@@ -1,0 +1,9 @@
+--- Arena\Setup-Arena.tp2	Wed Dec 29 17:37:30 2010
++++ C:\BWP Patchstudio\patched files\Arena\Setup-Arena.tp2	Thu Sep 26 23:01:31 2013
+@@ -1,5 +1,6 @@
+ BACKUP   ~Arena/backup~
+ AUTHOR   ~mastersuriel@gmail.com~
++VERSION	 ~v1 BWP Fix~
+ 
+ BEGIN ~The Arena Project~
+ REQUIRE_FILE ~Data/25Dialog.bif~ ~You do not appear to have TOB installed.~

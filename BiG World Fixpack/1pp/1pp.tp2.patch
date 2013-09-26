@@ -1,0 +1,10 @@
+--- 1pp\1pp.tp2	Thu Sep 20 14:21:10 2012
++++ C:\BWP Patchstudio\patched files\1pp\1pp.tp2	Thu Sep 26 21:41:38 2013
+@@ -4,6 +4,7 @@
+ 
+ BACKUP ~1pp/backup~
+ AUTHOR ~dotdotdot~
++VERSION ~v4.1.0 BWP Fix~
+ README ~1pp/documentation/readme.html~
+ 
+ // INCLUDE ~1pp/install/000_macros.tph~

@@ -1,0 +1,11 @@
+--- SETUP-alora.tp2	Sun Feb 19 15:12:06 2012
++++ C:\BWP Patchstudio\patched files\SETUP-alora.tp2	Thu Sep 26 22:30:26 2013
+@@ -8,7 +8,7 @@
+ BACKUP ~alora\backup~
+ AUTHOR ~"http://chosenofmystra.com"~
+ 
+-VERSION ~1.3~
++VERSION ~1.5 BWP Fix~
+ 
+ AUTO_TRA ~alora\%s~
+ 

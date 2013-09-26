@@ -1,0 +1,11 @@
+--- AM\AM.tp2	Wed Feb 17 18:37:39 2010
++++ C:\BWP Patchstudio\patched files\AM\AM.tp2	Thu Sep 26 22:37:12 2013
+@@ -2,7 +2,7 @@
+ // where should tell the user to send email if something goes wrong?
+ AUTHOR ~majortomsawyer@hotmail.com~
+ 
+-VERSION ~v4~
++VERSION ~v5 BWP Fix~
+ 
+ README ~am/am.txt~
+ 

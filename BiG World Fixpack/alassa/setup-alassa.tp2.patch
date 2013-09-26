@@ -1,0 +1,11 @@
+--- setup-alassa.tp2	Sat Aug 15 21:35:32 2009
++++ C:\BWP Patchstudio\patched files\setup-alassa.tp2	Thu Sep 26 22:15:08 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~alassa\backup~
+ AUTHOR ~SimDing0@hotmail.com~
+ 
+-VERSION ~v2~
++VERSION ~v2 BWP Fix~
+ 
+ AUTO_TRA ~alassa\%s~
+ 

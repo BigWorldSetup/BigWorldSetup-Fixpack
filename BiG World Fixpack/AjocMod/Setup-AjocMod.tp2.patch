@@ -1,0 +1,11 @@
+--- AjocMod\Setup-AjocMod.tp2	Mon Apr 05 02:32:54 2010
++++ C:\BWP Patchstudio\patched files\AjocMod\Setup-AjocMod.tp2	Thu Sep 26 22:16:21 2013
+@@ -4,7 +4,7 @@
+ 
+ AUTHOR ~See_The_Readme~
+ 
+-VERSION ~v1.6.5~
++VERSION ~v1.6.5 BWP Fix~
+ 
+ README ~AjocMod/AjocMod-Readme.txt~
+ 

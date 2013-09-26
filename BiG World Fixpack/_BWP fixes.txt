@@ -15,55 +15,173 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: 1PP - One Pixel Productions v2.70
+:: 1PP - One Pixel Productions v4.1.0
 
-:: Commented out the MODDER entry - 1pp.tp2
-:: http://www.shsforums.net/index.php?showtopic=43214 
+:: Lollorian's JC Helm animation crash fix for InfinityAnimations BG1 animation compatibility
+:: http://www.shsforums.net/topic/55047-1ppv410-release-download-discussion/?p=561441
 
-
-----------------------------------------------------------------------------------------
-
-
-:: AbyStore (The Unusual Oddities Shop) v3.0
-
-:: Lollorian's GLOBAL fixes - abysima.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__482945
+:: Lollorian's patch for Ashes of Embers compatibility
+:: http://www.shsforums.net/topic/56643-1pp-circlets-and-bg2tweaks-issue/?p=561849
 
 
 ----------------------------------------------------------------------------------------
 
 
-:: Ajantis NPC for BG2 v0.2.20
+:: 1pp_thieves_galore - One Pixel Productions v3: Thieves Galore
 
-:: Lollorian's corrected crom upgrade typo - c#ar0334.baf
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=10551&view=findpost&p=165051
-
-:: Lollorian's misc fixes - ajantis_nbromance_baf.baf, c#ajan.baf, romance_core.baf, romance.d
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=10551&view=findpost&p=165382
-
-:: Lollorian's OR() fixes (updated) - c#ajanp_pr.d, c#player1.d
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=10551&view=findpost&p=165578
+:: Miloch's Elf Thief animation crash fix
+:: http://www.shsforums.net/topic/45507-elf-female-thief-animation-bug/?p=491950
 
 
 ----------------------------------------------------------------------------------------
 
 
-:: Allison One-Day NPC v1.8
+:: 1Sylm - Sylmar: Elves vs. Orcs Battlefield v1.025
 
-:: Corrects UNHAPPY_BREAKING to UNHAPPY_BREAKING_POINT in r#aldrow.baf
+:: White Agnus' ZY1800.ARE Crash fix
+:: http://www.shsforums.net/topic/39703-sylmar-battlefield-ctd/?p=449645
+
+
+----------------------------------------------------------------------------------------
+
+
+:: AbyStore - The Unusual Oddities Shop v3.0
+
+:: Lollorian's GLOBAL fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
+
+:: Changed r#asmgau.itm to increase Max HP instead of Current HP
+:: - LINK NOT FOUND -
+
+:: Patched readme-AbyStore.html to display correct version number
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Aeon - Aeon NPC v1.0
+
+:: Lollorian's Items not being copied fix
+:: http://www.baldursgatemods.com/forums/index.php?topic=8024.0
+
+
+----------------------------------------------------------------------------------------
+
+
+:: AjocMod - Ajoc's Mod v1.6.5
+
+:: Miloch's script fixes
+:: http://www.shsforums.net/topic/7648-ajocs-minimod/?p=491329
+
+:: Lollorian's OCALS -> LOCALS fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=498838
+
+:: Lollorian's SPL fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548661
+
+:: Lollorian's ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=547828
+
+
+----------------------------------------------------------------------------------------
+
+
+:: alassa - Alassa NPC v2
+
+:: Lollorian's corrected join dialogue
+:: http://forums.pocketplane.net/index.php/topic,28026.0.html
+
+
+----------------------------------------------------------------------------------------
+
+
+:: allison - Allison One-Day NPC v1.8
+
+:: Leomar's UNHAPPY_BREAKING to UNHAPPY_BREAKING_POINT fix in r#aldrow.baf
 :: http://forums.rpgdungeon.net/index.php/topic,1622.0.html
 
+:: Lollorian's string tag fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=500837
+
 
 ----------------------------------------------------------------------------------------
 
 
-:: Amber NPC (SoA) v2.6
+:: alora - Alora NPC v1.5
+
+:: Lollorian's class script trigger fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561215
+
+
+----------------------------------------------------------------------------------------
+
+
+:: AM - Alex Macintosh PC Conversion v5
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=546737
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=547608
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=549486
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548608
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=549662
+
+
+----------------------------------------------------------------------------------------
+
+
+:: amber - Amber NPC (SoA) v2.6
 
 :: Small typo fix - m#ar0700.baf
 :: http://forums.gibberlings3.net/index.php?s=&showtopic=18567&view=findpost&p=163084
 
 :: Lollorian's typo fixes - m#boy1.baf, m#girl1.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__487571
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=487571
+
+:: Lollorian's KIT.iDS patching fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=542469
+
+:: Lollorian's string tag fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=500187
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+:: Lollorian's class script trigger fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561215
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Angelo - Angelo NPC v4
+
+:: Lollorian's string tag fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=500187
+
+:: Changed ADNinja.baf SpellNoDec(Myself,0) -> SpellNoDec(Myself,ROGUE_ASSASINATION)
+:: - NO LINK FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
+:: AnimalCompanions - Ulb's Animal Companions v0.5
+
+:: Added quotes to ApplySpellRES() objects in some scripts
+:: - NO LINK FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Arena - The Arena Project v1
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=547608
+
+:: micbaldur's Tier 6 rewards fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=554525
 
 
 ----------------------------------------------------------------------------------------
@@ -72,10 +190,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Ariena NPC v2.2
 
 :: Lollorian's corrected BoHunX -> MWBoHuX typos - Bohunl.D, MWARSC25.BAF
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__486586
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486586
 
 :: Lollorian's corrected wrong EXTERN (ARIENAP -> MWArnP) - MWBArn.D
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488721
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
 
 
 ----------------------------------------------------------------------------------------
@@ -84,7 +202,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Ascalons Breagar v5.2
 
 :: Lollorian's interchanged ACHAND1 and ACBre in 2 lines - ACBREP.D
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488721
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
 
 
 ----------------------------------------------------------------------------------------
@@ -105,10 +223,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Aurora's Shoes and Boots v5
 
 :: ScuD's MOVE correction - t-goblin.tpa
-:: http://www.shsforums.net/topic/44360-vague-errors-when-installing/page__view__findpost__p__481680
+:: http://www.shsforums.net/topic/44360-vague-errors-when-installing/?p=481680
 
 :: Miloch's v5.1 patch - folder _AuroraPatch
-:: http://www.shsforums.net/topic/44329-some-things-i-noticed/page__view__findpost__p__479223
+:: http://www.shsforums.net/topic/44329-some-things-i-noticed/?p=479223
 
 
 ----------------------------------------------------------------------------------------
@@ -117,7 +235,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Avi Maya NPC Project (AviM) v6.0
 
 :: Lollorian's corrected PlaySound("AVILOVE") -> PlaySound("AVIM") - 1xAVI25.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 
 ----------------------------------------------------------------------------------------
@@ -168,10 +286,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/index.php?showtopic=33192
 
 :: Lollorian's corrected AROW typos - Items.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483696
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483696
 
 :: Lollorian's renamed file (adding Zyraen's prefix "Z#" - GTHAC.SPL -> Z#GTHAC.SPL)
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 
 ----------------------------------------------------------------------------------------
@@ -207,7 +325,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: BG2 Fixpack v9.01
 
 :: Hoppy's Crom-not-enjoying fix - ar0334.baf
-:: http://www.shsforums.net/topic/44623-extreme-bloat-in-cromwells-dialogue/page__view__findpost__p__482717
+:: http://www.shsforums.net/topic/44623-extreme-bloat-in-cromwells-dialogue/?p=482717
 
 :: aVENGER's Moon Dog fix - setup-bg2fixpack.tp2
 :: http://forums.gibberlings3.net/index.php?showtopic=19582
@@ -219,7 +337,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: BG2 Tweak Pack (BG2 Tweaks) v9
 
 :: Mike1072's _KHALID's for BGT fix - Setup-BG2_Tweaks.tp2, P#FW2301.BAF
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__489437
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=489437
 
 
 ----------------------------------------------------------------------------------------
@@ -228,7 +346,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: BGSpawn v1.07
 
 :: Lollorian's corrected PlaySound("%tutu_var%VWOLF03") -> PlaySound("VWOLF03") for BGT - mm75wo.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__489410
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=489410
 
 
 ----------------------------------------------------------------------------------------
@@ -237,7 +355,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Big Picture (BP) v180a
 
 :: Lollorian's fixed typos in the BPSeries scripts - BPBard.baf, BPFT-MGT.baf, BPMage.baf, BPMulti.baf, BPRanged.baf
-:: http://www.shsforums.net/topic/45230-bpv180-beta-is-released/page__view__findpost__p__489325
+:: http://www.shsforums.net/topic/45230-bpv180-beta-is-released/?p=489325
 
 
 ----------------------------------------------------------------------------------------
@@ -246,7 +364,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Boards o' Magick Item Pack (BoM Item Pack) v2.0
 
 :: Lollorian's corrected PlaySound() typo - O!TalF.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483688
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483688
 
 
 ----------------------------------------------------------------------------------------
@@ -255,10 +373,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Bons’ Bruce, the Cockney Barfighter (One-Day NPC) v2
 
 :: Lollorian's corrected GLOBAL typo - subru.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488085
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488085
 
 :: Lollorian's corrections: items being copied over with 8+-char names - Setup-BonsBrucev2.tp2
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488721
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
 
 
 ----------------------------------------------------------------------------------------
@@ -304,7 +422,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Chiara NPC v1.02
 
 :: Lollorian's corrected PlaySound("Genmg15.wav") -> PlaySound("Genmg15") - V#GuardS.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 
 ----------------------------------------------------------------------------------------
@@ -323,7 +441,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: White Agnus' BGT fixes
 
 :: Miloch's scripting loop fixes - extended to 12 .bafs
-:: http://www.shsforums.net/topic/45031-ctd-blue-screen-of-death-nashkel-mines/page__view__findpost__p__487581
+:: http://www.shsforums.net/topic/45031-ctd-blue-screen-of-death-nashkel-mines/?p=487581
 
 
 ----------------------------------------------------------------------------------------
@@ -335,21 +453,21 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/index.php?s=&showtopic=38354&view=findpost&p=433831
 
 :: Corrections and fixes - Setup-DSotSC.TP2
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/page__view__findpost__p__477840
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/page__view__findpost__p__478149
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/page__view__findpost__p__479728
+:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=477840
+:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=478149
+:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=479728
 
 :: erebusant's duegskel fix - DSDUEGSK.BAF
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/page__view__findpost__p__474726
+:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=474726
 
 :: erebusant's revised Drow item dustification code - AR8700.BAF
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/page__view__findpost__p__478188
+:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=478188
 
 :: Lollorian's PlaySound() fixes - DSLICH1.baf, DSLICH2.baf
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/page__view__findpost__p__483690
+:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=483690
 
 :: Miloch's crashing club fix - dsclub01.itm
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/page__view__findpost__p__489005
+:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=489005
 
 
 ----------------------------------------------------------------------------------------
@@ -358,10 +476,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Deeper Shadows of Amn (DSoA) v2.2.4
 
 :: Lollorian's fixed .ids stuff - Setup-DSoA.tp2
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__486323
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486323
 
 :: Lollorian's corrected typos - Grothgar.baf, sAR0700.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 
 ----------------------------------------------------------------------------------------
@@ -401,7 +519,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://forums.pocketplane.net/index.php/topic,20010.msg323551.html#msg323551
 
 :: Lollorian's corrected animation typo - sufakeb.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483642
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483642
 
 :: Temujin's further fixes (points 13 until 18) done by Lollorian
 :: http://forums.pocketplane.net/index.php?topic=20010.msg324567#msg324567
@@ -443,10 +561,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/index.php?showtopic=39624
 
 :: Lollorian's replacement - ERLOVETALK2.D
-:: http://www.shsforums.net/topic/37020-please-post-outstanding-bugs-to-be-fixed/page__view__findpost__p__483612
+:: http://www.shsforums.net/topic/37020-please-post-outstanding-bugs-to-be-fixed/?p=483612
 
 :: Lollorian's corrected ER_EDBODY -> ER_EDBOD typo - ER_cleanse.bcs
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__486586
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486586
 
 
 ----------------------------------------------------------------------------------------
@@ -457,7 +575,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: RNDTREAS.2DA changes - Setup-Exnem.TP2
 
 :: Lollorian's corrected typos - AR0803.BAF, AR2100.BAF
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 
 ----------------------------------------------------------------------------------------
@@ -484,7 +602,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Ghareth One-Day NPC v0.91
 
 :: Lollorian's GLOBAL fixes - fwgharj.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__482945
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
 
 
 ----------------------------------------------------------------------------------------
@@ -493,7 +611,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Gloran NPC v2
 
 :: Lollorian's replacements - Gloran.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483525
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
 
 ----------------------------------------------------------------------------------------
@@ -511,7 +629,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Grimuars v3.3
 
 :: Lollorian's LOCALS fix - b#tar05.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__482945
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
 
 
 ----------------------------------------------------------------------------------------
@@ -520,7 +638,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Horace NPC (Beta) v1.71
 
 :: Lollorian's corrected typos - Horfight.baf, Horfight.bcs
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 
 ----------------------------------------------------------------------------------------
@@ -529,7 +647,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Hubelpot the Vegetable Merchant NPC v1.0
 
 :: Lollorian's GLOBAL fixes - SC#AR0530.baf, SC#HubQuest.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__482945
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
 
 
 ----------------------------------------------------------------------------------------
@@ -547,7 +665,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/index.php?showtopic=39145
 
 :: Lollorian's Myself corrections - vicond.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__482735
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482735
 
 
 ----------------------------------------------------------------------------------------
@@ -556,10 +674,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Imnesvale (D's Odd Quest) v1
 
 :: Lollorian's PARSE ERROR fix - ducleric.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483047
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483047
 
 :: Lollorian's typo fixes - easy\duAR1100.BAF, hard\duAR1100.BAF, impossible\duAR1100.BAF
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__487571
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=487571
 
 
 ----------------------------------------------------------------------------------------
@@ -570,7 +688,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: White Agnus' compatibility fix for BGT
 
 :: TheBigg's fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__478417
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=478417
 
 
 ----------------------------------------------------------------------------------------
@@ -600,10 +718,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://kerzenburg.baldurs-gate.eu/showpost.php?p=903792&postcount=1010
 
 :: Lol's crom.d typo fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__481120
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=481120
 
 :: Lol's cespy.d typo fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__481570
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=481570
 
 
 ----------------------------------------------------------------------------------------
@@ -635,16 +753,16 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/index.php?s=&showtopic=33658&view=findpost&p=394843
 
 :: Hoppy's demon spawn fix - KZ#2807A.baf
-:: http://www.shsforums.net/topic/43574-suldanesselar-bugs/page__view__findpost__p__470369
+:: http://www.shsforums.net/topic/43574-suldanesselar-bugs/?p=470369
 
 :: Lollorian's corrections
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 :: Lollorian's corrected OR(6) -> OR(4) - Kiar25.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488721
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
 
 :: Lollorian's changed some Unknown_error("XXX") lines to InParty("XXX") - Kiara.bcs
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488890
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488890
 
 
 ----------------------------------------------------------------------------------------
@@ -653,13 +771,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Kido NPC v7.0
 
 :: Lollorian's replacements - MWBKid25.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483525
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
 :: Lollorian's corrected animation typo - MWCySacr.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483642
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483642
 
 :: Lollorian's corrected wrong EXTERN (KIDOP -> MWKidP/GORMAD -> GORMAD1/KIDOP25 -> MWKidP25) - MWKidJ25.d, MWKidJ.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488721
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
 
 
 ----------------------------------------------------------------------------------------
@@ -678,10 +796,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Corrected !Dead("R#Kitanya) to !Dead("R#Kitanya") - kitanyaj.d
 
 :: Lollorian's GLOBAL fixes - kitanyaj.d, kitya.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__482945
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
 
 :: Lollorian's corrections: ga_(somespell) [name becomes more than 8 chars] -> (somespell) [3 instances] - r!kitele.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__486802
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486802
 
 
 ----------------------------------------------------------------------------------------
@@ -694,7 +812,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Corrected CreateCreatureObject - #SAr0406.baf
 
 :: Lollorian's corrected CreateCreature("#SMichele", -> CreateCreature("#SMichel", - #SAr1100.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 
 ----------------------------------------------------------------------------------------
@@ -703,10 +821,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lester NPC v0.9
 
 :: Lollorian's corrected CreateVisualEffect("SPLFLESHS", -> CreateVisualEffect("SPFLESHS", - lestcut1.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 :: Lollorian's removed ".cre" from inside CreateCreatureDoor() - kufartem.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488705
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488705
 
 
 ----------------------------------------------------------------------------------------
@@ -727,7 +845,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/index.php?showtopic=43042
 
 :: Lollorian's missing/unused sound files fix - Instal_wav.BAT
-:: http://www.shsforums.net/topic/44607-bwp-mods-bugs-not-solved-yet/page__view__findpost__p__482454
+:: http://www.shsforums.net/topic/44607-bwp-mods-bugs-not-solved-yet/?p=482454
 
 
 ----------------------------------------------------------------------------------------
@@ -740,7 +858,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: BWP compatibility issues with NEJ2 fixed - NALIAA.BCS
 
 :: Lollorian's replacements - badbadai.BAF, badbadog.BAF
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483525
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
 
 ----------------------------------------------------------------------------------------
@@ -752,19 +870,19 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/44627-typo-in-tp2/
 
 :: Lollorian's !Dead(Myself) changes - FHLAL.baf, fhljos.baf
-:: http://www.shsforums.net/topic/44627-some-stuff-to-check/page__view__findpost__p__483613
+:: http://www.shsforums.net/topic/44627-some-stuff-to-check/?p=483613
 
 :: Lollorian's OR() fix - FHLSEBJ.d
-:: http://www.shsforums.net/topic/44627-some-stuff-to-check/page__view__findpost__p__483703
+:: http://www.shsforums.net/topic/44627-some-stuff-to-check/?p=483703
 
 :: Lollorian's corrections: FHLROS -> FHLLROS (only spells, cre's still called FHLROS) - FHLBRID.baf, FHLROS.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__486802
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486802
 
 :: Lollorian's FHLGen corrections - FHLGEN.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 :: Lollorian's added "AR-" prefix to AreaCheck() (48 instances!) - FHLANDJ.d, FHLSEBJ.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488705
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488705
 
 
 ----------------------------------------------------------------------------------------
@@ -773,10 +891,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: MTS Crappack v4
 
 :: Lollorian's corrected "Myself" -> Myself - Val/LI%valygar.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__482735
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482735
 
 :: Lollorian's replacements - Ding0/d0pimag.baf and d0simul.baf, Questpack/d0pimag.baf and d0simul.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483525
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
 
 ----------------------------------------------------------------------------------------
@@ -785,7 +903,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: MunchMod v3.3
 
 :: Miloch's Arkvisti continuous spawning fix - sbaldur.baf
-:: http://www.shsforums.net/topic/43499-bridge-disrict-errors/page__view__findpost__p__489199
+:: http://www.shsforums.net/topic/43499-bridge-disrict-errors/?p=489199
 
 
 ----------------------------------------------------------------------------------------
@@ -794,7 +912,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Nathaniel NPC v4.2
 
 :: Lollorian's correction - fhnatp.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 
 ----------------------------------------------------------------------------------------
@@ -803,10 +921,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Neh'taniel NPC (Neht) v5.1
 
 :: Lollorian's corrected mistyped areas (AR01800->AR0900 / AR11800->AR1900 / AR21800->AR2900) - SK#NEHTJ.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488705
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488705
 
 :: Lollorian's added SK#2Fix.baf for COMPILE action - Setup-Neh'taniel.tp2
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__489410
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=489410
 
 
 ----------------------------------------------------------------------------------------
@@ -822,10 +940,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/index.php?s=&showtopic=33998&view=findpost&p=400984
 
 :: Lollorian's !Dead(Myself) change - TGVERBD.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483485
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
 
 :: Lollorian's corrected mogansti and HJescape typos - TuEzek.d, DHJOLLDE.D
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483696
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483696
 
 
 ----------------------------------------------------------------------------------------
@@ -845,13 +963,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/index.php?showtopic=38491
 
 :: Lollorian's Myself corrections - lk#nind.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__482735
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482735
 
 :: Lollorian's OR() fix - lk#nins.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483244
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483244
 
 :: Lollorian's correction - lk#nindj.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 
 ----------------------------------------------------------------------------------------
@@ -872,13 +990,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/index.php?s=&showtopic=33860&view=findpost&p=453459
 
 :: ScuD's update pack
-:: http://www.shsforums.net/topic/42951-planar-sphere/page__view__findpost__p__481226
+:: http://www.shsforums.net/topic/42951-planar-sphere/?p=481226
 
 :: Lollorian's corrected animation typos - psapp01.baf - psapp05.baf, pscut01.baf, psdwarf.baf, psglab.baf, pstutor1.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483642
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483642
 
 :: Lollorian's corrected psqMin -> psqsMin (8 instances) - psvecna.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483696
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483696
 
 
 ----------------------------------------------------------------------------------------
@@ -887,7 +1005,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Questor Revised v1
 
 :: Lollorian's correction - M#Questo.bcs
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 
 ----------------------------------------------------------------------------------------
@@ -923,13 +1041,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://kerzenburg.baldurs-gate.eu/showpost.php?p=908841&postcount=66
 
 :: Lollorian's !Dead(Myself) changes - CULTBOY.BAF, MAGE12B.BAF - MAGE20C.BAF (19 mage scripts)
-:: http://www.shsforums.net/topic/27638-rot-v21-bug-thread/page__view__findpost__p__483652
+:: http://www.shsforums.net/topic/27638-rot-v21-bug-thread/?p=483652
 
 :: Lollorian's replacement - GODAVA2.BAF
-:: http://www.shsforums.net/topic/27638-rot-v21-bug-thread/page__view__findpost__p__483652
+:: http://www.shsforums.net/topic/27638-rot-v21-bug-thread/?p=483652
 
 :: Lollorian's corrected KILLSWO1 -> KILLSW01 typos - ARFI2.BAF, ARFI3.BAF
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__486586
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486586
 
 
 ----------------------------------------------------------------------------------------
@@ -941,16 +1059,16 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/index.php?s=&showtopic=34387&view=findpost&p=444685
 
 :: Lollorian's FR_ROV compatibility check fix - Setup-RevisedBattles.tp2
-:: http://www.shsforums.net/topic/34387-revised-battles-v6-released/page__view__findpost__p__482207
+:: http://www.shsforums.net/topic/34387-revised-battles-v6-released/?p=482207
 
 :: Lollorian's LOCALS fix - b#tar05.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__482945
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
 
 :: Lollorian's !Dead(Myself) changes - b#lich02.baf, b#lsha.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483485
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
 
 :: Lollorian's replacements - drizzt/baf/check/useitem.baf, jaellat/baf/check/useitem.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483525
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
 
 ----------------------------------------------------------------------------------------
@@ -961,7 +1079,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: BWP compatibility fixes
 
 :: Lollorian's LOCALS fixes - rukrakia.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483384
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483384
 
 
 ----------------------------------------------------------------------------------------
@@ -970,7 +1088,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Sarah NPC v3.1
 
 :: Lollorian's corrected PlaySound("") -> PlaySound("K#SarM5") - k#sar25d.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__489410
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=489410
 
 
 ----------------------------------------------------------------------------------------
@@ -979,13 +1097,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Secret of Bone Hill (SoBH) v2.75a
 
 :: Lisandro's Spanish not installing fix - Bhyalta.tra
-:: http://www.shsforums.net/topic/44739-secret-of-bonehill-v275-bug-reports/page__view__findpost__p__487107
+:: http://www.shsforums.net/topic/44739-secret-of-bonehill-v275-bug-reports/?p=487107
 
 :: Ascalon's German not installing fix - BHARRNES.tra
-:: http://www.shsforums.net/topic/44739-secret-of-bonehill-v275-bug-reports/page__view__findpost__p__487484
+:: http://www.shsforums.net/topic/44739-secret-of-bonehill-v275-bug-reports/?p=487484
 
 :: Lollorian's corrected typos - BH0107.BAF, BH0500.BAF
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488681
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 
 ----------------------------------------------------------------------------------------
@@ -997,7 +1115,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/index.php?s=&showtopic=41997&view=findpost&p=459945
 
 :: Lollorian's replacement - tBALDUR.BAF
-:: http://www.shsforums.net/topic/27636-sos-v112-bug-thread/page__view__findpost__p__483654
+:: http://www.shsforums.net/topic/27636-sos-v112-bug-thread/?p=483654
 
 
 ----------------------------------------------------------------------------------------
@@ -1006,7 +1124,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Sheena NPC v1.7
 
 :: Lollorian's !Dead(Myself) change - K#Sheena.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483485
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
 
 
 ----------------------------------------------------------------------------------------
@@ -1023,10 +1141,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Solaufein Flirt Pack (RPGSola) v4.0
 
 :: Lollorian's corrected AreaCheck - RPGSola.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483544
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483544
 
 :: Lollorian's corrected 2500 -> AR2500 - RPGSolaFlirts.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488705
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488705
 
 
 ----------------------------------------------------------------------------------------
@@ -1035,7 +1153,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Sovereign (Er'vonyrah) v1.3.1
 
 :: Lollorian's !Dead(Myself) changes - Crdafgt.baf, Crsarfgt.baf, Crsdafgt.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483485
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
 
 
 ----------------------------------------------------------------------------------------
@@ -1065,7 +1183,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Summon Bhaalspawn (SBS) v3
 
 :: Lollorian's portrait installation fix - SBS\Language\English\Setup.tra
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__485886
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=485886
 
 
 ----------------------------------------------------------------------------------------
@@ -1138,13 +1256,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Tales of Anegh (ToA) v2.0
 
 :: Lollorian's corrected animation typo - ZBERGE.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483642
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483642
 
 :: Lollorian's changed 78 instances of "item_zo_delete -> item_to_delete" - setup-toa.TP2
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__487281
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=487281
 
 :: Lollorian's added missing ~'s - setup-toa.TP2
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__487677
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=487677
 
 
 ----------------------------------------------------------------------------------------
@@ -1153,7 +1271,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Tashia Remix v1.2
 
 :: Lollorian's corrected "LE#tbody " -> "LE#tbody" typos - LE#Cleanse.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__486586
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486586
 
 
 ----------------------------------------------------------------------------------------
@@ -1162,10 +1280,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: The Bigg Quest Pack v2.04
 
 :: Lollorian's corrected CRE typos - ar0700.baf, tb#lotpr.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__486013
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486013
 
 :: Lollorian's corrected tireless rage typo: tb#tles -> tg#tles - tb#lotr1.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488890
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488890
 
 
 ----------------------------------------------------------------------------------------
@@ -1174,13 +1292,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: The Darkest Day v1.13
 
 :: Lollorian's replacement - BGWARD.BAF
-:: http://www.shsforums.net/topic/38117-the-darkest-day-112-forumthread/page__view__findpost__p__483651
+:: http://www.shsforums.net/topic/38117-the-darkest-day-112-forumthread/?p=483651
 
 :: Lollorian's corrected animation typos - DD3300CT.BAF, GRAZINT.BAF
-:: http://www.shsforums.net/topic/38117-the-darkest-day-112-forumthread/page__view__findpost__p__483651
+:: http://www.shsforums.net/topic/38117-the-darkest-day-112-forumthread/?p=483651
 
 :: Hoppy's Chateau Irenicus spawn fix - bAR0602.BAF
-:: http://www.shsforums.net/topic/38117-the-darkest-day-112-forumthread/page__view__findpost__p__484055
+:: http://www.shsforums.net/topic/38117-the-darkest-day-112-forumthread/?p=484055
 
 
 ----------------------------------------------------------------------------------------
@@ -1207,10 +1325,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://forums.chosenofmystra.net/index.php?topic=1930.msg18280#msg18280
 
 :: Lollorian's replacement - WGcarin.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483525
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
 :: Lollorian's corrected "NONE" -> "" - WGwitch.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488721
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
 
 
 ----------------------------------------------------------------------------------------
@@ -1232,7 +1350,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: 10th Solaufein compatibility fix
 
 :: Lollorian's replacements - Movie3ba.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483525
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
 
 ----------------------------------------------------------------------------------------
@@ -1241,10 +1359,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Tower of Deception (ToD) v3.3.1
 
 :: Lollorian's Script fixes - va#lich.baf, va#lizrd.baf, va#shade.baf, va#wiste.baf
-:: http://www.shsforums.net/topic/44488-solved-probably-me-but-bwp-83/page__view__findpost__p__480898
+:: http://www.shsforums.net/topic/44488-solved-probably-me-but-bwp-83/?p=480898
 
 :: Lollorian's extended  OR() fixes - va#gitfm.baf, va#ustrn.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483244
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483244
 
 
 ----------------------------------------------------------------------------------------
@@ -1255,7 +1373,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Fennek's mod updates and partial German translation (15 May 2010)
 
 :: Lollorian's replacements - tz25nncf.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483525
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
 
 ----------------------------------------------------------------------------------------
@@ -1296,13 +1414,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://forums.pocketplane.net/index.php/topic,26931.msg323710.html#msg323710 
 
 :: Lollorian's Myself corrections - ubimoen2.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__482735
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482735
 
 :: Wisp's Muggers not spawning fix - u!0400.baf
 :: http://forums.pocketplane.net/index.php/topic,27193.msg324343.html#msg324343
 
 :: Lollorian's corrected "EXISTANCE5" -> EXISTANCE5 - ubimoen2.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__487571
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=487571
 
 
 ----------------------------------------------------------------------------------------
@@ -1320,10 +1438,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Valen NPC v45
 
 :: Lollorian's Valen charm dialogue fix - valen.bcs
-:: http://www.shsforums.net/topic/44452-remove-her-charm-powers/page__view__findpost__p__480359
+:: http://www.shsforums.net/topic/44452-remove-her-charm-powers/?p=480359
 
 :: Lollorian's corrected WRITE_ASCII 0x34 "valenS " -> WRITE_ASCII 0x34 "valenS" #8 - Setup-Valen.tp2
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__489410
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=489410
 
 
 ----------------------------------------------------------------------------------------
@@ -1332,7 +1450,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Vanim (NPC) v1.4
 
 :: Lollorian's removed ".itm" from inside a PartyHasItem() - vanimJ.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__488705
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488705
 
 
 ----------------------------------------------------------------------------------------
@@ -1344,7 +1462,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/index.php?s=&showtopic=39044&view=findpost&p=460268  
 
 :: Miloch's Bandit Camp fight crashing fix (and missing spaces) - Setup-Vault.tp2
-:: http://www.shsforums.net/topic/39044-vault-v7-released/page__view__findpost__p__487194
+:: http://www.shsforums.net/topic/39044-vault-v7-released/?p=487194
 
 
 ----------------------------------------------------------------------------------------
@@ -1353,7 +1471,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Viconia Friendship v3.0
 
 :: K'aeloree's ToB stutter fix - vico25.baf
-:: http://www.shsforums.net/topic/33456-viconia-friendship-bug-reports/page__view__findpost__p__481437
+:: http://www.shsforums.net/topic/33456-viconia-friendship-bug-reports/?p=481437
 
 
 ----------------------------------------------------------------------------------------
@@ -1362,10 +1480,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Victor's Improvements Pack (BGII Improvements Mod) v2.0
 
 :: Lollorian's !Dead(Myself) changes - LydMag.BAF, marcil.baf, quimb2.baf, salak2.baf, SCMAGE.BAF, SCSHOUT.BAF
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483485
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
 
 :: Lollorian's replacements - SCITEM.BAF, SCSHOUT.BAF
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__483525
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
 
 ----------------------------------------------------------------------------------------
@@ -1403,7 +1521,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Worgas NPC (Beta) v1.1
 
 :: Lollorian's \are\W_xxxx.baf's fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__486198
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486198
 
 
 ----------------------------------------------------------------------------------------
@@ -1424,7 +1542,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Yoshimo Friendship v2.0
 
 :: Lollorian's Myself corrections - yoshimo.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page__view__findpost__p__482735
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482735
 
 
 ----------------------------------------------------------------------------------------
