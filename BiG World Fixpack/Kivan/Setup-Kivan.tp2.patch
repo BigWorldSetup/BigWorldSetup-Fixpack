@@ -1,5 +1,14 @@
 --- Setup-Kivan.tp2	Sat Dec 10 17:13:30 2011
 +++ C:\BWP Patchstudio\patched files\Setup-Kivan.tp2	Wed Oct 24 04:08:37 2012
+@@ -2,7 +2,7 @@
+ BACKUP ~Kivan/backup~
+ AUTHOR ~domi_sotto@gibberlings3.net~
+ 
+-VERSION ~v13~ 
++VERSION ~v13 BWP Fix~ 
+ 
+ ALWAYS
+ AT_INTERACTIVE_EXIT ~VIEW Kivan/readme-kivan-new.html~
 @@ -61,7 +61,7 @@
  // The following fixes the broken kit.ids so that it can be used to detect kits properly.
  

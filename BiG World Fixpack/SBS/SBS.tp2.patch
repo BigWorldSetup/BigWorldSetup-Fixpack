@@ -9,3 +9,12 @@
  // ALWAYS
  //  AT_INTERACTIVE_EXIT ~VIEW SBS/SBS.txt~
  // END
+@@ -23,7 +25,7 @@
+ 
+ PRINT @1
+ 
+-COPY ~SBS/store/.DS_Store~ ~override~
++// COPY ~SBS/store/.DS_Store~ ~override~
+ 
+ COPY ~SBS/npcs~ ~override~
+ 

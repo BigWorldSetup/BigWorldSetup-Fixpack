@@ -1,9 +1,18 @@
 --- setup-HessaNPC.tp2	Mon Feb 23 18:28:26 2004
 +++ C:\BWP Patchstudio\patched files\setup-HessaNPC.tp2	Sun Aug 25 17:10:05 2013
-@@ -268,6 +268,22 @@
+@@ -2,6 +2,7 @@
+ 
+ BACKUP ~hessa\backup~
+ AUTHOR ~llamababe@carolina.rr.com~
++VERSION ~1.1 BWP Fix~
+ 
+ BEGIN ~Hessa NPC Mod (Requires Throne of Bhaal)~
+ REQUIRE_FILE ~Data/25Dialog.bif~ ~You do not appear to have TOB installed.~
+@@ -267,6 +268,22 @@
+ COPY ~hessa\areas\arsu10.tiz~ ~override\arsu10.tiz~ 
  COPY ~hessa\areas\arsu10.wed~ ~override\arsu10.wed~
  COPY ~hessa\areas\arsu10.mos~ ~override\arsu10.mos~
- 
++
 +ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
 +  COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
 +   APPEND_FILE ~hessa/Worldmap/areas.tbl~
@@ -19,7 +28,6 @@
 +  COPY ~hessa/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
 +  COPY ~hessa/Worldmap/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
 +END
-+
+ 
  COPY ~hessa\tisunpack.exe~ ~override~
  
- // Compile and append scripts

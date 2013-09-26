@@ -1,0 +1,13 @@
+--- vecna\baf\beh\AABEHHEL.baf	Sun Jul 03 22:12:26 2011
++++ C:\BWP Patchstudio\patched files\vecna\baf\beh\AABEHHEL.baf	Thu Dec 23 18:35:52 2010
+@@ -649,8 +649,8 @@
+     Class(LastSeenBy(Myself),DRUID_ALL)
+     Class(LastSeenBy(Myself),BARD)
+     Class(LastSeenBy(Myself),CLERIC_ALL)
+-    Name("LastSeenBy(Myself),","plangood")  // Planatar
+-    Name("LastSeenBy(Myself),","planevil")  // Darkplanatar
++    Race(LastSeenBy(Myself),PLANATAR)  // Planatar
++    Race(LastSeenBy(Myself),DARKPLANATAR)  // Darkplanatar
+   OR(2)
+     !StateCheck(LastSeenBy(Myself),-2146164691)
+     RandomNum(4,1)

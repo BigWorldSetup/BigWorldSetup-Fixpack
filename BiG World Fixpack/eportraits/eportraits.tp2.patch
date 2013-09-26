@@ -1,0 +1,11 @@
+--- eportraits\eportraits.tp2	Mon Mar 26 17:53:29 2012
++++ C:\BWP Patchstudio\patched files\eportraits\eportraits.tp2	Sun Aug 25 14:53:07 2013
+@@ -586,7 +586,7 @@
+ LAF replace_backup_all STR_VAR folder=~eportraits/rhilato_wm~ END
+ COPY_EXISTING ~wm_rhia1.cre~   ~override~
+               ~wm_rhia2.cre~   ~override~
+-              ~wm_rhia3.cre~   ~override~
++//            ~wm_rhia3.cre~   ~override~
+   WRITE_BYTE 0x2f 84 // skin colour:  84 Peach, was Shiny Gold
+   WRITE_BYTE 0x32 0  // hair colour:  0 Red Tinted Black, was Purple
+ BUT_ONLY_IF_IT_CHANGES

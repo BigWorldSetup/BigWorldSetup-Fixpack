@@ -1,6 +1,6 @@
 BACKUP ~lolfixer/backup~
 AUTHOR ~Lollorian~
-VERSION ~16082013~
+VERSION ~15092013~
 
 BEGIN ~Area Stuff - MAJESTIC Area Fixer~
   GROUP ~Area Stuff~
@@ -580,7 +580,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
             END
             PATCH_IF ("%index%" = 2) BEGIN // shield slot
               SET "offhand" = 1
-              PATCH_IF ((("%flags%" BAND 0b00010110) = 0b00000110) AND ("%ignore%" = 0)) AND (("%cre_flags%" BAND 0b00001000) = 0b00000000) BEGIN // 2h, uncursed and droppable check
+              PATCH_IF (("%flags%" BAND 0b00010110) = 0b00000110) AND (("%cre_flags%" BAND 0b00001000) = 0b00000000) BEGIN // 2h, uncursed and droppable check
                 SET "ref2" = 1
                 FOR (index3 = 21 ; ref2 != 0xffff && index3 < 37 ; index3 = index3 + 1) BEGIN
                   READ_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref2"
@@ -1696,8 +1696,8 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   END
 BUT_ONLY
 
-// 1Pv4 causing crashes on NPCs with BG1 animations wearing helms with animset JC
-ACTION_IF FILE_EXISTS_IN_GAME ~WPLJ8A1.bam~ THEN BEGIN
+// 1PPv4 causing crashes on NPCs with BG1 animations wearing helms with animset JC
+ACTION_IF (FILE_EXISTS_IN_GAME ~WPLJ8A1.bam~) AND NOT (FILE_EXISTS_IN_GAME ~WPLJCA1.bam~) THEN BEGIN
   PRINT "1PP detected! Adding missing JC Helm animation set frames for BG1 animation compatibility..."
   ACTION_FOR_EACH category IN ~L~ ~M~ ~S~ ~T~ BEGIN
     ACTION_FOR_EACH sequence IN ~A1~ ~A1E~ ~A2~ ~A2E~ ~A3~ ~A3E~ ~A4~ ~A4E~ ~A5~ ~A5E~ ~A6~ ~A6E~ ~CA~ ~CAE~ ~G1~ ~G1E~ ~SA~ ~SAE~ ~SX~ ~SXE~ ~W2~ ~W2E~ BEGIN

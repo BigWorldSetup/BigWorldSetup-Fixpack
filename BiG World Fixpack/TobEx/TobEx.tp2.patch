@@ -1,0 +1,11 @@
+--- TobEx\TobEx.tp2	Sun Mar 24 00:26:40 2013
++++ C:\BWP Patchstudio\patched files\TobEx\TobEx.tp2	Sun Sep 08 20:35:06 2013
+@@ -2,7 +2,7 @@
+ 
+ AUTHOR "Ascension64 (http://www.shsforums.net/forum/606-tobex/)"
+ 
+-VERSION "Beta 0025"
++VERSION "Beta 0026"
+ 
+ README "TobEx/tra/%LANGUAGE%/readme.htm" "TobEx/tra/english/readme.htm"
+ 

@@ -1,0 +1,24 @@
+--- vecna\baf\cre\AA162RAC.baf	Sun Jul 03 22:07:31 2011
++++ C:\BWP Patchstudio\patched files\vecna\baf\cre\AA162RAC.baf	Sun Sep 15 17:28:02 2013
+@@ -1371,8 +1371,8 @@
+     Class(LastSeenBy(Myself),DRUID_ALL)
+     Class(LastSeenBy(Myself),BARD)
+     Class(LastSeenBy(Myself),CLERIC_ALL)
+-    Name("LastSeenBy(Myself),","plangood")  // Planatar
+-    Name("LastSeenBy(Myself),","planevil")  // Darkplanatar
++    Race(LastSeenBy(Myself),PLANATAR)  // Planatar
++    Race(LastSeenBy(Myself),DARKPLANATAR)  // Darkplanatar
+   !StateCheck(LastSeenBy(Myself),-2146164691)
+ THEN
+   RESPONSE #100
+@@ -1491,8 +1491,8 @@
+     Class(LastSeenBy(Myself),DRUID_ALL)
+     Class(LastSeenBy(Myself),BARD)
+     Class(LastSeenBy(Myself),CLERIC_ALL)
+-    Name("LastSeenBy(Myself),","plangood")  // Planatar
+-    Name("LastSeenBy(Myself),","planevil")  // Darkplanatar
++    Race(LastSeenBy(Myself),PLANATAR)  // Planatar
++    Race(LastSeenBy(Myself),DARKPLANATAR)  // Darkplanatar
+   !HasItem("MINHP1",LastSeenBy(Myself))  // <Invalid Strref -1>
+   !HasItem("IMOENHP1",LastSeenBy(Myself))  // ~Imoen's Belt~
+   !StateCheck(LastSeenBy(Myself),-2146164691)

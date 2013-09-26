@@ -1,0 +1,10 @@
+--- soa\Worldmap\tutu_areas.tbl	Tue Jul 10 23:39:54 2012
++++ C:\BWP Patchstudio\patched files\soa\Worldmap\tutu_areas.tbl	Sat Oct 22 09:45:58 2011
+@@ -1,5 +1,5 @@
+ 
+ SHORT_NAME  CONTENT  LONG_NAME  FLAGS  BAM_ANIM  X_POS  Y_POS  NAME         TOOLTIP      LOAD_IM
+ 
+-ARS002      ARS002   ARS002     4      74       1700    2820   @SOA_782001   @SOA_782001   N        //Bluebell wood
+-ARS005      ARS005   ARS005     4      62       2230    2390   @SOA_782002   @SOA_782002   N        //Dystra old watch tower
++ARS002      ARS002   ARS002     4      74       1700    1165   @SOA_782001   @SOA_782001   N        //Bluebell wood
++ARS005      ARS005   ARS005     4      62       2230    815    @SOA_782002   @SOA_782002   N        //Dystra old watch tower

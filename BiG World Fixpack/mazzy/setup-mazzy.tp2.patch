@@ -1,0 +1,11 @@
+--- mazzy\setup-mazzy.tp2	Tue Jan 15 12:29:25 2013
++++ C:\BWP Patchstudio\patched files\mazzy\setup-mazzy.tp2	Sat Jan 26 11:47:42 2013
+@@ -11,7 +11,7 @@
+ AUTHOR ~kae@spellholdstudios.net~
+ 
+ // Version
+-VERSION ~v2.1~
++VERSION ~v2.1 BWP Fix~
+ 
+ // Readme
+ README ~mazzy/translations/%LANGUAGE%/mazzyfriendship.html~
