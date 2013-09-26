@@ -1,0 +1,11 @@
+--- mur'neth\dialogues\bgt\a#fmurn.d	Wed Nov 30 16:04:46 2005
++++ C:\BWP Patchstudio\patched files\mur'neth\dialogues\bgt\a#fmurn.d	Sun Nov 28 05:27:00 2010
+@@ -45,7 +45,7 @@
+ == ~FALDOJ~ IF ~InParty("FALDORN")
+ !Dead("FALDORN")
+ !StateCheck("FALDORN",STATE_SLEEPING)~ THEN @19
+-== ~BIMOEN~ IF ~InParty("IMOEN2")
++== ~BIMOEN2~ IF ~InParty("IMOEN2")
+ !Dead("IMOEN2")
+ !StateCheck("IMOEN2",STATE_SLEEPING)~ THEN @20
+ == ~XZARJ~ IF ~InParty("XZAR")

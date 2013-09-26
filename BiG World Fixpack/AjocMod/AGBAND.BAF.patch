@@ -1,0 +1,9 @@
+--- AjocMod\bcs\AGBAND.BAF	Mon Sep 29 21:16:22 2003
++++ C:\BWP Patchstudio\patched files\AjocMod\bcs\AGBAND.BAF	Fri Dec 17 13:05:54 2010
+@@ -1,5 +1,5 @@
+ IF
+-	Heard([ANYONE],INCOMING_111)
++	Heard([ANYONE],111)
+ THEN
+ 	RESPONSE #100
+ 		MoveToObject(NearestEnemyOf(Myself))

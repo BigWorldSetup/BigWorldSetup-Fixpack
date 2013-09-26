@@ -1,0 +1,104 @@
+--- Kari\Dialogue\MGKARIJ.d	Fri Jul 08 16:53:08 2005
++++ C:\BWP Patchstudio\patched files\Kari\Dialogue\MGKARIJ.d	Mon Aug 04 07:33:28 2008
+@@ -3,36 +3,36 @@
+ 
+ 
+ 
+-INTERJECT_COPY_TRANS AERIE 26 KariAerieOgre
++INTERJECT_COPY_TRANS AERIE 26 MGKariAerieOgre
+ == MGKARIJ IF ~InParty("Kari")~ THEN
+ ~W-what? Such a beautiful voice... Don't kill her, <CHARNAME>!~
+ == AERIE
+ ~K-kill me? N-no, please run. Go away from here, you don't want to fall for his magic!~
+ END
+ 
+-INTERJECT_COPY_TRANS ANOMENJ 150 KariAnomenChoice
++INTERJECT_COPY_TRANS ANOMENJ 150 MGKariAnomenChoice
+ == MGKARIJ IF ~InParty("Kari")~ THEN
+ ~I...I don't know if the law will help, but killing that merchant out of revenge doesn't sound good...~
+ END
+ 
+-INTERJECT_COPY_TRANS AMSI 0 KariAmsiBlood
++INTERJECT_COPY_TRANS AMSI 0 MGKariAmsiBlood
+ == MGKARIJ IF ~InParty("Kari")~ THEN
+ ~Y-you've been doing inhumane things!~
+ == AMSI
+ ~What? Shut up, I wasn't talking to *you*.~
+ END
+ 
+-INTERJECT_COPY_TRANS BOOTER 2 KariBooterDisgust
++INTERJECT_COPY_TRANS BOOTER 2 MGKariBooterDisgust
+ == MGKARIJ IF ~InParty("Kari")~ THEN
+ ~E-eww...t-that's sick!~
+ END
+ 
+-INTERJECT_COPY_TRANS CERND 30 KariCerndRitual
++INTERJECT_COPY_TRANS CERND 30 MGKariCerndRitual
+ == MGKARIJ IF ~InParty("Kari")~ THEN
+ ~I...I'm not sure. But please, don't let me do the ritual combat. I'm not pure enough.~
+ END
+ 
+-INTERJECT_COPY_TRANS COHRVALE 1 KariCohrvaleBand
++INTERJECT_COPY_TRANS COHRVALE 1 MGKariCohrvaleBand
+ == MGKARIJ IF ~InParty("Kari")~ THEN
+ ~Why are you being so rude? We're just...just walking by, you know.~
+ == COHRVALE
+@@ -42,46 +42,46 @@
+ 
+ 
+ 
+-INTERJECT PLAYER1 33 KariTreeofLife
++INTERJECT PLAYER1 33 MGKariTreeofLife
+ == PLAYER1 IF ~InParty("Kari")~ THEN
+-~(Kari, the half-kobold has been by your side for quite some time now. She has held her own well during your travels, and has proved her worth. She smiles shyly as you look towards her.)~
++~(Kari has been by your side for quite some time now. She has held her own well during your travels, and has proved her worth. She smiles shyly as you look towards her.)~
+ END
+-++ ~Kari, you know the next battle is going to be dangerous. You don't have to sacrifice your rare life for me.~ EXTERN MGKARIJ KariTreeofLife2
+-++ ~It's going to get ugly and dangerous soon enough. Are you sure you want to do this, Kari?~ EXTERN MGKARIJ KariTreeofLife2
+-++ ~You're not abandoning me now, are you?~ EXTERN MGKARIJ KariTreeofLife2
++++ ~Kari, you know the next battle is going to be dangerous. You don't have to sacrifice your rare life for me.~ EXTERN MGKARIJ MGKariTreeofLife2
++++ ~It's going to get ugly and dangerous soon enough. Are you sure you want to do this, Kari?~ EXTERN MGKARIJ MGKariTreeofLife2
++++ ~You're not abandoning me now, are you?~ EXTERN MGKARIJ MGKariTreeofLife2
+ 
+ APPEND MGKARIJ
+-IF ~~ THEN BEGIN KariTreeofLife2
+-SAY ~O-oh, I'm definately coming with you, <CHARNAME>. You've done so much for me... It's only fair I repay you.~ COPY_TRANS PLAYER1 33
++IF ~~ THEN BEGIN MGKariTreeofLife2
++SAY ~Oh, I'm definately coming with you, <CHARNAME>. You've done so much for me... It's only fair I repay you.~ COPY_TRANS PLAYER1 33
+ END
+ END
+ 
+ 
+-INTERJECT_COPY_TRANS PLAYER1 25 KariHell
++INTERJECT_COPY_TRANS PLAYER1 25 MGKariHell
+ == MGKARIJ IF ~InParty("Kari")~ THEN
+ ~I'm...dead? Is this where bad people go when they die? Then...why am I here? I'm confused and lost...but I'll stay by your side. I felt you tugging at me, and I just had to come.~
+ END
+ 
+ 
+-INTERJECT_COPY_TRANS HELLJON 7 KariJonFinal1
++INTERJECT_COPY_TRANS HELLJON 7 MGKariJonFinal1
+ == MGKARIJ IF ~InParty("Kari")~ THEN
+ ~You're a terrible man, and though I believe people really can change, I seriously doubt *you* can! Fitting that...that you would die *here*!~
+ END
+ 
+ 
+-INTERJECT_COPY_TRANS HELLJON 8 KariJonFinal2
++INTERJECT_COPY_TRANS HELLJON 8 MGKariJonFinal2
+ == MGKARIJ IF ~InParty("Kari")~ THEN
+ ~You're a terrible man, and though I believe people really can change, I seriously doubt *you* can! Fitting that...that you would die *here*!~
+ END
+ 
+ 
+-INTERJECT_COPY_TRANS HELLJON 9 KariJonFinal3
++INTERJECT_COPY_TRANS HELLJON 9 MGKariJonFinal3
+ == MGKARIJ IF ~InParty("Kari")~ THEN
+ ~You're a terrible man, and though I believe people really can change, I seriously doubt *you* can! Fitting that...that you would die *here*!~
+ END
+ 
+ 
+-INTERJECT_COPY_TRANS HELLJON 10 KariJonFinal4
++INTERJECT_COPY_TRANS HELLJON 10 MGKariJonFinal4
+ == MGKARIJ IF ~InParty("Kari")~ THEN
+ ~You're a terrible man, and though I believe people really can change, I seriously doubt *you* can! Fitting that...that you would die *here*!~
+ END

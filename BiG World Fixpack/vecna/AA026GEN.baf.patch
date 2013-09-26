@@ -1,0 +1,13 @@
+--- vecna\baf\cre\AA026GEN.baf	Wed Feb 26 12:12:06 2003
++++ C:\BWP Patchstudio\patched files\vecna\baf\cre\AA026GEN.baf	Fri Oct 28 08:53:47 2011
+@@ -649,8 +649,8 @@
+     Class(LastSeenBy(Myself),DRUID_ALL)
+     Class(LastSeenBy(Myself),BARD)
+     Class(LastSeenBy(Myself),CLERIC_ALL)
+-    Name("astSeenBy(),","Planatar")  // Planatar
+-    Name("astSeenBy(),","Darkplanatar")  // Darkplanatar
++    Race(LastSeenBy(Myself),PLANATAR)  // Planatar
++    Race(LastSeenBy(Myself),DARKPLANATAR)  // Darkplanatar
+   OR(2)
+     !StateCheck(LastSeenBy(Myself),-2146164691)
+     RandomNum(4,1)

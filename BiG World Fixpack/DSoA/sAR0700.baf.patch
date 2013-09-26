@@ -1,0 +1,20 @@
+--- DSoA\ShadeLord\snip\sAR0700.baf	Mon Aug 30 04:29:12 2004
++++ C:\BWP Patchstudio\patched files\DSoA\ShadeLord\snip\sAR0700.baf	Mon Oct 17 10:22:56 2011
+@@ -65,7 +65,7 @@
+ 		CreateCreatureObjectDoor("KRSHADF",Player1,0,0,0)
+ 		CreateCreatureObjectDoor("KRSHADF",Player1,0,0,0)
+ 		CreateCreatureObjectDoor("KRSHADMO",Player1,0,0,0)
+-		CreateCreatureObjectDoor("KRSHADM0",Player1,0,0,0)
++		CreateCreatureObjectDoor("KRSHADMO",Player1,0,0,0)
+ 		CreateCreatureObjectDoor("KRSHADM",Player1,0,0,0)
+ 		CreateCreatureObjectDoor("KRSHADM",Player1,0,0,0)
+ 		CreateCreatureObjectDoor("KRWERE",Player1,0,0,0)
+@@ -84,7 +84,7 @@
+ 		CreateCreatureObjectDoor("KRSHADF",Player1,0,0,0)
+ 		CreateCreatureObjectDoor("KRSHADF",Player1,0,0,0)
+ 		CreateCreatureObjectDoor("KRSHADMO",Player1,0,0,0)
+-		CreateCreatureObjectDoor("KRSHADM0",Player1,0,0,0)
++		CreateCreatureObjectDoor("KRSHADMO",Player1,0,0,0)
+ 		CreateCreatureObjectDoor("KRSHADC",Player1,0,0,0)
+ 		CreateCreatureObjectDoor("KRSHADM",Player1,0,0,0)
+ 		CreateCreatureObjectDoor("KRWERE",Player1,0,0,0)

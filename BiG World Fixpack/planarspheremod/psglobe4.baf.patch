@@ -1,0 +1,81 @@
+--- planarspheremod\baf\psglobe4.baf	Mon Jun 12 16:05:56 2006
++++ C:\BWP Patchstudio\patched files\planarspheremod\baf\psglobe4.baf	Sat Jun 23 04:50:47 2012
+@@ -1,4 +1,5 @@
+ IF
++	!GlobalTimerNotExpired("Globe4Timer","LOCALS")
+ 	Global("psGlobeSpellCounter", "LOCALS", 8)
+ THEN
+ 	RESPONSE #100
+@@ -7,22 +8,26 @@
+ END
+ 
+ IF
++	!GlobalTimerNotExpired("Globe4Timer","LOCALS")
+ 	RandomNum(5, 1)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe4Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+-		ReallyForceSpell(Player1,CLERIC_MAGIC_STONE)
+-		ReallyForceSpell(Player2,CLERIC_MAGIC_STONE)
+-		ReallyForceSpell(Player3,CLERIC_MAGIC_STONE)
+-		ReallyForceSpell(Player4,CLERIC_MAGIC_STONE)
+-		ReallyForceSpell(Player5,CLERIC_MAGIC_STONE)
+-		ReallyForceSpell(Player6,CLERIC_MAGIC_STONE)
++		ReallyForceSpell(Player1,CLERIC_SPIRITUAL_HAMMER)
++		ReallyForceSpell(Player2,CLERIC_SPIRITUAL_HAMMER)
++		ReallyForceSpell(Player3,CLERIC_SPIRITUAL_HAMMER)
++		ReallyForceSpell(Player4,CLERIC_SPIRITUAL_HAMMER)
++		ReallyForceSpell(Player5,CLERIC_SPIRITUAL_HAMMER)
++		ReallyForceSpell(Player6,CLERIC_SPIRITUAL_HAMMER)
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe4Timer","LOCALS")
++	RandomNum(5, 2)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe4Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(3)
+ 		ReallyForceSpell(Player1,CLERIC_CALL_LIGHTNING)
+@@ -34,9 +39,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe4Timer","LOCALS")
++	RandomNum(5, 3)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe4Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(3)
+ 		ReallyForceSpell(Player1,CLERIC_GLYPH_OF_WARDING)
+@@ -48,9 +55,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe4Timer","LOCALS")
++	RandomNum(5, 4)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe4Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(2)
+ 		ReallyForceSpell(Player1,CLERIC_FLAME_STRIKE)
+@@ -62,9 +71,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe4Timer","LOCALS")
++	RandomNum(5, 5)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe4Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(4)
+ 		ReallyForceSpell(Player1,CLERIC_SUNRAY)

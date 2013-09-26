@@ -1,0 +1,11 @@
+--- tb#tweaks\lib\3rd_ed_saves.tpa	Mon Jul 18 20:12:40 2011
++++ C:\BWP Patchstudio\patched files\tb#tweaks\lib\3rd_ed_saves.tpa	Sat Oct 22 06:25:55 2011
+@@ -54,7 +54,7 @@
+       TO_UPPER script
+       PATCH_IF $done (EVALUATE_BUFFER ~%script%~) STRING_EQUAL_CASE ~%name%~ THEN BEGIN
+         found = 1
+-      END ELSE PATCH_IF ~%script%~ STRING_EQUAL_CASE ~none~ || ~%script%~ STRING_EQUAL_CASE ~~ || ~%script%~ STRING_EQUAL_CASE ~ ~ THEN BEGIN
++      END ELSE PATCH_IF !FILE_EXISTS_IN_GAME ~%script%.bcs~ || ~%script%~ STRING_EQUAL_CASE ~none~ || ~%script%~ STRING_EQUAL_CASE ~~ || ~%script%~ STRING_EQUAL_CASE ~ ~ THEN BEGIN
+         offset -= 8
+       END ELSE PATCH_IF iter = 1 BEGIN
+         SPRINT $done (EVALUATE_BUFFER ~%script%~) ~%name%~

@@ -1,0 +1,70 @@
+--- ts25mini\blacklotus\dialog\dialog.d	Wed Mar 11 23:51:44 2009
++++ C:\BWP Patchstudio\patched files\ts25mini\blacklotus\dialog\dialog.d	Sat May 08 19:04:00 2010
+@@ -5920,18 +5920,18 @@
+ END
+ 
+ CHAIN HAQUAT tz25___HAQUAT_0.0
+-"私は美術商ですからね、何も知りませんよ。"
++@9999
+ END
+ IF ~Global("tz25__BL","GLOBAL",1)~ DO ~IncrementGlobal("tz25__BLAskCounter","GLOBAL",1)~ EXTERN HAQUAT tz25___HAQUAT_0.2
+ IF ~Global("tz25__BL","GLOBAL",2)~ DO ~IncrementGlobal("tz25__BLAskCounter2","GLOBAL",1)~ EXTERN HAQUAT tz25___HAQUAT_0.2
+ 
+ CHAIN HAQUAT tz25___HAQUAT_0.1
+-"前に言ったでしょう。私は美術商ですからね、何も知りませんよ。"
++@9991
+ END
+ IF ~~ EXTERN HAQUAT tz25___HAQUAT_0.2
+ 
+ CHAIN HAQUAT tz25___HAQUAT_0.2
+-"絵や彫刻などの装飾品の質問なら答えられますけどね。あなたは…そういった物に興味がおありですかな？"
++@9992
+ END
+ COPY_TRANS HAQUAT 0
+ 
+@@ -5950,18 +5950,18 @@
+ 
+ APPEND HAQUAT
+   IF ~~ haquat_0.0
+-    SAY "私は美術商ですからね、何も知りませんよ。"
++    SAY @9993
+   IF ~Global("tz25__BL","GLOBAL",1)~ THEN DO ~IncrementGlobal("tz25__BLAskCounter","GLOBAL",1)~ GOTO haquat_0.2
+   IF ~Global("tz25__BL","GLOBAL",2)~ THEN DO ~IncrementGlobal("tz25__BLAskCounter2","GLOBAL",1)~ GOTO haquat_0.2
+   END
+ 
+   IF ~~ haquat_0.1
+-    SAY "前に言ったでしょう。私は美術商ですからね、何も知りませんよ。"
++    SAY @9994 
+   IF ~~ THEN DO ~~ GOTO haquat_0.2
+   END
+ 
+   IF ~~ haquat_0.2
+-    SAY "絵や彫刻などの装飾品の質問なら答えられますけどね。あなたは…そういった物に興味がおありですかな？"
++    SAY @9995
+   COPY_TRANS HAQUAT 0
+   END
+ END
+@@ -5979,19 +5979,20 @@
+ 
+ APPEND HAQUAT
+   IF ~~ haquat_1.0
+-    SAY "私は美術商ですからね、何も知りませんよ。"
++    SAY @9996
+   IF ~Global("tz25__BL","GLOBAL",1)~ THEN DO ~IncrementGlobal("tz25__BLAskCounter","GLOBAL",1)~ GOTO haquat_1.2
+   IF ~Global("tz25__BL","GLOBAL",2)~ THEN DO ~IncrementGlobal("tz25__BLAskCounter2","GLOBAL",1)~ GOTO haquat_1.2
+   END
+ 
+   IF ~~ haquat_1.1
+-    SAY "前に言ったでしょう。私は美術商ですからね、何も知りませんよ。"
++    SAY @9997
+   IF ~~ THEN DO ~~ GOTO haquat_1.2
+   END
+ 
+   IF ~~ haquat_1.2
+-    SAY "絵や彫刻などの装飾品の質問なら答えられますけどね。あなたは…そういった物に縁がなさそうですな。どうぞお引き取り下さい。"
++    SAY @9998
+     IF ~~ THEN DO ~~ EXIT
+   END
+ END
+ */
++

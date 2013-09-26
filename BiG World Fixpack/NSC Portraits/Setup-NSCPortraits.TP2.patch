@@ -1,0 +1,38 @@
+--- Setup-NSCPortraits.TP2	Fri Aug 12 11:54:56 2011
++++ C:\BWP Patchstudio\patched files\Setup-NSCPortraits.TP2	Thu May 23 07:03:21 2013
+@@ -429,7 +429,7 @@
+ 
+ /*
+ BEGIN ~Never Ending Journey 2~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~<hier File einfügen~ ~You haven't installed NeJ2, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~Melora11.cre~ ~You haven't installed NeJ2, skip this component~ 
+ DESIGNATED 1040
+ 
+ OUTER_SPRINT ~folder~ ~NeJ2~
+@@ -448,7 +448,7 @@
+ 
+ 
+ BEGIN ~Portraits for Tortured Souls (TS-BP)~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~<hier File einfügen~ ~You haven't installed TS-BP, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~KachikoD.cre~ ~You haven't installed TS-BP, skip this component~ 
+ DESIGNATED 1050
+ 
+ OUTER_SPRINT ~folder~ ~TS~
+@@ -466,7 +466,7 @@
+ 
+ 
+ BEGIN ~Alternate NPC-Portraits for Tortured Souls (TS-BP)~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~~ ~You haven't installed TS-BP, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~KachikoD.cre~ ~You haven't installed TS-BP, skip this component~ 
+ DESIGNATED 1051
+ 
+ OUTER_SPRINT ~folder~ ~TS~
+@@ -484,7 +484,7 @@
+ 
+ 
+ BEGIN ~Portraits for Tower of Deception~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~~ ~You haven't installed ToD, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~VA#ASTSD.cre~ ~You haven't installed ToD, skip this component~ 
+ DESIGNATED 1300
+ 
+ OUTER_SPRINT ~folder~ ~TOD~

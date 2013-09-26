@@ -1,0 +1,65 @@
+--- RevisedBattles\drizzt\baf\check\useitem.baf	Sun Mar 23 00:31:34 2003
++++ C:\BWP Patchstudio\patched files\RevisedBattles\drizzt\baf\check\useitem.baf	Thu Apr 01 19:19:07 2010
+@@ -90,7 +90,7 @@
+     Class(Myself,MAGE_ALL)
+     Class(Myself,BARD_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   !StateCheck(LastSeenBy(Myself),STATE_PANIC)
+   !HasBounceEffects(LastSeenBy(Myself))
+   !LevelGT(LastSeenBy(Myself),10)
+@@ -107,7 +107,7 @@
+     Class(Myself,MAGE_ALL)
+     Class(Myself,BARD_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   !HasBounceEffects(LastSeenBy(Myself))
+   !StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+   HasItem("wand04",Myself) // Wand of Paralyzation 
+@@ -123,7 +123,7 @@
+     Class(Myself,MAGE_ALL)
+     Class(Myself,BARD_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   !HasBounceEffects(LastSeenBy(Myself))
+   HasItem("wand06",Myself) // Wand of Frost
+ THEN
+@@ -138,7 +138,7 @@
+     Class(Myself,MAGE_ALL)
+     Class(Myself,BARD_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   !StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+   !HasBounceEffects(LastSeenBy(Myself))
+   !LevelGT(LastSeenBy(Myself),10)
+@@ -155,7 +155,7 @@
+     Class(Myself,MAGE_ALL)
+     Class(Myself,BARD_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   !LevelGT(LastSeenBy(Myself),10)
+   !HasBounceEffects(LastSeenBy(Myself))
+   HasItem("wand09",Myself) // Wand of Polymorphing
+@@ -171,7 +171,7 @@
+     Class(Myself,MAGE_ALL)
+     Class(Myself,BARD_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   HasItem("wand10",Myself) // Wand of Monster Summoning
+ THEN
+   RESPONSE #100
+@@ -183,7 +183,7 @@
+ IF
+   Class(Myself,CLERIC_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   OR(2)
+     !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGICFIRE)
+     !HasImmunityEffects(LastSeenBy(Myself))

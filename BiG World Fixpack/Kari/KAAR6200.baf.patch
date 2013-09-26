@@ -1,0 +1,35 @@
+--- Kari\Scripts\KAAR6200.baf	Wed Jul 06 13:13:36 2005
++++ C:\BWP Patchstudio\patched files\Kari\Scripts\KAAR6200.baf	Mon Aug 04 19:34:06 2008
+@@ -1,21 +1,21 @@
+ IF
+    Global("StartEndBios","AR6200",1) 
+    InParty("Kari")
+-   Global("KariBio","GLOBAL",0)
+-   Global("PlayerChoseEssence","GLOBAL",1) 
+-THEN 
+-   RESPONSE #100 
+-      SetGlobal("KariBio","GLOBAL",1)
++   Global("MGKariBio","GLOBAL",0)
++   Global("PlayerChoseEssence","GLOBAL",1)
++THEN
++   RESPONSE #100
++      SetGlobal("MGKariBio","GLOBAL",1)
+       TextScreen("KARAND1")
+-END 
++END
+ 
+-IF 
+-   Global("StartEndBios","AR6200",1) 
++IF
++   Global("StartEndBios","AR6200",1)
+    InParty("Kari")
+-   Global("KariBio","GLOBAL",0)
++   Global("MGKariBio","GLOBAL",0)
+    Global("PlayerChoseEssence","GLOBAL",0)
+ THEN
+-   RESPONSE #100 
+-      SetGlobal("KariBio","GLOBAL",1)
++   RESPONSE #100
++      SetGlobal("MGKariBio","GLOBAL",1)
+       TextScreen("KARAND2")
+ END

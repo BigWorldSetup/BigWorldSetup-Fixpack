@@ -1,0 +1,42 @@
+--- BranwenNPC\WLBRAN.d	Mon Jun 02 17:21:56 2008
++++ C:\BWP Patchstudio\patched files\BranwenNPC\WLBRAN.d	Mon Oct 12 07:04:50 2009
+@@ -1,20 +1,20 @@
+ BEGIN WLBRAN
+ 
+-IF ~NumTimesTalkedTo(0)
++IF ~NumTimesTalkedToGT(0)
+     Name("Imoen",LastTalkedToBy)
+     OpenState("Cell04",FALSE)~ THEN BEGIN GetBranImoen
+  SAY @1
+  IF ~~ THEN EXTERN IMOENJ ImoenPickLock
+ END
+ 
+-IF ~NumTimesTalkedTo(0)
++IF ~NumTimesTalkedToGT(0)
+     Name("Minsc",LastTalkedToBy)
+     OpenState("Cell04",FALSE)~ THEN BEGIN GetBranMinsc
+  SAY @3
+  IF ~~ THEN EXTERN MINSCJ MinscBashLock
+ END
+ 
+-IF ~NumTimesTalkedTo(0)
++IF ~NumTimesTalkedToGT(0)
+     Name("Jaheira",LastTalkedToBy)
+     OpenState("Cell04",FALSE)~ THEN BEGIN GetBranJaheira
+  SAY @5
+@@ -48,6 +48,7 @@
+  SAY @2
+  IF ~~ THEN DO ~ClearActions("Imoen")
+                 ActionOverride("Imoen",PickLock("Cell04"))
++                Unlock("Cell04")
+                 ActionOverride("Imoen",OpenDoor("Cell04"))~ EXIT
+ END
+ END /* APPEND */
+@@ -57,6 +58,7 @@
+  SAY @4
+  IF ~~ THEN DO ~ClearActions("Minsc")
+                 ActionOverride("Minsc",BashDoor("Cell04"))
++                Unlock("Cell04")
+                 ActionOverride("Minsc",OpenDoor("Cell04"))~ EXIT
+ END
+ END /* APPEND */

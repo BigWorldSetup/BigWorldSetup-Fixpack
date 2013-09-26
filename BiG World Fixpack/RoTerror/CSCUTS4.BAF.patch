@@ -1,0 +1,11 @@
+--- RoTerror\BAF\CSCUTS4.BAF	Sat Mar 11 18:50:00 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\CSCUTS4.BAF	Sat Sep 26 21:24:10 2009
+@@ -7,7 +7,7 @@
+ 		Wait(1)
+ 		StorePartyLocations()
+ 		Wait(1)
+-		LeaveAreaLUA("RR9000","",[631.306],2)
++		LeaveAreaLUA("RR9000","",[0.0],2)
+ 		Wait(2)
+ 		CreateCreature("Enteri3C",[422.344],14) // Artemis Entreri
+ 		CreateCreature("Jarlax3C",[467.330],15) // Jarlaxle

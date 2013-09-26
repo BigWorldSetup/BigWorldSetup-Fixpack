@@ -1,0 +1,28 @@
+--- level1npcs\level1npcs.tp2	Sat Sep 24 03:14:26 2011
++++ C:\BWP Patchstudio\patched files\level1npcs\level1npcs.tp2	Wed Oct 24 04:18:41 2012
+@@ -8559,8 +8559,8 @@
+     REPLACE_TEXTUALLY ~[0-9x]+[ %0t0%%0t9%]+GODTALOS~                     ~0x4013 GODTALOS~
+     REPLACE_TEXTUALLY ~[0-9x]+[ %0t0%%0t9%]+GODHELM~                      ~0x4014 GODHELM~
+     REPLACE_TEXTUALLY ~[0-9x]+[ %0t0%%0t9%]+GODLATHANDER~                 ~0x4015 GODLATHANDER~
+-    REPLACE_TEXTUALLY ~[0-9x]+[ %0t0%%0t9%]+BARBARIAN~                    ~0x0000 BARBARIAN~
+-    REPLACE_TEXTUALLY ~[0-9x]+[ %0t0%%0t9%]+WILD[_]?MAGE~                 ~0x0000 WILDMAGE~
++    REPLACE_TEXTUALLY ~[0-9x]+[ %0t0%%0t9%]+BARBARIAN~                    ~0x40000000 BARBARIAN~
++    REPLACE_TEXTUALLY ~[0-9x]+[ %0t0%%0t9%]+WILD[_]?MAGE~                 ~0x80000000 WILDMAGE~
+     COUNT_REGEXP_INSTANCES ~TRUECLASS~ "cri"
+     PATCH_IF ("cri" < 0x1) THEN BEGIN
+       COUNT_2DA_ROWS 0x2 "entries"
+@@ -8569,12 +8569,12 @@
+     COUNT_REGEXP_INSTANCES ~BARBARIAN~ "cri"
+     PATCH_IF ("cri" < 0x1) THEN BEGIN
+       COUNT_2DA_ROWS 0x2 "entries"
+-      INSERT_2DA_ROW "entries" 0x2 ~0x0000 BARBARIAN~
++      INSERT_2DA_ROW "entries" 0x2 ~0x40000000 BARBARIAN~
+     END
+     COUNT_REGEXP_INSTANCES ~WILDMAGE~ "cri"
+     PATCH_IF ("cri" < 0x1) THEN BEGIN
+       COUNT_2DA_ROWS 0x2 "entries"
+-      INSERT_2DA_ROW "entries" 0x2 ~0x0000 WILDMAGE~
++      INSERT_2DA_ROW "entries" 0x2 ~0x80000000 WILDMAGE~
+     END
+   END
+ BUT_ONLY

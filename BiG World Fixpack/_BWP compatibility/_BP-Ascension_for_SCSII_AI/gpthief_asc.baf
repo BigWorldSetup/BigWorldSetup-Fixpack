@@ -1,0 +1,30 @@
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Shout(ALERT)
+		Enemy()
+END
+
+IF
+	ActionListEmpty()
+	See([GOODCUTOFF])
+	Allegiance(Myself,ENEMY)
+	Global("ShoutedAlert","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ShoutedAlert","LOCALS",1)
+		Shout(ALERT)
+		Continue()
+END
+
+IF
+	Heard([ANYONE],ALERT)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+

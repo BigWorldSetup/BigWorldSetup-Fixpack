@@ -1,0 +1,147 @@
+--- ImoenRom\Eternal\Imoendia.d	Thu Mar 25 19:39:18 2004
++++ C:\BWP Patchstudio\patched files\ImoenRom\Eternal\Imoendia.d	Tue Dec 21 14:09:07 2010
+@@ -852,7 +852,7 @@
+ 
+ 
+ APPEND AERIEJ
+-	IF WEIGHT #14
++	IF WEIGHT #999
+ ~!Global("PhaereFixMRAe","GLOBAL",1)
+ Global("WeTalkedOfItAlready","LOCALS",0)
+ Global("HadImoenDreamRomance2","GLOBAL",1)
+@@ -867,7 +867,7 @@
+ END
+ 
+ APPEND VICONIJ
+-	IF WEIGHT #4
++	IF WEIGHT #999
+ ~!Global("PhaereFixMRVi","GLOBAL",1)
+ Global("HadImoenDreamRomance2","GLOBAL",1)
+ !GGT("Chapter",3)
+@@ -882,7 +882,7 @@
+ 
+ 
+ APPEND JAHEIRAJ
+-IF WEIGHT #26
++IF WEIGHT #999
+ ~!Global("PhaereFixMRJa","GLOBAL",1)
+ Global("HadImoenDreamRomance2","GLOBAL",1)
+ !GGT("Chapter",3)
+@@ -5580,7 +5580,7 @@
+ 
+ // *** Haer'Dalis ***
+ 
+-EXTEND_TOP HAERDA 211 #2
++EXTEND_TOP HAERDA 211 #1
+ 	IF ~~ THEN REPLY @1296 GOTO MRHDAdd1
+ END
+ 
+@@ -14437,39 +14437,41 @@
+ 
+ // *** Imoen's extended kick out ***
+ 
+-REPLACE IMOEN2P
+-IF ~Global("KickedOut","LOCALS",1)
+-Gender(Player1,MALE)
+-!Global("ImoenRomanceActive","GLOBAL",2)~ THEN BEGIN 0 // from:
+-  SAY #49241 /* ~It's good to see you again, little brother.  Ha!  I rather enjoy calling you that.  So, you ready to go?  I'd prefer to travel with you, if I could.~ [IMOEN77A] */
+-  IF ~~ THEN REPLY #49270 /* ~I would be happy to have you join me.~ */ GOTO 2
+-  IF ~~ THEN REPLY #49271 /* @4184 */ GOTO 1
+-END
+-
+-IF ~Gender(Player1,MALE)
+-!Global("ImoenRomanceActive","GLOBAL",2)
+-~ THEN BEGIN 4 // from:
+-  SAY #49276 /* ~All right, no problem here, little brother.  You sure you want me to go?~ [IMOEN79A] */
+-  IF ~~ THEN REPLY #49277 /* ~I think it best.~ */ GOTO 5
+-  IF ~~ THEN REPLY #49279 /* ~No, stay with me.~ */ GOTO 2
+-END
+-
+-IF ~Global("KickedOut","LOCALS",1)
+-!Global("ImoenRomanceActive","GLOBAL",2)
+-Gender(Player1,FEMALE)~ THEN BEGIN 6 // from:
+-  SAY #61451 /* ~It's good to see you again, little sister.  Ha!  I rather enjoy calling you that.  So, you ready to go?  I'd prefer to travel with you, if I could.~ [IMOEN77B] */
+-  IF ~~ THEN REPLY #61453 /* ~I would be happy to have you join me.~ */ GOTO 2
+-  IF ~~ THEN REPLY #61454 /* @4184 */ GOTO 1
+-END
++// REPLACE IMOEN2P
++// IF ~Global("KickedOut","LOCALS",1)
++// Gender(Player1,MALE)
++// !Global("ImoenRomanceActive","GLOBAL",2)~ THEN BEGIN 0 // from:
++//   SAY #49241 /* ~It's good to see you again, little brother.  Ha!  I rather enjoy calling you that.  So, you ready to go?  I'd prefer to travel with you, if I could.~ [IMOEN77A] */
++//   IF ~~ THEN REPLY #49270 /* ~I would be happy to have you join me.~ */ GOTO 2
++//   IF ~~ THEN REPLY #49271 /* @4184 */ GOTO 1
++// END
++
++// IF ~Gender(Player1,MALE)
++// !Global("ImoenRomanceActive","GLOBAL",2)
++// ~ THEN BEGIN 4 // from:
++//   SAY #49276 /* ~All right, no problem here, little brother.  You sure you want me to go?~ [IMOEN79A] */
++//   IF ~~ THEN REPLY #49277 /* ~I think it best.~ */ GOTO 5
++//   IF ~~ THEN REPLY #49279 /* ~No, stay with me.~ */ GOTO 2
++// END
++
++// IF ~Global("KickedOut","LOCALS",1)
++// !Global("ImoenRomanceActive","GLOBAL",2)
++// Gender(Player1,FEMALE)~ THEN BEGIN 6 // from:
++//   SAY #61451 /* ~It's good to see you again, little sister.  Ha!  I rather enjoy calling you that.  So, you ready to go?  I'd prefer to travel with you, if I could.~ [IMOEN77B] */
++//   IF ~~ THEN REPLY #61453 /* ~I would be happy to have you join me.~ */ GOTO 2
++//   IF ~~ THEN REPLY #61454 /* @4184 */ GOTO 1
++// END
++
++// IF ~Gender(Player1,FEMALE)
++// !Global("ImoenRomanceActive","GLOBAL",2)
++// ~ THEN BEGIN 7 // from:
++//   SAY #61452 /* ~All right, no problem here, little sister.  You sure you want me to go?~ [IMOEN79B] */
++//   IF ~~ THEN REPLY #61455 /* ~I think it best.~ */ GOTO 5
++//   IF ~~ THEN REPLY #61456 /* ~No, stay with me.~ */ GOTO 2
++// END
++// END
+ 
+-IF ~Gender(Player1,FEMALE)
+-!Global("ImoenRomanceActive","GLOBAL",2)
+-~ THEN BEGIN 7 // from:
+-  SAY #61452 /* ~All right, no problem here, little sister.  You sure you want me to go?~ [IMOEN79B] */
+-  IF ~~ THEN REPLY #61455 /* ~I think it best.~ */ GOTO 5
+-  IF ~~ THEN REPLY #61456 /* ~No, stay with me.~ */ GOTO 2
+-END
+-END
++ADD_STATE_TRIGGER ~IMOEN2P~ 0 ~!Global("ImoenRomanceActive","GLOBAL",2)~ 4 6 7
+ 
+ APPEND IMOEN2P
+ IF ~Global("KickedOut","LOCALS",1)
+@@ -16913,7 +16915,8 @@
+ ~HPPercentGT("Imoen2",95)
+ !Global("ImoenRomanceActive","GLOBAL",3)
+ !IsGabber("Imoen2")
+-GlobalGT("Chapter","GLOBAL",1)~
++GlobalGT("Chapter","GLOBAL",1)
++Global("ENDOFBG1","GLOBAL",2)~
+ THEN BEGIN SelfIni0
+ 	SAY @4815
+ 	IF ~IsGabber(Player1) 
+@@ -17761,7 +17764,8 @@
+  !IsGabber("Imoen2")
+      HPPercentGT("Imoen2",70)
+ !Global("ImoenRomanceActive","GLOBAL",3)
+-GlobalGT("Chapter","GLOBAL",1)~
++GlobalGT("Chapter","GLOBAL",1)
++Global("ENDOFBG1","GLOBAL",2)~
+ THEN BEGIN SelfIni1
+ 	SAY @4815 // 1000
+ 	IF ~!Global("ImoenRomanceActive","GLOBAL",3)
+@@ -18403,7 +18407,7 @@
+ 
+ 
+ // This dialogue is obsolete now. It was a force talk for Aerie to break the romance whenever the player wanted. It is not proof readed and is hard coded. Feel free to uncomment it so you will see it in the game, but ONLY if you don't have the flirt packs installed.
+-APPEND AERIEJ
++/* APPEND AERIEJ
+ 	IF WEIGHT #999
+ ~!Global("PhaereFixMRAe","GLOBAL",1)~ 
+ 	THEN BEGIN MRDC1
+@@ -18462,4 +18466,4 @@
+ 	~Goodbye, Aerie... I'll miss you...~
+ 	IF ~~ THEN DO ~SetGlobal("ImoenRomanceActive","GLOBAL",3)~ EXIT
+ END
+-END
++END */

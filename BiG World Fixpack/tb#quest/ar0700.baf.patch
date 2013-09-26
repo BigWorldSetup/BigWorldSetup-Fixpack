@@ -1,0 +1,11 @@
+--- tb#quest\prilla\ar0700.baf	Thu Jul 01 00:39:00 2004
++++ C:\BWP Patchstudio\patched files\tb#quest\prilla\ar0700.baf	Mon Apr 26 20:42:18 2010
+@@ -2,7 +2,7 @@
+   Global("tb#spawnedMprilla","global",0)
+ THEN
+     RESPONSE #100
+-    	     CreateCreature("tb#mprila",[4600.100],7)
++    	     CreateCreature("tb#mpril",[4600.100],7)
+   	     SetGlobal("tb#spawnedMprilla","global",1)
+   	     Continue()
+ END

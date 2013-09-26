@@ -1,0 +1,21 @@
+--- questpack\helltest\data\d6b_2.baf	Fri Apr 01 01:04:08 2005
++++ C:\BWP Patchstudio\patched files\questpack\helltest\data\d6b_2.baf	Sun May 16 04:34:08 2010
+@@ -1,8 +1,9 @@
+ IF
+ 	OpenState("DOOR06",TRUE)
++	Global("OpenedDoor4","AR2904",1)
+ 	Global("OpenedDoor5","AR2904",0)
+ 	Global("OpenedDoor6","AR2904",0)
+-	Global("C7SelfishFight","GLOBAL",1)
++	Global("C7SelfishFight","GLOBAL",0)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("OpenedDoor6","AR2904",1)
+@@ -15,6 +16,7 @@
+ 
+ IF
+ 	OpenState("DOOR06",TRUE)
++	Global("OpenedDoor4","AR2904",1)
+ 	Global("OpenedDoor5","AR2904",0)
+ 	Global("OpenedDoor6","AR2904",0)
+ 	Global("C7SelfishFight","GLOBAL",1)

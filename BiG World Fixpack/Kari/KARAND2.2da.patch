@@ -1,0 +1,9 @@
+--- Kari\2da\KARAND2.2da	Wed Jul 06 13:16:22 2005
++++ C:\BWP Patchstudio\patched files\Kari\2da\KARAND2.2da	Mon Aug 04 19:35:02 2008
+@@ -1,5 +1,5 @@
+ 2DA V1.0
+-*KariL
++*MGKariG
+                         0           1 
+ SWITCH                  DEFAULT     DEFAULT 
+ DEFAULT                 71020       99998

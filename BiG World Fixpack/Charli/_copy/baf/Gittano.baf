@@ -1,0 +1,8 @@
+IF
+	Global("gittano","ar0400",0)
+THEN
+	RESPONSE #100
+		SetGlobal("gittano","ar0400",1)
+		CreateCreature("gittano",[2465.2340],3)
+		Continue()
+END

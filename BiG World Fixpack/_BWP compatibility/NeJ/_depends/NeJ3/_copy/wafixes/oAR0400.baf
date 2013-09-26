@@ -1,0 +1,11 @@
+IF
+	Global("Reveal0400","AR0400",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		Explore()
+		SetGlobal("Reveal0400","AR0400",1)
+		ActionOverride("GAELAN",StartDialogueNoSet(Player1))
+		EndCutSceneMode()
+		Continue()
+END

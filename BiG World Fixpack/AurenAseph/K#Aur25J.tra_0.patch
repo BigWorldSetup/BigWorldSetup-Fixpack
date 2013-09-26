@@ -1,0 +1,12 @@
+--- AurenAseph\German\K#Aur25J.tra	Tue Jun 16 11:58:56 2009
++++ C:\BWP Patchstudio\patched files\AurenAseph\German\K#Aur25J.tra	Sun Dec 11 16:37:23 2011
+@@ -84,7 +84,8 @@
+ @83  = ~Hmm? Oh, mir geht es gut.~
+ @84  = ~Man macht sich nie Gedanken darüber, wie wertvoll die Natur ist, bis man darin versinkt, <CHARNAME>.~
+ @85  = ~(Auren starrt vor sich hin, aber es ist ein verspieltes Starren.)~
+-@86  = ~(Auren lächelt ein wenig.)~ ~Danke, dass Ihr Licht ins Dunkel bringt, wenn die Zeiten düster sind.~
++@86  = ~(Auren lächelt ein wenig.)~
++@861 = ~Danke, dass Ihr Licht ins Dunkel bringt, wenn die Zeiten düster sind.~
+ @87  = ~Was? Nein, mir geht es gut. Verzeiht, wenn ich Euch beunruhigt haben sollte.~
+ @88  = ~Auren~
+ @89  = ~Hier zu bleiben wird nur mit unseren Tod enden.~ [K#Aure25]

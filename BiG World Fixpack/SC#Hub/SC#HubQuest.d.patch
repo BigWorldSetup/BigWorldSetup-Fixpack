@@ -1,0 +1,20 @@
+--- SC#Hub\Dialogue\SC#HubQuest.d	Thu Jul 29 21:53:18 2004
++++ C:\BWP Patchstudio\patched files\SC#Hub\Dialogue\SC#HubQuest.d	Sat Mar 27 08:38:16 2010
+@@ -170,7 +170,7 @@
+ SAY ~Dracandros is the man you seek. Beware kind sir, for he is well armed, and has powerful friends and more powerful masters. He stays somewhere in the Bridge district, in a warehouse in the North East, not far I think from Councilor Balthis’ estate, and well north of the Temple of Helm. Now if I may, I must return to my duties. Be cautious, and fare thee well.~
+ IF ~~ UNSOLVED_JOURNAL ~A Matter of Some Cabbages
+ Spoke with lady of quite good repute in the Copper Coronet. The caravan was robbed by a gang led by a man named Dracandros, who hides somewhere in the Bridge District.~
+-DO ~SetGlobal("SC#HubPlot","GLOBALS",3) TakePartyGold(25) AddexperienceParty(15000) EscapeArea()~
++DO ~SetGlobal("SC#HubPlot","GLOBAL",3) TakePartyGold(25) AddexperienceParty(15000) EscapeArea()~
+ EXIT
+ END
+ 
+@@ -181,7 +181,7 @@
+ IF ~Global("MurdersSolved","GLOBAL",1)~ Aegis_0
+ SAY ~Is there anything else I can help you with?~
+ ++ ~No, nothing officer.~ + Aegis_1
+-+ ~Global("SC#HubPlot","GLOBALS",3)~ + ~Yes sir. I was wondering if I could ask you some questions?~ + Aegis_2
+++ ~Global("SC#HubPlot","GLOBAL",3)~ + ~Yes sir. I was wondering if I could ask you some questions?~ + Aegis_2
+ END
+ 
+ IF ~~ Aegis_1

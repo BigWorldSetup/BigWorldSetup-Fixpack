@@ -1,0 +1,36 @@
+--- Kari\Dialogue\MGKARIP.d	Tue Jul 05 23:53:12 2005
++++ C:\BWP Patchstudio\patched files\Kari\Dialogue\MGKARIP.d	Mon Aug 04 07:35:16 2008
+@@ -2,24 +2,24 @@
+ 
+ 
+ 
+-IF ~Global("KariJoined","LOCALS",1)~ THEN BEGIN KariKick
+- SAY ~Y-you wish me to leave? Wherever could I go?~
+- ++ ~Just stay here, Kari. You'll be okay.~ GOTO KariKick2
+- ++ ~Not at all. It was merely a misspoken word.~ GOTO KariStay
++IF ~Global("MGKariJoined","LOCALS",1)~ THEN BEGIN MGKariKick
++ SAY ~Y-you wish me to leave? But...~
++ ++ ~Just stay here, Kari. You'll be okay.~ GOTO MGKariKick2
++ ++ ~Not at all. It was merely a misspoken word.~ GOTO MGKariStay
+ END
+ 
+-IF ~~ THEN BEGIN KariStay
++IF ~~ THEN BEGIN MGKariStay
+  SAY ~That's a relief. Let's go, then.~
+ IF ~~ THEN DO ~JoinParty()~
+ EXIT
+ END
+ 
+ 
+-IF ~~ THEN BEGIN KariKick2
+- SAY ~O-okay, if you insist. Take care, alright?~
++IF ~~ THEN BEGIN MGKariKick2
++ SAY ~Then I suppose I'll go back to my community. Take care!~
+ IF ~~ THEN DO ~SetGlobal("KariJoined","LOCALS",0)
+-SetGlobal("KariKickedOut","LOCALS",1)~
+-EXIT
++SetGlobal("KariKickedOut","LOCALS",1)
++EscapeArea()~ EXIT
+ END
+ 
+ 

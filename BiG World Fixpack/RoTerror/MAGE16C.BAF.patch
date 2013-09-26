@@ -1,0 +1,29 @@
+--- RoTerror\SNIP\BAF\Mage\MAGE16C.BAF	Wed Mar 15 10:59:50 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\Mage\MAGE16C.BAF	Thu Apr 01 16:55:19 2010
+@@ -46,7 +46,7 @@
+ 	HaveSpell(WIZARD_STONE_SKIN)
+ 	CheckStatLT(Myself,1,STONESKINS)
+ 	Global("Prep1","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,29736) // Contingency - Stoneskin
+@@ -66,7 +66,7 @@
+ 	See(NearestEnemyOf(Myself))
+ 	HaveSpell(WIZARD_SIMULACRUM)
+ 	Global("Sim","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		ForceSpell(Myself,DO_NOTHING)
+@@ -148,7 +148,7 @@
+ 	See(NearestEnemyOf(Myself))
+ 	HaveSpell(WIZARD_MIRROR_IMAGE)
+ 	Global("Prep","LOCALS",1)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,39969) // Spell Sequencer - Fired

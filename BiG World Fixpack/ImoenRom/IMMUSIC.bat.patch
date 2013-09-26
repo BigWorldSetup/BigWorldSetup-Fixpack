@@ -1,0 +1,41 @@
+--- ImoenRom\bat\IMMUSIC.bat	Sun Jan 17 10:59:18 2010
++++ C:\BWP Patchstudio\patched files\ImoenRom\bat\IMMUSIC.bat	Sun May 30 13:50:30 2010
+@@ -1,21 +1,22 @@
+ @echo off
+ cd override
+-oggdec MRImDre1.ogg
+-oggdec MRImDre2.ogg
+-oggdec MRImInt1.ogg
+-oggdec MRImInt2.ogg
+-oggdec MRImInt3.ogg
+-oggdec MRImEndG.ogg
+-oggdec MRImRom1.ogg
+-oggdec MRImRom2.ogg
+-oggdec MRImRom3.ogg
+-oggdec MRImRom4.ogg
+-oggdec MRImRom5.ogg
+-oggdec MRImRom6.ogg
++for %%a in (*.ogg) do oggdec -Q %%a
++:: oggdec MRImDre1.ogg
++:: oggdec MRImDre2.ogg
++:: oggdec MRImInt1.ogg
++:: oggdec MRImInt2.ogg
++:: oggdec MRImInt3.ogg
++:: oggdec MRImEndG.ogg
++:: oggdec MRImRom1.ogg
++:: oggdec MRImRom2.ogg
++:: oggdec MRImRom3.ogg
++:: oggdec MRImRom4.ogg
++:: oggdec MRImRom5.ogg
++:: oggdec MRImRom6.ogg
+ del MRIm*.ogg
+ del oggdec.exe
+ 
+-cd where_are_my_pants
+-print why_arent_my_pants_here
+-action get_mad
+-exhort agh!!.exe
++:: cd where_are_my_pants
++:: print why_arent_my_pants_here
++:: action get_mad
++:: exhort agh!!.exe

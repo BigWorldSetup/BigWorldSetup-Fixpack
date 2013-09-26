@@ -1,0 +1,17 @@
+--- DSoA\Grothgar\baf\Grothgar.baf	Mon May 25 10:26:14 2009
++++ C:\BWP Patchstudio\patched files\DSoA\Grothgar\baf\Grothgar.baf	Thu May 27 08:32:02 2010
+@@ -319,10 +319,10 @@
+ 	Global("KRGOTHPAL","LOCALS",0)
+ 	OR(5)
+ 		Kit(LastSeenBy(Myself),8)
+-		HasItemEquipedReal("astSeenBy(Myself),","SW1h54")
+-		HasItemEquipedReal("astSeenBy(Myself),","SW1h32")
+-		HasItemEquipedReal("astSeenBy(Myself),","SW2h10")
+-		HasItemEquipedReal("astSeenBy(Myself),","HALB04")
++		HasItemEquipedReal("SW1h54",LastSeenBy(Myself))
++		HasItemEquipedReal("SW1h32",LastSeenBy(Myself))
++		HasItemEquipedReal("SW2h10",LastSeenBy(Myself))
++		HasItemEquipedReal("HALB04",LastSeenBy(Myself))
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,26328) // Chain Contingency

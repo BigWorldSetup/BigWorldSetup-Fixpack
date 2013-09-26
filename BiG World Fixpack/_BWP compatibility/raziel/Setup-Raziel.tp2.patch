@@ -1,0 +1,46 @@
+--- Setup-Raziel.tp2	Tue Jun 28 18:27:16 2005
++++ C:\BWP Patchstudio\patched files\Setup-Raziel.tp2	Thu Apr 15 08:16:17 2010
+@@ -1,6 +1,8 @@
+ BACKUP ~raziel/backup~
+ AUTHOR ~damian-staniszewski@wp.pl~
+ 
++VERSION ~v1 BWP Fix~
++
+ BEGIN ~Raziel NPC~
+ 
+ COPY_EXISTING ~key13.itm~ ~override/key50.itm~
+@@ -36,7 +38,33 @@
+ 
+ COMPILE ~raziel/baf/RazielX.baf~
+ 
+-COMPILE ~raziel/baf/NEWGAME.baf~
++// COMPILE ~raziel/baf/NEWGAME.baf~
++
++ACTION_IF NOT (FILE_EXISTS ~data/BG1are.bif~) AND NOT (FILE_EXISTS_IN_GAME ~SPIN620.SPL~) AND NOT (FILE_EXISTS_IN_GAME ~SPIN506.SPL~) THEN BEGIN
++COPY_EXISTING ~NEWGAME.bcs~ ~override~
++  REPLACE_BCS_BLOCK ~raziel/baf/oNEWGAME.BAF~ ~raziel/baf/nNEWGAME.BAF~
++END
++
++ACTION_IF (NOT (FILE_EXISTS ~data/BG1are.bif~) AND (FILE_EXISTS_IN_GAME ~SPIN620.SPL~)) OR (NOT (FILE_EXISTS ~data/BG1are.bif~) AND (FILE_EXISTS_IN_GAME ~SPIN506.SPL~)) THEN BEGIN
++COPY_EXISTING ~NEWGAME.bcs~ ~override~
++  REPLACE_BCS_BLOCK ~raziel/baf/oNEWGAMENEJ.baf~ ~raziel/baf/nNEWGAMENEJ.baf~
++END
++
++ACTION_IF ((FILE_EXISTS ~data/BG1are.bif~) AND NOT (FILE_EXISTS_IN_GAME ~SPIN620.SPL~)) OR((FILE_EXISTS ~data/BG1are.bif~) AND NOT (FILE_EXISTS_IN_GAME ~SPIN506.SPL~)) THEN BEGIN
++COPY_EXISTING ~NEWGAME.bcs~ ~override~
++  REPLACE_BCS_BLOCK ~raziel/baf/oNEWGAMEBGT.BAF~ ~raziel/baf/nNEWGAMEBGT.BAF~
++END
++
++ACTION_IF ((FILE_EXISTS ~data/BG1are.bif~) AND (FILE_EXISTS_IN_GAME ~SPIN620.SPL~)) OR ((FILE_EXISTS ~data/BG1are.bif~) AND (FILE_EXISTS_IN_GAME ~SPIN506.SPL~)) THEN BEGIN
++COPY_EXISTING ~NEWGAME.bcs~ ~override~
++  REPLACE_BCS_BLOCK ~raziel/baf/oNEWGAMENEJBGT.BAF~ ~raziel/baf/nNEWGAMENEJBGT.BAF~
++END
++
++COPY_EXISTING ~newgame.bcs~ ~override~
++DECOMPILE_BCS_TO_BAF
++REPLACE 9999999 "Poczekaj tylko, a¿ wydostanê siê z tej klatki!" [RAZ001]
++REPLACE 9999998 "Cicho, psie!" [RAZ002]
++COMPILE_BAF_TO_BCS
+ 
+ APPEND ~pdialog.2da~
+ ~Raziel RazielP RazielJ RazielD~

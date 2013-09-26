@@ -1,0 +1,35 @@
+--- Setup-banterpack.tp2	Thu Mar 21 10:14:20 2013
++++ C:\BWP Patchstudio\patched files\Setup-banterpack.tp2	Fri May 17 19:14:34 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~banterpack\Backup~
+ AUTHOR ~jcompton@pocketplane.net~
+-VERSION ~V13~
++VERSION ~V13 BWP Viconia BGT Fix~
+ 
+ ALWAYS AT_INTERACTIVE_EXIT ~VIEW banter-readme.txt~ END
+ 
+@@ -50,14 +50,21 @@
+ ACTION_IF FILE_EXISTS ~DATA/BG1ARE.BIF~ THEN BEGIN
+     OUTER_SPRINT "percentage_sign" "%"
+     OUTER_SPRINT ~CLEVER_EDITORIAL_COMMENT~ ~Global("ENDOFBG1","GLOBAL",2)~
++            COMPILE EVALUATE_BUFFER ~banterpack/BGTComp/banter-soa.d~
++            USING ~banterpack\english\banter-soa.tra~
++                    ~banterpack\%s\banter-soa.tra~    
+ END ELSE BEGIN
+     OUTER_SPRINT "percentage_sign" "%"
+     OUTER_SPRINT ~CLEVER_EDITORIAL_COMMENT~ ~~
++            COMPILE EVALUATE_BUFFER ~banterpack/dialogue/banter-soa.d~
++            USING ~banterpack\english\banter-soa.tra~
++                    ~banterpack\%s\banter-soa.tra~
+ END
+ 
+-COMPILE EVALUATE_BUFFER ~banterpack/dialogue/banter-soa.d~
+-USING ~banterpack\english\banter-soa.tra~
+-        ~banterpack\%s\banter-soa.tra~
++// COMPILE EVALUATE_BUFFER ~banterpack/dialogue/banter-soa.d~
++// USING ~banterpack\english\banter-soa.tra~
++//         ~banterpack\%s\banter-soa.tra~
++
+ 
+ ACTION_IF
+   FILE_EXISTS ~override\edwind.bcs~

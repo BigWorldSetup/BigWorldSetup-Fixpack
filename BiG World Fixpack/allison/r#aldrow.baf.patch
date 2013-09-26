@@ -1,0 +1,11 @@
+--- allison\scripts\r#aldrow.baf	Fri Sep 28 21:22:26 2007
++++ C:\BWP Patchstudio\patched files\allison\scripts\r#aldrow.baf	Sat Feb 09 07:16:12 2008
+@@ -16,7 +16,7 @@
+   SetPlayerSound(Myself,@1,HAPPY)
+   SetPlayerSound(Myself,@2,UNHAPPY_ANNOYED) // ~Why do I waste my time with fools?~
+   SetPlayerSound(Myself,@3,UNHAPPY_SERIOUS)
+-  SetPlayerSound(Myself,@4,UNHAPPY_BREAKING)
++  SetPlayerSound(Myself,@4,UNHAPPY_BREAKING_POINT)
+   SetPlayerSound(Myself,@5,LEADER) // ~Females truly are the superior sex.~
+   SetPlayerSound(Myself,@6,TIRED) // ~We should stop to rest, *now.*~
+   SetPlayerSound(Myself,@7,BORED) // ~Why are we standing around? I demand we do something!~

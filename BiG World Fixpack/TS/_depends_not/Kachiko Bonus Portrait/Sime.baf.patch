@@ -1,0 +1,11 @@
+--- TS\baf\Sime.baf	Fri Aug 04 19:50:27 2006
++++ D:\BWP Patchstudio\patched files\TS\baf\Sime.baf	Sun Nov 22 08:23:05 2009
+@@ -81,7 +81,7 @@
+ 
+ IF
+ 	Global("SPRITE_IS_DEADSol","GLOBAL",1)
+-	Global("SPRITE_IS_DEADSola","GLOBAL",1)
++	Global("SPRITE_IS_DEADSolaTS","GLOBAL",1)
+ 	Global("SPRITE_IS_DEADSolauf","GLOBAL",1)
+ 	Global("VP_SimeDefeatedSols","GLOBAL",0)
+ THEN

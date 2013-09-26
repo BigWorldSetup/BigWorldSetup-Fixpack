@@ -1,0 +1,7 @@
+--- RoTerror\Language\spanish\MYSHDW01.tra	Fri May 23 12:23:18 2008
++++ C:\BWP Patchstudio\patched files\RoTerror\Language\spanish\MYSHDW01.tra	Mon Feb 16 08:34:55 2009
+@@ -8,3 +8,4 @@
+ @7    = ~Felicidades.~
+ @8    = ~Pero recordad, no preguntéis a nadie y la tiene. Si estáis seguro de quién la tiene, solo hacédselo saber. Y sabed también que solo podéis hacer preguntas sobre las Sombras al lado de la que estéis hablando.~ ~Pero recordad, no preguntéis a nadie y la tiene. Si estáis segura de quién la tiene, solo hacédselo saber. Y sabed también que solo podéis hacer preguntas sobre las Sombras al lado de la que estéis hablando.~
+ @9    = ~Correcto. Habéis mostrado que sois un hombre de acción y de valía. Aquí está. Os podéis ir.~ ~Correcto. Habéis mostrado que sois una mujer de acción y de valía. Aquí está. Os podéis ir.~
++@10	= ~Estoy en la búsqueda.~

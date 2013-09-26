@@ -1,0 +1,11 @@
+--- Chloe\Language\English\BanterCR.TRA	Sat Aug 16 16:17:56 2003
++++ C:\BWP Patchstudio\patched files\Chloe\Language\English\BanterCR.TRA	Fri Nov 12 16:59:25 2010
+@@ -162,7 +162,7 @@
+ @161  = ~He got what he deserved. Farewell, then. Be sure you won't see me again.~
+ @162  = ~He got what he deserved.~
+ @163  = ~Aha! That's what you get for combating a Thayvian red wizard, fool! Especially the great Edwin Odessieron!~
+-@164  = ~<CHARNAME!> I trust that my superior magic skills have proven themselves once again. Now let us continue. (And woe to any of you other simian fools who dare try to best me in combat! Bahahaha!)~
++@164  = ~<CHARNAME>! I trust that my superior magic skills have proven themselves once again. Now let us continue. (And woe to any of you other simian fools who dare try to best me in combat! Bahahaha!)~
+ @165  = ~Right you are, Edwin. You blasted that arrogant wench into next week! Welcome back.~
+ @166  = ~Blasted mage! You could have just cast a sleep spell on her and painted her face up in an embarrassing fashion! Now I'm without a good fighter! Get out of here, you make me sick, wizard.~
+ @167  = ~The whore got what she was asking for. No one challenges Edwin Odesseiron and survives.~

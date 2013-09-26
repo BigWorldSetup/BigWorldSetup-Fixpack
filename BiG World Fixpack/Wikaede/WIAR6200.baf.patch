@@ -1,0 +1,35 @@
+--- Wikaede\Scripts\WIAR6200.baf	Wed Jun 15 12:11:32 2005
++++ C:\BWP Patchstudio\patched files\Wikaede\Scripts\WIAR6200.baf	Tue May 13 15:44:12 2008
+@@ -1,21 +1,21 @@
+ IF
+    Global("StartEndBios","AR6200",1) 
+    InParty("Wikaede")
+-   Global("WikaedeBio","GLOBAL",0)
+-   Global("PlayerChoseEssence","GLOBAL",1) 
+-THEN 
+-   RESPONSE #100 
+-      SetGlobal("WikaedeBio","GLOBAL",1)
++   Global("MGWikaedeBio","GLOBAL",0)
++   Global("PlayerChoseEssence","GLOBAL",1)
++THEN
++   RESPONSE #100
++      SetGlobal("MGWikaedeBio","GLOBAL",1)
+       TextScreen("WIKAND1")
+-END 
++END
+ 
+-IF 
+-   Global("StartEndBios","AR6200",1) 
++IF
++   Global("StartEndBios","AR6200",1)
+    InParty("Wikaede")
+-   Global("WikaedeBio","GLOBAL",0)
++   Global("MGWikaedeBio","GLOBAL",0)
+    Global("PlayerChoseEssence","GLOBAL",0)
+ THEN
+-   RESPONSE #100 
+-      SetGlobal("WikaedeBio","GLOBAL",1)
++   RESPONSE #100
++      SetGlobal("MGWikaedeBio","GLOBAL",1)
+       TextScreen("WIKAND2")
+ END

@@ -1,0 +1,33 @@
+--- finch\d\sufinch.D	Sun Feb 27 08:26:14 2005
++++ C:\BWP Patchstudio\patched files\finch\d\sufinch.D	Sun Nov 28 12:36:37 2010
+@@ -6,8 +6,8 @@
+ Global("SUFinchKarl", "GLOBAL", 1)
+ Global("SURedSheafMeet", "GLOBAL", 0)~ THEN BEGIN SURedSheafMeeting1
+ SAY @70 
+-+ ~!InParty("Imoen")~ + @71 GOTO SuFinchQuicklyForget
+-+ ~InParty("Imoen")~ + @71 EXTERN _BIMOEN SuImoenQuicklyForget
+++ ~!InParty("Imoen2")~ + @71 GOTO SuFinchQuicklyForget
+++ ~InParty("Imoen2")~ + @71 EXTERN BIMOEN2 SuImoenQuicklyForget
+ ++ @72 GOTO SuFinchHowTerrible
+ ++ @73 GOTO SuFinchMoreUseful
+ ++ @74 GOTO SuFinchGotMyBook
+@@ -35,8 +35,8 @@
+ Global("SUFinchKarl", "GLOBAL", 0)
+ Global("SURedSheafMeet", "GLOBAL", 0)~ THEN BEGIN SURedSheafMeeting3
+ SAY @84 
+-+ ~!InParty("Imoen")~ + @71 GOTO SuFinchQuicklyForget
+-+ ~InParty("Imoen")~ + @71 EXTERN _BIMOEN SuImoenQuicklyForget
+++ ~!InParty("Imoen2")~ + @71 GOTO SuFinchQuicklyForget
+++ ~InParty("Imoen2")~ + @71 EXTERN BIMOEN2 SuImoenQuicklyForget
+ ++ @85 GOTO SuFinchWhatAssassin
+ ++ @86 GOTO SuFinchMoreUseful3
+ ++ @74 GOTO SuFinchGotMyBook
+@@ -325,7 +325,7 @@
+ IF ~~ THEN EXIT
+ END
+ 
+-APPEND _BIMOEN
++APPEND BIMOEN2
+ 
+ IF ~~ THEN BEGIN SuImoenQuicklyForget
+ SAY @167

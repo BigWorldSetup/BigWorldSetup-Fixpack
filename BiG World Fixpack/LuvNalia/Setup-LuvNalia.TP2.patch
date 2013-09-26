@@ -1,0 +1,11 @@
+--- Setup-LuvNalia.TP2	Wed Feb 08 22:05:20 2006
++++ C:\BWP Patchstudio\patched files\Setup-LuvNalia.TP2	Thu Apr 15 07:23:26 2010
+@@ -2,6 +2,8 @@
+ BACKUP ~LuvNalia/backup~ 
+ AUTHOR ~Sir_BillyBob~
+ 
++VERSION ~v1.06 BWP Fix~
++
+ AUTO_TRA ~LuvNalia/Language/%s/D~
+ 
+ LANGUAGE ~English~

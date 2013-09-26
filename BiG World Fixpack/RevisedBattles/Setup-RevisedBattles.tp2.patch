@@ -1,0 +1,39 @@
+--- Setup-RevisedBattles.tp2	Sat Aug 23 00:00:58 2008
++++ C:\BWP Patchstudio\patched files\Setup-RevisedBattles.tp2	Thu Feb 02 06:47:31 2012
+@@ -5,6 +5,8 @@
+ BACKUP ~RevisedBattles/backup~
+ AUTHOR ~erebusant@verizon.net~
+ 
++VERSION ~v6.3 BWP Fix~
++
+ // Modified to Patch vs. Overwrite by erebusant based entirely upon the original ideas and concepts
+ // of moonfruit & tyrus
+ 
+@@ -1107,7 +1109,7 @@
+ 
+ REQUIRE_COMPONENT ~Setup-RevisedBattles.TP2~ ~0~ ~Requires Improved Battles - "erebusant's Patching Version" v6~
+ REQUIRE_COMPONENT ~Setup-NEJ2V691.TP2~ ~0~ ~Never Ending Journey Second Edition v6.91~
+-
++/*
+ COPY - ~WeiDU.log~ ~WeiDU.log~
+   READ_2DA_ENTRIES_NOW ~_#_#_#weidu~ 1
+   SET good_install = 0
+@@ -1135,7 +1137,7 @@
+ ACTION_IF (good_install = 0) BEGIN
+   FAIL ~NeJ2 needs to be installed directly after BGT and/or BGTMusic.~
+ END
+-
++*/
+ COMPILE ~RevisedBattles/firkraag/dlg/NEJv691 Compat~
+ 
+ COPY_EXISTING ~AR1203.BCS~          ~override~
+@@ -1936,7 +1938,8 @@
+   END
+ BUT_ONLY_IF_IT_CHANGES
+ 
+-ACTION_IF NOT FILE_EXISTS_IN_GAME ~deitm011~ THEN BEGIN
++// ACTION_IF NOT FILE_EXISTS_IN_GAME ~deitm011~ THEN BEGIN
++ACTION_IF NOT FILE_EXISTS_IN_GAME ~deitm011.itm~ THEN BEGIN
+ COPY_EXISTING ~gall.CRE~	~override~
+   PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // protects against invalid files
+     ADD_CRE_ITEM			~BOW17~	#0 #0 #0	~NONE~	~WEAPON1~	EQUIP

@@ -1,0 +1,11 @@
+--- AviM\ToB\1xAVI25.baf	Sun Sep 27 20:57:40 2009
++++ C:\BWP Patchstudio\patched files\AviM\ToB\1xAVI25.baf	Tue May 25 07:35:07 2010
+@@ -455,7 +455,7 @@
+ THEN
+ RESPONSE #100
+ PlaySong(0)Wait(4)
+-PlaySound("AVILOVE")
++PlaySound("AVIM")
+ SetGlobal("AviRelationshipEndingS","GLOBAL",1)
+ Interact(Player1)
+ END

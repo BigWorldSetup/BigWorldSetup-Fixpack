@@ -1,0 +1,23 @@
+--- Ariena\SCRIPTS\MWARSC25.BAF	Thu Sep 25 10:51:04 2008
++++ C:\BWP Patchstudio\patched files\Ariena\SCRIPTS\MWARSC25.BAF	Tue May 04 10:10:24 2010
+@@ -43,13 +43,13 @@
+ THEN
+ RESPONSE #100
+ SetGlobalTimer("Ar_Tale2","GLOBAL",THREE_DAYS)
+-CreateCreatureObjectOffScreen("Bohunl",Myself,0,0,0)
+-CreateCreatureObjectOffScreen("Bohunm",Myself,0,0,0)
+-CreateCreatureObjectOffScreen("Bohun1",Myself,0,0,0)
+-CreateCreatureObjectOffScreen("Bohun2",Myself,0,0,0)
+-CreateCreatureObjectOffScreen("Bohun3",Myself,0,0,0)
+-CreateCreatureObjectOffScreen("Bohun4",Myself,0,0,0)
+-CreateCreatureObjectOffScreen("Bohun5",Myself,0,0,0)
++CreateCreatureObjectOffScreen("MWBohul",Myself,0,0,0)
++CreateCreatureObjectOffScreen("MWBohum",Myself,0,0,0)
++CreateCreatureObjectOffScreen("MWBohu1",Myself,0,0,0)
++CreateCreatureObjectOffScreen("MWBohu2",Myself,0,0,0)
++CreateCreatureObjectOffScreen("MWBohu3",Myself,0,0,0)
++CreateCreatureObjectOffScreen("MWBohu4",Myself,0,0,0)
++CreateCreatureObjectOffScreen("MWBohu5",Myself,0,0,0)
+ SetGlobal("Arcombatbohu","GLOBAL",1)
+ END
+ 

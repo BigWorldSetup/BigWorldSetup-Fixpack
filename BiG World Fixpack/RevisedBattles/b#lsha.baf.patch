@@ -1,0 +1,29 @@
+--- RevisedBattles\shade\baf\b#lsha.baf	Sun May 18 12:42:04 2003
++++ C:\BWP Patchstudio\patched files\RevisedBattles\shade\baf\b#lsha.baf	Thu Apr 01 16:34:44 2010
+@@ -99,7 +99,7 @@
+ IF
+     See(NearestEnemyOf(Myself))
+     Global("Prep","LOCALS",1)
+-    !Dead("yself)")
++    !StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+     RESPONSE #100
+         Spell(Myself,WIZARD_SPELL_TURNING)
+@@ -135,7 +135,7 @@
+     See(NearestEnemyOf(Myself))
+     TookDamage()
+     Global("Prep2","LOCALS",1)
+-    !Dead("yself)")
++    !StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+     RESPONSE #100
+         DisplayString(Myself,40252) // Contingency - Protection from Magical Weapons
+@@ -156,7 +156,7 @@
+ IF
+     See(NearestEnemyOf(Myself))
+     Global("SpellTrigger","LOCALS",0)
+-    !Dead("yself)")
++    !StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+     RESPONSE #100
+         DisplayString(Myself,39969) // Spell Sequencer - Fired

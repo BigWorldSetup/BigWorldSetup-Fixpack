@@ -1,0 +1,38 @@
+--- sovereign\Scripts\Crsdafgt.baf	Tue Apr 08 15:47:38 2008
++++ C:\BWP Patchstudio\patched files\sovereign\Scripts\Crsdafgt.baf	Thu Apr 01 16:36:04 2010
+@@ -26,7 +26,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	Global("Prep","LOCALS",1)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Spell(Myself,WIZARD_SPELL_TURNING)
+@@ -36,7 +36,7 @@
+ IF
+ 	Global("Stoneskin","LOCALS",1)
+ 	CheckStatLT(Myself,1,STONESKINS)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		ApplySpell(Myself,WIZARD_STONE_SKIN)
+@@ -47,7 +47,7 @@
+ 	See(NearestEnemyOf(Myself))
+ 	TookDamage()
+ 	Global("Prep2","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,43050)
+@@ -63,7 +63,7 @@
+ 	See(NearestEnemyOf(Myself))
+ 	TookDamage()
+ 	Global("Prep2","LOCALS",1)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,40252)

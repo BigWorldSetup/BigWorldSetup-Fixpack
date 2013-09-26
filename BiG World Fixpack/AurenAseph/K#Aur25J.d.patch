@@ -1,0 +1,11 @@
+--- AurenAseph\Dialogues\K#Aur25J.d	Mon Jun 15 23:13:02 2009
++++ C:\BWP Patchstudio\patched files\AurenAseph\Dialogues\K#Aur25J.d	Wed Dec 07 09:22:28 2011
+@@ -300,7 +300,7 @@
+ CHAIN
+ IF ~~ THEN K#Aur25J Talk1-5-1
+ @86
+-
++=@861
+ EXIT
+ 
+ CHAIN

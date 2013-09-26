@@ -1,0 +1,23 @@
+--- worgas\are\W_1500.baf	Sun Apr 08 22:23:16 2007
++++ C:\BWP Patchstudio\patched files\worgas\are\W_1500.baf	Thu Apr 29 13:08:18 2010
+@@ -18,17 +18,17 @@
+   RESPONSE #100
+    SetGlobal("w_gotospellhold","AR1500",3)
+ StartCutSceneMode()
+-ActionOverride("Worgas",Polymorph(TROLL)
++ActionOverride("Worgas",Polymorph(TROLL))
+   CreateVisualEffectObject("SPMONSUM","Worgas")
+ CreateVisualEffectObject("SPPOLYMP","Worgas")
+     PlaySound("EFF_M13")
+     Wait(6)
+-ActionOverride("Worgas",Polymorph(TANARRI)
++ActionOverride("Worgas",Polymorph(TANARRI))
+   CreateVisualEffectObject("SPSUMGTE","Worgas")
+ CreateVisualEffectObject("SPPOLYMP","Worgas")
+     PlaySound("EFF_M70")
+     Wait(6)
+- ActionOverride("Worgas",Polymorph(CHICKEN)
++ ActionOverride("Worgas",Polymorph(CHICKEN))
+   CreateVisualEffectObject("MMAGICH","Worgas")
+ CreateVisualEffectObject("SPPOLYMP","Worgas")
+     PlaySound("EFF_M71")

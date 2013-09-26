@@ -1,0 +1,86 @@
+--- planarspheremod\baf\psglobe6.baf	Mon Jun 12 16:05:50 2006
++++ C:\BWP Patchstudio\patched files\planarspheremod\baf\psglobe6.baf	Sat Jun 23 04:40:47 2012
+@@ -1,4 +1,5 @@
+ IF
++	!GlobalTimerNotExpired("Globe6Timer","LOCALS")
+ 	Global("psGlobeSpellCounter", "LOCALS", 8)
+ THEN
+ 	RESPONSE #100
+@@ -7,9 +8,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe6Timer","LOCALS")
++	RandomNum(6, 1)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe6Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(2)
+ 		ReallyForceSpell(Player1,WIZARD_DISPEL_MAGIC)
+@@ -21,9 +24,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe6Timer","LOCALS")
++	RandomNum(6, 2)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe6Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(1)
+ 		ReallyForceSpell(Player1,WIZARD_DETECT_ILLUSION)
+@@ -35,9 +40,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe6Timer","LOCALS")
++	RandomNum(6, 3)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe6Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(4)
+ 		ReallyForceSpell(Player1,WIZARD_POLYMORPH_OTHER)
+@@ -49,9 +56,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe6Timer","LOCALS")
++	RandomNum(6, 4)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe6Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(3)
+ 		ReallyForceSpell(Player1,WIZARD_BREACH)
+@@ -63,9 +72,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe6Timer","LOCALS")
++	RandomNum(6, 5)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe6Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(2)
+ 		ReallyForceSpell(Player1,WIZARD_SPOOK)
+@@ -77,9 +88,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe6Timer","LOCALS")
++	RandomNum(6, 6)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe6Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(2)
+ 		ReallyForceSpell(Player1,WIZARD_CHAOS)

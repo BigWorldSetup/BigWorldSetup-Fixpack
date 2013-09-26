@@ -1,0 +1,11 @@
+--- uniqueartifacts\Setup-uniqueartifacts.tp2	Thu Sep 13 10:09:56 2007
++++ C:\BWP Patchstudio\patched files\uniqueartifacts\Setup-uniqueartifacts.tp2	Thu Apr 15 09:55:21 2010
+@@ -3,7 +3,7 @@
+ 
+ //Component detection: dummy file for "strict" is g_uastr.itm. For expanded it's g_uaexp.itm
+ 
+-
++VERSION ~v1.12 BWP Fix~
+ 
+ BEGIN ~Pre-install check...~
+ NO_LOG_RECORD

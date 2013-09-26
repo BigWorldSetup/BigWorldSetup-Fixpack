@@ -1,0 +1,11 @@
+--- RoTerror\SNIP\BAF\bBALDUR.BAF	Thu Nov 02 20:47:42 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\bBALDUR.BAF	Sat Apr 14 05:24:13 2012
+@@ -1138,6 +1138,8 @@
+ 
+ IF
+ 	Global("RandallJoin","GLOBAL",7)
++	InParty("Randall")
++	!StateCheck("Randall",CD_STATE_NOTVALID)
+ THEN
+ 	RESPONSE #100
+ 		ActionOverride("Randall",StartDialog("RandallJ",[PC]))

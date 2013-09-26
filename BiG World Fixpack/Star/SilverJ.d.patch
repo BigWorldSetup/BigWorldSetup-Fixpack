@@ -1,0 +1,74 @@
+--- Star\Dialogue\SilverJ.d	Wed Nov 03 11:19:42 2004
++++ C:\BWP Patchstudio\patched files\Star\Dialogue\SilverJ.d	Sun Jun 03 19:55:55 2012
+@@ -1,38 +1,38 @@
+ BEGIN D#Silve1
+ 
+ IF ~Global("D#SilverSummoned","GLOBAL",1) !GlobalGT("Silvermorph","GLOBAL",0)~ tob0
+-  SAY ~And what kind of stupid place is this? There is enough dust here to choke an ogre! You should be more serious about tidying up your room.~
+-  IF ~~ REPLY ~This isn't my room, it's a Pocket Plane, and I've only just discovered it.~ DO ~SetGlobal("D#SilverSummoned","GLOBAL",2)~ GOTO tob1
++  SAY @94
++  IF ~~ REPLY @95 DO ~SetGlobal("D#SilverSummoned","GLOBAL",2)~ GOTO tob1
+ END
+ 
+ IF ~~ tob1
+-  SAY ~So you are bothering me again, aren't you? I don't know why I waste my time with you when there are so many lambs to kill and so little time.~
+-  IF ~~ REPLY ~I need some help, but you probably aren't the right person for this task.~ GOTO tob2
++  SAY @96
++  IF ~~ REPLY @97 GOTO tob2
+ END
+ 
+ IF ~~ tob2
+-  SAY ~I'm the right person for ANY task, and you have interrupted my search for lambs. You must take me with you, it is the least you can do!~
+-  IF ~~ REPLY ~I have changed my mind, for now I don't need your help.~ GOTO tob3
+-  IF ~~ REPLY ~Yes, just try to be a little quieter than usual.~ DO ~SetGlobal("SilverJoined","LOCALS",1) JoinParty() ~ EXIT
++  SAY @98
++  IF ~~ REPLY @99 GOTO tob3
++  IF ~~ REPLY @100 DO ~SetGlobal("SilverJoined","LOCALS",1) JoinParty() ~ EXIT
+ END
+ 
+ IF ~~ tob3
+-  SAY ~Ok, I will stay here and try to make this horrible hole a little more comfortable. Have you some pink ribbons, no? Ok I will do without them, but it will not be the same...~
++  SAY @101
+   IF ~~ DO ~ChangeAIScript("D#Silv01",OVERRIDE)~ EXIT
+ END
+ 
+ IF ~Global("D#SilverSummoned","GLOBAL",2) !GlobalGT("Silvermorph","GLOBAL",0)~ tob4
+-  SAY ~Why you are pestering me again? Don't you see I'm trying to make this place nicer and cleaner?~
+-  IF ~~ REPLY ~I just want to say you are doing good work.~ EXIT
+-  IF ~~ REPLY ~To stop you from wrecking this Pocket Plane. Come with me! It's hard to say, but it seems that I need you.~ DO ~ChangeAIScript("D#Silv01",OVERRIDE) SetGlobal("SilverJoined","LOCALS",1) JoinParty()~ EXIT
++  SAY @102
++  IF ~~ REPLY @103 EXIT
++  IF ~~ REPLY @104 DO ~ChangeAIScript("D#Silv01",OVERRIDE) SetGlobal("SilverJoined","LOCALS",1) JoinParty()~ EXIT
+ END
+ 
+ IF ~NumTimesTalkedTo(0)
+     Global("SilverJoined","LOCALS",0)~ FirstMeeting
+-  SAY ~Will you play with me? Or has the Master sent you to bother me again?~
+-  IF ~~ REPLY ~I'm no servant of your damned Master!~ GOTO Greet
+-  IF ~Class(Player1,THIEF_ALL)~ THEN REPLY ~I don't want to play now, I must escape, but... hey I know an assassin when I see one.~ GOTO BothThief
+-  IF ~~ REPLY ~I have no time for games, I must escape, sorry.~ GOTO GoAway
++  SAY @1
++  IF ~~ REPLY @2 GOTO Greet
++  IF ~Class(Player1,THIEF_ALL)~ THEN REPLY @3 GOTO BothThief
++  IF ~~ REPLY @4 GOTO GoAway
+ END
+ 
+ IF ~~ THEN BEGIN Greet
+@@ -300,7 +300,7 @@
+ ////////////////////////////////////////////////////////////////
+  
+ I_C_T idryad2 0 sildryad
+-== idryad3 @45
++== idryad3 IF ~IsValidForPartyDialog("D#Silver")~ THEN @45
+ == idryad1 @46
+ == idryad2 @47
+ == idryad3 @48
+@@ -333,7 +333,7 @@
+ // The escaped clone and Ellesimie's room
+ 
+ I_C_T clone1 1 escclone1
+-== clone1 @61
++== clone1 IF ~IsValidForPartyDialog("D#Silver")~ THEN @61
+ == D#silver @62
+ == clone1 @63
+ == D#silver @64

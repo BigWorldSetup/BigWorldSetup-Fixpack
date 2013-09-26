@@ -1,0 +1,11 @@
+--- vic\french\DjinM.tra	Mon Sep 25 18:12:12 2006
++++ C:\BWP Patchstudio\patched files\vic\french\DjinM.tra	Wed Oct 10 10:39:42 2012
+@@ -108,7 +108,7 @@
+ 
+ @330 = ~Ceinture~
+ @331 = ~Ceinture de compétence de combat~
+-@332 = Les ceinturons ressemblent généralement aux ceintures. Mais à la différence de ces dernières, ils ne servent pas à retenir les pantalons ou les salopettes, mais à porter bourses, fourreaux et choses de ce genre.  
++@332 = ~Les ceinturons ressemblent généralement aux ceintures. Mais à la différence de ces dernières, ils ne servent pas à retenir les pantalons ou les salopettes, mais à porter bourses, fourreaux et choses de ce genre.  
+ 
+ PARAMETRES :
+ 

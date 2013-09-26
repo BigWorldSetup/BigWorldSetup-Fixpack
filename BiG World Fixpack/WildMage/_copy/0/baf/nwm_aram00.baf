@@ -1,0 +1,17 @@
+IF
+  PartyHasItem("wm_sbook")
+  Global("wm_bg1book","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("wm_bg1book","GLOBAL",1)
+	Continue()
+END
+
+IF
+  PartyHasItem("MISC47")  // Golden Pantaloons
+  Global("IHavePants","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("IHavePants","GLOBAL",1)
+	Continue()
+END

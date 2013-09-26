@@ -1,0 +1,13 @@
+--- worgas\are\W_1512.baf	Sun Apr 08 23:17:52 2007
++++ C:\BWP Patchstudio\patched files\worgas\are\W_1512.baf	Thu Apr 29 13:04:33 2010
+@@ -5,8 +5,9 @@
+   RESPONSE #100
+    SetGlobal("w_elfchange","AR1512",1)
+ CreateVisualEffectObject("SPPOLYMP","Worgas")
+-ActionOverride("Worgas",Polymorph(MAGE_MALE_ELF)
++ActionOverride("Worgas",Polymorph(MAGE_MALE_ELF))
+ PlaySound("EFF_M61")
++Continue()
+ END
+ 
+ 

@@ -1,0 +1,29 @@
+--- RoTerror\SNIP\BAF\Mage\MAGE18A.BAF	Fri Feb 24 19:34:46 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\Mage\MAGE18A.BAF	Thu Apr 01 16:55:19 2010
+@@ -20,7 +20,7 @@
+ 		StateCheck(LastSeenBy(Myself),STATE_BLUR)
+ 		StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+ 	Global("PrepDef","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #70
+ 		ReallyForceSpell(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+@@ -66,7 +66,7 @@
+ 	CheckStatLT(Myself,1,STONESKINS)
+ 	TookDamage()
+ 	Global("Prep2","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,40199) // Chain Contingency - Mirror Image
+@@ -147,7 +147,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	HaveSpell(WIZARD_ABI_DALZIMS_HORRID_WILTING)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,39968) // Spell Trigger - Fired

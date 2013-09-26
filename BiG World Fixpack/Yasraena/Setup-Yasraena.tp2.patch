@@ -1,0 +1,18 @@
+--- Yasraena\Setup-Yasraena.tp2	Mon Jul 12 17:36:24 2010
++++ C:\BWP Patchstudio\patched files\Yasraena\Setup-Yasraena.tp2	Sun Mar 27 22:23:13 2011
+@@ -178,12 +178,12 @@
+ 
+ /* compile .d files into .dlg files which get stored in the Overide directory */
+ COMPILE ~Yasraena\Dialogues\YASRAENP.d~ ~Yasraena\Dialogues\YASRA25P.d~
+-USING ~Yasraena\English\JOURNAL.tra~
++USING ~Yasraena\%s\JOURNAL.tra~
+ COMPILE ~Yasraena\Dialogues\BYASRAEN.d~ ~Yasraena\Dialogues\BYASRA25.d~
+ COMPILE ~Yasraena\Dialogues\YASRAENJ.d~ ~Yasraena\Dialogues\YASRA25J.d~
+-USING ~Yasraena\English\JOURNAL.tra~
++USING ~Yasraena\%s\JOURNAL.tra~
+ COMPILE ~Yasraena\Dialogues\YASRAENA.d~ ~Yasraena\Dialogues\DIVALIR.d~ ~Yasraena\Dialogues\DIVALIR1.d~ ~Yasraena\Dialogues\YSCPTN.d~ ~Yasraena\Dialogues\YSTMCPTN.d~ ~Yasraena\Dialogues\YSNETHR.d~ ~Yasraena\Dialogues\YSMOM.d~
+-USING ~Yasraena\English\JOURNAL.tra~
++USING ~Yasraena\%s\JOURNAL.tra~
+ 
+ /* compile .baf files into .bcs files which get stored in the Override directory */
+ COMPILE ~Yasraena\Scripts\YSAR0603.baf~ ~Yasraena\Scripts\YSAR2200.baf~ ~Yasraena\Scripts\YSAR2800.baf~ ~Yasraena\Scripts\YSAR0300.baf~ ~Yasraena\Scripts\YSAR0704.baf~ ~Yasraena\Scripts\YSAR5202.baf~ ~Yasraena\Scripts\YSAR6100.baf~

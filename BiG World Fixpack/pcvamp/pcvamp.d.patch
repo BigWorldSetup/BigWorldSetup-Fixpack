@@ -1,0 +1,114 @@
+--- pcvamp\DLG\pcvamp.d	Fri Jul 06 14:33:00 2012
++++ C:\BWP Patchstudio\patched files\pcvamp\DLG\pcvamp.d	Fri May 24 08:14:40 2013
+@@ -9,13 +9,13 @@
+ APPEND VICONIJ
+    IF ~~ THEN BEGIN PCVampDViconia1
+    SAY @56
+-    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
++//    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
+     IF ~IsValidForPartyDialog("Cernd")~ THEN EXTERN ~CERNDJ~ PCVampDCernd1
+     IF ~IsValidForPartyDialog("Jan")~ THEN EXTERN ~JANJ~ PCVampDJan1
+     IF ~IsValidForPartyDialog("Yoshimo")~ THEN EXTERN ~YOSHJ~ PCVampDYoshi1
+     IF ~IsValidForPartyDialog("Edwin")~ THEN EXTERN ~EDWINJ~ PCVampDEdwin1
+     IF ~IsValidForPartyDialog("Korgan")~ THEN EXTERN ~KORGANJ~ PCVampDKorgan1
+-    IF ~!IsValidForPartyDialog("Korgan") !IsValidForPartyDialog("Edwin") !IsValidForPartyDialog("Yoshimo") !IsValidForPartyDialog("Jan") !IsValidForPartyDialog("Cernd") !IsValidForPartyDialog("shartel")~ THEN EXTERN ~BODHI~ PCVamp33
++    IF ~!IsValidForPartyDialog("Korgan") !IsValidForPartyDialog("Edwin") !IsValidForPartyDialog("Yoshimo") !IsValidForPartyDialog("Jan") !IsValidForPartyDialog("Cernd")~ THEN EXTERN ~BODHI~ PCVamp33
+    END
+ END
+ 
+@@ -24,12 +24,12 @@
+ APPEND KORGANJ
+    IF ~~ THEN BEGIN PCVampDKorgan1
+    SAY @57
+-    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
++//    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
+     IF ~IsValidForPartyDialog("Cernd")~ THEN EXTERN ~CERNDJ~ PCVampDCernd1
+     IF ~IsValidForPartyDialog("Jan")~ THEN EXTERN ~JANJ~ PCVampDJan1
+     IF ~IsValidForPartyDialog("Yoshimo")~ THEN EXTERN ~YOSHJ~ PCVampDYoshi1
+     IF ~IsValidForPartyDialog("Edwin")~ THEN EXTERN ~EDWINJ~ PCVampDEdwin1
+-    IF ~!IsValidForPartyDialog("Edwin") !IsValidForPartyDialog("Yoshimo") !IsValidForPartyDialog("Jan") !IsValidForPartyDialog("Cernd") !IsValidForPartyDialog("shartel")~ THEN EXTERN ~BODHI~ PCVamp33
++    IF ~!IsValidForPartyDialog("Edwin") !IsValidForPartyDialog("Yoshimo") !IsValidForPartyDialog("Jan") !IsValidForPartyDialog("Cernd")~ THEN EXTERN ~BODHI~ PCVamp33
+    END
+ END
+ 
+@@ -38,11 +38,11 @@
+ APPEND EDWINJ
+    IF ~~ THEN BEGIN PCVampDEdwin1
+    SAY @58
+-    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
++//    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
+     IF ~IsValidForPartyDialog("Cernd")~ THEN EXTERN ~CERNDJ~ PCVampDCernd1
+     IF ~IsValidForPartyDialog("Jan")~ THEN EXTERN ~JANJ~ PCVampDJan1
+     IF ~IsValidForPartyDialog("Yoshimo")~ THEN EXTERN ~YOSHJ~ PCVampDYoshi1
+-    IF ~!IsValidForPartyDialog("Yoshimo") !IsValidForPartyDialog("Jan") !IsValidForPartyDialog("Cernd") !IsValidForPartyDialog("shartel")~ THEN EXTERN ~BODHI~ PCVamp33
++    IF ~!IsValidForPartyDialog("Yoshimo") !IsValidForPartyDialog("Jan") !IsValidForPartyDialog("Cernd")~ THEN EXTERN ~BODHI~ PCVamp33
+    END
+ END
+ 
+@@ -51,10 +51,10 @@
+ APPEND YOSHJ
+    IF ~~ THEN BEGIN PCVampDYoshi1
+    SAY @59
+-    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
++//    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
+     IF ~IsValidForPartyDialog("Cernd")~ THEN EXTERN ~CERNDJ~ PCVampDCernd1
+     IF ~IsValidForPartyDialog("Jan")~ THEN EXTERN ~JANJ~ PCVampDJan1
+-    IF ~!IsValidForPartyDialog("Jan") !IsValidForPartyDialog("Cernd") !IsValidForPartyDialog("shartel")~ THEN EXTERN ~BODHI~ PCVamp33
++    IF ~!IsValidForPartyDialog("Jan") !IsValidForPartyDialog("Cernd")~ THEN EXTERN ~BODHI~ PCVamp33
+    END
+ END
+ 
+@@ -68,9 +68,9 @@
+ 
+    IF ~~ THEN BEGIN PCVampDJan2
+    SAY @61
+-    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
++//    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
+     IF ~IsValidForPartyDialog("Cernd")~ THEN EXTERN ~CERNDJ~ PCVampDCernd1
+-    IF ~!IsValidForPartyDialog("Cernd") !IsValidForPartyDialog("shartel")~ THEN EXTERN ~BODHI~ PCVamp33
++    IF ~!IsValidForPartyDialog("Cernd")~ THEN EXTERN ~BODHI~ PCVamp33
+    END
+ END
+ 
+@@ -79,12 +79,12 @@
+ APPEND CERNDJ
+    IF ~~ THEN BEGIN PCVampDCernd1
+    SAY @62
+-    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
+-    IF ~!IsValidForPartyDialog("shartel")~ THEN EXTERN ~BODHI~ PCVamp33
++//    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
++    IF ~~ THEN EXTERN ~BODHI~ PCVamp33
+    END
+ END
+ 
+-
++/*
+ // Shar-Teel-Dialog erweitern
+ APPEND CHARJ
+    IF ~~ THEN BEGIN PCVampDshartel1
+@@ -92,7 +92,7 @@
+     IF ~~ THEN EXTERN ~BODHI~ PCVamp33
+    END
+ END
+-
++*/
+ 
+ // Bodhi-Dialog erweitern I
+ APPEND BODHI
+@@ -142,14 +142,14 @@
+ 
+    IF ~~ THEN BEGIN PCVamp8
+    SAY @28 /*Die Wahl liegt bei Euch, <CHARNAME>. Ihr werdet ein solches Angebot kein zweites Mal erhalten.*/
+-    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
++//    IF ~IsValidForPartyDialog("shartel")~ THEN EXTERN ~CHARJ~ PCVampDshartel1
+     IF ~IsValidForPartyDialog("Cernd")~ THEN EXTERN ~CERNDJ~ PCVampDCernd1
+     IF ~IsValidForPartyDialog("Jan")~ THEN EXTERN ~JANJ~ PCVampDJan1
+     IF ~IsValidForPartyDialog("Yoshimo")~ THEN EXTERN ~YOSHJ~ PCVampDYoshi1
+     IF ~IsValidForPartyDialog("Edwin")~ THEN EXTERN ~EDWINJ~ PCVampDEdwin1
+     IF ~IsValidForPartyDialog("Korgan")~ THEN EXTERN ~KORGANJ~ PCVampDKorgan1
+     IF ~IsValidForPartyDialog("Viconia")~ THEN EXTERN ~VICONIJ~ PCVampDViconia1
+-    IF ~!IsValidForPartyDialog("Viconia") !IsValidForPartyDialog("Korgan") !IsValidForPartyDialog("Edwin") !IsValidForPartyDialog("Yoshimo") !IsValidForPartyDialog("Jan") !IsValidForPartyDialog("Cernd") !IsValidForPartyDialog("shartel")~ THEN GOTO PCVamp33
++    IF ~!IsValidForPartyDialog("Viconia") !IsValidForPartyDialog("Korgan") !IsValidForPartyDialog("Edwin") !IsValidForPartyDialog("Yoshimo") !IsValidForPartyDialog("Jan") !IsValidForPartyDialog("Cernd")~ THEN GOTO PCVamp33
+    END 
+ 
+    IF ~~ THEN BEGIN PCVamp33

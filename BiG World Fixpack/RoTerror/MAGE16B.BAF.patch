@@ -1,0 +1,29 @@
+--- RoTerror\SNIP\BAF\Mage\MAGE16B.BAF	Wed Mar 15 10:59:50 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\Mage\MAGE16B.BAF	Thu Apr 01 16:55:19 2010
+@@ -8,7 +8,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	Global("PrepSpells","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		ApplySpell(Myself,WIZARD_SPELL_TURNING)
+@@ -22,7 +22,7 @@
+ 	Allegiance(Myself,ENEMY)
+ 	Global("PrepSpells","LOCALS",1)
+ 	CheckStatLT(Myself,1,STONESKINS)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,29736) // Contingency - Stoneskin
+@@ -116,7 +116,7 @@
+ 	See(SecondNearestEnemyOf(Myself))
+ 	HaveSpell(WIZARD_CHAIN_LIGHTNING)
+ 	HaveSpell(WIZARD_PROTECTION_FROM_ELECTRICITY)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,31024) // Magic Tattoo - Mirror Image

@@ -1,0 +1,12 @@
+--- ts25mini\tra\japanese\setup.tra	Wed Mar 18 00:45:24 2009
++++ C:\BWP Patchstudio\patched files\ts25mini\tra\japanese\setup.tra	Fri Jan 07 17:23:17 2011
+@@ -195,6 +195,9 @@
+ @110 = "ゾンビ"
+ @111 = "マリッツァ"
+ @112 = "平民"
++@999 = "平民"
++@990 = "ファイター"
++@995 = "カウルドエンフォーサー"
+ @113 = "シールドナイト"
+ @114 = "モーニングナイト"
+ @115 = "アロイスの霊"

@@ -1,0 +1,11 @@
+--- lester_the_npc\lestcut1.baf	Thu Mar 24 23:12:14 2005
++++ C:\BWP Patchstudio\patched files\lester_the_npc\lestcut1.baf	Tue May 25 07:18:16 2010
+@@ -14,7 +14,7 @@
+    Wait(1)
+    CreateCreature("hlayskel",[1776.1481],4)
+    Wait(3)
+-   CreateVisualEffect("SPLFLESHS",[1776.1481])
++   CreateVisualEffect("SPFLESHS",[1776.1481])
+    Wait(1)
+    ActionOverride("hlayster",ChangeAnimation("hlayster"))
+    Wait(2)

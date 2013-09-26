@@ -1,0 +1,11 @@
+--- questpack\negotiate\dialog2.d	Mon Sep 12 16:03:20 2005
++++ C:\BWP Patchstudio\patched files\questpack\negotiate\dialog2.d	Tue Feb 16 20:59:52 2010
+@@ -161,7 +161,7 @@
+ IF ~~ THEN REPLY ~My share will be the Rod of Absorbtion, Skull of Death, and scroll of Incendiary Cloud.~ GOTO V_7j
+ IF ~~ THEN REPLY ~I think I shall take Simulacrum, Horrid Wilting, and Incendiary Cloud.~ GOTO V_7k
+ IF ~~ THEN REPLY ~I still want a little more. Let us divide the booty in half.~ GOTO V_12
+-IF ~~ THEN REPLY ~I think I deserve it all. Hand it over or I will be forced to take it from you.~ GOTO V_12
++IF ~~ THEN REPLY ~I think I deserve it all. Hand it over or I will be forced to take it from you.~ GOTO V_13b
+ END
+ 
+ IF ~~ THEN BEGIN V_12

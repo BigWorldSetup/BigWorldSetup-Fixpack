@@ -1,0 +1,15 @@
+--- RoTerror\SNIP\BAF\tAR0700.BAF	Thu Aug 24 20:16:10 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\tAR0700.BAF	Sat Sep 26 19:48:51 2009
+@@ -8,3 +8,11 @@
+ 		Continue()
+ END
+ 
++IF
++	Global("ZemirQuests","GLOBAL",10)
++	Dead("Laron1") // Laron
++THEN
++	RESPONSE #100
++		SetGlobal("ZemirQuests","GLOBAL",11)
++		ReputationInc(-1)
++END
+\ No newline at end of file

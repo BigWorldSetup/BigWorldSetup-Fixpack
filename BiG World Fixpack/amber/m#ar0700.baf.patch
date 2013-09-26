@@ -1,0 +1,45 @@
+--- amber\scripts\m#ar0700.baf	Sun Mar 13 00:52:00 2005
++++ C:\BWP Patchstudio\patched files\amber\scripts\m#ar0700.baf	Fri Feb 26 20:09:28 2010
+@@ -1,31 +1,31 @@
+ IF
+-	Global("M#RashrynInPlace","AR0700",0)
++	Global("M#RashryInPlace","AR0700",0)
+ 	TimeGT(6)
+ 	TimeLT(22)
+ THEN
+ 	RESPONSE #100
+-	CreateCreature("M#Rashryn",[1557.2236],14)
+-	SetGlobal("M#RashrynInPlace","AR0700",1)
++	CreateCreature("M#Rashry",[1557.2236],14)
++	SetGlobal("M#RashryInPlace","AR0700",1)
+ END
+ 
+ IF
+-	!Dead("M#Rashryn")
+-	Global("M#RashrynInPlace","AR0700",1)
++	!Dead("M#Rashry")
++	Global("M#RashryInPlace","AR0700",1)
+ 	TimeGT(21)
+ 	TimeLT(7)
+ THEN
+ 	RESPONSE #100
+-	Deactivate("M#Rashryn")
+-	SetGlobal("M#RashrynInPlace","AR0700",2)
++	Deactivate("M#Rashry")
++	SetGlobal("M#RashryInPlace","AR0700",2)
+ END
+ 
+ IF
+-	!Dead("M#Rashryn")
+-	Global("M#RashrynInPlace","AR0700",2)
++	!Dead("M#Rashry")
++	Global("M#RashryInPlace","AR0700",2)
+ 	TimeGT(6)
+ 	TimeLT(22)
+ THEN
+ 	RESPONSE #100
+-	Activate("M#Rashryn")
+-	SetGlobal("M#RashrynInPlace","AR0700",1)
++	Activate("M#Rashry")
++	SetGlobal("M#RashryInPlace","AR0700",1)
+ END

@@ -1,0 +1,10 @@
+--- RoTerror\BAF\OUTORC1.BAF	Sat Mar 11 20:22:34 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\OUTORC1.BAF	Sun Oct 04 13:06:28 2009
+@@ -4,6 +4,7 @@
+ 	Global("Orcsdiscuss","RA4600",0)
+ THEN
+ 	RESPONSE #100
++		ClearAllActions()
+ 		StartCutSceneMode()
+ 		HideGUI()
+ 		Wait(1)

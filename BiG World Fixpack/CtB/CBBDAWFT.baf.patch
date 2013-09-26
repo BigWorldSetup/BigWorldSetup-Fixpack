@@ -1,0 +1,58 @@
+--- CtB\scripts\ctb\CBBDAWFT.baf	Fri Sep 22 21:32:34 2006
++++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\CBBDAWFT.baf	Mon Oct 17 11:37:11 2011
+@@ -177,7 +177,7 @@
+ 	RESPONSE #100
+ 		SetGlobalTimer("SpellTrigger1","LOCALS",1000)
+ 		DisplayString(Myself,39968) // Spell Trigger - Fired
+-		ReallyForceSpell(Myself,0)
++		ReallyForceSpellRES("dgfaith",Myself)
+ END
+ 
+ IF
+@@ -189,7 +189,7 @@
+ 		SetGlobalTimer("SpellTrigger1","LOCALS",1000)
+ 		DisplayString(Myself,39968) // Spell Trigger - Fired
+ 		ReallyForceSpell(Myself,HEAL_NO_VISUAL)
+-		ReallyForceSpell(Myself,0)
++		ReallyForceSpellRES("dgfaith",Myself)
+ END
+ 
+ IF
+@@ -202,8 +202,8 @@
+ 		DisplayString(Myself,39968) // Spell Trigger - Fired
+ 		ReallyForceSpell(Myself,WIZARD_IMPROVED_HASTE)
+ 		ReallyForceSpell(Myself,HEAL_NO_VISUAL)
+-		ReallyForceSpell(Myself,0)
+-		ReallyForceSpell(Myself,0)
++		ReallyForceSpellRES("dgright","CBBDAW01")
++		ReallyForceSpellRES("dgfaith","CBBDAW01")
+ END
+ 
+ IF
+@@ -216,7 +216,7 @@
+ 	RESPONSE #100
+ 		SetGlobalTimer("BLUEDRAGONBREATH","LOCALS",12)
+ 		ReallyForceSpell(LastSeenBy(Myself),3597)
+-		ReallyForceSpell(LastSeenBy(Myself),0)
++	//	ReallyForceSpell(LastSeenBy(Myself),0)
+ END
+ 
+ IF
+@@ -229,7 +229,7 @@
+ 	RESPONSE #100
+ 		SetGlobalTimer("BLUEDRAGONBREATH","LOCALS",12)
+ 		ReallyForceSpell(LastSeenBy(Myself),3597)
+-		ReallyForceSpell(LastSeenBy(Myself),0)
++	//	ReallyForceSpell(LastSeenBy(Myself),0)
+ END
+ 
+ IF
+@@ -242,7 +242,7 @@
+ 	RESPONSE #100
+ 		SetGlobalTimer("BLUEDRAGONBREATH","LOCALS",12)
+ 		ReallyForceSpell(LastSeenBy(Myself),3597)
+-		ReallyForceSpell(LastSeenBy(Myself),0)
++	//	ReallyForceSpell(LastSeenBy(Myself),0)
+ END
+ 
+ IF

@@ -1,0 +1,11 @@
+--- Mod backups\old nathaniel tob\Nathaniel\English\fhnatj.tra	Mon Dec 10 14:13:01 2007
++++ C:\BWP Patchstudio\patched files\Mod backups\old nathaniel tob\Nathaniel\English\fhnatj.tra	Fri Nov 12 16:25:53 2010
+@@ -332,7 +332,7 @@
+ @323  = ~Just say goodbye and leave, Nathaniel.~
+ @324  = ~Are you - are you serious? I thought we--~
+ @325  = ~Oh, who cares about <PRO_HIMHER>. You owe me, Thaniel, but I'll forgive you. Now let's get out of here.~
+-@326  = ~But - but <CHARNAME>, <PROHESHE> ... goodbye--~
++@326  = ~But - but <CHARNAME>, <PRO_HESHE> ... goodbye--~
+ @327  = ~Yeah, yeah. Let's go.~
+ @328  = ~I--~ [ FHNVI4 ]
+ @329  = ~Yes. Yes, that's what I want, I want to--~

@@ -1,0 +1,20 @@
+--- IndiNPC\Dialogue\xmodfinchindi.d	Sat Nov 11 17:28:08 2006
++++ C:\BWP Patchstudio\patched files\IndiNPC\Dialogue\xmodfinchindi.d	Sun Nov 28 05:31:51 2010
+@@ -187,7 +187,7 @@
+ SAY @1058
+ IF ~!InParty("Imoen2") !InParty("Garrick")~ THEN EXTERN J#INDIB IndiSpiesForks
+ IF ~!InParty("Imoen2") InParty("Garrick")~ THEN EXTERN GARRIJ GarrickSpiesForks
+-IF ~InParty("Imoen2")~ THEN EXTERN BIMOEN ImoenSpiesForks
++IF ~InParty("Imoen2")~ THEN EXTERN BIMOEN2 ImoenSpiesForks
+ END
+ 
+ IF ~~ THEN BEGIN FinchShushImoen
+@@ -212,7 +212,7 @@
+ 
+ END
+ 
+-APPEND BIMOEN
++APPEND BIMOEN2
+ 
+ IF ~~ THEN BEGIN ImoenSpiesForks
+ SAY @1063

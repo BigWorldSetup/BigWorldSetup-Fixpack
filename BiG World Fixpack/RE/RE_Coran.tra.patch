@@ -1,0 +1,11 @@
+--- RE\English\RE_Coran.tra	Tue Sep 04 17:02:50 2007
++++ C:\BWP Patchstudio\patched files\RE\English\RE_Coran.tra	Fri Nov 12 17:12:59 2010
+@@ -61,7 +61,7 @@
+ @60   = ~I would advise against this course of action, <CHARNAME>. This is not the best way to help a grieving man.~
+ @61   = ~I can assure you, it most certainly is... Now, where was I? Ah, yes...~
+ @62   = ~Come - my room will be acceptable for one final tryst within its walls, and whom better to share the event with, than you!~
+-@63   = ~<CHARNAME!> You're not going to... are you?!~
++@63   = ~<CHARNAME>! You're not going to... are you?!~
+ @64   = ~Har! Now I know how te act next time one o' ye prissies dies on us if I be wantin' a warm bed and a willin' maid!~
+ @65   = ~My dear...~
+ @66   = ~And the time comes for us to part ways. It has been a pleasure, <CHARNAME>, to spend one final evening in your company... though it is a shame that we weren't able to make the most of it...~

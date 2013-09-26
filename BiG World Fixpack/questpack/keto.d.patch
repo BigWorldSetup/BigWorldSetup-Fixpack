@@ -1,0 +1,17 @@
+--- questpack\encounters\blue\keto.d	Mon Sep 12 15:46:16 2005
++++ C:\BWP Patchstudio\patched files\questpack\encounters\blue\keto.d	Tue Feb 16 20:59:52 2010
+@@ -1,11 +1,11 @@
+ INTERJECT_COPY_TRANS LMINDI I_5 D0KetoCommentsIndigo
+-== FWKETOJ IF ~IsValidForPartyDialog("FWKeto")~ THEN ~Wait, what? No! I mean, yes! Of course we want to hear it! <CHARNAME>, you and your big mouth!~
++== FWKETOJ IF ~IsValidForPartyDialog("Keto")~ THEN ~Wait, what? No! I mean, yes! Of course we want to hear it! <CHARNAME>, you and your big mouth!~
+ END
+ 
+ INTERJECT_COPY_TRANS LMINDI I_6 D0KetoCommentsIndigo2
+-== FWKETOJ IF ~IsValidForPartyDialog("FWKeto")~ THEN ~Wait, what? No! I mean, yes! Of course we want to hear it! <CHARNAME>, you and your big mouth!~
++== FWKETOJ IF ~IsValidForPartyDialog("Keto")~ THEN ~Wait, what? No! I mean, yes! Of course we want to hear it! <CHARNAME>, you and your big mouth!~
+ END
+ 
+ INTERJECT_COPY_TRANS LMINDI I_4_KetoSpeak D0KetoCommentsIndigo3
+-== FWKETOJ IF ~IsValidForPartyDialog("FWKeto")~ THEN ~That's... an amazing tale. I don't know what I can do to repay you for that, except to promise that I will do whatever I can to bring it to others, so that they may hear.~
++== FWKETOJ IF ~IsValidForPartyDialog("Keto")~ THEN ~That's... an amazing tale. I don't know what I can do to repay you for that, except to promise that I will do whatever I can to bring it to others, so that they may hear.~
+ END

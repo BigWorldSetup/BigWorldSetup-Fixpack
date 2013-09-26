@@ -1,0 +1,50 @@
+--- fadingpromises\setup-fadingpromises.tp2	Thu Aug 01 01:20:20 2013
++++ C:\BWP Patchstudio\patched files\fadingpromises\setup-fadingpromises.tp2	Sun Aug 25 13:31:00 2013
+@@ -3,7 +3,7 @@
+ 
+ //MODDER
+ 
+-VERSION ~v7~
++VERSION ~v7 BWP fix~
+ 
+ README ~fadingpromises/readmefadingpromises.html~
+ 
+@@ -53,15 +53,15 @@
+   REPLACE_TEXTUALLY ~.*\bTOTEMIC\b~                ~0x4010 TOTEMIC~
+   REPLACE_TEXTUALLY ~.*\bSHAPESHIFTER\b~           ~0x4011 SHAPESHIFTER~
+   REPLACE_TEXTUALLY ~.*\bBEASTFRIEND\b~            ~0x4012 BEASTFRIEND~
+-  REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x0000 BARBARIAN~
+-  REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x0000 WILDMAGE~
++  REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x40000000 BARBARIAN~
++  REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x80000000 WILDMAGE~
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ APPEND ~kit.ids~ ~0x4000 TRUECLASS~
+   UNLESS ~\bTRUECLASS\b~
+-APPEND ~kit.ids~ ~0x0000 BARBARIAN~
++APPEND ~kit.ids~ ~0x40000000 BARBARIAN~
+   UNLESS ~\bBARBARIAN\b~
+-APPEND ~kit.ids~ ~0x0000 WILDMAGE~
++APPEND ~kit.ids~ ~0x80000000 WILDMAGE~
+   UNLESS ~\bWILDMAGE\b~
+   
+ /* compiling dialogue */
+@@ -133,8 +133,8 @@
+   SAY NAME2 @4
+   SAY INITIAL_MEETING @5 
+ 
+-COPY_EXISTING ~UDTRAP04.cre~ ~override~
+-  ADD_CRE_ITEM ~b!amace~ #0 #0 #0 ~IDENTIFIED~ ~INV16~
++//COPY_EXISTING ~UDTRAP04.cre~ ~override~
++//  ADD_CRE_ITEM ~b!amace~ #0 #0 #0 ~IDENTIFIED~ ~INV16~
+ 
+ COPY_EXISTING ~CLMOM.cre~ ~override/b!selma.cre~
+   ADD_CRE_ITEM ~misc07~ #5 #0 #0 ~IDENTIFIED~ ~INV16~
+@@ -172,3 +172,7 @@
+         
+     EXTEND_BOTTOM ~dwface04.bcs~ ~fadingpromises/script/b!dwface04.baf~ 
+ END 
++ELSE BEGIN
++    COPY_EXISTING ~UDTRAP04.cre~ ~override~
++        ADD_CRE_ITEM ~b!amace~ #0 #0 #0 ~IDENTIFIED~ ~INV16~
++END

@@ -1,0 +1,29 @@
+--- Angelo\English\adangelj.tra	Sat May 01 11:28:25 2010
++++ C:\BWP Patchstudio\patched files\Angelo\English\adangelj.tra	Fri Nov 12 16:56:39 2010
+@@ -802,7 +802,7 @@
+ @790  = ~Angelo, aren't you worried you might be drinking to escape?~
+ @791  = ~My head is spinning... I'd better go lie down...~
+ @792  = ~Worried, chief? I thought it was fairly obvious.~
+-@793  = ~Bring out the best, my friend, nothing but the best for my <PRO_LORDLADY> <CHARNAME>!... Ah, Kara-Turan rice wine! Now this is a prize. The smell alone brings back the memories. Try some, chief.~
++@793  = ~Bring out the best, my friend, nothing but the best for my <PRO_LADYLORD> <CHARNAME>!... Ah, Kara-Turan rice wine! Now this is a prize. The smell alone brings back the memories. Try some, chief.~
+ @794  = ~I'm stopping, Angelo, and you should too. We've a hard day tomorrow.~
+ @795  = ~Tired... head hurts... going t'bed...~
+ @796  = ~My man, another round! Another round, I say!~
+@@ -844,7 +844,7 @@
+ @832  = ~Aw, chief, come now. There never was a man so true and virtuous he never touched it. Why, even your brother gave it a try! You'll enjoy yourself, I give my word.~
+ @833  = ~I said no, thank you.~
+ @834  = ~Absolutely not!~
+-@835  = ~Hee-hee. Atta<PRO_BOYGIRL>, chief. You're in good hands here.~
++@835  = ~Hee-hee. Atta<PRO_GIRLBOY>, chief. You're in good hands here.~
+ @836  = ~Now happen I've still got my old smoking-pipe. It's been months since I touched it, now the old girl gets some use... We pack it gently, not too loose, not too tight. And that's all there is to it.~
+ @837  = ~I mean right by you, chief. You grind yourself down day after day. Why shouldn't we smile every now and then?~
+ @838  = ~Alright, then!~
+@@ -1874,7 +1874,7 @@
+ @1857 = ~Uhp! Sorry about your foot there.~
+ @1858 = ~Now spin me! Spin!~
+ @1859 = ~Ha! Gods, my heart's beating...~
+-@1860 = ~Woah-ho--woah! Woah. I take it you weren't supposed to fall over like that. <CHARNAME?> Can you here me? M'lady? Oh, gods...~
++@1860 = ~Woah-ho--woah! Woah. I take it you weren't supposed to fall over like that. <CHARNAME>? Can you here me? M'lady? Oh, gods...~
+ @1861 = ~Woah----ho.~
+ @1862 = ~(You execute a graceful spin and Angelo catches you in his arms and holds you close. You feel his heart pounding.)~
+ @1863 = ~Chief, that was... really something.~

@@ -1,0 +1,59 @@
+--- LR\sound\Instal_wav.BAT	Sat Jul 31 15:15:12 2004
++++ C:\BWP Patchstudio\patched files\LR\sound\Instal_wav.BAT	Sun Mar 21 06:20:43 2010
+@@ -8,7 +8,7 @@
+ LR\sound\oggdec.exe LR\sound\deva8.ogg
+ LR\sound\oggdec.exe LR\sound\nymph11.ogg
+ LR\sound\oggdec.exe LR\sound\nymph118.ogg
+-LR\sound\oggdec.exe LR\sound\nymph12.ogg
++LR\sound\oggdec.exe LR\sound\nymph13.ogg
+ LR\sound\oggdec.exe LR\sound\nymph14.ogg
+ LR\sound\oggdec.exe LR\sound\nymph16.ogg
+ LR\sound\oggdec.exe LR\sound\nymph19.ogg
+@@ -33,9 +33,7 @@
+ LR\sound\oggdec.exe LR\sound\nymph311.ogg
+ LR\sound\oggdec.exe LR\sound\nymph313.ogg
+ LR\sound\oggdec.exe LR\sound\nymph314.ogg
+-LR\sound\oggdec.exe LR\sound\nymph315.ogg
+ LR\sound\oggdec.exe LR\sound\nymph317.ogg
+-LR\sound\oggdec.exe LR\sound\nymph319.ogg
+ LR\sound\oggdec.exe LR\sound\nymph323.ogg
+ LR\sound\oggdec.exe LR\sound\mary.ogg  
+ 
+@@ -49,7 +47,7 @@
+ Copy LR\sound\deva8.wav override
+ Copy LR\sound\nymph11.wav override
+ Copy LR\sound\nymph118.wav override
+-Copy LR\sound\nymph12.wav override
++Copy LR\sound\nymph13.wav override
+ Copy LR\sound\nymph14.wav override
+ Copy LR\sound\nymph16.wav override
+ Copy LR\sound\nymph19.wav override
+@@ -74,9 +72,7 @@
+ Copy LR\sound\nymph311.wav override
+ Copy LR\sound\nymph313.wav override
+ Copy LR\sound\nymph314.wav override
+-Copy LR\sound\nymph315.wav override
+ Copy LR\sound\nymph317.wav override
+-Copy LR\sound\nymph319.wav override
+ Copy LR\sound\nymph323.wav override
+ Copy LR\sound\mary.wav override
+ 
+@@ -90,7 +86,7 @@
+ Del LR\sound\deva8.wav
+ Del LR\sound\nymph11.wav
+ Del LR\sound\nymph118.wav
+-Del LR\sound\nymph12.wav
++Del LR\sound\nymph13.wav
+ Del LR\sound\nymph14.wav
+ Del LR\sound\nymph16.wav
+ Del LR\sound\nymph19.wav
+@@ -115,9 +111,7 @@
+ Del LR\sound\nymph311.wav
+ Del LR\sound\nymph313.wav
+ Del LR\sound\nymph314.wav
+-Del LR\sound\nymph315.wav
+ Del LR\sound\nymph317.wav
+-Del LR\sound\nymph319.wav
+ Del LR\sound\nymph323.wav
+ Del LR\sound\mary.wav
+ 

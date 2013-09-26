@@ -1,0 +1,9 @@
+--- ImoenRom\bat\ArUnPackMR.bat	2003-03-28 00:57:12.000000000 +0100
++++ C:\BWP Patchstudio\patched files\new\ImoenRom\bat\ArUnPackMR.bat	2010-02-09 15:14:42.037199000 +0100
+@@ -1,5 +1,5 @@
+ @echo off
+ cd override
+-tisunpack AR26MR.tiz
++tisunpack -s AR26MR.tiz
+ del AR26MR.tiz
+ del tisunpack.exe

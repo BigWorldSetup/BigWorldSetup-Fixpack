@@ -1,0 +1,14 @@
+--- rr\lib\rr#afix.tph	Sat Apr 06 01:47:52 2013
++++ C:\BWP Patchstudio\patched files\rr\lib\rr#afix.tph	Thu Jul 11 09:13:10 2013
+@@ -164,9 +164,9 @@
+ 
+ APPEND ~kit.ids~ ~0x4000 TRUECLASS~
+   UNLESS ~\bTRUECLASS\b~
+-APPEND ~kit.ids~ ~0x0000 BARBARIAN~
++APPEND ~kit.ids~ ~0x40000000 BARBARIAN~
+   UNLESS ~\bBARBARIAN\b~
+-APPEND ~kit.ids~ ~0x0000 WILDMAGE~
++APPEND ~kit.ids~ ~0x80000000 WILDMAGE~
+   UNLESS ~\bWILDMAGE\b~
+ 
+ 

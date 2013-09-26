@@ -1,0 +1,11 @@
+--- Kido\d\MWKidJ.d	Thu Sep 25 10:50:01 2008
++++ C:\BWP Patchstudio\patched files\Kido\d\MWKidJ.d	Mon May 31 04:36:57 2010
+@@ -271,7 +271,7 @@
+   IF ~~ THEN REPLY @120 DO ~SetGlobal("finalconKaAn","GLOBAL",2)~ GOTO ihearyaplay
+   IF ~~ THEN REPLY @121 DO ~SetGlobal("finalconKaAn","GLOBAL",2)~ GOTO ihearyaplay
+   IF ~~ THEN REPLY @122 DO ~SetGlobal("finalconKaAn","GLOBAL",2)~ GOTO ihearyaplay
+-  IF ~~ THEN REPLY @123 DO ~SetGlobal("finalconKaAn","GLOBAL",2)~ EXTERN KidoP 0
++  IF ~~ THEN REPLY @123 DO ~SetGlobal("finalconKaAn","GLOBAL",2)~ EXTERN MWKidP 0
+   IF ~!Gender(Player1,MALE) Global("AnomenRomanceActive","GLOBAL",2)~ THEN REPLY @124 DO ~SetGlobal("finalconKaAn","GLOBAL",2)~ GOTO dieplayer
+ END
+ 

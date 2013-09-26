@@ -1,0 +1,88 @@
+--- SETUP-LongerRoad.tp2	Fri Oct 07 19:09:18 2005
++++ C:\BWP Patchstudio\patched files\SETUP-LongerRoad.tp2	Thu Apr 15 07:20:53 2010
+@@ -5,6 +5,9 @@
+ 
+ ALLOW_MISSING ~ar3003.bcs~
+ ALLOW_MISSING ~ar5502.bcs~
++
++VERSION ~v1.5.1 BWP Fix~
++
+ ASK_EVERY_COMPONENT
+ 
+ 
+@@ -163,35 +166,40 @@
+   SET ~MxHeal~ = 0
+   SET ~warning~ = 0
+ 
+-ACTION_IF (~%row%~ < 100)
++// ACTION_IF (~%row%~ < 100)
++ACTION_IF (~%row%~ < 500)
+   THEN
+     BEGIN
+       COPY ~LR/sound/MxIren.mus~ ~music/MxIren.mus~
+       ADD_MUSIC ~MxIren~	~LR/sound/MxIren.mus~
+     END
+ 
+-ACTION_IF (~%row%~ < 99)
++// ACTION_IF (~%row%~ < 99)
++ACTION_IF (~%row%~ < 499)
+   THEN
+     BEGIN
+       COPY ~LR/sound/MxElle.mus~ ~music/MxElle.mus~
+       ADD_MUSIC ~MxElle~	~LR/sound/MxElle.mus~
+     END
+ 
+-ACTION_IF (~%row%~ < 98)
++// ACTION_IF (~%row%~ < 98)
++ACTION_IF (~%row%~ < 498)
+   THEN
+     BEGIN
+       COPY ~LR/sound/MxAbys.mus~ ~Music/MxAbys.mus~
+       ADD_MUSIC ~MxAbys~	~LR/sound/MxAbys.mus~
+     END
+ 
+-ACTION_IF (~%row%~ < 97)
++// ACTION_IF (~%row%~ < 97)
++ACTION_IF (~%row%~ < 497)
+   THEN
+     BEGIN
+       COPY ~LR/sound/MxTroll.mus~ ~music/MxTroll.mus~
+       ADD_MUSIC ~MxTroll~	~LR/sound/MxTroll.mus~
+     END
+ 
+-ACTION_IF (~%row%~ < 96) //Presuming that 99 is the largest possible entry number in SongList.2da
++// ACTION_IF (~%row%~ < 96) //Presuming that 99 is the largest possible entry number in SongList.2da
++ACTION_IF (~%row%~ < 496) //Presuming that 499 is the largest possible entry number in SongList.2da
+   THEN
+     BEGIN
+       COPY ~LR/sound/MxHeal.mus~ ~music/MxHeal.mus~
+@@ -742,7 +750,8 @@
+ 
+ //COMPATIBILITY BLOCKS
+ 
+-ACTION_IF FILE_EXISTS  ~override/d0hosti.bcs~ // Improved Oasis
++// ACTION_IF FILE_EXISTS  ~override/d0hosti.bcs~ // Improved Oasis
++ACTION_IF FILE_EXISTS_IN_GAME  ~d0hosti.bcs~ // Improved Oasis
+  THEN BEGIN
+    PRINT @114
+  END
+@@ -751,7 +760,8 @@
+    COMPILE ~LR/dlg/lroasis.d~
+  END
+ 
+-ACTION_IF FILE_EXISTS ~override/finbodh.cre~ // Ascension is installed
++// ACTION_IF FILE_EXISTS ~override/finbodh.cre~ // Ascension is installed
++ACTION_IF FILE_EXISTS_IN_GAME ~finbodh.cre~ // Ascension is installed
+  THEN BEGIN
+    PRINT @116 
+    COPY  ~LR/balth/ascen/balth.cre~    ~override~
+@@ -820,7 +830,8 @@
+         WRITE_LONG 0x24c 0 //Removing the override script.
+  END
+ 
+-ACTION_IF FILE_EXISTS ~override/drake01.cre~ // Tougher Abazigal
++// ACTION_IF FILE_EXISTS ~override/drake01.cre~ // Tougher Abazigal
++ACTION_IF FILE_EXISTS_IN_GAME ~drake01.cre~ // Tougher Abazigal
+  THEN BEGIN
+    PRINT @121
+    COPY_EXISTING ~ar6005.bcs~ ~override/ar6005.bcs~

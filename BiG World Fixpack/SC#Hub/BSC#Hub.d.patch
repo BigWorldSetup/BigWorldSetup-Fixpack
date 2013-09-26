@@ -1,0 +1,47 @@
+--- SC#Hub\Dialogue\BSC#Hub.d	Wed Jul 28 23:38:44 2004
++++ C:\BWP Patchstudio\patched files\SC#Hub\Dialogue\BSC#Hub.d	Sun Oct 31 17:31:24 2004
+@@ -41,7 +41,7 @@
+ See("Edwin")
+ !StateCheck("Edwin",STATE_SLEEPING)
+ Gender("Edwin",FEMALE) //Must be Edwina
+-Global("SC#HubEdw","LOCALS",0)~ THEN BEDWIN edw1
++Global("SC#HubEdw","LOCALS",0)~ THEN BSC#Hub edw1
+ ~Ah once bought a single pouch of them yellow Thayan peppercorns, m'lady, and Ah must say Ah have never figured out how to spice a dish with it. Take that time my old lady put it into the stew, and Ah told her that she should hae waited till the very last moment. All of us burned our tongues raw, I swear t'ye. So on next occasion Morag. . . ~ DO ~SetGlobal("SC#HubEdw","LOCALS",1)~
+ == BEDWIN ~Why, oh insipid oaf, are you distracting me with that nonsense?~
+ == BSC#Hub ~Why, Ah’m thinkin' that being a Thayvian ye could tip me on how te prepare the peppercorns –~
+@@ -72,7 +72,7 @@
+ CHAIN IF ~InParty("Valygar")
+ See("Valygar")
+ !StateCheck("Valygar",STATE_SLEEPING)
+-Global("LavokDead","LOCALS",1) //Lavok must be dead.
++Global("LavokDead","GLOBAL",1) //Lavok must be dead.
+ Global("SC#HubVal","LOCALS",1)~ THEN BSC#Hub val2
+ ~That kinsman o’yours, Lord Valygar. . . ~ DO ~SetGlobal("SC#HubVal","LOCALS",2)~
+ == BVALYGA ~Lavok? What of him? I think he finally found his peace of mind. I only wish that I could do the same.~
+@@ -93,7 +93,7 @@
+ ~InParty("Anomen")
+ See("Anomen")
+ !StateCheck("Anomen",STATE_SLEEPING)
+-Global("AnomenRomanceActive","LOCALS",3) //Anomen says "Are you trying to seduce my Lady behind my back?".
++Global("AnomenRomanceActive","GLOBAL",3) //Anomen says "Are you trying to seduce my Lady behind my back?".
+ Alignment("Anomen",LAWFUL_GOOD) //Hublepot says "Sir Anomen", which means he must have passed his test.
+ Global("SC#HubAno","LOCALS",1)~ THEN BSC#Hub ano2
+ ~Sir Anomen, what be ye favorite desert?~ DO ~SetGlobal("SC#HubAno","LOCALS",2)~
+@@ -157,7 +157,7 @@
+ CHAIN IF ~InParty("Nalia")
+ See("Nalia")
+ !StateCheck("Nalia",STATE_SLEEPING)
+-Global("PCKeepOwner","LOCALS",1) //PC must have the keep as stronghold.
++Global("PCKeepOwner","GLOBAL",1) //PC must have the keep as stronghold.
+ Global("SC#HubNal","LOCALS",1)~ THEN BSC#Hub nal2
+ ~So miss Nalia, ye got yeself a good plot of land there, ei?~ DO ~SetGlobal("SC#HubNal","LOCALS",2)~
+ == BNALIA ~Yes, D’Arnises’ Duchy is quite large.~
+@@ -384,7 +384,7 @@
+ !StateCheck("Hubelpot",STATE_SLEEPING)
+ !AreaType(DUNGEON) //cannot be in a dungeon
+ TimeOfDay(DAY) //can't be at night
+-Global("LadyMaria","LOCALS",5)
++Global("LadyMaria","GLOBAL",5)
+ Global("SC#HubKel","LOCALS",0)~ THEN BKELDOR kel1
+ ~It is a fine day my friend. On a day like this I feel young again.~ DO ~SetGlobal("SC#HubKel","LOCALS",1)~
+ == BSC#Hub ~Ye’re in good spirits today Sir Knight.~

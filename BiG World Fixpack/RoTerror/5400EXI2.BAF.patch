@@ -1,0 +1,32 @@
+--- RoTerror\BAF\5400EXI2.BAF	Sat Mar 11 18:16:10 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\5400EXI2.BAF	Sat Oct 03 19:54:54 2009
+@@ -14,7 +14,15 @@
+ END
+ 
+ IF
++	OR(6)
++	!StateCheck(Player1,STATE_INVISIBLE)
++	!StateCheck(Player2,STATE_INVISIBLE)
++	!StateCheck(Player3,STATE_INVISIBLE)
++	!StateCheck(Player4,STATE_INVISIBLE)
++	!StateCheck(Player5,STATE_INVISIBLE)
++	!StateCheck(Player6,STATE_INVISIBLE)
+ 	Clicked([ANYONE])
++	!GlobalGT("Knowabouttl","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("Knowabouttl","GLOBAL",2)
+@@ -26,10 +34,12 @@
+ 	Global("dsalffjad","GLOBAL",1)
+ THEN
+ 	RESPONSE #100
++		SetGlobal("dsalffjad","GLOBAL",0)
++		SetGlobal("Knowabouttl","GLOBAL",1)
+ 		FadeFromColor([20.0],0)
+ 		SmallWait(5)
+ 		ActionOverride(Player1,DisplayStringHead(Myself,@573246))
+-		SetGlobal("dsalffjad","GLOBAL",0)
++		SetGlobal("Knowabouttl","GLOBAL",999)
+ END
+ 
+ 

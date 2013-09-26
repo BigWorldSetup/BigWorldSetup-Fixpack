@@ -1,0 +1,222 @@
+IF
+  InParty("r!Kitanya")
+  !Allegiance(Myself,ENEMY)
+  See([PC])
+  NumTimesTalkedTo(0)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet("r!Kitanya")
+END
+
+IF
+  !InParty("r!Kitanya")
+  !Allegiance(Myself,ENEMY)
+  See([PC])
+  NumTimesTalkedTo(0)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  Global("ElethialBuffs","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ElethialBuffs","LOCALS",1)
+    ApplySpellRES("SPPR107",Myself) // Protection From Evil
+    ApplySpellRES("SPPR506",Myself) // Ironskins
+    ApplySpellRES("SPPR711",Myself) // Regeneration
+    ApplySpellRES("SPPR701",Myself) // Shield of the Archons
+  RESPONSE #100
+    SetGlobal("ElethialBuffs","LOCALS",1)
+    ApplySpellRES("SPPR506",Myself)
+    ApplySpellRES("SPPR711",Myself)
+    ApplySpellRES("SPPR111",Myself) // Armor of Faith
+    ApplySpellRES("SPPR701",Myself)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  Global("Plague","LOCALS",0)
+  See([PC])
+  !Class(NearestEnemyOfType([PC]),MAGE_ALL)
+THEN
+  RESPONSE #100
+    SetGlobal("Plague","LOCALS",1)
+    ForceSpellRES("SPPR517",NearestEnemyOfType([PC]))
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  Global("Beauty","LOCALS",0)
+  See(LastSeenBy(Myself))
+THEN
+  RESPONSE #100
+    SetGlobal("Beauty","LOCALS",1)
+    ForceSpellRES("SPPR704",Myself)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  Global("Summon","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Summon","LOCALS",1)
+    ForceSpellRES("SPPR702",Myself)
+  RESPONSE #100
+    SetGlobal("Summon","LOCALS",1)
+    ForceSpellRES("SPPR602",Myself)
+  RESPONSE #100
+    SetGlobal("Summon","LOCALS",1)
+    ForceSpellRES("SPPR604",Myself)
+  RESPONSE #100
+    SetGlobal("Summon","LOCALS",1)
+    ForceSpellRES("SPPR601",Myself)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  Global("Deva","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Deva","LOCALS",1)
+    ForceSpellRES("sppr727",Myself)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  Global("ProtectForStorm","LOCALS",0)
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    SetGlobal("ProtectForStorm","LOCALS",1)
+    ForceSpellRES("SPPR306",Myself)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  Global("Storm","LOCALS",0)
+  See(StrongestOf)
+  CheckStatLT(StrongestOf,100,RESISTFIRE)
+THEN
+  RESPONSE #100
+    SetGlobal("Storm","LOCALS",1)
+    ForceSpellRES("SPPR705",StrongestOf)
+END
+
+// Don't like summons
+IF
+  Allegiance(Myself,ENEMY)
+  Global("Vengeance","LOCALS",0)
+  !Gender(LastAttackerOf(Myself),MALE)
+  !Gender(LastAttackerOf(Myself),FEMALE)
+THEN
+  RESPONSE #100
+    SetGlobal("Vengeance","LOCALS",1)
+    ForceSpellRES("sppr722",LastAttackerOf(Myself))
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  See([PC])
+  Global("Confusion","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Confusion","LOCALS",1)
+    ForceSpellRES("SPPR709",LastAttackerOf(Myself))
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  See([PC])
+  Global("Whirlwind","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Whirlwind","LOCALS",1)
+    ForceSpellRES("spcl901",Myself)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  See(WorstAC)
+  !Class(WorstAC,MAGE_ALL)
+THEN
+  RESPONSE #100
+    Attack(WorstAC)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  See(Player1)
+  !Class(Player1,MAGE_ALL)
+THEN
+  RESPONSE #100
+    Attack(Player1)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  See(Player2)
+  !Class(Player2,MAGE_ALL)
+THEN
+  RESPONSE #100
+    Attack(Player2)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  See(Player3)
+  !Class(Player3,MAGE_ALL)
+THEN
+  RESPONSE #100
+    Attack(Player3)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  See(Player4)
+  !Class(Player2,MAGE_ALL)
+THEN
+  RESPONSE #100
+    Attack(Player4)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  See(Player5)
+  !Class(Player5,MAGE_ALL)
+THEN
+  RESPONSE #100
+    Attack(Player5)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  See(Player6)
+  !Class(Player6,MAGE_ALL)
+THEN
+  RESPONSE #100
+    Attack(Player6)
+END
+
+
+// If the Player can somehow sneak away to rest, why can't we?
+
+IF
+  Allegiance(Myself,ENEMY)
+  PartyRested()
+THEN
+  RESPONSE #100
+    SetGlobal("ElethialBuffs","LOCALS",0)
+    SetGlobal("Plague","LOCALS",0)
+    SetGlobal("Beauty","LOCALS",0)
+    SetGlobal("Summon","LOCALS",0)
+    SetGlobal("Deva","LOCALS",0)
+    SetGlobal("ProtectForStorm","LOCALS",0)
+    SetGlobal("Storm","LOCALS",0)
+    SetGlobal("Vengeance","LOCALS",0)
+    SetGlobal("Confusion","LOCALS",0)
+    SetGlobal("Whirlwind","LOCALS",0)
+END
+

@@ -1,0 +1,11 @@
+--- RoTerror\baf\rr3701.BAF	Sat Apr 08 18:44:38 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\baf\rr3701.BAF	Tue Apr 30 04:49:38 2013
+@@ -25,7 +25,7 @@
+ THEN
+ 	RESPONSE #100
+ 		CreateCreature("Cadderly",[714.1289],10) // Cadderly
+-		CreateCreature("Alissa8",[678.1209],10)  //was Alissa1
++		MoveGlobalObject("Alissa1",Player1)  //was Alissa1
+ 		SetGlobal("DlCadd","GLOBAL",3)
+ END
+ 

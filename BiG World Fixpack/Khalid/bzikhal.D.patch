@@ -1,0 +1,11 @@
+--- Khalid\d\bzikhal.D	Tue Apr 12 15:27:16 2011
++++ C:\BWP Patchstudio\patched files\Khalid\d\bzikhal.D	Sat Aug 24 18:38:07 2013
+@@ -336,7 +336,7 @@
+ == BZIKHAL IF ~InParty("AERIE") !Dead("AERIE")~ THEN @138
+ == BZIKHAL IF ~InParty("CERND") !Dead("CERND")~ THEN @139
+ == BZIKHAL IF ~InParty("ANOMEN") !Dead("ANOMEN")~ THEN @140
+-== BZIKHAL IF ~Class("Player1","CLERIC") ~THEN @141
++== BZIKHAL IF ~Class(Player1,CLERIC) ~THEN @141
+ EXIT
+ 
+ CHAIN

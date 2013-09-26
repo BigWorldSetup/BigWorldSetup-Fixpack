@@ -1,0 +1,17 @@
+--- imnesvale\scripts\easy\ducleric.baf	Wed Mar 15 17:38:18 2006
++++ C:\BWP Patchstudio\patched files\imnesvale\scripts\easy\ducleric.baf	Sun Mar 28 15:52:44 2010
+@@ -56,12 +56,12 @@
+ END
+ 
+ IF
+-	HaveSpell(CLERIC_SHIELD_OF_ARCHONS)
++	HaveSpell(CLERIC_SHIELD_OF_THE_ARCHONS)
+ 	See(NearestEnemyOf(Myself))
+ 	GlobalTimerExpired("duCastingTimer","LOCALS")
+ THEN
+ 	RESPONSE #100
+-		Spell(Myself,CLERIC_SHIELD_OF_ARCHONS)
++		Spell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)
+ 		Continue()
+ END
+ 

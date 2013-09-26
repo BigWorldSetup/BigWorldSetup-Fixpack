@@ -1,0 +1,11 @@
+--- vic\Dung\SCMAGE.BAF	Thu Sep 22 00:00:16 2005
++++ C:\BWP Patchstudio\patched files\vic\Dung\SCMAGE.BAF	Thu Apr 01 16:38:12 2010
+@@ -1,7 +1,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	Global("Prep","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 
+ 	RESPONSE #100

@@ -1,0 +1,21 @@
+--- Star\English\Silverj.tra	Wed Nov 03 11:17:06 2004
++++ C:\BWP Patchstudio\patched files\Star\English\Silverj.tra	Thu Jul 23 10:09:02 2009
+@@ -408,12 +408,12 @@
+ @625 = ~You're creative about this, Silver Star. What next?~
+ @626 = ~Alright, that's enough. Let's continue on our travels, shall we?~
+ @627 = ~Then I would take Mommy and slit along his arms and legs, and peel the skin off his limbs. I would still have to use a knife - pull a little, then cut a little free. It would be slow, and that's good. He would be bleeding a lot, so I might use some bright hot metal to burn the peeled parts next. It would keep it clean and painful at once. Very efficient.~
+-@628 = ~That is quite enough, Silver Star. , ask this poor twisted creature to cease her ramblings this instance. It troubles me that you have allowed her to speak this much on it.~ // Keldorn
+-@629 = ~Certainly more than I cared to know. , if you do not tell her to stop, I will.~ // Valygar
+-@630 = ~Oh, what hideous stories. There is no reason for this sort of talk, .~ //Nalia
+-@631 = ~I cannot abide such terrible plotting in my own group. , you must ask Silver Star to desist or I will be forced to take action.~ // Mazzy
+-@632 = ~More than I can stand! , tell this abomination to be quiet at once!~ // Anomen
+-@633 = ~Oh! How awful! I...I can't stand to listen to it! , p-please, make her stop.~ // Aerie
++@628 = ~That is quite enough, Silver Star. <CHARNAME>, ask this poor twisted creature to cease her ramblings this instance. It troubles me that you have allowed her to speak this much on it.~ // Keldorn
++@629 = ~Certainly more than I cared to know. <CHARNAME>, if you do not tell her to stop, I will.~ // Valygar
++@630 = ~Oh, what hideous stories. There is no reason for this sort of talk, <CHARNAME>.~ //Nalia
++@631 = ~I cannot abide such terrible plotting in my own group. <CHARNAME>, you must ask Silver Star to desist or I will be forced to take action.~ // Mazzy
++@632 = ~More than I can stand! <CHARNAME>, tell this abomination to be quiet at once!~ // Anomen
++@633 = ~Oh! How awful! I...I can't stand to listen to it! <CHARNAME>, p-please, make her stop.~ // Aerie
+ @634 = ~Boo...is not certain if he likes the turn this conversation has taken. Talk of hurting villains is good! But...he is afraid of the look in the pretty elf's eyes.~ // Minsc
+ @635 = ~Not bad, for a mad surface elf. The drow would do better.~ // Viccy
+ @636 = ~I admit, her enthusiasm is catching. It is important to love one's work. (Though she could stand to adopt a more sinister demeanor. I suppose it's too much to expect an insane child to be overly professional)~ // Edwin

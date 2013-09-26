@@ -1,0 +1,235 @@
+--- Setup-Kari.tp2	Sun Aug 07 12:21:20 2005
++++ C:\BWP Patchstudio\patched files\Setup-Kari.tp2	Mon May 24 17:43:21 2010
+@@ -1,156 +1,85 @@
+ BACKUP ~Kari\backup~
+ AUTHOR ~CuteOmen@gmail.com~
+-BEGIN ~Kari The Koboldgirl version 1.3b (Created by Moongaze)~
++VERSION ~v1.3b Upgraded to Moongaze's Kari v1~
+ 
+-
+-COPY ~Kari\Portraits~ ~override~
+-
+-
+-COPY ~Kari\Audio~ ~override~
+-COPY ~Kari\Setup-KariAudioInstall.bat~ ~Setup-KariAudioInstall.bat~
+-AT_INTERACTIVE_EXIT ~Setup-KariAudioInstall.bat~
++BEGIN ~Kari The Koboldgirl (Created by Moongaze)~
+ 
+ 
++COPY ~Kari\Portraits~ ~override~
+ 
+ COPY ~Kari\Creatures\MGKARI.CRE~ ~override~
++     ~Kari\Creatures\MGKARI25.CRE~ ~override~
+ SAY NAME1 ~Kari~
+ SAY NAME2 ~Kari~
+ SAY INITIAL_MEETING ~Ohh! I'm...I'm found? Oh no...~
+-SAY MORALE ~I'm a little out of practice, it seems.~ [KARI001]
+-SAY HAPPY ~It's good to be journeying again.~ [KARI002]
+-SAY UNHAPPY_ANNOYED ~Watch yourself.~ [KARI003]
+-SAY UNHAPPY_SERIOUS ~I cannot allow your evil to continue.~ [KARI004]
+-SAY UNHAPPY_BREAKING ~You have done enough harm!~ [KARI005]
+-SAY LEADER ~May my faith lend me strength.~ [KARI006]
+-SAY TIRED ~I feel fatigued. I should rest soon.~ [KARI007]
+-SAY BORED ~Through observation, sensation and experience, the truth of the multiverse shall be revealed.~ [KARI008]
+-SAY BATTLE_CRY1 ~Prepare yourself!~ [KARI009]
+-SAY BATTLE_CRY2 ~I cannot allow your evil to continue.~ [KARI004]
+-SAY BATTLE_CRY3 ~You have done enough harm!~ [KARI005]
+-SAY BATTLE_CRY4 ~Very well, then...~ [KARI032]
+-SAY BATTLE_CRY5 ~May my faith lend me strength.~ [KARI006]
+-SAY DAMAGE ~Ugh!~ [KARI011]
+-SAY DYING ~Forgive me...~ [KARI012]
+-SAY HURT ~I fear I've been wounded.~ [KARI013]
+-SAY AREA_FOREST ~We must take care and watch each other.~ [KARI014]
+-SAY AREA_CITY ~There's much to be learned from all parts of society~ [KARI015]
+-SAY AREA_DUNGEON ~It's difficult to seperate shadows from the darkness here.~ [KARI016]
+-SAY AREA_DAY ~It's good to be journeying again.~ [KARI002]
+-SAY AREA_NIGHT ~The air is quite...embracing here.~ [KARI017]
+-SAY SELECT_COMMON1 ~Yes? What did you wish?~ [KARI018]
+-SAY SELECT_COMMON2 ~Hmm?~ [KARI019]
+-SAY SELECT_COMMON3 ~Yes?~ [KARI020]
+-SAY SELECT_COMMON4 ~I'm here.~ [KARI021]
+-SAY SELECT_COMMON5 ~How may I help you?~ [KARI022]
+-SAY SELECT_COMMON6 ~I'm listening.~ [KARI023]
+-SAY SELECT_ACTION1 ~Very well.~ [KARI024]
+-SAY SELECT_ACTION2 ~A pleasure.~ [KARI025]
+-SAY SELECT_ACTION3 ~It shall be done.~ [KARI026]
+-SAY SELECT_ACTION4 ~Of course!~ [KARI027]
+-SAY SELECT_ACTION5 ~Very well, then.~ [KARI028]
+-SAY SELECT_ACTION6 ~It would be my pleasure.~ [KARI029]
+-SAY SELECT_ACTION7 ~Done.~ [KARI030]
+-SAY SELECT_RARE1 ~Sheeawasee...~ [KARI031]
+-SAY SELECT_RARE2 ~I hope your heart now finds solace.~ [KARI036]
+-SAY CRITICAL_HIT ~Playtime is over!~ [KARI010]
+-SAY CRITICAL_MISS ~I'm a little out of practice, it seems.~ [KARI001]
+-SAY TARGET_IMMUNE ~I cannot wound it.~ [KARI033]
+-SAY INVENTORY_FULL ~I'm carrying too much.~ [KARI034]
+-SAY SPELL_DISRUPTED ~My spell was disrupted!~ [KARI035]
+-SAY SET_A_TRAP ~Watch yourself.~ [KARI003]
+-SAY HIDDEN_IN_SHADOWS ~It's difficult to seperate shadows from the darkness here.~ [KARI016]
+-SAY PICKED_POCKET ~Forgive me...~ [KARI012]
+-SAY BIO ~When asked about her past, KARI smiles shyly and tells you she is the result of a human-kobold marriage. Her parents have died in a forest fire, and she was left unprotected. She looks slightly uneasy when she mentions nearly getting captured by slavers, though overall she seems to do well surviving alone. In your company she is safe and the chances of her being hunted is minimal. Her eyes light up when she speaks of her time spent in the wilderniss, avoiding human settlements, living on whatever Mother Nature has to offer. She seems to have learned the path of the druid in her own way, though she is not as dedicated, nor is she part of any group, clan, tribe or community.~
+-
+-
+-COPY ~Kari\Creatures\MGKARI25.CRE~ ~override~
+-SAY NAME1 ~Kari~
+-SAY NAME2 ~Kari~
+-SAY INITIAL_MEETING ~Ohh! I'm...I'm found? Oh no...~
+-SAY MORALE ~I'm a little out of practice, it seems.~ [KARI001]
+-SAY HAPPY ~It's good to be journeying again.~ [KARI002]
+-SAY UNHAPPY_ANNOYED ~Watch yourself.~ [KARI003]
+-SAY UNHAPPY_SERIOUS ~I cannot allow your evil to continue.~ [KARI004]
+-SAY UNHAPPY_BREAKING ~You have done enough harm!~ [KARI005]
+-SAY LEADER ~May my faith lend me strength.~ [KARI006]
+-SAY TIRED ~I feel fatigued. I should rest soon.~ [KARI007]
+-SAY BORED ~Through observation, sensation and experience, the truth of the multiverse shall be revealed.~ [KARI008]
+-SAY BATTLE_CRY1 ~Prepare yourself!~ [KARI009]
+-SAY BATTLE_CRY2 ~I cannot allow your evil to continue.~ [KARI004]
+-SAY BATTLE_CRY3 ~You have done enough harm!~ [KARI005]
+-SAY BATTLE_CRY4 ~Very well, then...~ [KARI032]
+-SAY BATTLE_CRY5 ~May my faith lend me strength.~ [KARI006]
+-SAY DAMAGE ~Ugh!~ [KARI011]
+-SAY DYING ~Forgive me...~ [KARI012]
+-SAY HURT ~I fear I've been wounded.~ [KARI013]
+-SAY AREA_FOREST ~We must take care and watch each other.~ [KARI014]
+-SAY AREA_CITY ~There's much to be learned from all parts of society~ [KARI015]
+-SAY AREA_DUNGEON ~It's difficult to seperate shadows from the darkness here.~ [KARI016]
+-SAY AREA_DAY ~It's good to be journeying again.~ [KARI002]
+-SAY AREA_NIGHT ~The air is quite...embracing here.~ [KARI017]
+-SAY SELECT_COMMON1 ~Yes? What did you wish?~ [KARI018]
+-SAY SELECT_COMMON2 ~Hmm?~ [KARI019]
+-SAY SELECT_COMMON3 ~Yes?~ [KARI020]
+-SAY SELECT_COMMON4 ~I'm here.~ [KARI021]
+-SAY SELECT_COMMON5 ~How may I help you?~ [KARI022]
+-SAY SELECT_COMMON6 ~I'm listening.~ [KARI023]
+-SAY SELECT_ACTION1 ~Very well.~ [KARI024]
+-SAY SELECT_ACTION2 ~A pleasure.~ [KARI025]
+-SAY SELECT_ACTION3 ~It shall be done.~ [KARI026]
+-SAY SELECT_ACTION4 ~Of course!~ [KARI027]
+-SAY SELECT_ACTION5 ~Very well, then.~ [KARI028]
+-SAY SELECT_ACTION6 ~It would be my pleasure.~ [KARI029]
+-SAY SELECT_ACTION7 ~Done.~ [KARI030]
+-SAY SELECT_RARE1 ~Sheeawasee...~ [KARI031]
+-SAY SELECT_RARE2 ~I hope your heart now finds solace.~ [KARI036]
+-SAY CRITICAL_HIT ~Playtime is over!~ [KARI010]
+-SAY CRITICAL_MISS ~I'm a little out of practice, it seems.~ [KARI001]
+-SAY TARGET_IMMUNE ~I cannot wound it.~ [KARI033]
+-SAY INVENTORY_FULL ~I'm carrying too much.~ [KARI034]
+-SAY SPELL_DISRUPTED ~My spell was disrupted!~ [KARI035]
+-SAY SET_A_TRAP ~Watch yourself.~ [KARI003]
+-SAY HIDDEN_IN_SHADOWS ~It's difficult to seperate shadows from the darkness here.~ [KARI016]
+-SAY PICKED_POCKET ~Forgive me...~ [KARI012]
+-SAY BIO ~When asked about her past, KARI smiles shyly and tells you she is the result of a human-kobold marriage. Her parents have died in a forest fire, and she was left unprotected. She looks slightly uneasy when she mentions nearly getting captured by slavers, though overall she seems to do well surviving alone. In your company she is safe and the chances of her being hunted is minimal. Her eyes light up when she speaks of her time spent in the wilderniss, avoiding human settlements, living on whatever Mother Nature has to offer. She seems to have learned the path of the druid in her own way, though she is not as dedicated, nor is she part of any group, clan, tribe or community.~
+-
++SAY MORALE ~Aaahh! I need to get away!~
++SAY HAPPY ~I'm happy to be a part of this! (giggle)~
++SAY UNHAPPY_ANNOYED ~Huh? Why are we...?~
++SAY UNHAPPY_SERIOUS ~Please, don't do this...~
++SAY UNHAPPY_BREAKING ~I can't take this!~
++SAY LEADER ~I'm...the boss? I hope you know what you're doing.~
++SAY TIRED ~I'm so tired... Can't we rest?~
++SAY BORED ~(yawn) When are we going to do something?~
++SAY BATTLE_CRY1 ~Back to where you came from, fiends!~
++SAY BATTLE_CRY2 ~Come here, so I can smack you!~
++SAY BATTLE_CRY3 ~Time to let my fangs do the talking!~
++SAY BATTLE_CRY4 ~(growls!)~
++SAY BATTLE_CRY5 ~I'll smack you so hard!~
++SAY DAMAGE ~Ow!~
++SAY DYING ~Aaaaahhhh!!!~
++SAY HURT ~It hurts... It hurts so bad!~
++SAY AREA_FOREST ~The soil beneath my feet feels real nice.~
++SAY AREA_CITY ~Towns aren't the place for me. I wish we'd leave soon.~
++SAY AREA_DUNGEON ~I really don't want to be here...~
++SAY AREA_DAY ~Daytime is when I feel best.~
++SAY AREA_NIGHT ~It's so dark... I can't see a thing.~
++SAY SELECT_COMMON1 ~Um...~
++SAY SELECT_COMMON2 ~Is there something you wish?~
++SAY SELECT_COMMON3 ~Don't shout! ...please.~
++SAY SELECT_COMMON4 ~Present!~
++SAY SELECT_COMMON5 ~Huh?~
++SAY SELECT_COMMON6 ~These ears were made for hearing.~
++SAY SELECT_ACTION1 ~This is what I do best!~
++SAY SELECT_ACTION2 ~Careful steps...~
++SAY SELECT_ACTION3 ~Let's mosey!~
++SAY SELECT_ACTION4 ~I don't know if I can...~
++SAY SELECT_ACTION5 ~I'll try for you.~
++SAY SELECT_ACTION6 ~Leave it to me!~
++SAY SELECT_ACTION7 ~Right!~
++SAY SELECT_RARE1 ~(Bark!)~
++SAY SELECT_RARE2 ~Anyone seen my brush?~
++SAY CRITICAL_HIT ~Whack you!~
++SAY CRITICAL_MISS ~Missed! No!~
++SAY TARGET_IMMUNE ~Why can't I hurt it?~
++SAY INVENTORY_FULL ~I-I really can't carry more than this!~
++SAY SPELL_DISRUPTED ~Lost my concentration!~
++SAY SET_A_TRAP ~Careful now...~
++SAY HIDDEN_IN_SHADOWS ~Um...I'm gone?~
++SAY PICKED_POCKET ~No thanks. One time's enough.~
++SAY BIO ~When asked about her past, KARI smiles shyly and tells you she is part of an isolated half-breed race. She looks slightly uneasy when she mentions nearly getting captured by slavers and being hunted on various occasions, though overall she seems to do well surviving alone. In your company she is safe and the chances of her being hunted is minimal. Her eyes light up when she speaks of her time spent in the wilderness, avoiding human settlements, living on whatever Mother Nature has to offer. She seems to have learned the path of the druid in her own way, though she is not as dedicated.~
+ 
+ 
+-COPY ~Kari\Items\MGLEATRO.itm~ ~override\MGLEATRO.itm~
++COPY ~Kari\Items\MGKARRB.itm~ ~override\MGKARRB.itm~
+ SAY NAME1 ~Concealing Robe~
+ SAY NAME2 ~Concealing Robe~
+ SAY UNIDENTIFIED_DESC ~Druid's Robe of Concealing
+-
+-Kari managed to "borrow" this robe long ago, in order to conceal her unusual appearance from others. Little did she know that she took a powerful mage robe, that grew aware of her and her connection to nature. Now, it may only be used by druids, while it retains it's original power.
++Kari managed to "borrow" this robe long ago, in order to conceal her unusual appearance from others. It offers decent protection, but is not very special besides that.
+ 
+ STATISTICS:
+ 
+ Armor Class:  5
+-Magic Resistance:  5%
+-Saving Throw:  +1 bonus
+ Weight:  6
+ Only usable by:
+- Druids
+- Fighter/Druids
+- Humans
+- Half-Elves
+- Kobolds~
++ Kari~
+ SAY DESC ~Druid's Robe of Concealing
+-
+-Kari managed to "borrow" this robe long ago, in order to conceal her unusual appearance from others. Little did she know that she took a powerful mage robe, that grew aware of her and her connection to nature. Now, it may only be used by druids, while it retains it's original power.
++Kari managed to "borrow" this robe long ago, in order to conceal her unusual appearance from others. It offers decent protection, but is not very special besides that.
+ 
+ STATISTICS:
+ 
+ Armor Class:  5
+-Magic Resistance:  5%
+-Saving Throw:  +1 bonus
+ Weight:  6
+ Only usable by:
+- Druids
+- Fighter/Druids
+- Humans
+- Half-Elves
+- Kobolds~
+-
++ Kari~
+ 
+ 
+ COMPILE ~Kari\Dialogue\MGKARI.d~
+@@ -163,17 +92,17 @@
+ COMPILE ~Kari\Dialogue\BMGKAR25.d~
+ 
+ COMPILE ~Kari\Scripts\MGKARI25.baf~
+-COMPILE ~Kari\Scripts\KAAR1200.baf~
++COMPILE ~Kari\Scripts\KAAR1900.baf~
+ COMPILE ~Kari\Scripts\KAAR6200.baf~
+ 
+-EXTEND_TOP ~AR1200.bcs~ ~Kari\Scripts\KAAR1200.baf~
++EXTEND_TOP ~AR1900.bcs~ ~Kari\Scripts\KAAR1900.baf~
+ COPY_EXISTING ~AR6200.bcs~ ~override\AR6200.bcs~
+ EXTEND_TOP ~AR6200.bcs~ ~Kari\Scripts\KAAR6200.baf~
+ 
+ COPY ~Kari\2da\KARAND1.2da~ ~override\KARAND1.2da~
+-REPLACE ~99999~ ~After <CHARNAME>'s ascension, Kari went back to her sheltered life in the wilderniss. No one has seen her again, but there are rumors of a band of kobolds being led by a human girl with a tail.~
++REPLACE ~99999~ ~After the ascension of <CHARNAME>, Kari went back to her sheltered life in her community. No one has seen her again, but there are rumors of a wolf-like humanoid being spotted on occasion.~
+ COPY ~Kari\2da\KARAND2.2da~ ~override\KARAND2.2da~
+-REPLACE ~99998~ ~After parting ways with <CHARNAME>, Kari went back to her sheltered life in the wilderniss. No one has seen her again, but there are rumors of a band of kobolds being led by a human girl with a tail.~
++REPLACE ~99998~ ~Kari went back to her sheltered life in her community. No one has seen her again, but there are rumors of a wolf-like humanoid being spotted on occasion.~
+ 
+ APPEND ~pdialog.2da~
+ ~Kari MGKARIP MGKARIJ MGKARID MGKAR25P MGKAR25J MGKAR25D MGKAR25~

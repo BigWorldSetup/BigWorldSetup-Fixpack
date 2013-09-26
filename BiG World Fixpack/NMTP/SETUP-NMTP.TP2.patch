@@ -1,0 +1,74 @@
+--- SETUP-NMTP.TP2	Fri Dec 17 08:55:00 2010
++++ C:\BWP Patchstudio\patched files\SETUP-NMTP.TP2	Thu Sep 13 16:13:36 2012
+@@ -16,6 +16,7 @@
+  ~NMTP/ChineseTraditional/NMTP-setup.tra~
+ ////////////////////金币实体化
+ BEGIN @1
++APPEND ~spell.ids~ ~2705 WIZARD_KHELBENS_WARDING_WHIP~ UNLESS ~WIZARD_KHELBENS_WARDING_WHIP~
+ //bcs
+ COPY ~NMTP/1/bcs~ ~override~
+ //BAF
+@@ -55,14 +56,14 @@
+ SAY NAME2 @110
+ SAY UNIDENTIFIED_DESC @111
+ SAY IDENTIFIED_DESC @111
+-APPEND ~TOOLTIP.2DA~ ~m_tpig1           107        -1        -1~
+-APPEND ~TOOLTIP.2DA~ ~m_tpig2           108        106        -1~
+-APPEND ~TOOLTIP.2DA~ ~m_tpig3           109        106        106~
++APPEND ~TOOLTIP.2DA~ ~m_tpig1           attrib1    -1        -1~
++APPEND ~TOOLTIP.2DA~ ~m_tpig2           attrib3    attrib2    -1~
++APPEND ~TOOLTIP.2DA~ ~m_tpig3           attrib4    attrib2    attrib2~
+ COPY_EXISTING     ~TOOLTIP.2DA~               ~override/TOOLTIP.2DA~
+- REPLACE ~107~ @107
+- REPLACE ~106~ @106
+- REPLACE ~108~ @108
+- REPLACE ~109~ @109
++ REPLACE ~attrib1~ @107
++ REPLACE ~attrib2~ @106
++ REPLACE ~attrib3~ @108
++ REPLACE ~attrib4~ @109
+ ////////////////////RNPC 人际关系核心插件V2.8
+ BEGIN @2
+ REQUIRE_PREDICATE (!FILE_EXISTS_IN_GAME ~M_RNPC.BCS~) @99
+@@ -419,23 +420,23 @@
+ SAY NAME2 @1001
+ SAY UNIDENTIFIED_DESC @1002
+ SAY IDENTIFIED_DESC @1011
+-APPEND ~TOOLTIP.2DA~ ~m_tpIR1           1005        -1        -1~
+-APPEND ~TOOLTIP.2DA~ ~m_tpIR2           1006        1008        -1~
+-APPEND ~TOOLTIP.2DA~ ~m_tpIR4           1006        1009        -1~
++APPEND ~TOOLTIP.2DA~ ~m_tpIR1           attrib1     -1        -1~
++APPEND ~TOOLTIP.2DA~ ~m_tpIR2           attrib2     attrib3     -1~
++APPEND ~TOOLTIP.2DA~ ~m_tpIR4           attrib2     attrib4     -1~
+ COPY_EXISTING     ~TOOLTIP.2DA~               ~override/TOOLTIP.2DA~
+- REPLACE ~1005~ @1005
+-  REPLACE ~1006~ @1006
+-  REPLACE ~1008~ @1008
+-  REPLACE ~1009~ @1009
++ REPLACE ~attrib1~ @1005
++  REPLACE ~attrib2~ @1006
++  REPLACE ~attrib3~ @1008
++  REPLACE ~attrib4~ @1009
+ //BAG
+ COPY ~NMTP/2/ITM/M_TPIB1.itm~~override/M_TPIB1.itm~
+ SAY NAME1 @1100
+ SAY NAME2 @1101
+ SAY UNIDENTIFIED_DESC @1102
+ SAY IDENTIFIED_DESC @1103
+-APPEND ~TOOLTIP.2DA~ ~m_tpIB1           1104        -1        -1~
++APPEND ~TOOLTIP.2DA~ ~m_tpIB1           attrib      -1        -1~
+ COPY_EXISTING     ~TOOLTIP.2DA~               ~override/TOOLTIP.2DA~
+- REPLACE ~1104~ @1104
++ REPLACE ~attrib~ @1104
+ //HELM
+ COPY ~NMTP/2/ITM/M_TPIH1.itm~~override/M_TPIH1.itm~
+ SAY NAME1 @1200
+@@ -1563,7 +1564,7 @@
+ ADD_CRE_ITEM ~M_TPII10~ #1 #0 #0 ~UNSTEALABLE~ ~inv~
+ END
+ END ELSE
+- PATCH_IF (("%general%" = "255") AND ("%race%" = "128") AND ("%stre%" > "13")) BEGIN
++ PATCH_IF (("%general%" = "255") AND ("%race%" = "118") AND ("%stre%" > "13")) BEGIN
+ SET Num=0 
+ FOR (i=0;i<16; i=i+1) BEGIN
+ READ_SHORT ~%Off%~+0x2a+0x2*~%i%~ ~inv~

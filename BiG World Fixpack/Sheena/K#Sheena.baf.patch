@@ -1,0 +1,11 @@
+--- Sheena\Scripts\K#Sheena.baf	Mon Apr 24 19:19:04 2006
++++ C:\BWP Patchstudio\patched files\Sheena\Scripts\K#Sheena.baf	Thu Apr 01 16:57:28 2010
+@@ -631,7 +631,7 @@
+ Global("SlayerTalkReady","LOCALS",1)
+ CombatCounter(0)
+ InParty(Myself)
+-!Dead("Myself")
++!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ RESPONSE #100
+ SetGlobal("SlayerTalkReady","LOCALS",2)

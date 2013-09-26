@@ -1,0 +1,319 @@
+--- MTS\Val\LI%valygar.baf	Mon Apr 12 00:55:58 2004
++++ C:\BWP Patchstudio\patched files\MTS\Val\LI%valygar.baf	Sat Jul 07 18:47:38 2012
+@@ -22,24 +22,24 @@
+ 
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04","LI%NPSW04A","Valygar")
++		TakeItemReplace("NPSW04","NPSW04A","Valygar")
+ 
+ END
+ 
+ IF
+ 	LevelGT("Valygar",20)
+-	HasItem("LI%NPSW04A","Valygar")
++	HasItem("NPSW04A","Valygar")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("LI%NPSW04A","LI%NPSW04B","Valygar")
++		TakeItemReplace("NPSW04A","NPSW04B","Valygar")
+ END
+ 
+ IF
+ 	LevelGT("Valygar",29)
+-	HasItem("LI%NPSW04B","Valygar")
++	HasItem("NPSW04B","Valygar")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("LI%NPSW04B","LI%NPSW04C","Valygar")
++		TakeItemReplace("NPSW04B","NPSW04C","Valygar")
+ END
+ 
+ IF
+@@ -53,229 +53,229 @@
+ 	!StateCheck("Valygar",STATE_DEAD)
+ THEN
+ 	RESPONSE #20
+-		ActionOverride("Valygar",ForceSpell(NearestEnemyOf("Myself"),"SUMMON_COW"))
++		ActionOverride("Valygar",ForceSpell(NearestEnemyOf(Myself),"SUMMON_COW"))
+ END
+ 
+ IF
+-   HasItemEquiped("Valygar","LI%NPSW04D")
++   HasItemEquiped("Valygar","NPSW04D")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04","LI%NPSW04D","Valygar")
++		TakeItemReplace("NPSW04","NPSW04D","Valygar")
+ END
+ 
+ IF
+-	HasItemEquiped("Player1","NPSW04A")
++	HasItemEquiped(Player1,"NPSW04A")
+ 	!HasItemEquiped("Valygar","NPSW04A")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04A","Player1")
++		TakeItemReplace("NPSW04D","NPSW04A",Player1)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player1","NPSW04B")
++	HasItemEquiped(Player1,"NPSW04B")
+ 	!HasItemEquiped("Valygar","NPSW04B")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04B","Player1")
++		TakeItemReplace("NPSW04D","NPSW04B",Player1)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player1","NPSW04C")
++	HasItemEquiped(Player1,"NPSW04C")
+ 	!HasItemEquiped("Valygar","NPSW04C")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04C","Player1")
++		TakeItemReplace("NPSW04D","NPSW04C",Player1)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player1","NPSW04 ")
+-	!HasItemEquiped("Valygar","NPSW04 ")
++	HasItemEquiped(Player1,"NPSW04")
++	!HasItemEquiped("Valygar","NPSW04")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04 ","Player1")
++		TakeItemReplace("NPSW04D","NPSW04",Player1)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player2","NPSW04A")
++	HasItemEquiped(Player2,"NPSW04A")
+ 	!HasItemEquiped("Valygar","NPSW04A")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04A","Player2")
++		TakeItemReplace("NPSW04D","NPSW04A",Player2)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player2","NPSW04B")
++	HasItemEquiped(Player2,"NPSW04B")
+ 	!HasItemEquiped("Valygar","NPSW04B")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04B","Player2")
++		TakeItemReplace("NPSW04D","NPSW04B",Player2)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player2","NPSW04C")
++	HasItemEquiped(Player2,"NPSW04C")
+ 	!HasItemEquiped("Valygar","NPSW04C")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04C","Player2")
++		TakeItemReplace("NPSW04D","NPSW04C",Player2)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player2","NPSW04 ")
+-	!HasItemEquiped("Valygar","NPSW04 ")
++	HasItemEquiped(Player2,"NPSW04")
++	!HasItemEquiped("Valygar","NPSW04")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04 ","Player2")
++		TakeItemReplace("NPSW04D","NPSW04",Player2)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player3","NPSW04A")
++	HasItemEquiped(Player3,"NPSW04A")
+ 	!HasItemEquiped("Valygar","NPSW04A")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04A","Player3")
++		TakeItemReplace("NPSW04D","NPSW04A",Player3)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player3","NPSW04B")
++	HasItemEquiped(Player3,"NPSW04B")
+ 	!HasItemEquiped("Valygar","NPSW04B")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04B","Player3")
++		TakeItemReplace("NPSW04D","NPSW04B",Player3)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player3","NPSW04C")
++	HasItemEquiped(Player3,"NPSW04C")
+ 	!HasItemEquiped("Valygar","NPSW04C")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04C","Player3")
++		TakeItemReplace("NPSW04D","NPSW04C",Player3)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player3","NPSW04 ")
+-	!HasItemEquiped("Valygar","NPSW04 ")
++	HasItemEquiped(Player3,"NPSW04")
++	!HasItemEquiped("Valygar","NPSW04")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04 ","Player3")
++		TakeItemReplace("NPSW04D","NPSW04",Player3)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player4","NPSW04A")
++	HasItemEquiped(Player4,"NPSW04A")
+ 	!HasItemEquiped("Valygar","NPSW04A")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04A","Player4")
++		TakeItemReplace("NPSW04D","NPSW04A",Player4)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player4","NPSW04B")
++	HasItemEquiped(Player4,"NPSW04B")
+ 	!HasItemEquiped("Valygar","NPSW04B")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04B","Player4")
++		TakeItemReplace("NPSW04D","NPSW04B",Player4)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player4","NPSW04C")
++	HasItemEquiped(Player4,"NPSW04C")
+ 	!HasItemEquiped("Valygar","NPSW04C")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04C","Player4")
++		TakeItemReplace("NPSW04D","NPSW04C",Player4)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player4","NPSW04 ")
+-	!HasItemEquiped("Valygar","NPSW04 ")
++	HasItemEquiped(Player4,"NPSW04")
++	!HasItemEquiped("Valygar","NPSW04")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04 ","Player4")
++		TakeItemReplace("NPSW04D","NPSW04",Player4)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player5","NPSW04A")
++	HasItemEquiped(Player5,"NPSW04A")
+ 	!HasItemEquiped("Valygar","NPSW04A")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04A","Player5")
++		TakeItemReplace("NPSW04D","NPSW04A",Player5)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player5","NPSW04B")
++	HasItemEquiped(Player5,"NPSW04B")
+ 	!HasItemEquiped("Valygar","NPSW04B")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04B","Player5")
++		TakeItemReplace("NPSW04D","NPSW04B",Player5)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player5","NPSW04C")
++	HasItemEquiped(Player5,"NPSW04C")
+ 	!HasItemEquiped("Valygar","NPSW04C")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04C","Player5")
++		TakeItemReplace("NPSW04D","NPSW04C",Player5)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player5","NPSW04 ")
+-	!HasItemEquiped("Valygar","NPSW04 ")
++	HasItemEquiped(Player5,"NPSW04")
++	!HasItemEquiped("Valygar","NPSW04")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04 ","Player5")
++		TakeItemReplace("NPSW04D","NPSW04",Player5)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player6","NPSW04A")
++	HasItemEquiped(Player6,"NPSW04A")
+ 	!HasItemEquiped("Valygar","NPSW04A")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04A","Player6")
++		TakeItemReplace("NPSW04D","NPSW04A",Player6)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player6","NPSW04B")
++	HasItemEquiped(Player6,"NPSW04B")
+ 	!HasItemEquiped("Valygar","NPSW04B")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04B","Player6")
++		TakeItemReplace("NPSW04D","NPSW04B",Player6)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player6","NPSW04C")
++	HasItemEquiped(Player6,"NPSW04C")
+ 	!HasItemEquiped("Valygar","NPSW04C")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04C","Player6")
++		TakeItemReplace("NPSW04D","NPSW04C",Player6)
+ END
+ 
+ 
+ IF
+-	HasItemEquiped("Player6","NPSW04 ")
+-	!HasItemEquiped("Valygar","NPSW04 ")
++	HasItemEquiped(Player6,"NPSW04")
++	!HasItemEquiped("Valygar","NPSW04")
+ THEN
+ 	RESPONSE #100
+-		TakeItemReplace("NPSW04D","NPSW04 ","Player6")
++		TakeItemReplace("NPSW04D","NPSW04",Player6)
+ END
+ 
+ 

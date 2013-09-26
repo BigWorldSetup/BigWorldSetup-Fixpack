@@ -1,0 +1,11 @@
+--- vic.tp2	Mon Jun 15 14:57:36 2009
++++ C:\BWP Patchstudio\patched files\vic.tp2	Thu Apr 15 18:42:53 2010
+@@ -7,7 +7,7 @@
+ 
+ AUTHOR ~Victor, balduran@abv.bg~
+ 
+-VERSION ~v2.0~
++VERSION ~v2.0 BWP Fix~
+ 
+ AUTO_TRA ~vic/%s~
+ 

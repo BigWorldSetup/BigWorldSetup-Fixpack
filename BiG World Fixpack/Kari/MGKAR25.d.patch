@@ -1,0 +1,62 @@
+--- Kari\Dialogue\MGKAR25.d	Wed Jul 06 12:57:10 2005
++++ C:\BWP Patchstudio\patched files\Kari\Dialogue\MGKAR25.d	Mon Aug 04 20:04:30 2008
+@@ -3,42 +3,42 @@
+ 
+ 
+ IF ~NumTimesTalkedTo(0)
+-Global("KariSummoned","GLOBAL",1)~ THEN BEGIN KariSummonPP
+- SAY ~O-oh! Um...wow. I don't know what just happened. Where am I?~
+- ++ ~Bhaalspawn are hunted, and I'm in danger. I need your help.~ GOTO KariSummonPP2
++Global("MGKariSummoned","GLOBAL",1)~ THEN BEGIN MGKariSummonPP
++ SAY ~O-Oh! Um...wow. I don't know what just happened. Where am I?~
++ ++ ~Bhaalspawn are hunted, and I'm in danger. I need your help.~ GOTO MGKariSummonPP2
+ END
+ 
+-IF ~~ THEN BEGIN KariSummonPP2
+- SAY ~M-my help? Okay...I'll try my best.~
+- ++ ~Then let's go, Kari.~ GOTO KariJoinPP
+- ++ ~Not at the moment, though. Please wait here and make yourself useful. Dust this place off or something.~ GOTO KariStayPP
++IF ~~ THEN BEGIN MGKariSummonPP2
++ SAY ~M-My help? Okay...I'll try my best.~
++ ++ ~Then let's go, Kari.~ GOTO MGKariJoinPP
++ ++ ~Not at the moment, though. Please wait here and make yourself useful. Dust this place off or something.~ GOTO MGKariStayPP
+ END
+ 
+-IF ~~ THEN BEGIN KariJoinPP
++IF ~~ THEN BEGIN MGKariJoinPP
+  SAY ~As...as you wish.~
+-IF ~~ THEN DO ~SetGlobal("KariJoined","LOCALS",1)JoinParty()~
++IF ~~ THEN DO ~SetGlobal("MGKariJoined","LOCALS",1)JoinParty()~
+ EXIT
+ END
+ 
+-IF ~~ THEN BEGIN KariStayPP
++IF ~~ THEN BEGIN MGKariStayPP
+  SAY ~Dust? Um...okay.~
+-IF ~~ THEN DO ~SetGlobal("KariStayPP","GLOBAL",1)~
++IF ~~ THEN DO ~SetGlobal("MGKariStayPP","GLOBAL",1)~
+ EXIT
+ END
+ 
+-IF ~Global("KariStayPP","GLOBAL",1)~ THEN BEGIN KariPP
++IF ~Global("MGKariStayPP","GLOBAL",1)~ THEN BEGIN MGKariPP
+  SAY ~Oh, you're back! Have...have I dusted this place well enough?~
+- ++ ~Hmm...you missed a spot. Best you stay here until you master the art of dusting.~ GOTO KariStayPP2
+- ++ ~Definately. Would you come with me now?~ GOTO KariJoinPP2
++ ++ ~Hmm...you missed a spot. Best you stay here until you master the art of dusting.~ GOTO MGKariStayPP2
++ ++ ~Definitely. Would you come with me now?~ GOTO MGKariJoinPP2
+ END
+ 
+-IF ~~ THEN BEGIN KariJoinPP2
++IF ~~ THEN BEGIN MGKariJoinPP2
+  SAY ~Of course!~
+-IF ~~ THEN DO ~SetGlobal("KariJoined","LOCALS",1)JoinParty()~
++IF ~~ THEN DO ~SetGlobal("MGKariJoined","LOCALS",1)JoinParty()~
+ EXIT
+ END
+ 
+-IF ~~ THEN BEGIN KariStayPP2
++IF ~~ THEN BEGIN MGKariStayPP2
+  SAY ~I'll try harder, then. Take care, <CHARNAME>.~
+ IF ~~ THEN EXIT
+ END

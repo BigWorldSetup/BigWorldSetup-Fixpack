@@ -1,0 +1,11 @@
+--- LR\tra\english\LRABAIA3.TRA	Sat Aug 21 14:35:46 2004
++++ C:\BWP Patchstudio\patched files\LR\tra\english\LRABAIA3.TRA	Fri Nov 12 16:46:35 2010
+@@ -9,7 +9,7 @@
+ @8    = ~I am sorry I will have to spill your blood!~
+ @9    = ~<CHARNAME>, you are a greedy villain without a speck of honor. My suspicions of you have been validated! First you brought Irenicus back, and now this. I am not staying in the same party as your vile self.~
+ @10   = ~I've put up with a lot, <CHARNAME>... even with your association with Irenicus. But this blatant violation of your promise to help these creatures is taking it too far. I cannot trust you anymore. Goodbye.~
+-@11   = ~No... you must not do this! You are a bad, bad <PRO_BOYGIRL>, <CHARNAME>! Look, even little Boo is gnashing his teeth at this wickedness. He thinks you are not going to reform the evil wizard, but will become evil one yourself. And he is telling me to leave you to your naughty ways!~
++@11   = ~No... you must not do this! You are a bad, bad <PRO_GIRLBOY>, <CHARNAME>! Look, even little Boo is gnashing his teeth at this wickedness. He thinks you are not going to reform the evil wizard, but will become evil one yourself. And he is telling me to leave you to your naughty ways!~
+ @12   = ~<CHARNAME>! I have long suspected you were an evil blight upon Faerun. Your harboring of Irenicus was suspicious enough but this final treachery confirms it. All who stand for virtue will join me and leave your presence.~
+ @13   = ~<CHARNAME>! You have almost convinced me to trust in your better motives when you brought Irenicus back, but I cannot forgive this latest act of treachery. His vile influence clearly has more effect on you than my counsel. The Deva comes from Elysium and the demon could have been turned to serve the Great Balance, if you had shown less laziness and more foresight. I will not stay at your side even for a moment longer.~
+ @14   = ~<CHARNAME>! As a member of the Order of the Radiant Heart I will not stand by while you sow treachery and discord in your wake. Your sheltering of Irenicus from justice was bad enough, but I still had my doubts. I will not stay in your company after this Latest act of vileness.~

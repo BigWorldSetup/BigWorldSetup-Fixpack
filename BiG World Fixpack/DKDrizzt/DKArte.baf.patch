@@ -1,0 +1,11 @@
+--- DKDrizzt\DArtemis\DKArte.baf	Thu Oct 04 20:15:52 2007
++++ C:\BWP Patchstudio\patched files\DKDrizzt\DArtemis\DKArte.baf	Mon Oct 17 12:12:28 2011
+@@ -53,7 +53,7 @@
+   RESPONSE #100
+     SetGlobal("DKPrep","LOCALS",1)
+     SetGlobalTimer("DKNextSpell","LOCALS",10)
+-    SpellNoDec(Myself,0)
++    SpellNoDec(Myself,ROGUE_ASSASINATION)
+ END
+ 
+ IF

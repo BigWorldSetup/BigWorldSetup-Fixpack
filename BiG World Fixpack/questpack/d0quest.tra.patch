@@ -1,0 +1,717 @@
+--- questpack\translations\spanish\d0quest.tra	Tue Jan 25 20:18:10 2005
++++ C:\BWP Patchstudio\patched files\questpack\translations\spanish\d0quest.tra	Tue Feb 16 20:59:51 2010
+@@ -1,9 +1,147 @@
++/* NOTICE TO TRANSLATORS: DON'T BOTHER WITH THIS FIRST LINE PLEASE: */ @-1000 = "Welcome to the Quest Pack for Baldur's Gate II. This mod has"
++
++// Translators, please note well: please translate component names only of the components you plan to translate fully.
++// Untranslated components should retain their english titles to distinguish them from those which have been translated.
++// Components without TRAs should not be translated as their text is subject to change. Check "Fully TRAified components.txt".
++@1 = ~Contenido adicional para los Ladrones de las Sombras~
++@2 = ~Busqueda alternativa de los arpistas/Xzar~
++@3 = ~Extended Reynald Sequence~
++@4 = ~Intriga en la Corona de Cobre~
++@5 = ~Escapando de Brynnlaw~
++@6 = ~Mejoras Varias~
++@8 = ~Busqueda de las pociones de Rahul Kanakia~
++@9 = ~Fortaleza del Druida extendida~
+ @10 = ~Pruebas Infernales Revisado~
+-@12 = ~Oasis Mejorado II (Dialogue Enhancement Only)~
++@11 = ~IO2 Dialogue & Combat Enhancement~
++@12 = ~Oasis Mejorado II (Sólo mejora de diálogo)~
+ @13 = ~Oasis Mejorado II~
++@14 = ~Mejoras de AI~
++@15 = ~Edificio del Consejo Mejorado~
++@16 = ~Guerra de Sangre sobre Carceri~
++@17 = ~Salvando a Sanik en Brynnlaw~
++@18 = ~El robo del Vendedor de Libros~
++@19 = ~Nuevo destino para las bellotas de las driadas~
++@20 = ~La tragedia de Besamen~
++@21 = ~Mas involucracion con los esclavistas~
++@22 = ~Sending The Solamnic Knights Home~
++@23 = ~Nazariel el Lich~
++@24 = ~La Amistad de Quallo~
++@25 = ~Palabra y Sabiduria~
++@26 = ~Atajo en la Infraoscuridad~
++@27 = ~Version Regular~
++@28 = ~Version con un poco de comedia~
++@29 = ~Legado del Ojo Ciego~
++@30 = ~Robo Especial~
++@31 = ~Corte Elfa~
++@32 = ~Mejoras en los jefes~
++@33 = ~Negociacion de Recompensa~
++
++@98 = ~Quest Pack no puede ser instalado sobre BG1Tutu.~
++@99 = ~BP detectado, saltando las mejoras de IA.~
++@100 = ~Saltando los componentes especificos de TOB.~
++
++@101 = ~Carta falsificada~
++@102 = ~Esta es la carta que te entregó Mae'Var para incriminar a Renal Cabellorrojo. Esta detalla el asesinato de algunos Ladrones de las Sombras de alto rango, llevado a cabo por los asesinos Máscaras Nocturnas.~
++@103 = ~Larell~
++@104 = ~¡Ven aquí! ¡Unámonos en la batalla!~
++@105 = ~Guantes para apuñalar por la espalda~
++@106 = ~Guantes para apuñalar por la espalda
++Estos raros guantes encantados solo son creados por los asesinos de mas alto rango de Máscaras Nocturnas.  Se rumorea que sus creadores originales fueron los asesinos portadores de magia de Sembia, y desde entonces fueron copiados por todos los gremios del continente.  A pesar de todo, estos guantes tienen la intención de convertir a los asesinos de Máscaras Nocturnas en peligrosos adversarios.
++
++ESTADISTICAS:
++
++Incrementa el modificador de apuñalamiento por la espalda en 1 mientras esté equipado
++
++No utilizable por:
++ Luchador
++ Druida
++ Clérigo
++ Mago
++ Bardo~
++
++@107 = ~Anillo de Aran de Invisibilidad~
++@108 = ~Anillo de Aran de Invisibilidad
++Este anillo te fué entregado como recompensa por el lider de los Ladrones de las Sombras, Aran Linvail. Su creación fué encargada por un lider Ladron de las Sombras que buscaba escapar de las situaciones delicadas; trágicamente no fué capaz de ayudar a su portador cuando Linvail ascendió al liderazgo político.
++
++ESTADISTICAS:
++
++Especial:  El portador puede lanzar Invisibilad 3 veces al día
++
++No utilizable por:
++ Asesino de magos~
++
++@109 = ~Asesinos de Máscaras Nocturnas~
++@110 = ~Este es el ave que te entregó Meronia. Es un asesino destinado a entregarse al ingenuo Mago, Xzar.~
++@111 = ~¡Uhh...uhhhhh...uuuaaaAARRGHH!~
++@112 = ~¡Monty!  ¡Monty!  ¡Noooooo!~
++@113 = ~¡Puedo salvarte aún así!~
++@114 = ~Celile~
++@115 = ~¡Rápido, debemos hacerlo antes de que sus compañeros despierten!~
++@116 = ~¡Esto te enseñará a pagar tus deudas!~
++@117 = ~Recaudador de Deudas~
++@118 = ~Moiya~
++@119 = ~¡Mamita! ¡¿Estás herida?!~
++@120 = ~¡Permíteme matarla y salir de aquí!~
++@121 = ~Lorick~
++@122 = ~Sarem~
++@123 = ~Dahlia~
++@124 = ~Besamen~
++@125 = ~Baisera~
++@126 = ~Alyce~
++@127 = ~Dagny~
++@128 = ~Sahen~
++@129 = ~Nazariel~
++@130 = ~¡Alto, intrusos!~ [d0qpnaz1]
++@131 = ~Amuleto de Nazariel~
++@132 = ~Habiendo seguido un estrecho tunel por algún tiempo, adviertes que comienza a dirigirse profundamente por debajo del suelo. Eventualmente comienza a ensancharse, revelando una luz mas adelante.~
++@133 = ~Indigo~
++@134 = ~Jadarath~
++@135 = ~Phluafae~
++@136 = ~Aprendiz encapuchado~
++@137 = ~Este amuleto contiene la escencia del antiguo lich Nazariel, cuyo deseo final fué salir a la superficie y ser libre.~
++@138 = ~Bellotas de Phluafae~
++@139 = ~Siendo similares en apariencia a las bellotas de las dryadas que le diste a Phluafae, la dura cubierta de estas semillas albergan un matiz ligeramente oscuro. Quizas esa aura es producto de algun propósito maligno.~
++@140 = ~Gema con forma de lágrima~
++@141 = ~Lágrima de dryada~
++@142 = ~Una pálida piedra púrpura. Brilla con una opaca luz interior.~
++@143 = ~Adquirida con un precio sanguinario y despiadado, pocos aventureros tienen el estómago suficiente para llevar este objeto. La última lágrima de una dryada, cristalizada con su último frío aliento, esta piedra brilla con una aterradora luz. El que la lleve se sentirá tocado con su prolongado legado de belleza, pero esta bendición trae un alto precio, la gema representa la debilidad de la vida de su víctima, aplastada por una mano cruel.
++
++ESTADISTICAS:
++  Inmunidad a Encantamiento mientras esté equipado
++  +1 bonificación al Carisma
++  -1 penalización a Constitución
++
++No utilizable por:
++ Personajes con alineamiendo Bueno
++ Asesino de magos~
++
++@144 = ~Este es el anillo grabado que llevaba Rayic Gethras. Trae un encantamiento menor, pero aparte de eso es un objeto con un significado puramente sentimental.
++
++ESTADISTICAS:
+ 
+-@147 = ~Dejad las armas!~
+-@148 = ~A las armas!  El Hijo de Bhaal nos ha engañado!~ ~A las armas!  La Hija de Bhaal nos ha engañado!~
+++1 bonificación a todas las tiradas de salvación
++
++No utilizable por:
++ Asesino de magos~
++@145 = ~Anillo grabado de Rayic~
++@146 = ~Escolta Encapuchado~
++@147 = ~¡Dejad las armas!~
++@148 = ~¡A las armas!  ¡El Hijo de Bhaal nos ha engañado!~ ~¡A las armas!  ¡La Hija de Bhaal nos ha engañado!~
++@149 = ~Lista de Pociones de Jadarath~
++@150 = ~Esta es la lista de pociones que te entregó Jadarath. Él acordó un sueldo por cada poción de su lista que sea llevada.
++
++1. Poción de Invisibilidad
++2. Aceite de Velocidad
++3. Poción de Resistencia al Frío
++4. Poción de Exploción
++5. Poción de Fortaleza
++6. Poción de Aislamiento
++7. Poción de Bloqueo Mágico
++8. Poción de Ojos Espejados
++9. Poción de Poder
++10. Poción de Perspicacia
++11. Poción de Libertad
++12. Poción de Forma de Piedra~
+ 
+ @151 = ~Has sido agraciado con un +2 a tu destreza.~
+ @152 = ~Has sido agraciado con +30% de resistencia a las armas cortantes.~
+@@ -19,4 +157,561 @@
+ @162 = ~Tu alineamiento ha cambiado a Legal Neutral.~
+ @163 = ~Tu alineamiento ha cambiado a Neutral Auténtico.~
+ @164 = ~Tu alineamiento ha cambiado a Caótico Neutral.~
+-@165 = ~Has perdido las habilidades especiels conferidas por tu deidad.~
++@165 = ~Has perdido las habilidades especiales conferidas por tu deidad.~
++
++@166 = ~Bendición de Jadarath~
++@167 = ~Este cinturón te fué entregado por Jadarath, quien a partido hacia reinos desconocidos. Imbuído con una pequeña porción de su extraña magia, puede en ocaciones salvar al portador de ciertos tipos de muerte. A pesar de ser un maestro de la magia, Jadarath era desafortunadamente un pésimo sastre, por lo que este cinturón es desproporcionado e incómodo de llevar.
++
++ESTADISTICAS:
++
++Especial: El portador puede lanzar Sanar una ves al día
++
++No utilizable por:
++ Asesino de magos~
++
++@168 = ~Cuando el aire fresco de la superficie tocó el amuleto de Nazarial, este se desintegra, liberando por fin al antiguo lich.~
++
++@169 = ~Pociones para Jadarath.
++
++Un botánico llamado Jadarath, quien reside en las alcantarillas del Distrito del Templo, me ha pedido que junte pociones para algún misterioso experimento suyo. Me pagará por cada una que reciva, y tambien habló de otra recompensa si le ayudo en todo lo que necesite. Las pociones que requiere son las siguientes:
++
++1. Poción de Invisibilidad
++2. Aceite de Velocidad
++3. Poción de Resistencia al Frio
++4. Poción de Explosiones
++5. Poción de Fortaleza
++6. Poción de Aislamiento
++7. Poción de Bloqueo Mágico
++8. Poción de Ojos Espejados
++9. Poción de Poder
++10. Poción de Perspicacia
++11. Poción de Libertad
++12. Poción de Forma de Piedra~
++
++@170 = ~Pociones para Jadarath.
++
++Despues de entregarle las pociones que necesita para sus experimentos en las alcantarillas, Jadarath necesitaba juntarlas y beberlas para terminar con su investigación. Aparentemente sobreestimó las terribles concecuencias de tal acción y su cuerpo fué destruído por la confluencia de poder mágico. Parece que los motivos del experimento relacionado con los poderes con los que trabajaba seguirán siendo un misterio. O quizas nunca existieron.~
++@171 = ~Pociones para Jadarath.
++
++Despues de entregarle las pociones que necesita para sus experimentos en las alcantarillas, acepté probar la mezcla de Jadarath. La mezcolanza parece tener desagradables efectos secundarios, pero él asegura haber acabado su "trabajo". Despues de examinar mi sangre tomó algo que le otorgó extraños poderes y desapareció. Solo puedo esperar que no haya desatado algo sobre el mundo.~
++@172 = ~Familia de Jadarath.
++
++Jadarath se fué para enfrentar a Sidhe y Janie, su esposa e hija, en la parte suroeste del Distrito del Puente.~
++@173 = ~Familia de Jadarath.
++
++De acuerdo a la declaración de Sidhe acerca de los eventos, Jadarath nunca salvó a su familia de los bandidos, but had in fact murdered a daughter he has no memory of in front of Janie. Despues de gastar mucho tiempo haciendo extraños experimentos en las alcantarillas, mi intervención llevó a Jadarath a abandonar sus investigaciones in order to attone for his actions, somehow.~
++@174 = ~Familia de Jadarath.
++
++De acuerdo a la declaración de Sidhe acerca de los eventos, Jadarath nunca salvó a su familia de los bandidos, pero asesinó a una de las hijas a la que no recuerda en frente de Janie. Luego de esta dolorosa reunion, Jadarath decidió regresar a las alcantarillas para continuar con sus experimentos.~
++@175 = ~Guardaespaldas Pirata~
++@176 = ~Tredor~
++@177 = ~Constitución permanentemente reducida.~
++@178 = ~Sidhe~
++@179 = ~Janie~
++@180 = ~Esta poción protegerá a quien la beba de los ataques de miradas, incluyendo los de los basiliscos, momias, moles sombrías, y otras criaturas.  El efecto durará 10 turnos o hasta que se dispele.~
++@181 = ~Mirada de Desesperación~
++@182 = ~Contingencia - Invisibilidad Mejorada~
++@183 = ~¡¡¡Aiiiiee!!!~
++@184 = ~Os planto, hermanas, en nuestra arboleda sagrada.~
++@185 = ~¡Levantaos y sed libres!~
++@186 = ~¿Qué?~
++@187 = ~¡¿Qué pasa?!~
++@188 = ~¿Cania...?~
++@189 = ~¿Elyme...?~
++@190 = ~¿Ulene...?~
++@191 = ~¡Estoy abandonada! ¡Todas estamos abandonadas!~
++
++@192 = ~No entregues tu vida por esos documentos políticos menores de Máscaras Nocturnas.  Mae'Var está acreditado a ellos; las Máscaras son aparentemente sus sigilosos aliados.~
++@193 = ~Mae'Var ha estado negociando con las Máscaras Nocturnas con la intención de reforzar su posición y traicionar a Renal.  Genialmente planeado, pero lo he descubierto.~
++@194 = ~Las Máscaras son un gremio despiadado de salteadores de caminos, bandidos y bandoleros ubicados en el centro de corrupción de Puerta Oeste.  Obviamente desean expandirse.~
++@195 = ~Si, tengo las evidencias que necesitas en estas escrituras.  Parece que Mae'Var ha estado negociando con las Máscaras Nocturnas.~
++@196 = ~Has caído en la trampa, picaste el anzuelo. Ahora eres vulnerable, ¡y mis asesinos estan en su lugar! ¡Entrégate a las Máscaras Nocturnas!~
++@197 = ~Er, hola. Yo... te he estado siguiendo... y estoy excesivamente apenado acerca del lío con esa Ama. Mi informante me dijo que su banda lleva la insignia de las Máscaras Nocturnas.~
++@198 = ~Una carta de Mae'Var a los asesinos de las Máscaras Nocturnas solicitando la muerte de Renal Cabellorrojo. Este es justo el tipo de prueba que Renal necesita.~
++@199 = ~Portador del Escudo de Tethyr~
++@200 = ~Bastión~
++@201 = ~Shieldbash~
++@202 = ~Mientras buscas un camino en esta sección de las sombrías cavernas, un débil eco proveniente de un muro capta tu atención. Es un pasaje oculto en alguna parte en la oscuridad.~
++@203 = ~Encuentras varias marcas chamuscadas en la roca. Las huellas de los Kua-Toa están presentes alrededor del punto en el cual el tunel se ensancha, pero se detienen abruptamente poco después.~
++@204 = ~Este es el cuerpo de Montaron, el compañero del mago Xzar. Al parecer si los Arpistas lo escondieran podrían hacerte enviarle el asesino a Xzar.~
++@205 = ~Mago castigado~
++@206 = ~Lemure~
++@207 = ~Corazón de demonio~
++@208 = ~El corazón del demonio es extrañamente escalofriante al tacto. Un gran número de púas encierran el carnoso centro del órgano, y debes tener un gran cuidado de evitar el flujo de sangre que sale de sus afiladas extremidades. El golpeteo rítmico como un continuo azote es dificil de soportar, y por momentos hace un súbito movimiento dentro de tu mochila, como si intentara escapar por voluntad propia.~
++@209 = ~A falta de una solución mas obvia, alimentas con el corazón del demonio a una de las muchas bocas incrustadas en la estructura de carne, esperando que pueda darte un aceptable sustituto del corazón de demonio que usaste previamente. Un momento despues la esfera tiembla y puedes sentir que comienza a llenarse de energía.~
++@210 = ~Adrozel~
++@211 = ~Kram~
++@212 = ~Cimitarra +1, Shazzellim
++Esta cimitarra es de la peor calidad, pero en su interior reside gran poder y maldad.  Creada con el solo propósito de cazar Arpistas, Shazzellim es mas que capaz de llevar a cabo esa tarea.  Con un golpe de esta espada el Arpista debe superar una tirada de salvación contra hechizos o morirá.  Con la pericia de los Magos Rojos de Thay, esta espada también tiene el poder de Vocalizar, por lo cual son con frecuencia entregadas a los Luchador-Magos en su cargo de Magos.  De mas está decir que el poseedor de esta espada no será bien visto por Arpistas.
++
++ESTADISTICAS
++
++Habilidades poseídas:
++ Vocalizar
++
++Habilidades de combate:
++ Cualquier Arpista que sea golpeado debe hacer una tirada de salvación contra hechizos con un penalizador de -2 o morirá
++
++Daño:  1D8 +1
++THAC0: +1
++Tipo de daño:  Cortante
++Peso:  3
++Factor de velocidad: 4
++Talento marcial: Cimitarra/Wakizashi/Ninja-To
++Tipo:  1 mano
++Requisitos: Fuerza 10
++No utilizable por:
++ Clérigo
++ Mago
++ Ladrón
++ Señor de las Bestias
++ Personajes de alineamiento bueno~
++@213 = ~Jaheira se echa para atras con disgusto ante el arma. "Esta hoja ha acabado con muchos Arpistas, <CHARNAME>. No la esgrimiré."~ [GAM_47]
++@214 = ~Con la Lágrima de Bhaal retirada, no hay nada mas interesante aquí.~
++@215 = ~¡Noooo! ¡¿Por qué no está funcionando?!~
++@216 = ~Te saludo, tejedor de hechizos. Yo soy el canal a traves del cual tus deseos serán cumplidos. Decide tu deseo.~
++@217 = ~Deseo que el padre de este niño vuelva a la vida.~
++@218 = ~Entonces eso será.~
++@219 = ~Y me retiro.~
++@220 = ~Con Faldorn muerta, y su vínculo con la arboleda violentamente dañado, la tierra misma parece dejar de lamentarse. Parece que tu negligencia con los rituales druídicos ha tomado su derecho.~
++@221 = ~Mientras tu mente pelea contra la magia siniestra que Quallo controla o lo contola a él, tu cuerpo es transformado en una horrible criatura de pesadilla.  Como pedido, atacas a tus compañeros, como la voz te susurra silenciosamente a traves de tu mente, "Ellos quieren alejarte de mí, amigo.  Ellos no son amigos.  Deben morir."
++
++Tu mente se tambalea con horror al ver que cada uno de tus camaradas a caído contra eso que tanto has enfrentado para mantener enterrado.  La escencia de Bhaal.  Que inapreciable poder contiene la criatura que te poseyó, ¿así de facil puede controlarte a tí y a tu corrupta alma?  Quizas nunca se sabrá.
++
++Estás tranquilo, y como no podría ser de otra manera, solo puedes ver con un absorto interes como la sangre que le queda a tus amigos fluye de sus magullados cadáveres.  Tu visión se nubla, y te deshaces del siniestro perfil de Quallo como si se encorvara sobre sus postradas figuras, y comienza a cubrir su derramada sangre.  Denuevo su repulsiva y siniestra voz hace eco en tu mente, "Amigos por siempre, seremos.  Y tu eres un poderoso amigo, verdaderamente."
++
++La eternidad aguarda, pero no habrá hazañas legendarias o vastas riquezas.  Por tí, solo está esta desagradable ruptura, y este viejo loco.~
++@222 = ~EL PRECIO DE LA AMISTAD~
++@223 = ~Mujer esclava~
++@224 = ~Kobold solitario~
++@225 = ~Hobgoblin~
++@226 = ~Mercenarios Hobgoblin~
++@227 = ~Bibliotecario~
++@228 = ~Historial del Valle de las Sombras, Vol. 1~
++@229 = ~Historial del Valle de las Sombras, Vol. 2~
++@230 = ~Historial del Valle de las Sombras, Vol. 3~
++@231 = ~Historial del Valle de las Sombras, Vol. 4~
++@232 = ~Historial del Valle de las Sombras, Vol. 5~
++@233 = ~Historial del Valle de las Sombras, Vol. 6~
++@234 = ~Historial del Valle de las Sombras, Vol. 7~
++@235 = ~Historial del Valle de las Sombras, Vol. 8~
++@236 = ~Historial del Valle de las Sombras, Vol. 9~
++@237 = ~Historial del Valle de las Sombras, Vol. 10~
++@238 = ~Historial del Valle de las Sombras, Vol. 11~
++@239 = ~Historial del Valle de las Sombras, Vol. 12~
++@240 = ~Historial del Valle de las Sombras, Vol. 13~
++@241 = ~Historia del Drow, Vol. 1~
++@242 = ~Historia del Drow, Vol. 2~
++@243 = ~Historia del Norte, Vol. 1~
++@244 = ~Historia del Norte, Vol. 2~
++@245 = ~Historia del Norte, Vol. 3~
++@246 = ~Historia del Norte, Vol. 4~
++@247 = ~Historia del Norte, Vol. 5~
++@248 = ~Historia del Norte, Vol. 6~
++@249 = ~Historia del Norte, Vol. 7~
++@250 = ~Historia del Norte, Vol. 8~
++@251 = ~Historia del Norte, Vol. 9~
++@252 = ~Historia del Norte, Vol. 10~
++@253 = ~Historia de Aguas Profundas, Vol. 1~
++@254 = ~Historia de Aguas Profundas, Vol. 2~
++@255 = ~Historia de Aguas Profundas, Vol. 3~
++@256 = ~Historia de Aguas Profundas, Vol. 4~
++@257 = ~Historia de Aguas Profundas, Vol. 5~
++@258 = ~Historia de Aguas Profundas, Vol. 6~
++@259 = ~¿Pero eso no es lo que te pedí que hicieras, o sí?  ¡Necesitaba evidencias antes de ordenar la muerte de Mae'Var!  ¡¡Ahora hay que ver como puedo crear las evidencia despues de esto!!~
++@260 = ~¡Pero tengo evidencia de que la traición de Mae'Var todavía continua!~
++@261 = ~Carrack~
++@262 = ~Lillian~
++@263 = ~Cora~
++@264 = ~Arris~
++@265 = ~Torturador~
++@266 = ~Evidentemente Carrack no lo hizo mejor en su intento de venganza. Su cuerpo ha sido saqueado y avandonado, posiblemente como advertencia a otros.~
++@267 = ~Eye~
++@268 = ~Abraxxi~
++@269 = ~Dispondré de Arkanis, Kachiko y otros, nuestros mejores asesinos, se uniran a tí cuando entres en las catacumbas de Bodhi.  Me aseguraré de que Bodhi deje de fastidiarme para siempre.~
++@270 = ~Contingencia en cadena - Protección contra armas mágicas~
++@271 = ~Contingencia en cadena - Spell Turning~
++@272 = ~Contingencia en cadena - Mislead~
++@273 = ~Disparador de conjuros - Escudo igneo~
++@274 = ~Contingencia en cadena - Piel de piedra~
++
++@99999 = ~Traicionando a Renal.
++
++Mae'Var sugirió que en ves de buscar pruebas sobre su traición a Renal Cabellorrojo, yo podría pantar evidencias en la cofradía de los Ladrones de las Sombras para incriminar al propio Renal. Debo volver con él una ves que deposite los documentos.~
++
++@99998 = ~Las convocaciones de Mae'Var.
++
++Mae'Var envió un mensajero para que me reúna con él en su cofradía inmediatamente. Por que razón no lo sé, pero seguramente tiene algún trabajo pendiente.~
++
++@99997 = ~Las convocaciones de Mae'Var.
++
++Mae'Var es mas ambicioso de lo que aparenta a simple vista. Busca modificar el balance de poder en Athkatla asesinando al Maestro de las sombras Aran Linvail. Debo reunirme con su contacto Larell en la cofradía de Renal y asistirlo en el asalto a Linvail.~
++
++@99996 = ~Las convocaciones de Mae'Var.
++
++Mae'Var es mas ambicioso de lo que aparenta a simple vista. Busca modificar el balance de poder en Athkatla asesinando al Maestro de las sombras Aran Linvail. Rechacé asistirlo, y posiblemente haga bien en alertar a Linvail de la amenaza de Larell.~
++
++@99995 = ~Acabando con los Ladrones de las Sombras.
++
++El inspector en jefe Brega preguntó si estaba ayudando a terminar con la presencia de los Ladrones de las Sombras en Athkatla. Me informó que ultimamente se han vuelto bastante problemáticos, y decidió entrar en acción en contra de la voluntad del Concilio. Debo reunirme con algunos de los guardias de la ciudad fuera de la cofradía naranja en el Distrito del Puerto.~
++
++@99994 = ~Acabando con los Ladrones de las Sombras.
++
++Como pidió el inspector en jefe Brega, eliminé al lider de los Ladrones de las Sombras en Athkatla, Aran Linvail. Esto debería reducir sus actividades por un tiempo, pero esto no significa que sea el fin de sus operaciones en la ciudad.~
++
++@99993 = ~Acabando con los Ladrones de las Sombras.
++
++Informé a Bylanna del plan del inspector Brega contra los Ladrones de las Sombras. Ella informará al Concilio del giro que tomaron los eventos, y enviará soldados para detener a Brega.~
++
++@99992 = ~Aliándome con Aran.
++
++Aran no parece haber anticipado la estratagema que tuvo lugar dentro de los Ladrones de las Sombras. Sin embargo, está agradecido por mi ayuda en el asunto, y me ordenó que elimine a Mae'Var y Larell.~
++
++@99991 = ~Aliándome con Aran.
++
++Aran no parece haber anticipado la estratagema que tuvo lugar dentro de los Ladrones de las Sombras. Sin embargo, está agradecido por mi ayuda en el asunto, y con Mae'Var muerto, me ordenó eliminar a su cómplice, Larell.~
++
++@99990 = ~Aliándome con Aran.
++
++Aran no parece haber anticipado la estratagema que tuvo lugar dentro de los Ladrones de las Sombras. Sin embargo, está agradecido por mi ayuda en el asunto, y me ordenó eliminar al traidor de Mae'Var.~
++
++
++@99989 = ~Advirtiendo a Aran.
++
++Advertí a Aran de la conspiración de Mae'Var contra su vida, ante la que pareció más que sorprendido. Sin embargo, me está muy agradecido por mi ayuda en el asunto, y me ha pedido que elimine a Mae'Var y a Larell.~
++
++@99988 = ~Ayudando a Aran Linvail.
++
++Advertí al Maestro de la Sombras Aran Linvail de una conspiración contra su vida por miembros de alto rango de su propia cofradía, eliminando después a los traidores en su nombre. Pareció muy agradecido, y seguramente he ayudado a estabilizar su posición en la ciudad.~
++
++@99987 = ~Acabando con los Ladrones de las Sombras.
++
++Tras ayudar a Aran Linvail a eliminar a los traidores de su propia cofradía, también me volví contra él. Los Ladrones de las Sombras ahora no tienen líder en Athkatla, y lo más probable es que se disgreguen hasta su desaparición. Quizás le haya hecho un favor a la ciudad.~
++
++@99986 = ~Asuntos con las Máscaras de la Noche.
++
++Tras ayudar a Larell y a Mae'Var a eliminar al Maestro de la Sombras Aran Linvail, rechacé seguir ayudándole y se volvió contra mí. Aunque escapó antes de que pudiera interrogarle a fondo, sospecho que esta no será la última vez que sepa de Larell.~
++
++@99985 = ~Asuntos con las Máscaras de la Noche.
++
++Tras ayudar a Larell y a Mae'Var a eliminar al Maestro de la Sombras Aran Linvail, también me volví contra ellos. Aunque Larell escapó antes de que pudiera interrogarle a fondo, sospecho que esta no será la última vez que sepa de él.~
++
++@99984 = ~La última petición de Larell.
++
++Tras ayudar a Larell liquidando a Aran Linvail y a sus partidarios de parte de Mae'Var, Larell me pidió que traicionara al propio Mae'Var. Parece ser que desea controlar a los Ladrones de las Sombras de Athkatla en solitario.~
++
++@99983 = ~Asuntos con las Máscaras de la Noche.
++
++He jugado un papel muy importante en la usurpación del poder de los Ladrones de las Sombras de Athkatla y el establecimiento de las Máscaras de la Noche en la ciudad. Eliminé al Maestro de la Sombras Aran Linvail de parte de Larell, quien después traicionó a su cómplice, Mae'Var. Aún queda por ver qué cambiará con las Máscaras de la Noche en el poder.~
++
++@99982 = ~Aliándome con Mae'Var.
++
++Tras advertirle del intento de Larell de traicionarlo, Mae'Var me pidió que le ayudara una vez más eliminando a su rival. En vez de matar a Mae'Var voy a acabar con Larell.~
++
++@99981 = ~Mae'Var en el poder.
++
++He jugado un papel importante en situar a Mae'Var en el cargo de los Ladrones de las Sombras de Athkatla. Al final sus artimañas con las Máscaras de la Noche se volvieron en su contra, pero elegí ayudarle a él en vez de a su ex cómplice, Larell. Mae'Var parece satisfecho con el resultado.~
++
++@99980 = ~Un nuevo rol para Reynald.
++
++He aceptado ayudar a Reynald de Chatillon a encontrar un nuevo papel en su vida, uno más apropiado que el de caballero. Voy a investigar la posibilidad de que se una a la guardia de la ciudad de Athkatla. Puedo encontrarle en el Distrito del Puente cuando haya hablado con alguien de las autoridades.~
++
++@99979 = ~Un nuevo rol para Reynald.
++
++He hablado con Bylanna sobre que Reynald se una a la guardia. Pareció agradarle la oferta, y me pidió que le dijera a Reynald que fuera a hablar con ella.~
++
++@99978 = ~Un nuevo rol para Reynald.
++
++Hablé con Bylanna de parte de Reynald de Chatillon sobre que se una a la guardia de la ciudad de Athkatla. El trato pareció beneficiar a ambas partes, proporcionando un papel virtuoso a Reynald y un soldado más a Bylanna.~
++
++@99977 = ~Averiguar qué pasó con Montaron.
++
++Frustré el plan de los Arpistas de asesinar a Xzar, advirtiéndole del peligro y dejando que matara al asesino. Sin embargo, aún queda encontrar a Montaron, y debo volver a entrar en el cuartel general de los Arpistas para resolver ese asunto.~
++
++@99976 = ~Averiguar qué pasó con Montaron.
++
++Ayudé al mago Xzar a recuperar el cadáver de su compañero Montaron del cuartel general de los Arpistas, linchando a los Arpistas en el proceso. Xzar pareció divertirse ante el cambio de la situación.~
++
++@99975 = ~Averiguar qué pasó con Montaron.
++
++Ayudé al mago Xzar a recuperar el cadáver de su compañero Montaron del cuartel general de los Arpistas. Sin embargo, tracé una línea en matar a los Arpistas, y esto pareció disgustarle.~
++
++@99974 = ~Averiguar qué pasó con Montaron.
++
++Ayudé al mago Xzar a recuperar el cadáver de su compañero Montaron del cuartel general de los Arpistas, linchando después a los Arpistas como castigo. Xzar pareció divertirse ante el cambio de la situación.~
++
++@99973 = ~El problema de deudas de Moiya.
++
++Una mujer llamada Moiya se me acercó en los barrios bajos y me explicó un problema que tenía con un prestamista llamado Celile, al que puedo encontrar en la Corona de Cobre. Ella no puede devolverle el dinero que le debe y está preocupada por las posibles consecuencias. Voy a hablar con Celile para intentar llegar a algún tipo de acuerdo.~
++
++@99972 = ~El problema de deudas de Moiya.
++
++Celile me explicó que Moiya no tenía nada que temer. Me dijo que le exigirá que pague sus deudas, y que puede que alguno de sus socios la visite en el futuro como resultado, pero negó que corriera peligro alguno.~
++
++@99971 = ~El problema de deudas de Moiya.
++
++Hablé con Celile de parte de Moiya, y me explicó que ella no tenía de qué preocuparse. Puede que alguno de sus socios la visite en el futuro, pero ella se siente más segura tras lo que he hecho.~
++
++@99970 = ~El problema de deudas de Moiya.
++
++Uno de los hijos de Moiya me trajo un mensaje suyo, pidiéndome que me encontrara con ella en los barrios bajos lo antes posible. No sé por qué, pero me dijo que había pasado algo terrible, y sospecho que ha habido juego sucio.~
++
++@99969 = ~El problema de deudas de Moiya.
++
++Una de las hijas de Moiya, una niña llamada Carla, ha sido secuestrada por los socios de Celile por no haber pagado su deuda. Parece ser que me engañó cuando me dijo que no corría ningún peligro. Voy a hablar con Celile para ver qué se puede hacer con la situación.~
++
++@99968 = ~El problema de deudas de Moiya.
++
++Uno de los matones de Celile me dijo que matarían a Carla si no se pagaba la deuda en el plazo de un día. Voy a encontrarme con él al sur de los barrios bajos para realizar el pago. El matón me dijo que el propio Celile desapareció hace tiempo.~
++
++@99967 = ~El problema de deudas de Moiya.
++
++El hombre de Celile me insinuó dónde podría encontrar a la hija de Moiya. Me dijo que estaba "en algún lugar bajo tierra", pero se negó a revelarme nada más si no le pagaba.~
++
++@99966 = ~El problema de deudas de Moiya.
++
++Pagué al hombre de Celile la deuda de 6250 piezas de oro, y me reveló que la hija de Moiya estaba retenida en una de las tumbas del distrito del cementerio. Ahora la liberarán, pero tendré que buscarla en el interior de las tumbas.~
++
++@99965 = ~El problema de deudas de Moiya.
++
++Pude someter a uno de los hombres de Celile, y me reveló el paradero de la hija de Moiya. Está retenida en una de las tumbas del distrito del cementerio. Tendré que buscarla en el interior de las tumbas y enfrentarme a quienes la custodian.~
++
++@99964 = ~El problema de deudas de Moiya.
++
++Uno de los hombres de Celile apareció para recordarme que se me había acabado el tiempo, y que la hija de Moira iba a morir. Sin embargo, quizás no sea demasiado tarde para salvarla de su funesto destino.~
++
++@99963 = ~El problema de deudas de Moiya.
++
++Rescaté a la hija de Moiya de la tumba del cementerio en la que estaba retenida. Parecía aliviada al ser libre de nuevo, y eso debería consolar en parte a su madre.~
++
++@99962 = ~El problema de deudas de Moiya.
++
++No llegué a tiempo para salvar a la hija de Moiya de los matones que la custodiaban, y fue asesinada ante mis ojos. No sé cómo darle esta noticia a su desesperada madre.~
++
++@99961 = ~El problema de deudas de Moiya.
++
++Intenté ayudar a una mujer llamada Moiya a resolver un problema que tenía con un cobrador de deudas llamado Celile. Por desgracia no todo salió bien, ya que su hija fue asesinada por los hombres de Celile. Moiya está desolada.~
++
++@99960 = ~El problema de deudas de Moiya.
++
++Ayudé a una mujer llamada Moiya a resolver un problema que tenía con un cobrador de deudas llamado Celile. El hombre recurrió a secuestrar a su hija para chantajearla y que le devolviera el dinero, pero pude recuperar a la niña antes de que le hicieran daño.~
++
++@99959 = ~Encontrando a Baisera para Besamen.
++
++Me encontré a un extraño hombre muerto viviente que se hacía llamar Besamen en una cripta del cementerio de Athkatla. Me pidió que encontrara a una mujer que había sido su esposa antes de su fallecimiento, Baisera. El hombre piensa que un tendero del Paseo de Waukin llamado Mira puede saber algo sobre el actual paradero de la mujer.~
++
++@99958 = ~Encontrando a Baisera para Besamen.
++
++El tendero Mira me dijo que puedo encontrar a Baisera en las habitaciones traseras de la Corona de Cobre.~
++
++@99957 = ~Encontrando a Baisera para Besamen.
++
++Encontré a Baisera en las habitaciones traseras de la Corona de Cobre, y la convencí para que buscara a su difunto esposo. Debo encontrarme con ella en el cementerio lo antes posible.~
++
++@99956 = ~Encontrando a Baisera para Besamen.
++
++Una criatura muerta viviente del cementerio llamada Besamen me pidió que buscara a la mujer que había sido su esposa antes de su fallecimiento, Baisera. La conduje hasta él, y su último abrazo de amor le trajo la paz.~
++
++@99955 = ~Los Caballeros de Solamnia atrapados.
++
++Los Caballeros de Solamnia que fueron atrapados en la Esfera de los Planos y traídos a este plano me han pedido que intente encontrar una forma de que vuelvan a casa. Veré qué puedo hacer. Quizás los Magos Encapuchados u otros usuarios de magia puedan ayudarme.~
++
++@99954 = ~Enviando a los Caballeros de Solamnia a casa.
++
++He informado a los Caballeros de Solamnia de la oferta hecha por el prelado de la Muy Noble Orden del Radiante Corazón. Han decidido aceptar y se han marchado a la Orden. Es un final agridulce, ya que ellos habrían preferido volver a su verdadero hogar.~
++
++@99953 = ~Los Caballeros de Solamnia en la Orden.
++
++He hablado con el prelado de la Muy Noble Orden del Radiante Corazón. Me ha dicho que los Caballeros de Solamnia pueden quedarse con ellos como invitados de honor. Es una alternativa viable si no pueden regresar a su hogar.~
++
++@99952 = ~Ribald puede liberar a los Caballeros de Solamnia.
++
++Ribald, del Mercado del Aventurero, tiene los medios para enviar a los Caballeros de Solamnia de la Esfera de los Planos a su hogar, pero necesita 9000 piezas de oro.~
++
++@99951 = ~He pagado por los Caballeros.
++
++Ribald ha cogido las 9000 piezas de oro y ha prometido enviar un mago a la esfera para teleportar a los caballeros a su hogar. A ese precio, será mejor que se presente.~
++
++@99950 = ~Los Caballeros de Solamnia son libres.
++
++Khollynnus Paac llegó a la Esfera de los Planos como había dicho y los Caballeros de Solamnia han sido enviados a su casa. Es agradable ver que han cumplido su deseo.~
++
++@99949 = ~Engañando a Edwin.
++
++En vez de matar a Rayic Gethras como me pidió Edwin, he hecho un trato con él. Me ha dado su sello para convencer a Edwin de que está muerto. Cuando lo haya hecho, debo llevar a Edwin ante Rayic y devolverle el anillo.~
++
++@99948 = ~Encontrar pruebas de la traición de Mae'Var.
++
++El asistente de Mae'Var ha resultado ser el mago thayino que me encontré en la Costa de la Espada. Me ha encomendado matar a Rayic Gethras, un Mago Encapuchado que vive en un edificio gris de tres plantas hacia el oeste del Distrito Portuario. Sabré que está en casa si tiene la puerta abierta. Cuando Rayic esté muerto debo traerle su sello a Edwin como prueba.~
++
++@99947 = ~Intentando entrar en el Sanatorio.
++
++El camarero de El Mono Vulgar me dijo que el asesino que intentó matar a Sanik fue enviado por la Dama Galvena, la señora de la Cofradía de Cortesanas local y una mujer poderosa y rica en Brynn Ley.~
++
++@99946 = ~Intentando entrar en el Sanatorio.
++
++Me encontré con Sanik en el Mono Vulgar y fui testigo de un atentado contra su vida. Me ha prometido ayudarme a entrar en el sanatorio si rescato a su esposa, Claire, de las garras de la propietaria de la mancebía local, la Dama Galvena.~
++
++@99945 = ~Intentando entrar en el Sanatorio.
++
++Me encontré con Sanik en el Mono Vulgar y fui testigo de un atentado contra su vida. Sin embargo, aunque sobrevivió al ataque se marchó antes de explicarme cómo puedo entrar en el sanatorio.~
++
++@99944 = ~Un final feliz para Sanik y Claire.
++
++Sanik y Claire estaban entusiasmados y aliviados tras su reencuentro, y han decidido marcharse de la isla a toda prisa. Sólo me queda esperar que pronto yo también pueda marcharme de aquí.~
++
++@99942 = ~La fortaleza del paladín caído: Asesinato.
++
++Anarg me ha dado una poción mortal con la que voy a asesinar al prelado de la Orden, Wessalen. Cuando lo haya hecho, los contactos de Anarg en la Orden convencerán al resto de los miembros de que su única esperanza es aceptarle de nuevo.~
++
++@99941 = ~Encuentro con los Paladines Caídos.
++
++Me abordó otro paladín que cayó y fue expulsado de la Orden. Parece ser que un grupo de ellos desea encontrarse conmigo al noreste del Distrito del Puente, aunque no sé sus intenciones.~
++
++@99940 = ~Encuentro con los Paladines Caídos.
++
++He hablado con Reynald de Chatillon, un miembro de los Paladines Caídos, que me ha prometido presentarme a su líder, Anarg, si puedo hacerme con una copa que perteneció a Anarg. Al parecer la copa es básicamente ceremonial, pero de gran valor sentimental para Anarg.~
++
++@99939 = ~Vendiendo a Risa a Lehtinan.
++
++Lehtinan se ha mostrado interesado en comprar a la huérfana Risa como parte de sus actividades de comercio de esclavos. Ha enviado a un contacto al cementerio para que se encuentre con Risa y su actual guardián.~
++
++@99938 = ~Vendiendo a Risa a Lehtinan.
++
++Pude engañar al clérigo de Lathander que cuidaba a la huérfana Risa para entregarla a uno de los contactos esclavistas de Lehtinan. Seguramente Lehtinan sabrá darle un buen uso en la Corona de Cobre.~
++
++@99937 = ~Encontrar un protector para Risa, la huérfana.
++
++Al intentar realizar un pequeño comercio de esclavos, junté sin darme cuenta a dos personas que conocí en el Distrito del Cementerio... un paladín llamado Kamir cuyo hijo ha muerto, y una niñita llamada Risa cuyos padres han muerto. El paladín accedió a educar a la niña y se marcharon juntos. Es probable que Lehtinan esté disgustado ya que su agente no pudo conseguir a la niña, pero seguro que Risa será feliz.~
++
++@99936 = ~La familia de Jadarath.
++
++Según el relato de Sidhe, Jadarath nunca salvó a su familia de los bandidos, sino que de hecho asesinó a una hija que no quiere recordar delante de Janie. Tras esta espantosa revelación no quiero volver a saber nada de ese hombre, que se pudra. Lo que no sé es si buscará a su familia o seguirá con su investigación.~
++
++@99935 = ~Acabando con los Ladrones de las Sombras.
++
++Tras advertir a Aran Linvail de la amenaza de los miembros de su cofradía, también me volví contra él. Los Ladrones de las Sombras ahora no tienen líder en Athkatla, y lo más probable es que se disgreguen hasta su desaparición. Quizás le haya hecho un favor a la ciudad.~
++
++@99934 = ~Brega solicita mi presencia.
++
++Un mensajero me ha pedido que me encuentre con el Alguacil Jefe Brega en el Salón del Gobierno. Desconozco el motivo por el que desea verme.~
++
++@99933 = ~El problema de deudas de Moiya.
++
++Una mujer llamada Moiya se me acercó en los barrios bajos y me explicó un problema que tenía con un prestamista llamado Celile. El problema disminuyó en cierto modo con la muerte de Celile, pero a Moiya no pareció agradarle cómo resolví la situación.~
++
++@99932 = ~Ayudando a las dríadas cautivas de Irenicus.
++
++Rompí mi acuerdo con las dríadas cautivas de Irenicus, en vez de eso le entregué las bellotas a otra dríada que se me acercó cerca del castillo De'Arnise. Me habló de un harén de dríadas, por lo que parece ser que no les he hecho ningún favor.~
++
++@99931 = ~Ayudando a las dríadas cautivas de Irenicus.
++
++Rompí mi acuerdo con las dríadas cautivas de Irenicus, en vez de eso decidí, ehm, comerme las bellotas. La dríada que se me acercó para hablarme de ellas cerca del castillo De'Arnise pareció muy sorprendida.~
++
++@99930 = ~Ayudando a las dríadas cautivas de Irenicus.
++
++Tras hablar con una dríada cerca del castillo De'Arnise, he aceptado traicionar a las dríadas cautivas de Irenicus entregándole unas bellotas falsas a su hermana Vaelasa en las Colinas Ventolanza.~
++
++@99929 = ~Ayudando a las dríadas cautivas de Irenicus.
++
++Vaelasa no se creyó que las bellotas falsas fueran las de sus hermanas y me atacó. Dudo que Phluafae esté contenta con el giro de la situación.~
++
++@99928 = ~Ayudando a las dríadas cautivas de Irenicus.
++
++Pude engañar a Vaelasa con las bellotas falsas que le entregué, y murió a causa de ello. Phluafae estará satisfecha con el resultado.~
++
++@99927 = ~Ayudando a las dríadas cautivas de Irenicus.
++
++Rompí mi acuerdo con las dríadas cautivas de Irenicus, en vez de eso le entregué unas bellotas falsas que me dio una de sus hermanas a Vaelasa en las Colinas Ventolanza. Murió a causa de ello, y recibí una buena recompensa por mis esfuerzos.~
++
++@99926 = ~El deseo final de Nazariel.
++
++Mientras exploraba la Infraoscuridad me tropecé con un liche llamado Nazariel. Antes de atacarme dijo algo sobre que le ayudara a alcanzar la superficie. Sólo se me ocurre que estaba evaluando mi valía para transportar su filacteria desde la Infraoscuridad tras su muerte.~
++
++@99925 = ~El deseo final de Nazariel.
++
++Llevé la filacteria de un liche que me encontré en la Infraoscuridad a la superficie, cumpliendo su último deseo antes de morir. Cuando el aire fresco lo tocó, el objeto se disolvió en mis manos, liberando a la criatura.~
++
++@99924 = ~La familia de Jadarath.
++
++Jadarath mencionó que antes tenía una familia con la que vivía en el Valle de Imnes. El nombre de la mujer es Sidhe y el de la hija, Janie. Quizás pueda encontrarlas si tengo tiempo.~
++
++@99923 = ~La familia de Jadarath.
++
++Encontré a la mujer y a la hija de Jadarath en el Distrito del Puente de Athkatla. Sin embargo, Sidhe no pareció muy contenta cuando le dije que conocía a Jadarath... más bien asustada.~
++
++@99922 = ~Acabando con los Ladrones de las Sombras.
++
++Informé a Bylanna del plan del Alguacil Jefe Brega para actuar contra los Ladrones de las Sombras. Advirtió al Consejo del giro de la situación y las tropas que envió pudieron detener el ataque de los hombres de Brega.~
++
++@99921 = ~Besamen y Baisera.
++
++Me encontré a un extraño hombre muerto viviente que se hacía llamar Besamen en una cripta del cementerio de Athkatla. Mencionó a una mujer que había sido su esposa antes de su fallecimiento, Baisera. El hombre piensa que un tendero del Paseo de Waukin llamado Mira puede saber algo sobre el actual paradero de la mujer. Quizás debería tomar la iniciativa y buscarla.~
++
++@99920 = ~La muerte de Xzar.
++
++Me encontré al mago loco Xzar una vez más, esta vez en el hogar de Prebek. Pretendía reanimar el cadáver de Montaron, pero parece ser que hay motivos por los que esos trucos sólo los pueden conceder los dioses, ya que su irracional creación le atacó, y se consumió por su propia magia.~
++
++@99919 = ~Acabando con los Ladrones de las Sombras.
++
++El Alguacil Jefe Brega me ha pedido que le ayude a acabar con los Ladrones de las Sombras de Athkatla. He decidido ayudarle, pero cuando yo lo decida. Cuando me haya preparado debo regresar ante él y el ataque se llevará a cabo.~
++
++@99918 = ~Enviando a los Caballeros de Solamnia a casa.
++
++Pedí al representante de los Magos Encapuchados en el edificio del Consejo que enviara a los caballeros a su hogar. Aunque él no estaba dispuesto a ayudarme, me sugirió que hablara con Ribald, quien se relaciona con magos sancionados de alto nivel.~
++
++@99917 = ~¡Al vendedor de libros le han robado!
++
++Galump, el vendedor de libros que posee una tienda en el Paseo de Waukin, ha solicitado mi ayuda para encontrar al ladrón que le ha estado robando. Él sugiere que busque a un mediano desaliñado al norte del Distrito del Puente.~
++
++@99916 = ~Pidiendo préstamos a Celile.
++
++Le he pedido 100 piezas de oro al prestamista Celile. La retribución que pide es de 125 piezas de oro, que debo pagar en dos días.~
++
++@99915 = ~Pidiendo préstamos a Celile.
++
++Le he pedido 1000 piezas de oro al prestamista Celile. La retribución que pide es de 1250 piezas de oro, que debo pagar en cuatro días.~
++
++@99914 = ~Pidiendo préstamos a Celile.
++
++Le he pedido 5000 piezas de oro al prestamista Celile. La retribución que pide es de 6250 piezas de oro, que debo pagar en seis días.~
++
++@99913 = ~Pidiendo préstamos a Celile.
++
++Le he pedido 10,000 piezas de oro al prestamista Celile. La retribución que pide es de 12,500 piezas de oro, que debo pagar en ocho días.~
++
++@99912 = ~Pidiendo préstamos a Celile.
++
++Le he pedido 25,000 piezas de oro al prestamista Celile. La retribución que pide es de 31,250 piezas de oro, que debo pagar en diez días.~
++
++@99911 = ~¡Al vendedor de libros le han robado!
++
++Tras ver que estaba arrepentido, decidí perdonarle la vida a Kram, el mediano que había estado robando a Galump. La inseguridad lo condujo a su crimen, y ya ha pagado un precio muy alto. Espero que ahora pueda cambiar su vida y que le acepten y encuentre amistades en el mundo. Galump está agradecido por nuestra ayuda.~
++
++@99910 = ~¡Al vendedor de libros le han robado!
++
++Tras oír su historia matamos a Kram, el mediano que había estado robando a Galump. Ahora ha pagado su precio final por sus torpes intentos de encontrar 'amigos'.~
++
++@99909 = ~¡Al vendedor de libros le han robado!
++
++Tras ver que estaba arrepentido, decidí perdonarle la vida a Kram, el mediano que había estado robando a Galump. La inseguridad lo condujo a su crimen, y ya ha pagado un precio muy alto. Le entregué el anillo de influencia en humanos para que no necesite robar para encontrar amigos. Galump está agradecido por nuestra ayuda.~
++
++@99908 = ~Jaheira insiste en que destruya un arma.
++
++Jaheira ha dicho que debemos destruir el arma que encontramos en el hogar de Prebek. Voy a entregársela a Bernard en la Corona de Cobre, quien se ocupará del asunto.~
++
++@99907 = ~Jaheira insiste en que destruya un arma.
++
++Ante la insistencia de Jaheira, le entregué la cimitarra del hogar de Prebek a Bernard, quien se la dará a alguien que la destruirá.~
++
++@99906 = ~¿La Casa Despana tiene los huevos de Adalon?
++
++Según un drow anciano de la taberna, es probable que los huevos del dragón argénteo estén en algún lugar del recinto de la Casa Despana. Sin duda conseguir entrar será muy complicado.~
++
++@99905 = ~Liberar a Carrack de los Ladrones de las Sombras.
++
++Tras oír su historia explicada por Botero, el torturador, decidí liberar a Carrack de su encarcelamiento en la guarida de los Ladrones de las Sombras. Está preocupado por el bienestar de su familia, y me ha pedido que me encuentre con él en la entrada norte del Distrito del Puente lo antes posible.~
++
++@99904 = ~El destino de la familia de Carrack.
++
++Aunque lo salvé de ser torturado a manos de los Ladrones de las Sombras, llegamos demasiado tarde para salvar a la familia de Carrack de los asesinos de Aran. Ahora Carrack se ha embarcado en una cruzada de venganza de los Ladrones de las Sombras, aunque tiene pocas posibilidades contra una organización tan poderosa.~
+\ No newline at end of file

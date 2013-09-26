@@ -1,0 +1,14 @@
+--- Yikari\Translations\English\setup.tra	Sun May 30 12:36:16 2010
++++ C:\BWP Patchstudio\patched files\Yikari\Translations\English\setup.tra	Fri Dec 02 13:07:59 2011
+@@ -224,3 +224,11 @@
+ @64 = ~Compatibility with Kuroisan (from Tactics or Big Picture)~
+ 
+ @65 = ~Compatibility with Kuroisan (from Tactics or Big Picture) skipped.~
++
++@66 = ~Compatibility with Item Upgrade SoA - Revised~
++
++@67 = ~You must have Shadows Of Amn Item Upgrades Revised Component installed.~
++
++@68 = ~Compatibility with Item Upgrade ToB - Revised~
++
++@69 = ~You must have Throne of Bhaal Item Upgrades Revised Component installed.~

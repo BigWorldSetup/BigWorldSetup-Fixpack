@@ -1,0 +1,11 @@
+--- Star\Dialogue\fatesp.d	Thu May 20 14:23:22 2004
++++ C:\BWP Patchstudio\patched files\Star\Dialogue\fatesp.d	Thu Jul 23 09:49:14 2009
+@@ -3,7 +3,7 @@
+ !GlobalGT("Silvermorph","GLOBAL",0)
+ Global("SilverFMT","GLOBAL",0)
+ !InMyArea("D#Silver")
+-Global("D#SilverSummoned","GLOBAL",0)~ THEN REPLY ~Bring me Silver Star, the insane assassin.~
++Global("D#SilverSummoned","GLOBAL",0)~ THEN REPLY @1
+  DO ~CreateVisualEffect("SPPORTAL",[1999.1228])
+ Wait(2)
+ CreateCreature("D#Silver",[1999.1228],0)

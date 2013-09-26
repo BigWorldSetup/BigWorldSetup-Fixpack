@@ -1,0 +1,11 @@
+--- RoTerror\Language\Spanish\journal.tra	Mon Jun 02 19:40:54 2008
++++ C:\BWP Patchstudio\patched files\RoTerror\Language\Spanish\journal.tra	Sun Oct 04 13:40:57 2009
+@@ -550,7 +550,7 @@
+ //unsolved - 10,12,13
+ @573330 = ~El Santuario del Dragón
+ 
+-Un viejo hombre llamado Martwyn me contó algo sobre un área sagrada de los dragones. Si quiero ir allí, tendría que andar con los ojos cerrados a través de las tierras infranqueables y entonces seguir el camino hasta salir del Laberinto de Hielo.~ /* #73330 */
++Un viejo hombre llamado Martwyn me contó algo sobre un área sagrada de los dragones. Si quiero ir allí, tendría que esconderme para atravesar las tierras infranqueables y entonces seguir el camino hasta salir del Laberinto de Hielo.~ /* #73330 */
+ 
+ 
+ //MAYASSI.DLG

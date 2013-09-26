@@ -1,0 +1,146 @@
+--- Setup-Wikaede.tp2	Sun Oct 30 12:39:44 2005
++++ C:\BWP Patchstudio\patched files\Setup-Wikaede.tp2	Mon May 24 17:41:01 2010
+@@ -1,19 +1,19 @@
+-BACKUP ~Wikaede\backup~
++BACKUP ~wikaede\backup~
+ AUTHOR ~CuteOmen@gmail.com~
+-BEGIN ~Wikaede One-Day NPC v3.4~
+ 
++VERSION ~v3.4 Upgraded to Revisited v4.1~
+ 
+-COPY ~Wikaede\Portraits~ ~override~
++BEGIN ~Wikaede by Moongaze~
+ 
+ 
+-COPY ~Wikaede\Audio~ ~override~
+-COPY ~Wikaede\Setup-WikaedeAudioInstall.bat~ ~Setup-WikaedeAudioInstall.bat~
+-AT_INTERACTIVE_EXIT ~Setup-WikaedeAudioInstall.bat~
++COPY ~wikaede\Portraits~ ~override~
++COPY ~wikaede\Audio~ ~override~
++COPY ~wikaede\Setup-wikaedeAudioInstall.bat~ ~Setup-wikaedeAudioInstall.bat~
++AT_INTERACTIVE_EXIT ~Setup-wikaedeAudioInstall.bat~
+ 
+ 
+-
+-COPY ~Wikaede\Creatures\MGWIKA.CRE~ ~override~
+-     ~Wikaede\Creatures\MGWIKA25.CRE~ ~override~
++COPY ~wikaede\Creatures\MGWIKA.CRE~ ~override~
++     ~wikaede\Creatures\MGWIKA25.CRE~ ~override~
+ SAY NAME1 ~Wikaede~
+ SAY NAME2 ~Wikaede~
+ SAY INITIAL_MEETING ~Greetings. I am Sir Wikaede.~
+@@ -61,44 +61,43 @@
+ SAY SET_A_TRAP ~I have no need of this.~ [WIKA042]
+ SAY HIDDEN_IN_SHADOWS ~I lack the reason to hide.~ [WIKA043]
+ SAY PICKED_POCKET ~This goes against all that I stand for.~ [WIKA044]
+-SAY BIO ~When asked about his past, WIKAEDE remains as calm and collected as ever and tells you he was born in Baldur's Gate. At a young age he began his education at the temple of Helm. During his life he has been in several different temples, improving his skills as he trained, learned and journeyed. Now he travels with you, and being duty-bound as he is, you know he is trustworthy.~
+-
++SAY BIO ~When asked about his past, WIKAEDE remains as calm and collected as ever and tells you he was born in Baldur's Gate. At a young age he began his education at the temple of Helm. During his life, he has been in service of several different temples, improving his skills as he trained, learned and journeyed. Now he travels with you, and being duty-bound as he is, you know he is trustworthy.~
+ 
+ 
+-COPY ~Wikaede\Items\MGMACE.itm~ ~override\MGMACE.itm~
++COPY ~wikaede\Items\MGWMACE.itm~ ~override\MGWMACE.itm~
+ SAY NAME1 ~Wand of Chronology~
+ SAY NAME2 ~Wand of Chronology~
+ SAY UNIDENTIFIED_DESC ~Mace +2: Wand of Chronology
+-Wikaede recieved this mace when he set out to venture beyond the walls of Baldur's Gate. Apparently, this magical weapon has the ability to slow an enemy. Who created this weapon, or what it's history is, is yet unknown. Wikaede does not seem to mind, however.
++Wikaede recieved this mace when he set out to venture beyond the walls of Baldur's Gate. Apparently, this magical weapon has the ability to slow an enemy. Who created this weapon, or what its history is, is yet unknown. Wikaede does not seem to mind, however.
+ 
+ STATISTICS:
+ 
+-Combat Ability: A creature hit by this mace must make a saving throw vs. spells at +3 or be slowed for 12 seconds
++Combat Ability: A creature hit by this mace must make a saving throw vs. spells at +3 or be slowed for 12 seconds.
+ THAC0: +1 bonus
+ Damage:  1D6 + 2
+-Damage type:  crushing
++Damage type: crushing
+ Weight: 8
+ Speed Factor: 6
+ Proficiency Type: Mace
+-Type:  1-handed
++Type: 1-handed
+ Requires: 10 Strength
+ Usable By:
+  Non-Chaotic characters
+  Clerics (single, dual and multi-class)
+  Paladins~
+ SAY DESC ~Mace +2: Wand of Chronology
+-Wikaede recieved this mace when he set out to venture beyond the walls of Baldur's Gate. Apparently, this magical weapon has the ability to slow an enemy. Who created this weapon, or what it's history is, is yet unknown. Wikaede does not seem to mind, however.
++Wikaede recieved this mace when he set out to venture beyond the walls of Baldur's Gate. Apparently, this magical weapon has the ability to slow an enemy. Who created this weapon, or what its history is, is yet unknown. Wikaede does not seem to mind, however.
+ 
+ STATISTICS:
+ 
+-Combat Ability: A creature hit by this mace must make a saving throw vs. spells at +3 or be slowed for 12 seconds
++Combat Ability: A creature hit by this mace must make a saving throw vs. spells at +3 or be slowed for 12 seconds.
+ THAC0: +1 bonus
+ Damage:  1D6 + 2
+-Damage type:  crushing
++Damage type: crushing
+ Weight: 8
+ Speed Factor: 6
+ Proficiency Type: Mace
+-Type:  1-handed
++Type: 1-handed
+ Requires: 10 Strength
+ Usable By:
+  Non-Chaotic characters
+@@ -106,38 +105,35 @@
+  Paladins~
+ 
+ 
++COMPILE ~wikaede\Dialogue\MGWIKA.d~
++COMPILE ~wikaede\Dialogue\MGWIK25.d~
++COMPILE ~wikaede\Dialogue\MGWIKAJ.d~
++COMPILE ~wikaede\Dialogue\MGWIK25J.d~
++COMPILE ~wikaede\Dialogue\MGWIKAP.d~
++COMPILE ~wikaede\Dialogue\MGWIK25P.d~
++COMPILE ~wikaede\Dialogue\BMGWIKA.d~
++COMPILE ~wikaede\Dialogue\BMGWIK25.d~
++
++COMPILE ~wikaede\Scripts\MGWIKA25.baf~
++COMPILE ~wikaede\Scripts\WIAR0901.baf~
++COMPILE ~wikaede\Scripts\WIAR6200.baf~
+ 
+-COMPILE ~Wikaede\Dialogue\MGWIKA.d~
+-COMPILE ~Wikaede\Dialogue\MGWIK25.d~
+-COMPILE ~Wikaede\Dialogue\MGWIKAJ.d~
+-COMPILE ~Wikaede\Dialogue\MGWIK25J.d~
+-COMPILE ~Wikaede\Dialogue\MGWIKAP.d~
+-COMPILE ~Wikaede\Dialogue\MGWIK25P.d~
+-COMPILE ~Wikaede\Dialogue\BMGWIKA.d~
+-COMPILE ~Wikaede\Dialogue\BMGWIK25.d~
+-
+-COMPILE ~Wikaede\Scripts\MGWIKA25.baf~
+-COMPILE ~Wikaede\Scripts\WIAR0901.baf~
+-COMPILE ~Wikaede\Scripts\WIAR6200.baf~
+ 
+-EXTEND_TOP ~AR0901.bcs~ ~Wikaede\Scripts\WIAR0901.baf~
++EXTEND_TOP ~AR0901.bcs~ ~wikaede\Scripts\WIAR0901.baf~
+ COPY_EXISTING ~AR6200.bcs~ ~override\AR6200.bcs~
+-EXTEND_TOP ~AR6200.bcs~ ~Wikaede\Scripts\WIAR6200.baf~
+-
+-COPY ~Wikaede\2da\WIKAND1.2da~ ~override\WIKAND1.2da~
+-REPLACE ~99999~ ~After <CHARNAME>'s ascension, Wikaede's faith in Helm and other Gods was shaken. He did not think the line between mortal and deity could be so thin. He returned to Athkatla, only to be expelled from the Helmite priesthood after several months. They could not tolerate a faithless priest, and sent him on his way. Wikaede lost his divine magic and became a mecenary in order to survive and have a home of sorts. After several years of mercenary employment, during a guard job on a caravan heading towards Calimport, he was poisoned by an unknown assassin, who swiftly slipped some lethal toxin in his drink. His vision blurred, his heart beating faster than ever before, and the last thing he ever heard was "The Storm Lord prevails!". His grave is said to be along the trade route between Athkatla and Calimport, but few have come. Only one person, Quicksilver Nitki, dared approach the grave of the former holy man, not to pay her respects, but to steal the magical mace he had always carried with him.~
+-COPY ~Wikaede\2da\WIKAND2.2da~ ~override\WIKAND2.2da~
+-REPLACE ~99998~ ~After parting ways with <CHARNAME>, Wikaede returned to Athkatla to serve at the Temple of Helm once again. Within several years he rose to the rank of High Watcher, eventually replacing Oisig when he retired. The Talassan priesthood feared Wikaede, and after several failed attempts to assassinate him, they were driven out of the city by the followers of Helm and the Order of the Radiant Heart. Unexpectedly, he fell in love with Harah, a Dawnbringer of Lathander, and became the father of her first child after a holy marriage. He never traveled the road again, but remembers the time spend with <CHARNAME> quite fondly.~
+-
++EXTEND_TOP ~AR6200.bcs~ ~wikaede\Scripts\WIAR6200.baf~
+ 
+ 
++COPY ~wikaede\2da\WIKAND1.2da~ ~override\WIKAND1.2da~
++REPLACE ~99999~ ~After <CHARNAME>'s ascension, Wikaede's faith in Helm and other Gods was shaken. He did not think the line between mortal and deity could be so thin. He returned to Athkatla, only to be expelled from the Helmite priesthood after several months. They could not tolerate a faithless priest, and sent him on his way. Wikaede lost his divine magic and became a mercenary in order to survive and have a home of sorts. After several years of mercenary employment, during a guard job on a caravan heading towards Calimport, he was poisoned by an unknown assassin, who swiftly slipped some lethal toxin in his drink. His vision blurred, his heart beating faster than ever before, and the last thing he ever heard was "The Storm Lord prevails!". His grave is said to be along the trade route between Athkatla and Calimport, but few have come. Only one person, Quicksilver Nitki, dared approach the grave of the former holy man, not to pay his respects, but to steal the magical mace he had always carried with him.~
++COPY ~wikaede\2da\WIKAND2.2da~ ~override\WIKAND2.2da~
++REPLACE ~99998~ ~After parting ways with <CHARNAME>, Wikaede returned to Athkatla to serve at the Temple of Helm once again. Within several years he rose to the rank of High Watcher, eventually replacing Oisig when he retired. The Talassan priesthood feared Wikaede, and after several failed attempts to assassinate him, they were driven out of the city by the followers of Helm and the Order of the Radiant Heart. In due time he ended up marrying Harah, a Dawnbringer of Lathander he had known for a long time, and became the father of their first child. He never travelled the road again, but remembers the time spend with <CHARNAME> quite fondly.~
+ 
+ 
+ APPEND ~pdialog.2da~
+-~Wikaede MGWIKAP MGWIKAJ MGWIKAD MGWIKA MGWIK25P MGWIK25J MGWIK25D MGWIK25~ 
++~Wikaede MGWIKAP MGWIKAJ MGWIKAD MGWIKA MGWIK25P MGWIK25J MGWIK25D MGWIK25~
+ UNLESS ~Wikaede~
+ 
+-
+-APPEND ~interdia.2da~ 
+-~Wikaede BMGWIKA BMGWIK25~ 
++APPEND ~interdia.2da~
++~Wikaede BMGWIKA BMGWIK25~
+ UNLESS ~Wikaede~

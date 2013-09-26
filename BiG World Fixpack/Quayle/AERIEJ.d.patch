@@ -1,0 +1,11 @@
+--- Quayle\Dialogues\AERIEJ.d	Fri Nov 09 09:37:20 2012
++++ C:\BWP Patchstudio\patched files\Quayle\Dialogues\AERIEJ.d	Fri Jul 05 07:07:53 2013
+@@ -93,7 +93,7 @@
+ ////If he survived
+ 
+ CHAIN
+-IF WEIGHT #-15 ~AreaCheck("QUA000") Global("Dead1xQBG","GLOBAL",1)~ THEN BAERIE QuayleSurvivedMod00
++IF WEIGHT #-15 ~AreaCheck("QUA000") Global("Dead1xQBG","GLOBAL",1)~ THEN AERIE QuayleSurvivedMod00
+ ~Uncle Quayle!  We -- we did it!  For Baervan's blessing, I'm so happy to see you alive!~
+ DO ~SetGlobal("Dead1xQBG","GLOBAL",2)~
+ == 1xQuayB

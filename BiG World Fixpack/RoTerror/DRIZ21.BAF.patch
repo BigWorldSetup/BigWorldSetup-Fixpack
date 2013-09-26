@@ -1,0 +1,10 @@
+--- RoTerror\BAF\DRIZ21.BAF	Wed Mar 01 21:46:06 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\DRIZ21.BAF	Thu Oct 08 12:22:48 2009
+@@ -133,6 +133,7 @@
+ END
+ 
+ IF
++	InParty(Myself)
+ 	Global("WulfgarOut","GLOBAL",1)
+ 	Delay(5)
+ 	CombatCounter(0)

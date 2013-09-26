@@ -1,0 +1,11 @@
+--- Wikaede\Dialogue\MGWIKAJ.d	Wed Oct 26 21:26:06 2005
++++ C:\BWP Patchstudio\patched files\Wikaede\Dialogue\MGWIKAJ.d	Sun Mar 16 16:12:40 2008
+@@ -77,7 +77,7 @@
+ == MGWIKAJ IF ~InParty("Wikaede")~ THEN
+ ~I can scarce imagine myself in the Abyss, yet it appears to be the case. You have brough us here, have you not?~
+ =
+-~Worry not. I have stood by you before, I shall not fail you now.~
++~Worry not. I have stood by your side before. I shall not fail you now.~
+ END
+ 
+ 

@@ -1,0 +1,13 @@
+--- CtB\scripts\ctb\CBBDFeit.baf	Wed Nov 09 12:19:44 2005
++++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\CBBDFeit.baf	Mon Oct 17 11:34:30 2011
+@@ -103,8 +103,8 @@
+ 		DisplayString(Myself,39968) // Spell Trigger - Fired
+ 		ReallyForceSpell(Myself,WIZARD_IMPROVED_HASTE)
+ 		ReallyForceSpell(Myself,HEAL_NO_VISUAL)
+-		ReallyForceSpell(Myself,0)
+-		ReallyForceSpell(Myself,0)
++		ReallyForceSpellRES("dgright",Myself)
++		ReallyForceSpellRES("dgfaith",Myself)
+ 		Continue()
+ END
+ 

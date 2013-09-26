@@ -1,0 +1,11 @@
+--- TOD\Setup-TOD.tp2	Mon Jan 04 14:37:57 2010
++++ C:\BWP Patchstudio\patched files\TOD\Setup-TOD.tp2	Thu Apr 15 09:28:11 2010
+@@ -1,6 +1,8 @@
+ BACKUP ~TOD\Backup~
+ AUTHOR ~Valiant (kiski@centrum.sk)~
+ 
++VERSION ~v3.3.1 BWP Fix~
++
+ //ALWAYS
+ //AT_INTERACTIVE_EXIT ~VIEW TOD/Readme-TOD.htm~
+ //END

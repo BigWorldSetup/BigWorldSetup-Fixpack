@@ -1,0 +1,19 @@
+--- Neh'taniel\English\sk#ne25j.tra	Fri Sep 10 14:46:02 2010
++++ C:\BWP Patchstudio\patched files\Neh'taniel\English\sk#ne25j.tra	Fri Nov 05 12:39:28 2010
+@@ -10,6 +10,7 @@
+ @9    = ~Please, my <LADYLORD>, speak to him first before making any decisions. Liches are quite powerful, and this seems to be no exception. Also, this man is a liar, I am almost sure of it.~
+ @10   = ~Sacrificing his wife was not a benefit to his daughter's future. He is unworthy of living and must be held accountable.~
+ @11   = ~I knew he was a liar! Liches do not just steal souls. That fiend must be made to pay for his crimes against his family.~
++@12   = ~You did a wonderful thing, <LADYLORD>. I only hope in time she can overcome her father's treachery and live happily.~
+ @14   = ~Despite the fact I consider thievery to be lawless, death is too extreme a punishment in this case. Her reasons were honorable and that must be taken in to consideration.~
+ @15   = ~Lend him no aid, my <LADYLORD>. This feind deserves whatever they wish to do to him. I would like naught more than to run him through myself.~
+ @16   = ~What manner of trickery is this scoundel up to now? Please, my <LADYLORD>, allow me to put him out of his misery.~
+@@ -424,7 +425,7 @@
+ @425  = ~Sir Neh'taniel, you won't answer a silly little question like that? I'm hurt.~
+ @426  = ~I barely remember my mother my lady, I cannot remember that! Why are you-?~
+ @427  = ~I give, never mind. *sighs*~
+-@428  = ~Ha! Sure you do my dear Neh'taniel! Of course you've forgotten. You just want to jealously guard your secrets you've brought to the grave and not let a little < CharRace > like me to have such lovely hair.~
++@428  = ~Ha! Sure you do my dear Neh'taniel! Of course you've forgotten. You just want to jealously guard your secrets you've brought to the grave and not let a little <PRO_RACE> like me to have such lovely hair.~
+ @429  = ~I thank you, <CHARNAME>. When I was younger, I suppose it was 'beautiful' but I am afraid as I grew older the beauty left...~
+ @430  = ~Your welcome. (You smile.)~
+ @431  = ~I just do not understand what you are trying to do.~

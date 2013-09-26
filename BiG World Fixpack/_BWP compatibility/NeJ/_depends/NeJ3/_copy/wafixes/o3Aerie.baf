@@ -1,0 +1,20 @@
+IF
+  GlobalTimerExpired("AerieRemindsRaelis","GLOBAL")
+  GlobalLT("AerieReminder2","LOCALS",2)
+  Global("QuayleJob","GLOBAL",1)
+  AreaType(OUTDOOR)
+  AreaType(CITY)
+  !AreaCheck("AR2000")
+  !Global("Chapter","GLOBAL",4)
+  !Global("Chapter","GLOBAL",5)
+  !Global("Chapter","GLOBAL",7)
+  CombatCounter(0)
+  Global("HaerDalisPlotStarted","GLOBAL",0)
+  Global("HaerDalisFree","GLOBAL",0)
+  InParty(Myself)
+  See(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+THEN
+  RESPONSE #100
+    StartDialogNoSet(Player1)
+END

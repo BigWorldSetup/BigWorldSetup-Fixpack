@@ -1,0 +1,386 @@
+--- tobr\setup-tobr.tp2	Fri Jul 17 21:43:34 2009
++++ C:\BWP Patchstudio\patched files\tobr\setup-tobr.tp2	Fri Nov 12 04:53:48 2010
+@@ -3,7 +3,7 @@
+ 
+ README ~ToBR/ReadMe.html~
+ 
+-VERSION ~beta 4~
++VERSION ~beta 4 BWP Fix~
+ 
+ 
+ ///////////////////////////////
+@@ -45,7 +45,7 @@
+ 
+ EXTEND_BOTTOM ~yaga01.bcs~ ~ToBR/Gromnir/scripts/yaga01.baf~
+ 
+-ACTION_IF FILE_EXISTS ~override/GROMNIR.BCS~
++ACTION_IF FILE_EXISTS_IN_GAME ~GROMNIR.BCS~
+   THEN BEGIN
+     EXTEND_BOTTOM ~GROMNIR.BCS~ ~ToBR/Gromnir/scripts/gromnir.baf~
+   END ELSE BEGIN
+@@ -56,7 +56,7 @@
+  
+ //Scripts -- Cutscenes (compatible w/ Ascension)
+ 
+-ACTION_IF !(FILE_EXISTS ~override/jumjum.cre~)
++ACTION_IF !(FILE_EXISTS_IN_GAME ~jumjum.CRE~)
+   THEN BEGIN
+     COMPILE ~ToBR/Gromnir/scripts/cutgre.baf~
+   END ELSE BEGIN
+@@ -95,12 +95,24 @@
+ //Scripts -- Cut Scenes
+ COMPILE ~ToBR/Solar/scripts/cutsolar.baf~
+ 
+-//Scripts -- Portal
++//Scripts -- Portal (compatible w/ Longer Road)
++
++
++ACTION_IF !(FILE_EXISTS_IN_GAME ~lr6603.are~)
++  THEN BEGIN
++    COPY_EXISTING ~itpplane.bcs~ ~override/itpplane.bcs~
++		REPLACE_BCS_BLOCK ~ToBR/Solar/scripts/itpplane_old.baf~ ~ToBR/Solar/scripts/itpplane_new.baf~
++			
++		EXTEND_BOTTOM ~itpplane.bcs~ ~ToBR/Solar/scripts/itpplane.baf~
++  END ELSE BEGIN
++  	COPY_EXISTING ~itpplane.bcs~ ~override/itpplane.bcs~
++		REPLACE_BCS_BLOCK ~ToBR/Solar/scripts/LongerRoad/itpplane_old.baf~ ~ToBR/Solar/scripts/itpplane_new.baf~
++			
++		EXTEND_BOTTOM ~itpplane.bcs~ ~ToBR/Solar/scripts/LongerRoad/itpplane.baf~
++  END
++
+ 
+-COPY_EXISTING ~itpplane.bcs~ ~override/itpplane.bcs~
+-REPLACE_BCS_BLOCK ~ToBR/Solar/scripts/itpplane_old.baf~ ~ToBR/Solar/scripts/itpplane_new.baf~
+ 
+-EXTEND_BOTTOM ~itpplane.bcs~ ~ToBR/Solar/scripts/itpplane.baf~
+ 
+ ////////////////////////////////
+ //////////Yaga Shura - 3////////
+@@ -166,20 +178,20 @@
+         ~ToBR/Yaga/scripts/WGfire01.baf~ ~ToBR/Yaga/scripts/WGfire02.baf~
+ 
+ // Dialogues if Gromnir is installed
+-ACTION_IF FILE_EXISTS ~override/WGgromn.cre~
++ACTION_IF FILE_EXISTS_IN_GAME ~WGgromn.cre~
+   THEN BEGIN
+   COMPILE ~ToBR/Yaga/dialogue/WGgromnir.d~
+   END
+ 
+ // Dialogues if Ascension is installed  
+ 
+-ACTION_IF FILE_EXISTS ~override/yscler01.cre~
++ACTION_IF FILE_EXISTS_IN_GAME ~yscler01.cre~
+   THEN BEGIN
+     COMPILE ~ToBR/Yaga/dialogue/yaga01_asc.d~
+   END
+     
+ // Scripts if Ascension is installed
+-ACTION_IF FILE_EXISTS ~override/yscler01.cre~
++ACTION_IF FILE_EXISTS_IN_GAME ~yscler01.cre~
+   THEN BEGIN
+     COPY_EXISTING ~YSsold01.cre~ ~override~
+     WRITE_ASCII 0x248 YSSOLD01
+@@ -234,7 +246,7 @@
+ COMPILE ~ToBR/Grove/scripts/WGcutgro.baf~
+ 
+ // Dependent on WoP
+-ACTION_IF !(FILE_EXISTS ~override/dw#head2.bcs~)
++ACTION_IF !(FILE_EXISTS_IN_GAME ~dw#head2.bcs~)
+   THEN BEGIN
+     COMPILE ~ToBR/Grove/dialogue/head1.d~ ~ToBR/Grove/dialogue/head2.d~ 
+             ~ToBR/Grove/dialogue/head3.d~ ~ToBR/Grove/dialogue/head4.d~ 
+@@ -247,7 +259,7 @@
+ 
+ //Dependent on LR
+ 
+-ACTION_IF FILE_EXISTS ~override/LRELLE1.dlg~ 
++ACTION_IF FILE_EXISTS_IN_GAME ~LRELLE1.dlg~ 
+   THEN BEGIN
+ 
+   COMPILE ~ToBR/Grove/dialogue/WGelleLR.d~
+@@ -299,7 +311,7 @@
+ 
+ // Sarevok's dialogue dependent on Solar component
+ 
+-ACTION_IF FILE_EXISTS ~override/cutsolar.bcs~ 
++ACTION_IF FILE_EXISTS_IN_GAME ~cutsolar.bcs~ 
+   THEN 
+     BEGIN COMPILE ~ToBR/pocketplane/dialogue/sarev25a_solar.d~ END 
+   ELSE
+@@ -347,15 +359,30 @@
+ 
+ // Portal scripts dependent on Solar component
+ 
+-ACTION_IF FILE_EXISTS ~override/cutsolar.bcs~ 
++ACTION_IF (FILE_EXISTS_IN_GAME ~cutsolar.bcs~) AND !(FILE_EXISTS_IN_GAME ~lr6603.are~)
+   THEN BEGIN
+     COPY_EXISTING ~ITPPLANE.bcs~ ~override/ITPPLANE.bcs~
+     REPLACE_BCS_BLOCK ~ToBR/pocketplane/scripts/ITPPLANE_solar.baf~ ~ToBR/pocketplane/scripts/ITPPLANE_new.baf~
+-  END ELSE BEGIN
++  END 
++  
++ACTION_IF (FILE_EXISTS_IN_GAME ~cutsolar.bcs~) AND (FILE_EXISTS_IN_GAME ~lr6603.are~)
++  THEN BEGIN
++    COPY_EXISTING ~ITPPLANE.bcs~ ~override/ITPPLANE.bcs~
++    REPLACE_BCS_BLOCK ~ToBR/pocketplane/scripts/LongerRoad/ITPPLANE_solar.baf~ ~ToBR/pocketplane/scripts/LongerRoad/ITPPLANE_new.baf~
++  END 
++  
++ACTION_IF !(FILE_EXISTS_IN_GAME ~cutsolar.bcs~) AND !(FILE_EXISTS_IN_GAME ~lr6603.are~)  
++  THEN BEGIN
+     COPY_EXISTING ~ITPPLANE.bcs~ ~override/ITPPLANE.bcs~
+     REPLACE_BCS_BLOCK ~ToBR/pocketplane/scripts/ITPPLANE_old.baf~ ~ToBR/pocketplane/scripts/ITPPLANE_new.baf~
+   END
+ 
++ACTION_IF !(FILE_EXISTS_IN_GAME ~cutsolar.bcs~) AND (FILE_EXISTS_IN_GAME ~lr6603.are~)  
++  THEN BEGIN
++    COPY_EXISTING ~ITPPLANE.bcs~ ~override/ITPPLANE.bcs~
++    REPLACE_BCS_BLOCK ~ToBR/pocketplane/scripts/LongerRoad/ITPPLANE_old.baf~ ~ToBR/pocketplane/scripts/LongerRoad/ITPPLANE_new.baf~
++  END
++  
+ // Adding the Tethyr Woods area (Shamelessly stolen from SConrad at G3)
+ 
+ COPY ~ToBR/pocketplane/areas/ARTOBR.are~ ~override~
+@@ -366,190 +393,35 @@
+ // Append mastarea.2da with the new area
+ APPEND ~MASTAREA.2da~ ~ARTOBR  value~
+ 
+-COPY_EXISTING ~worldm25.wmp~ ~override~
+-// Read offsets and stuff.
+-  READ_LONG  0x30 "area_num"
+-  READ_LONG  0x34 "area_off"
+-  READ_LONG  0x38 "link_off"
+-  READ_LONG  0x3c "link_num"
+-  READ_LONG  0xc "map_off"
+-  SET "entry"       = ("%map_off%" + 0xb8)
+-  SET "outer_check" = 0
+-  SET "inner_check" = 0
+-  SET "num_ent"     = 0
+-// New offsets
+-  WRITE_LONG 0x30 ("%area_num%" + 1)
+-  WRITE_LONG 0x38 ("%link_off%" + 0xf0)
+-  WRITE_LONG 0x3c ("%link_num%" + 4)
+-// Add area to worldmap
+-  INSERT_BYTES  ("%area_off%" +        (0xf0 * "%area_num%")) 0xf0
+-    WRITE_ASCII ("%area_off%" +        (0xf0 * "%area_num%")) ~ARTOBR~ // AR-name
+-    WRITE_ASCII ("%area_off%" + 0x08 + (0xf0 * "%area_num%")) ~ARTOBR~ // AR-name
+-    WRITE_ASCII ("%area_off%" + 0x10 + (0xf0 * "%area_num%")) ~ARTOBR~ // AR-name
+-    WRITE_LONG  ("%area_off%" + 0x34 + (0xf0 * "%area_num%")) 6 // Map icon
+-    WRITE_LONG  ("%area_off%" + 0x38 + (0xf0 * "%area_num%")) 400 // X coordinate
+-    WRITE_LONG  ("%area_off%" + 0x3C + (0xf0 * "%area_num%")) 50 // Y coordinate
+-    SAY         ("%area_off%" + 0x40 + (0xf0 * "%area_num%")) ~Tethyr Woods~ // Name of the area
+-    SAY         ("%area_off%" + 0x44 + (0xf0 * "%area_num%")) #-1 // Description
+-// Now, we add four area links, all from east
+-    WRITE_SHORT ("%area_off%" + 0x50 + (0xf0 * "%area_num%")) ("%link_num%" + 4) // First N link
+-    WRITE_SHORT ("%area_off%" + 0x58 + (0xf0 * "%area_num%")) ("%link_num%" + 4) // First W link
+-    WRITE_SHORT ("%area_off%" + 0x60 + (0xf0 * "%area_num%")) ("%link_num%" + 4) // First S link
+-    WRITE_SHORT ("%area_off%" + 0x68 + (0xf0 * "%area_num%")) ("%link_num%") // First E link
+-    WRITE_SHORT ("%area_off%" + 0x6c + (0xf0 * "%area_num%")) 4 // Number of links from E
+-
+-// Add links from WK to the new area
+-// We'll start by fixing the offsets
+-  WHILE ("%outer_check%" = 0) BEGIN
+-    READ_ASCII ("%entry%" + 0x8) "area" (2)
+-    READ_ASCII ("%entry%" + 0x8) "spec_area" (6)
+-    WHILE (("%spec_area%" STRING_COMPARE_CASE "AR3000" = 0) AND ("%inner_check%" = 0)) BEGIN
+-      READ_SHORT  ("%entry%" + 0x50)                         "nlink"
+-      READ_SHORT  ("%entry%" + 0x50 + 0x4)                   "#nlink"
+-      WRITE_SHORT ("%entry%" + 0x50 + 0x4)                   ("%#nlink%" + 1)
+-      READ_SHORT  ("%entry%" + 0x50 + 0x8)                   "wlink"
+-      WRITE_SHORT ("%entry%" + 0x50 + 0x8)                   ("%wlink%" + 3)
+-      READ_SHORT  ("%entry%" + 0x50 + 0x8)                   "wlink"
+-      READ_SHORT  ("%entry%" + 0x50 + 0x8 + 0x4)             "#wlink"
+-      WRITE_SHORT ("%entry%" + 0x50 + 0x8 + 0x4)             ("%#wlink%" + 1)
+-      READ_SHORT  ("%entry%" + 0x50 + 0x8 + 0x8)             "slink"
+-      WRITE_SHORT ("%entry%" + 0x50 + 0x8 + 0x8)             ("%slink%" + 2)
+-      READ_SHORT  ("%entry%" + 0x50 + 0x8 + 0x8)             "slink"
+-      READ_SHORT  ("%entry%" + 0x50 + 0x8 + 0x8 + 0x4)       "#slink"
+-      WRITE_SHORT ("%entry%" + 0x50 + 0x8 + 0x8 + 0x4)       ("%#slink%" + 1)
+-      READ_SHORT  ("%entry%" + 0x50 + 0x8 + 0x8 + 0x8)       "elink"
+-      WRITE_SHORT ("%entry%" + 0x50 + 0x8 + 0x8 + 0x8)       ("%elink%" + 1)
+-      READ_SHORT  ("%entry%" + 0x50 + 0x8 + 0x8 + 0x8)       "elink"
+-      READ_SHORT  ("%entry%" + 0x50 + 0x8 + 0x8 + 0x8 + 0x4) "#elink"
+-      WRITE_SHORT ("%entry%" + 0x50 + 0x8 + 0x8 + 0x8 + 0x4) ("%#elink%" + 1)
+-      SET "inner_check" = 1
+-    END
+-        PATCH_IF (("%area%" STRING_COMPARE_CASE "AR" = 0) OR ("%area%" STRING_COMPARE_CASE "G3" = 0)) BEGIN
+-      SET "num_ent" = ("%num_ent%" + 1)
+-    END ELSE
+-    PATCH_IF (("%area%" STRING_COMPARE_CASE "AR" != 0) AND ("%area%" STRING_COMPARE_CASE "G3" != 0)) BEGIN
+-      SET "outer_check" = 1
+-    END
+-    SET "entry" = ("%entry%" + 0xf0)
+-  END
+-
+-// Re-read offsets
+-  READ_LONG  0x30 "area_num"
+-  READ_LONG  0x38 "link_off"
+-
+-// Add four links to ARTOBR
+-  INSERT_BYTES  ("%link_off%" - 0x01 + (0xd8 * "%nlink%")) 0xd8
+-    WRITE_LONG  ("%link_off%"        + (0xd8 * "%nlink%")) ("%area_num%" - 1) // Add the last entry
+-    WRITE_ASCII ("%link_off%" + 0x04 + (0xd8 * "%nlink%")) ~CDExit~ // Entrance
+-    WRITE_LONG  ("%link_off%" + 0x28 + (0xd8 * "%nlink%")) 4 // Unknown
+-  INSERT_BYTES  ("%link_off%" - 0x01 + (0xd8 * "%wlink%")) 0xd8
+-    WRITE_LONG  ("%link_off%"        + (0xd8 * "%wlink%")) ("%area_num%" - 1) // Add the last entry
+-    WRITE_ASCII ("%link_off%" + 0x04 + (0xd8 * "%wlink%")) ~CDExit~ // Entrance
+-    WRITE_LONG  ("%link_off%" + 0x28 + (0xd8 * "%wlink%")) 4 // Unknown
+-  INSERT_BYTES  ("%link_off%" - 0x01 + (0xd8 * "%slink%")) 0xd8
+-    WRITE_LONG  ("%link_off%"        + (0xd8 * "%slink%")) ("%area_num%" - 1) // Add the last entry
+-    WRITE_ASCII ("%link_off%" + 0x04 + (0xd8 * "%slink%")) ~CDExit~ // Entrance
+-    WRITE_LONG  ("%link_off%" + 0x28 + (0xd8 * "%slink%")) 4 // Unknown
+-  INSERT_BYTES  ("%link_off%" - 0x01 + (0xd8 * "%elink%")) 0xd8
+-    WRITE_LONG  ("%link_off%"        + (0xd8 * "%elink%")) ("%area_num%" - 1) // Add the last entry
+-    WRITE_ASCII ("%link_off%" + 0x04 + (0xd8 * "%elink%")) ~CDExit~ // Entrance
+-    WRITE_LONG  ("%link_off%" + 0x28 + (0xd8 * "%elink%")) 4 // Unknown
+-  
+-// Check which link is largest
+-  PATCH_IF (("%nlink%" > "%wlink%") AND ("%nlink%" > "%slink%") AND ("%nlink%" > "%elink%")) BEGIN
+-    SET "link" = "%nlink%"
+-  END
+-  PATCH_IF (("%wlink%" > "%nlink%") AND ("%wlink%" > "%slink%") AND ("%wlink%" > "%elink%")) BEGIN
+-    SET "link" = "%wlink%"
+-  END
+-  PATCH_IF (("%slink%" > "%wlink%") AND ("%slink%" > "%nlink%") AND ("%slink%" > "%elink%")) BEGIN
+-    SET "link" = "%slink%"
+-  END
+-  PATCH_IF (("%elink%" > "%wlink%") AND ("%elink%" > "%slink%") AND ("%elink%" > "%nlink%")) BEGIN
+-    SET "link" = "%elink%"
+-  END
+-  
+-// Correct ALL other links after elink
+-// New variables
+-  SET "entry"        = ("%map_off%" + 0xb8)
+-  SET "outer_c"      = 0
+-// Let's WHILE a bit and search for area-links
+-  WHILE ("%outer_c%" = 0) BEGIN
+-    READ_ASCII ("%entry%" + 0x8) "area" (2)
+-    PATCH_IF (("%area%" STRING_COMPARE_CASE "AR" = 0) OR ("%area%" STRING_COMPARE_CASE "G3" = 0)) BEGIN
+-      READ_SHORT ("%entry%" + 0x50)                   "nlink"
+-      READ_SHORT ("%entry%" + 0x50 + 0x8)             "wlink"
+-      READ_SHORT ("%entry%" + 0x50 + 0x8 + 0x8)       "slink"
+-      READ_SHORT ("%entry%" + 0x50 + 0x8 + 0x8 + 0x8) "elink"
+-// And if they are larger, let's patch 'em
+-      PATCH_IF ("%nlink%" > "%link%") BEGIN
+-        WRITE_SHORT ("%entry%" + 0x50) ("%nlink%" + 4)
+-      END
+-      PATCH_IF ("%wlink%" > "%link%") BEGIN
+-        WRITE_SHORT ("%entry%" + 0x50 + 0x8) ("%wlink%" + 4)
++ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
++  AR3000 => CDExit
++END
++
++ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
++  AR3000 => ExitSW
++  AR6300 => ExitW
++  AR5203 => ExitNE
++  AR5500 => ExitS
++END
++
++OUTER_SPRINT strDesc #-1
++
++LAF sc#addWmpAre INT_VAR mapIcon = 6 xCoord = 400 yCoord = 50 tTime = 0 inclSv = 0 STR_VAR areName = ARTOBR strName = "Tethyr Woods" strDesc worldmap = worldm25 END
++
++COPY_EXISTING worldm25.wmp override
++  READ_LONG 0x30 na
++  READ_LONG 0x34 ao
++  FOR (i=0;i<na;++i) BEGIN
++    READ_ASCII ao + 0xf0*i area 
++    PATCH_IF "%area%" STRING_EQUAL_CASE ar5203 OR "%area%" STRING_EQUAL_CASE ar6300 OR "%area%" STRING_EQUAL_CASE ar6400 BEGIN
++      WRITE_BYTE ao + i*0xf0 + 0x30 THIS BOR BIT2
++      PATCH_IF "%area%" STRING_EQUAL_CASE ar5203 BEGIN
++        SAY ao + i*0xf0 + 0x40 "Outside Saradush"
++        SAY ao + i*0xf0 + 0x44 "Outside Saradush"
+       END
+-      PATCH_IF ("%slink%" > "%link%") BEGIN
+-        WRITE_SHORT ("%entry%" + 0x50 + 0x8 + 0x8) ("%slink%" + 4)
+-      END
+-      PATCH_IF ("%elink%" > "%link%") BEGIN
+-        WRITE_SHORT ("%entry%" + 0x50 + 0x8 + 0x8 + 0x8) ("%elink%" + 4)
+-      END    END ELSE
+-    PATCH_IF (("%area%" STRING_COMPARE_CASE "AR" != 0) AND ("%area%" STRING_COMPARE_CASE "G3" != 0)) BEGIN
+-      SET "outer_c" = 1
+     END
+-    SET "entry" = ("%entry%" + 0xf0)
+   END
+-
+-// Add four new links from the new area
+-// Re-read offsets
+-  READ_LONG  0x38 "link_off"
+-  READ_LONG  0x3c "link_num"
+-// New offset
+-  WRITE_LONG 0x3c ("%link_num%" + 4)
+-// Add link to WK
+-  INSERT_BYTES  ("%link_off%" - 0x01 + (0xd8 * "%link_num%")) 0xd8
+-    WRITE_LONG  ("%link_off%"        + (0xd8 * "%link_num%")) 1 // WK
+-    WRITE_ASCII ("%link_off%" + 0x04 + (0xd8 * "%link_num%")) ~ExitSW~ // Entrance
+-    WRITE_LONG  ("%link_off%" + 0x28 + (0xd8 * "%link_num%")) 4 // Unknown
+-// Add link to Oasis
+-  INSERT_BYTES  ("%link_off%" - 0x01 + (0xd8 * "%link_num%")) 0xd8
+-    WRITE_LONG  ("%link_off%"        + (0xd8 * "%link_num%")) 7 // Oasis
+-    WRITE_ASCII ("%link_off%" + 0x04 + (0xd8 * "%link_num%")) ~ExitW~ // Entrance
+-    WRITE_LONG  ("%link_off%" + 0x28 + (0xd8 * "%link_num%")) 4 // Unknown
+-// Add link to Seige Camp
+-  INSERT_BYTES  ("%link_off%" - 0x01 + (0xd8 * "%link_num%")) 0xd8
+-    WRITE_LONG  ("%link_off%"        + (0xd8 * "%link_num%")) 4 // Seige Camp
+-    WRITE_ASCII ("%link_off%" + 0x04 + (0xd8 * "%link_num%")) ~ExitNE~ // Entrance
+-    WRITE_LONG  ("%link_off%" + 0x28 + (0xd8 * "%link_num%")) 4 // Unknown
+-// Add link to Amekathan
+-  INSERT_BYTES  ("%link_off%" - 0x01 + (0xd8 * "%link_num%")) 0xd8
+-    WRITE_LONG  ("%link_off%"        + (0xd8 * "%link_num%")) 3 // Amekathan
+-    WRITE_ASCII ("%link_off%" + 0x04 + (0xd8 * "%link_num%")) ~ExitS~ // Entrance
+-    WRITE_LONG  ("%link_off%" + 0x28 + (0xd8 * "%link_num%")) 4 // Unknown
+-// Make Areas Visitable
+-  FOR (index = 0 ; index < area_num ; index = index + 1) BEGIN
+-    READ_ASCII ("%area_off%" + ("%index%" * 0xf0)) "areafile"
+-    PATCH_IF ( ("AR5203" STRING_COMPARE_CASE "%areafile%" = 0) OR // Siege Camp
+-    	       ("AR6400" STRING_COMPARE_CASE "%areafile%" = 0) OR // North Woods
+-   	       ("AR6300" STRING_COMPARE_CASE "%areafile%" = 0) ) // Oasis
+-    BEGIN 
+-      READ_BYTE  ("%area_off%" + 0x30 + ("%index%" * 0xf0)) "flags"
+-      WRITE_BYTE ("%area_off%" + 0x30 + ("%index%" * 0xf0)) ("%flags%" BOR 0b00000100)
+-    END
+-  END
+- 
+-// Change name of seige camp to "Outside Saradush"
+-  FOR (index = 0 ; index < area_num ; index = index + 1) BEGIN
+-    READ_ASCII ("%area_off%" + ("%index%" * 0xf0)) "areafile"
+-
+-    PATCH_IF ("AR5203" STRING_COMPARE_CASE "%areafile%" = 0)  // Seige Camp
+-    BEGIN 
+-      SAY  ("%area_off%" + 0x40 + ("%index%" * 0xf0)) ~Outside Saradush~
+-      SAY  ("%area_off%" + 0x44 + ("%index%" * 0xf0)) ~Outside Saradush~ 
+-    END
+-  END
+-
+-BUT_ONLY_IF_IT_CHANGES
++BUT_ONLY
+ 
+ COPY_EXISTING ~AR5013.are~ ~override~
+ // Make the door in the sewers operate on the key in the guard house
+@@ -571,7 +443,7 @@
+ 
+ // Dependent on Yaga Shura Component
+ 
+-ACTION_IF (FILE_EXISTS ~override/WGneutra.cre~)
++ACTION_IF (FILE_EXISTS_IN_GAME ~WGneutra.cre~)
+   THEN BEGIN
+ 	
+ // Scripts -- Areas
+@@ -883,7 +755,7 @@
+   
+ // Dependent on SimDing0's Improved Oasis
+ 
+-ACTION_IF (FILE_EXISTS ~override/D0SHIELD.cre~) 
++ACTION_IF (FILE_EXISTS_IN_GAME ~D0SHIELD.cre~) 
+   THEN BEGIN
+   
+   COPY_EXISTING ~AR6300.bcs~ ~override~
+@@ -995,7 +867,7 @@
+ COPY ~ToBR/Cleansing/cre/WGdestru.cre~ ~override~
+ 
+ //Dialogues
+-COMPILE ~ToBR/Cleansing/dialogue/WGcleric.d~ ~override~
++COMPILE ~ToBR/Cleansing/dialogue/WGcleric.d~
+ 
+ //Items
+ COPY ~ToBR/Cleansing/items/WGholy.itm~ ~override~

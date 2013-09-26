@@ -1,0 +1,9 @@
+--- worgas\are\W_6003.baf	Sun Apr 22 21:48:52 2007
++++ C:\BWP Patchstudio\patched files\worgas\are\W_6003.baf	Thu Apr 29 12:59:00 2010
+@@ -7,5 +7,6 @@
+  RESPONSE #100
+ SetGlobal("WorgasManyEyes","AR6003",1)
+ ActionOverride("Worgas",StartDialogNoSet([PC])
++Continue()
+ END
+ 

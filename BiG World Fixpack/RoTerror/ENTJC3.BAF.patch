@@ -1,0 +1,11 @@
+--- RoTerror\BAF\ENTJC3.BAF	Thu Aug 24 19:22:52 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\ENTJC3.BAF	Sat Sep 26 20:56:42 2009
+@@ -5,7 +5,7 @@
+ 		CutSceneId(Player1)
+ 		FadeToColor([20.0],0)
+ 		Wait(2)
+-		LeaveAreaLUA("RR9000","",[631.306],2)
++		LeaveAreaLUA("RR9000","",[0.0],0)
+ 		Wait(2)
+ 		CreateCreature("Enteri3C",[422.344],14) // Artemis Entreri
+ 		CreateCreature("Jarlax3C",[467.330],15) // Jarlaxle

@@ -1,0 +1,20 @@
+--- rttitempack\rttitempack.tp2	Mon Dec 14 08:11:58 2009
++++ C:\BWP Patchstudio\patched files\rttitempack\rttitempack.tp2	Mon Oct 01 11:13:59 2012
+@@ -2,7 +2,7 @@
+ 
+ AUTHOR ~al17 (rtt-mod@libero.it)~
+ 
+-VERSION ~v1.2~
++VERSION ~v1.2 BWP Fix~
+ 
+ README ~rttitempack/rttitempack-readme.txt~
+ 
+@@ -27,6 +27,8 @@
+ BEGIN @0
+ 
+ // add items, spells and effs
++
++COPY ~rttitempack/files/RODSLING.BAM~              ~override/RODSLING.BAM~        
+ 
+ COPY ~rttitempack/files/RTT001.ITM~                ~override/RTT001.ITM~         
+   SAY NAME2 @1 

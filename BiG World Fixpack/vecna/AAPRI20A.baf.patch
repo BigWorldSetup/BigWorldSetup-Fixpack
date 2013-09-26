@@ -1,0 +1,83 @@
+--- vecna\baf\chr\AAPRI20A.baf	Mon May 09 20:21:13 2011
++++ C:\BWP Patchstudio\patched files\vecna\baf\chr\AAPRI20A.baf	Fri Oct 28 10:46:57 2011
+@@ -196,7 +196,7 @@
+ IF
+ 	Heard(NearestMyGroupOfType,HEALME)
+ 	!HPPercentLT(Myself,35)
+-	!Dead("astHeardBy())")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HaveSpell(CLERIC_MASS_CURE)
+ THEN
+@@ -210,7 +210,7 @@
+ IF
+ 	Heard(NearestMyGroupOfType,HEALME)
+ 	!HPPercentLT(Myself,35)
+-	!Dead("astHeardBy())")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HaveSpell(CLERIC_HEAL)
+ THEN
+@@ -224,7 +224,7 @@
+ IF
+ 	Heard(NearestMyGroupOfType,HEALME)
+ 	!HPPercentLT(Myself,35)
+-	!Dead("astHeardBy())")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+ THEN
+@@ -238,7 +238,7 @@
+ IF
+ 	Heard(NearestMyGroupOfType,HEALME)
+ 	!HPPercentLT(Myself,35)
+-	!Dead("astHeardBy())")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)
+ THEN
+@@ -252,7 +252,7 @@
+ IF
+ 	Heard(NearestMyGroupOfType,HEALME)
+ 	!HPPercentLT(Myself,35)
+-	!Dead("astHeardBy())")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
+ THEN
+@@ -266,7 +266,7 @@
+ IF
+ 	Heard(NearestMyGroupOfType,HEALME)
+ 	!HPPercentLT(Myself,35)
+-	!Dead("astHeardBy())")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)
+ THEN
+@@ -282,7 +282,7 @@
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HPPercentGT(Myself,75)
+ 	See(LastHeardBy(Myself))
+-	!Dead("astHeardBy(Myself))")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Range(LastHeardBy(Myself),10)
+ 	!NumItemsGT("POTN55",LastHeardBy(Myself),0) // Potion of Superior Healing
+ 	NumItemsGT("POTN55",Myself,1) // Potion of Superior Healing
+@@ -505,7 +505,7 @@
+ 
+ IF
+ 	Heard(NearestMyGroupOfType,ASSIST)
+-	!Dead("astHeardBy(Myself))")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_INVISIBLE)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_IMPROVEDINVISIBILITY)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_CHARMED)
+@@ -523,7 +523,7 @@
+ 	Heard(NearestMyGroupOfType,ASSIST)
+ 	See(LastHeardBy(Myself))
+ 	!See(LastAttackerOf(LastHeardBy(Myself)))
+-	!Dead("astHeardBy(Myself))")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_INVISIBLE)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_IMPROVEDINVISIBILITY)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_CHARMED)

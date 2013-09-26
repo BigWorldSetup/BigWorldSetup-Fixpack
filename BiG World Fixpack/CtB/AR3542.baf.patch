@@ -1,0 +1,164 @@
+--- CtB\scripts\ctb\AR3542.baf	Sun Aug 23 19:25:30 2009
++++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\AR3542.baf	Wed Jun 20 06:51:40 2012
+@@ -22,7 +22,7 @@
+ IF
+ 	NumInParty(1)
+ 	LevelPartyLT(20)
+-	LevelPartyGT(11)
++	LevelPartyGT(9)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty1Cat2","MYAREA",1)
+@@ -31,7 +31,7 @@
+ IF
+ 	NumInParty(1)
+ 	LevelPartyLT(30)
+-	LevelPartyGT(21)
++	LevelPartyGT(19)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty1Cat3","MYAREA",1)
+@@ -39,7 +39,7 @@
+ 
+ IF
+ 	NumInParty(1)
+-	LevelPartyGT(31)
++	LevelPartyGT(29)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty1Cat4","MYAREA",1)
+@@ -56,7 +56,7 @@
+ IF
+ 	NumInParty(2)
+ 	LevelPartyLT(20)
+-	LevelPartyGT(11)
++	LevelPartyGT(9)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty2Cat2","MYAREA",1)
+@@ -65,7 +65,7 @@
+ IF
+ 	NumInParty(2)
+ 	LevelPartyLT(30)
+-	LevelPartyGT(21)
++	LevelPartyGT(19)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty2Cat3","MYAREA",1)
+@@ -73,7 +73,7 @@
+ 
+ IF
+ 	NumInParty(2)
+-	LevelPartyGT(31)
++	LevelPartyGT(29)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty2Cat4","MYAREA",1)
+@@ -90,7 +90,7 @@
+ IF
+ 	NumInParty(3)
+ 	LevelPartyLT(20)
+-	LevelPartyGT(11)
++	LevelPartyGT(9)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty3Cat2","MYAREA",1)
+@@ -99,7 +99,7 @@
+ IF
+ 	NumInParty(3)
+ 	LevelPartyLT(30)
+-	LevelPartyGT(21)
++	LevelPartyGT(19)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty3Cat3","MYAREA",1)
+@@ -107,7 +107,7 @@
+ 
+ IF
+ 	NumInParty(3)
+-	LevelPartyGT(31)
++	LevelPartyGT(29)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty3Cat4","MYAREA",1)
+@@ -124,7 +124,7 @@
+ IF
+ 	NumInParty(4)
+ 	LevelPartyLT(20)
+-	LevelPartyGT(11)
++	LevelPartyGT(9)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty4Cat2","MYAREA",1)
+@@ -133,7 +133,7 @@
+ IF
+ 	NumInParty(4)
+ 	LevelPartyLT(30)
+-	LevelPartyGT(21)
++	LevelPartyGT(19)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty4Cat3","MYAREA",1)
+@@ -141,7 +141,7 @@
+ 
+ IF
+ 	NumInParty(4)
+-	LevelPartyGT(31)
++	LevelPartyGT(29)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty4Cat4","MYAREA",1)
+@@ -158,7 +158,7 @@
+ IF
+ 	NumInParty(5)
+ 	LevelPartyLT(20)
+-	LevelPartyGT(11)
++	LevelPartyGT(9)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty5Cat2","MYAREA",1)
+@@ -167,7 +167,7 @@
+ IF
+ 	NumInParty(5)
+ 	LevelPartyLT(30)
+-	LevelPartyGT(21)
++	LevelPartyGT(19)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty5Cat3","MYAREA",1)
+@@ -175,7 +175,7 @@
+ 
+ IF
+ 	NumInParty(5)
+-	LevelPartyGT(31)
++	LevelPartyGT(29)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty5Cat4","MYAREA",1)
+@@ -192,7 +192,7 @@
+ IF
+ 	NumInParty(6)
+ 	LevelPartyLT(20)
+-	LevelPartyGT(11)
++	LevelPartyGT(9)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty6Cat2","MYAREA",1)
+@@ -201,7 +201,7 @@
+ IF
+ 	NumInParty(6)
+ 	LevelPartyLT(30)
+-	LevelPartyGT(21)
++	LevelPartyGT(19)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty6Cat3","MYAREA",1)
+@@ -209,7 +209,7 @@
+ 
+ IF
+ 	NumInParty(6)
+-	LevelPartyGT(31)
++	LevelPartyGT(29)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbParty6Cat4","MYAREA",1)

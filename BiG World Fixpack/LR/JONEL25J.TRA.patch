@@ -1,0 +1,11 @@
+--- LR\tra\english\JONEL25J.TRA	Sat Aug 21 14:30:44 2004
++++ C:\BWP Patchstudio\patched files\LR\tra\english\JONEL25J.TRA	Fri Nov 05 12:28:46 2010
+@@ -16,7 +16,7 @@
+ @15   = ~I would rather risk my neck by following her bizarre directions than listen to your lies!~
+ @16   = ~I saw your eyes flicker under the mask while she was talking and was curious about what you might say. I agree that she is not to be trusted. But the fact is, Irenicus, that I trust you even less.~
+ @17   = ~Why, thank you for being frank once in a while, Irenicus. As a matter of fact, I don't trust Melissan either. Unfortunately, we have not much of a choice but to follow her questionable advice and hope it turns out for the better.~
+-@18   = ~<CHARNAME >, you show insolence and stupidity in equal measure, as I fully expected from a self-absorbed fool such as you. Suit yourself, I shall not bother you with further offers of advice, whatever the price.~
++@18   = ~<CHARNAME>, you show insolence and stupidity in equal measure, as I fully expected from a self-absorbed fool such as you. Suit yourself, I shall not bother you with further offers of advice, whatever the price.~
+ @19   = ~Godchild, you must have eaten something wrong today, as I cannot find any rational justification for your sudden bout of common sense. Trusting me would earn you nothing but my contempt, yet trusting Melissan might turn out to be your last foolish resolution on this Plane.~
+ @20   = ~I have heard of the fire giant Spawn raised by a Bhaalite witch, yet dismissed him as a soul donor. Yaga-Shura has been rumored to meddle in primeval witchcraft, which is not surprising in someone of his background - stemmed from elemental blood and reared by a hag. Such a primitive use of the Weave disgusts me to the core, yet he is a dangerous enemy to make. Are you sure you want to cross him?~
+ @21   = ~What other choices do I have?~

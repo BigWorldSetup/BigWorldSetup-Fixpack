@@ -1,0 +1,17 @@
+--- RoTerror\BAF\OTHESOE.BAF	Thu Nov 02 19:41:18 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\OTHESOE.BAF	Fri Jan 23 05:38:37 2009
+@@ -35,12 +35,14 @@
+ 		EndCutSceneMode()
+ 		ActionOverride("Enter2",StartDialog("Enter2","Drizi2"))
+ 		SmallWait(1)
++		/*
+ 		MakeUnselectable(999999)
+ 		ActionOverride(Player2,MakeUnselectable(999999))
+ 		ActionOverride(Player3,MakeUnselectable(999999))
+ 		ActionOverride(Player4,MakeUnselectable(999999))
+ 		ActionOverride(Player5,MakeUnselectable(999999))
+ 		ActionOverride(Player6,MakeUnselectable(999999))
++		*/
+ END
+ 
+ 

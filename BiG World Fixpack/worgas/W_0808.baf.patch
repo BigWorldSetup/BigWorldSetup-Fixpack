@@ -1,0 +1,19 @@
+--- worgas\are\W_0808.baf	Tue May 01 12:20:02 2007
++++ C:\BWP Patchstudio\patched files\worgas\are\W_0808.baf	Thu Apr 29 13:07:23 2010
+@@ -5,7 +5,7 @@
+ THEN
+   RESPONSE #100
+     SetGlobal("DrizztSpawn","AR0808",2)
+-    ActionOverride("C6DRIZZ2",DestroySelf()
++    ActionOverride("C6DRIZZ2",DestroySelf())
+     CreateCreature("w_drizz2",[458.901],8)  // ~Drizzt~
+ END
+ 
+@@ -14,6 +14,6 @@
+ Global("w_drizztFOLLOW","GLOBAL",1)
+ THEN
+   RESPONSE #100
+-    ActionOverride("w_drizz2",DestroySelf()
++    ActionOverride("w_drizz2",DestroySelf())
+ END
+ 

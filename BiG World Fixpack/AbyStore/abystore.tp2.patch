@@ -1,0 +1,11 @@
+--- AbyStore\abystore.tp2	Mon Sep 04 19:47:20 2006
++++ C:\BWP Patchstudio\patched files\AbyStore\abystore.tp2	Tue Apr 13 21:38:54 2010
+@@ -3,6 +3,8 @@
+ BACKUP ~AbyStore/backup~
+ AUTHOR ~Rastor <rastor@rpgdungeon.net>~
+ 
++VERSION ~v3.0 BWP Fix~
++
+ AUTO_TRA ~AbyStore/%s~
+ 
+ ALWAYS

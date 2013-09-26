@@ -1,0 +1,10 @@
+--- stratagems\tactical_bg2\minor_bg2.tpa	Sat Feb 02 17:57:35 2013
++++ C:\BWP Patchstudio\patched files\stratagems\tactical_bg2\minor_bg2.tpa	Tue Sep 10 03:39:19 2013
+@@ -313,6 +313,7 @@
+ <<<<<<<< .../stratagems-inline/dw#dkmg2.baf
+ 
+ IF
++  AreaCheck("AR0300")
+   GlobalGT("DMWWDockMuggers","GLOBAL",2)
+ THEN
+   RESPONSE #100

@@ -1,0 +1,11 @@
+--- setup-imnesvale.tp2	Tue Mar 14 18:02:34 2006
++++ C:\BWP Patchstudio\patched files\setup-imnesvale.tp2	Wed Apr 14 22:53:48 2010
+@@ -1,6 +1,8 @@
+ BACKUP ~imnesvale/backup~
+ AUTHOR ~Duality (Dualities.Shadow@gmail.com)~
+ 
++VERSION ~v1 BWP Fix~
++
+ LANGUAGE ~English~ ~English~ ~imnesvale/english/imnes.tra~
+ 
+ BEGIN ~Easy~

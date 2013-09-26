@@ -1,0 +1,8 @@
+IF
+  PartyHasItem("MISC47")  // Golden Pantaloons
+  Global("IHavePants","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("IHavePants","GLOBAL",1)
+	Continue()
+END

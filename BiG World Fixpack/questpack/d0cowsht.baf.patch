@@ -1,0 +1,15 @@
+--- questpack\encounters\DING0\d0cowsht.baf	Sat Mar 05 15:11:42 2005
++++ C:\BWP Patchstudio\patched files\questpack\encounters\DING0\d0cowsht.baf	Tue Dec 14 06:44:01 2010
+@@ -21,11 +21,11 @@
+ 	Global("D0QSpawnCowled","AR0500",3)
+ THEN
+ 	RESPONSE #100
+-		SetGlobal("D0QSpawnCowled","AR0500",4)
+ 		Wait(1)
+ 		FaceObject("d0qpcow3")
+ 		ActionOverride("d0qpcow3",FaceObject("d0qpcow1"))
+ 		ActionOverride("d0qpcow2",FaceObject("d0qpcow3"))
+ 		Wait(1)
++		SetGlobal("D0QSpawnCowled","AR0500",4)
+ 		StartDialogNoSet("d0qpcow3")
+ END

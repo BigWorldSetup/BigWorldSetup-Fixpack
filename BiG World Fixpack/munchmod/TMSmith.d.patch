@@ -1,0 +1,16 @@
+--- munchmod\dlg\TMSmith.d	Tue Nov 03 22:07:58 2009
++++ C:\BWP Patchstudio\patched files\munchmod\dlg\TMSmith.d	Sat Sep 17 07:34:40 2011
+@@ -46,7 +46,12 @@
+ 
+ IF ~~ THEN BEGIN MM11 // from: 12.0
+   SAY @11 
+-  IF ~~ THEN DO ~~ GOTO MM14
++  IF ~~ THEN DO ~TakePartyItem("SGMISC2")
++DestroyItem("SGMISC2")
++TakePartyItem("SGMISC3")
++DestroyItem("SGMISC3")
++GiveItemCreate("SGSPR1",LastTalkedToBy,1,0,0)
++SetGlobal("SGspearforged","GLOBAL",1) ~ GOTO MM14
+ END
+ 
+ IF ~~ THEN BEGIN MM12 // from: 15.0 8.1

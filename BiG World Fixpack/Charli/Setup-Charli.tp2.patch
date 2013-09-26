@@ -1,0 +1,22 @@
+--- Charli\Setup-Charli.tp2	Tue Apr 06 06:18:10 2010
++++ C:\BWP Patchstudio\patched files\Charli\Setup-Charli.tp2	Thu May 02 04:56:01 2013
+@@ -16,6 +16,10 @@
+ LANGUAGE ~English~
+                  ~english~
+                  ~Charli/english/setup.tra~
++                 
++LANGUAGE ~Italian~
++		 ~italian~
++                 ~Charli/italian/setup.tra~
+                 
+ //**************************************************************
+ //**************************************************************
+@@ -36,7 +40,7 @@
+ 
+ 
+ COMPILE ~Charli\baf\Gittanox.baf~
+-// EXTEND_TOP ~ar0400.bcs~ ~Charli\baf\Añadir_Gittano.baf~
++EXTEND_TOP ~ar0400.bcs~ ~Charli\baf\Gittano.baf~
+ 
+ 
+ // Copia retratos

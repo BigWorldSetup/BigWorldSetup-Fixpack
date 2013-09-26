@@ -1,0 +1,11 @@
+--- infinityanimations\lib\t-moines.tpa	Tue May 11 22:59:18 2010
++++ C:\BWP Patchstudio\patched files\infinityanimations\lib\t-moines.tpa	Fri Jul 15 12:33:45 2011
+@@ -183,7 +183,7 @@
+         WRITE_BYTE 0x2c 66 //Metal color
+         WRITE_BYTE 0x2d 66 //Minor color
+         WRITE_BYTE 0x2e 66 //Major color
+-        WRITE_BYTE 0x2f 153 //Skin color
++        WRITE_BYTE 0x2f 13 //Skin color
+         WRITE_BYTE 0x30 66 //Leather color
+         WRITE_BYTE 0x31 66 //Armor color
+         WRITE_BYTE 0x32 66 //Hair color

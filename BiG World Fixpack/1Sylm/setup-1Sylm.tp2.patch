@@ -1,0 +1,47 @@
+--- setup-1Sylm.tp2	Wed Jan 16 16:01:26 2008
++++ C:\BWP Patchstudio\patched files\setup-1Sylm.tp2	Thu Sep 13 16:32:05 2012
+@@ -1,5 +1,8 @@
+ BACKUP ~1Sylm\backup~
+ AUTHOR ~zyraen@hotmail.com~
++
++VERSION ~v1.025 BWP Fix~
++
+ // ALWAYS
+ //  AT_INTERACTIVE_EXIT ~VIEW readme-btl.html~
+ // END
+@@ -11,6 +14,8 @@
+ BEGIN ~Sylmar - Elves vs Orcs~
+ REQUIRE_FILE ~Data/25Dialog.bif~ ~You do not appear to have TOB installed.~ 
+ 
++APPEND ~stats.ids~ ~181 WIZARD_PROTECTION_FROM_NORMAL_WEAPONS~ UNLESS ~WIZARD_PROTECTION_FROM_NORMAL_WEAPONS~
++
+ // generic map controls
+ 
+ // for general Squad Movement Points
+@@ -58,13 +63,25 @@
+ 
+ // Map Zy1800
+ 
+-COPY ~1Sylm\ARE\Zy1800~ ~override~
++COPY ~1Sylm\ARE\Zy1800\Zy1800.ARE~ ~override~
++REPLACE_TEXTUALLY ~AM1800~ ~ZY1800~
++COPY ~1Sylm\ARE\Zy1800\Zy1800HT.BMP~ ~override~
++COPY ~1Sylm\ARE\Zy1800\Zy1800SR.BMP~ ~override~
+ 
+ COPY_EXISTING ~AR1800.TIS~ ~override\Zy1800.TIS~
+ COPY_EXISTING ~AR1800.WED~ ~override\Zy1800.WED~
+   WRITE_ASCII 0x24 ~ZY1800~
+ COPY_EXISTING ~AR1800LM.BMP~ ~override\Zy1800LM.BMP~
+ COPY_EXISTING ~AR1800.MOS~ ~override\ZY1800.MOS~
++COPY_EXISTING ~AM1800.WAV~ ~override\ZY1800.wav~
++COPY_EXISTING ~AM1800A1.WAV~ ~override\ZY1800A1.wav~
++COPY_EXISTING ~AM1800A2.WAV~ ~override\ZY1800A2.wav~
++COPY_EXISTING ~AM1800D1.WAV~ ~override\ZY1800D1.wav~
++COPY_EXISTING ~AM1800D2.WAV~ ~override\ZY1800D2.wav~
++COPY_EXISTING ~AM1800D3.WAV~ ~override\ZY1800D3.wav~
++COPY_EXISTING ~AM1800D4.WAV~ ~override\ZY1800D4.wav~
++COPY_EXISTING ~AM1800D5.WAV~ ~override\ZY1800D5.wav~
++COPY_EXISTING ~AM1800N.WAV~ ~override\ZY1800N.wav~
+ 
+ COPY ~1Sylm\SPL\Zy18ELSS.CRE~ ~override~
+ SAY NAME1 ~Dancing Sword~

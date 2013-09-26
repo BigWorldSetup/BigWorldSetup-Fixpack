@@ -1,0 +1,11 @@
+--- haerdalisromance\dialogue\interjections.d	Sun Dec 02 16:02:14 2012
++++ C:\BWP Patchstudio\patched files\haerdalisromance\dialogue\interjections.d	Sat Feb 09 12:38:53 2013
+@@ -1442,7 +1442,7 @@
+ SAY ~I...~
+ = ~That... was...~
+ = ~For once, I have no words to do this moment justice.~
+-IF ~~ DO ~SetGlobal("LS_RE_Anishai","GLOBAL",2)~ EXIT
++IF ~~ DO ~SetGlobal("LS_RE_Noober","GLOBAL",2)~ EXIT
+ END
+ 
+ // Old Ribald's Speciality, comment

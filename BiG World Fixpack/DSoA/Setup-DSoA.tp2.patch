@@ -1,0 +1,33 @@
+--- Setup-DSoA.tp2	Tue Aug 18 20:29:36 2009
++++ C:\BWP Patchstudio\patched files\Setup-DSoA.tp2	Tue May 11 17:36:57 2010
+@@ -4,7 +4,7 @@
+ 
+ AUTHOR ~Kensai Ryu  (Repackaged by hlidskialf)~
+ 
+-VERSION ~v2.2.4~
++VERSION ~v2.2.4 BWP Fix~
+ 
+ README ~DSoA/Readme-DSoA.txt~
+   
+@@ -16,6 +16,21 @@
+   UNLESS ~SpellRES~
+   APPEND ~trigger.ids~ ~0x4031 HaveSpellRES(S:Spell*)~
+   UNLESS ~HaveSpellRES~
++  COPY_EXISTING ~State.IDS~ ~Override/State.IDS~
++  APPEND ~STATE.IDS~ ~0x8014202D STATE_OUT_OF_ACTION~
++  UNLESS ~STATE_OUT_OF_ACTION~
++  COPY_EXISTING ~Gtimes.IDS~ ~Override/GTimes.IDS~
++  APPEND ~GTIMES.IDS~ ~2400 EIGHT_HOURS~        
++  UNLESS ~EIGHT_HOURS~
++  APPEND ~GTIMES.IDS~   ~6 ONE_ROUND~     
++  UNLESS ~ONE_ROUND~
++  APPEND ~GTIMES.IDS~  ~18 THREE_ROUNDS~  
++  UNLESS ~THREE_ROUNDS~
++  APPEND ~GTIMES.IDS~ ~900 FIFTEEN_TURNS~ 
++  UNLESS ~FIFTEEN_TURNS~
++  COPY_EXISTING ~Spell.IDS~ ~Override/Spell.IDS~
++  APPEND ~spell.ids~ ~2302 WIZARD_REMOVE_MAGIC~ 
++  UNLESS ~WIZARD_REMOVE_MAGIC~
+ 
+ COPY ~DSoA/spl~ ~Override~
+ 

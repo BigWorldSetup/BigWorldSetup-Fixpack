@@ -1,0 +1,25 @@
+--- finch\d\xmodfinchmurneth.D	Mon Oct 31 22:34:42 2005
++++ C:\BWP Patchstudio\patched files\finch\d\xmodfinchmurneth.D	Fri Nov 28 05:47:10 2008
+@@ -21,16 +21,16 @@
+ InParty("A#MURN")
+ See("A#MURN")
+ !StateCheck("A#MURN",STATE_SLEEPING)
+-InParty("IMOEN")
+-See("IMOEN")
+-!StateCheck("IMOEN",STATE_SLEEPING)
++InParty("IMOEN2")
++See("IMOEN2")
++!StateCheck("IMOEN2",STATE_SLEEPING)
+ Global("FinchMurn2","LOCALS",0)~ THEN BSUFINCH ScribblySort
+ @967 DO ~SetGlobal("FinchMurn2","LOCALS",1)~
+-== _BIMOEN @968 
++== BIMOEN2 @968 
+ == BSUFINCH @969
+-== _BIMOEN @970
++== BIMOEN2 @970
+ == BSUFINCH @971
+-== _BIMOEN @972
++== BIMOEN2 @972
+ =
+ @973
+ =

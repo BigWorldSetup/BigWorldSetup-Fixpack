@@ -1,0 +1,20 @@
+--- RoTerror\SNIP\BAF\Mage\MAGE14M.BAF	Fri Feb 24 19:34:34 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\Mage\MAGE14M.BAF	Thu Apr 01 16:55:19 2010
+@@ -21,7 +21,7 @@
+ 	Allegiance(Myself,ENEMY)
+ 	Global("prepspells","LOCALS",1)
+ 	CheckStatLT(Myself,1,STONESKINS)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,29736) // Contingency - Stoneskin
+@@ -86,7 +86,7 @@
+ 	Global("prepspells","LOCALS",2)
+ 	HaveSpell(WIZARD_STONE_SKIN)
+ 	CheckStatLT(Myself,1,STONESKINS)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Spell(Myself,WIZARD_STONE_SKIN)

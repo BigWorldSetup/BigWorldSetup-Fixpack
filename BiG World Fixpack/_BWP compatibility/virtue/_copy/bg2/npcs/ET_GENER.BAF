@@ -1,0 +1,630 @@
+IF
+	Die()
+	OR(2)
+                AttackedBy([GOODCUTOFF],DEFAULT)
+                HitBy([GOODCUTOFF],CRUSHING)
+	!StateCheck(LastTrigger,STATE_CHARMED)
+	!StateCheck(LastTrigger,STATE_CONFUSED)
+	OR(2)
+		!HasItemEquipedReal("SW2H03",LastTrigger)
+		!StateCheck(LastTrigger,STATE_BERSERK)
+	!StateCheck(Myself,STATE_CHARMED)
+	!StateCheck(Myself,STATE_CONFUSED)
+	OR(2)
+		!HasItemEquipedReal("SW2H03",Myself)
+		!StateCheck(Myself,STATE_BERSERK)
+	!Alignment(Myself,MASK_EVIL)
+THEN
+	RESPONSE #100
+		IncrementGlobal("D0Change","GLOBAL",-2)
+END
+
+IF
+	ActionListEmpty()
+	!ModalState(BATTLESONG)
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	!ModalState(TURNUNDEAD)
+	InParty(Myself)
+	Alignment(Myself,MASK_GOOD)
+	GlobalGT("D0Happiness","LOCALS",12)
+	RealGlobalTimerExpired("D0Speak","LOCALS")
+THEN
+	RESPONSE #100
+		VerbalConstant(Myself,HAPPY)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!ModalState(BATTLESONG)
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	!ModalState(TURNUNDEAD)
+	InParty(Myself)
+	Alignment(Myself,MASK_GOOD)
+	GlobalLT("D0Happiness","LOCALS",9)
+	GlobalGT("D0Happiness","LOCALS",5)
+	RealGlobalTimerExpired("D0Speak","LOCALS")
+THEN
+	RESPONSE #100
+		VerbalConstant(Myself,UNHAPPY_ANNOYED)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!ModalState(BATTLESONG)
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	!ModalState(TURNUNDEAD)
+	InParty(Myself)
+	Alignment(Myself,MASK_GOOD)
+	GlobalLT("D0Happiness","LOCALS",6)
+	GlobalGT("D0Happiness","LOCALS",2)
+	RealGlobalTimerExpired("D0Speak","LOCALS")
+THEN
+	RESPONSE #100
+		VerbalConstant(Myself,UNHAPPY_SERIOUS)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!ModalState(BATTLESONG)
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	!ModalState(TURNUNDEAD)
+	InParty(Myself)
+	Alignment(Myself,MASK_GOOD)
+	GlobalLT("D0Happiness","LOCALS",3)
+	RealGlobalTimerExpired("D0Speak","LOCALS")
+THEN
+	RESPONSE #100
+		VerbalConstant(Myself,UNHAPPY_BREAKING_POINT)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!ModalState(BATTLESONG)
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	!ModalState(TURNUNDEAD)
+	InParty(Myself)
+	Alignment(Myself,MASK_GENEUTRAL)
+	GlobalGT("D0Happiness","LOCALS",8)
+	GlobalLT("D0Happiness","LOCALS",13)
+	RealGlobalTimerExpired("D0Speak","LOCALS")
+THEN
+	RESPONSE #100
+		VerbalConstant(Myself,HAPPY)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!ModalState(BATTLESONG)
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	!ModalState(TURNUNDEAD)
+	InParty(Myself)
+	Alignment(Myself,MASK_GENEUTRAL)
+	OR(2)
+		GlobalGT("D0Happiness","LOCALS",18)
+		GlobalLT("D0Happiness","LOCALS",6)
+	OR(2)
+		GlobalGT("D0Happiness","LOCALS",18)
+		GlobalGT("D0Happiness","LOCALS",3)
+	RealGlobalTimerExpired("D0Speak","LOCALS")
+THEN
+	RESPONSE #100
+		VerbalConstant(Myself,UNHAPPY_ANNOYED)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!ModalState(BATTLESONG)
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	!ModalState(TURNUNDEAD)
+	InParty(Myself)
+	Alignment(Myself,MASK_GENEUTRAL)
+	GlobalLT("D0Happiness","LOCALS",4)
+	GlobalGT("D0Happiness","LOCALS",1)
+	RealGlobalTimerExpired("D0Speak","LOCALS")
+THEN
+	RESPONSE #100
+		VerbalConstant(Myself,UNHAPPY_SERIOUS)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!ModalState(BATTLESONG)
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	!ModalState(TURNUNDEAD)
+	InParty(Myself)
+	Alignment(Myself,MASK_GENEUTRAL)
+	GlobalLT("D0Happiness","LOCALS",2)
+	RealGlobalTimerExpired("D0Speak","LOCALS")
+THEN
+	RESPONSE #100
+		VerbalConstant(Myself,UNHAPPY_BREAKING_POINT)
+		Continue()
+END
+IF
+	ActionListEmpty()
+	!ModalState(BATTLESONG)
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	!ModalState(TURNUNDEAD)
+	InParty(Myself)
+	Alignment(Myself,MASK_EVIL)
+	GlobalLT("D0Happiness","LOCALS",7)
+	RealGlobalTimerExpired("D0Speak","LOCALS")
+THEN
+	RESPONSE #100
+		VerbalConstant(Myself,HAPPY)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!ModalState(BATTLESONG)
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	!ModalState(TURNUNDEAD)
+	InParty(Myself)
+	Alignment(Myself,MASK_EVIL)
+	GlobalGT("D0Happiness","LOCALS",12)
+	GlobalLT("D0Happiness","LOCALS",16)
+	RealGlobalTimerExpired("D0Speak","LOCALS")
+THEN
+	RESPONSE #100
+		VerbalConstant(Myself,UNHAPPY_ANNOYED)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!ModalState(BATTLESONG)
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	!ModalState(TURNUNDEAD)
+	InParty(Myself)
+	Alignment(Myself,MASK_EVIL)
+	GlobalGT("D0Happiness","LOCALS",15)
+	GlobalLT("D0Happiness","LOCALS",19)
+	RealGlobalTimerExpired("D0Speak","LOCALS")
+THEN
+	RESPONSE #100
+		VerbalConstant(Myself,UNHAPPY_SERIOUS)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!ModalState(BATTLESONG)
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	!ModalState(TURNUNDEAD)
+	InParty(Myself)
+	Alignment(Myself,MASK_EVIL)
+	GlobalGT("D0Happiness","LOCALS",18)
+	RealGlobalTimerExpired("D0Speak","LOCALS")
+THEN
+	RESPONSE #100
+		VerbalConstant(Myself,UNHAPPY_BREAKING_POINT)
+		Continue()
+END
+
+IF
+	Global("D0SpeakStart","LOCALS",0)
+	InParty(Myself)
+THEN
+	RESPONSE #100
+		SetGlobal("D0SpeakStart","LOCALS",1)
+		RealSetGlobalTimer("D0Speak","LOCALS",1000)
+		Continue()
+	RESPONSE #100
+		SetGlobal("D0SpeakStart","LOCALS",1)
+		RealSetGlobalTimer("D0Speak","LOCALS",1100)
+		Continue()
+	RESPONSE #100
+		SetGlobal("D0SpeakStart","LOCALS",1)
+		RealSetGlobalTimer("D0Speak","LOCALS",1200)
+		Continue()
+	RESPONSE #100
+		SetGlobal("D0SpeakStart","LOCALS",1)
+		RealSetGlobalTimer("D0Speak","LOCALS",1300)
+		Continue()
+	RESPONSE #100
+		SetGlobal("D0SpeakStart","LOCALS",1)
+		RealSetGlobalTimer("D0Speak","LOCALS",1400)
+		Continue()
+	RESPONSE #100
+		SetGlobal("D0SpeakStart","LOCALS",1)
+		RealSetGlobalTimer("D0Speak","LOCALS",1500)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!ModalState(BATTLESONG)
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	!ModalState(TURNUNDEAD)
+	InParty(Myself)
+	RealGlobalTimerExpired("D0Speak","LOCALS")
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("D0Speak","LOCALS",1000)
+	RESPONSE #100
+		RealSetGlobalTimer("D0Speak","LOCALS",1100)
+	RESPONSE #100
+		RealSetGlobalTimer("D0Speak","LOCALS",1200)
+	RESPONSE #100
+		RealSetGlobalTimer("D0Speak","LOCALS",1300)
+	RESPONSE #100
+		RealSetGlobalTimer("D0Speak","LOCALS",1400)
+	RESPONSE #100
+		RealSetGlobalTimer("D0Speak","LOCALS",1500)
+END
+
+IF
+	Global("D0Happiness","LOCALS",0)
+	Global("D0HappySetup","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("D0HappySetup","LOCALS",1)
+		SetGlobal("D0Happiness","LOCALS",10)
+END
+
+IF
+	GlobalGT("D0Happiness","LOCALS",20)
+THEN
+	RESPONSE #100
+		SetGlobal("D0Happiness","LOCALS",20)
+END
+
+IF
+	GlobalLT("D0Happiness","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("D0Happiness","LOCALS",1)
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("D0___NPC___Happy","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",1)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",2)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",3)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",4)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",4)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",5)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",5)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",6)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",6)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",7)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",8)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",8)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",9)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",9)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",11)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",11)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",12)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",12)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",13)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",13)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",14)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",14)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",15)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",15)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",16)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",16)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",17)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",17)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",18)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",18)
+END
+
+IF
+	!InParty(Myself)
+	GlobalGT("D0___NPC___Happy","GLOBAL",18)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",19)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-1)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-1)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-2)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-2)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-3)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-3)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-4)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-4)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-5)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-5)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-6)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-6)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-7)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-7)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-8)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-8)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-9)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-9)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-11)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-11)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-12)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-12)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-13)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-13)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-14)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-14)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-15)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-15)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-16)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-16)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-17)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-17)
+END
+
+IF
+	!InParty(Myself)
+	Global("D0___NPC___Happy","GLOBAL",-18)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-18)
+END
+
+IF
+	!InParty(Myself)
+	GlobalLT("D0___NPC___Happy","GLOBAL",-18)
+THEN
+	RESPONSE #100
+		SetGlobal("D0___NPC___Happy","GLOBAL",0)
+		IncrementGlobal("D0Happiness","LOCALS",-19)
+END

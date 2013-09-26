@@ -1,0 +1,11 @@
+--- worgas\worgas.tp2	Sun Nov 08 06:11:42 2009
++++ C:\BWP Patchstudio\patched files\worgas\worgas.tp2	Tue May 11 11:27:30 2010
+@@ -1,7 +1,7 @@
+ BACKUP ~worgas\backup~
+ AUTHOR ~flysoups@hotmail.com~
+ 
+-VERSION ~Beta v1.1~
++VERSION ~Beta v1.1 BWP Fix~
+ 
+ BEGIN ~Worgas~
+ 

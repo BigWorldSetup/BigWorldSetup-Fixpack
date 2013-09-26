@@ -1,0 +1,36 @@
+--- SC#Hub\Dialogue\SC#FatespiritTD.d	Wed Jul 28 17:14:04 2004
++++ C:\BWP Patchstudio\patched files\SC#Hub\Dialogue\SC#FatespiritTD.d	Sun Oct 31 16:59:54 2004
+@@ -8,32 +8,9 @@
+ EXTEND_TOP FATESP 6 #5
+   IF ~!Dead("Hubelpot")
+      !InMyArea("Hubelpot")
+-     Global("SC#HubSummoned","GLOBAL",0)
+-     Kit(Hubelpot,TOTEMIC)~
++     Global("SC#HubSummoned","GLOBAL",0)~
+   THEN
+     REPLY ~Bring me Hubelpot, the Totemic Druid.~
+-      DO ~CreateVisualEffect("SPPORTAL",[1999.1218])
+-         Wait(2)
+-         CreateCreature("SC#Hub25",[1999.1218],0)
+-         SetGlobal("SC#HubSummoned","GLOBAL",1)~
+-         GOTO 8
+-   IF ~!Dead("Hubelpot")
+-     !InMyArea("Hubelpot")
+-     Global("SC#HubSummoned","GLOBAL",0)
+-     Kit(Hubelpot,SC#VDrd)~
+-  THEN
+-    REPLY ~Bring me Hubelpot, the Village Druid.~
+-      DO ~CreateVisualEffect("SPPORTAL",[1999.1218])
+-         Wait(2)
+-         CreateCreature("SC#Hub25",[1999.1218],0)
+-         SetGlobal("SC#HubSummoned","GLOBAL",1)~
+-         GOTO 8
+-   IF ~!Dead("Hubelpot")
+-     !InMyArea("Hubelpot")
+-     Global("SC#HubSummoned","GLOBAL",0)
+-     Kit(Hubelpot,SC#VFar)~
+-  THEN
+-    REPLY ~Bring me Hubelpot, the Vegetable Farmer.~
+       DO ~CreateVisualEffect("SPPORTAL",[1999.1218])
+          Wait(2)
+          CreateCreature("SC#Hub25",[1999.1218],0)

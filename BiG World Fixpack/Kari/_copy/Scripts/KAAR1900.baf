@@ -1,0 +1,7 @@
+IF
+  Global("MGKariExists","AR1900",0)
+THEN
+ RESPONSE #100
+  SetGlobal("MGKariExists","AR1900",1)
+  CreateCreature("MGKARI",[3931.2204],0)
+END

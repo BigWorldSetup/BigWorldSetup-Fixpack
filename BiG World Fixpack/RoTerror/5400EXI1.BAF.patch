@@ -1,0 +1,11 @@
+--- RoTerror\BAF\5400EXI1.BAF	Fri Feb 24 19:03:04 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\5400EXI1.BAF	Sat Sep 26 22:38:41 2009
+@@ -3,7 +3,7 @@
+ 	Global("Brothertimeriwd","GLOBAL",7)
+ THEN
+ 	RESPONSE #100
+-		ActionOverride("BreTor1",MoveBetweenAreas("RA5400",[3221.2771],8))
++		ActionOverride("BreTor1",MoveBetweenAreas("RA5401",[3221.2771],8))
+ END
+ 
+ 

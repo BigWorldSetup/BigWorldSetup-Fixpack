@@ -1,0 +1,610 @@
+--- aD&L\start.baf	Wed Jan 16 17:37:28 2008
++++ C:\BWP Patchstudio\patched files\aD&L\start.baf	Sun Aug 31 08:06:01 2008
+@@ -3,6 +3,7 @@
+ IF	Global("Z#MeetingSeida","GLOBAL",1)
+ 	Global("z#gaelanc6","GLOBAL",8)
+ 	Global("z#movedfinale","GLOBAL",0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("z#movedfinale","GLOBAL",1)
+@@ -21,6 +22,7 @@
+ 	Global("Z#KKLeftForTrial","GLOBAL",1)
+ 	!InPartyAllowDead("Kiyone")
+ 	!InPartyAllowDead("Kova")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#KKLeftForTrial","GLOBAL",2)
+@@ -43,6 +45,7 @@
+ 	AreaCheck("AR0311")
+ 	!Global("AranJob","GLOBAL",1)
+ 	Global("FindingKova", "GLOBAL", 10)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	ActionOverride(Player1,LeaveAreaLUA("AR0307","",[4530.2050],12))
+@@ -66,6 +69,7 @@
+ 	GlobalGT("JermClue", "GLOBAL", 0)
+ 	GlobalGT("LOAClue", "GLOBAL", 0)
+ 	GlobalGT("DayvClue", "GLOBAL", 0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("z#gaelanc6","GLOBAL",1)
+@@ -81,6 +85,7 @@
+ 	OR(2)
+ 		Global("Z#Gaelanc6","GLOBAL",4)
+ 		Global("Z#Gaelanc6","GLOBAL",5)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#ArledTalk","GLOBAL",1)
+@@ -93,6 +98,7 @@
+ IF	Global("BaevClue","GLOBAL",2)
+ 	Global("Z#BaevrinPlot","GLOBAL",25)
+ 	AreaCheck("AR1002")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ //	SetCutSceneLite(FALSE)
+@@ -103,6 +109,7 @@
+ IF	Global("Z#BaevrinPlot","GLOBAL",24)
+ 	AreaCheck("AR1002")
+ 	InParty("Kiyone")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	ActionOverride("Kiyone", StartDialogNoSet(Player1) )	
+@@ -111,6 +118,7 @@
+ IF	Global("Z#BaevrinPlot","GLOBAL",24)
+ 	AreaCheck("AR1002")
+ 	!InParty("Kiyone")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	ActionOverride("Z#MESSEN", StartDialogNoSet(Player1) )
+@@ -121,6 +129,7 @@
+ 	AreaType(CITY)
+ 	AreaType(OUTDOOR)
+ 	InParty("Kiyone")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#BaevrinPlot","GLOBAL",2)
+@@ -132,6 +141,7 @@
+ 	Global("Z#BaevrinPlot","GLOBAL",6)
+ 	AreaType(CITY)
+ 	AreaType(OUTDOOR)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#BaevrinPlot","GLOBAL",7)
+@@ -145,6 +155,7 @@
+ 	Global("Z#BaevrinPlot","GLOBAL",20)
+ 	ActuallyInCombat()
+ 	InMyArea("Z#Ardel")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN	
+ 	RESPONSE #100
+ 	SetGlobal("Z#BaevrinPlot","GLOBAL",21)
+@@ -165,6 +176,7 @@
+ IF	Global("Z#BaevrinPlot","GLOBAL",23)
+ 	Dead("Z#Baev")
+ 	!Dead("Z#Adyl")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	DisplayStringHead("Z#Adyl", @813)
+@@ -175,6 +187,7 @@
+ 
+ IF	Global("Z#BaevrinPlot","GLOBAL",17)
+ 	AreaCheckObject("AR0500",Player1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#BaevrinPlot","GLOBAL",18)
+@@ -190,6 +203,7 @@
+ 
+ IF	Global("Z#BaevrinPlot","GLOBAL",17)
+ 	AreaCheckObject("AR0531",Player1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#BaevrinPlot","GLOBAL",18)
+@@ -207,6 +221,7 @@
+ 	Global("Z#HabregaTalk","GLOBAL",0)
+ 	Dead("Z#Messen")
+ 	RealGlobalTimerExpired("KKDreamT","GLOBAL")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#HabregaTalk","GLOBAL",1)
+@@ -223,6 +238,7 @@
+ 	RealGlobalTimerExpired("Z#KharenWarnT","AR1500")
+ 	Global("Z#KharenWarn","AR1500",0)
+ 	PartyHasItem("MISC8V")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#KharenWarn","AR1500",1)
+@@ -232,6 +248,7 @@
+ // Met too many Govt Guards - Reputation Drop
+ 
+ IF	GlobalGT("GovtMeetGuards","GLOBAL",3)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #10
+ 	SetGlobal("GovtMeetGuards","GLOBAL",2)
+@@ -261,6 +278,7 @@
+ 		Dead("hprelate")
+ 		Dead("bylanna")
+ 		Dead("habrega")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	DisplayStringHead("Kiyone", @804)
+@@ -273,6 +291,7 @@
+ 
+ IF	PartyRested()
+ 	GlobalGT("Z#PartyRested","GLOBAL",0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#PartyRested","GLOBAL",0)
+@@ -292,6 +311,7 @@
+ 	AreaCheck("AR1105") // Umar Inn
+ 	AreaCheck("AR1602") // Brynnlaw Inn
+ 	AreaCheck("AR2010") // Trademeet Inn
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#RestInn", "GLOBAL", 1)	
+@@ -308,6 +328,7 @@
+ 	OR(2)
+ 		AreaType(Outdoor)
+ 		AreaType(Forest)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("KiyoOut","GLOBAL",1)
+@@ -321,6 +342,7 @@
+ 	InParty("Kova")
+ 	InParty("Kiyone")
+ 	AreaCheck("AR1002")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	ActionOverride("HABREGA", ForceSpell("HaBrega", INQUIS_TRUE_SIGHT) )
+@@ -336,6 +358,7 @@
+ 	InParty("Kova")
+ 	InParty("Kiyone")
+ 	AreaCheck("AR1002")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("CornTalk", "GLOBAL", 249)
+@@ -353,6 +376,7 @@
+ 
+ IF 	Global("Z#KharenMove","GLOBAL",5)
+ 	AreaCheckObject("AR1002",Player1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#KharenMove","GLOBAL",6)
+@@ -365,6 +389,7 @@
+ 	!Dead("Anomen")
+ 	!Dead("Kova")
+ 	!StateCheck("Kova", STATE_INVISIBLE)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	ActionOverride("Anomen", Attack("Kova") )
+@@ -373,6 +398,7 @@
+ IF 	Global("KvAnomFight", "GLOBAL", 2)
+ 	!Dead("Anomen")
+ 	Dead("Kova")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("KvAnomFight", "GLOBAL", 3)
+@@ -386,6 +412,7 @@
+ IF 	Global("KvAnomFight", "GLOBAL", 2)
+ 	Dead("Anomen")
+ 	!Dead("Kova")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("KvAnomFight", "GLOBAL", 3)
+@@ -401,6 +428,7 @@
+ 	Dead("Kiyone")
+ 	!Dead("Viconia")
+ 	!Global("KyVicFight", "GLOBAL", 3)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	ActionOverride("Viconia", StartDialogNoSet(Player1) )
+@@ -411,6 +439,7 @@
+ IF	Dead("Kiyone")
+ 	Dead("Kova")
+ 	Global("FindingKova", "GLOBAL", 112)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	AddexperienceParty(10000)
+@@ -425,6 +454,7 @@
+ 	Global("BKKChat", "GLOBAL", 8)
+ 	Global("KKRomance", "GLOBAL", 2)
+ 	Global("KKInStage2x", "GLOBAL", 0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("KKInStage2x", "GLOBAL", 1)
+@@ -438,6 +468,7 @@
+ 	Global("BKKChat", "GLOBAL", 7)
+ 	Global("KKRomance", "GLOBAL", 1)
+ 	Global("KKInStage1x", "GLOBAL", 0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #0
+ 	RESPONSE #100
+@@ -487,6 +518,7 @@
+ IF	InPartyAllowDead("Kova")
+ 	!InParty("Kova")
+ 	Global("KovaDied", "GLOBAL", 0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("KovaDied", "GLOBAL", 1)
+@@ -495,6 +527,7 @@
+ IF	InPartyAllowDead("Kiyone")
+ 	!InParty("Kiyone")
+ 	Global("KiyoDied", "GLOBAL", 0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("KiyoDied", "GLOBAL", 1)
+@@ -505,6 +538,7 @@
+ IF	AreaCheck("AR0306")
+ 	GlobalGT("Z#MeetingSeida","GLOBAL",3)
+ 	Global("Z#ShowRenalGone","AR0306",0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#ShowRenalGone","AR0306",1)
+@@ -514,6 +548,7 @@
+ IF	AreaCheck("AR0307")
+ 	GlobalGT("Z#MeetingSeida","GLOBAL",3)
+ 	Global("Z#ShowRenalGone","AR0307",0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#ShowRenalGone","AR0307",1)
+@@ -527,6 +562,7 @@
+ 		!InParty("Kova")
+ 		!InParty("Kiyone")
+ 	Global("Z#KKHardFight", "GLOBAL", 1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN 
+ 	RESPONSE #100
+ 	SetGlobal("Z#KKHardFight", "GLOBAL", 0)
+@@ -538,6 +574,7 @@
+ 	!AreaCheckObject("AR0331",Player1)
+ 	!AreaCheckObject("AR2102",Player1)
+ 	!AreaCheckObject("AR1203",Player1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#KKHardFight", "GLOBAL", 0)
+@@ -553,6 +590,7 @@
+ 	!GlobalTimerNotExpired("KKCowlT","GLOBAL")
+ 	!ActuallyInCombat()
+ 	!Global("BribeCorn", "GLOBAL", 1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #90
+ 		SetGlobalTimer("KKCowlT","GLOBAL",36000)	
+@@ -563,6 +601,7 @@
+ 
+ IF	Global("BribeCorn", "GLOBAL", 1)
+ 	!GlobalTimerNotExpired("KKCowlT","GLOBAL")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("KKCowlT","GLOBAL",18000)	
+@@ -577,6 +616,7 @@
+ 	!Global("FindingKova", "GLOBAL", 255)
+ 	!RealGlobalTimerNotExpired("KKThiefT","GLOBAL")
+ 	!ActuallyInCombat()
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #90
+ 		RealSetGlobalTimer("KKThiefT","GLOBAL",6000)
+@@ -591,6 +631,7 @@
+ 	!Global("FindingKova", "GLOBAL", 255)
+ 	!RealGlobalTimerNotExpired("KKThiefT","GLOBAL")
+ 	!ActuallyInCombat()
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #90
+ 		RealSetGlobalTimer("KKThiefT","GLOBAL",9000)
+@@ -605,6 +646,7 @@
+ 	!Global("FindingKova", "GLOBAL", 255)
+ 	!RealGlobalTimerNotExpired("KKThiefT","GLOBAL")
+ 	!ActuallyInCombat()
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #90
+ 		RealSetGlobalTimer("KKThiefT","GLOBAL",12600)	
+@@ -621,6 +663,7 @@
+ 	!Global("FindingKova", "GLOBAL", 255)
+ 	!GlobalTimerNotExpired("KKGovtT","GLOBAL")
+ 	!ActuallyInCombat()
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #90
+ 		SetGlobalTimer("KKGovtT","GLOBAL",24480)	
+@@ -640,6 +683,7 @@
+ 	!ActuallyInCombat()
+ 	!RealGlobalTimerNotExpired("KKBanterTMin","GLOBAL")
+ 	!RealGlobalTimerNotExpired("KKBanterT","GLOBAL")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #45
+ 		RealSetGlobalTimer("KKBanterT","GLOBAL",1500)
+@@ -659,6 +703,7 @@
+ 	!ActuallyInCombat()
+ 	!RealGlobalTimerNotExpired("KKBanterTMin","GLOBAL")
+ //	!RealGlobalTimerNotExpired("KKBanterT","GLOBAL")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #45
+ 		RealSetGlobalTimer("KKBanterTMin","GLOBAL",40)
+@@ -675,6 +720,7 @@
+ 		InParty("Kova")
+ 		InParty("Kiyone")
+ 	Global("Z#DrowChange","GLOBAL",0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#DrowChange","GLOBAL",1)
+@@ -688,6 +734,7 @@
+ 	InParty("Kiyone")
+ 	!ActuallyInCombat()
+ 	!RealGlobalTimerNotExpired("KKBanterT","GLOBAL")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #50
+ 		ActionOverride("Kiyone", Interact("Kova") )
+@@ -700,6 +747,7 @@
+ // Creates Brynnlaw Assassin
+ 
+ IF	Global("Z#Brynn1Spoke","GLOBAL",1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#Brynn1Spoke","GLOBAL",2)
+@@ -719,6 +767,7 @@
+ 	GlobalGT("DayvClue", "GLOBAL", 2)
+ 	GlobalGT("BaevClue", "GLOBAL", 2)
+ 	Global("MetKharen", "GLOBAL", 3)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#Trial", "GLOBAL", 2)
+@@ -726,6 +775,7 @@
+ 
+ IF	Global("Z#NoMoreGovt", "GLOBAL", 1)
+ 	GlobalLT("GovtGuards", "GLOBAL", 4)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("GovtGuards", "GLOBAL", 4)
+@@ -736,6 +786,7 @@
+ 	Global("LOAClue", "GLOBAL", 3)
+ 	Global("DayvClue", "GLOBAL", 3)
+ 	Global("Z#BaevrinPlot","GLOBAL",0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobalTimer("Z#BaevrinPlotT","GLOBAL",2400) // 8 hours	
+@@ -748,6 +799,7 @@
+ 	OR(2)
+ 		GlobalGT("JermClue", "GLOBAL", 0)
+ 		GlobalGT("LOAClue", "GLOBAL", 0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#Trial", "GLOBAL", 1)			
+@@ -756,6 +808,7 @@
+ IF	GlobalGT("JermClue", "GLOBAL", 0)
+ 	GlobalGT("LOAClue", "GLOBAL", 0)
+ 	Global("Z#Trial", "GLOBAL", 0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#Trial", "GLOBAL", 1)	
+@@ -770,6 +823,7 @@
+ 	Global("HadImoenDream1","GLOBAL",0)
+ 	GlobalLT("Chapter","GLOBAL",4)
+ 	Global("Z#GotGameDream","GLOBAL",0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#GotGameDream","GLOBAL",1)
+@@ -779,6 +833,7 @@
+ 	Global("HadImoenDream1","GLOBAL",1)
+ 	!GlobalTimerExpired("JonDream1","GLOBAL")
+ 	Global("Z#GotGameDream","GLOBAL",1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#GotGameDream","GLOBAL",0)
+@@ -789,6 +844,7 @@
+ 	Global("HadJonDream1","GLOBAL",0)
+ 	GlobalLT("Chapter","GLOBAL",4)
+ 	Global("Z#GotGameDream","GLOBAL",0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#GotGameDream","GLOBAL",1)
+@@ -799,6 +855,7 @@
+ 	Global("HadJonDream1","GLOBAL",1)
+ 	!GlobalTimerExpired("JonDream2","GLOBAL")
+ 	Global("Z#GotGameDream","GLOBAL",1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#GotGameDream","GLOBAL",0)
+@@ -809,6 +866,7 @@
+ 	Global("HadJonDream2","GLOBAL",0)
+ 	GlobalLT("Chapter","GLOBAL",4)
+ 	Global("Z#GotGameDream","GLOBAL",0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#GotGameDream","GLOBAL",1)
+@@ -819,6 +877,7 @@
+ 	Global("HadJonDream1","GLOBAL",1)
+ 	Global("HadJonDream2","GLOBAL",1)
+ 	Global("Z#GotGameDream","GLOBAL",1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#GotGameDream","GLOBAL",0)
+@@ -835,6 +894,7 @@
+ 		!Global("HadSlayerDream","GLOBAL",0)
+ 		!GlobalGT("AsylumPlot","GLOBAL",54)
+ 	Global("Z#GotGameDream","GLOBAL",1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#GotGameDream","GLOBAL",0)
+@@ -844,6 +904,7 @@
+ 	Global("HadSlayerDream","GLOBAL",0)
+ 	GlobalGT("AsylumPlot","GLOBAL",54)
+ 	Global("Z#GotGameDream","GLOBAL",0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#GotGameDream","GLOBAL",1)
+@@ -853,6 +914,7 @@
+ 	GlobalTimerExpired("EllesimeDream1","GLOBAL")
+ 	Global("HadEllesimeDream1","GLOBAL",0)
+ 	Global("Z#GotGameDream","GLOBAL",0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#GotGameDream","GLOBAL",1)
+@@ -866,6 +928,7 @@
+ 	!InPartyAllowDead("Kova")
+ 	!InPartyAllowDead("Kiyone")
+ 	Global("Z#JournalClean", "GLOBAL", 0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("Z#JournalClean", "GLOBAL", 1)
+@@ -915,6 +978,7 @@
+ 		PartyHasItem("KiyoBow3")
+ 		PartyHasItem("KiyoBow2")
+ 		PartyHasItem("KiyoBow1")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	TakePartyItemAll("KiyoArm3")
+@@ -933,6 +997,7 @@
+ 		PartyHasItem("KovaDag3")
+ 		PartyHasItem("KovaDag2")
+ 		PartyHasItem("KovaDag5")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	TakePartyItemAll("KovaArm5")
+@@ -949,6 +1014,7 @@
+ 		NumItemsPartyGT("KovaDag3",1)
+ 		NumItemsPartyGT("KovaDag2",1)
+ 		NumItemsPartyGT("KovaDag5",1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	TakePartyItemAll("KovaDag3")
+@@ -960,6 +1026,7 @@
+ 		NumItemsPartyGT("KovaArm5",1)
+ 		NumItemsPartyGT("KovaArm2",1)
+ 		NumItemsPartyGT("KovaArm1",1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	TakePartyItemAll("KovaArm5")
+@@ -971,6 +1038,7 @@
+ 		NumItemsPartyGT("KiyoArm3",1)
+ 		NumItemsPartyGT("KiyoArm2",1)
+ 		NumItemsPartyGT("KiyoArm1",1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	TakePartyItemAll("KiyoArm3")
+@@ -982,6 +1050,7 @@
+ 		NumItemsPartyGT("KiyoBow3",1)
+ 		NumItemsPartyGT("KiyoBow2",1)
+ 		NumItemsPartyGT("KiyoBow1",1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	TakePartyItemAll("KiyoBow3")
+@@ -994,6 +1063,7 @@
+ IF	OR(2)
+ 		NumItemsPartyGT("KyRing2",1)
+ 		NumItemsPartyGT("KyRing1",1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	TakePartyItemAll("KyRing2")
+@@ -1003,6 +1073,7 @@
+ IF	OR(2)
+ 		NumItemsPartyGT("KvRing2",1)
+ 		NumItemsPartyGT("KvRing1",1)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	TakePartyItemAll("KvRing2")
+@@ -1013,6 +1084,7 @@
+ 	OR(2)
+ 		PartyHasItem("KvRing2")
+ 		PartyHasItem("KvRing1")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	TakePartyItemAll("KvRing2")
+@@ -1023,6 +1095,7 @@
+ 	OR(2)
+ 		PartyHasItem("KyRing2")
+ 		PartyHasItem("KyRing1")
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	TakePartyItemAll("KyRing2")
+@@ -1032,6 +1105,7 @@
+ 
+ IF	Global("KKDream1", "GLOBAL", 10)
+ 	PartyRested()
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("KKDream1", "GLOBAL", 11)
+@@ -1050,6 +1124,7 @@
+ 	InPartyAllowDead("Kova")
+ 	InPartyAllowDead("Kiyone")
+ 	Global("Z#TrialClear","GLOBAL",0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("D0Maevar","GLOBAL",299)
+@@ -1057,6 +1132,7 @@
+ 
+ IF	Global("D0Maevar","GLOBAL",299)
+ 	!Global("Z#TrialClear","GLOBAL",0)
++	Global("EndOfBG1","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+ 	SetGlobal("D0Maevar","GLOBAL",30)	

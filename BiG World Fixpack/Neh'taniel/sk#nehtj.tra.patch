@@ -1,0 +1,11 @@
+--- Neh'taniel\English\sk#nehtj.tra	Thu Mar 18 14:46:31 2010
++++ C:\BWP Patchstudio\patched files\Neh'taniel\English\sk#nehtj.tra	Fri Nov 05 12:31:12 2010
+@@ -1887,7 +1887,7 @@
+ @1877 = ~Sir Neh'taniel, you won't answer a silly little question like that? I'm hurt.~
+ @1878 = ~I barely remember my mother my lady, I cannot remember that! Why are you-?~
+ @1879 = ~I give, never mind. *sighs*~
+-@1880 = ~Ha! Sure you do my dear Neh'taniel! Of course you've forgotten. You just want to jealously guard your secrets you've brought to the grave and not let a little < CharRace > like me to have such lovely hair.~
++@1880 = ~Ha! Sure you do my dear Neh'taniel! Of course you've forgotten. You just want to jealously guard your secrets you've brought to the grave and not let a little <PRO_RACE> like me to have such lovely hair.~
+ @1881 = ~I thank you, <CHARNAME>. When I was younger, I suppose it was 'beautiful' but I am afraid as I grew older the beauty left...~
+ @1882 = ~Your welcome. (You smile.)~
+ @1883 = ~I just do not understand what you are trying to do.~

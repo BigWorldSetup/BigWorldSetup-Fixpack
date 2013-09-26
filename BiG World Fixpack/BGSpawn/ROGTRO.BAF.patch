@@ -1,0 +1,11 @@
+--- BGSpawn\cre\ROGTRO.BAF	Wed Dec 07 11:00:30 2011
++++ C:\BWP Patchstudio\patched files\BGSpawn\cre\ROGTRO.BAF	Sun Sep 08 15:27:05 2013
+@@ -12,7 +12,7 @@
+ 	RESPONSE #100
+ 		SetInterrupt(FALSE)
+ 		StartTimer(77,6)
+-		ChangeAnimationNoEffect("ROGTRO02") // Sea Troll
++		ChangeAnimationNoEffect("ROGTROXD") // Sea Troll
+ END
+ 
+ IF

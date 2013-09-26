@@ -1,0 +1,11 @@
+--- sarahtob\setup-sarahtob.tp2	Fri Apr 30 23:06:25 2010
++++ C:\BWP Patchstudio\patched files\sarahtob\setup-sarahtob.tp2	Wed Jun 09 21:24:26 2010
+@@ -1,7 +1,7 @@
+ BACKUP ~SarahToB/backup~
+ AUTHOR ~theacefes (theacefes@gibberlings3.net)~
+ 
+-VERSION ~3.1~
++VERSION ~3.1 BWP Fix~
+ README ~SarahToB/readme-sarahtob.html~
+ 
+ //MODDER

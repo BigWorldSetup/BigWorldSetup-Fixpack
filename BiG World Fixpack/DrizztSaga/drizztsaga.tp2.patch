@@ -1,0 +1,204 @@
+--- DrizztSaga\drizztsaga.tp2	Mon May 25 09:36:23 2009
++++ C:\BWP Patchstudio\patched files\DrizztSaga\drizztsaga.tp2	Sat Oct 17 17:02:21 2009
+@@ -849,12 +849,56 @@
+ 
+ ACTION_IF FILE_EXISTS_IN_GAME ~macinit.bcs~ THEN BEGIN	// EasyTutu
+   COPY_EXISTING ~_TANARI.BCS~ ~override~
+-	REPLACE_BCS_BLOCK ~DRIZZTSAGA/SNIP/oTANARI.BAF~ ~DRIZZTSAGA/SNIP/nTANARI.BAF~
+-  BUT_ONLY_IF_IT_CHANGES
++	  DECOMPILE_BCS_TO_BAF
++	  REPLACE_TEXTUALLY
++	   ~IF
++	See([PC])
++	Global("Paralyze","LOCALS",0)
++THEN
++	RESPONSE #100
++		ForceSpell([PC],TANARI_PARALYZE)
++		SetGlobal("Paralyze","LOCALS",1)
++END
++~
++	   ~IF
++	See([PC])
++	Global("Paralyze","LOCALS",0)
++THEN
++	RESPONSE #100
++		ReallyForceSpell([PC],WIZARD_HOLD_PERSON)
++		ReallyForceSpell([PC],FEAR)
++		ReallyForceSpell([PC],WIZARD_DISPEL_MAGIC)
++		ReallyForceSpell([PC],RED_FIREBALL)
++		ReallyForceSpell([PC],TANARI_DEATH_GAZE)
++		SetGlobal("Paralyze","LOCALS",1)
++END~
++	  COMPILE_BAF_TO_BCS
+ END ELSE BEGIN	// normal Tutu
+   COPY_EXISTING ~_TANARI.BCS~ ~override~
+-	REPLACE_BCS_BLOCK ~DRIZZTSAGA/SNIP/Tutu/oTANARI.BAF~ ~DRIZZTSAGA/SNIP/nTANARI.BAF~
+-  BUT_ONLY_IF_IT_CHANGES
++	  DECOMPILE_BCS_TO_BAF
++	  REPLACE_TEXTUALLY
++	   ~IF
++	See([PC])
++	Global("Paralyze","LOCALS",0)
++THEN
++	RESPONSE #100
++		ForceSpell([PC],TANARI_PARALYZE)
++		SetGlobal("Paralyze","LOCALS",1)
++END
++~
++	   ~IF
++	See([PC])
++	Global("Paralyze","LOCALS",0)
++THEN
++	RESPONSE #100
++		ReallyForceSpell([PC],WIZARD_HOLD_PERSON)
++		ReallyForceSpell([PC],FEAR)
++		ReallyForceSpell([PC],WIZARD_DISPEL_MAGIC)
++		ReallyForceSpell([PC],RED_FIREBALL)
++		ReallyForceSpell([PC],TANARI_DEATH_GAZE)
++		SetGlobal("Paralyze","LOCALS",1)
++END~
++	  COMPILE_BAF_TO_BCS
+ END
+ 
+ EXTEND_TOP ~_AR0123.BCS~ ~DRIZZTSAGA/SNIP/eAR0123.BAF~
+@@ -2076,12 +2120,136 @@
+ COMPILE	~DRIZZTSAGA/BAF/BGT~
+ 
+ COPY_EXISTING ~TANARI.BCS~ ~override~
+-	REPLACE_BCS_BLOCK ~DRIZZTSAGA/SNIP/oTANARI.BAF~ ~DRIZZTSAGA/SNIP/nTANARI.BAF~
+-BUT_ONLY_IF_IT_CHANGES
++	  DECOMPILE_BCS_TO_BAF
++	  REPLACE_TEXTUALLY
++	   ~IF
++	See([PC])
++	Global("Paralyze","LOCALS",0)
++THEN
++	RESPONSE #100
++		ForceSpell([PC],TANARI_PARALYZE)
++		SetGlobal("Paralyze","LOCALS",1)
++END
++~
++	   ~IF
++	See([PC])
++	Global("Paralyze","LOCALS",0)
++THEN
++	RESPONSE #100
++		ReallyForceSpell([PC],WIZARD_HOLD_PERSON)
++		ReallyForceSpell([PC],FEAR)
++		ReallyForceSpell([PC],WIZARD_DISPEL_MAGIC)
++		ReallyForceSpell([PC],RED_FIREBALL)
++		ReallyForceSpell([PC],TANARI_DEATH_GAZE)
++		SetGlobal("Paralyze","LOCALS",1)
++END~
++	  COMPILE_BAF_TO_BCS
+ 
+ COPY_EXISTING ~ARAM00.BCS~ ~override~
+-	REPLACE_BCS_BLOCK ~DRIZZTSAGA/SNIP/oARAM00.BAF~ ~DRIZZTSAGA/SNIP/nARAM00.BAF~
+-BUT_ONLY_IF_IT_CHANGES
++ DECOMPILE_BCS_TO_BAF
++ REPLACE_TEXTUALLY
++ ~IF
++  InParty("Imoen2")
++  Global("A6ImoenPurgeGAM","ARAM00",0)
++THEN
++  RESPONSE #100
++    ActionOverride("Imoen2",LeaveParty())
++    ActionOverride("Imoen2",ChangeAIScript("",DEFAULT))
++    SetGlobal("ImoenPartyBG1","GLOBAL",1)
++    ActionOverride("Imoen2",MoveBetweenAreas("AR0602",[3198.2837],6))
++    SetGlobal("A6ImoenPurgeGAM","ARAM00",2)
++    Continue()
++END~
++ ~IF
++    InParty("F_DRIZZT")
++THEN
++  RESPONSE #100
++    ActionOverride("F_DRIZZT",LeaveParty())
++    ActionOverride("F_DRIZZT",ChangeAIScript("",DEFAULT))
++    ActionOverride("F_DRIZZT",ClearAllActions())
++    ActionOverride("F_DRIZZT",DestroySelf())
++    Continue()
++END
++
++IF
++    InParty("F_CATTIBR")
++THEN
++  RESPONSE #100
++    ActionOverride("F_CATTIBR",LeaveParty())
++    ActionOverride("F_CATTIBR",ChangeAIScript("",DEFAULT))
++    ActionOverride("F_CATTIBR",ClearAllActions())
++    ActionOverride("F_CATTIBR",DestroySelf())
++    Continue()
++END
++
++IF
++    InParty("F_BRUENOR")
++THEN
++  RESPONSE #100
++    ActionOverride("F_BRUENOR",LeaveParty())
++    ActionOverride("F_BRUENOR",ChangeAIScript("",DEFAULT))
++    ActionOverride("F_BRUENOR",ClearAllActions())
++    ActionOverride("F_BRUENOR",DestroySelf())
++    Continue()
++END
++
++IF
++    InParty("F_ARTEMIS")
++THEN
++  RESPONSE #100
++    ActionOverride("F_ARTEMIS",LeaveParty())
++    ActionOverride("F_ARTEMIS",ChangeAIScript("",DEFAULT))
++    ActionOverride("F_ARTEMIS",ClearAllActions())
++    ActionOverride("F_ARTEMIS",DestroySelf())
++    Continue()
++END
++
++IF
++    InParty("F_JARLAXE")
++THEN
++  RESPONSE #100
++    ActionOverride("F_JARLAXE",LeaveParty())
++    ActionOverride("F_JARLAXE",ChangeAIScript("",DEFAULT))
++    ActionOverride("F_JARLAXE",ClearAllActions())
++    ActionOverride("F_JARLAXE",DestroySelf())
++    Continue()
++END
++
++IF
++    InParty("F_REGIS2")
++THEN
++  RESPONSE #100
++    ActionOverride("F_REGIS2",LeaveParty())
++    ActionOverride("F_REGIS2",ChangeAIScript("",DEFAULT))
++    ActionOverride("F_REGIS2",ClearAllActions())
++    ActionOverride("F_REGIS2",DestroySelf())
++    Continue()
++END
++
++IF
++    InParty("F_WULFGAR")
++THEN
++  RESPONSE #100
++    ActionOverride("F_WULFGAR",LeaveParty())
++    ActionOverride("F_WULFGAR",ChangeAIScript("",DEFAULT))
++    ActionOverride("F_WULFGAR",ClearAllActions())
++    ActionOverride("F_WULFGAR",DestroySelf())
++    Continue()
++END
++
++IF
++  InParty("Imoen2")
++  Global("A6ImoenPurgeGAM","ARAM00",0)
++THEN
++  RESPONSE #100
++    ActionOverride("Imoen2",LeaveParty())
++    ActionOverride("Imoen2",ChangeAIScript("",DEFAULT))
++    SetGlobal("ImoenPartyBG1","GLOBAL",1)
++    ActionOverride("Imoen2",MoveBetweenAreas("AR0602",[3198.2837],6))
++    SetGlobal("A6ImoenPurgeGAM","ARAM00",2)
++    Continue()
++END~
++COMPILE_BAF_TO_BCS
+ 
+ EXTEND_TOP ~AR7223.BCS~ ~DRIZZTSAGA/SNIP/eAR0123.BAF~
+ EXTEND_TOP ~ARU000.BCS~ ~DRIZZTSAGA/SNIP/eARU000.BAF~

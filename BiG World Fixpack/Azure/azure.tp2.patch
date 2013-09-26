@@ -1,0 +1,11 @@
+--- Azure\azure.tp2	Sat Sep 03 00:00:20 2005
++++ C:\BWP Patchstudio\patched files\Azure\azure.tp2	Wed Apr 14 09:09:10 2010
+@@ -2,6 +2,8 @@
+ 
+ AUTHOR ~Victor, balduran@abv.bg~
+ 
++VERSION ~Beta v3 BWP Fix~
++
+ AUTO_TRA ~azure/%s~
+ 
+ 

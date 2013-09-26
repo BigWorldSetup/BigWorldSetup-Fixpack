@@ -1,0 +1,11 @@
+--- alora\d\BCMALOR.D	Sat Apr 25 11:58:11 2009
++++ C:\BWP Patchstudio\patched files\alora\d\BCMALOR.D	Wed Aug 21 08:33:25 2013
+@@ -265,7 +265,7 @@
+ IF ~InParty("Keldorn")
+ See("Keldorn")
+ !StateCheck("Keldorn",STATE_SLEEPING)
+-!Class(Player1,"PALADIN")
++!Class(Player1,PALADIN)
+ Global("CMAloraKel1","LOCALS",0)~ THEN BCMALOR alora_kel
+ @100 
+ DO ~SetGlobal("CMAloraKel1","LOCALS",1)~

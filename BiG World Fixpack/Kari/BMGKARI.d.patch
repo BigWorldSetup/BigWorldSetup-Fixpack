@@ -1,0 +1,704 @@
+--- Kari\Dialogue\BMGKARI.d	Tue Jul 19 00:13:14 2005
++++ C:\BWP Patchstudio\patched files\Kari\Dialogue\BMGKARI.d	Mon Aug 04 11:44:28 2008
+@@ -4,24 +4,24 @@
+ 
+ IF ~See(Player1)
+ !StateCheck(Player1,STATE_SLEEPING)
+-Global("KariPCTalk","GLOBAL",0)~ THEN BEGIN KariPCThanks
+-SAY ~<CHARNAME>? Um...thank you again for taking me under your wing.~
+- ++ ~It's no problem, Kari. You should know it's not always going to be a walk in the park, though.~ DO ~SetGlobal("KariPCTalk","GLOBAL",1)~ GOTO KariPC1
+- ++ ~That's fine, but you'd better prove your worth.~ DO ~SetGlobal("KariPCTalk","GLOBAL",1)~ GOTO KariPC2
+- ++ ~I don't give a gibberling's arse about what you think. Keep quiet and stay in line, half-breed.~ DO ~SetGlobal("KariPCTalk","GLOBAL",1)~ GOTO KariPC3
++Global("MGKariPCTalk","GLOBAL",0)~ THEN BEGIN KariPCThanks
++SAY ~<CHARNAME>, um...thank you again for taking me under your wing.~
++ ++ ~It's no problem, Kari. You should know it's not always going to be a walk in the park, though.~ DO ~SetGlobal("MGKariPCTalk","GLOBAL",1)~ GOTO MGKariPC1
++ ++ ~That's fine, but you'd better prove your worth.~ DO ~SetGlobal("MGKariPCTalk","GLOBAL",1)~ GOTO MGKariPC2
++ ++ ~I don't give a gibberling's arse about what you think. Keep quiet and stay in line, half-breed.~ DO ~SetGlobal("MGKariPCTalk","GLOBAL",1)~ GOTO MGKariPC3
+ END
+ 
+-IF ~~ THEN BEGIN KariPC1
++IF ~~ THEN BEGIN MGKariPC1
+  SAY ~I-I understand. I'll do my best to help you, as you've helped me. I'm ready whenever you need me!~
+  IF ~~ THEN EXIT
+ END
+ 
+-IF ~~ THEN BEGIN KariPC2
++IF ~~ THEN BEGIN MGKariPC2
+  SAY ~I-I will. I'll try my best not to disappoint. I know I can do it!~
+  IF ~~ THEN EXIT
+ END
+ 
+-IF ~~ THEN BEGIN KariPC3
++IF ~~ THEN BEGIN MGKariPC3
+  SAY ~Eep! (She quickly scurries to her place in line.)~
+  IF ~~ THEN EXIT
+ END
+@@ -30,27 +30,27 @@
+ 
+ IF ~See(Player1)
+ !StateCheck(Player1,STATE_SLEEPING)
+-Global("KariPCTalk2","GLOBAL",0)~ THEN BEGIN KariPCBhaalspawn
++Global("MGKariPCTalk2","GLOBAL",0)~ THEN BEGIN MGKariPCBhaalspawn
+ SAY ~You...have an odd air about you. Is there something you haven't told me yet?~
+- ++ ~Hey! Are you saying I stink!?~ DO ~SetGlobal("KariPCTalk2","GLOBAL",1)~ GOTO Kari2PC1
+- ++ ~There is, actually. There's a chance you'll damn your ears after you hear this, but...I'm Bhaalspawn.~ DO ~SetGlobal("KariPCTalk2","GLOBAL",1)~ GOTO Kari2PC2
+- ++ ~No, it's nothing. Don't worry about it.~ DO ~SetGlobal("KariPCTalk2","GLOBAL",1)~ GOTO Kari2PC3
++ ++ ~You're the one to talk...you smell like a wet dog.~ DO ~SetGlobal("MGKariPCTalk2","GLOBAL",1)~ GOTO MGKari2PC1
++ ++ ~There is, actually. There's a chance you'll damn your ears after you hear this, but...I'm Bhaalspawn.~ DO ~SetGlobal("MGKariPCTalk2","GLOBAL",1)~ GOTO MGKari2PC2
++ ++ ~No, it's nothing. Don't worry about it.~ DO ~SetGlobal("MGKariPCTalk2","GLOBAL",1)~ GOTO MGKari2PC3
+ END
+ 
+-IF ~~ THEN BEGIN Kari2PC1
+- SAY ~Oh no, not at all! Um...I...I was just saying that I sense something...unusual around you.~
+- ++ ~That's because I'm Bhaalspawn, Kari.~ GOTO Kari2PC2
+- ++ ~It's nothing. Really. I mean it. Honest. Shut up! Stop asking! AAHHH!!~ GOTO Kari2PC3
++IF ~~ THEN BEGIN MGKari2PC1
++ SAY ~Oh no, that's not what I meant at all! Um...I...I was just saying that I sense something...unusual around you.~
++ ++ ~That's because I'm Bhaalspawn, Kari.~ GOTO MGKari2PC2
++ ++ ~It's nothing. Really. I mean it. Honest. Shut up! Stop asking! AAHHH!!~ GOTO MGKari2PC3
+ END
+ 
+-IF ~~ THEN BEGIN Kari2PC2
++IF ~~ THEN BEGIN MGKari2PC2
+  SAY ~Bhaalspawn? Isn't that...offspring of the dead god Bhaal? Wow...a demi-god.~
+  =
+  ~It must be so hard for you... I wish I could be of more help, but I fear my knowledge of Bhaal is limited. Just...just tell me what to do and I'll do it.~
+  IF ~~ THEN EXIT
+ END
+ 
+-IF ~~ THEN BEGIN Kari2PC3
++IF ~~ THEN BEGIN MGKari2PC3
+  SAY ~Really? Um...okay. If you say so.~
+  IF ~~ THEN EXIT
+ END
+@@ -61,19 +61,19 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariAerieTalk","GLOBAL",0)~ THEN BAERIE KariAerieSkittish
++Global("MGKariAerieTalk","GLOBAL",0)~ THEN BAERIE MGKariAerieSkittish
+ ~Kari? Are...are you okay?~
+-DO ~SetGlobal("KariAerieTalk","GLOBAL",1)~
++DO ~SetGlobal("MGKariAerieTalk","GLOBAL",1)~
+ == BMGKARI
+ ~I...ah...I-I guess I am. I...um...~
+ == BAERIE
+-~Calm yourself, dear. I-I won't hurt you.~
++~Aww..calm yourself, dear. I-I won't hurt you.~
+ == BMGKARI
+-~O-okay. Um...I'm just unused to being addressed a lot.~
++~Okay.. Um...I'm just unused to being addressed a lot.~
+ == BAERIE
+-~How long have you been evading contact with the communities?~
++~How long have you been evading contact with the other communities?~
+ == BMGKARI
+-~Quite long. I was usually hunted when near human settlements. After all, I'm a freak to them.~
++~Quite long, for I was usually the hunted when near human settlements. After all, I'm a freak to them. They probably thought I was going to eat their cattle.~
+ == BAERIE
+ ~It's cruel, I know. I...I have been enslaved too.~
+ == BMGKARI
+@@ -90,9 +90,9 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariAerieTalk2","GLOBAL",0)~ THEN BAERIE KariAerieHumanAge
++Global("MGKariAerieTalk2","GLOBAL",0)~ THEN BAERIE MGKariAerieHumanAge
+ ~Have you ever been in touch with kind humans?~
+-DO ~SetGlobal("KariAerieTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariAerieTalk2","GLOBAL",1)~
+ == BMGKARI
+ ~Um...I...yes, I have. Not all humans are cruel slavers...~
+ == BAERIE
+@@ -100,11 +100,11 @@
+ == BMGKARI
+ ~I-Innocent? Isn't...that what they call you, Aerie?~
+ == BAERIE
+-~Sometimes, yes. I am much older than any human or half-elf, though.~
++~Sadly, yes. I am much older than any human or half-elf, but still...~
+ == BMGKARI
+-~But you don't look old.~
++~But...you don't look old.~
+ == BAERIE
+-~By Avariel standard years, I am still young. I don't like to think of myself as too young for traveling, though.~
++~By Avariel standards, I am still young. I suppose that is why some still treat me as "little Aerie".~
+ == BMGKARI
+ ~We both try our best. I'm...I'm glad we do.~
+ == BAERIE
+@@ -117,9 +117,9 @@
+ IF ~InParty("Anomen")
+ See("Anomen")
+ !StateCheck("Anomen",STATE_SLEEPING)
+-Global("KariAnomenTalk","GLOBAL",0)~ THEN BMGKARI KariAnomenArmor
++Global("MGKariAnomenTalk","GLOBAL",0)~ THEN BMGKARI MGKariAnomenArmor
+ ~Your armor is awfully shiny...~
+-DO ~SetGlobal("KariAnomenTalk","GLOBAL",1)~
++DO ~SetGlobal("MGKariAnomenTalk","GLOBAL",1)~
+ == BANOMEN
+ ~Of course it is, my lady. During my training I have learned to take excellent care of my equipment.~
+ == BMGKARI
+@@ -129,7 +129,7 @@
+ =
+ ~Ahh, your belt is not secured tight enough because of that small pouch you tucked in there a while ago.~
+ == BMGKARI
+-~O-oh...did you notice?~
++~Oh...did you notice?~
+ == BANOMEN
+ ~I have.~
+ =
+@@ -146,9 +146,9 @@
+ IF ~InParty("Anomen")
+ See("Anomen")
+ !StateCheck("Anomen",STATE_SLEEPING)
+-Global("KariAnomenTalk2","GLOBAL",0)~ THEN BMGKARI KariAnomenParents
++Global("MGKariAnomenTalk2","GLOBAL",0)~ THEN BMGKARI MGKariAnomenParents
+ ~What was your mother like?~
+-DO ~SetGlobal("KariAnomenTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariAnomenTalk2","GLOBAL",1)~
+ == BANOMEN
+ ~She was a kind and good woman who meant well. Like me, she was a priest of Helm. She...convinced the Knights of the Order to take me in.~
+ == BMGKARI
+@@ -156,15 +156,11 @@
+ == BANOMEN
+ ~Indeed it was. What of your mother, girl?~
+ == BMGKARI
+-~My...my mother was a kobold.~
++~My...my mother? She was very beautiful and kind...~
+ == BANOMEN
+-~Truly? And your father?~
++~I am certain she was. Perhaps you will see her again when this whole ordeal is over with.~
+ == BMGKARI
+-~He was a human. A...priest of Sune, I think. They loved each other deeply, regardless of race or appearance.~
+-== BANOMEN
+-~Now that's true love if I ever heard it. It has the blessings of Sune, especially since it brough forth new life; you.~
+-== BMGKARI
+-~Y-you make me blush with such comments, Anomen...~
++~Yea, I hope so.~
+ EXIT
+ 
+ 
+@@ -173,11 +169,11 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariCerndTalk","GLOBAL",0)~ THEN BCERND KariCerndDruids
+-~Kobold child, you are shy as the squirrel, and graceful like the fox. I can sense we are alike. We both serve Mother Nature in our own ways.~
+-DO ~SetGlobal("KariCerndTalk","GLOBAL",1)~
++Global("MGKariCerndTalk","GLOBAL",0)~ THEN BCERND MGKariCerndDruids
++~Wolfess, you are shy as the squirrel, and graceful like the fox. I can sense we are alike. We both serve Mother Nature in our own ways.~
++DO ~SetGlobal("MGKariCerndTalk","GLOBAL",1)~
+ == BMGKARI
+-~I'm not as...as dedicated as you are. I feel akin to nature, but I don't actively serve it like you do.~
++~I'm not as...as dedicated as you are. I feel an affinity to nature, probably due to me heritage, but I don't actively serve it like you do.~
+ == BCERND
+ ~Whether you realise or not, your very existance serves the natural world. We are all part of the great cycle.~
+ == BMGKARI
+@@ -190,19 +186,19 @@
+ IF ~InParty("Cernd")
+ See("Cernd")
+ !StateCheck("Cernd",STATE_SLEEPING)
+-Global("KariCerndTalk2","GLOBAL",0)~ THEN BMGKARI KariCerndUnnatural
++Global("MGKariCerndTalk2","GLOBAL",0)~ THEN BMGKARI MGKariCerndUnnatural
+ ~Cernd, am I...unnatural to you?~
+-DO ~SetGlobal("KariCerndTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariCerndTalk2","GLOBAL",1)~
+ == BCERND
+-~You live and breathe and you require food and water. That alone makes you very much natural.~
++~You live and breathe, you require food and water. You think, you survive, you have purpose in life. That, and more, makes you very much natural.~
+ == BMGKARI
+-~But...I can't have children.~
++~But...I can't have children. Is that normal?~
+ == BCERND
+-~There are many half-breeds and chimeras in this world. I cannot see why you could not bear children.~
++~Why would you not be able to give birth? Others of your kind can reproduce, can they not?~
+ == BMGKARI
+-~Perhaps I'm just...scared that I can't.~
++~Yes, they can. However...~
+ == BCERND
+-~Rest assured that you can. I have no evidence or proof, but call it a hunch.~
++~Do not worry too much, wolfess. That is something you can...test...once you meet the right "mate".~
+ EXIT
+ 
+ 
+@@ -211,15 +207,15 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariEdwinTalk","GLOBAL",0)~ THEN BEDWIN KariEdwinCreation
++Global("MGKariEdwinTalk","GLOBAL",0)~ THEN BEDWIN MGKariEdwinCreation
+ ~You are certainly an interesting and amusing specimen of crossbreeding, girl. I can guess how your folks accomplished that, but I shall give you a chance to wiggle your tongue.~
+-DO ~SetGlobal("KariEdwinTalk","GLOBAL",1)~
++DO ~SetGlobal("MGKariEdwinTalk","GLOBAL",1)~
+ == BMGKARI
+ ~I...they...they slept together. That's all.~
+ == BEDWIN
+-~I can hardly imagine a kobold female would be able to endure a male's erotic onslaught, unless, of course, it was done by me.~
++~I can hardly imagine a furred female would be able to endure a male's savage erotic onslaught, unless, of course, it was done by me.~
+ == BMGKARI
+-~Did you just say you're going to sleep with a kobold?~
++~Did you just say you're going to sleep with one of fur-kind?~
+ == BEDWIN
+ ~What? I said no such thing! I was merely pointing out that no man could ever exceed my skills when it comes to erotica. The woman's species would be irrelevant.~
+ == BMGKARI
+@@ -236,17 +232,17 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariEdwinTalk2","GLOBAL",0)~ THEN BEDWIN KariEdwinComponents
+-~Did you know that kobold ears are a popular spell component in Thay?~
+-DO ~SetGlobal("KariEdwinTalk2","GLOBAL",1)~
++Global("MGKariEdwinTalk2","GLOBAL",0)~ THEN BEDWIN MGKariEdwinComponents
++~Did you know that wolf ears are a popular spell component in Thay?~
++DO ~SetGlobal("MGKariEdwinTalk2","GLOBAL",1)~
+ == BMGKARI
+ ~No, and I don't want to hear it!~
+ == BEDWIN
+-~First one takes a living kobold, chained and fatigued, and alter it's appearance with a sharp knife. Be sure to cut through the flesh with care...and slowly. (Yes...very slowly.)~
++~First one takes a living wolf, chained and fatigued, and alter its appearance with a sharp knife. Be sure to cut through the flesh with care...and slowly. (Yes...very slowly.)~
+ == BMGKARI
+ ~Stop it! Just go away! You're not getting my ears!~
+ == BEDWIN
+-~I was talking about kobold ears, not a freak's unnatural audio devices.~
++~I was talking about wolf ears, not a freak's auditive receivers.~
+ EXIT
+ 
+ 
+@@ -255,9 +251,9 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariHaerTalk","GLOBAL",0)~ THEN BHAERDA KariHaerPlay
++Global("MGKariHaerTalk","GLOBAL",0)~ THEN BHAERDA MGKariHaerPlay
+ ~An innocent furry face, homeless, and gazing upon a harsh world. That reminds me of a play I once performed.~
+-DO ~SetGlobal("KariHaerTalk","GLOBAL",1)~
++DO ~SetGlobal("MGKariHaerTalk","GLOBAL",1)~
+ == BMGKARI
+ ~It...it does?~
+ == BHAERDA
+@@ -265,7 +261,7 @@
+ == BMGKARI
+ ~Did he stay alone all his life?~
+ == BHAERDA
+-~Not at all. He carved his name into history by forging trade connections between a high elven city and a human merchant city.~
++~Not at all. He carved his name into history by forging trade connections between an elven city and a human merchant city.~
+ =
+ ~No matter who and what you are, dear fennec, you can always make a difference.~
+ == BMGKARI
+@@ -278,9 +274,9 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariHaerTalk2","GLOBAL",0)~ THEN BHAERDA KariHaerActor
++Global("MGKariHaerTalk2","GLOBAL",0)~ THEN BHAERDA MGKariHaerActor
+ ~Have you ever acted out a role, dear fennec?~
+-DO ~SetGlobal("KariHaerTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariHaerTalk2","GLOBAL",1)~
+ == BMGKARI
+ ~Um...only some animals, to identify with them better.~
+ == BHAERDA
+@@ -288,7 +284,7 @@
+ == BMGKARI
+ ~N-no. I'll risk getting captured, unless I'm very careful.~
+ == BHAERDA
+-~You can convince them your kobold-like appearance is a costume.~
++~You can convince them your wolf-like appearance is a costume.~
+ == BMGKARI
+ ~Um...won't that show?~
+ == BHAERDA
+@@ -301,15 +297,15 @@
+ IF ~InParty("Imoen2")
+ See("Imoen2")
+ !StateCheck("Imoen2",STATE_SLEEPING)
+-Global("KariImmyTalk","GLOBAL",0)~ THEN BMGKARI KariImmyCare
++Global("MGKariImmyTalk","GLOBAL",0)~ THEN BMGKARI MGKariImmyCare
+ ~You must mean an awful lot to <CHARNAME> for <PRO_HIMHER> to come all the way to Brynnlaw to save you.~
+-DO ~SetGlobal("KariImmyTalk","GLOBAL",1)~
++DO ~SetGlobal("MGKariImmyTalk","GLOBAL",1)~
+ == IMOEN2J
+ ~Hehe, of course I mean a lot to <PRO_HIMHER>. We grew up together, and we wouldn't abandon each other like that.~
+ == BMGKARI
+ ~I've never had someone to care for, or to care for me. I'm...jealous...of you and <CHARNAME>.~
+ == IMOEN2J
+-~Aww, don't you worry. I'm sure you'll meet a handsome half-kobold stud one day. You two are going to marry, have kids, get a cottage in the Tethyr Forest...~
++~Aww, don't you worry. I'm sure you'll meet a handsome fur stud one day. You two are going to marry, have kids, get a cottage in the Tethyr Forest...~
+ == BMGKARI
+ ~Immy...you're embarrassing me...~
+ EXIT
+@@ -320,17 +316,17 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariImmyTalk2","GLOBAL",0)~ THEN IMOEN2J KariImmyTailhole
++Global("MGKariImmyTalk2","GLOBAL",0)~ THEN IMOEN2J MGKariImmyTail
+ ~Your tailhole is showing.~
+-DO ~SetGlobal("KariImmyTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariImmyTalk2","GLOBAL",1)~
+ == BMGKARI
+ ~Oh my, it is!?~
+ == IMOEN2J
+-~(Imoen giggles) Yeah, that hole in your undergarments where your tail pokes through.~
++~(giggle) Yeah, that hole in your undergarments where your tail pokes through.~
+ == BMGKARI
+-~O-ohh... (Kari blushes brightly)~
++~Ohh... (Kari blushes brightly.)~
+ == IMOEN2J
+-~What? What did you think I meant, hmm?~
++~What? What did you think I meant, huh?~
+ EXIT
+ 
+ 
+@@ -339,13 +335,13 @@
+ IF ~InParty("Jaheira")
+ See("Jaheira")
+ !StateCheck("Jaheira",STATE_SLEEPING)
+-Global("KariJaheiraTalk","GLOBAL",0)~ THEN BMGKARI KariJaheiraAdvice
++Global("MGKariJaheiraTalk","GLOBAL",0)~ THEN BMGKARI MGKariJaheiraAdvice
+ ~Do you have any advice for me, Jaheira?~
+-DO ~SetGlobal("KariJaheiraTalk","GLOBAL",1)~
++DO ~SetGlobal("MGKariJaheiraTalk","GLOBAL",1)~
+ == BJAHEIR
+ ~Advice? What kind of advice do you require?~
+ == BMGKARI
+-~Advice on travelling and combat...~
++~Advice on travelling or combat... Anything, really.~
+ == BJAHEIR
+ ~Keep yourself alert and focused. Do not stress, even when in dangerous situations. Believe you will survive, and you will.~
+ == BMGKARI
+@@ -358,19 +354,19 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariJaheiraTalk2","GLOBAL",0)~ THEN BJAHEIR KariJaheiraTail
++Global("MGKariJaheiraTalk2","GLOBAL",0)~ THEN BJAHEIR MGKariJaheiraTail
+ ~Watch where you are swinging that tail of yours, child.~
+-DO ~SetGlobal("KariJaheiraTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariJaheiraTalk2","GLOBAL",1)~
+ == BMGKARI
+ ~I-I'm sorry, Jaheira. Sometimes it has a mind of it's own.~
+ == BJAHEIR
+-~Understood. Take good care of your tail, Kari. You would not want it to get cut off, now do you?~
++~Even so, take good care of your tail, Kari. You would not want it to get cut off, now do you?~
+ == BMGKARI
+ ~I...no.~
+ == BJAHEIR
+ ~Good. Perhaps you should try folding it underneath your robes.~
+ == BMGKARI
+-~I can't. It needs it's freedom.~
++~I can't. It needs its freedom.~
+ EXIT
+ 
+ 
+@@ -379,11 +375,11 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariJanTalk","GLOBAL",0)~ THEN BJAN KariJanGEC
+-~Young lass, your presence reminds me of...er...well, no one I know, but cousin Gerk once had a pet kobold. Not for long, though. The little yipper tore all his carpets to shreds.~
+-DO ~SetGlobal("KariJanTalk","GLOBAL",1)~
++Global("MGKariJanTalk","GLOBAL",0)~ THEN BJAN MGKariJanGEC
++~Young lass, your presence reminds me of...er...well, no one I know, but cousin Gerk once had a pet fox. Not for long, though. The little yipper tore all his carpets to shreds.~
++DO ~SetGlobal("MGKariJanTalk","GLOBAL",1)~
+ == BMGKARI
+-~Kobolds shouldn't be kept as pets!~
++~Foxes shouldn't be kept as pets!~
+ == BJAN
+ ~Neither should gnomes, but every gnome knows of the infamous G.E.C.~
+ == BMGKARI
+@@ -402,9 +398,9 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariJanTalk2","GLOBAL",0)~ THEN BJAN KariJanSleep
++Global("MGKariJanTalk2","GLOBAL",0)~ THEN BJAN MGKariJanSleep
+ ~Have you ever heard the tale of the Sleeping Curse?~
+-DO ~SetGlobal("KariJanTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariJanTalk2","GLOBAL",1)~
+ == BMGKARI
+ ~No, I haven't.~
+ == BJAN
+@@ -416,9 +412,11 @@
+ == BMGKARI
+ ~Jan?~
+ == BJAN
+-~Hmm...h-huh? Oh my, it appears I dozed off. That happens sometimes when I tell stories about curses.~
++~Hmm...huh? Oh my, it appears I dozed off. The Sleeping Curse, perhaps?~
+ == BMGKARI
+-~May Kurtulmak preserve us...~
++~That's not funny...~
++== BJAN
++~Why not? Come on! Cheer up, lass! Life is too short!~
+ EXIT
+ 
+ 
+@@ -427,9 +425,9 @@
+ IF ~InParty("Keldorn")
+ See("Keldorn")
+ !StateCheck("Keldorn",STATE_SLEEPING)
+-Global("KariKeldornTalk","GLOBAL",0)~ THEN BMGKARI KariKeldornDaughters
+-~D-do your daughters love you, Keldorn?~
+-DO ~SetGlobal("KariKeldornTalk","GLOBAL",1)~
++Global("MGKariKeldornTalk","GLOBAL",0)~ THEN BMGKARI MGKariKeldornDaughters
++~D-Do your daughters love you, Keldorn?~
++DO ~SetGlobal("MGKariKeldornTalk","GLOBAL",1)~
+ == BKELDOR
+ ~I am quite sure they do, Kari. Why do you ask?~
+ == BMGKARI
+@@ -446,9 +444,9 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariKeldornTalk2","GLOBAL",0)~ THEN BKELDOR KariKeldornEtiquette
+-~You are doing well in battle, for one unused to it.~
+-DO ~SetGlobal("KariKeldornTalk2","GLOBAL",1)~
++Global("MGKariKeldornTalk2","GLOBAL",0)~ THEN BKELDOR MGKariKeldornEtiquette
++~You are doing well in battle, for one so unused to it.~
++DO ~SetGlobal("MGKariKeldornTalk2","GLOBAL",1)~
+ == BMGKARI
+ ~Um...thank you, sir.~
+ == BKELDOR
+@@ -465,15 +463,15 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariKorganTalk","GLOBAL",0)~ THEN BKORGAN KariKorganChoppin
+-~I feel like haven' meat fer supper. 'Ere, kobold lass! Come closer so I can be choppin' ye up!~
+-DO ~SetGlobal("KariKorganTalk","GLOBAL",1)~
++Global("MGKariKorganTalk","GLOBAL",0)~ THEN BKORGAN MGKariKorganChoppin
++~I feel like haven' meat fer supper. 'Ere, dog lass! Come closer so I can be choppin' ye up!~
++DO ~SetGlobal("MGKariKorganTalk","GLOBAL",1)~
+ == BMGKARI
+-~S-savage... I am not your dinner!~
++~S-Savage... I am not your dinner!~
+ == BKORGAN
+ ~Ye be whatever I bloody tell ye to be! Now, lay down on that pile o' wood so I can set it ablaze, ken?~
+ == BMGKARI
+-~Y-you're serious about this, aren't you?~
++~Y-You're serious about this, aren't you?~
+ == BKORGAN
+ ~I be. Hurry up, girl, afore I lose me patience.~
+ == BMGKARI
+@@ -486,9 +484,9 @@
+ IF ~InParty("Korgan")
+ See("Korgan")
+ !StateCheck("Korgan",STATE_SLEEPING)
+-Global("KariKorganTalk2","GLOBAL",0)~ THEN BMGKARI KariKorganWeapons
++Global("MGKariKorganTalk2","GLOBAL",0)~ THEN BMGKARI MGKariKorganWeapons
+ ~Korgan? I know I'm going to regret this, but can I ask you something about weapons?~
+-DO ~SetGlobal("KariKorganTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariKorganTalk2","GLOBAL",1)~
+ == BKORGAN
+ ~Ay', ye be wantin' to hear about weaponry, ye does? What does ye want?~
+ == BMGKARI
+@@ -505,9 +503,9 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariMazzyTalk","GLOBAL",0)~ THEN BMAZZY KariMazzyCongrats
++Global("MGKariMazzyTalk","GLOBAL",0)~ THEN BMAZZY MGKariMazzyCongrats
+ ~My congratulations to you, Kari. You have done well in this world that is no doubt strange to you.~
+-DO ~SetGlobal("KariMazzyTalk","GLOBAL",1)~
++DO ~SetGlobal("MGKariMazzyTalk","GLOBAL",1)~
+ == BMGKARI
+ ~I...I just do my best.~
+ == BMAZZY
+@@ -522,11 +520,11 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariMazzyTalk2","GLOBAL",0)~ THEN BMAZZY KariMazzyPatrick
++Global("MGKariMazzyTalk2","GLOBAL",0)~ THEN BMAZZY MGKariMazzyPatrick
+ ~Have you ever loved another, Kari?~
+-DO ~SetGlobal("KariMazzyTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariMazzyTalk2","GLOBAL",1)~
+ == BMGKARI
+-~N-no, I haven't. I've never been close enough to anyone for that. M-maybe I'm scared. I know I'd...I'd love a family of my own some day.~
++~N-No, I haven't. I've never been close enough to anyone for that. M-Maybe I'm scared. I know I'd...I'd love a family of my own some day.~
+ == BMAZZY
+ ~Relationships are complex, and they can end before you know it. Once it is your time, savor what you have.~
+ == BMGKARI
+@@ -539,9 +537,9 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariMinscTalk","GLOBAL",0)~ THEN BMINSC KariMinscWitch
++Global("MGKariMinscTalk","GLOBAL",0)~ THEN BMINSC MGKariMinscWitch
+ ~You dress in funny robes, dog lady. Are you a witch?~
+-DO ~SetGlobal("KariMinscTalk","GLOBAL",1)~
++DO ~SetGlobal("MGKariMinscTalk","GLOBAL",1)~
+ == BMGKARI
+ ~No, I'm not a...a "witch". I dress in these robes to keep myself concealed.~
+ == BMINSC
+@@ -551,7 +549,7 @@
+ == BMINSC
+ ~Sometimes Boo is more human than Minsc! Right, Boo?~
+ == BMGKARI
+-~O-of course.~
++~O-Of course.~
+ EXIT
+ 
+ 
+@@ -560,15 +558,15 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariMinscTalk2","GLOBAL",0)~ THEN BMINSC KariMinscFoxtail
++Global("MGKariMinscTalk2","GLOBAL",0)~ THEN BMINSC MGKariMinscFoxtail
+ ~Your tail is very bushy. Minsc has seen you fluff it up. How did you get it?~
+-DO ~SetGlobal("KariMinscTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariMinscTalk2","GLOBAL",1)~
+ == BMGKARI
+ ~Get it? I was born with it.~
+ == BMINSC
+ ~But kobolds have long thin rat tails. Minsc knows because he has seen them, and kicked them with his mighty buttkicking boot!~
+ == BMGKARI
+-~Yes...I don't know, then. It's just what formed during the time my mother carried me.~
++~Yes...but I'm no kobold, Minsc.~
+ == BMINSC
+ ~What is it, Boo? Really?~
+ =
+@@ -583,9 +581,9 @@
+ IF ~InParty("Nalia")
+ See("Nalia")
+ !StateCheck("Nalia",STATE_SLEEPING)
+-Global("KariNaliaTalk","GLOBAL",0)~ THEN BMGKARI KariNaliaSteal
++Global("MGKariNaliaTalk","GLOBAL",0)~ THEN BMGKARI MGKariNaliaSteal
+ ~Why do you steal, Nalia?~
+-DO ~SetGlobal("KariNaliaTalk","GLOBAL",1)~
++DO ~SetGlobal("MGKariNaliaTalk","GLOBAL",1)~
+ == BNALIA
+ ~How rude. I don't steal, Kari.~
+ == BMGKARI
+@@ -606,9 +604,9 @@
+ IF ~InParty("Nalia")
+ See("Nalia")
+ !StateCheck("Nalia",STATE_SLEEPING)
+-Global("KariNaliaTalk2","GLOBAL",0)~ THEN BMGKARI KariNaliaFlail
++Global("MGKariNaliaTalk2","GLOBAL",0)~ THEN BMGKARI MGKariNaliaFlail
+ ~I've...heard merchants talk about an artifact held by the De'Arnise family. The...flail of mages?~
+-DO ~SetGlobal("KariNaliaTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariNaliaTalk2","GLOBAL",1)~
+ == BNALIA
+ ~The flail of ages. Yes, my father's prized possession. He had it seperated, though. It was too risky to keep it in our keep in one piece.~
+ == BMGKARI
+@@ -618,7 +616,7 @@
+ == BMGKARI
+ ~Have you ever touched it?~
+ == BNALIA
+-~Gods no! I know better than to touch *that* thing. (Nalia laughs.)~
++~Gods no! I know better than to touch *that* thing. (laughs)~
+ EXIT
+ 
+ 
+@@ -627,17 +625,17 @@
+ IF ~InParty("Valygar")
+ See("Valygar")
+ !StateCheck("Valygar",STATE_SLEEPING)
+-Global("KariValygarTalk","GLOBAL",0)~ THEN BMGKARI KariValygarRangers
++Global("MGKariValygarTalk","GLOBAL",0)~ THEN BMGKARI MGKariValygarRangers
+ ~Valygar? You're a ranger, aren't you? How...how different are you from druids?~
+-DO ~SetGlobal("KariValygarTalk","GLOBAL",1)~
++DO ~SetGlobal("MGKariValygarTalk","GLOBAL",1)~
+ == BVALYGA
+-~Rangers are woodsmen. We fight to preserve nature, and the human settlements within. We're attuned to nature, but not as much as druids.~
++~Rangers are woodsmen. We fight to preserve nature, and the human settlements within. We're attuned to nature, be it in a different way.~
+ == BMGKARI
+ ~Are you able to cast spells?~
+ == BVALYGA
+ ~It's not unheard of, for rangers to cast druidic magic.~
+ == BMGKARI
+-~B-but you?~
++~B-But you?~
+ == BVALYGA
+ ~(The ranger sighs.) Yes, Kari, I can cast spells, whether I like it or not. It makes me feel uncomfortable, knowing what can happen.~
+ == BMGKARI
+@@ -652,9 +650,9 @@
+ IF ~InParty("Valygar")
+ See("Valygar")
+ !StateCheck("Valygar",STATE_SLEEPING)
+-Global("KariValygarTalk2","GLOBAL",0)~ THEN BMGKARI KariValygarFlower
++Global("MGKariValygarTalk2","GLOBAL",0)~ THEN BMGKARI MGKariValygarFlower
+ ~That's a beautiful flower...~
+-DO ~SetGlobal("KariValygarTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariValygarTalk2","GLOBAL",1)~
+ == BVALYGA
+ ~This? It's an orchid.~
+ == BMGKARI
+@@ -668,7 +666,7 @@
+ == BVALYGA
+ ~The woods can bring forth things of great beauty, be it with leaves, wings...or a tail.~
+ == BMGKARI
+-~H-huh? Valygar...~
++~H-Huh? Valygar...~
+ == BVALYGA
+ ~You know what I mean.~
+ EXIT
+@@ -679,13 +677,13 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariViconiaTalk","GLOBAL",0)~ THEN BVICONI KariViconiaMongrel
++Global("MGKariViconiaTalk","GLOBAL",0)~ THEN BVICONI MGKariViconiaMongrel
+ ~Of all the crossbred mongrels I have had the misfortune of meeting during my unpleasant stay on the surface, you are by far the most deformed one.~
+-DO ~SetGlobal("KariViconiaTalk","GLOBAL",1)~
++DO ~SetGlobal("MGKariViconiaTalk","GLOBAL",1)~
+ == BMGKARI
+-~Y-you are not a true Drow either, as...as I've heard.~
++~Y-You are not a true Drow either, as...as I've heard.~
+ == BVICONI
+-~I am better this way. Powerful and mighty. You, however, are nothing. Hah! Even a pathetic surface pony could better wield a piece of wood, and it doesn't even have fingers.~
++~I am better this way. Powerful and mighty. You, however, are nothing. Even a pathetic surface pony could better wield a piece of wood, and it doesn't even have fingers.~
+ == BMGKARI
+ ~T-there's more to me than swinging clubs around, Viconia.~
+ == BVICONI
+@@ -700,11 +698,11 @@
+ IF ~InParty("Viconia")
+ See("Viconia")
+ !StateCheck("Viconia",STATE_SLEEPING)
+-Global("KariViconiaTalk2","GLOBAL",0)~ THEN BMGKARI KariViconiaConceal
++Global("MGKariViconiaTalk2","GLOBAL",0)~ THEN BMGKARI MGKariViconiaConceal
+ ~Viconia? I have a question.~
+-DO ~SetGlobal("KariViconiaTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariViconiaTalk2","GLOBAL",1)~
+ == BVICONI
+-~What is it?~
++~Make it quick. I haven't the stomach to stand near your stench for very long.~
+ == BMGKARI
+ ~Does your hood have any effect? To...to hide your appearance, that is.~
+ == BVICONI
+@@ -712,7 +710,7 @@
+ == BMGKARI
+ ~Assault?~
+ == BVICONI
+-~I survived because I was raised with dicipline and torture. You would not last. You know this.~
++~I survived because I was raised with discipline and torture. You would not last. You know this.~
+ EXIT
+ 
+ 
+@@ -721,9 +719,9 @@
+ IF ~InParty("Yoshimo")
+ See("Yoshimo")
+ !StateCheck("Yoshimo",STATE_SLEEPING)
+-Global("KariYoshimoTalk","GLOBAL",0)~ THEN BMGKARI KariYoshimoPrawn
++Global("MGKariYoshimoTalk","GLOBAL",0)~ THEN BMGKARI MGKariYoshimoPrawn
+ ~Yoshimo? In a...a human cafe I once saw people eating a cracker-like thing. The menu said it was made in Kara-Tur.~
+-DO ~SetGlobal("KariYoshimoTalk","GLOBAL",1)~
++DO ~SetGlobal("MGKariYoshimoTalk","GLOBAL",1)~
+ == BYOSHIM
+ ~Ahh, you must mean prawn crackers. Yes, they are a common delicacy where I come from. Heh, these westerners make such a fuss about oriental customs.~
+ == BMGKARI
+@@ -744,13 +742,13 @@
+ IF ~InParty("Yoshimo")
+ See("Yoshimo")
+ !StateCheck("Yoshimo",STATE_SLEEPING)
+-Global("KariYoshimoTalk2","GLOBAL",0)~ THEN BMGKARI KariYoshimoKatana
++Global("MGKariYoshimoTalk2","GLOBAL",0)~ THEN BMGKARI MGKariYoshimoKatana
+ ~May I see your katana?~
+-DO ~SetGlobal("KariYoshimoTalk2","GLOBAL",1)~
++DO ~SetGlobal("MGKariYoshimoTalk2","GLOBAL",1)~
+ == BYOSHIM
+ ~Here. Careful not to touch it. It is quite sharp, capable of splitting a hair.~
+ == BMGKARI
+-~Wow...are you a samurai?~
++~Wow...are you a... "samurai", I believe it's called?~
+ == BYOSHIM
+ ~No, I am a ronin.~
+ == BMGKARI

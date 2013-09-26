@@ -1,0 +1,11 @@
+--- LR\tra\english\LRBALTH3.TRA	Sat Aug 21 14:43:58 2004
++++ C:\BWP Patchstudio\patched files\LR\tra\english\LRBALTH3.TRA	Fri Nov 12 16:46:35 2010
+@@ -7,7 +7,7 @@
+ @6    = ~How noble. I'll enjoy spilling your pretentious guts all over the floor.~
+ @7    = ~That certainly was an engaging battle of wills. Yes, <CHARNAME>, the ‘righteous’ monk was as cleverly tricked by Melissan as you once were. And now all that unyielding resolve, all that stoicism... are trapped inside a sparkly bit of crystal.~
+ @8    = ~Nnn..no!! <CHARNAME>, you cannot allow this to happen before your very eyes! What of your pledges to the elves?! What of your promise to me?!! By the Great Balance, I shall be tricked by your vile treachery no longer! I have to stop Irenicus now before it is too late!~
+-@9    = ~Nasty <PRO_BOYGIRL> <CHARNAME>, what have you done? The Evil One is leering wickedly at us! Now he is going to become stronger than ever! Boo is trembling with righteous fury and he is telling me to CHAAAARGE!~
++@9    = ~Nasty <PRO_GIRLBOY> <CHARNAME>, what have you done? The Evil One is leering wickedly at us! Now he is going to become stronger than ever! Boo is trembling with righteous fury and he is telling me to CHAAAARGE!~
+ @10   = ~<CHARNAME>, I have long suspected that you are an evil blight upon Faerun - this treachery confirms it. My duty to the land dictates that I interfere, and stop the corrupt mage’s wickedness before its spreads any further!~
+ @11   = ~<CHARNAME>, as a knight of Avoreen and a servant of goodness, I cannot allow this vileness to go unpunished! My own soul and body were nearly possessed by the shades, and unlike you, I shall not stand idle while watching the raise of another Dark Power!~
+ @12   = ~<CHARNAME>, I have put up with a lot, but your latest act of calculated cruelty disgusts me too much. You allowed the vilest act of necromancy to proceed unhindered. I shall not follow your suit.~

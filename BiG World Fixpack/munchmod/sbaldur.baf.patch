@@ -1,0 +1,10 @@
+--- munchmod\snip\sbaldur.baf	Sun Nov 29 18:07:18 2009
++++ C:\BWP Patchstudio\patched files\munchmod\snip\sbaldur.baf	Sun Jun 06 04:20:20 2010
+@@ -39,6 +39,7 @@
+     !TimeOfDay(NIGHT)
+     !See([ENEMY])
+     GlobalTimerExpired("PEDDLER","GLOBAL")
++	Global("ResetPeddlerTimer","GLOBAL",0)
+ THEN
+     RESPONSE #1
+         SetGlobal("PeddlerStore","GLOBAL",1)

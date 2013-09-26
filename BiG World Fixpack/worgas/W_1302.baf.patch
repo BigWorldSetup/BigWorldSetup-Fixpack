@@ -1,0 +1,17 @@
+--- worgas\are\W_1302.baf	Sun Apr 22 21:33:02 2007
++++ C:\BWP Patchstudio\patched files\worgas\are\W_1302.baf	Thu Apr 29 13:04:23 2010
+@@ -15,12 +15,12 @@
+ CreateVisualEffectObject("SPROTECT","Worgas")
+ PlaySound("XZARR39")
+ Wait(2)
+-ActionOverride("Worgas",ForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)
++ActionOverride("Worgas",ForceSpell(Myself,WIZARD_FIRE_SHIELD_RED))
+ CreateVisualEffectObject("spfirsd2","Worgas")
+ CreateVisualEffectObject("spfirepi","Worgas")
+ PlaySound("EFF_M59")
+ Wait(3)
+-ActionOverride("Worgas",ReallyForceSpell(Myself,CLERIC_CONJURE_FIRE_ELEMENTAL)
++ActionOverride("Worgas",ReallyForceSpell(Myself,CLERIC_CONJURE_FIRE_ELEMENTAL))
+ EndCutSceneMode()
+ END
+ 

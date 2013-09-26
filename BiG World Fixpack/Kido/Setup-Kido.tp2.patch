@@ -1,0 +1,31 @@
+--- Setup-Kido.tp2	Thu Sep 25 10:11:12 2008
++++ C:\BWP Patchstudio\patched files\Setup-Kido.tp2	Wed Oct 24 04:07:46 2012
+@@ -1,5 +1,8 @@
+ BACKUP ~Kido\Backup~
+ AUTHOR ~Deathsangel deathsangel@spellholdstudios.net~
++
++VERSION ~v7.0 BWP Fix~
++
+ AUTO_TRA ~Kido/%s~
+ 
+ LANGUAGE ~English~ ~english~ ~Kido\english\setup.tra~
+@@ -175,15 +178,15 @@
+   REPLACE_TEXTUALLY ~.*\bTOTEMIC\b~                ~0x4010 TOTEMIC~
+   REPLACE_TEXTUALLY ~.*\bSHAPESHIFTER\b~           ~0x4011 SHAPESHIFTER~
+   REPLACE_TEXTUALLY ~.*\bBEASTFRIEND\b~            ~0x4012 BEASTFRIEND~
+-  REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x0000 BARBARIAN~
+-  REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x0000 WILDMAGE~
++  REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x40000000 BARBARIAN~
++  REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x80000000 WILDMAGE~
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ APPEND ~kit.ids~ ~0x4000 TRUECLASS~
+   UNLESS ~\bTRUECLASS\b~
+-APPEND ~kit.ids~ ~0x0000 BARBARIAN~
++APPEND ~kit.ids~ ~0x40000000 BARBARIAN~
+   UNLESS ~\bBARBARIAN\b~
+-APPEND ~kit.ids~ ~0x0000 WILDMAGE~
++APPEND ~kit.ids~ ~0x80000000 WILDMAGE~
+   UNLESS ~\bWILDMAGE\b~
+ 
+ APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~

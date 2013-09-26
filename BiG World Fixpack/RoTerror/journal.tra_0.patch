@@ -1,0 +1,11 @@
+--- RoTerror\Language\German\journal.tra	Thu Dec 13 09:04:44 2007
++++ C:\BWP Patchstudio\patched files\RoTerror\Language\German\journal.tra	Sun Oct 04 13:18:43 2009
+@@ -550,7 +550,7 @@
+ //unsolved - 10,12,13
+ @573330 = ~Das Heiligtum der Drachen
+ 
+-Ein alter Mann namens Martwyn erzählte mir von einem alten Heiligtum der Drachen. Wenn ich dorthin gehen wollte, müsste ich mit verschlossenen Augen durch das unpassierbare Land wandern und meinen Weg durch das Eislabyrinth finden.~ /* #73330 */
++Ein alter Mann namens Martwyn erzählte mir von einem alten Heiligtum der Drachen. Wenn ich dorthin gehen wollte, müsste ich versteckt durch das unpassierbare Land wandern und meinen Weg durch das Eislabyrinth finden.~ /* #73330 */
+ 
+ 
+ //MAYASSI.DLG

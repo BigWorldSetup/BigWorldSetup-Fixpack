@@ -1,0 +1,92 @@
+--- questpack\oasis\combat\scripts\d0amthea.baf	Tue Jan 25 20:06:58 2005
++++ C:\BWP Patchstudio\patched files\questpack\oasis\combat\scripts\d0amthea.baf	Tue Feb 16 20:59:51 2010
+@@ -52,7 +52,7 @@
+ 	OR(3)
+ 		Allegiance(Myself,GOODBUTBLUE)
+ 		Allegiance(Myself,NEUTRAL)
+-		Allegiance(Myself,0)
++		Allegiance(Myself,EVILBUTBLUE)
+ THEN
+ 	RESPONSE #100
+ 		Shout(125)
+@@ -255,7 +255,7 @@
+ 	Heard(NearestMyGroupOfType,123)
+ 	!GlobalTimerNotExpired("D0Cast","LOCALS")
+ 	!HPPercentLT(Myself,35)
+-	!Dead("astHeardBy())")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HaveSpell(CLERIC_MASS_CURE)
+ THEN
+@@ -271,7 +271,7 @@
+ 	Heard(NearestMyGroupOfType,123)
+ 	!GlobalTimerNotExpired("D0Cast","LOCALS")
+ 	!HPPercentLT(Myself,35)
+-	!Dead("astHeardBy())")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HaveSpell(CLERIC_HEAL)
+ THEN
+@@ -287,7 +287,7 @@
+ 	Heard(NearestMyGroupOfType,123)
+ 	!GlobalTimerNotExpired("D0Cast","LOCALS")
+ 	!HPPercentLT(Myself,35)
+-	!Dead("astHeardBy())")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+ THEN
+@@ -303,7 +303,7 @@
+ 	Heard(NearestMyGroupOfType,123)
+ 	!GlobalTimerNotExpired("D0Cast","LOCALS")
+ 	!HPPercentLT(Myself,35)
+-	!Dead("astHeardBy())")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)
+ THEN
+@@ -319,7 +319,7 @@
+ 	Heard(NearestMyGroupOfType,123)
+ 	!GlobalTimerNotExpired("D0Cast","LOCALS")
+ 	!HPPercentLT(Myself,35)
+-	!Dead("astHeardBy())")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
+ THEN
+@@ -335,7 +335,7 @@
+ 	Heard(NearestMyGroupOfType,123)
+ 	!GlobalTimerNotExpired("D0Cast","LOCALS")
+ 	!HPPercentLT(Myself,35)
+-	!Dead("astHeardBy())")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)
+ THEN
+@@ -352,7 +352,7 @@
+ 	Global("OnWayToHeal","LOCALS",0)
+ 	HPPercentGT(Myself,75)
+ 	See(LastHeardBy(Myself))
+-	!Dead("astHeardBy(Myself))")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	Range(LastHeardBy(Myself),10)
+ 	!NumItemsGT("POTN55",LastHeardBy(Myself),0) // Potion of Superior Healing
+ 	NumItemsGT("POTN55",Myself,1) // Potion of Superior Healing
+@@ -594,7 +594,7 @@
+ 
+ IF
+ 	Heard(NearestMyGroupOfType,124)
+-	!Dead("astHeardBy(Myself))")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_INVISIBLE)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_IMPROVEDINVISIBILITY)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_CHARMED)
+@@ -612,7 +612,7 @@
+ 	Heard(NearestMyGroupOfType,124)
+ 	See(LastHeardBy(Myself))
+ 	!See(LastAttackerOf(LastHeardBy(Myself)))
+-	!Dead("astHeardBy(Myself))")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_INVISIBLE)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_IMPROVEDINVISIBILITY)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_CHARMED)

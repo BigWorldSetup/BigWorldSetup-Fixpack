@@ -1,0 +1,47 @@
+--- RoTerror\SNIP\BAF\Mage\MAGE20A.BAF	Wed Mar 15 11:04:54 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\Mage\MAGE20A.BAF	Thu Apr 01 16:55:19 2010
+@@ -1,7 +1,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	Global("Prep","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)
+@@ -13,7 +13,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	Global("SpellTrigger","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,39968) // Spell Trigger - Fired
+@@ -59,7 +59,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	Global("Prep","LOCALS",1)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Spell(Myself,WIZARD_SPELL_TURNING)
+@@ -80,7 +80,7 @@
+ 	See(NearestEnemyOf(Myself))
+ 	TookDamage()
+ 	Global("Prep2","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,43050) // Chain Contingency - Improved Mantle
+@@ -96,7 +96,7 @@
+ 	See(NearestEnemyOf(Myself))
+ 	TookDamage()
+ 	Global("Prep2","LOCALS",1)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,40252) // Contingency - Protection from Magical Weapons

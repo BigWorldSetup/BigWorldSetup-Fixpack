@@ -1,0 +1,15 @@
+--- com_encounters\dlg\UCMGHUN1.D	Wed May 25 16:14:08 2005
++++ C:\BWP Patchstudio\patched files\com_encounters\dlg\UCMGHUN1.D	Sat Nov 27 06:39:06 2010
+@@ -21,7 +21,10 @@
+ END
+ 
+ IF ~~ dieplease
+-SAY @408 IF ~~ THEN DO ~SetGlobal("UcmgHuntHostile","GLOBAL",1) Enemy()
+-~ EXIT
++SAY @408 IF ~~ THEN DO ~SetGlobal("UcmgHuntHostile","GLOBAL",1)
++ActionOverride("cmthang",Enemy())
++ActionOverride("cmkang",Enemy())
++ActionOverride("cmortus",Enemy())
++Enemy()~ EXIT
+ END
+ 

@@ -1,0 +1,11 @@
+--- RoTerror\BAF\OLMGUAR1.BAF	Fri Feb 24 19:37:22 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\OLMGUAR1.BAF	Sun Jun 08 05:44:12 2008
+@@ -3,7 +3,7 @@
+ 	Global("ChangeName","LOCALS",0)
+ THEN
+ 	RESPONSE #100
+-		SetName(63273) // Castle Guard
++		SetName(30115) // Guardian
+ 		SetGlobal("ChangeName","LOCALS",1)
+ END
+ 

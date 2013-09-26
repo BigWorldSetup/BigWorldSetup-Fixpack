@@ -1,0 +1,20 @@
+--- AjocMod\bcs\AGBMAGE.BAF	Mon Sep 29 22:45:24 2003
++++ C:\BWP Patchstudio\patched files\AjocMod\bcs\AGBMAGE.BAF	Fri Dec 17 13:08:46 2010
+@@ -6,7 +6,7 @@
+ 	RESPONSE #100
+ 		Spell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)
+ 		SetGlobal("MagicMissile","LOCALS",1)
+-		SetGlobalTimer("MagicMissile1","LOCALS",FIVE_ROUNDS)
++		SetGlobalTimer("MagicMissile1","LOCALS",30)
+ END
+ 
+ IF
+@@ -23,7 +23,7 @@
+ 	See(NearestEnemyOf(Myself))
+ THEN
+ 	RESPONSE #100
+-		SetGlobalTimer("MagicMissile1","LOCALS",FIVE_ROUNDS)
++		SetGlobalTimer("MagicMissile1","LOCALS",30)
+ 		Spell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)
+ END
+ 

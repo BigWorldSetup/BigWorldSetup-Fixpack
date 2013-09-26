@@ -1,0 +1,320 @@
+--- tobr\witch\dialogue\WGwitch.d	Thu Jul 09 09:05:06 2009
++++ C:\BWP Patchstudio\patched files\tobr\witch\dialogue\WGwitch.d	Mon May 31 08:38:16 2010
+@@ -45,7 +45,7 @@
+ 	IF ~Global("WGpos","ARTOBR",1)~ THEN 
+ 		DO ~StartCutSceneMode()
+ 			SetGlobal("WGcon","ARTOBR",1)
+-	    	ActionOverride(Player2,SetDialog("None"))
++	    	ActionOverride(Player2,SetDialog(""))
+ 	    	ActionOverride(Player2,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player2,LeaveParty())
+ 		    ReallyForceSpell(Player2,CLERIC_DEER)
+@@ -55,7 +55,7 @@
+ 	IF ~Global("WGpos","ARTOBR",2)~ THEN 
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-	    	ActionOverride(Player3,SetDialog("None"))
++	    	ActionOverride(Player3,SetDialog(""))
+ 	    	ActionOverride(Player3,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player3,LeaveParty())
+ 		    ReallyForceSpell(Player3,CLERIC_DEER)
+@@ -65,7 +65,7 @@
+ 	IF ~Global("WGpos","ARTOBR",3)~ THEN 
+ 		DO ~StartCutSceneMode()
+ 	    	SetGlobal("WGcon","ARTOBR",1)
+-	    	ActionOverride(Player4,SetDialog("None"))
++	    	ActionOverride(Player4,SetDialog(""))
+ 	    	ActionOverride(Player4,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player4,LeaveParty())
+ 		    ReallyForceSpell(Player4,CLERIC_DEER)
+@@ -75,7 +75,7 @@
+ 	IF ~Global("WGpos","ARTOBR",5)~ THEN 
+ 		DO ~StartCutSceneMode()
+ 	     	SetGlobal("WGcon","ARTOBR",1)
+-	    	ActionOverride(Player5,SetDialog("None"))
++	    	ActionOverride(Player5,SetDialog(""))
+ 	    	ActionOverride(Player5,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player5,LeaveParty())
+ 		    ReallyForceSpell(Player5,CLERIC_DEER)
+@@ -85,7 +85,7 @@
+ 	IF ~Global("WGpos","ARTOBR",8)~ THEN 
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-	    	ActionOverride(Player6,SetDialog("None"))
++	    	ActionOverride(Player6,SetDialog(""))
+ 	    	ActionOverride(Player6,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player6,LeaveParty())
+ 		    ReallyForceSpell(Player6,CLERIC_DEER)
+@@ -104,7 +104,7 @@
+     		  Global("WGpos","ARTOBR",9)~ THEN 
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGmore","ARTOBR",1)
+-	    	ActionOverride(Player2,SetDialog("None"))
++	    	ActionOverride(Player2,SetDialog(""))
+ 	    	ActionOverride(Player2,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player2,LeaveParty())
+ 		    ReallyForceSpell(Player2,CLERIC_DEER)
+@@ -116,7 +116,7 @@
+ 		      Global("WGpos","ARTOBR",10)~ THEN 
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGmore","ARTOBR",1)
+-	    	ActionOverride(Player3,SetDialog("None"))
++	    	ActionOverride(Player3,SetDialog(""))
+ 	    	ActionOverride(Player3,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player3,LeaveParty())
+ 		    ReallyForceSpell(Player3,CLERIC_DEER)
+@@ -127,7 +127,7 @@
+ 		       Global("WGpos","ARTOBR",11)~ THEN 
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGmore","ARTOBR",1)
+-	    	ActionOverride(Player4,SetDialog("None"))
++	    	ActionOverride(Player4,SetDialog(""))
+ 	    	ActionOverride(Player4,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player4,LeaveParty())
+ 		    ReallyForceSpell(Player4,CLERIC_DEER)
+@@ -137,7 +137,7 @@
+ 	IF ~Global("WGpos","ARTOBR",13)~ THEN 
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGmore","ARTOBR",1)
+-	    	ActionOverride(Player5,SetDialog("None"))
++	    	ActionOverride(Player5,SetDialog(""))
+ 	    	ActionOverride(Player5,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player5,LeaveParty())
+ 		    ReallyForceSpell(Player5,CLERIC_DEER)
+@@ -151,7 +151,7 @@
+ 	IF ~Global("WGpos","ARTOBR",3)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-	    	ActionOverride(Player3,SetDialog("None"))
++	    	ActionOverride(Player3,SetDialog(""))
+ 	    	ActionOverride(Player3,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player3,LeaveParty())
+ 		    ReallyForceSpell(Player3,CLERIC_DEER)
+@@ -162,7 +162,7 @@
+ 		       Global("WGpos","ARTOBR",5)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-	    	ActionOverride(Player4,SetDialog("None"))
++	    	ActionOverride(Player4,SetDialog(""))
+ 	    	ActionOverride(Player4,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player4,LeaveParty())
+ 		    ReallyForceSpell(Player4,CLERIC_DEER)
+@@ -174,7 +174,7 @@
+ 		       Global("WGpos","ARTOBR",8)~ THEN
+ 		DO ~StartCutSceneMode()
+ 	    	SetGlobal("WGcon","ARTOBR",1)
+-	    	ActionOverride(Player5,SetDialog("None"))
++	    	ActionOverride(Player5,SetDialog(""))
+ 	    	ActionOverride(Player5,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player5,LeaveParty())
+ 		    ReallyForceSpell(Player5,CLERIC_DEER)
+@@ -187,7 +187,7 @@
+ 		      Global("WGpos","ARTOBR",13)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-	    	ActionOverride(Player6,SetDialog("None"))
++	    	ActionOverride(Player6,SetDialog(""))
+ 	    	ActionOverride(Player6,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player6,LeaveParty())
+ 		    ReallyForceSpell(Player6,CLERIC_DEER)
+@@ -208,7 +208,7 @@
+ 			   Global("WGpos","ARTOBR",19)~ THEN
+ 		DO ~StartCutSceneMode()
+ 			SetGlobal("WGnext","ARTOBR",1)
+-		 	ActionOverride(Player2,SetDialog("None"))
++		 	ActionOverride(Player2,SetDialog(""))
+ 	    	ActionOverride(Player2,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player2,LeaveParty())
+ 			ReallyForceSpell(Player2,CLERIC_DEER)
+@@ -221,7 +221,7 @@
+ 			   Global("WGpos","ARTOBR",18) ~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGnext","ARTOBR",1)
+-		 	ActionOverride(Player3,SetDialog("None"))
++		 	ActionOverride(Player3,SetDialog(""))
+ 	    	ActionOverride(Player3,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player3,LeaveParty())
+ 			ReallyForceSpell(Player3,CLERIC_DEER)
+@@ -231,7 +231,7 @@
+ 	IF ~Global("WGnum","ARTOBR",3) Global("WGpos","ARTOBR",16)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGnext","ARTOBR",1)
+-		 	ActionOverride(Player4,SetDialog("None"))
++		 	ActionOverride(Player4,SetDialog(""))
+ 	    	ActionOverride(Player4,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player4,LeaveParty())
+ 			ReallyForceSpell(Player4,CLERIC_DEER)
+@@ -241,7 +241,7 @@
+ 	IF ~Global("WGnum","ARTOBR",4) Global("WGpos","ARTOBR",16)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGnext","ARTOBR",1)
+-		 	ActionOverride(Player2,SetDialog("None"))
++		 	ActionOverride(Player2,SetDialog(""))
+ 	    	ActionOverride(Player2,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player2,LeaveParty())
+ 			ReallyForceSpell(Player2,CLERIC_DEER)
+@@ -259,7 +259,7 @@
+ 			   Global("WGpos","ARTOBR",19) ~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGlast","ARTOBR",1)
+-		 	ActionOverride(Player3,SetDialog("None"))
++		 	ActionOverride(Player3,SetDialog(""))
+ 	    	ActionOverride(Player3,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player3,LeaveParty())
+ 			ReallyForceSpell(Player3,CLERIC_DEER)
+@@ -272,7 +272,7 @@
+ 			   Global("WGpos","ARTOBR",18)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGlast","ARTOBR",1)
+-		 	ActionOverride(Player4,SetDialog("None"))
++		 	ActionOverride(Player4,SetDialog(""))
+ 	    	ActionOverride(Player4,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player4,LeaveParty())
+ 			ReallyForceSpell(Player4,CLERIC_DEER)
+@@ -282,7 +282,7 @@
+ 	IF ~ Global("WGpos","ARTOBR",15) ~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGlast","ARTOBR",1)
+-		 	ActionOverride(Player5,SetDialog("None"))
++		 	ActionOverride(Player5,SetDialog(""))
+ 	    	ActionOverride(Player5,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player5,LeaveParty())
+ 			ReallyForceSpell(Player5,CLERIC_DEER)
+@@ -292,7 +292,7 @@
+ 	IF ~ Global("WGpos","ARTOBR",16) Global("WGnum","ARTOBR",3) ~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGlast","ARTOBR",1)
+-		 	ActionOverride(Player5,SetDialog("None"))
++		 	ActionOverride(Player5,SetDialog(""))
+ 	    	ActionOverride(Player5,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player5,LeaveParty())
+ 			ReallyForceSpell(Player5,CLERIC_DEER)
+@@ -302,7 +302,7 @@
+ 	IF ~ Global("WGpos","ARTOBR",15) Global("WGnum","ARTOBR",4)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGlast","ARTOBR",1)
+-		 	ActionOverride(Player3,SetDialog("None"))
++		 	ActionOverride(Player3,SetDialog(""))
+ 	    	ActionOverride(Player3,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player3,LeaveParty())
+ 			ReallyForceSpell(Player3,CLERIC_DEER)
+@@ -316,7 +316,7 @@
+ 	IF ~ Global("WGpos","ARTOBR",6) ~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-		 	ActionOverride(Player4,SetDialog("None"))
++		 	ActionOverride(Player4,SetDialog(""))
+ 	    	ActionOverride(Player4,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player4,LeaveParty())
+ 			ReallyForceSpell(Player4,CLERIC_DEER)
+@@ -327,7 +327,7 @@
+ 			  Global("WGpos","ARTOBR",10)~ THEN
+ 	 	DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-		 	ActionOverride(Player5,SetDialog("None"))
++		 	ActionOverride(Player5,SetDialog(""))
+ 	    	ActionOverride(Player5,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player5,LeaveParty())
+ 			ReallyForceSpell(Player5,CLERIC_DEER)
+@@ -338,7 +338,7 @@
+ 			  Global("WGpos","ARTOBR",15)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-			ActionOverride(Player6,SetDialog("None"))
++			ActionOverride(Player6,SetDialog(""))
+ 	    	ActionOverride(Player6,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player6,LeaveParty())
+ 			ReallyForceSpell(Player6,CLERIC_DEER)
+@@ -348,7 +348,7 @@
+ 	IF ~Global("WGpos","ARTOBR",11) Global("WGnum","ARTOBR",3)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-			ActionOverride(Player6,SetDialog("None"))
++			ActionOverride(Player6,SetDialog(""))
+ 	    	ActionOverride(Player6,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player6,LeaveParty())
+ 			ReallyForceSpell(Player6,CLERIC_DEER)
+@@ -358,7 +358,7 @@
+ 	IF ~Global("WGpos","ARTOBR",16) Global("WGnum","ARTOBR",3)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-			ActionOverride(Player6,SetDialog("None"))
++			ActionOverride(Player6,SetDialog(""))
+ 	    	ActionOverride(Player6,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player6,LeaveParty())
+ 			ReallyForceSpell(Player6,CLERIC_DEER)
+@@ -368,11 +368,11 @@
+ 	IF ~Global("WGpos","ARTOBR",11) Global("WGnum","ARTOBR",4)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-			ActionOverride(Player4,SetDialog("None"))
++			ActionOverride(Player4,SetDialog(""))
+ 	    	ActionOverride(Player4,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player4,LeaveParty())
+ 			ReallyForceSpell(Player4,CLERIC_DEER)
+-			ActionOverride(Player5,SetDialog("None"))
++			ActionOverride(Player5,SetDialog(""))
+ 	    	ActionOverride(Player5,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player5,LeaveParty())
+ 			ReallyForceSpell(Player5,CLERIC_DEER)
+@@ -382,11 +382,11 @@
+ 	IF ~Global("WGpos","ARTOBR",14)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-			ActionOverride(Player4,SetDialog("None"))
++			ActionOverride(Player4,SetDialog(""))
+ 	    	ActionOverride(Player4,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player4,LeaveParty())
+ 			ReallyForceSpell(Player4,CLERIC_DEER)
+-			ActionOverride(Player6,SetDialog("None"))
++			ActionOverride(Player6,SetDialog(""))
+ 	    	ActionOverride(Player6,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player6,LeaveParty())
+ 			ReallyForceSpell(Player6,CLERIC_DEER)
+@@ -397,11 +397,11 @@
+ 			  Global("WGpos","ARTOBR",18)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-			ActionOverride(Player6,SetDialog("None"))
++			ActionOverride(Player6,SetDialog(""))
+ 	    	ActionOverride(Player6,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player6,LeaveParty())
+ 			ReallyForceSpell(Player6,CLERIC_DEER)
+-			ActionOverride(Player5,SetDialog("None"))
++			ActionOverride(Player5,SetDialog(""))
+ 	    	ActionOverride(Player5,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player5,LeaveParty())
+ 			ReallyForceSpell(Player5,CLERIC_DEER)
+@@ -411,11 +411,11 @@
+ 	IF ~Global("WGpos","ARTOBR",16) Global("WGnum","ARTOBR",4)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-			ActionOverride(Player6,SetDialog("None"))
++			ActionOverride(Player6,SetDialog(""))
+ 	    	ActionOverride(Player6,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player6,LeaveParty())
+ 			ReallyForceSpell(Player6,CLERIC_DEER)
+-			ActionOverride(Player5,SetDialog("None"))
++			ActionOverride(Player5,SetDialog(""))
+ 	    	ActionOverride(Player5,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player5,LeaveParty())
+ 			ReallyForceSpell(Player5,CLERIC_DEER)
+@@ -425,15 +425,15 @@
+ 	IF ~Global("WGpos","ARTOBR",19)~ THEN
+ 		DO ~StartCutSceneMode()
+ 		    SetGlobal("WGcon","ARTOBR",1)
+-   			ActionOverride(Player4,SetDialog("None"))
++   			ActionOverride(Player4,SetDialog(""))
+ 	    	ActionOverride(Player4,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player4,LeaveParty())
+ 			ReallyForceSpell(Player4,CLERIC_DEER)
+-			ActionOverride(Player6,SetDialog("None"))
++			ActionOverride(Player6,SetDialog(""))
+ 	    	ActionOverride(Player6,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player6,LeaveParty())
+ 			ReallyForceSpell(Player6,CLERIC_DEER)
+-			ActionOverride(Player5,SetDialog("None"))
++			ActionOverride(Player5,SetDialog(""))
+ 	    	ActionOverride(Player5,ChangeAIScript("",DEFAULT))
+ 	      	ActionOverride(Player5,LeaveParty())
+ 			ReallyForceSpell(Player5,CLERIC_DEER)

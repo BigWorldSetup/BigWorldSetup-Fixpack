@@ -1,0 +1,10 @@
+--- worgas\are\W_0700.baf	Tue Apr 24 21:14:30 2007
++++ C:\BWP Patchstudio\patched files\worgas\are\W_0700.baf	Thu Apr 29 13:01:39 2010
+@@ -10,6 +10,7 @@
+     SetGlobal("WorgasPostSpeak","AR0700",1)
+ SetGlobal("w_cowledchase","AR0700",1)
+     ActionOverride("Worgas",StartDialogNoSet([PC]))
++Continue()
+ END
+ 
+ 

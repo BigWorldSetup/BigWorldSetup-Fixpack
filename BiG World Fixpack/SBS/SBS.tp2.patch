@@ -1,0 +1,11 @@
+--- SBS.tp2	Fri Mar 19 00:25:36 2010
++++ C:\BWP Patchstudio\patched files\SBS.tp2	Sun May 09 14:29:22 2010
+@@ -2,6 +2,8 @@
+ // where should tell the user to send email if something goes wrong?
+ AUTHOR ~majortomsawyer@hotmail.com~
+ 
++VERSION ~v3 BWP Fix~
++
+ // ALWAYS
+ //  AT_INTERACTIVE_EXIT ~VIEW SBS/SBS.txt~
+ // END

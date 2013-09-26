@@ -1,0 +1,11 @@
+--- imnesvale\scripts\easy\duSpawn1.baf	Tue Mar 14 18:41:16 2006
++++ C:\BWP Patchstudio\patched files\imnesvale\scripts\easy\duSpawn1.baf	Thu Sep 15 02:31:57 2011
+@@ -3,7 +3,7 @@
+ //They are invis to avoid being attacked for the 1/3 second that they exist.
+ 
+ If
+-	true()
++	oncreation()
+ then
+ 	response #100
+ 		ApplySpell(myself, WIZARD_INVISIBILITY)

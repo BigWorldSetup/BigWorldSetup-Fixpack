@@ -1,0 +1,21 @@
+--- RoTerror\BAF\RA5100.BAF	Fri Feb 24 19:40:30 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\RA5100.BAF	Sat Sep 26 20:04:57 2009
+@@ -178,3 +178,17 @@
+ END
+ 
+ 
++IF
++	PartyRested()
++	//AreaCheck("RA5100")
++THEN
++	RESPONSE #100
++		ApplyDamage(Player2,50,COLD)
++		ApplyDamage(Player3,50,COLD)
++		ApplyDamage(Player4,50,COLD)
++		ApplyDamage(Player5,50,COLD)
++		ApplyDamage(Player6,50,COLD)
++		ApplyDamage(Myself,50,COLD)
++		Wait(1)
++		DisplayStringHead(Myself,@573848) // Icecold wind blows from the lake, chilling your bones. It is not wise to sleep outside.
++END
+\ No newline at end of file

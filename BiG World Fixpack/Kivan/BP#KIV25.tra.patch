@@ -1,0 +1,11 @@
+--- Kivan\tra\english\BP#KIV25.tra	Sun Mar 05 14:47:32 2006
++++ C:\BWP Patchstudio\patched files\Kivan\tra\english\BP#KIV25.tra	Fri Nov 12 16:42:46 2010
+@@ -8,7 +8,7 @@
+ @7    = ~If not for me, you would be preaching to Cespenar in the Nine Hells by now, assuming you would live so long. We struck a bargain, <CHARNAME> and I, and it was fortunate that <PRO_HESHE> thought it a fair one.~
+ @8    = ~Once a merchant, always a merchant.~
+ @9    = ~A merchant who deals in life and death is better by far than a lickspittle of a mad god.~
+-@10   = ~Kivan, my pious companion, will you forsake Shevarash when the new <PRO_LORDLADY> of Murder is raised?~
++@10   = ~Kivan, my pious companion, will you forsake Shevarash when the new <PRO_LADYLORD> of Murder is raised?~
+ @11   = ~I will do no such thing. Shevarash is my patron, and he led me in my hour of sorrow.~ [KIVAN87]
+ @12   = ~As did <CHARNAME>.~
+ @13   = ~My allegiance is to <CHARNAME> in the flesh, not to Bhaal's leavings.~

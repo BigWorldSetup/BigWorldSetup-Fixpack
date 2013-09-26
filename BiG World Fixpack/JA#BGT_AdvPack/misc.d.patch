@@ -1,0 +1,39 @@
+--- JA#BGT_AdvPack\DLG\misc.d	Fri Jul 06 22:02:49 2012
++++ C:\BWP Patchstudio\patched files\JA#BGT_AdvPack\DLG\misc.d	Fri Oct 12 07:45:34 2012
+@@ -126,26 +126,23 @@
+ BEGIN 0 END // transition number (can be more than one)
+ BEGIN // list of changes, see below for flags
+   "REPLY" ~Geht so. Einen schönen Tag wünsche ich!~
+-  "EPILOGUE" ~GOTO 4~
+ END
+ 
+ EXTEND_BOTTOM PHANDA 3
+-IF ~~ THEN REPLY ~Bis jetzt! Zieht Eure Waffe, scheinheiliger Dummschwätzer!~ GOTO 5
++IF ~~ THEN REPLY ~Bis jetzt! Zieht Eure Waffe, scheinheiliger Dummschwätzer!~ GOTO JA#PHANDA_1
+ END
+ 
+-ALTER_TRANS PHANDA // file name
+-BEGIN 4 END // state number (can be more than one)
+-BEGIN 0 END // transition number (can be more than one)
+-BEGIN // list of changes, see below for flags
+-  "ACTION" ~NoAction()~
++
++APPEND PHANDA
++
++IF ~~ THEN BEGIN JA#PHANDA_1
++SAY ~Helm wird mich schützen vor solchen wie Euch!~
++IF ~~ THEN DO ~Enemy()
++Attack([0.0.0.0.0.0.MASK_EVIL])~ JOURNAL ~Böse Taten werden bestraft
++
++Meine Gruppe wurde von Phandalyn, einem übertrieben wachsamen Paladin, der sich in der Taverne "Elfgesang" in Baldurs Tor herumtreibt, angegriffen. Eines muss man sich merken: Wenn man von einer Gruppe von Bösewichten abhängig ist, sollte man muskulösen Paladinen besser aus dem Weg gehen.~ EXIT
+ END
+ 
+-ALTER_TRANS PHANDA // file name
+-BEGIN 5 END // state number (can be more than one)
+-BEGIN 0 END // transition number (can be more than one)
+-BEGIN // list of changes, see below for flags
+-  "ACTION" ~Enemy()
+-Attack([0.0.0.0.0.0.MASK_EVIL])~
+ END
+ 
+ 

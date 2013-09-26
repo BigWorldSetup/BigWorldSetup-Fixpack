@@ -1,0 +1,8 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		ApplySpell(Myself,TROLL_SETHP1)
+		PlayDead(300)
+		ReallyForceSpellRES("ROGTROXD",Myself) // No such index
+END

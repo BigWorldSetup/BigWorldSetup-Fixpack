@@ -1,0 +1,104 @@
+IF
+	!GlobalTimerNotExpired("Globe5Timer","LOCALS")
+	Global("psGlobeSpellCounter", "LOCALS", 8)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself, WIZARD_SUN_FIRE)
+		DestroySelf()
+END
+
+IF
+	!GlobalTimerNotExpired("Globe5Timer","LOCALS")
+	RandomNum(6, 1)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("Globe5Timer","LOCALS",6)
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(2)
+		ReallyForceSpell(Player1,CLERIC_ANIMAL_SUMMONING_3)
+		ReallyForceSpell(Player2,CLERIC_ANIMAL_SUMMONING_3)
+		ReallyForceSpell(Player3,CLERIC_ANIMAL_SUMMONING_3)
+		ReallyForceSpell(Player4,CLERIC_ANIMAL_SUMMONING_3)
+		ReallyForceSpell(Player5,CLERIC_ANIMAL_SUMMONING_3)
+		ReallyForceSpell(Player6,CLERIC_ANIMAL_SUMMONING_3)
+END
+
+IF
+	!GlobalTimerNotExpired("Globe5Timer","LOCALS")
+	RandomNum(6, 2)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("Globe5Timer","LOCALS",6)
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(3)
+		ReallyForceSpell(Player1,CLERIC_SUMMON_INSECTS)
+		ReallyForceSpell(Player2,CLERIC_SUMMON_INSECTS)
+		ReallyForceSpell(Player3,CLERIC_SUMMON_INSECTS)
+		ReallyForceSpell(Player4,CLERIC_SUMMON_INSECTS)
+		ReallyForceSpell(Player5,CLERIC_SUMMON_INSECTS)
+		ReallyForceSpell(Player6,CLERIC_SUMMON_INSECTS)
+END
+
+IF
+	!GlobalTimerNotExpired("Globe5Timer","LOCALS")
+	RandomNum(6, 3)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("Globe5Timer","LOCALS",6)
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(5)
+		ReallyForceSpell(Player1,WIZARD_MONSTER_SUMMONING_4)
+		ReallyForceSpell(Player2,WIZARD_MONSTER_SUMMONING_4)
+		ReallyForceSpell(Player3,WIZARD_MONSTER_SUMMONING_4)
+		ReallyForceSpell(Player4,WIZARD_MONSTER_SUMMONING_4)
+		ReallyForceSpell(Player5,WIZARD_MONSTER_SUMMONING_4)
+		ReallyForceSpell(Player6,WIZARD_MONSTER_SUMMONING_4)
+END
+
+IF
+	!GlobalTimerNotExpired("Globe5Timer","LOCALS")
+	RandomNum(6, 4)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("Globe5Timer","LOCALS",6)
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(6)
+		ReallyForceSpell(Player1,WIZARD_SUMMON_EFREET)
+		ReallyForceSpell(Player2,WIZARD_SUMMON_EFREET)
+		ReallyForceSpell(Player3,WIZARD_SUMMON_EFREET)
+		ReallyForceSpell(Player4,WIZARD_SUMMON_EFREET)
+		ReallyForceSpell(Player5,WIZARD_SUMMON_EFREET)
+		ReallyForceSpell(Player6,WIZARD_SUMMON_EFREET)
+END
+
+IF
+	!GlobalTimerNotExpired("Globe5Timer","LOCALS")
+	RandomNum(6, 5)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("Globe5Timer","LOCALS",6)
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(3)
+		ReallyForceSpell(Player1,SUMMON_FIRE_ELEMENTAL)
+		ReallyForceSpell(Player2,SUMMON_FIRE_ELEMENTAL)
+		ReallyForceSpell(Player3,SUMMON_FIRE_ELEMENTAL)
+		ReallyForceSpell(Player4,SUMMON_FIRE_ELEMENTAL)
+		ReallyForceSpell(Player5,SUMMON_FIRE_ELEMENTAL)
+		ReallyForceSpell(Player6,SUMMON_FIRE_ELEMENTAL)
+END
+
+IF
+	!GlobalTimerNotExpired("Globe5Timer","LOCALS")
+	RandomNum(6, 6)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("Globe5Timer","LOCALS",6)
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(7)
+		ReallyForceSpell(Player1,SUMMON_DEVIL_SHADE)
+		ReallyForceSpell(Player2,SUMMON_DEVIL_SHADE)
+		ReallyForceSpell(Player3,SUMMON_DEVIL_SHADE)
+		ReallyForceSpell(Player4,SUMMON_DEVIL_SHADE)
+		ReallyForceSpell(Player5,SUMMON_DEVIL_SHADE)
+		ReallyForceSpell(Player6,SUMMON_DEVIL_SHADE)
+END

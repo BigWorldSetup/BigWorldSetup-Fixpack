@@ -1,0 +1,11 @@
+--- CtB\scripts\ctb\CBBDenem.baf	Tue Feb 24 09:15:46 2004
++++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\CBBDenem.baf	Mon Oct 17 10:59:21 2011
+@@ -74,7 +74,7 @@
+ 	RESPONSE #100
+ 		SetGlobalTimer("BLUEDRAGONBREATH","AR3521",24)
+ 		ReallyForceSpell(LastSeenBy("CBBDAW01"),BLUE_DRAGON_BREATH)
+-		ReallyForceSpell(LastSeenBy("CBBDAW01"),0)
++	//	ReallyForceSpell(LastSeenBy("CBBDAW01"),0)
+ END
+ 
+ IF

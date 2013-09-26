@@ -1,0 +1,20 @@
+--- Star\Dialogue\Sword.d	Wed Jun 16 14:54:28 2004
++++ C:\BWP Patchstudio\patched files\Star\Dialogue\Sword.d	Thu Jul 23 09:53:22 2009
+@@ -93,12 +93,12 @@
+ BEGIN D#Crybl1
+ 
+ IF ~True()~ SSSword1
+-  SAY ~Dear Silver what can I do for you?~
+-  IF ~~ REPLY ~Nothing Mommy, I want only be sure that you are all right.~ GOTO SSSword2 
++  SAY @12
++  IF ~~ REPLY @13 GOTO SSSword2 
+ END
+ 
+ CHAIN D#Crybl1 SSSword2 
+-  ~Yes my dear.~
+-  == D#Silver ~Then good bye Mommy.~
+-  == D#Crybl1 ~See you Silver.~
++  @14
++  == D#Silver @15
++  == D#Crybl1 @16
+ EXIT

@@ -1,0 +1,95 @@
+--- Setup-Kivan.tp2	Sat Dec 10 17:13:30 2011
++++ C:\BWP Patchstudio\patched files\Setup-Kivan.tp2	Wed Oct 24 04:08:37 2012
+@@ -61,7 +61,7 @@
+ // The following fixes the broken kit.ids so that it can be used to detect kits properly.
+ 
+ COPY_EXISTING ~kit.ids~ ~override/kit.ids~
+-   REPLACE_TEXTUALLY ~0x40000000~ ~0x4000~ // TRUECLASS/MAGESCHOOL_GENERALIST
++   REPLACE_TEXTUALLY ~0x00004000~ ~0x4000~ // TRUECLASS/MAGESCHOOL_GENERALIST
+    REPLACE_TEXTUALLY ~0x00000040~ ~0x0040~ // MAGESCHOOL_ABJURER
+    REPLACE_TEXTUALLY ~0x00000080~ ~0x0080~ // MAGESCHOOL_CONJURER
+    REPLACE_TEXTUALLY ~0x00000100~ ~0x0100~ // MAGESCHOOL_DIVINER
+@@ -91,7 +91,7 @@
+    REPLACE_TEXTUALLY ~0x08000000~ ~0x4010~ // TOTEMIC
+    REPLACE_TEXTUALLY ~0x10000000~ ~0x4011~ // SHAPESHIFTER
+    REPLACE_TEXTUALLY ~0x20000000~ ~0x4012~ // BEASTFRIEND
+-   REPLACE_TEXTUALLY ~0x00004000~ ~0x0000~ // BARBARIAN
++   REPLACE_TEXTUALLY ~0x40000000~ ~0x40000000~ // BARBARIAN
+ 
+ //The following compiles SoA d files
+ 
+@@ -187,7 +187,8 @@
+ 
+ COPY ~kivan/itm/P#AROW.ITM~ ~override~
+ SAY NAME1 @183
+-  SAY NAME2 @184
++  SAY NAME2 @183
++  SAY UNIDENTIFIED_DESC @184
+   SAY DESC @185
+   
+ COPY ~Kivan/itm/P#WISH04.spl~ ~override~
+@@ -417,14 +418,14 @@
+   SAY NAME1 @161
+   SAY NAME2 @161
+   WRITE_ASCII 0x280 ~p#lilarcor~
+-  
++
+ ////QUESTS
+ 
+ //Compiles quests dialogues and scripts
+ 
+ //Lover's Ring
+ 
+-COMPILE ~Kivan/d/P#KIRING.D~
++//COMPILE ~Kivan/d/P#KIRING.D~
+ EXTEND_BOTTOM ~P#KIV01.bcs~ ~Kivan/baf/P#KIRIBF.baf~
+ 
+ //The following is some 2DA appending for Kivan
+@@ -479,17 +480,37 @@
+ SET_2DA_ENTRY 0 2 3 ~P#BLANK.MUS~
+ 
+ //Audio
+-ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~win32~) THEN BEGIN
+-  AT_NOW                   ~kivan/ogg/audio-install.bat~
+-  AT_INTERACTIVE_UNINSTALL ~kivan/ogg/audio-uninstall.bat~
+-END ELSE BEGIN
+-  ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~osx~) THEN BEGIN
+-    AT_NOW                   ~sh kivan/ogg/audio-install-osx.sh~
+-    AT_INTERACTIVE_UNINSTALL ~sh kivan/ogg/audio-uninstall-osx.sh~
+-  END ELSE BEGIN
+-    AT_NOW                   ~bash kivan/ogg/audio-install-lin.sh~
+-    AT_INTERACTIVE_UNINSTALL ~bash kivan/ogg/audio-uninstall-lin.sh~
++ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~win32~ = 1) BEGIN
++  ACTION_BASH_FOR ~kivan/ogg~ ~^.+\.ogg$~ BEGIN
++    ACTION_IF NOT FILE_EXISTS_IN_GAME ~%BASH_FOR_RES%.wav~ BEGIN
++      AT_NOW ~kivan\ogg\oggdec.exe -o override\%BASH_FOR_RES%.wav kivan\ogg\%BASH_FOR_RES%.ogg~
++    END
++  END
++  AT_INTERACTIVE_UNINSTALL ~del override\kivan*.wav~
++  AT_INTERACTIVE_UNINSTALL ~del override\p#deh*.wav~
++  AT_INTERACTIVE_UNINSTALL ~del override\p#male*.wav~
++END ELSE ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~osx~ = 1) BEGIN
++  AT_NOW ~shopt -s nocaseglob~
++  ACTION_BASH_FOR ~kivan/ogg~ ~^.+\.ogg$~ BEGIN
++    ACTION_IF NOT FILE_EXISTS_IN_GAME ~%BASH_FOR_RES%.wav~ BEGIN
++      AT_NOW ~kivan/ogg/sox kivan/ogg/%BASH_FOR_RES%.ogg override/%BASH_FOR_RES%.wav~
++    END
++  END
++  AT_INTERACTIVE_UNINSTALL ~shopt -s nocaseglob~
++  AT_INTERACTIVE_UNINSTALL ~rm -f override/kivan*.wav~
++  AT_INTERACTIVE_UNINSTALL ~rm -f override/p#deh*.wav~
++  AT_INTERACTIVE_UNINSTALL ~rm -f override/p#male*.wav~
++END ELSE ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~unix~ = 1) BEGIN
++  AT_NOW ~shopt -s nocaseglob~
++  ACTION_BASH_FOR ~kivan/ogg~ ~^.+\.ogg$~ BEGIN
++    ACTION_IF NOT FILE_EXISTS_IN_GAME ~%BASH_FOR_RES%.wav~ BEGIN
++      AT_NOW ~oggdec -o override/%BASH_FOR_RES%.wav kivan/ogg/%BASH_FOR_RES%.ogg~
++    END
+   END
++  AT_INTERACTIVE_UNINSTALL ~shopt -s nocaseglob~
++  AT_INTERACTIVE_UNINSTALL ~rm -f override/kivan*.wav~
++  AT_INTERACTIVE_UNINSTALL ~rm -f override/p#deh*.wav~
++  AT_INTERACTIVE_UNINSTALL ~rm -f override/p#male*.wav~
+ END
+ 
+ // win

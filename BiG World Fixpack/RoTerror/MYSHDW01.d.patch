@@ -1,0 +1,25 @@
+--- RoTerror\D\MYSHDW01.d	Thu Apr 13 19:41:44 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\D\MYSHDW01.d	Sat Aug 24 18:40:55 2013
+@@ -41,13 +41,13 @@
+ Global("BattlShdw4","RA4006",2)
+ Global("BattlShdw5","RA4006",2)
+ Global("BattlShdw6","RA4006",2)~ THEN REPLY @5 GOTO 7
+-  IF ~~ THEN EXIT
++  IF ~~ THEN REPLY @10 EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 4 // from: 3.1 3.0
+   SAY @6
+   IF ~~ THEN DO ~SetGlobal("TheGame","RA4006",2)
+-GiveItemCreate("MarkShdw",LastTalkedToBy,0,0,0)~ EXIT
++GiveItemCreate("MarkShdw",Player1,0,0,0)~ EXIT
+ END
+ 
+ IF ~Global("TheGame","RA4006",2)~ THEN BEGIN 5
+@@ -63,5 +63,5 @@
+ IF ~~ THEN BEGIN 7 // from: 3.3 3.2
+   SAY @9
+   IF ~~ THEN DO ~SetGlobal("TheGame","RA4006",2)
+-GiveItemCreate("MarkShdw",LastTalkedToBy,0,0,0)~ EXIT
++GiveItemCreate("MarkShdw",Player1,0,0,0)~ EXIT
+ END

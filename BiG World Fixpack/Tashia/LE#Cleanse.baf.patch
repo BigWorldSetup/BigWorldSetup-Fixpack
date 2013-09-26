@@ -1,0 +1,18 @@
+--- Tashia\update\Scripts\LE#Cleanse.baf	Sat Aug 27 22:42:36 2005
++++ C:\BWP Patchstudio\patched files\Tashia\update\Scripts\LE#Cleanse.baf	Tue Jun 01 19:45:00 2010
+@@ -7,13 +7,13 @@
+ END
+ 
+ IF
+-  Contains("LE#tbody ",Myself)
++  Contains("LE#tbody",Myself)
+   Contains("MISCBP",Myself)
+ THEN
+   RESPONSE #100
+     SetInterrupt(FALSE)
+     SetGlobal("CleanseVampire","AR1401",2)
+-    DestroyItem("le#tbody ")  // ~Tashia's Body~
++    DestroyItem("le#tbody")  // ~Tashia's Body~
+     DestroyItem("MISCBP")  // ~Bodhi's Black Heart~
+     CreateVisualEffect("SPMETSW2",[2592.1701])
+     CreateVisualEffect("SPMETSW2",[2645.1742])

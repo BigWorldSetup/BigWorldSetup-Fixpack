@@ -1,0 +1,563 @@
+--- RoTerror\BAF\rr3101.BAF	Thu Nov 02 19:44:46 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\rr3101.BAF	Sat Nov 27 02:50:29 2010
+@@ -121,274 +121,292 @@
+ END
+ 
+ IF
+-	Global("SmithApprsc","GLOBAL",1)
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		SetGlobalTimer("SmithApprsc1","GLOBAL",TWO_DAYS)
+-		SetGlobal("SmithApprsc","GLOBAL",2)
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",2)
+-	GlobalTimerExpired("SmithApprsc1","GLOBAL")
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		StartCutSceneMode()
+-		HideGUI()
+-		CreateCreature("BrunCus1",[588.361],5) // Customer
+-		Wait(1)
+-		UnhideGUI()
+-		EndCutSceneMode()
+-		ActionOverride("BrunCus1",StartDialogueNoSet(Player1))
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",3)
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		StartCutSceneMode()
+-		HideGUI()
+-		Wait(1)
+-		FadeToColor([20.0],0)
+-		Wait(2)
+-		FadeFromColor([20.0],0)
+-		Wait(1)
+-		UnhideGUI()
+-		EndCutSceneMode()
+-		ActionOverride("Brundor",StartDialogueNoSet(Player1))
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",4)
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		StartCutSceneMode()
+-		HideGUI()
+-		Wait(1)
+-		ActionOverride("BrunCus1",EscapeArea())
+-		Wait(2)
+-		UnhideGUI()
+-		EndCutSceneMode()
+-		ActionOverride("Brundor",StartDialogueNoSet(Player1))
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",5)
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		SetGlobalTimer("SmithApprsc2","GLOBAL",FIVE_DAYS)
+-		SetGlobal("SmithApprsc","GLOBAL",6)
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",6)
+-	GlobalTimerExpired("SmithApprsc2","GLOBAL")
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		StartCutSceneMode()
+-		HideGUI()
+-		ActionOverride("Grayfoot",Face(10))
+-		ActionOverride("Brundor",FaceObject("Grayfoot"))
+-		Wait(1)
+-		SetGlobal("SmithApprextra","RR3101",1)
+-		UnhideGUI()
+-		EndCutSceneMode()
+-		ActionOverride("Brundor",StartDialogueNoSet(Player1))
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",7)
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		StartCutSceneMode()
+-		HideGUI()
+-		SmallWait(5)
+-		ActionOverride("Grayfoot",FaceObject("Brundor"))
+-		Wait(1)
+-		UnhideGUI()
+-		EndCutSceneMode()
+-		ActionOverride("Grayfoot",StartDialogueNoSet(Player1))
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",8)
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		StartCutSceneMode()
+-		HideGUI()
+-		Wait(1)
+-		FadeToColor([20.0],0)
+-		Wait(2)
+-		FadeFromColor([20.0],0)
+-		Wait(1)
+-		UnhideGUI()
+-		EndCutSceneMode()
+-		ActionOverride("Grayfoot",StartDialogueNoSet(Player1))
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",9)
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		ActionOverride("Grayfoot",Face(2))
+-		ActionOverride("Brundor",Face(13))
+-		SetGlobalTimer("SmithApprsc3","GLOBAL",FIVE_DAYS)
+-		SetGlobal("SmithApprsc","GLOBAL",10)
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",10)
+-	GlobalTimerExpired("SmithApprsc3","GLOBAL")
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		StartCutSceneMode()
+-		HideGUI()
+-		ActionOverride("Grayfoot",FaceObject("Brundor"))
+-		ActionOverride("Brundor",FaceObject("Grayfoot"))
+-		Wait(1)
+-		SetGlobal("SmithApprextra","RR3101",2)
+-		UnhideGUI()
+-		EndCutSceneMode()
+-		ActionOverride("Brundor",StartDialogueNoSet(Player1))
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",11)
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		StartCutSceneMode()
+-		HideGUI()
+-		Wait(1)
+-		FadeToColor([20.0],0)
+-		Wait(2)
+-		FadeFromColor([20.0],0)
+-		Wait(1)
+-		SetGlobal("SmithApprsc","GLOBAL",12)
+-		UnhideGUI()
+-		EndCutSceneMode()
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",12)
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		ActionOverride("Grayfoot",Face(2))
+-		ActionOverride("Brundor",Face(13))
+-		SetGlobalTimer("SmithApprsc4","GLOBAL",FIVE_DAYS)
+-		SetGlobal("SmithApprsc","GLOBAL",13)
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",13)
+-	GlobalTimerExpired("SmithApprsc4","GLOBAL")
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		StartCutSceneMode()
+-		HideGUI()
+-		ActionOverride("Grayfoot",FaceObject("Brundor"))
+-		ActionOverride("Brundor",FaceObject("Grayfoot"))
+-		Wait(1)
+-		SetGlobal("SmithApprextra","RR3101",3)
+-		UnhideGUI()
+-		EndCutSceneMode()
+-		ActionOverride("Brundor",StartDialogueNoSet(Player1))
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",14)
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		ActionOverride("Grayfoot",Face(2))
+-		ActionOverride("Brundor",Face(13))
+-		SetGlobalTimer("SmithApprsc5","GLOBAL",FIVE_DAYS)
+-		SetGlobal("SmithApprsc","GLOBAL",15)
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",15)
+-	GlobalTimerExpired("SmithApprsc5","GLOBAL")
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		StartCutSceneMode()
+-		HideGUI()
+-		ActionOverride("Grayfoot",FaceObject("Brundor"))
+-		ActionOverride("Brundor",FaceObject("Grayfoot"))
+-		Wait(1)
+-		SetGlobal("SmithApprextra","RR3101",4)
+-		UnhideGUI()
+-		EndCutSceneMode()
+-		ActionOverride("Brundor",StartDialogueNoSet(Player1))
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",16)
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		ActionOverride("Grayfoot",Face(2))
+-		ActionOverride("Brundor",Face(13))
+-		SetGlobalTimer("SmithApprsc6","GLOBAL",FIVE_DAYS)
+-		SetGlobal("SmithApprsc","GLOBAL",17)
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",17)
+-	GlobalTimerExpired("SmithApprsc6","GLOBAL")
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		StartCutSceneMode()
+-		HideGUI()
+-		ActionOverride("Grayfoot",FaceObject("Brundor"))
+-		ActionOverride("Brundor",FaceObject("Grayfoot"))
+-		Wait(1)
+-		SetGlobal("SmithApprextra","RR3101",5)
+-		UnhideGUI()
+-		EndCutSceneMode()
+-		ActionOverride("Brundor",StartDialogueNoSet(Player1))
+-END
+-
+-IF
+-	Global("SmithApprsc","GLOBAL",18)
+-	InActiveArea("Brundor")
+-	InActiveArea("Grayfoot")
+-THEN
+-	RESPONSE #100
+-		ActionOverride("Grayfoot",Face(2))
+-		ActionOverride("Brundor",Face(13))
+-		SetGlobal("SmithApprsc","GLOBAL",19)
++        Global("SmithApprsc","GLOBAL",1)
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                SetGlobalTimer("SmithApprsc1","GLOBAL",TWO_DAYS)
++                SetGlobal("SmithApprsc","GLOBAL",2)
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",2)
++        GlobalTimerExpired("SmithApprsc1","GLOBAL")
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                StartCutSceneMode()
++                HideGUI()
++                CreateCreature("BrunCus1",[588.361],5) // Customer
++                Wait(1)
++                UnhideGUI()
++                EndCutSceneMode()
++                ActionOverride("BrunCus1",StartDialogueNoSet(Player1))
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",3)
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                StartCutSceneMode()
++                HideGUI()
++                Wait(1)
++                FadeToColor([20.0],0)
++                Wait(2)
++                FadeFromColor([20.0],0)
++                Wait(1)
++                UnhideGUI()
++                EndCutSceneMode()
++                ActionOverride("Brundor",StartDialogueNoSet(Player1))
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",4)
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                StartCutSceneMode()
++                HideGUI()
++                Wait(1)
++                ActionOverride("BrunCus1",EscapeArea())
++                Wait(2)
++                UnhideGUI()
++                EndCutSceneMode()
++                ActionOverride("Brundor",StartDialogueNoSet(Player1))
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",5)
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                SetGlobalTimer("SmithApprsc2","GLOBAL",FIVE_DAYS)
++                SetGlobal("SmithApprsc","GLOBAL",6)
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",6)
++        GlobalTimerExpired("SmithApprsc2","GLOBAL")
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                StartCutSceneMode()
++                HideGUI()
++                ActionOverride("Grayfoot",Face(10))
++                ActionOverride("Brundor",FaceObject("Grayfoot"))
++                Wait(1)
++                SetGlobal("SmithApprextra","RR3101",1)
++                UnhideGUI()
++                EndCutSceneMode()
++                ActionOverride("Brundor",StartDialogueNoSet(Player1))
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",7)
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                StartCutSceneMode()
++                HideGUI()
++                SmallWait(5)
++                ActionOverride("Grayfoot",FaceObject("Brundor"))
++                Wait(1)
++                UnhideGUI()
++                EndCutSceneMode()
++                ActionOverride("Grayfoot",StartDialogueNoSet(Player1))
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",8)
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                StartCutSceneMode()
++                HideGUI()
++                Wait(1)
++                FadeToColor([20.0],0)
++                Wait(2)
++                FadeFromColor([20.0],0)
++                Wait(1)
++                UnhideGUI()
++                EndCutSceneMode()
++                ActionOverride("Grayfoot",StartDialogueNoSet(Player1))
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",9)
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                ActionOverride("Grayfoot",Face(2))
++                ActionOverride("Brundor",Face(13))
++                SetGlobalTimer("SmithApprsc3","GLOBAL",FIVE_DAYS)
++                SetGlobal("SmithApprsc","GLOBAL",10)
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",10)
++        GlobalTimerExpired("SmithApprsc3","GLOBAL")
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                StartCutSceneMode()
++                HideGUI()
++                ActionOverride("Grayfoot",FaceObject("Brundor"))
++                ActionOverride("Brundor",FaceObject("Grayfoot"))
++                Wait(1)
++                SetGlobal("SmithApprextra","RR3101",2)
++                UnhideGUI()
++                EndCutSceneMode()
++                ActionOverride("Brundor",StartDialogueNoSet(Player1))
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",11)
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                StartCutSceneMode()
++                HideGUI()
++                Wait(1)
++                FadeToColor([20.0],0)
++                Wait(2)
++                FadeFromColor([20.0],0)
++                Wait(1)
++                SetGlobal("SmithApprsc","GLOBAL",12)
++                UnhideGUI()
++                EndCutSceneMode()
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",12)
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                ActionOverride("Grayfoot",Face(2))
++                ActionOverride("Brundor",Face(13))
++                SetGlobalTimer("SmithApprsc4","GLOBAL",FIVE_DAYS)
++                SetGlobal("SmithApprsc","GLOBAL",13)
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",13)
++        GlobalTimerExpired("SmithApprsc4","GLOBAL")
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                StartCutSceneMode()
++                HideGUI()
++                ActionOverride("Grayfoot",FaceObject("Brundor"))
++                ActionOverride("Brundor",FaceObject("Grayfoot"))
++                Wait(1)
++                SetGlobal("SmithApprextra","RR3101",3)
++                UnhideGUI()
++                EndCutSceneMode()
++                ActionOverride("Brundor",StartDialogueNoSet(Player1))
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",14)
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                ActionOverride("Grayfoot",Face(2))
++                ActionOverride("Brundor",Face(13))
++                SetGlobalTimer("SmithApprsc5","GLOBAL",FIVE_DAYS)
++                SetGlobal("SmithApprsc","GLOBAL",15)
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",15)
++        GlobalTimerExpired("SmithApprsc5","GLOBAL")
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                StartCutSceneMode()
++                HideGUI()
++                ActionOverride("Grayfoot",FaceObject("Brundor"))
++                ActionOverride("Brundor",FaceObject("Grayfoot"))
++                Wait(1)
++                SetGlobal("SmithApprextra","RR3101",4)
++                UnhideGUI()
++                EndCutSceneMode()
++                ActionOverride("Brundor",StartDialogueNoSet(Player1))
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",16)
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                ActionOverride("Grayfoot",Face(2))
++                ActionOverride("Brundor",Face(13))
++                SetGlobalTimer("SmithApprsc6","GLOBAL",FIVE_DAYS)
++                SetGlobal("SmithApprsc","GLOBAL",17)
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",17)
++        GlobalTimerExpired("SmithApprsc6","GLOBAL")
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                StartCutSceneMode()
++                HideGUI()
++                ActionOverride("Grayfoot",FaceObject("Brundor"))
++                ActionOverride("Brundor",FaceObject("Grayfoot"))
++                Wait(1)
++                SetGlobal("SmithApprextra","RR3101",5)
++                UnhideGUI()
++                EndCutSceneMode()
++                ActionOverride("Brundor",StartDialogueNoSet(Player1))
++END
++
++IF
++        Global("SmithApprsc","GLOBAL",18)
++        InActiveArea("Brundor")
++        InActiveArea("Grayfoot")
++        !Global("Pipleaves","GLOBAL",2)
++THEN
++        RESPONSE #100
++                ActionOverride("Grayfoot",Face(2))
++                ActionOverride("Brundor",Face(13))
++                SetGlobal("SmithApprsc","GLOBAL",19)
+ END
+ 
+ 

@@ -1,0 +1,12 @@
+--- questpack\lich\d0lichaudiouninstall.bat	Sat Aug 06 03:11:20 2005
++++ C:\BWP Patchstudio\patched files\questpack\lich\d0lichaudiouninstall.bat	Sun May 16 04:37:43 2010
+@@ -1,5 +1,7 @@
+-del override\d00040.tis
+-del override\sukiss*.wav
++del override\d0ar01.tis
++del override\d0ar01a.wav
++del override\d0ar01b.wav
++del override\d0qpnaz1.wav
+ @ECHO
+ @ECHO Nazariel Audio Uninstalled
+ @ECHO

@@ -1,0 +1,20 @@
+--- bg2_tweaks\setup-bg2_tweaks.tp2	Sun Jul 21 07:56:39 2013
++++ C:\BWP Patchstudio\patched files\bg2_tweaks\setup-bg2_tweaks.tp2	Fri Sep 13 09:20:40 2013
+@@ -7,7 +7,7 @@
+   END
+ END
+ 
+-VERSION ~v12~
++VERSION ~v13 with ar0903 Hotfix~
+ 
+ README ~bg2_tweaks/readme-bg2tweaks.html~
+ 
+@@ -8122,6 +8122,8 @@
+ END
+ 
+ ACTION_IF (GAME_IS ~BGT SOA TOB~) THEN BEGIN // BG2/BGT
++
++  DECOMPRESS_BIFF AREA090A.BIF
+   
+   INCLUDE ~bg2_tweaks/lib/functions.tpa~
+ 

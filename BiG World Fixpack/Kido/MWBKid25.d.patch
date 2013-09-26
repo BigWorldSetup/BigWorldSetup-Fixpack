@@ -1,0 +1,41 @@
+--- Kido\d\MWBKid25.d	Thu Sep 25 11:17:21 2008
++++ C:\BWP Patchstudio\patched files\Kido\d\MWBKid25.d	Fri Apr 02 18:44:21 2010
+@@ -493,10 +493,10 @@
+ 
+ APPEND ANOME25J
+ IF ~Global("finalconAak25","GLOBAL",1)
+-  See("Player1")
++  See(Player1)
+   Dead("MWKido")
+   Global("KandAcombat25","GLOBAL",1)
+-  !StateCheck("Player1",CD_STATE_NOTVALID)~ THEN BEGIN lastquabkijo25
++  !StateCheck(Player1,CD_STATE_NOTVALID)~ THEN BEGIN lastquabkijo25
+  SAY @152
+   IF ~Alignment(Player1,MASK_GOOD)~ THEN REPLY @153 DO ~SetGlobal("finalconAak25","GLOBAL",2)~ GOTO iundnow25
+   IF ~~ THEN REPLY @154 DO ~SetGlobal("finalconAak25","GLOBAL",2)~ GOTO iundnow25
+@@ -506,20 +506,20 @@
+ END
+ 
+ IF ~Global("Anofightplay25","GLOBAL",0)
+-  See("Player1")
++  See(Player1)
+   Dead("MWKido")
+   Global("KandAcombat25","GLOBAL",1)
+   Global("finalconAak25","GLOBAL",2)
+-  !StateCheck("Player1",CD_STATE_NOTVALID)~ THEN BEGIN fightpla125
+- SAY @158  IF ~~ THEN DO ~SetGlobal("Anofightplay25","GLOBAL",1) ClearAllActions() Attack("Player1")~ EXIT
++  !StateCheck(Player1,CD_STATE_NOTVALID)~ THEN BEGIN fightpla125
++ SAY @158  IF ~~ THEN DO ~SetGlobal("Anofightplay25","GLOBAL",1) ClearAllActions() Attack(Player1)~ EXIT
+ END
+ 
+ IF ~Global("Anomundnow25","GLOBAL",0)
+-  See("Player1")
++  See(Player1)
+   Dead("MWKido")
+   Global("KandAcombat25","GLOBAL",1)
+   Global("finalconAak25","GLOBAL",2)
+-  !StateCheck("Player1",CD_STATE_NOTVALID)~ THEN BEGIN iundnow25
++  !StateCheck(Player1,CD_STATE_NOTVALID)~ THEN BEGIN iundnow25
+  SAY @159
+   IF ~~ THEN DO ~SetGlobal("Anomundnow25","GLOBAL",1)~ EXIT
+ END

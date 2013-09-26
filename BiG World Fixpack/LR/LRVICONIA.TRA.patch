@@ -1,0 +1,11 @@
+--- LR\tra\english\LRVICONIA.TRA	Sat Aug 21 16:02:32 2004
++++ C:\BWP Patchstudio\patched files\LR\tra\english\LRVICONIA.TRA	Fri Nov 12 16:46:35 2010
+@@ -3,7 +3,7 @@
+ @2    = ~Well, well, well, the 'Broken One'. It is amusing how fate bends and twists our lives, is it not? ~ [VICONI66]
+ @3    = ~Weakling, am I? I am the master of the Arcane. I do not require you or anyone else to 'watch over' me, as you so eloquently put it. I am well capable of outperforming everyone in this party.~ [DPJON137]
+ @4    = ~You are a master of nothing! You have not had a single victory to your name, darthiir! Your first plan to tap the power from the Tree of Life failed miserably, and the consequences were dire for you. Your plan to capture the power of Tree of Life for a second time was even worse a failure, since it ended your worthless life. ~ [VICONI62]
+-@5    = ~You also tried to capture <CHARNAME>'s soul. You succeeded for a while, but <PRO_SHEHE> paid you back in full by destroying you not once but twice. And now you have the gall to pass yourself with us as our superior, while you cannot even call yourself our equal.~
++@5    = ~You also tried to capture <CHARNAME>'s soul. You succeeded for a while, but <PRO_HESHE> paid you back in full by destroying you not once but twice. And now you have the gall to pass yourself with us as our superior, while you cannot even call yourself our equal.~
+ @6    = ~If *I* am a failure, drow, then I am not the only one here. Need I remind you who was cast from her home, faith, and House? Remarkable forgetfulness on your part.~
+ @7    = ~Hah, it was a change for the better. A choice I made myself. Face it - my Mrann d'ssinss has led us on the path of glory. We have scored victory after victory. We have gained riches that would rival the contents of the treasury of a king! We have gained power that places us amongst the most potent of the Realms! ~
+ @8    = ~All of us have toiled, but have emerged from our struggles as victors. You, on the other hand, have crawled through dirt on your belly and have gained nothing. You only live because my Mrann d'ssinss' is kind and made, perhaps, a foolish decision. Face it, darthiir, you are an inferior male, and thus beneath my notice. Crawl back into dirt, worm, before I crush you under my boot heel!~

@@ -1,0 +1,1016 @@
+@0  = "Detectable Spells (Für alle Komponente, 'Der Zielort eines Untoten' ausgenommen, notwendig)"
+@1  = "Das Geheimnis der Trollhöhle"
+@2  = "Der Duft des Schwarzen Lotus"
+@3  = "Der Zielort eines Untoten"
+@4  = "Die Leiden eines Hexenmeisters"
+@5  = "Die Bitte einer edlen Dame"
+@6  = ""
+@7  = ""
+@8  = ""
+@9  = ""
+
+@10 = "Für diese Komponente ist Detectable Spells nötig."
+@11 = ""
+@12 = ""
+@13 = ""
+@14 = ""
+@15 = ""
+@16 = ""
+@17 = ""
+@18 = ""
+@19 = ""
+
+//
+@20 = "Altariel Galathil "
+@21 = "Spektraltroll"
+@22 = "Abenteurer"
+@23 = "Höherer Todesalb"
+@24 = "Höhere Mumie"
+@25 = "Skelettkrieger"
+@26 = "Steingolem"
+@27 = "Sandgolem"
+@28 = "Knochengolem"
+@29 = "Gilasalva" 
+@30 = "Hexenmeister"
+@31 = "Skelettzauberer"
+@32 = "Versile"
+@33 = "Fledermaus"
+@34 = "Gasform"
+@35 = "Junger Vampir"
+@36 = "Karmesinroter Tod"
+@37 = "Giftnebel"
+@38 = "Geist"
+@39 = "Kindergeist"
+@40 = "Antikes Zauberbuch"
+@41 = "Antikes Zauberbuch
+
+Antike Magie ist, allerdings nur in geringem Grad, von Elfen und Zwergen weitervererbet worden oder aber durch das Ausgraben von Artefakten in Ruinen wiederentdeckt worden. Allerdings ist der Großteil seit dem Untergang des Reichs Nesseril mit der Zeit verloren gegangen. Diese Mysterien wiederzuentdecken ist der Traum vieler Magier geworden. Dies, weil ein Unterschied zwischen der antiken Magie im Vergleich zur heutigen, die die Mystra unterstehende 'Welle' benutzt, besteht. Da unmittelbar rohe magische Energie verwendet wird, nimmt man an, dass es möglich ist, eine viel stärkere Kraft hervorzubringen. Dieses Buch ist daher ein Objekt, dass ein Magier, der sich mit dieser Art der Zauberei beschäftigt hatte, sehr gerne in die Hände bekommt, und das für einen Forscher wohl einen großen Schatz darstellt. Der Erhaltungszustand ist allerdings schlecht und es hat daher als Antiquität quasi keinen Wert. Zudem, welche Seite Ihr auch aufschlagt, reihen sich Euch unbekannte Wörter und Runen aneinander. Für Euch ist es daher unmöglich, es zu benutzen."
+@42 = "Ring des Futters"
+@43 = "Ring des Futters
+
+Das auf den ersten Blick völlig alltäglich wirkende Aussehen des Ringes verbirgt seinen finsteren Zweck. Einerseits verliert man, wenn angelegt, an Stärke und Agilität und kann sich nicht mehr bewegen, andererseits wird der sonstige körperliche Zustand viel besser. Die Umstände, wie Ihr an den Ring gekommen seid bedenkend, ist es wohl angemessen anzunehmen, dass der Vampir ihn benutzt hatte, um sein 'Futter' in möglichst gesundem Zustand gefangen zu halten
+
+Eigenschaften:
+
+Stärke: auf 3 gesenkt
+Geschicklichkeit: auf 3 gesenkt
+Konstitution: +3
+Besonderheiten: Kann nur durch Fluch brechen wieder abgenommen werden
+
+Kann nicht verwendet werden von:
+Magierkiller"
+@44 = "Amulett der verlorenen antiken Magie"
+@45 = "Amulett der verlorenen antiken Magie
+
+Dieses Amulett, von dem angenommen werden kann, dass antike Magie in ihm vorhanden ist, erhöht auf verschiedenen magischen Wegen die Verteidigungskraft des Trägers. Da die einzelnen, die Verteidigung betreffenden Fähigkeiten gar keine Gesamtkonsistenz besitzen, lässt sich annehmen, dass es sich um ein Testobjekt handelt, um die antike Magie zu erforschen, oder dass es ein Zufallsprodukt ist, bei dem auf gut Glück antike Magie verwendet wurde.
+
+Eigenschaften:
+
+RW-Bonus: -4 gg. Tod
+RW-Bonus: -3 gg. Odem
+RK-Bonus: -1 gg. Durchbohren
+Feuerwiderstand: +25%
+
+Kann nicht verwendet werden von:
+Magierkiller"
+@46 = " Schlinge +2: Die verlorene antike Magie"
+@47 = " Schlinge +2: Die verlorene antike Magie
+
+Diese mit verlorener antiker Magie erfüllt zu sein scheinende Schlinge macht den Träger zum Mister mit Schlingen. Die die Schlinge selbst nicht dermaßen alt aussieht, scheint es kein ausgegrabenes Artefakt zu sein, sondern kürzlich mit wiederentdeckter antiker Magier erfüllt worden zu sein. Sie ist ein Meisterwerk, dass euch einen Eindruck von der Stärke der heute noch äußerst rätselhaften antiken Magie verschafft.
+
+Eigenschaften:
+
+Wenn getragen:  
+Die Fertigkeit des Trägers in Schlingen wird auf 'Meister' (3 Punkte) gesetzt
+
+ETW0-Bonus: -2
+Schaden: +2 (Geschoß)
+Gewicht: 0
+Initiativefaktor: 4
+Fertigkeit: Schleuder
+Typ: 1-händig
+Mindeststärke: 3
+Kann nicht verwendet werden von:
+Kensai
+Ritter"
+@48 = ""
+@49 = ""
+@50 = ""
+@51 = ""
+@52 = ""
+@53 = ""
+@54 = ""
+@55 = ""
+@56 = ""
+@57 = ""
+@58 = ""
+@59 = ""
+
+
+//
+
+@60 = "Bandenchef"
+@61 = "Meuchelmörder"
+@62 = "Ehemaliger Meuchelmörder"
+@63 = "Sedd"
+@64 = "Jadd"
+@65 = "Rakshasar"
+@66 = "Dieb"
+@67 = "Kämpfer"
+@990= "Kämpferin"
+@995= "Verhüllte Vollstreckerin"
+@68 = "Kurtisane"
+@69 = "Schmuggler"
+@70 = "Feuerläufer"
+@71 = "Ifrit"
+@72 = "Feuerelementar"
+@73 = "Magier"
+@74 = "Niederer Lehmgolem"
+@75 = "Lehmgolem"
+@76 = "Kleriker"
+@77 = "Teufelchen"
+@78 = "Bauer"
+@79 = "Bürgerlicher"
+@80 = ""
+@81 = ""
+@82 = ""
+@83 = ""
+@84 = ""
+@85 = ""
+@86 = ""
+@87 = ""
+@88 = ""
+@89 = ""
+@90 = "Schlüssel"
+
+@91 = "Schlüssel
+
+Der Schlüssel, den der Magier der Schwarzer Lotus-Schmugglerorganisation bei sich hatte. Er wird wohl für eine Tür in einem Unterschlupf verwendet."
+@92 = "Schlüssel
+
+Ein Schlüssel, den Ihr in einer Kiste der Schwarzer Lotus-Schmugglerorganisation gefunden habt. Er wird wohl für eine Tür in einem Unterschlupf verwendet."
+@93 = "Schutzstein"
+@94 = " Schutzstein
+
+Ein Schutzstein, den eine Wache der Schwarze Lotus-Schmugglerorganisation bei sich hatte. Hiermit könnt Ihr zweifelsohne den Bannkreis um den Eingang zum Unterschlupf außer Kraft setzen."
+@95 = "Notiz des Meuchemörders"
+@96 = " Notiz des Meuchemörders
+
+Dies ist die Notiz, die Ihr bei der Leiche eines Meuchelmörders, der euch angegriffen hatte, gefunden habt. Der Eingang zum Unterschlupf der Schwarzer Lotus-Schmugglerorganisation im Brückendistrikt ist auf einer Karte eingezeichnet. Die Worte 'Sedd' und 'Jadd' sind wohl Namen. Vermutlich gehören sie den Wachen."
+@97 = "Schwarzer Lotus-Blume"
+@98 = " Schwarzer Lotus-Blume
+
+Eine Schwarzer Lotus-Blume. Der Saft des Schwarzen Lotus ist ein Rohstoff für die Rausgifterzeugung. Außerdem ist er als eine Ingredienz für Zaubersprüche bekannt."
+@99 = "Harz des Schwarzen Lotus"
+@100 = " Harz des Schwarzen Lotus
+
+Harz, gewonnen durch das Austrocknen lassen des aus einem Schwarzen Lotus ausgepressten Saftes. Er wird in kleine Stücke geschnitten, in eine Pfeife gestopft, angezündet und geraucht."
+@101 = "Kurzschwert +3: 'Zweite Chance'"
+@102 = " Kurzschwert +3: 'Zweite Chance'
+
+Dieses Kurzschwert, dass von vielen Meuchelmördern gerne benutzt wurde, gehörte Ursprungs einem Dieb aus Berdusk namens Kessel. Kessel wollte kein Meuchelmörder werden, musste diese Aufgabe aber übernehmen, da der Meister der Gilde, zu der er gehörte, es ihm befahl. Man kann nicht sagen, dass er wegen eines guten Charakters kein Meuchelmörder werden wollte. Es lag daran, dass er sich seiner Veranlagung zur Schlampigkeit bewusst war. Bei Mordaktionen schaffte er es zwar öfters, sein Opfer mit dem ersten Schlag den Todesstoß zu versetzen, aber da er mit dieser Klinge zusätzlich eine zweite Schlagchance erhalten konnte, konnte er sich einen Namen als großer Meuchelmörder machen. Wie er ursprünglich in den Besitz des Schwertes kam, ist unbekannt. Dies lag daran, dass er nicht wollte, dass bekannt würde, dass sein Erfolg von der Klinge stammte, weshalb er nicht oft über sie sprach. Kessels Ruhm währte so lange, bis der in seiner Schlampigkeit die Klinge irgendwo vergas.
+
+Eigenschaften:
+
+Fähigkeiten:
+Bei jedem Treffer besteht eine Chance von 50%, dass das Opfer für eine Runde betäubt wird (Rettungswurf gegen Zauberei, -1 Malus).
+
+ETW0-Bonus: -3
+Schaden: 1W6+3 (Durchbohren)
+Gewicht: 2
+Initiativefaktor: 1
+Fertigkeit: Kurzschwert
+Typ: 1-händig
+Mindeststärke: 5
+Kann nicht verwendet werden von:
+Druide
+Kleriker
+Magier
+Bestienmeister"
+@103 = ""
+@104 = ""
+@105 = ""
+@106 = ""
+@107 = ""
+@108 = ""
+@109 = ""
+
+
+//
+@110 = "Zombie"
+@111 = "Marizza"
+@112 = "Bürgerlicher " 
+@999 = "Bürgerliche"
+@113 = "Schildritter"
+@114 = "Morgenritter"
+@115 = "Geist von Alois"
+@116 = ""
+@117 = ""
+@118 = ""
+@119 = ""
+@120 = "Schädel von Alois"
+@121 = "Schädel von Alois
+
+Dies ist der Schädel von Alois, der nach seinem Ende noch übrig ist. Wenn Ihr wünscht, Alois Frieden zu geben, dann solltet Ihr ihn vielleicht seinen Angehörigen geben."
+@122 = "Alois' Ring"
+@123 = "Alois' Ring
+
+Dies ist der Ring, der Euch von Alois' Geist geschenkt wurde. Es gibt keinen Grund, warum er allzu starke Magie enthalten sollte. Als ein Zeichen der Dankbarkeit ist er aber zweifellos ausreichend.
+
+Eigenschaften:
+
+RW-Bonus: -1 gg. Tod
+RW-Bonus: -1 gg. Zauberei"
+@124 = ""
+@125 = ""
+@126 = ""
+@127 = ""
+@128 = ""
+@129 = ""
+
+
+//
+@130 = "Markerus"
+@131 = "Lostan"
+@132 = "Dieb"
+@133 = "Kämpfer"
+@134 = "Kleriker"
+@135 = "Graf Schtard"
+@136 = "Zauberer"
+@137 = "Verhüllter Vollstrecker"
+@138 = "Bürokrat"
+@139 = "Halbelfischer Kämpfer-Zauberer"
+@140 = "Zwergischer Berserker"
+@141 = "Halbork-Barbar"
+@142 = "Nekromantin"
+@143 = ""
+@144 = ""
+@145 = ""
+@146 = ""
+@147 = ""
+@148 = ""
+@149 = ""
+
+@150 = "Markerus' Zaubertrank"
+@151 = " Markerus' Zaubertrank
+
+Dies ist ein Zaubertrank von Euch unbekannter Art, allerdings scheint er, so weit Ihr dies der kurzen Gebrauchsanweisung auf dem Etikett entnehmen könnt, dazu zu dienen, die Symptome einer Person, die unter einer Raserei der eigenen magischen Kräfte leidet, zu unterdrücken. Da es unklar ist was passiert wenn eine andere Person ihn trinkt ist es sicher besser es nicht auszuprobieren."
+@152 = ""//Einnahme nicht möglich
+@153 = ""
+@154 = ""
+@155 = ""
+@156 = ""
+@157 = ""
+@158 = ""
+@159 = ""
+
+@160 = "Gryn's Dolch"
+@161 = " Gryn's Dolch
+
+Vor langer Zeit, als die Vororte von Athkatla von einer Diebesbande heimgesucht wurden, bat eine Gruppe von Kaufleuten, die unter den Überfällen litten, den mächtigen Magier Gryn, die Diebe auszutilgen. Da er wusste, dass die Diebe bei Angriffen oft vergiftete Pfeile benutzten, schuf Gryn zusammen mit seinem Freund dem Schmied Deurloo diesen Dolch und zog mit einigen von den Kaufleuten angeheuerten Söldnern los, die Diebe auszumerzen. Hauptsächlich durch die Macht des Dolches war das Austilgen der Diebe erfolgreich. Jedoch wurde Gryn leider, da die Söldner versuchten die Belohnung komplett für sich zu beanspruchen, von diesen hinterrücks ermordet. Kurze Zeit später wurden die Verräterischen Söldner von Deurloo, der den wahren Sachverhalt kannte, durch einen fingierten Auftrag zusammengebracht. Deurloo attackierte sie überraschend und konnte so Rache nehmen sowie das Andenken seines Freundes wiederherstellen. Es wird auch gesagt, dass dieser Dolch das Einzige gewesen wäre, was Deurloo dem Anführer der Söldner nach dem Gnadenstoß abgenommen hätte.
+
+Eigenschaften:
+
+Der Träger ist immun gegen Gift.
+Einmal am Tag kann der Zauberspruch Schild gesprochen werden.
+Schaden: 1W4+2 (Durchbohren)
+ETW0-Bonus: -2
+Gewicht: 1
+Initiativefaktor: 1
+Fertigkeit: Dolch
+Typ: 1-händig
+Mindeststärke: 3
+Kann nicht verwendet werden von:
+Kleriker
+Bestienmeister"
+@162 = ""
+@163 = ""
+@164 = ""
+@165 = ""
+@166 = ""
+@167 = ""
+@168 = ""
+@169 = ""
+
+//
+@170 = "Lady de Feuerbarde"
+@171 = "Rurik"
+@172 = "Bürgerlicher"
+@173 = "Bauer"
+@174 = "Gusabii"
+@175 = "Birga"
+@176 = "Lindwurm-Statue"
+@177 = "Lindwurm"
+@178 = "Stock"
+@179 = "Corneille"
+@180 = "Mithas Cragmoon"
+@181 = "Bluträuberin Winneria"
+@182 = "Blutsbruder"
+@183 = "Graf Louis Lobero"
+@184 = "Amun-Anführer"
+@185 = "Amun-Truppler"
+@186 = "Tizi"
+@187 = "Lygia"
+@188 = "Velero"
+@189 = "Schurke"
+@190 = "Ork"
+@191 = "Graf La Mer"
+@192 = "Tervin"
+@193 = "Tratto"
+@194 = "Terje"
+@195 = "Unhold"
+@196 = "Skelettkrieger-Statue"
+@197 = "Schicksalsführer Celsius"
+@198 = "Skelett"
+@199 = "Verhüllter Magier"
+@200 = "Leibwache"
+@201 = "Lehmgolem"
+@202 = "Steingolem"
+@203 = "Ribald"
+@204 = "Lucy"
+@205 = "Ankündiger"
+@206 = "Lindwurm-Kultist"
+@207 = "Baby-Lindwurm"
+@208 = "Lindwurm"
+@209 = "Denslow"
+@210 = "Oliveira"
+@211 = "Quatalis"
+@212 = "Visias"
+@213 = "Wallis"
+@214 = "Liam"
+@215 = "Arrants"
+@216 = "Ramsay"
+@220 = "Abstraktes Gemälde"
+@221 = "Abstraktes Gemälde
+
+Ein abstraktes Gemälde, das so aussieht, als ob jemand mit blauer und gelber Farbe Wirbel gemalt hätte. Es scheint zwar nur wie Gekritzel aus, aber anscheinend handelt es sich um Kunst."
+@222 = "Bildnis von Tempus"
+@223 = " Bildnis von Tempus
+
+Ein Bildnis von Tempus, dem Herren der Schlachten. Er ist auf einem Pferd reitend gemalt."
+@224 = "Aktgemälde"
+@225 = " Aktgemälde
+
+Ein Bild, auf dem ein schönes junges Aktmodell gemalt ist."
+@226 = "Landschaftsbild"
+@227 = " Landschaftsbild
+
+Ein Landschaftsbild, das einen ruhigen Eindruck gibt. Einige Häuser an einem Flußufer sind darauf zu sehen."
+@228 = "Lindwurm-Skulptur"
+@229 = " Lindwurm-Skulptur
+
+Die Skulptur eines Lindwurms, die wie ein Echter wirkt. Damit sie noch authentischer wirkt, kann man sie aufgrund irgendeiner Magie so installieren, dass sie über dem Boden schwebt. "
+@230 = "Ring der Familie de Feuerbarde"
+@231 = "Ring der Familie de Feuerbarde
+
+Der Ring der Familie de Feuerbarde. Er dient zugleich als Siegel."
+@232 = " Schlüssel der Familie de Feuerbarde "
+@233 = " Schlüssel der Familie de Feuerbarde
+
+Ein Schlüssel, der für das Öffnen eines Schlosses von solcher Stärke, dass es nicht durch gewöhnliche Schlösserknackkunst oder Magie geöffnet werden kann, nötig ist. "
+@234 = "Bruchstücke eines Gemäldes"
+@235 = "Bruchstücke eines Gemäldes
+
+Dies war einstmals ein Gemälde, auf dem anscheinend Tempus abgebildet war, jedoch ist es bedauerlicherweise in Stücke gebrochen worden."
+@236 = "Velero's Körper"
+@237 = "Velero ist völlig außer Bewusstsein."
+@238 = "Notiz eines Schurken"
+@239 = "Notiz eines Schurken
+
+Eine Notiz, die Ihr bei einem Schurken, der euch angegriffen hatte, gefunden habt. Hier steht:
+
+'Da ich von den Gefängniswärtern beobachtet werden, kann ich keine lange Erklärung verfassen, aber nehmt bitte Rache an der Person namens <CHARNAME>. Wegen <CHARNAME> sitze ich im Gefängnis.
+ 
+                  Verelo'"
+@240 = " Tervin "
+@241 = "Tervin ist völlig resigniert und still. Er macht sich offenbar um die beiden Kinder Sorgen und antwortet auch dann nicht, wenn er angesprochen wird."
+@242 = "Notiz von Tratto und Terje"
+@243 = " Notiz von Tratto und Terje
+
+Eine Notiz, die Ihr im Unterschlupf von Tratto und Terje gefunden habt. Sie ist mit sehr plump wirkenden Lettern geschrieben, aber dass die Beiden bei ihren Verhältnissen überhaupt Schreiben und Lesen können, ist vielleicht schon eine kleine Überraschung. Hier steht:
+
+'Ein Bote eines Adeligen kam und wir werden jetzt in einem großen Anwesen leben. Danke. Wenn wir uns wieder treffen, werden wir Euch richtig danken.
+                      
+                     Tratto und Terje'"
+@244 = "Schriftrolle zur Beendigung des Fluchs"
+@245 = " Schriftrolle zur Beendigung des Fluchs
+
+Die Spruchrolle, die Ihr im Labor der Häretikergruppe der Verhüllten Magier gestohlen und mitgenommen habt. Hiermit könnt Ihr den Fluch, der auf Rurik liegt, brechen."
+@246 = "Fleisch eines Lebewesens"
+@247 = "Fleisch eines Lebewesens
+
+Fleisch irgendeines Lebewesens, das als Lindwurmfutter dient. Wenn Ihr versucht es an die Lindwürmer zu verfüttern, werden diese sich wohl dankbar zeigen."
+// Zeichen der Dankbarkeit der Lindwürmer??? Im Spiel gucken... Wofür???
+@248 = "Lackware"
+@249 = " Lackware
+
+Ein exotische Stimmung verbreitendes, schwarz lackiertes Essgeschirr. Es wurde wohl in der Gegend von Kara-Tur hergestellt."
+@250 = " Lackware
+
+Ein exotische Stimmung verbreitendes, rot lackiertes Essgeschirr. Es wurde wohl in der Gegend von Kara-Tur hergestellt."
+@251 = "Amulett der Oliveita-Gruppe"
+@252 = " Amulett der Oliveita-Gruppe
+
+Wenn Ihr dieses Amulett tragt, könnt Ihr die Tür zum Labor der Oliveira-Gruppe passieren."
+@253 = "Verfluchte Stiefel"
+@254 = " Verfluchte Stiefel
+
+Verfluchte Stiefel, die der mit Fluch-Forschung beschäftigte Verhüllte Magier Oliveira geschaffen hat. Sie wurden wohl zur experimentellen Benutzung hergestellt. Wenn man sie lediglich anzieht, bemerkt man gar nichts, aber in dem Augenblick, in dem man versucht einen Gegner anzugreifen verliert man die Balance und das Ziel kann ausweichen.
+
+Eigenschaften:
+
+Wenn getragen: Der Basis-ETW0 wird auf 20 gesetzt.
+Besonderheiten: Kann nur durch Fluch brechen wieder abgenommen werden"
+@255 = "Verfluchter Helm"
+@256 = " Verfluchter Helm
+
+Ein verfluchter Stiefel, den der mit Fluch-Forschung beschäftigte Verhüllte Magier Oliveira geschaffen hat. Er wurde wohl zur experimentellen Benutzung hergestellt. Wenn man ihn aufsetzt wird das Blickfeld extrem eingeschränkt und man Gegner quasi gar nicht mehr erkennen.
+
+Eigenschaften:
+RK-Bonus: -
+
+Wenn getragen: 
+Der Träger unterliegt der Wirkung des Zauberspruchs Blindheit
+
+Besonderheiten: Kann nur durch Fluch brechen wieder abgenommen werden.
+Schützt vor kritischen Treffern. "
+@257 = "Tiara von Mary Glücks"
+@258 = "Tiara von Mary Glücks
+
+Man sagt, dass die Herzogin Mary Glücks, eine entfernte Verwandte des Königshauses von Cormyr, die Anfertigung dieser Tiara befohlen hätte. Die der Ausschmückung dienenden Diamanten sind in die Form von Blätter des Olivenbaums geschliffen worden. Die als Gelehrte bekannte Herzogin ließ von einem untergeben Zauberer Magie zur Stärkung der Selbstbeherrschung einweben. Auch wenn es eigentlich eine Tiara für den Gebrauch durch Frauen ist, können auch Männer es tragen.
+
+Eigenschaften:
+
+Wenn getragen: 
+Immunität gegen Furcht
+Die maximalen HP werden um 10 erhöht.
+
+Kann nicht verwendet werden von:
+-"
+@259 = ""
+
+//Tagebuch
+@1000 = "Die Leiden eines Zauberers
+
+In einer Ecke der Promenade von Athkatla traf ich den Hexenmeister Markerus, der in einen bemitleidenswerten Zustand versetzt ist, in dem er unter einer unkontrollierbaren Raserei seiner magischen Kräfte leidet. Wenn er in diesem Zustand verbleibt, wird er wahrscheinlichen von den Verhüllten Magiern weggeschafft werden. Ein Mann namens Lostan, der sich in Delosars Schänke im Brückenbezirk aufhält, verkauft einen Trank, mit dem Markerus' Symptome unterdrückt werden können."
+@1001 = "Die Leiden eines Zauberers
+
+Ich habe Markerus den Trank gegeben. Er ist auf dem Weg zum Ratsgebäude im Regierungsbezirk gegangen, um sich das Gerichtsurteil anzuhören."
+@1002 = "Die Leiden eines Zauberers
+
+Markerus hat den Prozess gewonnen und versprochen, mir dafür eine Belohnung zu geben. Wir haben vereinbart, uns in zwei Tagen im ersten Stock der Taverne Fünf Krüge zu treffen."
+@1003 = "Die Leiden eines Zauberers
+
+Nachdem ich Markerus vor Graf Schtard gerettet hatte, versuchte Schtard sogar ihn zu töten. Er war erfolglos, konnte aber leider fliehen. Allerdings habe ich die Belohnung erhalten und die Beute des Kampfes mit Graf Schtards Schergen habe ich auch, also kann ich wohl nur zufrieden sein."
+
+@1004 = "Die Leiden eines Zauberers
+
+Ich habe Markerus vor Graf Schtard gerettet und eine Belohnung erhalten. Da ich nicht wollte, dass sich mein Name verbreitet, habe ich mich von Markerus verabschiedet, ohne ihm meinen Namen zu nennen. Sein Grund und Boden wird jetzt wohl zur Ruhe finden."
+@1005 = "Die Leiden eines Zauberers
+
+Ich habe Markerus vor Graf Schtard gerettet und eine Belohnung erhalten. Ich habe ihm meinen Namen genannt und er hat versprochen, meine Tat weiterzuerzählen. Sein Grund und Boden wird jetzt wohl zur Ruhe finden."
+@1006 = "Die Leiden eines Zauberers
+
+Markerus wurde von den Verhüllten Magiern weggeschafft. Wenn er nicht an dem Prozess teilnehmen kann, wird er ihn wahrscheinlich verlieren. Wenn ich das Urteil erfahren will, sollte ich wohl zum Ratsgebäude im Regierungsbezirk gehen."
+@1007 = "Die Leiden eines Zauberers
+
+Als ich den Trank erhielt, tauchte ein Adeliger namens Schtard auf und verlangte, ihm den Trank zu geben. Ich lehnte dies ab."
+@1008 = "Die Leiden eines Zauberers
+
+Als ich den Trank erhielt, tauchte ein Adeliger namens Schtard auf und verlangte, ihm den Trank zu geben. Es kam zu einem Kampf, er konnte jedoch leider fliehen."
+@1009 = "Die Leiden eines Zauberers
+
+Als ich den Trank erhielt, tauchte ein Adeliger namens Schtard auf und verlangte, ihm den Trank zu geben. Ich gab ihm den Trank."
+// Ausgelassen
+@1010 = "Die Leiden eines Zauberers
+
+Am mit Markerus abgesprochenen Ort wartete ein falscher Bote auf mich und ich wurde bedauerlicherweise an irgendeinen mir unbekannten Ort teleportiert. Das war sicherlich das Werk von Graf Schtard. Ist Markerus wohlmöglich auch gefangen genommen worden?"
+@1011 = "Ein Adeliger namens Schtard
+
+Als ich einen geheimnisvollen Trank in die Hände bekam, tauchte ein Adeliger namens Schtard auf und verlangte, ihm den Trank zu übergeben. Ich lehnte dies ab."
+@1012 = "Ein Adeliger namens Schtard
+
+Als ich einen geheimnisvollen Trank in die Hände bekam, tauchte ein Adeliger namens Schtard auf und verlangte, ihm den Trank zu geben. Es kam zu einem Kampf, er konnte jedoch leider fliehen."
+@1013 = "Ein Adeliger namens Schtard
+
+Als ich einen geheimnisvollen Trank in die Hände bekam, tauchte ein Adeliger namens Schtard auf und verlangte, ihm den Trank zu geben. Ich gab ihm den Trank."
+@1014 = "Ein Adeliger namens Schtard
+
+Ich war Augenzeuge, als ein Mann namens Markerus von den Verhüllten Magiern fortgeschafft wurde. Dieser Graf Schtard hatte den Namen einmal erwähnt gehabt, glaube ich, aber... "
+@1015 = "Der Mann namens Markerus
+
+Ich griff einen Mann namens Markerus an, aber bevor ich ihn niedermachen konnte, wurde er leider von den Verhüllten Magier verschleppt. Was aus dem Mann wird, der so dumm war in dieser Stadt Magie zu benutzen, ist mir egal, aber es ist schade, dass ich hier keine Beute machen konnte."
+@1016 = "Die Leiden eines Zauberers
+
+Markerus hat den Prozess verloren und sein Land gehört jetzt Graf Schtard. Allerdings ist das ja nicht mein Problem."
+@1017 = "Ein Adeliger namens Schtard
+
+Schtard hat offenbar einen Prozess gewonnen und das Land in seinen Besitz bekommen. Die genaue Sachlage habe ich zwar auch weiterhin nicht verstanden, aber schlussendlich ist das auch nicht meine Angelegenheit."
+@1018 = "Der Mann namens Markerus
+
+Markerus hat einen Prozess verloren und sein Land gehört jetzt Graf Schtard. Die genaue Sachlage habe ich zwar auch weiterhin nicht verstanden, aber schlussendlich ist das auch nicht meine Angelegenheit."
+
+@1050 = "Der Zielort eines Untoten
+
+In den Docks bin ich einem geheimnisvollen Zombie begegnet. Er schien eine Frau namens Marizza zu suchen."
+@1051 = "Der Zielort eines Untoten
+
+Diesmal habe ich den Zombie im Brückenbezirk getroffen. Er scheint auf dem Weg zum Lathander-Tempel zu sein. Vielleicht hält sich dort ja die von ihm... von dem Wesen gesuchte Marizza auf?"
+@1052 = "Der Zielort eines Untoten
+
+Im Lathander-Tempel traf ich eine Frau namens Marizza, die vor kurzem ihren Ehemann verloren hatte. Sie war misstrauisch, aber sie ist zweifellos die Frau, die der Zombie sucht. Wird er wirklich hier in der Nähe auftauchen? Ausgerechnet bei einem Lathander-Tempel..."
+@1053 = "Der Zielort eines Untoten
+
+Der Zombie, der vorher Alois war, ist nun endlich beim Tempel angekommen. Jedoch musste er in diesem Zustand von den Wachen des Tempels erschlagen werden. Vielleicht gibt es etwas, das ich tun kann, um ihm Ruhe zu scheinken."
+@1054 = "Der Zielort eines Untoten
+
+Wenn ich die Knochen von Alois hätte, könnte dies die Wirksamkeit von Gebeten für seine Ruhe verstärken."
+@1055 = "Der Zielort eines Untoten
+
+Ich habe zwar Alois's Schädel eingesammelt, mich aber dazu entschlossen, ihn Marizza nicht zu übergeben. Die Ruhe eines Mannes, den ich nie gesehen noch gekannt habe, ist nicht meine Angelegenheit."
+@1056 = "Der Zielort eines Untoten
+
+Ich habe Alois's Schädel an Marizza verkauft. Es ist zwar nur eine kleine Summe, aber da ich sie mühelos verdient habe, ist es wohl gut so."
+@1057 = "Der Zielort eines Untoten
+
+Ich habe mich dazu entschlossen, Alois's Knochen zu übergeben und Morgenmeister Krell wird für seine Ruhe beten.  Marizza ist auf dem Weg zum Friedhof, um das Grab ihres Mannes zu besuchen. "
+@1058 = "Der Zielort eines Untoten
+
+Es scheint, dass Alois nun endlich an seinem wirklichen Zielort angekommen ist."
+
+@1100 = "Der Duft de Schwarzen Lotus
+
+Beim Stadttor habe ich eine Person gesehen, die auf mich wie ein Schmuggler von Schwarzem Lotus, einem bekannten Rauschmittel, wirkte. Ich sollte vielleicht versuchen, der Angelegenheit nachzugehen, aber das wird wohl kaum einfach werden. Ich habe wohl nur die Möglichkeit so lange herumzufragen, bis die dahinter stehende Schmugglerbande darauf reagieren."
+@1101 ="Der Duft de Schwarzen Lotus
+
+Beim Stadttor habe ich eine Person gesehen, die auf mich wie ein Schmuggler von Schwarzem Lotus wirkte. Wie es aussieht, ist die Droge hier in der Stadt weit verbreitet."
+@1102 = "Der Duft de Schwarzen Lotus
+
+In einem Zimmer weiter hinten in der Kupferkrone habe ich einige Gäste bemerkt, die so wirkten, als wären sie vom Schwarzen Lotus abhängig. Ich sollte vielleicht versuchen, der Angelegenheit nachzugehen, aber das wird wohl kaum einfach werden. Ich habe wohl nur die Möglichkeit so lange herumzufragen, bis die dahinter stehende Schmugglerbande darauf reagieren."
+@1103 = "Der Duft de Schwarzen Lotus
+
+In einem Zimmer weiter hinten in der Kupferkrone habe ich einige Gäste bemerkt, die so wirkten, als ob sie vom Schwarzen Lotus abhängig wären. Wie es aussieht, ist die Droge hier in der Stadt weit verbreitet."
+@1104 = "Der Duft de Schwarzen Lotus
+
+Ich habe das Herumfragen fortgesetzt und daraufhin erhielt ich eine Drohung von einem Mitglied der Schmugglerorganisation. Wenn ich ihren Angelegenheiten weiter nachgehen, werden sie das nächste Mal wohl Gewalt anwenden. Das wäre gefährlich, aber so könnte ich sicher auch mehr über sie erfahren."
+@1105 = "Der Duft de Schwarzen Lotus
+
+Die Schmugglerorganisation hat plötzlich einen Meuchelmördertrupp nach mir ausgesandt, aber in völliger Umkehrung ihres Planes konnte ich aus einem herausholen, wo sich der Unterschlupf befindet. Man kann ihn erreichen, indem man im Brückenbezirk eine Treppe die nur ein wenig von der Südspitze von Balthis Anwesen entfernt ist, einen Stock nach unten geht."
+@1106 = "Der Duft de Schwarzen Lotus
+
+Ich habe aus dem Meuchelmörder das Passwort für den Unterschlupf herausholen können. Mit 'Tigerin' kann man ungefährdet hineingehen."
+@1107 = "Der Duft de Schwarzen Lotus
+
+Die Schmugglerorganisation hat plötzlich einen Meuchelmörder nach mir ausgesandt, den ich aber zurückschlagen konnte. Allerdings konnte ich aus ihm nicht herausholen, wo sich der Unterschlupf befindet. Wenn ich seine Habseeligkeiten durchsuche, kann ich vielleicht einen Hinweis finden."
+@1108 = "Der Duft de Schwarzen Lotus
+
+Bei den Sachen des Meuchelmörders befand sich ein Plan, auf dem der Eingang zum Unterschlupf eingezeichnet ist. Er liegt im Brückenbezirk. Die Wörter 'Sedd' und 'Jadd', die wohl Namen darstellen, sind dort auch vermerkt."
+@1109 = "Der Duft de Schwarzen Lotus
+
+Es hat sich herausgestellt, dass es noch einen Unterschlupf der Schwarzer Lotus-Schmugglerorganisation gibt. Er ist in der Kanalisation unter der Kupferkrone."
+@1110 = "Der Duft de Schwarzen Lotus
+
+Wenn ich wissen möchte, wo sich ein weiterer Unterschlupf der Schwarzer Lotus-Schmugglerorganisation befindet, sollte ich Jadd in der Taverne Seeschatz in den Docks befragen."
+@1111 = "Der Duft de Schwarzen Lotus
+
+Ich konnte aus Jadd keine Informationen zu einem weiteren Unterschlupf herausholen. Andere Möglichkeiten fallen mir nicht ein. Diese Angelegenheit noch weiterzuverfolgen ist also offenbar nicht möglich."
+@1112 = "Der Duft de Schwarzen Lotus
+
+Ich konnte aus Jadd keine Informationen zu einem weiteren Unterschlupf herausholen. Ob es einen anderen Weg gibt, etwas herauszufinden, weiß ich nicht genau. Wenn ich diesen Meuchelmörder, den ich habe laufen lassen, wiederfinden könnte - er wollte ja angeblich irgendwo anders ein neues, ehrliches Leben beginnen, wäre das sicher hilfreich..."
+// HINWEIS ZU ORT GEBEN??? Ja, habe ich mich zu entschlossen... Fennek
+@1113 = "Der Duft de Schwarzen Lotus
+
+Wenn ich wissen möchte, wo sich ein weiterer Unterschlupf der Schwarzer Lotus-Schmugglerorganisation befindet, sollte ich den Schmuggler, der sich von der Organisation getrennt hat, in der Taverne Seeschatz in den Docks befragen."
+@1114 = "Der Duft de Schwarzen Lotus
+
+Ich konnte aus dem Schmuggler, der die Organisation verlassen hatte, keine Informationen zu einem weiteren Unterschlupf herausholen. Andere Möglichkeiten fallen mir nicht ein. Diese Angelegenheit noch weiterzuverfolgen ist also offenbar nicht möglich."
+@1115 = "Der Duft de Schwarzen Lotus
+
+Ich konnte aus dem Schmuggler, der die Organisation verlassen hatte, keine Informationen zu einem weiteren Unterschlupf herausholen. Ob es einen anderen Weg gibt, etwas herauszufinden, weiß ich nicht genau. Wenn ich diesen Meuchelmörder, den ich habe laufen lassen, wiederfinden könnte - er wollte ja angeblich irgendwo anders ein neues, ehrliches Leben beginnen, wäre das sicher hilfreich..."
+// HINWEIS ZU ORT GEBEN??? Ja, habe ich mich zu entschlossen... Fennek
+
+@1116 = "Der Duft de Schwarzen Lotus
+
+Ich konnte den Kopf der Schmugglerbande in die Enge treiben, jedoch entkam er leider. Was er sagte hörte sich so an, als wenn es noch einen Unterschlupf gäbe. "
+@1117 = "Der Duft de Schwarzen Lotus
+
+Schlussendlich konnte ich die Schmugglerorganisation zerschlagen. Den Verkauf von Schwarzem Lotus gänzlich zu verhindern dürfte unmöglich sein, aber es war ein Schritt in die richtige Richtung."
+@1118 = "Der Duft de Schwarzen Lotus
+
+Schlussendlich konnte ich die Schmugglerorganisation in die enge Treiben und einen Handel mit ihnen abschließen. Dafür, dass ich wegsehe, erhalte ich alle zehn Tage tausend Goldstücke, was sicher nicht schlecht ist.
+Allerdings wurde ich gewarnt, dass ich meine Finger von den Kisten hinten im Unterschlupf lassen soll."
+@1119 = "Der Duft de Schwarzen Lotus
+
+Mein Abkommen mit der Schmugglerorganisation wurde beendet. Ich hatte versucht, meinen Anteil zu erhöhen, was aber abgelehnt wurde. Es gibt jetzt keine andere Möglichkeit, als gegen den Bandenchef und seine Leute zu kämpfen."
+@1120 = "Der Duft de Schwarzen Lotus
+
+Mein Abkommen mit der Schmugglerorganisation wurde beendet. Der Bandenchef hat mir gesagt, dass er mir nicht mehr vertrauen könne und hat mich angegriffen. Anscheinend lag es daran, dass von seinem Standpunkt als Verbrecher aus gesehen mein Ruf zu hoch war, was ihm gar nicht gefiel."
+@1121 = "Der Duft de Schwarzen Lotus
+
+Meine Handel mit der Schmugglerorganisation wurde beendet. Es lag daran, dass ich mich entschlossen hatte, sie zu zerschlagen und die Mitglieder daher angriffen hatte. Dass ich kein Geld mehr bekomme ist bedauerlich, aber ich sollte diese Leute nicht am Leben lassen."
+@1122 = "Der Duft de Schwarzen Lotus
+
+Ich konnte aus dem ehemaligen Meuchelmörder keine Informationen zu einem weiteren Unterschlupf herausholen. Andere Möglichkeiten fallen mir nicht ein. Diese Angelegenheit noch weiterzuverfolgen ist also offenbar nicht möglich."
+@1123 = "Der Duft de Schwarzen Lotus
+
+Meine Handel mit der Schmugglerorganisation wurde beendet. Es lag daran, dass ich versuchte, etwas von dem Schwarzer Lotus-Harz zu stehlen. Es war aber ja sowieso bestenfalls eine Beziehung auf Zeit."
+
+@1150 = "Das Geheimnis der Trollhöhle
+
+Ich bin von dem Elfenmagier Altariel Galathil, der sich im Gasthaus von Handelstreff aufhält, darum gebeten worden, für 4000 Goldstücke ein Zauberbuch aus einem Verlies zu beschaffen, das sich im hinteren Teil der Trollhöhle befinden soll. Ich habe das abgelehnt, aber da er wohl in dem Gasthaus bleiben wird, kann ich mich an ihn wenden, wenn ich Interesse daran bekomme."
+@1151 = "Das Geheimnis der Trollhöhle
+
+Ich bin von dem Elfenmagier Altariel Galathil darum gebeten worden, für 4000 Goldstücke ein Zauberbuch aus einem Verlies zu beschaffen, das sich im hinteren Teil der Trollhöhle befinden soll. Er ist in den Druidenhain vorausgegangen und wartet dort auf mich."
+@1152 = "Das Geheimnis der Trollhöhle
+
+Altariel scheint an die freie Natur nicht gewöhnt zu sein und hat wohl daher ziemliche Angst. Ich muss daher sämtliche Monster in der Trollhöhle und auf dem Weg dorthin beseitigen. Wenn er verschreckt wegrennen sollte, kriege ich mein Geld niemals."
+@1153 = "Das Geheimnis der Trollhöhle
+
+Der Feigling Altariel hat sich vor einem Monster erschreckt und ist leider weggelaufen. Mit ihm ist auch die Belohnung fort, was sehr bedauerlich ist. Ich hätte ein wenig vorsichtiger sein müssen."
+@1154 = "Das Geheimnis der Trollhöhle
+
+Ich habe mir Altariel zum Feind gemacht und er ist weggelaufen. Mit ihm ist auch die Belohnung fort, was sehr bedauerlich ist. Ich hätte ein wenig vorsichtiger sein müssen."
+@1155 = "Das Geheimnis der Trollhöhle
+
+Durch Altariels Magie ist der verborgene Eingang sichtbar geworden. Jetzt muss ich mich 'nur noch' um die Monster im Verlies kümmern. Altariel ist ein Partner, der es sich schon bequem zu machen weiß...  "
+@1156 = "Das Geheimnis der Trollhöhle
+
+Durch Altariels Magie ist der verborgene Eingang sichtbar geworden. Er ist jetzt nutzlos geworden, weil ich das Buch sicher auch andernorts verkaufen kann. Ich muss mich 'nur noch' um die Monster im Verlies kümmern. Altariel war ein Partner, der es sich schon bequem zu machen wusste... "
+// Triggert wann? Nach dessen Tod? Nach Antwortoption / Ablehnung?
+@1157 = "Das Geheimnis der Trollhöhle
+
+Ein Abenteurer, den ich im Verlies traf, gab mir einige Informationen, bevor er seine Augen für immer schloss. Laut ihm sei sein Gegner ein Vampir gewesen. Wenn man diesen besiegt, müsse man ihm noch in seinem Sarg weiter hinten in der Felshöhle einen Pflock ins Herz rammen. Auf dem Weg dorthin gibt es zudem eine Treppe, durch die man anscheinend noch weiter nach Innen vordringen kann."
+@1158 = "Das Geheimnis der Trollhöhle
+
+Ich habe einen Leichnam bezwungen und das gesuchte Buch an mich gebracht. Jetzt kann ich mir von Altariel, der in der Herberge von Handelstreff wartet, die Belohnung holen."
+@1159 = "Das Geheimnis der Trollhöhle
+
+Ich habe einen Leichnam bezwungen und das gesuchte Buch an mich gebracht. ich kann es nicht benutzen, wie es aussieht, daher kann ich noch wohl versuchen, es irgendwo zu verkaufen..."
+@1160 = "Das Geheimnis der Trollhöhle
+
+Ich habe das Buch Altariel übergeben und die Belohnung erhalten. Ob gerade einmal 4000 Goldstücke für meine ganze Mühe wirklich angemessen waren? Na ja, er ist glücklich und daher habe ich es wohl richtig gemacht."
+@1161 = "Das Geheimnis der Trollhöhle
+
+Da 4000 Goldstücke für meine ganzen Mühen unangemessen waren, habe ich mich dazu entschlossen Altariel anzugreifen. Ich kann das Buch sicher auch anderenorts verkaufen."
+
+//Lady de Feuerbarde
+@1200 = "Die adelige Sammlerin
+
+In das Anwesen von Pimlico im Tempelbezirk ist, wie es aussieht, ein neuer Aristokrat eingezogen. Genau genommen scheint es eine Adelige zu sein, die zudem noch Sammlerin ist. Vielleicht hat sie Arbeit für mich."
+@1201 = "Die Aufträge von Lady de Feuerbarde
+
+Ich bin von der Adeligen, die neu in den Tempelbezirk gezogen ist, sofort mit einer Aufgabe versehen worden. Ich soll in der Kunsthändlerei in der Promenade eine seltene Statue erwerben."
+@1202 = "Die Aufträge von Lady de Feuerbarde
+
+ich habe die erste Aufgabe der Adeligen erledigt. Sie war mit der Lindwurm-Statue sehr zufrieden."
+@1210 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe von der Adeligen einen weiteren Auftrag erhalten. In den Fünf Krügen im Brückenbezirk soll ich bei einer zwergischen Kunsthändlerin namens Birga ein Gemälde kaufen."
+@1211 = "Die Aufträge von Lady de Feuerbarde
+
+Bevor ich ein Bild von Birga kaufen kann, muss ich zunächst einen Auftrag für sie erledigen. Ich soll ein abstraktes Gemälde aus Gelb und Blau von einem Magier namens Merkrath wiederbeschaffen. Sein Versteck liegt irgendwo in der Kanalisation unter dem Tempelbezirk."
+@1212 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe den zweiten Auftrag der Adeligen erledigt. Sie war von dem Bild von Tempus offenbar sehr angetan."
+@1213 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe den zweiten Auftrag der Adeligen erledigt. Sie war von dem Aktgemälde offenbar sehr angetan."
+@1214 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe den zweiten Auftrag der Adeligen erledigt. Sie war von dem Landschaftsbild offenbar sehr angetan."
+@1215 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe Birgas Auftrag erledigt und das Bild erhalten. Jetzt muss ich es nur noch der Adeligen geben."
+@1220 = "Die Aufträge von Lady de Feuerbarde
+
+Der nächste Auftrag ist, auf das Anwesen aufzupassen, so lange der Diener Rurik unterwegs ist. Es reicht wohl, wenn ich von Zeit zu Zeit einmal vorbeischaue."
+@1230 = "Die Aufträge von Lady de Feuerbarde
+
+Die Lindwurmstatue, die ich gekauft hatte, war ein durch Magie in seiner Form veränderter echter Lindwurm. Er hat den Siegelring der Dame verschluckt und ich versuche nun, ihn wiederzubekommen."
+@1231 = "Die Aufträge von Lady de Feuerbarde
+
+Die Angelegenheit mit dem Ring wird sich wohl nach einiger Zeit von selbst lösen. Es gibt aber wahrscheinlich auch noch andere Wege."
+@1232 = "Die Aufträge von Lady de Feuerbarde
+
+Man kann die Angelegenheit mit dem Ring wohl lösen, indem man den Lindwurm umbringt. Aber vielleicht gibt es noch Alternativen dazu."
+@1233 = "Die Aufträge von Lady de Feuerbarde
+
+Vielleicht kann man den Lindwurm durch Magie dazu bringen, den Ring auszuwürgen. Ribald vom Abenteurers Allerlei wäre hier sicherlich ein guter Ansprechpartner, aber vielleicht gibt es auch andere Leute, die man bitten kann."
+@1234 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe mich dazu entschlossen, die Angelegenheit durch Magie zu lösen und es selbst zu probieren. Wenn es nichts wird, kann ich ja immer noch jemand anderes bitten."
+@1235 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe den Auftrag mit dem Ring abgelehnt. Wenn ich meine Meinung ändere kann ich ja irgendetwas probieren."
+@1236 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe mich entschlossen die Angelegenheit mit dem Ring zu lösen, indem ich den Kunsthändler zur Verantwortung ziehe. Es gibt aber vielleicht noch andere Wege."
+@1237 = "Die Aufträge von Lady de Feuerbarde
+
+Den Kunsthändler kann ich nicht zur Verantwortung ziehen. Es bietet sich aber an, mit Ribald aus dem Abenteurers Allerlei zu sprechen. Wahrscheinlich gibt es aber auch noch andere Wege."
+@1238 = "Die Aufträge von Lady de Feuerbarde
+
+Angeblich soll man den Lindwurm durch den Zauberspruch Stinkende Wolke dazu bringen können, den Ring auszuwürgen."
+@1239 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe mir die Dienste eines Magiers, der Stinkende Wolke beherrscht, gesichert. Wenn ich zum Anwesen der Adeligen komme, wird er dort sicher schon auf mich warten. "
+@1240 = "Die Aufträge von Lady de Feuerbarde
+
+Die Angelegenheit mit dem vom Lindwurm verschluckten Ring hat sich von selbst gelöst. Ich habe hierfür nichts geleistet."
+@1241 = "Die Aufträge von Lady de Feuerbarde
+
+Die Angelegenheit mit dem durch den Lindwurm verschluckten Ring hat sich friedlich lösen lassen. So wie es aussieht, will die Adelige ihn jetzt behalten."
+@1242 = "Die Aufträge von Lady de Feuerbarde
+
+Die Angelegenheit mit dem durch den Lindwurm verschluckten Ring hat sich friedlich lösen lassen. Nur um den Lindwurm ist es schade, aber da kann man wohl nichts machen."
+@1250 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe die Streitigkeiten um das Tempus-Gemälde gelöst. Die Garagos-Priesterin Winneria hat es nicht aus dem Anwesen weggebracht und Graf Louis Lobero hat die Zustimmung erhalten, jederzeit in das Anwesen kommen zu dürfen, um das Gemälde zu betrachten. Die Adelige ist ebenfalls zufrieden."
+@1251 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe die Streitigkeiten um das Tempus-Gemälde nicht lösen können und die Adelige ist damit nicht zufrieden. Ich werde höchstwahrscheinlich keine Aufträge mehr von ihr erhalten. "
+@1252 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe die Streitigkeiten um das Tempus-Gemälde nicht lösen können und die Adelige ist damit nicht zufrieden. Weitere Aufträge von ihr zu erhalten dürfte schwierig werden."
+@1253 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe die Streitigkeiten um das Tempus-Gemälde gelöst. Die Garagos-Priesterin konnte ich zwar nicht überzeugen, aber Graf Louis Lobero hat die Zustimmung erhalten, jederzeit in das Anwesen kommen zu dürfen, um das Gemälde zu betrachten. Die Adelige ist damit auch noch zufrieden."
+@1254 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe die Streitigkeiten um das Tempus-Gemälde im Großen und Ganzen gelöst, allerdings ist die Adelige überhaupt nicht zufrieden. Allerdings kann ich, wie es aussieht, auch in Zukunft noch von ihr Aufträge erhalten. "
+@1260 = "Die Aufträge von Lady de Feuerbarde
+
+Der Maler und das Modell des Aktgemäldes sind gekommen, um ein Anliegen vorzubringen. Das Modell, Lygia, wird von einem Mann namens Velero zur Prostituton gezwungen. Der Auftrag der Adeligen ist es Velero, der sich in einem geheimen Raum kurz vor dem Gefängnis der Kupferkrone aufhält, den zuständigen Behörden auszuliefern. Ihn umzubringen ist für sie keine Lösung."
+@1261 = "Die Aufträge von Lady de Feuerbarde
+
+Ich konnte Velero Bewusstlos schlagen und ihn gefangen nehmen. Jetzt muss ich ihn noch ins Ratsgebäude zu Friedensrichterin Brylanna oder Hochkommissar Brega bringen."
+@1262 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe Velero leider umgebracht. Die Dame und der Maler Tizi werden wohl nicht zufrieden sein, aber ich muss es berichten."
+@1263 = "Die Aufträge von Lady de Feuerbarde
+
+ich habe Velero den Behörden übergeben. Jetzt muss ich es nur noch der Adeligen mitteilen."
+@1264 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe das Problem um das Aktgemälde gelöst. Sowohl die Adelige, wie auch der Maler Tizi sind zufrieden. Das Modell Lygia wiederum ist von dem schrecklichen Mann befreit."
+@1265 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe das Problem um das Aktgemälde gelöst, allerdings habe ich Velero leider umgebracht und sowohl die Adelige wie auch der Maler Tizi sich ehr unzufrieden. Im Großen und Ganzen ist das Modell Lygia zwar von dem schrecklichen Mann befreit, aber ich sollte vorsichtiger sein."
+@1266 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe es abgelehnt, die Probleme um das Aktgemälde zu lösen und auch alle weiteren Aufträge der Adeligen. Doch noch Aufträge von ihr zu erhalten dürfte wohl schwierig werden."
+@1267 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe es abgelehnt, die Probleme um das Aktgemälde zu lösen  Absehbar war die Adelige damit überhaupt nicht zufrieden. Allerdings kann ich, wie es aussieht, weiterhin Aufträge von ihr erhalten."
+@1270 = "Die Aufträge von Lady de Feuerbarde
+
+In Zusammenhang mit dem Landschaftsgemälde hat sich ein Problem entwickelt. Es war Graf La Mer gestohlen worden. Er wünscht sich, dass der Dieb den Behörden übergeben wird. Der Verdächtige soll ein sich im Westen der Slums aufhaltender Halbling sein. Weder die Adelige noch La Mer wünschen, dass ich ihn umbringe. "
+@1271 = "Die Aufträge von Lady de Feuerbarde
+
+Gemäß einem Kind soll sich der verdächtige Halbling im Osten des Gebietes aufhalten, in der Nähe des nach Steckrüben stinkenden Hauses. Das stimmt mit den anfänglichen Informationen nicht so ganz überein, aber..."
+@1272 = "Die Aufträge von Lady de Feuerbarde
+
+Diesmal wurde mir gesagt, dass der verdächtige Halbling sich auf dem Dach der Kupferkrone aufhalten würde. Ist das diesmal vielleicht richtig? "
+@1273 = "Die Aufträge von Lady de Feuerbarde
+
+Diesmal habe ich das wirkliche Versteck des verdächtigen Halblings herausgefunden. Ich sollte hineingehen und mich vergewissern. "
+@1274 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe den verdächtigen Halbling leider umgebracht. Weder die Adelige noch Graf La Mer werden zufrieden sein, aber ich muss es berichten."
+@1275 = "Die Aufträge von Lady de Feuerbarde
+
+Ich konnte den verbrecherischen Halbling gefangen nehmen. Jetzt muss ich ihn noch ins Ratsgebäude zu Friedensrichterin Brylanna oder Hochkommissar Brega bringen.
+"
+@1276 = "Die Aufträge von Lady de Feuerbarde
+
+Unter der Voraussetzung, Graf La Mer von der Situation der Kinder zu berichten, konnte ich den verbrecherischen Halbling gefangen nehmen. Jetzt muss ich ihn noch ins Ratsgebäude zu Friedensrichterin Brylanna oder Hochkommissar Brega bringen."
+@1277 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe den verbrecherischen Halbling fliehen lassen. Die Dame und Graf La Mer werden wohl nicht zufrieden sein, aber ich muss es berichten."
+@1278 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe den verbrecherischen Halbling, Tervin, den Behörden übergeben. Jetzt muss ich es nur noch der Adeligen mitteilen."
+@1279 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe das Problem um das Landschaftsgemälde gelöst. Sowohl die Adelige als auch Graf La Mer sind zufrieden."
+@1280 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe das Problem um das Landschaftsgemälde gelöst. Graf La Mer hat zugestimmt, die Fürsorge für die Kinder zu übernehmen. Sowohl die Adelige als auch Graf La Mer sind zufrieden "
+@1281 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe das Problem um das Landschaftsgemälde gelöst, aber auch nachdem ich die Umstände berichtete ist Graf La Mer absehbar sehr unzufrieden."
+@1282 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe das Problem um das Landschaftsgemälde gelöst, aber da ich auch die Umstände nicht berichtete ist Graf La Mer absehbar sehr unzufrieden."
+@1283 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe das Problem um das Landschaftsgemälde gelöst, aber da ich den Verdächtigen leider umgebracht habe, sind Graf La Mer und die Adelige absehbar sehr unzufrieden."
+@1284 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe das Problem um das Landschaftsgemälde gelöst, aber da ich den Verdächtigen leider umgebracht habe und die Schwierigkeiten der Kinder berichtete, hat Graf La Mer leider einen Schock erlitten."
+@1285 = "Die Aufträge von Lady de Feuerbarde
+
+Da ich es abgelehnt habe, das Problem um das Landschaftsgemälde zu lösen, ist die Adelige absehbar sehr unzufrieden."
+@1286 = "Die Aufträge von Lady de Feuerbarde
+
+Beim Problem um das Aktgemälde war die Adelige nicht nur mit meinem Arbeitsstil unzufrieden, sondern ich habe auch noch alle weiteren Aufgaben der Adeligen abgelehnt. Von jetzt an doch noch Aufträge von ihr zu erhalten dürfte wohl schwierig werden. "
+@1287 = "Die Aufträge von Lady de Feuerbarde
+
+Beim Problem um das Aktgemälde war die Adelige mit meinem Arbeitsstil unzufrieden, allerdings kann ich, so wie es aussieht, auch weiterhin Aufträge von ihr erhalten. "
+@1288 = "Die Aufträge von Lady de Feuerbarde
+
+Beim Problem um das Aktgemälde war die Adelige mit meinem Arbeitsstil unzufrieden. Ich kann höchstwahrscheinlich keine weiteren Aufträge mehr von ihr erhalten."
+@1290 = "Die Aufträge von Lady de Feuerbarde
+
+Dank Ruriks Vermittlung kam es dazu, dass ich weiterhin Aufträge von der Adeligen erhalten kann."
+@1291 = "Die Aufträge von Lady de Feuerbarde
+
+Da Rurik zurückgekommen ist, ist meine Arbeit als Wächter beendet. Wahrscheinlich gibt es aber in Bälde wieder einen Auftrag. Ich sollte mich von Zeit zu Zeit vergewissern."
+@1300 = "Die Aufträge von Lady de Feuerbarde
+
+Derzeit gibt es keine Arbeit, aber Rurik hat eine schlechte Vorahnung bezüglich der Skeltettkrieger-Statue, sagte er. Ich sollte vielleicht von Zeit zu Zeit einmal nach dem Rechten sehen."
+@1301 = "Die Aufträge von Lady de Feuerbarde
+
+Zur Vorahnung passend hat sich ein Problem um die Skeltettkrieger-Statue entwickelt. Rurik leidet unter starken Schmerzen. Ich sollte die sich im Untergeschoss aufhaltende Adelige rufen. "
+@1302 = "Die Aufträge von Lady de Feuerbarde
+
+Ich wurde beauftragt, den Kelemvor-Priester Celsius zu suchen, um Ruriks Fluch aufzuheben. Er ist in einem Grab im Friedhofsbezirk, allerdings nur tagsüber."
+@1303 = "Die Aufträge von Lady de Feuerbarde
+
+Den Fluch kann man lediglich durch eine Spruchrolle, die sich im Besitz einer Häretikergruppe von Verhüllten Magiern befindet, beenden. Es wurde beschlossen, dass das Eindringen durch die Kanalisation erfolgen soll. Im Süden des Regierungsbezirks wird mir Celsius beim Eingang zur Kanalisation weitere Anweisungen geben. Allerdings wird er nur nachts dort sein."
+@1304 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe von Celsius den Ratschlag erhalten, keinen Kampf mit den Verhüllten Magiern zu beginnen."
+@1305 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe die Fluch-Angelegenheit ohne Zwischenfälle beenden können. Meine Tat scheint zudem die Adelige und Rurik zueinander geführt zu haben."
+@1306 = "Die Aufträge von Lady de Feuerbarde
+
+Während des Rituals zur Aufhebung des Fluchs kam es zu einem Gegenangriff und Rurik wurde bedauerlicherweise getötet. Die Adelige hat einen Schock erlitten und sich dazu entschlossen, die Stadt zu verlassen."
+//Man selbst tötet ihn aus Versehen? Andere töten ihn?
+@1310 = "Die Aufträge von Lady de Feuerbarde
+
+Derzeit gibt es keine Aufträge, aber wenn ich von Zeit zu Zeit vorbeischaue, wird sicher einmal wieder etwas anfallen."
+@1311 = "Die Aufträge von Lady de Feuerbarde
+
+Es wurde beschlossen, dass der Lindwurm der Dame und Lucy aus Ribalds Laden sich paaren sollen. Ich sollte wohl ins Abenteurers Allerlei gehen."
+@1312 = "Die Aufträge von Lady de Feuerbarde
+
+Die Paarung von Lucy und dem Lindwurm der Adeligen war offenbar erfolgreich."
+@1320 = "Die Aufträge von Lady de Feuerbarde
+
+Im Moment gibt es keine Aufträge zu erledigen. Wenn ich in ein paar Tagen wieder zum Grundstück komme, wird es vielleicht wieder etwas geben."
+@1321 = "Die Aufträge von Lady de Feuerbarde
+
+Die Adelige hat mich beauftragt, die Eskorte für eine Reise zum Erwerb einiger ausländischer Hausgeräte zu übernehmen. Sie und Rurik werden in der Herberge von Imnestal in den Umar Hügeln auf mich warten."
+@1322 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe die Beiden getroffen. Rurik scheint dem an einem abgelegenen Ort wohnenden Geschäftspartner gegenüber etwas Misstrauen zu empfinden."
+@1323 = "Die Aufträge von Lady de Feuerbarde
+
+Der Hausgeräte-Handel war eine Falle von Lindwurmkultisten. Ich konnte den Angriff ohne Verluste zurückschlagen, aber die erhofften Kunstgegenstände nicht in die Finger bekommen. Die Adelige ist daher etwas enttäuscht. "
+@1324 = "Die Aufträge von Lady de Feuerbarde
+
+Der Hausgeräte-Handel war eine Falle von Lindwurmkultisten. Die Adelige starb jedoch traurigerweise und Rurik ist extrem niedergeschlagen. Ich werde ihn wahrscheinlich nicht mehr wiedersehen."
+@1325 = "Die Aufträge von Lady de Feuerbarde
+
+Der Hausgeräte-Handel war eine Falle von Lindwurmkultisten. Rurik starb jedoch traurigerweise und die Adelige ist extrem niedergeschlagen. Ich werde sie wahrscheinlich nicht mehr wiedersehen."
+@1326 = "Die Aufträge von Lady de Feuerbarde
+
+Der Hausgeräte-Handel war eine Falle von Lindwurmkultisten. Allerdings sind traurigerweise sowohl Rurik als auch die Adelige gestorben. "
+@1330 = "Die Aufträge von Lady de Feuerbarde
+
+Derzeit gibt es keine Aufträge, aber es wird sicher irgendwann wieder Ärger geben. Ich sollte von Zeit zu Zeit einmal in dem Anwesen vorbeikommen."
+@1331 = "Die Aufträge von Lady de Feuerbarde
+
+Die Adelige und Rurik sind leider durch Zauberei der Häretikergruppe der Verhüllten Magier ihres Bewusstseins beraubt worden. Denslow von der Gegenfraktion hat vorgeschlagen, einen Überraschungsangriff auf ihren Unterschlupf durchzuführen. Er wartet im Ratsgebäude."
+@1332 = "Die Aufträge von Lady de Feuerbarde
+
+Denslow gab mir ein Amulett, durch das man in den Unterschlupf hineingehen kann. Dieses muss ich anlegen, um eintreten zu können."
+@1333 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe Oliveiras Häretikergruppe niedergemacht. Die Adelige und Rurik werden jetzt sicher wieder gesund werden."
+
+@1334 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe die Zauberei der Häretikergruppe der Verhüllten Magier erfolgreich gestoppt. Die Adelige und Rurik haben ihre Gesundheit wiedererlangt."
+@1335 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe mir Denslow zum Feind gemacht. Die Möglichkeit, die Zauberei unter der die Adelige und Rurik leiden zu beenden, ist damit dahin. Ich hätte vorsichtiger sein sollen."
+@1340 = "Die Aufträge von Lady de Feuerbarde
+
+Die Hochzeit von Rurik und der Adeligen wird in Bälde stattfinden. Wenn die Zeit gekommen ist, wird uns sicher ein Bote erreichen."
+@1341 = "Die Aufträge von Lady de Feuerbarde
+
+Die Hochzeit von Rurik und der Adeligen findet im Kürze statt. Ich sollte zum Anwesen eilen."
+@1342 = "Die Aufträge von Lady de Feuerbarde
+
+Die Hochzeit von Rurik und der Adeligen ist ohne Zwischenfall zu Ende gegangen. Es wird jetzt höchstwahrscheinlich keinen Ärger mehr geben."
+@1350 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe die Lackwaren, die ich den Lindwurmkultisten abgenommen habe, der Dame gegeben. Sie war sehr erfreut."
+@1351 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe die Lackwaren, die ich den Feinden abgenommen habe, der Dame gegeben. Sie war sehr erfreut."
+@1370 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe die Adelige leider erzürnt und eine Warnung erhalten, das Anwesen zu verlassen. Ich sollte wahrscheinlich am Besten gehen und nicht wiederkommen."
+@1371 = "Die Aufträge von Lady de Feuerbarde
+
+Ich habe mir die Adelige zur Feindin gemacht. Die Aufträge der Adeligen enden damit ganz sicher."
+
+
+
+//Skripte
+@2000 = "Kleinerer Kettenzauber"
+@2001 = "Notfall"
+@2002 = "Aaah! "
+@2003 = "Versucht Illusionen zu erkennen."
+@2004 = "Kettenzauber"
+@2005 = "Versucht sich in den Schatten zu verbergen."
+@2006 = "Zauberauslöser"
+@2007 = "Kombinierter Notfall"
+@2008 = "Illusion wurde erkannt."
+@2009 = ""
+@2010 = "WAAAAH! WEG HIER!"
+@2011 = "Ihr dient mir auch noch im Tode, Hexenmeister!"
+@2012 = "Alarm wurde ausgelöst."
+@2013 = "Illusion verschwindet."
+@2014 = "Dummkopf! Ich werde es Euch zeigen!"
+
+@2100 = "Als Ihr den Grabstein berührt, erscheint ein Ring, der euch dann in Eure Hand fällt."
+//@2101 = "Es passiert nichts Weiteres, das Eure Aufmerksamkeit auf sich zieht."
+@2101 = "Für Alois: Du hast mich die wahre Liebe gelehrt. Dir in ewiger Liebe."
+
+@2200 = "Als Ihr den Schutzstein in die Hand nehmt, endet der Bannkreis um den Eingang und Ihr scheint hineingehen zu können."
+@2201 = "Nachdem die Rakshasar-Wächter tot sind erlischt der Bannkreis um den Eingang zum Unterschlupf und es scheint, dass Ihr hineingehen könnt."
+@2202 = "Um die Treppe zum Eingang erstreckt sich ein Bannkreis. Um hineingehen zu können ist offenbar ein Schutzstein oder etwas anderes, das den Bannkreis aufhebt, nötig."
+@2203 = "Wie es aussieht, hat man das Inventar bereits komplett wegtransportiert. Wichtige Gegenstände gibt es hier wahrscheinlich keine mehr."
+@2204 = "Der Durchgang ist leider durch einen Bannkreis gesichert. Es scheint, dass Ihr alle Gegner in diesem Raum besiegen müsst, bevor Ihr es verlassen könnt."
+//@2205 = "Die Gruppe hat einen Gegenstand verloren."
+
+@2300 = "Von irgendwo her kommt auf Euch unbekannte Art und Weise in großen Mengen Blut hereingeflossen."
+@2301 = "Nachdem Ihr den Vampir zum ersten Mal besiegt habt, zog er sich in diesen Sarg zurück. Wenn Ihr einen Holzpfahl dabeihabt, könnt Ihr ihn jetzt wohl endgültig vernichten."
+@2302 = "Ihr treibt den Holzpflock in das schmutzige Herz des Vampirs. Diese Bestie wird wohl niemandes Blut mehr trinken."
+@2303 = "Das Unleben dieses Vampirs wurde vollständig beendet und der Sarg verbreitet einen Geruch von Verwesung. Ihr habt hier nichts mehr zu tun."
+@2304 = "Ihr seid zu weit entfernt und könnt daher nichts machen."
+@2305 = "Der Durchgang ist leider durch einen Bannkreis gesichert. Es scheint, dass Ihr alle Gegner in diesem Raum besiegen müsst, bevor Ihr es verlassen könnt."
+@2306 = "Nachdem Ihr den Vampir vernichtet habt, hat sich ein an einen unbekannten Ort führendes Portal geöffnet."
+@2307 = "Diese große Menge Blut kommt wahrscheinlich aus einem Becken, das sich auf der anderen Seite des Portals befindet. Wenn man dieses Becken reinigen würde, kann man den Blutstrom vielleicht anhalten."
+@2308 = "Der Blutstrom ist jetzt versiegt."
+@2309 = "Dies ist wohl die Quelle des in großer Menge hereinströmenden Blutes. Wenn man dieses Becken reinigen würde, kann man den Blutstrom vielleicht anhalten."
+@2310 = "Nachdem Ihr elfisches Weihwasser in den Teich geschüttet habt, sieht man sofort die Wirkung. Innerhalb eines Augenblicks gab es ein heftiges Geblubber, danach waren, bevor man sich versah, das Böse beseitigt und das Becken gereinigt."
+@2311 = "Das Becken ist nun gereinigt. Jetzt könnt Ihr den hier gefangenen Geistern der von den Vampiren Ermordeten sicherlich Ruhe schenken."
+@2312 = "Ihr habt mich befreit! Herzlichen Dank!"
+@2313 = "Hil... feee..."
+@2314 = "Hier ist in Zeichen, die so klein sind, dass man sie fast nicht lesen kann, geritzt:
+'Ihr seid verdrießlich und schlechter Laune geworden. Das ist in der Tat ausgezeichnet. Wenn Ihr irgendwann noch grausam werdet, ist das noch besser.' "
+@2315 = "Nicht...!"
+@2316 = "Das Becken ist nun gereinigt. Ihr habt nicht allen der hier gefangenen Geistern der von den Vampiren Ermordeten Ruhe schenken können, aber es gibt vielleicht noch einige, die Ihr retten könnt."
+
+@2350 = "<CHARNAME>! Sterbt!!"
+@2351 = "Eine Skulptur eines Lindwurms. Sie sieht einem echten Lindwurm täuschend ähnlich. Durch irgendeine magische Kraft schwebt sie über dem Boden."
+@2352 = "Eine Skulptur eines Skelettkriegers. Ein durch irgendeine magische Kraft erzeugtes unheiliges Leuchten erweckt ein ungutes Gefühl."
+@2353 = "Falle wurde aktiviert."
+// Falle oder Hinterhalt???
+@2354 = "Ein Alarm erklingt. Ihr seid wohl entdeckt worden."
+@2355 = "Ein bestimmter Schlüssel scheint für dieses Portal nötig zu sein. Wenn Ihr diesen nicht besitzt, könnt Ihr es nicht passieren."
+@2356 = "Ihr seid zu weit entfernt und könnt daher nichts machen."
+@2357 = "Ihr spürt, wie die magische Kraft des Amuletts innerhalb eines Augenblicks euren Körper umhüllt. Wie es aussieht, konntet Ihr so in das Gebäude hineingehen."
+@2358 = "Verschlossen."
+@2359 = "Er zieht sich fluchtartig in die Kanalisation zurück. Um diese Uhrzeit seid Ihr leider entdeckt worden."
+// Gruppe? Oder aktiv, Gegner???
+@2360 = "Es sieht so aus, als hätte er etwas ausgewürgt."
+@2361 = "So ist es gut!"
+@2362 = "Was passiert?!?"
+@2363 = "WAAAH!"
+@2364 = "Es scheint so, dass das Ende der Treppe versperrt ist. Was Ihr auch probiert, Ihr könnt die Treppe im Moment nicht benutzen."
+@2365 = "Es scheint so, als wäre das Ende verschlossen, als Ihr aber genauer nachseht, stellt Ihr fest, dass Ihr offenbar doch nach oben steigen könnt."
+@2366 = "Ihr seid zu weit weg und könnt nicht viel erkennen."
+@2367 = "Ein abstraktes Gemälde, auf dem blaue und gelbe Wirbel zu sehen sind."
+@2368 = "Das ist wohl das gesuchte abstrakte Gemälde. Es sieht aus, als hätte jemand mit Blau und Gelb Wirbel gemalt. Wenn Ihr versuchen würdet, es abzuhängen, wäre dies wohl recht einfach."
+@2369 = "Hier hängt das von euch ausgesuchte Bildnis des wilden Tempus."
+@2370 = "Hier hängt das von euch ausgesuchte Bild eines hübschen Aktmodells."
+@2371 = "Hier hängt das von euch ausgesuchte, Ruhe verbreitende Landschaftsgemälde."
+
+//Kartennotizen, Gebietsdaten
+@2500 = "Eingang zum Unterschlupf der Schwarzer Lotus-Schmugglerbande"
+@2510 = "Eingang zum Verlies"
+@2511 = "Ausgang des Verlieses"
+@2512 = "Zum hinteren Teil des Verlieses"
+@2513 = "Sarg"
+@2514 = "Portal"
+@2520 = "Ihr könnte dieses Anwesen nicht mehr betreten."
+@2521 = "Eingang zum Versteck"
+@2522 = "Ausgang zur Erdoberfläche"
+@2523 = "Nach Imnestal"
+@2524 = "De Feuerbarde-Anwesen"
+@2525 = "Zum Bergpfad"
+@2526 = "Eingang zur Kanalisation (nur Nachts)"
+@2527 = "Treppe zum oberen Stockwerk"
+@2528 = "Kunsthandlung"
+@2529 = "De Feuerbarde-Anwesen"
+
+
+
+

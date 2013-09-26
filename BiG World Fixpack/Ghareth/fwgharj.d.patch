@@ -1,0 +1,19 @@
+--- Ghareth\d\fwgharj.d	Mon Feb 16 08:31:33 2004
++++ C:\BWP Patchstudio\patched files\Ghareth\d\fwgharj.d	Sat Mar 27 08:41:25 2010
+@@ -103,14 +103,14 @@
+ END
+ 
+ IF ~Global("KickedOut","LOCALS",0)
+-GlobalGT("Chapter","GLOBALS",4)~ kickedoutlate
++GlobalGT("Chapter","GLOBAL",4)~ kickedoutlate
+ SAY ~Spellhold is fallen, but still, much is left undone. Should we not press on?~ [FWGHAR59]
+ ++ ~I do not require your help any longer.~ DO ~SetGlobal("kickedout","LOCALS",1)~ + leave
+ ++ ~Of course.~ DO ~JoinParty()~ EXIT
+ END
+ 
+ IF ~Global("KickedOut","LOCALS",0)
+-!GlobalGT("Chapter","GLOBALS",4)~ kickedoutearly
++!GlobalGT("Chapter","GLOBAL",4)~ kickedoutearly
+ SAY ~Our mission has only just begun! I should like to press on.~ [FWGHAR58]
+ ++ ~I do not require your help any longer.~ DO ~SetGlobal("kickedout","LOCALS",1)~ + leave
+ ++ ~Of course.~ DO ~JoinParty()~ EXIT

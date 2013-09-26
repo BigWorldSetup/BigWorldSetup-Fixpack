@@ -1,0 +1,25 @@
+--- dq\setup-dq.tp2	Sat Dec 29 19:18:32 2012
++++ C:\BWP Patchstudio\patched files\dq\setup-dq.tp2	Sun Jan 06 17:59:52 2013
+@@ -1561,3 +1561,22 @@
+ END
+ 
+ COPY ~dq/portraits~ ~override~
++
++BEGIN @20002
++REQUIRE_COMPONENT ~setup-dq.tp2~ 0 ~This component requires the main component.~
++
++ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
++  COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
++   APPEND_FILE ~dq/Worldmap/areas.tbl~
++  COPY ~Worldmap/map_mods_links.tbl~  ~Worldmap~
++   APPEND_FILE ~dq/Worldmap/links.tbl~
++  COPY - ~dq/Worldmap/worldmap.tra~  ~tmp_worldmap.tra~
++  COPY ~Worldmap/map_mods_trans.tra~  ~Worldmap~
++   APPEND_FILE ~tmp_worldmap.tra~
++END
++ELSE BEGIN
++  MKDIR ~Worldmap~
++  COPY ~dq/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
++  COPY ~dq/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
++  COPY ~dq/Worldmap/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
++END

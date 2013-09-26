@@ -1,0 +1,11 @@
+--- CtB\Language\English\CBC8CONV.TRA	Sun Nov 16 04:14:06 2003
++++ C:\BWP Patchstudio\patched files\CtB\Language\English\CBC8CONV.TRA	Mon Sep 09 17:53:30 2013
+@@ -33,7 +33,7 @@
+ @33  = ~All you ever do is complain.  I'm tired of you and I'm gonna hawk you to Ribald if you don't start respecting me.~
+ @34  = ~Okay, okay.  You want a tale of adventure?  Then read a book.  I'd rather go make one than tell one.~
+ @35  = ~Now, let's get going.~
+-@36  = ~I'll tell you a story.  Once upon a time, there was a <PRO_RACE> <PRO_CLASS> that found a magical weapon.~
++@36  = ~I'll tell you a story.  Once upon a time, there was a <PRO_RACE> <PRO_GIRLBOY> that found a magical weapon.~
+ @37  = ~This weapon could talk, and was extremely intelligent and attractive.~
+ @38  = ~The <PRO_RACE> wasn't, and the magical sword got tired of being in such poor company.~
+ @39  = ~One night, while the <PRO_RACE> and <PRO_HISHER> friends were sleeping, the magical weapon slide over and bashed each of their heads for their laziness.~

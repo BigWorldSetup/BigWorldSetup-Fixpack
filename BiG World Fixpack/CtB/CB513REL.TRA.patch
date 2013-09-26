@@ -1,0 +1,11 @@
+--- CtB\Language\English\CB513REL.TRA	Sun Nov 16 03:09:36 2003
++++ C:\BWP Patchstudio\patched files\CtB\Language\English\CB513REL.TRA	Fri Nov 12 16:38:01 2010
+@@ -49,7 +49,7 @@
+ @49  = ~As you wish, my <LADYLORD>.  Here, the completed deed and all the relevant paperwork.~
+ @50  = ~Pleasure doing business with you, my <LADYLORD>.~
+ @51  = ~I'm sorry, <SIRMAAM>, but all sales are final, especially on a purchase of this size.  I think I'm giving you a good deal here.~
+-@52  = ~As you wish, my <LORDLADY>.~
++@52  = ~As you wish, my <LADYLORD>.~
+ @53  = ~I hope you are enjoying your new life of luxury up at your mountain cabin.~
+ @54  = ~Have you reconsidered selling your home?  Sell it with Lerrit, that's my motto.~
+ @55  = ~Yeah, I know your motto.~

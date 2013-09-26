@@ -1,0 +1,10 @@
+--- Kiss\npc.d	Sun May 16 20:57:00 2004
++++ C:\BWP Patchstudio\patched files\Kiss\npc.d	Thu Sep 06 14:43:52 2007
+@@ -17,6 +17,6 @@
+ IF ~~ THEN BEGIN GoAway
+ SAY ~Cmok (tongue) Cmok~
+ IF ~~ THEN DO ~ApplySpell(LastTalkedToBy,WIZARD_POLYMORPH_SELF)
+-ApplySpell(self,WIZARD_MAGIC_MISSILE)~
++ApplySpell(myself,WIZARD_MAGIC_MISSILE)~
+ EXIT
+ END

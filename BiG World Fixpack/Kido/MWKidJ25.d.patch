@@ -1,0 +1,24 @@
+--- Kido\d\MWKidJ25.d	Thu Sep 25 10:50:32 2008
++++ C:\BWP Patchstudio\patched files\Kido\d\MWKidJ25.d	Mon May 31 04:36:09 2010
+@@ -301,7 +301,7 @@
+   IF ~~ THEN REPLY @137 DO ~SetGlobal("finalconKaAn25","GLOBAL",2)~ GOTO ihearyaplay
+   IF ~~ THEN REPLY @138 DO ~SetGlobal("finalconKaAn25","GLOBAL",2)~ GOTO ihearyaplay
+   IF ~~ THEN REPLY @139 DO ~SetGlobal("finalconKaAn25","GLOBAL",2)~ GOTO ihearyaplay
+-  IF ~~ THEN REPLY @140 DO ~SetGlobal("finalconKaAn25","GLOBAL",2)~ EXTERN KIDOP25 0
++  IF ~~ THEN REPLY @140 DO ~SetGlobal("finalconKaAn25","GLOBAL",2)~ EXTERN MWKidP25 0
+   IF ~!Gender(Player1,MALE)~ THEN REPLY @141 DO ~SetGlobal("finalconKaAn25","GLOBAL",2)~ GOTO dieplayer
+ END
+ 
+@@ -319,9 +319,9 @@
+   See(Player1)
+   !StateCheck(Player1,CD_STATE_NOTVALID)~ THEN BEGIN notthatlore25
+   SAY @144
+-  IF ~~ THEN REPLY @145 EXTERN GORMAD 16
+-  IF ~~ THEN REPLY @146 EXTERN GORMAD 16
+-  IF ~~ THEN REPLY @147 EXTERN GORMAD 17
++  IF ~~ THEN REPLY @145 EXTERN GORMAD1 16
++  IF ~~ THEN REPLY @146 EXTERN GORMAD1 16
++  IF ~~ THEN REPLY @147 EXTERN GORMAD1 17
+ END
+ 
+ IF ~InParty(Player1)

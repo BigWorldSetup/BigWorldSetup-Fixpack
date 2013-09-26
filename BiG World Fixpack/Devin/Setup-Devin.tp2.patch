@@ -1,0 +1,74 @@
+--- Devin\Setup-Devin.tp2	Sat Mar 20 10:37:54 2010
++++ C:\BWP Patchstudio\patched files\Devin\Setup-Devin.tp2	Sat Oct 15 11:59:54 2011
+@@ -164,7 +164,7 @@
+ COPY ~Devin/Creatures/PostQuest/#VDevin.cre~ ~override~
+ SAY NAME1 @10
+ SAY NAME2 @10
+-COMPILE ~Devin/Dialogues/#VDevin.d~ ~override~
++COMPILE ~Devin/Dialogues/#VDevin.d~
+   USING ~Devin/Translations/French/#VDevin.tra~
+ COMPILE ~Devin/Scripts/Perso/#VDevin.baf~
+ 
+@@ -204,21 +204,21 @@
+ COPY ~Devin/Creatures/PostQuest/#VJack.cre~ ~override~
+ SAY NAME1 @17
+ SAY NAME2 @17
+-COMPILE ~Devin/Dialogues/#VMonk2.d~ ~override~
++COMPILE ~Devin/Dialogues/#VMonk2.d~
+   USING ~Devin/Translations/French/#VMonk2.tra~
+-COMPILE ~Devin/Dialogues/#VBardi.d~ ~override~
++COMPILE ~Devin/Dialogues/#VBardi.d~
+   USING ~Devin/Translations/French/#VBardi.tra~
+-COMPILE ~Devin/Dialogues/#VAkno.d~ ~override~
++COMPILE ~Devin/Dialogues/#VAkno.d~
+   USING ~Devin/Translations/French/#VAkno.tra~
+-COMPILE ~Devin/Dialogues/#VMonk1.d~ ~override~
++COMPILE ~Devin/Dialogues/#VMonk1.d~
+   USING ~Devin/Translations/French/#VMonk1.tra~
+-COMPILE ~Devin/Dialogues/#VElen.d~ ~override~
++COMPILE ~Devin/Dialogues/#VElen.d~
+   USING ~Devin/Translations/French/#VElen.tra~
+-COMPILE ~Devin/Dialogues/#VChat.d~ ~override~
++COMPILE ~Devin/Dialogues/#VChat.d~
+   USING ~Devin/Translations/French/#VSke01.tra~ 
+-COMPILE ~Devin/Dialogues/#VRama.d~ ~override~ // Travail zone principal (transféré de #var20)
++COMPILE ~Devin/Dialogues/#VRama.d~ // Travail zone principal (transféré de #var20)
+   USING ~Devin/Translations/French/#VSke02.tra~
+-COMPILE ~Devin/Dialogues/#VJack.d~ ~override~
++COMPILE ~Devin/Dialogues/#VJack.d~
+   USING ~Devin/Translations/French/#VJack.tra~
+ COMPILE ~Devin/Scripts/Perso/#VMonk1.baf~
+ COMPILE ~Devin/Scripts/Perso/#VMonk2.baf~
+@@ -310,17 +310,17 @@
+ COMPILE ~Devin/Scripts/CutScene/#VCutJ01.baf~
+ COMPILE ~Devin/Scripts/CutScene/#VCutJ02.baf~
+ COMPILE ~Devin/Scripts/CutScene/#VCutscr.baf~
+-COMPILE ~Devin/Dialogues/#VSke02.d~ ~override~
++COMPILE ~Devin/Dialogues/#VSke02.d~
+   USING ~Devin/Translations/French/#VSke02.tra~
+-COMPILE ~Devin/Dialogues/#VSke01.d~ ~override~
++COMPILE ~Devin/Dialogues/#VSke01.d~
+   USING ~Devin/Translations/French/#VSke01.tra~
+-COMPILE ~Devin/Dialogues/#VSku.d~ ~override~
++COMPILE ~Devin/Dialogues/#VSku.d~
+   USING ~Devin/Translations/French/#VSku.tra~
+-COMPILE ~Devin/Dialogues/#VLmail.d~ ~override~
++COMPILE ~Devin/Dialogues/#VLmail.d~
+   USING ~Devin/Translations/French/#VLmail.tra~
+-COMPILE ~Devin/Dialogues/#VInter1.d~ ~override~
++COMPILE ~Devin/Dialogues/#VInter1.d~
+   USING ~Devin/Translations/French/#VInter1.tra~
+-COMPILE ~Devin/Dialogues/#VLucie.d~ ~override~
++COMPILE ~Devin/Dialogues/#VLucie.d~
+   USING ~Devin/Translations/French/#VLucie.tra~
+ COPY ~Devin/Items/#vskull.itm~ ~override~ SAY NAME1 @1 SAY NAME2 @1 SAY DESC @2
+ COPY ~Devin/Items/#vsku1.itm~ ~override~ SAY NAME1 @3 SAY NAME2 @3 SAY DESC @4
+@@ -393,7 +393,7 @@
+ COPY ~Devin/Creatures/#VAR20Area/#VPros.cre~ ~override~
+ SAY NAME1 @44
+ SAY NAME2 @44
+-COMPILE ~Devin/Dialogues/#VImplen.d~ ~override~
++COMPILE ~Devin/Dialogues/#VImplen.d~
+   USING ~Devin/Translations/French/#VMonk2.tra~    
+ COMPILE ~Devin/Scripts/Perso/#VRama.baf~
+ COMPILE ~Devin/Scripts/CutScene/#VCutRam.baf~

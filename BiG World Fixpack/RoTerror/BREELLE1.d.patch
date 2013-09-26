@@ -1,0 +1,10 @@
+--- RoTerror\D\BREELLE1.d	Thu Apr 13 19:40:08 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\D\BREELLE1.d	Tue Sep 29 12:38:54 2009
+@@ -27,5 +27,6 @@
+ 
+ IF ~~ THEN BEGIN 5 // from: 4.0
+   SAY @5
+-  IF ~~ THEN DO ~SetGlobal("Knowabouttl","GLOBAL",1)~ EXIT
++  IF ~~ THEN DO ~SetGlobal("Knowabouttl","GLOBAL",1)
++SetGlobal("Youcanleavenow3","GLOBAL",1)~ EXIT
+ END

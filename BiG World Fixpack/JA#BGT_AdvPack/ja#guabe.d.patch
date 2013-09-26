@@ -1,0 +1,38 @@
+--- JA#BGT_AdvPack\DLG\ja#guabe.d	Fri Mar 09 17:15:43 2012
++++ C:\BWP Patchstudio\patched files\JA#BGT_AdvPack\DLG\ja#guabe.d	Tue Apr 30 13:49:54 2013
+@@ -27,7 +27,7 @@
+   IF ~~ THEN EXIT
+ END
+ 
+-IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 15
++IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 15
+   SAY ~Ihr seid hier nicht willkommen!~
+   IF ~~ THEN EXIT
+ END
+@@ -53,7 +53,7 @@
+   IF ~~ THEN EXIT
+ END
+ 
+-IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 15
++IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 15
+   SAY ~Ihr seid hier nicht willkommen!~
+   IF ~~ THEN EXIT
+ END
+@@ -107,7 +107,7 @@
+ Ein Wächter in Beregost sprach von einem gewissen "Bassilus" und "Zombies".~ EXIT
+ END
+ 
+-IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 15
++IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 15
+   SAY ~Ihr seid hier nicht willkommen!~
+   IF ~~ THEN EXIT
+ END
+@@ -134,7 +134,7 @@
+ 
+ BEGIN ~JA#GUAB7~
+ 
+-IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 1
++IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 1
+   SAY ~Ihr seid hier nicht willkommen!~
+   IF ~~ THEN EXIT
+ END

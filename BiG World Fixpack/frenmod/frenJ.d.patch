@@ -1,0 +1,11 @@
+--- frenmod\frenJ.d	Wed Jun 24 08:24:00 2009
++++ C:\BWP Patchstudio\patched files\frenmod\frenJ.d	Sun Jan 06 17:46:34 2013
+@@ -703,7 +703,7 @@
+ END
+ 
+ 
+-INTERJECT_COPY_TRANS SUJON 14 einmi17
++INTERJECT_COPY_TRANS2 SUJON 14 einmi17
+ == frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+   @160
+ END

@@ -1,0 +1,92 @@
+--- Wikaede\Dialogue\BMGWIKA.d	Wed Oct 26 23:00:30 2005
++++ C:\BWP Patchstudio\patched files\Wikaede\Dialogue\BMGWIKA.d	Sun May 04 16:31:12 2008
+@@ -57,11 +57,11 @@
+ == BMGWIKA
+ ~Baervar Wildwanderer? He is a gnomish deity. Why does an elf like you worship him?~
+ == BAERIE
+-~H-He gave me comfort when I needed it the most. Uncle Quayle taught me about him. I know it's odd...~
++~He gave me comfort when I needed it the most. Uncle Quayle taught me about him. I know it is odd...~
+ == BMGWIKA
+ ~It is not odd as long as you believe, and he hears you, and I know both do. Tell me, though, do you still pray to the Avariel goddess?~
+ == BAERIE
+-~I do, though not as much as I used to. She is...my only link to my Avariel roots, after my wings were c-clipped.~
++~I do, though not as much as I used to. She is...my only link to my Avariel roots, after my wings were clipped.~
+ == BMGWIKA
+ ~That is good, then. I deeply respect you and your faith, Lady Aerie.~
+ == BAERIE
+@@ -121,7 +121,7 @@
+ !Alignment("Anomen",CHAOTIC_NEUTRAL)
+ Global("AnomenRomanceActive","GLOBAL",2)
+ Global("MGWikaAnomenTalk2","GLOBAL",0)~ THEN BMGWIKA MGWikaAnomenLove
+-~I see you and <CHARNAME> have found each other's heart. It is pleasing to see your smiling faces.~
++~I see you have found each other's heart. It is pleasing to see your smiling faces.~
+ DO ~SetGlobal("MGWikaAnomenTalk2","GLOBAL",1)~
+ == BANOMEN
+ ~I thank you, my friend. I am very happy with her, and I shall take excellent care of her.~
+@@ -203,7 +203,7 @@
+ ~I am glad <CHARNAME> chose to rescue you, Lady Imoen.~
+ DO ~SetGlobal("MGWikaImoenTalk","GLOBAL",1)~
+ == IMOEN2J
+-~I knew I could count on <PRO_HIMHER> to rescue me. Hehe, leave it to <CHARNAME> to save the day AGAIN.~
++~I knew I could count on <PRO_HIMHER> to rescue me. Hehe, leave it to <CHARNAME> to save the day...*again*!~
+ == BMGWIKA
+ ~<PRO_HESHE> certainly is heroic and powerful. I am glad to have met <PRO_HIMHER>.~
+ == IMOEN2J
+@@ -250,7 +250,7 @@
+ See("Wikaede")
+ !StateCheck("Wikaede",STATE_SLEEPING)
+ Global("MGWikaJanTalk","GLOBAL",0)~ THEN BJAN MGWikaJanPolisher
+-~Traveling alongside a respected Helmite such as yourself strangely reminds me of the time my cousin Barov took up a career in armor-polishing.~
++~Travelling alongside a respected Helmite such as yourself strangely reminds me of the time my cousin Barov took up a career in armor-polishing.~
+ DO ~SetGlobal("MGWikaJanTalk","GLOBAL",1)~
+ == BMGWIKA
+ ~I see.~
+@@ -269,14 +269,14 @@
+ See("Keldorn")
+ !StateCheck("Keldorn",STATE_SLEEPING)
+ Global("MGWikaKeldornTalk","GLOBAL",0)~ THEN BMGWIKA MGWikaKeldornBlush
+-~It is an honor to journey with you, Sir Keldorn. Your good reputation is quite widespread among Helm's followers.~
++~It is an honor to journey with you, Lord Firecam. Your good reputation is quite widespread among Helm's followers.~
+ DO ~SetGlobal("MGWikaKeldornTalk","GLOBAL",1)~
+ == BKELDOR
+-~I do what I must in the name of the Order and our Gods. I am hardly worthy of your praise, Lord Wikaede.~
++~I do what I must in the name of the Order and our Gods. I am hardly worthy of your praise, Lord Olveyn.~
+ == BMGWIKA
+ ~Modesty is also sign of acknowledgement, good sir.~
+ == BKELDOR
+-~Haha, you are too much. Run along, Guardian, you will not see this knight blush.~
++~Haha, you are too much. Run along, Guardian. You will not see this knight blush.~
+ == BMGWIKA
+ ~I believe I already have.~
+ EXIT
+@@ -288,10 +288,10 @@
+ See("Wikaede")
+ !StateCheck("Wikaede",STATE_SLEEPING)
+ Global("MGWikaKorganTalk","GLOBAL",0)~ THEN BKORGAN MGWikaKorganHate
+-~I hate Amn. I hate the people. I hate the climate. And I certainly hate all'ye blasted fanatical godsmen, boy.~
++~Ah hate Amn, hate the people, hate the climate, an' ah certainly hate all'ye blasted fanatical godsmen!~
+ DO ~SetGlobal("MGWikaKorganTalk","GLOBAL",1)~
+ == BMGWIKA
+-~And I am sure there are many whom share my disliking for mindless machines of slaughter like you.~
++~And I am sure there are many whom share my disliking for mindless machines of slaughter such as yourself.~
+ == BKORGAN
+ ~Anyone foolish enough tae say that in me face gets their skull cracked open. I'm warning ye.~
+ == BMGWIKA
+@@ -309,7 +309,7 @@
+ See("Wikaede")
+ !StateCheck("Wikaede",STATE_SLEEPING)
+ Global("MGWikaMazzyTalk","GLOBAL",0)~ THEN BMAZZY MGWikaMazzyCareer
+-~You are a good man and a worthy companion, Sir Wikaede. For this, I salute you.~
++~You are a good man and a worthy companion, Lord Olveyn. For this, I salute you.~
+ DO ~SetGlobal("MGWikaMazzyTalk","GLOBAL",1)~
+ == BMGWIKA
+ ~My thanks, Lady Fentan. I do my utmost to serve Lord Helm.~
+@@ -422,7 +422,7 @@
+ See("Wikaede")
+ !StateCheck("Wikaede",STATE_SLEEPING)
+ Global("MGWikaYoshimoTalk","GLOBAL",0)~ THEN BYOSHIM MGWikaYoshimoInterest
+-~Sir Wikaede, respected priest of the Everseeing Eye. Was it wise to leave the temple with <CHARNAME>? Chances are you might not be able to return for a long time.~
++~Sir Wikaede, respected priest of the Everseeing Eye. Was it wise for you to leave the temple? Chances are you might not be able to return for a long time.~
+ DO ~SetGlobal("MGWikaYoshimoTalk","GLOBAL",1)~
+ == BMGWIKA
+ ~It was the right decision. I do wonder about your decisions, though.~

@@ -1,0 +1,10 @@
+--- Morituri.tp2	Sun Feb 22 14:15:38 2004
++++ C:\BWP Patchstudio\patched files\Morituri.tp2	Sun Aug 28 10:18:13 2011
+@@ -123,6 +123,6 @@
+ EXTEND_TOP ~DPlayer2.bcs~ ~morituri/morstats.baf~
+ EXTEND_TOP ~DPlayer2.bcs~ ~morituri/mortext.baf~
+ 
+-AT_INTERACTIVE_EXIT ~notepad morituri/morituri readme.txt~
++AT_INTERACTIVE_EXIT ~notepad morituri/morituri_readme.txt~
+ 
+ // EOF: MORITURI.tp2

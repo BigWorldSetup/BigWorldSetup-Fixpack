@@ -1,0 +1,13 @@
+--- ts25mini\lady\script\tz25nncf.baf	Sat Mar 14 16:58:26 2009
++++ C:\BWP Patchstudio\patched files\ts25mini\lady\script\tz25nncf.baf	Fri Apr 02 12:17:39 2010
+@@ -3,8 +3,8 @@
+ THEN
+ 	RESPONSE #100
+ 		CutSceneID(Player1)
+-		ActionOverride("tz25nnla",FaceObject("Player1"))
+-		ActionOverride("tz25nnlu",FaceObject("Player1"))
++		ActionOverride("tz25nnla",FaceObject(Player1))
++		ActionOverride("tz25nnlu",FaceObject(Player1))
+ 		Wait(3)
+ 		ActionOverride("tz25nnke",StartDialogNoSet(Player1))
+ END

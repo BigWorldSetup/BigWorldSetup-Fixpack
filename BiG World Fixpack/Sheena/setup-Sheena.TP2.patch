@@ -1,0 +1,11 @@
+--- setup-Sheena.TP2	Sun Jun 14 17:13:02 2009
++++ C:\BWP Patchstudio\patched files\setup-Sheena.TP2	Thu Apr 15 09:08:12 2010
+@@ -1,7 +1,7 @@
+ BACKUP ~Sheena\backup~
+ AUTHOR ~j_f_kalban@caramail.com~
+ 
+-VERSION ~v1.7~
++VERSION ~v1.7 BWP Fix~
+ 
+ AUTO_TRA ~Sheena/%s~
+ 

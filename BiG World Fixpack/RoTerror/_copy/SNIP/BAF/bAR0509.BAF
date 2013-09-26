@@ -1,0 +1,10 @@
+IF
+	Global("Clobsson","GLOBAL",3)
+	Global("nmkesae","AR0509",0)
+THEN
+	RESPONSE #100
+		CreateCreature("Jatta",[662.310],1) // Jatta
+		SetGlobal("nmkesae","AR0509",1)
+END
+
+

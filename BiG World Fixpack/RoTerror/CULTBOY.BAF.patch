@@ -1,0 +1,11 @@
+--- RoTerror\BAF\CULTBOY.BAF	Mon Mar 13 17:30:26 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\CULTBOY.BAF	Thu Apr 01 16:55:19 2010
+@@ -11,7 +11,7 @@
+ IF
+ 	Global("JoinTheCult","GLOBAL",3)
+ 	Global("Donthurtme","LOCALS",1)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ 	Delay(10)
+ THEN
+ 	RESPONSE #20

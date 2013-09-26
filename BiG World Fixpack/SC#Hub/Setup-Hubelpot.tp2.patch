@@ -1,0 +1,327 @@
+--- Setup-Hubelpot.tp2	Thu Jul 29 21:56:18 2004
++++ C:\BWP Patchstudio\patched files\Setup-Hubelpot.tp2	Thu Jul 03 21:16:10 2008
+@@ -1,11 +1,14 @@
+ BACKUP ~SC#Hub/Backup~
+-AUTHOR ~sebastian8987@edu.upplands-bro.se~ //Coder extraordinaire!
++AUTHOR ~seb@sconrad.net~
++
++VERSION ~v1.0 BWP Fix~
++
+ ASK_EVERY_COMPONENT
+-ALLOW_MISSING ~Ar0707.bcs~  
++ALLOW_MISSING ~Ar0707.bcs~
+               ~Ar0530.bcs~  
+               ~Ar0509.bcs~
+ 
+-BEGIN ~Hubelpot Thistledown, the Vegetable Merchant NPC-mod~
++BEGIN ~SConrad's IM6-entry: Hubelpot Thistledown, the Vegetable Merchant NPC-mod~
+ 
+ /////////////////////////////////
+ //			       //
+@@ -325,13 +328,11 @@
+ //////////////////////////
+ 
+ COMPILE ~SC#Hub\Scripts\SC#Hub.baf~
+-  USING ~~
+ 
+ COMPILE ~SC#Hub\Scripts\SC#Hub25.baf~
+-  USING ~~
+ 
+ COMPILE ~SC#Hub\Scripts\SC#HubX.baf~
+-  USING ~~
++
+ COMPILE ~SC#Hub\Scripts\SC#AR0509.baf~
+   USING ~SC#Hub\Dialogue\SC#Quest.tra~
+ 
+@@ -368,13 +369,11 @@
+ 
+ //ToB!!!!
+ COMPILE ~SC#Hub\Dialogue\SC#FatespiritTD.d~
+-  USING ~~
+ 
+ COMPILE ~SC#Hub\Dialogue\SC#Hub25.d~
+-  USING ~~
+ 
+ COMPILE ~SC#Hub\Dialogue\BSC#Hub25.d~
+-  USING ~~
++
+ 
+ //////////
+ //      //
+@@ -387,6 +386,11 @@
+ //AT_INTERACTIVE_EXIT ~VIEW SC#Hub\README-Hubelpot.txt~
+ //AudioInstall takes care of this...
+ 
++BEGIN ~Default kit, the Totemic Druid~
++SUBCOMPONENT ~Hubelpot's Kit~
++
++COPY_EXISTING ~SC#Hub.cre~ ~override~
++
+ ///////////////////////
+ //                   //
+ // Village Druid-kit //
+@@ -394,44 +398,25 @@
+ ///////////////////////
+ 
+ 
+-BEGIN ~Optional kit 1 of 2, the Village Druid.~
++BEGIN ~Optional kit, the Village Druid.~
++SUBCOMPONENT ~Hubelpot's Kit~
+ REQUIRE_FILE ~override\SC#Hub.cre~ ~You do not appear to have Hubelpot installed. To install this component, please install Hubelpot first.~
+-FORBID_FILE ~override/SC#VFar.2da~ ~You have already installed the Vegetable Farmer-kit. If you wish to install this kit instead, please uninstall that kit first.~
+-
+-//Fatespirit-dlg.
+-/*COMPILE ~SC#Hub\dialogue\SC#FatespiritVDrd.d~
+-  USING ~~*/
+ 
+ //Adding kit.
+-// internal name of the kit
+ ADD_KIT ~SC#VDrd~
+-// appended to CLASWEAP.2da
+  ~SC#VDrd                 1           0           1           1           0           0           0           1~
+-// appended column-wise to WEAPPROF.2da
+  ~SC#VDrd  0 0 0 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 1 0 0 0 1 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+-// appended to ABCLASRQ.2da
+  ~SC#VDrd                 0       0       0       0       12      13~
+-// appended to ABCLSMOD.2da
+  ~SC#VDrd                 0       0       0       0       0       0~
+-// appended to ABDCDSRQ.2da
+  ~SC#VDrd                 0       0       0       0       17      17~
+-// appended to ABDCSCRQ.2da
+  ~SC#VDrd                 0       0       0       0       15      15~
+-// appended to ALIGNMNT.2da
+  ~SC#VDrd                 0       0       0       0       1       0       0       0       0~
+-// appended to DUALCLAS.2da
+  ~SC#VDrd                 0       0       0       0       0       0~
+-// path to your CLAB-style 2da file
+  ~SC#Hub/Kits/SC#VDrd.2da~
+-// PC races and classes allowed to use this kit, from KITTABLE.2da
+  ~~
+-// usability flags, added to the end of the KITLIST.2da entry
+  ~0x08000000	11~
+-// HLA table to use; see LUABBR.2da
+  ~Dr2~
+-// list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
+-  ~LEAT20 * HELM19 BAG27 RING06 RING31 CLCK02 BOOT01 AMUL19 BRAC14 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 HAMM11 SW1H27 STAF08~
+-// Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
++ ~LEAT20 * HELM19 BAG27 RING06 RING31 CLCK02 BOOT01 AMUL19 BRAC14 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 HAMM11 SW1H27 STAF08~
+  SAY ~Village Druid~
+  SAY ~Village Druid~
+  SAY ~The Village Druid, also known as the Wise Man or Wise Woman, is found in many small rural communities. He or She is skilled in herbal medicine, animal husbandry, midwifery, agriculture, and the many other tasks so vital to the maintenance of an isolated settlement. Additionally, the Village Druid draws magic from the land to assist in these tasks. The Village Druid will often act formally or informally as a judge and records keeper, and as an advisor to the village headman or council.
+@@ -446,37 +431,40 @@
+ Disadvantages:
+ May not shape-change. May cast one fewer spell per spell level than a standard Druid.~
+ 
+-//Fixing the innate abilities to innate abilities. :wacko:
+ COPY_EXISTING ~SPPR109.spl~ ~override/SC#vd01.spl~
+               ~SPPR308.spl~ ~override/SC#vd02.spl~
+               ~SPPR411.spl~ ~override/SC#vd03.spl~
+               ~SPPR514.spl~ ~override/SC#vd04.spl~
+               ~SPPR602.spl~ ~override/SC#vd05.spl~
+-  WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
++  WRITE_SHORT 0x1C 4
+   WRITE_LONG 0x34 1
+   READ_LONG  0x64 "offset_abil"
+   READ_SHORT  0x68 "num_abil"
+-  READ_ASCII ("%offset_abil%" + 0x04) "bam" // reads the bam filename from ability
+-  WRITE_EVALUATED_ASCII 0x3A "%bam%" // writes the bam filename from abilities to spell icon
++  READ_ASCII ("%offset_abil%" + 0x04) "bam"
++  WRITE_EVALUATED_ASCII 0x3A "%bam%"
+   WHILE (0 < "%num_abil%")
+     BEGIN
+-      WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4 // changes ability icon location to innate (4)
++      WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4
+       SET "num_abil" = ("%num_abil%" - 1)
+     END
+ 
+ //Updating Hubelpot.
+ COPY_EXISTING ~SC#Hub.cre~ ~override~
+- WRITE_SHORT 0x244 0 // doesn't change
+- WRITE_BYTE  0x246 ~%SC#VDrd%~ // the internal name of your kit, surrounded by %
+- WRITE_BYTE  0x247 0x40 // doesn't change
++  WRITE_SHORT 0x244 0
++  WRITE_BYTE  0x246 ~%SC#VDrd%~
++  WRITE_BYTE  0x247 0x40
+ 
+-ACTION_IF FILE_EXISTS ~data/25dialog.bif~ 
+- THEN BEGIN
+- COPY_EXISTING ~SC#Hub25.cre~ ~override~ // ToB only
+-   WRITE_SHORT 0x244 0 // doesn't change
+-   WRITE_BYTE  0x246 ~%SC#VDrd%~ // the internal name of your kit, surrounded by %
+-   WRITE_BYTE  0x247 0x40 // doesn't change
+- END
++ACTION_IF FILE_EXISTS ~data/25dialog.bif~
++  THEN BEGIN
++  COPY_EXISTING ~SC#Hub25.cre~ ~override~
++    WRITE_SHORT 0x244 0
++    WRITE_BYTE  0x246 ~%SC#VDrd%~
++    WRITE_BYTE  0x247 0x40
++  END
++
++//Updating dlg's.
++COPY_EXISTING ~FATESP.dlg~ ~override~
++  REPLACE_TEXTUALLY ~Bring me Hubelpot, the Totemic Druid.~ ~Bring me Hubelpot, the Village Druid.~
+ 
+ 
+ //////////////////////////
+@@ -485,54 +473,48 @@
+ //                      //
+ //////////////////////////
+ 
+-/*BEGIN ~Optional kit 2 of 2, the Vegetable Farmer.~
++BEGIN ~Optional kit, the Vegetable Farmer.~
++SUBCOMPONENT ~Hubelpot's Kit~
+ REQUIRE_FILE ~override\SC#Hub.cre~ ~You do not appear to have Hubelpot installed. To install this component, please install Hubelpot first.~
+-FORBID_FILE ~override/SC#VDrd.2da~ ~You have already installed the Village Druid-kit. If you wish to install this kit instead, please uninstall that kit first.~
+ 
+ //Fatespirit-dlg.
+ //COMPILE ~SC#Hub\dialogue\SC#FatespiritVFar.d~
+ //  USING ~~
+ 
+ //The vegetables.
+-COPY ~SC#Hub\Items\SC#PEP.ITM~ ~override\SC#PEP.ITM~
++COPY ~SC#Hub\Items\SDPEP.ITM~ ~override\SDPEP.ITM~
+   SAY NAME1 ~Pepper~
+   SAY NAME2 ~Pepper~
+   SAY UNIDENTIFIED_DESC ~If you eat this pepper, you will be able to breathe fire for 1D8 damage.~
+   SAY DESC ~If you eat this pepper, you will be able to breathe fire for 1D8 damage.~
+ 
+-COPY ~SC#Hub\Items\SC#CAR.ITM~ ~override\SC#CAR.ITM~
+-  SAY NAME1 ~Carrot~
+-  SAY NAME2 ~Carrot~
+-  SAY UNIDENTIFIED_DESC ~This carrot can either be eaten for 15 HP of healing, or be used to summon white rabbits that will give the caster a minute of sanctuary.~
+-  SAY DESC ~This carrot can either be eaten for 15 HP of healing, or be used to summon two white rabbits.~
+-
+-COPY ~SC#Hub\Items\SC#TOM.ITM~ ~override\SC#TOM.ITM~
++COPY ~SC#Hub\Items\SDTOM.ITM~ ~override\SDTOM.ITM~
+   SAY NAME1 ~Tomato~
+   SAY NAME2 ~Tomato~
+   SAY UNIDENTIFIED_DESC ~If you eat this tomato, you will be healed for 15 HP. You can also use it as a weapon, dealing 1D4 crushing damage on hit.~
+   SAY DESC ~If you eat this tomato, you will be healed for 15 HP. You can also use it as a weapon, dealing 1D4 crushing damage on hit.~
+ 
+-COPY ~SC#Hub\Items\SC#POT.ITM~ ~override\SC#POT.ITM~
++COPY ~SC#Hub\Items\SDPOT.ITM~ ~override\SDPOT.ITM~
+   SAY NAME1 ~Potato~
+   SAY NAME2 ~Potato~
+   SAY UNIDENTIFIED_DESC ~If you eat this potatp, you will be healed 30 HP.~
+   SAY DESC ~If you eat this potato, you will be healed 30 HP.~
+ 
+-  
+-COPY ~SC#Hub\Items\SC#GAR.ITM~ ~override\SC#GAR.ITM~
++
++COPY ~SC#Hub\Items\SDGAR.ITM~ ~override\SDGAR.ITM~
+   SAY NAME1 ~Garlic~
+   SAY NAME2 ~Garlic~
+   SAY UNIDENTIFIED_DESC ~If you eat this garlic, you will have protection against vampires and immunity to level drain for 1 minute. A charisma penalty will also occur; -3 in charisma for 10 minutes.~
+   SAY DESC ~If you eat this garlic, you will have protection against vampires and immunity to level drain for 1 minute. A charisma penalty will also occur; -3 in charisma for 10 minutes.~
+-  
+-COPY ~SC#Hub\Items\SC#BEAN.ITM~ ~override\SC#BEAN.ITM~
++
++COPY ~SC#Hub\Items\SDBEAN.ITM~ ~override\SDBEAN.ITM~
+   SAY NAME1 ~Beans~
+   SAY NAME2 ~Beans~
+   SAY UNIDENTIFIED_DESC ~These beans can either be eaten, and if you do, you will be able to cast the spell stinking cloud two times. You can also use the beans to cast on the floor, which will result in a grease-effect.~
+   SAY DESC ~These beans can either be eaten, and if you do, you will be able to cast the spell stinking cloud two times. You can also use the beans to cast on the floor, which will result in a grease-effect.~
+ 
+ //The spells that creates the vegetables...
+-COPY ~SC#Hub\Spells\SC#PEP.SPL~ ~override\SC#PEP.SPL~
++COPY ~SC#Hub\Spells\SDPEP.SPL~ ~override\SDPEP.SPL~
+   WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+   WRITE_LONG 0x34 1
+   READ_LONG  0x64 "offset_abil"
+@@ -547,37 +529,7 @@
+       SET "num_abil" = ("%num_abil%" - 1)
+     END
+ 
+-COPY ~SC#Hub\Spells\SC#PEP2.SPL~ ~override\SC#PEP2.SPL~
+-  WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+-  WRITE_LONG 0x34 1
+-  READ_LONG  0x64 "offset_abil"
+-  READ_SHORT  0x68 "num_abil"
+-  READ_ASCII ("%offset_abil%" + 0x04) "bam" // reads the bam filename from ability
+-  WRITE_EVALUATED_ASCII 0x3A "%bam%" // writes the bam filename from abilities to spell icon
+-  SAY NAME1 ~Create Pepper~
+-  SAY UNIDENTIFIED_DESC ~This spell creates a pepper.~
+-  WHILE (0 < "%num_abil%")
+-    BEGIN
+-      WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4 // changes ability icon location to innate (4)
+-      SET "num_abil" = ("%num_abil%" - 1)
+-    END
+-
+-COPY ~SC#Hub\Spells\SC#CAR.SPL~ ~override\SC#CAR.SPL~
+-  WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+-  WRITE_LONG 0x34 1
+-  READ_LONG  0x64 "offset_abil"
+-  READ_SHORT  0x68 "num_abil"
+-  READ_ASCII ("%offset_abil%" + 0x04) "bam" // reads the bam filename from ability
+-  WRITE_EVALUATED_ASCII 0x3A "%bam%" // writes the bam filename from abilities to spell icon
+-  SAY NAME1 ~Create Carrot~
+-  SAY UNIDENTIFIED_DESC ~This spell creates a carrot.~
+-  WHILE (0 < "%num_abil%")
+-    BEGIN
+-      WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4 // changes ability icon location to innate (4)
+-      SET "num_abil" = ("%num_abil%" - 1)
+-    END
+-
+-COPY ~SC#Hub\Spells\SC#TOM.SPL~ ~override\SC#TOM.SPL~
++COPY ~SC#Hub\Spells\SDTOM.SPL~ ~override\SDTOM.SPL~
+   WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+   WRITE_LONG 0x34 1
+   READ_LONG  0x64 "offset_abil"
+@@ -592,7 +544,7 @@
+       SET "num_abil" = ("%num_abil%" - 1)
+     END
+ 
+-COPY ~SC#Hub\Spells\SC#POT.SPL~ ~override\SC#POT.SPL~
++COPY ~SC#Hub\Spells\SDPOT.SPL~ ~override\SDPOT.SPL~
+   WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+   WRITE_LONG 0x34 1
+   READ_LONG  0x64 "offset_abil"
+@@ -607,7 +559,7 @@
+       SET "num_abil" = ("%num_abil%" - 1)
+     END
+ 
+-COPY ~SC#Hub\Spells\SC#GAR.SPL~ ~override\SC#GAR.SPL~
++COPY ~SC#Hub\Spells\SDGAR.SPL~ ~override\SDGAR.SPL~
+   WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+   WRITE_LONG 0x34 1
+   READ_LONG  0x64 "offset_abil"
+@@ -622,7 +574,7 @@
+       SET "num_abil" = ("%num_abil%" - 1)
+     END
+ 
+-COPY ~SC#Hub\Spells\SC#BEAN.SPL~ ~override\SC#BEAN.SPL~
++COPY ~SC#Hub\Spells\SDBEAN.SPL~ ~override\SDBEAN.SPL~
+   WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+   WRITE_LONG 0x34 1
+   READ_LONG  0x64 "offset_abil"
+@@ -657,7 +609,7 @@
+ // appended to DUALCLAS.2da
+  ~SC#VFar                 0       0       0       0       0       0~
+ // path to your CLAB-style 2da file
+- ~SC#Hub/Kits/SC#VFar.2da~
++ ~SC#Hub/Kits/SDVFar.2da~
+ // PC races and classes allowed to use this kit, from KITTABLE.2da
+  ~~
+ // usability flags, added to the end of the KITLIST.2da entry
+@@ -685,6 +637,9 @@
+ Disadvantages:
+ May not shapeshift~
+ 
++COPY ~SC#Hub\Items\sdtom1.eff~ ~override\sdtom1.eff~
++COPY ~SC#Hub\Items\sdtom2.eff~ ~override\sdtom2.eff~
++
+ //Updating Hubelpot.
+ COPY_EXISTING ~SC#Hub.cre~ ~override~
+  WRITE_SHORT 0x244 0 // doesn't change
+@@ -697,5 +652,9 @@
+    WRITE_SHORT 0x244 0 // doesn't change
+    WRITE_BYTE  0x246 ~%SC#VFar%~ // the internal name of your kit, surrounded by %
+    WRITE_BYTE  0x247 0x40 // doesn't change
+- END */
++ END 
++ 
++//Updating dlg's.
++COPY_EXISTING ~FATESP.dlg~ ~override~
++  REPLACE_TEXTUALLY ~Bring me Hubelpot, the Totemic Druid.~ ~Bring me Hubelpot, the Vegetable Farmer.~
+ 

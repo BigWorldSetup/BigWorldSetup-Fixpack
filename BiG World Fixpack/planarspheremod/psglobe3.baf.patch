@@ -1,0 +1,86 @@
+--- planarspheremod\baf\psglobe3.baf	Mon Jun 12 16:06:02 2006
++++ C:\BWP Patchstudio\patched files\planarspheremod\baf\psglobe3.baf	Sat Jun 23 04:40:47 2012
+@@ -1,4 +1,5 @@
+ IF
++	!GlobalTimerNotExpired("Globe3Timer","LOCALS")
+ 	Global("psGlobeSpellCounter", "LOCALS", 8)
+ THEN
+ 	RESPONSE #100
+@@ -7,9 +8,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe3Timer","LOCALS")
++	RandomNum(6, 1)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe3Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(1)
+ 		ReallyForceSpell(Player1,CLERIC_SILENCE_15_FOOT)
+@@ -21,9 +24,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe3Timer","LOCALS")
++	RandomNum(6, 2)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe3Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(1)
+ 		ReallyForceSpell(Player1,CLERIC_ENTANGLE)
+@@ -35,9 +40,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe3Timer","LOCALS")
++	RandomNum(6, 3)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe3Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(1)
+ 		ReallyForceSpell(Player1,CLERIC_CHARM_PERSON)
+@@ -49,9 +56,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe3Timer","LOCALS")
++	RandomNum(6, 4)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe3Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(2)
+ 		ReallyForceSpell(Player1,CLERIC_HOLD_PERSON)
+@@ -63,9 +72,11 @@
+ END
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe3Timer","LOCALS")
++	RandomNum(6, 5)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe3Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(3)
+ 		ReallyForceSpell(Player1,CLERIC_MENTAL_DOMINATION)
+@@ -78,9 +89,11 @@
+ 
+ 
+ IF
+-	RandomNum(5, 1)
++	!GlobalTimerNotExpired("Globe3Timer","LOCALS")
++	RandomNum(6, 6)
+ THEN
+ 	RESPONSE #100
++		SetGlobalTimer("Globe3Timer","LOCALS",6)
+ 		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+ 		Wait(1)
+ 		ReallyForceSpell(Player1,CLERIC_RIGID_THINKING)

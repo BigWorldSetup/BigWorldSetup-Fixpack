@@ -1,0 +1,21 @@
+--- tb#quest\tb#quest.tp2	Wed Dec 15 00:03:36 2010
++++ C:\BWP Patchstudio\patched files\tb#quest\tb#quest.tp2	Thu Sep 13 16:26:12 2012
+@@ -5,7 +5,7 @@
+ 
+ README ~tb#quest/readme-TB#Quest-%LANGUAGE%.htm~ ~tb#quest/readme-TB#Quest.htm~
+ 
+-VERSION 2.04
++VERSION ~2.04 BWP Fix~
+ 
+ AUTO_TRA ~tb#quest/english~
+ AUTO_TRA ~tb#quest/%s~
+@@ -114,6 +114,9 @@
+ 			 UNLESS ~LeaveAreaLUAEntry(S:Area*,S:Entry*,P:Point*,I:Face*)~
+ 		APPEND ~ACTION.IDS~ ~351 LeaveAreaLUAPanicEntry(S:Area*,S:Entry*,P:Point*,I:Face*)~
+ 			 UNLESS ~LeaveAreaLUAPanicEntry(S:Area*,S:Entry*,P:Point*,I:Face*)~
++
++		APPEND ~STATS.IDS~ ~185 WIZARD_PROTECTION_FROM_MAGIC_WEAPONS~
++			 UNLESS ~WIZARD_PROTECTION_FROM_MAGIC_WEAPONS~
+ 
+ 		//Scriptable Spells, courthesy of Cirrerek
+ 		  COPY_EXISTING

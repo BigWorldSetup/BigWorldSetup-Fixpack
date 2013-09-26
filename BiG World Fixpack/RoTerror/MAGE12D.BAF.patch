@@ -1,0 +1,11 @@
+--- RoTerror\SNIP\BAF\Mage\MAGE12D.BAF	Fri Feb 24 19:34:20 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\Mage\MAGE12D.BAF	Thu Apr 01 16:55:19 2010
+@@ -24,7 +24,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	See(NearestMyGroupOfType)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ 	Global("SpellSequencer","LOCALS",0)
+ THEN
+ 	RESPONSE #100

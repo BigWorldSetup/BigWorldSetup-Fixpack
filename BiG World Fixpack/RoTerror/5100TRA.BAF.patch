@@ -1,0 +1,13 @@
+--- RoTerror\BAF\5100TRA.BAF	Sat Mar 11 18:15:48 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\5100TRA.BAF	Tue Sep 29 15:14:44 2009
+@@ -1,6 +1,9 @@
+ IF
+ 	Clicked([ANYONE])
+-	Global("Youcanleavenow","GLOBAL",0)
++	OR(3)
++		Global("Youcanleavenow","GLOBAL",0)
++		!Global("Youcanleavenow2","GLOBAL",0)
++		!Global("Youcanleavenow3","GLOBAL",0)
+ 	InParty("Driz2")
+ THEN
+ 	RESPONSE #100

@@ -1,0 +1,12 @@
+--- allison\setup-allison.tp2	Sat Apr 04 21:13:02 2009
++++ C:\BWP Patchstudio\patched files\allison\setup-allison.tp2	Tue Apr 13 21:47:12 2010
+@@ -6,6 +6,9 @@
+ 
+ BACKUP ~allison/backup~
+ AUTHOR ~"Rastor" <rastor@rpgdungeon.net>~
++
++VERSION ~v1.8 BWP Fix~
++
+ AUTO_TRA ~allison/%s~
+ README ~allison/readme-allison.html~
+ 

@@ -1,0 +1,8 @@
+--- hf_hhg\english\hfArthur.tra	Mon Jan 11 12:23:50 2010
++++ C:\BWP Patchstudio\patched files\hf_hhg\english\hfArthur.tra	Mon Dec 05 19:04:43 2011
+@@ -1,4 +1,4 @@
+-@0    = ~RUN AWAY! RUN AWAY!~ [hfrunaway]
++@0    = ~RUN AWAY! RUN AWAY!~ [hfrnaway]
+ @1    = ~Okay, how many did we lose?~
+ @2    = ~Well...Gawain...Ector...and Bors. That's five.~
+ @3    = ~Three, Sire!~

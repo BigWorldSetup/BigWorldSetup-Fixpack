@@ -1,0 +1,5 @@
+Aurora's Shoes v5a (Patch)
+- Fixed items that increase ability scores displaying them in red
+- Fixed crash-causing bug with Iceblade's swing animation
+- Fixed De'Arnise Keep "troll problem" and other potential script glitches in Fix Areas component
+- Changed kobold captains' Arrow of Detonation to Dispelling in Realistic Kobold Commandos component

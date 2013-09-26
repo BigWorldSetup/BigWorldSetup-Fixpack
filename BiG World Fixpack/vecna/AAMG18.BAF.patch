@@ -1,0 +1,47 @@
+--- vecna\baf\chr\AAMG18.BAF	Sun Jul 17 21:08:49 2011
++++ C:\BWP Patchstudio\patched files\vecna\baf\chr\AAMG18.BAF	Fri Oct 28 08:48:51 2011
+@@ -1,7 +1,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	Global("Prep","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		ApplySpell(Myself,WIZARD_SPELL_SHIELD)
+@@ -12,7 +12,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	Global("SpellTrigger","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,39968) // Spell Trigger - Fired
+@@ -58,7 +58,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	Global("Prep","LOCALS",1)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Spell(Myself,WIZARD_SPELL_TURNING)
+@@ -79,7 +79,7 @@
+ 	See(NearestEnemyOf(Myself))
+ 	TookDamage()
+ 	Global("Prep2","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,43050) // Chain Contingency - Improved Mantle
+@@ -95,7 +95,7 @@
+ 	See(NearestEnemyOf(Myself))
+ 	TookDamage()
+ 	Global("Prep2","LOCALS",1)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,40252) // Contingency - Protection from Magical Weapons

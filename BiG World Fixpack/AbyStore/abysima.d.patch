@@ -1,0 +1,20 @@
+--- AbyStore\abysima.d	Tue Nov 29 22:51:24 2005
++++ C:\BWP Patchstudio\patched files\AbyStore\abysima.d	Sat Mar 27 08:34:19 2010
+@@ -1,7 +1,7 @@
+ BEGIN ~r#asdemn~
+ 
+ IF ~NumTimesTalkedTo(0)
+-    Global("r#AbysimaAR","GLOBALS",0)~ THEN BEGIN Introduction
++    Global("r#AbysimaAR","GLOBAL",0)~ THEN BEGIN Introduction
+ SAY @0
+ IF ~~ THEN REPLY @1 GOTO Demon
+ IF ~~ THEN REPLY @2 GOTO Leave
+@@ -27,7 +27,7 @@
+ IF ~~ THEN BEGIN Leave
+ SAY @13 
+ IF ~~ THEN DO ~EscapeArea()
+-               SetGlobal("r#AbysimaAR","GLOBALS",1)~
++               SetGlobal("r#AbysimaAR","GLOBAL",1)~
+ EXIT
+ END
+ 

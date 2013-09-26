@@ -1,0 +1,11 @@
+--- Star.tp2	Sun Jul 22 20:53:27 2012
++++ C:\BWP Patchstudio\patched files\Star.tp2	Fri Jul 27 10:21:49 2012
+@@ -4,6 +4,8 @@
+ ALLOW_MISSING ~aR4500.bcs~
+ ~FATESP.dlg~
+ 
++VERSION ~v1.93 BWP Fix~
++
+ LANGUAGE ~English~
+ ~English~
+ ~Star/English/Setup.tra~

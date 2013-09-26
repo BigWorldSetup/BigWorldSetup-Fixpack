@@ -1,0 +1,48 @@
+--- RoTerror\BAF\RA5611.BAF	Sat Mar 11 21:17:02 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\RA5611.BAF	Tue Sep 29 23:55:48 2009
+@@ -13,6 +13,7 @@
+ END
+ 
+ IF
++	Global("Dweaponquest","GLOBAL",1)
+ 	Global("Speakwithice","RA5611",1)
+ THEN
+ 	RESPONSE #100
+@@ -25,6 +26,19 @@
+ END
+ 
+ IF
++	!InParty("Driz2")
++	!InParty("Wulfg2")
++	Global("Dweaponquest","GLOBAL",0)
++THEN
++	RESPONSE #100
++		ActionOverride("Icebeard",DestroyItem("AegisFa"))
++		ActionOverride("Icebeard",DestroyItem("DrizztDe"))
++		ActionOverride("Icebeard",DestroyItem("DrizztFr"))
++END
++
++IF
++	InParty("Driz2")
++	Global("Dweaponquest","GLOBAL",1)
+ 	PartyHasItem("DrizztDe") // Scimitar +6, Twinkle
+ 	PartyHasItem("DrizztFr") // Scimitar +3, Icingdeath
+ 	PartyHasItem("AegisFa") // Aegis Fang +4
+@@ -36,4 +50,17 @@
+ 		SetGlobal("Journalentry","RA5611",1)
+ END
+ 
++IF	
++	InParty("Driz2")
++	Global("Dweaponquest","GLOBAL",0)
++	PartyHasItem("DrizztDe") // Scimitar +6, Twinkle
++	PartyHasItem("DrizztFr") // Scimitar +3, Icingdeath
++	PartyHasItem("AegisFa") // Aegis Fang +4
++	Global("Journalentry","RA5611",0)
++THEN
++	RESPONSE #100
++		AddJournalEntry(@572917,QUEST_DONE)
++		SetGlobal("Journalentry","RA5611",1)
++		SetGlobal("Dweaponquest","GLOBAL",2)
++END
+ 

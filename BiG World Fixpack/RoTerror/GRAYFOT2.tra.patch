@@ -1,0 +1,52 @@
+--- RoTerror\Language\German\GRAYFOT2.tra	Fri Jan 04 08:21:30 2008
++++ C:\BWP Patchstudio\patched files\RoTerror\Language\German\GRAYFOT2.tra	Thu Feb 12 15:15:58 2009
+@@ -127,9 +127,9 @@
+ 
+ @65   = ~Ich will sie am Schwert haben.~
+ 
+-@66   = ~Ein gefrorener Kristall... ich könnte ihn an einer Plattenrüstung anbringen, oder auch an einem Großschild oder einer Katana.~
++@66   = ~Ein gefrorener Kristall... ich könnte ihn an einem Prunkharnisch anbringen, oder auch an einem Großschild oder einer Katana.~
+ 
+-@67   = ~Ich will ihn an der Plattenrüstung haben.~
++@67   = ~Ich will ihn am Prunkharnisch haben.~
+ 
+ @68   = ~Ich will ihn an der Katana haben.~
+ 
+@@ -218,9 +218,9 @@
+ @119  = ~Hmm... ich nehme das Schwert.~
+ @120  = ~Hervorragend! Ich werde sofort mit der Arbeit beginnen.~
+ @121  = ~Die Katana könnte über erweiterten Kälteschaden verfügen.~
+-@122  = ~Der Plattenpanzer ist vielleicht nicht so mächtig, verfügt aber danach über beeindruckende Schutzzauber... Würde ich sagen.~
++@122  = ~Der Prunkharnisch ist vielleicht nicht so mächtig, verfügt aber danach über beeindruckende Schutzzauber... Würde ich sagen.~
+ @123  = ~Der Schild wird über eigene magische Kräfte verfügen, vielleicht über Kräfte der Regenerationsmagie.~
+-@124  = ~...ich denke, ich nehme den Plattenpanzer.~
++@124  = ~...ich denke, ich nehme den Prunkharnisch.~
+ @125  = ~...ich denke, ich nehme den Schild.~
+ @126  = ~...ich denke, ich nehme die Katana.~
+ @127  = ~Also gut, hier ist Eure neue Axt, <CHARNAME>.~
+@@ -263,13 +263,13 @@
+ @161  = ~...D-das Auge eines Gottes!?... Dann ist es wahr! Ihr habt es gefunden! Und zu mir gebracht!~
+ @162  = ~Huh! Beruhig Dich, Pip! Beruhig Dich. Huh! Gut, lasst mich einen Blick darauf werfen. Ich werde sehen, was ich damit tun kann.~
+ 
+-@163  = ~Hmm... einen Plattenpanzer oder einen Großschild. Ja, dass sind Eure Optionen. Welche würdet Ihr wählen?~
+-@164  = ~Den Plattenpanzer.~
++@163  = ~Hmm... einen Prunkharnisch oder einen Großschild. Ja, dass sind Eure Optionen. Welche würdet Ihr wählen?~
++@164  = ~Den Prunkharnisch.~
+ @165  = ~Den Großschild.~
+ @166  = ~Habt Ihr eine Ahnung, was das Auge für Auswirkungen auf die Gegenstände haben wird?~
+ @167  = ~...ich werde keinen davon wählen. Ich werde wohl einfach gehen.~
+ @168  = ~Es tut mir wirklich leid, aber ich habe keine Ahnung.~
+-@169  = ~Also gut, dann wähle ich den Plattenpanzer.~
++@169  = ~Also gut, dann wähle ich den Prunkharnisch.~
+ @170  = ~Also gut, dann wähle ich den Großschild.~
+ @171  = ~Hmm... ich denke, ich werde weder das eine noch das andere nehmen. Ich werde einfach gehen.~
+ @172  = ~Warum!? Das wäre das Schmiedewerk des Jahrhunderts!... Ist es weil Ihr keine Plattenrüstung oder Großschild habt?~
+@@ -277,7 +277,7 @@
+ @174  = ~Hmm... dann, auf Wiedersehen...~
+ @175  = ~Gut. Ich bin mir sicher, Ihr werdet zufrieden sein. Ich werde Euch damit nicht enttäuschen.~
+ @176  = ~Ihr seid zurück! Bitte, lasst mich den Stein für Euch schmieden.~
+-@177  = ~Also gut. Schmiedet mir den Plattenpanzer.~
++@177  = ~Also gut. Schmiedet mir den Prunkharnisch.~
+ @178  = ~Also gut. Schmiedet mir den Großschild.~
+ @179  = ~Nein, werdet Ihr nicht.~
+ 

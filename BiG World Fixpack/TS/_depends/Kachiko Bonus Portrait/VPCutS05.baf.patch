@@ -1,0 +1,11 @@
+--- TS\baf\VPCutS05.baf	Mon Dec 27 14:10:50 2004
++++ D:\BWP Patchstudio\patched files\TS\baf\VPCutS05.baf	Sun Nov 22 08:44:17 2009
+@@ -5,7 +5,7 @@
+ 		CutSceneId("Sime")
+ 		SmallWait(5)
+ 		CreateCreatureObjectDoor("Sol","Sime",0,0,0)
+-		CreateCreatureObjectDoor("Sola","Sime",0,0,0)
++		CreateCreatureObjectDoor("SolaTS","Sime",0,0,0)
+ 		CreateCreatureObjectDoor("Solauf","Sime",0,0,0)
+ 		Wait(6)
+ 		ActionOverride("Sol",MoveToObjectNoInterrupt("Sime"))

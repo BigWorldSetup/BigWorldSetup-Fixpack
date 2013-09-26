@@ -1,0 +1,20 @@
+--- Setup-TDD.tp2	Sat Aug 31 09:32:51 2013
++++ C:\BWP Patchstudio\patched files\Setup-TDD.tp2	Sun Aug 25 10:52:53 2013
+@@ -3523,7 +3523,7 @@
+   REPLACE_TEXTUALLY ~0x08000000~ ~0x4010~ // TOTEMIC
+   REPLACE_TEXTUALLY ~0x10000000~ ~0x4011~ // SHAPESHIFTER
+   REPLACE_TEXTUALLY ~0x20000000~ ~0x4012~ // BEASTFRIEND
+-  REPLACE_TEXTUALLY ~0x40000000~ ~0x401F~ // BARBARIAN
++  REPLACE_TEXTUALLY ~0x40000000~ ~0x40000000~ // BARBARIAN
+ BUT_ONLY_IF_IT_CHANGES
+ 
+ 
+@@ -12419,7 +12419,7 @@
+ //*********************************************************************************************
+ BEGIN @21467
+ REQUIRE_COMPONENT "Setup-TDD.tp2"      "0"  @21468
+-FORBID_COMPONENT  "Setup-RoT.tp2"      "1"  @214680
++// FORBID_COMPONENT  "Setup-RoT.tp2"      "1"  @214680
+ 
+ 
+ COPY_EXISTING + ~LAYHANDS.2DA~ ~override~  //to be sure that the originals will come to backup folder, even if everything is or will be biffed

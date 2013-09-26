@@ -1,0 +1,16 @@
+--- vic\Dung\SCSHOUT.BAF	Sat Aug 13 16:03:34 2005
++++ C:\BWP Patchstudio\patched files\vic\Dung\SCSHOUT.BAF	Thu Apr 01 20:13:21 2010
+@@ -67,11 +67,11 @@
+ 	General(Myself,HUMANOID)
+ 	HPPercentLT(Myself,20)
+ 	HPGT(Myself,1)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ 	Global("whined","LOCALS",0)
+ 	See(NearestMyGroupOfType)
+ 	Allegiance(Myself,ENEMY)
+-	!Dead("astSeenBy(Myself))")
++	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #50
+ 		SetGlobal("whined","LOCALS",1)

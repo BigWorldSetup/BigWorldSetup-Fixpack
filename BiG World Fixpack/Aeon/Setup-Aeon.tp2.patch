@@ -1,0 +1,19 @@
+--- Aeon\Setup-Aeon.tp2	Thu Aug 11 09:19:40 2011
++++ C:\BWP Patchstudio\patched files\Aeon\Setup-Aeon.tp2	Sun Aug 25 10:31:08 2013
+@@ -1,5 +1,6 @@
+ BACKUP ~Aeon\backup~
+ AUTHOR ~Lava Del'Vortel~
++VERSION ~1.0 BWP Fix~
+ BEGIN ~Aeon - BG2~
+ 
+ // Add state CD_STATE_NOTVALID
+@@ -298,6 +299,9 @@
+ COPY ~Aeon\Portraits\REA1S.bmp~ ~override\REA1S.bmp~
+ COPY ~Aeon\Portraits\REA1L.bmp~ ~override\REA1L.bmp~
+ COPY ~Aeon\Portraits\REA1S.bmp~ ~override\REA2S.bmp~
++
++COPY ~Aeon\ITEMS\REA001.itm~ ~override\REA001.itm~
++COPY ~Aeon\ITEMS\REA002.itm~ ~override\REA002.itm~
+ 
+ COPY ~Aeon\CREATURES\1xrea2.cre~ ~override\1xrea2.cre~
+ SAY NAME1 ~Undead Rea~

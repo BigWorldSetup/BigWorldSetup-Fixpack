@@ -1,0 +1,13 @@
+--- RoTerror\BAF\RA5104.BAF	Fri Feb 24 19:40:34 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\RA5104.BAF	Sun Sep 27 16:37:02 2009
+@@ -27,3 +27,9 @@
+ END
+ 
+ 
++IF
++	Global("Knowabouttl","GLOBAL",999)
++THEN
++	RESPONSE #100
++		SetGlobal("Knowabouttl","GLOBAL",2)
++END
+\ No newline at end of file

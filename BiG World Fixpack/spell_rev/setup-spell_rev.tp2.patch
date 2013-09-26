@@ -1,0 +1,11 @@
+--- spell_rev\setup-spell_rev.tp2	Wed Jan 04 03:44:18 2012
++++ C:\BWP Patchstudio\patched files\spell_rev\setup-spell_rev.tp2	Tue Jun 25 07:59:42 2013
+@@ -4,7 +4,7 @@
+ 
+ //MODDER
+ 
+-VERSION ~v3.1~
++VERSION ~v3.1 (Hotfix 02)~
+ 
+ README ~spell_rev\readme-spell_rev.html~
+ 

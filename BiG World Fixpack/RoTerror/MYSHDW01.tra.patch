@@ -1,0 +1,8 @@
+--- RoTerror\Language\english\MYSHDW01.tra	Thu Apr 13 18:41:44 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\Language\english\MYSHDW01.tra	Mon Feb 16 08:34:15 2009
+@@ -8,3 +8,4 @@
+ @7    = ~Congratulations.~
+ @8    = ~But remember, don't ask anyone if they have it. If you are sure of the owner, just make a statement of it to him. And also know that you may only ask questions about the Shadows next to the one you are speaking to.~
+ @9    = ~Correct. You have shown that you are a <PRO_MANWOMAN> of action and thus worthy. Here it is. You may go.~
++@10	= ~I am on the search.~
+\ No newline at end of file

@@ -1,0 +1,33 @@
+--- Ariena\D\MWBArn.D	Sat Oct 27 11:03:12 2007
++++ C:\BWP Patchstudio\patched files\Ariena\D\MWBArn.D	Sat Nov 12 12:10:54 2011
+@@ -71,7 +71,7 @@
+ Global("MWBAJH1","LOCALS",1)
+ !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN MWBArn MWConAJH3
+ @32
+-DO ~SetGlobal("MWBAJ3","LOCALS",1)~
++DO ~SetGlobal("MWBAJH3","LOCALS",1)~
+ == BJAHEIR @33
+ == MWBArn @34
+ == BJAHEIR @35
+@@ -280,8 +280,8 @@
+ == MWBArn @125
+ DO ~ActionOverride("Aerie",Kill(Myself))~
+ END
+-IF ~Global("Arinumkic","GLOBAL",0)~ THEN REPLY @126 DO ~ReputationInc(-1)~ EXTERN ArienaP 0
+-IF ~Global("Arinumkic","GLOBAL",1)~ THEN REPLY @126 DO ~ReputationInc(-1)~ EXTERN ArienaP 2
++IF ~Global("Arinumkic","GLOBAL",0)~ THEN REPLY @126 DO ~ReputationInc(-1)~ EXTERN MWArnP 0
++IF ~Global("Arinumkic","GLOBAL",1)~ THEN REPLY @126 DO ~ReputationInc(-1)~ EXTERN MWArnP 2
+ IF ~~ THEN REPLY @127 DO ~ReputationInc(-2)~ EXIT
+ IF ~~ THEN REPLY @128 DO ~ReputationInc(-2)~ EXIT
+ 
+@@ -292,8 +292,8 @@
+ DO ~ActionOverride("Aerie",Kill(Myself)) SetGlobal("MWBAAE2","GLOBAL",2)~
+ == MWBArn @130
+ END
+-IF ~Global("Arinumkic","GLOBAL",0)~ THEN REPLY @131 DO ~ReputationInc(-1)~ EXTERN ArienaP 0
+-IF ~Global("Arinumkic","GLOBAL",1)~ THEN REPLY @131 DO ~ReputationInc(-1)~ EXTERN ArienaP 2
++IF ~Global("Arinumkic","GLOBAL",0)~ THEN REPLY @131 DO ~ReputationInc(-1)~ EXTERN MWArnP 0
++IF ~Global("Arinumkic","GLOBAL",1)~ THEN REPLY @131 DO ~ReputationInc(-1)~ EXTERN MWArnP 2
+ IF ~~ THEN REPLY @132 DO ~ReputationInc(-2)~ EXIT
+ IF ~~ THEN REPLY @133 DO ~ReputationInc(-2)~ EXIT
+ 

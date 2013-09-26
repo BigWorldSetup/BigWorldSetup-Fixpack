@@ -1,0 +1,24 @@
+--- tactics2\behold\bcs\behhiv01.baf	Thu Mar 11 11:19:58 2004
++++ C:\BWP Patchstudio\patched files\tactics2\behold\bcs\behhiv01.baf	Sun Jan 09 19:47:54 2011
+@@ -1371,8 +1371,8 @@
+     Class(LastSeenBy(Myself),DRUID_ALL)
+     Class(LastSeenBy(Myself),BARD)
+     Class(LastSeenBy(Myself),CLERIC_ALL)
+-    Name("astSeenBy(),","Planatar")  // Planatar
+-    Name("astSeenBy(),","Darkplanatar")  // Darkplanatar
++    Race(LastSeenBy(Myself),PLANATAR)  // Planatar
++    Race(LastSeenBy(Myself),DARKPLANATAR)  // Darkplanatar
+   !StateCheck(LastSeenBy(Myself),-2146164691)
+ THEN
+   RESPONSE #100
+@@ -1491,8 +1491,8 @@
+     Class(LastSeenBy(Myself),DRUID_ALL)
+     Class(LastSeenBy(Myself),BARD)
+     Class(LastSeenBy(Myself),CLERIC_ALL)
+-    Name("astSeenBy(),","Planatar")  // Planatar
+-    Name("astSeenBy(),","Darkplanatar")  // Darkplanatar
++    Race(LastSeenBy(Myself),PLANATAR)  // Planatar
++    Race(LastSeenBy(Myself),DARKPLANATAR)  // Darkplanatar
+   !HasItem("MINHP1",LastSeenBy(Myself))  // <Invalid Strref -1>
+   !HasItem("IMOENHP1",LastSeenBy(Myself))  // ~Imoen's Belt~
+   !StateCheck(LastSeenBy(Myself),-2146164691)

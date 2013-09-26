@@ -1,0 +1,12 @@
+--- Setup-PPK.tp2	Sat May 17 17:42:32 2008
++++ C:\BWP Patchstudio\patched files\Setup-PPK.tp2	Wed Nov 28 13:44:59 2012
+@@ -17,6 +17,9 @@
+ BEGIN @20
+ REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~Data/25Dialog.bif~) @2
+ 
++APPEND ~KIT.IDS~ ~0x4100 TEMPPRST~ UNLESS ~0x4100 TEMPPRST~
++APPEND ~KIT.IDS~ ~0x4101 OHGMPRST~ UNLESS ~0x4101 OHGMPRST~
++
+ /*ÀÏ°ý º¹»ç*/
+ COPY ~ppk/data~ ~override~
+ COPY ~ppk/spell~ ~override~

@@ -1,0 +1,121 @@
+--- wheels\setup-wheels.tp2	Sat Jan 03 18:54:43 2009
++++ C:\BWP Patchstudio\patched files\wheels\setup-wheels.tp2	Sat Apr 17 20:21:41 2010
+@@ -4,7 +4,7 @@
+ 
+ AUTO_TRA ~%s~
+ 
+-VERSION ~v2~
++VERSION ~v2 BWP Fix~
+ 
+ README ~wheels/readme-wheels.html~
+ 
+@@ -165,9 +165,9 @@
+ // Melissan in cutscene mode - general requirement
+ 
+ COPY_EXISTING ~mel01.cre~ ~override/dw#cutme.cre~
+-	WRITE_ASCII 0x248 ~~
+-	WRITE_ASCII 0x280 ~dw#cutme~
+-	WRITE_ASCII 0x2cc ~dw#cutme~
++	WRITE_ASCII 0x248 ~~ #8
++	WRITE_ASCII 0x280 ~dw#cutme~ #32
++	WRITE_ASCII 0x2cc ~dw#cutme~ #8
+ 
+ // Sendai's enclave, with Melissan added
+ 
+@@ -245,8 +245,8 @@
+ 	~balelit4.cre~ ~override/dw#wrmo4.cre~
+ 		ADD_CRE_ITEM ~lich~ #0 #0 #0 ~NONE~ ~LRING~
+ 		ADD_CRE_ITEM ~telslav2~ #0 #0 #0 ~NONE~ ~RRING~
+-		WRITE_ASCII 0x248 ~dw#wrmon~
+-		WRITE_ASCII 0x280 ~%DEST_RES%~
++		WRITE_ASCII 0x248 ~dw#wrmon~ #8
++		WRITE_EVALUATED_ASCII 0x280 ~%DEST_RES%~ #32
+ 		READ_SHORT 0x24 ~hitpoints~
+ 		REMOVE_CRE_ITEM ~potn55~
+ 		SET ~hitpoints~=~hitpoints~+80
+@@ -301,10 +301,10 @@
+ APPEND ~ITEMEXCL.2DA~ ~dw#melri 1~
+ 
+ COPY_EXISTING ~mel01.cre~ ~override/dw#melis.cre~
+-	WRITE_ASCII 0x248 ~dw#melis~
+-	WRITE_ASCII 0x250 ~cmage20a~
+-	WRITE_ASCII 0x280 ~dw#melis~
+-	WRITE_ASCII 0x2cc ~dw#melis~
++	WRITE_ASCII 0x248 ~dw#melis~ #8
++	WRITE_ASCII 0x250 ~cmage20a~ #8
++	WRITE_ASCII 0x280 ~dw#melis~ #32
++	WRITE_ASCII 0x2cc ~dw#melis~ #8
+ 	WRITE_BYTE 0x54 1
+ 	WRITE_BYTE 0x55 1
+ 	WRITE_BYTE 0x56 1
+@@ -342,9 +342,9 @@
+ // The messenger
+ 
+ COPY_EXISTING ~cutgrd01.cre~ ~override/dw#monme.cre~
+-	WRITE_ASCII 0x280 ~dw#monme~
+-	WRITE_ASCII 0x248 ~dw#monme~
+-	WRITE_ASCII 0x2cc ~dw#monme~
++	WRITE_ASCII 0x280 ~dw#monme~ #32
++	WRITE_ASCII 0x248 ~dw#monme~ #8
++	WRITE_ASCII 0x2cc ~dw#monme~ #8
+ 
+ COMPILE ~wheels/scripts/dw#monme.baf~
+ 
+@@ -549,7 +549,7 @@
+ 	~bazliz03.cre~ ~override/dw#viliz.cre~
+ 	~salgrice.cre~ ~override/dw#visal.cre~
+ 	~elearl01.cre~ ~override/dw#viele.cre~
+-	WRITE_ASCII 0x248 ~dw#vilat~
++	WRITE_ASCII 0x248 ~dw#vilat~ #8
+ 	WRITE_BYTE 0x275 14
+ 
+ COPY_EXISTING ~dw#viliz.cre~ ~override~
+@@ -564,7 +564,7 @@
+ 	~eyesek01.cre~ ~override/dw#visek.cre~
+ 	~eyeegl01.cre~ ~override/dw#viegl.cre~
+ 	~gorbat5.cre~ ~override/dw#vibon.cre~
+-	WRITE_ASCII 0x248 ~dw#vilat~
++	WRITE_ASCII 0x248 ~dw#vilat~ #8
+ 	WRITE_BYTE 0x275 15
+ 
+ COPY_EXISTING
+@@ -576,11 +576,11 @@
+ // Create panicked peasants
+ 
+ COPY_EXISTING ~amconw01.cre~ ~override/dw#ampp1.cre~
+-		WRITE_ASCII 0x248 ~dw#ampp1~
++		WRITE_ASCII 0x248 ~dw#ampp1~ #8
+ COPY_EXISTING ~amconm01.cre~ ~override/dw#ampp2.cre~
+-		WRITE_ASCII 0x248 ~dw#ampp2~
++		WRITE_ASCII 0x248 ~dw#ampp2~ #8
+ COPY_EXISTING ~amconm01.cre~ ~override/dw#ampp3.cre~
+-		WRITE_ASCII 0x248 ~dw#ampp3~
++		WRITE_ASCII 0x248 ~dw#ampp3~ #8
+ 
+ COMPILE ~wheels/amkethran/dw#ampp1.baf~
+ COMPILE ~wheels/amkethran/dw#ampp2.baf~
+@@ -592,6 +592,7 @@
+ 	DECOMPILE_BCS_TO_BAF
+ 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~Die()~ ~Die()!Global("DMWWVillageAttacked","GLOBAL",1)~
+ 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~Heard([EVILCUTOFF],ALERT)~ ~Heard([EVILCUTOFF],ALERT)!Global("DMWWVillageAttacked","GLOBAL",1)~
++	COMPILE_BAF_TO_BCS
+ 
+ COPY_EXISTING ~ammerc.bcs~ ~override~
+ 	DECOMPILE_BCS_TO_BAF
+@@ -635,14 +636,14 @@
+ COPY_EXISTING 
+ 	~cutammag.cre~ ~override~
+ 	~cutamfig.cre~ ~override~
+-		WRITE_ASCII 0x248 ~dw#amksd~
++		WRITE_ASCII 0x248 ~dw#amksd~ #8
+ 
+ EXTEND_TOP ~dw#amksd.bcs~ ~wheels/amkethran/baltharmy_selfdestruct.baf~
+ 
+ 
+ 
+ COPY_EXISTING ~ammerc07.cre~ ~override/dw#vime1.cre~
+-	WRITE_ASCII 0x248 ~dw#vime1~
++	WRITE_ASCII 0x248 ~dw#vime1~ #8
+ 
+ // new scripts for the battle
+ 

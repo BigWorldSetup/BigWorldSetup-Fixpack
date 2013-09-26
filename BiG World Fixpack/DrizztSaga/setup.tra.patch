@@ -1,0 +1,18 @@
+--- DrizztSaga\Language\English\setup.tra	Sat May 23 12:47:22 2009
++++ C:\BWP Patchstudio\patched files\DrizztSaga\Language\English\setup.tra	Thu Aug 15 07:57:57 2013
+@@ -1301,11 +1301,11 @@
+ @1024   = ~[DWARF 1] By Moradin's hammer.~ [DWARF01]
+ @1025   = ~[DWARF 5]~ [DWARF05]
+ @1026   = ~[DWARF 6]~ [DWARF06]
+-@1029   = ~[BLACK LILY 1] 'Twill be the darkest day ye never seen before I don't have what ye need.~ [BLACK01]
++@1029   = ~[BLACK LILY 1] 'Twill be the darkest day ye never seen before I don't have what ye need.~ [BLACKL01]
+ @1030   = ~[FEMALE THREAT 6]  Your life means nothing to me.~ [GENFT06]
+-@1031   = ~[BLACK LILY 3]~ [BLACK03]
+-@1032   = ~[BLACK LILY 4]~ [BLACK04]
+-@1033   = ~[BLACK LILY 2] Off wit ye now!  I've got counting to do.~ [BLACK02]
++@1031   = ~[BLACK LILY 3]~ [BLACKL03]
++@1032   = ~[BLACK LILY 4]~ [BLACKL04]
++@1033   = ~[BLACK LILY 2] Off wit ye now!  I've got counting to do.~ [BLACKL02]
+ @1050   = ~[DRIZZT DO'URDEN 1] All I wish is to continue my journey! Friends await, while I must suffer this tiresome dance?! Does the mere mention of Drizzt attract your ilk?!~ [DRIZT01]
+ @1051   = ~[DRIZZT DO'URDEN 2]~
+ @1052   = ~[DRIZZT DO'URDEN 3] 'Tis your lives to waste!~ [DRIZT03]

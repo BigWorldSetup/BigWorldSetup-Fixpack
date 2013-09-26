@@ -1,0 +1,33 @@
+--- RoTerror\Language\German\MYSHDW01.tra	Wed Dec 05 22:31:16 2007
++++ C:\BWP Patchstudio\patched files\RoTerror\Language\German\MYSHDW01.tra	Thu Feb 12 14:16:26 2009
+@@ -1,19 +1,11 @@
+-@0    = ~Willkommen. Ihr dringt tiefer in diese Höhle vor. Aber Euer Weg ist blockiert. Wenn Ihr weiter vordringen wollt, dann benötigt Ihr das Zeichen des Schattens.~
+-
+-@1    = ~Seht Euch um. Ihr seht Schatten in der Nähe der Feuer. Das Zeichen ist in den Händen von einem dieser Schatten. Findet heraus, welcher es hat und Ihr werdet es bekommen. Antwortet Ihr falsch, werdet Ihr bestraft.~
+-
+-@2    = ~Ich werde Euch etwas Starthilfe geben. Der Schatten direkt rechts von mir lügt immer. Der Schatten auf der anderen Seite des grossen Feuers sagt die Wahrheit. Nutzt Euren Verstand, um das Zeichen zu finden. Stellt Fragen und seid weise.~
+-
+-@3    = ~Findet das Zeichen, um tiefer in diese Höhlen vorzudringen.~
+-
+-@4    = ~Ihr habt es! Ihr habt das Zeichen.~
+-
+-@5    = ~Das Teilchen war die ganze Zeit in Euren Händen! Clever, clever. Gebt es mir jetzt.~
+-
+-@6    = ~Korrekt. Ihr habt Euch als würdig erwiesen. Hier ist es. Ihr dürft gehen.~
+-
+-@7    = ~Gratulation.~
+-
+-@8    = ~Aber fragt niemanden direkt, wer es hat. Wenn Ihr sicher seid, wer es hat, dann macht einfach eine Erklärung. Ihr dürft ebenfalls nur Fragen über die Schatten stellen, die neben dem Schatten stehen, mit dem Ihr sprecht.~
+-
+-@9    = ~Korrekt. Ihr habt bewiesen, dass Ihr sowohl scharfsinnig als auch kampferfahren seid. Hier ist es. Ihr dürft gehen.~
++@0  = ~Willkommen. Ihr dringt tiefer in diese Höhle vor. Aber Euer Weg ist blockiert. Wenn Ihr weiter vordringen wollt, dann benötigt Ihr das Zeichen des Schattens.~ 
++@1  = ~Seht Euch um. Ihr seht Schatten in der Nähe der Feuer. Das Zeichen ist in den Händen von einem dieser Schatten. Findet heraus, welcher es hat und Ihr werdet es bekommen. Antwortet Ihr falsch, werdet Ihr bestraft.~
++@2  = ~Ich werde Euch etwas Starthilfe geben. Der Schatten direkt rechts von mir lügt immer. Der Schatten auf der anderen Seite des grossen Feuers sagt die Wahrheit. Nutzt Euren Verstand, um das Zeichen zu finden. Stellt Fragen und seid weise.~ 
++@3  = ~Findet das Zeichen, um tiefer in diese Höhlen vorzudringen.~
++@4  = ~Ihr habt es! Ihr habt das Zeichen.~ 
++@5  = ~Das Teilchen war die ganze Zeit in Euren Händen! Clever, clever. Gebt es mir jetzt.~
++@6  = ~Korrekt. Ihr habt Euch als würdig erwiesen. Hier ist es. Ihr dürft gehen.~
++@7  = ~Gratulation.~ 
++@8  = ~Aber fragt niemanden direkt, wer es hat. Wenn Ihr sicher seid, wer es hat, dann macht einfach eine Erklärung. Ihr dürft ebenfalls nur Fragen über die Schatten stellen, die neben dem Schatten stehen, mit dem Ihr sprecht.~
++@9  = ~Korrekt. Ihr habt bewiesen, dass Ihr sowohl scharfsinnig als auch kampferfahren seid. Hier ist es. Ihr dürft gehen.~ 
++@10 = ~Ich bin auf der Suche.~

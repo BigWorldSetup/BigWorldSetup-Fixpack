@@ -1,0 +1,14 @@
+--- RoTerror\Language\German\MARTWYN1.tra	Fri Jan 25 08:36:44 2008
++++ C:\BWP Patchstudio\patched files\RoTerror\Language\German\MARTWYN1.tra	Sun Oct 04 13:17:15 2009
+@@ -10,9 +10,9 @@
+ 
+ @5    = ~Nicht wirklich.~
+ 
+-@6    = ~Wenn... (er sieht sich um und beginnt leiser zu sprechen)... Wenn Ihr Eure Augen schliesst und durch das unpassierbare Land geht, werdet Ihr in ein Tal kommen, das sehr unnatürlich aussieht.~
++@6    = ~Wenn... (er sieht sich um und beginnt leiser zu sprechen)... Wenn Ihr Euch vor den wachsamen Augen des Wächters versteckt und durch das unpassierbare Land geht, werdet Ihr in ein Tal kommen, das sehr unnatürlich aussieht.~
+ 
+-@7    = ~Dort gibt es einen Drachen. Seid vorsichtig, er ist noch am Leben! Passiert ihn und betretet das Portal. Dort ist ein grosser Irrgarten aus Eis. Passt auf die Wächter auf!~
++@7    = ~Der Wächter des Durchgangs ist ein Drache. Seid vorsichtig denn er ist noch am Leben! Passiert ihn und betretet dann das Portal. Dort ist ein grosser Irrgarten aus Eis. Passt auf die Wächter auf!~
+ 
+ @8    = ~Wenn Ihr auf der anderen Seite angekommen seid, werdet Ihr den heiligen Bereich der Drachen finden! Und in dem Tempel werdet Ihr den Drachen finden!~
+ 

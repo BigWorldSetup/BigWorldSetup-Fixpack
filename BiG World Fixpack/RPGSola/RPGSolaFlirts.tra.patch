@@ -1,0 +1,11 @@
+--- RPGSola\english\RPGSolaFlirts.tra	Sun Jan 13 15:55:00 2008
++++ C:\BWP Patchstudio\patched files\RPGSola\english\RPGSolaFlirts.tra	Mon Nov 01 10:39:03 2010
+@@ -514,7 +514,7 @@
+ @430   = ~I want you <CHARNAME>. Can we not slip away? For a moment? (He emphasizes his desire with a deeper movement of his hand and a groan of his own as you rake your nails across his skin.)~
+ @431   = ~(You call for a short rest and the two of you quietly slip away into the trees when no one else is looking.)~
+ @432   = ~(Sola approaches you, a gentle smile on his lips, and tentatively brushes a lock of hair from your face. When he sees no rebuke is forthcoming from you, he allows his fingers to linger, softly tracing a line down your jaw.)~
+-@433   = ~Thank you, <CHARNAME.> (He allows his fingers to caress your neck a single time before walking away, leaving you mystified as to the source of his gratitude.)~
++@433   = ~Thank you, <CHARNAME>. (He allows his fingers to caress your neck a single time before walking away, leaving you mystified as to the source of his gratitude.)~
+ @434   = ~I have seen many things in my short time on the surface, <CHARNAME>. (His eyes roam appreciatively over your body)Too bad society dictates that they must constantly be covered. Certain things are much better in their natural state of being.~
+ @435   = ~(Soundlessly, Sola appears beside you, and wordlessly weaves his arms about you in an affectionate hug. He then backs away and disappears as quickly as he materialized, the only evidence he was ever there the tingle running down your spine.)~
+ @436   = ~(You are simply marching in formation, lost in your thoughts, when you feel a finger languorously, sensually, tracing a path down your spine.  You slow to a stop, and Sola envelops you in his arms, tenderly kissing the nape of your neck as his fingers trace leisurely designs on your belly. It is long before the two of you part from this loving embrace.)~

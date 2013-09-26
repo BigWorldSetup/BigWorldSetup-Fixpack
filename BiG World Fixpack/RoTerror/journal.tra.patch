@@ -1,0 +1,11 @@
+--- RoTerror\Language\English\journal.tra	Sat Mar 11 22:47:06 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\Language\English\journal.tra	Sun Oct 04 13:12:56 2009
+@@ -550,7 +550,7 @@
+ //unsolved - 10,12,13
+ @573330 = ~Dragon's Sanctuary
+ 
+-An old man named Martwyn told me about a sacred area of the dragons. If I wanted to go there, I would have to walk my eyes closed through the unpassable lands and then make my way out of the Ice Maze.~ /* #73330 */
++An old man named Martwyn told me about a sacred area of the dragons. If I wanted to go there, I would have to hide from the eyes of the guardian to get through the unpassable lands and then make my way out of the Ice Maze.~ /* #73330 */
+ 
+ 
+ //MAYASSI.DLG

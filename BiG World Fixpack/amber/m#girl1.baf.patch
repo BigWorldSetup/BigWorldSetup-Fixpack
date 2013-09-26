@@ -1,0 +1,17 @@
+--- amber\scripts\m#girl1.baf	Thu Nov 06 20:56:00 2003
++++ C:\BWP Patchstudio\patched files\amber\scripts\m#girl1.baf	Sun May 16 18:47:53 2010
+@@ -9,12 +9,12 @@
+ END
+ 
+ IF
+-	Global("M#BoyGirl","GLOBAL","1")
++	Global("M#BoyGirl","GLOBAL",1)
+ 	!TimeOfDay(Day)
+ THEN
+ 	RESPONSE #100
+ 		EscapeAreaDestroy(30)
+-		SetGlobal("M#BoyGirl","GLOBAL","0")
++		SetGlobal("M#BoyGirl","GLOBAL",0)
+ END
+ 
+ IF

@@ -1,0 +1,9 @@
+IF
+        InParty("Jaheira")
+        CheckStat("Jaheira",14,DEX)
+        Global("MeetOldenFriends","GLOBAL",2)
+THEN
+        RESPONSE #100
+                ApplySpellRES("BGDEX17","Jaheira")
+                Continue()
+END

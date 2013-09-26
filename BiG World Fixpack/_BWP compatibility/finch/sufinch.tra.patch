@@ -1,0 +1,21 @@
+--- finch\English\sufinch.tra	Sun Jul 30 16:06:03 2006
++++ C:\BWP Patchstudio\patched files\finch\English\sufinch.tra	Fri Nov 05 12:33:03 2010
+@@ -64,7 +64,9 @@
+ @54   = ~The Tailor of Calimshan~
+ @55   = ~The Tailor of Calimshan
+ 
++
+   This libretto faithfully reproduces the treasured story of Faruk, a cloth merchant who battles wits with genies, pashas, thieves, wicked magicians, and a beholder until he ultimately becomes the wealthiest and most powerful man in the desert realm. Calimshites are taught these tales and songs from the cradle, for the stories illustrate many of the values and desires of that culture, while the populace of colder climates admire the tales as a window into understanding an exotic and mysterious land.
++
+   
+   Each chapter is beautifully illustrated - a few of the portraits a bit too racy for younger eyes - and the pages are edged in gold. Truly, a precious find that Davaeorn must have been hoarding.~
+ @56   = ~Nashkel: A Folk History~
+@@ -806,7 +808,7 @@
+ @848  = ~That's enough! I shall bear no more pestering! Bah, if a handful of you commoners cause this much stink, how can I endure the entire town milling about my foyer?~
+ @849  = ~Out! Out, I say! There will be no library under my roof!~
+ @850  = ~Hmm. I suppose. I dare say 'tis too much to expect the rabble throw a parade or tug a forelock to show their appreciation, but what can you expect from peasant miners?~
+-@851  = ~Now, now. You've taken enough of my time. Move along, that's a good <PRO_ GIRLBOY>.~
++@851  = ~Now, now. You've taken enough of my time. Move along, that's a good <PRO_GIRLBOY>.~
+ @852  = ~Oooooh! Won't they? That's a good point, young <PRO_MANWOMAN>. Here, go buy yourself some soap.~
+ @853  = ~I must say, I most certainly am not! Trask is a dusty sort. Perfect man for a library, even if he is a commoner.~
+ @854  = ~Stinking rich. Isn't it fabulous?~

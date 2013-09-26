@@ -1,0 +1,10 @@
+--- SC#Hub\Scripts\SC#AR0500.baf	Wed Jul 28 00:22:20 2004
++++ C:\BWP Patchstudio\patched files\SC#Hub\Scripts\SC#AR0500.baf	Thu Sep 13 05:33:26 2012
+@@ -2,6 +2,7 @@
+   Global("SC#AegisExists","AR0500",0)
+   Global("MurdersSolved","GLOBAL",1)
+   !Dead("Inspect")
++  !Exists("Inspect")
+ THEN
+   RESPONSE #100
+     SetGlobal("SC#AegisExists","AR0500",1)

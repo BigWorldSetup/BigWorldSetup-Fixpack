@@ -1,0 +1,116 @@
+IF
+  InParty("Imoen")
+  Global("A6ImoenNeJPurgeGAM","ARAM00",0)
+  Global("MeetOldenFriends","GLOBAL",2)
+THEN
+  RESPONSE #100
+    ActionOverride("Imoen",LeaveParty())
+    ActionOverride("Imoen",ChangeAIScript("",DEFAULT))
+    SetGlobal("ImoenPartyBG1","GLOBAL",1)
+    ActionOverride("Imoen",MoveBetweenAreas("AR0602",[3198.2837],6))
+    SetGlobal("A6ImoenNeJPurgeGAM","ARAM00",2)
+    SetGlobal("MeetOldenFriends","GLOBAL",-1)
+    Continue()
+END
+
+IF
+  InPartyAllowDead("Imoen")
+  Dead("Imoen")
+  Global("ImoenPartyBG1","GLOBAL",0)
+  Global("A6ImoenNeJPurgeGAM","ARAM00",0)
+  Global("MeetOldenFriends","GLOBAL",2)
+THEN
+  RESPONSE #100
+    ActionOverride("Imoen",LeaveParty())
+    ActionOverride("Imoen",ApplySpellRES("BGLIVE",Myself))
+    ActionOverride("Imoen",SetPlayerSound(Myself,-1,DYING))
+    ActionOverride("Imoen",ApplySpellRES("BGSILENC",Myself))
+    ActionOverride("Imoen",JumpToPoint([0.0]))
+    ActionOverride("Imoen",AddFamiliar())
+    ActionOverride("Imoen",ApplySpellRES("BGDEATH",Myself))
+    SetGlobal("A6ImoenNeJPurgeGAM","ARAM00",2)
+    SetGlobal("MeetOldenFriends","GLOBAL",-1)
+    Continue()
+END
+
+IF
+  !InPartyAllowDead("Imoen")
+  !Dead("Imoen")
+  Global("ImoenPartyBG1","GLOBAL",0)
+  Global("A6ImoenNeJPurgeGAM","ARAM00",0)
+  Global("A6ImoenWasInParty","GLOBAL",1)
+  Global("MeetOldenFriends","GLOBAL",2)
+THEN
+  RESPONSE #100
+    MoveGlobal("ARAM00","Imoen",[0.0])
+    ActionOverride("Imoen",SetPlayerSound(Myself,-1,DYING))
+    ActionOverride("Imoen",AddFamiliar())
+    ActionOverride("Imoen",ApplySpellRES("BGDEATH",Myself))
+    SetGlobal("A6ImoenNeJPurgeGAM","ARAM00",1)
+    Continue()
+END
+
+IF
+  !InPartyAllowDead("Imoen")
+  Dead("Imoen")
+  Global("ImoenPartyBG1","GLOBAL",0)
+  Global("A6ImoenNeJPurgeGAM","ARAM00",0)
+  Global("A6ImoenWasInParty","GLOBAL",1)
+  Global("MeetOldenFriends","GLOBAL",2)
+THEN
+  RESPONSE #100
+    MoveGlobal("ARAM00","Imoen",[0.0])
+    ActionOverride("Imoen",ApplySpellRES("BGLIVE",Myself))
+    ActionOverride("Imoen",SetPlayerSound(Myself,-1,DYING))
+    ActionOverride("Imoen",ApplySpellRES("BGSILENC",Myself))
+    ActionOverride("Imoen",AddFamiliar())
+    ActionOverride("Imoen",ApplySpellRES("BGDEATH",Myself))
+    SetGlobal("A6ImoenNeJPurgeGAM","ARAM00",2)
+    SetGlobal("MeetOldenFriends","GLOBAL",-1)
+    Continue()
+END
+
+IF
+  Global("A6ImoenNeJPurgeGAM","ARAM00",1)
+  Global("MeetOldenFriends","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("A6ImoenNeJPurgeGAM","ARAM00",2)
+    SetGlobal("SPRITE_IS_DEADIMOEN","GLOBAL",0)
+    SetGlobal("MeetOldenFriends","GLOBAL",-1)
+    Continue()
+END
+
+IF
+  !InPartyAllowDead("Imoen")
+  Global("ImoenPartyBG1","GLOBAL",0)
+  Global("A6ImoenNeJPurgeGAM","ARAM00",0)
+  Global("A6ImoenWasInParty","GLOBAL",0)
+  Global("MeetOldenFriends","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("A6ImoenNeJPurgeGAM","ARAM00",2)
+    SetGlobal("MeetOldenFriends","GLOBAL",-1)
+    Continue()
+END
+
+IF
+  Global("MeetOldenFriends","GLOBAL",-1)
+  Global("A6ImoenNeJPurgeGAM","ARAM00",2)
+  Global("A6ImoenNeJOnce","ARAM00",0)
+THEN
+  RESPONSE #100
+    SetGlobal("A6ImoenNeJOnce","ARAM00",1)
+    SetGlobal("MeetOldenFriends","GLOBAL",2)
+    Continue()
+END
+
+IF
+        InParty("Jaheira")
+        CheckStat("Jaheira",14,DEX)
+        Global("MeetOldenFriends","GLOBAL",2)
+THEN
+        RESPONSE #100
+                ApplySpellRES("BGDEX17","Jaheira")
+                Continue()
+END

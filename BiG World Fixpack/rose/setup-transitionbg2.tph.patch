@@ -1,0 +1,84 @@
+--- rose\tph\setup-transitionbg2.tph	Mon Oct 19 10:03:27 2009
++++ C:\BWP Patchstudio\patched files\rose\tph\setup-transitionbg2.tph	Thu May 09 07:43:24 2013
+@@ -1,54 +1,35 @@
+ //TPH last updated for Rose v0.03
+-
++ 
+ //Import Rose to BG2
+ COPY_EXISTING ~ARAM00.BCS~ ~override~
+  DECOMPILE_BCS_TO_BAF
+-
+- REPLACE_TEXTUALLY
+-~IF
+-  InParty("Imoen2")
+-  Global("A6ImoenPurgeGAM","ARAM00",0)
++ 
++ REPLACE_TEXTUALLY ~InParty("Imoen2")[%TAB% %LNL%%MNL%%WNL%]+Global("A6ImoenPurgeGAM","ARAM00",0)[%TAB% %LNL%%MNL%%WNL%]+Global("MeetOldenFriends","GLOBAL",1)~
++~InParty("k-rose")
+ THEN
+-  RESPONSE #100
+-    ActionOverride("Imoen2",LeaveParty())
+-    ActionOverride("Imoen2",ChangeAIScript("",DEFAULT))
+-    SetGlobal("ImoenPartyBG1","GLOBAL",1)
+-    ActionOverride("Imoen2",MoveBetweenAreas("AR0602",[3198.2837],6))
+-    SetGlobal("A6ImoenPurgeGAM","ARAM00",2)
+-    Continue()
+-END~
+-~IF
+- InParty("k-rose")
+-THEN
+- RESPONSE #100
+-  ActionOverride("k-rose",LeaveParty())
+-  ActionOverride("k-rose",ChangeAIScript("",DEFAULT))
+-  ActionOverride("k-rose",ClearAllActions())
+-  ActionOverride("k-rose",MoveBetweenAreas("AR0602",[3371.3067],6))
+-  Continue()
++    RESPONSE #100
++        ActionOverride("k-rose",LeaveParty())
++        ActionOverride("k-rose",ChangeAIScript("",DEFAULT))
++        ActionOverride("k-rose",ClearAllActions())
++        ActionOverride("k-rose",MoveBetweenAreas("AR0602",[3371.3067],6))
++        Continue()
+ END
+-
++ 
+ IF
+- InPartyAllowDead("k-rose")
+- Dead("k-rose")
++    InPartyAllowDead("k-rose")
++    Dead("k-rose")
+ THEN
+- RESPONSE #100
+-  ActionOverride("k-rose",LeaveParty())
+-  ActionOverride("k-rose",DestroySelf())
+-  Continue()
++    RESPONSE #100
++        ActionOverride("k-rose",LeaveParty())
++        ActionOverride("k-rose",DestroySelf())
++        Continue()
+ END
+-
++ 
+ IF
+-  InParty("Imoen2")
+-  Global("A6ImoenPurgeGAM","ARAM00",0)
+-THEN
+-  RESPONSE #100
+-    ActionOverride("Imoen2",LeaveParty())
+-    ActionOverride("Imoen2",ChangeAIScript("",DEFAULT))
+-    SetGlobal("ImoenPartyBG1","GLOBAL",1)
+-    ActionOverride("Imoen2",MoveBetweenAreas("AR0602",[3198.2837],6))
+-    SetGlobal("A6ImoenPurgeGAM","ARAM00",2)
+-    Continue()
+-END~
+-
+- COMPILE_BAF_TO_BCS
+\ No newline at end of file
++    InParty("Imoen2")
++    Global("A6ImoenPurgeGAM","ARAM00",0)
++    Global("MeetOldenFriends","GLOBAL",1)
++~
++ 
++ COMPILE_BAF_TO_BCS
++ BUT_ONLY_IF_IT_CHANGES
+\ No newline at end of file

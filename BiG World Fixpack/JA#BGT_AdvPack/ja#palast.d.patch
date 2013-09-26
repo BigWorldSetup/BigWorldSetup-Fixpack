@@ -1,0 +1,39 @@
+--- JA#BGT_AdvPack\DLG\ja#palast.d	Thu Jan 05 17:22:30 2012
++++ C:\BWP Patchstudio\patched files\JA#BGT_AdvPack\DLG\ja#palast.d	Tue Apr 30 13:51:36 2013
+@@ -91,7 +91,8 @@
+ 
+ IF ~NumTimesTalkedTo(0)~ THEN BEGIN JA#FLAM2_1
+ SAY ~Eindringling! Im Inneren des Palastes! Für solch einen dreisten Dieb gibt es keine Gnade!~
+-IF ~~ THEN DO ~SetGlobal("JA#ALERT","MYAREA",1)Enemy()~ EXIT
++IF ~~ THEN DO ~SetGlobal("JA#ALERT","MYAREA",1)
++Enemy()~ EXIT
+ END
+ 
+ 
+@@ -145,7 +146,7 @@
+ 
+ IF ~RandomNum(3,3)~ THEN BEGIN JA#NOB00_2
+ SAY ~Ich hoffe inständig, dass es gelingt, der aus Kerzenburg entkommenen Spitzbuben habhaft zu werden. Soweit ich ersehen kann, haben sie versucht, dem Eisenthron Verbrechen anzulasten, die in Wirklichkeit von Amn begangen wurden. Es ist unverständlich, wie Herzog Eltan den amnischen Spionen derart blind vertrauen konnte.~
+-IF ~~ THEN DO ~AddJournalEntry(%999999%,USER)~ EXIT
++IF ~~ THEN DO ~AddJournalEntry(%999999%,USER)~ EXIT
+ END
+ 
+ 
+@@ -168,7 +169,7 @@
+ 
+ IF ~RandomNum(3,3)~ THEN BEGIN JA#NOB13_3
+ SAY ~Es gibt da eine Menge Gerüchte um Sarevok. Er wird wohl ganz offensichtlich der neue Großherzog, aber die wirkliche Neuigkeit ist, dass er an Krieg denkt... gegen Amn!~
+-IF ~~ THEN DO ~AddJournalEntry(%999998%,USER)~ EXIT
++IF ~~ THEN DO ~AddJournalEntry(%999998%,USER)~ EXIT
+ END
+ 
+ 
+@@ -176,7 +177,7 @@
+ 
+ IF ~StateCheck(Myself,STATE_CHARMED)~ THEN BEGIN JA#NOBW6_0
+ SAY ~Es gibt da eine Menge Gerüchte um Sarevok. Er wird wohl ganz offensichtlich der neue Großherzog, aber die wirkliche Neuigkeit ist, dass er an Krieg denkt... gegen Amn!~
+-IF ~~ THEN DO ~AddJournalEntry(%999998%,USER)~ EXIT
++IF ~~ THEN DO ~AddJournalEntry(%999998%,USER)~ EXIT
+ END
+ 
+ IF ~RandomNum(3,1)~ THEN BEGIN JA#NOBW6_1

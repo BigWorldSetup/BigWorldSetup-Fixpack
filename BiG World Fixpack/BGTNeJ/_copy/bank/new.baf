@@ -1,0 +1,103 @@
+IF
+        PartyHasItem("VPVOUC10")
+THEN
+        RESPONSE #100
+                IncrementGlobal("IHaveVoucher10","GLOBAL",1)
+                TakePartyItemNum("VPVOUC10",1)
+END
+
+IF
+        PartyHasItem("VPVOUC25")
+THEN
+        RESPONSE #100
+                IncrementGlobal("IHaveVoucher25","GLOBAL",1)
+                TakePartyItemNum("VPVOUC25",1)
+END
+
+IF
+        PartyHasItem("VPVOUC50")
+THEN
+        RESPONSE #100
+                IncrementGlobal("IHaveVoucher50","GLOBAL",1)
+                TakePartyItemNum("VPVOUC50",1)
+END
+
+IF
+        PartyHasItem("VPVOU100")
+THEN
+        RESPONSE #100
+                IncrementGlobal("IHaveVoucher100","GLOBAL",1)
+                TakePartyItemNum("VPVOU100",1)
+END
+
+IF
+        PartyHasItem("vpsword")
+        Global("VP_Save_Answerer","GLOBAL",0)
+THEN
+        RESPONSE #100
+                SetGlobal("VP_Save_Answerer","GLOBAL",1)
+                Continue()
+END
+
+IF
+        PartyHasItem("vpnjclck")
+        Global("VP_Save_WolfCloak","GLOBAL",0)
+THEN
+        RESPONSE #100
+                SetGlobal("VP_Save_WolfCloak","GLOBAL",1)
+                Continue()
+END
+
+IF
+        PartyHasItem("vpptnbag")
+        Global("VP_Save_PotionCase","GLOBAL",0)
+THEN
+        RESPONSE #100
+                SetGlobal("VP_Save_PotionCase","GLOBAL",1)
+                Continue()
+END
+
+IF
+        PartyHasItem("vpscrbag")
+        Global("VP_Save_ScrollTub","GLOBAL",0)
+THEN
+        RESPONSE #100
+                SetGlobal("VP_Save_ScrollTub","GLOBAL",1)
+                Continue()
+END
+
+IF
+        PartyHasItem("vpambelt")
+        Global("VP_Save_Quiver","GLOBAL",0)
+THEN
+        RESPONSE #100
+                SetGlobal("VP_Save_Quiver","GLOBAL",1)
+                Continue()
+END
+
+IF
+        PartyHasItem("vpgenbag")
+        Global("VP_Save_GenBag","GLOBAL",0)
+THEN
+        RESPONSE #100
+                SetGlobal("VP_Save_GenBag","GLOBAL",1)
+                Continue()
+END
+
+IF
+        PartyHasItem("ulfists")
+        Global("VP_Save_BoxGloves","GLOBAL",0)
+THEN
+        RESPONSE #100
+                SetGlobal("VP_Save_BoxGloves","GLOBAL",1)
+                Continue()
+END
+
+IF
+        PartyHasItem("MISC47") // Golden Pantaloons
+        Global("IHavePants","GLOBAL",0)
+THEN
+        RESPONSE #100
+                SetGlobal("IHavePants","GLOBAL",1)
+                Continue()
+END

@@ -1,0 +1,19 @@
+--- TS\baf\Movie3ba.baf	Mon Dec 27 14:07:02 2004
++++ C:\BWP Patchstudio\patched files\TS\baf\Movie3ba.baf	Fri Apr 02 04:54:18 2010
+@@ -4,11 +4,11 @@
+ 	RESPONSE #100
+ 		CutSceneId(Player1)
+ 		Rest()
+-		ActionOverride("Player2",Rest())
+-		ActionOverride("Player3",Rest())
+-		ActionOverride("Player4",Rest())
+-		ActionOverride("Player5",Rest())
+-		ActionOverride("Player6",Rest())
++		ActionOverride(Player2,Rest())
++		ActionOverride(Player3,Rest())
++		ActionOverride(Player4,Rest())
++		ActionOverride(Player5,Rest())
++		ActionOverride(Player6,Rest())
+ 		Wait(1)
+ 		SaveGame(0)
+ 		MultiPlayerSync()

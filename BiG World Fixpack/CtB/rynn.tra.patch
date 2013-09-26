@@ -1,0 +1,11 @@
+--- CtB\Language\German\rynn.tra	Sun Nov 22 11:10:56 2009
++++ C:\BWP Patchstudio\patched files\CtB\Language\German\rynn.tra	Fri Nov 05 12:45:00 2010
+@@ -22,7 +22,7 @@
+ @22 = ~Nein, aber wir fanden Astinar. Er möchte, dass Ihr uns begleitet, wenn wir die Schlangen außer Gefecht setzen wollen - offensichtlich, um ein Auge auf uns zu werfen. Werdet Ihr mit uns kommen?~ 
+ @23 = ~Ich werde mein Leben dafür geben, Hlondeth von den schändlichen Schlangen zu befreien. Wenn Gonthril will, dass ich auf Kinder aufpasse, werde ich es tun. Lasst uns zu ihm gehen und den Schlüssel bekommen. Wir müssen Extaminos so schnell wie möglich ausschalten.~
+ @24 = ~CHARNAME, Ihr habt Eure Wahl bereits getroffen, aber begreift, dass wir dabei sind, Geschichte zu schreiben. Wir werden das Herrscherhaus von Hlondeth übernehmen, ungewiss, was die Zukunft bringen mag. Ich glaube - ich glaube aufrichtig, dass wir im Leben aller etwas verändern werden. Genug. Es wird Zeit! Für ein freies Hlondeth müssen wir die Schlangen töten!~ 
+-@25 = ~Es ist geschafft, CHARNAME. Hlondeth ist der Freiheit näher. Ich hoffe, unsere Taten waren nützlich. Gonthril muss die Neuigkeiten schnell erfahren, daher werde ich ihn nun suchen. Danke für Eure Hilfe, CHARNAME.~
++@25 = ~Es ist geschafft, <CHARNAME>. Hlondeth ist der Freiheit näher. Ich hoffe, unsere Taten waren nützlich. Gonthril muss die Neuigkeiten schnell erfahren, daher werde ich ihn nun suchen. Danke für Eure Hilfe, <CHARNAME>.~
+ @26 = ~Schwarze Natter-Ragout
+ 
+ Rynn soll den Anführer der Abspaltung kontaktieren, der mich in der Stadt treffen wird. Da es einen hohen Preis für seinen Kopf gibt, muß Astinar im Untergrund bleiben. Ich bin mir sicher, dass er mich finden wird, aber ich muss nach ihm Ausschau halten. Wenn ich ihn finde, bekomme ich einen Schlüssel, der angeblich das Tor zum Gelände des Hauses Extaminos öffnen wird.~

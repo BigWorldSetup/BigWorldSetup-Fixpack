@@ -1,0 +1,20 @@
+--- vecna\baf\cre\AA022GEN.baf	Sun Jul 03 20:19:25 2011
++++ C:\BWP Patchstudio\patched files\vecna\baf\cre\AA022GEN.baf	Fri Oct 28 08:52:20 2011
+@@ -759,7 +759,7 @@
+ 
+ IF
+ 	Heard(NearestMyGroupOfType,ASSIST)
+-	!Dead("astHeardBy(Myself))")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_INVISIBLE)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_IMPROVEDINVISIBILITY)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_CHARMED)
+@@ -777,7 +777,7 @@
+ 	Heard(NearestMyGroupOfType,ASSIST)
+ 	See(LastHeardBy(Myself))
+ 	!See(LastAttackerOf(LastHeardBy(Myself)))
+-	!Dead("astHeardBy(Myself))")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_INVISIBLE)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_IMPROVEDINVISIBILITY)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_CHARMED)

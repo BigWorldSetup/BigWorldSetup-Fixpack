@@ -1,0 +1,11 @@
+--- Setup-Ascension.tp2	Mon Nov 30 22:59:53 2009
++++ C:\BWP Patchstudio\patched files\Setup-Ascension.tp2	Wed Apr 14 09:05:48 2010
+@@ -9,6 +9,8 @@
+ // where should tell the user to send email if something goes wrong? 
+ AUTHOR "weimer@cs.berkeley.edu (http://weidu.org/)"
+ 
++VERSION ~v1.4.24 BWP Fix~
++
+ AUTO_TRA ~ascension/%s~
+ 
+ ///////////////////////////////////////////////////////////////////////

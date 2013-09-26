@@ -1,0 +1,11 @@
+--- LR\tra\english\LRGAR.TRA	Sat Aug 21 14:53:38 2004
++++ C:\BWP Patchstudio\patched files\LR\tra\english\LRGAR.TRA	Fri Nov 12 16:46:35 2010
+@@ -34,7 +34,7 @@
+ @33   = ~Mortal, is a pleasure to deal with a prime as intelligent as you! Here is your reward for being reasonable.~
+ @34   = ~<CHARNAME>, you are a greedy villain without a speck of honor! I am not staying in the same party as your vile self!~
+ @35   = ~I've put up with a lot, <CHARNAME>... but this blatant violation of your promise to help these creatures is taking it too far. I am leaving, and all who have honor will follow me.~
+-@36   = ~No... you must not do this! You are a bad, bad <PRO_BOYGIRL>, <CHARNAME>! Look, even little Boo is gnashing his teeth at this wickedness. And he is telling me to leave you to your naughty ways!~
++@36   = ~No... you must not do this! You are a bad, bad <PRO_GIRLBOY>, <CHARNAME>! Look, even little Boo is gnashing his teeth at this wickedness. And he is telling me to leave you to your naughty ways!~
+ @37   = ~<CHARNAME>! I have long suspected you were an evil blight upon Faerun. This treachery confirms it. All who stand for virtue will join me and leave your presence.~
+ @38   = ~<CHARNAME>! I cannot forgive this treachery! The Deva comes from Elysium - the Earthmother's realm, and the demon could have been turned to serve the Great Balance as well, if you had shown less laziness and more foresight. I will not stay at your side for a moment longer!~
+ @39   = ~<CHARNAME>! As a member of the Order of the Radiant Heart I shall not stand by while you sow treachery and discord in your wake. I shall not stay in your company after this vile act.~

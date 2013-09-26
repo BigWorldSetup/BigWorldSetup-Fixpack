@@ -1,0 +1,10 @@
+--- worgas\are\W_2100.baf	Tue Apr 17 14:50:38 2007
++++ C:\BWP Patchstudio\patched files\worgas\are\W_2100.baf	Thu Apr 29 13:08:27 2010
+@@ -6,6 +6,6 @@
+ THEN
+  RESPONSE #100
+ SetGlobal("WorgasUnderdark","AR2100",1)
+-ActionOverride("Worgas",StartDialogNoSet([PC])
++ActionOverride("Worgas",StartDialogNoSet([PC]))
+ END
+ 

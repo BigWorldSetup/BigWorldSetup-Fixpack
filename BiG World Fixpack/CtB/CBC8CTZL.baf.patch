@@ -1,0 +1,34 @@
+--- CtB\scripts\ctb\CBC8CTZL.baf	Tue Dec 15 23:04:06 2009
++++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\CBC8CTZL.baf	Tue Jun 26 16:01:56 2012
+@@ -81,18 +81,18 @@
+ 		StartCutSceneMode()
+ 		MoveViewObject(Myself,INSTANT)
+ 		SmallWait(2)
+-		DisplayStringHead(Myself,84831) // Zannaster's Death Spell Trigger
++		DisplayStringHead(Myself,@550303) // Zannaster's Death Spell Trigger
+ 		Wait(2)
+ 		ApplySpell(Myself,WIZARD_FIREBALL)
+ 		Wait(2)
+-		DisplayStringHead(Myself,84832) // Imposss.....
++		DisplayStringHead(Myself,@550304) // Imposss.....
+ 		Wait(2)
+ 		ApplySpell(Myself,WIZARD_FIREBALL)
+ 		Wait(2)
+-		DisplayStringHead(Myself,84833) // able!
++		DisplayStringHead(Myself,@550305) // able!
+ 		ApplySpell(Myself,WIZARD_FIREBALL)
+ 		Wait(2)
+-		DisplayStringHead(Myself,84834) // (hissss) NoooOOooo!!
++		DisplayStringHead(Myself,@550306) // (hissss) NoooOOooo!!
+ 		SetGlobal("Cb_Cult_Of_Dragon_Demise","GLOBAL",1)
+ 		SetGlobal("Cb_ZannastersDeathSpellTrigger","LOCALS",1)
+ 		CreateVisualEffectObject("SPFIREPI",Myself)
+@@ -101,7 +101,7 @@
+ 		Wait(2)
+ 		DestroyItem("IMOENHP1") // Imoen's Belt
+ 		EndCutSceneMode()
+-		ActionOverride(LastAttackerOf(Myself),Kill(Myself))
++		ActionOverride(Myself,Kill(Myself))
+ END
+ 
+ IF

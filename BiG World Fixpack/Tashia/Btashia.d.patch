@@ -1,0 +1,54 @@
+--- tashia\dialogues\Btashia.d	Sat Dec 05 20:53:58 2009
++++ C:\BWP Patchstudio\patched files\tashia\dialogues\Btashia.d	Sat Nov 10 17:15:34 2012
+@@ -1755,7 +1755,7 @@
+ 
+ IF ~~ THEN BEGIN 281 // from: 280.0
+   SAY @543 /* #74749 */
+-  IF ~~ THEN EXTERN ~PLAYER1~ add2
++COPY_TRANS player1 33
+ END
+ 
+ IF ~~ THEN BEGIN salv3
+@@ -1876,7 +1876,11 @@
+ END
+ 
+ EXTEND_BOTTOM player1 33
+-  IF ~IsValidForPartyDialog("Tashia") !Global("TashiaRomanceActive","GLOBAL",2) Global("M#TashiTalk1","LOCALS",0)~ THEN DO ~SetGlobal("M#TashiTalkPlayer1_1","LOCALS",1)~ EXTERN ~player1~ add1
++  IF ~IsValidForPartyDialog("Tashia") !Global("TashiaRomanceActive","GLOBAL",2) Global("M#TashiTalkPlayer1_1","LOCALS",0)~ THEN DO ~SetGlobal("M#TashiTalkPlayer1_1","LOCALS",1)~ EXTERN ~player1~ add1
++END
++
++EXTEND_BOTTOM player1 33
++  IF ~IsValidForPartyDialog("Tashia") Global("TashiaRomanceActive","GLOBAL",2) Global("M#TashiTalkPlayer1_5","LOCALS",0)~ THEN DO ~SetGlobal("M#TashiTalkPlayer1_5","LOCALS",1)~ EXTERN ~player1~ add3
+ END
+ 
+ ADD_TRANS_TRIGGER helljon 7 ~!IsValidForPartyDialog("Tashia")~
+@@ -1884,17 +1888,6 @@
+   IF ~IsValidForPartyDialog("Tashia") Global("M#TashiTalkPlayer1_4","LOCALS",0)~ THEN DO ~SetGlobal("M#TashiTalkPlayer1_4","LOCALS",1)~ EXTERN ~BTASHIA~ 282
+ END
+ 
+-REPLACE player1
+-  IF ~~ THEN BEGIN 53
+-    SAY @566
+-    IF ~OR(2)
+-!InParty("Tashia")
+-!Global("TashiaRomanceActive","GLOBAL",2)~ THEN EXTERN ~player1~ add2
+-    IF ~InParty("Tashia") !Dead("Tashia") 
+-Global("TashiaRomanceActive","GLOBAL",2)~ THEN EXTERN ~player1~ add3
+-  END
+-END
+-
+ CHAIN ~KELDORJ~ kelcer1
+   @158
+   == ~BTASHIA~  @567
+@@ -2152,11 +2145,6 @@
+     IF ~~ THEN REPLY @672 EXTERN BTASHIA 273
+     IF ~~ THEN REPLY @673 EXTERN BTASHIA 273
+     IF ~~ THEN REPLY @674 EXTERN BTASHIA 273
+-  END
+-
+-  IF ~~ THEN BEGIN add2
+-    SAY @675
+-    IF ~~ THEN EXIT
+   END
+ 
+   IF ~~ THEN BEGIN add3

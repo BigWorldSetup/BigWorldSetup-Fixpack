@@ -1,0 +1,10 @@
+--- RoTerror\BAF\TALLSDE.BAF	Thu Nov 02 20:41:28 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\TALLSDE.BAF	Sat Apr 14 05:21:29 2012
+@@ -19,6 +19,7 @@
+ 		Wait(1)
+ 		UnhideGUI()
+ 		EndCutSceneMode()
++		SetGlobal("Olmsidthebat","GLOBAL",15)
+ 		SetGlobal("DllsDed","LOCALS",1)
+ 		SetGlobal("Olmtlks","GLOBAL",1)
+ END

@@ -1,0 +1,31 @@
+/*
+ * "Gavin NPC for Tutu and BGT - P-file hotfix"
+ * Combined Tutu/BGT installer
+ * by berelinde; rtannahill@msn.com, www.gibberlings3.net
+ * October 22, 2011 
+ * P-file hotfix
+*/
+
+/* Backup folder */
+BACKUP ~gavin_kickout_hotfix/backup~
+
+/* Author */
+AUTHOR ~berelinde@gmail.com, www.gibberlings3.net~
+
+/* enable all error messages; nothing suppressed. comment this out for release version */
+//MODDER
+
+VERSION ~kickout_hotfix~
+
+BEGIN ~Gavin for Tutu/BGT Kick-out Hotfix~ 
+
+ACTION_IF FILE_EXISTS_IN_GAME ~b!gavinp.dlg~ THEN BEGIN 
+    COPY_EXISTING ~b!gavinp.dlg~ ~override~ 
+    DECOMPILE_DLG_TO_D 
+    REPLACE_TEXTUALLY ~!HappinessLT("B!GAVIN",0)~ ~!HappinessLT(Myself,-290)~ 
+    COMPILE_D_TO_DLG 
+    BUT_ONLY_IF_IT_CHANGES 
+END 
+
+COMPILE ~gavin_kickout_hotfix/gavin_kickout_hotfix.d~ 
+

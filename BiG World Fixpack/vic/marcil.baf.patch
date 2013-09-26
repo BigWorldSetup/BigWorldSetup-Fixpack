@@ -1,0 +1,11 @@
+--- vic\Dung\marcil.baf	Wed Sep 21 23:53:42 2005
++++ C:\BWP Patchstudio\patched files\vic\Dung\marcil.baf	Thu Apr 01 16:38:12 2010
+@@ -111,7 +111,7 @@
+ 	Allegiance(Myself,ENEMY)
+ 	!HasBounceEffects(Myself)
+ 	Global("Contingency","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,36209) // Contingency - Minor Spell Turning

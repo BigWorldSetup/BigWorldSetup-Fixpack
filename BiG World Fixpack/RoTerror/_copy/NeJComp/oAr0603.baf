@@ -1,0 +1,10 @@
+IF
+	OnCreation()
+	InMyArea("Yoshimo")
+	!InParty("Yoshimo")
+	Global("VP_Destroy_Yoshimo","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Destroy_Yoshimo","GLOBAL",1)
+		ActionOverride("Yoshimo",DestroySelf())
+END

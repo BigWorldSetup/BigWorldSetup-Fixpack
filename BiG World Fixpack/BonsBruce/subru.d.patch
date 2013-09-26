@@ -1,0 +1,11 @@
+--- BonsBruce\d\subru.d	Mon Nov 15 21:20:10 2004
++++ C:\BWP Patchstudio\patched files\BonsBruce\d\subru.d	Sun May 23 03:06:46 2010
+@@ -187,7 +187,7 @@
+ 
+ IF ~~ THEN BEGIN SuBruceJoins 
+ SAY ~Yessirbob, signs me h'up fer tha' roadshow!~
+-IF ~~ THEN DO ~SetGlobal("BruceJoined", "GLOBALS", 1) JoinParty()~ EXIT
++IF ~~ THEN DO ~SetGlobal("BruceJoined", "GLOBAL", 1) JoinParty()~ EXIT
+ END
+ 
+ IF ~~ THEN BEGIN SuIffenReconsider

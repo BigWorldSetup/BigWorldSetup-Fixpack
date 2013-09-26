@@ -1,0 +1,15 @@
+--- RevisedBattles\mencar\baf\pookpar.baf	Sat Jun 14 01:02:56 2003
++++ C:\BWP Patchstudio\patched files\RevisedBattles\mencar\baf\pookpar.baf	Sat May 02 10:03:01 2009
+@@ -26,10 +26,10 @@
+   RESPONSE #100
+     IncrementGlobal("b#PookyParents","GLOBAL",1)
+     CreateCreatureObjectOffset("b#pdad",Player1,[75.100])  // Walter
+-    CreateVisualEffectObject("SPDIMNDR","b#pkydad")
++    CreateVisualEffectObject("SPDIMNDR","b#pdad")
+     ActionOverride("b#pdad",FaceObject(Player1))
+     CreateCreatureObjectOffset("b#pmom",Player1,[-75.100])  // Martha
+-    CreateVisualEffectObject("SPDIMNDR","b#pkymom")
++    CreateVisualEffectObject("SPDIMNDR","b#pmom")
+     ActionOverride("b#pmom",FaceObject(Player1))
+ END
+ 

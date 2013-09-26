@@ -1,0 +1,11 @@
+--- RoTerror\D\CADDER3.d	Thu Apr 13 19:40:22 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\D\CADDER3.d	Sun Oct 04 16:23:19 2009
+@@ -95,6 +95,8 @@
+ SaveGame(0)~ UNSOLVED_JOURNAL @571235 EXIT
+   IF ~IsValidForPartyDialog("Alissa1")
+ Global("AlissaQuest","GLOBAL",4)~ THEN UNSOLVED_JOURNAL @571235 EXTERN ~ALISSA1J~ 5
++IF ~IsValidForPartyDialog("Alissa1")
++Global("AlissaQuest","GLOBAL",1)~ THEN UNSOLVED_JOURNAL @571235 EXTERN ~ALISSA1J~ 5
+ END
+ 
+ IF ~Global("CQuestActive","GLOBAL",9)~ THEN BEGIN 18

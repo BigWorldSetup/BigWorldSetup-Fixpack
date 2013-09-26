@@ -1,0 +1,63 @@
+Area Stuff - MAJESTIC Area Fixer:
+
+Like the other MAJESTIC components, this basically does lots of little stuff when it loads each area in your game to check :) Area files have the extension .ARE and contain info about how an area looks, the area size, the containers and items it has, the creatures that may spawn (or are already spawned), the music that plays etc. You get the idea :P
+
+File type index:
+
+ARE = Area files
+BCS = Script files
+CRE = Creature files
+WAV = Sound files
+
+The kinds of stuff this component can display in the mod's console are:
+
+1) FOO.ARE error: Area Script (FOO.bcs) assigned
+
+=> This means FOO.ARE had no area script assigned, but there was a script called FOO.BCS present (usually areas have scripts that have the same name as the area - so FOO.ARE usually has FOO.BCS as the area script)
+   This component will not do anything if the area already has a script assigned even if the name of the script and area do not match.
+
+2) FOO.ARE error: Missing area Script (BAR.bcs) created
+
+=> This means FOO.ARE had a script called BAR.BCS assigned but BAR.BCS didn't actually exist! So the lolfixer created a blank BAR.BCS for the area to play with :) So the game's engine doesn't have to search for a missing script.
+
+3) FOO.ARE error: Missing area Script (FOO.bcs) created and assigned
+
+=> This means FOO.ARE had no script assigned and neither does FOO.BCS (since area scripts usually have the name of the area itself) so the lolfixer created a blank FOO.BCS and assigned it to the area.
+
+4) FOO.ARE error: Ambient #X does not exist (BAR.wav)! Nulling...
+
+=> Ah this one's big! :D
+
+   What this means is that FOO.ARE was supposed to play the sound named BAR.WAV (ambients like birds chirping and campfire sounds and waves crashing etc) but BAR.WAV doesn't exist. The ambient entry is removed because missing ambients are one of the primary causes of stutter in megamodded games!
+   
+   Ideally, missing resources like these can usually be traced as typoes so BAR.WAV could've been actually a typo for BEAR.WAV that actually exists :) But the lolfixer is not an AI and doesn't try to be smarter than you or me so it chooses the lesser evil and deletes it.
+   
+5) FOO.ARE error: Actor #X does not exist (BAR.cre)! Removing actor...
+   
+=> This means FOO.ARE had an entry that said BAR.CRE (a creature in an area is called an actor) was supposed to be in the area (like how Gorion stands in Candlekeep or how the Drow guards in Ust Natha stand around in... Ust Natha) but BAR.CRE doesn't exist. The lolfixer removes the entry.
+
+6) FOO.ARE error: Spawn Point #X creature file does not exist (BAR.cre)! Nulling...
+
+=> Spawn points are things inside an ARE that tell them to spawn something when the time is right (like how you get skeletons at night in some areas but friggin gibberlings during the day in the same area).  A spawn point can have upto 10 different types of creatures spawning in it.
+
+   This error happens when FOO.ARE is supposed to spawn BAR.CRE but BAR.CRE doesn't exist! So the lolfixer changes BAR.CRE to None. It doesn't just remove the spawn point because as mentioned earlier, a spawn point can spawn upto 10 types of creatures so the other 9 may actually be legit stuff :P Don't worry though... if all 10 aren't legit, the lolfixer produces the next error.
+   
+7) FOO.ARE error: Spawn Point #X has no creatures to spawn! Removing spawn entry...
+   
+=> Like I said, the lolfixer is thorough! (I think I said that somewhere)
+
+   So if all 10 slots in a spawn point are "None" (which means that spawn point can't spawn any creatures), the lolfixer removes the spawn point entirely :) Less data for the game to worry about...
+   
+8) FOO.ARE error: Rest Spawn creature file does not exist (BAR.cre)! Nulling...
+   
+=> The Rest Spawn block is a special kind of spawn point that has a chance to spawn stuff when you rest in an area (usually with a message like 'You are awakened from your rest.') Try resting on the streets of Atkathla to know what I mean... The Amnish guard that spawns is a direct result of this block in the ARE file :) Like regular spawn points, it too can spawn 10 different types of creatures.
+
+   The treatment given is similar to spawn points, first it checks each of the 10 slots...
+
+   This error happens when FOO.ARE is supposed to spawn BAR.CRE but BAR.CRE doesn't exist! So the lolfixer changes BAR.CRE to None. It doesn't just remove the spawn point because as mentioned earlier, a spawn point can spawn upto 10 types of creatures so the other 9 may actually be legit stuff :P This actually prevents crashes so if you get these, pat yourself for saving yourself a crash!
+   
+   Unlike regular spawn points (which are optional in an area) every area always has a rest spawn block so it can't be deleted :P Instead, the lolfixer does this if all 10 slots are None in the rest spawn block.
+   
+9) FOO.ARE error: No creatures in Rest Spawn Entry but area still set to spawn something! Setting number of spawnable creatures to 0...
+
+=> Since the rest spawn block cannot be deleted, the lolfixer sets the rest block to spawn 0 creatures in the first place! :) No that's not a choice, if the rest spawn is set to spawn something but all its entries are 'None', it'll crash when you try to rest in the area!

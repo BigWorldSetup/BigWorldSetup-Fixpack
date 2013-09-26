@@ -1,0 +1,19 @@
+IF
+	WalkedToTrigger([ANYONE])
+	Global("LeavingPocketPlane","AR4500",0)
+	GlobalGT("GavePocketPlane","GLOBAL",0)
+	!GlobalTimerNotExpired("Triggered","MYAREA")
+	!Global("SarevokTold","GLOBAL",0)
+	OR(2)
+		Global("ReceivedMask","GLOBAL",0)
+		Global("TalkedToRielev","GLOBAL",2)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		SaveGame(0)
+		SmallWait(7)
+		SetGlobalTimer("Triggered","MYAREA",7)
+		SetGlobal("LeavingPocketPlane","AR4500",1)
+		StartCutSceneMode()
+		StartCutScene("cut220a")
+END

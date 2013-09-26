@@ -1,0 +1,10 @@
+--- AnimalCompanions\files3\UBRPETS0.baf	Wed May 08 20:33:13 2013
++++ C:\BWP Patchstudio\patched files\AnimalCompanions\files3\UBRPETS0.baf	Sat Jun 08 18:19:48 2013
+@@ -4,6 +4,6 @@
+ THEN 
+ RESPONSE #100
+   SetGlobal("UBRPETSTART","GLOBAL",1)
+-  ApplySpellRES(UBRPETZ,Player1)
++  ApplySpellRES("UBRPETZ",Player1)
+   Continue()
+ END   

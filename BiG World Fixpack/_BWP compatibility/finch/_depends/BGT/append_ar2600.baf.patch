@@ -1,0 +1,15 @@
+--- finch\scripts\append_ar2600.baf	Sat Aug 27 13:17:30 2005
++++ C:\BWP Patchstudio\patched files\finch\scripts\append_ar2600.baf	Fri Nov 28 06:53:59 2008
+@@ -1,10 +1,10 @@
+ IF
+ 
+-	Global("SUFinchIExists", "FW2600", 0)
++	Global("SUFinchIExists", "AR0015", 0)
+ 
+ THEN
+ 	RESPONSE #100
+-	SetGlobal("SUFinchIExists", "FW2600", 1)
++	SetGlobal("SUFinchIExists", "AR0015", 1)
+ 	CreateCreature("sufinchi", [1575.1945],8)
+ END
+ 

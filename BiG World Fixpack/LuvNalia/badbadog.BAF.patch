@@ -1,0 +1,65 @@
+--- LuvNalia\BAF\New\badbadog.BAF	Sun Jan 29 21:52:03 2006
++++ C:\BWP Patchstudio\patched files\LuvNalia\BAF\New\badbadog.BAF	Sun May 23 03:12:38 2010
+@@ -100,7 +100,7 @@
+     Class(Myself,MAGE_ALL)
+     Class(Myself,BARD_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   !StateCheck(LastSeenBy(Myself),STATE_PANIC)
+   !HasBounceEffects(LastSeenBy(Myself))
+   !LevelGT(LastSeenBy(Myself),10)
+@@ -117,7 +117,7 @@
+     Class(Myself,MAGE_ALL)
+     Class(Myself,BARD_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   !HasBounceEffects(LastSeenBy(Myself))
+   !StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+   HasItem("wand04",Myself)
+@@ -133,7 +133,7 @@
+     Class(Myself,MAGE_ALL)
+     Class(Myself,BARD_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   !HasBounceEffects(LastSeenBy(Myself))
+   HasItem("wand06",Myself)
+ THEN
+@@ -148,7 +148,7 @@
+     Class(Myself,MAGE_ALL)
+     Class(Myself,BARD_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   !StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+   !HasBounceEffects(LastSeenBy(Myself))
+   !LevelGT(LastSeenBy(Myself),10)
+@@ -165,7 +165,7 @@
+     Class(Myself,MAGE_ALL)
+     Class(Myself,BARD_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   !LevelGT(LastSeenBy(Myself),10)
+   !HasBounceEffects(LastSeenBy(Myself))
+   HasItem("wand09",Myself)
+@@ -181,7 +181,7 @@
+     Class(Myself,MAGE_ALL)
+     Class(Myself,BARD_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   HasItem("wand10",Myself)
+ THEN
+   RESPONSE #100
+@@ -193,7 +193,7 @@
+ IF
+   Class(Myself,CLERIC_ALL)
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+   OR(2)
+     !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGICFIRE)
+     !HasImmunityEffects(LastSeenBy(Myself))

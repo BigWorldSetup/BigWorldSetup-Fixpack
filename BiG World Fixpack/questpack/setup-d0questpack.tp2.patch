@@ -1,0 +1,1471 @@
+--- setup-d0questpack.tp2	Sat Apr 15 23:39:16 2006
++++ C:\BWP Patchstudio\patched files\setup-d0questpack.tp2	Wed Oct 24 04:06:44 2012
+@@ -1,5 +1,7 @@
+ BACKUP ~questpack/backup~
+ AUTHOR ~SimDing0@hotmail.com~
++VERSION ~v2.3 (Feb 14, 2010) BWP Fix~
++
+ 
+ // SPECIFICS USED:
+ // 133
+@@ -117,7 +119,7 @@
+ REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_INVOKER\b~     ~0x0800 MAGESCHOOL_INVOKER~
+ REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_NECROMANCER\b~ ~0x1000 MAGESCHOOL_NECROMANCER~
+ REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_TRANSMUTER\b~  ~0x2000 MAGESCHOOL_TRANSMUTER~
+-REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_GENERALIST\b~  ~0x0000 WILDMAGE~
++REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_GENERALIST\b~  ~0x4000 MAGESCHOOL_GENERALIST~
+ REPLACE_TEXTUALLY ~.*\bFERALAN\b~                ~0x4007 FERALAN~
+ REPLACE_TEXTUALLY ~.*\bSTALKER\b~                ~0x4008 STALKER~
+ REPLACE_TEXTUALLY ~.*\bBEASTMASTER\b~            ~0x4009 BEASTMASTER~
+@@ -133,15 +135,15 @@
+ REPLACE_TEXTUALLY ~.*\bTOTEMIC\b~                ~0x4010 TOTEMIC~
+ REPLACE_TEXTUALLY ~.*\bSHAPESHIFTER\b~           ~0x4011 SHAPESHIFTER~
+ REPLACE_TEXTUALLY ~.*\bBEASTFRIEND\b~            ~0x4012 BEASTFRIEND~
+-REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x0000 BARBARIAN~
+-REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x0000 WILDMAGE~
++REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x40000000 BARBARIAN~
++REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x80000000 WILDMAGE~
+ BUT_ONLY_IF_IT_CHANGES
+ 
+ APPEND ~kit.ids~ ~0x4000 TRUECLASS~
+ UNLESS ~\bTRUECLASS\b~
+-APPEND ~kit.ids~ ~0x0000 BARBARIAN~
++APPEND ~kit.ids~ ~0x40000000 BARBARIAN~
+ UNLESS ~\bBARBARIAN\b~
+-APPEND ~kit.ids~ ~0x0000 WILDMAGE~
++APPEND ~kit.ids~ ~0x80000000 WILDMAGE~
+ UNLESS ~\bWILDMAGE\b~
+ 
+ COPY_EXISTING ~race.ids~ ~override~
+@@ -257,7 +259,7 @@
+ BUT_ONLY_IF_IT_CHANGES
+ 
+ // detectable spells
+-ACTION_IF NOT FILE_EXISTS ~override/cddetect.spl~ THEN BEGIN
++ACTION_IF NOT FILE_EXISTS_IN_GAME ~cddetect.spl~ THEN BEGIN
+   COPY_EXISTING ~SPWI103.SPL~ ~override/cddetect.spl~
+ 
+   // .ids stuff
+@@ -350,22 +352,22 @@
+             PATCH_IF ("%opcode%" = 230) BEGIN // opcode to clone
+               READ_ASCII ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "clone" (0x30)
+               INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+-                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
++                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%" #48  // clones portrait icon effect
+                 WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 282 // modify script state/prof
+                 WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
+                 WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 7   // script state/prof
+               INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+-                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
++                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%" #48  // clones portrait icon effect
+                 WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 282 // modify script state/prof
+                 WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
+                 WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 5   // script state/prof
+               INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+-                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
++                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%" #48  // clones portrait icon effect
+                 WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 233 // modify script state/prof
+                 WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
+                 WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 129   // script state/prof
+               INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+-                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
++                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%" #48  // clones portrait icon effect
+                 WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 233 // modify script state/prof
+                 WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
+                 WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 116   // script state/prof
+@@ -373,7 +375,7 @@
+               SET "local_delta" = ("%local_delta%" + 4)
+             END
+             INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+-              WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
++              WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%" #48  // clones portrait icon effect
+               WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 233 // modify script state/prof
+               WRITE_BYTE            ("%fx_off%" + 0x02 + (0x30 * "%abil_fx_idx%")) 1 // target:self
+               WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 1  // value
+@@ -466,7 +468,7 @@
+                     END
+                   END
+                   INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+-                    WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
++                    WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%" #48  // clones portrait icon effect
+                     WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%new_op%" // modify script state/prof
+                     WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) "%value%"  // value
+                     WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) "%stat%"   // script state/prof
+@@ -493,7 +495,7 @@
+                   END
+                 END
+                 INSERT_BYTES            ("%fx_off%" +        (0x30 * "%fx_idx%")) 0x30       // insert bytes for new effect
+-                  WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%fx_idx%")) "%clone%"  // clones portrait icon effect
++                  WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%fx_idx%")) "%clone%" #48  // clones portrait icon effect
+                   WRITE_SHORT           ("%fx_off%" +        (0x30 * "%fx_idx%")) "%new_op%" // modify script state/prof
+                   WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%fx_idx%")) "%value%"  // value
+                   WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%fx_idx%")) "%stat%"   // script state/prof
+@@ -757,20 +759,20 @@
+               ~C6VFLM01.CRE~ ~override~
+               ~VAMFLF01.CRE~ ~override~
+               ~VAMFLM01.CRE~ ~override~
+-  WRITE_ASCII 0x260 "D0QPVAFL"
++  WRITE_ASCII 0x260 "D0QPVAFL" #8
+   WRITE_LONG 0x14 8000
+ COPY_EXISTING ~vamver01.cre~ ~override~
+               ~vampym01.cre~ ~override~
+               ~vampyf01.cre~ ~override~
+               ~nevm4.cre~ ~override~
+-  WRITE_EVALUATED_ASCII 0x280 "%SOURCE_RES%"
++  WRITE_EVALUATED_ASCII 0x280 "%SOURCE_RES%" #32
+   BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~vamold01.cre~ ~override~
+               ~vamver01.cre~ ~override~
+   SAY NAME1 @291
+   SAY NAME2 @291
+   WRITE_LONG 0x14 10500
+-  WRITE_EVALUATED_ASCII 0x280 "%SOURCE_RES%"
++  WRITE_EVALUATED_ASCII 0x280 "%SOURCE_RES%" #32
+   BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~vamanc01.cre~ ~override~
+               ~vamemi01.cre~ ~override~
+@@ -778,19 +780,19 @@
+   SAY NAME2 @292
+   WRITE_LONG 0x14 12500
+   REPLACE_TEXTUALLY "vampir01" "vamemi01"
+-  WRITE_EVALUATED_ASCII 0x280 "%SOURCE_RES%"
++  WRITE_EVALUATED_ASCII 0x280 "%SOURCE_RES%" #32
+   BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~vampat01.cre~ ~override~
+   SAY NAME1 @292
+   SAY NAME2 @292
+   WRITE_LONG 0x14 12500
+-  WRITE_ASCII 0x260 "VAMPAT01"
++  WRITE_ASCII 0x260 "VAMPAT01" #8
+   BUT_ONLY_IF_IT_CHANGES
+ // Tanova needs special handling to prevent vampire scripting cutting off her spellcasting.
+ // (I don't bother improving her mage scripting here. My general mage handling takes care of that.)
+ COPY_EXISTING ~BODTAN.CRE~ ~override~
+-WRITE_ASCII 0x248 "D0PQTAN1"
+-WRITE_ASCII 0x258 "D0PQTAN2"
++WRITE_ASCII 0x248 "D0QPTAN1" #8
++WRITE_ASCII 0x258 "D0QPTAN2" #8
+ // Fix Parisa's soundset.
+ COPY_EXISTING ~vvparis.cre~ ~override~
+               ~ppparis.cre~ ~override~
+@@ -810,24 +812,24 @@
+ // Djinni clouds yield XP rewards
+ COPY_EXISTING ~djinnisu.cre~ ~override~
+   WRITE_LONG 0x14 0
+-  WRITE_ASCII 0x260 "d0sumdji"
++  WRITE_ASCII 0x260 "d0sumdji" #8
+   BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~efreetsu.cre~ ~override~
+   WRITE_LONG 0x14 0
+-  WRITE_ASCII 0x260 "d0sumefr"
++  WRITE_ASCII 0x260 "d0sumefr" #8
+   BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~efreet01.bcs~ ~override/d0sumefr.bcs~
+   DECOMPILE_BCS_TO_BAF
+   REPLACE_TEXTUALLY ~AddExperienceParty(6000)~ ~~
+   REPLACE_TEXTUALLY ~AddexperienceParty(6000)~ ~~
+   COMPILE_BAF_TO_BCS
+-  BUT_ONLY_IF_IT_CHANGES
++//  BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~djinni01.bcs~ ~override/d0sumdji.bcs~
+   DECOMPILE_BCS_TO_BAF
+   REPLACE_TEXTUALLY ~AddExperienceParty(3750)~ ~~
+   REPLACE_TEXTUALLY ~AddexperienceParty(3750)~ ~~
+   COMPILE_BAF_TO_BCS
+-  BUT_ONLY_IF_IT_CHANGES
++//  BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~efreet01.bcs~ ~override~
+   DECOMPILE_BCS_TO_BAF
+   REPLACE_TEXTUALLY ~AddExperienceParty(6000)~ ~~
+@@ -895,7 +897,7 @@
+ 			  ~MUMMY01.CRE~ ~override~
+ 			  ~RIFTCR03.CRE~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN // protects against invalid files
+-    WRITE_ASCII 0x258 "D0MUMMY"
++    WRITE_ASCII 0x258 "D0MUMMY" #8
+   END
+ // Gaze attacks are labelled as such
+ COPY_EXISTING ~spin784.spl~ ~override~
+@@ -1004,7 +1006,7 @@
+ // Umber Hulk Elders
+ COPY_EXISTING ~umbhul02.cre~ ~override~
+ PATCH_IF SOURCE_SIZE > 0x260 BEGIN
+-WRITE_ASCII 0x260 "D0UMBHUL"
++WRITE_ASCII 0x260 "D0UMBER" #8
+ END
+ 
+ // Shadows
+@@ -1016,40 +1018,40 @@
+               ~RNGSHA.CRE~ ~override~
+               ~FIRWRA01.CRE~ ~override~
+               ~WRAITH01.CRE~ ~override~
+-WRITE_ASCII 0x248 "D0QPSHAD"
+-WRITE_ASCII 0x258 "GENSHT01"
++WRITE_ASCII 0x248 "D0QPSHAD" #8
++WRITE_ASCII 0x258 "GENSHT01" #8
+ BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~SEWSHA01.CRE~ ~override~
+               ~SEWSHA02.CRE~ ~override~
+               ~SEWSHA03.CRE~ ~override~
+ PATCH_IF SOURCE_SIZE > 0 BEGIN
+-WRITE_ASCII 0x248 "D0QPSHAD"
+-WRITE_ASCII 0x250 "%SOURCE_RES%"
++WRITE_ASCII 0x248 "D0QPSHAD" #8
++WRITE_EVALUATED_ASCII 0x250 "%SOURCE_RES%" #8
+ END
+ BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~RNGSHA01.CRE~ ~override~
+               ~RNGSHA03.CRE~ ~override~
+               ~RNGSHA04.CRE~ ~override~
+-WRITE_ASCII 0x248 "D0QPSHAD"
+-WRITE_ASCII 0x250 "SHOUTDLG"
++WRITE_ASCII 0x248 "D0QPSHAD" #8
++WRITE_ASCII 0x250 "SHOUTDLG" #8
+ BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~RNGSHA2D.CRE~ ~override~
+               ~KSHADOW.CRE~ ~override~
+               ~SLAYSH01.CRE~ ~override~
+               ~WRAITHSU.CRE~ ~override~
+ PATCH_IF SOURCE_SIZE > 0 BEGIN
+-WRITE_ASCII 0x248 "D0QPSHAD"
++WRITE_ASCII 0x248 "D0QPSHAD" #8
+ END
+ BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~UHCREAT.CRE~ ~override~
+-WRITE_ASCII 0x248 "D0QPSHAD"
+-WRITE_ASCII 0x250 "SHDWKILL"
+-WRITE_ASCII 0x258 "GPSHOUT"
++WRITE_ASCII 0x248 "D0QPSHAD" #8
++WRITE_ASCII 0x250 "SHDWKILL" #8
++WRITE_ASCII 0x258 "GPSHOUT" #8
+ BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~TELWRAI.CRE~ ~override~
+ PATCH_IF SOURCE_SIZE > 0 BEGIN
+-WRITE_ASCII 0x248 "D0QPSHAD"
+-WRITE_ASCII 0x250 "GRPSHT01"
++WRITE_ASCII 0x248 "D0QPSHAD" #8
++WRITE_ASCII 0x250 "GRPSHT01" #8
+ END
+ BUT_ONLY_IF_IT_CHANGES
+ COPY ~questpack/creatures/compile/shadows/d0qpshad.vvc~ ~override~
+@@ -1064,12 +1066,12 @@
+ COPY_EXISTING ~HGMAG01.CRE~ ~override~
+               ~HGMAG02.CRE~ ~override~
+ PATCH_IF SOURCE_SIZE > 0 BEGIN
+-WRITE_ASCII 0x268 "WTASIGHT"
++WRITE_ASCII 0x268 "WTASIGHT" #8
+ END
+ BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~HGWAR02.CRE~ ~override~
+ PATCH_IF SOURCE_SIZE > 0 BEGIN
+-WRITE_ASCII 0x268 "D0FGIANT"
++WRITE_ASCII 0x268 "D0FGIANT" #8
+ END
+ BUT_ONLY_IF_IT_CHANGES
+ 
+@@ -1184,16 +1186,16 @@
+ 
+ // Tanova favours mage abilities to vampire
+ COPY_EXISTING ~bodtan.cre~ ~override~
+-WRITE_ASCII 0x248 "MAGE16C"
+-WRITE_ASCII 0x250 "VAMEMI01"
++WRITE_ASCII 0x248 "MAGE16C" #8
++WRITE_ASCII 0x250 "VAMEMI01" #8
+ 
+ // These guys need script order changes
+ COPY_EXISTING ~kpsham01.cre~ ~override~
+-WRITE_ASCII 0x248 "SHOUTDLG"
+-WRITE_ASCII 0x250 "MAGE12D"
++WRITE_ASCII 0x248 "SHOUTDLG" #8
++WRITE_ASCII 0x250 "MAGE12D" #8
+ COPY_EXISTING ~lavok01.cre~ ~override~
+-WRITE_ASCII 0x250 "SHOUTDLG"
+-WRITE_ASCII 0x258 "MAGE16A"
++WRITE_ASCII 0x250 "SHOUTDLG" #8
++WRITE_ASCII 0x258 "MAGE16A" #8
+ END
+ 
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@@ -1234,12 +1236,12 @@
+           END
+         END
+         INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+-          WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones blindness effect
++          WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%" #48  // clones blindness effect
+           WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%d0effect%"        // protection from spell
+           WRITE_BYTE            ("%fx_off%" + 0x03 + (0x30 * "%abil_fx_idx%")) "%d0power%"          // power
+           WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) "%d0param1%"          // unknown
+           WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) "%d0param2%"         // unknown
+-          WRITE_EVALUATED_ASCII           ("%fx_off%" + 0x14 + (0x30 * "%abil_fx_idx%")) "%d0ascii%" // gaze attack SPL
++          WRITE_EVALUATED_ASCII           ("%fx_off%" + 0x14 + (0x30 * "%abil_fx_idx%")) "%d0ascii%" #8 // gaze attack SPL
+         SET "delta" = ("%delta%" + 1)
+         WRITE_SHORT ("%abil_off%" + 0x1e + (0x28 * "%index%")) ("%abil_fx_num%" + 1)
+       END
+@@ -1275,7 +1277,7 @@
+           WRITE_BYTE  ("%fx_off%" + 0x0d + (0x30 * "%abil_fx_idx%")) "%d0bypass%"     // inherits dispel/MR
+           WRITE_LONG  ("%fx_off%" + 0x0e + (0x30 * "%abil_fx_idx%")) "%d0delay%"              // no delay
+           WRITE_BYTE  ("%fx_off%" + 0x12 + (0x30 * "%abil_fx_idx%")) "%d0prob%"            // probability
+-          WRITE_EVALUATED_ASCII  ("%fx_off%" + 0x14 + (0x30 * "%abil_fx_idx%")) "%d0ascii%"
++          WRITE_EVALUATED_ASCII  ("%fx_off%" + 0x14 + (0x30 * "%abil_fx_idx%")) "%d0ascii%" #8
+         SET "delta1" = 1
+         SET "delta" = ("%delta%" + "%delta1%")
+         WRITE_SHORT ("%abil_off%" + 0x1e + (0x28 * "%loops%")) ("%abil_fx_num%" + "%delta1%")
+@@ -1302,7 +1304,7 @@
+           WRITE_BYTE  ("%fx_off%" + 0x0d + (0x30 * "%abil_fx_idx%")) "%d0bypass%"     // inherits dispel/MR
+           WRITE_LONG  ("%fx_off%" + 0x0e + (0x30 * "%abil_fx_idx%")) "%d0delay%"              // no delay
+           WRITE_BYTE  ("%fx_off%" + 0x12 + (0x30 * "%abil_fx_idx%")) "%d0prob%"            // probability
+-          WRITE_EVALUATED_ASCII  ("%fx_off%" + 0x14 + (0x30 * "%abil_fx_idx%")) "%d0ascii%"
++          WRITE_EVALUATED_ASCII  ("%fx_off%" + 0x14 + (0x30 * "%abil_fx_idx%")) "%d0ascii%" #8
+         SET "delta" = ("%delta%" + 1)
+         WRITE_SHORT ("%abil_off%" + 0x1e + (0x28 * "%index%")) ("%abil_fx_num%" + 1)
+       END
+@@ -1338,7 +1340,7 @@
+   END
+   WHILE (("%newitemadded%" = 0) AND ("%newiteminsert%" > 0)) BEGIN
+     INSERT_BYTES ("%sale_offset%" + ("%newiteminsert%" * 0x1C)) 28
+-    WRITE_EVALUATED_ASCII ("%sale_offset%" +        ("%newiteminsert%" * 0x1C)) "%new_item%"
++    WRITE_EVALUATED_ASCII ("%sale_offset%" +        ("%newiteminsert%" * 0x1C)) "%new_item%" #8
+     WRITE_LONG  ("%sale_offset%" + 0xa + ("%newiteminsert%" * 0x1C)) "%stack_size%"
+     WRITE_LONG  ("%sale_offset%" + 0x10 + ("%newiteminsert%" * 0x1C)) "%identified%"
+     WRITE_LONG  ("%sale_offset%" + 0x14 + ("%newiteminsert%" * 0x1C)) "%quantity%"
+@@ -1393,12 +1395,13 @@
+ 
+ // AI IMPROVEMENTS WITHOUT SHOUTS
+ BEGIN @14
++DESIGNATED 0
+ // REQUIRE_PREDICATE NOT FILE_EXISTS ~data/BP-CRE.BIF~ @99
+-// REQUIRE_PREDICATE NOT FILE_EXISTS ~override/horred.cre~ @99
++// REQUIRE_PREDICATE NOT FILE_EXISTS_IN_GAME ~horred.cre~ @99
+ 
+ COMPILE ~questpack/AI/compile~
+ 
+-ACTION_IF FILE_EXISTS ~override/KRIN400.SPL~ THEN BEGIN
++ACTION_IF FILE_EXISTS_IN_GAME ~KRIN400.SPL~ THEN BEGIN
+ EXTEND_TOP ~WTASIGHT.BCS~ ~questpack/AI/ET_WTA.BAF~
+ EXTEND_TOP ~WTARSGT.BCS~ ~questpack/AI/ET_WTA.BAF~
+ EXTEND_TOP ~WDASIGHT.BCS~ ~questpack/AI/ET_WTA.BAF~
+@@ -1453,8 +1456,9 @@
+ 
+ // All creature and area
+ BEGIN @36
++DESIGNATED 1
+ // REQUIRE_PREDICATE NOT FILE_EXISTS ~data/BP-CRE.BIF~ @99
+-// REQUIRE_PREDICATE NOT FILE_EXISTS ~override/horred.cre~ @99
++// REQUIRE_PREDICATE NOT FILE_EXISTS_IN_GAME ~horred.cre~ @99
+ SUBCOMPONENT @34
+ 
+ LAUNCH_ACTION_MACRO ~DETECTABLE_SPELLS~
+@@ -1462,10 +1466,10 @@
+ 
+ // Beholders
+ COPY_EXISTING ~udelder.cre~ ~override/udelder2.cre~
+-WRITE_ASCII 0x280 "udelder2"
++WRITE_ASCII 0x280 "udelder2" #32
+ COPY_EXISTING ~ar2101.are~ ~override~
+ REPLACE_TEXTUALLY "BEHELD01" "UDELDER2"
+-ACTION_IF FILE_EXISTS ~override/ar2101.bcs~ THEN BEGIN
++ACTION_IF FILE_EXISTS_IN_GAME ~ar2101.bcs~ THEN BEGIN
+   EXTEND_TOP ~ar2101.bcs~ ~questpack/areas/ar2101.baf~
+ END ELSE BEGIN
+   COMPILE ~questpack/areas/ar2101.baf~
+@@ -1474,12 +1478,12 @@
+ // Twisted Rune
+ EXTEND_TOP ~ar1008.bcs~ ~questpack/areas/ar1008.baf~
+ COPY_EXISTING ~HLVAXAL.CRE~ ~override~
+-WRITE_ASCII 0x260 "BEHELD01"
++WRITE_ASCII 0x260 "BEHELD01" #8
+ COPY_EXISTING ~hlrevan.cre~ ~override~
+ WRITE_LONG 0x14 12000
+ WRITE_LONG 0x1c 13
+-WRITE_ASCII 0x260 "USEITEM"
+-WRITE_ASCII 0x268 "WTARSGT"
++WRITE_ASCII 0x260 "USEITEM" #8
++WRITE_ASCII 0x268 "WTARSGT" #8
+ WRITE_BYTE 0x27b 35
+ ADD_CRE_ITEM ~helm01~ #0 #0 #0 ~NONE~ ~HELMET~
+ ADD_CRE_ITEM ~xbow07~ #0 #0 #0 ~NONE~ ~WEAPON1~
+@@ -1506,8 +1510,9 @@
+ 
+ // All creature only
+ BEGIN @35
++DESIGNATED 2
+ // REQUIRE_PREDICATE NOT FILE_EXISTS ~data/BP-CRE.BIF~ @99
+-// REQUIRE_PREDICATE NOT FILE_EXISTS ~override/horred.cre~ @99
++// REQUIRE_PREDICATE NOT FILE_EXISTS_IN_GAME ~horred.cre~ @99
+ SUBCOMPONENT @34
+ 
+ LAUNCH_ACTION_MACRO ~DETECTABLE_SPELLS~
+@@ -1515,6 +1520,7 @@
+ 
+ // Boss Only
+ BEGIN @32
++DESIGNATED 3
+ SUBCOMPONENT @34
+ 
+ LAUNCH_ACTION_MACRO ~DETECTABLE_SPELLS~
+@@ -1525,8 +1531,7 @@
+ // MISCELLANEOUS ENHANCEMENTS
+ 
+ BEGIN @6
+-
+-DESIGNATED 2
++DESIGNATED 4
+ 
+ UNINSTALL Setup-BonsKiss.tp2 0
+ UNINSTALL Setup-LMA.tp2 0
+@@ -1603,8 +1608,8 @@
+   SAY NAME2 @277
+ COPY_EXISTING ~ar2100.are~ ~override~
+   READ_LONG 0xc0 "restoffset"
+-  WRITE_ASCII ("%restoffset%" + 88) "JY_00DB1"
+-  WRITE_ASCII ("%restoffset%" + 96) "JY_00DB"
++  WRITE_ASCII ("%restoffset%" + 88) "JY_00DB1" #8
++  WRITE_ASCII ("%restoffset%" + 96) "JY_00DB" #8
+   WRITE_SHORT ("%restoffset%" + 152)  4
+ BUT_ONLY_IF_IT_CHANGES
+ 
+@@ -1628,6 +1633,7 @@
+ // FUN DOG :)
+ COMPILE ~questpack/encounters/ding0/d0fundog.baf~
+ COPY ~questpack/encounters/ding0/d0fundog.cre~ ~override~
++WRITE_ASCII 0x280 ~d0fundog~ #32
+ EXTEND_TOP ~ar0300.bcs~ ~questpack/encounters/ding0/et_0300.baf~
+ COPY ~questpack/encounters/ding0/dogfix~ ~override~
+ 
+@@ -1660,11 +1666,11 @@
+ COPY ~questpack/encounters/blue/d0indigo.cre~ ~override~
+ SAY NAME1 @133
+ SAY NAME2 @133
+-ACTION_IF (FILE_EXISTS ~override/FWKETO.DLG~) THEN BEGIN
++ACTION_IF (FILE_EXISTS_IN_GAME ~FWKETO.DLG~) THEN BEGIN
+ COMPILE ~questpack/encounters/blue/lmindi.d~
+         ~questpack/encounters/blue/keto.d~
+ END
+-ACTION_IF (NOT FILE_EXISTS ~override/FWKETO.DLG~) THEN BEGIN
++ACTION_IF (NOT FILE_EXISTS_IN_GAME ~FWKETO.DLG~) THEN BEGIN
+ COMPILE ~questpack/encounters/blue/lmindi.d~
+ END
+ EXTEND_TOP ~ar1105.bcs~ ~questpack/encounters/blue/spawn.baf~
+@@ -1675,8 +1681,8 @@
+      ~questpack/encounters/ding0/d0gnoll/d0gnoll.vvc~ ~override~
+ 
+ COPY_EXISTING ~DFTOWN2.CRE~ ~override/D0FTOWN2.CRE~
+-WRITE_ASCII 0x2cc "D0FTOWN2"
+-WRITE_ASCII 0x258 "WTRUNSGT"
++WRITE_ASCII 0x2cc "D0FTOWN2" #8
++WRITE_ASCII 0x258 "WTRUNSGT" #8
+ COPY_EXISTING ~DFTOWN2.DLG~ ~override/D0FTOWN2.DLG~
+ 
+ COPY_EXISTING ~ar0300.are~ ~override~
+@@ -1687,17 +1693,17 @@
+   READ_SHORT ("%actorsoffset%" + ("%currentactor%" * 272) + 32) "location1"
+   READ_SHORT ("%actorsoffset%" + ("%currentactor%" * 272) + 34) "location2"
+   PATCH_IF (("%location1%" = 3668) AND ("%location2%" = 2314)) BEGIN
+-    WRITE_ASCII ("%actorsoffset%" + ("%currentactor%" * 272) + 128) "D0FTOWN2"
++    WRITE_ASCII ("%actorsoffset%" + ("%currentactor%" * 272) + 128) "D0FTOWN2" #8
+   END
+   SET "currentactor" = ("%currentactor%" + 1)
+ END
+ BUT_ONLY_IF_IT_CHANGES
+ 
+ COPY_EXISTING ~dlost.cre~ ~override~
+-WRITE_ASCII 0x250 "DLOST"
++WRITE_ASCII 0x250 "DLOST" #8
+ COMPILE ~questpack/encounters/ding0/dlost.baf~
+ COPY_EXISTING ~dftown2.cre~ ~override~
+-WRITE_ASCII 0x280 "DFTOWN2"
++WRITE_ASCII 0x280 "DFTOWN2" #32
+ 
+ COMPILE ~questpack/encounters/ding0/dialog.d~
+ ACTION_IF FILE_EXISTS ~data/25dialog.bif~ THEN BEGIN
+@@ -1707,71 +1713,71 @@
+ EXTEND_TOP ~ar0500.bcs~ ~questpack/encounters/ding0/et_0500.baf~
+ COMPILE ~questpack/encounters/ding0/d0cowsht.baf~
+ COPY ~questpack/encounters/ding0/d0qpcow1.cre~ ~override/d0qpcow1.cre~
+-WRITE_ASCII 0x280 "d0qpcow1"
+-WRITE_ASCII 0x2cc "d0qpcow1"
+-WRITE_ASCII 0x248 "d0cowsht"
++WRITE_ASCII 0x280 "d0qpcow1" #32
++WRITE_ASCII 0x2cc "d0qpcow1" #8
++WRITE_ASCII 0x248 "d0cowsht" #8
+ COPY ~questpack/encounters/ding0/d0qpcow1.cre~ ~override/d0qpcow2.cre~
+ SAY NAME1 @136
+ SAY NAME2 @136
+-WRITE_ASCII 0x280 "d0qpcow2"
+-WRITE_ASCII 0x2cc "d0qpcow2"
+-WRITE_ASCII 0x248 "d0cowsht"
++WRITE_ASCII 0x280 "d0qpcow2" #32
++WRITE_ASCII 0x2cc "d0qpcow2" #8
++WRITE_ASCII 0x248 "d0cowsht" #8
+ COPY ~questpack/encounters/ding0/d0qpcow1.cre~ ~override/d0qpcow3.cre~
+ SAY NAME1 #3139
+ SAY NAME2 #3139
+ WRITE_SHORT 0x28 25088
+-WRITE_ASCII 0x280 "d0qpcow3"
+-WRITE_ASCII 0x2cc "d0qpcow3"
++WRITE_ASCII 0x280 "d0qpcow3" #32
++WRITE_ASCII 0x2cc "d0qpcow3" #8
+ WRITE_BYTE 0x2d 46
+ WRITE_BYTE 0x2e 47
+-WRITE_ASCII 0x248 "d0cowsht"
++WRITE_ASCII 0x248 "d0cowsht" #8
+ 
+ EXTEND_TOP ~ar1100.bcs~ ~questpack/encounters/ding0/et_1100.baf~
+ COPY_EXISTING ~uhogre01.cre~ ~override~
+-WRITE_ASCII 0x268 "WTASIGHT"
+-WRITE_ASCII 0x260 ""
+-WRITE_ASCII 0x258 "MADULF"
+-WRITE_ASCII 0x250 ""
+-WRITE_ASCII 0x248 "INITRG10"
++WRITE_ASCII 0x268 "WTASIGHT" #8
++WRITE_ASCII 0x260 "" #8
++WRITE_ASCII 0x258 "MADULF" #8
++WRITE_ASCII 0x250 "" #8
++WRITE_ASCII 0x248 "INITRG10" #8
+ COPY_EXISTING ~uhogre02.cre~ ~override~
+-WRITE_ASCII 0x268 "WTASIGHT"
+-WRITE_ASCII 0x260 ""
+-WRITE_ASCII 0x258 "OGRE"
+-WRITE_ASCII 0x250 ""
+-WRITE_ASCII 0x248 "UHOGRE"
++WRITE_ASCII 0x268 "WTASIGHT" #8
++WRITE_ASCII 0x260 "" #8
++WRITE_ASCII 0x258 "OGRE" #8
++WRITE_ASCII 0x250 "" #8
++WRITE_ASCII 0x248 "UHOGRE" #8
+ COPY_EXISTING ~uhogre03.cre~ ~override~
+-WRITE_ASCII 0x268 "WTASIGHT"
+-WRITE_ASCII 0x260 ""
+-WRITE_ASCII 0x258 ""
+-WRITE_ASCII 0x250 ""
+-WRITE_ASCII 0x248 "UHOGRE"
++WRITE_ASCII 0x268 "WTASIGHT" #8
++WRITE_ASCII 0x260 "" #8
++WRITE_ASCII 0x258 "" #8
++WRITE_ASCII 0x250 "" #8
++WRITE_ASCII 0x248 "UHOGRE" #8
+ COPY_EXISTING ~uhogre04.cre~ ~override~
+-WRITE_ASCII 0x268 "WTASIGHT"
+-WRITE_ASCII 0x260 ""
+-WRITE_ASCII 0x258 ""
+-WRITE_ASCII 0x250 ""
+-WRITE_ASCII 0x248 "UHOGRE"
++WRITE_ASCII 0x268 "WTASIGHT" #8
++WRITE_ASCII 0x260 "" #8
++WRITE_ASCII 0x258 "" #8
++WRITE_ASCII 0x250 "" #8
++WRITE_ASCII 0x248 "UHOGRE" #8
+ COPY_EXISTING ~uhogre05.cre~ ~override~
+-WRITE_ASCII 0x268 "WTARSGT"
+-WRITE_ASCII 0x260 ""
+-WRITE_ASCII 0x258 ""
+-WRITE_ASCII 0x250 ""
+-WRITE_ASCII 0x248 "UHOGRE"
++WRITE_ASCII 0x268 "WTARSGT" #8
++WRITE_ASCII 0x260 "" #8
++WRITE_ASCII 0x258 "" #8
++WRITE_ASCII 0x250 "" #8
++WRITE_ASCII 0x248 "UHOGRE" #8
+ COMPILE ~questpack/encounters/ding0/madulf.baf~
+ COMPILE ~questpack/encounters/ding0/uhogre.baf~
+ COPY_EXISTING ~plshkn01.cre~ ~override~
+               ~plshkn02.cre~ ~override~
+-WRITE_ASCII 0x250 ""
++WRITE_ASCII 0x250 "" #8
+ 
+ // EXTEND_TOP ~ar0801.bcs~ ~questpack/encounters/ding0/et_0801.baf~
+ // COMPILE ~questpack/encounters/ding0/bodfgt03.baf~
+ 
+ COPY_EXISTING ~MUMGRE01.CRE~ ~override~
+               ~RIFTCR03.CRE~ ~override~
+-WRITE_ASCII 0x248 "MUMMY01"
++WRITE_ASCII 0x248 "MUMMY01" #8
+ WRITE_BYTE 0x24f 0
+ COPY_EXISTING ~MUMMY.CRE~ ~override~
+-WRITE_ASCII 0x250 "MUMMY01"
++WRITE_ASCII 0x250 "MUMMY01" #8
+ COMPILE ~questpack/encounters/ding0/mummy01.baf~
+ COPY ~questpack/encounters/ding0/d0mumfig.cre~ ~override~
+ COPY_EXISTING ~mumfig01.cre~ ~override~
+@@ -1815,7 +1821,7 @@
+ BUT_ONLY_IF_IT_CHANGES
+ 
+ COPY_EXISTING ~wish01.cre~ ~override~
+-WRITE_ASCII 0x280 "WISH01"
++WRITE_ASCII 0x280 "WISH01" #32
+ 
+   COPY_EXISTING ~spin684.spl~ ~override~
+                 ~sppr950.spl~ ~override~
+@@ -1859,10 +1865,11 @@
+ EXTEND_TOP ~trrak01.bcs~ ~questpack/encounters/ding0/trrak01.baf~
+ 
+ COPY ~questpack/encounters/ding0/d0vamsim.cre~ ~override~
++WRITE_ASCII 0x280 ~D0VAMSIM~ #32
+ EXTEND_TOP ~ppsime.bcs~ ~questpack/encounters/ding0/et_sime.baf~
+ EXTEND_BOTTOM ~ar1514.bcs~ ~questpack/encounters/ding0/et_spawnsime.baf~
+ // COPY_EXISTING ~vammat01.cre~ ~override~
+-// WRITE_ASCII 0x280 "VAMMAT01"
++// WRITE_ASCII 0x280 "VAMMAT01" #32
+ 
+ COPY ~questpack/encounters/audio~ ~override~
+ 
+@@ -1874,6 +1881,7 @@
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ // SHADOW THIEVES
+ BEGIN @1
++DESIGNATED 5
+ 
+ UNINSTALL setup-ghreyim8.tp2 0
+ 
+@@ -1926,9 +1934,9 @@
+ COMPILE ~questpack/thieves/dialog4.d~
+ COMPILE ~questpack/thieves/ghrey/j#im8grd.baf~
+ COPY_EXISTING ~AR0527.are~ ~override~
+-WRITE_ASCII 0x94 ~AR0527~
++WRITE_ASCII 0x94 ~AR0527~ #8
+ COPY_EXISTING ~AR0528.are~ ~override~
+-WRITE_ASCII 0x94 ~AR0528~
++WRITE_ASCII 0x94 ~AR0528~ #8
+ COPY ~questpack/thieves/ghrey/j#im8grd.cre~ ~override~
+   SAY NAME1 @261
+   SAY NAME2 @261
+@@ -1959,8 +1967,8 @@
+ EXTEND_TOP ~AR0528.bcs~ ~questpack/thieves/ghrey/adar0528.baf~
+ EXTEND_TOP ~AR0307.bcs~ ~questpack/thieves/ghrey/adar0307.baf~
+ EXTEND_TOP ~AR0329.bcs~ ~questpack/thieves/ghrey/et_0329.baf~
+-COPY_EXISTING ~questpack/thieves/ghrey/d0qpgude.cre~ ~override~
+-WRITE_ASCII 0x248 "d0qpgude"
++COPY ~questpack/thieves/ghrey/d0qpgude.cre~ ~override~
++WRITE_ASCII 0x248 "d0qpgude" #8
+ COMPILE ~questpack/thieves/ghrey/d0qpgude.baf~
+ 
+ // RAYIC STUFF
+@@ -2026,7 +2034,7 @@
+ EXTEND_TOP ~ar0301.bcs~ ~questpack/thieves/scripts/et_0301.baf~
+ 
+ COPY_EXISTING ~ar0306.are~ ~override~
+-WRITE_ASCII 0x94 "ar0306"
++WRITE_ASCII 0x94 "ar0306" #8
+ EXTEND_TOP ~ar0306.bcs~ ~questpack/thieves/scripts/et_0306.baf~
+ EXTEND_TOP ~ar0328.bcs~ ~questpack/thieves/scripts/et_0306.baf~
+ 
+@@ -2034,9 +2042,9 @@
+ EXTEND_TOP ~ar0329.bcs~ ~questpack/thieves/scripts/et_0307.baf~
+ 
+ COPY_EXISTING ~ar0305.are~ ~override~
+-WRITE_ASCII 0x94 "AR0305"
++WRITE_ASCII 0x94 "AR0305" #8
+ COPY_EXISTING ~ar0327.are~ ~override~
+-WRITE_ASCII 0x94 "AR0327"
++WRITE_ASCII 0x94 "AR0327" #8
+ EXTEND_TOP ~ar0305.bcs~ ~questpack/thieves/scripts/et_0305.baf~
+ EXTEND_TOP ~ar0327.bcs~ ~questpack/thieves/scripts/et_0305.baf~
+ 
+@@ -2079,29 +2087,29 @@
+ 		~questpack/thieves/scripts/d0awbuff.baf~
+ COPY_EXISTING ~FLYFGT02.CRE~ ~override~
+ 			  ~FLYFGT03.CRE~ ~override~
+-WRITE_ASCII 0x250 "D0ARANBK"
++WRITE_ASCII 0x250 "D0ARANBK" #8
+ COPY_EXISTING ~FLYFGT04.CRE~ ~override~
+-WRITE_ASCII 0x250 "D0ARANBK"
+-WRITE_ASCII 0x258 "MAGE12D"
++WRITE_ASCII 0x250 "D0ARANBK" #8
++WRITE_ASCII 0x258 "MAGE12D" #8
+ COPY_EXISTING ~renal.cre~ ~override~
+-WRITE_ASCII 0x250 "D0RENAL"
+-WRITE_ASCII 0x258 "USEITEM"
+-WRITE_ASCII 0x260 "STDEATH"
++WRITE_ASCII 0x250 "D0RENAL" #8
++WRITE_ASCII 0x258 "USEITEM" #8
++WRITE_ASCII 0x260 "STDEATH" #8
+ COPY_EXISTING ~ARNWAR01.CRE~ ~override~
+               ~ARNWAR02.CRE~ ~override~
+               ~ARNWAR03.CRE~ ~override~
+               ~ARNWAR04.CRE~ ~override~
+               ~ARNWAR05.CRE~ ~override~
+-WRITE_ASCII 0x250 "D0AWBUFF"
++WRITE_ASCII 0x250 "D0AWBUFF" #8
+ COPY_EXISTING ~ARNWAR07.CRE~ ~override~
+-WRITE_ASCII 0x248 "D0AWBUFF"
++WRITE_ASCII 0x248 "D0AWBUFF" #8
+ COPY_EXISTING ~ARNWAR06.CRE~ ~override/D0ARNLIE.CRE~
+ SAY NAME1 @122
+ SAY NAME2 @122
+ REPLACE_TEXTUALLY ~STAF01~ ~STAF02~
+-WRITE_ASCII 0x2cc "D0ARNLIE"
++WRITE_ASCII 0x2cc "D0ARNLIE" #8
+ COPY_EXISTING ~STASS1.CRE~ ~override~
+-WRITE_ASCII 0x248 "STDEATH"
++WRITE_ASCII 0x248 "STDEATH" #8
+ 
+ COPY_EXISTING ~stguard2.cre~ ~override~
+ 			  ~stguard3.cre~ ~override~
+@@ -2112,7 +2120,7 @@
+ WRITE_BYTE 0x52 8
+ 
+ COPY_EXISTING ~tassa.cre~ ~override~
+-WRITE_ASCII 0x248 "D0NOTHIN"
++WRITE_ASCII 0x248 "D0NOTHIN" #8
+ 
+ // ITEMS
+ COPY_EXISTING ~misc4v.itm~ ~override/d0letter.itm~
+@@ -2160,9 +2168,10 @@
+ COMPILE ~questpack/thieves/scripts/d0guards.baf~
+ 		~questpack/thieves/scripts/d0guard4.baf~
+ COPY ~questpack/thieves/creatures/d0guard.cre~ ~override/d0guard3.cre~
+-WRITE_ASCII 0x248 "D0NOTHIN"
++WRITE_ASCII 0x248 "D0NOTHIN" #8
+ WRITE_SHORT 0x28 24832
+-WRITE_ASCII 0x2cc "D0GUARD3"
++WRITE_ASCII 0x280 "d0guard3" #32
++WRITE_ASCII 0x2cc "D0GUARD3" #8
+ COPY ~questpack/thieves/creatures/d0guard4.cre~ ~override~
+ SAY NAME1 @205
+ SAY NAME2 @205
+@@ -2176,7 +2185,7 @@
+ COMPILE_BAF_TO_BCS
+ 
+ COPY_EXISTING ~arnboy01.cre~ ~override~
+-WRITE_ASCII 0x260 "WTRUNSGT"
++WRITE_ASCII 0x260 "WTRUNSGT" #8
+ COPY_EXISTING ~arnman03.cre~ ~override~
+               ~arnman04.cre~ ~override~
+               ~arnman08.cre~ ~override~
+@@ -2187,21 +2196,21 @@
+               ~arntra04.cre~ ~override~
+               ~arntra05.cre~ ~override~
+               ~arntra06.cre~ ~override~
+-WRITE_ASCII 0x260 "WTASIGHT"
++WRITE_ASCII 0x260 "WTASIGHT" #8
+ COPY_EXISTING ~arnman01.cre~ ~override~
+               ~arnman02.cre~ ~override~
+               ~arnman06.cre~ ~override~
+               ~arnman07.cre~ ~override~
+-WRITE_ASCII 0x268 "D0PRISON"
++WRITE_ASCII 0x268 "D0PRISON" #8
+ COPY_EXISTING ~arnman05.cre~ ~override~
+-// WRITE_ASCII 0x250 "D0PRISON"
+-WRITE_ASCII 0x260 "WTASIGHT"
++// WRITE_ASCII 0x250 "D0PRISON" #8
++WRITE_ASCII 0x260 "WTASIGHT" #8
+ COMPILE ~questpack/thieves/scripts/d0prison.baf~
+ 
+ COPY_EXISTING ~arnfgt04.cre~ ~override/d0arbku2.cre~
+-WRITE_ASCII 0x280 "d0arbkup"
++WRITE_ASCII 0x280 "d0arbkup" #32
+ COPY_EXISTING ~arnwar09.cre~ ~override~
+-WRITE_ASCII 0x280 "arnwar09"
++WRITE_ASCII 0x280 "arnwar09" #32
+ 
+ // Suppress jouurnal entry on killing Aran
+ COPY_EXISTING ~ar0329.bcs~ ~override~
+@@ -2218,20 +2227,20 @@
+   FOR (current = 0; current < spawns; current = current + 1) BEGIN
+     READ_ASCII ("%spawnoffset%" + ("%current%" * 200)) "currentname" (13)
+     PATCH_IF (("%currentname%" STRING_COMPARE_CASE "Spawn Point 1") = 0) BEGIN
+-      WRITE_ASCII ("%spawnoffset%" + ("%current%" * 200) + 36) "ARNWAR01"
++      WRITE_ASCII ("%spawnoffset%" + ("%current%" * 200) + 36) "ARNWAR01" #8
+       WRITE_SHORT ("%spawnoffset%" + ("%current%" * 200) + 132) 5
+     END
+     PATCH_IF (("%currentname%" STRING_COMPARE_CASE "Spawn Point 2") = 0) BEGIN
+-      WRITE_ASCII ("%spawnoffset%" + ("%current%" * 200) + 36) "ARNWAR01"
+-      WRITE_ASCII ("%spawnoffset%" + ("%current%" * 200) + 44) "ARNWAR03"
++      WRITE_ASCII ("%spawnoffset%" + ("%current%" * 200) + 36) "ARNWAR01" #8
++      WRITE_ASCII ("%spawnoffset%" + ("%current%" * 200) + 44) "ARNWAR03" #8
+       WRITE_SHORT ("%spawnoffset%" + ("%current%" * 200) + 132) 7
+     END
+     PATCH_IF (("%currentname%" STRING_COMPARE_CASE "Spawn Point 3") = 0) BEGIN
+-      WRITE_ASCII ("%spawnoffset%" + ("%current%" * 200) + 36) "ARNWAR01"
++      WRITE_ASCII ("%spawnoffset%" + ("%current%" * 200) + 36) "ARNWAR01" #8
+       WRITE_SHORT ("%spawnoffset%" + ("%current%" * 200) + 132) 6
+     END
+     PATCH_IF (("%currentname%" STRING_COMPARE_CASE "Spawn Point 4") = 0) BEGIN
+-      WRITE_ASCII ("%spawnoffset%" + ("%current%" * 200) + 36) "ARNWAR01"
++      WRITE_ASCII ("%spawnoffset%" + ("%current%" * 200) + 36) "ARNWAR01" #8
+       WRITE_SHORT ("%spawnoffset%" + ("%current%" * 200) + 132) 6
+     END
+   END
+@@ -2252,6 +2261,7 @@
+ // HARPERS
+ 
+ BEGIN @2
++DESIGNATED 6
+ 
+ COMPILE ~questpack/harpers/dialog.d~
+ 
+@@ -2291,9 +2301,9 @@
+ EXTEND_TOP ~ar0308.bcs~ ~questpack/harpers/ar0308.baf~
+ 
+ COPY_EXISTING ~lyros.cre~ ~override/d0xzar.cre~
+-WRITE_ASCII 0x248 "D0XZAR"
+-WRITE_ASCII 0x280 "D0XZAR"
+-WRITE_ASCII 0x2cc "D0XZAR"
++WRITE_ASCII 0x248 "D0XZAR" #8
++WRITE_ASCII 0x280 "D0XZAR" #32
++WRITE_ASCII 0x2cc "D0XZAR" #8
+ WRITE_BYTE 0x2c 50
+ WRITE_BYTE 0x2d 66
+ WRITE_BYTE 0x2e 54
+@@ -2313,17 +2323,17 @@
+ COPY_EXISTING ~sleepdw.cre~ ~override/d0monty.cre~
+ WRITE_BYTE 0x28 0x00
+ WRITE_BYTE 0x29 0x48
+-WRITE_ASCII 0x248 "D0MONTY"
+-WRITE_ASCII 0x280 "D0MONTY"
+-WRITE_ASCII 0x2cc "D0MONTY"
++WRITE_ASCII 0x248 "D0MONTY" #8
++WRITE_ASCII 0x280 "D0MONTY" #32
++WRITE_ASCII 0x2cc "D0MONTY" #8
+ SAY NAME1 #2422
+ SAY NAME2 #2422
+ 
+ COPY_EXISTING ~zombie01.cre~ ~override/d0monty2.cre~
+ WRITE_BYTE 0x270 128
+-WRITE_ASCII 0x248 "D0MONTY2"
+-WRITE_ASCII 0x280 "D0MONTY2"
+-WRITE_ASCII 0x2cc "D0MONTY2"
++WRITE_ASCII 0x248 "D0MONTY2" #8
++WRITE_ASCII 0x280 "D0MONTY2" #32
++WRITE_ASCII 0x2cc "D0MONTY2" #8
+ 
+ COPY_EXISTING ~harpass1.cre~ ~override~
+ WRITE_BYTE 0x274 133
+@@ -2377,7 +2387,7 @@
+ END
+ BUT_ONLY_IF_IT_CHANGES
+ COPY_EXISTING ~BERNARD.CRE~ ~override~
+-WRITE_ASCII 0x280 "BERNARD"
++WRITE_ASCII 0x280 "BERNARD" #32
+ WRITE_BYTE 0x274 243
+ BUT_ONLY_IF_IT_CHANGES
+ 
+@@ -2396,13 +2406,13 @@
+ SAY ("%effects_offset%" + 20) @213
+ WRITE_LONG ("%effects_offset%" + 28) 9
+ WRITE_SHORT ("%effects_offset%" + 36) 100
+-WRITE_ASCII ("%effects_offset%" + 40) "SW1H50"
++WRITE_ASCII ("%effects_offset%" + 40) "SW1H50" #8
+ 
+ COPY ~questpack/harpers/sw1h50.itm~ ~override~
+ SAY IDENTIFIED_DESC @212
+ 
+ COPY_EXISTING ~AR0407.ARE~ ~override~       /* Prebek's Home */
+-WRITE_ASCII 0x94 "AR0407"
++WRITE_ASCII 0x94 "AR0407" #8
+ EXTEND_TOP ~AR0407.bcs~ ~questpack/harpers/u!0407.baf~       /* Prebek's Home, Shazzellim, Container 3, Item 1 */
+ 
+ COPY_EXISTING ~C6ELHAN.CRE~ ~override/C6ELHAN.CRE~   /* Remove Elhan's evil-aligned Shazzellim scimitars */
+@@ -2416,22 +2426,22 @@
+ WHILE ("%currentactor%" < "%#actors%") BEGIN
+ READ_ASCII ("%actoroffset%" + ("%currentactor%" * 272) + 128) "actorname"
+ PATCH_IF (("%actorname%" STRING_COMPARE_CASE "ICGOB01") = 0) BEGIN
+-WRITE_ASCII ("%actoroffset%" + ("%currentactor%" * 272) + 128) "XGHAST1"
++WRITE_ASCII ("%actoroffset%" + ("%currentactor%" * 272) + 128) "XGHAST1" #8
+ END
+ PATCH_IF (("%actorname%" STRING_COMPARE_CASE "ICGOB02") = 0) BEGIN
+-WRITE_ASCII ("%actoroffset%" + ("%currentactor%" * 272) + 128) "XGOLEM"
++WRITE_ASCII ("%actoroffset%" + ("%currentactor%" * 272) + 128) "XGOLEM" #8
+ WRITE_BYTE ("%actoroffset%" + ("%currentactor%" * 272) + 134) 0
+ END
+ PATCH_IF (("%actorname%" STRING_COMPARE_CASE "ICGOB03") = 0) BEGIN
+-WRITE_ASCII ("%actoroffset%" + ("%currentactor%" * 272) + 128) "XGHAST2"
++WRITE_ASCII ("%actoroffset%" + ("%currentactor%" * 272) + 128) "XGHAST2" #8
+ END
+ SET "currentactor" = ("%currentactor%" + 1)
+ END
+ BUT_ONLY_IF_IT_CHANGES
+ 
+ COPY_EXISTING ~XGOLEM.CRE~ ~override~
+-WRITE_ASCII 0x248 "D0XGOLEM"
+-WRITE_ASCII 0x268 "WTASIGHT"
++WRITE_ASCII 0x248 "D0XGOLEM" #8
++WRITE_ASCII 0x268 "WTASIGHT" #8
+ 
+ COMPILE ~questpack/harpers/d0xgolem.baf~
+ 
+@@ -2450,6 +2460,7 @@
+ // FALLEN PALADINS
+ 
+ BEGIN @3
++DESIGNATED 7
+ 
+ COMPILE ~questpack/reynald/dialog.d~
+ 
+@@ -2474,10 +2485,10 @@
+ // FALLEN PC
+ // EXTEND_TOP ~baldur.bcs~ ~questpack/reynald/et_spawn.baf~
+ COPY_EXISTING ~kaypal03.cre~ ~override/d0palmsg.cre~
+-WRITE_ASCII 0x248 "SHOUTDLG"
+-WRITE_ASCII 0x250 "D0NOTHIN"
+-WRITE_ASCII 0x280 "D0PALMSG"
+-WRITE_ASCII 0x2cc "D0PALMSG"
++WRITE_ASCII 0x248 "SHOUTDLG" #8
++WRITE_ASCII 0x250 "D0NOTHIN" #8
++WRITE_ASCII 0x280 "D0PALMSG" #32
++WRITE_ASCII 0x2cc "D0PALMSG" #8
+ COPY_EXISTING ~ar0500.bcs~ ~override~
+ 			  ~kaypal02.bcs~ ~override~
+ DECOMPILE_BCS_TO_BAF
+@@ -2487,7 +2498,7 @@
+ COMPILE_BAF_TO_BCS
+ 
+ COPY_EXISTING ~kayl2.cre~ ~override~
+-WRITE_ASCII 0x260 "D0KAYL"
++WRITE_ASCII 0x260 "D0KAYL" #8
+ 
+ COMPILE ~questpack/reynald/d0kayl.baf~
+ 
+@@ -2504,28 +2515,29 @@
+ // COPPER CORONET
+ 
+ BEGIN @4
++DESIGNATED 8
+ 
+-ACTION_IF (FILE_EXISTS ~override/J#KLSYJ.DLG~)
+-      AND (FILE_EXISTS ~override/FWKETO.DLG~) THEN BEGIN
++ACTION_IF (FILE_EXISTS_IN_GAME ~J#KLSYJ.DLG~)
++      AND (FILE_EXISTS_IN_GAME ~FWKETO.DLG~) THEN BEGIN
+ COMPILE ~questpack/coronet/dialog.d~
+         ~questpack/coronet/kelseydialog.d~
+         ~questpack/coronet/ketodialog.d~
+ END
+ 
+-ACTION_IF (FILE_EXISTS ~override/J#KLSYJ.DLG~)
+-      AND (NOT FILE_EXISTS ~override/FWKETO.DLG~) THEN BEGIN
++ACTION_IF (FILE_EXISTS_IN_GAME ~J#KLSYJ.DLG~)
++      AND (NOT FILE_EXISTS_IN_GAME ~FWKETO.DLG~) THEN BEGIN
+ COMPILE ~questpack/coronet/dialog.d~
+         ~questpack/coronet/kelseydialog.d~
+ END
+ 
+-ACTION_IF (NOT FILE_EXISTS ~override/J#KLSYJ.DLG~)
+-      AND (FILE_EXISTS ~override/FWKETO.DLG~) THEN BEGIN
++ACTION_IF (NOT FILE_EXISTS_IN_GAME ~J#KLSYJ.DLG~)
++      AND (FILE_EXISTS_IN_GAME ~FWKETO.DLG~) THEN BEGIN
+ COMPILE ~questpack/coronet/dialog.d~
+         ~questpack/coronet/ketodialog.d~
+ END
+ 
+-ACTION_IF (NOT FILE_EXISTS ~override/J#KLSYJ.DLG~)
+-      AND (NOT FILE_EXISTS ~override/FWKETO.DLG~) THEN BEGIN
++ACTION_IF (NOT FILE_EXISTS_IN_GAME ~J#KLSYJ.DLG~)
++      AND (NOT FILE_EXISTS_IN_GAME ~FWKETO.DLG~) THEN BEGIN
+ COMPILE ~questpack/coronet/dialog.d~
+ END
+ 
+@@ -2582,7 +2594,7 @@
+ SAY NAME2 @175
+ 
+ COPY_EXISTING ~ar0812.are~ ~override~
+-WRITE_ASCII 0x94 "ar0812"
++WRITE_ASCII 0x94 "ar0812" #8
+ 
+ COPY_EXISTING ~ar1515.bcs~ ~override~
+ DECOMPILE_BCS_TO_BAF
+@@ -2604,7 +2616,7 @@
+ 
+ // Surly returns
+ COPY_EXISTING ~thumb.cre~ ~override~
+-WRITE_ASCII 0x280 "thumb"
++WRITE_ASCII 0x280 "thumb" #32
+ EXTEND_TOP ~ar0313.bcs~ ~questpack/coronet/scripts/ar0313.baf~
+ 
+ COPY ~questpack/coronet/audio~ ~override~
+@@ -2618,6 +2630,7 @@
+ // POTION QUEST
+ 
+ BEGIN @8
++DESIGNATED 9
+ 
+ // UNINSTALL ~setup-potionquest.tp2~ 0
+ 
+@@ -2648,18 +2661,18 @@
+ COPY_EXISTING ~clmom.cre~ ~override/d0qpmom.cre~
+   SAY NAME1 @178
+   SAY NAME2 @178
+-  WRITE_ASCII 0x250 "D0QPMOM"
++  WRITE_ASCII 0x250 "D0QPMOM" #8
+   WRITE_BYTE 0x27b 33
+-  WRITE_ASCII 0x280 "D0QPMOM"
+-  WRITE_ASCII 0x2cc "D0QPMOM"
++  WRITE_ASCII 0x280 "D0QPMOM" #32
++  WRITE_ASCII 0x2cc "D0QPMOM" #8
+ 
+ COPY_EXISTING ~clkid.cre~ ~override/d0qpjan.cre~
+   SAY NAME1 @179
+   SAY NAME2 @179
+-  WRITE_ASCII 0x258 "D0QPJAN"
++  WRITE_ASCII 0x258 "D0QPJAN" #8
+   WRITE_BYTE 0x27b 33
+-  WRITE_ASCII 0x280 "D0QPJAN"
+-  WRITE_ASCII 0x2cc "D0QPJAN"
++  WRITE_ASCII 0x280 "D0QPJAN" #32
++  WRITE_ASCII 0x2cc "D0QPJAN" #8
+ 
+ COPY ~questpack/potion/potn38.itm~ ~override~
+   SAY IDENTIFIED_DESC @180
+@@ -2729,6 +2742,7 @@
+ // HELL TRIALS
+ 
+ BEGIN @10
++DESIGNATED 10
+ 
+ // UNINSTALL ~setup-hell.tp2~ 0
+ 
+@@ -2755,6 +2769,24 @@
+ END
+ 
+ COPY_EXISTING ~ar2904.bcs~ ~override/ar2904.bcs~
++  PATCH_IF (MOD_IS_INSTALLED ~Setup-LuvNalia.tp2~ 0) BEGIN  // compatibility with Arnel's Nalia
++    SPRINT search_string ~Global("OpenedDoor6","AR2904",0)~
++    INNER_PATCH_SAVE replace_string "%search_string%" BEGIN
++      INSERT_BYTES 0x20 0x22
++      WRITE_BYTE   0x20 0x0A
++      WRITE_BYTE   0x21 0x09
++      WRITE_ASCII  0x22 ~!Global("NaliaTaken","AR2904",1)~
++    END
++    INNER_ACTION BEGIN
++      COPY ~questpack/helltest/data/d2a_1.baf~ ~questpack/helltest/data~
++           ~questpack/helltest/data/d2a_2.baf~ ~questpack/helltest/data~
++           ~questpack/helltest/data/d4a_1.baf~ ~questpack/helltest/data~
++           ~questpack/helltest/data/d4a_2.baf~ ~questpack/helltest/data~
++           ~questpack/helltest/data/d6a_1.baf~ ~questpack/helltest/data~
++           ~questpack/helltest/data/d6a_2.baf~ ~questpack/helltest/data~
++        REPLACE_TEXTUALLY "%search_string%" "%replace_string%"
++    END
++  END
+   REPLACE_BCS_BLOCK ~questpack/helltest/data/d2a_1.baf~ ~questpack/helltest/data/d2a_2.baf~
+   REPLACE_BCS_BLOCK ~questpack/helltest/data/d2b_1.baf~ ~questpack/helltest/data/d2b_2.baf~
+   REPLACE_BCS_BLOCK ~questpack/helltest/data/d4a_1.baf~ ~questpack/helltest/data/d4a_2.baf~
+@@ -2773,6 +2805,7 @@
+ // IMPROVED OASIS
+ 
+ BEGIN @11 // Dialogue & Combat Enhancement
++DESIGNATED 11
+ REQUIRE_PREDICATE FILE_EXISTS ~data/25dialog.bif~ @100
+ REQUIRE_PREDICATE FILE_EXISTS ~data/25scripts.bif~ @100
+ SUBCOMPONENT @13
+@@ -2814,6 +2847,7 @@
+ //////////////////////////////////////////////////////////
+ 
+ BEGIN @12 // Dialogue Enhancement Only
++DESIGNATED 12
+ SUBCOMPONENT @13
+ 
+ UNINSTALL ~setup-oasis.tp2~ 0
+@@ -2838,19 +2872,20 @@
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ // SANIK
+ BEGIN @17
++DESIGNATED 13
+ 
+ COMPILE ~questpack/sanik/dialog.d~
+ COPY_EXISTING ~ppsanik.cre~ ~override~
+ WRITE_BYTE 0x63 0
+ WRITE_SHORT 0x24 18
+ WRITE_SHORT 0x26 36
+-WRITE_ASCII 0x248 "D0SANIK"
++WRITE_ASCII 0x248 "D0SANIK" #8
+ COPY_EXISTING ~pirmur02.cre~ ~override~
+ WRITE_SHORT 0x24 36
+ WRITE_SHORT 0x26 36
+ WRITE_BYTE 0x52 10
+ WRITE_BYTE 0x53 4
+-WRITE_ASCII 0x248 "D0PIRMUR"
++WRITE_ASCII 0x248 "D0PIRMUR" #8
+ COMPILE ~questpack/sanik/d0sanik.baf~
+ 		~questpack/sanik/d0pirmur.baf~
+ EXTEND_TOP ~ar1602.bcs~ ~questpack/sanik/et_1602.baf~
+@@ -2870,17 +2905,18 @@
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ // GALOOMP
+ BEGIN @18
++DESIGNATED 14
+ 
+ UNINSTALL Setup-AndyrIM5.tp2 0
+ 
+ COPY ~questpack/galoomp/A#KRAM.CRE~ ~override/A#KRAM.CRE~
+ SAY NAME1 @211
+ SAY NAME2 @211
+-WRITE_ASCII 0x248 ~A#KRAM~ //Override script
+-WRITE_ASCII 0x280 ~A#KRAM~ //Death variable
+-WRITE_ASCII 0x2cc ~A#KRAM~ //Dialogue
++WRITE_ASCII 0x248 ~A#KRAM~ #8 //Override script
++WRITE_ASCII 0x280 ~A#KRAM~ #32 //Death variable
++WRITE_ASCII 0x2cc ~A#KRAM~ #8 //Dialogue
+ COPY_EXISTING ~A#KRAM.CRE~ ~override/A#KRAM2.CRE~
+-WRITE_ASCII 0x2cc ~A#KRAM2~ //Dialogue
++WRITE_ASCII 0x2cc ~A#KRAM2~ #8 //Dialogue
+ COMPILE ~questpack/galoomp/dialog.d~ USING ~questpack/translations/english/galoomp.tra~
+ 										 ~questpack/translations/%s/galoomp.tra~
+ COMPILE ~questpack/galoomp/A#KRAM.BAF~
+@@ -2890,6 +2926,7 @@
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ // PHLUAFAE
+ BEGIN @19
++DESIGNATED 15
+ 
+ UNINSTALL Setup-BonsPromise.tp2 0
+ 
+@@ -2907,13 +2944,13 @@
+ COPY ~questpack/phluafae/sudryad.cre~ ~override/SUDRYAD.cre~
+ SAY NAME1 @135
+ SAY NAME2 @135
+-ACTION_IF (FILE_EXISTS ~override/J#KLSYJ.DLG~) THEN BEGIN
++ACTION_IF (FILE_EXISTS_IN_GAME ~J#KLSYJ.DLG~) THEN BEGIN
+ COMPILE ~questpack/phluafae/dialog.d~ // USING ~questpack/translations/english/dryads.tra~
+ 									  // ~questpack/translations/%s/dryads.tra~
+         ~questpack/phluafae/kelsey.d~ USING ~questpack/translations/english/dryads.tra~
+ 										 ~questpack/translations/%s/dryads.tra~
+ END
+-ACTION_IF (NOT FILE_EXISTS ~override/J#KLSYJ.DLG~) THEN BEGIN
++ACTION_IF (NOT FILE_EXISTS_IN_GAME ~J#KLSYJ.DLG~) THEN BEGIN
+ COMPILE ~questpack/phluafae/dialog.d~ USING ~questpack/translations/english/dryads.tra~
+ 										 ~questpack/translations/%s/dryads.tra~
+ END
+@@ -2941,11 +2978,12 @@
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ // BESAMEN
+ BEGIN @20
++DESIGNATED 16
+ 
+ UNINSTALL setup-icekiss.tp2 0
+ 
+ COPY_EXISTING ~AR0811.are~ ~override~
+-WRITE_ASCII ~0x94~ ~AR0811~
++WRITE_ASCII 0x94 ~AR0811~ #8
+ EXTEND_TOP ~AR0811.bcs~ ~questpack/besamen/IR0811.baf~
+ EXTEND_TOP ~AR0406.bcs~ ~questpack/besamen/IR0406.baf~
+ COPY ~questpack/besamen/besamen.cre~ ~override~
+@@ -2968,20 +3006,21 @@
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ // SLAVER STUFF
+ BEGIN @21
++DESIGNATED 17
+ 
+ COMPILE ~questpack/slaver/dialog.d~
+ 
+ COPY_EXISTING ~slaver4.cre~ ~override/d0qpslav.cre~
+ SAY NAME1 @176
+ SAY NAME2 @176
+-WRITE_ASCII 0x248 "D0QPSLAV"
+-WRITE_ASCII 0x280 "D0QPSLAV"
+-WRITE_ASCII 0x2cc "D0QPSLAV"
++WRITE_ASCII 0x248 "D0QPSLAV" #8
++WRITE_ASCII 0x280 "D0QPSLAV" #32
++WRITE_ASCII 0x2cc "D0QPSLAV" #8
+ EXTEND_TOP ~ar0800.bcs~ ~questpack/slaver/et_0800.baf~
+ COMPILE ~questpack/slaver/d0qpslav.baf~
+ EXTEND_TOP ~kamir.bcs~ ~questpack/slaver/et_kamir.baf~
+ COPY_EXISTING ~kamir.cre~ ~override~
+-WRITE_ASCII 0x268 "WTASIGHT"
++WRITE_ASCII 0x268 "WTASIGHT" #8
+ WRITE_LONG 0x1c 2500
+ 
+ COPY ~questpack/slaver/d0jaisla.cre~ ~override~
+@@ -2992,15 +3031,17 @@
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ // SOLAMNIC KNIGHTS
+ BEGIN @22
++DESIGNATED 18
+ 
+ COMPILE ~questpack/solamnic/dialog.d~
+ 
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ // NAZARIEL
+ BEGIN @23
++DESIGNATED 19
+ 
+ // Disable flirting in new area
+-ACTION_IF FILE_EXISTS ~override/j#klsy.bcs~
++ACTION_IF FILE_EXISTS_IN_GAME ~j#klsy.bcs~
+ THEN BEGIN
+ COPY_EXISTING ~aerie.bcs~ ~override~
+ 			  ~jaheira.bcs~ ~override~
+@@ -3013,7 +3054,7 @@
+ COMPILE_BAF_TO_BCS
+ BUT_ONLY_IF_IT_CHANGES
+ END
+-ACTION_IF NOT FILE_EXISTS ~override/j#klsy.bcs~
++ACTION_IF NOT FILE_EXISTS_IN_GAME ~j#klsy.bcs~
+ THEN BEGIN
+ COPY_EXISTING ~aerie.bcs~ ~override~
+ 			  ~jaheira.bcs~ ~override~
+@@ -3025,7 +3066,7 @@
+ COMPILE_BAF_TO_BCS
+ BUT_ONLY_IF_IT_CHANGES
+ END
+-ACTION_IF FILE_EXISTS ~override/J#KLSYJ.DLG~
++ACTION_IF FILE_EXISTS_IN_GAME ~J#KLSYJ.DLG~
+ THEN BEGIN
+ COPY_EXISTING ~aeriej.dlg~ ~override~
+ 			  ~jaheiraj.dlg~ ~override~
+@@ -3039,7 +3080,7 @@
+ COMPILE_D_TO_DLG
+ BUT_ONLY_IF_IT_CHANGES
+ END
+-ACTION_IF NOT FILE_EXISTS ~override/J#KLSYJ.DLG~
++ACTION_IF NOT FILE_EXISTS_IN_GAME ~J#KLSYJ.DLG~
+ THEN BEGIN
+ COPY_EXISTING ~aeriej.dlg~ ~override~
+ 			  ~jaheiraj.dlg~ ~override~
+@@ -3119,18 +3160,15 @@
+ WRITE_SHORT 0x0BC (~%songsOff%~ + 224)
+ WRITE_SHORT 0x0C0 (~%restcOff%~ + 224)
+ WRITE_SHORT 0x0C4 (~%automOff%~ + 224)
+-WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196) ~D0WayIn~
+-WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 8) ~~
+-WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 16) ~~
+-WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 24) ~~
++WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196) ~D0WayIn~ #32
+ WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 32) 02
+ WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 52) 30
+-WRITE_ASCII  (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 56) ~d0ar01~
+-WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 64) ~d0entry1~
++WRITE_ASCII  (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 56) ~d0ar01~ #8
++WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 64) ~d0entry1~ #32
+ WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 96) 04
+ WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 112) 1490
+ WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 114) 1539
+-WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 124) ~d0wayin~
++WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 124) ~d0wayin~ #8
+ WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 34) 1450
+ WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 36) 1450
+ WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 38) 1525
+@@ -3195,8 +3233,7 @@
+ WRITE_SHORT 0x0C0 (~%restcOff%~ + 104)
+ WRITE_SHORT 0x0C4 (~%automOff%~ + 104)
+ INSERT_BYTES (~%entraOff%~ + ~%#ofEntra%~ * 104) 104
+-WRITE_ASCII (~%entraOff%~ + ~%#ofEntra%~ * 104 + 0) ~D0AR01En~
+-WRITE_ASCII (~%entraOff%~ + ~%#ofEntra%~ * 104 + 8) ~try~
++WRITE_ASCII (~%entraOff%~ + ~%#ofEntra%~ * 104 + 0) ~D0AR01Entry~ #32
+ WRITE_LONG (~%entraOff%~ + ~%#ofEntra%~ * 104 + 32) 1490
+ WRITE_LONG (~%entraOff%~ + ~%#ofEntra%~ * 104 + 34) 1601
+ WRITE_LONG (~%entraOff%~ + ~%#ofEntra%~ * 104 + 36) 0
+@@ -3218,6 +3255,7 @@
+ // REWARD NEGOTIATION
+ 
+ BEGIN @33
++DESIGNATED 20
+ 
+ COMPILE // ~questpack/negotiate/dialog.d~
+         ~questpack/negotiate/dialog2.d~
+@@ -3234,6 +3272,7 @@
+ // WILBUR
+ 
+ BEGIN @30
++DESIGNATED 21
+ 
+ REQUIRE_PREDICATE FILE_EXISTS ~data/25dialog.bif~ @100
+ REQUIRE_PREDICATE FILE_EXISTS ~data/25scripts.bif~ @100
+@@ -3242,9 +3281,9 @@
+ SAY NAME1 @268
+ SAY NAME2 @268
+ SAY INITIAL_MEETING #61758
+-WRITE_ASCII 0x248 "d0qpwima"
+-WRITE_ASCII 0x2cc "d0qpwima"
+-WRITE_ASCII 0x280 "d0qpwima"
++WRITE_ASCII 0x248 "d0qpwima" #8
++WRITE_ASCII 0x2cc "d0qpwima" #8
++WRITE_ASCII 0x280 "d0qpwima" #32
+ WRITE_BYTE 0x270 128
+ 
+ COPY_EXISTING ~DEMOSUM1.CRE~ ~override/d0qpwigi.cre~ // Girl
+@@ -3252,14 +3291,14 @@
+ SAY NAME2 #9406
+ SAY INITIAL_MEETING #-1
+ WRITE_SHORT 0x28 50960
+-WRITE_ASCII 0x2cc "d0qpwigi"
++WRITE_ASCII 0x2cc "d0qpwigi" #8
+ WRITE_BYTE 0x270 128
+-WRITE_ASCII 0x248 "d0qpwigi"
+-WRITE_ASCII 0x250 ""
+-WRITE_ASCII 0x258 ""
+-WRITE_ASCII 0x260 ""
+-WRITE_ASCII 0x268 ""
+-WRITE_ASCII 0x280 "d0qpwigi"
++WRITE_ASCII 0x248 "d0qpwigi" #8
++WRITE_ASCII 0x250 "" #8
++WRITE_ASCII 0x258 "" #8
++WRITE_ASCII 0x260 "" #8
++WRITE_ASCII 0x268 "" #8
++WRITE_ASCII 0x280 "d0qpwigi" #32
+ 
+ COPY ~questpack/wilbur/d0qpwisw.itm~ ~override~
+ SAY NAME2 @301
+@@ -3292,10 +3331,10 @@
+ EXTEND_BOTTOM ~ar0502.bcs~ ~questpack/wilbur/et_0502.baf~
+ 
+ COPY_EXISTING ~ar0530.are~ ~override~
+-WRITE_ASCII 0x94 "ar0530"
++WRITE_ASCII 0x94 "ar0530" #8
+ BUT_ONLY_IF_IT_CHANGES
+ 
+-ACTION_IF FILE_EXISTS ~override/ar0530.bcs~ THEN BEGIN
++ACTION_IF FILE_EXISTS_IN_GAME ~ar0530.bcs~ THEN BEGIN
+ EXTEND_TOP ~ar0530.bcs~ ~questpack/wilbur/ar0530.baf~
+ END ELSE BEGIN
+ COMPILE ~questpack/wilbur/ar0530.baf~
+@@ -3307,6 +3346,7 @@
+ // ORMAND
+ 
+ /* BEGIN @31
++DESIGNATED 22
+ 
+ COPY ~questpack/ormand/randenc/areas~ ~override~
+ COMPILE ~questpack/ormand/randenc/d00040.baf~
+@@ -3335,7 +3375,7 @@
+ //    READ_ASCII ("%linkoffset%" + ("%currentlink%" * 216) + 76) "encounterarea4"
+       READ_LONG ("%linkoffset%" + ("%currentlink%" * 216) + 84) "encounterprob"
+       PATCH_IF ((("%encounterarea0%" STRING_COMPARE_CASE "") = 0) AND ("%encounterprob%" = 0)) BEGIN
+-        WRITE_ASCII ("%linkoffset%" + ("%currentlink%" * 216) + 44) "D00040"
++        WRITE_ASCII ("%linkoffset%" + ("%currentlink%" * 216) + 44) "D00040" #8
+         WRITE_LONG ("%linkoffset%" + ("%currentlink%" * 216) + 84) 101 // 101 causes encounter to occur only once
+       END
+     SET "currentlink" = ("%currentlink%" + 1)
+@@ -3359,10 +3399,11 @@
+ // COUNCIL BUILDING
+ 
+ /* BEGIN @15
++DESIGNATED 23
+ 
+ COPY_EXISTING ~bylanna.cre~ ~override~
+-WRITE_ASCII 0x248 "D0BYLANN"
+-WRITE_ASCII 0x250 "D0NOTHIN"
++WRITE_ASCII 0x248 "D0BYLANN" #8
++WRITE_ASCII 0x250 "D0NOTHIN" #8
+ READ_LONG 0x2c4 "effects_offset"
+ READ_LONG 0x2c8 "#effects"
+ READ_LONG 0x2bc "items_offset"
+@@ -3402,13 +3443,13 @@
+ EXTEND_TOP ~ar1002.bcs~ ~questpack/council/et_1002.baf~
+ 
+ COPY_EXISTING ~corgeig.cre~ ~override~
+-WRITE_ASCII 0x248 "SHOUT"
++WRITE_ASCII 0x248 "SHOUT" #8
+ 
+ // Teeny bit of code stolen from G3 Tweak Pack. Yay.
+ COPY_EXISTING ~AMNLEG1.CRE~ ~override/D0AMNLEG.CRE~
+ SAY NAME1 #819
+ SAY NAME2 #819
+-WRITE_ASCII 0x248 "D0AMNLEG"
++WRITE_ASCII 0x248 "D0AMNLEG" #8
+ READ_LONG 0x2c4 "effects_offset"
+ READ_LONG 0x2c8 "#effects"
+ READ_LONG 0x2bc "items_offset"
+@@ -3425,8 +3466,8 @@
+ WRITE_SHORT ("%effects_offset%" + 36) 100
+ 
+ COPY_EXISTING ~MAGE18A.CRE~ ~override/D0AMNMAG.CRE~
+-WRITE_ASCII 0x248 "D0AMNMAG"
+-WRITE_ASCII 0x250 "D0AMNMAG"
++WRITE_ASCII 0x248 "D0AMNMAG" #8
++WRITE_ASCII 0x250 "D0AMNMAG" #8
+ READ_LONG 0x2c4 "effects_offset"
+ READ_LONG 0x2c8 "#effects"
+ READ_LONG 0x2bc "items_offset"
+@@ -3445,10 +3486,10 @@
+ SAY NAME2 @205
+ 
+ COPY_EXISTING ~CORNEIL.CRE~ ~override~
+-WRITE_ASCII 0x250 "D0CORNEI"
++WRITE_ASCII 0x250 "D0CORNEI" #8
+ 
+ COPY_EXISTING ~TOLGER.CRE~ ~override~
+-WRITE_ASCII 0x260 "D0NOTHIN"
++WRITE_ASCII 0x260 "D0NOTHIN" #8
+ COMPILE ~questpack/council/tolger.baf~
+ 
+ COMPILE ~questpack/council/d0amnleg.baf~ */
+@@ -3457,6 +3498,7 @@
+ // FALDORN
+ 
+ /* BEGIN @9
++DESIGNATED 24
+ 
+ COMPILE ~questpack/druid/dialog.d~
+ 
+@@ -3466,7 +3508,7 @@
+ COMPILE ~questpack/druid/cefald01.baf~
+         ~questpack/druid/cefaldor.baf~
+ COPY_EXISTING ~wolfdr01.cre~ ~override/wolfd1.cre~
+-WRITE_ASCII 0x280 "wolfd1"
++WRITE_ASCII 0x280 "wolfd1" #32
+ 
+ COPY_EXISTING ~ar1901.bcs~ ~override~
+ DECOMPILE_BCS_TO_BAF
+@@ -3489,11 +3531,11 @@
+ COMPILE ~questpack/druid/d0trgrd.baf~
+ COPY_EXISTING ~trgrd01.cre~ ~override~
+               ~trgrd02.cre~ ~override~
+-WRITE_ASCII 0x250 "d0trgrd"
++WRITE_ASCII 0x250 "d0trgrd" #8
+ COPY_EXISTING ~trgrd02.cre~ ~override~
+-WRITE_ASCII 0x258 "MAGE8A"
++WRITE_ASCII 0x258 "MAGE8A" #8
+ COPY_EXISTING ~trgrd03.cre~ ~override~
+-WRITE_ASCII 0x258 "d0trgrd"
++WRITE_ASCII 0x258 "d0trgrd" #8
+ 
+ EXTEND_TOP ~shout.bcs~ ~questpack/druid/d0trgrd.baf~
+ 
+@@ -3503,12 +3545,13 @@
+ // QUALLO
+ 
+ /* BEGIN @24
++DESIGNATED 25
+ 
+ // Suggest altering it so you find him another friend after you've already killed the Carrion Crawler. Discuss.
+ 
+ COPY_EXISTING ~sewcc.cre~ ~override/sewcc.cre~
+-  WRITE_ASCII 0x248 ~j#im5crw~
+-  WRITE_ASCII 0x3f8 ~minhp1~
++  WRITE_ASCII 0x248 ~j#im5crw~ #8
++  WRITE_ASCII 0x3f8 ~minhp1~ #8
+   WRITE_BYTE 0x414 01
+   WRITE_BYTE 0x430 00
+ 
+@@ -3545,6 +3588,7 @@
+ // OGHMA
+ 
+ /* BEGIN @25
++DESIGNATED 26
+ 
+ COPY ~questpack/oghma/d0qplibr.cre~ ~override~
+ SAY NAME1 @227
+@@ -3554,15 +3598,15 @@
+ 
+ COMPILE ~questpack/oghma/dialog.d~
+ 
+-ACTION_IF NOT FILE_EXISTS ~override/ar0319.bcs~ THEN BEGIN
++ACTION_IF NOT FILE_EXISTS_IN_GAME ~ar0319.bcs~ THEN BEGIN
+ COMPILE ~questpack/oghma/ar0319.baf~
+ END
+-ACTION_IF FILE_EXISTS ~override/ar0319.bcs~ THEN BEGIN
++ACTION_IF FILE_EXISTS_IN_GAME ~ar0319.bcs~ THEN BEGIN
+ EXTEND_TOP ~ar0319.bcs~ ~questpack/oghma/ar0319.baf~
+ END
+ 
+ COPY_EXISTING ~oghmonk1.cre~ ~override~
+-WRITE_ASCII 0x280 "oghmonk1"
++WRITE_ASCII 0x280 "oghmonk1" #32
+ 
+ COPY_EXISTING ~book03.itm~ ~override~
+               ~book04.itm~ ~override~
+@@ -3657,6 +3701,7 @@
+ // UNDERDARK
+ 
+ /* BEGIN @26
++DESIGNATED 27
+ 
+ COMPILE ~questpack/underdark/dialog.d~ */
+ 
+@@ -3664,6 +3709,7 @@
+ // SMUGGLERS
+ 
+ /* BEGIN @5
++DESIGNATED 28
+ 
+ COMPILE ~smugglers/dialog.d~
+ 

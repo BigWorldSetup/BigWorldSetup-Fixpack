@@ -1,0 +1,52 @@
+--- SETUP-BGSpawn.tp2	Tue Aug 21 10:50:35 2012
++++ C:\BWP Patchstudio\patched files\SETUP-BGSpawn.tp2	Mon Sep 09 08:23:33 2013
+@@ -2,7 +2,7 @@
+ 
+ AUTHOR ~Melkor Morgoth75~
+ 
+-VERSION ~1.12~
++VERSION ~1.12 BWP Fix~
+ 
+ README ~BGSpawn/Help/BGSpawnReadme.doc~
+ 
+@@ -189,6 +189,10 @@
+ COPY ~BGSpawn/cre/rogtro.CRE~ ~override~
+ 	SAY 0x8 @1306
+ 	SAY 0xc @1306
++COPY ~BGSpawn/cre/rogtroxd.CRE~ ~override~
++	SAY 0x8 @1306
++	SAY 0xc @1306
++COPY ~BGSpawn/cre/rogtroxd.SPL~ ~override~
+ COPY ~BGSpawn/cre/sxvart.CRE~ ~override~
+ 	SAY 0x8 @1303
+ 	SAY 0xc @1303
+@@ -215,6 +219,7 @@
+ 
+ COMPILE EVALUATE_BUFFER ~BGSpawn/cre/sgnoll.baf~
+ COMPILE EVALUATE_BUFFER ~BGSpawn/cre/rogtro.baf~
++COMPILE EVALUATE_BUFFER ~BGSpawn/cre/rogtroxd.baf~
+ 
+ // END of Scripts for CRE
+ 
+@@ -458,6 +463,10 @@
+ COPY ~BGSpawn/cre/sftroll.CRE~ ~override~
+ 	SAY 0x8 @1308
+ 	SAY 0xc @1308
++COPY ~BGSpawn/cre/sftrolxd.CRE~ ~override~
++	SAY 0x8 @1308
++	SAY 0xc @1308
++COPY ~BGSpawn/cre/sftrolxd.SPL~ ~override~
+ COPY ~BGSpawn/cre/sminotau.CRE~ ~override~
+ COPY ~BGSpawn/cre/swatel01.CRE~ ~override~
+ 	SAY 0x8 @1309
+@@ -472,3 +481,10 @@
+ 	SAY 0x8 @1312
+ 	SAY 0xc @1312
+ COPY ~BGSpawn/cre/sankheg2.ITM~ ~override~
++
++// Compiling Scripts for Creatures
++
++COMPILE EVALUATE_BUFFER ~BGSpawn/cre/sftroll.baf~
++COMPILE EVALUATE_BUFFER ~BGSpawn/cre/sftrolxd.baf~
++
++// END of Scripts for CRE

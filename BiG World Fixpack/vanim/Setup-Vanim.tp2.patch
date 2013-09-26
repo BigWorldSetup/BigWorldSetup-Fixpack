@@ -1,0 +1,11 @@
+--- Setup-Vanim.tp2	Tue Jul 15 21:00:34 2003
++++ C:\BWP Patchstudio\patched files\Setup-Vanim.tp2	Tue Jun 01 07:00:25 2010
+@@ -3,6 +3,8 @@
+ BACKUP ~vanim/vanim-backup~
+ AUTHOR ~maus@fphfslinux.physik.uni-karlsruhe.de~
+ 
++VERSION ~v1.4 BWP Fix~
++
+ // Kompatibilität
+ ALLOW_MISSING
+         ~Ar4500.bcs~

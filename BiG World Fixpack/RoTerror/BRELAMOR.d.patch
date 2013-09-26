@@ -1,0 +1,12 @@
+--- RoTerror\D\BRELAMOR.d	Thu Apr 13 19:40:14 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\D\BRELAMOR.d	Tue Sep 29 12:38:00 2009
+@@ -33,7 +33,8 @@
+ 
+ IF ~~ THEN BEGIN 5 // from: 4.0
+   SAY @12
+-  IF ~~ THEN DO ~SetGlobal("Helpthebrother","GLOBAL",3)~ UNSOLVED_JOURNAL @572896 EXIT
++  IF ~~ THEN DO ~SetGlobal("Helpthebrother","GLOBAL",3)
++SetGlobal("Youcanleavenow2","GLOBAL",1)~ UNSOLVED_JOURNAL @572896 EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 6 // from: 7.1 3.1

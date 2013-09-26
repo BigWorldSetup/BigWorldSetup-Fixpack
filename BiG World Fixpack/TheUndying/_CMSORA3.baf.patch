@@ -1,0 +1,20 @@
+--- TheUndying\bafs\_CMSORA3.baf	Sat Nov 29 05:21:36 2008
++++ C:\BWP Patchstudio\patched files\TheUndying\bafs\_CMSORA3.baf	Thu Dec 23 15:31:16 2010
+@@ -21,7 +21,7 @@
+ 	Allegiance(Myself,ENEMY)
+ 	Global("CmSoranMprep","LOCALS",1)
+ 	CheckStatLT(Myself,1,STONESKINS)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,29736) // Contingency - Stoneskin
+@@ -77,7 +77,7 @@
+ 	Global("CmSoranMprep","LOCALS",2)
+ 	HaveSpell(WIZARD_STONE_SKIN)
+ 	CheckStatLT(Myself,1,STONESKINS)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Spell(Myself,WIZARD_STONE_SKIN)

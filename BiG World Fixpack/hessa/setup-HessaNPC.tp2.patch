@@ -1,0 +1,25 @@
+--- setup-HessaNPC.tp2	Mon Feb 23 18:28:26 2004
++++ C:\BWP Patchstudio\patched files\setup-HessaNPC.tp2	Sun Aug 25 17:10:05 2013
+@@ -268,6 +268,22 @@
+ COPY ~hessa\areas\arsu10.wed~ ~override\arsu10.wed~
+ COPY ~hessa\areas\arsu10.mos~ ~override\arsu10.mos~
+ 
++ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
++  COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
++   APPEND_FILE ~hessa/Worldmap/areas.tbl~
++  COPY ~Worldmap/map_mods_links.tbl~  ~Worldmap~
++   APPEND_FILE ~hessa/Worldmap/links.tbl~
++  COPY - ~hessa/Worldmap/worldmap.tra~  ~tmp_worldmap.tra~
++  COPY ~Worldmap/map_mods_trans.tra~  ~Worldmap~
++   APPEND_FILE ~tmp_worldmap.tra~
++END
++ELSE BEGIN
++  MKDIR ~Worldmap~
++  COPY ~hessa/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
++  COPY ~hessa/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
++  COPY ~hessa/Worldmap/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
++END
++
+ COPY ~hessa\tisunpack.exe~ ~override~
+ 
+ // Compile and append scripts

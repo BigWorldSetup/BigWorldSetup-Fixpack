@@ -1,0 +1,32 @@
+--- Kitanya\dialogues\kitanyaj.d	Thu Aug 26 02:38:24 2010
++++ C:\BWP Patchstudio\patched files\Kitanya\dialogues\kitanyaj.d	Sun Nov 14 04:43:50 2010
+@@ -4,9 +4,9 @@
+               InParty("R#Kitanya")
+ 	      !Dead("R#Kitanya")
+ 	      !StateCheck("R#Kitanya",STATE_SLEEPING)
+-              Global("R#KitanyaHome","GLOBALS",0)~ THEN BEGIN KitanyaHomeSay
++              Global("R#KitanyaHome","GLOBAL",0)~ THEN BEGIN KitanyaHomeSay
+    SAY @0 = @1 = @2
+-   IF ~~ THEN DO ~SetGlobal("R#KitanyaHome","GLOBALS",1)~ EXIT
++   IF ~~ THEN DO ~SetGlobal("R#KitanyaHome","GLOBAL",1)~ EXIT
+ END
+ 
+ IF WEIGHT #1 ~Global("PhaereInnuendo","GLOBAL",2)
+@@ -154,7 +154,7 @@
+    == R#KITYJ IF ~InParty("R#Kitanya")
+                   !StateCheck("R#Kitanya",STATE_SLEEPING)
+                   !Dead("R#Kitanya")~ THEN @48 = @49 = @50 
+-  DO ~LeaveParty() SetGlobal("R#KitValygarAttacked","GLOBALS",1)~
++  DO ~LeaveParty() SetGlobal("R#KitValygarAttacked","GLOBAL",1)~
+ END
+ 
+ INTERJECT_COPY_TRANS ANOMEN 11 r#KitAnomenRighteousness
+@@ -396,7 +396,7 @@
+ END
+ 
+ INTERJECT_COPY_TRANS YOSHJ 113 r#KitYoshTraitor
+-  == R#KITYJ IF ~Global("YoshNoticeKit","GLOBALS",1)
++  == R#KITYJ IF ~Global("YoshNoticeKit","GLOBAL",1)
+                  InParty("R#Kitanya")
+ 		 See("R#Kitanya")
+ 		 !StateCheck("R#Kitanya",STATE_SLEEPING)

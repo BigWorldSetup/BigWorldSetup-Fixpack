@@ -1,0 +1,20 @@
+--- RoTerror\BAF\ARFI3.BAF	Sat Mar 11 18:29:48 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\ARFI3.BAF	Tue May 04 09:45:21 2010
+@@ -105,7 +105,7 @@
+ 		HasItemEquipedReal("HALB08",LastHitter(Myself)) // Halberd +2, Duskblade
+ 		HasItemEquipedReal("JARLAXSC",LastHitter(Myself)) // Arandil +4
+ 		HasItemEquipedReal("KATOFPOW",LastHitter(Myself)) // Katana of Power
+-		HasItemEquipedReal("KILLSWO1",LastHitter(Myself))
++		HasItemEquipedReal("KILLSW01",LastHitter(Myself))
+ 		HasItemEquipedReal("MAGSSWRD",LastHitter(Myself)) // Magical Blade of Nomal
+ 		HasItemEquipedReal("NewAx02",LastHitter(Myself)) // The Sight
+ 		HasItemEquipedReal("NewDa01",LastHitter(Myself)) // Dagger of Icestorm
+@@ -139,7 +139,7 @@
+ 		HasItemEquipedReal("HALB08",LastHitter(Myself)) // Halberd +2, Duskblade
+ 		HasItemEquipedReal("JARLAXSC",LastHitter(Myself)) // Arandil +4
+ 		HasItemEquipedReal("KATOFPOW",LastHitter(Myself)) // Katana of Power
+-		HasItemEquipedReal("KILLSWO1",LastHitter(Myself))
++		HasItemEquipedReal("KILLSW01",LastHitter(Myself))
+ 		HasItemEquipedReal("MAGSSWRD",LastHitter(Myself)) // Magical Blade of Nomal
+ 		HasItemEquipedReal("NewAx02",LastHitter(Myself)) // The Sight
+ 		HasItemEquipedReal("NewDa01",LastHitter(Myself)) // Dagger of Icestorm

@@ -1,0 +1,37 @@
+--- Setup-Kiara-Zaiya.tp2	Sun Dec 12 17:38:22 2010
++++ C:\BWP Patchstudio\patched files\Setup-Kiara-Zaiya.tp2	Thu Jan 31 19:32:09 2013
+@@ -4,7 +4,7 @@
+ 
+ // Isaya: version information removed from the tra files and set here (using a new WeiDU feature)
+ // Version of the mod, appearing in the WeiDU.log
+-VERSION ~v1.6.2~
++VERSION ~v1.6.2 BWP Fix~
+ 
+ README ~Kiara-Zaiya/readme_KZ.chm~
+ 
+@@ -322,10 +322,23 @@
+         ~Kiara-Zaiya\Scripts\CutL1.baf~
+         ~Kiara-Zaiya\Scripts\CutL2.baf~
+         ~Kiara-Zaiya\Scripts\CutL3.baf~
+-        ~Kiara-Zaiya\Scripts\AR0807.baf~
+         ~Kiara-Zaiya\Scripts\CutJer.baf~
+         ~Kiara-Zaiya\Scripts\Jerlia.baf~
+-COPY ~Kiara-Zaiya\Scripts\AR0807.are~ ~Override\AR0807.are~
++
++COPY_EXISTING ~AR0807.are~ ~override~
++  READ_SHORT  0x5a "info_num"
++  READ_LONG   0x5c "info_off"
++  WRITE_ASCII 0x94 ~AR0807~ #8
++  FOR (index = 0 ; index < info_num ; index = index + 1) BEGIN
++    READ_ASCII ("%info_off%" +        ("%index%" * 0xc4)) "info_name" (8)
++    PATCH_IF ("%info_name%" STRING_EQUAL_CASE "Tran0800") BEGIN
++      READ_BYTE  ("%info_off%" + 0x61 + ("%index%" * 0xc4)) "flags"
++      WRITE_BYTE ("%info_off%" + 0x61 + ("%index%" * 0xc4)) ("%flags%" BAND 0b11111101)
++	END
++  END
++BUT_ONLY
++EXTEND_BOTTOM ~AR0807.bcs~ ~Kiara-Zaiya\Scripts\AR0807.baf~
++
+ COMPILE ~Kiara-Zaiya\Scripts\KiarFigt.baf~
+ COPY ~Kiara-Zaiya\Creatures\KZWyvern.cre~ ~override\KZWyvern.cre~
+   SAY NAME1 @230

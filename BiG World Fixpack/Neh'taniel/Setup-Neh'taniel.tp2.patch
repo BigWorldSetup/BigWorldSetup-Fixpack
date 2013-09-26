@@ -1,0 +1,19 @@
+--- Setup-Neh'taniel.tp2	Wed Apr 21 03:13:12 2010
++++ C:\BWP Patchstudio\patched files\Setup-Neh'taniel.tp2	Tue Aug 24 07:14:01 2010
+@@ -1,7 +1,7 @@
+ BACKUP ~Neh'taniel/backup~
+ AUTHOR ~Kitannadk@yahoo.com~
+ 
+-VERSION @0
++VERSION ~v5.5 BWP fix~
+ 
+ README ~Neh'taniel/readme-Neh'taniel.txt~
+ 
+@@ -467,6 +467,7 @@
+         ~Neh'taniel/Scripts/SK#25NED.baf~
+         ~Neh'taniel/Scripts/SK#NehtD.baf~
+         ~Neh'taniel/Scripts/SK#Fix.baf~
++        ~Neh'taniel/Scripts/SK#2Fix.baf~
+         
+         
+ COMPILE ~Neh'taniel/Dialogue/BSK#NEHT.d~

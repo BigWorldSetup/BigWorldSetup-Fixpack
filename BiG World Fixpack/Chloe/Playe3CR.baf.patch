@@ -1,0 +1,362 @@
+--- Chloe\Scripts\Extending\Playe3CR.baf	Sat Nov 07 23:08:46 2009
++++ C:\BWP Patchstudio\patched files\Chloe\Scripts\Extending\Playe3CR.baf	Tue Nov 01 16:51:01 2011
+@@ -4,7 +4,8 @@
+ // SW 1
+ 
+ IF
+-   !HasItemEquiped("CHLOSW1","RChloe")
++   !Name("RChloe",Player1)
++   !HasItem("CHLOSW1","RChloe")
+    HasItemEquiped("CHLOSW1",Player1)
+ THEN
+    RESPONSE #100
+@@ -21,7 +22,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW1","RChloe")
++   !Name("RChloe",Player2)
++   !HasItem("CHLOSW1","RChloe")
+    HasItemEquiped("CHLOSW1",Player2)
+ THEN
+    RESPONSE #100
+@@ -38,7 +40,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW1","RChloe")
++   !Name("RChloe",Player3)
++   !HasItem("CHLOSW1","RChloe")
+    HasItemEquiped("CHLOSW1",Player3)
+ THEN
+    RESPONSE #100
+@@ -55,7 +58,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW1","RChloe")
++   !Name("RChloe",Player4)
++   !HasItem("CHLOSW1","RChloe")
+    HasItemEquiped("CHLOSW1",Player4)
+ THEN
+    RESPONSE #100
+@@ -72,7 +76,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW1","RChloe")
++   !Name("RChloe",Player5)
++   !HasItem("CHLOSW1","RChloe")
+    HasItemEquiped("CHLOSW1",Player5)
+ THEN
+    RESPONSE #100
+@@ -89,7 +94,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW1","RChloe")
++   !Name("RChloe",Player6)
++   !HasItem("CHLOSW1","RChloe")
+    HasItemEquiped("CHLOSW1",Player6)
+ THEN
+    RESPONSE #100
+@@ -108,7 +114,8 @@
+ // SW2
+ 
+ IF
+-   !HasItemEquiped("CHLOSW2","RChloe")
++   !Name("RChloe",Player1)
++   !HasItem("CHLOSW2","RChloe")
+    HasItemEquiped("CHLOSW2",Player1)
+ THEN
+    RESPONSE #100
+@@ -125,7 +132,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW2","RChloe")
++   !Name("RChloe",Player2)
++   !HasItem("CHLOSW2","RChloe")
+    HasItemEquiped("CHLOSW2",Player2)
+ THEN
+    RESPONSE #100
+@@ -142,7 +150,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW2","RChloe")
++   !Name("RChloe",Player3)
++   !HasItem("CHLOSW2","RChloe")
+    HasItemEquiped("CHLOSW2",Player3)
+ THEN
+    RESPONSE #100
+@@ -159,7 +168,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW2","RChloe")
++   !Name("RChloe",Player4)
++   !HasItem("CHLOSW2","RChloe")
+    HasItemEquiped("CHLOSW2",Player4)
+ THEN
+    RESPONSE #100
+@@ -176,7 +186,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW2","RChloe")
++   !Name("RChloe",Player5)
++   !HasItem("CHLOSW2","RChloe")
+    HasItemEquiped("CHLOSW2",Player5)
+ THEN
+    RESPONSE #100
+@@ -193,7 +204,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW2","RChloe")
++   !Name("RChloe",Player6)
++   !HasItem("CHLOSW2","RChloe")
+    HasItemEquiped("CHLOSW2",Player6)
+ THEN
+    RESPONSE #100
+@@ -212,7 +224,8 @@
+ // SW 3
+ 
+ IF
+-   !HasItemEquiped("CHLOSW3","RChloe")
++   !Name("RChloe",Player1)
++   !HasItem("CHLOSW3","RChloe")
+    HasItemEquiped("CHLOSW3",Player1)
+ THEN
+    RESPONSE #100
+@@ -229,7 +242,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW3","RChloe")
++   !Name("RChloe",Player2)
++   !HasItem("CHLOSW3","RChloe")
+    HasItemEquiped("CHLOSW3",Player2)
+ THEN
+    RESPONSE #100
+@@ -246,7 +260,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW3","RChloe")
++   !Name("RChloe",Player3)
++   !HasItem("CHLOSW3","RChloe")
+    HasItemEquiped("CHLOSW3",Player3)
+ THEN
+    RESPONSE #100
+@@ -263,7 +278,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW3","RChloe")
++   !Name("RChloe",Player4)
++   !HasItem("CHLOSW3","RChloe")
+    HasItemEquiped("CHLOSW3",Player4)
+ THEN
+    RESPONSE #100
+@@ -280,7 +296,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW3","RChloe")
++   !Name("RChloe",Player5)
++   !HasItem("CHLOSW3","RChloe")
+    HasItemEquiped("CHLOSW3",Player5)
+ THEN
+    RESPONSE #100
+@@ -297,7 +314,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW3","RChloe")
++   !Name("RChloe",Player6)
++   !HasItem("CHLOSW3","RChloe")
+    HasItemEquiped("CHLOSW3",Player6)
+ THEN
+    RESPONSE #100
+@@ -316,7 +334,8 @@
+ // SW 4
+ 
+ IF
+-   !HasItemEquiped("CHLOSW4","RChloe")
++   !Name("RChloe",Player1)
++   !HasItem("CHLOSW4","RChloe")
+    HasItemEquiped("CHLOSW4",Player1)
+ THEN
+    RESPONSE #100
+@@ -333,7 +352,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW4","RChloe")
++   !Name("RChloe",Player2)
++   !HasItem("CHLOSW4","RChloe")
+    HasItemEquiped("CHLOSW4",Player2)
+ THEN
+    RESPONSE #100
+@@ -350,7 +370,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW4","RChloe")
++   !Name("RChloe",Player3)
++   !HasItem("CHLOSW4","RChloe")
+    HasItemEquiped("CHLOSW4",Player3)
+ THEN
+    RESPONSE #100
+@@ -367,7 +388,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW4","RChloe")
++   !Name("RChloe",Player4)
++   !HasItem("CHLOSW4","RChloe")
+    HasItemEquiped("CHLOSW4",Player4)
+ THEN
+    RESPONSE #100
+@@ -384,7 +406,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW4","RChloe")
++   !Name("RChloe",Player5)
++   !HasItem("CHLOSW4","RChloe")
+    HasItemEquiped("CHLOSW4",Player5)
+ THEN
+    RESPONSE #100
+@@ -401,7 +424,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW4","RChloe")
++   !Name("RChloe",Player6)
++   !HasItem("CHLOSW4","RChloe")
+    HasItemEquiped("CHLOSW4",Player6)
+ THEN
+    RESPONSE #100
+@@ -420,7 +444,8 @@
+ // SW 5
+ 
+ IF
+-   !HasItemEquiped("CHLOSW5","RChloe")
++   !Name("RChloe",Player1)
++   !HasItem("CHLOSW5","RChloe")
+    HasItemEquiped("CHLOSW5",Player1)
+ THEN
+    RESPONSE #100
+@@ -437,7 +462,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW5","RChloe")
++   !Name("RChloe",Player2)
++   !HasItem("CHLOSW5","RChloe")
+    HasItemEquiped("CHLOSW5",Player2)
+ THEN
+    RESPONSE #100
+@@ -454,7 +480,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW5","RChloe")
++   !Name("RChloe",Player3)
++   !HasItem("CHLOSW5","RChloe")
+    HasItemEquiped("CHLOSW5",Player3)
+ THEN
+    RESPONSE #100
+@@ -471,7 +498,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW5","RChloe")
++   !Name("RChloe",Player4)
++   !HasItem("CHLOSW5","RChloe")
+    HasItemEquiped("CHLOSW5",Player4)
+ THEN
+    RESPONSE #100
+@@ -488,7 +516,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW5","RChloe")
++   !Name("RChloe",Player5)
++   !HasItem("CHLOSW5","RChloe")
+    HasItemEquiped("CHLOSW5",Player5)
+ THEN
+    RESPONSE #100
+@@ -505,7 +534,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW5","RChloe")
++   !Name("RChloe",Player6)
++   !HasItem("CHLOSW5","RChloe")
+    HasItemEquiped("CHLOSW5",Player6)
+ THEN
+    RESPONSE #100
+@@ -524,7 +554,8 @@
+ // SW 6
+ 
+ IF
+-   !HasItemEquiped("CHLOSW6","RChloe")
++   !Name("RChloe",Player1)
++   !HasItem("CHLOSW6","RChloe")
+    HasItemEquiped("CHLOSW6",Player1)
+ THEN
+    RESPONSE #100
+@@ -541,7 +572,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW6","RChloe")
++   !Name("RChloe",Player2)
++   !HasItem("CHLOSW6","RChloe")
+    HasItemEquiped("CHLOSW6",Player2)
+ THEN
+    RESPONSE #100
+@@ -558,7 +590,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW6","RChloe")
++   !Name("RChloe",Player3)
++   !HasItem("CHLOSW6","RChloe")
+    HasItemEquiped("CHLOSW6",Player3)
+ THEN
+    RESPONSE #100
+@@ -575,7 +608,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW6","RChloe")
++   !Name("RChloe",Player4)
++   !HasItem("CHLOSW6","RChloe")
+    HasItemEquiped("CHLOSW6",Player4)
+ THEN
+    RESPONSE #100
+@@ -592,7 +626,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW6","RChloe")
++   !Name("RChloe",Player5)
++   !HasItem("CHLOSW6","RChloe")
+    HasItemEquiped("CHLOSW6",Player5)
+ THEN
+    RESPONSE #100
+@@ -609,7 +644,8 @@
+ END
+ 
+ IF
+-   !HasItemEquiped("CHLOSW6","RChloe")
++   !Name("RChloe",Player6)
++   !HasItem("CHLOSW6","RChloe")
+    HasItemEquiped("CHLOSW6",Player6)
+ THEN
+    RESPONSE #100

@@ -1,0 +1,10 @@
+--- Khalid\Khalid.TP2	Fri Jul 01 07:20:44 2011
++++ C:\BWP Patchstudio\patched files\Khalid\Khalid.TP2	Fri Oct 07 11:35:50 2011
+@@ -193,6 +193,7 @@
+ EXTEND_BOTTOM ~AR2010.bcs~ ~Khalid/baf/AR2010.baf~
+ 
+ COPY ~Khalid/itm/zibook.itm~ ~override/zibook.itm~
++COPY ~Khalid/itm/misc5x.itm~ ~override/misc5x.itm~
+ 
+ //Czêœæ do ToB
+ ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN BEGIN

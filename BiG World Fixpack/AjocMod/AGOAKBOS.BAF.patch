@@ -1,0 +1,18 @@
+--- AjocMod\bcs\AGOAKBOS.BAF	Mon Sep 29 23:43:22 2003
++++ C:\BWP Patchstudio\patched files\AjocMod\bcs\AGOAKBOS.BAF	Mon Oct 11 19:19:54 2010
+@@ -19,13 +19,13 @@
+ 
+ IF
+ 	Global("TalkBitch","LOCALS",1)
+-	Global("OCALSoakfisthurt","LOCALS",0)
++	Global("oakfisthurt","LOCALS",0)
+ 	See(NearestEnemyOf(Myself))
+ 	Range(NearestEnemyOf(Myself),3)
+ 	HPPercentLT(Myself,49)
+ THEN
+ 	RESPONSE #100
+ 		RunAwayFrom(NearestEnemyOf(Myself),30)
+-		SetGlobal("OCALSoakfisthurt","LOCALS",1)
++		SetGlobal("oakfisthurt","LOCALS",1)
+ END
+ 

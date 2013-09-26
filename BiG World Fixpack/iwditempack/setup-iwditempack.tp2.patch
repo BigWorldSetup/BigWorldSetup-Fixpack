@@ -1,0 +1,11 @@
+--- setup-iwditempack.tp2	Tue Dec 07 01:49:54 2010
++++ C:\BWP Patchstudio\patched files\setup-iwditempack.tp2	Thu Jan 06 22:26:49 2011
+@@ -1,7 +1,7 @@
+ BACKUP ~iwditempack/backup~
+ AUTHOR ~malek.deneith@trioptimum.com~
+ 
+-README ~c2/readme-itemupgrades.txt~
++README ~iwditempack/readme-iwditempack.txt~
+ 
+ LANGUAGE ~English~ ~iwditempack/english~ ~iwditempack/english/wsetup.tra~
+ LANGUAGE ~Polski~ ~iwditempack/polish~ ~iwditempack/polish/wsetup.tra~

@@ -1,0 +1,32 @@
+BACKUP ~ninjawakifix/backup~
+AUTHOR ~g3~
+BEGIN ~Quickfix for wakizashis and ninja-tos~
+INCLUDE ~item_rev/lib/compatibility.tpa~
+
+INCLUDE ~item_rev/lib/identify_weapon.tpa~
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ override PATCH_IF SOURCE_SIZE>0x71 BEGIN
+  LPM identify_item
+
+  PATCH_IF wakizashi || ninjato BEGIN
+
+        GET_OFFSET_ARRAY headers ITM_V10_HEADERS
+    PHP_EACH headers AS ind => off BEGIN
+      PATCH_IF (BYTE_AT off)=1 BEGIN
+                WRITE_SHORT off+0x26 1
+                WRITE_SHORT off+0x28 0
+                WRITE_SHORT off+0x2a 1
+                PATCH_IF wakizashi BEGIN
+                  WRITE_SHORT off+0x2c 50 // overhand
+                  WRITE_SHORT off+0x2e 50 // backhand
+                  WRITE_SHORT off+0x30 0  // thrust
+                END ELSE BEGIN
+
+                  WRITE_SHORT off+0x2c 10 // overhand
+                  WRITE_SHORT off+0x2e 25 // backhand
+                  WRITE_SHORT off+0x30 65 // thrust
+                END
+          END
+        END
+  END
+END BUT_ONLY

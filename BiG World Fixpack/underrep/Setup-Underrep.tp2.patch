@@ -1,0 +1,11 @@
+--- Setup-Underrep.tp2	Sat Aug 15 23:01:33 2009
++++ C:\BWP Patchstudio\patched files\Setup-Underrep.tp2	Sat Apr 17 22:45:24 2010
+@@ -2,6 +2,8 @@
+ BACKUP ~underrep/backup~
+ AUTHOR ~weimer@cs.berkeley.edu (http://weidu.org)~
+ 
++VERSION ~v6 BWP Fix~
++
+ AUTO_TRA ~underrep/%s~
+ 
+ LANGUAGE ~American English~ ~american~

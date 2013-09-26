@@ -1,0 +1,11 @@
+--- SOS\Language\English\CBSOUMJR.tra	Thu Feb 02 12:54:50 2006
++++ C:\BWP Patchstudio\patched files\SOS\Language\English\CBSOUMJR.tra	Fri Nov 12 16:50:26 2010
+@@ -221,7 +221,7 @@
+ @220  = ~No, Major, I have not.~
+ @221  = ~I've been thinking about it.  I think I would be a good Mayor for Soubar.  I'll do it.~
+ @222  = ~Ah well.  If you change your mind, I'll still be here in the barracks.  With tremendous amounts of work to do.~
+-@223  = ~<PRO_LORDLADY> Mayor <CHARNAME>.  Soubar will be lead quite well with you in charge.  Don't worry about the defense of the town;  I'll care for that.~
++@223  = ~<PRO_LADYLORD> Mayor <CHARNAME>.  Soubar will be lead quite well with you in charge.  Don't worry about the defense of the town;  I'll care for that.~
+ @224  = ~Sergeant, I must disagree with you.  There is too much evidence to the contrary.  Continue your investigations.~
+ @225  = ~Dismissed, Sergeant.~
+ @226  = ~Very well, Sergeant.  Carry on.~

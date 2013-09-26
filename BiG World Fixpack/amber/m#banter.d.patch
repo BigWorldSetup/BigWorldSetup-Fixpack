@@ -1,0 +1,262 @@
+--- amber\dialogs\m#banter.d	Fri Aug 21 11:25:00 2009
++++ C:\BWP Patchstudio\patched files\amber\dialogs\m#banter.d	Wed Aug 21 08:40:26 2013
+@@ -739,91 +739,91 @@
+ == BM#AMBER
+ @1178 /* @1178 = ~No, I don't think so. I'm not foolish enough to be lured into a riddling competition with a word twister like you. Been there, done that, and ended up losing every time.~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",1)
+-    	       Class("Player1",BARD_ALL)~
++    	       Class(Player1,BARD_ALL)~
+ @1179 /* @1179 = ~Yet you subject yourself to defeat over and over again with our raven here; after all, he is a bard of sorts as well. Why so cruelly exclude this poet from a friendly game of wits?~ */
+ == BM#AMBER IF ~Global("M#AmberMatch","GLOBAL",1)
+-    		Class("Player1",BARD_ALL)~
++    		Class(Player1,BARD_ALL)~
+ @1180 /* @1180 = ~Well, with him I do not mind fulfilling his wish, should I lose the game.~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",1)
+-    	       !Class("Player1",BARD_ALL)~ 
++    	       !Class(Player1,BARD_ALL)~ 
+ @1181 /* @1181 = ~Yet you subject yourself to defeat over and over again with our raven here. Even though he is no fool, he is no wordsmith either. Thus the game with him must be a rather boring experience, don't you agree, my hummingbird? Why so cruelly exclude this poet from a friendly game of wits? Come now, let us set our wits to work against each other. ~ */
+ == BM#AMBER IF ~Global("M#AmberMatch","GLOBAL",1)
+- 		!Class("Player1",BARD_ALL)~
++ 		!Class(Player1,BARD_ALL)~
+ @1182 /* @1182 = ~No, I don't think so.~ */
+ 
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+- 	       Class("Player2",BARD)~ 
++ 	       Class(Player2,BARD)~ 
+ @1183 /* @1183 = ~Yet you subject yourself to defeat over and over again with our mockingbird here; after all, he is a bard of sorts as well. Why so cruelly exclude this poet from a friendly game of wits?~ */
+ == BM#AMBER IF ~Global("M#AmberMatch","GLOBAL",3)
+-    Class("Player2",BARD)~
++    Class(Player2,BARD)~
+ @1180 /* @1180 = ~Well, with him I do not mind fulfilling his wish, should I lose the game.~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+-   	       Class("Player2",THIEF)~
++   	       Class(Player2,THIEF)~
+ @1184 /* @1184 = ~Yet you subject yourself to defeat over and over again with our mockingbird here. Even though <PLAYER2> is no fool, he is no wordsmith either. Thus the game with him must be a rather boring experience, don't you agree, my hummingbird? Why so cruelly exclude this poet from a friendly game of wits? Come now, let us set our wits to work against each other. ~ */
+ == BM#AMBER IF ~Global("M#AmberMatch","GLOBAL",3)
+-    		Class("Player2",THIEF)~
++    		Class(Player2,THIEF)~
+ @1182 /* @1182 = ~No, I don't think so.~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+    	       OR(3)
+-    		  Class("Player2",CLERIC)
+-    		  Class("Player2",DRUID)
+-    		  Class("Player2",RANGER)~
++    		  Class(Player2,CLERIC)
++    		  Class(Player2,DRUID)
++    		  Class(Player2,RANGER)~
+ @1185 /* @1185 = ~Yet you subject yourself to defeat over and over again with our owl here. Even though <PLAYER2> is no fool, he is no wordsmith either. Thus the game with him must be a rather boring experience, don't you agree, my hummingbird? Why so cruelly exclude this poet from a friendly game of wits? Come now, let us set our wits to work against each other. ~ */
+ == BM#AMBER IF ~Global("M#AmberMatch","GLOBAL",3)
+     		OR(3)
+-    		  Class("Player2",CLERIC)
+-    		  Class("Player2",DRUID)
+-    		  Class("Player2",RANGER)~
++    		  Class(Player2,CLERIC)
++    		  Class(Player2,DRUID)
++    		  Class(Player2,RANGER)~
+ @1182 /* @1182 = ~No, I don't think so.~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+    	       OR(4)
+-    		  Class("Player2",FIGHTER)
+-    		  Class("Player2",PALADIN)
+-    		  Class("Player2",MONK)
+-    		  Kit("Player2",BARBARIAN)~
++    		  Class(Player2,FIGHTER)
++    		  Class(Player2,PALADIN)
++    		  Class(Player2,MONK)
++    		  Kit(Player2,BARBARIAN)~
+ @1186 /* @1186 = ~Yet you subject yourself to defeat over and over again with our hawk here. Even though <PLAYER2> is no fool, he is no wordsmith either. Thus the game with him must be a rather boring experience, don't you agree, my hummingbird? Why so cruelly exclude this poet from a friendly game of wits? Come now, let us set our wits to work against each other. ~ */
+ == BM#AMBER IF ~Global("M#AmberMatch","GLOBAL",3)
+     		OR(4)
+-    		  Class("Player2",FIGHTER)
+-    		  Class("Player2",PALADIN)
+-    		  Class("Player2",MONK)
+-    		  Kit("Player2",BARBARIAN)~
++    		  Class(Player2,FIGHTER)
++    		  Class(Player2,PALADIN)
++    		  Class(Player2,MONK)
++    		  Kit(Player2,BARBARIAN)~
+ @1182 /* @1182 = ~No, I don't think so.~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+    	       OR(2)
+-    		  Class("Player2",MAGE)
+-    		  Class("Player2",SORCERER)~
++    		  Class(Player2,MAGE)
++    		  Class(Player2,SORCERER)~
+ @1187 /* @1187 = ~Yet you subject yourself to defeat over and over again with our ibis here. Even though <PLAYER2> is no fool, he is no wordsmith either. Thus the game with him must be a rather boring experience, don't you agree, my hummingbird? Why so cruelly exclude this poet from a friendly game of wits? Come now, let us set our wits to work against each other. ~ */
+ == BM#AMBER IF ~Global("M#AmberMatch","GLOBAL",3)
+     		OR(2)
+-    		  Class("Player2",MAGE)
+-    		  Class("Player2",SORCERER)~
++    		  Class(Player2,MAGE)
++    		  Class(Player2,SORCERER)~
+ @1182 /* @1182 = ~No, I don't think so.~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+    	       OR(10)
+-    		  Class("Player2",FIGHTER_MAGE)
+-    		  Class("Player2",FIGHTER_CLERIC)
+-    		  Class("Player2",FIGHTER_THIEF)
+-    		  Class("Player2",FIGHTER_MAGE_THIEF)
+-    		  Class("Player2",MAGE_THIEF)
+-    		  Class("Player2",CLERIC_MAGE)
+-    		  Class("Player2",CLERIC_THIEF)
+-    		  Class("Player2",FIGHTER_DRUID)
+-    		  Class("Player2",FIGHTER_MAGE_CLERIC)
+-    		  Class("Player2",CLERIC_RANGER)~
++    		  Class(Player2,FIGHTER_MAGE)
++    		  Class(Player2,FIGHTER_CLERIC)
++    		  Class(Player2,FIGHTER_THIEF)
++    		  Class(Player2,FIGHTER_MAGE_THIEF)
++    		  Class(Player2,MAGE_THIEF)
++    		  Class(Player2,CLERIC_MAGE)
++    		  Class(Player2,CLERIC_THIEF)
++    		  Class(Player2,FIGHTER_DRUID)
++    		  Class(Player2,FIGHTER_MAGE_CLERIC)
++    		  Class(Player2,CLERIC_RANGER)~
+ @1188 /* @1188 = ~Yet you subject yourself to defeat over and over again with our hound here. Even though <PLAYER2> is no fool, he is no wordsmith either. Thus the game with him must be a rather boring experience, don't you agree, my hummingbird? Why so cruelly exclude this poet from a friendly game of wits? Come now, let us set our wits to work against each other. ~ */
+ == BM#AMBER IF ~Global("M#AmberMatch","GLOBAL",3)
+     		OR(10)
+-		  Class("Player2",FIGHTER_MAGE)
+-		  Class("Player2",FIGHTER_CLERIC)
+-		  Class("Player2",FIGHTER_THIEF)
+-		  Class("Player2",FIGHTER_MAGE_THIEF)
+-		  Class("Player2",MAGE_THIEF)
+-		  Class("Player2",CLERIC_MAGE)
+-		  Class("Player2",CLERIC_THIEF)
+-		  Class("Player2",FIGHTER_DRUID)
+-		  Class("Player2",FIGHTER_MAGE_CLERIC)
+-    		  Class("Player2",CLERIC_RANGER)~
++		  Class(Player2,FIGHTER_MAGE)
++		  Class(Player2,FIGHTER_CLERIC)
++		  Class(Player2,FIGHTER_THIEF)
++		  Class(Player2,FIGHTER_MAGE_THIEF)
++		  Class(Player2,MAGE_THIEF)
++		  Class(Player2,CLERIC_MAGE)
++		  Class(Player2,CLERIC_THIEF)
++		  Class(Player2,FIGHTER_DRUID)
++		  Class(Player2,FIGHTER_MAGE_CLERIC)
++    		  Class(Player2,CLERIC_RANGER)~
+ @1182 /* @1182 = ~No, I don't think so.~ */
+ == BHAERDA
+ @1189 /* @1189 = ~But who is it then, my hummingbird, that taught you not to engage in a game of wits with one of my calling? This bard would be honoured to hear of another master of words.~ */
+@@ -1138,39 +1138,39 @@
+ @1264 /* @1264 = ~You have made our raven the most blessed man on this earth. But this sparrow must wonder; who shall be the king of the planes?~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+ 	       OR(4)
+-    		 Class("Player2",FIGHTER)
+-    		 Class("Player2",PALADIN)
+-    		 Class("Player2",MONK)
+-    		 Kit("Player2",BARBARIAN)~
++    		 Class(Player2,FIGHTER)
++    		 Class(Player2,PALADIN)
++    		 Class(Player2,MONK)
++    		 Kit(Player2,BARBARIAN)~
+ @1265 /* @1265 = ~You have made our hawk the most blessed man on this earth. But this sparrow must wonder; who shall be the king of the planes?~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+ 	       OR(2)
+-    		 Class("Player2",BARD)
+-    		 Class("Player2",THIEF)~
++    		 Class(Player2,BARD)
++    		 Class(Player2,THIEF)~
+ @1266 /* @1266 = ~You have made our mockingbird the most blessed man on this earth. But this sparrow must wonder; who shall be the king of the planes?~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+ 	       OR(3)
+-    		 Class("Player2",CLERIC)
+-    		 Class("Player2",DRUID)
+-    		 Class("Player2",RANGER)~
++    		 Class(Player2,CLERIC)
++    		 Class(Player2,DRUID)
++    		 Class(Player2,RANGER)~
+ @1267 /* @1267 = ~You have made our owl the most blessed man on this earth. But this sparrow must wonder; who shall be the king of the planes?~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+ 	       OR(2)
+-    		 Class("Player2",MAGE)
+-    		 Class("Player2",SORCERER)~
++    		 Class(Player2,MAGE)
++    		 Class(Player2,SORCERER)~
+ @1268 /* @1268 = ~You have made our ibis the most blessed man on this earth. But this sparrow must wonder; who shall be the king of the planes?~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+     		OR(10)
+-		  Class("Player2",FIGHTER_MAGE)
+-		  Class("Player2",FIGHTER_CLERIC)
+-		  Class("Player2",FIGHTER_THIEF)
+-		  Class("Player2",FIGHTER_MAGE_THIEF)
+-		  Class("Player2",MAGE_THIEF)
+-		  Class("Player2",CLERIC_MAGE)
+-		  Class("Player2",CLERIC_THIEF)
+-		  Class("Player2",FIGHTER_DRUID)
+-		  Class("Player2",FIGHTER_MAGE_CLERIC)
+-    		  Class("Player2",CLERIC_RANGER)~
++		  Class(Player2,FIGHTER_MAGE)
++		  Class(Player2,FIGHTER_CLERIC)
++		  Class(Player2,FIGHTER_THIEF)
++		  Class(Player2,FIGHTER_MAGE_THIEF)
++		  Class(Player2,MAGE_THIEF)
++		  Class(Player2,CLERIC_MAGE)
++		  Class(Player2,CLERIC_THIEF)
++		  Class(Player2,FIGHTER_DRUID)
++		  Class(Player2,FIGHTER_MAGE_CLERIC)
++    		  Class(Player2,CLERIC_RANGER)~
+ @1269 /* @1269 = ~You have made our hound the most blessed man on this earth. But this sparrow must wonder; who shall be the king of the planes?~ */
+ == BM#AMBER
+ @1270 /* @1270 = ~If you're suggesting that you, I or any of our blood could bestow a blessing on anything, you are even more deranged than I thought.~ */
+@@ -1182,39 +1182,39 @@
+ @1273 /* @1273 = ~Now that, my angel, would be unfortunate indeed... were it to be true. But let this bard makes his rhymes a little clearer: the raven rules your heart this day, that much is plain to see, but foresee you not the dusk of it already?~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+ 	       OR(4)
+-    		 Class("Player2",FIGHTER)
+-    		 Class("Player2",PALADIN)
+-    		 Class("Player2",MONK)
+-    		 Kit("Player2",BARBARIAN)~
++    		 Class(Player2,FIGHTER)
++    		 Class(Player2,PALADIN)
++    		 Class(Player2,MONK)
++    		 Kit(Player2,BARBARIAN)~
+ @1274 /* @1274 = ~Now that, my angel, would be unfortunate indeed... were it to be true. But let this bard makes his rhymes a little clearer: the hawk rules your heart this day, that much is plain to see, but foresee you not the dusk of it already?~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+ 	       OR(2)
+-    		 Class("Player2",BARD)
+-    		 Class("Player2",THIEF)~
++    		 Class(Player2,BARD)
++    		 Class(Player2,THIEF)~
+ @1275 /* @1275 = ~Now that, my angel, would be unfortunate indeed... were it to be true. But let this bard makes his rhymes a little clearer: the mockingbird rules your heart this day, that much is plain to see, but foresee you not the dusk of it already?~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+ 	       OR(3)
+-    		 Class("Player2",CLERIC)
+-    		 Class("Player2",DRUID)
+-    		 Class("Player2",RANGER)~
++    		 Class(Player2,CLERIC)
++    		 Class(Player2,DRUID)
++    		 Class(Player2,RANGER)~
+ @1276 /* @1276 = ~Now that, my angel, would be unfortunate indeed... were it to be true. But let this bard makes his rhymes a little clearer: the owl rules your heart this day, that much is plain to see, but foresee you not the dusk of it already?~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+ 	       OR(2)
+-    		 Class("Player2",MAGE)
+-    		 Class("Player2",SORCERER)~
++    		 Class(Player2,MAGE)
++    		 Class(Player2,SORCERER)~
+ @1277 /* @1277 = ~Now that, my angel, would be unfortunate indeed... were it to be true. But let this bard makes his rhymes a little clearer: the ibis rules your heart this day, that much is plain to see, but foresee you not the dusk of it already?~ */
+ == BHAERDA IF ~Global("M#AmberMatch","GLOBAL",3)
+     		OR(10)
+-		  Class("Player2",FIGHTER_MAGE)
+-		  Class("Player2",FIGHTER_CLERIC)
+-		  Class("Player2",FIGHTER_THIEF)
+-		  Class("Player2",FIGHTER_MAGE_THIEF)
+-		  Class("Player2",MAGE_THIEF)
+-		  Class("Player2",CLERIC_MAGE)
+-		  Class("Player2",CLERIC_THIEF)
+-		  Class("Player2",FIGHTER_DRUID)
+-		  Class("Player2",FIGHTER_MAGE_CLERIC)
+-    		  Class("Player2",CLERIC_RANGER)~
++		  Class(Player2,FIGHTER_MAGE)
++		  Class(Player2,FIGHTER_CLERIC)
++		  Class(Player2,FIGHTER_THIEF)
++		  Class(Player2,FIGHTER_MAGE_THIEF)
++		  Class(Player2,MAGE_THIEF)
++		  Class(Player2,CLERIC_MAGE)
++		  Class(Player2,CLERIC_THIEF)
++		  Class(Player2,FIGHTER_DRUID)
++		  Class(Player2,FIGHTER_MAGE_CLERIC)
++    		  Class(Player2,CLERIC_RANGER)~
+ @1278 /* @1278 = ~Now that, my angel, would be unfortunate indeed... were it to be true. But let this bard makes his rhymes a little clearer: the hound rules your heart this day, that much is plain to see, but foresee you not the dusk of it already?~ */
+ == BM#AMBER
+ @1279 /* @1279 = ~The king of chaos asks me to foresee the future? Since when have you been interested in the longevity of anything?~ */

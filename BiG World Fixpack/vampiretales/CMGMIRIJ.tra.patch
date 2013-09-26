@@ -1,0 +1,11 @@
+--- vampiretales\american\CMGMIRIJ.tra	Wed Jan 06 15:47:37 2010
++++ C:\BWP Patchstudio\patched files\vampiretales\american\CMGMIRIJ.tra	Fri Nov 05 12:44:51 2010
+@@ -47,7 +47,7 @@
+ @46   = ~We are never alone either. The many voices always keeps us company.~
+ @47   = ~The crazies want your blood, oh yes we do! Oh yes another thing, you can't beat <CHARNAME>. We are too good for you.~
+ @48   = ~So we've been double-crossed? Mmmmm! We're going to enjoy bleeding you Havarian. Oh yes, we will certainly enjoy it!.~
+-@49   = ~We do like this fools overwhelming greed, but we have a thing against betrayers. CHARNAME> why is he still alive? Let us have him, please!~
++@49   = ~We do like this fools overwhelming greed, but we have a thing against betrayers. <CHARNAME> why is he still alive? Let us have him, please!~
+ @50   = ~Keep her away from me <CHARNAME>. I will explain why if you keep her from me.~
+ @51   = ~Ha ha ha! I vote we go straight to the Underdark, and we bring along Havarian's severed head to hold the candles to light up our way.~
+ @52   = ~Good thinking, <CHARNAME>. AlwaMiriam go with the flow of coin.~

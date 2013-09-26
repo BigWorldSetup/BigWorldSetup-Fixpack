@@ -1,0 +1,11 @@
+--- Innershade\SCRIPTS\ARISH1.baf	Sun Oct 10 21:59:54 2010
++++ C:\BWP Patchstudio\patched files\Innershade\SCRIPTS\ARISH1.baf	Sun Aug 25 17:24:26 2013
+@@ -226,7 +226,7 @@
+ 
+ IF
+ Global("ISHxCC","GLOBAL",4)
+-GlobalGT("ISHxCCJ","GLOBAL",1)
++Global("ISHxCCJ","GLOBAL",1)
+ THEN
+ RESPONSE #100
+ SetGlobal("ISHxCCJ","GLOBAL",4)

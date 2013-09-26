@@ -1,0 +1,11 @@
+--- Exnem\BAF\AR2100.BAF	Fri Apr 08 16:35:53 2005
++++ C:\BWP Patchstudio\patched files\Exnem\BAF\AR2100.BAF	Thu May 27 07:40:24 2010
+@@ -11,7 +11,7 @@
+       ActionOverride("Chest 1",CreateItem("SCRXX22",0,0,0) // 
+       ActionOverride("Chest 11",CreateItem("XROB001",0,0,0) // 
+       ActionOverride("Chest 14",CreateItem("RNDTRE05",0,0,0) // 
+-      ActionOverride("Chest 17",CreateItem("AMULX003",0,0,0) // 
++      ActionOverride("Chest 17",CreateItem("AMULX03",0,0,0) // 
+       ActionOverride("Chest 4",CreateItem("RNDTRE04",0,0,0) // 
+       ActionOverride("Chest 4",CreateItem("RNDTRE03",0,0,0) // 
+       ActionOverride("Chest 7",CreateItem("AMULX01",0,0,0) // 

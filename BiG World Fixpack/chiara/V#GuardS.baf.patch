@@ -1,0 +1,11 @@
+--- chiara\V#GuardS.baf	Mon Apr 21 17:02:54 2003
++++ C:\BWP Patchstudio\patched files\chiara\V#GuardS.baf	Tue May 25 07:26:58 2010
+@@ -6,7 +6,7 @@
+     RESPONSE #100
+         DisplayStringHead("V#Guard",@1)
+         DisplayString("V#Guard",@1)
+-        PlaySound("Genmg15.wav")
++        PlaySound("Genmg15")
+         Wait(10)
+ END
+ 

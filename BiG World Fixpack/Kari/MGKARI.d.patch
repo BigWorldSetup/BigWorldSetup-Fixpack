@@ -1,0 +1,146 @@
+--- Kari\Dialogue\MGKARI.d	Thu Jul 07 15:42:48 2005
++++ C:\BWP Patchstudio\patched files\Kari\Dialogue\MGKARI.d	Mon Aug 04 20:14:54 2008
+@@ -2,100 +2,92 @@
+ 
+ 
+ 
+-IF ~NumTimesTalkedTo(0)~ THEN BEGIN MeetKari
++IF ~NumTimesTalkedTo(0)~ THEN BEGIN MGMeetKari
+  SAY ~Ohh! I'm...I'm found? Oh no...~
+  =
+  ~Please don't hurt me. I...I mean you no harm.~
+- ++ ~Relax, I'm not here to hurt you. My name is <CHARNAME>. What might yours be?~ GOTO MeetKari2
+- ++ ~Hmm, you look tasty. It's DINNER TIME!~ GOTO KariScaredOff
++ ++ ~Relax, I'm not here to hurt you. My name is <CHARNAME>. What might yours be?~ GOTO MGMeetKari2
++ ++ ~Hmm, you look tasty. It's DINNER TIME!~ GOTO MGKariScaredOff
+ END
+ 
+-IF ~~ THEN BEGIN MeetKari2
++IF ~~ THEN BEGIN MGMeetKari2
+  SAY ~Oh...that's a relief. Um...my name is Kari. I'm...ah...~
+  =
+- ~(The young girl lowers her hood, revealing two long dog-like ears and a red furred face. From her backside, a bushy fox tail seems to sprout.)~
++ ~(The young girl lowers her hood, revealing two dog-like ears and a furred face, a muzzle even. From her backside, a bushy canine tail seems to sprout.)~
+  =
+- ~I'm half kobold, half human. I don't like keeping secrets. Well met, <CHARNAME>.~
+- ++ ~Wow, that's some risk you're taking. How do you know you can trust me?~ GOTO MeetKari3
+- ++ ~Um, aren't kobolds reptilian?~ GOTO MeetKariReptilian
+- ++ ~A foolish mistake. Now you will die, freak!~ GOTO KariScaredOff
++ ~I'm what you'd call a "fur". Um...some call it a freak of nature.~
++ ++ ~Wow, that's some risk you're taking. How do you know you can trust me?~ GOTO MGMeetKari3
++ ++ ~Fur? What in the world?~ GOTO MGMeetKariFur
++ ++ ~A foolish mistake. Now you will die, freak!~ GOTO MGKariScaredOff
+ END
+ 
+-IF ~~ THEN BEGIN MeetKariReptilian
+- SAY ~Usually, yes. But apparently my mother's dog-like features show on me. I'm...not sure if that's normal. I've never seen another half-kobold before.~
+- ++ ~I...see. How do you know you can trust me, lowering your hood like that?~ GOTO MeetKari3
+- ++ ~DIE FREAK!~ GOTO KariScaredOff
++IF ~~ THEN BEGIN MGMeetKariFur
++ SAY ~Yea...there's a few small communities usually hidden away from the eyes of others. We're a rare breed, a byproduct of magical experimentation.~
++ ++ ~I...see. How do you know you can trust me, lowering your hood like that?~ GOTO MGMeetKari3
++ ++ ~Are they all...doggy-like?~ GOTO MGMeetKariFur2
++ ++ ~DIE FREAK!~ GOTO MGKariScaredOff
+ END
+ 
+-IF ~~ THEN BEGIN MeetKari3
+- SAY ~I don't, but you didn't seem like trouble. Um...is there something you wish?~
+- ++ ~Er...how did you come to be here? You seem to have a rather unique heritage.~ GOTO MeetKari4
+- ++ ~I *am* trouble, girl!~ GOTO KariScaredOff
++IF ~~ THEN BEGIN MGMeetKariFur2
++ SAY ~Oh, no. There's a lot of different types. Skunks, deer, bats, felines, rabbits, mice... You name it. It's all there.~
++ ++ ~I...see. How do you know you can trust me? You're taking quite a risk.~ GOTO MGMeetKari3
++ ++ ~I suppose I'll have to kill you, regardless.~ GOTO MGKariScaredOff
+ END
+ 
+-IF ~~ THEN BEGIN MeetKari4
+- SAY ~My father was a human priest of Sune. One autumn day he layed with my mother, a kobold from a nearby troupe. Six months later, I came into the world.~
+- =
+- ~They died in a forest fire when I was but six winters old. Since then, the kobold troupe has supported me, and I took what I could from nature.~
+- =
+- ~Now I dwell here, away from the eyes of city-folk. Garren comes near sometimes, but he's a good man.~
+- ++ ~Your father slept with a kobold!? You folks are freaks!~ GOTO MeetKariFreaks
+- ++ ~I...see. You have no one to be with?~ GOTO MeetKari5
+- ++ ~I don't care. Try on this leash, would you?~ GOTO KariOffendLeave
++IF ~~ THEN BEGIN MGMeetKari3
++ SAY ~I don't, but you didn't seem like trouble. Why did you approach me, anyway?~
++ ++ ~Er...how did you come to be here? This isn't exactly a secret hideaway.~ GOTO MGMeetKari4
++ ++ ~I *am* trouble, girl!~ GOTO MGKariScaredOff
+ END
+ 
+-IF ~~ THEN BEGIN MeetKariFreaks
+- SAY ~They were in love, <CHARNAME>! He...he loved her for her heart.~
+- ++ ~I see. It's a little odd, still, but let's not dwell on that. Are you all by yourself here?~ GOTO MeetKari5
+- ++ ~I think he just wanted to try out some sweet wet kobold flesh, if you know what I mean.~ GOTO KariOffendLeave
++IF ~~ THEN BEGIN MGMeetKari4
++ SAY ~Yes, I know... Perhaps I was foolish to venture out like this, but I needed to find some fruit that only grows in this grove.~
++ ++ ~I...see. You have no one to be with?~ GOTO MGMeetKari5
++ ++ ~I don't care. Try on this leash, would you?~ GOTO MGKariOffendLeave
+ END
+ 
+-IF ~~ THEN BEGIN MeetKari5
+- SAY ~I'm alone and safe here, but it does get lonely sometimes. Alas, I have no one to guide me. Not even Garren would.~
+- ++ ~I could guide you to places you'd want to visit, if you'd like.~ GOTO MeetKari6
+- ++ ~I wish I could take you with me, but I'm afraid I have no room for you at the moment.~ GOTO RefuseKari
+- ++ ~You're right, no one would guide a freak like you around.~ GOTO KariOffendLeave
++IF ~~ THEN BEGIN MGMeetKari5
++ SAY ~I'm alone here, and it does get lonely sometimes. Alas, such is my fate.~
++ ++ ~I could guide you to places you'd want to visit, if you'd like.~ GOTO MGMeetKari6
++ ++ ~I wish I could take you with me, but I'm afraid I have no room for you at the moment.~ GOTO MGRefuseKari
++ ++ ~You're right, no one would guide a freak like you around.~ GOTO MGKariOffendLeave
+ END
+ 
+-IF ~~ THEN BEGIN MeetKari6
++IF ~~ THEN BEGIN MGMeetKari6
+  SAY ~Really? Wow, that'd be...um...great! Okay, let's go before you change your mind!~
+-IF ~~ THEN DO ~SetGlobal("KariJoined","LOCALS",1)JoinParty()~
++IF ~~ THEN DO ~SetGlobal("MGKariJoined","LOCALS",1)JoinParty()~
+ EXIT
+ END
+ 
+-IF ~~ THEN BEGIN KariScaredOff
++IF ~~ THEN BEGIN MGKariScaredOff
+  SAY ~Y-you're a cruel person. Stay away from me!~
+  IF ~~ THEN DO ~EscapeArea()~ EXIT
+ END
+ 
+-IF ~~ THEN BEGIN KariOffendLeave
++IF ~~ THEN BEGIN MGKariOffendLeave
+  SAY ~You're...not as nice as I thought you were. Just...just go away.~
+  IF ~~ THEN DO ~EscapeArea()~ EXIT
+ END
+ 
+-
+-
+-
+-
+-IF ~~ THEN BEGIN RefuseKari
++IF ~~ THEN BEGIN MGRefuseKari
+  SAY ~It's okay. Um...I'll see you again sometime? Oh, and please don't mention this place to anyone. I'd...like no one else to visit.~
+-IF ~~ THEN DO ~SetGlobal("KariAgain","GLOBAL",1)~
++IF ~~ THEN DO ~SetGlobal("MGKariAgain","GLOBAL",1)~
+ EXIT
+ END
+ 
+-IF ~Global("KariAgain","GLOBAL",1)~ THEN BEGIN KariAgain
++IF ~Global("MGKariAgain","GLOBAL",1)~ THEN BEGIN MGKariAgain
+  SAY ~Oh, you're back! Um...have you...reconsidered?~
+- ++ ~No, I was just checking on you.~ GOTO RefuseKari2
+- ++ ~Would you join our group?~ GOTO MeetKari7
++ ++ ~No, I was just checking on you.~ GOTO MGRefuseKari2
++ ++ ~Would you join our group?~ GOTO MGMeetKari7
+ END
+ 
+-IF ~~ THEN BEGIN MeetKari7
++IF ~~ THEN BEGIN MGMeetKari7
+  SAY ~Okay! Let's go before you change your mind!~
+-IF ~~ THEN DO ~SetGlobal("KariJoined","LOCALS",1)JoinParty()~
++IF ~~ THEN DO ~SetGlobal("MGKariJoined","LOCALS",1)JoinParty()~
+ EXIT
+ END
+ 
+-IF ~~ THEN BEGIN RefuseKari2
++IF ~~ THEN BEGIN MGRefuseKari2
+  SAY ~Oh... I'm fine, really.~
+  =
+  ~Take care, <CHARNAME>.~

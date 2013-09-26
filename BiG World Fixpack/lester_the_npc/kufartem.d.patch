@@ -1,0 +1,17 @@
+--- lester_the_npc\kufartem.d	Sat Jun 20 19:22:16 2009
++++ C:\BWP Patchstudio\patched files\lester_the_npc\kufartem.d	Sun May 30 22:20:04 2010
+@@ -74,10 +74,10 @@
+ IF ~~ THEN BEGIN A0
+    SAY @24
+    IF ~~ THEN DO ~SetGlobal("LestQuest","GLOBAL",4)
+-                 CreateCreatureDoor("vamflf01.cre",[356.2800],4)
+-                 CreateCreatureDoor("vamflf01.cre",[219.2936],8)
+-                 CreateCreatureDoor("vamflf01.cre",[124.2892],10)
+-                 CreateCreatureDoor("vamflf01.cre",[87.2816],12)
++                 CreateCreatureDoor("vamflf01",[356.2800],4)
++                 CreateCreatureDoor("vamflf01",[219.2936],8)
++                 CreateCreatureDoor("vamflf01",[124.2892],10)
++                 CreateCreatureDoor("vamflf01",[87.2816],12)
+                  Enemy()~ EXIT
+ END
+ 

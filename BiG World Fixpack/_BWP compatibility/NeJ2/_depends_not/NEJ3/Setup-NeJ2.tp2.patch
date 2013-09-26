@@ -1,0 +1,20 @@
+--- Setup-NeJ2.tp2	Mon Jul 25 12:46:36 2005
++++ C:\BWP Patchstudio\patched files\Setup-NeJ2.tp2	Sat Oct 01 17:20:45 2011
+@@ -2,6 +2,8 @@
+ 
+ AUTHOR ~Vlad & Larrienne~
+ 
++VERSION ~v4.2b BWP Fix~
++
+ BEGIN ~Never Ending Journey v4.2 - Part 1~
+ 
+ //______________________________________//
+@@ -13,7 +15,7 @@
+ REQUIRE_FILE ~Data/25Dialog.bif~ ~Please install "Throne Of Bhaal" and the official ToB patch before installation of this mod.~
+ REQUIRE_FILE ~override/Animate.ids~ ~Please install the official ToB patch before installation of this mod.~
+ REQUIRE_FILE ~override/MusicList.ids~ ~Please install the official ToB patch before installation of this mod.~
+-REQUIRE_FILE ~override/CLASS.ids~ ~Please install the official ToB patch before installation of this mod.~
++//REQUIRE_FILE ~override/CLASS.ids~ ~Please install the official ToB patch before installation of this mod.~
+ REQUIRE_FILE ~override/AreaType.ids~ ~Please install the official ToB patch before installation of this mod.~
+ REQUIRE_FILE ~override/Spell.ids~ ~Please install the Baldurdash fixpack before installation of this mod.~
+ 

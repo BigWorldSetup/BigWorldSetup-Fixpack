@@ -1,0 +1,12 @@
+--- worgas\are\W_4000.baf	Sat Nov 07 15:53:20 2009
++++ C:\BWP Patchstudio\patched files\worgas\are\W_4000.baf	Thu Apr 29 12:57:22 2010
+@@ -3,7 +3,8 @@
+ THEN
+ RESPONSE #100
+ SetGlobal("ZarixNewSpell","AR4000",1)
+-  ActionOverride("Zarix",ChangeAIScript("zarix3",GENERAL)
++  ActionOverride("Zarix",ChangeAIScript("zarix3",GENERAL))
+ Wait(4)
+ DisplayStringHead("Zarix",~Zarix gains new offensive magics.~)
++Continue()
+ END

@@ -1,0 +1,11 @@
+--- vic\shield\quimb2.baf	Fri Aug 12 18:34:38 2005
++++ C:\BWP Patchstudio\patched files\vic\shield\quimb2.baf	Thu Apr 01 16:38:12 2010
+@@ -1,7 +1,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	Global("Prep","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 
+ 	RESPONSE #100

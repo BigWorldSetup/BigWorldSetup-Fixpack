@@ -1,0 +1,11 @@
+--- Yvette\Setup-Yvette.tp2	Sat Feb 25 12:56:38 2012
++++ C:\BWP Patchstudio\patched files\Yvette\Setup-Yvette.tp2	Sun Jan 06 17:56:16 2013
+@@ -16,7 +16,7 @@
+ 
+ ADD_KIT ~YxKit~
+ ~YxKit 0 0 0 0 0 0 0 0~
+-~YxKit 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
++~YxKit 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+ ~YxKit 0 0 0 0 9 0~
+ ~YxKit 0 0 0 0 0 0~
+ ~YxKit 0 0 0 0 0 0~

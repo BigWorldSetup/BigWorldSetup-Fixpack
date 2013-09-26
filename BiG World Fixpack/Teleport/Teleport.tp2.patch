@@ -1,0 +1,110 @@
+--- Teleport\Teleport.tp2	Tue Dec 01 15:43:44 2009
++++ C:\BWP Patchstudio\patched files\Teleport\Teleport.tp2	Thu Oct 18 19:56:19 2012
+@@ -1,5 +1,6 @@
+ BACKUP ~Teleport/backup~
+ AUTHOR ~Razfallow~
++VERSION ~v14 BWP Fix~
+ 
+ LANGUAGE ~Cesky~
+          ~cesky~
+@@ -81,36 +82,12 @@
+       SAY UNIDENTIFIED_DESC @2
+ END
+ 
+-
+-COPY_EXISTING ~scrolls.sto~ ~override/scrolls.sto~
+-READ_LONG 0x34 "sale_offset"
+-READ_LONG 0x38 "sale_number"
+-READ_LONG 0x2C "purchase_offset"
+-READ_LONG 0x4C "drink_offset"
+-READ_LONG 0x70 "cure_offset"
+-WRITE_LONG 0x2C ("%purchase_offset%" + 0x1C)
+-WRITE_LONG 0x4C ("%drink_offset%" + 0x1C)
+-WRITE_LONG 0x70 ("%cure_offset%" + 0x1C)
+-WRITE_LONG 0x38 ("%sale_number%" + 1)
+-INSERT_BYTES  ("%sale_offset%" + ("%sale_number%" * 0x1C)) 28
+-WRITE_ASCII ("%sale_offset%" + ("%sale_number%" * 0x1C)) ~RZTELEP~
+-WRITE_SHORT ("%sale_offset%" + ("%sale_number%" * 0x1C) + 0x0a) 1
+-WRITE_LONG ("%sale_offset%" + ("%sale_number%" * 0x1C) + 0x14) 1
+-
+-COPY_EXISTING ~uddrow25.sto~ ~override/uddrow25.sto~
+-READ_LONG 0x34 "sale_offset"
+-READ_LONG 0x38 "sale_number"
+-READ_LONG 0x2C "purchase_offset"
+-READ_LONG 0x4C "drink_offset"
+-READ_LONG 0x70 "cure_offset"
+-WRITE_LONG 0x2C ("%purchase_offset%" + 0x1C)
+-WRITE_LONG 0x4C ("%drink_offset%" + 0x1C)
+-WRITE_LONG 0x70 ("%cure_offset%" + 0x1C)
+-WRITE_LONG 0x38 ("%sale_number%" + 1)
+-INSERT_BYTES  ("%sale_offset%" + ("%sale_number%" * 0x1C)) 28
+-WRITE_ASCII ("%sale_offset%" + ("%sale_number%" * 0x1C)) ~RZTELEP~
+-WRITE_SHORT ("%sale_offset%" + ("%sale_number%" * 0x1C) + 0x0a) 1
+-WRITE_LONG ("%sale_offset%" + ("%sale_number%" * 0x1C) + 0x14) 1
++COPY_EXISTING ~scrolls.sto~ ~override~
++              ~uddrow25.sto~ ~override~
++  PATCH_IF SOURCE_SIZE > 0x9b BEGIN
++    ADD_STORE_ITEM ~RZTELEP~ LAST #1 #0 #0 ~IDENTIFIED~ #1
++  END
++  BUT_ONLY_IF_IT_CHANGES
+ 
+ APPEND ~Spell.ids~ ~2730 WIZARD_TELEPORT~ UNLESS ~2730 WIZARD_TELEPORT~
+ 
+@@ -313,50 +290,13 @@
+       SAY UNIDENTIFIED_DESC @2
+ END
+ 
+-COPY_EXISTING ~25spell.sto~ ~override/25spell.sto~
+-READ_LONG 0x34 "sale_offset"
+-READ_LONG 0x38 "sale_number"
+-READ_LONG 0x2C "purchase_offset"
+-READ_LONG 0x4C "drink_offset"
+-READ_LONG 0x70 "cure_offset"
+-WRITE_LONG 0x2C ("%purchase_offset%" + 0x1C)
+-WRITE_LONG 0x4C ("%drink_offset%" + 0x1C)
+-WRITE_LONG 0x70 ("%cure_offset%" + 0x1C)
+-WRITE_LONG 0x38 ("%sale_number%" + 1)
+-INSERT_BYTES  ("%sale_offset%" + ("%sale_number%" * 0x1C)) 28
+-WRITE_ASCII ("%sale_offset%" + ("%sale_number%" * 0x1C)) ~RZTELEP~
+-WRITE_SHORT ("%sale_offset%" + ("%sale_number%" * 0x1C) + 0x0a) 1
+-WRITE_LONG ("%sale_offset%" + ("%sale_number%" * 0x1C) + 0x14) 1
+-
+-COPY_EXISTING ~25spell2.sto~ ~override/25spell2.sto~
+-READ_LONG 0x34 "sale_offset"
+-READ_LONG 0x38 "sale_number"
+-READ_LONG 0x2C "purchase_offset"
+-READ_LONG 0x4C "drink_offset"
+-READ_LONG 0x70 "cure_offset"
+-WRITE_LONG 0x2C ("%purchase_offset%" + 0x1C)
+-WRITE_LONG 0x4C ("%drink_offset%" + 0x1C)
+-WRITE_LONG 0x70 ("%cure_offset%" + 0x1C)
+-WRITE_LONG 0x38 ("%sale_number%" + 1)
+-INSERT_BYTES  ("%sale_offset%" + ("%sale_number%" * 0x1C)) 28
+-WRITE_ASCII ("%sale_offset%" + ("%sale_number%" * 0x1C)) ~RZTELEP~
+-WRITE_SHORT ("%sale_offset%" + ("%sale_number%" * 0x1C) + 0x0a) 1
+-WRITE_LONG ("%sale_offset%" + ("%sale_number%" * 0x1C) + 0x14) 1
+-
+-COPY_EXISTING ~garlena.sto~ ~override/garlena.sto~
+-READ_LONG 0x34 "sale_offset"
+-READ_LONG 0x38 "sale_number"
+-READ_LONG 0x2C "purchase_offset"
+-READ_LONG 0x4C "drink_offset"
+-READ_LONG 0x70 "cure_offset"
+-WRITE_LONG 0x2C ("%purchase_offset%" + 0x1C)
+-WRITE_LONG 0x4C ("%drink_offset%" + 0x1C)
+-WRITE_LONG 0x70 ("%cure_offset%" + 0x1C)
+-WRITE_LONG 0x38 ("%sale_number%" + 1)
+-INSERT_BYTES  ("%sale_offset%" + ("%sale_number%" * 0x1C)) 28
+-WRITE_ASCII ("%sale_offset%" + ("%sale_number%" * 0x1C)) ~RZTELEP~
+-WRITE_SHORT ("%sale_offset%" + ("%sale_number%" * 0x1C) + 0x0a) 1
+-WRITE_LONG ("%sale_offset%" + ("%sale_number%" * 0x1C) + 0x14) 1
++COPY_EXISTING ~25spell.sto~ ~override~
++              ~25spell2.sto~ ~override~
++              ~garlena.sto~ ~override~
++  PATCH_IF SOURCE_SIZE > 0x9b BEGIN
++    ADD_STORE_ITEM ~RZTELEP~ LAST #1 #0 #0 ~IDENTIFIED~ #1
++  END
++  BUT_ONLY_IF_IT_CHANGES
+ 
+ APPEND ~Spell.ids~ ~2730 WIZARD_TELEPORT~ UNLESS ~2730 WIZARD_TELEPORT~
+ 

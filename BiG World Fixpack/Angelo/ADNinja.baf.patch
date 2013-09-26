@@ -1,0 +1,11 @@
+--- Angelo\Scripts\ADNinja.baf	Tue May 13 10:59:04 2008
++++ C:\BWP Patchstudio\patched files\Angelo\Scripts\ADNinja.baf	Mon Oct 17 12:12:25 2011
+@@ -6,7 +6,7 @@
+ RESPONSE #100
+ SetGlobal("Prep","LOCALS",1)
+ SetGlobalTimer("NextSpell","LOCALS",10)
+-SpellNoDec(Myself,0)
++SpellNoDec(Myself,ROGUE_ASSASINATION)
+ END
+ 
+ IF

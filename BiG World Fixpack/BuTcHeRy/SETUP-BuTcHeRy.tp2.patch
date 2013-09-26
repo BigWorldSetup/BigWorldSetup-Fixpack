@@ -1,0 +1,19 @@
+--- SETUP-BuTcHeRy.tp2	Wed Nov 16 02:06:55 2011
++++ C:\BWP Patchstudio\patched files\SETUP-BuTcHeRy.tp2	Mon Dec 19 08:14:06 2011
+@@ -144,7 +144,7 @@
+ 
+ 
+ 
+-COMPILE ~BuTcHeRy/dlg/D9firorc.d~ ~override~
++COMPILE ~BuTcHeRy/dlg/D9firorc.d~
+   USING ~BuTcHeRy/Translations/%s/D9firorc.tra~
+ 
+ // Customs tazok for cutsecne
+@@ -337,6 +337,7 @@
+ ADD_MEMORIZED_SPELL 	~spcl152~ 	#0	~INNATE~ 	#2
+ SET_BG2_PROFICIENCY ~PROFICIENCYTWOHANDEDSWORD~ 2
+ SET_BG2_PROFICIENCY ~PROFICIENCY2HANDED~ 2
++  WRITE_BYTE 0x006e 0
+ BUT_ONLY_IF_IT_CHANGES
+ 
+ 

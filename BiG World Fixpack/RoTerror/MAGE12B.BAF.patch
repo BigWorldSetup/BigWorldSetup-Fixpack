@@ -1,0 +1,11 @@
+--- RoTerror\SNIP\BAF\Mage\MAGE12B.BAF	Wed Mar 15 10:55:24 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\Mage\MAGE12B.BAF	Thu Apr 01 16:55:19 2010
+@@ -23,7 +23,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	HPPercentLT(Myself,30)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ 	Global("prepspells","LOCALS",1)
+ THEN
+ 	RESPONSE #100

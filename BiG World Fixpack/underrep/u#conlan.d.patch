@@ -1,0 +1,66 @@
+--- underrep\dlg\u#conlan.d	Sat Apr 24 12:17:50 2004
++++ C:\BWP Patchstudio\patched files\underrep\dlg\u#conlan.d	Fri Jul 28 21:05:08 2006
+@@ -3,40 +3,40 @@
+ BEGIN ~u#conlan~
+ 
+ IF ~Global("U#MetConlan","GLOBAL",0)~ THEN BEGIN 0
+-  SAY ~Who's there?!  Are you friend or foe?!  Speak up, damn your eyes, or you'll get a hammer in your skull!~
+-  IF ~~ THEN REPLY ~I'm <CHARNAME>, an adventurer.~
++  SAY @0
++  IF ~~ THEN REPLY @1
+     DO ~SetGlobal("U#MetConlan","GLOBAL",1)~ GOTO 1
+-  IF ~~ THEN REPLY ~Brave words, but the fear in your voice betrays you, old man. Do not threaten us - we're adventurers and we're not your enemies.~ 
++  IF ~~ THEN REPLY @2 
+     DO ~SetGlobal("U#MetConlan","GLOBAL",1)~ GOTO 1
+ END
+ 
+ IF ~True()~ THEN BEGIN 1
+-  SAY ~Look, I can't offer you much, but I'll be more than glad to shave a few gold off my goods here, if you're interested in buying - and you'd be the only buyers we've had in a long time.~
+-  IF ~Global("U#ExplainConlan", "GLOBAL", 0)~ THEN REPLY ~You have goods for sale?  I'd be interested in seeing them.~ GOTO 15
+-  IF ~Global("U#ExplainConlan", "GLOBAL", 1)~ THEN REPLY ~You have goods for sale?  I'd be interested in seeing them.~ DO ~StartStore("u#conlan",LastTalkedToBy(Myself))~ EXIT
+-  IF ~~ THEN REPLY ~What are you doing here?~ GOTO 17
+-  IF ~~ THEN REPLY ~Perhaps we will return, then.  Farewell.~ EXIT
++  SAY @3
++  IF ~Global("U#ExplainConlan", "GLOBAL", 0)~ THEN REPLY @4 GOTO 15
++  IF ~Global("U#ExplainConlan", "GLOBAL", 1)~ THEN REPLY @4 DO ~StartStore("u#conlan",LastTalkedToBy(Myself))~ EXIT
++  IF ~~ THEN REPLY @5 GOTO 17
++  IF ~~ THEN REPLY @6 EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 15
+-  SAY ~Aye, these weapons should earn me a dragon's horde now that I can actually *sell* them here farther south - did you know they used to be naught but earth-grade iron?  Nay, it's true!  Then, not less than a year ago, Sheemish and I were awoken by this strange greenish glow emanating from them - it was like each one was a torch, they were so bright!~
+-  IF ~~ THEN REPLY ~A glow?~ DO ~SetGlobal("U#ExplainConlan", "GLOBAL", 1)~ GOTO 16
+-  IF ~~ THEN REPLY ~Spare me the rambling, old man, and just show me the weapons.~ DO ~SetGlobal("U#ExplainConlan", "GLOBAL", 1)
++  SAY @7
++  IF ~~ THEN REPLY @8 DO ~SetGlobal("U#ExplainConlan", "GLOBAL", 1)~ GOTO 16
++  IF ~~ THEN REPLY @9 DO ~SetGlobal("U#ExplainConlan", "GLOBAL", 1)
+ StartStore("u#conlan",LastTalkedToBy(Myself))~ EXIT
+-  IF ~~ THEN REPLY ~Never mind - I'll see your goods at some other time.  Farewell.~ DO ~SetGlobal("U#ExplainConlan", "GLOBAL", 1)~ EXIT
++  IF ~~ THEN REPLY @10 DO ~SetGlobal("U#ExplainConlan", "GLOBAL", 1)~ EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 16
+-  SAY ~Aye, they started beating like a *heart* - like the Heartstone Gem itself!  The stone's done something, to them, it has, made them powerfully strong.  I don't know how, but they'll cleave a horde of snakemen in two - hmmph.  If I could only *see* well enough to aim.  And if I had my old strength back...~
+-  IF ~~ THEN REPLY ~I'd like to see these enchanted weapons.~ DO ~StartStore("u#conlan",LastTalkedToBy(Myself))~ EXIT
+-  IF ~~ THEN REPLY ~Spare me the rambling, old man, and just show me the weapons.~ DO ~StartStore("u#conlan",LastTalkedToBy(Myself))~ EXIT
+-  IF ~~ THEN REPLY ~Never mind - I'll see your goods at some other time.  Farewell.~ EXIT
++  SAY @11
++  IF ~~ THEN REPLY @12 DO ~StartStore("u#conlan",LastTalkedToBy(Myself))~ EXIT
++  IF ~~ THEN REPLY @9 DO ~StartStore("u#conlan",LastTalkedToBy(Myself))~ EXIT
++  IF ~~ THEN REPLY @10 EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 17
+-  SAY ~There may have been a time I would never have thought of fleeing Kuldahar, but that all changed recently.  Some bloody yuan-ti attacked the town and slaughtered my son Sheemish.  I swore I'd never set eyes on the place again.~
+-  IF ~Global("U#ExplainConlan", "GLOBAL", 0)~ THEN REPLY ~I'd be interested in seeing the wares you mentioned.~ GOTO 15
+-  IF ~Global("U#ExplainConlan", "GLOBAL", 1)~ THEN REPLY ~I'd be interested in seeing your wares.~ DO ~StartStore("u#conlan",LastTalkedToBy(Myself))~ EXIT
+-  IF ~Global("U#ExplainConlan", "GLOBAL", 1)~ THEN REPLY ~Spare me the rambling, old man, and just show me the weapons.~ DO ~StartStore("u#conlan",LastTalkedToBy(Myself))~ EXIT
+-  IF ~~ THEN REPLY ~I see.  Farewell.~ EXIT
+-END
++  SAY @13
++  IF ~Global("U#ExplainConlan", "GLOBAL", 0)~ THEN REPLY @14 GOTO 15
++  IF ~Global("U#ExplainConlan", "GLOBAL", 1)~ THEN REPLY @15 DO ~StartStore("u#conlan",LastTalkedToBy(Myself))~ EXIT
++  IF ~Global("U#ExplainConlan", "GLOBAL", 1)~ THEN REPLY @9 DO ~StartStore("u#conlan",LastTalkedToBy(Myself))~ EXIT
++  IF ~~ THEN REPLY @16 EXIT
++END
+\ No newline at end of file

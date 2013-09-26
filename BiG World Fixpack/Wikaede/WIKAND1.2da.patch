@@ -1,0 +1,10 @@
+--- Wikaede\2da\WIKAND1.2da	Wed Jun 15 12:07:12 2005
++++ C:\BWP Patchstudio\patched files\Wikaede\2da\WIKAND1.2da	Sun Mar 16 16:06:18 2008
+@@ -1,5 +1,5 @@
+-2DA V1.0 
+-*WikaedeL
++2DA V1.0
++*mgwikaG
+                         0           1 
+ SWITCH                  DEFAULT     DEFAULT 
+ DEFAULT                 71020       99999 

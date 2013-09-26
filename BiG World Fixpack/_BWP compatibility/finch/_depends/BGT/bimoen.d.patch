@@ -1,0 +1,8 @@
+--- finch\bimoen.d	Thu Jul 15 17:48:00 2004
++++ C:\BWP Patchstudio\patched files\finch\bimoen.d	Fri Nov 28 05:45:27 2008
+@@ -1,4 +1,4 @@
+-BEGIN _bimoen
++BEGIN BIMOEN2
+ 
+ IF ~False()~ shah
+   SAY #12345

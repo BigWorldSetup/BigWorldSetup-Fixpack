@@ -1,0 +1,38 @@
+--- kelsey\spanish\Kelsey.TRA	Sun Oct 05 18:10:20 2003
++++ C:\BWP Patchstudio\patched files\kelsey\spanish\Kelsey.TRA	Fri Nov 05 22:32:29 2010
+@@ -33,7 +33,7 @@
+ @27  = ~Realmente no.~
+ @28  = ~Dynaheir y Khalid, compañeros confiables y valiosos amigos, ambos murieron antes de que llegara a alcanzarlos.~
+ @29  = ~Dynaheir y Khalid, compañeros confiables y valiosos amigos, ambos murieron antes de que llegara a alcanzarlos.~
+-@30  = ~Dynaheir y Khalid eran principiantes, por lo tanto sucumbieron ante Irenicus y sus secuaces..~
++@30  = ~Dynaheir y Khalid eran principiantes, por lo tanto sucumbieron ante Irenicus y sus secuaces.~
+ @31  = ~Dynaheir y Khalid eran principiantes, por lo tanto sucumbieron ante Irenicus y sus secuaces.~
+ @32  = ~Esta bien, quiero ayudar. si quieres ayuda estare aqui. Eso es lo que los amigos hacen entre si, segun creo.~
+ @33  = ~Lo siento tanto. Tengo la certeza de haber visto mi parte por los compañeros caídos, pero supongo que no soy afortunado por haber tenido que terminar con muchos de ellos. Imagino que esto sólo es más difícil para un líder, tal como tu.~
+@@ -400,7 +400,7 @@
+ @400 = ~Yo no puedo contestarte  a eso, Kelsey.  Pero no pienso que seas inhumano o un monstruo o algo parecido.~
+ @401 = ~ La magia puede realmente corromper a la gente, pero pienso que tú eres una buena persona y no es un problema.  Y yo te abofeteare si veo que te pierdes, ¿ok? ~
+ @402 = ~ Yo no sé.  El poder conlleva la responsabilidad de la vigilancia.  Nadie puede ser mejor perro guardián de ti mismo, que tu mismo.~
+-@403 = ~ Me alegro de oírte decir eso.  Sé que suena tonto, pero es agradable saber que no estoy solo.  Tú me das la sensación de que no estoy solo.  Gracias, < CHARNAME>. ~
++@403 = ~ Me alegro de oírte decir eso.  Sé que suena tonto, pero es agradable saber que no estoy solo.  Tú me das la sensación de que no estoy solo.  Gracias, <CHARNAME>. ~
+ @404 = ~ Supongo que tienes  razón.  Espero que no  te sientas incomoda con esto, pero me ayuda a saber que alguien más puede entender cómo me siento.~
+ @405 = ~<CHARNAME>... yo estoy casi seguro que tú eres uno de los Hijos de Bhaal.  Te he visto en acción, he oído historias sobre Sarevok y Puerta Baldur.  ¿Y eso Te da ciertos poderes especiales ¿no es así?  Cosas que la gente normal no puede hacer ~ 
+ @406 = ~Yo había esperado protegerte de mi secreto, pero sí, soy un hijo de Bhaal.~ 
+@@ -427,7 +427,7 @@
+ @427 = ~Un día, sin embargo, cuando estaba comerciando en una de nuestras tiendas en Puerta oeste, un par de bandidos nos atracaron, a plena luz del día, y comenzaron a destrozar el lugar.  Allí había un par de clientes pero ninguno protector de la ley, y yo estaba asustado por su vida y por la mía. ~ 
+ @428 = ~A pensar, yo lance un conjuro de flecha ácida cerca del bandido... este era uno de los conjuros que había aprendido hacia pocas semanas, y yo no estaba enterado todavía de su máximo potencial.~ 
+ @429 = ~ La flecha, por un extraño efecto, alcanzo al bandido en pleno cuello, y mágico ácido que yo cree a partir del fino aire hizo su trabajo, muy rápido.~
+-@430 = ~La imagen... yo no puedo conseguir quitarme de la cabeza, la imagen del cuello de ese hombre cuello disolviéndose, Oh, < CHARNAME > era horrible.~ 
++@430 = ~La imagen... yo no puedo conseguir quitarme de la cabeza, la imagen del cuello de ese hombre cuello disolviéndose, Oh, <CHARNAME> era horrible.~ 
+ @431 = ~Ugh, Kelsey, para.  Éste es demasiado. ~
+ @432 = ~Sigue, aún te escucho si te hace sentir bien el hablar de ello.~
+ @433 = ~(Temblor) Tienes razón, no debería hacerte pensar en tales cosas. Lo siento, trataré de no ser así.~
+@@ -1228,7 +1228,7 @@
+ @1341 = ~Y estas preocupado por los miles de tipos malos que aún nos quedan, no?~
+ @1342 = ~Eso es todo?~
+ @1343 = ~Vale, bien. Ahora relájate. Salvar al mundo no es gran cosa. Joder, casi estamos haciendo un hábito de ello.~
+-@1344 = ~Digo, tu sabes como rula esto. Cuando vengan los malos, escucha a <CHARNAME> y haz lo que <PRO_ HESHE> diga.~
++@1344 = ~Digo, tu sabes como rula esto. Cuando vengan los malos, escucha a <CHARNAME> y haz lo que <PRO_HESHE> diga.~
+ @1345 = ~Si no es muy tonto, en cuyo caso haz lo que sea que tenga sentido. Unos minutos después, y puf! Malos muertos. Lo he visto miles de veces.~
+ @1346 = ~Claro! Además, estaré aqui peleando contigo. Te prometo que si te veo en apuros hecharé mihechi mas poderoso a quien sea que te de problemas, o me pondré detrás de ellos y les daré una de la que no se olvidarán.~
+ @1347 = ~Um, siii! Eso si mejor no me voy a casa a tomar un baño o hacer una tarta o algo asi.~

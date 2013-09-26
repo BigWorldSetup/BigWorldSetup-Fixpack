@@ -1,0 +1,21 @@
+--- Ariena\D\Bohunl.D	Thu Sep 25 11:10:02 2008
++++ C:\BWP Patchstudio\patched files\Ariena\D\Bohunl.D	Tue May 04 10:09:00 2010
+@@ -95,12 +95,12 @@
+ APPEND BOHUNL
+ IF ~~ THEN BEGIN HUNT_10
+ SAY @33 
+-  IF ~~ THEN DO ~SetGlobal("Arcombatbohu","GLOBAL",4) ActionOverride("BOHUNM",Enemy())
+-ActionOverride("BOHUN1",Enemy())
+-ActionOverride("BOHUN2",Enemy())
+-ActionOverride("BOHUN3",Enemy())
+-ActionOverride("BOHUN4",Enemy())
+-ActionOverride("BOHUN5",Enemy())
++  IF ~~ THEN DO ~SetGlobal("Arcombatbohu","GLOBAL",4) ActionOverride("MWBOHUM",Enemy())
++ActionOverride("MWBOHU1",Enemy())
++ActionOverride("MWBOHU2",Enemy())
++ActionOverride("MWBOHU3",Enemy())
++ActionOverride("MWBOHU4",Enemy())
++ActionOverride("MWBOHU5",Enemy())
+ Enemy() Attack("Ariena")~ EXIT
+ END
+ END

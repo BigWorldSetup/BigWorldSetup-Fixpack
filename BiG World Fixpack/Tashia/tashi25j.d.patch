@@ -1,0 +1,12 @@
+--- tashia\dialogues\tashi25j.d	Sat Dec 05 20:54:06 2009
++++ C:\BWP Patchstudio\patched files\tashia\dialogues\tashi25j.d	Sun Aug 19 19:21:07 2012
+@@ -167,7 +167,8 @@
+ REPLACE FINSOL01
+   IF ~~ THEN BEGIN 28
+     SAY @39
+-    IF ~Global("TashiaRomanceActive","GLOBAL",2)~ THEN EXTERN tashi25j rom1
++    IF ~IsValidForPartyDialogue("Tashia")
++Global("TashiaRomanceActive","GLOBAL",2)~ THEN EXTERN tashi25j rom1
+     IF ~!Global("TashiaRomanceActive","GLOBAL",2)~ THEN EXTERN FINSOL01 TashiaAdd1
+   END
+ END

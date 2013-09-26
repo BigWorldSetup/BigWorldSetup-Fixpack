@@ -1,0 +1,38 @@
+BACKUP ~iwditemfix/backup~
+AUTHOR ~Lollorian~
+
+BEGIN ~Fix IWD Item Pack Items turning to Gold on load~
+
+COPY_EXISTING ~00flal03.itm~ ~override\xoflal03.itm~
+COPY_EXISTING ~11hfaxks.itm~ ~override\xohfaxks.itm~
+COPY_EXISTING ~11hrsrnp.itm~ ~override\xohrsrnp.itm~
+COPY_EXISTING ~11hfbtsb.itm~ ~override\xohfbtsb.itm~
+COPY_EXISTING ~11hfamlk.itm~ ~override\xohfamlk.itm~
+COPY_EXISTING ~50clubbt.itm~ ~override\xoclubbt.itm~
+COPY_EXISTING ~53amulhd.itm~ ~override\xoamulhd.itm~
+COPY_EXISTING ~60chancd.itm~ ~override\xochancd.itm~
+
+COPY_EXISTING ~wmart1.sto~ ~override\wmart1.sto~
+  REMOVE_STORE_ITEM ~00flal03~
+  REMOVE_STORE_ITEM ~11hfaxks~
+  REMOVE_STORE_ITEM ~11hrsrnp~
+  REMOVE_STORE_ITEM ~11hfbtsb~
+  REMOVE_STORE_ITEM ~11hfamlk~
+  REMOVE_STORE_ITEM ~50clubbt~
+  REMOVE_STORE_ITEM ~53amulhd~
+  REMOVE_STORE_ITEM ~60chancd~
+
+  ADD_STORE_ITEM ~xoflal03~ #1 #1 #1 ~IDENTIFIED~ #1
+  ADD_STORE_ITEM ~xohfaxks~ #1 #1 #1 ~IDENTIFIED~ #1
+  ADD_STORE_ITEM ~xohrsrnp~ #1 #3 #1 ~IDENTIFIED~ #1
+  ADD_STORE_ITEM ~xohfbtsb~ #1 #1 #1 ~IDENTIFIED~ #1
+  ADD_STORE_ITEM ~xohfamlk~ #1 #1 #1 ~IDENTIFIED~ #1
+  ADD_STORE_ITEM ~xoclubbt~ #1 #1 #1 ~IDENTIFIED~ #1
+  ADD_STORE_ITEM ~xoamulhd~ #1 #1 #1 ~IDENTIFIED~ #1
+  ADD_STORE_ITEM ~xochancd~ #1 #1 #1 ~IDENTIFIED~ #1
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~tooltip.2da~ ~override\tooltip.2da~
+  REPLACE_TEXTUALLY ~11hrsrnp~ ~xohrsrnp~
+  REPLACE_TEXTUALLY ~53amulhd~ ~xoamulhd~
+BUT_ONLY_IF_IT_CHANGES

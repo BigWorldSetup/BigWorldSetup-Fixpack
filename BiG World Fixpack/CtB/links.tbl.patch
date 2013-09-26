@@ -1,0 +1,21 @@
+--- CtB\Worldmap\links.tbl	Mon Jun 04 20:35:44 2007
++++ C:\BWP Patchstudio\patched files\CtB\Worldmap\links.tbl	Thu Jul 12 11:54:05 2012
+@@ -107,14 +107,14 @@
+ AR3587    E         AR3520      N           40        8          AR0042   AR0044   AR0043   N        N        70
+ 
+ AR3597    S         AR0020      ExitNE      1         1          N        N        N        N        N        0
+-AR3597    S         AR1300      N           1         8          N        N        N        N        N        0
+-AR3597    S         AR1304      N           1         8          N        N        N        N        N        0
++AR3597    S         AR1300      ExitSE      1         8          N        N        N        N        N        0
++AR3597    S         AR1304      ExitSE      1         8          N        N        N        N        N        0
+ AR3597    S         AR1400      ExitE       3         8          N        N        N        N        N        0
+ AR3597    S         AR1404      ExitE       3         8          N        N        N        N        N        0
+ AR3597    S         AR2000      ExitNW      4         8          N        N        N        N        N        0
+ AR3597    E         AR0020      ExitNE      1         1          N        N        N        N        N        0
+-AR3597    E         AR1300      N           1         8          N        N        N        N        N        0
+-AR3597    E         AR1304      N           1         8          N        N        N        N        N        0
++AR3597    E         AR1300      ExitSE      1         8          N        N        N        N        N        0
++AR3597    E         AR1304      ExitSE      1         8          N        N        N        N        N        0
+ AR3597    E         AR1400      ExitE       3         8          N        N        N        N        N        0
+ AR3597    E         AR1404      ExitE       3         8          N        N        N        N        N        0
+ AR3597    E         AR2000      ExitNW      4         8          N        N        N        N        N        0

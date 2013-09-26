@@ -1,0 +1,10 @@
+IF
+  See([PC])
+  Delay(12)
+  Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+    ForceSpell([PC],VAMPIRE_DOMINATION)
+    Continue()
+END
+

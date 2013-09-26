@@ -1,0 +1,1485 @@
+--- CtB\scripts\ctb\CBBDAWOV.baf	Wed Nov 09 12:20:04 2005
++++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\CBBDAWOV.baf	Mon Oct 17 12:42:42 2011
+@@ -1,39 +1,39 @@
+ IF
+-	Global("AR3521Cb_DSACK_WeaponChoice","",1)
+-	Global("AR3521Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACK_WeaponChoice","AR3521",1)
++	Global("Cb_DSACKsFeintStart","AR3521",1)
+ 	OR(2)
+ 		HitBy([GOODCUTOFF],MISSILE)
+ 		HitBy([GOODCUTOFF],SLASHING)
+ THEN
+ 	RESPONSE #100
+-		SetGlobal("AR3521Cb_DSACKsFeintStart","",2)
+-		SetGlobal("AR3521Cb_DSACKsFeintLose","",1)
++		SetGlobal("Cb_DSACKsFeintStart","AR3521",2)
++		SetGlobal("Cb_DSACKsFeintLose","AR3521",1)
+ 		ClearAllActions()
+ 		StartDialogueNoSet(LastAttackerOf(Myself))
+ END
+ 
+ IF
+-	Global("AR3521Cb_DSACK_WeaponChoice","",2)
+-	Global("AR3521Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACK_WeaponChoice","AR3521",2)
++	Global("Cb_DSACKsFeintStart","AR3521",1)
+ 	HitBy([GOODCUTOFF],MISSILE)
+ THEN
+ 	RESPONSE #100
+-		SetGlobal("AR3521Cb_DSACKsFeintStart","",2)
+-		SetGlobal("AR3521Cb_DSACKsFeintLose","",1)
++		SetGlobal("Cb_DSACKsFeintStart","AR3521",2)
++		SetGlobal("Cb_DSACKsFeintLose","AR3521",1)
+ 		ClearAllActions()
+ 		StartDialogueNoSet(LastAttackerOf(Myself))
+ END
+ 
+ IF
+-	Global("AR3521Cb_DSACK_WeaponChoice","",3)
+-	Global("AR3521Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACK_WeaponChoice","AR3521",3)
++	Global("Cb_DSACKsFeintStart","AR3521",1)
+ 	OR(2)
+ 		HitBy([GOODCUTOFF],PIERCING)
+ 		HitBy([GOODCUTOFF],MISSILE)
+ THEN
+ 	RESPONSE #100
+-		SetGlobal("AR3521Cb_DSACKsFeintStart","",2)
+-		SetGlobal("AR3521Cb_DSACKsFeintLose","",1)
++		SetGlobal("Cb_DSACKsFeintStart","AR3521",2)
++		SetGlobal("Cb_DSACKsFeintLose","AR3521",1)
+ 		ClearAllActions()
+ 		StartDialogueNoSet(LastAttackerOf(Myself))
+ END
+@@ -48,7 +48,7 @@
+ END
+ 
+ IF
+-	Global("AR3521Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3521",1)
+ 	!Exists("CBBDFHJD")
+ THEN
+ 	RESPONSE #100
+@@ -56,7 +56,7 @@
+ END
+ 
+ IF
+-	Global("AR3521Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3521",1)
+ 	!Exists("CBBDFHJE")
+ THEN
+ 	RESPONSE #100
+@@ -76,9 +76,9 @@
+ 
+ IF
+ 	!GlobalTimerNotExpired("DRAGONFEAR","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("DRAGONFEAR","LOCALS",100)
+@@ -87,9 +87,9 @@
+ 
+ IF
+ 	!GlobalTimerNotExpired("DRAGONFEAR","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("DRAGONFEAR","LOCALS",100)
+@@ -100,9 +100,9 @@
+ 
+ IF
+ 	!GlobalTimerNotExpired("DRAGONFEAR","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("DRAGONFEAR","LOCALS",100)
+@@ -127,9 +127,9 @@
+ IF
+ 	!GlobalTimerNotExpired("Prepare2","LOCALS")
+ 	!CheckStatGT(Myself,0,STONESKINS)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("Prepare2","LOCALS",1000)
+@@ -140,9 +140,9 @@
+ IF
+ 	!GlobalTimerNotExpired("Prepare2","LOCALS")
+ 	!CheckStatGT(Myself,0,STONESKINS)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("Prepare2","LOCALS",1000)
+@@ -154,9 +154,9 @@
+ IF
+ 	!GlobalTimerNotExpired("Prepare2","LOCALS")
+ 	!CheckStatGT(Myself,0,STONESKINS)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("Prepare2","LOCALS",1000)
+@@ -173,7 +173,7 @@
+ 	Allegiance(Myself,ENEMY)
+ THEN
+ 	RESPONSE #100
+-		SetGlobalTimer("AR3521TailSlap","",30)
++		SetGlobalTimer("TailSlap","AR3521",30)
+ 		ActionOverride(Myself,SwingOnce())
+ 		DisplayString(Myself,74022) // Tail Slap
+ 		ReallyForceSpell(LastSeenBy(Myself),CLERIC_EARTHQUAKE)
+@@ -183,12 +183,12 @@
+ 	!GlobalTimerNotExpired("TailSlap","AR3521")
+ 	Range(LastSeenBy(Myself),20)
+ 	!StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+-		SetGlobalTimer("AR3521TailSlap","",30)
++		SetGlobalTimer("TailSlap","AR3521",30)
+ 		ActionOverride(Myself,SwingOnce())
+ END
+ 
+@@ -196,12 +196,12 @@
+ 	!GlobalTimerNotExpired("TailSlap","AR3521")
+ 	Range(LastSeenBy(Myself),20)
+ 	!StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+-		SetGlobalTimer("AR3521TailSlap","",30)
++		SetGlobalTimer("TailSlap","AR3521",30)
+ 		ActionOverride(Myself,SwingOnce())
+ END
+ 
+@@ -209,12 +209,12 @@
+ 	!GlobalTimerNotExpired("TailSlap","AR3521")
+ 	Range(LastSeenBy(Myself),20)
+ 	!StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+-		SetGlobalTimer("AR3521TailSlap","",30)
++		SetGlobalTimer("TailSlap","AR3521",30)
+ 		ActionOverride(Myself,SwingOnce())
+ END
+ 
+@@ -233,9 +233,9 @@
+ 
+ IF
+ 	!GlobalTimerNotExpired("SpellTrigger1","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("SpellTrigger1","LOCALS",1000)
+@@ -245,9 +245,9 @@
+ 
+ IF
+ 	!GlobalTimerNotExpired("SpellTrigger1","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("SpellTrigger1","LOCALS",1000)
+@@ -258,9 +258,9 @@
+ 
+ IF
+ 	!GlobalTimerNotExpired("SpellTrigger1","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("SpellTrigger1","LOCALS",1000)
+@@ -280,49 +280,49 @@
+ 	RESPONSE #100
+ 		SetGlobalTimer("BLUEDRAGONBREATH","LOCALS",12)
+ 		ReallyForceSpell(LastSeenBy(Myself),3597)
+-		ReallyForceSpell(LastSeenBy(Myself),0)
++	//	ReallyForceSpell(LastSeenBy(Myself),0)
+ END
+ 
+ IF
+ 	Range(LastSeenBy(Myself),30)
+ 	CheckStatLT(LastSeenBy(Myself),100,RESISTELECTRICITY)
+ 	!GlobalTimerNotExpired("BLUEDRAGONBREATH","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("BLUEDRAGONBREATH","LOCALS",12)
+ 		ReallyForceSpell(LastSeenBy(Myself),3597)
+-		ReallyForceSpell(LastSeenBy(Myself),0)
++	//	ReallyForceSpell(LastSeenBy(Myself),0)
+ END
+ 
+ IF
+ 	Range(LastSeenBy(Myself),30)
+ 	CheckStatLT(LastSeenBy(Myself),100,RESISTELECTRICITY)
+ 	!GlobalTimerNotExpired("BLUEDRAGONBREATH","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("BLUEDRAGONBREATH","LOCALS",12)
+ 		ReallyForceSpell(LastSeenBy(Myself),3597)
+-		ReallyForceSpell(LastSeenBy(Myself),0)
++	//	ReallyForceSpell(LastSeenBy(Myself),0)
+ END
+ 
+ IF
+ 	Range(LastSeenBy(Myself),30)
+ 	CheckStatLT(LastSeenBy(Myself),100,RESISTELECTRICITY)
+ 	!GlobalTimerNotExpired("BLUEDRAGONBREATH","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("BLUEDRAGONBREATH","LOCALS",12)
+ 		ReallyForceSpell(LastSeenBy(Myself),3597)
+-		ReallyForceSpell(LastSeenBy(Myself),0)
++	//	ReallyForceSpell(LastSeenBy(Myself),0)
+ END
+ 
+ IF
+@@ -344,9 +344,9 @@
+ 		SpellCast([GOODCUTOFF],WIZARD_FOG_CLOUD)
+ 		SpellCast([GOODCUTOFF],WIZARD_STINKING_CLOUD)
+ 	!GlobalTimerNotExpired("WINGBUFFET","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("WINGBUFFET","LOCALS",8)
+@@ -362,9 +362,9 @@
+ 		SpellCast([GOODCUTOFF],WIZARD_FOG_CLOUD)
+ 		SpellCast([GOODCUTOFF],WIZARD_STINKING_CLOUD)
+ 	!GlobalTimerNotExpired("WINGBUFFET","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("WINGBUFFET","LOCALS",8)
+@@ -380,9 +380,9 @@
+ 		SpellCast([GOODCUTOFF],WIZARD_FOG_CLOUD)
+ 		SpellCast([GOODCUTOFF],WIZARD_STINKING_CLOUD)
+ 	!GlobalTimerNotExpired("WINGBUFFET","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("WINGBUFFET","LOCALS",8)
+@@ -401,9 +401,9 @@
+ 
+ IF
+ 	!GlobalTimerNotExpired("dbMalison","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("dbMalison","LOCALS",1000)
+@@ -411,9 +411,9 @@
+ 
+ IF
+ 	!GlobalTimerNotExpired("dbMalison","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("dbMalison","LOCALS",1000)
+@@ -422,9 +422,9 @@
+ 
+ IF
+ 	!GlobalTimerNotExpired("dbMalison","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("dbMalison","LOCALS",1000)
+@@ -444,9 +444,9 @@
+ IF
+ 	!CheckStatGT(Myself,0,STONESKINS)
+ 	!GlobalTimerNotExpired("DragonStoneSkin","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("DragonStoneSkin","LOCALS",60)
+@@ -455,9 +455,9 @@
+ IF
+ 	!CheckStatGT(Myself,0,STONESKINS)
+ 	!GlobalTimerNotExpired("DragonStoneSkin","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("DragonStoneSkin","LOCALS",60)
+@@ -467,9 +467,9 @@
+ IF
+ 	!CheckStatGT(Myself,0,STONESKINS)
+ 	!GlobalTimerNotExpired("DragonStoneSkin","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("DragonStoneSkin","LOCALS",60)
+@@ -505,9 +505,9 @@
+ 	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+ 	!HasBounceEffects(LastSeenBy(Myself))
+ 	!GlobalTimerNotExpired("dbSilence","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3521",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("dbSilence","LOCALS",15)
+@@ -524,9 +524,9 @@
+ 	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+ 	!HasBounceEffects(LastSeenBy(Myself))
+ 	!GlobalTimerNotExpired("dbSilence","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("dbSilence","LOCALS",15)
+@@ -544,9 +544,9 @@
+ 	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+ 	!HasBounceEffects(LastSeenBy(Myself))
+ 	!GlobalTimerNotExpired("dbSilence","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("dbSilence","LOCALS",15)
+@@ -566,9 +566,9 @@
+ IF
+ 	CheckStatLT(Myself,50,RESISTMAGIC)
+ 	!GlobalTimerNotExpired("RegainMagic","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("RegainMagic","LOCALS",15)
+@@ -577,9 +577,9 @@
+ IF
+ 	CheckStatLT(Myself,50,RESISTMAGIC)
+ 	!GlobalTimerNotExpired("RegainMagic","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("RegainMagic","LOCALS",15)
+@@ -588,9 +588,9 @@
+ IF
+ 	CheckStatLT(Myself,50,RESISTMAGIC)
+ 	!GlobalTimerNotExpired("RegainMagic","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("RegainMagic","LOCALS",15)
+@@ -628,9 +628,9 @@
+ IF
+ 	!CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
+ 	!GlobalTimerNotExpired("Barrage","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("Barrage","LOCALS",18)
+@@ -646,9 +646,9 @@
+ IF
+ 	!CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
+ 	!GlobalTimerNotExpired("Barrage","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("Barrage","LOCALS",18)
+@@ -670,9 +670,9 @@
+ IF
+ 	!CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
+ 	!GlobalTimerNotExpired("Barrage","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("Barrage","LOCALS",18)
+@@ -712,9 +712,9 @@
+ 	!HasBounceEffects(Myself)
+ 	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+ 	!GlobalTimerNotExpired("SpellTurn","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("SpellTurn","LOCALS",15)
+@@ -724,9 +724,9 @@
+ 	!HasBounceEffects(Myself)
+ 	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+ 	!GlobalTimerNotExpired("SpellTurn","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("SpellTurn","LOCALS",15)
+@@ -736,9 +736,9 @@
+ 	!HasBounceEffects(Myself)
+ 	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+ 	!GlobalTimerNotExpired("SpellTurn","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("SpellTurn","LOCALS",15)
+@@ -759,9 +759,9 @@
+ 
+ IF
+ 	Global("Prepare2","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,73139) // Contingency - Fired
+@@ -770,9 +770,9 @@
+ 
+ IF
+ 	Global("Prepare2","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,73139) // Contingency - Fired
+@@ -782,9 +782,9 @@
+ 
+ IF
+ 	Global("Prepare2","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,73139) // Contingency - Fired
+@@ -816,9 +816,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis1","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis1","LOCALS",1)
+@@ -828,9 +828,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis1","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis1","LOCALS",1)
+@@ -840,9 +840,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis1","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis1","LOCALS",1)
+@@ -875,9 +875,9 @@
+ 		StateCheck(LastSeenBy(Myself),STATE_BLUR)
+ 		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+ 	!GlobalTimerNotExpired("TrueSight","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("TrueSight","LOCALS",30)
+@@ -892,9 +892,9 @@
+ 		StateCheck(LastSeenBy(Myself),STATE_BLUR)
+ 		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+ 	!GlobalTimerNotExpired("TrueSight","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("TrueSight","LOCALS",30)
+@@ -910,9 +910,9 @@
+ 		StateCheck(LastSeenBy(Myself),STATE_BLUR)
+ 		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+ 	!GlobalTimerNotExpired("TrueSight","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("TrueSight","LOCALS",30)
+@@ -932,9 +932,9 @@
+ IF
+ 	See([GOODCUTOFF.0.0.0.0.6])
+ 	Global("Summon","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("Summon","LOCALS",1)
+@@ -943,9 +943,9 @@
+ IF
+ 	See([GOODCUTOFF.0.0.0.0.6])
+ 	Global("Summon","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("Summon","LOCALS",1)
+@@ -954,9 +954,9 @@
+ IF
+ 	See([GOODCUTOFF.0.0.0.0.6])
+ 	Global("Summon","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		ReallyForceSpell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
+@@ -992,9 +992,9 @@
+ 		StateCheck(LastSeenBy(Myself),STATE_DRAWUPONHOLYMIGHT)
+ 		CheckStatGT(LastSeenBy(Myself),0,0)
+ 		CheckStatGT(LastSeenBy(Myself),0,0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("dbDispel","LOCALS",30)
+@@ -1011,9 +1011,9 @@
+ 		StateCheck(LastSeenBy(Myself),STATE_DRAWUPONHOLYMIGHT)
+ 		CheckStatGT(LastSeenBy(Myself),0,0)
+ 		CheckStatGT(LastSeenBy(Myself),0,0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("dbDispel","LOCALS",30)
+@@ -1031,9 +1031,9 @@
+ 		StateCheck(LastSeenBy(Myself),STATE_DRAWUPONHOLYMIGHT)
+ 		CheckStatGT(LastSeenBy(Myself),0,0)
+ 		CheckStatGT(LastSeenBy(Myself),0,0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("dbDispel","LOCALS",30)
+@@ -1052,9 +1052,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis2","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis2","LOCALS",1)
+@@ -1063,9 +1063,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis2","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis2","LOCALS",1)
+@@ -1074,9 +1074,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis2","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis2","LOCALS",1)
+@@ -1115,9 +1115,9 @@
+ 		HasBounceEffects(LastSeenBy(Myself))
+ 		HasImmunityEffects(LastSeenBy(Myself))
+ 	!GlobalTimerNotExpired("dbSecret","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("dbSecret","LOCALS",30)
+@@ -1136,9 +1136,9 @@
+ 		HasBounceEffects(LastSeenBy(Myself))
+ 		HasImmunityEffects(LastSeenBy(Myself))
+ 	!GlobalTimerNotExpired("dbSecret","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("dbSecret","LOCALS",30)
+@@ -1160,9 +1160,9 @@
+ 		HasBounceEffects(LastSeenBy(Myself))
+ 		HasImmunityEffects(LastSeenBy(Myself))
+ 	!GlobalTimerNotExpired("dbSecret","LOCALS")
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("dbSecret","LOCALS",30)
+@@ -1186,9 +1186,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis3","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis3","LOCALS",1)
+@@ -1196,9 +1196,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis3","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis3","LOCALS",1)
+@@ -1207,9 +1207,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis3","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis3","LOCALS",1)
+@@ -1230,9 +1230,9 @@
+ IF
+ 	Global("Prepare","LOCALS",0)
+ 	!CheckStatGT(Myself,0,STONESKINS)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("Prepare","LOCALS",1)
+@@ -1241,9 +1241,9 @@
+ IF
+ 	Global("Prepare","LOCALS",0)
+ 	!CheckStatGT(Myself,0,STONESKINS)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		ApplySpell(Myself,WIZARD_STONE_SKIN)
+@@ -1253,9 +1253,9 @@
+ IF
+ 	Global("Prepare","LOCALS",0)
+ 	!CheckStatGT(Myself,0,STONESKINS)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		ApplySpell(Myself,WIZARD_STONE_SKIN)
+@@ -1274,9 +1274,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis4","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis4","LOCALS",1)
+@@ -1284,9 +1284,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis4","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis4","LOCALS",1)
+@@ -1295,9 +1295,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis4","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis4","LOCALS",1)
+@@ -1320,9 +1320,9 @@
+ IF
+ 	Global("SpellTrigger","LOCALS",0)
+ 	HPGT(Myself,0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("SpellTrigger","LOCALS",1)
+@@ -1331,9 +1331,9 @@
+ IF
+ 	Global("SpellTrigger","LOCALS",0)
+ 	HPGT(Myself,0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("SpellTrigger","LOCALS",1)
+@@ -1342,9 +1342,9 @@
+ IF
+ 	Global("SpellTrigger","LOCALS",0)
+ 	HPGT(Myself,0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,39968) // Spell Trigger - Fired
+@@ -1365,9 +1365,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis5","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis5","LOCALS",1)
+@@ -1375,9 +1375,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis5","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis5","LOCALS",1)
+@@ -1385,9 +1385,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis5","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis5","LOCALS",1)
+@@ -1412,9 +1412,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis6","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis6","LOCALS",1)
+@@ -1422,9 +1422,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis6","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis6","LOCALS",1)
+@@ -1432,9 +1432,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis6","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis6","LOCALS",1)
+@@ -1452,9 +1452,9 @@
+ 
+ IF
+ 	Global("Prepare","LOCALS",1)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("Prepare","LOCALS",2)
+@@ -1462,9 +1462,9 @@
+ 
+ IF
+ 	Global("Prepare","LOCALS",1)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		Spell(Myself,WIZARD_SPELL_TURNING)
+@@ -1473,9 +1473,9 @@
+ 
+ IF
+ 	Global("Prepare","LOCALS",1)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		Spell(Myself,WIZARD_SPELL_TURNING)
+@@ -1493,9 +1493,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis7","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis7","LOCALS",1)
+@@ -1503,9 +1503,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis7","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis7","LOCALS",1)
+@@ -1514,9 +1514,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis7","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis7","LOCALS",1)
+@@ -1535,9 +1535,9 @@
+ IF
+ 	!HasBounceEffects(Myself)
+ 	!HasImmunityEffects(Myself)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		Continue()
+@@ -1546,9 +1546,9 @@
+ IF
+ 	!HasBounceEffects(Myself)
+ 	!HasImmunityEffects(Myself)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		Continue()
+@@ -1557,9 +1557,9 @@
+ IF
+ 	!HasBounceEffects(Myself)
+ 	!HasImmunityEffects(Myself)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		Spell(Myself,WIZARD_SPELL_TURNING)
+@@ -1576,9 +1576,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis8","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis8","LOCALS",1)
+@@ -1586,9 +1586,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis8","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis8","LOCALS",1)
+@@ -1596,9 +1596,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis8","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis8","LOCALS",1)
+@@ -1617,9 +1617,9 @@
+ IF
+ 	Global("Prepare2","LOCALS",1)
+ 	HPPercentLT(Myself,100)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,40252) // Contingency - Protection from Magical Weapons
+@@ -1630,9 +1630,9 @@
+ IF
+ 	Global("Prepare2","LOCALS",1)
+ 	HPPercentLT(Myself,100)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,40252) // Contingency - Protection from Magical Weapons
+@@ -1643,9 +1643,9 @@
+ IF
+ 	Global("Prepare2","LOCALS",1)
+ 	HPPercentLT(Myself,100)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,40252) // Contingency - Protection from Magical Weapons
+@@ -1664,9 +1664,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis9","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis9","LOCALS",1)
+@@ -1674,9 +1674,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis9","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis9","LOCALS",1)
+@@ -1685,9 +1685,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThis9","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThis9","LOCALS",1)
+@@ -1704,9 +1704,9 @@
+ END
+ 
+ IF
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ 	Global("Cb_DSACK_Maze","LOCALS",0)
+ THEN
+ 	RESPONSE #100
+@@ -1714,9 +1714,9 @@
+ END
+ 
+ IF
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ 	Global("Cb_DSACK_Maze","LOCALS",0)
+ THEN
+ 	RESPONSE #100
+@@ -1724,9 +1724,9 @@
+ END
+ 
+ IF
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ 	Global("Cb_DSACK_Maze","LOCALS",0)
+ THEN
+ 	RESPONSE #100
+@@ -1745,9 +1745,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThisA","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThisA","LOCALS",1)
+@@ -1755,9 +1755,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThisA","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThisA","LOCALS",1)
+@@ -1766,9 +1766,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThisA","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThisA","LOCALS",1)
+@@ -1787,9 +1787,9 @@
+ 
+ IF
+ 	!HasImmunityEffects(Myself)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		Continue()
+@@ -1797,9 +1797,9 @@
+ 
+ IF
+ 	!HasImmunityEffects(Myself)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+@@ -1808,9 +1808,9 @@
+ 
+ IF
+ 	!HasImmunityEffects(Myself)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+@@ -1829,9 +1829,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThisB","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThisB","LOCALS",1)
+@@ -1839,9 +1839,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThisB","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThisB","LOCALS",1)
+@@ -1850,9 +1850,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThisB","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThisB","LOCALS",1)
+@@ -1870,9 +1870,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThisC","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThisC","LOCALS",1)
+@@ -1880,9 +1880,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThisC","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThisC","LOCALS",1)
+@@ -1891,9 +1891,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThisC","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThisC","LOCALS",1)
+@@ -1911,9 +1911,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThisD","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThisD","LOCALS",1)
+@@ -1921,9 +1921,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThisD","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThisD","LOCALS",1)
+@@ -1932,9 +1932,9 @@
+ 
+ IF
+ 	Global("CbSpyDidThisD","LOCALS",0)
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbSpyDidThisD","LOCALS",1)
+@@ -1955,9 +1955,9 @@
+ IF
+ 	Detect([GOODCUTOFF])
+ 	!See([GOODCUTOFF])
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",1)
++	Global("Cb_DSACK_SpellLevel","AR3521",1)
+ THEN
+ 	RESPONSE #100
+ 		Continue()
+@@ -1966,9 +1966,9 @@
+ IF
+ 	Detect([GOODCUTOFF])
+ 	!See([GOODCUTOFF])
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",2)
++	Global("Cb_DSACK_SpellLevel","AR3521",2)
+ THEN
+ 	RESPONSE #100
+ 		SpellNoDec(Myself,WIZARD_SUMMON_EFREET)
+@@ -1977,9 +1977,9 @@
+ IF
+ 	Detect([GOODCUTOFF])
+ 	!See([GOODCUTOFF])
+-	Global("AR3531Cb_DSACKsFeintStart","",1)
++	Global("Cb_DSACKsFeintStart","AR3531",1)
+ 	!Allegiance(Myself,ENEMY)
+-	Global("AR3521Cb_DSACK_SpellLevel","",3)
++	Global("Cb_DSACK_SpellLevel","AR3521",3)
+ THEN
+ 	RESPONSE #100
+ 		SpellNoDec(Myself,WIZARD_INVISIBLE_STALKER)

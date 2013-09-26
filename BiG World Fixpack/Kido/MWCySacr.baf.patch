@@ -1,0 +1,11 @@
+--- Kido\scripts\MWCySacr.baf	Thu Sep 25 10:58:36 2008
++++ C:\BWP Patchstudio\patched files\Kido\scripts\MWCySacr.baf	Sat Apr 03 17:55:01 2010
+@@ -21,7 +21,7 @@
+ Wait(2)
+ DisplayStringWait(Myself,~Oh, Great Cyric, Highest of High, Black Sun, Prince of Lies I hereby sacrifice this girl, so that you may claim this place of worship in your name!~)
+ PlaySound("CAS_P07")
+-CreateVisualEffectObject("SPWIRHL","girl02")
++CreateVisualEffectObject("SPWHIRL","girl02")
+ Wait(6)
+ ApplyDamage("girl02",900,PIERCING)
+ Wait(3)

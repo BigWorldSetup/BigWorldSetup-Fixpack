@@ -1,0 +1,11 @@
+--- LR\tra\french\JONEL25J.TRA	Fri Oct 07 17:51:02 2005
++++ C:\BWP Patchstudio\patched files\LR\tra\french\JONEL25J.TRA	Fri Nov 05 12:31:12 2010
+@@ -34,7 +34,7 @@
+ 
+ @17   = ~Eh bien, merci d'être franc une fois de temps en temps, Irenicus. En fait, je ne fais pas non plus confiance à Mélissane. Malheureusement nous n'avons pas d'autre choix que de suivre ses conseils douteux et d'espérer que tout se passe pour le mieux.~
+ 
+-@18   = ~<CHARNAME >, tu fais montre d'autant d'insolence que de bêtise, comme je m'y attendais de la part d'un égoïste comme toi. Fais comme tu veux, je ne t'ennuierai plus avec d'autres conseils, quoi qu'il advienne.~
++@18   = ~<CHARNAME>, tu fais montre d'autant d'insolence que de bêtise, comme je m'y attendais de la part d'un égoïste comme toi. Fais comme tu veux, je ne t'ennuierai plus avec d'autres conseils, quoi qu'il advienne.~
+ 
+ @19   = ~Enfant divin, tu as dû manger un aliment périmé aujourd'hui, je ne peux trouver d'autre raison rationnelle à ta soudaine bouffée de bon sens. Tu ne gagnerais rien à me faire confiance, à part mon mépris, et pourtant faire confiance à Mélissane pourrait bien se révéler être ta dernière décision stupide sur ce plan.~
+ 

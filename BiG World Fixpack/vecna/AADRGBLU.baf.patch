@@ -1,0 +1,11 @@
+--- vecna\baf\drg\AADRGBLU.baf	Mon Mar 22 01:31:10 2010
++++ C:\BWP Patchstudio\patched files\vecna\baf\drg\AADRGBLU.baf	Mon Oct 17 11:12:52 2011
+@@ -56,7 +56,7 @@
+ 	RESPONSE #100
+ 		SetGlobal("WingBuffet","LOCALS",0)
+ 		ForceSpell(LastSeenBy(Myself),BLUE_DRAGON_BREATH)
+-		ReallyForceSpell(LastSeenBy(Myself),0)
++	//	ReallyForceSpell(LastSeenBy(Myself),0)
+ 		SetGlobalTimer("BLUEDRAGONBREATH","GLOBAL",THREE_ROUNDS)
+ END
+ 

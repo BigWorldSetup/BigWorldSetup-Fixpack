@@ -1,0 +1,230 @@
+--- amber\dialogs\m#amber.d	Fri Aug 28 11:48:00 2009
++++ C:\BWP Patchstudio\patched files\amber\dialogs\m#amber.d	Wed Aug 21 08:39:59 2013
+@@ -9658,35 +9658,35 @@
+   IF ~IsValidForPartyDialog("Imoen2")~ THEN EXTERN IMOEN2J M#P2LT2
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(4)
+-    	Class("Player2",FIGHTER)
+-    	Class("Player2",PALADIN)
+-    	Class("Player2",MONK)
+-    	Kit("Player2",BARBARIAN)~ THEN EXTERN HAERDAJ M#P2LT2Hawk
++    	Class(Player2,FIGHTER)
++    	Class(Player2,PALADIN)
++    	Class(Player2,MONK)
++    	Kit(Player2,BARBARIAN)~ THEN EXTERN HAERDAJ M#P2LT2Hawk
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(2)
+-    	Class("Player2",BARD)
+-    	Class("Player2",THIEF)~ THEN EXTERN HAERDAJ M#P2LT2Mockingbird
++    	Class(Player2,BARD)
++    	Class(Player2,THIEF)~ THEN EXTERN HAERDAJ M#P2LT2Mockingbird
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(3)
+-    	Class("Player2",CLERIC)
+-    	Class("Player2",DRUID)
+-    	Class("Player2",RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Owl
++    	Class(Player2,CLERIC)
++    	Class(Player2,DRUID)
++    	Class(Player2,RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Owl
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(2)
+-    	Class("Player2",MAGE)
+-    	Class("Player2",SORCERER)~ THEN EXTERN HAERDAJ M#P2LT2Ibis
++    	Class(Player2,MAGE)
++    	Class(Player2,SORCERER)~ THEN EXTERN HAERDAJ M#P2LT2Ibis
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(10)
+-	Class("Player2",FIGHTER_MAGE)
+-	Class("Player2",FIGHTER_CLERIC)
+-	Class("Player2",FIGHTER_THIEF)
+-	Class("Player2",FIGHTER_MAGE_THIEF)
+-	Class("Player2",MAGE_THIEF)
+-	Class("Player2",CLERIC_MAGE)
+-	Class("Player2",CLERIC_THIEF)
+-	Class("Player2",FIGHTER_DRUID)
+-	Class("Player2",FIGHTER_MAGE_CLERIC)
+-    	Class("Player2",CLERIC_RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Hound
++	Class(Player2,FIGHTER_MAGE)
++	Class(Player2,FIGHTER_CLERIC)
++	Class(Player2,FIGHTER_THIEF)
++	Class(Player2,FIGHTER_MAGE_THIEF)
++	Class(Player2,MAGE_THIEF)
++	Class(Player2,CLERIC_MAGE)
++	Class(Player2,CLERIC_THIEF)
++	Class(Player2,FIGHTER_DRUID)
++	Class(Player2,FIGHTER_MAGE_CLERIC)
++    	Class(Player2,CLERIC_RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Hound
+   IF ~IsValidForPartyDialog("Edwin")~ THEN EXTERN EDWINJ M#P2LT2
+   // IF ~IsValidForPartyDialog("Cernd")~ THEN EXTERN CERNDJ M#P2LT2 
+   IF ~IsValidForPartyDialog("Anomen")~ THEN EXTERN ANOMENJ M#P2LT2 
+@@ -9702,35 +9702,35 @@
+   IF ~IsValidForPartyDialog("Edwin")~ THEN EXTERN EDWINJ M#P2LT2
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(4)
+-    	Class("Player2",FIGHTER)
+-    	Class("Player2",PALADIN)
+-    	Class("Player2",MONK)
+-    	Kit("Player2",BARBARIAN)~ THEN EXTERN HAERDAJ M#P2LT2Hawk
++    	Class(Player2,FIGHTER)
++    	Class(Player2,PALADIN)
++    	Class(Player2,MONK)
++    	Kit(Player2,BARBARIAN)~ THEN EXTERN HAERDAJ M#P2LT2Hawk
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(2)
+-    	Class("Player2",BARD)
+-    	Class("Player2",THIEF)~ THEN EXTERN HAERDAJ M#P2LT2Mockingbird
++    	Class(Player2,BARD)
++    	Class(Player2,THIEF)~ THEN EXTERN HAERDAJ M#P2LT2Mockingbird
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(3)
+-    	Class("Player2",CLERIC)
+-    	Class("Player2",DRUID)
+-    	Class("Player2",RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Owl
++    	Class(Player2,CLERIC)
++    	Class(Player2,DRUID)
++    	Class(Player2,RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Owl
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(2)
+-    	Class("Player2",MAGE)
+-    	Class("Player2",SORCERER)~ THEN EXTERN HAERDAJ M#P2LT2Ibis
++    	Class(Player2,MAGE)
++    	Class(Player2,SORCERER)~ THEN EXTERN HAERDAJ M#P2LT2Ibis
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(10)
+-	Class("Player2",FIGHTER_MAGE)
+-	Class("Player2",FIGHTER_CLERIC)
+-	Class("Player2",FIGHTER_THIEF)
+-	Class("Player2",FIGHTER_MAGE_THIEF)
+-	Class("Player2",MAGE_THIEF)
+-	Class("Player2",CLERIC_MAGE)
+-	Class("Player2",CLERIC_THIEF)
+-	Class("Player2",FIGHTER_DRUID)
+-	Class("Player2",FIGHTER_MAGE_CLERIC)
+-    	Class("Player2",CLERIC_RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Hound
++	Class(Player2,FIGHTER_MAGE)
++	Class(Player2,FIGHTER_CLERIC)
++	Class(Player2,FIGHTER_THIEF)
++	Class(Player2,FIGHTER_MAGE_THIEF)
++	Class(Player2,MAGE_THIEF)
++	Class(Player2,CLERIC_MAGE)
++	Class(Player2,CLERIC_THIEF)
++	Class(Player2,FIGHTER_DRUID)
++	Class(Player2,FIGHTER_MAGE_CLERIC)
++    	Class(Player2,CLERIC_RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Hound
+   IF ~IsValidForPartyDialog("Imoen2")~ THEN EXTERN IMOEN2J M#P2LT2
+   IF ~IsValidForPartyDialog("Jaheira")~ THEN EXTERN JAHEIRAJ M#P2LT2
+   IF ~IsValidForPartyDialog("Jan")~ THEN EXTERN JANJ M#P2LT2
+@@ -9756,35 +9756,35 @@
+   IF ~IsValidForPartyDialog("Yoshimo")~ THEN EXTERN YOSHJ M#P2LT2
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(4)
+-    	Class("Player2",FIGHTER)
+-    	Class("Player2",PALADIN)
+-    	Class("Player2",MONK)
+-    	Kit("Player2",BARBARIAN)~ THEN EXTERN HAERDAJ M#P2LT2Hawk
++    	Class(Player2,FIGHTER)
++    	Class(Player2,PALADIN)
++    	Class(Player2,MONK)
++    	Kit(Player2,BARBARIAN)~ THEN EXTERN HAERDAJ M#P2LT2Hawk
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(2)
+-    	Class("Player2",BARD)
+-    	Class("Player2",THIEF)~ THEN EXTERN HAERDAJ M#P2LT2Mockingbird
++    	Class(Player2,BARD)
++    	Class(Player2,THIEF)~ THEN EXTERN HAERDAJ M#P2LT2Mockingbird
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(3)
+-    	Class("Player2",CLERIC)
+-    	Class("Player2",DRUID)
+-    	Class("Player2",RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Owl
++    	Class(Player2,CLERIC)
++    	Class(Player2,DRUID)
++    	Class(Player2,RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Owl
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(2)
+-    	Class("Player2",MAGE)
+-    	Class("Player2",SORCERER)~ THEN EXTERN HAERDAJ M#P2LT2Ibis
++    	Class(Player2,MAGE)
++    	Class(Player2,SORCERER)~ THEN EXTERN HAERDAJ M#P2LT2Ibis
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(10)
+-	Class("Player2",FIGHTER_MAGE)
+-	Class("Player2",FIGHTER_CLERIC)
+-	Class("Player2",FIGHTER_THIEF)
+-	Class("Player2",FIGHTER_MAGE_THIEF)
+-	Class("Player2",MAGE_THIEF)
+-	Class("Player2",CLERIC_MAGE)
+-	Class("Player2",CLERIC_THIEF)
+-	Class("Player2",FIGHTER_DRUID)
+-	Class("Player2",FIGHTER_MAGE_CLERIC)
+-    	Class("Player2",CLERIC_RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Hound
++	Class(Player2,FIGHTER_MAGE)
++	Class(Player2,FIGHTER_CLERIC)
++	Class(Player2,FIGHTER_THIEF)
++	Class(Player2,FIGHTER_MAGE_THIEF)
++	Class(Player2,MAGE_THIEF)
++	Class(Player2,CLERIC_MAGE)
++	Class(Player2,CLERIC_THIEF)
++	Class(Player2,FIGHTER_DRUID)
++	Class(Player2,FIGHTER_MAGE_CLERIC)
++    	Class(Player2,CLERIC_RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Hound
+   IF ~IsValidForPartyDialog("Nalia")~ THEN EXTERN NALIAJ M#P2LT2
+   IF ~IsValidForPartyDialog("Imoen2")~ THEN EXTERN IMOEN2J M#P2LT2
+   IF ~IsValidForPartyDialog("Anomen")~ THEN EXTERN ANOMENJ M#P2LT2 
+@@ -9808,35 +9808,35 @@
+   IF ~IsValidForPartyDialog("Nalia")~ THEN EXTERN NALIAJ M#P2LT2
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(4)
+-    	Class("Player2",FIGHTER)
+-    	Class("Player2",PALADIN)
+-    	Class("Player2",MONK)
+-    	Kit("Player2",BARBARIAN)~ THEN EXTERN HAERDAJ M#P2LT2Hawk
++    	Class(Player2,FIGHTER)
++    	Class(Player2,PALADIN)
++    	Class(Player2,MONK)
++    	Kit(Player2,BARBARIAN)~ THEN EXTERN HAERDAJ M#P2LT2Hawk
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(2)
+-    	Class("Player2",BARD)
+-    	Class("Player2",THIEF)~ THEN EXTERN HAERDAJ M#P2LT2Mockingbird
++    	Class(Player2,BARD)
++    	Class(Player2,THIEF)~ THEN EXTERN HAERDAJ M#P2LT2Mockingbird
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(3)
+-    	Class("Player2",CLERIC)
+-    	Class("Player2",DRUID)
+-    	Class("Player2",RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Owl
++    	Class(Player2,CLERIC)
++    	Class(Player2,DRUID)
++    	Class(Player2,RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Owl
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(2)
+-    	Class("Player2",MAGE)
+-    	Class("Player2",SORCERER)~ THEN EXTERN HAERDAJ M#P2LT2Ibis
++    	Class(Player2,MAGE)
++    	Class(Player2,SORCERER)~ THEN EXTERN HAERDAJ M#P2LT2Ibis
+   IF ~IsValidForPartyDialog("HaerDalis")
+       OR(10)
+-	Class("Player2",FIGHTER_MAGE)
+-	Class("Player2",FIGHTER_CLERIC)
+-	Class("Player2",FIGHTER_THIEF)
+-	Class("Player2",FIGHTER_MAGE_THIEF)
+-	Class("Player2",MAGE_THIEF)
+-	Class("Player2",CLERIC_MAGE)
+-	Class("Player2",CLERIC_THIEF)
+-	Class("Player2",FIGHTER_DRUID)
+-	Class("Player2",FIGHTER_MAGE_CLERIC)
+-    	Class("Player2",CLERIC_RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Hound
++	Class(Player2,FIGHTER_MAGE)
++	Class(Player2,FIGHTER_CLERIC)
++	Class(Player2,FIGHTER_THIEF)
++	Class(Player2,FIGHTER_MAGE_THIEF)
++	Class(Player2,MAGE_THIEF)
++	Class(Player2,CLERIC_MAGE)
++	Class(Player2,CLERIC_THIEF)
++	Class(Player2,FIGHTER_DRUID)
++	Class(Player2,FIGHTER_MAGE_CLERIC)
++    	Class(Player2,CLERIC_RANGER)~ THEN EXTERN HAERDAJ M#P2LT2Hound
+   IF ~IsValidForPartyDialog("Minsc")~ THEN EXTERN MINSCJ M#P2LT2
+   IF ~IsValidForPartyDialog("Imoen2")~ THEN EXTERN IMOEN2J M#P2LT2
+   IF ~IsValidForPartyDialog("Mazzy")~ THEN EXTERN MAZZYJ M#P2LT2

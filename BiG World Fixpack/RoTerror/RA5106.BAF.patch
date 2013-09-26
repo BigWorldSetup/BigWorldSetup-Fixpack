@@ -1,0 +1,58 @@
+--- RoTerror\BAF\RA5106.BAF	Sat Mar 11 21:06:56 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\RA5106.BAF	Sun Sep 27 19:38:57 2009
+@@ -15,6 +15,7 @@
+ 		HideGUI()
+ 		ActionOverride("Option",DestroySelf())
+ 		Wait(1)
++		SetGlobal("Thestrangeman","GLOBAL",999)
+ 		SetGlobal("Thestrangeman3","GLOBAL",2)
+ 		UnhideGUI()
+ 		EndCutSceneMode()
+@@ -109,3 +110,46 @@
+ END
+ 
+ 
++IF
++	!Global("Thestrangeman","GLOBAL",2)
++	!Global("Thestrangeman","GLOBAL",3)
++	!Global("Thestrangeman","GLOBAL",4)
++	!Global("Thestrangeman","GLOBAL",5)
++	Global("jkasdflk","GLOBAL",0)
++	//AreaCheck("RA5106")
++	!See("BreFi9")
++THEN
++	RESPONSE #100
++		SetGlobal("jkasdflk","GLOBAL",1)
++END
++
++IF
++        OR(2)
++	     Global("Thestrangeman","GLOBAL",2)
++	     Global("Thestrangeman","GLOBAL",3)
++	!Global("Notthisagain","RA5106",1)
++	//AreaCheck("RA5106")
++	!See("BreFi9")
++	OR(2)
++		Time(24)
++		Time(1)
++THEN
++	RESPONSE #100
++		StartCutSceneMode()
++		HideGUI()
++		CreateCreatureObject("Option",Player1,0,0,0) // Option
++		Wait(1)
++		UnhideGUI()
++		EndCutSceneMode()
++		ActionOverride("Option",StartDialogueNoSet(Player1))
++END
++
++IF
++	Global("Thestrangeman","GLOBAL",6)
++	Global("rgggdaf","GLOBAL",0)
++	//AreaCheck("RA5106")
++	!See("BreFi9")
++THEN
++	RESPONSE #100
++		SetGlobal("rgggdaf","GLOBAL",1)
++END
+\ No newline at end of file

@@ -1,0 +1,28 @@
+--- AjocMod\bcs\AGSQUIR.BAF	Mon Sep 29 21:17:02 2003
++++ C:\BWP Patchstudio\patched files\AjocMod\bcs\AGSQUIR.BAF	Fri Dec 17 13:18:47 2010
+@@ -1,6 +1,6 @@
+ IF
+ 	Global("AGSquirrelQuest","GLOBAL",9)
+-	Heard([ANYONE],INCOMING_111)
++	Heard([ANYONE],111)
+ THEN
+ 	RESPONSE #100
+ 		MoveToObject(NearestEnemyOf(Myself))
+@@ -48,9 +48,16 @@
+ 
+ IF
+ 	Global("AGSquirrelQuest","GLOBAL",9)
++	!Allegiance(Myself,ENEMY)
+ THEN
+ 	RESPONSE #100
+-		Attack(Player1)
+ 		Enemy()
++END
++
++IF
++	See(NearestEnemyOf(Myself))
++THEN
++	RESPONSE #100
++		AttackReevaluate(NearestEnemyOf(Myself),30)
+ END
+ 

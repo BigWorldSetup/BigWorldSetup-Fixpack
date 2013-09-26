@@ -1,0 +1,10 @@
+--- sarahtob\scripts\k#sar25d.baf	Sat Oct 17 21:31:00 2009
++++ C:\BWP Patchstudio\patched files\sarahtob\scripts\k#sar25d.baf	Mon Jun 07 20:43:26 2010
+@@ -13,6 +13,6 @@
+ RESPONSE #100
+ IncrementGlobal("K#UltraSurfboard","GLOBAL",1)
+ PlaySong(0)
+-PlaySound("")
++PlaySound("K#SarM5")
+ Interact(Player1)
+ END

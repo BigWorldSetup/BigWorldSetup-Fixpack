@@ -1,0 +1,11 @@
+--- tb#quest\lotr\compile\tb#lotpr.baf	Wed Jul 28 17:01:12 2004
++++ C:\BWP Patchstudio\patched files\tb#quest\lotr\compile\tb#lotpr.baf	Mon Apr 26 20:35:46 2010
+@@ -24,7 +24,7 @@
+     	     CreateCreature("tb#lotgw",[96.224],14) //13 level Ogre Warrior
+     	     CreateCreature("tb#lotgm",[160.32],14) //19 level Orc Wild Mage
+     	     CreateCreature("tb#lotga",[160.96],14)
+-    	     CreateCreature("tb#lotg",[160.160],14)  //25 level Orog Berzerker: the general
++    	     CreateCreature("tb#lotrg",[160.160],14)  //25 level Orog Berzerker: the general
+     	     CreateCreature("tb#lotra",[224.32],14)
+     	     CreateCreature("tb#lotgw",[224.96],14)
+     	     CreateCreature("tb#lotro",[288.32],14)

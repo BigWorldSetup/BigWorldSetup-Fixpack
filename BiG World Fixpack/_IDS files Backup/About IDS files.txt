@@ -1,0 +1,5 @@
+IDS files provide a method to map a symbolic name to a numeric identifier. The file fall into two categories; those required by the game, and those required for ease-of-use in scripting. Files required by the game (e.g. projectl.ids) are referenced at run-time to convert a number (as stored in an ITM or SPL) into a filename. Files used by scripting are referenced when scripts are compiled/decompile. When scripts are decompiled, IDS files can optionally be used to convert the numeric format stored in BSC files back to the symbolic name. When scripts are compiled, if a symbolic name has been used, the relevant IDS file must be present to convert the name into a numeric value. In either case, once the compilation/decompilation is done, the IDS file is no longer used.
+
+(from IESDP)
+
+If you have any problem with a missing IDS entry during installation, just drop the IDS file into the override folder. This should solve your problem.

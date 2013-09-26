@@ -1,0 +1,216 @@
+--- Yikari\Yikari.tp2	Sun May 30 12:36:28 2010
++++ C:\BWP Patchstudio\patched files\Yikari\Yikari.tp2	Sun Dec 04 09:34:43 2011
+@@ -14,8 +14,11 @@
+ 
+ LANGUAGE ~English~ ~English~ ~Yikari/Translations/English/setup.tra~
+ LANGUAGE ~French~ ~Francais~ ~Yikari/Translations/Francais/setup.tra~
++                             ~Yikari/Translations/English/setup.tra~
+ LANGUAGE ~Russian~ ~Russian~ ~Yikari/Translations/Russian/setup.tra~
++                             ~Yikari/Translations/English/setup.tra~
+ LANGUAGE ~Italian~ ~Italian~ ~Yikari/Translations/Italian/setup.tra~
++                             ~Yikari/Translations/English/setup.tra~
+ 
+ BEGIN @1
+ 
+@@ -425,3 +428,201 @@
+  BEGIN COMPILE ~Yikari/Dialogue/kuroisan.d~
+  USING ~Yikari/Translations/%s/interject.tra~
+ END
++
++BEGIN @66
++REQUIRE_COMPONENT ~setup-itemupgrade.tp2~ ~10~ @67
++INSTALL_BY_DEFAULT
++
++// Item Upgrade - Revised
++
++<<<<<<<< .../Yikari/Dialogue/c2soa.d
++
++EXTEND_BOTTOM WSMITH01 13
++	IF ~PartyHasItem("sdnpcsw3")~ THEN GOTO XO#ItemUp00
++END
++  
++APPEND WSMITH01
++	IF ~~ THEN BEGIN XO#ItemUp00 SAY @123470
++		IF ~PartyHasItem("sdnpcsw3")
++			PartyHasItem("misc6m")
++			PartyHasItem("wand07")~ THEN GOTO XO#ItemUp02
++		IF ~PartyHasItem("sdnpcsw3")
++			!PartyHasItem("misc6m")
++			PartyHasItem("wand07")
++			PartyHasItem("plot02i")~ THEN GOTO XO#ItemUp03
++		IF ~PartyHasItem("sdnpcsw3")
++			!PartyHasItem("misc6m")
++			PartyHasItem("wand07")
++			PartyHasItem("plot02j")~ THEN GOTO XO#ItemUp04
++		IF ~PartyHasItem("sdnpcsw3")
++			OR(2)
++				!PartyHasItem("misc6m")
++				!PartyHasItem("wand07")~ THEN GOTO XO#ItemUp01
++		IF ~PartyHasItem("sdnpcsw3")
++			!PartyHasItem("misc6m")
++			OR(2)
++				!PartyHasItem("wand07")
++				!PartyHasItem("plot02i")~ THEN GOTO XO#ItemUp01
++		IF ~PartyHasItem("sdnpcsw3")
++			!PartyHasItem("misc6m")
++			!PartyHasItem("plot02i")
++			OR(2)
++				!PartyHasItem("wand07")
++				!PartyHasItem("plot02j")~ THEN GOTO XO#ItemUp01
++	END
++  
++	IF ~~ THEN BEGIN XO#ItemUp01 SAY @1234870
++		IF ~~ THEN GOTO XO#NoItemUp
++	END
++  
++	IF ~~ THEN BEGIN XO#ItemUp02 SAY @1234970
++		IF ~PartyGoldLT(20000)~ THEN REPLY #66662 GOTO XO#NoItemUp
++		IF ~PartyGoldGT(19999)~ THEN REPLY #66664 DO ~SetGlobal("XO#ItemUp","ar0334",41)
++											 		 SetGlobal("ForgeStuff","GLOBAL",1)
++													 TakePartyGold(20000)
++													 DestroyGold(20000)
++													 TakePartyItemNum("sdnpcsw3",1)
++													 DestroyItem("sdnpcsw3")
++													 TakePartyItemNum("misc6m",1)
++													 DestroyItem("misc6m")
++													 TakePartyItemNum("wand07",1)
++													 DestroyItem("wand07")~ GOTO 56
++    IF ~~ THEN REPLY #66770 GOTO XO#NoItemUp
++	END
++  
++	IF ~~ THEN BEGIN XO#ItemUp03 SAY @1234970
++		IF ~PartyGoldLT(20000)~ THEN REPLY #66662 GOTO XO#NoItemUp
++		IF ~PartyGoldGT(19999)~ THEN REPLY #66664 DO ~SetGlobal("XO#ItemUp","ar0334",41)
++											 		 SetGlobal("ForgeStuff","GLOBAL",1)
++													 TakePartyGold(20000)
++													 DestroyGold(20000)
++													 TakePartyItemNum("sdnpcsw3",1)
++													 DestroyItem("sdnpcsw3")
++													 TakePartyItemNum("plot02i",1)
++													 DestroyItem("plot02i")
++													 TakePartyItemNum("wand07",1)
++													 DestroyItem("wand07")~ GOTO 56
++    IF ~~ THEN REPLY #66770 GOTO XO#NoItemUp
++	END
++  
++	IF ~~ THEN BEGIN XO#ItemUp04 SAY @1234970
++		IF ~PartyGoldLT(20000)~ THEN REPLY #66662 GOTO XO#NoItemUp
++		IF ~PartyGoldGT(19999)~ THEN REPLY #66664 DO ~SetGlobal("XO#ItemUp","ar0334",41)
++											 		 SetGlobal("ForgeStuff","GLOBAL",1)
++													 TakePartyGold(20000)
++													 DestroyGold(20000)
++													 TakePartyItemNum("sdnpcsw3",1)
++													 DestroyItem("sdnpcsw3")
++													 TakePartyItemNum("plot02j",1)
++													 DestroyItem("plot02j")
++													 TakePartyItemNum("wand07",1)
++													 DestroyItem("wand07")~ GOTO 56
++    IF ~~ THEN REPLY #66770 GOTO XO#NoItemUp
++	END
++
++	IF ~~ THEN BEGIN XO#NoItemUp SAY @1234
++		COPY_TRANS WSMITH01 13
++	END
++END
++>>>>>>>>
++COMPILE ~.../Yikari/Dialogue/c2soa.d~
++USING ~Yikari/Translations/English/interject.tra~
++
++BEGIN @68
++REQUIRE_COMPONENT ~setup-itemupgrade.tp2~ ~11~ @69
++INSTALL_BY_DEFAULT
++
++<<<<<<<< .../Yikari/Dialogue/c2tob.d
++EXTEND_BOTTOM BOTSMITH 4
++	IF ~PartyHasItem("sdnpcsw3")~ THEN GOTO XO#ItemUp00
++END
++  
++APPEND BOTSMITH
++	IF ~~ THEN BEGIN XO#ItemUp00 SAY @567870
++		IF ~PartyHasItem("sdnpcsw3")
++			PartyHasItem("misc6m")
++			PartyHasItem("wand07")~ THEN GOTO XO#ItemUp02
++		IF ~PartyHasItem("sdnpcsw3")
++			!PartyHasItem("misc6m")
++			PartyHasItem("wand07")
++			PartyHasItem("plot02i")~ THEN GOTO XO#ItemUp03
++		IF ~PartyHasItem("sdnpcsw3")
++			!PartyHasItem("misc6m")
++			PartyHasItem("wand07")
++			PartyHasItem("plot02j")~ THEN GOTO XO#ItemUp04
++		IF ~PartyHasItem("sdnpcsw3")
++			OR(2)
++				!PartyHasItem("misc6m")
++				!PartyHasItem("wand07")~ THEN GOTO XO#ItemUp01
++		IF ~PartyHasItem("sdnpcsw3")
++			!PartyHasItem("misc6m")
++			OR(2)
++				!PartyHasItem("wand07")
++				!PartyHasItem("plot02i")~ THEN GOTO XO#ItemUp01
++		IF ~PartyHasItem("sdnpcsw3")
++			!PartyHasItem("misc6m")
++			!PartyHasItem("plot02i")
++			OR(2)
++				!PartyHasItem("wand07")
++				!PartyHasItem("plot02j")~ THEN GOTO XO#ItemUp01
++	END
++  
++	IF ~~ THEN BEGIN XO#ItemUp01 SAY @5678870
++		IF ~~ THEN GOTO XO#NoItemUp
++	END
++  
++	IF ~~ THEN BEGIN XO#ItemUp02 SAY @5678970
++		IF ~PartyGoldLT(20000)~ THEN REPLY #66662 GOTO XO#NoItemUp
++		IF ~PartyGoldGT(19999)~ THEN REPLY #66664 DO ~SetGlobal("XO#TOBItemUp","GLOBAL",41)
++											 		 SetGlobal("ImpForgeStuff","GLOBAL",1)
++													 SetGlobal("XO#TOBCraft","GLOBAL",1)
++													 TakePartyGold(20000)
++													 DestroyGold(20000)
++													 TakePartyItemNum("sdnpcsw3",1)
++													 DestroyItem("sdnpcsw3")
++													 TakePartyItemNum("misc6m",1)
++													 DestroyItem("misc6m")
++													 TakePartyItemNum("wand07",1)
++													 DestroyItem("wand07")~ GOTO 11
++    IF ~~ THEN REPLY #66770 GOTO XO#NoItemUp
++	END
++  
++	IF ~~ THEN BEGIN XO#ItemUp03 SAY @5678970
++		IF ~PartyGoldLT(20000)~ THEN REPLY #66662 GOTO XO#NoItemUp
++		IF ~PartyGoldGT(19999)~ THEN REPLY #66664 DO ~SetGlobal("XO#TOBItemUp","GLOBAL",41)
++											 		 SetGlobal("ImpForgeStuff","GLOBAL",1)
++													 SetGlobal("XO#TOBCraft","GLOBAL",1)
++													 TakePartyGold(20000)
++													 DestroyGold(20000)
++													 TakePartyItemNum("sdnpcsw3",1)
++													 DestroyItem("sdnpcsw3")
++													 TakePartyItemNum("plot02i",1)
++													 DestroyItem("plot02i")
++													 TakePartyItemNum("wand07",1)
++													 DestroyItem("wand07")~ GOTO 11
++    IF ~~ THEN REPLY #66770 GOTO XO#NoItemUp
++	END
++  
++	IF ~~ THEN BEGIN XO#ItemUp04 SAY @5678970
++		IF ~PartyGoldLT(20000)~ THEN REPLY #66662 GOTO XO#NoItemUp
++		IF ~PartyGoldGT(19999)~ THEN REPLY #66664 DO ~SetGlobal("XO#TOBItemUp","GLOBAL",41)
++											 		 SetGlobal("ImpForgeStuff","GLOBAL",1)
++													 SetGlobal("XO#TOBCraft","GLOBAL",1)
++													 TakePartyGold(20000)
++													 DestroyGold(20000)
++													 TakePartyItemNum("sdnpcsw3",1)
++													 DestroyItem("sdnpcsw3")
++													 TakePartyItemNum("plot02j",1)
++													 DestroyItem("plot02j")
++													 TakePartyItemNum("wand07",1)
++													 DestroyItem("wand07")~ GOTO 11
++    IF ~~ THEN REPLY #66770 GOTO XO#NoItemUp
++	END
++
++	IF ~~ THEN BEGIN XO#NoItemUp SAY @5678
++		COPY_TRANS BOTSMITH 4
++	END
++END
++>>>>>>>>
++COMPILE ~.../Yikari/Dialogue/c2tob.d~
++USING ~Yikari/Translations/English/interject.tra~

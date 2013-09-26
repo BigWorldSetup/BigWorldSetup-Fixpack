@@ -1,0 +1,10 @@
+--- planarspheremod\baf\pstanal.baf	Sun May 28 15:26:20 2006
++++ C:\BWP Patchstudio\patched files\planarspheremod\baf\pstanal.baf	Sat Jun 23 04:13:14 2012
+@@ -4,6 +4,7 @@
+ 	See(NearestEnemyOf(Myself))
+ Then
+ 	Response #100
++		ReallyForceSpell(Myself, CLERIC_HEAL)
+ 		IncrementGlobal("psTanaSummonedCounter", "LOCALS", 1)
+ 		CreateCreatureObject("psTana01", NearestEnemyOf(Myself), 0, 0, 0)
+ 		CreateCreatureObject("psTana02", NearestEnemyOf(Myself), 0, 0, 0)

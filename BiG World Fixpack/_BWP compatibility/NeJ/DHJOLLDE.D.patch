@@ -1,0 +1,11 @@
+--- NeJ\Dfiles\DHJOLLDE.D	Fri Apr 02 03:12:06 2004
++++ C:\BWP Patchstudio\patched files\NeJ\Dfiles\DHJOLLDE.D	Sun Apr 04 12:07:04 2010
+@@ -386,7 +386,7 @@
+   SAY ~I shall defy banishment and return to the camp in secret.  If you are successful, go directly to the Mead Hall and demand an audience with Wylfdene.  Together, we shall expose him and put an end to his evil.~ [HJOLL060] 
+   IF ~~ THEN REPLY ~Farewell.~  DO ~SetGlobal("Hjollder_Quest", "GLOBAL", 9)
+ StartCutSceneMode()
+-StartCutScene("HJescape2")~ JOURNAL ~Hjollder told us he was going to defy banishment and return to the barbarian camp in secret. The camp is well guarded and would be difficult, if not impossible, to enter. Perhaps he means to hide in the forest nearby. We should search for him there.~  EXIT
++StartCutScene("HJescape")~ JOURNAL ~Hjollder told us he was going to defy banishment and return to the barbarian camp in secret. The camp is well guarded and would be difficult, if not impossible, to enter. Perhaps he means to hide in the forest nearby. We should search for him there.~  EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 60 // from: 81.0 79.2 75.1 58.1 53.3 53.2 49.2

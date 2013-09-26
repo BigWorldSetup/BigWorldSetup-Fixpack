@@ -1,0 +1,11 @@
+--- bg1npc.tp2	Sun Nov 27 10:02:04 2011
++++ C:\BWP Patchstudio\patched files\bg1npc.tp2	Fri Dec 09 09:39:24 2011
+@@ -859,7 +859,7 @@
+ 					ADD_MEMORIZED_SPELL ~spwi406~ #3 ~wizard~ // Minor Globe of Invulnerability
+ 					ADD_MEMORIZED_SPELL ~spwi502~ #4 ~wizard~ (4) // Cloudkill
+ 				END
+-				PATCH_IF (~%crefile%~ STRING_COMPARE_CASE ~%tutu_var%minsc.cre~ = 0) BEGIN
++				PATCH_IF (~%crefile%~ STRING_COMPARE_CASE ~%tutu_var%minsc6.cre~ = 0) BEGIN
+ 					WRITE_LONG 0x18 36293 // Current XP
+ 				END
+ 				PATCH_IF (~%crefile%~ STRING_COMPARE_CASE ~%tutu_var%montar.cre~ = 0) BEGIN

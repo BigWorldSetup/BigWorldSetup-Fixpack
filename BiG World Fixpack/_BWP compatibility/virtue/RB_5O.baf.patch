@@ -1,0 +1,13 @@
+--- virtue\bg2\quest\RB_5O.baf	Sun Mar 14 05:32:06 2004
++++ C:\BWP Patchstudio\patched files\virtue\bg2\quest\RB_5O.baf	Tue Apr 19 19:39:57 2011
+@@ -1,8 +1,8 @@
+ IF
+ 	GlobalTimerExpired("MazzyCommentsRep","GLOBAL")
+ 	InParty(Myself)
+-	See("Player1")
+-	!StateCheck("Player1",STATE_SLEEPING)
++	See(Player1)
++	!StateCheck(Player1,STATE_SLEEPING)
+ 	OR(2)
+ 		ReputationLT(Player1,8)
+ 		ReputationGT(Player1,14)

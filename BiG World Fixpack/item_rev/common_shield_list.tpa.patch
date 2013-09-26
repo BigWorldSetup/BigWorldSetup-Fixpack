@@ -1,0 +1,37 @@
+--- item_rev\lib\common_shield_list.tpa	Sun Nov 23 00:29:44 2008
++++ C:\BWP Patchstudio\patched files\item_rev\lib\common_shield_list.tpa	Mon May 28 22:25:02 2012
+@@ -8,7 +8,7 @@
+ 194 - Large/Tower Shield
+ 
+ */
+-
++DEFINE_ACTION_MACRO shields BEGIN
+ 
+ // bucklers
+ ACTION_FOR_EACH ~item~ IN
+@@ -270,4 +270,25 @@
+         BUT_ONLY_IF_IT_CHANGES
+     END
+   END
++
++
++  // small shields
++  ACTION_FOR_EACH ~item~ IN
++    ~shld27.itm~
++  BEGIN
++    ACTION_IF (FILE_EXISTS_IN_GAME ~%item%~) BEGIN
++      COPY_EXISTING ~%item%~ ~override~
++        PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
++          WRITE_SHORT 0x1C 191
++        END
++        BUT_ONLY_IF_IT_CHANGES
++    END
++  END
++
+ END
++
++///////////////////////////////////////////////////////////////////////////////
++
++END // end of macro
++
++

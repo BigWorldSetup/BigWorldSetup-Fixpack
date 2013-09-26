@@ -1,0 +1,29 @@
+--- RoTerror\SNIP\BAF\Mage\MAGE18B.BAF	Wed Mar 15 11:02:32 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\Mage\MAGE18B.BAF	Thu Apr 01 16:55:19 2010
+@@ -53,7 +53,7 @@
+ 	CheckStatLT(Myself,1,STONESKINS)
+ 	TookDamage()
+ 	Global("Prep2","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,3302) // Chain Contingency - Spell Turning
+@@ -70,7 +70,7 @@
+ 	CheckStatLT(Myself,1,STONESKINS)
+ 	HitBy([ANYONE],CRUSHING)
+ 	Global("Prep2","LOCALS",1)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,40252) // Contingency - Protection from Magical Weapons
+@@ -91,7 +91,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	Global("SpellTrigger","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,39968) // Spell Trigger - Fired

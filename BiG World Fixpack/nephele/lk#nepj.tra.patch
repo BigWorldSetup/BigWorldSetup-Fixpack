@@ -1,0 +1,11 @@
+--- nephele\tra\english\lk#nepj.tra	Sat Dec 31 13:16:07 2011
++++ C:\BWP Patchstudio\patched files\nephele\tra\english\lk#nepj.tra	Wed Sep 11 16:14:27 2013
+@@ -246,7 +246,7 @@
+ @245  = ~Thank you, Nephele. I'll keep that in mind.~
+ @246  = ~You can keep your "advice" to yourself. My casting is fine.~
+ @247  = ~Now's a rather bad time.~
+-@248  = ~You're a cleric, not a <PRO_CLASS>. How would you know?~
++@248  = ~You're a cleric. How would you know?~
+ @249  = ~Think nothing of it, dear.~
+ @250  = ~Well, as far as it goes, yes. But you're not getting as much power out of it as you could!~
+ @251  = ~Well, this is rather important, dear - if you'd like to be the best you can, there are always things you can improve upon.~

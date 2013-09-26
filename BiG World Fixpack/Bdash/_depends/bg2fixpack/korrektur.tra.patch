@@ -1,0 +1,98 @@
+--- Bdash\Language\deutsch\korrektur.tra	Sun Sep 20 04:42:18 2009
++++ C:\BWP Patchstudio\patched files\Bdash\Language\deutsch\korrektur.tra	Tue Sep 22 07:16:12 2009
+@@ -34762,4 +34762,92 @@
+ @1027778 = ~Still, Kind!~ []
+ @1046913 = ~Ich kann nicht länger bei Euch bleiben. Meine Schwester stirbt, während wir uns unterhalten, und doch weigert Ihr Euch, mit mir nach Handelstreff zu gehen, um nach ihr zu sehen. Eure Gefühllosigkeit ist verabscheuenswert. Gehabt Euch wohl!~ [MAZZY82]
+ @1070666 = ~Den magischen Ventilator aktivieren
+-Das Teufelchen, auf das ich in diesem Stockwerk gestoßen bin, hat gemeint, dass das ganze Stockwerk durch eine Art magischen Ventilator angetrieben wird. Er dient dazu die verschiedenen Labors in diesem Stockwerk zu aktivieren. Ich frage mich, ob man den Ventilator noch für andere Zwecke einsetzen könnte?~
+\ No newline at end of file
++Das Teufelchen, auf das ich in diesem Stockwerk gestoßen bin, hat gemeint, dass das ganze Stockwerk durch eine Art magischen Ventilator angetrieben wird. Er dient dazu die verschiedenen Labors in diesem Stockwerk zu aktivieren. Ich frage mich, ob man den Ventilator noch für andere Zwecke einsetzen könnte?~
++
++@12018 = ~Dak'kons Zerthklinge~
++@12019 = ~Dak'kons Zerthklinge +2
++Das war die Waffe, die einst der legendäre Githzerai Dak'kon führte. Dak'kon wurde von einer Verkörperung der Macht getötet, während er im Dienst eines mysteriösen Wesens stand, das als 'Der Namenlose' bekannt war.
++
++EIGENSCHAFTEN:
++Der Träger erhält -1 auf RK und kann sich einen zusätzlichen Zauber des 1., 2., 3. und 4. Grades am Tag einprägen.
++
++Schaden: 1W10+2 (Klinge)
++ETW0-Bonus:-2
++Gewicht: 4
++Initiativefaktor: 2
++Mindeststärke: 6
++Fertigkeit: Katana
++Typ: 1-händig
++
++Kann nicht verwendet werden von:
++Druiden
++Klerikern~
++@12020 = ~Dak'kons Dampfklinge~
++@12021 = ~Dak'kons Dampfklinge +2
++Das war die Waffe, die einst der legendäre Githzerai Dak'kon führte. Dak'kon wurde von einer Verkörperung der Macht getötet, während er im Dienst eines mysteriösen Wesens stand, das als 'Der Namenlose' bekannt war.
++
++EIGENSCHAFTEN:
++Der Träger erhält -2 auf RK und kann sich zwei zusätzliche Zauber des 1., 2., 3. und 4. Grades am Tag einprägen.
++
++Schaden: 1W10+2 (Klinge)
++ETW0-Bonus:-2
++Gewicht: 4
++Initiativefaktor: 2
++Mindeststärke: 6
++Fertigkeit: Katana
++Typ: 1-händig
++
++Kann nicht verwendet werden von:
++Druiden
++Klerikern~
++@12022 = ~Dak'kons Dampfklinge +3
++Das war die Waffe, die einst der legendäre Githzerai Dak'kon führte. Dak'kon wurde von einer Verkörperung der Macht getötet, während er im Dienst eines mysteriösen Wesens stand, das als 'Der Namenlose' bekannt war.
++
++EIGENSCHAFTEN:
++Der Träger erhält -3 auf RK und kann sich drei zusätzliche Zauber des 1., 2., 3. und 4. Grades am Tag einprägen.
++
++Schaden: 1W10+3 (Klinge)
++ETW0-Bonus:-3
++Gewicht: 4
++Initiativefaktor: 2
++Mindeststärke: 6
++Fertigkeit: Katana
++Typ: 1-händig
++
++Kann nicht verwendet werden von:
++Druiden
++Klerikern~
++@12023 = ~Dak'kons Dampfklinge +4
++Das war die Waffe, die einst der legendäre Githzerai Dak'kon führte. Dak'kon wurde von einer Verkörperung der Macht getötet, während er im Dienst eines mysteriösen Wesens stand, das als 'Der Namenlose' bekannt war.
++
++EIGENSCHAFTEN:
++Der Träger erhält -3 auf RK und kann sich drei zusätzliche Zauber des 1., 2., 3. und 4. und ein Zauber des 5. Grades am Tag einprägen.
++
++Schaden: 1W10+4 (Klinge)
++ETW0-Bonus:-4
++Gewicht: 4
++Initiativefaktor: 2
++Mindeststärke: 6
++Fertigkeit: Katana
++Typ: 1-händig
++
++Kann nicht verwendet werden von:
++Druiden
++Klerikern~
++@12024 = ~Dak'kons Dampfklinge +5
++Das war die Waffe, die einst der legendäre Githzerai Dak'kon führte. Dak'kon wurde von einer Verkörperung der Macht getötet, während er im Dienst eines mysteriösen Wesens stand, das als 'Der Namenlose' bekannt war.Nach dem Kampf des Namenlosen gegen die Verkörperung der Macht stellte er Dak'kons Leben wieder her und befreite ihm von dem Eid, den er dem Namenlosen gegeben hatte. Das ist die Klinge, die gebildet wurde, nachdem Dak'kon von seinem Eid befreit worden war.
++
++EIGENSCHAFTEN:
++Der Träger erhält -4 auf RK und kann sich drei zusätzliche Zauber des 1., 2., 3. und 4. und zwei Zauber des 5. Grades am Tag einprägen.
++
++Schaden: 1W10+5 (Klinge)
++ETW0-Bonus:-5
++Gewicht: 4
++Initiativefaktor: 2
++Mindeststärke: 6
++Fertigkeit: Katana
++Typ: 1-händig
++
++Kann nicht verwendet werden von:
++Druiden
++Klerikern~
+\ No newline at end of file

@@ -1,0 +1,8 @@
+--- Neh'taniel\English\setup.tra	Wed Apr 21 03:38:33 2010
++++ C:\BWP Patchstudio\patched files\Neh'taniel\English\setup.tra	Tue Jun 01 06:55:53 2010
+@@ -1,4 +1,4 @@
+-@0    = ~v5.5~
++@0    = ~v5.5 BWP Fix~
+ @1    = ~Neh'taniel NPC Mod~
+ @2    = ~Judicial Knight~
+ @3    = ~JUDICIAL KNIGHT: This ancient class is the embodiment of balance, he represents the loftiest standards of law, order, and the sun in service to Amaunator. He is the enforcer of truth without being biased by good or evil. The Judicial Knight has dedicated his life to preserve law and strives to bring the world into true neutrality, and hence peace.

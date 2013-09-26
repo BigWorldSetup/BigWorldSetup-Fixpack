@@ -1,0 +1,11 @@
+--- RoTerror\SNIP\BAF\Mage\MAGE16M.BAF	Wed Mar 15 11:00:56 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\Mage\MAGE16M.BAF	Thu Apr 01 16:55:19 2010
+@@ -8,7 +8,7 @@
+ IF
+ 	See(NearestEnemyOf(Myself))
+ 	Global("PrepSpells","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,36209) // Contingency - Minor Spell Turning

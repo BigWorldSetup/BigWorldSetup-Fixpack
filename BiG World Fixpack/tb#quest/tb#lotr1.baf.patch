@@ -1,0 +1,11 @@
+--- tb#quest\lotr\compile\tb#lotr1.baf	Wed Jul 28 16:58:32 2004
++++ C:\BWP Patchstudio\patched files\tb#quest\lotr\compile\tb#lotr1.baf	Tue Jun 01 19:48:02 2010
+@@ -46,7 +46,7 @@
+ THEN
+     RESPONSE #100
+     	     SetGlobal("rage","locals",5)
+-    	     SpellNoDecRES("tb#tles",Myself)//Refinements Tireless Rage
++    	     SpellNoDecRES("tg#tles",Myself)//Refinements Tireless Rage
+     	     SetGlobalTimer("cast","locals",6)
+     	     SetGlobalTimer("rage","locals",60)
+ END

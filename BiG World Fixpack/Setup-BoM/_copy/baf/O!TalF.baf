@@ -1,0 +1,43 @@
+IF
+        Global("O!TaluntainGreets","GLOBAL",0)
+	See(Player1)
+THEN
+	RESPONSE #100
+	DisplayStringHead(Myself,%Lo!%)
+        PlaySound("DEMOG01")
+	SetGlobal("O!TaluntainGreets","GLOBAL",1)
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,GOODBUTBLUE)
+THEN
+	RESPONSE #100
+                SetGlobal("O!TaluntainTransform","GLOBAL",4)
+                Dialogue([PC])
+                Wait(5)
+END
+
+IF
+        Global("O!TaluntainTransform","GLOBAL",1)
+THEN
+      RESPONSE #100
+                NoAction()
+END
+
+IF
+        Global("O!TaluntainTransform", "GLOBAL",2)
+THEN
+     RESPONSE #100
+                ChangeEnemyAlly("Taluntain",ENEMY)
+                ActionOverride("Taluntain",Polymorph(DRAGON_PURPLE))
+                SetGlobal("O!TaluntainTransform","GLOBAL",3)
+END
+
+IF
+        Global("O!TaluntainTransform","GLOBAL",3)
+THEN
+      RESPONSE #100
+                ChangeEnemyAlly("Taluntain",ENEMY)
+                Attack(LastSeenBy())
+END

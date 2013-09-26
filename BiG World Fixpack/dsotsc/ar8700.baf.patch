@@ -1,0 +1,11 @@
+--- dsotsc\baf\area\ar8700.baf	Sun Jan 29 18:01:41 2012
++++ C:\BWP Patchstudio\patched files\dsotsc\baf\area\ar8700.baf	Sat Aug 24 18:35:17 2013
+@@ -933,7 +933,7 @@
+ 	PartyHasItem("DWDUST")
+ THEN
+ 	RESPONSE #100
+-		DisplayStringHead(Player1,@20) // As the refreshing air and "above world" light of the outside reaches the Drow items you carry, they crumble and fall as dust to the ground around you.
++		DisplayStringHead(Player1,@2165) // As the refreshing air and "above world" light of the outside reaches the Drow items you carry, they crumble and fall as dust to the ground around you.
+ 		Continue()
+ END
+ 

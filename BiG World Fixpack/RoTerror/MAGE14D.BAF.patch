@@ -1,0 +1,56 @@
+--- RoTerror\SNIP\BAF\Mage\MAGE14D.BAF	Fri Feb 24 19:34:30 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\Mage\MAGE14D.BAF	Thu Apr 01 16:55:19 2010
+@@ -26,7 +26,7 @@
+ 	See(NearestEnemyOf(Myself))
+ 	HaveSpell(WIZARD_STONE_SKIN)
+ 	Global("skin","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Spell(Myself,WIZARD_STONE_SKIN)
+@@ -66,7 +66,7 @@
+ 	CheckStatLT(Myself,1,STONESKINS)
+ 	TookDamage()
+ 	Global("Sequencer","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,39969) // Spell Sequencer - Fired
+@@ -86,7 +86,7 @@
+ 	Allegiance(Myself,ENEMY)
+ 	!HasBounceEffects(Myself)
+ 	Global("Contingency","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,36209) // Contingency - Minor Spell Turning
+@@ -99,7 +99,7 @@
+ 	!HasBounceEffects(LastSeenBy(Myself))
+ 	!HasImmunityEffects(LastSeenBy(Myself))
+ 	Global("MinorSequencer","LOCALS",0)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		DisplayString(Myself,8635) // Minor Sequencer Activated
+@@ -113,7 +113,7 @@
+ 	!HasBounceEffects(Myself)
+ 	!HasImmunityEffects(Myself)
+ 	HaveSpell(WIZARD_MINOR_SPELL_DEFLECTION)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Spell(Myself,WIZARD_MINOR_SPELL_DEFLECTION)
+@@ -321,7 +321,7 @@
+ 	See(NearestEnemyOf(Myself))
+ 	HaveSpell(WIZARD_STONE_SKIN)
+ 	CheckStatLT(Myself,1,STONESKINS)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Spell(Myself,WIZARD_STONE_SKIN)

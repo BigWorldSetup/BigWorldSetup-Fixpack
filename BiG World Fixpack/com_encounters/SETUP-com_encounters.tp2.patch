@@ -1,0 +1,11 @@
+--- SETUP-com_encounters.tp2	Wed Jan 13 16:44:28 2010
++++ C:\BWP Patchstudio\patched files\SETUP-com_encounters.tp2	Wed Apr 14 19:47:53 2010
+@@ -8,6 +8,8 @@
+ BACKUP ~com_encounters\backup~
+ AUTHOR ~"http://chosenofmystra.com"~
+ 
++VERSION ~v1.08 BWP Fix~
++
+ LANGUAGE ~English~
+          ~english~
+          ~com_encounters/translations/english/dialog.tra~

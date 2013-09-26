@@ -1,0 +1,13 @@
+--- Severian\Scripts\#SAr0406.baf	Fri Oct 10 19:49:06 2008
++++ C:\BWP Patchstudio\patched files\Severian\Scripts\#SAr0406.baf	Mon Feb 16 09:08:40 2009
+@@ -6,8 +6,8 @@
+ THEN
+   RESPONSE #100
+   SetGlobal("#SRomanceFinalCouronne","GLOBAL",2)
+-  CreateCreatureObject("#SAicha","#Severian")
+-  CreateCreatureObject("#SAnnae","#Severian")
++  CreateCreatureObject("#SAicha","#Severian",0,0,0)
++  CreateCreatureObject("#SAnnae","#Severian",0,0,0)
+ END
+ 
+ // CREATION MERCENAIRES RUNE POURPRE

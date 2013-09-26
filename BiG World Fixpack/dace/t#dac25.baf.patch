@@ -1,0 +1,11 @@
+--- dace\scripts\t#dac25.baf	Sun Feb 03 11:54:40 2013
++++ C:\BWP Patchstudio\patched files\dace\scripts\t#dac25.baf	Fri Aug 23 15:26:39 2013
+@@ -637,7 +637,7 @@
+ THEN
+   RESPONSE #100
+     SetGlobal("T#DaceJToBSpiders","GLOBAL",3)
+-    Calm()
++    Calm(Myself)
+ END
+ 
+ 

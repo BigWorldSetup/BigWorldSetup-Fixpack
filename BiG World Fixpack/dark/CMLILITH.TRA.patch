@@ -1,0 +1,9 @@
+--- dark\french\CMLILITH.TRA	Sun Dec 14 18:29:24 2003
++++ C:\BWP Patchstudio\patched files\dark\french\CMLILITH.TRA	Fri Nov 05 12:45:00 2010
+@@ -1,5 +1,5 @@
+ @1   = ~Gabrielle, dis bonjour !~
+-@2   = ~Eh bien eh bien, regardez ces belles femmes, ce < PRO_RACE> semble être un bon candidat pour nous rejoindre…~
++@2   = ~Eh bien eh bien, regardez ces belles femmes, ce <PRO_RACE> semble être un bon candidat pour nous rejoindre…~
+ @3   = ~Marial, vous êtes difficile à satisfaire mais j’ose espérer qu’ils feront bientôt partie intégrante de notre culte. Je peux sentir une grande puissance émaner de <PRO_HIMHER>.~
+ @4   = ~Sang, “soyez des nôtres”… Mais de quoi parlez-vous, par les Neufs Enfers ?~
+ @5   = ~Contente que vous le demandiez. Je commençais à penser que vous étiez muet, ou peut-être trop timide, ce qui serait un signe de faiblesse. Nous sommes les serviteurs de la grande déesse du Passé, Kali. Elle est la Mère des Enfants de la Nuit, le vrai dieu de tous les Royaumes. Elle a besoin d’encore plus d’adeptes afin de renaître et d’atteindre son réel statut de divinité. La puissance que je sens en vous facilitera grandement la tâche si vous venez avec nous.~

@@ -1,0 +1,11 @@
+--- tactics2\krgnome\scripts\KRGNOME.BAF	Wed Feb 26 13:29:06 2003
++++ C:\BWP Patchstudio\patched files\tactics2\krgnome\scripts\KRGNOME.BAF	Mon Oct 17 11:10:52 2011
+@@ -369,7 +369,7 @@
+     DisplayString(Myself,39968)  // ~Spell Trigger - Fired~
+     ReallyForceSpell(LastSeenBy(Myself),WIZARD_SPELL_STRIKE)
+     ReallyForceSpell(LastSeenBy(Myself),WIZARD_POWER_WORD_KILL)
+-    ReallyForceSpell(LastSeenBy(Myself),0)
++    ReallyForceSpell(LastSeenBy(Myself),WIZARD_ICE_STORM)
+     SetGlobal("KR_OFFENSIVE_TIME","LOCALS",0)
+     SetGlobal("SpellTrigger","LOCALS",1)
+ END

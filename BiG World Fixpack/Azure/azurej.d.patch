@@ -1,0 +1,11 @@
+--- Azure\d\azurej.d	Sun Sep 04 10:51:12 2005
++++ C:\BWP Patchstudio\patched files\Azure\d\azurej.d	Wed Jul 18 21:06:56 2007
+@@ -255,7 +255,7 @@
+ 	~Despite of that I decided to stay in the forest. I avoided meeting the other druid when possible and I guess my presence didn't bother them that much, because they weren't very consistent in chasing me.~
+ 	=
+ 	~I lived like that for a year. Then you came.~
+-	IF ~~ THEN REPLY ~I'm happy I met you, Azure. You are more then just a worthy party member. You are a friend.~ Do ~IncrementGlobal("AzureAffection","GLOBAL",1)~ GOTO 33
++	IF ~~ THEN REPLY ~I'm happy I met you, Azure. You are more then just a worthy party member. You are a friend.~ DO ~IncrementGlobal("AzureAffection","GLOBAL",1)~ GOTO 33
+ 	IF ~~ THEN REPLY ~And rescued you from the boredom.~ GOTO 34
+ END
+ 

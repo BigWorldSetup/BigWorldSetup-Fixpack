@@ -1,0 +1,11 @@
+--- vanim\vanimJ.d	Wed Jul 16 22:32:50 2003
++++ C:\BWP Patchstudio\patched files\vanim\vanimJ.d	Sun May 30 22:21:34 2010
+@@ -684,7 +684,7 @@
+ IF ~~ THEN BEGIN 321
+    SAY @150
+        IF ~~ THEN REPLY @151 GOTO 322
+-       IF ~PartyHasItem("C6LANTHO.ITM")~ THEN REPLY @153 GOTO 323
++       IF ~PartyHasItem("C6LANTHO")~ THEN REPLY @153 GOTO 323
+        IF ~Dead("Bodhi")~ THEN REPLY @156 GOTO 324
+        IF ~OR(8) AreaCheck("AR2800") AreaCheck("AR2801") AreaCheck("AR2803") AreaCheck("AR2802") AreaCheck("AR2807") AreaCheck("AR2808") AreaCheck("AR2809") AreaCheck("AR2810")~ THEN REPLY @159 EXIT
+        IF ~!AreaCheck("AR2800") !AreaCheck("AR2801") !AreaCheck("AR2803") !AreaCheck("AR2802") !AreaCheck("AR2807") !AreaCheck("AR2808") !AreaCheck("AR2809") !AreaCheck("AR2810")~ THEN REPLY @160 GOTO 325

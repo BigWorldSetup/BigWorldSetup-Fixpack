@@ -1,0 +1,38 @@
+--- infinityanimations\setup-infinityanimations.tp2	Wed May 12 19:49:14 2010
++++ C:\BWP Patchstudio\patched files\infinityanimations\setup-infinityanimations.tp2	Sat Nov 03 04:29:59 2012
+@@ -958,7 +958,7 @@
+   END
+ END
+ 
+-ACTION_FOR_EACH nb IN ~abishai1.cre~ ~babi.cre~ ~duegabis.cre~ ~godabis1.cre~ ~godabis2.cre~ ~grenabi1.cre~ ~nsabish.cre~ ~psbaat02.cre~ ~psbaat2a.cre~ ~rabi.cre~ ~redabi01.cre~ ~remorhaz.cre~ ~remorle.cre~ ~wardabi1.cre~ ~wardabi2.cre~ BEGIN
++ACTION_FOR_EACH nb IN ~abishai1~ ~babi~ ~duegabis~ ~godabis1~ ~godabis2~ ~grenabi1~ ~nsabish~ ~psbaat02~ ~psbaat2a~ ~rabi~ ~redabi01~ ~remorhaz~ ~remorle~ ~wardabi1~ ~wardabi2~ BEGIN
+   ACTION_IF FILE_EXISTS_IN_GAME ~%nb%.cre~ BEGIN //Abishai
+     COPY_EXISTING ~%nb%.cre~ ~override~
+       PATCH_INCLUDE ~infinityanimations/lib/fj_cre_validity.tpp~
+@@ -1282,7 +1282,7 @@
+   END
+ END
+ 
+-ACTION_FOR_EACH t-bcre IN ~%tsu%cuchol.cre~ ~dreself1~ ~dreself3~ ~dreself5~ ~dreself7~ ~z_2bibli~ BEGIN
++ACTION_FOR_EACH t-bcre IN ~%tsu%cuchol~ ~dreself1~ ~dreself3~ ~dreself5~ ~dreself7~ ~z_2bibli~ BEGIN
+   ACTION_IF FILE_EXISTS_IN_GAME ~%t-bcre%.cre~ BEGIN //Male Elf Mages
+     COPY_EXISTING ~%t-bcre%.cre~ ~override~
+       PATCH_INCLUDE ~infinityanimations/lib/fj_cre_validity.tpp~
+@@ -2061,7 +2061,7 @@
+   BUT_ONLY
+ END
+ 
+-ACTION_FOR_EACH nb IN ~demmau01~ ~gortan6~ ~obsdem04.cre~ BEGIN
++ACTION_FOR_EACH nb IN ~demmau01~ ~gortan6~ ~obsdem04~ BEGIN
+   ACTION_IF FILE_EXISTS_IN_GAME ~%nb%.cre~ BEGIN //Maurezhi
+     COPY_EXISTING ~%nb%.cre~ ~override~
+       PATCH_INCLUDE ~infinityanimations/lib/fj_cre_validity.tpp~
+@@ -2404,7 +2404,7 @@
+   END
+ END
+ 
+-ACTION_FOR_EACH nb IN ~bhghoul2~ ~%tsu%ghast~ ~ghast01~ ~%tsu%ghastd~ ~%tsu%ghasts~ ~ghastsu~ ~gmayor~ ~%tsu%grael~ ~gron~ ~nevm3~ ~%tsu%sewerf3~ ~xghast1~ BEGIN
++ACTION_FOR_EACH nb IN ~bhghoul2~ ~%tsu%ghast~ ~ghast01~ ~%tsu%ghastd~ ~%tsu%ghasts~ ~gmayor~ ~%tsu%grael~ ~gron~ ~nevm3~ ~%tsu%sewerf3~ ~xghast1~ BEGIN
+   ACTION_IF FILE_EXISTS_IN_GAME ~%nb%.cre~ BEGIN //Ghasts
+     COPY_EXISTING ~%nb%.cre~ ~override~
+       PATCH_INCLUDE ~infinityanimations/lib/fj_cre_validity.tpp~

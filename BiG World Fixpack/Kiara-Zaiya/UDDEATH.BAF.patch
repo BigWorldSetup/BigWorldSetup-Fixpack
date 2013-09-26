@@ -1,0 +1,11 @@
+--- Kiara-Zaiya\Sulda\UDDEATH.BAF	Sun Feb 20 08:41:50 2005
++++ C:\BWP Patchstudio\patched files\Kiara-Zaiya\Sulda\UDDEATH.BAF	Mon Oct 17 11:09:29 2011
+@@ -62,7 +62,7 @@
+   RESPONSE #15
+     ReallyForceSpell(LastSeenBy(Myself),WIZARD_SYMBOL_FEAR)
+   RESPONSE #15
+-    ReallyForceSpell(LastSeenBy(Myself),0)
++    ReallyForceSpell(LastSeenBy(Myself),WIZARD_SYMBOL_STUN)
+   RESPONSE #15
+     ReallyForceSpell(LastSeenBy(Myself),WIZARD_POWER_WORD_KILL)
+   RESPONSE #40

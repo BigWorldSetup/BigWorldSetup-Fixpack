@@ -1,0 +1,11 @@
+--- worgas\are\W_0411.baf	Sat Apr 21 02:25:24 2007
++++ C:\BWP Patchstudio\patched files\worgas\are\W_0411.baf	Thu Apr 29 12:59:31 2010
+@@ -6,6 +6,7 @@
+ THEN
+  RESPONSE #100
+ SetGlobal("WorgasSphere","AR0411",1)
+-ActionOverride("Worgas",StartDialogNoSet([PC])
++ActionOverride("Worgas",StartDialogNoSet([PC]))
++Continue()
+ END
+ 

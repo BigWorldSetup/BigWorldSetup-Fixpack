@@ -1,0 +1,83 @@
+--- tactics2\nforest\scripts\drake01.BAF	Wed Feb 26 13:33:16 2003
++++ C:\BWP Patchstudio\patched files\tactics2\nforest\scripts\drake01.BAF	Fri Apr 02 04:23:01 2010
+@@ -5,7 +5,7 @@
+   RESPONSE #100
+     SetGlobalTimer("RunInvisible","LOCALS",4)
+     SetInterrupt(FALSE)
+-    ApplySpell("runrun",0)
++    ApplySpellRES("runrun",Myself)
+     RunAwayFrom(NearestEnemyOf(Myself),45)
+     SetInterrupt(TRUE)
+     Continue()
+@@ -73,7 +73,7 @@
+ 
+ IF
+   See(NearestEnemyOf(Myself))
+-  !Dead("astSeenBy())")  // astSeenBy())
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)  // astSeenBy())
+ THEN
+   RESPONSE #100
+     Continue()
+@@ -85,7 +85,7 @@
+     See(SecondNearestEnemyOfType([GOODCUTOFF.0.0.DRUID_ALL]))
+     See(SecondNearestEnemyOfType([GOODCUTOFF.0.0.CLERIC_ALL]))
+   !StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+-  !Dead("astSeenBy())")  // astSeenBy())
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)  // astSeenBy())
+ THEN
+   RESPONSE #100
+     Continue()
+@@ -97,7 +97,7 @@
+     See(NearestEnemyOfType([GOODCUTOFF.0.0.DRUID_ALL]))
+     See(NearestEnemyOfType([GOODCUTOFF.0.0.CLERIC_ALL]))
+   !StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+-  !Dead("astSeenBy())")  // astSeenBy())
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)  // astSeenBy())
+ THEN
+   RESPONSE #100
+     Continue()
+@@ -108,7 +108,7 @@
+     See(ThirdNearestEnemyOfType([GOODCUTOFF.0.0.MAGE_ALL]))
+     See(ThirdNearestEnemyOfType([GOODCUTOFF.0.0.SORCERER]))
+   !StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+-  !Dead("astSeenBy())")  // astSeenBy())
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)  // astSeenBy())
+ THEN
+   RESPONSE #100
+     Continue()
+@@ -122,7 +122,7 @@
+   !StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+   !StateCheck(LastSeenBy(Myself),STATE_PANIC)
+   !StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+-  !Dead("astSeenBy())")  // astSeenBy())
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)  // astSeenBy())
+ THEN
+   RESPONSE #100
+     Continue()
+@@ -136,7 +136,7 @@
+   !StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+   !StateCheck(LastSeenBy(Myself),STATE_PANIC)
+   !StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+-  !Dead("astSeenBy())")  // astSeenBy())
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)  // astSeenBy())
+ THEN
+   RESPONSE #100
+     Continue()
+@@ -145,7 +145,7 @@
+ IF
+   AttackedBy([ANYONE],DEFAULT)
+   See(LastAttackerOf(Myself))
+-  !Dead("astSeenBy())")  // astSeenBy())
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)  // astSeenBy())
+ THEN
+   RESPONSE #100
+     Continue()
+@@ -155,7 +155,7 @@
+   Range(NearestEnemyOf(Myself),4)
+   See(NearestEnemyOf(Myself))
+   !Gender(LastSeenBy(Myself),SUMMONED)
+-  !Dead("astSeenBy())")  // astSeenBy())
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)  // astSeenBy())
+ THEN
+   RESPONSE #100
+     Continue()

@@ -1,0 +1,13 @@
+--- RoTerror\Language\English\MARTWYN1.tra	Thu Apr 13 19:41:34 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\Language\English\MARTWYN1.tra	Sun Oct 04 13:07:31 2009
+@@ -4,8 +4,8 @@
+ @3    = ~You tried to walk through the unpassable lands! I can feel it! Want to hear a secret?~
+ @4    = ~Well, why not.~
+ @5    = ~Not really.~
+-@6    = ~If...(he watches around and lowers his voice)...if you close your eyes and walk through the unpassable lands, you will get into a dale which is formed of unnatural formations.~
+-@7    = ~There's a dragon there. Be careful, it's alive! Pass it and enter the portal. There's a great Ice Maze. Look out for the guardians!~
++@6    = ~If...(he watches around and lowers his voice)...if you hide yourself from the eyes of the guardian and walk through the unpassable lands, you will get into a dale which is formed of unnatural formations.~
++@7    = ~Beware as the guardian is a giant dragon! Pass it and enter the portal. There's a great Ice Maze. Look out for the guardians!~
+ @8    = ~Once you get to the other side, you'll find the sacred area of the dragons! And in the temple, you'll find the Dragon!~
+ @9    = ~Intresting. I think I'll pay a visit to this...Dragon.~
+ @10   = ~Why would I want to go to the temple?~

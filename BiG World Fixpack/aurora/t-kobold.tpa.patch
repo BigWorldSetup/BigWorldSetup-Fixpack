@@ -1,0 +1,78 @@
+--- aurora\lib\t-kobold.tpa	Thu Oct 22 16:46:10 2009
++++ C:\BWP Patchstudio\patched files\aurora\lib\t-kobold.tpa	Sun Dec 12 04:29:30 2010
+@@ -65,6 +65,33 @@
+   END
+ END
+ 
++ACTION_FOR_EACH ~kba~ IN ~%tsu%kobolda~ ~kobarc01~ ~swsfoll4~ ~swsfoll5~ BEGIN
++  ACTION_IF FILE_EXISTS_IN_GAME ~%kbc%.cre~ BEGIN
++    COPY_EXISTING ~%kba%.cre~ ~override~ //Kobold Archers
++      PATCH_INCLUDE ~aurora/lib/fj_cre_validity.tpp~
++      PATCH_IF vl BEGIN
++        PATCH_INCLUDE ~aurora/lib/fj_cre_reindex.tpp~
++        WRITE_BYTE 0x54 14 //Save vs. death (was 16)
++        WRITE_BYTE 0x55 16 //Save vs. wands (was 18)
++        WRITE_BYTE 0x56 15 //Save vs. polymorph (was 17)
++        WRITE_BYTE 0x57 17 //Save vs. breath (was 20)
++        WRITE_BYTE 0x58 17 //Save vs. spells (was 19)
++        WRITE_BYTE 0x6e 0 //Large swords (was 1)
++        WRITE_BYTE 0x6f 2 //Small swords (was 1)
++        READ_ASCII 0x260 t-gen //General script
++        PATCH_IF (~%t-gen%~ STRING_EQUAL_CASE ~kbarch01~) BEGIN
++          WRITE_ASCII 0x260 ~~ #8 //Clear nonexistent script
++        END
++        READ_ASCII 0x268 t-def //Default script
++        PATCH_IF (~%t-def%~ STRING_EQUAL_CASE ~%tsw%tasight~) OR (~%t-def%~ STRING_EQUAL_CASE ~%tsu%wtarsgt~) BEGIN
++          WRITE_ASCIIE 0x260 ~%tsu%wdarsgt~ #8 //Melee to ranged script
++        END
++        REPLACE_CRE_ITEM ~%tsu%bow05~ #0 #0 #0 ~UNSTEALABLE~ ~WEAPON1~ EQUIP TWOHANDED //Short Bow (was bow01)
++      END
++    BUT_ONLY
++  END
++END
++
+ ACTION_FOR_EACH ~kbp~ IN ~kobcap01~ ~kobcap02~ BEGIN
+   ACTION_IF FILE_EXISTS_IN_GAME ~%kbp%.cre~ BEGIN
+     COPY_EXISTING ~%kbp%.cre~ ~override~ //Kobold Captains
+@@ -88,11 +115,39 @@
+         WRITE_BYTE 0x234 3 //Level 1
+         WRITE_BYTE 0x235 1 //Level 2
+         WRITE_BYTE 0x273 0x7a //Class (kobold)
+-        REMOVE_CRE_ITEM ~arow01~ ~arow06~ ~arow10~
+-        REPLACE_CRE_ITEM ~%tsu%arow06~ #1 #0 #0 ~NONE~ ~QUIVER1~
++        REMOVE_CRE_ITEM ~arow01~ ~arow06~ ~arow07~ ~arow10~
++        REPLACE_CRE_ITEM ~%tsu%bow05~ #0 #0 #0 ~UNSTEALABLE~ ~WEAPON2~ EQUIP TWOHANDED //Short Bow (was bow01)
++        REPLACE_CRE_ITEM ~%tsu%arow07~ #1 #0 #0 ~NONE~ ~QUIVER1~
+         REPLACE_CRE_ITEM ~%tsu%arow10~ #2 #0 #0 ~NONE~ ~QUIVER2~
+         REPLACE_CRE_ITEM ~%tsu%arow01~ #20 #0 #0 ~NONE~ ~QUIVER3~
+       END
+     BUT_ONLY
+   END
+ END
++
++COPY_EXISTING ~ppguard1.cre~ ~override~ //Kobold Elite
++  PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
++    PATCH_IF LONG_AT 0x14 > 270 BEGIN
++      WRITE_LONG 0x14 270 //XP value
++    END
++    WRITE_SHORT 0x28 0x8200 //Animation (kobold, was xvart)
++    WRITE_BYTE 0x54 11 //Save vs. death (was 16)
++    WRITE_BYTE 0x55 13 //Save vs. wands (was 18)
++    WRITE_BYTE 0x56 12 //Save vs. polymorph (was 17)
++    WRITE_BYTE 0x57 13 //Save vs. breath (was 20)
++    WRITE_BYTE 0x58 14 //Save vs. spells (was 19)
++    WRITE_BYTE 0x6e 0 //Large swords (was 1)
++    WRITE_BYTE 0x6f 2 //Small swords (was 1)
++    WRITE_BYTE 0x70 4 //Bows (was 2)
++    WRITE_BYTE 0x23c 16 //Dexterity (was 9)
++    READ_ASCII 0x260 t-gen //General script
++    PATCH_IF (~%t-gen%~ STRING_EQUAL_CASE ~kbarch01~) BEGIN
++      WRITE_ASCII 0x260 ~~ #8 //Clear nonexistent script
++    END
++    READ_ASCII 0x268 t-def //Default script
++    PATCH_IF (~%t-def%~ STRING_EQUAL_CASE ~%tsw%tasight~) OR (~%t-def%~ STRING_EQUAL_CASE ~%tsu%wtarsgt~) BEGIN
++      WRITE_ASCIIE 0x260 ~%tsu%wtarsgt~ #8 //Melee to ranged script
++    END
++    REPLACE_CRE_ITEM ~%tsu%bow05~ #0 #0 #0 ~UNSTEALABLE~ ~WEAPON2~ EQUIP TWOHANDED //Short Bow (was bow01)
++  END
++BUT_ONLY

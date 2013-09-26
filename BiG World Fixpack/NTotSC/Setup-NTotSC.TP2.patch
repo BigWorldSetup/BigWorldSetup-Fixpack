@@ -1,0 +1,26 @@
+--- Setup-NTotSC.TP2	Sat Aug 31 09:32:49 2013
++++ C:\BWP Patchstudio\patched files\Setup-NTotSC.TP2	Sun Aug 25 09:57:26 2013
+@@ -2,7 +2,7 @@
+ 
+ AUTHOR ~SirBillyBob@gmail.com & erebusant@verizon.net~
+ 
+-VERSION ~v1.70a~
++VERSION ~v1.70a BWP Fix~
+ 
+ ALWAYS
+   ACTION_IF NOT FILE_EXISTS_IN_GAME ~DSC001.are~ THEN BEGIN FAIL ~This mod should be installed after DSotSC.~ END
+@@ -234,10 +234,11 @@
+  COPY ~ntotSC/itm/ADISEASE.ITM~       ~override~ 
+    SAY NAME2 @69
+    SAY DESC @71
+- COPY ~ntotSC/itm/NAMJI.ITM~       ~override~
+-   SAY NAME2 @73
+-   SAY DESC @75
+ END
++
++COPY ~ntotSC/itm/NAMJI.ITM~       ~override~
++  SAY NAME2 @73
++  SAY DESC @75
+ 
+ COPY ~ntotSC/itm/NTDAGG01.ITM~       ~override~ 
+   SAY NAME2 @77

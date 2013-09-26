@@ -1,0 +1,11 @@
+--- CtB\Language\English\CBSEACPT.TRA	Sun Nov 16 04:31:10 2003
++++ C:\BWP Patchstudio\patched files\CtB\Language\English\CBSEACPT.TRA	Fri Nov 12 16:14:17 2010
+@@ -87,7 +87,7 @@
+ @87  = ~When the fog blew away, we were near to land.  To our starboard loomed a small island, tree covered, and directly in front of the Sea Sprite was a long bridge.  There was a fair sized, walled town at the end of the bridge, and beyond the town, tall mountains.~ [CB_78531]
+ @88  = ~Many boats were about, though none bigger than the Sea Sprites longboats.  Surveying the area, the coastline which curled behind us, it was clear we were not on the open sea.~ [CB_78532]
+ @89  = ~I swear, <GABBER>, my wizard put the Sea Sprite in a lake.  Impresk Lake, fifteen hundred leagues from Waterdeep!~ [CB_78533]
+-@90  = ~The rest of that tale is a long one, and I won't be boring you with the details now, but it truly was a _Passage To Dawn_.  By the by, do you need anything?~ [CB_78534]
++@90  = ~The rest of that tale is a long one, and I won't be boring you with the details now, but it truly was a Passage To Dawn.  By the by, do you need anything?~ [CB_78534]
+ @91  = ~I've got a fair crew aboard the Sea Sprite.  A score or two of prime seamen, and a good half of the people right and proper man-of-war's men, which is more than you can say for most line of pirate hunters nowadays.~ [CB_78535]
+ @92  = ~There are some untoward sods among the other half, but so there are in every ship's company ordinarily, and at least there are no sea-lawyers aboard.~ [CB_78536]
+ @93  = ~Then there are the standing officers, right taut old fashioned sailormen, for the most part.  The bosun knows his business as well as any man in Waterdeep's fleet.~ [CB_78537]

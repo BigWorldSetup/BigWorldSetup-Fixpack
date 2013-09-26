@@ -1,0 +1,4 @@
+Previous installation of the BiG World Fixpack detected!
+This Fixpack cannot be installed multiple times.
+If you are sure you haven't run it before, try looking for a file
+BWP_Fixpack.installed in the current directory and delete it.

@@ -1,0 +1,11 @@
+--- tobr\cleansing\scripts\WGcarin.baf	Thu Jul 09 09:15:48 2009
++++ C:\BWP Patchstudio\patched files\tobr\cleansing\scripts\WGcarin.baf	Thu Apr 01 19:21:25 2010
+@@ -282,7 +282,7 @@
+ 	See(NearestEnemyOfType([0.UNDEAD]))
+ 	!Allegiance(LastSeenBy(Myself),ENEMY)
+ 	Range(LastSeenBy(Myself),5)
+-	!Dead("astSeenBy(Myself))")
++	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Turn()

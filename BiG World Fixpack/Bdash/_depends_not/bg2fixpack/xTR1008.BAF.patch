@@ -1,0 +1,44 @@
+--- Bdash\BAF_x\xTR1008.BAF	Thu Feb 24 17:56:07 2005
++++ C:\BWP Patchstudio\patched files\Bdash\BAF_x\xTR1008.BAF	Sun Mar 30 12:10:12 2008
+@@ -1,12 +1,11 @@
+ IF
+ 	Clicked([ANYONE])
+ 	Range(LastTrigger,10)
+-	PartyHasItem("MISC45") // Rogue Stone
++	PartyHasItem("MISC45") // Spitzbubenstein
+ THEN
+ 	RESPONSE #100
+ 		SaveGame(0)
+-		TakePartyItem("MISC45") // Rogue Stone
+-		DisplayString(Myself,8639) // You peer into the nothingness behind the door and the Rogue Stone in your backpack glows fiercely and disappears. You are pulled into the blackness.
++		DisplayString(Myself,8639) // Ihr späht in das Nichts hinter der Tür, und der Schurkenstein in Eurem Rucksack glüht hellt auf, bevor er verschwindet. Ihr werdet in die Dunkelheit gesogen.
+ 		StartCutSceneMode()
+ 		CreateVisualEffectObject("SPDIMNDR",Player1)
+ 		Wait(4)
+@@ -15,6 +14,7 @@
+ 		PlaySound("PORTAL2")
+ 		Wait(2)
+ 		ActionOverride(Player1,LeaveAreaLUAPanic("AR1008","",[495.755],10))
++		TakePartyItem("MISC45") // Spitzbubenstein
+ 		ActionOverride(Player1,LeaveAreaLUA("AR1008","",[495.755],10))
+ 		ActionOverride(Player2,LeaveAreaLUA("AR1008","",[431.730],10))
+ 		ActionOverride(Player3,LeaveAreaLUA("AR1008","",[459.777],10))
+@@ -29,8 +29,16 @@
+ IF
+ 	Clicked([ANYONE])
+ 	Range(LastTrigger,10)
+-	!PartyHasItem("MISC45") // Rogue Stone
++	!PartyHasItem("MISC45") // Spitzbubenstein
+ THEN
+ 	RESPONSE #100
+-		DisplayString(Myself,8636) // You open the door and peer through but you see nothing. There is no room, no house just emptiness, darkness. It is a bizarre thing to behold. You do not know what would happen if you stepped through.
++		DisplayString(Myself,8636) // Ihr öffnet die Tür und spät nach innen, könnt aber nichts erkennen. Da gibt es keinen Raum, kein Haus, nur die Leere, die Dunkelheit. Es ist ein äußerst bizarrer Anblick. Ihr wisst nicht, was alles passieren könnte, wenn Ihr durch die Tür tretet.
++END
++
++IF
++	Clicked([ANYONE])
++	!Range(LastTrigger,10)
++THEN
++	RESPONSE #100
++		DisplayString(Myself,14702) // Ihr seid zu weit entfernt, um das zu benutzen.
+ END

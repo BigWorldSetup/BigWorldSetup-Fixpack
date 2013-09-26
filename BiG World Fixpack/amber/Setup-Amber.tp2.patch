@@ -1,0 +1,30 @@
+--- Setup-Amber.tp2	Mon Aug 31 10:58:00 2009
++++ C:\BWP Patchstudio\patched files\Setup-Amber.tp2	Wed Oct 24 04:03:31 2012
+@@ -1,6 +1,6 @@
+ BACKUP ~amber/backup~
+ AUTHOR ~amber@welho.net~
+-VERSION ~v2.5~
++VERSION ~v2.6 BWP Fix~
+ README ~amber/readme-amber.html~
+ LANGUAGE ~English~ ~english~ ~amber/tra/english/setup.tra~
+ LANGUAGE ~Deutsch~ ~german~ ~amber/tra/german/setup.tra~
+@@ -256,7 +256,7 @@
+   REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_INVOKER\b~     ~0x0800 MAGESCHOOL_INVOKER~
+   REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_NECROMANCER\b~ ~0x1000 MAGESCHOOL_NECROMANCER~
+   REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_TRANSMUTER\b~  ~0x2000 MAGESCHOOL_TRANSMUTER~
+-  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_GENERALIST\b~  ~0x0000 WILDMAGE~
++  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_GENERALIST\b~  ~0x4000 MAGESCHOOL_GENERALIST~
+   REPLACE_TEXTUALLY ~.*\bFERALAN\b~                ~0x4007 FERALAN~
+   REPLACE_TEXTUALLY ~.*\bSTALKER\b~                ~0x4008 STALKER~
+   REPLACE_TEXTUALLY ~.*\bBEASTMASTER\b~            ~0x4009 BEASTMASTER~
+@@ -272,8 +272,8 @@
+   REPLACE_TEXTUALLY ~.*\bTOTEMIC\b~                ~0x4010 TOTEMIC~
+   REPLACE_TEXTUALLY ~.*\bSHAPESHIFTER\b~           ~0x4011 SHAPESHIFTER~
+   REPLACE_TEXTUALLY ~.*\bBEASTFRIEND\b~            ~0x4012 BEASTFRIEND~
+-  REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x0000 BARBARIAN~
+-  REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x0000 WILDMAGE~
++  REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x40000000 BARBARIAN~
++  REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x80000000 WILDMAGE~
+ BUT_ONLY_IF_IT_CHANGES
+ 
+ // The following fixes the spear animations (code from G3 Tweak Pack)

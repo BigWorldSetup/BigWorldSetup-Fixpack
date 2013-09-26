@@ -1,0 +1,11 @@
+--- JA#BGT_AdvPack\DLG\ja#gheld.d	Fri Jan 06 17:13:00 2012
++++ C:\BWP Patchstudio\patched files\JA#BGT_AdvPack\DLG\ja#gheld.d	Tue Apr 30 13:41:35 2013
+@@ -68,7 +68,7 @@
+   SAY ~Ah, meine Stiefel. Das habt Ihr gut gemacht. Erlaubt mir, als Bezahlung ein paar Eurer Wunden zu heilen.~
+   IF ~~ THEN DO ~TakePartyItem("JA#GHELD")SetGlobal("JA#GHELD_JOB","GLOBAL",2)DestroyItem("JA#GHELD")AddexperienceParty(400)EraseJournalEntry(%Pilar und Gheldehar
+ 
+-Ich bin heute in einem Gässchen einem schmutzigen kleinen Gnom namens Gheldehar begegnet. Er behauptet, dass Pilar, eine "alte Freundin", die zurzeit im Freundlichen Arm abgestiegen ist, seine Stiefel gestohlen haben soll, und er möchte sie zurückhaben. Gheldehar schien es nichts auszumachen, welcher Methoden ich mich dazu bediene, und ich traue daher der Bezeichnung "Freundin" nicht so ganz.%)ForceSpell([PC],CLERIC_MASS_CURE)~ SOLVED_JOURNAL ~Pilar und Gheldehar
++Ich bin heute in einem Gässchen einem schmutzigen kleinen Gnom namens Gheldehar begegnet. Er behauptet, dass Pilar, eine "alte Freundin", die zurzeit im Freundlichen Arm abgestiegen ist, seine Stiefel gestohlen haben soll, und er möchte sie zurückhaben. Gheldehar schien es nichts auszumachen, welcher Methoden ich mich dazu bediene, und ich traue daher der Bezeichnung "Freundin" nicht so ganz.%)ForceSpell([PC],CLERIC_MASS_CURE)~ SOLVED_JOURNAL ~Pilar und Gheldehar
+ 
+ Ich habe dem Gnomenpriester Gheldehar seine Stiefel von Pilar wiederbeschafft. Ich glaube jedoch nicht, dass dadurch die merkwürdige Fehde zwischen den Beiden beendet ist.~ EXIT
+ END

@@ -1,0 +1,199 @@
+--- ts25mini\setup-ts25mini.tp2	Fri Mar 13 15:42:40 2009
++++ C:\BWP Patchstudio\patched files\ts25mini\setup-ts25mini.tp2	Fri Jan 07 17:46:35 2011
+@@ -1,14 +1,20 @@
+ BACKUP ~ts25mini/backup~
+ AUTHOR ~TS25~
+-VERSION ~v2~
++VERSION ~v2 BWP Fix~
+ 
+ ////////////////////////////////////////////////////////////
+ 
+ ASK_EVERY_COMPONENT
+ 
+ AUTO_TRA ~ts25mini/tra/%s~
++ 
++ALWAYS
++  INCLUDE ~ts25mini/lib/fj_are_struct.tpp~
++END
+ 
+-LANGUAGE ~japanese~ ~japanese~ ~ts25mini/tra/japanese/setup.tra~
++ LANGUAGE ~japanese~ ~japanese~ ~ts25mini/tra/japanese/setup.tra~
++ 
++ LANGUAGE ~Deutsch (Fennek der Schwarze; bisher nur Das Geheimnis der Trollhoehle / Der Duft des Schwarzen Lotus / Der Zielort eines Untoten~ ~german~ ~ts25mini/tra/German/Setup.tra~ 
+ 
+ ////////////////////////////////////////////////////////////
+ 
+@@ -592,8 +598,8 @@
+   SAY NAME1 @73
+   SAY NAME2 @73
+ COPY ~ts25mini/blacklotus/cre/tz25__gz.cre~ ~override~
+-  SAY NAME1 @67
+-  SAY NAME2 @67
++  SAY NAME1 @990
++  SAY NAME2 @990
+ COPY ~ts25mini/blacklotus/cre/tz25__cg.cre~ ~override~
+   SAY NAME1 @75
+   SAY NAME2 @75
+@@ -619,8 +625,8 @@
+   SAY NAME1 @78
+   SAY NAME2 @78
+ COPY ~ts25mini/blacklotus/cre/tz25__j2.cre~ ~override~
+-  SAY NAME1 @79
+-  SAY NAME2 @79
++  SAY NAME1 @999
++  SAY NAME2 @999
+ COPY ~ts25mini/blacklotus/cre/tz25__j3.cre~ ~override~
+   SAY NAME1 @79
+   SAY NAME2 @79
+@@ -1041,8 +1047,8 @@
+   SAY NAME1 @111
+   SAY NAME2 @111
+ COPY ~ts25mini/undead/cre/tz25_!cf.cre~ ~override~
+-  SAY NAME1 @112
+-  SAY NAME2 @112
++  SAY NAME1 @999
++  SAY NAME2 @999
+ COPY ~ts25mini/undead/cre/tz25_!cm.cre~ ~override~
+   SAY NAME1 @112
+   SAY NAME2 @112
+@@ -1292,8 +1298,8 @@
+   SAY NAME1 @132
+   SAY NAME2 @132
+ COPY ~ts25mini/sorcerer/cre/tz25_#l2.cre~ ~override~
+-  SAY NAME1 @133
+-  SAY NAME2 @133
++  SAY NAME1 @990
++  SAY NAME2 @990
+ COPY ~ts25mini/sorcerer/cre/tz25_#l3.cre~ ~override~
+   SAY NAME1 @134
+   SAY NAME2 @134
+@@ -1304,8 +1310,8 @@
+   SAY NAME1 @135
+   SAY NAME2 @135
+ COPY ~ts25mini/sorcerer/cre/tz25_#s1.cre~ ~override~
+-  SAY NAME1 @133
+-  SAY NAME2 @133
++  SAY NAME1 @990
++  SAY NAME2 @990
+ COPY ~ts25mini/sorcerer/cre/tz25_#s2.cre~ ~override~
+   SAY NAME1 @134
+   SAY NAME2 @134
+@@ -1322,8 +1328,8 @@
+   SAY NAME1 @137
+   SAY NAME2 @137
+ COPY ~ts25mini/sorcerer/cre/tz25_#w2.cre~ ~override~
+-  SAY NAME1 @137
+-  SAY NAME2 @137
++  SAY NAME1 @995
++  SAY NAME2 @995
+ COPY ~ts25mini/sorcerer/cre/tz25_#of.cre~ ~override~
+   SAY NAME1 @138
+   SAY NAME2 @138
+@@ -1337,8 +1343,8 @@
+   SAY NAME1 @141
+   SAY NAME2 @141
+ COPY ~ts25mini/sorcerer/cre/tz25_#sp.cre~ ~override~
+-  SAY NAME1 @133
+-  SAY NAME2 @133
++  SAY NAME1 @990
++  SAY NAME2 @990
+ COPY ~ts25mini/sorcerer/cre/tz25_#sq.cre~ ~override~
+   SAY NAME1 @134
+   SAY NAME2 @134
+@@ -1346,6 +1352,14 @@
+   SAY NAME1 @142
+   SAY NAME2 @142
+ 
++COPY_EXISTING ~Mage12A.bcs~ ~override/Ts25blah.bcs~
++
++COPY_EXISTING ~tz25_#ma.cre~ ~override~
++  PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
++    WRITE_ASCII 0x258 ~Ts25blah~ #8 //Race script
++  END
++BUT_ONLY_IF_IT_CHANGES
++
+ COPY ~ts25mini/sorcerer/item/tz25_#po.itm~ ~override~
+   SAY NAME2 @150
+   SAY IDENTIFIED_DESC @151
+@@ -1451,51 +1465,38 @@
+ END
+ 
+ // ar0400
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-5 1110
+-55 1130
+-55 1220
+-5 1220
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar0400_to_tzdr03"
+-OUTER_SET    "type" = 2
+-OUTER_SET    "bounding_box_left" = 5
+-OUTER_SET    "bounding_box_top" = 1110
+-OUTER_SET    "bounding_box_right" = 55
+-OUTER_SET    "bounding_box_bottom" = 1220
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 30
+-OUTER_SPRINT "destination_area" "tzdr03"
+-OUTER_SPRINT "entrance_name" "Exit0400"
+-OUTER_SET    "flag1" = 0b00000000 // bitwise
+-OUTER_SET    "flag2" = 0b00000011 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 20
+-OUTER_SET    "launch_point_y" = 1100
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" ""
+-OUTER_SET    "activation_point_x" = 0
+-OUTER_SET    "activation_point_y" = 0
+ 
+ COPY_EXISTING ~ar0400.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-OUTER_SPRINT "name" "tz25nn_ar0400_from_tzdr03"
+-OUTER_SET    "coordinate_x" = 130
+-OUTER_SET    "coordinate_y" = 1200
+-OUTER_SET    "orientation" = 12
+-
+-COPY_EXISTING ~ar0400.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_entrance~
+-  BUT_ONLY_IF_IT_CHANGES
++ LPF fj_are_structure
++    INT_VAR
++    fj_type         = 2    //travel
++    fj_box_left     = 5
++    fj_box_top      = 1110
++    fj_box_right    = 55
++    fj_box_bottom   = 1220
++    fj_cursor_idx   = 30   //door
++	fj_flags		= 0x304
++    fj_vertex_0     = 5 + (1110 << 16)
++    fj_vertex_1     = 55 + (1130 << 16)
++    fj_vertex_2     = 55 + (1220 << 16)
++    fj_vertex_3     = 5 + (1220 << 16)
++	fj_loc_x		= 2
++	fj_loc_y		= 1100
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = tz25nn_ar0400_to_tzdr03
++    fj_destination_area = tzdr03
++    fj_destination_name = Exit0400
++  END
++  LPF fj_are_structure
++    INT_VAR
++    fj_loc_x       = 130
++    fj_loc_y       = 1200
++    fj_orientation = 12   //NE
++    STR_VAR
++    fj_structure_type = entrance
++    fj_name           = tz25nn_ar0400_from_tzdr03
++  END
+ 
+ //ar0900
+ // Travel Trigger

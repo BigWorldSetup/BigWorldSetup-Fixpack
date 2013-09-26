@@ -1,0 +1,47 @@
+--- Kari\Dialogue\MGKAR25P.d	Wed Jul 06 13:04:42 2005
++++ C:\BWP Patchstudio\patched files\Kari\Dialogue\MGKAR25P.d	Mon Aug 04 20:05:24 2008
+@@ -2,35 +2,16 @@
+ 
+ 
+ 
+-IF ~Global("KariJoined","LOCALS",1)~ THEN BEGIN KariKickToB
++IF ~Global("MGKariJoined","LOCALS",1)~ THEN BEGIN MGKariKickToB
+  SAY ~Um...I'm to leave?~
+  ++ ~No, not at all.~ DO ~JoinParty()~ EXIT
+- ++ ~Yes. Please wait here until I need you again.~ GOTO KariKickToB2
++ ++ ~Yes. Please wait here until I need you again.~ GOTO MGKariKickToB2
+ END
+ 
+ 
+-IF ~~ THEN BEGIN KariKickToB2
+- SAY ~I...I'll do that, then. Take care, <CHARNAME>. I'll try to stay safe myself.~
+-IF ~~ THEN DO ~SetGlobal("KariJoined","LOCALS",0)
+-SetGlobal("KariKickedOutToB","LOCALS",1)~
+-EXIT
+-END
+-
+-
+-IF ~Global("KariJoined","LOCALS",0)
+-Global("KariKickedOutToB","LOCALS",1)~ THEN BEGIN KariRejoinTOB
+- SAY ~O-ohh! <CHARNAME>! Er...what is it?~
+- ++ ~It's nothing. I was just checking on you.~ GOTO KariStayTOB2
+- ++ ~Come along, girl.~ GOTO KariJoinTOB2
+-END
+-
+-IF ~~ THEN BEGIN KariJoinTOB2
+- SAY ~Oh! Of course!~
+-IF ~~ THEN DO ~SetGlobal("KariJoined","LOCALS",1)JoinParty()~
+-EXIT
+-END
+-
+-IF ~~ THEN BEGIN KariStayTOB2
+- SAY ~Oh...I'm fine, really. I hope you're well too.~
+-IF ~~ THEN EXIT
+-END
++IF ~~ THEN BEGIN MGKariKickToB2
++ SAY ~Oh no, I couldn't! I can't stay here in this warzone! I'm retreating for better places!~
++IF ~~ THEN DO ~SetGlobal("MGKariJoined","LOCALS",0)
++SetGlobal("MGKariKickedOutToB","LOCALS",1)
++EscapeArea()~ EXIT
++END
+\ No newline at end of file

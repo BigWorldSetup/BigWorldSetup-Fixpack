@@ -1,0 +1,9 @@
+--- Kari\Scripts\MGKARI25.baf	Wed Jul 06 12:37:42 2005
++++ C:\BWP Patchstudio\patched files\Kari\Scripts\MGKARI25.baf	Mon Aug 04 19:33:36 2008
+@@ -1,5 +1,5 @@
+ IF
+-  Global("KariSummoned","GLOBAL",1)
++  Global("MGKariSummoned","GLOBAL",1)
+ THEN
+  RESPONSE #100
+   StartDialogueNoSet([PC])

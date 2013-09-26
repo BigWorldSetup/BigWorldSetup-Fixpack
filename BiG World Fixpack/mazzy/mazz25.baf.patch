@@ -1,0 +1,20 @@
+--- mazzy\scripts\mazz25.baf	Tue Dec 02 23:10:28 2008
++++ C:\BWP Patchstudio\patched files\mazzy\scripts\mazz25.baf	Sat Nov 10 15:00:34 2012
+@@ -38,7 +38,7 @@
+     InParty(Myself)
+     See(Player1)
+     Global("SaradushSacked","GLOBAL",1)
+-    Global("I#MazzyFriendTalks","GLOBAL",2)
++    Global("I#MazzyToBFriendTalks","GLOBAL",2)
+ THEN
+   RESPONSE #100
+     RealSetGlobalTimer("I#MazzyToBFriendTalksTimer","GLOBAL",600)
+@@ -60,6 +60,6 @@
+     Global("I#MazzyToBFriendTalks","GLOBAL",4)
+ THEN
+   RESPONSE #100
+-    IncrementGlobal("I#MazzyFriendTalks","GLOBAL",1)
+-    RealSetGlobalTimer("I#MazzyFriendTalksTimer","GLOBAL",1800)
++    IncrementGlobal("I#MazzyToBFriendTalks","GLOBAL",1)
++    RealSetGlobalTimer("I#MazzyToBFriendTalksTimer","GLOBAL",1800)
+ END

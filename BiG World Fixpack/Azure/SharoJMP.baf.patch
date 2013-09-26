@@ -1,0 +1,17 @@
+--- Azure\append\SharoJMP.baf	Fri Sep 02 19:35:32 2005
++++ D:\BWP Patchstudio\patched files\Azure\append\SharoJMP.baf	Sun Dec 06 14:57:58 2009
+@@ -7,6 +7,7 @@
+ 	!StateCheck("Azure",STATE_DEAD)
+ THEN RESPONSE #100
+ 	 MoveGlobalObject("sharo","Azure")
++	 Continue()
+ END
+ 
+ IF
+@@ -18,5 +19,6 @@
+ 	StateCheck("Azure",STATE_DEAD)
+ THEN RESPONSE #100
+ 	 MoveGlobalObject("sharo",Protagonist)
++	 Continue()
+ END
+ 

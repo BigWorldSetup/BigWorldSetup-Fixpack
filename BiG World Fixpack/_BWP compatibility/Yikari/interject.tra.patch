@@ -1,0 +1,28 @@
+--- Yikari\Translations\English\interject.tra	Wed Sep 23 16:28:42 2009
++++ C:\BWP Patchstudio\patched files\Yikari\Translations\English\interject.tra	Fri Dec 02 13:06:15 2011
+@@ -70,4 +70,22 @@
+ 
+ @505 = ~Well... if you wish.~
+ 
+-@506 = ~No, I shall hold on to it. It's safer this way.~
+\ No newline at end of file
++@506 = ~No, I shall hold on to it. It's safer this way.~
++
++// Lol's Fury Upgrade
++
++@1234 = ~Well, let's see what else ye got.~
++
++@123470 = ~A katana? Looks like original Kara-Turan craftmanship too...~
++
++@1234870 = ~Celestial Fury? I'm nay from Kara-Tur, and enchanting a Katana is no easy task, but with a Demon Heart and a Wand of Lightning I could just about do it. I'd charge you 20,000 for me sweat.~
++
++@1234970 = ~Celestial Fury? I'm nay from Kara-Tur, and enchanting a Katana is no easy task, but with a Demon Heart and a Wand of Lightning I could just about do it. I'd charge you 20,000 for me sweat. Interested?~
++
++@5678 = ~Well, let's sees what else you has...~
++
++@567870 = ~Oh, most honorable Great One-san! Can youse believe that Celestial Fury not looking so good anymore?~ [FWCESP25]
++
++@5678870 = ~Cespenar have nice quick recipe to fix that! Well, is maybe not so quick. You gots Wand of Lightning? How about spare demon heart? Stiiiinky, I know, but they comes in handy for strangest things. Oh, and 20,000 gold be needed as well.~
++
++@5678970 = ~Cespenar have nice quick recipe to fix that! Well, is maybe not so quick. You gots Wand of Lightning? How about spare demon heart? Stiiiinky, I know, but they comes in handy for strangest things. Oh, and 20,000 gold be needed as well.~
+\ No newline at end of file

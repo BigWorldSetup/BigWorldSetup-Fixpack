@@ -1,0 +1,10 @@
+--- SETUP-NMRF-PC.TP2	Mon Mar 07 12:00:57 2011
++++ C:\BWP Patchstudio\patched files\SETUP-NMRF-PC.TP2	Thu Sep 13 16:13:28 2012
+@@ -24,6 +24,7 @@
+ 
+ BEGIN @1
+ SUBCOMPONENT @0
++APPEND ~spell.ids~ ~2705 WIZARD_KHELBENS_WARDING_WHIP~ UNLESS ~WIZARD_KHELBENS_WARDING_WHIP~
+ //bs
+   COMPILE ~NMRF-PC\bs-scs~
+   COPY_EXISTING ~override\M_RF_B.bcs~ ~scripts\M_RF_B.bs~

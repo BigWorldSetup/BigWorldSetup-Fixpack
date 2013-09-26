@@ -1,0 +1,21 @@
+--- Setup-BTL.tp2	Wed Jan 16 16:14:48 2008
++++ C:\BWP Patchstudio\patched files\Setup-BTL.tp2	Sat Jun 19 15:20:12 2010
+@@ -3,6 +3,9 @@
+ // ALWAYS
+ //  AT_INTERACTIVE_EXIT ~VIEW readme-btl.html~
+ // END
++
++VERSION ~v1.35 BWP Fix~
++
+ ASK_EVERY_COMPONENT
+ LANGUAGE ~English~
+ 	      ~English~
+@@ -298,7 +301,7 @@
+ 
+ // Adding Quest Related Items
+ 
+-COPY ~aD&L\GTHAC.spl~ ~override\GTHAC.spl~
++COPY ~aD&L\Z#GTHAC.spl~ ~override\Z#GTHAC.spl~
+ COPY ~aD&L\Z#HIDE.spl~ ~override\Z#HIDE.spl~
+ 
+ // Adding Quest Related Items

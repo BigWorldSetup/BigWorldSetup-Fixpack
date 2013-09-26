@@ -1,0 +1,14 @@
+--- RoTerror\D\BREFI7.d	Thu Apr 13 19:40:12 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\D\BREFI7.d	Tue Sep 29 12:36:22 2009
+@@ -1,7 +1,10 @@
+ BEGIN ~BREFI7~
+ 
+ IF ~Global("Openthegate","RA5100",0)
+-!Global("Youcanleavenow","GLOBAL",0)~ THEN BEGIN 0
++	OR(3)
++	!Global("Youcanleavenow","GLOBAL",0)
++	!Global("Youcanleavenow2","GLOBAL",0)
++	!Global("Youcanleavenow3","GLOBAL",0)~ THEN BEGIN 0
+   SAY @0
+   IF ~~ THEN GOTO 1
+ END

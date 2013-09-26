@@ -1,0 +1,17 @@
+--- RoTerror\BAF\MYFICUT2.BAF	Thu Nov 02 20:41:38 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\MYFICUT2.BAF	Fri Mar 21 17:24:26 2008
+@@ -15,12 +15,14 @@
+ 		EndCutSceneMode()
+ 		ActionOverride("Driz2",StartDialogueNoSet("Enteri"))
+ 		SmallWait(1)
++		/*
+ 		MakeUnselectable(999999)
+ 		ActionOverride(Player2,MakeUnselectable(999999))
+ 		ActionOverride(Player3,MakeUnselectable(999999))
+ 		ActionOverride(Player4,MakeUnselectable(999999))
+ 		ActionOverride(Player5,MakeUnselectable(999999))
+ 		ActionOverride(Player6,MakeUnselectable(999999))
++		*/
+ END
+ 
+ 

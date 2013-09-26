@@ -1,0 +1,8 @@
+--- worgas\are\W_0808B.baf	Tue May 01 23:35:40 2007
++++ C:\BWP Patchstudio\patched files\worgas\are\W_0808B.baf	Thu Apr 29 13:02:31 2010
+@@ -7,4 +7,5 @@
+ RESPONSE #100
+ SetGlobal("w_artemisSPAWN","AR0808",1)
+ CreateCreature("w_art",[1356.879],0)
++Continue()
+ END

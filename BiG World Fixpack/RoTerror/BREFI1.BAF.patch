@@ -1,0 +1,21 @@
+--- RoTerror\BAF\BREFI1.BAF	Fri Feb 24 19:13:26 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\BREFI1.BAF	Tue Sep 29 12:29:56 2009
+@@ -1,5 +1,8 @@
+ IF
+-	!Global("Youcanleavenow","GLOBAL",0)
++	OR(3)
++		!Global("Youcanleavenow","GLOBAL",0)
++		!Global("Youcanleavenow2","GLOBAL",0)
++		!Global("Youcanleavenow3","GLOBAL",0)
+ 	Global("Openthegate","RA5100",0)
+ 	CombatCounter(0)
+ 	OR(6)
+@@ -11,7 +14,5 @@
+ 		Range(Player6,5)
+ THEN
+ 	RESPONSE #100
+-		StartDialogueNoSet(Player1)
++	StartDialogueNoSet(Player1)
+ END
+-
+-

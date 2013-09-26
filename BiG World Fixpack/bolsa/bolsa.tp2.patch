@@ -1,0 +1,8 @@
+--- bolsa\bolsa.tp2	Wed Nov 04 16:13:14 2009
++++ C:\BWP Patchstudio\patched files\bolsa\bolsa.tp2	Mon May 20 18:55:42 2013
+@@ -78,4 +78,4 @@
+   SAY NAME1 @3
+   SAY NAME2 @3
+ 
+-EXTEND_BOTTOM ~ar0702.bcs~ ~bolsa/mhbolsa.baf~
++EXTEND_BOTTOM ~ar0511.bcs~ ~bolsa/mhbolsa.baf~

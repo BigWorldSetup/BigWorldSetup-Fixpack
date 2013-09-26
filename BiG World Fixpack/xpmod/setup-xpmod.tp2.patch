@@ -1,0 +1,29 @@
+--- setup-xpmod.tp2	Mon Dec 24 22:26:48 2007
++++ C:\BWP Patchstudio\patched files\setup-xpmod.tp2	Wed Dec 08 23:25:28 2010
+@@ -3,6 +3,8 @@
+ BACKUP ~xpmod/backup~
+ AUTHOR ~SimDing0~
+ 
++VERSION ~v6 BWP Fix~
++
+ ASK_EVERY_COMPONENT
+ 
+ ALWAYS
+@@ -271,7 +273,7 @@
+ 
+ COPY_EXISTING_REGEXP GLOB ~.*\.bcs~ ~override~
+ DECOMPILE_BCS_TO_BAF
+-REPLACE_EVALUATE ~AddexperienceParty(\(.*\))~
++REPLACE_EVALUATE ~AddexperienceParty(\([0-9]*\))~
+   BEGIN
+     SET "RESULT" = (("%MATCH1%" * "%percentage_modifier%") / 100)
+     SET "patched" = 0
+@@ -297,7 +299,7 @@
+ 
+ COPY_EXISTING_REGEXP GLOB ~.*\.dlg~ ~override~
+ DECOMPILE_DLG_TO_D
+-REPLACE_EVALUATE ~xperienceParty(\(.*\))~
++REPLACE_EVALUATE ~xperienceParty(\([0-9]*\))~
+   BEGIN
+     SET "RESULT" = (("%MATCH1%" * "%percentage_modifier%") / 100)
+     SET "patched" = 0

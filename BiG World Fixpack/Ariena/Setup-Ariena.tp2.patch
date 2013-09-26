@@ -1,0 +1,11 @@
+--- Setup-Ariena.tp2	Thu Apr 03 00:05:22 2008
++++ C:\BWP Patchstudio\patched files\Setup-Ariena.tp2	Mon May 17 03:40:18 2010
+@@ -1,5 +1,8 @@
+ BACKUP ~Ariena\Backup~
+ AUTHOR ~Deathsangel deathsangel@spellholdstudios.net~
++
++VERSION ~v2.2 BWP Fix~
++
+ AUTO_TRA ~Ariena/%s~
+ 
+ LANGUAGE ~English~ ~english~ ~Ariena\english\setup.tra~

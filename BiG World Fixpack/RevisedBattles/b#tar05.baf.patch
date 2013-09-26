@@ -1,0 +1,11 @@
+--- RevisedBattles\sewers\baf\b#tar05.baf	Fri Apr 04 16:47:56 2003
++++ C:\BWP Patchstudio\patched files\RevisedBattles\sewers\baf\b#tar05.baf	Sat Mar 27 08:31:38 2010
+@@ -40,7 +40,7 @@
+     SetGlobalTimer("UseQuiver","LOCALS",6)
+     Spell(Myself,MONK_STUNNING_BLOW)
+     Attack(LastSeenBy(Myself))
+-    SetGlobal("b#quiver","LOCAL",1)
++    SetGlobal("b#quiver","LOCALS",1)
+     Continue()
+ END
+ 

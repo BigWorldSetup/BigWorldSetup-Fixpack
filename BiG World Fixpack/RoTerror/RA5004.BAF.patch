@@ -1,0 +1,11 @@
+--- RoTerror\BAF\RA5004.BAF	Thu Mar 23 19:13:12 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\RA5004.BAF	Sun Oct 04 19:19:10 2009
+@@ -140,7 +140,7 @@
+ 		CreateVisualEffect("SPFIRSDI",[1321.980])
+ 		SmallWait(5)
+ 		CreateCreature("GarSaph2",[1321.980],0) // Sapphire Golem
+-		SetGlobal("CreateThree","RA5004",1)
++		SetGlobal("CreateThree","RA5004",2)
+ END
+ 
+ IF

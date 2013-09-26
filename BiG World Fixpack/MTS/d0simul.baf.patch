@@ -1,0 +1,20 @@
+--- MTS\Ding0\d0simul.baf	Fri Nov 18 14:23:46 2005
++++ C:\BWP Patchstudio\patched files\MTS\Ding0\d0simul.baf	Thu Apr 01 20:05:11 2010
+@@ -647,7 +647,7 @@
+ 
+ IF
+ 	Heard(NearestMyGroupOfType,0)
+-	!Dead("astHeardBy(Myself))")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_INVISIBLE)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_IMPROVEDINVISIBILITY)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_CHARMED)
+@@ -665,7 +665,7 @@
+ 	Heard(NearestMyGroupOfType,0)
+ 	See(LastHeardBy(Myself))
+ 	!See(LastAttackerOf(LastHeardBy(Myself)))
+-	!Dead("astHeardBy(Myself))")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_INVISIBLE)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_IMPROVEDINVISIBILITY)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_CHARMED)

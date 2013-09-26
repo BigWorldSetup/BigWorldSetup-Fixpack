@@ -1,0 +1,48 @@
+--- item_rev\languages\english\setup.tra	Mon Aug 01 05:04:20 2011
++++ C:\BWP Patchstudio\patched files\item_rev\languages\english\setup.tra	Sat Jun 09 00:13:57 2012
+@@ -31,6 +31,8 @@
+ @28   = ~Speed Factor Penalties~
+ 
+ @12   = ~Allow Thieving Skills in Armor~
++@43   = ~Stealth is Penalized by Armor~
++@44   = ~Stealth is Penalized by Armor and Shields~
+ 
+ @29   = ~Revised Armor Bonuses~
+ 
+@@ -42,10 +44,14 @@
+ 
+ @16   = ~Halberds Can Slash, Too~
+ 
+-@17   = ~Remove Cleric Weapon Restrictions from Multi-Classed Clerics~
++@17   = ~Remove Weapon Restrictions from Multi-classed Divine Spellcasters~
++@39   = ~Clerics Only~
++@40   = ~Clerics and Druids~
++@41   = ~Clerics Only, With Halved Specialization~
++@42   = ~Clerics and Druids, With Halved Specialization~
+ 
+ @38   = ~PnP Equipment for Druids~
+-@18   = ~Druids only~
++@18   = ~Druids Only~
+ @19   = ~Druids and Fighter/Druids~
+ 
+ @30   = ~Kensai Can Wear Bracers~
+@@ -59,10 +65,12 @@
+ @22   = ~Backstabbing Penalties for Inappropriate Weapons~
+ @21   = ~Backstabbing Penalties Only~
+ @23   = ~Backstabbing Penalties with More Weapons Usable for Backstabbing~
++@45   = ~All Melee and Ranged Weapons Usable For Backstabbing~
+ 
+ ///////
+ 
+-@39   = ~~
++// the next free value
++@46   = ~~
+ 
+ ///////
+ 
+@@ -73,4 +81,5 @@
+ @9004 = ~This component is conceptually incompatible with the Improved Backstabbing component from Ding0's Tweak Pack (d0tweak).~
+ @9005 = ~This component is currently incompatible with the Altered Weapon Proficiency System from the BG2 Tweak Pack.~
+ 
++@9006 = ~This component has been deprecated.~
+ 

@@ -1,0 +1,11 @@
+--- Fade\English\Fade.tra	Thu Jan 06 18:34:10 2005
++++ C:\BWP Patchstudio\patched files\Fade\English\Fade.tra	Fri Nov 12 16:38:54 2010
+@@ -85,7 +85,7 @@
+ @90 = ~(Put an arm around her waist) Change my mind? Well, that depends on what you mean by that.~
+ @91 = ~Money? Is that everything to you? No, hand the gems over, they're going back in the collar.~
+ @92 = ~Yes, the money... they wouldn't notice. Okay... ~
+-@93 = ~Good <PRO_BOYGIRL>. (She winks and drops the gems into her cleavage) For safe keeping... ~
++@93 = ~Good <PRO_GIRLBOY>. (She winks and drops the gems into her cleavage) For safe keeping... ~
+ @94 = ~(She rolls her eyes, grins, and then pulls away from you) One-track mind, eh, <CHARNAME>?~
+ @95 = ~(She winks and drops the gems into her cleavage) For safe keeping... ~
+ 

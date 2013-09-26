@@ -1,0 +1,12 @@
+--- xpmod\functions\creature_xp.tph	Wed Nov 29 16:07:00 2006
++++ C:\BWP Patchstudio\patched files\xpmod\functions\creature_xp.tph	Sun Nov 27 20:15:25 2011
+@@ -6,6 +6,9 @@
+   SET "patched4" = 0
+   WHILE (("%new_xp_value%" > 0) AND ("%new_xp_value%" < 1000) AND ("%patched4%" = 0)) BEGIN // Round to nearest 5
+     SET "new_xp_value" = ("%new_xp_value%" / 5)
++	PATCH_IF ("%new_xp_value%" = 0) THEN BEGIN
++      SET "new_xp_value" = 1
++    END
+     SET "new_xp_value" = ("%new_xp_value%" * 5)
+     SET "patched4" = 1
+   END

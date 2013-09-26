@@ -1,0 +1,15 @@
+--- finch\scripts\append_ar4804.baf	Sun Feb 27 09:15:46 2005
++++ C:\BWP Patchstudio\patched files\finch\scripts\append_ar4804.baf	Fri Nov 28 06:54:14 2008
+@@ -1,10 +1,10 @@
+ IF
+ 
+-	Global("SUTraskExists", "FW4804", 0)
++	Global("SUTraskExists", "AR3704", 0)
+ 
+ THEN
+ 	RESPONSE #100
+-	SetGlobal("SUTraskExists", "FW4804", 1)
++	SetGlobal("SUTraskExists", "AR3704", 1)
+ 	CreateCreature("sutrask", [300.225],14)
+ END
+ 

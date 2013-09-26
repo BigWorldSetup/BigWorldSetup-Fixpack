@@ -1,0 +1,59 @@
+--- Setup-TS.tp2	Wed Sep 23 21:53:28 2009
++++ C:\BWP Patchstudio\patched files\Setup-TS.tp2	Sun Jan 13 14:55:12 2013
+@@ -2,6 +2,8 @@
+ 
+ AUTHOR ~Vlad & Domi~
+ 
++VERSION ~v7.04 BWP Fix~
++
+ BEGIN ~TORTURED SOULS v7.04~
+ 
+ //______________________________________//
+@@ -3312,20 +3314,9 @@
+ //Adding music
+ ACTION_IF FILE_EXISTS_IN_GAME ~Bag02NeJ.ITM~
+  THEN BEGIN
+-		COPY_EXISTING ~SONGLIST.2da~ ~override~
+-
+-			APPEND ~SONGLIST.2da~
+-				~85      Kachiko         MXKACHI.MUS~
+-
+-			APPEND ~SONGLIST.2da~
+-				~86      Valygar         MXVALYG.MUS~
+-
+-			APPEND ~SONGLIST.2da~
+-				~87      Sime            MXSIMEL.MUS~
+-
+-		COPY ~TS/music/MxKachi.mus~ ~music~
+-		COPY ~TS/music/MxSimel.mus~ ~music~
+-		COPY ~TS/music/MxValyg.mus~ ~music~
++		ADD_MUSIC ~Kachiko~	~TS/music/MxKachi.mus~
++		ADD_MUSIC ~Valygar~	~TS/music/MxSimel.mus~
++		ADD_MUSIC ~Sime~	~TS/music/MxValyg.mus~
+ 
+ 		MKDIR ~music/MxKachi~
+ 		MKDIR ~music/MxSimel~
+@@ -3349,20 +3340,9 @@
+ 		COMPILE ~TS/music/zbaf~
+ END
+ 	ELSE BEGIN
+-		COPY_EXISTING ~SONGLIST.2da~ ~override~
+-
+-			APPEND ~SONGLIST.2da~
+-				~84      Kachiko         MXKACHI.MUS~
+-
+-			APPEND ~SONGLIST.2da~
+-				~85      Valygar         MXVALYG.MUS~
+-
+-			APPEND ~SONGLIST.2da~
+-				~86      Sime            MXSIMEL.MUS~
+-
+-		COPY ~TS/music/MxKachi.mus~ ~music~
+-		COPY ~TS/music/MxSimel.mus~ ~music~
+-		COPY ~TS/music/MxValyg.mus~ ~music~
++		ADD_MUSIC ~Kachiko~	~TS/music/MxKachi.mus~
++		ADD_MUSIC ~Valygar~	~TS/music/MxSimel.mus~
++		ADD_MUSIC ~Sime~	~TS/music/MxValyg.mus~
+ 
+ 		MKDIR ~music/MxKachi~
+ 		MKDIR ~music/MxSimel~

@@ -1,0 +1,93 @@
+--- 1pp\install\400_1pp_update_bgii.tph	Thu Sep 20 12:25:37 2012
++++ C:\BWP Patchstudio\patched files\1pp\install\400_1pp_update_bgii.tph	Mon Sep 09 17:49:41 2013
+@@ -6503,7 +6503,7 @@
+   
+   
+   ACTION_IF (FILE_EXISTS_IN_GAME ~amul02.itm~) THEN BEGIN
+-COPY_EXISTING ~amul02.itm~ ~override/band02.itm~
++COPY_EXISTING ~amul02.itm~ ~override/xoband02.itm~
+ PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+     WRITE_ASCII 0x22 ~JB~
+     WRITE_LONG  0x3E 0
+@@ -6587,7 +6587,7 @@
+   END
+   
+   ACTION_IF (FILE_EXISTS_IN_GAME ~amul02.itm~) THEN BEGIN
+-COPY_EXISTING ~amul02.itm~ ~override/band01.itm~
++COPY_EXISTING ~amul02.itm~ ~override/xoband01.itm~
+ PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+     WRITE_ASCII 0x22 ~JB~
+     WRITE_LONG  0x3E 0
+@@ -6609,7 +6609,7 @@
+   
+   
+   ACTION_IF (FILE_EXISTS_IN_GAME ~amul02.itm~) THEN BEGIN
+-COPY_EXISTING ~amul02.itm~ ~override/band03.itm~
++COPY_EXISTING ~amul02.itm~ ~override/xoband03.itm~
+ PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+     WRITE_ASCII 0x22 ~JB~
+     WRITE_LONG  0x3E 0
+@@ -6712,7 +6712,7 @@
+   END
+   
+   ACTION_IF (FILE_EXISTS_IN_GAME ~amul02.itm~) THEN BEGIN
+-COPY_EXISTING ~amul02.itm~ ~override/band04.itm~
++COPY_EXISTING ~amul02.itm~ ~override/xoband04.itm~
+ PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+     WRITE_ASCII 0x22 ~JB~
+     WRITE_LONG  0x3E 0
+@@ -16099,7 +16099,7 @@
+     LAUNCH_PATCH_MACRO ADD_AREA_ITEM
+    
+    COPY_EXISTING ~ar0203.are~ ~override~ 
+-     SPRINT ~item_to_add~  ~BAND03~
++     SPRINT ~item_to_add~  ~XOBAND03~
+     SET container_to_add_to = 1
+     SET charges1 = 0
+     SET charges2 = 0
+@@ -16107,7 +16107,7 @@
+     LAUNCH_PATCH_MACRO ADD_AREA_ITEM
+    
+      COPY_EXISTING ~ar1403.are~ ~override~ 
+-     SPRINT ~item_to_add~  ~BAND04~
++     SPRINT ~item_to_add~  ~XOBAND04~
+     SET container_to_add_to = 1
+     SET charges1 = 0
+     SET charges2 = 0
+@@ -16136,28 +16136,28 @@
+     ADD_STORE_ITEM ~helm22~   AFTER  ~amul10~ #0 #0 #0 ~IDENTIFIED~ #1
+    
+     COPY_EXISTING ~dshop02.sto~ ~override~ 
+-    ADD_STORE_ITEM ~band01~   AFTER  ~potn20~ #0 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM ~xoband01~   AFTER  ~potn20~ #0 #0 #0 ~IDENTIFIED~ #1
+    
+    COPY_EXISTING ~dshop02.sto~ ~override~ 
+-    ADD_STORE_ITEM ~band01~   AFTER  ~potn20~ #0 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM ~xoband01~   AFTER  ~potn20~ #0 #0 #0 ~IDENTIFIED~ #1
+ 	
+ 	COPY_EXISTING ~bmthief.sto~ ~override~ 
+-    ADD_STORE_ITEM ~band01~   AFTER  ~dagg16~ #0 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM ~xoband01~   AFTER  ~dagg16~ #0 #0 #0 ~IDENTIFIED~ #1
+    
+    COPY_EXISTING ~bernard.sto~ ~override~ 
+-    ADD_STORE_ITEM ~band01~   AFTER  ~amul13~ #0 #0 #0 ~IDENTIFIED~ #2
++    ADD_STORE_ITEM ~xoband01~   AFTER  ~amul13~ #0 #0 #0 ~IDENTIFIED~ #2
+    
+    COPY_EXISTING ~bmthief.sto~ ~override~ 
+-    ADD_STORE_ITEM ~band01~   AFTER  ~dagg16~ #0 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM ~xoband01~   AFTER  ~dagg16~ #0 #0 #0 ~IDENTIFIED~ #1
+    
+      COPY_EXISTING ~govwau01.sto~ ~override~ 
+-    ADD_STORE_ITEM ~band02~   BEFORE  ~potn08~ #0 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM ~xoband02~   BEFORE  ~potn08~ #0 #0 #0 ~IDENTIFIED~ #1
+ 	
+ 	COPY_EXISTING ~uddrow23.sto~ ~override~ 
+-    ADD_STORE_ITEM ~band02~   AFTER  ~amul10~ #0 #0 #0 ~IDENTIFIED~ #2
++    ADD_STORE_ITEM ~xoband02~   AFTER  ~amul10~ #0 #0 #0 ~IDENTIFIED~ #2
+    
+    COPY_EXISTING ~ppumb01.sto~ ~override~ 
+-    ADD_STORE_ITEM ~band02~   BEFORE  ~potn08~ #0 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM ~xoband02~   BEFORE  ~potn08~ #0 #0 #0 ~IDENTIFIED~ #1
+    
+    
+      END // game is

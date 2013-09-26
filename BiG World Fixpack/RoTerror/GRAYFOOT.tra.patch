@@ -1,0 +1,26 @@
+--- RoTerror\Language\German\GRAYFOOT.tra	Thu Jan 03 23:17:06 2008
++++ C:\BWP Patchstudio\patched files\RoTerror\Language\German\GRAYFOOT.tra	Thu Feb 12 15:15:52 2009
+@@ -142,9 +142,9 @@
+ 
+ @71   = ~Ich möchte sie am Schwert haben.~
+ 
+-@72   = ~Ein gefrorener Kristall... den könnte ich an einer Plattenrüstung, einem Großschild oder einer Katana anbringen.~
++@72   = ~Ein gefrorener Kristall... den könnte ich an einem Prunkharnisch, einem Großschild oder einer Katana anbringen.~
+ 
+-@73   = ~Ich will ihn an der Plattenrüstung haben.~
++@73   = ~Ich will ihn am Prunkharnisch haben.~
+ 
+ @74   = ~Ich will ihn an der Katana haben.~
+ 
+@@ -251,9 +251,9 @@
+ @129  = ~Hmm... ich nehme das Schwert.~
+ @130  = ~Hervorragend! Ich werde sofort mit der Arbeit beginnen.~
+ @131  = ~Die Katana könnte über erweiterten Kälteschaden verfügen.~
+-@132  = ~Der Plattenpanzer ist vielleicht nicht so mächtig, verfügt aber danach über beeindruckende Schutzzauber... Würde ich sagen.~
++@132  = ~Der Prunkharnisch ist vielleicht nicht so mächtig, verfügt aber danach über beeindruckende Schutzzauber... Würde ich sagen.~
+ @133  = ~Der Schild wird über eigene magische Kräfte verfügen, vielleicht über Kräfte der Regenerationsmagie.~
+-@134  = ~...ich denke, ich nehme den Plattenpanzer.~
++@134  = ~...ich denke, ich nehme den Prunkharnisch.~
+ @135  = ~...ich denke, ich nehme den Schild.~
+ 
+ @136  = ~...ich denke, ich werde die Katana nehmen.~

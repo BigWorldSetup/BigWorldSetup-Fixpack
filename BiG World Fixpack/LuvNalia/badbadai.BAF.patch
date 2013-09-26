@@ -1,0 +1,16 @@
+--- LuvNalia\BAF\New\badbadai.BAF	Sun Jan 29 21:50:16 2006
++++ C:\BWP Patchstudio\patched files\LuvNalia\BAF\New\badbadai.BAF	Sun May 23 03:13:31 2010
+@@ -12,11 +12,11 @@
+   General(Myself,HUMANOID)
+   HPPercentLT(Myself,20)
+   HPGT(Myself,1)
+-  !Dead("yself)")
++  !StateCheck(Myself,STATE_REALLY_DEAD)
+   Global("whined","LOCALS",0)
+   See(NearestMyGroupOfType)
+   Allegiance(Myself,ENEMY)
+-  !Dead("astSeenBy(Myself))")
++  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+ THEN
+   RESPONSE #50
+     SetGlobal("whined","LOCALS",1)

@@ -1,0 +1,11 @@
+--- Exnem\BAF\AR0803.BAF	Fri Apr 08 16:29:52 2005
++++ C:\BWP Patchstudio\patched files\Exnem\BAF\AR0803.BAF	Thu May 27 08:11:35 2010
+@@ -7,7 +7,7 @@
+    RESPONSE #100
+       SetGlobal("ExnemSpawnItem","AR0803",1)
+       ActionOverride("Altar 1",CreateItem("RNDTRE03",0,0,0) // 
+-      ActionOverride("Chest 1",CreateItem("XSWS003",0,0,0) // 
++      ActionOverride("Chest 1",CreateItem("XSWD003",0,0,0) // 
+       ActionOverride("Vase 1",CreateItem("RNDTRE04",0,0,0) // 
+       ActionOverride("Vase 1",CreateItem("XSWD006",0,0,0) // 
+       Continue()

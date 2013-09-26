@@ -1,0 +1,13 @@
+--- JondalarFix\Setup-JondalarFix.tp2	Mon Nov 22 17:52:08 2010
++++ C:\BWP Patchstudio\patched files\JondalarFix\Setup-JondalarFix.tp2	Wed Sep 28 16:32:47 2011
+@@ -3,5 +3,6 @@
+ 
+ BEGIN ~Jondalar Fix for BGT~
+ 
+-COPY ~JondalarFix/JONDAL.DLG~ ~override~
+-  SAY 0x074 ~I was going to teach you a thing or two about fighting, but I see you are rather handy with that weapon already.  You should go talk to the Gatewarden if you want some experience in fighting with a group of people.  You can find him just south of here.  Out there it can be pretty important to know how to fight with allies at your side.~
+\ No newline at end of file
++// COPY ~JondalarFix/JONDAL.DLG~ ~override~
++//   SAY 0x074 ~I was going to teach you a thing or two about fighting, but I see you are rather handy with that weapon already.  You should go talk to the Gatewarden if you want some experience in fighting with a group of people.  You can find him just south of here.  Out there it can be pretty important to know how to fight with allies at your side.~
++COMPILE ~JondalarFix/JONDAL.d~
+\ No newline at end of file

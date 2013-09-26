@@ -1,0 +1,19 @@
+--- SBS\Language\English\Setup.tra	Fri Nov 16 02:24:30 2007
++++ C:\BWP Patchstudio\patched files\SBS\Language\English\Setup.tra	Sun Apr 25 05:38:41 2010
+@@ -40,6 +40,8 @@
+ @18 = ~Gods, guide me.~ [MTS#s10] 
+ @19 = ~I'll give it all I've got.~ [MTS#s12]
+ @20 = ~Forgive me.~ [MTS#s13] 
++@21 = ~~ [MTS#s14]
++@22 = ~~ [MTS#s15]
+ @23 = ~This can't be.~ [MTS#s16] 
+ @24 = ~Our prayers will be answered.~ [MTS#s17]
+ @25 = ~Our prayers will be answerd.~ [MTS#sbs18] 
+@@ -79,6 +81,5 @@
+ @52 = ~Install Skie Portrait (Original Mod Portrait)~
+ @53 = ~Install Edited Skie Portrait by Plasmocat~
+ @54 = ~Install Redheaded Paladin Portrait (Author Unknown)~
+-@21 = ~~ [MTS#s14]
+ @55 = ~Install Salma Hayek Portrait from The Portrait Portal ~
+-@22 = ~~ [MTS#s15]
++@56 = ~Install BGEP Sandra Portrait by Xenobia ~

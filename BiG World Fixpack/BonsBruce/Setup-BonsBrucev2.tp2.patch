@@ -1,0 +1,58 @@
+--- Setup-BonsBrucev2.tp2	Sun Jan 02 20:26:00 2005
++++ C:\BWP Patchstudio\patched files\Setup-BonsBrucev2.tp2	Tue Jun 01 19:40:46 2010
+@@ -1,8 +1,9 @@
+ BACKUP ~BonsBruce\Backup~
+ AUTHOR ~llamababe@pocketplane.net~
+ 
++VERSION ~v2 BWP Fix~
+ 
+-BEGIN ~Bons's Bruce The Cockney Barfighter - A One-Day NPC - Version 2~
++BEGIN ~Bons's Bruce The Cockney Barfighter - A One-Day NPC~
+ REQUIRE_FILE ~Data/25Dialog.bif~ ~You do not appear to have TOB installed.~
+ 
+ // Soundage - Be very afraid.
+@@ -205,7 +206,7 @@
+ Weight: 1
+ ~
+ 
+-COPY ~BonsBruce\items\subrfis1.itm~ ~override\subrifis1.itm~
++COPY ~BonsBruce\items\subrfis1.itm~ ~override\subrfis1.itm~
+ SAY NAME1 ~Bruce's Right Jab~
+ SAY NAME2 ~Bruce's Right Jab~
+ SAY UNIDENTIFIED_DESC ~Bruce's Right Jab
+@@ -223,7 +224,7 @@
+ THACO: +1
+ Speed: 2~
+ 
+-COPY ~BonsBruce\items\subrfis2.itm~ ~override\subrifis2.itm~
++COPY ~BonsBruce\items\subrfis2.itm~ ~override\subrfis2.itm~
+ SAY NAME1 ~Bruce's Right Jab~
+ SAY NAME2 ~Bruce's Right Jab~
+ SAY UNIDENTIFIED_DESC ~Bruce's Right Jab
+@@ -242,7 +243,7 @@
+ THACO: +2
+ Speed: 2~
+ 
+-COPY ~BonsBruce\items\subrfis3.itm~ ~override\subrifis3.itm~
++COPY ~BonsBruce\items\subrfis3.itm~ ~override\subrfis3.itm~
+ SAY NAME1 ~Bruce's Right Jab~
+ SAY NAME2 ~Bruce's Right Jab~
+ SAY UNIDENTIFIED_DESC ~Bruce's Right Jab
+@@ -261,7 +262,7 @@
+ THACO: +3
+ Speed: 2~
+ 
+-COPY ~BonsBruce\items\subrfis4.itm~ ~override\subrifis4.itm~
++COPY ~BonsBruce\items\subrfis4.itm~ ~override\subrfis4.itm~
+ SAY NAME1 ~Bruce's Right Jab~
+ SAY NAME2 ~Bruce's Right Jab~
+ SAY UNIDENTIFIED_DESC ~Bruce's Right Jab
+@@ -282,7 +283,7 @@
+ Speed: 2
+ Modifiers: Strength +1~
+ 
+-COPY ~BonsBruce\items\subrfis5.itm~ ~override\subrifis5.itm~
++COPY ~BonsBruce\items\subrfis5.itm~ ~override\subrfis5.itm~
+ SAY NAME1 ~Bruce's Right Jab~
+ SAY NAME2 ~Bruce's Right Jab~
+ SAY UNIDENTIFIED_DESC ~Bruce's Right Jab

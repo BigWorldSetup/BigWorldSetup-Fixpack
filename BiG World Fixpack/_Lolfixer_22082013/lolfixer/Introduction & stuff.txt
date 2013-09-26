@@ -1,0 +1,34 @@
+INTRODUCTION:
+
+The Lolfixer is supposed to do fixups and cleanups in your BGII-ToB game. I'll detail exactly what this does with examples in separate text files for ease of reading and stuff :)
+
+Things to note though:
+- The lolfixer always tries to never change stuff that requires an actual choice in the way to go about fixing it. It changes stuff that are KNOWN to cause problems and will never do something that could've been fixed in another way.
+- The lolfixer always tries to preserve data (which extends to content) so it will never actual REMOVE something from anything unless there's a copy of the same thing (in case of items and effects) or cause any change that might prevent access to content in anything
+
+If you find a case where the above aren't true, I'm usually a really nice guy so would love to either change/remove whatever's bothersome (or make it optional and separate it into a new component :P)
+
+LICENSING:
+
+<insert legal stuff I have no clue about here>
+
+Feel free to use, peruse, disassemble, make sweet love to, have fights with or practically do anything feasible (humane or otherwise) with this mod :) I don't care :D
+
+No need for credit or anything either :P Use as you wish.
+
+USAGE:
+
+1. Drop setup-lolfixer.exe, lolfixer.tp2 and the lolfixer folder into your BGII folder
+2. Run setup-lolfixer.exe
+3. Choose stuff to install
+4. Regale at the awesome computery black screen with words whizzing past in high speed like the Matrix (not applicable for some components or when your game has not much to fix :P)
+5. ???
+6. PROFIT! (hopefully)
+
+=> NOTE ABOUT setup-lolfixer_ONLY_DEBUG_MODE.bat
+
+You might've noticed this file in the archive. What this does is install every lolfixer component and then uninstall everything immediately. In the process it records the installation and uninstallation in files (lolfixer.log and uninstall_lolfixer.log respectively)
+
+This is because unless you have really really radical eye surgery with cybernetics, you might never actually be able to read what's whizzing past in the black console screen while the lolfixer installs :) (and trust me, I made those info lines very easy to read so you have no doubts about what the lolfixer is actually doing)
+
+All the info from the console gets dumped into those files so you can read them at your leisure (and stand in awe as you realize what a shit job the lolfixer did :D)

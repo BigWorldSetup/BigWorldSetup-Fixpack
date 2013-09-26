@@ -1,0 +1,11 @@
+--- Severian\Scripts\#SAr1100.baf	Mon Dec 14 23:13:14 2009
++++ C:\BWP Patchstudio\patched files\Severian\Scripts\#SAr1100.baf	Tue May 25 07:57:56 2010
+@@ -301,7 +301,7 @@
+     CreateCreature("#SMoust",[4485.3012],15)
+     CreateCreature("#SLouve",[4686.3083],6)
+     CreateCreature("#SBlaidd",[4590.3057],12)
+-    CreateCreature("#SMichele",[4046.3239],15)
++    CreateCreature("#SMichel",[4046.3239],15)
+     CreateCreature("#Smfar01",[4090.3227],15)
+     CreateCreature("#Smfar02",[4069.3263],8)
+     CreateCreature("#Skid01",[4321.3306],7)

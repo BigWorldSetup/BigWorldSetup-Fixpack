@@ -1,0 +1,11 @@
+--- imnesvale\scripts\easy\duSpawn2.baf	Tue Mar 14 18:43:24 2006
++++ C:\BWP Patchstudio\patched files\imnesvale\scripts\easy\duSpawn2.baf	Thu Sep 15 02:31:45 2011
+@@ -1,7 +1,7 @@
+ //See spawn one.
+ 
+ If
+-	true()
++	oncreation()
+ then
+ 	response #100
+ 		ApplySpell(myself, WIZARD_INVISIBILITY)

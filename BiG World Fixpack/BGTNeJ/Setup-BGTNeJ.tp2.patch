@@ -1,0 +1,21 @@
+--- Setup-BGTNeJ.tp2	Thu Mar 26 18:52:58 2009
++++ C:\BWP Patchstudio\patched files\Setup-BGTNeJ.tp2	Sat Jan 12 16:49:43 2013
+@@ -25,7 +25,8 @@
+  	COPY_EXISTING ~AR6600.bcs~ ~override/AR6600.bcs~
+ 	EXTEND_BOTTOM ~AR0602.bcs~ ~BGTNeJ/BGTcomp/fAR0602.bcs~
+ 	EXTEND_BOTTOM ~AR6600.bcs~ ~BGTNeJ/BGTcomp/fAR6600.bcs~
+-	EXTEND_TOP ~ARAM00.bcs~ ~BGTNeJ/BGTcomp/xrARAM00.bcs~
++	COPY_EXISTING ~ARAM00.bcs~ ~override/ARAM00.bcs~
++	REPLACE_BCS_BLOCK ~BGTNeJ/BGTComp/replace.baf~ ~BGTNeJ/BGTComp/new.baf~
+ END
+  ELSE BEGIN
+ /////DO NOTHING/////////	 
+@@ -907,7 +908,7 @@
+ REQUIRE_FILE ~data/BG1ARE.BIF~ ~Please install BG1 and BGT before installation of this component.~
+ 
+ COPY_EXISTING ~ARAM00.BCS~ ~override~
+-  EXTEND_TOP ~ARAM00.bcs~ ~BGTNeJ/bank/xARAM00.bcs~
++  REPLACE_BCS_BLOCK ~BGTNeJ/bank/replace.baf~ ~BGTNeJ/bank/new.baf~
+ 
+ //__________________________________________//
+ //                                          //

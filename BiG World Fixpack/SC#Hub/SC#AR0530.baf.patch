@@ -1,0 +1,10 @@
+--- SC#Hub\Scripts\SC#AR0530.baf	Wed Jul 28 21:33:42 2004
++++ C:\BWP Patchstudio\patched files\SC#Hub\Scripts\SC#AR0530.baf	Sat Mar 27 08:38:16 2010
+@@ -1,6 +1,6 @@
+ /*IF
+   Global("SC#HubItems","AR0530",0)
+-  GlobalGT("SC#HubPlot","GLOBALS",3)
++  GlobalGT("SC#HubPlot","GLOBAL",3)
+ THEN
+   RESPONSE #100
+     SetGlobal("SC#HubItems","AR0530",1)

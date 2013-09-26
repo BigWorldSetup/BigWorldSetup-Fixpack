@@ -1,0 +1,37 @@
+--- Kari\Dialogue\MGKAR25J.d	Thu Jul 07 21:36:52 2005
++++ C:\BWP Patchstudio\patched files\Kari\Dialogue\MGKAR25J.d	Mon Aug 04 19:33:06 2008
+@@ -1,26 +1,26 @@
+ BEGIN MGKAR25J
+ 
+ EXTEND_TOP SARVOLO 9
+-IF ~InParty("Kari")~ THEN REPLY ~Tell me about Kari.~ GOTO KariVolo
++IF ~InParty("Kari")~ THEN REPLY ~Tell me about Kari.~ GOTO MGKariVolo
+ END
+ 
+-CHAIN SARVOLO KariVolo
+-~Kari, a rare offspring of a human-kobold marriage, has gained the respect of many commoners and adventurers alike during her time in <CHARNAME>'s company.~
++CHAIN SARVOLO MGKariVolo
++~Kari, part of a rare race that resembles animalistic humanoids. They are normally isolated, yet Kari seems to enjoy her stay in <CHARNAME>'s company, though she does need to keep her appearance concealed.~
+ =
+-~Perhaps in a not-too-far future she will be able to live in human settlements without fear of being hunted.~
+-== MGKAR25J IF ~InParty("Kari")~ THEN ~R-really? Wow...that'd be great.~
++~Perhaps in a not-too-far future she will be able to live in a settlement without fear of being hunted.~
++== MGKAR25J IF ~InParty("Kari")~ THEN ~R-Really? Wow...that'd be great.~
+ EXTERN SARVOLO 9
+ 
+ 
+ EXTEND_TOP FATESP 6 #11
+ IF ~!Dead("Kari")
+     !InMyArea("Kari")
+-    Global("KariSummoned","GLOBAL",0)~
++    Global("MGKariSummoned","GLOBAL",0)~
+ THEN
+-  REPLY ~Bring me Kari, the kobold druid.~
++  REPLY ~Bring me Kari, the wolfess druid.~
+     DO ~CreateVisualEffect("SPPORTAL",[1999.1218])
+      Wait(2)
+      CreateCreature("MGKARI25",[1999.1218],0)
+-     SetGlobal("KariSummoned","GLOBAL",1)~
++     SetGlobal("MGKariSummoned","GLOBAL",1)~
+ EXIT
+ END

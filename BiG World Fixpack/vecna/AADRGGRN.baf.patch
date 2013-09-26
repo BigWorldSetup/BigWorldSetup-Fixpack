@@ -1,0 +1,83 @@
+--- vecna\baf\drg\AADRGGRN.baf	Mon Mar 22 00:31:11 2010
++++ C:\BWP Patchstudio\patched files\vecna\baf\drg\AADRGGRN.baf	Fri Oct 28 08:56:14 2011
+@@ -31,7 +31,7 @@
+ 		SetGlobalTimer("DRAGONFEAR","LOCALS",TWENTY_MINUTES)
+ 		PlaySound("BLACK01")
+ 		ReallyForceSpell(NearestEnemyOf(Myself),DRAGON_FEAR)
+-		ReallyForceSpell(NearestEnemyOf(Myself),0)
++		ReallyForceSpell(NearestEnemyOf(Myself),DRAGON_LOWER_ELECTRICAL)
+ 		ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET)
+ END
+ 
+@@ -87,7 +87,7 @@
+ 
+ IF
+ 	See(NearestEnemyOf(Myself))
+-	!Dead("astSeenBy())")
++	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Continue()
+@@ -99,7 +99,7 @@
+ 		See(SecondNearestEnemyOfType([GOODCUTOFF.0.0.DRUID_ALL]))
+ 		See(SecondNearestEnemyOfType([GOODCUTOFF.0.0.CLERIC_ALL]))
+ 	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+-	!Dead("astSeenBy())")
++	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Continue()
+@@ -111,7 +111,7 @@
+ 		See(NearestEnemyOfType([GOODCUTOFF.0.0.DRUID_ALL]))
+ 		See(NearestEnemyOfType([GOODCUTOFF.0.0.CLERIC_ALL]))
+ 	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+-	!Dead("astSeenBy())")
++	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Continue()
+@@ -122,7 +122,7 @@
+ 		See(ThirdNearestEnemyOfType([GOODCUTOFF.0.0.LONG_BOW]))
+ 		See(ThirdNearestEnemyOfType([GOODCUTOFF.0.0.SORCERER]))
+ 	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+-	!Dead("astSeenBy())")
++	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Continue()
+@@ -136,7 +136,7 @@
+ 	!StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+ 	!StateCheck(LastSeenBy(Myself),STATE_PANIC)
+ 	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+-	!Dead("astSeenBy())")
++	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Continue()
+@@ -150,7 +150,7 @@
+ 	!StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+ 	!StateCheck(LastSeenBy(Myself),STATE_PANIC)
+ 	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+-	!Dead("astSeenBy())")
++	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Continue()
+@@ -162,7 +162,7 @@
+ 	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+ 	!StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+ 	!StateCheck(LastSeenBy(Myself),STATE_PANIC)
+-	!Dead("astSeenBy())")
++	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Continue()
+@@ -174,7 +174,7 @@
+ 	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+ 	!StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+ 	!StateCheck(LastSeenBy(Myself),STATE_PANIC)
+-	!Dead("astSeenBy())")
++	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+ THEN
+ 	RESPONSE #100
+ 		Continue()

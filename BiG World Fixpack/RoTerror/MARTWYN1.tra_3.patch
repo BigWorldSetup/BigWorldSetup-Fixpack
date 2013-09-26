@@ -1,0 +1,11 @@
+--- RoTerror\Language\Spanish\MARTWYN1.tra	Fri May 23 15:16:26 2008
++++ C:\BWP Patchstudio\patched files\RoTerror\Language\Spanish\MARTWYN1.tra	Sun Oct 04 13:29:01 2009
+@@ -4,7 +4,7 @@
+ @3    = ~¡Intentasteis pasar por las tierras infranqueables! ¡Lo puedo sentir! ¿Queréis oír un secreto?~
+ @4    = ~Bueno, porqué no.~
+ @5    = ~Realmente no.~
+-@6    = ~Si... (mira a su alrededor y baja la voz)... si cerráis vuestros ojos y cruzáis por las tierras infranqueables, llegaréis a un valle que está formado por formaciones antinaturales.~
++@6    = ~Si... (mira a su alrededor y baja la voz)... si os escondéis y cruzáis por las tierras infranqueables, llegaréis a un valle que está formado por formaciones antinaturales.~
+ @7    = ~Allí hay un dragón. Id con cuidado, ¡está vivo! Pasadlo y entrad en el portal. Hay un gran Laberinto de Hielo. ¡Vigilad con los guardianes!~
+ @8    = ~Una vez llegáis al otro lado, ¡estaréis en la zona sagrada de los dragones! Y en el templo, ¡encontraréis el Dragón!~
+ @9    = ~Interesante. Creo que haré una visita a este... Dragón.~

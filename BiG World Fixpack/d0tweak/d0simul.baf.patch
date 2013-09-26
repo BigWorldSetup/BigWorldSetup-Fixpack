@@ -1,0 +1,20 @@
+--- d0tweak\simul\d0simul.baf	Fri May 28 01:57:12 2004
++++ C:\BWP Patchstudio\patched files\d0tweak\simul\d0simul.baf	Thu Apr 01 20:03:34 2010
+@@ -647,7 +647,7 @@
+ 
+ IF
+ 	Heard(NearestMyGroupOfType,0)
+-	!Dead("astHeardBy(Myself))")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_INVISIBLE)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_IMPROVEDINVISIBILITY)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_CHARMED)
+@@ -665,7 +665,7 @@
+ 	Heard(NearestMyGroupOfType,0)
+ 	See(LastHeardBy(Myself))
+ 	!See(LastAttackerOf(LastHeardBy(Myself)))
+-	!Dead("astHeardBy(Myself))")
++	!StateCheck(LastHeardBy(Myself),STATE_REALLY_DEAD)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_INVISIBLE)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_IMPROVEDINVISIBILITY)
+ 	!StateCheck(LastAttackerOf(LastHeardBy(Myself)),STATE_CHARMED)

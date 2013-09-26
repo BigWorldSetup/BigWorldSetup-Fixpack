@@ -1,0 +1,746 @@
+--- Kari\Dialogue\BMGKAR25.d	Tue Jul 19 00:23:54 2005
++++ C:\BWP Patchstudio\patched files\Kari\Dialogue\BMGKAR25.d	Mon Aug 04 19:26:18 2008
+@@ -4,26 +4,26 @@
+ 
+ IF ~See(Player1)
+ !StateCheck(Player1,STATE_SLEEPING)
+-Global("KariPCTalkToB","GLOBAL",0)~ THEN BEGIN KariPCAscension
++Global("MGKariPCTalkToB","GLOBAL",0)~ THEN BEGIN MGKariPCAscension
+ SAY ~Your destiny is catching up with you, isn't it? Will you...will you become the new Bhaal in a while?~
+- ++ ~I'd rather avoid my destiny if I could. Becoming a god isn't what I desire. I desire a normal life.~ DO ~SetGlobal("KariPCTalkToB","GLOBAL",1)~ GOTO KariPCToB1
+- ++ ~Of course! <CHARNAME>, the new <PRO_LORDLADY> of Murder. Hmm...I like the sound of that.~ DO ~SetGlobal("KariPCTalkToB","GLOBAL",1)~ GOTO KariPCToB2
+- ++ ~I don't know yet, Kari. I can't decide such an important step this quickly.~ DO ~SetGlobal("KariPCTalkToB","GLOBAL",1)~ GOTO KariPCToB3
++ ++ ~I'd rather avoid my destiny if I could. Becoming a god isn't what I desire. I desire a normal life.~ DO ~SetGlobal("MGKariPCTalkToB","GLOBAL",1)~ GOTO MGKariPCToB1
++ ++ ~Of course! <CHARNAME>, the new <PRO_LORDLADY> of Murder. Hmm...I like the sound of that.~ DO ~SetGlobal("MGKariPCTalkToB","GLOBAL",1)~ GOTO MGKariPCToB2
++ ++ ~I don't know yet, Kari. I can't decide such an important step this quickly.~ DO ~SetGlobal("MGKariPCTalkToB","GLOBAL",1)~ GOTO MGKariPCToB3
+ END
+ 
+-IF ~~ THEN BEGIN KariPCToB1
++IF ~~ THEN BEGIN MGKariPCToB1
+  SAY ~Really? I-I can relate to that...~
+  =
+  ~I pray we both may have a normal life some day soon.~
+  IF ~~ THEN EXIT
+ END
+ 
+-IF ~~ THEN BEGIN KariPCToB2
++IF ~~ THEN BEGIN MGKariPCToB2
+  SAY ~I-I...oh my.~
+  IF ~~ THEN EXIT
+ END
+ 
+-IF ~~ THEN BEGIN KariPCToB3
++IF ~~ THEN BEGIN MGKariPCToB3
+  SAY ~Oh...I understand. Please, take as much time as you need. But do let me know once you've decided, okay?~
+  IF ~~ THEN EXIT
+ END
+@@ -34,9 +34,9 @@
+ IF ~InParty("Aerie")
+ See("Aerie")
+ !StateCheck("Aerie",STATE_SLEEPING)
+-Global("KariAerieTalkToB","GLOBAL",0)~ THEN BMGKAR25 KariAerieInnocent
++Global("MGKariAerieTalkToB","GLOBAL",0)~ THEN BMGKAR25 MGKariAerieInnocent
+ ~Aerie? I...have a question.~
+-DO ~SetGlobal("KariAerieTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariAerieTalkToB","GLOBAL",1)~
+ == BAERIE25
+ ~What is it, Kari?~
+ == BMGKAR25
+@@ -50,7 +50,7 @@
+ == BMGKAR25
+ ~I guess I'm still...a little innocent.~
+ == BAERIE25
+-~That's only part of your personal charisma, Kari. It's alright.~
++~That's only part of your personal charm, Kari. It's alright.~
+ == BMGKAR25
+ ~You're one of the nicest people I've ever met, Aerie. Thank you.~
+ == BAERIE25
+@@ -63,19 +63,19 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariAerieTalkToB2","GLOBAL",0)~ THEN BAERIE25 KariAerieMagic
++Global("MGKariAerieTalkToB2","GLOBAL",0)~ THEN BAERIE25 MGKariAerieMagic
+ ~I've seen you using nature magic. How does that work, exactly? I must admit it puzzles me.~
+-DO ~SetGlobal("KariAerieTalkToB2","GLOBAL",1)~
++DO ~SetGlobal("MGKariAerieTalkToB2","GLOBAL",1)~
+ == BMGKAR25
+ ~I...I don't know. I just *know* how to do it. It feels like I draw energy from nature itself, from everything around me. The air, the ground...even the water in the ground.~
+ == BAERIE25
+-~That...reminds me of my divine magic. Through my faith, I recieve my powers.~
++~That...reminds me of my divine magic. Through my faith, I receive my powers.~
+ == BMGKAR25
+-~S-so if you lose your faith, you'll lose your powers?~
++~S-So if you lose your faith, you'll lose your powers?~
+ == BAERIE25
+-~Sadly, yes. I lost my power when I was enslaved...until Quayle taught me to worship Baervar.~
++~Sadly, yes. I lost my power when I was enslaved...until Quayle taught me to worship Baervar, and renewed my faith.~
+ == BMGKAR25
+-~D-do you think I'll lose my powers if I...stop believing in nature? Say...started to hate it?~
++~D-Do you think I'll lose my powers if I...stop believing in nature? Say...started to hate it?~
+ == BAERIE25
+ ~I don't know. It's possible...but I'm sure that will not happen.~
+ == BMGKAR25
+@@ -91,9 +91,9 @@
+ See("Anomen")
+ !StateCheck("Anomen",STATE_SLEEPING)
+ !Alignment("Anomen",CHAOTIC_NEUTRAL)
+-Global("KariAnomenTalkToB","GLOBAL",0)~ THEN BMGKAR25 KariAnomenWarrior
++Global("MGKariAnomenTalkToB","GLOBAL",0)~ THEN BMGKAR25 MGKariAnomenWarrior
+ ~How long have you trained yourself in the arts of war, Anomen?~
+-DO ~SetGlobal("KariAnomenTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariAnomenTalkToB","GLOBAL",1)~
+ == BANOME25
+ ~Quite a few years, actually. It was necessary to become part of the Order, after all.~
+ == BMGKAR25
+@@ -105,13 +105,13 @@
+ == BANOME25
+ ~Why thank you. But what about yourself? Surely you must have something to believe in.~
+ == BMGKAR25
+-~No, I don't. I worship no specific deity, I'm not part of any community, and I'm not a true druid.~
++~No, I don't. I worship no specific deity, I'm not part of any common community, and I'm not a true druid.~
+ =
+ ~My faith is fragile. I try my best, but it's not always enough.~
+ == BANOME25
+ ~What about Sylvanus, or Chauntea? They are gods you could relate to.~
+ == BMGKAR25
+-~I'm not human, nor kobold. It just wouldn't feel right.~
++~I'm not human, nor animal. It just wouldn't feel right.~
+ EXIT
+ 
+ 
+@@ -121,9 +121,9 @@
+ See("Anomen")
+ !StateCheck("Anomen",STATE_SLEEPING)
+ Alignment("Anomen",CHAOTIC_NEUTRAL)
+-Global("KariAnomenTalkToB2","GLOBAL",0)~ THEN BMGKAR25 KariAnomenChange
++Global("MGKariAnomenTalkToB2","GLOBAL",0)~ THEN BMGKAR25 MGKariAnomenChange
+ ~You sure act...wild, for a priest of Helm.~
+-DO ~SetGlobal("KariAnomenTalkToB2","GLOBAL",1)~
++DO ~SetGlobal("MGKariAnomenTalkToB2","GLOBAL",1)~
+ == BANOME25
+ ~Question not my faith, girl.~
+ == BMGKAR25
+@@ -148,9 +148,9 @@
+ IF ~InParty("Anomen")
+ See("Anomen")
+ !StateCheck("Anomen",STATE_SLEEPING)
+-Global("KariAnomenTalkToB3","GLOBAL",0)~ THEN BMGKAR25 KariAnomenWatchersKeep
++Global("MGKariAnomenTalkToB3","GLOBAL",0)~ THEN BMGKAR25 MGKariAnomenWatchersKeep
+ ~Have...have you ever heard of a place called "Watcher's Keep"?~
+-DO ~SetGlobal("KariAnomenTalkToB3","GLOBAL",1)~
++DO ~SetGlobal("MGKariAnomenTalkToB3","GLOBAL",1)~
+ == BANOME25
+ ~I've heard of it. Why do you ask?~
+ == BMGKAR25
+@@ -167,17 +167,17 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariCerndTalkToB","GLOBAL",0)~ THEN BCERND25 KariCerndFuture
++Global("MGKariCerndTalkToB","GLOBAL",0)~ THEN BCERND25 MGKariCerndFuture
+ ~Have you given any thought at all about your future?~
+-DO ~SetGlobal("KariCerndTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariCerndTalkToB","GLOBAL",1)~
+ == BMGKAR25
+-~O-of course I have. I just...don't think I'm ready to have a family just yet. Not until <CHARNAME>'s affairs are finished.~
++~O-Of course I have. I just...don't think I'm ready to have a family just yet. Not until <CHARNAME>'s affairs are finished.~
+ == BCERND25
+-~That would be more than fair. Remember what I said; you *are* able to bear children.~
++~That would be more than fair. Remember what I said; you *are* able to start a family.~
+ == BMGKAR25
+ ~Okay...~
+ == BCERND25
+-~I wish I could help you more in this endeavour, but obviously I cannot. I am not the luckiest man when it comes to children.~
++~I wish I could help you more in this endeavour, but obviously I cannot. I am not the luckiest man when it comes to families.~
+ EXIT
+ 
+ 
+@@ -186,9 +186,9 @@
+ IF ~InParty("Cernd")
+ See("Cernd")
+ !StateCheck("Cernd",STATE_SLEEPING)
+-Global("KariCerndTalkToB2","GLOBAL",0)~ THEN BMGKAR25 KariCerndMan
+-~D-do you think a man would want me?~
+-DO ~SetGlobal("KariCerndTalkToB2","GLOBAL",1)~
++Global("MGKariCerndTalkToB2","GLOBAL",0)~ THEN BMGKAR25 MGKariCerndMan
++~D-Do you think a man would want me?~
++DO ~SetGlobal("MGKariCerndTalkToB2","GLOBAL",1)~
+ == BCERND25
+ ~I beg your pardon?~
+ == BMGKAR25
+@@ -198,7 +198,7 @@
+ == BMGKAR25
+ ~The proof? Oh dear...you mean me, don't you?~
+ == BCERND25
+-~That I do. If your parents could perform such deeds, there is bound to be a man who will do the same for you, my child.~
++~That I do. There is bound to be a man who will wish to be with you, my child. It might be one of fur-kind, or perhaps one of more bare-skinned nature.~
+ EXIT
+ 
+ 
+@@ -207,23 +207,21 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariEdwinTalkToB","GLOBAL",0)~ THEN BEDWIN25 KariEdwinPlants
++Global("MGKariEdwinTalkToB","GLOBAL",0)~ THEN BEDWIN25 MGKariEdwinPlants
+ ~So, you remain with the living still. Your bonding with the random plants and trees is mildly impressive, though I wonder why it does not swallow you up and consume you. It is obviously past your bedtime.~
+-DO ~SetGlobal("KariEdwinTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariEdwinTalkToB","GLOBAL",1)~
+ == BMGKAR25
+-~P-past my bedtime? Edwin, unless...unless you explain that remark, please take it back.~
++~P-Past my bedtime? Edwin, unless...unless you explain that remark, please take it back.~
+ == BEDWIN25
+ ~Yes, past your bedtime. If your puny intellect cannot even grasp such a simple meaning, I do not see why I take the effort to waste my breath on you.~
+ == BMGKAR25
+ ~You can be quiet if you want... I know I could use a break from hearing your voice all the time.~
+ == BEDWIN25
+-~When compared to *your* whining, I sincerely hope we encounter a giant venus fly trap soon.~
++~When compared to *your* whining, it would be music to the ears of many.~
+ == BMGKAR25
+-~W-we're not in Chult, Edwin.~
++~Whining? Stupid wizard! Why must you always pick on me, just because I'm different!?~
+ == BEDWIN25
+-~A teleportation spell can remedy *that* particular inconvenience. I am actually tempted to do it, too.~
+-== BMGKAR25
+-~You're forgetting that the jungles of Chult would be my terrain...~
++~Because you are freakish, worthless, and a piece of meat waiting to be consumed. You serve no purpose other than to perish. I sincerely question the logic of <CHARNAME> when <PRO_HESHE> decided to take you along for the ride.~
+ EXIT
+ 
+ 
+@@ -232,13 +230,13 @@
+ IF ~InParty("Edwin")
+ See("Edwin")
+ !StateCheck("Edwin",STATE_SLEEPING)
+-Global("KariEdwinTalkToB2","GLOBAL",0)~ THEN BMGKAR25 KariEdwinHair
++Global("MGKariEdwinTalkToB2","GLOBAL",0)~ THEN BMGKAR25 MGKariEdwinHair
+ ~How long is your hair, Edwin? I recall most Thayvians are bald...~
+-DO ~SetGlobal("KariEdwinTalkToB2","GLOBAL",1)~
++DO ~SetGlobal("MGKariEdwinTalkToB2","GLOBAL",1)~
+ == BEDWIN25
+ ~I am not bald! And if you think I would show you my hair, I would lose that tiny grain of respect I have for your miniscule, inferior, useless, microscopic, nearly non-existing soppy gray mass of wet moss you call a brain! Hmpf.~
+ == BMGKAR25
+-~W-would it hurt?~
++~W-Would it hurt?~
+ == BEDWIN25
+ ~Hrrm...~
+ =
+@@ -248,7 +246,7 @@
+ == BMGKAR25
+ ~It's beautiful... I can see why you're proud of it.~
+ == BEDWIN25
+-~Hm. Yes, of course. I *am* the prime example of Thayvian masculinity, after all. Now move along, girl. Nothing more to see here. (And Edwin covers his hair again.)~
++~Hm. Yes, of course. I *am* the prime example of Thayvian masculinity, after all. Now move along, girl. There is nothing more to see here. (And Edwin covers his hair again.)~
+ EXIT
+ 
+ 
+@@ -257,11 +255,11 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariHaerTalkToB","GLOBAL",0)~ THEN BHAERD25 KariHaerMusic
++Global("MGKariHaerTalkToB","GLOBAL",0)~ THEN BHAERD25 MGKariHaerMusic
+ ~Have you much knowledge of music, dear fennec?~
+-DO ~SetGlobal("KariHaerTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariHaerTalkToB","GLOBAL",1)~
+ == BMGKAR25
+-~I'm afraid I don't. I don't visit the cities often...~
++~I'm afraid I don't. There is a bit of music in my community, but not much.~
+ == BHAERD25
+ ~A shame. Would you like to hear a tune?~
+ == BMGKAR25
+@@ -271,15 +269,15 @@
+ =
+ ~A small gift for you, regardless.~
+ == BMGKAR25
+-~F-for me? But I...~
++~F-For me? But I...~
+ == BHAERD25
+-~Hush yourself and take it, hestitant fennec. Practice when you can, and you too, can create music.~
++~Hush yourself and take it, hesitant fennec. Practice when you can, and you too, can create music.~
+ == BMGKAR25
+ ~Um...thank you, Haer.~
+ == BHAERD25
+ ~'Tis "Haer'Dalis". A full name.~
+ == BMGKAR25
+-~Y-yes, of course. I'm sorry, Haer'Dalis, sir.~
++~Y-Yes, of course. I'm sorry, Haer'Dalis, sir.~
+ EXIT
+ 
+ 
+@@ -288,11 +286,11 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariHaerTalkToB2","GLOBAL",0)~ THEN BHAERD25 KariHaerSigil
++Global("MGKariHaerTalkToB2","GLOBAL",0)~ THEN BHAERD25 MGKariHaerSigil
+ ~(Sigh) Sigil would have a great benefit from your kind within it's cage walls. Alas, 'tis not how it is.~
+-DO ~SetGlobal("KariHaerTalkToB2","GLOBAL",1)~
++DO ~SetGlobal("MGKariHaerTalkToB2","GLOBAL",1)~
+ == BMGKAR25
+-~There are no kobolds where you come from?~
++~There are no furs where you come from?~
+ == BHAERD25
+ ~Ahh, innocent one. Sigil is not my hometown. 'Tis a city of portals, nicknamed "The Cage", and indeed greenery has little place there.~
+ == BMGKAR25
+@@ -304,7 +302,7 @@
+ == BHAERD25
+ ~As would I, dear fennec. Who am I to deny the natural decay of lush greenery?~
+ == BMGKAR25
+-~E-excuse me?~
++~E-Excuse me?~
+ EXIT
+ 
+ 
+@@ -313,9 +311,9 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariImmyTalkToB","GLOBAL",0)~ THEN BIMOEN25 KariImmyHairGrooming
+-~Hey, Kari? You've been brushing your hair and tail for, like, two hours now. I swear, any more of this and you'll be like a bald puppy!~
+-DO ~SetGlobal("KariImmyTalkToB","GLOBAL",1)~
++Global("MGKariImmyTalkToB","GLOBAL",0)~ THEN BIMOEN25 MGKariImmyHairGrooming
++~Hey, Kari? You've been brushing your fur and tail for, like, two hours now. I swear, any more of this and you'll look like a bald puppy!~
++DO ~SetGlobal("MGKariImmyTalkToB","GLOBAL",1)~
+ == BMGKAR25
+ ~(Kari grins.) If it was your hairdo, yes.~
+ == BIMOEN25
+@@ -329,7 +327,7 @@
+ == BIMOEN25
+ ~Yeah, but you didn't wash your hair.~
+ == BMGKAR25
+-~W-what? How did you know that?~
++~W-What? How did you know that?~
+ == BIMOEN25
+ ~I do now! Hehe.~
+ == BMGKAR25
+@@ -344,13 +342,13 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariImmyTalkToB2","GLOBAL",0)~ THEN BIMOEN25 KariImmyRobe
++Global("MGKariImmyTalkToB2","GLOBAL",0)~ THEN BIMOEN25 MGKariImmyRobe
+ ~Where did you get that robe, anyway? Did you snag it off some grumpy old mage's back? I bet he was steaming mad.~
+-DO ~SetGlobal("KariImmyTalkToB2","GLOBAL",1)~
++DO ~SetGlobal("MGKariImmyTalkToB2","GLOBAL",1)~
+ == BMGKAR25
+ ~No no, I...um...I saw it near a store. A stand of some sort. There wasn't anyone nearby, so I...um, I basically took it.~
+ == BIMOEN25
+-~Aha... I see a little thief that wants to come out of her shell. Gorion would be proud of Shadowmaster Imoen!~
++~Aha... I see a little thief that wants to come out of her shell. Gorion would be proud of Shadowmistress Imoen!~
+ == BMGKAR25
+ ~I'm not a thief... I just stole that one time, and only to conceal my appearance!~
+ == BIMOEN25
+@@ -363,9 +361,9 @@
+ IF ~InParty("Jaheira")
+ See("Jaheira")
+ !StateCheck("Jaheira",STATE_SLEEPING)
+-Global("KariJaheiraTalkToB","GLOBAL",0)~ THEN BMGKAR25 KariJaheiraTethyr
++Global("MGKariJaheiraTalkToB","GLOBAL",0)~ THEN BMGKAR25 MGKariJaheiraTethyr
+ ~They tell me you hail from Tethyr...~
+-DO ~SetGlobal("KariJaheiraTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariJaheiraTalkToB","GLOBAL",1)~
+ == BJAHEI25
+ ~I do. What of it?~
+ == BMGKAR25
+@@ -373,21 +371,19 @@
+ == BJAHEI25
+ ~(Sigh) Foolish girl, we *are* in Tethyr! Saradush, the Forest of Mir, the Marching Mountains. All of it!~
+ == BMGKAR25
+-~T-then Calimshan must be close by, right?~
++~T-Then Calimshan must be close by, right?~
+ == BJAHEI25
+ ~Yes, to the south.~
+ == BMGKAR25
+ ~That's...where Khalid was from, no?~
+ == BJAHEI25
+-~Khalid...~
+-=
+-~Ahem. Yes, it was, child.~
++~Yes, it was, child.~
+ == BMGKAR25
+ ~Wouldn't you...want to go there? I mean, tell his family, at least?~
+ == BJAHEI25
+ ~It would be the right thing to do. However, <CHARNAME> requires my help at present. After this Bhaal business is done with, we shall see.~
+ == BMGKAR25
+-~Fair enough. Calimshan will still be there when this is all over, I'm sure.~
++~Fair enough. Calimshan will still be there when this is all over...I hope.~
+ EXIT
+ 
+ 
+@@ -396,9 +392,9 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariJaheiraTalkToB2","GLOBAL",0)~ THEN BJAHEI25 KariJaheiraDirt
++Global("MGKariJaheiraTalkToB2","GLOBAL",0)~ THEN BJAHEI25 MGKariJaheiraDirt
+ ~Stand still a moment, child.~
+-DO ~SetGlobal("KariJaheiraTalkToB2","GLOBAL",1)~
++DO ~SetGlobal("MGKariJaheiraTalkToB2","GLOBAL",1)~
+ == BMGKAR25
+ ~Um..o-okay. What's wrong?~
+ == BJAHEI25
+@@ -406,7 +402,7 @@
+ == BMGKAR25
+ ~Okay...but isn't it fitting for a druid to look...well, dirty?~
+ == BJAHEI25
+-~A filthy appearance is not what signifies one as a druid, child. A beggar, or sewage worker look much the same.~
++~A filthy appearance is not what signifies one as a druid, child. A beggar or sewage worker look much the same.~
+ == BMGKAR25
+ ~Why clean when I just get dirty again tomorrow?~
+ == BJAHEI25
+@@ -423,19 +419,19 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariJanTalkToB","GLOBAL",0)~ THEN BJAN25 KariJanHaircut
++Global("MGKariJanTalkToB","GLOBAL",0)~ THEN BJAN25 MGKariJanHaircut
+ ~You know, Kari, my Aunt Helgarda is a mistress with scissors. She could help you with your excess hair problem.~
+-DO ~SetGlobal("KariJanTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariJanTalkToB","GLOBAL",1)~
+ == BMGKAR25
+ ~This is what I look like, Jan. I...don't need a haircut that severe.~
+ == BJAN25
+-~But what if it covers your eyes? You would wake up one morning, yelling "I'm blind I'm blind!" and wake the rest of us up quicker than orcs run at the sight and smell of my Uncle Smaelley, you would!~
++~But what if it covers your eyes? You would wake up one morning, yelling "I'm blind! I'm blind!" and wake the rest of us up quicker than orcs run at the sight and smell of my Uncle Smaelley, you would!~
+ == BMGKAR25
+ ~Uncle Smelly?~
+ == BJAN25
+ ~Yes. Best sewer janitor Athkatla had ever seen. At least, until he removed some carrion crawler eggs that one day, two years back.~
+ == BMGKAR25
+-~W-wasn't he allowed to?~
++~W-Wasn't he allowed to?~
+ == BJAN25
+ ~Oh no, he was. It was just unfortunate that the particular carrion crawler was laying the eggs at the same time.~
+ == BMGKAR25
+@@ -462,9 +458,9 @@
+ IF ~InParty("Jan")
+ See("Jan")
+ !StateCheck("Jan",STATE_SLEEPING)
+-Global("KariJanTalkToB2","GLOBAL",0)~ THEN BMGKAR25 KariJanTurnips
++Global("MGKariJanTalkToB2","GLOBAL",0)~ THEN BMGKAR25 MGKariJanTurnips
+ ~Do you have any turnips, Jan?~
+-DO ~SetGlobal("KariJanTalkToB2","GLOBAL",1)~
++DO ~SetGlobal("MGKariJanTalkToB2","GLOBAL",1)~
+ == BJAN25
+ ~Oh ho! Developing a taste for turnips, by any chance?~
+ == BMGKAR25
+@@ -483,11 +479,11 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariKeldornTalkToB","GLOBAL",0)~ THEN BKELDO25 KariKeldornFamily
++Global("MGKariKeldornTalkToB","GLOBAL",0)~ THEN BKELDO25 MGKariKeldornFamily
+ ~You seem weary, Kari. Is there ought I could do for you?~
+-DO ~SetGlobal("KariKeldornTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariKeldornTalkToB","GLOBAL",1)~
+ == BMGKAR25
+-~N-no, that's fine. You do so much already...for everyone.~
++~N-No, that's fine. You do so much already...for everyone.~
+ =
+ ~Why didn't you stay with your family after we defeated Irenicus?~
+ == BKELDO25
+@@ -510,9 +506,9 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariKeldornTalkToB2","GLOBAL",0)~ THEN BKELDO25 KariKeldornPaladin
++Global("MGKariKeldornTalkToB2","GLOBAL",0)~ THEN BKELDO25 MGKariKeldornPaladin
+ ~There is a dark chill in the air...~
+-DO ~SetGlobal("KariKeldornTalkToB2","GLOBAL",1)~
++DO ~SetGlobal("MGKariKeldornTalkToB2","GLOBAL",1)~
+ == BMGKAR25
+ ~Do you...sense bad things?~
+ == BKELDO25
+@@ -520,7 +516,7 @@
+ == BMGKAR25
+ ~Do you ever sleep, Keldorn? Is your heart ever at ease?~
+ == BKELDO25
+-~It is not. Your concern is appreciated, my friend, though I do not wish you to worry. I chose for this path, and I do not regret any of it.~
++~It is not. Your concern is appreciated, my friend, though I do not wish for you to worry. I chose for this path, and I do not regret any of it.~
+ == BMGKAR25
+ ~That...puts me at ease, at least.~
+ EXIT
+@@ -531,9 +527,9 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariKorganTalkToB","GLOBAL",0)~ THEN BKORGA25 KariKorganMeat
++Global("MGKariKorganTalkToB","GLOBAL",0)~ THEN BKORGA25 MGKariKorganMeat
+ ~I still say ye be nothin' but cannon fodder. Meat fer the slaughter. Chop it all up an' grind the bones with it!~
+-DO ~SetGlobal("KariKorganTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariKorganTalkToB","GLOBAL",1)~
+ == BMGKAR25
+ ~I've...grown numb to your insults, Korgan. Please, just drop it.~
+ == BKORGA25
+@@ -552,13 +548,13 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariKorganTalkToB2","GLOBAL",0)~ THEN BKORGA25 KariKorganHairy
+-~Ye know, ye wouldnae be such a bad girlie, if ye weren't so hairy.~
+-DO ~SetGlobal("KariKorganTalkToB2","GLOBAL",1)~
++Global("MGKariKorganTalkToB2","GLOBAL",0)~ THEN BKORGA25 MGKariKorganHairy
++~Ye know, ye wouldnae be such a bad girlie, if ye weren't so bloody hairy.~
++DO ~SetGlobal("MGKariKorganTalkToB2","GLOBAL",1)~
+ == BMGKAR25
+ ~Thanks...I guess.~
+ == BKORGA25
+-~Why thank me? Why any man would want to make love to a hairball is beyond me ken.~
++~Why thank me? Why any man would want to shag yon bleedin' hairball is beyond me ken.~
+ == BMGKAR25
+ ~I'm glad I disgust you enough that you don't find me appealing in any ugly dwarven erotic way.~
+ EXIT
+@@ -569,11 +565,11 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariMazzyTalkToB","GLOBAL",0)~ THEN BMAZZY25 KariMazzyControl
++Global("MGKariMazzyTalkToB","GLOBAL",0)~ THEN BMAZZY25 MGKariMazzyControl
+ ~You have grown strong in <CHARNAME>'s company, Kari. I'm curious to know whether or not you are in full control of your abilities.~
+-DO ~SetGlobal("KariMazzyTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariMazzyTalkToB","GLOBAL",1)~
+ == BMGKAR25
+-~I-I think I am. D-did I make an error recently?~
++~I-I think I am. D-Did I make an error recently?~
+ == BMAZZY25
+ ~Not at all. I am merely expressing concern and admiration.~
+ == BMGKAR25
+@@ -586,21 +582,21 @@
+ IF ~InParty("Mazzy")
+ See("Mazzy")
+ !StateCheck("Mazzy",STATE_SLEEPING)
+-Global("KariMazzyTalkToB2","GLOBAL",0)~ THEN BMGKAR25 KariMazzyTrip
++Global("MGKariMazzyTalkToB2","GLOBAL",0)~ THEN BMGKAR25 MGKariMazzyTrip
+ ~Oh! Whoa!~
+-DO ~SetGlobal("KariMazzyTalkToB2","GLOBAL",1)~
++DO ~SetGlobal("MGKariMazzyTalkToB2","GLOBAL",1)~
+ == BMAZZY25
+ ~Kari! Are you well?~
+ == BMGKAR25
+-~Y-yes...I just tripped. I'm sorry, it won't happen again. Please...~
++~Y-Yes...I just tripped. I'm sorry, it won't happen again. Please...~
+ == BMAZZY25
+-~Why are you suddenly so defensive? I mean you no harm. I only wished to know if you are well.~
++~Why are you apologizing? I mean you no harm. I only wished to know if you are well.~
+ == BMGKAR25
+ ~But I...I made a mistake.~
+ == BMAZZY25
+ ~You do not need to be flawless, Kari. Nobody is perfect, and anyone who told you that you have to be...they shall answer to Mazzy Fentan.~
+ == BMGKAR25
+-~O-okay. Um...let's...let's just get going. I feel more foolish by the moment.~
++~O-Okay. Um...let's...let's just get going. I feel more foolish by the moment.~
+ EXIT
+ 
+ 
+@@ -609,19 +605,19 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariMinscTalkToB","GLOBAL",0)~ THEN BMINSC25 KariMinscDynaheir
++Global("MGKariMinscTalkToB","GLOBAL",0)~ THEN BMINSC25 MGKariMinscDynaheir
+ ~Minsc still thinks Kari would make a good witch, druid or not!~
+-DO ~SetGlobal("KariMinscTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariMinscTalkToB","GLOBAL",1)~
+ == BMGKAR25
+ ~Thanks...I think.~
+ =
+ ~Minsc? What was Dynaheir like?~
+ == BMINSC25
+-~Dynaheir was wise. She taught Minsc and Boo many things about the nature of plants and herbs. Now that I think of it, Boo once told me Dynaheir was rather much like a druid. Only she used witching magicks.~
++~Dynaheir was wise and beautiful, though speaking in a rather funny way. She taught Minsc and Boo many things about the nature of plants and herbs. Now that I think of it, Boo once told me Dynaheir was rather much like a druid. Only she used witching magicks.~
+ == BMGKAR25
+ ~I...don't know how well I could help you with herbs, Minsc. I'm a druid, yes, but I fear I don't have Dynaheir's standards.~
+ == BMINSC25
+-~Boo says that if you were to be our witch, you would not replace Dynaheir. Just her duties. Dynaheir is in our hearts and we remember her well, and her death is avenged. All is well, is it not, little Boo? Yes it is.~
++~Boo says that if you were to be our witch, you would not replace Dynaheir. Just her duties. Dynaheir is in our hearts and we remember her well, and her death is avenged. All is well, is it not, little Boo? Yes, it is!~
+ == BMGKAR25
+ ~I-I'm glad you're at peace, Minsc.~
+ EXIT
+@@ -632,19 +628,19 @@
+ IF ~InParty("Minsc")
+ See("Minsc")
+ !StateCheck("Minsc",STATE_SLEEPING)
+-Global("KariMinscTalkToB2","GLOBAL",0)~ THEN BMGKAR25 KariMinscPolish
+-~W-what are you doing, Minsc?~
+-DO ~SetGlobal("KariMinscTalkToB2","GLOBAL",1)~
++Global("MGKariMinscTalkToB2","GLOBAL",0)~ THEN BMGKAR25 MGKariMinscPolish
++~W-What are you doing, Minsc?~
++DO ~SetGlobal("MGKariMinscTalkToB2","GLOBAL",1)~
+ == BMINSC25
+-~Minsc is polishing his head! Evil will see it's reflection on Minsc's shiny forehead and quiver in fear as his big sword slices and dices them into tiny evil-sized chunks!~
++~Minsc is polishing his head! Evil will see its reflection on Minsc's shiny forehead and quiver in fear as his big sword slices and dices them into tiny evil-sized chunks!~
+ == BMGKAR25
+-~P-polishing...? Oh my...what are you using?~
++~P-Polishing...? Oh my...what are you using?~
+ == BMINSC25
+-~Some shiny potion we saw at the shops last time. Boo says it was too expensive, but that is what he always says. Except when we buy crackers, in which case it is cheaper than the rest of our groceries.~
++~Some shiny potion we saw at the shops last time. Boo says it was too expensive, but that is what he always says. Except when we buy crackers, in which case it is never enough!~
+ == BMGKAR25
+ ~Let me see that potion...~
+ =
+-~Oh! T-this is a potion of mirroring eyes. It should be safe, then.~
++~Oh! T-This is a potion of mirroring eyes. It should be safe, then.~
+ == BMINSC25
+ ~You hear that evil!? Minsc has a shiny forehead, and is NOT AFRAID TO USE IT!!!~
+ EXIT
+@@ -655,13 +651,13 @@
+ IF ~InParty("Nalia")
+ See("Nalia")
+ !StateCheck("Nalia",STATE_SLEEPING)
+-Global("KariNaliaTalkToB","GLOBAL",0)~ THEN BMGKAR25 KariNaliaPets
++Global("MGKariNaliaTalkToB","GLOBAL",0)~ THEN BMGKAR25 MGKariNaliaPets
+ ~Nalia? Did you ever have any pets, or animal companions?~
+-DO ~SetGlobal("KariNaliaTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariNaliaTalkToB","GLOBAL",1)~
+ == BNALIA25
+ ~A pony, when I was five.~
+ == BMGKAR25
+-~D-did you form a special bond with him or her?~
++~D-Did you form a special bond with him or her?~
+ == BNALIA25
+ ~She was a fine steed. I greatly enjoyed riding her. So...yes, I believe she and I had some sort of bonding.~
+ == BMGKAR25
+@@ -669,7 +665,7 @@
+ == BNALIA25
+ ~I'm not as bad as you think nobles are, Kari.~
+ == BMGKAR25
+-~What? W-who says I think nobles are bad?~
++~What? W-Who says I think nobles are bad?~
+ == BNALIA25
+ ~It shows.~
+ EXIT
+@@ -680,11 +676,11 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariNaliaTalkToB2","GLOBAL",0)~ THEN BNALIA25 KariNaliaOld
++Global("MGKariNaliaTalkToB2","GLOBAL",0)~ THEN BNALIA25 MGKariNaliaOld
+ ~I wish we could visit a library sometime. I feel the strange need to get lost in the words of the parchments.~
+-DO ~SetGlobal("KariNaliaTalkToB2","GLOBAL",1)~
++DO ~SetGlobal("MGKariNaliaTalkToB2","GLOBAL",1)~
+ == BMGKAR25
+-~R-running from reality, no doubt...~
++~R-Running from reality, no doubt...~
+ == BNALIA25
+ ~I heard that. Why are you being so cross with me, Kari? I have done you no wrong.~
+ == BMGKAR25
+@@ -692,7 +688,7 @@
+ == BNALIA25
+ ~I'm the same woman. Only my power as an archmage has improved. Is that such a bad change?~
+ == BMGKAR25
+-~Y-you don't even realize your attitude has changed. (Sigh) Oh Nalia, just...just forget what I said.~
++~Y-You don't even realize your attitude has changed. (Sigh) Oh Nalia, just...just forget what I said.~
+ == BNALIA25
+ ~It would be my pleasure.~
+ EXIT
+@@ -703,19 +699,19 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariValygarTalkToB","GLOBAL",0)~ THEN BVALYG25 KariValygarCreature
++Global("MGKariValygarTalkToB","GLOBAL",0)~ THEN BVALYG25 MGKariValygarCreature
+ ~You are a most curious creature, Kari.~
+-DO ~SetGlobal("KariValygarTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariValygarTalkToB","GLOBAL",1)~
+ == BMGKAR25
+-~H-how so?~
++~H-How so?~
+ == BVALYG25
+-~I don't know what to call your species. Half-kobold are quite rare. I've certainly never met one before.~
++~I don't know what to call your species. Half-breeds such as yourself are quite rare. I've certainly never met one before.~
+ == BMGKAR25
+ ~What happens when a new species is discovered? Are...are they not named and catalogued? Identified, as it were?~
+ == BVALYG25
+ ~I would imagine so.~
+ == BMGKAR25
+-~I don't feel very comfortable with the idea of becoming a research specimen. I'd...I'd rather keep my identity a secret, at least until I see a community of half-kobolds with my own eyes.~
++~I don't feel very comfortable with the idea of becoming a research specimen. I'd...I'd rather keep my identity a secret. We furs should remain isolated...~
+ == BVALYG25
+ ~Fair enough.~
+ EXIT
+@@ -726,11 +722,11 @@
+ IF ~InParty("Valygar")
+ See("Valygar")
+ !StateCheck("Valygar",STATE_SLEEPING)
+-Global("KariValygarTalkToB2","GLOBAL",0)~ THEN BMGKAR25 KariValygarSilent
++Global("MGKariValygarTalkToB2","GLOBAL",0)~ THEN BMGKAR25 MGKariValygarSilent
+ ~Why are you so silent most of the time?~
+-DO ~SetGlobal("KariValygarTalkToB2","GLOBAL",1)~
++DO ~SetGlobal("MGKariValygarTalkToB2","GLOBAL",1)~
+ == BVALYG25
+-~It's how I am. Just like you hestitate sometimes when you speak.~
++~It's how I am. Just like you hesitate sometimes when you speak.~
+ == BMGKAR25
+ ~But...why? You have a lovely voice.~
+ == BVALYG25
+@@ -749,9 +745,9 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariViconiaTalkToB","GLOBAL",0)~ THEN BVICON25 KariViconiaScent
++Global("MGKariViconiaTalkToB","GLOBAL",0)~ THEN BVICON25 MGKariViconiaScent
+ ~So, we remain side by side, it seems. Do stand downwind, however. Your animalistic scent disrupts my concentration.~
+-DO ~SetGlobal("KariViconiaTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariViconiaTalkToB","GLOBAL",1)~
+ == BMGKAR25
+ ~Your metally scent is offending me too, more than you know.~
+ == BVICON25
+@@ -759,7 +755,7 @@
+ == BMGKAR25
+ ~I'm part dog, Viconia. I *smell* you from far away.~
+ == BVICON25
+-~Dog would be the fitting word, indeed.~
++~Dog would be a fitting description indeed.~
+ EXIT
+ 
+ 
+@@ -768,13 +764,13 @@
+ IF ~InParty("Viconia")
+ See("Viconia")
+ !StateCheck("Viconia",STATE_SLEEPING)
+-Global("KariViconiaTalkToB2","GLOBAL",0)~ THEN BMGKAR25 KariViconiaBedchamber
++Global("MGKariViconiaTalkToB2","GLOBAL",0)~ THEN BMGKAR25 MGKariViconiaBedchamber
+ ~I've heard the drow have special "lust chambers"... Have you ever used them?~
+-DO ~SetGlobal("KariViconiaTalkToB2","GLOBAL",1)~
++DO ~SetGlobal("MGKariViconiaTalkToB2","GLOBAL",1)~
+ == BVICON25
+-~I should remove your tongue for daring asking me such, but I am feeling amused today. What if I have used them?~
++~I should remove your tongue for that daring question, but I am feeling amused today. What if I have used them?~
+ == BMGKAR25
+-~I was just wondering if you could give me some...you know...pointers. You don't seem ashamed of talking about such matters.~
++~I was just wondering if you could give me some...you know...tips. You don't seem ashamed of talking about such matters.~
+ == BVICON25
+ ~(Viconia grins in amusement.) Hah! *You*? You wouldn't live through one night of passion, you foolish, foolish surface bitch.~
+ == BMGKAR25
+@@ -793,9 +789,9 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariSarevokTalkToB","GLOBAL",0)~ THEN BSAREV25 KariSarevokWeakness
++Global("MGKariSarevokTalkToB","GLOBAL",0)~ THEN BSAREV25 MGKariSarevokWeakness
+ ~Why <CHARNAME> insisted on bringing a weak frail girl like you along is beyond me. Tell me, why do you think you will live this through?~
+-DO ~SetGlobal("KariSarevokTalkToB","GLOBAL",1)~
++DO ~SetGlobal("MGKariSarevokTalkToB","GLOBAL",1)~
+ == BMGKAR25
+ ~Because I've lived through all of my hazardous life already, that's why!~
+ == BSAREV25
+@@ -812,15 +808,15 @@
+ IF ~InParty("Kari")
+ See("Kari")
+ !StateCheck("Kari",STATE_SLEEPING)
+-Global("KariSarevokTalkToB2","GLOBAL",0)~ THEN BMGKAR25 KariSarevokMage
++Global("MGKariSarevokTalkToB2","GLOBAL",0)~ THEN BMGKAR25 MGKariSarevokMage
+ ~Why don't you study magic, Sarevok? You're obviously smart enough.~
+-DO ~SetGlobal("KariSarevokTalkToB2","GLOBAL",1)~
++DO ~SetGlobal("MGKariSarevokTalkToB2","GLOBAL",1)~
+ == BSAREV25
+ ~I have perfected the ways of the warrior. Why would I want to put that aside, only to start as a weakling apprentice mage?~
+ == BMGKAR25
+ ~You started the arts of war once, didn't you?~
+ == BSAREV25
+-~That was a long time ago, and presently time is short. I have no time to study the books, regardless of the knowledge I possess.~
++~That was a long time ago, and presently time is short. I have no time to study the books, regardless of the knowledge I own.~
+ == BMGKAR25
+ ~I...suppose that makes sense.~
+ == BSAREV25

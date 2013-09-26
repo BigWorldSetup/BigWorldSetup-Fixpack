@@ -1,0 +1,11 @@
+--- setup-munchmod.tp2	Thu Apr 01 19:32:16 2010
++++ C:\BWP Patchstudio\patched files\setup-munchmod.tp2	Sun Jun 06 09:11:55 2010
+@@ -4,7 +4,7 @@
+ 
+ AUTHOR ~See_The_Readme~
+ 
+-VERSION ~v3.3~
++VERSION ~v3.3 BWP Fix~
+ 
+ README ~munchmod/munchmod-readme.txt~
+ 

@@ -1,0 +1,9 @@
+--- CtB\scripts\ctb\CBRYBREL.baf	Sat Nov 08 15:20:34 2003
++++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\CBRYBREL.baf	Mon Sep 09 04:39:16 2013
+@@ -1,5 +1,6 @@
+ IF
+ 	See("CBRYBERG")
++	Global("CbRybergMeetsRelative","GLOBAL",0)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("CbRybergMeetsRelative","GLOBAL",1)

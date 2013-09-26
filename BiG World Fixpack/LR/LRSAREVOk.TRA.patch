@@ -1,0 +1,10 @@
+--- LR\tra\spanish\LRSAREVOk.TRA	Mon May 09 08:58:04 2005
++++ C:\BWP Patchstudio\patched files\LR\tra\spanish\LRSAREVOk.TRA	Fri Nov 05 12:31:12 2010
+@@ -1,6 +1,6 @@
+ @0    = ~Dime, mago, ¿cómo te sientes al intercambiar una agonía por otra?~
+ @1    = ~¡Pero a diferencia de ti, yo aún tengo voluntad propia!~
+-@2    = ~ Yo luché, y me arrastré, y negocié. ¡Pero me gané mi regreso al mundo de los vivos sin someterme totalmente al control de <CHARNAME >! Y a diferencia de tu esclavitud, mi juramento a <CHARNAME> fue libre y voluntario - no impuesto por el dios de los esclavos fugitivos.~
++@2    = ~ Yo luché, y me arrastré, y negocié. ¡Pero me gané mi regreso al mundo de los vivos sin someterme totalmente al control de <CHARNAME>! Y a diferencia de tu esclavitud, mi juramento a <CHARNAME> fue libre y voluntario - no impuesto por el dios de los esclavos fugitivos.~
+ @3    = ~Yo luché, y me arrastré, y negocié. ¡Pero me gané mi regreso al mundo de los vivos sin someterme totalmente al control de <CHARNAME>!~
+ @4    = ~Humano, tu voz es tan discordante y repulsiva como tu carácter. Sé amable, déjame con mis pensamientos y no me importunes más.~
+ @5    = ~¡Ja! No intentes ahuyentarme como a una mosca, brujo. Veo las oscuras miradas que lanzas hacia <CHARNAME>, y no tengo duda alguna de que tu actual existencia al lado de mi hermano es un cruel tormento para tu orgullo herido.~ ~¡Ja! No intentes ahuyentarme como a una mosca, brujo. Veo las oscuras miradas que lanzas hacia <CHARNAME>, y no tengo duda alguna de que tu actual existencia al lado de mi hermana es un cruel tormento para tu orgullo herido.~

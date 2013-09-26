@@ -1,0 +1,13 @@
+--- Arena\d\AR#REWMA.d	Wed Dec 29 15:01:36 2010
++++ C:\BWP Patchstudio\patched files\Arena\d\AR#REWMA.d	Sun Feb 10 08:53:51 2013
+@@ -19,8 +19,8 @@
+   !Global("AR_R4_GIVEN","GLOBAL",1)~ THEN REPLY ~I have completed round four.~ GOTO ar4
+   IF ~Global("AR_R6_M1","GLOBAL",1)
+   !Global("AR_R5_GIVEN","GLOBAL",1)~ THEN REPLY ~I have completed round five.~ GOTO ar5
+-  IF ~Global("AR_R6_M1","GLOBAL",1)
+-  !Global("AR_R5_GIVEN","GLOBAL",1)~ THEN REPLY ~I have completed round six.~ GOTO ar6
++  IF ~Global("AR_R7_M1","GLOBAL",1)
++  !Global("AR_R6_GIVEN","GLOBAL",1)~ THEN REPLY ~I have completed round six.~ GOTO ar6
+   IF ~~ THEN REPLY ~Nevermind.~ EXIT
+ END
+ 

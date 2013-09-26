@@ -1,0 +1,13 @@
+--- Azure\are\ar1900.baf	Sun Sep 04 09:06:44 2005
++++ C:\BWP Patchstudio\patched files\Azure\are\ar1900.baf	Tue Apr 06 13:11:34 2010
+@@ -2,8 +2,8 @@
+ Global("AzureExists","AR1900",0)
+ Global("AzureFound","GLOBAL",0)
+ OR(2)
+-GlobalGT("Chapter","GLOBAL",2)
+-GlobalGT("Chapter","GLOBAL",3)
++Global("Chapter","GLOBAL",2)
++Global("Chapter","GLOBAL",3)
+ THEN
+ RESPONSE #100
+ SetGlobal("AzureExists","AR1900",1)

@@ -1,0 +1,11 @@
+--- Setup-Ghareth.tp2	Mon Feb 16 17:14:13 2004
++++ C:\BWP Patchstudio\patched files\Setup-Ghareth.tp2	Wed Apr 14 22:42:18 2010
+@@ -1,6 +1,8 @@
+ BACKUP ~ghareth\Backup~
+ AUTHOR ~jcompton@forgottenwars.net~
+ 
++VERSION ~v0.91 BWP Fix~
++
+ /*
+ LANGUAGE ~English~
+          ~english~

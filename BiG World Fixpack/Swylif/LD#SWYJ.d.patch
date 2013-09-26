@@ -1,0 +1,11 @@
+--- Swylif\Dialogues\LD#SWYJ.d	Mon Apr 18 16:19:20 2011
++++ C:\BWP Patchstudio\patched files\Swylif\Dialogues\LD#SWYJ.d	Sat Feb 09 12:37:24 2013
+@@ -298,7 +298,7 @@
+ SAY @120 /* Ah, yes... I... forgot about the fact. */
+ =
+ @121 /* Let's say I'm...grateful for sharing your knowledge with me. Now let us move. */
+-IF~~THEN DO ~SetGlobal("LavaLoveTalk","LOCALS",7)~ EXIT
++IF~~THEN DO ~SetGlobal("SWYTalk","LOCALS",7)~ EXIT
+ END
+ 
+ IF~~THEN BEGIN SWYLIF04x10

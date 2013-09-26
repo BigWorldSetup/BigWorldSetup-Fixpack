@@ -1,0 +1,11 @@
+--- vecna\baf\cre\AA031OVR.baf	Mon Mar 29 21:34:13 2010
++++ C:\BWP Patchstudio\patched files\vecna\baf\cre\AA031OVR.baf	Mon Oct 17 11:12:23 2011
+@@ -53,7 +53,7 @@
+ 	RESPONSE #100
+ 		SetGlobalTimer("BLUEDRAGONBREATH","GLOBAL",FOUR_ROUNDS)
+ 		ReallyForceSpell(LastSeenBy(Myself),BLUE_DRAGON_BREATH)
+-		ReallyForceSpell(LastSeenBy(Myself),0)
++	//	ReallyForceSpell(LastSeenBy(Myself),0)
+ END
+ 
+ IF

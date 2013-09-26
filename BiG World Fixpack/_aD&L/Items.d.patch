@@ -1,0 +1,20 @@
+--- aD&L\Items.d	Fri Aug 11 15:50:40 2006
++++ C:\BWP Patchstudio\patched files\aD&L\Items.d	Sun Apr 04 15:31:46 2010
+@@ -68,7 +68,7 @@
+         DO ~TakePartyGold(10000)      DestroyGold(10000)
+ 	TakePartyItemNum("SCRL7M",2)   DestroyItem("SCRL7M")
+ 	TakePartyItemNum("SCRL1E",3)   DestroyItem("SCRL1E")
+-	TakePartyItemNum("AROW11",20)   DestroyItem("ARROW11")
++	TakePartyItemNum("AROW11",20)   DestroyItem("AROW11")
+ 	CreateVisualEffectObject("SPCRTWPN",Myself)
+ 	SetGlobal("KyBowUpg", "GLOBAL", 1)
+ 	TakeItemReplace("KiyoBow2","KiyoBow1","Kiyone")~ EXIT	
+@@ -146,7 +146,7 @@
+         DO ~TakePartyGold(15000)      DestroyGold(15000)
+ 	TakePartyItemNum("SCRL7M",3)   DestroyItem("SCRL7M")
+ 	TakePartyItemNum("SCRL1E",5)   DestroyItem("SCRL1E")
+-	TakePartyItemNum("AROW15",20)   DestroyItem("ARROW15")
++	TakePartyItemNum("AROW15",20)   DestroyItem("AROW15")
+ 	CreateVisualEffectObject("SPCRTWPN",Myself)
+ 	SetGlobal("KyBowUpg", "GLOBAL", 2)
+ 	TakeItemReplace("KiyoBow3","KiyoBow2","Kiyone")~ EXIT	

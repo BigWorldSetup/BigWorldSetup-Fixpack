@@ -1,0 +1,11 @@
+--- 1pp\install\208_v4_helmets.tph	Mon Jul 02 04:15:30 2012
++++ C:\BWP Patchstudio\patched files\1pp\install\208_v4_helmets.tph	Mon Aug 26 19:05:30 2013
+@@ -33,7 +33,7 @@
+   END
+ END
+ 
+-ACTION_FOR_EACH set IN ~J2~ ~J8~ BEGIN
++ACTION_FOR_EACH set IN ~J2~ ~J8~ ~JC~ BEGIN
+   ACTION_FOR_EACH category IN ~L~ ~M~ ~S~ ~T~ BEGIN
+     ACTION_FOR_EACH sequence IN ~A1~ ~A1E~ ~A2~ ~A2E~ ~A3~ ~A3E~ ~A4~ ~A4E~ ~A5~ ~A5E~ ~A6~ ~A6E~ ~CA~ ~CAE~ ~G1~ ~G1E~ ~SA~ ~SAE~ ~SX~ ~SXE~ ~W2~ ~W2E~ BEGIN
+      COPY_EXISTING ~WP%category%H2%sequence%.BAM~ ~override/WP%category%%set%%sequence%.BAM~

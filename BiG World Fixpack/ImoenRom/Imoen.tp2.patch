@@ -1,0 +1,39 @@
+--- Imoen.tp2	Wed Apr 14 09:45:10 2010
++++ C:\BWP Patchstudio\patched files\Imoen.tp2	Wed Apr 14 23:04:31 2010
+@@ -1,6 +1,8 @@
+ BACKUP ~ImoenRom/backup~
+ AUTHOR ~Lord_Mirrabbo@hotmail.com (Remember that you need to have the expansion pack, Baldur's Gate II: Throne of Bhaal, installed to be able to run this mod. Make sure you are installing the latest version of the mod before e-mailing.)~
+ 
++VERSION ~v1.202Full BWP Fix~
++
+ AUTO_TRA ~ImoenRom\%s~
+ 
+ LANGUAGE ~English (Original language)~
+@@ -131,8 +133,8 @@
+ 
+   PRINT @18
+ 
+-  		COPY  ~ImoenRom\bat\IMMUSIC.bat~ ~IMMUSIC.bat~
+-      COPY  ~ImoenRom\bat\ArUnPackMR.bat~ ~ArUnPackMR.bat~
++//   		COPY  ~ImoenRom\bat\IMMUSIC.bat~ ~IMMUSIC.bat~
++//       COPY  ~ImoenRom\bat\ArUnPackMR.bat~ ~ArUnPackMR.bat~
+ 
+ PRINT @19
+ 
+@@ -413,10 +415,14 @@
+ ACTION_IF NOT FILE_EXISTS ~override\MRImRom1.wav~
+ 	THEN BEGIN
+ 		PRINT @78
+- 		AT_EXIT ~IMMUSIC.bat~
++//  		AT_EXIT ~IMMUSIC.bat~
++ 		AT_NOW ~ImoenRom/bat/IMMUSIC.bat~
+ END
+ 
+-		AT_EXIT ~ArUnPackMR.bat~
++// 		AT_EXIT ~ArUnPackMR.bat~
++		AT_NOW ~ImoenRom/bat/ArUnPackMR.bat~
++
++AT_UNINSTALL ~ImoenRom/bat/uninstall.bat~
+ 		
+ 
+ 

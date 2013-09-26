@@ -1,0 +1,34 @@
+--- Setup-MTS_Crappack.tp2	Tue Mar 16 17:32:36 2010
++++ C:\BWP Patchstudio\patched files\Setup-MTS_Crappack.tp2	Sat Jul 07 18:45:47 2012
+@@ -128,10 +128,10 @@
+ 		 WRITE_BYTE 0x2f 0x00
+          SAY NAME2   @6
+ 	 	 SAY IDENTIFIED_DESC  @7
+-	 COPY	~MTS/val/LI%NPSW04A.itm~ ~override/LI%NPSW04A.itm~
+-			~MTS/val/LI%NPSW04B.itm~ ~override/LI%NPSW04B.itm~
+-			~MTS/val/LI%NPSW04C.itm~ ~override/LI%NPSW04C.itm~
+-			~MTS/val/LI%NPSW04D.itm~ ~override/LI%NPSW04D.itm~
++	 COPY	~MTS/val/LI%NPSW04A.itm~ ~override/NPSW04A.itm~
++			~MTS/val/LI%NPSW04B.itm~ ~override/NPSW04B.itm~
++			~MTS/val/LI%NPSW04C.itm~ ~override/NPSW04C.itm~
++			~MTS/val/LI%NPSW04D.itm~ ~override/NPSW04D.itm~
+ 		SAY NAME2  @6
+ 		SAY IDENTIFIED_DESC   @8
+ 	APPEND ~spell.ids~ ~2299 SUMMON_COW~ UNLESS ~ 2299 ~
+@@ -358,13 +358,13 @@
+ COPY ~MTS/Dynaheir~ ~override~
+ 
+ BEGIN @48
+-COPY ~MTS/Questpack~ ~override~
++COMPILE ~MTS/Questpack~
+ 
+ BEGIN @49
+-COPY ~MTS/Ding0~ ~override~
++COMPILE ~MTS/Ding0~
+ 
+ BEGIN @50
+-COPY ~MTS/Kelsey~ ~override~
++COMPILE ~MTS/Kelsey~
+ 
+ BEGIN @51
+ PRINT @52

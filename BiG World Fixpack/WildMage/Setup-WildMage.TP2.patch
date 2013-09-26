@@ -1,0 +1,22 @@
+--- WildMage\Setup-WildMage.TP2	Fri Jul 17 11:05:36 2009
++++ C:\BWP Patchstudio\patched files\WildMage\Setup-WildMage.TP2	Thu Apr 15 18:47:54 2010
+@@ -1,6 +1,8 @@
+ BACKUP ~WildMage/backup~
+ AUTHOR ~jo.ge@gmx.net~
+ 
++VERSION ~v1.7 BWP Fix~
++
+ LANGUAGE ~English~
+          ~english~
+          ~WildMage/translations/english/text.tra~
+@@ -330,7 +332,9 @@
+ 
+ ACTION_IF FILE_EXISTS ~DATA/BG1ARE.BIF~ THEN BEGIN
+ 
+-EXTEND_TOP ~aram00.bcs~ ~WildMage/0/baf/wm_aram00.baf~
++// EXTEND_TOP ~aram00.bcs~ ~WildMage/0/baf/wm_aram00.baf~
++COPY_EXISTING ~ARAM00.BCS~ ~override~
++  REPLACE_BCS_BLOCK ~WildMage/0/baf/owm_aram00.baf~ ~WildMage/0/baf/nwm_aram00.baf~
+ EXTEND_TOP ~ar0602.bcs~ ~WildMage/0/baf/wm_ar0602.baf~
+ 
+ END

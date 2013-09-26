@@ -1,0 +1,20 @@
+--- Kivan\d\P#KIVJ.d	Sat May 03 08:24:44 2008
++++ C:\BWP Patchstudio\patched files\Kivan\d\P#KIVJ.d	Mon Sep 09 04:57:39 2013
+@@ -2116,7 +2116,7 @@
+ == P#KIVJ @497
+ == SW2H14 @498
+ DO ~ActionOverride("p#lilarcor",DestroySelf())~
+-END
++EXIT
+ 
+ CHAIN P#KIVJ KivanExcuse
+ @495
+@@ -2124,7 +2124,7 @@
+ == P#KIVJ @500
+ == SW2H14 @501
+ DO ~ActionOverride("p#lilarcor",DestroySelf())~
+-END
++EXIT
+ 
+ CHAIN P#KIVJ KivanLate
+ @495

@@ -1,0 +1,38 @@
+--- vic\Lydia\LydMag.BAF	Thu Aug 17 23:41:36 2006
++++ C:\BWP Patchstudio\patched files\vic\Lydia\LydMag.BAF	Thu Apr 01 16:38:12 2010
+@@ -7,7 +7,7 @@
+  	Global("Prep","LOCALS",0)
+ 
+ 
+- 	!Dead("yself)")
++ 	!StateCheck(Myself,STATE_REALLY_DEAD)
+ 
+ 
+  THEN
+@@ -206,7 +206,7 @@
+  	Global("Prep2","LOCALS",0)
+ 
+ 
+- 	!Dead("yself)")
++ 	!StateCheck(Myself,STATE_REALLY_DEAD)
+ 
+ 
+  THEN
+@@ -251,7 +251,7 @@
+  	Global("Prep2","LOCALS",1)
+ 
+ 
+- 	!Dead("yself)")
++ 	!StateCheck(Myself,STATE_REALLY_DEAD)
+ 
+ 
+  THEN
+@@ -338,7 +338,7 @@
+  	Global("SpellTrigger","LOCALS",0)
+ 
+ 
+- 	!Dead("yself)")
++ 	!StateCheck(Myself,STATE_REALLY_DEAD)
+ 
+ 
+  THEN

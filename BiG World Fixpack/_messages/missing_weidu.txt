@@ -1,0 +1,5 @@
+Cannot find "WeiDU.exe" in the current directory.
+The BiG World Fixpack contains an optional component which requires
+the WeiDU.exe. It will be skipped if you choose to continue the installation.
+Close this window now and place a WeiDU.exe in the current directory,
+if you want to run the optional component.
