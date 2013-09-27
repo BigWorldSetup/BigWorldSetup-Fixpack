@@ -1,0 +1,10 @@
+--- aurora\setup-aurora.tp2	Mon Feb 08 21:12:20 2010
++++ C:\BWP Patchstudio\patched files\aurora\setup-aurora.tp2	Fri Sep 27 22:22:20 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~aurora/backup~
+ AUTHOR ~www.shsforums.net/forum/418-auroras-shoes/~
+-VERSION ~v5~
++VERSION ~v5a BWP Fix~
+ README ~aurora/aurora-%LANGUAGE%.html~
+ 
+ //! Platform variables //////////////////////////////////////////////////////

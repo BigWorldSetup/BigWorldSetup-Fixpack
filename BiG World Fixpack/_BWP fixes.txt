@@ -187,21 +187,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Ariena NPC v2.2
+:: Ariena - Ariena NPC v2.2
 
-:: Lollorian's corrected BoHunX -> MWBoHuX typos - Bohunl.D, MWARSC25.BAF
+:: Deathsangel's Jaheira dialogue loop fix
+:: http://www.shsforums.net/topic/36469-report-bugs-for-ariena/?p=522145
+
+:: Lollorian's corrected BoHunX -> MWBoHuX typos
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486586
 
 :: Lollorian's corrected wrong EXTERN (ARIENAP -> MWArnP) - MWBArn.D
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Ascalons Breagar v5.2
-
-:: Lollorian's interchanged ACHAND1 and ACBre in 2 lines - ACBREP.D
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
 
 
@@ -220,35 +214,62 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Aurora's Shoes and Boots v5
+:: AshesofEmbers - Ashes of Embers v27
+
+:: Mythrun's fixes
+:: http://forums.gibberlings3.net/index.php?showtopic=9238&view=findpost&p=76718
+
+
+----------------------------------------------------------------------------------------
+
+
+:: AurenAseph - Auren Aseph NPC v7.2
+
+:: prowler and Caroline's fixes and Russian translation
+:: http://forums.gibberlings3.net/index.php?showtopic=14910&view=findpost&p=205115
+
+
+----------------------------------------------------------------------------------------
+
+
+:: aurora - Aurora's Shoes and Boots v5
 
 :: ScuD's MOVE correction - t-goblin.tpa
 :: http://www.shsforums.net/topic/44360-vague-errors-when-installing/?p=481680
 
+:: Miloch's v5a patch
+:: http://www.shsforums.net/files/file/937-aurora-v5a-patch/
+
 :: Miloch's v5.1 patch - folder _AuroraPatch
 :: http://www.shsforums.net/topic/44329-some-things-i-noticed/?p=479223
 
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
 
 ----------------------------------------------------------------------------------------
 
 
-:: Avi Maya NPC Project (AviM) v6.0
+:: AviM - Avi Maya NPC Project (AviM) v6.0
 
-:: Lollorian's corrected PlaySound("AVILOVE") -> PlaySound("AVIM") - 1xAVI25.baf
+:: Lollorian's corrected PlaySound("AVILOVE") -> PlaySound("AVIM")
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=547608
+
 
 ----------------------------------------------------------------------------------------
 
 
-:: Azure NPC (Beta) v3
+:: Azure - Azure NPC (Beta) v3
 
-:: Fixed parsing ERROR at line 258 column 121-167 - azurej.d
+:: Fixed parsing ERROR at line 258 column 121-167
 :: http://forums.blackwyrmlair.net/index.php?s=ea3cd08de46ebb4971cd040e3012e512&showtopic=1633
 
 :: White Agnus' Continue() Fix - SharoJMP.baf
 
-:: Valiant's correct chapter fix - ar1900.baf
+:: Valiant's correct chapter fix
 :: http://forums.blackwyrmlair.net/index.php?s=&showtopic=1633&view=findpost&p=45078
 
 ----------------------------------------------------------------------------------------

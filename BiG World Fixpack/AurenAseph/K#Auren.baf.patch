@@ -1,0 +1,11 @@
+--- AurenAseph\Scripts\K#Auren.baf	Thu Feb 01 17:21:00 2007
++++ C:\BWP Patchstudio\patched files\AurenAseph\Scripts\K#Auren.baf	Sat Aug 04 13:17:08 2012
+@@ -359,7 +359,7 @@
+ !Exists("ARIANNA") 
+ THEN
+ RESPONSE #100
+-DisplayStringHead(Player1,~You see two experienced looking fighters approach you.~)
++DisplayStringHead(Player1,@2)
+ SetGlobal("AriannaValinorExist","GLOBAL",1)
+ CreateCreatureObjectOffScreen("ARIANNA",Myself,0,0,0)
+ CreateCreatureObjectOffScreen("VALINOR",Myself,0,0,0)

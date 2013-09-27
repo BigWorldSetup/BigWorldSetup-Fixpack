@@ -1,0 +1,12 @@
+--- AurenAseph\German\K#AurenB.tra	Tue Jun 16 13:43:41 2009
++++ C:\BWP Patchstudio\patched files\AurenAseph\German\K#AurenB.tra	Tue Aug 07 01:32:06 2012
+@@ -192,7 +192,8 @@
+ @191 = ~Dann hattet Ihr bestimmt ein aufregendes Leben, Auren.~
+ @192 = ~(Sie winkt ab) Ich hoffe, es bleibt so, Miss Aerie.~
+ @193 = ~Anomen, warum macht Ihr das immer?~ [K#Aure42]
+-@194 = ~Was mache ich, meine Lady?~ ~Ihr starrt oft Löcher in die Luft... als ob Ihr einen Tagtraum oder so etwas hättet... etwas, das ich von einem ernsthaften Ritter wie Euch nicht erwartet hätte.~
++@194 = ~Was mache ich, meine Lady?~
++@1941= ~Ihr starrt oft Löcher in die Luft... als ob Ihr einen Tagtraum oder so etwas hättet... etwas, das ich von einem ernsthaften Ritter wie Euch nicht erwartet hätte.~
+ @195 = ~Um ein Ritter zu werden, muss ich über vieles nachdenken. Es gibt sehr ernste und wichtige Dinge, über die ich nachdenken muss. Das sind sicherlich keine Tagträume!~
+ @196 = ~Ah... in Ordnung.~
+ @197 = ~...~
