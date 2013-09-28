@@ -1,0 +1,11 @@
+--- setup-bgttweak.tp2	Thu Feb 09 10:37:36 2012
++++ C:\BWP Patchstudio\patched files\setup-bgttweak.tp2	Sun Sep 29 00:46:51 2013
+@@ -6,7 +6,7 @@
+ 
+ AUTHOR ~http://forums.spellholdstudios.net/index.php?showforum=261~
+ 
+-VERSION ~11 (5 Feb 12)~
++VERSION ~11 (5 Feb 12) BWP Fix~
+ 
+ README ~bgttweak/language/%LANGUAGE%/readme.htm~
+ 

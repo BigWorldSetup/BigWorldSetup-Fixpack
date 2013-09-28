@@ -1,6 +1,14 @@
---- SETUP-BuTcHeRy.tp2	Wed Nov 16 02:06:55 2011
-+++ C:\BWP Patchstudio\patched files\SETUP-BuTcHeRy.tp2	Mon Dec 19 08:14:06 2011
-@@ -144,7 +144,7 @@
+--- SETUP-BuTcHeRy.tp2	Tue Nov 15 05:23:51 2011
++++ C:\BWP Patchstudio\patched files\SETUP-BuTcHeRy.tp2	Sun Sep 29 00:54:25 2013
+@@ -12,6 +12,7 @@
+ 
+ BACKUP ~BuTcHeRy\backup~
+ AUTHOR ~"DrAzTiK=====DrAzTiK01@msn.com"~
++VERSION ~v3.0 BWP Fix~
+ 
+ 
+ LANGUAGE ~English~
+@@ -144,7 +145,7 @@
  
  
  
@@ -9,7 +17,7 @@
    USING ~BuTcHeRy/Translations/%s/D9firorc.tra~
  
  // Customs tazok for cutsecne
-@@ -337,6 +337,7 @@
+@@ -337,6 +338,7 @@
  ADD_MEMORIZED_SPELL 	~spcl152~ 	#0	~INNATE~ 	#2
  SET_BG2_PROFICIENCY ~PROFICIENCYTWOHANDEDSWORD~ 2
  SET_BG2_PROFICIENCY ~PROFICIENCY2HANDED~ 2

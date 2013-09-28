@@ -1,0 +1,10 @@
+--- BP\setup-bp.tp2	Tue Jun 11 04:28:00 2013
++++ C:\BWP Patchstudio\patched files\BP\setup-bp.tp2	Sun Sep 29 00:50:55 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~bp/backup~
+ AUTHOR ~www.shsforums.net/forum/192-big-picture/~
+-VERSION ~v181-b4503~
++VERSION ~v181-b4503 BWP Fix~
+ 
+ // MODDER setup_tra none area_variables warn missing_extern warn missing_resref warn overwriting_file none
+ //Change overwriting_file none to overwriting_file warn when it's fixed in a future WeiDU

@@ -1,5 +1,14 @@
---- Setup-BGTNeJ.tp2	Thu Mar 26 18:52:58 2009
-+++ C:\BWP Patchstudio\patched files\Setup-BGTNeJ.tp2	Sat Jan 12 16:49:43 2013
+--- Setup-BGTNeJ.tp2	Thu Mar 26 23:22:56 2009
++++ C:\BWP Patchstudio\patched files\Setup-BGTNeJ.tp2	Sun Sep 29 00:45:33 2013
+@@ -2,7 +2,7 @@
+ 
+ AUTHOR ~Vlad~
+ 
+-VERSION ~v1.1~
++VERSION ~v1.1 BWP Fix~
+ 
+ ///////////////////////////////
+ //Adding Modified Imoen
 @@ -25,7 +25,8 @@
   	COPY_EXISTING ~AR6600.bcs~ ~override/AR6600.bcs~
  	EXTEND_BOTTOM ~AR0602.bcs~ ~BGTNeJ/BGTcomp/fAR0602.bcs~

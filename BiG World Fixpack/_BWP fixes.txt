@@ -1,7 +1,6 @@
 Since Leomars' absence this file is no longer supported. Read Lollorians excellent reports instead at:
 http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/
 
-
 ======================================================================================================
 
 
@@ -187,6 +186,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: arestorationp - Almateria's Restoration Project v3.3
+
+:: Lollorian's polish Rielev fix
+:: http://www.shsforums.net/topic/56026-almaterias-restoration-project/?p=562513
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Ariena - Ariena NPC v2.2
 
 :: Deathsangel's Jaheira dialogue loop fix
@@ -275,9 +283,27 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Baldurdash v1.6.8
+:: banterpack - Banter Packs v13
+
+:: White Agnus' Viconia BG2 dialogue in BG1 fix
+:: http://forums.pocketplane.net/index.php/topic,26135.0.html
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Bdash - Baldurdash v1.6.8
 
 :: BWP compatibility fixes to use it with or without BG2 Fixpack (updated 31 March 2010).
+
+
+----------------------------------------------------------------------------------------
+
+
+:: bg1npc - BG1 NPC Project v20
+
+:: Wedge's Ankheg Quest fix - ar8300.BAF
+:: http://kerzenburg.baldurs-gate.eu/showpost.php?p=968744&postcount=1089
 
 
 ----------------------------------------------------------------------------------------
@@ -287,15 +313,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Wedge's Ankheg Quest fix - ar8300.BAF
 :: http://kerzenburg.baldurs-gate.eu/showpost.php?p=968744&postcount=1089
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Banter Packs v12
-
-:: White Agnus' Viconia BG2 dialogue in BG1 fix - Setup-banterpack.tp, BGTComp folder
-:: http://forums.pocketplane.net/index.php/topic,26135.0.html
 
 
 ----------------------------------------------------------------------------------------
@@ -311,45 +328,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's renamed file (adding Zyraen's prefix "Z#" - GTHAC.SPL -> Z#GTHAC.SPL)
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
-
-
-----------------------------------------------------------------------------------------
-
-
-:: BG1 NPC Project v18
-
-:: aVENGER's harpers portrait fix - bg1npc.tp2
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=18332&view=findpost&p=164697 
-
-:: Lollorian's OR() fix - p#corlt.d
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=19610&view=findpost&p=165579
-
-:: TheBigg's Elminster doesn't leave unless Jaheira present fix - x#miint.d
-:: http://forums.gibberlings3.net/index.php?showtopic=19941
-
-:: Wedge's Tevan not shouting for help fix - x#kiint.d
-:: http://kerzenburg.baldurs-gate.eu/showpost.php?p=968727&postcount=1088
-
-
-----------------------------------------------------------------------------------------
-
-
-:: BG1 Unfinished Business v12
-
-:: Allow to install Shilo Chen with NTotSC, because Shilo Chen from NTotSC is deactivated at the moment - setup-bg1ub.tp2
-:: http://forums.pocketplane.net/index.php/topic,26319.0.html
-
-
-----------------------------------------------------------------------------------------
-
-
-:: BG2 Fixpack v9.01
-
-:: Hoppy's Crom-not-enjoying fix - ar0334.baf
-:: http://www.shsforums.net/topic/44623-extreme-bloat-in-cromwells-dialogue/?p=482717
-
-:: aVENGER's Moon Dog fix - setup-bg2fixpack.tp2
-:: http://forums.gibberlings3.net/index.php?showtopic=19582
 
 
 ----------------------------------------------------------------------------------------
@@ -403,26 +381,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: BP-BGT-Worldmap v7.1
-
-:: erebusant's Worldmap Imoen Translations Patch
-:: http://www.shsforums.net/index.php?showtopic=38293
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Branwen NPC v1.2
 :: White Agnus BGT Compatibility - Setup-BranwenNPC.tp2, WLBRAN.d, BGT-WLBRAN.d
-
-
-----------------------------------------------------------------------------------------
-
-
-:: BW Herbs and Potions Add-in for BG1 v1.0.3
-
-:: Optional you can get the Improved Animations for BW Herbs from One Pixel Productions
-:: http://www.shsforums.net/index.php?autocom=downloads&showfile=555
 
 
 ----------------------------------------------------------------------------------------
@@ -432,9 +392,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Needed fix to install BW Herbs for BG1 with BW Herbs for BG2 together
 :: http://forums.blackwyrmlair.net/index.php?showtopic=235
-
-:: Optional you can get the Improved Animations for BW Herbs from One Pixel Productions
-:: http://www.shsforums.net/index.php?autocom=downloads&showfile=555
 
 
 ----------------------------------------------------------------------------------------
@@ -469,7 +426,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 
 :: Dark Side of the Sword Coast (DSotSC) 2.15
- 
+
 :: erebusant's corrected BAM's of Thorfinn's armor and the 2 robes from TDD and/or NTotSC - DSILEA10.BAM and ICLCK51.bam
 :: http://www.shsforums.net/index.php?s=&showtopic=38354&view=findpost&p=433831
 
@@ -531,7 +488,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: CamDawg's YuanTe-Mage spellcasting fix
 :: http://forums.pocketplane.net/index.php/topic,24754.0.html
 
-:: Steve's fixes 
+:: Steve's fixes
 :: http://www.shsforums.net/index.php?s=&showtopic=37926&view=findpost&p=428254
 :: http://www.shsforums.net/index.php?s=&showtopic=37926&view=findpost&p=428670
 :: http://forums.pocketplane.net/index.php/topic,26020.msg316860.html
@@ -569,23 +526,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Drizzt Saga v2.0
 
 :: White Agnus' BGT Fixes - nARAM00.BAF, oARAM00.BAF
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Edwin Romance (SoA) v1.07
-
-:: NEJ2 compatibility fixes - EDWIN_DEGARDAN.BCS, EDWIN_DEGARDAN_ROMANCE.BCS
-
-:: White Agnus' compatibility fix for Tsujatha NPC - Setup-EdwinRomance.tp2, DPLAYER2.baf
-:: http://www.shsforums.net/index.php?showtopic=39624
-
-:: Lollorian's replacement - ERLOVETALK2.D
-:: http://www.shsforums.net/topic/37020-please-post-outstanding-bugs-to-be-fixed/?p=483612
-
-:: Lollorian's corrected ER_EDBODY -> ER_EDBOD typo - ER_cleanse.bcs
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486586
 
 
 ----------------------------------------------------------------------------------------
@@ -638,15 +578,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: gMinion v2
-
-:: Azazello's BGT adaption - Setup-gMinion.tp2
-:: http://forums.gibberlings3.net/index.php?showtopic=16272
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Grimuars v3.3
 
 :: Lollorian's LOCALS fix - b#tar05.baf
@@ -656,37 +587,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Horace NPC (Beta) v1.71
-
-:: Lollorian's corrected typos - Horfight.baf, Horfight.bcs
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Hubelpot the Vegetable Merchant NPC v1.0
 
 :: Lollorian's GLOBAL fixes - SC#AR0530.baf, SC#HubQuest.d
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
-
-
-----------------------------------------------------------------------------------------
-
-
-:: IEP Extended Banters v3.2
-
-:: Toran's setup.tra fixes - english/setup.tra, german/setup.tra
-:: http://www.shsforums.net/index.php?s=&showtopic=38241&view=findpost&p=435558
-
-:: K'aeloree's Viconia-Cernd Banter Fix - banters.d
-:: http://www.shsforums.net/index.php?showtopic=39055
-
-:: K'aeloree's Viconia-Imoen Banter Fix - banters.d
-:: http://www.shsforums.net/index.php?showtopic=39145
-
-:: Lollorian's Myself corrections - vicond.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482735
 
 
 ----------------------------------------------------------------------------------------
@@ -715,34 +619,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Improved Asylum v0.93
-
-:: Official Fix for Riddles Bug in the English version
-:: http://forums.rpgdungeon.net/index.php/topic,1377.0.html
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Item Revisions v2
 
 :: Official hotfixes from 02 June 2010
 :: http://forums.gibberlings3.net/index.php?showtopic=15698
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Item Upgrade v37
-
-:: Lich's C2AX1H01.ITM fix
-:: http://kerzenburg.baldurs-gate.eu/showpost.php?p=903792&postcount=1010
-
-:: Lol's crom.d typo fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=481120
-
-:: Lol's cespy.d typo fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=481570
 
 
 ----------------------------------------------------------------------------------------
@@ -854,7 +734,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Level 1 NPCs v1.3
 
 :: erik's level1npcs.tp2 fixes (eib2)
-:: http://anduin.net/~knan/bg2/level1npcs.tp2 
+:: http://anduin.net/~knan/bg2/level1npcs.tp2
 
 
 ----------------------------------------------------------------------------------------
@@ -885,30 +765,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Luxley Family (SoA) v1.1
-
-:: Lollorian's random treasure typos - Setup-LuxleySoA.tp2
-:: http://www.shsforums.net/topic/44627-typo-in-tp2/
-
-:: Lollorian's !Dead(Myself) changes - FHLAL.baf, fhljos.baf
-:: http://www.shsforums.net/topic/44627-some-stuff-to-check/?p=483613
-
-:: Lollorian's OR() fix - FHLSEBJ.d
-:: http://www.shsforums.net/topic/44627-some-stuff-to-check/?p=483703
-
-:: Lollorian's corrections: FHLROS -> FHLLROS (only spells, cre's still called FHLROS) - FHLBRID.baf, FHLROS.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486802
-
-:: Lollorian's FHLGen corrections - FHLGEN.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
-
-:: Lollorian's added "AR-" prefix to AreaCheck() (48 instances!) - FHLANDJ.d, FHLSEBJ.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488705
-
-
-----------------------------------------------------------------------------------------
-
-
 :: MTS Crappack v4
 
 :: Lollorian's corrected "Myself" -> Myself - Val/LI%valygar.baf
@@ -925,15 +781,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Miloch's Arkvisti continuous spawning fix - sbaldur.baf
 :: http://www.shsforums.net/topic/43499-bridge-disrict-errors/?p=489199
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Nathaniel NPC v4.2
-
-:: Lollorian's correction - fhnatp.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 
 ----------------------------------------------------------------------------------------
@@ -978,24 +825,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Ninde NPC v1.1
-
-:: K'aeloree's "player-initiated talks keep appearing initiated by Ninde when turned into a drow" fix - lk#nindj.d, lk#nins.baf
-:: http://www.shsforums.net/index.php?showtopic=38491
-
-:: Lollorian's Myself corrections - lk#nind.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482735
-
-:: Lollorian's OR() fix - lk#nins.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483244
-
-:: Lollorian's correction - lk#nindj.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
-
-
-----------------------------------------------------------------------------------------
-
- 
 :: Northern Tales of the Sword Coast (NTotSC) v1.70a
 
 :: erebusant's "Original Travel Times" links.tbl fix
@@ -1115,21 +944,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Secret of Bone Hill (SoBH) v2.75a
-
-:: Lisandro's Spanish not installing fix - Bhyalta.tra
-:: http://www.shsforums.net/topic/44739-secret-of-bonehill-v275-bug-reports/?p=487107
-
-:: Ascalon's German not installing fix - BHARRNES.tra
-:: http://www.shsforums.net/topic/44739-secret-of-bonehill-v275-bug-reports/?p=487484
-
-:: Lollorian's corrected typos - BH0107.BAF, BH0500.BAF
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Shadows over Soubar (SoS) v1.13
 
 :: Lollorian's Fence fix - Setup-SOS.tp2
@@ -1188,7 +1002,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Official hotfixes
 :: http://forums.blackwyrmlair.net/index.php?showtopic=4073
 
-	
+
 ----------------------------------------------------------------------------------------
 
 
@@ -1232,33 +1046,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Sword Coast Stratagems II (SCSII) v13
-
-:: Help typo - help.tph
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=19401&view=findpost&p=163938
-
-:: Temujin's .d corruption fix
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=19401&view=findpost&p=164455
-
-:: Lollorian's replacement - dw#grpin.BAF
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=19401&view=findpost&p=165552
-
-:: Wisp's component naming typo fix - setup-scsII.tp2
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=19675&view=findpost&p=165847
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Sylmar Battlefield v1.025
-
-:: White Agnus' Area fixes - 1Sylm-setup.tp2
-:: http://www.shsforums.net/index.php?showtopic=39703
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Tactics v25
 
 :: Azazello's BGT adaption - Setup-Tactics.tp2
@@ -1269,21 +1056,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's replacements - drake01.BAF
 :: http://forums.pocketplane.net/index.php/topic,27207.0.html
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Tales of Anegh (ToA) v2.0
-
-:: Lollorian's corrected animation typo - ZBERGE.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483642
-
-:: Lollorian's changed 78 instances of "item_zo_delete -> item_to_delete" - setup-toa.TP2
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=487281
-
-:: Lollorian's added missing ~'s - setup-toa.TP2
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=487677
 
 
 ----------------------------------------------------------------------------------------
@@ -1335,7 +1107,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 
 ----------------------------------------------------------------------------------------
- 
+
 
 :: Throne of Bhaal Revisited (ToBR-Beta) v4
 
@@ -1420,28 +1192,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Underrepresented Items v5
 
-:: The file underrep\dlg\u#conlan.d was not traified yet 
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Unfinished Business for BG2 v19
-
-:: Polish translation fix - setup-ub.tp2
-:: http://forums.pocketplane.net/index.php/topic,26239.msg320387.html#msg320387
-
-:: aVENGER's more robust check for docsol03.cre restoriation - setup-ub.tp2
-:: http://forums.pocketplane.net/index.php/topic,26931.msg323710.html#msg323710 
-
-:: Lollorian's Myself corrections - ubimoen2.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482735
-
-:: Wisp's Muggers not spawning fix - u!0400.baf
-:: http://forums.pocketplane.net/index.php/topic,27193.msg324343.html#msg324343
-
-:: Lollorian's corrected "EXISTANCE5" -> EXISTANCE5 - ubimoen2.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=487571
+:: The file underrep\dlg\u#conlan.d was not traified yet
 
 
 ----------------------------------------------------------------------------------------
@@ -1480,19 +1231,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Vault v7.1
 
 :: White Agnus' Zhurlong Fix - vault.d
-:: http://www.shsforums.net/index.php?s=&showtopic=39044&view=findpost&p=460268  
+:: http://www.shsforums.net/index.php?s=&showtopic=39044&view=findpost&p=460268
 
 :: Miloch's Bandit Camp fight crashing fix (and missing spaces) - Setup-Vault.tp2
 :: http://www.shsforums.net/topic/39044-vault-v7-released/?p=487194
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Viconia Friendship v3.0
-
-:: K'aeloree's ToB stutter fix - vico25.baf
-:: http://www.shsforums.net/topic/33456-viconia-friendship-bug-reports/?p=481437
 
 
 ----------------------------------------------------------------------------------------
@@ -1546,35 +1288,5 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 
 ----------------------------------------------------------------------------------------
-
-
-:: Xulaye NPC v1
-
-:: K'aeloree's Armor dialogue hotfix - lk#xula.baf
-:: http://www.shsforums.net/index.php?s=&showtopic=38768&view=findpost&p=436885
-
-:: K'aeloree's BG2 Fixpack solution - xulaye.tp2
-:: http://www.shsforums.net/index.php?s=&showtopic=38480&view=findpost&p=440370
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Yoshimo Friendship v2.0
-
-:: Lollorian's Myself corrections - yoshimo.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482735
-
-
-----------------------------------------------------------------------------------------
-
-----------------------------------------------------------------------------------------
-
-
-:: 
-
-:: 
-:: 
-
 
 ----------------------------------------------------------------------------------------

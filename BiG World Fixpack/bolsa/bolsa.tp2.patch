@@ -1,5 +1,13 @@
---- bolsa\bolsa.tp2	Wed Nov 04 16:13:14 2009
-+++ C:\BWP Patchstudio\patched files\bolsa\bolsa.tp2	Mon May 20 18:55:42 2013
+--- bolsa\bolsa.tp2	Wed Nov 04 19:43:14 2009
++++ C:\BWP Patchstudio\patched files\bolsa\bolsa.tp2	Sun Sep 29 00:49:38 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~bolsa/backup~
+ AUTHOR ~www.shsforums.net/index.php?showforum=234~ //aimainahikari@hotmail.com
+-VERSION ~v4.1~
++VERSION ~v4.1 BWP Fix~
+ README ~bolsa/bolsa-%LANGUAGE%.txt~
+ 
+ AUTO_TRA ~bolsa/%s~
 @@ -78,4 +78,4 @@
    SAY NAME1 @3
    SAY NAME2 @3

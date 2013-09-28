@@ -1,5 +1,14 @@
 --- bg1npc.tp2	Sun Nov 27 10:02:04 2011
-+++ C:\BWP Patchstudio\patched files\bg1npc.tp2	Fri Dec 09 09:39:24 2011
++++ C:\BWP Patchstudio\patched files\bg1npc.tp2	Sun Sep 29 00:28:45 2013
+@@ -15,7 +15,7 @@
+ //  MODDER
+ 
+ /* WeiDU v204 allows tp2 level version listing in the .log, so no more tra changes  */
+-VERSION ~v20~
++VERSION ~v20 BWP Fix~
+ 
+ /* launch the readme file immediately. If you want to disable the ReadMe, place two slashes before it, like // README  */
+ /* Isaya : display in native selected language if available, otherwise english */
 @@ -859,7 +859,7 @@
  					ADD_MEMORIZED_SPELL ~spwi406~ #3 ~wizard~ // Minor Globe of Invulnerability
  					ADD_MEMORIZED_SPELL ~spwi502~ #4 ~wizard~ (4) // Cloudkill

@@ -1,0 +1,19 @@
+--- arestorationp\setup-arestorationp.tp2	Sat Jun 22 01:14:22 2013
++++ C:\BWP Patchstudio\patched files\arestorationp\setup-arestorationp.tp2	Sat Sep 28 10:16:47 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~arestorationp/backup~
+ AUTHOR ~Almateria (sylwiabukato@gmail.com)~
+-VERSION ~v3.3~
++VERSION ~v3.3 BWP Fix~
+ AUTO_TRA ~arestorationp/%s~
+ LANGUAGE ~Polski~	~polski~	~arestorationp/polski/setup.tra~
+ LANGUAGE ~English~	~english~	~arestorationp/english/setup.tra~
+@@ -1477,7 +1477,7 @@
+   END
+ BUT_ONLY
+ 
+-ACTION_IF (~%LANGUAGE%~ STRING_COMPARE_CASE ~Polski~) THEN BEGIN
++ACTION_IF (~%LANGUAGE%~ STRING_EQUAL_CASE ~Polski~) THEN BEGIN
+ 	STRING_SET 11626 ~Ani ¿ywy, ani umar³y. Jestem... pomiêdzy... mistrz o mnie zapomnia³... nie zabi³ mnie.~ [RIELEV07]
+ 	STRING_SET 11556 ~Aaaaaa... kim¿e jesteœcie... s³ugami mistrza?~ [RIELEV02]
+ 	STRING_SET 37848 ~Dziêkujê ci... idŸ i zostaw mnie sam na sam z moim zapomnieniem. S³odki œnie...~ [RIELEV06]
