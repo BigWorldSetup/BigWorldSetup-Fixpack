@@ -407,8 +407,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: BranwenNPC - Branwen NPC v2.1
 
-::
-::
+:: White Agnus BGT Compatibility - Setup-BranwenNPC.tp2, WLBRAN.d, BGT-WLBRAN.d
+:: - LINK NOT FOUND ~
 
 
 ----------------------------------------------------------------------------------------
@@ -426,55 +426,61 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Boards o' Magick Item Pack (BoM Item Pack) v2.0
+:: Charli - Charli, the Fence v2.3
 
-:: Lollorian's corrected PlaySound() typo - O!TalF.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483688
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Bons’ Bruce, the Cockney Barfighter (One-Day NPC) v2
-
-:: Lollorian's corrected GLOBAL typo - subru.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488085
-
-:: Lollorian's corrections: items being copied over with 8+-char names - Setup-BonsBrucev2.tp2
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
+:: micbaldur's corrected spawn
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=558339
 
 
 ----------------------------------------------------------------------------------------
 
 
-:: Branwen NPC v1.2
-:: White Agnus BGT Compatibility - Setup-BranwenNPC.tp2, WLBRAN.d, BGT-WLBRAN.d
+:: chiara - Chiara NPC v1.02
 
-
-----------------------------------------------------------------------------------------
-
-
-:: BW Herbs and Potions Add-in for BG2 v1.0.4
-
-:: Needed fix to install BW Herbs for BG1 with BW Herbs for BG2 together
-:: http://forums.blackwyrmlair.net/index.php?showtopic=235
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Chiara NPC v1.02
-
-:: Lollorian's corrected PlaySound("Genmg15.wav") -> PlaySound("Genmg15") - V#GuardS.baf
+:: Lollorian's corrected PlaySound("Genmg15.wav") -> PlaySound("Genmg15")
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
+:: Changed Anomen.bcs Dead() -> StateCheck()
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
 
-:: CoM Encounters v1.04
+:: Chloe - Chloe NPC v1.5
+
+:: Beleg33's spell casting swords fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543398
+
+:: Taimon's preset targetting SPL fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=546783
+
+:: cmorgan's fix for suicidal weapons
+:: http://www.shsforums.net/topic/45516-chloes-weapons-killiing-their-owner/?p=492084
+
+:: Lollorian's string tag fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=500837
+
+
+----------------------------------------------------------------------------------------
+
+
+:: com_encounters - CoM Encounters v1.04
 
 :: White Agnus' KORSCROO Spell Memorization Fix - KORSCROO.CRE
+:: - LINK NOT FOUND -
+
+:: Hoppy's Chang SHOUT fix
+:: http://www.shsforums.net/topic/46469-bwp-and-mod-bugs-not-yet-fixed/?p=501418
+
+
+----------------------------------------------------------------------------------------
+
+
+:: coranbgfriend - CoM Encounters v1.04
+
+:: Lollorian's string tag fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=500837
 
 
 ----------------------------------------------------------------------------------------

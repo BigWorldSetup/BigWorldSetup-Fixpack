@@ -1,17 +1,15 @@
---- Charli\Setup-Charli.tp2	Tue Apr 06 06:18:10 2010
-+++ C:\BWP Patchstudio\patched files\Charli\Setup-Charli.tp2	Thu May 02 04:56:01 2013
-@@ -16,6 +16,10 @@
- LANGUAGE ~English~
-                  ~english~
-                  ~Charli/english/setup.tra~
-+                 
-+LANGUAGE ~Italian~
-+		 ~italian~
-+                 ~Charli/italian/setup.tra~
-                 
- //**************************************************************
- //**************************************************************
-@@ -36,7 +40,7 @@
+--- Charli\Setup-Charli.tp2	Sun Jul 04 10:34:24 2010
++++ C:\BWP Patchstudio\patched files\Charli\Setup-Charli.tp2	Sun Sep 29 17:21:10 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~Charli\backup~
+ AUTHOR ~sergiond77@hotmail.com~
+ 
+-VERSION ~v2.3~
++VERSION ~v2.3 BWP Fix~
+ 
+ ASK_EVERY_COMPONENT
+ 
+@@ -40,7 +40,7 @@
  
  
  COMPILE ~Charli\baf\Gittanox.baf~

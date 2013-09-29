@@ -1,0 +1,11 @@
+--- Chloe\Chloe.tp2	Mon Jan 25 22:00:24 2010
++++ C:\BWP Patchstudio\patched files\Chloe\Chloe.tp2	Sun Sep 29 17:30:57 2013
+@@ -2,7 +2,7 @@
+ AUTHOR ~Lucythebeast@hotmail.com~
+ 
+ // Version appearing in WeiDU.log
+-VERSION ~v1.5~
++VERSION ~v1.5 BWP Fix~
+ 
+ AUTO_TRA ~Chloe/Language/%s~ // This will tell WeiDU the folder where the D's are stored.
+ 

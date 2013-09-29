@@ -1,0 +1,11 @@
+--- coranbgfriend\coranbgfriend.tp2	Wed Aug 17 20:12:32 2011
++++ C:\BWP Patchstudio\patched files\coranbgfriend\coranbgfriend.tp2	Sun Sep 29 22:31:21 2013
+@@ -13,7 +13,7 @@
+ /* enable all error messages; nothing suppressed. comment this out for release version */
+ //MODDER
+ 
+-VERSION ~v3~
++VERSION ~v3 BWP Fix~
+ 
+ README ~coranbgfriend/readme-coranbg.html~
+ 
