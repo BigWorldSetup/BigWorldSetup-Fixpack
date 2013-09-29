@@ -296,6 +296,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: BWP compatibility fixes to use it with or without BG2 Fixpack (updated 31 March 2010).
 
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
 
 ----------------------------------------------------------------------------------------
 
@@ -379,30 +382,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 
 :: BonsBruce - Bon's Bruce v2
-
-:: micbaldur's AR0511 script compilation fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=558339
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Beyond the Law (aD&L) v1.35
-
-:: Hoppy's Global("EndOfBG1","GLOBAL",2) fix - start.baf
-:: http://www.shsforums.net/index.php?showtopic=33192
-
-:: Lollorian's corrected AROW typos - Items.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483696
-
-:: Lollorian's renamed file (adding Zyraen's prefix "Z#" - GTHAC.SPL -> Z#GTHAC.SPL)
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
-
-
-----------------------------------------------------------------------------------------
-
-
-:: BG2 Tweak Pack (BG2 Tweaks) v9
 
 :: Lollorian's On-hit bonus ITM fix
 :: http://www.shsforums.net/topic/55229-khazids-death-sword-bug/?p=546708
@@ -669,6 +648,21 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's LOCALS fix - b#tar05.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
+
+
+----------------------------------------------------------------------------------------
+
+
+:: haerdalisromance - Haer'Dalis Romance v2
+
+:: Kulyok's Noober flirt fix
+:: http://www.shsforums.net/topic/52894-bug-report-thread/?p=554323
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+:: Lollorian's stutter fix
+:: http://www.shsforums.net/topic/56695-stutter-bug/?p=562540
 
 
 ----------------------------------------------------------------------------------------

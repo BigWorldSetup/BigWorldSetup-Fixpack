@@ -1,0 +1,10 @@
+--- haerdalisromance\scripts\haerdali.baf	Sun Dec 02 16:17:48 2012
++++ C:\BWP Patchstudio\patched files\haerdalisromance\scripts\haerdali.baf	Sun Sep 29 10:56:02 2013
+@@ -98,6 +98,7 @@
+     RealGlobalTimerExpired("LS_HaerDalisLovetalkTimer","GLOBAL")
+     CombatCounter(0)
+     !See([ENEMY])
++    !Global("LS_HaerDalisRomanceActive","GLOBAL",3)
+     OR(23)
+       Global("LS_HaerDalisLovetalk","GLOBAL",1)
+       Global("LS_HaerDalisLovetalk","GLOBAL",3)
