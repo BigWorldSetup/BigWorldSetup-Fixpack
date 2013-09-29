@@ -1,0 +1,9 @@
+--- BG1NPCSoA.tp2	Sun Jun 02 00:04:52 2013
++++ C:\BWP Patchstudio\patched files\BG1NPCSoA.tp2	Sun Sep 29 10:04:19 2013
+@@ -1,5 +1,6 @@
+ BACKUP ~BG1NPCSoA\backup~
+ AUTHOR ~Smiling Imp: MBONE911@excite.com~
++VERSION ~v8 BWP Fix~
+ BEGIN ~BG1 NPCs, Shar-Teel, Yeslick, Garrick, Branwen & Skie~ DESIGNATED 0
+ GROUP ~SoA NPCs~
+ 

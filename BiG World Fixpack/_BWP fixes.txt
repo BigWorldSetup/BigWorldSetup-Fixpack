@@ -159,7 +159,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=500187
 
 :: Changed ADNinja.baf SpellNoDec(Myself,0) -> SpellNoDec(Myself,ROGUE_ASSASINATION)
-:: - NO LINK FOUND -
+:: - LINK NOT FOUND ~
 
 
 ----------------------------------------------------------------------------------------
@@ -168,7 +168,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: AnimalCompanions - Ulb's Animal Companions v0.5
 
 :: Added quotes to ApplySpellRES() objects in some scripts
-:: - NO LINK FOUND -
+:: - LINK NOT FOUND ~
 
 
 ----------------------------------------------------------------------------------------
@@ -302,17 +302,86 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: bg1npc - BG1 NPC Project v20
 
-:: Wedge's Ankheg Quest fix - ar8300.BAF
-:: http://kerzenburg.baldurs-gate.eu/showpost.php?p=968744&postcount=1089
+:: cmorgan's BGT Minsc XP fix
+:: http://forums.gibberlings3.net/index.php?showtopic=23622&view=findpost&p=194238
+
+:: cmorgan's Beador buglet fix
+:: http://forums.gibberlings3.net/index.php?showtopic=25677&view=findpost&p=214364
 
 
 ----------------------------------------------------------------------------------------
 
 
-:: Baldur's Gate Trilogy (08 May 10) v1.09
+:: BG1NPCSoA - BG1 NPCs for SoA v8
 
-:: Wedge's Ankheg Quest fix - ar8300.BAF
-:: http://kerzenburg.baldurs-gate.eu/showpost.php?p=968744&postcount=1089
+:: Lollorian's fix for Coran having Eldoth's item
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561388
+
+
+----------------------------------------------------------------------------------------
+
+
+:: bg2_tweaks - BG2 Tweak Pack v13
+
+:: CamDawg's NORH/Sensible Entrance Points crash fix
+:: http://forums.gibberlings3.net/index.php?showtopic=25485
+
+
+----------------------------------------------------------------------------------------
+
+
+:: BGSpawn - BGSpawn v1.12
+
+:: 10th's Troll spawn fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=561772
+
+
+----------------------------------------------------------------------------------------
+
+
+:: bgt - Baldur's Gate Trilogy v1.18 (28 Apr 13)
+
+:: micbaldur's Duchal Palace locked container fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=561315
+
+:: Deluxe's Imoen soundset change fix
+:: http://www.shsforums.net/topic/56700-possible-bug-in-latest-bgt-fix-inside/?p=562370
+
+
+----------------------------------------------------------------------------------------
+
+
+:: BGTNeJ - BGT-NeJ Compatibility v1.1
+
+:: Ascension64's BGT Transition hanging fix
+:: http://www.shsforums.net/topic/47057-setup-bgtnej-makes-transition-stuck/
+
+
+----------------------------------------------------------------------------------------
+
+
+:: BGTTweak - BGT Tweaks v11 (5 Feb 12)
+
+:: Ascension64's MTOWN2 installation failure fix
+:: http://www.shsforums.net/topic/47916-bgt-tweaks-hardcoded-to-fail/?p=510618
+
+
+----------------------------------------------------------------------------------------
+
+
+:: bolsa - Bolsa v4.1
+
+:: micbaldur's AR0511 script compilation fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=558339
+
+
+----------------------------------------------------------------------------------------
+
+
+:: BonsBruce - Bon's Bruce v2
+
+:: micbaldur's AR0511 script compilation fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=558339
 
 
 ----------------------------------------------------------------------------------------
@@ -335,26 +404,44 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: BG2 Tweak Pack (BG2 Tweaks) v9
 
-:: Mike1072's _KHALID's for BGT fix - Setup-BG2_Tweaks.tp2, P#FW2301.BAF
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=489437
+:: Lollorian's On-hit bonus ITM fix
+:: http://www.shsforums.net/topic/55229-khazids-death-sword-bug/?p=546708
+
+:: Lollorian's >8-char ITM names fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=547608
 
 
 ----------------------------------------------------------------------------------------
 
 
-:: BGSpawn v1.07
+:: BP - Big Picture (BP) v181-b4503
 
-:: Lollorian's corrected PlaySound("%tutu_var%VWOLF03") -> PlaySound("VWOLF03") for BGT - mm75wo.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=489410
+:: micbaldur's locked container problems fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=561315
 
 
 ----------------------------------------------------------------------------------------
 
 
-:: Big Picture (BP) v180a
+:: BranwenNPC - Branwen NPC v2.1
 
-:: Lollorian's fixed typos in the BPSeries scripts - BPBard.baf, BPFT-MGT.baf, BPMage.baf, BPMulti.baf, BPRanged.baf
-:: http://www.shsforums.net/topic/45230-bpv180-beta-is-released/?p=489325
+::
+::
+
+
+----------------------------------------------------------------------------------------
+
+
+:: BuTcHeRy - BuTcHeRy v3.0
+
+:: Lollorian's override compilation fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=524893
+
+:: Patches ORC05.CRE's BG1 Long Swords proficiency to 0
+:: - LINK NOT FOUND ~
 
 
 ----------------------------------------------------------------------------------------
@@ -1228,13 +1315,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Vault v7.1
+:: Vault - Vault v7.2
 
-:: White Agnus' Zhurlong Fix - vault.d
-:: http://www.shsforums.net/index.php?s=&showtopic=39044&view=findpost&p=460268
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/55129-the-vault-for-bgt-v72-released/?p=547438
+:: http://www.shsforums.net/topic/55129-the-vault-for-bgt-v72-released/?p=547611
+:: http://www.shsforums.net/topic/55129-the-vault-for-bgt-v72-released/?p=548588
 
-:: Miloch's Bandit Camp fight crashing fix (and missing spaces) - Setup-Vault.tp2
-:: http://www.shsforums.net/topic/39044-vault-v7-released/?p=487194
+:: Lollorian's Greater Wolfwere dropping Peladan fix
+:: http://www.shsforums.net/topic/55129-the-vault-for-bgt-v72-released/?p=548857
 
 
 ----------------------------------------------------------------------------------------

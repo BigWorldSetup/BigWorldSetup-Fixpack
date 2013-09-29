@@ -1,0 +1,11 @@
+--- Setup-Vault.tp2	Sun Aug 26 20:37:16 2012
++++ C:\BWP Patchstudio\patched files\Setup-Vault.tp2	Sun Sep 29 09:36:42 2013
+@@ -10,7 +10,7 @@
+ 	// where should tell the user to send email if something goes wrong? 
+ AUTHOR ~http://www.shsforums.net/topic/55129-the-vault-for-bgt-v72-released/~
+ 
+-VERSION	~v7.2~
++VERSION	~v7.2 BWP Fix~
+ 
+ README ~vault/ReadMe-Vault.html~
+ 

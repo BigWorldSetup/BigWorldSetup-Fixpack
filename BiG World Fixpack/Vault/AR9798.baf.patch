@@ -1,0 +1,11 @@
+--- Vault\SNIP/AR9798.baf	Mon Jul 30 07:35:00 2012
++++ C:\BWP Patchstudio\patched files\Vault\SNIP/AR9798.baf	Sun Sep 29 09:39:55 2013
+@@ -11,7 +11,7 @@
+ 		CreateCreature("WOLFWEGL",[518.184],5) // Wolfwere
+ 		CreateCreature("WOLFWEGL",[629.1485],5) // Wolfwere
+ 		CreateCreature("WOLFWEGL",[1644.1342],5) // Wolfwere
+-		CreateCreature("WOLFWEGR",[1241.1171],5) // Greater Wolfwere
++		CreateCreature("JC_WLFWE",[1241.1171],5) // Greater Wolfwere
+ 		SetGlobal("UlcasterHell","GLOBAL",1)
+ 		Continue()
+ END
