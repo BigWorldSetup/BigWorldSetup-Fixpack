@@ -1,0 +1,11 @@
+--- dace\dace.tp2	Sun Feb 03 11:00:03 2013
++++ C:\BWP Patchstudio\patched files\dace\dace\dace.tp2	Mon Sep 30 23:35:23 2013
+@@ -4,7 +4,7 @@
+ // Basics
+ BACKUP ~dace/backup~
+ AUTHOR ~Tess Grey (tess.grey@gmail.com) & K'aeloree (kae@spellholdstudios.net)~
+-VERSION ~v1.2~
++VERSION ~v1.2 BWP Fix~
+ README ~dace/dace_readme.html~
+ 
+ // --------------------------------------------

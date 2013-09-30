@@ -1,5 +1,5 @@
 --- arestorationp\setup-arestorationp.tp2	Sat Jun 22 01:14:22 2013
-+++ C:\BWP Patchstudio\patched files\arestorationp\setup-arestorationp.tp2	Sat Sep 28 10:16:47 2013
++++ C:\BWP Patchstudio\patched files\arestorationp\setup-arestorationp.tp2	Mon Sep 30 08:08:42 2013
 @@ -1,6 +1,6 @@
  BACKUP ~arestorationp/backup~
  AUTHOR ~Almateria (sylwiabukato@gmail.com)~
@@ -8,6 +8,21 @@
  AUTO_TRA ~arestorationp/%s~
  LANGUAGE ~Polski~	~polski~	~arestorationp/polski/setup.tra~
  LANGUAGE ~English~	~english~	~arestorationp/english/setup.tra~
+@@ -689,12 +689,12 @@
+     SAY DYING ~~ [EPRIM07]
+ 	SAY MORALE ~~ [EPRIM08]
+   END
+-  PATCH_IF selected = 61631 BEGIN
++  PATCH_IF selected = 61623 BEGIN
+ 	SAY DAMAGE ~~ [FANATF06]
+     SAY DYING ~~ [FANATF07]
+ 	SAY MORALE ~~ [FANATF08]
+   END
+-  PATCH_IF selected = 61623 BEGIN
++  PATCH_IF selected = 61631 BEGIN
+ 	SAY DAMAGE ~~ [FANATM06]
+     SAY DYING ~~ [FANATM07]
+ 	SAY MORALE ~~ [FANATM08]
 @@ -1477,7 +1477,7 @@
    END
  BUT_ONLY

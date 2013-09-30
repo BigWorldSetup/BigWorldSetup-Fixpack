@@ -191,6 +191,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's polish Rielev fix
 :: http://www.shsforums.net/topic/56026-almaterias-restoration-project/?p=562513
 
+:: Lollorian's sex changed cultist voices fix
+:: http://www.shsforums.net/topic/56026-almaterias-restoration-project/?p=562573
+
 
 ----------------------------------------------------------------------------------------
 
@@ -477,7 +480,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: coranbgfriend - CoM Encounters v1.04
+:: coranbgfriend - Coran BG1 Friendship v3
 
 :: Lollorian's string tag fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=500837
@@ -486,12 +489,63 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Dark Horizons v2.03
+:: CtB - Check the Bodies v1.13a
 
-:: White Agnus' BGT fixes
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
-:: Miloch's scripting loop fixes - extended to 12 .bafs
-:: http://www.shsforums.net/topic/45031-ctd-blue-screen-of-death-nashkel-mines/?p=487581
+::
+::
+
+
+----------------------------------------------------------------------------------------
+
+
+:: d0tweak - Ding0's Tweak pack v20
+
+:: Lollorian's replacements
+:: http://forums.pocketplane.net/index.php/topic,19301.msg324135.html#msg324135
+
+:: Lollorian's WRITE_ASCII padding
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=489586
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+:: Lollorian's KIT.iDS patching fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=542469
+
+
+----------------------------------------------------------------------------------------
+
+
+:: dace - Dace NPC v1.2
+
+:: Lollorian's Calm() -> Calm(Myself) fix
+:: http://www.shsforums.net/topic/55815-dace-bugs-thread/?p=561314
+
+
+----------------------------------------------------------------------------------------
+
+
+:: dark - ???
+
+::
+::
+
+
+----------------------------------------------------------------------------------------
+
+
+:: DarkHorizons - Dark Horizons v2.09
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/55229-khazids-death-sword-bug/?p=546708
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=546737
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=547608
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548590
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=553439
 
 
 ----------------------------------------------------------------------------------------
@@ -574,14 +628,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Temujin's further fixes (points 13 until 18) done by Lollorian
 :: http://forums.pocketplane.net/index.php?topic=20010.msg324567#msg324567
 
-
-----------------------------------------------------------------------------------------
-
-
-:: Ding0's Tweak pack v20
-
-:: Lollorian's replacements - d0pimag.baf, d0simul.baf
-:: http://forums.pocketplane.net/index.php/topic,19301.msg324135.html#msg324135
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------
@@ -614,6 +662,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: fadingpromises - Fading Promises v7
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+:: Lollorian's patch to add B!AMACE.ITM to UDTRAP02.CRE if not present
+:: -LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Finch NPC v3.0
 
 :: Converted to BGT by using Ascension64's Platform Conversion Utility (PCU)
@@ -623,10 +683,22 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Gavin NPC for BG2 v16
+:: gavin - Gavin NPC v8
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+
+----------------------------------------------------------------------------------------
+
+
+:: gavin_bg2 - Gavin NPC for BG2 v20
 
 :: Berelinde's BGT hotfix - folder _BG2GavinHotfix
 :: http://forums.gibberlings3.net/index.php?showtopic=20056
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------
@@ -669,6 +741,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's stutter fix
 :: http://www.shsforums.net/topic/56695-stutter-bug/?p=562540
+
+
+----------------------------------------------------------------------------------------
+
+
+:: haldamir - Haldamir NPC v2
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------
@@ -756,7 +837,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Kido NPC v7.0
+:: Kido - Kido NPC v7.0
 
 :: Lollorian's replacements - MWBKid25.d
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
@@ -766,6 +847,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's corrected wrong EXTERN (KIDOP -> MWKidP/GORMAD -> GORMAD1/KIDOP25 -> MWKidP25) - MWKidJ25.d, MWKidJ.d
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------
@@ -779,7 +863,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Kitanya NPC v6.2.2
+:: Kitanya - Kitanya NPC v6.2.2
 
 :: Corrected !Dead("R#Kitanya) to !Dead("R#Kitanya") - kitanyaj.d
 
@@ -788,6 +872,21 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's corrections: ga_(somespell) [name becomes more than 8 chars] -> (somespell) [3 instances] - r!kitele.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486802
+
+:: Lollorian's KIT.iDS patching fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=542469
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Kivan - Kivan and Deheriana Companions v13
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------
@@ -818,10 +917,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Level 1 NPCs v1.3
+:: level1npcs - Level 1 NPCs v1.9
 
-:: erik's level1npcs.tp2 fixes (eib2)
-:: http://anduin.net/~knan/bg2/level1npcs.tp2
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------
@@ -912,10 +1011,28 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: npckit - NPC Kitpack v3
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Northern Tales of the Sword Coast (NTotSC) v1.70a
 
 :: erebusant's "Original Travel Times" links.tbl fix
 :: http://www.shsforums.net/index.php?showtopic=40767
+
+
+----------------------------------------------------------------------------------------
+
+
+:: oversight - Oversight v13
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------
@@ -986,6 +1103,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's corrected KILLSWO1 -> KILLSW01 typos - ARFI2.BAF, ARFI3.BAF
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486586
 
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1006,6 +1126,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's replacements - drizzt/baf/check/useitem.baf, jaellat/baf/check/useitem.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
+
+
+----------------------------------------------------------------------------------------
+
+
+:: rr - Rogue Rebalancing v4.63
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------
@@ -1038,6 +1167,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's replacement - tBALDUR.BAF
 :: http://www.shsforums.net/topic/27636-sos-v112-bug-thread/?p=483654
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------
@@ -1153,6 +1285,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's corrected "LE#tbody " -> "LE#tbody" typos - LE#Cleanse.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486586
 
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1179,6 +1314,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Hoppy's Chateau Irenicus spawn fix - bAR0602.BAF
 :: http://www.shsforums.net/topic/38117-the-darkest-day-112-forumthread/?p=484055
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------
@@ -1336,6 +1474,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's replacements - SCITEM.BAF, SCSHOUT.BAF
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
+
+
+----------------------------------------------------------------------------------------
+
+
+:: virtue - Virtue Mod v19
+
+:: Lollorian's KIT.iDS patching fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=542469
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------
