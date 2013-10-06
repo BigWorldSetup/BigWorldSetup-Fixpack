@@ -129,7 +129,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: amber - Amber NPC (SoA) v2.6
+:: amber - Amber NPC (SoA) v4
 
 :: Small typo fix - m#ar0700.baf
 :: http://forums.gibberlings3.net/index.php?s=&showtopic=18567&view=findpost&p=163084
@@ -137,14 +137,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's typo fixes - m#boy1.baf, m#girl1.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=487571
 
-:: Lollorian's KIT.iDS patching fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=542469
-
 :: Lollorian's string tag fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=500187
-
-:: the bigg's KIT.IDS ToBEx compatibility fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 :: Lollorian's class script trigger fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561215
@@ -234,15 +228,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: AurenAseph - Auren Aseph NPC v7.2
-
-:: prowler and Caroline's fixes and Russian translation
-:: http://forums.gibberlings3.net/index.php?showtopic=14910&view=findpost&p=205115
-
-
-----------------------------------------------------------------------------------------
-
-
 :: aurora - Aurora's Shoes and Boots v5
 
 :: ScuD's MOVE correction - t-goblin.tpa
@@ -318,19 +303,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: BG1NPCSoA - BG1 NPCs for SoA v8
+:: BG1NPCSoA - BG1 NPCs for SoA v9
 
 :: Lollorian's fix for Coran having Eldoth's item
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561388
-
-
-----------------------------------------------------------------------------------------
-
-
-:: bg2_tweaks - BG2 Tweak Pack v13
-
-:: CamDawg's NORH/Sensible Entrance Points crash fix
-:: http://forums.gibberlings3.net/index.php?showtopic=25485
 
 
 ----------------------------------------------------------------------------------------

@@ -1,5 +1,13 @@
---- infinityanimations\setup-infinityanimations.tp2	Wed May 12 19:49:14 2010
-+++ C:\BWP Patchstudio\patched files\infinityanimations\setup-infinityanimations.tp2	Sat Nov 03 04:29:59 2012
+--- infinityanimations\setup-infinityanimations.tp2	Wed May 12 20:49:14 2010
++++ C:\BWP Patchstudio\patched files\infinityanimations\setup-infinityanimations.tp2	Sun Oct 06 20:45:53 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~infinityanimations/backup~
+ AUTHOR ~www.shsforums.net/forum/594-infinity-animations/~
+-VERSION ~v5~
++VERSION ~v5 BWP Fix~
+ README ~infinityanimations/documentation/infinityanimations.html~
+ 
+ //! Platform variables //////////////////////////////////////////////////////
 @@ -958,7 +958,7 @@
    END
  END

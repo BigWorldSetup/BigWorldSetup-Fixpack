@@ -1,0 +1,9 @@
+--- Setup-IndiNPC.tp2	Sat Feb 17 15:25:55 2007
++++ C:\BWP Patchstudio\patched files\Setup-IndiNPC.tp2	Sun Oct 06 20:41:25 2013
+@@ -1,5 +1,6 @@
+ BACKUP ~IndiNPC/Backup~
+ AUTHOR ~Ascension64~
++VERSION ~v10.4 BWP Fix~
+ 
+ AUTO_TRA ~IndiNPC/%s~
+ 
