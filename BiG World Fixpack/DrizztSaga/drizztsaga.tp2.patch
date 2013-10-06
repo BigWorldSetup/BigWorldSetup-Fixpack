@@ -1,5 +1,14 @@
---- DrizztSaga\drizztsaga.tp2	Mon May 25 09:36:23 2009
-+++ C:\BWP Patchstudio\patched files\DrizztSaga\drizztsaga.tp2	Sat Oct 17 17:02:21 2009
+--- DrizztSaga\drizztsaga.tp2	Wed Oct 02 09:07:11 2013
++++ C:\BWP Patchstudio\patched files\DrizztSaga\drizztsaga.tp2	Wed Oct 02 09:08:48 2013
+@@ -4,7 +4,7 @@
+ BACKUP ~DRIZZTSAGA/backup~
+ /* Author */
+ AUTHOR ~flysoup, http://forums.blackwyrmlair.net/index.php?showforum=103~
+-VERSION ~v2.0~
++VERSION ~v2.0 BWP Fix~
+ 
+ /*
+  WeiDU conversion and Tutu/BGT tp2 code by:
 @@ -849,12 +849,56 @@
  
  ACTION_IF FILE_EXISTS_IN_GAME ~macinit.bcs~ THEN BEGIN	// EasyTutu

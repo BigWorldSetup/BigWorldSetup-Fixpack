@@ -1,0 +1,11 @@
+--- DKDrizzt\Setup-DKDrizzt.tp2	Mon Apr 05 06:20:30 2010
++++ C:\BWP Patchstudio\patched files\DKDrizzt\Setup-DKDrizzt.tp2	Wed Oct 02 08:58:39 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~DKDrizzt\backup~
+ AUTHOR ~am_universum@gmx.de~
+ 
+-VERSION ~v2.0 Beta 3~
++VERSION ~v2.0 Beta 3 BWP Fix~
+ 
+ AUTO_TRA ~DKDrizzt/%s~
+ 

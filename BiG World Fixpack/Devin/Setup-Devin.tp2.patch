@@ -1,6 +1,13 @@
---- Devin\Setup-Devin.tp2	Sat Mar 20 10:37:54 2010
-+++ C:\BWP Patchstudio\patched files\Devin\Setup-Devin.tp2	Sat Oct 15 11:59:54 2011
-@@ -164,7 +164,7 @@
+--- Devin\Setup-Devin.tp2	Sat Mar 20 10:37:52 2010
++++ C:\BWP Patchstudio\patched files\Devin\Setup-Devin.tp2	Wed Oct 02 08:51:50 2013
+@@ -1,5 +1,6 @@
+ BACKUP ~Devin/backup~
+ AUTHOR ~Armand~
++VERSION ~v1 BWP Fix~
+ 
+ 
+ LANGUAGE ~Francais~
+@@ -164,7 +165,7 @@
  COPY ~Devin/Creatures/PostQuest/#VDevin.cre~ ~override~
  SAY NAME1 @10
  SAY NAME2 @10
@@ -9,7 +16,7 @@
    USING ~Devin/Translations/French/#VDevin.tra~
  COMPILE ~Devin/Scripts/Perso/#VDevin.baf~
  
-@@ -204,21 +204,21 @@
+@@ -204,21 +205,21 @@
  COPY ~Devin/Creatures/PostQuest/#VJack.cre~ ~override~
  SAY NAME1 @17
  SAY NAME2 @17
@@ -39,7 +46,7 @@
    USING ~Devin/Translations/French/#VJack.tra~
  COMPILE ~Devin/Scripts/Perso/#VMonk1.baf~
  COMPILE ~Devin/Scripts/Perso/#VMonk2.baf~
-@@ -310,17 +310,17 @@
+@@ -310,17 +311,17 @@
  COMPILE ~Devin/Scripts/CutScene/#VCutJ01.baf~
  COMPILE ~Devin/Scripts/CutScene/#VCutJ02.baf~
  COMPILE ~Devin/Scripts/CutScene/#VCutscr.baf~
@@ -63,7 +70,7 @@
    USING ~Devin/Translations/French/#VLucie.tra~
  COPY ~Devin/Items/#vskull.itm~ ~override~ SAY NAME1 @1 SAY NAME2 @1 SAY DESC @2
  COPY ~Devin/Items/#vsku1.itm~ ~override~ SAY NAME1 @3 SAY NAME2 @3 SAY DESC @4
-@@ -393,7 +393,7 @@
+@@ -393,7 +394,7 @@
  COPY ~Devin/Creatures/#VAR20Area/#VPros.cre~ ~override~
  SAY NAME1 @44
  SAY NAME2 @44

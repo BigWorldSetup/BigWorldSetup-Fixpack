@@ -1,0 +1,11 @@
+--- hf_hhg\setup-hf_hhg.tp2	Thu Apr 01 04:29:58 2010
++++ C:\BWP Patchstudio\patched files\hf_hhg\setup-hf_hhg.tp2	Sat Oct 05 12:14:03 2013
+@@ -2,7 +2,7 @@
+ 
+ AUTHOR ~hlidskialf~
+ 
+-VERSION ~v1.3~
++VERSION ~v1.3 BWP Fix~
+ 
+ README ~hf_hhg/hf_hhg-readme.txt~
+ 

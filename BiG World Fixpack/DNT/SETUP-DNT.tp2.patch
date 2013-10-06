@@ -1,0 +1,9 @@
+--- SETUP-DNT.tp2	Thu Jun 12 22:18:21 2008
++++ C:\BWP Patchstudio\patched files\SETUP-DNT.tp2	Wed Oct 02 09:01:31 2013
+@@ -1,5 +1,6 @@
+ BACKUP ~DNT\bak~
+ AUTHOR ~vira@live.com~
++VERSION ~v0.9 BWP Fix~
+ 
+ LANGUAGE~¼òÌåÖÐÎÄ~
+ 	~SimChinese~

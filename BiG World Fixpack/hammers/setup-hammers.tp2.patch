@@ -1,14 +1,13 @@
 --- hammers\setup-hammers.tp2	Sun Oct 31 00:36:34 2010
-+++ C:\BWP Patchstudio\patched files\hammers\setup-hammers.tp2	Fri Nov 25 08:40:02 2011
-@@ -73,7 +73,7 @@
-     COUNT_2DA_COLS cl
-     COUNT_2DA_ROWS 1 rw
-     SPRINT cz ~~
--    SPRINT rx ~          ~
-+    SPRINT rx ~       ~
-     SPRINT ry ~-1~
-     SPRINT rz ~~
-     PATCH_IF cl < 5 BEGIN
++++ C:\BWP Patchstudio\patched files\hammers\setup-hammers.tp2	Sat Oct 05 12:16:08 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~hammers/backup~
+ AUTHOR ~www.shsforums.net/topic/34099-thrown-hammers/~
+-VERSION ~v3~
++VERSION ~v3 BWP Fix~
+ README ~hammers/hammers-%LANGUAGE%.html~ ~hammers/hammers-english.html~
+ 
+ ALWAYS
 @@ -82,7 +82,7 @@
          SPRINT rz ~%rz%~ ^ ~%rx%~ ^ ~%ry%~
        END
@@ -18,59 +17,3 @@
          SPRINT cz ~%cz%~ ^ ~%rx%~ ^ ~%ry%~
        END
      END
-@@ -246,7 +246,7 @@
-       READ_SHORT 0x68 hc //Update header count
-     BUT_ONLY
-     ACTION_IF hc > 1 BEGIN
--      APPEND ~tooltip.2da~ ~%sz%            %j_0%        %j_1%       %j_2% %j_3%%cz%~ UNLESS ~^%sz%[%ws%]~
-+      APPEND ~tooltip.2da~ ~%sz%    %j_0%    %j_1%    %j_2%       %j_3%%cz%~ UNLESS ~^%sz%[%ws%]~
-     END
-   END
- END
-@@ -335,7 +335,7 @@
-       END
-     BUT_ONLY
-     ACTION_IF hc > 1 BEGIN
--      APPEND ~tooltip.2da~ ~%sz%           %j_0%        %j_1%       %j_2% %j_3%%cz%~ UNLESS ~^%sz%[%ws%]~
-+      APPEND ~tooltip.2da~ ~%sz% %j_0%    %j_1%    %j_2%       %j_3%%cz%~ UNLESS ~^%sz%[%ws%]~
-     END
-   END
- END
-@@ -490,7 +490,7 @@
-     END
-   END
- 
--APPEND ~tooltip.2da~ ~T-HAMM03          15527        15529       -1 -1%cz%~ UNLESS ~^T-HAMM03~
-+APPEND ~tooltip.2da~ ~T-HAMM03 15527    15529    -1       -1%cz%~ UNLESS ~^T-HAMM03~
- 
- ACTION_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) OR (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
-   ACTION_FOR_EACH hz IN ~%tsu%friend~ ~%tsu%inn2616~ ~%tsu%inn3304~ ~%tsu%sto1112~ ~%tsu%sto4803~ ~%tsu%sto4908~ ~%tsu%sto4909~ ~%tsu%taerum~ ~%tsu%ulgoth~ ~arlax2~ ~bernpotr~ ~bh2010~ ~bhst0102~ ~bhzelmar~ ~brundor~ ~calshop1~ ~cb3651in~ ~cb4279st~ ~cb4280st~ ~cb4281st~ ~cbhlvlnt~ ~cbsbin72~ ~cmmagin1~ ~equselca~ ~kusmith~ ~osgil2~ ~sto1320~ ~wwmer01~ BEGIN
-@@ -661,9 +661,10 @@
-     WRITE_ASCII 0x58 ~_cdagg05~ #8 //Description icon
-   END
- 
--APPEND ~tooltip.2da~ ~T-HAMM04          15527        15529       -1 -1%cz%~ UNLESS ~^T-HAMM04~
--APPEND ~tooltip.2da~ ~T-AX1H01          15527        15529       -1 -1%cz%~ UNLESS ~^T-AX1H01~
--APPEND ~tooltip.2da~ ~T-DAGG03          15527        15529       -1 -1%cz%~ UNLESS ~^T-DAGG03~
-+APPEND ~tooltip.2da~ ~T-HAMM03 15527    15529    -1       -1%cz%~ UNLESS ~^T-HAMM03~
-+APPEND ~tooltip.2da~ ~T-HAMM04 15527    15529    -1       -1%cz%~ UNLESS ~^T-HAMM04~
-+APPEND ~tooltip.2da~ ~T-AX1H01 15527    15529    -1       -1%cz%~ UNLESS ~^T-AX1H01~
-+APPEND ~tooltip.2da~ ~T-DAGG03 15527    15529    -1       -1%cz%~ UNLESS ~^T-DAGG03~
- 
- ACTION_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) OR (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
-   ACTION_IF (~%ttc%~ STRING_EQUAL ~totsc~ = 1) BEGIN //TotSC
-@@ -862,11 +863,11 @@
-       WRITE_BYTE 0x26 12 //Strength
-       WRITE_BYTE 0x2c 6 //Dexterity
-     END
--  APPEND ~tooltip.2da~ ~T-HAMM06          15527        15529       -1 -1%cz%~ UNLESS ~^T-HAMM06~
-+  APPEND ~tooltip.2da~ ~T-HAMM06 15527    15529    -1       -1%cz%~ UNLESS ~^T-HAMM06~
- END
- 
--APPEND ~tooltip.2da~ ~T-DAGG02          15527        15529       -1 -1%cz%~ UNLESS ~^T-DAGG02~
--APPEND ~tooltip.2da~ ~T-HAMM01          15527        12124       12060 15529%cz%~ UNLESS ~^T-HAMM01~
-+APPEND ~tooltip.2da~ ~T-DAGG02 15527    15529    -1       -1%cz%~ UNLESS ~^T-DAGG02~
-+APPEND ~tooltip.2da~ ~T-HAMM01 15527    12124    12060    15529%cz%~ UNLESS ~^T-HAMM01~
- 
- OUTER_SET rn = 0
- RANDOM_SEED null

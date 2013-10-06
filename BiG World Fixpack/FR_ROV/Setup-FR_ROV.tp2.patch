@@ -1,0 +1,11 @@
+--- FR_ROV\Setup-FR_ROV.tp2	Fri Dec 21 19:31:37 2012
++++ C:\BWP Patchstudio\patched files\FR_ROV\Setup-FR_ROV.tp2	Wed Oct 02 14:14:25 2013
+@@ -8,7 +8,7 @@
+ ReWeidu'd by: idobek@yahoo.co.uk
+ Translated by: Clan DLAN~
+ 
+-VERSION ~v7.3~
++VERSION ~v7.3 BWP Fix~
+ 
+ README ~FR_ROV/ReadMe-FR_ROV.txt~
+ 

@@ -1,0 +1,10 @@
+--- iiItemMod\Setup-iiItemMod.tp2	Fri Nov 09 10:16:44 2007
++++ C:\BWP Patchstudio\patched files\iiItemMod\Setup-iiItemMod.tp2	Sat Oct 05 12:18:36 2013
+@@ -6,6 +6,7 @@
+ // ----------------------------------------------------------------------------
+ BACKUP ~iiItemMod/backup~
+ AUTHOR ~igi~
++VERSION ~v5 BWP Fix~
+ 
+ LANGUAGE ~English~ ~English~ ~iiItemMod/Languages/English/setup.tra~
+ LANGUAGE ~Spanish~ ~Spanish~ ~iiItemMod/Languages/Spanish/setup.tra~

@@ -1,0 +1,10 @@
+--- haiass\setup-haiass.tp2	Fri Sep 24 10:43:26 2010
++++ C:\BWP Patchstudio\patched files\haiass\setup-haiass.tp2	Sat Oct 05 12:03:28 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~haiass/backup~
+ AUTHOR ~www.shsforums.net/index.php?showtopic=40623~ //Author: Auda (auda_chella@hotmail.com)
+-VERSION ~v2.3~
++VERSION ~v2.3 BWP Fix~
+ README ~haiass/haiass-%LANGUAGE%.txt~
+ 
+ AUTO_TRA ~haiass/%s~

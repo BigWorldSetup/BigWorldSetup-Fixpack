@@ -1,0 +1,9 @@
+--- Setup-gloran.tp2	Sat Apr 22 16:04:07 2006
++++ C:\BWP Patchstudio\patched files\Setup-gloran.tp2	Sat Oct 05 11:54:40 2013
+@@ -1,5 +1,6 @@
+ BACKUP ~gloran/backup~
+ AUTHOR ~gloran@wp.pl~
++VERSION ~v3 BWP Fix~
+ 
+ AUTO_TRA ~gloran/tra/%s~
+ 

@@ -1,0 +1,11 @@
+--- gavin_bg2\setup-gavin_bg2.tp2	Sat Nov 19 15:27:06 2011
++++ C:\BWP Patchstudio\patched files\gavin_bg2\setup-gavin_bg2.tp2	Sat Oct 05 11:53:02 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~gavin_bg2/backup~ 
+ AUTHOR ~berelinde@gmail.com~ 
+ 
+-VERSION ~20111016 TOB~ 
++VERSION ~20111016 TOB BWP Fix~ 
+ 
+ README ~gavin_bg2/readme-gavin_bg2.html~ 
+ 

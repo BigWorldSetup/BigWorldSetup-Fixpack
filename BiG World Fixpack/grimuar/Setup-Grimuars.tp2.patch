@@ -1,11 +1,14 @@
---- Setup-Grimuars.tp2	Sat Aug 29 00:02:20 2009
-+++ C:\BWP Patchstudio\patched files\Setup-Grimuars.tp2	Sat Oct 08 13:27:48 2011
-@@ -17,62 +17,87 @@
-          ~spanish~ 
-          ~Grimuar/Translation/Spanish/setup.tra~
- 
--BEGIN @22
-+BEGIN ~Grimuars for BG2~
+--- Setup-Grimuars.tp2	Sat Aug 29 03:32:18 2009
++++ C:\BWP Patchstudio\patched files\Setup-Grimuars.tp2	Sat Oct 05 12:04:45 2013
+@@ -1,5 +1,6 @@
+ BACKUP ~grimuar/Backup~
+ AUTHOR ~Rughalt (rughalt@gmail.com)~
++VERSION ~v3.3 BWP Patching version~
+ AUTO_TRA ~Grimuar/Translation/%s~
+ LANGUAGE ~English~
+          ~english~
+@@ -20,53 +21,77 @@
+ BEGIN @22
  
  
 -COPY ~grimuar/creatures/notactics/shadra01.cre~ ~Override/shadra01.cre~
@@ -42,6 +45,19 @@
 -
 -
 -BEGIN @26
+-
+-COPY ~grimuar/creatures/withtactics/shadra01.cre~ ~Override/shadra01.cre~
+-COPY ~grimuar/creatures/withtactics/pmaster.cre~ ~Override/Pmaster.cre~
+-COPY ~grimuar/creatures/withtactics/hlshang.cre~ ~Override/hlshang.cre~
+-COPY ~grimuar/creatures/withtactics/Hlkoshi.cre~ ~Override/Hlkoshi.cre~
+-COPY ~grimuar/creatures/withtactics/hldemi.cre~ ~Override/hldemi.cre~
+-COPY ~grimuar/creatures/notactics/gaal01.cre~ ~Override/gaal01.cre~
+-COPY ~grimuar/creatures/notactics/gaal02.cre~ ~Override/gaal02.cre~
+-COPY ~grimuar/creatures/withtactics/torgal.cre~ ~Override/torgal.cre~
+-COPY ~grimuar/creatures/withtactics/draug.cre~ ~Override/draug.cre~
+-COPY ~grimuar/creatures/withtactics/trrak01.cre~ ~Override/trrak01.cre~
+-COPY ~grimuar/items/book08.itm~ ~Override/book08.itm~
+-COPY ~grimuar/items/book07.itm~ ~Override/book07.itm~
 +COPY_EXISTING ~shadra01.cre~	~override/shadra01.cre~
 +  PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
 +    ADD_CRE_ITEM ~book03~ #0 #20 #20 ~NONE~ ~INV~
@@ -112,26 +128,7 @@
 +    WRITE_SHORT 0x1c 0x0b
 +  END
 +BUT_ONLY_IF_IT_CHANGES
- 
--COPY ~grimuar/creatures/withtactics/shadra01.cre~ ~Override/shadra01.cre~
--COPY ~grimuar/creatures/withtactics/pmaster.cre~ ~Override/Pmaster.cre~
--COPY ~grimuar/creatures/withtactics/hlshang.cre~ ~Override/hlshang.cre~
--COPY ~grimuar/creatures/withtactics/Hlkoshi.cre~ ~Override/Hlkoshi.cre~
--COPY ~grimuar/creatures/withtactics/hldemi.cre~ ~Override/hldemi.cre~
--COPY ~grimuar/creatures/notactics/gaal01.cre~ ~Override/gaal01.cre~
--COPY ~grimuar/creatures/notactics/gaal02.cre~ ~Override/gaal02.cre~
--COPY ~grimuar/creatures/withtactics/torgal.cre~ ~Override/torgal.cre~
--COPY ~grimuar/creatures/withtactics/draug.cre~ ~Override/draug.cre~
--COPY ~grimuar/creatures/withtactics/trrak01.cre~ ~Override/trrak01.cre~
--COPY ~grimuar/items/book08.itm~ ~Override/book08.itm~
--COPY ~grimuar/items/book07.itm~ ~Override/book07.itm~
++
  COPY ~grimuar/items/r#grim01.itm~ ~Override/r#grim01.itm~
  SAY NAME1 #7150
    SAY NAME2 @3
-   SAY UNIDENTIFIED_DESC #17278
-   SAY DESC @2
-   SAY 0x10e @23
-+  
- COPY ~grimuar/items/r#grim02.itm~ ~Override/r#grim02.itm~
- SAY NAME1 #7150
-   SAY NAME2 @4

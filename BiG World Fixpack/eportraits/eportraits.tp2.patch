@@ -1,5 +1,13 @@
 --- eportraits\eportraits.tp2	Mon Mar 26 17:53:29 2012
-+++ C:\BWP Patchstudio\patched files\eportraits\eportraits.tp2	Sun Aug 25 14:53:07 2013
++++ C:\BWP Patchstudio\patched files\eportraits\eportraits.tp2	Wed Oct 02 09:31:21 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~eportraits/backup~
+ AUTHOR ~http://www.shsforums.net/topic/54227-enkidas-portrait-pack-v2/~
+-VERSION ~v2.0~
++VERSION ~v2.0 BWP Fix~
+ README ~eportraits/eportraits_readme.html~
+ 
+ // Other flags above this comment
 @@ -586,7 +586,7 @@
  LAF replace_backup_all STR_VAR folder=~eportraits/rhilato_wm~ END
  COPY_EXISTING ~wm_rhia1.cre~   ~override~

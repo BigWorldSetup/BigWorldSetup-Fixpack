@@ -1,5 +1,14 @@
---- setup-foodmod.tp2	Sun Feb 13 00:34:48 2011
-+++ C:\BWP Patchstudio\patched files\setup-foodmod.tp2	Mon May 20 18:55:45 2013
+--- setup-foodmod.tp2	Sun Feb 13 04:04:46 2011
++++ C:\BWP Patchstudio\patched files\setup-foodmod.tp2	Wed Oct 02 09:39:45 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~foodmod\backup~
+ AUTHOR ~belladonna@chosenofmystra.net~
+ 
+-VERSION ~v1.03~
++VERSION ~v1.03 BWP Fix~
+ 
+ AUTO_TRA ~foodmod\%s~
+ 
 @@ -287,7 +287,7 @@
  
  EXTEND_BOTTOM ~ar1200.bcs~ ~foodmod/bafs/cml1200.baf~

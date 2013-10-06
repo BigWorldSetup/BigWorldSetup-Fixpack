@@ -1,0 +1,11 @@
+--- Setup-DofD.TP2	Fri Nov 13 04:58:30 2009
++++ C:\BWP Patchstudio\patched files\Setup-DofD.TP2	Wed Oct 02 09:02:48 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~DofD/backup~ 
+ AUTHOR ~XXXXXXXXXX~
+ 
+-VERSION ~v3~
++VERSION ~v3 BWP Fix~
+ 
+ README ~DofD\ReadMe-DofD.txt~
+ 
