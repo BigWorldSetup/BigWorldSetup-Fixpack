@@ -1,0 +1,8 @@
+--- nephele\tra\english\setup.tra	Sat Apr 28 16:24:36 2012
++++ C:\BWP Patchstudio\patched files\nephele\tra\english\setup.tra	Mon Oct 07 23:46:46 2013
+@@ -1,4 +1,4 @@
+-@0    = ~2.1~
++@0    = ~2.1 BWP Fix~
+ @1    = ~Nephele NPC Mod for BGII: SoA & ToB~
+ @2    = ~ToB is not installed! Please install the Throne of Bhaal expansion before installing Nephele.~
+ @3    = ~Cleric of Yondalla~

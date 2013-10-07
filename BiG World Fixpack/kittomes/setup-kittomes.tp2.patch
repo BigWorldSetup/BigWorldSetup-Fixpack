@@ -1,5 +1,13 @@
---- kittomes\setup-kittomes.tp2	Sun Jun 09 23:50:55 2013
-+++ C:\BWP Patchstudio\patched files\kittomes\setup-kittomes.tp2	Sun Jul 21 07:27:19 2013
+--- kittomes\setup-kittomes.tp2	Mon Jun 10 03:20:55 2013
++++ C:\BWP Patchstudio\patched files\kittomes\setup-kittomes.tp2	Mon Oct 07 23:01:54 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~kittomes/backup~
+ AUTHOR ~Smeagolheart~
+-VERSION ~v2.0~
++VERSION ~v2.0 BWP Fix~
+ //README ~kittomes/ReadMe.txt~
+ 
+ ALWAYS
 @@ -36,9 +36,9 @@
  //--------------------------------------------
  //Invisibile Creature

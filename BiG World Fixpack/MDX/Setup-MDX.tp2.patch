@@ -1,0 +1,11 @@
+--- Setup-MDX.tp2	Sat Oct 31 19:20:02 2009
++++ C:\BWP Patchstudio\patched files\Setup-MDX.tp2	Mon Oct 07 23:35:08 2013
+@@ -2,7 +2,7 @@
+ 
+ AUTHOR ~Mordan Dragon Slayer~
+ 
+-VERSION ~v1.0.3~
++VERSION ~v1.0.3 BWP Fix~
+ 
+ ALLOW_MISSING ~AR0408.bcs~
+ 

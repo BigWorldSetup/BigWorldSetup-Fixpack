@@ -1,0 +1,11 @@
+--- musica.tp2	Sun Nov 08 01:40:13 2009
++++ C:\BWP Patchstudio\patched files\musica.tp2	Mon Oct 07 23:39:25 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~musica/backup~
+ AUTHOR ~Drizzt905@hotmail.com~
+ 
+-VERSION ~v2.0~
++VERSION ~v2.0 BWP Fix~
+ 
+ AUTO_TRA ~musica/%s~
+ 

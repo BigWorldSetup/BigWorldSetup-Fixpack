@@ -1,0 +1,9 @@
+--- KonTwk\Setup-KonTwk.TP2	Sat Nov 07 09:31:43 2009
++++ C:\BWP Patchstudio\patched files\KonTwk\Setup-KonTwk.TP2	Mon Oct 07 23:03:44 2013
+@@ -1,5 +1,6 @@
+ BACKUP ~KonTwk/Backup~ // so WeiDU can uninstall
+ AUTHOR ~slarrabe@gmail.com~ // contact address displayed if installation fails
++VERSION ~v2.2 BWP Fix~
+ 
+ README ~KonTwk/KonTwk-readme.txt~
+ 

@@ -1,5 +1,14 @@
---- Setup-MTS_Crappack.tp2	Tue Mar 16 17:32:36 2010
-+++ C:\BWP Patchstudio\patched files\Setup-MTS_Crappack.tp2	Sat Jul 07 18:45:47 2012
+--- Setup-MTS_Crappack.tp2	Tue Mar 16 16:32:36 2010
++++ C:\BWP Patchstudio\patched files\Setup-MTS_Crappack.tp2	Mon Oct 07 23:38:01 2013
+@@ -2,7 +2,7 @@
+ // where should tell the user to send email if something goes wrong?
+ AUTHOR ~majortomsawyer@hotmail.com~
+ 
+-VERSION ~v3~
++VERSION ~v3 BWP Fix~
+ 
+ README ~MTS/Crappack.txt~
+ 
 @@ -128,10 +128,10 @@
  		 WRITE_BYTE 0x2f 0x00
           SAY NAME2   @6

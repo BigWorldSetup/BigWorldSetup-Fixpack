@@ -1,0 +1,9 @@
+--- Innershade\Setup-Innershade.tp2	Tue May 07 23:39:32 2013
++++ C:\BWP Patchstudio\patched files\Innershade\Setup-Innershade.tp2	Mon Oct 07 08:41:46 2013
+@@ -1,5 +1,6 @@
+ BACKUP ~Innershade\backup~
+ AUTHOR ~Lava Del'Vortel~
++VERSION ~v6.0 BWP Fix~
+ README ~Innershade/+Documents+/Innershade_readme.html~
+ 
+ AUTO_TRA ~Innershade/TRANSLATIONS/%s~

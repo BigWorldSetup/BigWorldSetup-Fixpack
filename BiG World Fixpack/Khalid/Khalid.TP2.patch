@@ -1,9 +1,17 @@
---- Khalid\Khalid.TP2	Fri Jul 01 07:20:44 2011
-+++ C:\BWP Patchstudio\patched files\Khalid\Khalid.TP2	Fri Oct 07 11:35:50 2011
-@@ -193,6 +193,7 @@
+--- Khalid\Khalid.TP2	Fri Oct 19 18:31:20 2012
++++ C:\BWP Patchstudio\patched files\Khalid\Khalid.TP2	Mon Oct 07 22:54:39 2013
+@@ -1,5 +1,6 @@
+ BACKUP ~Khalid\backup~
+ AUTHOR ~Zireael~
++VERSION ~v.021 BWP Fix~
+ 
+ AUTO_TRA ~Khalid\tra\%s~
+ LANGUAGE ~ENGLISH~
+@@ -192,7 +193,7 @@
+ EXTEND_BOTTOM ~AR2000.bcs~ ~Khalid/baf/AR2000.baf~
  EXTEND_BOTTOM ~AR2010.bcs~ ~Khalid/baf/AR2010.baf~
  
- COPY ~Khalid/itm/zibook.itm~ ~override/zibook.itm~
+-COPY ~Khalid/itm/zibook.itm~ ~override/zibook.itm~
 +COPY ~Khalid/itm/misc5x.itm~ ~override/misc5x.itm~
  
  //Czêœæ do ToB

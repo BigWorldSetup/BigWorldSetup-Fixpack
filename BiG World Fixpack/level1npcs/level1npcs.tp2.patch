@@ -1,5 +1,14 @@
 --- level1npcs\level1npcs.tp2	Sat Sep 24 03:14:26 2011
-+++ C:\BWP Patchstudio\patched files\level1npcs\level1npcs.tp2	Wed Oct 24 04:18:41 2012
++++ C:\BWP Patchstudio\patched files\level1npcs\level1npcs.tp2	Mon Oct 07 23:06:49 2013
+@@ -18,7 +18,7 @@
+ 
+ //MODDER setup_tra none area_variables fail missing_extern warn missing_resref fail missing_eval warn
+ 
+-VERSION ~v1.9~
++VERSION ~v1.9 BWP Fix~
+ ASK_EVERY_COMPONENT
+ 
+ ALWAYS
 @@ -8559,8 +8559,8 @@
      REPLACE_TEXTUALLY ~[0-9x]+[ %0t0%%0t9%]+GODTALOS~                     ~0x4013 GODTALOS~
      REPLACE_TEXTUALLY ~[0-9x]+[ %0t0%%0t9%]+GODHELM~                      ~0x4014 GODHELM~

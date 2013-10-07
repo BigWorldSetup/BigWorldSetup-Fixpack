@@ -1,0 +1,10 @@
+--- Setup-LostItems.tp2	Mon Nov 27 13:56:46 2006
++++ C:\BWP Patchstudio\patched files\Setup-LostItems.tp2	Mon Oct 07 23:17:24 2013
+@@ -1,6 +1,7 @@
+ BACKUP ~LostItems/backup~
+ 
+ AUTHOR ~Vedran, recoded by Ascension64 (http://forums.spellholdstudios.net)~
++VERSION ~vR2 BWP Fix~
+ 
+ //////////////////////////////////////////////////////////////////////////////////////////////////
+ //PATCH_MACRO are_update_offset

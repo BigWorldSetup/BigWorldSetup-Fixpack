@@ -1,6 +1,13 @@
---- Setup-LOHMod.tp2	Sun Nov 30 10:35:00 2008
-+++ C:\BWP Patchstudio\patched files\Setup-LOHMod.tp2	Sun Mar 27 23:12:32 2011
-@@ -66,7 +66,7 @@
+--- Setup-LOHMod.tp2	Sun Nov 30 09:35:00 2008
++++ C:\BWP Patchstudio\patched files\Setup-LOHMod.tp2	Mon Oct 07 23:12:32 2013
+@@ -1,5 +1,6 @@
+ BACKUP ~LOHMod/backup~ // Backup Directory 
+ AUTHOR ~Slughorn2007@163.com~ // Author's e-mail address 
++VERSION ~v1.0 BWP Fix~
+ LANGUAGE ~English~ ~English~ ~LOHMod/english/setup.tra~ // English
+ LANGUAGE ~Chinese(Simplified)~ ~chs~ ~LOHMod/chs/setup.tra~ // Chinese(Simplified)
+ 
+@@ -66,7 +67,7 @@
    PATCH_IF ("%animaionIDS%" = 57568) BEGIN
      ADD_CRE_ITEM ~LOHCorn~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP
    END
