@@ -1,0 +1,9 @@
+--- Setup-RPG-KP.tp2	Tue Feb 28 21:14:44 2006
++++ C:\BWP Patchstudio\patched files\Setup-RPG-KP.tp2	Tue Oct 08 22:37:26 2013
+@@ -1,5 +1,6 @@
+ BACKUP ~RPG-KP\backup~
+ AUTHOR ~Olryx2@Yahoo.co.uk~
++VERSION ~v1.0 BWP Fix~
+ 
+ ALWAYS
+   AT_INTERACTIVE_EXIT ~VIEW RPG-KP/readme-RPGKP.chm~

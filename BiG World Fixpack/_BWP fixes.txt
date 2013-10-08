@@ -1116,6 +1116,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: RPG-KP - RPG Dungeon Kitpack v1.0
+
+:: Lollorian's fixed malformed S#PRO.SPL
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Rukrakia NPC v0.7
 
 :: BWP compatibility fixes
