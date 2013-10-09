@@ -1050,7 +1050,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Region of Terror (RoT) v2.1
+:: RoTerror - Region of Terror (RoT) v2.1
 
 :: Azazello's Summoning Chamber fix - RR3702.BAF
 :: http://www.shsforums.net/index.php?s=&showtopic=22078&view=findpost&p=266533
@@ -1081,6 +1081,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+:: Abakus139 and The Imp's Knight kit armor restrictions fix
+:: http://www.shsforums.net/topic/56740-knight-kit-armor-restriction/?p=562768
 
 
 ----------------------------------------------------------------------------------------

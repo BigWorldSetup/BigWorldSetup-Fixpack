@@ -1,5 +1,5 @@
---- Setup-RoT.tp2	Sat Jun 14 19:23:08 2008
-+++ C:\BWP Patchstudio\patched files\Setup-RoT.tp2	Wed Oct 24 04:11:25 2012
+--- Setup-RoT.tp2	Sat Jun 14 20:23:08 2008
++++ C:\BWP Patchstudio\patched files\Setup-RoT.tp2	Wed Oct 09 22:45:25 2013
 @@ -2,6 +2,8 @@
  
  AUTHOR ~Gilgamesh, King Diamond (WeiDU conversion)~ NO_IF_EVAL_BUG
@@ -101,3 +101,12 @@
  
  ADD_KIT ~Holy_Swordsman~
  ~Holy_Swordsman          1           1           1           1           1           1           1           1~
+@@ -9438,7 +9462,7 @@
+ ~Knight                  0       0       0       0       0       0~
+ ~RoTerror/kits/CLABPAKn.2DA~
+ ~ K_P_HO  K_P_HL  K_P_HE  K_P_E  K_P_G  K_P_D  K_P_H ~
+-~0x00050000 6~
++~0x00004000 6~
+ ~Pa0~
+ ~ CHAN09  *  HELM07  BAG26  RING06  RING31  *  BOOT01  AMUL20  BRAC10  BELT06  AROW11,40  BULL03,40  BOLT06,40  POTN52,5  POTN04,2  POTN14,5  HAMM07  SW1H27  STAF08 ~
+ 
