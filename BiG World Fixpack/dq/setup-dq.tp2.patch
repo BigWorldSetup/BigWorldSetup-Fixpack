@@ -1,0 +1,10 @@
+--- dq\setup-dq.tp2	Tue Aug 06 09:50:53 2013
++++ C:\BWP Patchstudio\patched files\dq\setup-dq.tp2	Thu Oct 10 23:12:18 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~dq/backup~
+ AUTHOR ~www.shsforums.net/forum/550-fishing-for-trouble/~
+-VERSION ~v2.4~
++VERSION ~v2.6 BWP Fix~
+ //MODDER setup_tra NONE
+ //launch the ReadMe file immediately
+ README ~dq/dq-readme.html~

@@ -329,6 +329,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Deluxe's Imoen soundset change fix
 :: http://www.shsforums.net/topic/56700-possible-bug-in-latest-bgt-fix-inside/?p=562370
 
+:: Lollorian's assorted ARE fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=562853
+
 
 ----------------------------------------------------------------------------------------
 
@@ -469,6 +472,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+:: Lollorian's assorted ARE fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=562853
 
 ::
 ::
@@ -772,6 +778,24 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: iwditempack - IWD Item Pack
+
+:: Lollorian's Blunt Ground Icon fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=562853
+
+
+----------------------------------------------------------------------------------------
+
+
+:: JA#BGT_Tweak - Jarl's BGT Tweaks v1.73
+
+:: Lollorian's TP2 corrections
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=562853
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Kari the Half-Kobold NPC (Beta) v1.3
 
 :: Upgraded to the "Moongaze's Kari v1" version
@@ -1014,7 +1038,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Planar Sphere v2.6c
+:: planarspheremod - Planar Sphere v2.6c
 
 :: Renamed psglobe5.cre to psglobe5.baf
 :: http://www.shsforums.net/index.php?s=&showtopic=33860&view=findpost&p=453459
@@ -1027,6 +1051,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's corrected psqMin -> psqsMin (8 instances) - psvecna.d
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483696
+
+:: Lollorian's assorted ARE fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=562853
 
 
 ----------------------------------------------------------------------------------------

@@ -1,0 +1,29 @@
+--- JA#BGT_Tweak\Setup-JA#BGT_Tweak.tp2	Tue May 14 00:37:34 2013
++++ C:\BWP Patchstudio\patched files\JA#BGT_Tweak\Setup-JA#BGT_Tweak.tp2	Thu Oct 10 22:19:58 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~JA#BGT_Tweak/backup~
+ AUTHOR ~Anacondaz@gmx.de~
+ 
+-VERSION ~1.73~
++VERSION ~1.73 BWP Fix~
+ 
+ LANGUAGE ~german~ ~german~ ~JA#BGT_Tweak/tra/german/setup.tra~
+ 
+@@ -2236,7 +2236,7 @@
+ 
+ COPY_EXISTING ~AR0602.ARE~ ~override~ //Axt im Startcontainer
+ READ_ASCII 0x72c8 AXT
+-PATCH_IF (~%AXT%~ STRING_COMPARE ~AX1H01.ITM~ ) THEN BEGIN
++PATCH_IF (~%AXT%~ STRING_COMPARE_CASE ~AX1H01~ ) THEN BEGIN
+ WRITE_ASCII 0x72c8 ~JA#AX1H1~
+ END
+ BUT_ONLY_IF_IT_CHANGES
+@@ -2317,7 +2317,7 @@
+ 
+ COPY_EXISTING ~AR0602.ARE~ ~override~ //Katana im Startcontainer entfernen
+ READ_ASCII 0x7340 KATAN
+-PATCH_IF (~%KATAN%~ STRING_COMPARE ~SW1H43.ITM~ ) THEN BEGIN
++PATCH_IF (~%KATAN%~ STRING_COMPARE_CASE ~SW1H43~ ) THEN BEGIN
+ WRITE_ASCII 0x7340 ~SW1H01~
+ END
+ BUT_ONLY_IF_IT_CHANGES
