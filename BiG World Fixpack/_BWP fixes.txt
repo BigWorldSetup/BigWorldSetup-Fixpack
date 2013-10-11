@@ -180,18 +180,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: arestorationp - Almateria's Restoration Project v3.3
-
-:: Lollorian's polish Rielev fix
-:: http://www.shsforums.net/topic/56026-almaterias-restoration-project/?p=562513
-
-:: Lollorian's sex changed cultist voices fix
-:: http://www.shsforums.net/topic/56026-almaterias-restoration-project/?p=562573
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Ariena - Ariena NPC v2.2
 
 :: Deathsangel's Jaheira dialogue loop fix
