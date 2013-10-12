@@ -778,6 +778,33 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: infinityanimations - Infinity Animations v5
+
+:: Gwendolyne's Water Elemental bug fix
+:: http://www.shsforums.net/topic/55742-fixed-small-elemental-water-bug/
+
+:: Gwendolyne's NWN Basilisk bug fix
+:: http://www.shsforums.net/topic/56013-fixed-basilisk-nwn-bug/
+
+:: Gwendolyne's Bovine axe thing fix
+:: http://www.shsforums.net/topic/55823-fixed-bovine-thing-axe-bug/
+
+:: Miloch's fixed Tanar'ri and Wyvern
+:: http://www.shsforums.net/files/file/1052-ia-content-fixed-tanarri-and-wyvern/
+
+:: Miloch's updated t-pstanims.tpa
+:: http://www.shsforums.net/topic/45383-infinity-animations-from-pst/?p=534274
+
+:: Miloch's crossbow crash fix
+:: http://www.shsforums.net/topic/53322-sahuagin-bug/?p=530224
+
+:: Lollorian's Ghouls transforming to Golems fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=562939
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Item Revisions v2
 
 :: Official hotfixes from 02 June 2010

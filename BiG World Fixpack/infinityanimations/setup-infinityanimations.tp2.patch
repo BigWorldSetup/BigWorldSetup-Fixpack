@@ -1,5 +1,5 @@
 --- infinityanimations\setup-infinityanimations.tp2	Wed May 12 20:49:14 2010
-+++ C:\BWP Patchstudio\patched files\infinityanimations\setup-infinityanimations.tp2	Sun Oct 06 20:45:53 2013
++++ C:\BWP Patchstudio\patched files\infinityanimations\setup-infinityanimations.tp2	Sun Oct 13 01:12:18 2013
 @@ -1,6 +1,6 @@
  BACKUP ~infinityanimations/backup~
  AUTHOR ~www.shsforums.net/forum/594-infinity-animations/~
@@ -8,7 +8,28 @@
  README ~infinityanimations/documentation/infinityanimations.html~
  
  //! Platform variables //////////////////////////////////////////////////////
-@@ -958,7 +958,7 @@
+@@ -293,12 +293,16 @@
+ 
+   ACTION_IF ((FILE_EXISTS_IN_GAME ~bpdrifm1.cre~) OR (FILE_EXISTS_IN_GAME ~cbbgbera.cre~) OR (FILE_EXISTS_IN_GAME ~f_bel.cre~) OR (FILE_EXISTS_IN_GAME ~brefr1.cre~) OR (FILE_EXISTS_IN_GAME ~cbssyeti.cre~) OR (FILE_EXISTS_IN_GAME ~purang.cre~)) BEGIN //BP, CtB, Drizzt Saga, RoT, SOS, TS
+ 
+-    ACTION_IF FILE_EXISTS_IN_GAME ~mgh2a4.bam~ BEGIN //ghoul_iwd
+-      DISABLE_FROM_KEY ~mgh2a4.bam~
++    ACTION_FOR_EACH bm IN ~mgh2a3~ ~mgh2a4~ ~mgh2ca~ ~mgh2sp~ BEGIN //ghoul_iwd
++      ACTION_IF FILE_EXISTS_IN_GAME ~%bm%.bam~ BEGIN
++        DISABLE_FROM_KEY ~%bm%.bam~
++      END
+     END
+ 
+-    ACTION_IF FILE_EXISTS_IN_GAME ~mgh2a4e.bam~ BEGIN
+-      DISABLE_FROM_KEY ~mgh2a4e.bam~
++    ACTION_FOR_EACH bm IN ~mgh2a3e~ ~mgh2a4e~ ~mgh2cae~ ~mgh2spe~ BEGIN
++      ACTION_IF FILE_EXISTS_IN_GAME ~%bm%.bam~ BEGIN
++        DISABLE_FROM_KEY ~%bm%.bam~
++      END
+     END
+ 
+     ACTION_IF FILE_EXISTS_IN_GAME ~mgh3a4.bam~ BEGIN //ghast_iwd
+@@ -958,7 +962,7 @@
    END
  END
  
@@ -17,7 +38,7 @@
    ACTION_IF FILE_EXISTS_IN_GAME ~%nb%.cre~ BEGIN //Abishai
      COPY_EXISTING ~%nb%.cre~ ~override~
        PATCH_INCLUDE ~infinityanimations/lib/fj_cre_validity.tpp~
-@@ -1282,7 +1282,7 @@
+@@ -1282,7 +1286,7 @@
    END
  END
  
@@ -26,7 +47,7 @@
    ACTION_IF FILE_EXISTS_IN_GAME ~%t-bcre%.cre~ BEGIN //Male Elf Mages
      COPY_EXISTING ~%t-bcre%.cre~ ~override~
        PATCH_INCLUDE ~infinityanimations/lib/fj_cre_validity.tpp~
-@@ -2061,7 +2061,7 @@
+@@ -2061,7 +2065,7 @@
    BUT_ONLY
  END
  
@@ -35,7 +56,7 @@
    ACTION_IF FILE_EXISTS_IN_GAME ~%nb%.cre~ BEGIN //Maurezhi
      COPY_EXISTING ~%nb%.cre~ ~override~
        PATCH_INCLUDE ~infinityanimations/lib/fj_cre_validity.tpp~
-@@ -2404,7 +2404,7 @@
+@@ -2404,7 +2408,7 @@
    END
  END
  
