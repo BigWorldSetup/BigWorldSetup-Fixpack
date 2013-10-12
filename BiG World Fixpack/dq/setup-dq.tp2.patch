@@ -1,5 +1,5 @@
 --- dq\setup-dq.tp2	Tue Aug 06 09:50:53 2013
-+++ C:\BWP Patchstudio\patched files\dq\setup-dq.tp2	Thu Oct 10 23:12:18 2013
++++ C:\BWP Patchstudio\patched files\dq\setup-dq.tp2	Sun Oct 13 00:39:39 2013
 @@ -1,6 +1,6 @@
  BACKUP ~dq/backup~
  AUTHOR ~www.shsforums.net/forum/550-fishing-for-trouble/~
@@ -8,3 +8,88 @@
  //MODDER setup_tra NONE
  //launch the ReadMe file immediately
  README ~dq/dq-readme.html~
+@@ -407,7 +407,7 @@
+ 	SAY NAME2 @107
+ 	SAY UNIDENTIFIED_DESC @108
+ 	SAY IDENTIFIED_DESC @100
+-	COPY ~dq/items/ysepring.itm~ ~override/.~
++	COPY ~dq/items/ysepring.itm~ ~override/ysepring.itm~
+ 	SAY NAME2 @128
+ 	SAY IDENTIFIED_DESC @129
+ 	COPY ~dq/items/ysgldag.itm~ ~override/ysgldag.itm~
+@@ -894,13 +894,13 @@
+ 	COPY ~dq/cre/yscdmer3.cre~ ~override/yscdmer3.cre~
+ 	SAY NAME1 @270
+ 	SAY NAME2 @270
+-	COPY ~dq/cre/imradim/yscddwm1.cre~ ~override/.~
++	COPY ~dq/cre/imradim/yscddwm1.cre~ ~override/yscddwm1.cre~
+ 	SAY NAME1 @274
+ 	SAY NAME2 @274
+-	COPY ~dq/cre/imradim/yscddwm2.cre~ ~override/.~
++	COPY ~dq/cre/imradim/yscddwm2.cre~ ~override/yscddwm2.cre~
+ 	SAY NAME1 @274
+ 	SAY NAME2 @274
+-	COPY ~dq/cre/imradim/yscddwf1.cre~ ~override/.~
++	COPY ~dq/cre/imradim/yscddwf1.cre~ ~override/yscddwf1.cre~
+ 	SAY NAME1 @274
+ 	SAY NAME2 @274
+ 	COPY ~dq/cre/yscdcook.cre~ ~override/yscdcook.cre~
+@@ -1166,41 +1166,41 @@
+ //##################################################
+ //Stores
+ //Athkatla
+-	COPY ~dq/stores/ysslvale.sto~ ~override/.~
++	COPY ~dq/stores/ysslvale.sto~ ~override/ysslvale.sto~
+ 	SAY 0xc @403
+-	COPY ~dq/stores/yskeldrl.sto~ ~override/.~
++	COPY ~dq/stores/yskeldrl.sto~ ~override/yskeldrl.sto~
+ 	SAY 0xc @405
+-	COPY ~dq/stores/ysgibmel.sto~ ~override/.~
++	COPY ~dq/stores/ysgibmel.sto~ ~override/ysgibmel.sto~
+ 	SAY 0xc @406
+-	COPY ~dq/stores/yscolla1.sto~ ~override/.~
++	COPY ~dq/stores/yscolla1.sto~ ~override/yscolla1.sto~
+ 	SAY 0xc @272
+-	COPY ~dq/stores/yscolla2.sto~ ~override/.~
++	COPY ~dq/stores/yscolla2.sto~ ~override/yscolla2.sto~
+ 	SAY 0xc @272
+ 
+ //Porthpentyrch
+-	COPY ~dq/stores/ysstor1c.sto~ ~override/.~
+-	COPY ~dq/stores/ysstor1e.sto~ ~override/.~
+-	COPY ~dq/stores/ysstor2c.sto~ ~override/.~
+-	COPY ~dq/stores/ysstor2e.sto~ ~override/.~
+-	COPY ~dq/stores/ysmorv.sto~ ~override/.~
++	COPY ~dq/stores/ysstor1c.sto~ ~override/ysstor1c.sto~
++	COPY ~dq/stores/ysstor1e.sto~ ~override/ysstor1e.sto~
++	COPY ~dq/stores/ysstor2c.sto~ ~override/ysstor2c.sto~
++	COPY ~dq/stores/ysstor2e.sto~ ~override/ysstor2e.sto~
++	COPY ~dq/stores/ysmorv.sto~ ~override/ysmorv.sto~
+ 	SAY 0xc @402
+ 
+ //Cerendor Hold
+-	COPY ~dq/stores/yschclr.sto~ ~override/.~
++	COPY ~dq/stores/yschclr.sto~ ~override/yschclr.sto~
+ 	SAY 0xc @233
+-	COPY ~dq/stores/ysbk1sto.sto~ ~override/.~
++	COPY ~dq/stores/ysbk1sto.sto~ ~override/ysbk1sto.sto~
+ 	SAY 0xc @222
+-	COPY ~dq/stores/ysblksto.sto~ ~override/.~
++	COPY ~dq/stores/ysblksto.sto~ ~override/ysblksto.sto~
+ 	SAY 0xc @222
+ 
+ //Imradim
+-	COPY ~dq/stores/ysnuri.sto~ ~override/.~
++	COPY ~dq/stores/ysnuri.sto~ ~override/ysnuri.sto~
+ 	SAY 0xc @266
+-	COPY ~dq/stores/yskhoury.sto~ ~override/.~
++	COPY ~dq/stores/yskhoury.sto~ ~override/yskhoury.sto~
+ 	SAY 0xc @265
+-	COPY ~dq/stores/ystahir.sto~ ~override/.~
++	COPY ~dq/stores/ystahir.sto~ ~override/ystahir.sto~
+ 	SAY 0xc @407
+-	COPY ~dq/stores/ysbasima.sto~ ~override/.~
++	COPY ~dq/stores/ysbasima.sto~ ~override/ysbasima.sto~
+ 	SAY 0xc @422
+ 
+ //##################################################

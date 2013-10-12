@@ -613,6 +613,27 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: DofD - Domains of Dread v3
+
+:: Lollorian's assorted ARE fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=562853
+
+
+----------------------------------------------------------------------------------------
+
+
+:: dq - Fishing for Trouble v2.6
+
+:: Lollorian's assorted ARE fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=562853
+
+:: Lollorian's improper file copy fix
+:: http://www.shsforums.net/topic/56713-i-have-some-questions-regarding-some-of-the-queststriggers/?p=562918
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Drizzt Saga v2.0
 
 :: White Agnus' BGT Fixes - nARAM00.BAF, oARAM00.BAF
