@@ -53,7 +53,7 @@ SET PATCH_FILES=*.patch
 SET TP2_FILES=*.tp2
 
 SET COPY_CMD=xcopy /Y /E /R /V
-SET PATCH_CMD="%UTILS%\patch" -p0 --no-backup-if-mismatch --ignore-whitespace --binary
+SET PATCH_CMD="%UTILS%\patch" -p0 --no-backup-if-mismatch --ignore-whitespace
 SET TEE_CMD="%UTILS%\tee" -a "BiG World Debug.txt"
 
 SET INSTALL_MARKER=BWP_Fixpack.installed
