@@ -52,9 +52,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Changed r#asmgau.itm to increase Max HP instead of Current HP
 :: - LINK NOT FOUND -
 
-:: Patched readme-AbyStore.html to display correct version number
-:: - LINK NOT FOUND -
-
 
 ----------------------------------------------------------------------------------------
 
