@@ -23,7 +23,7 @@
  ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN BEGIN // tob 
  
 -  EXTEND_BOTTOM ~anom25.bcs~ ~NPCKit/anomen/no_holy_symbol.baf~
-+  EXTEND_BOTTOM ~anom25.bcs~ ~NPCKit//baf/no_holy_symbol.baf~
++  EXTEND_BOTTOM ~anom25.bcs~ ~NPCKit/baf/no_holy_symbol.baf~
  
  END
  
