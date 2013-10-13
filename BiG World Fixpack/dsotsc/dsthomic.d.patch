@@ -1,0 +1,10 @@
+--- dsotsc\d\dsthomic.d	Sat Apr 15 19:08:02 2006
++++ C:\BWP Patchstudio\patched files\dsotsc\d\dsthomic.d	Sun Oct 13 19:48:42 2013
+@@ -3,6 +3,6 @@
+ IF ~True()~ THEN BEGIN 0
+   SAY @1
+   IF ~~ THEN DO ~TakePartyItem("DSMISC05")
+-GivePartyGold(50)
++GiveGoldForce(50)
+ EscapeArea()~ EXIT
+ END

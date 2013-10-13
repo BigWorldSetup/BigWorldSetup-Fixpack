@@ -521,27 +521,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Dark Side of the Sword Coast (DSotSC) 2.15
+:: dsotsc - Dark Side of the Sword Coast v2.17
 
-:: erebusant's corrected BAM's of Thorfinn's armor and the 2 robes from TDD and/or NTotSC - DSILEA10.BAM and ICLCK51.bam
-:: http://www.shsforums.net/index.php?s=&showtopic=38354&view=findpost&p=433831
+:: 10th's drow dustification string fix
+:: http://www.shsforums.net/topic/55731-dsotsc-v217-bug-thread/?p=558661
 
-:: Corrections and fixes - Setup-DSotSC.TP2
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=477840
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=478149
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=479728
-
-:: erebusant's duegskel fix - DSDUEGSK.BAF
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=474726
-
-:: erebusant's revised Drow item dustification code - AR8700.BAF
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=478188
-
-:: Lollorian's PlaySound() fixes - DSLICH1.baf, DSLICH2.baf
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=483690
-
-:: Miloch's crashing club fix - dsclub01.itm
-:: http://www.shsforums.net/topic/38354-dsotsc-v215-bug-reports/?p=489005
+:: micbaldur's 'game breaking bug' aka 50 gold richer fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=562991
 
 
 ----------------------------------------------------------------------------------------
@@ -1148,6 +1134,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Abakus139 and The Imp's Knight kit armor restrictions fix
 :: http://www.shsforums.net/topic/56740-knight-kit-armor-restriction/?p=562768
 
+:: The Imp's SPIN516R.spl proper name Charmed Animal fix
+:: http://www.shsforums.net/topic/56751-several-alissas-special-abilities-seems-to-be-messed-up/?p=562972
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1373,10 +1362,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: The Undying v2.06
+:: TheUndying - The Undying v2.11
 
-:: Lollorian's Myself corrections - CMNINAF.BAF
-:: http://forums.chosenofmystra.net/index.php?topic=1628.msg18906#msg18906
+:: Lollorian's Ghost spawn corrections
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=554204
 
 :: Lollorian's !Dead(Myself) changes - CMSORA3.baf
 :: http://forums.chosenofmystra.net/index.php?topic=1628.msg18973#msg18973

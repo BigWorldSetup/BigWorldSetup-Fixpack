@@ -1,0 +1,10 @@
+--- pcvamp\Setup-pcvamp.tp2	Thu Jun 07 23:16:06 2012
++++ C:\BWP Patchstudio\patched files\pcvamp\Setup-pcvamp.tp2	Sun Oct 13 18:49:57 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~pcvamp/Backup~
+ AUTHOR ~Nicolas Peters - admin@baldursgate-refugium.de (http://www.baldursgate-refugium.de/)~
+-VERSION "v1.0"
++VERSION "v1.0 BWP Fix"
+ README "pcvamp/Readme.txt"
+ LANGUAGE ~Deutsch~ ~german~ ~pcvamp/TRA/german/setup.tra~
+ 

@@ -1,5 +1,14 @@
---- Setup-Oversight.tp2	Tue Mar 02 11:44:24 2010
-+++ C:\BWP Patchstudio\patched files\Setup-Oversight.tp2	Wed Oct 24 04:10:14 2012
+--- Setup-Oversight.tp2	Tue Mar 02 12:44:22 2010
++++ C:\BWP Patchstudio\patched files\Setup-Oversight.tp2	Sun Oct 13 18:43:25 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~oversight/backup~
+ AUTHOR "Kish_K@pacbell.net"
+ 
+-VERSION ~13~ 
++VERSION ~13 BWP Fix~ 
+ 
+ README ~oversight/ReadMe-Oversight.html~
+ 
 @@ -1440,15 +1440,15 @@
    REPLACE_TEXTUALLY ~.*\bTOTEMIC\b~                ~0x4010 TOTEMIC~
    REPLACE_TEXTUALLY ~.*\bSHAPESHIFTER\b~           ~0x4011 SHAPESHIFTER~

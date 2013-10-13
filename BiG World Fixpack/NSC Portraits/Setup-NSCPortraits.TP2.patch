@@ -1,14 +1,13 @@
 --- Setup-NSCPortraits.TP2	Fri Aug 12 11:54:56 2011
-+++ C:\BWP Patchstudio\patched files\Setup-NSCPortraits.TP2	Thu May 23 07:03:21 2013
-@@ -429,7 +429,7 @@
++++ C:\BWP Patchstudio\patched files\Setup-NSCPortraits.TP2	Sun Oct 13 18:37:17 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~NSC Portraits/backup~
+ AUTHOR ~Gerri~ 
+-VERSION ~v2.1~ 
++VERSION ~v2.1 BWP Fix~ 
  
- /*
- BEGIN ~Never Ending Journey 2~ 
--REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~<hier File einfügen~ ~You haven't installed NeJ2, skip this component~ 
-+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~Melora11.cre~ ~You haven't installed NeJ2, skip this component~ 
- DESIGNATED 1040
- 
- OUTER_SPRINT ~folder~ ~NeJ2~
+ DEFINE_ACTION_MACRO ~Addpic~ BEGIN
+ ACTION_IF FILE_EXISTS_IN_GAME ~%Crename%~
 @@ -448,7 +448,7 @@
  
  

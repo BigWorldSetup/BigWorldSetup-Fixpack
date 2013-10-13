@@ -1,0 +1,10 @@
+--- Quayle\Setup-Quayle.tp2	Fri Nov 09 09:37:20 2012
++++ C:\BWP Patchstudio\patched files\Quayle\Setup-Quayle.tp2	Sun Oct 13 19:01:44 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~Quayle\backup~
+ AUTHOR ~Lava Del'Vortel~
+-
++VERSION ~v1 BWP Fix~
+ README ~Quayle/ReadMe-Quayle.english.txt~
+ 
+ BEGIN ~Quayle ReDone for Baldur's Gate 2~

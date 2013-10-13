@@ -1,0 +1,11 @@
+--- Setup-OldModsPack.tp2	Fri Dec 18 09:38:42 2009
++++ C:\BWP Patchstudio\patched files\Setup-OldModsPack.tp2	Sun Oct 13 18:41:43 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~OldModsPack/backup~        
+ AUTHOR ~Badgert(iklest@yandex.ru)~ 
+ 
+-VERSION ~v2~
++VERSION ~v2 BWP Fix~
+ 
+ README ~OldModsPack/ReadMe-OMP.txt~
+ 
