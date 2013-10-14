@@ -1,0 +1,10 @@
+--- Swylif\Swylif.tp2	Mon Apr 18 17:24:02 2011
++++ C:\BWP Patchstudio\patched files\Swylif\Swylif.tp2	Mon Oct 14 22:57:51 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~Swylif\backup~
+ AUTHOR ~Lava Del'Vortel~
+-
++VERSION ~v1.0 BWP Fix~
+ AUTO_TRA ~Swylif/tra/%s~
+ 
+ LANGUAGE ~English~ ~English~ ~Swylif/tra/English/swylif.tra~

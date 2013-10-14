@@ -1,0 +1,8 @@
+--- tb#tweaks\english\setup.tra	Tue Jan 03 00:19:03 2012
++++ C:\BWP Patchstudio\patched files\tb#tweaks\english\setup.tra	Mon Oct 14 23:59:45 2013
+@@ -1,4 +1,4 @@
+-@500   = ~TB#Tweaks, V 2.61~
++@500   = ~TB#Tweaks, V 2.61 BWP Fix~
+ 
+ @0     = ~You seem to already have this component installed, skipping...~
+ @1     = ~This could take some minutes, sorry for the inconvenience.~

@@ -1,5 +1,14 @@
---- Yasraena\Setup-Yasraena.tp2	Mon Jul 12 17:36:24 2010
-+++ C:\BWP Patchstudio\patched files\Yasraena\Setup-Yasraena.tp2	Sun Mar 27 22:23:13 2011
+--- Yasraena\Setup-Yasraena.tp2	Sat Aug 31 23:51:09 2013
++++ C:\BWP Patchstudio\patched files\Yasraena\Setup-Yasraena.tp2	Tue Oct 15 00:23:17 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~Yasraena\backup~
+ AUTHOR ~gilalion@gmail.com~
+ 
+-VERSION ~v13~
++VERSION ~v13 BWP Fix~
+ 
+ README ~Yasraena/README-Yasraena.html~
+ 
 @@ -178,12 +178,12 @@
  
  /* compile .d files into .dlg files which get stored in the Overide directory */

@@ -5,7 +5,7 @@
  AUTHOR ~Charles Bisson, Horred The Plague (WeiDU), King Diamond (WeiDU revision)~  NO_IF_EVAL_BUG
  
 -VERSION ~1.13~
-+VERSION ~v1.13 BWP Fix~
++VERSION ~1.13 BWP Fix~
  
  AUTO_TRA ~SOS/Language/%s~
  

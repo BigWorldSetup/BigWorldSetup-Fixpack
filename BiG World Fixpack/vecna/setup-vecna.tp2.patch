@@ -1,0 +1,10 @@
+--- vecna\setup-vecna.tp2	Sun Aug 14 21:10:42 2011
++++ C:\BWP Patchstudio\patched files\vecna\setup-vecna.tp2	Tue Oct 15 00:14:50 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~vecna/backup~
+ AUTHOR ~http://www.shsforums.net/topic/43975-vecna/~
+-VERSION ~v23~ // version number
++VERSION ~v23 BWP Fix~ // version number
+ README ~vecna/VecnaReadMe.txt~
+ 
+ 

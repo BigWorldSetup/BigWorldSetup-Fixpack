@@ -1,0 +1,11 @@
+--- stratagems\setup-stratagems.tp2	Sat Aug 17 08:58:39 2013
++++ C:\BWP Patchstudio\patched files\stratagems\setup-stratagems.tp2	Mon Oct 14 22:56:29 2013
+@@ -2,7 +2,7 @@
+ 
+ AUTHOR ~For help troubleshooting installation problems, go to the Sword Coast Stratagems forum at forums.gibberlings3.net.~
+ 
+-VERSION ~v24.04~
++VERSION ~v24.04 BWP Fix~
+ 
+ README ~stratagems/readme-stratagems.html~
+ 

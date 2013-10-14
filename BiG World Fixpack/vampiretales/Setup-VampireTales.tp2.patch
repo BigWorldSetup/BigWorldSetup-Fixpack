@@ -1,0 +1,10 @@
+--- Setup-VampireTales.tp2	Sat Dec 22 16:26:56 2012
++++ C:\BWP Patchstudio\patched files\Setup-VampireTales.tp2	Tue Oct 15 00:13:40 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~vampiretales/backup~
+ AUTHOR ~"http://www.chosenofmystra.com"~
+-
++VERSION ~v1.03 BWP Fix~
+ AUTO_TRA ~vampiretales/%s~
+ LANGUAGE "American English" "american" 
+   ~vampiretales/american/setup.tra~

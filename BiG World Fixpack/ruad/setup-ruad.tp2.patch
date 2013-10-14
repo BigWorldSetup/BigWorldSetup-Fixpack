@@ -1,0 +1,11 @@
+--- ruad\setup-ruad.tp2	Sat Jan 22 03:45:03 2011
++++ C:\BWP Patchstudio\patched files\ruad\setup-ruad.tp2	Mon Oct 14 22:39:11 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~ruad/backup~
+ AUTHOR ~moonfruit@webonline.co.za~
+ 
+-VERSION ~v26~
++VERSION ~v26 BWP Fix~
+ 
+ README ~ruad\readme-ruad.txt~
+ 

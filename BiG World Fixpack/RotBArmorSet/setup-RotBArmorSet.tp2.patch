@@ -1,21 +1,18 @@
 --- setup-RotBArmorSet.tp2	Wed Jun 22 18:07:24 2005
-+++ C:\BWP Patchstudio\patched files\setup-RotBArmorSet.tp2	Thu Apr 15 08:23:12 2010
-@@ -1,6 +1,9 @@
++++ C:\BWP Patchstudio\patched files\setup-RotBArmorSet.tp2	Mon Oct 14 22:29:11 2013
+@@ -1,6 +1,6 @@
  BACKUP ~RotBArmorSet\backup~
- 
+-
  AUTHOR ~lordjyssev@yahoo.com~
-+
 +VERSION ~v1.0 BWP Fix~
-+
  BEGIN ~Realm of the Bhaalspawn Armor Set~
  
  COPY ~RotBArmorSet\Store\rbarmor.sto~ ~override\rbarmor.sto~
-@@ -24,7 +27,8 @@
+@@ -24,7 +24,7 @@
  
  
  COPY ~RotBArmorSet\Items\rbplat02.itm~ ~override\rbplat02.itm~
 -SAY NAME1 ~Blessed of the Triad~ 
-+// SAY NAME1 ~Blessed of the Triad~ 
 +SAY NAME2 ~Blessed of the Triad~ 
  SAY UNIDENTIFIED_DESC ~This armor is the first of a set of armors that were created by three syblings. This plate, Blessed, was made by Godric Gladivir, a powerful mage who believed in the god known as Torm. It was said that if a person ever wore this plate, then they would be blessed and protected from many things.
  

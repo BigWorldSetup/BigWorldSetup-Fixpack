@@ -1,0 +1,10 @@
+--- rukrakia\Setup-rukrakia.tp2	Thu Jun 23 16:27:04 2011
++++ C:\BWP Patchstudio\patched files\rukrakia\Setup-rukrakia.tp2	Mon Oct 14 22:40:55 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~rukrakia/backup~
+ AUTHOR ~darktn@naver.com~
+-
++VERSION ~v.08 BWP Fix~
+ LANGUAGE ~korean~
+          ~korean~
+          ~rukrakia/korean/setup.tra~

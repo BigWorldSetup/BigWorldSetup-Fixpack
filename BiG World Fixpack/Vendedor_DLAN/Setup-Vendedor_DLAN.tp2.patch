@@ -1,0 +1,10 @@
+--- Setup-Vendedor_DLAN.tp2	Tue May 26 11:08:34 2009
++++ C:\BWP Patchstudio\patched files\Setup-Vendedor_DLAN.tp2	Tue Oct 15 00:16:14 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~Vendedor_DLAN\backup~
+ AUTHOR ~Bhasbuto@adinet.com.uy~
+-
++VERSION ~v6.1 BWP Fix~
+ BEGIN ~Vendedor DLAN para SoA v6.1~
+ 
+ 

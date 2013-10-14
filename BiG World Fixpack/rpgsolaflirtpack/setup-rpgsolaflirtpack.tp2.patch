@@ -1,0 +1,11 @@
+--- rpgsolaflirtpack\setup-rpgsolaflirtpack.tp2	Sun Dec 05 07:02:44 2010
++++ C:\BWP Patchstudio\patched files\rpgsolaflirtpack\setup-rpgsolaflirtpack.tp2	Mon Oct 14 22:35:28 2013
+@@ -10,7 +10,7 @@
+ 
+ README ~rpgsolaflirtpack/README-RPGSolaFlirtPack.txt~
+ 
+-VERSION ~v1.1~
++VERSION ~v1.1 BWP Fix~
+ 
+ LANGUAGE ~English~ ~english~ ~rpgsolaflirtpack/English/setup.tra~
+ 

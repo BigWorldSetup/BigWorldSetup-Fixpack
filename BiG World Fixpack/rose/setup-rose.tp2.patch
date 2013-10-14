@@ -1,0 +1,10 @@
+--- rose\setup-rose.tp2	Mon Jul 18 00:33:41 2011
++++ C:\BWP Patchstudio\patched files\rose\setup-rose.tp2	Mon Oct 14 22:27:13 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~rose/backup~
+ AUTHOR ~kthxbye~
+-VERSION ~v0.03 OPEN BETA~
++VERSION ~v0.03 OPEN BETA BWP Fix~
+ README ~rose/readme/readme.html~
+ 
+ AUTO_TRA ~rose/tra/%s~

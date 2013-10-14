@@ -1,5 +1,5 @@
---- setup-d0questpack.tp2	Sat Apr 15 23:39:16 2006
-+++ C:\BWP Patchstudio\patched files\setup-d0questpack.tp2	Wed Oct 24 04:06:44 2012
+--- setup-d0questpack.tp2	Sun Apr 16 04:09:14 2006
++++ C:\BWP Patchstudio\patched files\setup-d0questpack.tp2	Mon Oct 14 23:32:59 2013
 @@ -1,5 +1,7 @@
  BACKUP ~questpack/backup~
  AUTHOR ~SimDing0@hotmail.com~
@@ -148,7 +148,7 @@
  // Fix Parisa's soundset.
  COPY_EXISTING ~vvparis.cre~ ~override~
                ~ppparis.cre~ ~override~
-@@ -810,24 +812,24 @@
+@@ -810,11 +812,11 @@
  // Djinni clouds yield XP rewards
  COPY_EXISTING ~djinnisu.cre~ ~override~
    WRITE_LONG 0x14 0
@@ -162,21 +162,6 @@
    BUT_ONLY_IF_IT_CHANGES
  COPY_EXISTING ~efreet01.bcs~ ~override/d0sumefr.bcs~
    DECOMPILE_BCS_TO_BAF
-   REPLACE_TEXTUALLY ~AddExperienceParty(6000)~ ~~
-   REPLACE_TEXTUALLY ~AddexperienceParty(6000)~ ~~
-   COMPILE_BAF_TO_BCS
--  BUT_ONLY_IF_IT_CHANGES
-+//  BUT_ONLY_IF_IT_CHANGES
- COPY_EXISTING ~djinni01.bcs~ ~override/d0sumdji.bcs~
-   DECOMPILE_BCS_TO_BAF
-   REPLACE_TEXTUALLY ~AddExperienceParty(3750)~ ~~
-   REPLACE_TEXTUALLY ~AddexperienceParty(3750)~ ~~
-   COMPILE_BAF_TO_BCS
--  BUT_ONLY_IF_IT_CHANGES
-+//  BUT_ONLY_IF_IT_CHANGES
- COPY_EXISTING ~efreet01.bcs~ ~override~
-   DECOMPILE_BCS_TO_BAF
-   REPLACE_TEXTUALLY ~AddExperienceParty(6000)~ ~~
 @@ -895,7 +897,7 @@
  			  ~MUMMY01.CRE~ ~override~
  			  ~RIFTCR03.CRE~ ~override~

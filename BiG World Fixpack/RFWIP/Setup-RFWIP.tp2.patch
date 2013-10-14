@@ -1,0 +1,10 @@
+--- Setup-RFWIP.tp2	Sat Jul 10 02:29:50 2004
++++ C:\BWP Patchstudio\patched files\Setup-RFWIP.tp2	Mon Oct 14 22:23:25 2013
+@@ -2,6 +2,7 @@
+ 
+ BACKUP ~RFWIP/Backup~
+ AUTHOR ~mrennigma@aol.com~
++VERSION ~v1.0 BWP Fix~
+ AUTO_TRA ~RFWIP/Translations/%s~
+ ALLOW_MISSING ~AR6400.bcs~ ~Baldur25.bcs~
+ 

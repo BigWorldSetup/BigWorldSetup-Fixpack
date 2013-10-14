@@ -1,6 +1,14 @@
---- SETUP-NMR.TP2	Sat Dec 25 17:54:24 2010
-+++ C:\BWP Patchstudio\patched files\SETUP-NMR.TP2	Thu Sep 13 16:21:24 2012
-@@ -25,6 +25,10 @@
+--- SETUP-NMR.TP2	Sat Dec 25 21:24:23 2010
++++ C:\BWP Patchstudio\patched files\SETUP-NMR.TP2	Mon Oct 14 22:18:22 2013
+@@ -7,6 +7,7 @@
+  **************************************************************************/
+ BACKUP ~NMR/backup~
+ AUTHOR ~macholy@live.com~ 
++VERSION ~v2.8 BWP Fix~ 
+ AUTO_TRA ~NMR/%s~
+ 
+ README ~NMR/Readme.TXT~
+@@ -25,6 +26,10 @@
  
  BEGIN @1
  REQUIRE_PREDICATE (!FILE_EXISTS_IN_GAME ~M_RNPC.BCS~) @1000

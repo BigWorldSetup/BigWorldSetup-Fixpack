@@ -1,5 +1,14 @@
---- Setup-SpellPackB6.TP2	Tue May 17 21:11:22 2011
-+++ C:\BWP Patchstudio\patched files\Setup-SpellPackB6.TP2	Fri Sep 02 07:27:03 2011
+--- Setup-SpellPackB6.TP2	Tue May 17 21:11:21 2011
++++ C:\BWP Patchstudio\patched files\Setup-SpellPackB6.TP2	Mon Oct 14 22:54:59 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~SpellPackB6/Backup~
+ AUTHOR ~galactygon@baraban.com~
++VERSION ~BWP Fix~
+ README ~SpellPackB6/README.html~
+-
+ ALWAYS
+ 	// Macros
+ 	INCLUDE ~SpellPackB6/Macros/add_projectile.tph~
 @@ -2353,7 +2353,8 @@
  BEGIN @15390	DESIGNATED 1539 	GROUP @10002
  REQUIRE_FILE ~Data/25Dialog.bif~ @2 // ToB  check

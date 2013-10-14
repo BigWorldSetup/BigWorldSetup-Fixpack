@@ -1,0 +1,10 @@
+--- setup-trovador.TP2	Sun Nov 22 20:01:15 2009
++++ C:\BWP Patchstudio\patched files\setup-trovador.TP2	Tue Oct 15 00:05:13 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~TROVADOR/backup~
+ AUTHOR ~riojano2002@hotmail.com~
+-VERSION ~v2.4~
++VERSION ~v2.4 BWP Fix~
+ AUTO_TRA ~TROVADOR/TRA/%s~
+ 
+ LANGUAGE "Castellano (Clan REO)" "spanish"

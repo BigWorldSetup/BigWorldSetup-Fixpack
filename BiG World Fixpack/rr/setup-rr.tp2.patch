@@ -1,0 +1,11 @@
+--- rr\setup-rr.tp2	Mon Aug 26 14:21:11 2013
++++ C:\BWP Patchstudio\patched files\rr\setup-rr.tp2	Mon Oct 14 22:38:10 2013
+@@ -7,7 +7,7 @@
+ 
+ BACKUP ~rr/backup~
+ AUTHOR "Wisp, www.shsforums.net"
+-VERSION ~v4.63~
++VERSION ~v4.63 BWP Fix~
+ 
+ ALWAYS
+   INCLUDE ~rr/lib/rr#afix.tph~                                        // Include the Rogue Rebalancing Assorted Fixes macro

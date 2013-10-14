@@ -1,6 +1,14 @@
---- SETUP-NMRF-PC.TP2	Mon Mar 07 12:00:57 2011
-+++ C:\BWP Patchstudio\patched files\SETUP-NMRF-PC.TP2	Thu Sep 13 16:13:28 2012
-@@ -24,6 +24,7 @@
+--- SETUP-NMRF-PC.TP2	Mon Mar 07 15:30:57 2011
++++ C:\BWP Patchstudio\patched files\SETUP-NMRF-PC.TP2	Mon Oct 14 22:20:12 2013
+@@ -3,6 +3,7 @@
+  **************************************************************************/
+ BACKUP ~NMRF-PC/backup~
+ AUTHOR ~Macholy@live.com~ 
++VERSION ~v3.1 BWP Fix~ 
+ AUTO_TRA ~NMRF-PC/%s~
+ README ~NMRF-PC/Readme.TXT~
+ 
+@@ -24,6 +25,7 @@
  
  BEGIN @1
  SUBCOMPONENT @0

@@ -1,0 +1,11 @@
+--- SDMODS\SDMODS.tp2	Sun May 30 00:07:40 2010
++++ C:\BWP Patchstudio\patched files\SDMODS\SDMODS.tp2	Mon Oct 14 22:45:53 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~SDMODS/backup~
+ 
+ AUTHOR ~shed@spellholdstudios.net~
+-
++VERSION ~v1.03 BWP FIx~
+ ALLOW_MISSING ~AR0305.bcs~
+ 
+ AUTO_TRA ~SDMODS/Language/%s~

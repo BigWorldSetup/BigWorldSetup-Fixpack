@@ -1,0 +1,10 @@
+--- Setup-UoT.tp2	Sat May 03 14:39:11 2008
++++ C:\BWP Patchstudio\patched files\Setup-UoT.tp2	Tue Oct 15 00:12:01 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~UoT\backup~
+ AUTHOR ~inthel~
+-
++VERSION ~v1.0 BWP Fix~
+ LANGUAGE ~Chinese(Simplified)~ ~Chinese(Simplified)~ ~UoT\Languages\Chinese(Simplified)\UT_CHS.tra~
+ 
+ BEGIN ~Umbra of T.R.O.W.~

@@ -1,5 +1,13 @@
---- setup-virtue.tp2	Sun Jan 30 00:33:26 2005
-+++ C:\BWP Patchstudio\patched files\setup-virtue.tp2	Wed Oct 24 04:12:20 2012
+--- setup-virtue.tp2	Sun Jan 30 05:03:26 2005
++++ C:\BWP Patchstudio\patched files\setup-virtue.tp2	Tue Oct 15 00:20:52 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~virtue/backup~
+ AUTHOR ~SimDing0@hotmail.com~
+-
++VERSION ~v19 BWP Fix~
+ ALWAYS
+ COPY_EXISTING_REGEXP GLOB ~^anomen[0-9]*\.cre~ ~override~
+                          ~^imoen[0-9]*\.cre~  ~override~
 @@ -41,7 +41,7 @@
  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_INVOKER\b~     ~0x0800 MAGESCHOOL_INVOKER~
  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_NECROMANCER\b~ ~0x1000 MAGESCHOOL_NECROMANCER~

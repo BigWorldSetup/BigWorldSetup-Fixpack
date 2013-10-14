@@ -1,5 +1,13 @@
---- setup-turnabout.tp2	Mon Oct 03 02:43:16 2005
-+++ C:\BWP Patchstudio\patched files\setup-turnabout.tp2	Mon Nov 01 10:30:24 2010
+--- setup-turnabout.tp2	Mon Oct 03 07:13:16 2005
++++ C:\BWP Patchstudio\patched files\setup-turnabout.tp2	Tue Oct 15 00:09:13 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~turnabout/backup~
+ AUTHOR ~jcompton@pocketplane.net and simding0@pocketplane.net~
+-
++VERSION ~BWP Fix~
+ ALWAYS AT_INTERACTIVE_EXIT ~VIEW turnabout/TurnaboutReadme.txt~ END
+ 
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 @@ -342,17 +342,17 @@
  Alianna resumed her responsibilities as a Deathstalker, acting as assassin to the expediency of Thayvian politics and the Tower's coffers. This cocoon harbored your mother safely within her past for nearly a year before being slashed open to reveal the true host of the faithful's power: Cyric. Others of the Tower's priesthood accepted the brand of their new lord without hesitation, marking that the Mad God granted their spells already and must be appeased. Alianna resisted, unable to overlook Cyric's part in Bhaal's demise. She argued vocally against the usurper, her protests falling on deaf ears as the Tower unfurled flags proclaiming its allegiance to the Black Sun. As their first order of worship, the denizens of the tower turned their bloodlust against Alianna. Stripped of her divine magic and targeted as a heretic, Alianna could not escape, once again victim of her devotion to Bhaal, Lord of Murder.~
  

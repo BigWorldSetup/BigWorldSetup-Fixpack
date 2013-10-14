@@ -1,0 +1,10 @@
+--- rupert\setup-rupert.tp2	Sat Mar 20 19:26:22 2010
++++ C:\BWP Patchstudio\patched files\rupert\setup-rupert.tp2	Mon Oct 14 22:42:03 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~rupert/backup~
+ AUTHOR ~jonalun@gmail.com~
+-VERSION ~v2.1~
++VERSION ~v2.1 BWP Fix~
+ README ~rupert/lang/english/readme.html~
+ 
+ 

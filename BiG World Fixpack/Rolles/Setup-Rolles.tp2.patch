@@ -1,0 +1,10 @@
+--- Setup-Rolles.tp2	Sun Sep 07 23:58:34 2008
++++ C:\BWP Patchstudio\patched files\Setup-Rolles.tp2	Mon Oct 14 22:26:11 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~rolles/backup~
+ AUTHOR ~serdrick@rol.ru~
+-
++VERSION ~v3 BWP Fix~
+ AUTO_TRA ~Rolles/%s~
+ 
+ LANGUAGE ~Russian~

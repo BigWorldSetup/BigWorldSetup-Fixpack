@@ -1,0 +1,11 @@
+--- setup-refinements.tp2	Tue Jan 03 00:19:55 2012
++++ C:\BWP Patchstudio\patched files\setup-refinements.tp2	Mon Oct 14 22:21:57 2013
+@@ -16,7 +16,7 @@
+ AUTO_TRA ~refinements/%s~
+ 
+ README ~Refinements/README-Refinements.htm~
+-VERSION ~Refinements v 3.31~
++VERSION ~Refinements v 3.31 BWP Fix~
+ 
+ 
+ ALWAYS

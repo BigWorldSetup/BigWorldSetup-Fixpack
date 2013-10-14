@@ -1,0 +1,11 @@
+--- Severian\Setup-Severian.tp2	Tue Feb 22 13:29:01 2011
++++ C:\BWP Patchstudio\patched files\Severian\Setup-Severian.tp2	Mon Oct 14 22:47:20 2013
+@@ -6,7 +6,7 @@
+         Installation ToB requise!
+         Important : consultez le Read-Me !
+         Important : l'installation préalable du BG2Fixpack (Correctifs Principaux uniquement !) est vivement recommandée et ce, quel que soit le mod. Consultez le chapitre Conditions d'Installation de la rubrique Téléchargement sur le site !~
+-
++VERSION ~v02a BWP Fix~
+ 
+ LANGUAGE ~Francais~
+ 	 ~french~

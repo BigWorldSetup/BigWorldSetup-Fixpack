@@ -1,5 +1,13 @@
---- Yvette\Setup-Yvette.tp2	Sat Feb 25 12:56:38 2012
-+++ C:\BWP Patchstudio\patched files\Yvette\Setup-Yvette.tp2	Sun Jan 06 17:56:16 2013
+--- Yvette\Setup-Yvette.tp2	Sat Feb 25 13:56:38 2012
++++ C:\BWP Patchstudio\patched files\Yvette\Setup-Yvette.tp2	Tue Oct 15 00:29:40 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~Yvette\backup~
+ AUTHOR ~Lava Del'Vortel~
+-
++VERSION ~v2.0 BWP Fix~
+ BEGIN ~Yvette Romance - BG2 Romance Character~
+ 
+ ////////////////CD STATE
 @@ -16,7 +16,7 @@
  
  ADD_KIT ~YxKit~

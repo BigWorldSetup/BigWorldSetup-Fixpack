@@ -1,0 +1,11 @@
+--- TotDG\Setup-TotDG.tp2	Sat Dec 22 17:49:32 2012
++++ C:\BWP Patchstudio\patched files\TotDG\Setup-TotDG.tp2	Tue Oct 15 00:04:14 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~TotDG\backup~
+ AUTHOR ~Lava Del'Vortel~
++VERSION ~v9.3 BWP Fix~
+ README ~TotDG/totdg_readme.html~
+-
+ AUTO_TRA ~TotDG/Translations/%s~
+ 
+ LANGUAGE ~English~    

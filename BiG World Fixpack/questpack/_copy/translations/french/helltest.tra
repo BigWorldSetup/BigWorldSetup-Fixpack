@@ -1,0 +1,74 @@
+//Dragon d'Argent de l'Orgueil
+
+@1 = ~L'enfant du dieu défunt est venu, je vois, sans doute pour tuer l'épouvantable bête qui garde la larme du père. Très bien, finissons-en.~
+@2 = ~Prépare-toi à goûter mon acier, lézard !~
+@3 = ~Attendez ! Ne pouvons-nous en discuter ?~
+@4 = ~Discuter ? Je ne m'attendais pas à une telle hésitation de ta part. De quoi désires-tu parler ? Ou veux-tu simplement te moquer, pour retarder l'inévitable massacre ?~
+@5 = ~Je ne suis venu que pour la larme de Bhaal, pas pour combattre. Une créature comme vous n'a sûrement aucune envie d'un combat insensé non plus.~
+@6 = ~Tes paroles sont sages. Il n'y a aucune raison pour que je ne te donne pas la larme.~
+@7 = ~Je ne pensais pas que tu ferais une offre pareille. Voici donc la gemme que tu cherchais. Pour un <RACE> mortel, tu t’es conduit plutôt raisonnablement. Va en paix.~
+@8 = ~Attends... Qu'est-ce que ceci ?~
+@9 = ~Tu as tué d'autres membres de ma race auparavant, n'est-ce pas ? La puanteur de leur mort imprègne lourdement ton équipement. Je ne crois pas que tu m'aurais laissé vivre, mortel. Espérais-tu me distraire avec tes belles paroles, tes mensonges, en comptant me prendre au dépourvu ?~
+@10 = ~Mon destin est de t'affronter au combat. Voyons qui sera le vainqueur.~
+
+// Le Démon de la Peur
+
+@11 = ~...comme une cape, par exemple. Cousue à partir des peaux écorchées d'adorables nymphes. Porte-la et sois calmé par sa puissante magie... La panique ne te submergera plus jamais.~ ~...comme une cape, par exemple. Cousue à partir des peaux écorchées d'adorables nymphes. Porte-la et sois calmée par sa puissante magie... La panique ne te submergera plus jamais.~ [HELFEA13]
+@12 = ~Dites-moi, démon, les nymphes dont les peaux composent la cape sont-elles déjà mortes ? Ou ne seront-elles tuées que lorsque j'accepterai de la prendre ?~
+@13 = ~Ceci est une étrange question. Pourquoi la poses-tu ?~
+@14 = ~Sans importance. Je ne veux pas de cet objet maléfique, de toute façon. Mon propre courage suffira.~
+@15 = ~J'étais simplement curieux. Donnez-moi la cape.~
+@16 = ~Si les nymphes doivent être tuées uniquement à cause de moi, je ne veux pas de la cape. Mais si elles sont mortes de toute façon, je pourrais aussi bien la prendre. Je ne changerais rien.~
+@17 = ~Je vois. Un point de vue intéressant. Pour répondre à ta question, oui, elles ont été tuées il y a bien longtemps. Je vais te donner la cape.~
+
+//Le Génie de la Cupidité
+
+@18 = ~Mais j'aurai vraiment besoin de l'épée quand j'affronterai Irenicus à nouveau ! Et je ne voudrais pas non plus vous tuer pour la larme. Êtes-vous sûr qu'il n'y a aucun autre moyen ?~
+@19 = ~J'ai davantage réfléchi à votre offre, et je suis prêt à prendre un sort de quête.~
+@20 = ~Je ne peux pas te dire cela, ô <PRO_LADYLORD>.~
+@21 = ~Il semble que je devrai me débrouiller sans l'épée, dans ce cas. Prenez-la.~
+@22 = ~Mais ne pourrais-je garder l'épée quelque temps, puis revenir plus tard pour vous la donner ?~
+@23 = ~Ne te vexe pas, ô <PRO_LADYLORD>, mais je ne sais pas si tes intentions sont sincères. Trop de choses reposent là-dessus pour moi. Je ne vais pas laisser partir la seule chance que j'ai de faire cesser ce supplice.~
+@24 = ~Et si je faisais le serment de la ramener ? Je serais même prêt à vous laisser placer un sort de quête sur moi !~ ~Et si je faisais le serment de la ramener ? Je serais même prête à vous laisser placer un sort de quête sur moi.~
+@25 = ~Oui, ceci pourrait être une solution. Je vais jeter un sort de quête pour te lier à ton serment. Si tu le brises, tu mourras. Es-tu absolument sûr que tu veux cela, ô <PRO_LADYLORD> ?~ ~Oui, ceci pourrait être une solution. Je vais jeter un sort de quête pour te lier à ton serment. Si tu le brises, tu mourras. Es-tu absolument sûre que tu veux cela, ô <PRO_LADYLORD> ?~
+@26 = ~Après réflexion, je pense que je préfèrerais ne pas vous être lié. Laissez-moi réfléchir encore un moment.~ ~Après réflexion, je pense que je préfèrerais ne pas vous être liée. Laissez-moi réfléchir encore un moment.~
+@27 = ~Je suis prêt. Commencez votre sort.~ ~Je suis prête. Commencez votre sort.~
+@28 = ~Comme tu le souhaites, ô <PRO_LADYLORD>.~
+@29 = ~C'est fait, ô <PRO_LADYLORD>. Je te souhaite bonne chance et attends impatiemment ton retour. Nous nous rencontrerons à nouveau.~
+@30 = ~Trouver Irenicus aux Enfers
+
+L'épée du démon, Rasoirnoir, était manifestement la clé qui me permettait de libérer le génie de son esclavage ici aux Enfers. Il m'a permis de garder l'épée aussi longtemps que j'en aurai besoin pour détruire Irenicus, et a lancé un sort de quête sur moi pour s'assurer que je ramènerai l'épée une fois que ce sera terminé. J'espère juste que je trouverai un moyen de revenir ici.~
+@31 = ~S'il te plaît, ô <PRO_LADYLORD>, dépêche-toi dans ta quête. Je ne souhaite pas rester dans cet endroit plus que nécessaire.~
+@32 = ~Tu es revenu, ô <PRO_LADYLORD>, et le sorcier est mort ! Je ne doute pas que tu honoreras notre accord et me donneras l'épée Rasoirnoir ? Je suis impatient de quitter ce plan infernal.~
+@33 = ~Bien sûr. Prenez-la.~
+@34 = ~Oubliez ça. Cette épée est la mienne, et je me moque de ce que j'ai pu dire plus tôt.~
+@35 = ~Je ne peux pas. Il semblerait que je l'ai perdue, d'une manière ou d'une autre.~
+@36 = ~Tu ne peux pas penser ce que tu dis là, ô <PRO_LADYLORD> ! Même si tu ne te soucies pas de mon supplice, briser ton serment serait ta mort !~
+@37 = ~Bien sûr, oubliez ce que j'ai dit. Prenez l'épée.~
+@38 = ~Vous m'avez entendu la première fois. Prenez vos intimidations avec vous et partez, avant que je ne décide de tourner l'épée vers vous.~
+@39 = ~Je sentais que je ne pouvais pas te faire confiance. La mort serait la bienvenue maintenant, mais il est trop tard. Au moins la pensée de ta mort sera-t-elle un mince réconfort durant l'éternité de supplice qui m'attend. Sache que je maudirai ton nom jusqu'à la fin.~
+@40 = ~Tu... Tu l'as perdue ? Mais... Sais-tu seulement ce que cela veut dire ? Comment as-tu pu être si irresponsable ?~
+
+// Sarevok de la Colère
+
+@41 = ~Me croyais-tu réellement assez fou pour accepter ton offre ? Je me méfie de tout ce que tu peux me donner, Sarevok, et je n'en ai pas besoin.~ ~Me croyais-tu réellement assez folle pour accepter ton offre ? Je me méfie de tout ce que tu peux me donner, Sarevok, et je n'en ai pas besoin.~
+@42 = ~Quoi que le destin me réserve, que ce soit le pouvoir ou la pauvreté, la seule chose dont je suis certain est que je n'accepterai jamais ce que tu pourras m'offrir.~ ~Quoi que le destin me réserve, que ce soit le pouvoir ou la pauvreté, la seule chose dont je suis certaine est que je n'accepterai jamais ce que tu pourras m'offrir.~
+
+//Le Démon de l'Égoïsme
+
+@43 = ~Alors je suppose que je devrai me sacrifier. Je ne voudrais pas que quiconque soit blessé à cause de moi.~
+@44 = ~Faites ce que vous devez faire. Tuez-la. Cela ne pourrait pas m'être plus égal.~
+@45 = ~J'ignore ce que je devrais faire maintenant.~
+@46 = ~Non ! Je ne me sacrifierai pas, mais je ne vous laisserai pas faire de mal à quelqu'un d'autre non plus. Préparez-vous à mourir, démon !~
+@47 = ~Faites ce que vous avez à faire. Tuez-le. Cela ne pourrait pas m'être plus égal.~
+@48 = ~C'est ta décision, Enfant de Bhaal. Étudie-la avec attention, et choisis le chemin que tu veux suivre.~
+@49 = ~Ne sois pas stupide, Enfant. Tu ne peux sérieusement espérer me vaincre ? Après tout, tu es encore un mortel, et tu ne peux me détruire, moi une création de ta propre conscience. J'existe depuis aussi longtemps que toi. Me combattre est un effort vain, dans lequel tu périrais finalement, ainsi que tous ceux que tu essaies de protéger.~ ~Ne sois pas stupide, Enfant. Tu ne peux sérieusement espérer me vaincre ? Après tout, tu es encore une mortelle, et tu ne peux me détruire, moi une création de ta propre conscience. J'existe depuis aussi longtemps que toi. Me combattre est un effort vain, dans lequel tu périrais finalement, ainsi que tous ceux que tu essaies de protéger.~
+@50 = ~Vos paroles sont sages, je suppose. Je supporterai le fardeau moi-même, dans ce cas.~
+@51 = ~Et bien... Maintenant que j'y pense, vous avez absolument raison. Tuez donc l'otage, et oubliez tout ce que j'ai dit.~
+@52 = ~J'ai tué des créatures bien plus puissantes que vous. Parlez autant que vous le souhaitez, vous n'échapperez pas à ce combat.~
+@53 = ~Très bien, si c'est ton souhait, je ne protesterai pas. Cela peut en fait s'avérer assez amusant.~
+@54 = ~Assez. Je pense que cela suffira. Tu as prouvé ta volonté à accepter le combat le plus désespéré pour arrêter ceux qui essayeraient d'influencer la destinée des autres. L'innocent va être rendu, quelle que soit son origine.~
+@55 = ~Trouver Irenicus aux Enfers
+
+J'ai refusé de passer par l'une ou l'autre des portes et ai combattu le démon. Quoique la bataille ait été longue et que la bête ne pouvait être tuée, elle m'a rendu la larme de Bhaal. Cet événement a semblé revêtir une certaine signification pour elle, bien que je sache pas ce dont il s'agit.~
+@56 = ~Assez. Je pense que cela suffira. Tu as prouvé ta volonté d'engager un combat même désespéré afin d'arrêter ceux qui tenteraient d'influencer le destin d'autrui. L'innocent te sera rendu.~

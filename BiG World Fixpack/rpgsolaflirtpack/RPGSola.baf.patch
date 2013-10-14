@@ -1,0 +1,11 @@
+--- rpgsolaflirtpack\RPGSola.baf	Sat Dec 04 23:13:36 2010
++++ C:\BWP Patchstudio\patched files\rpgsolaflirtpack\RPGSola.baf	Mon Oct 14 22:34:11 2013
+@@ -156,7 +156,7 @@
+ IF
+  Global("DeadlySpider","GLOBAL",0)
+  GlobalLT("SolaTalk","GLOBAL",3)
+- AreaCheck("2500")
++ AreaCheck("AR2500")
+  !Detect([ENEMY])
+  !Detect([EVILBUTBLUE])
+  !Detect([NEUTRAL])
