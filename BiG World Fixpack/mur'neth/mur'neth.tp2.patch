@@ -1,0 +1,11 @@
+--- mur'neth\mur'neth.tp2	Tue Oct 01 15:05:22 2013
++++ C:\BWP Patchstudio\patched files\mur'neth\mur'neth.tp2	Mon Oct 14 21:40:08 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~mur'neth/backup~
+ AUTHOR ~Andyr, Andyr@Gibberlings3.net~
+ 
+-VERSION ~v11~
++VERSION ~v11 BWP Fix~
+ 
+ README ~mur'neth/readme-murneth.html~
+ 

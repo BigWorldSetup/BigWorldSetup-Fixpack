@@ -991,6 +991,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: mur'neth - Mur'Neth NPC v11
+
+:: CamDawg's install fix for BGT
+:: http://forums.gibberlings3.net/index.php?showtopic=1541&view=findpost&p=214668
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Neh'taniel NPC (Neht) v5.1
 
 :: Lollorian's corrected mistyped areas (AR01800->AR0900 / AR11800->AR1900 / AR21800->AR2900) - SK#NEHTJ.d
