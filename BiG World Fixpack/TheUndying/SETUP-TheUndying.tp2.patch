@@ -3,7 +3,7 @@
 @@ -1,7 +1,7 @@
  BACKUP ~TheUndying/backup~
  AUTHOR ~"http://www.chosenofmystra.com"~
-+AUTHOR ~v2.11 BWP Fix~
++VERSION ~v2.11 BWP Fix~
  BEGIN ~ "The Undying" Mod (Requires Throne of Bhaal)~
 -
  PRINT ~/****************************************~
