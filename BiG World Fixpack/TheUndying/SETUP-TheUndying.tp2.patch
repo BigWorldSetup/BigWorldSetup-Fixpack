@@ -1,29 +1,31 @@
---- SETUP-TheUndying.tp2	Fri Dec 21 19:45:23 2012
-+++ C:\BWP Patchstudio\patched files\SETUP-TheUndying.tp2	Sun Oct 13 19:40:20 2013
-@@ -1,5 +1,6 @@
+--- SETUP-TheUndying.tp2	Mon Oct 14 02:36:39 2013
++++ C:\BWP Patchstudio\patched files\SETUP-TheUndying.tp2	Tue Oct 15 23:22:16 2013
+@@ -1,7 +1,7 @@
  BACKUP ~TheUndying/backup~
  AUTHOR ~"http://www.chosenofmystra.com"~
-+VERSION ~"v2.11 BWP Fix"~
++AUTHOR ~v2.11 BWP Fix~
  BEGIN ~ "The Undying" Mod (Requires Throne of Bhaal)~
- 
+-
  PRINT ~/****************************************~
-@@ -249,17 +250,17 @@
+ PRINT ~*The Undying Mod Version 2.11		*~
+ PRINT ~*http://www.teambg.org            	*~
+@@ -249,17 +249,17 @@
    SAY NAME1 ~Solaufein Daelvorta~
    SAY NAME2 ~Solaufein Daelvorta~
  
--COPY ~TheUndying/cre/CMGHOST.CRE~ ~override~
+-COPY ~TheUndying/cre/CMGHOST1.CRE~ ~override~
 +COPY ~TheUndying/cre/CMGHOST.CRE~ ~override/CMGHOST1.CRE~
    SAY NAME1 ~Ghost~
    SAY NAME2 ~Ghost~
    WRITE_ASCII 0x280 ~CMGHOST1~
  
--COPY ~TheUndying/cre/CMGHOST.CRE~ ~override~
+-COPY ~TheUndying/cre/CMGHOST2.CRE~ ~override~
 +COPY ~TheUndying/cre/CMGHOST.CRE~ ~override/CMGHOST2.CRE~
    SAY NAME1 ~Ghost~
    SAY NAME2 ~Ghost~
    WRITE_ASCII 0x280 ~CMGHOST2~
  
--COPY ~TheUndying/cre/CMGHOST.CRE~ ~override~
+-COPY ~TheUndying/cre/CMGHOST3.CRE~ ~override~
 +COPY ~TheUndying/cre/CMGHOST.CRE~ ~override/CMGHOST3.CRE~
    SAY NAME1 ~Ghost~
    SAY NAME2 ~Ghost~
