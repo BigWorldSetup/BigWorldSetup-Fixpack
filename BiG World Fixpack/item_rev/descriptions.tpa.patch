@@ -1,5 +1,5 @@
---- item_rev\lib\descriptions.tpa	Tue Jul 12 23:39:10 2011
-+++ C:\BWP Patchstudio\patched files\item_rev\lib\descriptions.tpa	Sat Dec 17 22:26:18 2011
+--- item_rev\lib\descriptions.tpa	Tue Jul 12 22:39:10 2011
++++ C:\BWP Patchstudio\patched files\item_rev\lib\descriptions.tpa	Sun Dec 18 10:56:18 2011
 @@ -14,7 +14,8 @@
  
  // stolen from BG2 Tweak Pack at G3 and modified to take parameter ~%text_update%~, the macro name of the REPLACE_TEXTUALLY to execute
@@ -10,13 +10,12 @@
      READ_LONG "%index%" "valid"
      PATCH_IF ("%valid%" < 2147483646) AND ("%valid%" >= 0) BEGIN // verify description is valid
        READ_STRREF "%index%" "description"
-@@ -22,7 +23,8 @@
-         LAUNCH_PATCH_MACRO ~%text_update%~
+@@ -23,6 +24,7 @@
        END
        SAY_EVALUATED "%index%" ~%new_desc%~
-- //     PATCH_PRINT ~%new_desc%~
-+  //    PATCH_PRINT ~%new_desc%~
+  //     PATCH_PRINT ~%new_desc%~
 +      ident -=1
      END
    END
  END
+\ No newline at end of file

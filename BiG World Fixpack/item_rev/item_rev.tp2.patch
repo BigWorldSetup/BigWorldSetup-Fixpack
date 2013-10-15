@@ -1,5 +1,5 @@
---- item_rev\item_rev.tp2	Wed Aug 03 16:37:20 2011
-+++ C:\BWP Patchstudio\patched files\item_rev\item_rev.tp2	Sun Oct 21 11:06:17 2012
+--- item_rev\item_rev.tp2	Wed Aug 03 15:37:20 2011
++++ C:\BWP Patchstudio\patched files\item_rev\item_rev.tp2	Mon Sep 16 01:50:57 2013
 @@ -1,25 +1,29 @@
  BACKUP ~item_rev/backup~
 -AUTHOR ~Demivrgvs and Mike1072 at forums.gibberlings3.net~
@@ -10,7 +10,7 @@
  ASK_EVERY_COMPONENT
  
 -VERSION ~V3 Beta 1.1~
-+VERSION ~V3 Beta 1.13~
++VERSION ~V3 Beta 1.16~
  
  NO_IF_EVAL_BUG
  
@@ -110,11 +110,10 @@
  DESIGNATED 1030
  REQUIRE_PREDICATE (ENGINE_IS ~soa tob~) @9002
  
--INCLUDE ~item_rev/components/store_revisions.tpa~
 +// a bit rough for now... will fine-tune once BG1 revision is complete
 +ACTION_IF (GAME_IS ~tob bgt~) BEGIN
 +  LOAD_TRA ~item_rev/languages/%LANGUAGE%/store_revisions.tra~
-+  INCLUDE ~item_rev/components/store_revisions.tpa~
+ INCLUDE ~item_rev/components/store_revisions.tpa~
 +  INCLUDE ~item_rev/components/item_reallocation.tpa~
 +  COPY_EXISTING_REGEXP GLOB ~.*\.sto~ override
 +    LPF items_to_order END

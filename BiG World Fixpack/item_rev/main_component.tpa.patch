@@ -1,5 +1,5 @@
---- item_rev\components\main_component.tpa	Mon Aug 01 23:44:44 2011
-+++ C:\BWP Patchstudio\patched files\item_rev\components\main_component.tpa	Fri Aug 23 16:51:02 2013
+--- item_rev\components\main_component.tpa	Mon Aug 01 22:44:44 2011
++++ C:\BWP Patchstudio\patched files\item_rev\components\main_component.tpa	Fri Sep 13 01:24:02 2013
 @@ -1,3 +1,8 @@
 +INCLUDE ~item_rev/lib/compatibility.tpa~
 +INCLUDE ~item_rev/lib/tooltip_macro.tpa~
@@ -40,7 +40,7 @@
  COPY ~item_rev/itm/dvsburst.spl~      ~override~  // Sound Burst
    WRITE_SHORT 0x98 %dvsburst%
  COPY ~item_rev/itm/dvsburst.eff~      ~override~
-@@ -291,59 +304,40 @@
+@@ -291,60 +304,41 @@
  COPY ~item_rev/1pp/shields/c4_fortress_bg2_large~      ~override~
  COPY ~item_rev/1pp/shields/c5_star_small~      ~override~
  COPY ~item_rev/1pp/shields/c6_polished_large~      ~override~
@@ -53,19 +53,12 @@
 -    ACTION_FOR_EACH animation IN ~c5~ BEGIN
 -      ACTION_IF (FILE_EXISTS_IN_GAME ~wp%size%d2%sequence%.bam~) BEGIN
 -        COPY_EXISTING ~wp%size%d2%sequence%.bam~ ~override/wp%size%%animation%%sequence%.bam~
--      END
-+/* add c0-c7 creature animations
++// add c0-c7 creature animations
 +ACTION_FOR_EACH set IN ~C0~ ~C5~ BEGIN
 +  ACTION_FOR_EACH category IN ~L~ ~M~ ~S~ BEGIN
 +    ACTION_FOR_EACH sequence IN ~A1~ ~A1E~ ~A3~ ~A3E~ ~A5~ ~A5E~ ~G1~ ~G1E~ ~W2~ ~W2E~  BEGIN
 +     COPY_EXISTING ~WP%category%D2%sequence%.bam~ ~override/WP%category%%set%%sequence%.bam~
-     END
--    // medium shields
--    ACTION_FOR_EACH animation IN ~c0~ ~c1~
--    BEGIN
--      ACTION_IF (FILE_EXISTS_IN_GAME ~wp%size%d3%sequence%.bam~) BEGIN
--        COPY_EXISTING ~wp%size%d3%sequence%.bam~ ~override/wp%size%%animation%%sequence%.bam~
--      END
++    END
 +  END
 +END
 +
@@ -73,30 +66,35 @@
 +  ACTION_FOR_EACH category IN ~L~ ~M~ ~S~ BEGIN
 +    ACTION_FOR_EACH sequence IN ~A1~ ~A1E~ ~A3~ ~A3E~ ~A5~ ~A5E~ ~G1~ ~G1E~ ~W2~ ~W2E~ BEGIN
 +     COPY_EXISTING ~WP%category%D3%sequence%.bam~ ~override/WP%category%%set%%sequence%.bam~
+       END
      END
--    // large shields
--    ACTION_FOR_EACH animation IN ~c2~ ~c3~ ~c4~ ~c6~ BEGIN
--      ACTION_IF (FILE_EXISTS_IN_GAME ~wp%size%d4%sequence%.bam~) BEGIN
--        COPY_EXISTING ~wp%size%d4%sequence%.bam~ ~override/wp%size%%animation%%sequence%.bam~
--      END
-+  END
-+END
+-    // medium shields
+-    ACTION_FOR_EACH animation IN ~c0~ ~c1~
+-    BEGIN
+-      ACTION_IF (FILE_EXISTS_IN_GAME ~wp%size%d3%sequence%.bam~) BEGIN
+-        COPY_EXISTING ~wp%size%d3%sequence%.bam~ ~override/wp%size%%animation%%sequence%.bam~
+       END
 +
 +ACTION_FOR_EACH set IN ~C2~ ~C6~ BEGIN
 +  ACTION_FOR_EACH category IN ~L~ ~M~ ~S~ BEGIN
 +    ACTION_FOR_EACH sequence IN ~A1~ ~A1E~ ~A3~ ~A3E~ ~A5~ ~A5E~ ~G1~ ~G1E~ ~W2~ ~W2E~ BEGIN
 +     COPY_EXISTING ~WP%category%D4%sequence%.bam~ ~override/WP%category%%set%%sequence%.bam~
      END
-   END
- END
- 
+-    // large shields
+-    ACTION_FOR_EACH animation IN ~c2~ ~c3~ ~c4~ ~c6~ BEGIN
+-      ACTION_IF (FILE_EXISTS_IN_GAME ~wp%size%d4%sequence%.bam~) BEGIN
+-        COPY_EXISTING ~wp%size%d4%sequence%.bam~ ~override/wp%size%%animation%%sequence%.bam~
+       END
+     END
++
 +ACTION_FOR_EACH category IN ~L~ ~M~ ~S~ BEGIN
 +  ACTION_FOR_EACH sequence IN ~A1~ ~A1E~ ~A3~ ~A3E~ ~A5~ ~A5E~ ~G1~ ~G1E~ ~W2~ ~W2E~ BEGIN
 +   COPY_EXISTING ~WP%category%D1%sequence%.bam~ ~override/WP%category%C4%sequence%.bam~
-+  END
-+END */
+   END
+ END
  
--/*--------------------Patches--------------------*/
+ 
+ /*--------------------Patches--------------------*/
  
 -// update strings for proficiency changes
 -COPY_EXISTING ~weapprof.2da~ ~override~
@@ -121,10 +119,10 @@
 -  REPLACE ~mi_flail_desc~    @100007
 -  REPLACE ~mi_mace_name~     @100008
 -  REPLACE ~mi_mace_desc~     @100009
-+/*--------------------Patches--------------------*/
- 
+-
  // Demon Lord no longer immune to +4 enchanted weapons
  COPY_EXISTING ~uddemon.cre~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
 @@ -398,78 +392,9 @@
    END
    BUT_ONLY

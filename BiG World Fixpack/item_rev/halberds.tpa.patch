@@ -1,5 +1,5 @@
---- item_rev\components\halberds.tpa	Sun Jul 10 23:39:24 2011
-+++ C:\BWP Patchstudio\patched files\item_rev\components\halberds.tpa	Mon May 28 22:25:02 2012
+--- item_rev\components\halberds.tpa	Sun Jul 10 22:39:24 2011
++++ C:\BWP Patchstudio\patched files\item_rev\components\halberds.tpa	Tue May 29 10:55:02 2012
 @@ -1,126 +1,61 @@
 +INCLUDE ~item_rev/lib/descriptions.tpa~
  INCLUDE ~item_rev/lib/macros.tpa~
@@ -103,6 +103,9 @@
 -          REPLACE ~ 1~ ~%name% (%slashing%)~
 -          READ_2DA_ENTRY 0 0 1 mi_halb_piercing
 -          READ_2DA_ENTRY 0 1 1 mi_halb_slashing
+-        END
+-        SET_2DA_ENTRY_LATER ~s2el_tooltip~ i index ~%mi_halb_piercing% %mi_halb_slashing%~
+-        SET $halberd(~%j%~ ~added~) = 1
 +//////////////////////////////////////////////
 +//  patching
 +
@@ -133,21 +136,23 @@
 +        ip+=1
 +        INNER_ACTION BEGIN
 +          LAF tooltips INT_VAR $ EVAL tip("%i%")=slash  $ EVAL tip("%ip%")=pierce  STR_VAR item= EVAL ~%SOURCE_RES%~ END
-         END
--        SET_2DA_ENTRY_LATER ~s2el_tooltip~ i index ~%mi_halb_piercing% %mi_halb_slashing%~
--        SET $halberd(~%j%~ ~added~) = 1
--      END
--    END
--  END
+       END
++        SPRINT text_update halberd
++        LPM update_item_descriptions
++        i=hc
+     END
+   END
 -  SET_2DA_ENTRIES_NOW ~s2el_tooltip~ 3
--  
+   
 -  // remove last entry from rows that are now too long because we added two entries where there was only one previously
 -  READ_2DA_ENTRIES_NOW ~r2en_tooltip2~ (num_cols + 1)
 -  FOR (i = 0; i < r2en_tooltip2; i += 1) BEGIN
 -    SET_2DA_ENTRY_LATER ~s2el_tooltip2~ i num_cols ~~
--  END
+   END
 -  SET_2DA_ENTRIES_NOW ~s2el_tooltip2~ (num_cols + 1)
--  
++END BUT_ONLY
++
+   
 -  // add new rows for items that weren't previously listed in the file
 -  FOR (i = halberd_count - 1; i >= 0; i -= 1) BEGIN
 -    SET added = $halberd(~%i%~ ~added~)
@@ -157,21 +162,14 @@
 -      TEXT_SPRINT line ~%halberd% mi_halb_piercing mi_halb_slashing -1~
 -      FOR (j = 4; j < num_cols; j += 1) BEGIN // add -1 entries for columns 4+ if they exist, just to keep things tidy
 -        TEXT_SPRINT line ~%line% -1~
-+        SPRINT text_update halberd
-+        LPM update_item_descriptions
-+        i=hc
-       END
+-      END
 -      INSERT_2DA_ROW r2en_tooltip 3 ~%line%~
 -      // replace the dummy entries with strrefs for our new strings
 -      TEXT_SPRINT name $halberd(~%i%~ ~name~)
 -      REPLACE ~mi_halb_piercing~ ~%name% (%piercing%)~
 -      REPLACE ~mi_halb_slashing~ ~%name% (%slashing%)~
-     END
-+
-   END
+-    END
+-  END
 -  PRETTY_PRINT_2DA
 -  REPLACE_TEXTUALLY ~2DA +~ ~2DA ~
 -  BUT_ONLY_IF_IT_CHANGES
-+END BUT_ONLY
-+
-+

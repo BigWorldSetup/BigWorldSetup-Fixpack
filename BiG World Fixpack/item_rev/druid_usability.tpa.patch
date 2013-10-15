@@ -1,5 +1,5 @@
---- item_rev\components\druid_usability.tpa	Mon Aug 01 04:58:44 2011
-+++ C:\BWP Patchstudio\patched files\item_rev\components\druid_usability.tpa	Mon May 28 22:25:02 2012
+--- item_rev\components\druid_usability.tpa	Mon Aug 01 03:58:44 2011
++++ C:\BWP Patchstudio\patched files\item_rev\components\druid_usability.tpa	Tue May 29 10:55:02 2012
 @@ -1,100 +1,104 @@
 +INCLUDE ~item_rev/lib/armor_list.tpa~
  INCLUDE ~item_rev/lib/descriptions.tpa~
@@ -141,12 +141,12 @@
 -    SPRINT text_update ~druid_usable~
 -    LAUNCH_PATCH_MACRO ~update_item_descriptions~
 -END
--
--//////////////////////////////////////////////
--//  armor
 +    SPRINT text_update druid
 +    LPM update_item_descriptions
  
+-//////////////////////////////////////////////
+-//  armor
+-
 -INCLUDE ~item_rev/lib/armor_list.tpa~
 -ACTION_PHP_EACH armor AS ind => res BEGIN
 -  ACTION_IF FILE_EXISTS_IN_GAME ~%ind%.itm~ BEGIN
@@ -174,9 +174,3 @@
        PATCH_IF ((usability4 BAND 0b01000000) == 0b01000000) BEGIN // if unusable by druids
          WRITE_BYTE 0x1f (usability2 BOR 0b00010000) // make unusable by fighter/druids
        END
-@@ -114,3 +118,5 @@
-   END
-   BUT_ONLY_IF_IT_CHANGES
- END
-+
-+

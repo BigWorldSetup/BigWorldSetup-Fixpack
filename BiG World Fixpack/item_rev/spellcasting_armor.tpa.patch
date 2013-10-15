@@ -1,5 +1,5 @@
---- item_rev\components\spellcasting_armor.tpa	Wed Aug 03 18:12:06 2011
-+++ C:\BWP Patchstudio\patched files\item_rev\components\spellcasting_armor.tpa	Fri Jun 08 23:52:23 2012
+--- item_rev\components\spellcasting_armor.tpa	Wed Aug 03 17:12:06 2011
++++ C:\BWP Patchstudio\patched files\item_rev\components\spellcasting_armor.tpa	Sat Jun 09 12:22:23 2012
 @@ -1,8 +1,11 @@
 -
  INCLUDE ~item_rev/lib/descriptions.tpa~
@@ -83,14 +83,13 @@
        OUTER_SET val= val>0 ? val : 0
 -      ACTION_IF val>0 && (NOT VARIABLE_IS_SET $spd("%val%")) BEGIN
 +      ACTION_IF val>0 BEGIN
-+        OUTER_SET $spd("%val%")=1
-+      END
+         OUTER_SET $spd("%val%")=1
+       END
 +      // elven craftsmanship
 +      OUTER_SET val += EVAL ~rn_10_3~
 +      OUTER_SET val= val>0 ? val : 0
 +      ACTION_IF val>0 BEGIN
-         OUTER_SET $spd("%val%")=1
-       END
++        OUTER_SET $spd("%val%")=1
      END
    END
 -  ACTION_PHP_EACH spd AS ind => res BEGIN
@@ -103,6 +102,7 @@
 -      WRITE_LONG 0x1c (0 - ind)
 -      WRITE_LONG 0x24 2
 -      WRITE_SHORT 0x2c 100
++  END
 +  ACTION_PHP_EACH spd AS i => r BEGIN
 +    LAF CREATE_EFFECT INT_VAR opcode=189 target=1 parameter1=(0 - i) timing=2 STR_VAR effect= EVAL ~ag#irs%i%~ END
    END
@@ -149,43 +149,32 @@
                17 // fighter/mage/cleric
              BEGIN
 -              LPF ADD_ITEM_EQEFFECT INT_VAR opcode=177 target=1 timing=2 parameter1=class parameter2=5 STR_VAR resource=EVAL ~micstsp%value%~ END
-+              LPF ADD_ITEM_EQEFFECT INT_VAR opcode=177 target=1 timing=2 parameter1=class parameter2=5 STR_VAR resource=EVAL ~ag#irs%value%~ END
-             END
+-            END
 -          END
--        END
--        PATCH_IF option=3 BEGIN
++              LPF ADD_ITEM_EQEFFECT INT_VAR opcode=177 target=1 timing=2 parameter1=class parameter2=5 STR_VAR resource=EVAL ~ag#irs%value%~ END
+         END
+         PATCH_IF option=3 BEGIN
 -          col=2 LPM calc
 -          PATCH_IF value BEGIN
 -            xspd=value
--            PATCH_FOR_EACH class IN
+             PATCH_FOR_EACH class IN
 -              1  // mage
--              3  // cleric
+               3  // cleric
 -              5  // bard
--              6  // paladin
+               6  // paladin
 -              7  // fighter/mage
--              8  // fighter/cleric
+               8  // fighter/cleric
 -              10 // fighter/mage/thief
--              11 // druid
--              12 // ranger
+               11 // druid
+               12 // ranger
 -              13 // mage/thief
 -              14 // cleric/mage
--              15 // cleric/thief
--              16 // fighter/druid
+               15 // cleric/thief
+               16 // fighter/druid
 -              17 // fighter/mage/cleric
--              18 // cleric/ranger
--            BEGIN
+               18 // cleric/ranger
+             BEGIN
 -              LPF ADD_ITEM_EQEFFECT INT_VAR opcode=177 target=1 timing=2 parameter1=class parameter2=5 STR_VAR resource=EVAL ~micstsp%value%~ END
-+            PATCH_IF option=3 BEGIN
-+              PATCH_FOR_EACH class IN
-+                3  // cleric
-+                6  // paladin
-+                8  // fighter/cleric
-+                11 // druid
-+                12 // ranger
-+                15 // cleric/thief
-+                16 // fighter/druid
-+                18 // cleric/ranger
-+              BEGIN
 +                LPF ADD_ITEM_EQEFFECT INT_VAR opcode=177 target=1 timing=2 parameter1=class parameter2=5 STR_VAR resource=EVAL ~ag#irs%value%~ END
 +              END
              END
@@ -253,25 +242,20 @@
      WRITE_SHORT 0x1c 0xc
    END
  
--  PATCH_IF xfail BEGIN
--    LPF ADD_ITEM_EQEFFECT INT_VAR opcode=60 target=1 timing=2 parameter1=xfail END
--    SPRINT text_update casting_penalty
--    LPM update_item_descriptions
 +  PATCH_IF option=1 && type BEGIN
 +    xfail=0
 +    READ_2DA_ENTRY_FORMER rn type 2 xfail
-+    PATCH_IF xfail BEGIN
-+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode=60 target=1 timing=2 parameter1=xfail END
-+      SPRINT text_update casting_penalty
-+      LPM update_item_descriptions
-+    END
+   PATCH_IF xfail BEGIN
+     LPF ADD_ITEM_EQEFFECT INT_VAR opcode=60 target=1 timing=2 parameter1=xfail END
+     SPRINT text_update casting_penalty
+     LPM update_item_descriptions
    END
--  PATCH_IF xspd BEGIN
--    PATCH_IF option=2 BEGIN
++  END
 +  PATCH_IF (option=2 || option=3) && type BEGIN
 +    xspd=0
 +    READ_2DA_ENTRY_FORMER rn type 3 xspd
-+    PATCH_IF xspd BEGIN
+   PATCH_IF xspd BEGIN
+-    PATCH_IF option=2 BEGIN
        PATCH_FOR_EACH class IN
          1  // mage
          5  // bard
@@ -280,48 +264,35 @@
          17 // fighter/mage/cleric
        BEGIN
 -        LPF ADD_ITEM_EQEFFECT INT_VAR opcode=177 target=1 timing=2 parameter1=class parameter2=5 STR_VAR resource=EVAL ~micstsp%xspd%~ END
+-      END
 +        LPF ADD_ITEM_EQEFFECT INT_VAR opcode=177 target=1 timing=2 parameter1=class parameter2=5 STR_VAR resource=EVAL ~ag#irs%xspd%~ END
-       END
--    END
--    PATCH_IF option=3 BEGIN
--      PATCH_FOR_EACH class IN
+     END
+     PATCH_IF option=3 BEGIN
+       PATCH_FOR_EACH class IN
 -        1  // mage
--        3  // cleric
+         3  // cleric
 -        5  // bard
--        6  // paladin
+         6  // paladin
 -        7  // fighter/mage
--        8  // fighter/cleric
+         8  // fighter/cleric
 -        10 // fighter/mage/thief
--        11 // druid
--        12 // ranger
+         11 // druid
+         12 // ranger
 -        13 // mage/thief
 -        14 // cleric/mage
--        15 // cleric/thief
--        16 // fighter/druid
+         15 // cleric/thief
+         16 // fighter/druid
 -        17 // fighter/mage/cleric
--        18 // cleric/ranger
--      BEGIN
+         18 // cleric/ranger
+       BEGIN
 -        LPF ADD_ITEM_EQEFFECT INT_VAR opcode=177 target=1 timing=2 parameter1=class parameter2=5 STR_VAR resource=EVAL ~micstsp%xspd%~ END
-+      PATCH_IF option=3 BEGIN
-+        PATCH_FOR_EACH class IN
-+          3  // cleric
-+          6  // paladin
-+          8  // fighter/cleric
-+          11 // druid
-+          12 // ranger
-+          15 // cleric/thief
-+          16 // fighter/druid
-+          18 // cleric/ranger
-+        BEGIN
 +          LPF ADD_ITEM_EQEFFECT INT_VAR opcode=177 target=1 timing=2 parameter1=class parameter2=5 STR_VAR resource=EVAL ~ag#irs%xspd%~ END
-+        END
        END
-+      SPRINT text_update casting_penalty
-+      LPM update_item_descriptions
      END
--    SPRINT text_update casting_penalty
--    LPM update_item_descriptions
+     SPRINT text_update casting_penalty
+     LPM update_item_descriptions
    END
++  END
  
  END BUT_ONLY
 +

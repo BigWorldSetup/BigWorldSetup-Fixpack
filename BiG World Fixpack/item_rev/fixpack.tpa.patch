@@ -1,5 +1,5 @@
---- item_rev\lib\fixpack.tpa	Thu Jul 28 17:49:20 2011
-+++ C:\BWP Patchstudio\patched files\item_rev\lib\fixpack.tpa	Sat Dec 17 22:26:18 2011
+--- item_rev\lib\fixpack.tpa	Thu Jul 28 16:49:20 2011
++++ C:\BWP Patchstudio\patched files\item_rev\lib\fixpack.tpa	Sun Dec 18 10:56:18 2011
 @@ -1,121 +1,436 @@
  
 +//////////////////////////////////////////////
@@ -26,23 +26,13 @@
 -    PATCH_IF type=1 && damage=2 BEGIN
 -      SPRINT text_update wc_pre_fix
 -      LPM update_item_descriptions
--    END
 +    old_speed=99 old_thaco=99 old_dice=99 old_size=99 old_damage=99
 +    new_speed=99 new_thaco=99 new_dice=99 new_size=99 new_damage=99
 +    LPM file_fix
-   END
--BUT_ONLY
++  END
 +END
- 
- 
--// Club of Detonation +5
--COPY_EXISTING blun27.itm override
--  READ_SHORT 0x1c item
--  READ_BYTE  0x31 prof
--  PATCH_IF prof=0x73 && item=0x17 BEGIN
--    WRITE_SHORT 0x1c 0x11 // change item type to mace
--  END  
--BUT_ONLY
++
++
 +// due to how WeiDU handles \1's, we have to cut the line in two halves and then stitch them back after evaluation is done
 +OUTER_SPRINT colon @100100
 +OUTER_SPRINT plus  @100144
@@ -71,25 +61,12 @@
 +            END
 +          END
 +        END ~%t5%~
- 
++
 +      END
 +    END ~%start%%temp%~
- 
--// Ice Star +4
--DEFINE_PATCH_MACRO wc_pre_fix BEGIN
--  SPRINT t1 @100151
--  SPRINT t2 @100152
--  REPLACE_TEXTUALLY ~%t1%~ ~%t2%~
++
 +  END
- END
--COPY_EXISTING blun35.itm override
--  GET_OFFSET_ARRAY header ITM_V10_HEADERS
--  PHP_EACH header AS ind => res BEGIN
--    READ_BYTE res type
--    READ_SHORT res+0x12 speed
--    PATCH_IF type=1 && speed=3 BEGIN
--      SPRINT text_update wc_pre_fix
--      LPM update_item_descriptions
++END
 +
 +// outer part of desc fixer
 +DEFINE_PATCH_MACRO fix_desc BEGIN
@@ -115,7 +92,7 @@
 +    PATCH_IF old_thaco<0 BEGIN
 +      old_thaco = ABS old_thaco
 +      SPRINT sign ~%minus%~
-     END
++    END
 +    SPRINT check @100151
 +
 +    PATCH_IF new_thaco>0 BEGIN
@@ -128,9 +105,8 @@
 +    SPRINT replace @100152
 +
 +    LPM fix
-   END
--BUT_ONLY
- 
++  END
++
 +  PATCH_IF old_dice !=99 BEGIN
 +    SPRINT main @100124 // main damage line
 +    SPRINT cut @100153
@@ -253,16 +229,43 @@
 +      WRITE_LONG 0x50 ~-1~
 +      WRITE_LONG 0x54 ~-1~
 +    END BUT_ONLY
-+  END
-+END
-+
-+
+     END
+   END
+-BUT_ONLY
+ 
+ 
+-// Club of Detonation +5
+-COPY_EXISTING blun27.itm override
+-  READ_SHORT 0x1c item
+-  READ_BYTE  0x31 prof
+-  PATCH_IF prof=0x73 && item=0x17 BEGIN
+-    WRITE_SHORT 0x1c 0x11 // change item type to mace
+-  END  
+-BUT_ONLY
 +//////////////////////////////////////////////
 +//  misc fixes and adjustments
-+
+ 
 +// Arrow of Fire (kobold commandos)
 +COPY_EXISTING arow08.itm ~override/arowkc.itm~
-+
+ 
+-// Ice Star +4
+-DEFINE_PATCH_MACRO wc_pre_fix BEGIN
+-  SPRINT t1 @100151
+-  SPRINT t2 @100152
+-  REPLACE_TEXTUALLY ~%t1%~ ~%t2%~
+-END
+-COPY_EXISTING blun35.itm override
+-  GET_OFFSET_ARRAY header ITM_V10_HEADERS
+-  PHP_EACH header AS ind => res BEGIN
+-    READ_BYTE res type
+-    READ_SHORT res+0x12 speed
+-    PATCH_IF type=1 && speed=3 BEGIN
+-      SPRINT text_update wc_pre_fix
+-      LPM update_item_descriptions
+-    END
+-  END
+-BUT_ONLY
+-
 +// Arrow +2 (unknown origin)
 +COPY_EXISTING arow11.itm ~override/arow1a.itm~
  
@@ -270,18 +273,25 @@
  DEFINE_PATCH_MACRO wc_pre_fix BEGIN
 -  SPRINT t1 @100138
 -  SPRINT t2 @100139
--  REPLACE_TEXTUALLY ~%t1%~ ~%t2%~
 +  PATCH_IF ident BEGIN
 +    SPRINT t1 @100161
 +    SPRINT t2 @100162
-+    REPLACE_TEXTUALLY ~%t1%~ ~%t2%~
-+  END
+   REPLACE_TEXTUALLY ~%t1%~ ~%t2%~
  END
++END
  COPY_EXISTING bow14.itm override
    SPRINT text_update wc_pre_fix
    LPM update_item_descriptions
  BUT_ONLY
  
+-
+-// Blade of Roses +3
+-DEFINE_PATCH_MACRO wc_pre_fix BEGIN
+-  SPRINT t1 @100140
+-  SPRINT t2 @100141
+-  REPLACE_TEXTUALLY ~%t1%~ ~%t2%~
+-END
+-COPY_EXISTING sw1h40.itm override
 +// Embarl's Dagger
 +COPY_EXISTING misc4u.itm override PATCH_IF SOURCE_SIZE>0x71 BEGIN
 +  WRITE_LONG 0x54 ~-1~
@@ -290,46 +300,66 @@
 +// Azuredge, fucked up by BG2Fixpack
 +ACTION_IF (MOD_IS_INSTALLED ~BG2FIXPACK/SETUP-BG2FIXPACK.TP2~ 0) BEGIN // // Core Fixes
 +  COPY_EXISTING ax1h10.itm override PATCH_IF SOURCE_SIZE>0x71 BEGIN
-+    GET_OFFSET_ARRAY header ITM_V10_HEADERS
-+    PHP_EACH header AS ind => res BEGIN
-+      READ_BYTE res type
+   GET_OFFSET_ARRAY header ITM_V10_HEADERS
+   PHP_EACH header AS ind => res BEGIN
+     READ_BYTE res type
+-    READ_SHORT res+0x16 size
+-    READ_SHORT res+0x18 dice
+-    PATCH_IF type=1 && size=8 && dice=1 BEGIN
+-      SPRINT text_update wc_pre_fix
+-      LPM update_item_descriptions
 +      READ_SHORT res+0x14 thaco
 +      READ_SHORT res+0x1a damage
 +      PATCH_IF (type=1 || type=2) && thaco=3 && damage=3 BEGIN
 +        WRITE_SHORT res+0x14 0
 +        WRITE_SHORT res+0x1a 0
-+      END
-+    END
+     END
+   END
+-BUT_ONLY
+-
 +  END BUT_ONLY
 +END
  
--// Blade of Roses +3
+-// Angurvadal +4
 +// Moonblade
  DEFINE_PATCH_MACRO wc_pre_fix BEGIN
--  SPRINT t1 @100140
--  SPRINT t2 @100141
--  REPLACE_TEXTUALLY ~%t1%~ ~%t2%~
+-  SPRINT t1 @100153
+-  SPRINT t2 @100154
 +  PATCH_IF ident BEGIN
 +    SPRINT t1 @100163
 +    REPLACE_TEXTUALLY ~%t1%~ ~~
 +    SPRINT t1 @100164
 +    SPRINT t2 @100165
-+    REPLACE_TEXTUALLY ~%t1%~ ~%t2%~
-+  END
+   REPLACE_TEXTUALLY ~%t1%~ ~%t2%~
  END
--COPY_EXISTING sw1h40.itm override
+-COPY_EXISTING sw1h60.itm override
+-  GET_OFFSET_ARRAY header ITM_V10_HEADERS
+-  PHP_EACH header AS ind => res BEGIN
+-    READ_BYTE res type
+-    READ_SHORT res+0x12 speed
+-    PATCH_IF type=1 && speed=1 BEGIN
+-      SPRINT text_update wc_pre_fix
+-      LPM update_item_descriptions
+-    END
+   END
+-BUT_ONLY
+-
 +COPY_EXISTING sw1h13.itm override PATCH_IF SOURCE_SIZE>0x71 BEGIN
 +  SPRINT text_update wc_pre_fix LPM update_item_descriptions
 +END BUT_ONLY
-+
+ 
+-// Carsomyr +5
 +// Sling of Everard +5, bugged with or without help of GTU
 +ACTION_IF (MOD_IS_INSTALLED ~BG2FIXPACK/SETUP-BG2FIXPACK.TP2~ 1001) BEGIN // GTU
-+DEFINE_PATCH_MACRO wc_pre_fix BEGIN
+ DEFINE_PATCH_MACRO wc_pre_fix BEGIN
+-  SPRINT t1 @100142
+-  SPRINT t2 @100143
 +  PATCH_IF ident BEGIN
 +    SPRINT t1 @100166
 +    SPRINT t2 @100167
-+    REPLACE_TEXTUALLY ~%t1%~ ~%t2%~
-+  END
+   REPLACE_TEXTUALLY ~%t1%~ ~%t2%~
+ END
+-COPY_EXISTING sw2h10.itm override
 +END
 +COPY_EXISTING wasling.itm override PATCH_IF SOURCE_SIZE>0x71 BEGIN
    GET_OFFSET_ARRAY header ITM_V10_HEADERS
@@ -337,7 +367,7 @@
      READ_BYTE res type
      READ_SHORT res+0x16 size
      READ_SHORT res+0x18 dice
--    PATCH_IF type=1 && size=8 && dice=1 BEGIN
+-    PATCH_IF type=1 && size=10 && dice=1 BEGIN
 -      SPRINT text_update wc_pre_fix
 -      LPM update_item_descriptions
 +    READ_SHORT res+0x1a damage
@@ -360,15 +390,10 @@
 +  LPM read_file
 +END BUT_ONLY
 +END
- 
++
 +// BG2Fixpack GTU had bugged few more items
 +ACTION_IF (MOD_IS_INSTALLED ~BG2FIXPACK/SETUP-BG2FIXPACK.TP2~ 1001) BEGIN // GTU
- 
--// Angurvadal +4
--DEFINE_PATCH_MACRO wc_pre_fix BEGIN
--  SPRINT t1 @100153
--  SPRINT t2 @100154
--  REPLACE_TEXTUALLY ~%t1%~ ~%t2%~
++
 +// Flame Tongue +4
 +DEFINE_PATCH_MACRO file_fix BEGIN
 +  PATCH_IF type=1 && dice=1 && size=8 && damage=1 BEGIN
@@ -377,16 +402,7 @@
 +    new_dice=1 new_size=8 new_damage=1
 +    SPRINT text_update fix_desc LPM update_item_descriptions
 +  END
- END
--COPY_EXISTING sw1h60.itm override
--  GET_OFFSET_ARRAY header ITM_V10_HEADERS
--  PHP_EACH header AS ind => res BEGIN
--    READ_BYTE res type
--    READ_SHORT res+0x12 speed
--    PATCH_IF type=1 && speed=1 BEGIN
--      SPRINT text_update wc_pre_fix
--      LPM update_item_descriptions
--    END
++END
 +COPY_EXISTING sw1h24.itm override PATCH_IF SOURCE_SIZE>0x71 BEGIN
 +  LPM read_file
 +END BUT_ONLY
@@ -398,20 +414,14 @@
 +    old_dice=1 old_size=6 old_damage=2
 +    new_dice=1 new_size=6 new_damage=3
 +    SPRINT text_update fix_desc LPM update_item_descriptions
-   END
--BUT_ONLY
++  END
 +END
 +COPY_EXISTING blun13.itm override PATCH_IF SOURCE_SIZE>0x71 BEGIN
 +  LPM read_file
 +END BUT_ONLY
- 
++
 +END
- 
--// Carsomyr +5
--DEFINE_PATCH_MACRO wc_pre_fix BEGIN
--  SPRINT t1 @100142
--  SPRINT t2 @100143
--  REPLACE_TEXTUALLY ~%t1%~ ~%t2%~
++
 +//////////////////////////////////////////////
 +//  fix bugs in descriptions
 +
@@ -432,16 +442,7 @@
 +    END
 +    SPRINT text_update fix_desc LPM update_item_descriptions
 +  END
- END
--COPY_EXISTING sw2h10.itm override
--  GET_OFFSET_ARRAY header ITM_V10_HEADERS
--  PHP_EACH header AS ind => res BEGIN
--    READ_BYTE res type
--    READ_SHORT res+0x16 size
--    READ_SHORT res+0x18 dice
--    PATCH_IF type=1 && size=10 && dice=1 BEGIN
--      SPRINT text_update wc_pre_fix
--      LPM update_item_descriptions
++END
 +
 +<<<<<<<<item_rev/lib/fixpack.2da
 +itm       old_sp new_sp  old_th new_th  old_d new_d  old_s new_s  old_dam new_dam
@@ -502,9 +503,8 @@
 +          LPM read_file
 +        END BUT_ONLY
 +      END
-     END
-   END
--BUT_ONLY
++    END
++  END
 +
 +//////////////////////////////////////////////
 +

@@ -1,5 +1,5 @@
---- item_rev\languages\english\item_descriptions.tra	Mon Aug 01 23:38:03 2011
-+++ C:\BWP Patchstudio\patched files\item_rev\languages\english\item_descriptions.tra	Sun Oct 21 10:49:20 2012
+--- item_rev\languages\english\item_descriptions.tra	Mon Aug 01 22:38:03 2011
++++ C:\BWP Patchstudio\patched files\item_rev\languages\english\item_descriptions.tra	Sun Oct 21 23:19:20 2012
 @@ -39,7 +39,7 @@
   Paladin
   Ranger~
@@ -688,15 +688,6 @@
  
  STATISTICS:
  
-@@ -6548,7 +6563,7 @@
- 
- Equipped Abilities:
-  Aura of Despair: opponents within 10 feet suffer -2 penalty to attack rolls, damage rolls and saving throws
-- Luck: -1 penalty  (-5% for skills)
-+ Luck: -1 penalty (-5% for skills)
- 
- Armor Class: 0
- Weight: 50
 @@ -6661,6 +6676,7 @@
   Stalker
   Barbarian

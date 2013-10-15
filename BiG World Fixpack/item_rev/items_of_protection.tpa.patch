@@ -1,5 +1,5 @@
---- item_rev\components\items_of_protection.tpa	Sat Nov 22 21:44:08 2008
-+++ C:\BWP Patchstudio\patched files\item_rev\components\items_of_protection.tpa	Mon May 28 22:25:02 2012
+--- item_rev\components\items_of_protection.tpa	Sat Nov 22 20:44:08 2008
++++ C:\BWP Patchstudio\patched files\item_rev\components\items_of_protection.tpa	Tue May 29 10:55:02 2012
 @@ -1,25 +1,20 @@
 -INCLUDE ~item_rev/lib/macros.tpa~
  
@@ -13,17 +13,13 @@
 -    INNER_ACTION BEGIN
 -      ACTION_IF (FILE_EXISTS_IN_GAME ~%current_item%.itm~) BEGIN
 -        COPY_EXISTING ~%current_item%.itm~ ~override~
--          READ_SHORT 0x1c item_type
--          PATCH_IF (%item_type% == 0x02) BEGIN
--            SET isArmor = 1
--          END
--          BUT_ONLY_IF_IT_CHANGES
 +    PATCH_IF (FILE_EXISTS_IN_GAME ~%current_item%.itm~) BEGIN
 +      INNER_PATCH_FILE ~%current_item%.itm~ BEGIN
-+        READ_SHORT 0x1c item_type
-+        PATCH_IF (%item_type% == 0x02) BEGIN
-+          SET isArmor = 1
-+        END
+           READ_SHORT 0x1c item_type
+           PATCH_IF (%item_type% == 0x02) BEGIN
+             SET isArmor = 1
+           END
+-          BUT_ONLY_IF_IT_CHANGES
        END
      END
      PATCH_IF (%isArmor% == 1) BEGIN

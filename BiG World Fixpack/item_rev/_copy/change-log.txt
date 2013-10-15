@@ -234,8 +234,12 @@ v3 Beta 1.15 (22 August 2013)
  - Potion of Sight now correctly "cures" blindness from imbiber
  - Obsidian Ioun Stone had incorrect bonus to saves vs. spell instead of vs. death
 
+v3 Beta 1.16 (12 September 2013)
 
- TO DO:
+ - re-fixed old bug relating to 1PP shield animations
+
+
+TO DO:
  - include Demi's work on rods
  - Fix @1822
  - add critical hit revision

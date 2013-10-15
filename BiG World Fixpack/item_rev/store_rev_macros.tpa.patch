@@ -1,5 +1,5 @@
---- item_rev\lib\store_rev_macros.tpa	Mon Feb 14 23:57:38 2011
-+++ C:\BWP Patchstudio\patched files\item_rev\lib\store_rev_macros.tpa	Mon May 28 22:25:02 2012
+--- item_rev\lib\store_rev_macros.tpa	Mon Feb 14 22:57:38 2011
++++ C:\BWP Patchstudio\patched files\item_rev\lib\store_rev_macros.tpa	Tue May 29 10:55:02 2012
 @@ -1,10 +1,13 @@
  
  // buy_group       - action macro, loads arrays of item types required for the 'buy' function to work
@@ -7,8 +7,7 @@
 +// order           - action array, defines the order in which items will appear in stores
 +//                   dependant upon 'item_rev/lib/identify_weapon.tpa'
  // spelldesc       - action macro, loads array of spells required for the 'temple' function to work
--//                                 patches SPELDESC.2DA to use real spell descriptions
-+//                   patches SPELDESC.2DA to use real spell descriptions
+ //                                 patches SPELDESC.2DA to use real spell descriptions
 +//                   dependant upon 'item_rev/lib/compatibility.tpa'
  // buy             - patch function, sets item types the store will buy
  // items_to_order  - patch function, rearranges items in stores
@@ -255,6 +254,55 @@
 -                    SPRINT $scroll_entry("%x%"$scroll_counter("%x%")) $entry("%z%""%i%")
 -                    SET $scroll_counter("%x%")+=1
 -                    bastard=1
+-                  END
+-                END
+-              END
+-              PATCH_IF type=2 BEGIN                // if divine
+-                FOR (j=1;j<8;j+=1) BEGIN
+-                  PATCH_IF level=j BEGIN
+-                    x=j+8
+-                    SPRINT $scroll_name("%x%"$scroll_counter("%x%")) $name("%z%""%i%")
+-                    SPRINT $scroll_entry("%x%"$scroll_counter("%x%")) $entry("%z%""%i%")
+-                    SET $scroll_counter("%x%")+=1
+-                    bastard=1
+-                  END
+-                END
+-              END
+-              PATCH_IF !(type=1||type=2) BEGIN      // if neither = crap
+-                x=16
+-                SPRINT $scroll_name("%x%"$scroll_counter("%x%")) $name("%z%""%i%")
+-                SPRINT $scroll_entry("%x%"$scroll_counter("%x%")) $entry("%z%""%i%")
+-                SET $scroll_counter("%x%")+=1
+-                bastard=1
+-              END
+-            END ELSE BEGIN bad_scroll+=1 END END END ELSE BEGIN bad_scroll+=1 END // SOURCE_SIZE INNER_PATCH_FILE FILE_EXISTS_IN_GAME
+-          END // if can cast spell
+-          PATCH_IF (!(opcode=146||opcode=148))&&bastard=0 BEGIN // if can't cast spell = crap
+-            SPRINT $scroll_name("16"$scroll_counter("16")) EVAL $name("%z%""%i%")
+-            SPRINT $scroll_entry("16"$scroll_counter("16")) EVAL $entry("%z%""%i%")
+-            SET $scroll_counter("16")+=1
+-            bastard=1
+-          END
+-        END // PHP_EACH
+-      END // PHP_EACH
+-    END // INNER_PATCH_FILE
+-  END // FOR
+-  scroll_counter=0
+-  FOR (i=0;i<17;i+=1) BEGIN
+-    FOR (j=0;j<$scroll_counter("%i%");j+=1) BEGIN
+-      SPRINT $name("%z%""%scroll_counter%") $scroll_name("%i%""%j%")
+-      SPRINT $entry("%z%""%scroll_counter%") $scroll_entry("%i%""%j%")
+-      scroll_counter+=1
+-    END
+-  END
+-  SET $counter("%z%") -= bad_scroll
+-  delete+=bad_scroll
+-  // end of scrolls
+-
+-  READ_LONG 0x34 offset
+-  READ_LONG 0x38 count
+-  DELETE_BYTES offset delete*0x1c   // if we ran across invalid items or scrolls with invalid spells
+-  WRITE_LONG 0x38 count - delete
 +  max=0
 +  del=0
 +  PHP_EACH order AS i => r BEGIN
@@ -294,34 +342,7 @@
 +                        END // should you find an arcane/divine scroll not in it's expected place - 
 +                      END //
 +                    END // e.g. among greens, - then SPL is either invalid or missing
-                   END
--                END
--              END
--              PATCH_IF type=2 BEGIN                // if divine
--                FOR (j=1;j<8;j+=1) BEGIN
--                  PATCH_IF level=j BEGIN
--                    x=j+8
--                    SPRINT $scroll_name("%x%"$scroll_counter("%x%")) $name("%z%""%i%")
--                    SPRINT $scroll_entry("%x%"$scroll_counter("%x%")) $entry("%z%""%i%")
--                    SET $scroll_counter("%x%")+=1
--                    bastard=1
--                  END
--                END
--              END
--              PATCH_IF !(type=1||type=2) BEGIN      // if neither = crap
--                x=16
--                SPRINT $scroll_name("%x%"$scroll_counter("%x%")) $name("%z%""%i%")
--                SPRINT $scroll_entry("%x%"$scroll_counter("%x%")) $entry("%z%""%i%")
--                SET $scroll_counter("%x%")+=1
--                bastard=1
--              END
--            END ELSE BEGIN bad_scroll+=1 END END END ELSE BEGIN bad_scroll+=1 END // SOURCE_SIZE INNER_PATCH_FILE FILE_EXISTS_IN_GAME
--          END // if can cast spell
--          PATCH_IF (!(opcode=146||opcode=148))&&bastard=0 BEGIN // if can't cast spell = crap
--            SPRINT $scroll_name("16"$scroll_counter("16")) EVAL $name("%z%""%i%")
--            SPRINT $scroll_entry("16"$scroll_counter("16")) EVAL $entry("%z%""%i%")
--            SET $scroll_counter("16")+=1
--            bastard=1
++                  END
 +                  k=ef_num // stop looking once 146/148 is found - if a scroll has several of those, then
 +                  j=ab_num // even if that's not a bug we still can't guess correctly which one is 'main'
 +                END // PATCH_IF op=146 || op=148
@@ -341,46 +362,11 @@
 +            SPRINT $ EVAL "%itemtype%"("%item_name%") ~%item_entry%~
 +            SPRINT $ EVAL "%itemtype%_idn"("%item_name%") ~%idname%~
 +            SET $ EVAL "%itemtype%_cst"("%item_name%") = cost
-           END
--        END // PHP_EACH
--      END // PHP_EACH
--    END // INNER_PATCH_FILE
--  END // FOR
--  scroll_counter=0
--  FOR (i=0;i<17;i+=1) BEGIN
--    FOR (j=0;j<$scroll_counter("%i%");j+=1) BEGIN
--      SPRINT $name("%z%""%scroll_counter%") $scroll_name("%i%""%j%")
--      SPRINT $entry("%z%""%scroll_counter%") $scroll_entry("%i%""%j%")
--      scroll_counter+=1
--    END
--  END
--  SET $counter("%z%") -= bad_scroll
--  delete+=bad_scroll
--  // end of scrolls
--
--  READ_LONG 0x34 offset
--  READ_LONG 0x38 count
--  DELETE_BYTES offset delete*0x1c   // if we ran across invalid items or scrolls with invalid spells
--  WRITE_LONG 0x38 count - delete
--  PATCH_FOR_EACH off IN 0x2c 0x4c 0x70 BEGIN
--    READ_LONG off another
--    PATCH_IF another>=offset BEGIN
--      WRITE_LONG off another - delete*0x1c
--    END
++          END
 +        END ELSE BEGIN del+=1 END
 +      END
 +    END ELSE BEGIN del+=1 END
-   END
--  FOR (i=0;i<47;i+=1) BEGIN                      // global item type loop
--    PATCH_IF $counter("%i%")>0 BEGIN             // if there's at least one of this type - no need to waste electric power
--      PHP_EACH $fixed("%i%") AS ind => res BEGIN // load the hardcoded array
--        FOR (j=0;j<$counter("%i%");j+=1) BEGIN   // check every item in this type group
--          SPRINT name $name("%i%""%j%")
--          PATCH_IF (~%name%~ STRING_EQUAL_CASE ~%res%~) BEGIN
--            SET $sorted("%i%""%j%") = 1
--            WRITE_ASCIIE offset $entry("%i%""%j%") (0x1c)
--            offset+=0x1c
--          END
++  END
 +
 +  // rebuild each itemtype's array, ordering first by cost, then alphabetically
 +  PHP_EACH order AS i => r BEGIN // i = unused, r = itemtype
@@ -394,21 +380,14 @@
 +          min=r3
 +          SPRINT temp ~%i3%~
 +          SPRINT low EVAL ~%%r%_idn_%i3%%~
-         END
--      END
--      FOR (j=0;j<$counter("%i%");j+=1) BEGIN     // now we simply put in what remains, if...
--        PATCH_IF $sorted("%i%""%j%")=0 BEGIN     // ...the previous block didn't sort it out
--          WRITE_ASCIIE offset $entry("%i%""%j%") (0x1c)
--          offset+=0x1c
++        END
 +        PATCH_IF r3=min BEGIN // if two items cost the same, sort them alphabetically
 +          PATCH_IF (EVAL ~%%r%_idn_%i3%%~ STRING_COMPARE_CASE ~%low%~) < 0 BEGIN
 +            SPRINT temp ~%i3%~
 +            SPRINT low EVAL ~%%r%_idn_%i3%%~
 +          END
-         END
-       END
--    END // PATCH_IF
--  END // FOR
++        END
++      END
 +      SPRINT $aux("%temp%") EVAL ~%r%_%temp%~
 + //     SET $aux_cst("%temp%") = $ EVAL "%r%_cst"("%temp%")
 +      SET $ EVAL "%r%_cst"("%temp%") = max+2
@@ -434,10 +413,33 @@
 +  PATCH_IF del BEGIN
 +    DELETE_BYTES off del*0x1c
 +    WRITE_LONG 0x38 THIS - del
-+    PATCH_FOR_EACH off IN 0x2c 0x4c 0x70 BEGIN
+   PATCH_FOR_EACH off IN 0x2c 0x4c 0x70 BEGIN
+-    READ_LONG off another
+-    PATCH_IF another>=offset BEGIN
+-      WRITE_LONG off another - delete*0x1c
 +      WRITE_LONG off (THIS > LONG_AT 0x34) ? (THIS - del*0x1c) : THIS
-+    END
-+  END
+     END
+   END
+-  FOR (i=0;i<47;i+=1) BEGIN                      // global item type loop
+-    PATCH_IF $counter("%i%")>0 BEGIN             // if there's at least one of this type - no need to waste electric power
+-      PHP_EACH $fixed("%i%") AS ind => res BEGIN // load the hardcoded array
+-        FOR (j=0;j<$counter("%i%");j+=1) BEGIN   // check every item in this type group
+-          SPRINT name $name("%i%""%j%")
+-          PATCH_IF (~%name%~ STRING_EQUAL_CASE ~%res%~) BEGIN
+-            SET $sorted("%i%""%j%") = 1
+-            WRITE_ASCIIE offset $entry("%i%""%j%") (0x1c)
+-            offset+=0x1c
+-          END
+-        END
+-      END
+-      FOR (j=0;j<$counter("%i%");j+=1) BEGIN     // now we simply put in what remains, if...
+-        PATCH_IF $sorted("%i%""%j%")=0 BEGIN     // ...the previous block didn't sort it out
+-          WRITE_ASCIIE offset $entry("%i%""%j%") (0x1c)
+-          offset+=0x1c
+-        END
+-      END
+-    END // PATCH_IF
+-  END // FOR
  
  PATCH_VERBOSE END
  
