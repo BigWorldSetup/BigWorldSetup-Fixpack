@@ -729,10 +729,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Hubelpot the Vegetable Merchant NPC v1.0
+:: SC#Hub - Hubelpot the Vegetable Merchant NPC v1.0
 
 :: Lollorian's GLOBAL fixes - SC#AR0530.baf, SC#HubQuest.d
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
+
+:: Lollorian's assorted CRE fixes
+:: NEWLINK
 
 
 ----------------------------------------------------------------------------------------
@@ -1201,6 +1204,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's corrected PlaySound("") -> PlaySound("K#SarM5") - k#sar25d.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=489410
+
+
+----------------------------------------------------------------------------------------
+
+
+:: SDMODS - Shed's Modpack v1.03
+
+:: Lollorian's assorted CRE fixes
+:: NEWLINK
 
 
 ----------------------------------------------------------------------------------------
