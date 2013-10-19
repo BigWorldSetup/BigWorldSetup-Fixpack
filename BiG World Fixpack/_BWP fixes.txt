@@ -231,6 +231,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: AvengerKit - Holy Avenger Kit + Extras v1.02
+
+:: Rename sudemin.cre -> suedemin.cre
+:: http://www.shsforums.net/topic/42248-holy-avenger-kit-extra/?p=509983
+
+
+----------------------------------------------------------------------------------------
+
+
 :: AviM - Avi Maya NPC Project (AviM) v6.0
 
 :: Lollorian's corrected PlaySound("AVILOVE") -> PlaySound("AVIM")

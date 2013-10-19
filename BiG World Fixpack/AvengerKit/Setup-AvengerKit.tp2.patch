@@ -1,0 +1,11 @@
+--- Setup-AvengerKit.tp2	Sun Sep 13 15:02:16 2009
++++ C:\BWP Patchstudio\patched files\Setup-AvengerKit.tp2	Sat Oct 19 15:47:59 2013
+@@ -3,7 +3,7 @@
+ 
+ 
+ //MODDER
+-VERSION ~v1.1~
++VERSION ~v1.02 BWP Fix~
+ 
+ README ~HAKit\Readme.txt~
+ 
