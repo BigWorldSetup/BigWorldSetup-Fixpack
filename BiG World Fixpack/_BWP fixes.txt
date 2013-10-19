@@ -696,15 +696,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Grimuars v3.3
-
-:: Lollorian's LOCALS fix - b#tar05.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
-
-
-----------------------------------------------------------------------------------------
-
-
 :: haerdalisromance - Haer'Dalis Romance v2
 
 :: Kulyok's Noober flirt fix
