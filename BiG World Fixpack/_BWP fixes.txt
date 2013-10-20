@@ -513,7 +513,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: DarkHorizons - Dark Horizons v2.09
+:: DarkHorizons - Dark Horizons v2.10
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/55229-khazids-death-sword-bug/?p=546708
@@ -1384,9 +1384,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 
 :: TheUndying - The Undying v2.11
-
-:: Lollorian's Ghost spawn corrections
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=554204
 
 :: Lollorian's !Dead(Myself) changes - CMSORA3.baf
 :: http://forums.chosenofmystra.net/index.php?topic=1628.msg18973#msg18973

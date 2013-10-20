@@ -9,24 +9,3 @@
  PRINT ~/****************************************~
  PRINT ~*The Undying Mod Version 2.11		*~
  PRINT ~*http://www.teambg.org            	*~
-@@ -249,17 +249,17 @@
-   SAY NAME1 ~Solaufein Daelvorta~
-   SAY NAME2 ~Solaufein Daelvorta~
- 
--COPY ~TheUndying/cre/CMGHOST1.CRE~ ~override~
-+COPY ~TheUndying/cre/CMGHOST.CRE~ ~override/CMGHOST1.CRE~
-   SAY NAME1 ~Ghost~
-   SAY NAME2 ~Ghost~
-   WRITE_ASCII 0x280 ~CMGHOST1~
- 
--COPY ~TheUndying/cre/CMGHOST2.CRE~ ~override~
-+COPY ~TheUndying/cre/CMGHOST.CRE~ ~override/CMGHOST2.CRE~
-   SAY NAME1 ~Ghost~
-   SAY NAME2 ~Ghost~
-   WRITE_ASCII 0x280 ~CMGHOST2~
- 
--COPY ~TheUndying/cre/CMGHOST3.CRE~ ~override~
-+COPY ~TheUndying/cre/CMGHOST.CRE~ ~override/CMGHOST3.CRE~
-   SAY NAME1 ~Ghost~
-   SAY NAME2 ~Ghost~
-   WRITE_ASCII 0x280 ~CMGHOST3~

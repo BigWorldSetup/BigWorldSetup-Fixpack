@@ -4,8 +4,8 @@
  BACKUP ~DarkHorizons/backup~
  AUTHOR ~"http://www.teambg.org"~
  
--VERSION ~BGT v209~
-+VERSION ~BGT v209 BWP Fix~
+-VERSION ~BGT v210~
++VERSION ~BGT v210 BWP Fix~
  
  ALWAYS
  ACTION_IF !("%percentage_sign%" STRING_EQUAL "%") THEN BEGIN //do once
