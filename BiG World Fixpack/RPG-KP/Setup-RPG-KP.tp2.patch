@@ -1,9 +1,28 @@
 --- Setup-RPG-KP.tp2	Tue Feb 28 21:14:44 2006
-+++ C:\BWP Patchstudio\patched files\Setup-RPG-KP.tp2	Tue Oct 08 22:37:26 2013
-@@ -1,5 +1,6 @@
++++ C:\BWP Patchstudio\patched files\Setup-RPG-KP.tp2	Sun Oct 20 18:49:41 2013
+@@ -1,6 +1,6 @@
  BACKUP ~RPG-KP\backup~
  AUTHOR ~Olryx2@Yahoo.co.uk~
+-
 +VERSION ~v1.0 BWP Fix~
- 
  ALWAYS
    AT_INTERACTIVE_EXIT ~VIEW RPG-KP/readme-RPGKP.chm~
+ END
+@@ -1899,7 +1899,7 @@
+ BEGIN ~Kitpack Component - Dual-wielding for thrown weapons tweak~
+ 
+ COPY ~RPG-KP/dualthrown/copy~ ~override~
+-ACTION_IF FILE_EXISTS ~override/c2ax1h01.itm~
++ACTION_IF MOD_IS_INSTALLED setup-itemupgrade.tp2 0
+ THEN BEGIN
+ COPY_EXISTING ~c2ax1h01.itm~ ~override/c2ax1h01.itm~
+      READ_LONG NAME2 ~azurname~
+@@ -1911,7 +1911,7 @@
+      WRITE_LONG NAME2 ~%azurname%~
+      WRITE_LONG IDENTIFIED_DESC ~%azurdesc%~
+ COMPILE ~RPG-KP/dualthrown/dtsoa.d~
+-ACTION_IF FILE_EXISTS ~Data/25Dialog.bif~
++ACTION_IF MOD_IS_INSTALLED setup-itemupgrade.tp2 1
+ THEN BEGIN
+ COMPILE ~RPG-KP/dualthrown/dttob.d~
+ END
