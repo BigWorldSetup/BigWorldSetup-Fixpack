@@ -1185,6 +1185,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's fixed malformed S#PRO.SPL
 :: - LINK NOT FOUND -
 
+:: Lollorian's unnecessary string fix for dualwielding axes: @243 -> ~Yes, let's do it!~
+:: http://forums.rpgdungeon.net/index.php?topic=1224.0
+
 
 ----------------------------------------------------------------------------------------
 

@@ -1,0 +1,11 @@
+--- RPG-KP\dualthrown\dtsoa.d	Sun Nov 06 16:35:50 2005
++++ C:\BWP Patchstudio\patched files\RPG-KP\dualthrown\dtsoa.d	Sun Oct 20 18:37:57 2013
+@@ -15,7 +15,7 @@
+ PartyHasItem("w#ax10NR")
+ PartyHasItem("misc5k")
+ PartyGoldGT(19999)
+-~ THEN REPLY @243 DO ~TakePartyGold(20000)
++~ THEN REPLY ~Yes, let's do it!~ DO ~TakePartyGold(20000)
+ DestroyGold(20000)
+ TakePartyItemNum("ax1h10",1)
+ DestroyItem("ax1h10")
