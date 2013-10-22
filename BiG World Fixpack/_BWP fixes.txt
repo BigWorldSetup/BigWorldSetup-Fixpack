@@ -49,8 +49,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's GLOBAL fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
 
-:: Changed r#asmgau.itm to increase Max HP instead of Current HP
-:: - LINK NOT FOUND -
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
 ----------------------------------------------------------------------------------------
@@ -527,6 +527,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Devin - Les Exilés de Lunargent v1.0
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
 :: dsotsc - Dark Side of the Sword Coast v2.17
 
 :: 10th's drow dustification string fix
@@ -535,63 +544,20 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's 'game breaking bug' aka 50 gold richer fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=562991
 
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
 
 ----------------------------------------------------------------------------------------
 
 
-:: Deeper Shadows of Amn (DSoA) v2.2.4
+:: DSoA - Deeper Shadows of Amn (DSoA) v2.2.4
 
 :: Lollorian's fixed .ids stuff - Setup-DSoA.tp2
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486323
 
 :: Lollorian's corrected typos - Grothgar.baf, sAR0700.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Ding0's Experience Fixer v6
-
-:: White Agnus' 0 XP Creature Fix - creature_xp.tph
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Ding0's Quest Pack v2.3
-
-:: Azazello's Infinite Rune Assassins fix - city_new.baf
-:: http://forums.pocketplane.net/index.php/topic,24876.msg308040.html#msg308040
-
-:: TheBigg's added Start/EndCutSceneMode - harpass1.bcs
-:: http://www.shsforums.net/index.php?s=&showtopic=33538&view=findpost&p=393893
-
-:: TheBigg's addenda
-:: http://www.shsforums.net/index.php?s=&showtopic=36182&view=findpost&p=414114
-
-:: omeletted's hell trial fix
-:: http://www.shsforums.net/index.php?s=&showtopic=31309&view=findpost&p=370565
-
-:: CamDawg's YuanTe-Mage spellcasting fix
-:: http://forums.pocketplane.net/index.php/topic,24754.0.html
-
-:: Steve's fixes
-:: http://www.shsforums.net/index.php?s=&showtopic=37926&view=findpost&p=428254
-:: http://www.shsforums.net/index.php?s=&showtopic=37926&view=findpost&p=428670
-:: http://forums.pocketplane.net/index.php/topic,26020.msg316860.html
-
-:: Temujin's current fixes
-:: http://forums.pocketplane.net/index.php/topic,20010.msg323551.html#msg323551
-
-:: Lollorian's corrected animation typo - sufakeb.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483642
-
-:: Temujin's further fixes (points 13 until 18) done by Lollorian
-:: http://forums.pocketplane.net/index.php?topic=20010.msg324567#msg324567
-
-:: the bigg's KIT.IDS ToBEx compatibility fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------
@@ -634,7 +600,16 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Exnem's Vault / Exnem Items MiniMOD v5
+:: emad - Every Mod and Dog v6
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: exnem - Exnem's Vault / Exnem Items MiniMOD v5
 
 :: RNDTREAS.2DA changes - Setup-Exnem.TP2
 
@@ -657,10 +632,20 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: finch - Finch NPC v3.0
+
+:: Converted to BGT by using Ascension64's Platform Conversion Utility (PCU)
+:: http://kerzenburg.baldurs-gate.eu/showpost.php?p=911087&postcount=36
+
+
+----------------------------------------------------------------------------------------
+
+
 :: FR_ROV - Freedom's Reign / Reign of Virtue v7.3
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543398
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=547828
 
 :: Guest's patch for duplicate Deidre/Joluvs
@@ -670,19 +655,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Finch NPC v3.0
-
-:: Converted to BGT by using Ascension64's Platform Conversion Utility (PCU)
-:: http://kerzenburg.baldurs-gate.eu/showpost.php?p=911087&postcount=36
-
-
-----------------------------------------------------------------------------------------
-
-
 :: gavin - Gavin NPC v8
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
 ----------------------------------------------------------------------------------------
@@ -696,11 +675,14 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
 
 ----------------------------------------------------------------------------------------
 
 
-:: Ghareth One-Day NPC v0.91
+:: ghareth - Ghareth One-Day NPC v0.91
 
 :: Lollorian's GLOBAL fixes - fwgharj.d
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
@@ -709,10 +691,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Gloran NPC v2
+:: gloran - Gloran NPC v3
 
-:: Lollorian's replacements - Gloran.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
 ----------------------------------------------------------------------------------------
@@ -742,13 +724,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: SC#Hub - Hubelpot the Vegetable Merchant NPC v1.0
+:: iiItemMod - igi's Item Mod v5
 
-:: Lollorian's GLOBAL fixes - SC#AR0530.baf, SC#HubQuest.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
-
-:: Lollorian's assorted CRE fixes
-:: NEWLINK
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
 ----------------------------------------------------------------------------------------
@@ -927,7 +906,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Les Chroniques de Severian (LCDS) v0.1R
+:: severian - Les Chroniques de Severian (LCDS) v0.1R
 
 :: Faulty compile order corrected - Setup-Severian.tp2
 
@@ -935,6 +914,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's corrected CreateCreature("#SMichele", -> CreateCreature("#SMichel", - #SAr1100.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
 ----------------------------------------------------------------------------------------
@@ -998,10 +980,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: MunchMod v3.3
+:: munchmod - MunchMod v3.3
 
 :: Miloch's Arkvisti continuous spawning fix - sbaldur.baf
 :: http://www.shsforums.net/topic/43499-bridge-disrict-errors/?p=489199
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
 ----------------------------------------------------------------------------------------
@@ -1064,10 +1049,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Northern Tales of the Sword Coast (NTotSC) v1.70a
+:: NTotSC- Northern Tales of the Sword Coast (NTotSC) v1.70a
 
 :: erebusant's "Original Travel Times" links.tbl fix
 :: http://www.shsforums.net/index.php?showtopic=40767
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
 ----------------------------------------------------------------------------------------
@@ -1099,6 +1087,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's assorted ARE fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=562853
 
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1107,6 +1098,44 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's correction - M#Questo.bcs
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
+
+
+----------------------------------------------------------------------------------------
+
+
+:: questpack - Ding0's Quest Pack v2.3
+
+:: Azazello's Infinite Rune Assassins fix - city_new.baf
+:: http://forums.pocketplane.net/index.php/topic,24876.msg308040.html#msg308040
+
+:: TheBigg's added Start/EndCutSceneMode - harpass1.bcs
+:: http://www.shsforums.net/index.php?s=&showtopic=33538&view=findpost&p=393893
+
+:: TheBigg's addenda
+:: http://www.shsforums.net/index.php?s=&showtopic=36182&view=findpost&p=414114
+
+:: omeletted's hell trial fix
+:: http://www.shsforums.net/index.php?s=&showtopic=31309&view=findpost&p=370565
+
+:: CamDawg's YuanTe-Mage spellcasting fix
+:: http://forums.pocketplane.net/index.php/topic,24754.0.html
+
+:: Steve's fixes
+:: http://www.shsforums.net/index.php?s=&showtopic=37926&view=findpost&p=428254
+:: http://www.shsforums.net/index.php?s=&showtopic=37926&view=findpost&p=428670
+:: http://forums.pocketplane.net/index.php/topic,26020.msg316860.html
+
+:: Temujin's current fixes
+:: http://forums.pocketplane.net/index.php/topic,20010.msg323551.html#msg323551
+
+:: Lollorian's corrected animation typo - sufakeb.baf
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483642
+
+:: Temujin's further fixes (points 13 until 18) done by Lollorian
+:: http://forums.pocketplane.net/index.php?topic=20010.msg324567#msg324567
+
+:: the bigg's KIT.IDS ToBEx compatibility fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------
@@ -1159,13 +1188,16 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: The Imp's SPIN516R.spl proper name Charmed Animal fix
 :: http://www.shsforums.net/topic/56751-several-alissas-special-abilities-seems-to-be-messed-up/?p=562972
 
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
 
 ----------------------------------------------------------------------------------------
 
 
-:: Revised Battles v6.3
+:: RevisedBattles - Revised Battles v6.3
 
-:: ScuD's  typo fix - pookpar.baf
+:: ScuD's typo fix - pookpar.baf
 :: http://www.shsforums.net/index.php?s=&showtopic=34387&view=findpost&p=444685
 
 :: Lollorian's FR_ROV compatibility check fix - Setup-RevisedBattles.tp2
@@ -1180,6 +1212,27 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's replacements - drizzt/baf/check/useitem.baf, jaellat/baf/check/useitem.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: RFWIP - Revised Forgotten Wars Item Pack v1.0
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: RItemPack - RPG Dungeon Item Pack v2.0
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1188,6 +1241,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+
+----------------------------------------------------------------------------------------
+
+
+:: rttitempack - Return To Trademeet Item Pack v1.2
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
 ----------------------------------------------------------------------------------------
@@ -1216,6 +1278,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: ruad - Ruad Ro'fhessa Item Upgrade v27
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Sarah NPC v3.1
 
 :: Lollorian's corrected PlaySound("") -> PlaySound("K#SarM5") - k#sar25d.baf
@@ -1234,7 +1305,19 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Shadows over Soubar (SoS) v1.13
+:: SC#Hub - Hubelpot the Vegetable Merchant NPC v1.0
+
+:: Lollorian's GLOBAL fixes - SC#AR0530.baf, SC#HubQuest.d
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
+
+:: Lollorian's assorted CRE fixes
+:: NEWLINK
+
+
+----------------------------------------------------------------------------------------
+
+
+:: SOS - Shadows over Soubar v1.13
 
 :: Lollorian's Fence fix - Setup-SOS.tp2
 :: http://www.shsforums.net/index.php?s=&showtopic=41997&view=findpost&p=459945
@@ -1244,6 +1327,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
 ----------------------------------------------------------------------------------------
@@ -1378,7 +1464,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: The Darkest Day v1.13
+:: TDD - The Darkest Day v1.13
 
 :: Lollorian's replacement - BGWARD.BAF
 :: http://www.shsforums.net/topic/38117-the-darkest-day-112-forumthread/?p=483651
@@ -1392,6 +1478,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1400,6 +1489,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's !Dead(Myself) changes - CMSORA3.baf
 :: http://forums.chosenofmystra.net/index.php?topic=1628.msg18973#msg18973
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
 ----------------------------------------------------------------------------------------
@@ -1538,6 +1630,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Vendedor_DLAN - Clan DLAN Vendor v6.1
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Victor's Improvements Pack (BGII Improvements Mod) v2.0
 
 :: Lollorian's !Dead(Myself) changes - LydMag.BAF, marcil.baf, quimb2.baf, salak2.baf, SCMAGE.BAF, SCSHOUT.BAF
@@ -1595,6 +1696,23 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's \are\W_xxxx.baf's fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486198
+
+
+----------------------------------------------------------------------------------------
+
+
+:: xpmod - Ding0's Experience Fixer v6
+
+:: White Agnus' 0 XP Creature Fix - creature_xp.tph
+
+
+----------------------------------------------------------------------------------------
+
+
+:: YLITEMS - YLITEMS Pack Final
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
 ----------------------------------------------------------------------------------------
