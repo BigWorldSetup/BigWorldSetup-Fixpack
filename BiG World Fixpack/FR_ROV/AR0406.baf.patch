@@ -1,0 +1,16 @@
+--- FR_ROV\bcs\bonus\AR0406.baf	Sun Sep 21 21:55:20 2003
++++ C:\BWP Patchstudio\patched files\FR_ROV\bcs\bonus\AR0406.baf	Tue Oct 22 06:34:10 2013
+@@ -2,10 +2,10 @@
+ //////////////////////////////////////////////////
+ 
+ IF
+-	Global("wmSpawnJoluv","AR0406",0)
++	Global("wmSpawnJoluv","GLOBAL",0)
+ THEN
+ 	RESPONSE #100
+-		SetGlobal("wmSpawnJoluv","AR0406",1)
++		SetGlobal("wmSpawnJoluv","GLOBAL",1)
+ 		CreateCreature("wmart1",[1337.1751],4) // Joluv
+-      Continue()
++//    Continue()
+ END

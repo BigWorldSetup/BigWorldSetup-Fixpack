@@ -657,6 +657,19 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: FR_ROV - Freedom's Reign / Reign of Virtue v7.3
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543398
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=547828
+
+:: Guest's patch for duplicate Deidre/Joluvs
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=563378
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Finch NPC v3.0
 
 :: Converted to BGT by using Ascension64's Platform Conversion Utility (PCU)

@@ -1,0 +1,16 @@
+--- FR_ROV\bcs\bonus\AR0702.baf	Sun Sep 21 21:55:20 2003
++++ C:\BWP Patchstudio\patched files\FR_ROV\bcs\bonus\AR0702.baf	Tue Oct 22 06:34:20 2013
+@@ -2,10 +2,10 @@
+ ///////////////////////////////////////////////////////
+ 
+ IF
+-	Global("wmSpawnDeidre","AR0702",0)
++	Global("wmSpawnDeidre","GLOBAL",0)
+ THEN
+ 	RESPONSE #100
+-		SetGlobal("wmSpawnDeidre","AR0702",1)
++		SetGlobal("wmSpawnDeidre","GLOBAL",1)
+ 		CreateCreature("wmart2",[498.456],12) // Deidre
+-      Continue()
++//    Continue()
+ END
