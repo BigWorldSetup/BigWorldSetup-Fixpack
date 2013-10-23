@@ -1,0 +1,11 @@
+--- Setup-BoneHillv275.tp2	Sat Jul 13 12:48:48 2013
++++ C:\BWP Patchstudio\patched files\Setup-BoneHillv275.tp2	Wed Oct 23 21:29:57 2013
+@@ -2,7 +2,7 @@
+ BACKUP ~Bonehillv275/backup~ 
+ AUTHOR ~SirBillyBob@gmail.com and erebusant@verizon.net~
+ 
+-VERSION ~v2.75c~
++VERSION ~v2.75c BWP Fix~
+ 
+ // Isaya: readme at the beginning of installation, if missing in a language, use English
+ README ~bonehillv275/language/%LANGUAGE%/ReadMe-Bonehill.html~ ~bonehillv275/language/english/ReadMe-Bonehill.html~

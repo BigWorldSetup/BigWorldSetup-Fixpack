@@ -357,6 +357,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Bonehillv275 - The Secret of Bone Hill v275c
+
+:: Lollorian's fix for Fabio/Pelltar spawning even if part 1 skipped
+:: http://www.shsforums.net/topic/56785-sobh-part-2-started-but-i-didnt-started-part-1-yet/?p=563462
+
+
+----------------------------------------------------------------------------------------
+
+
 :: BonsBruce - Bon's Bruce v2
 
 :: Lollorian's On-hit bonus ITM fix

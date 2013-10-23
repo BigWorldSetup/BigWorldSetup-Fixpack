@@ -1,0 +1,18 @@
+--- Bonehillv275\BGT\BCS\AR6526.BAF	Sat Feb 27 04:51:26 2010
++++ C:\BWP Patchstudio\patched files\Bonehillv275\BGT\BCS\AR6526.BAF	Wed Oct 23 21:24:43 2013
+@@ -21,6 +21,7 @@
+ 	Global("Criminal","GLOBAL",1)
+ 	Global("WatchSpawn","GLOBAL",1)
+ 	GlobalGT("BHQuestAccept","GLOBAL",3)
++	GlobalLT("BHQuestAccept","GLOBAL",9)
+ 	Global("BHToldOfDeath","GLOBAL",0)
+ 	!Dead("Fabio")
+ THEN
+@@ -34,6 +35,7 @@
+ 	Global("Criminal","GLOBAL",1)
+ 	Global("WatchSpawn","GLOBAL",1)
+ 	GlobalGT("BHQuestAccept","GLOBAL",3)
++	GlobalLT("BHQuestAccept","GLOBAL",9)
+ 	Global("BHToldOfDeath","GLOBAL",0)
+ 	Dead("Fabio")
+ THEN
