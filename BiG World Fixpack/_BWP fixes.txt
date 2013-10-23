@@ -517,6 +517,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/55229-khazids-death-sword-bug/?p=546708
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=546737
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=547608
@@ -536,6 +537,24 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: DNT - Tomoyo and the Underground City v0.9
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
+
+
+----------------------------------------------------------------------------------------
+
+
+:: DrizztSaga - Drizzt Saga v2.0
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
+
+
+----------------------------------------------------------------------------------------
+
+
 :: dsotsc - Dark Side of the Sword Coast v2.17
 
 :: 10th's drow dustification string fix
@@ -545,6 +564,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=562991
 
 :: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
@@ -943,13 +963,16 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Longer Road v1.5.1
+:: LR - Longer Road v1.5.1
 
 :: White Agnus' songlist, creature and file check fixes - SETUP-LongerRoad.tp2
 :: http://www.shsforums.net/index.php?showtopic=43042
 
 :: Lollorian's missing/unused sound files fix - Instal_wav.BAT
 :: http://www.shsforums.net/topic/44607-bwp-mods-bugs-not-solved-yet/?p=482454
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
 
 
 ----------------------------------------------------------------------------------------
@@ -986,6 +1009,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/43499-bridge-disrict-errors/?p=489199
 
 :: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
@@ -1141,7 +1165,59 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Realm of Bhaalspawn Armor Set (RotB Armor Set) v1.0
+:: RevisedBattles - Revised Battles v6.3
+
+:: ScuD's typo fix - pookpar.baf
+:: http://www.shsforums.net/index.php?s=&showtopic=34387&view=findpost&p=444685
+
+:: Lollorian's FR_ROV compatibility check fix - Setup-RevisedBattles.tp2
+:: http://www.shsforums.net/topic/34387-revised-battles-v6-released/?p=482207
+
+:: Lollorian's LOCALS fix - b#tar05.baf
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
+
+:: Lollorian's !Dead(Myself) changes - b#lich02.baf, b#lsha.baf
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
+
+:: Lollorian's replacements - drizzt/baf/check/useitem.baf, jaellat/baf/check/useitem.baf
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: RFWIP - Revised Forgotten Wars Item Pack v1.0
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: RItemPack - RPG Dungeon Item Pack v2.0
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: rolles - Rolles NPC v3a
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
+
+
+----------------------------------------------------------------------------------------
+
+
+:: RotBArmorSet - Realm of Bhaalspawn Armor Set v1.0
 
 :: Lollorian's Blessed of the Triad Fix - setup-RotBArmorSet.tp2
 :: http://www.shsforums.net/index.php?s=&showtopic=41997&view=findpost&p=459945
@@ -1195,43 +1271,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: RevisedBattles - Revised Battles v6.3
+:: RPG-KP - RPG Dungeon Kitpack v1.0
 
-:: ScuD's typo fix - pookpar.baf
-:: http://www.shsforums.net/index.php?s=&showtopic=34387&view=findpost&p=444685
+:: Lollorian's fixed malformed S#PRO.SPL
+:: - LINK NOT FOUND -
 
-:: Lollorian's FR_ROV compatibility check fix - Setup-RevisedBattles.tp2
-:: http://www.shsforums.net/topic/34387-revised-battles-v6-released/?p=482207
-
-:: Lollorian's LOCALS fix - b#tar05.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
-
-:: Lollorian's !Dead(Myself) changes - b#lich02.baf, b#lsha.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
-
-:: Lollorian's replacements - drizzt/baf/check/useitem.baf, jaellat/baf/check/useitem.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
-
-:: Lollorian's assorted ITM fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
-
-
-----------------------------------------------------------------------------------------
-
-
-:: RFWIP - Revised Forgotten Wars Item Pack v1.0
-
-:: Lollorian's assorted ITM fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
-
-
-----------------------------------------------------------------------------------------
-
-
-:: RItemPack - RPG Dungeon Item Pack v2.0
-
-:: Lollorian's assorted ITM fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+:: Lollorian's unnecessary string fix for dualwielding axes: @243 -> ~Yes, let's do it!~
+:: http://forums.rpgdungeon.net/index.php?topic=1224.0 (only installs for ItemUpgrade's original version components #0 & #1)
 
 
 ----------------------------------------------------------------------------------------
@@ -1250,18 +1296,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
-
-
-----------------------------------------------------------------------------------------
-
-
-:: RPG-KP - RPG Dungeon Kitpack v1.0
-
-:: Lollorian's fixed malformed S#PRO.SPL
-:: - LINK NOT FOUND -
-
-:: Lollorian's unnecessary string fix for dualwielding axes: @243 -> ~Yes, let's do it!~
-:: http://forums.rpgdungeon.net/index.php?topic=1224.0 (only installs for ItemUpgrade's original version components #0 & #1)
 
 
 ----------------------------------------------------------------------------------------
@@ -1479,6 +1513,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 :: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 
