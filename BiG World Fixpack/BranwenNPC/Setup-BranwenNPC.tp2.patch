@@ -1,15 +1,14 @@
---- Setup-BranwenNPC.tp2	Tue Jun 03 13:33:49 2008
-+++ C:\BWP Patchstudio\patched files\Setup-BranwenNPC.tp2	Wed Apr 14 09:38:47 2010
-@@ -1,6 +1,8 @@
+--- Setup-BranwenNPC.tp2	Sat Feb 12 15:11:30 2011
++++ C:\BWP Patchstudio\patched files\Setup-BranwenNPC.tp2	Fri Nov 08 17:53:57 2013
+@@ -1,6 +1,6 @@
  BACKUP ~BranwenNPC/backup~
  AUTHOR ~aWoundedLion@yahoo.com~
- 
+-
 +VERSION ~v1.2 BWP Fix~
-+
  README ~BranwenNPC/readme.txt~
  
  LANGUAGE ~English~
-@@ -21,7 +23,11 @@
+@@ -24,7 +24,11 @@
   ~BranwenNPC/WLBRAN_L.bmp~ ~override~
   ~BranwenNPC/WLBRAN_S.bmp~ ~override~
  

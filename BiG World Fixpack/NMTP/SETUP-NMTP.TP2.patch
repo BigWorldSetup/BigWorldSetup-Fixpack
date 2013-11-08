@@ -63,12 +63,3 @@
  //HELM
  COPY ~NMTP/2/ITM/M_TPIH1.itm~~override/M_TPIH1.itm~
  SAY NAME1 @1200
-@@ -1563,7 +1564,7 @@
- ADD_CRE_ITEM ~M_TPII10~ #1 #0 #0 ~UNSTEALABLE~ ~inv~
- END
- END ELSE
-- PATCH_IF (("%general%" = "255") AND ("%race%" = "128") AND ("%stre%" > "13")) BEGIN
-+ PATCH_IF (("%general%" = "255") AND ("%race%" = "118") AND ("%stre%" > "13")) BEGIN
- SET Num=0 
- FOR (i=0;i<16; i=i+1) BEGIN
- READ_SHORT ~%Off%~+0x2a+0x2*~%i%~ ~inv~

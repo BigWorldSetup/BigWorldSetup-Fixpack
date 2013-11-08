@@ -398,6 +398,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's locked container problems fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=561315
 
+:: horred the plague's Lavok script issue fix
+:: http://www.shsforums.net/topic/56797-lavok-back-from-the-dead/?p=563869
+
 
 ----------------------------------------------------------------------------------------
 

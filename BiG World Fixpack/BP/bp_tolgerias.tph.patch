@@ -1,0 +1,11 @@
+--- BP\LIB\bp_tolgerias.tph	Sun May 26 04:24:51 2013
++++ C:\BWP Patchstudio\patched files\BP\LIB\bp_tolgerias.tph	Thu Nov 07 13:46:43 2013
+@@ -65,7 +65,7 @@
+   PATCH_IF vl BEGIN
+     WRITE_SHORT 0x28 25088 // AnimationID (was 32570)
+     WRITE_BYTE 0x241 255 // Racial (was 0)
+-    WRITE_ASCII 0x250 ~bplavok1~ #8 // Class (was MAGE16A)
++    WRITE_ASCII 0x248 ~bplavok1~ #8 // Override (was LAVOK01)
+     WRITE_ASCII 0x250 ~shoutdlg~ #8 // Class (was MAGE16A)
+     WRITE_ASCII 0x258 ~lavokbp~ #8 // Race (was SHOUTDLG)
+     REMOVE_KNOWN_SPELL ~spwi617~
