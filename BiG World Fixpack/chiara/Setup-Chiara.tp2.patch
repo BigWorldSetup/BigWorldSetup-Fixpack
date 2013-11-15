@@ -1,11 +1,11 @@
 --- Setup-Chiara.tp2	Sun Dec 05 11:41:02 2004
-+++ C:\BWP Patchstudio\patched files\Setup-Chiara.tp2	Tue Jun 01 06:48:42 2010
-@@ -3,6 +3,8 @@
++++ C:\BWP Patchstudio\patched files\Setup-Chiara.tp2	Fri Nov 08 22:41:32 2013
+@@ -2,7 +2,7 @@
+ 
  BACKUP ~chiara/chiara-backup~
  AUTHOR ~octavian@rosenranken.de~
- 
+-
 +VERSION ~v1.02 BWP Fix~
-+
  // Dateien, die nicht jeder hat
  ALLOW_MISSING
          ~Ar4500.bcs~
