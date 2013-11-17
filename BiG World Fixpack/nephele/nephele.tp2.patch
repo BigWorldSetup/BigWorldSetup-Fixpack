@@ -1,0 +1,11 @@
+--- nephele\nephele.tp2	Mon Nov 11 15:41:31 2013
++++ C:\BWP Patchstudio\patched files\nephele\nephele.tp2	Sun Nov 17 21:33:36 2013
+@@ -4,7 +4,7 @@
+ // Basics
+ BACKUP ~nephele/backup~
+ AUTHOR ~K'aeloree (kae@spellholdstudios.net)~
+-VERSION ~v2.2~
++VERSION ~v2.2 BWP Fix~
+ README ~nephele/nephele_readme.html~
+ 
+ AUTO_TRA ~nephele/tra/%s~

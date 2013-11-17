@@ -144,18 +144,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Angelo - Angelo NPC v4
-
-:: Lollorian's string tag fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=500187
-
-:: Changed ADNinja.baf SpellNoDec(Myself,0) -> SpellNoDec(Myself,ROGUE_ASSASINATION)
-:: - LINK NOT FOUND ~
-
-
-----------------------------------------------------------------------------------------
-
-
 :: AnimalCompanions - Ulb's Animal Companions v0.5
 
 :: Added quotes to ApplySpellRES() objects in some scripts
@@ -393,7 +381,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: BP - Big Picture (BP) v181-b4503
+:: BP - Big Picture (BP) v181-b4602
 
 :: micbaldur's locked container problems fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=561315
@@ -493,6 +481,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ARE fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=562853
+
+:: Lollorian's PRO_CLASS replacement
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561847
 
 ::
 ::
@@ -1088,6 +1079,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: nephele - Nephele NPC v2.2
+
+:: Lollorian's PRO_CLASS replacement
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561847
+
+
+----------------------------------------------------------------------------------------
+
+
 :: npckit - NPC Kitpack v3
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
@@ -1302,15 +1302,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's unnecessary string fix for dualwielding axes: @243 -> ~Yes, let's do it!~
 :: http://forums.rpgdungeon.net/index.php?topic=1224.0 (only installs for ItemUpgrade's original version components #0 & #1)
-
-
-----------------------------------------------------------------------------------------
-
-
-:: rr - Rogue Rebalancing v4.63
-
-:: the bigg's KIT.IDS ToBEx compatibility fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
 
 ----------------------------------------------------------------------------------------

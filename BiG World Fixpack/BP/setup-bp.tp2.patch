@@ -3,8 +3,8 @@
 @@ -1,6 +1,6 @@
  BACKUP ~bp/backup~
  AUTHOR ~www.shsforums.net/forum/192-big-picture/~
--VERSION ~v181-b4503~
-+VERSION ~v181-b4503 BWP Fix~
+-VERSION ~v181-b4602~
++VERSION ~v181-b4602 BWP Fix~
  
  // MODDER setup_tra none area_variables warn missing_extern warn missing_resref warn overwriting_file none
  //Change overwriting_file none to overwriting_file warn when it's fixed in a future WeiDU
