@@ -1,0 +1,17 @@
+--- Setup-Vagrant.tp2	Sat Mar 22 19:28:16 2008
++++ C:\BWP Patchstudio\patched files\Setup-Vagrant.tp2	Sun Dec 01 09:33:38 2013
+@@ -1,11 +1,13 @@
+ BACKUP ~Vagrant/backup~
+ AUTHOR ~sikret_the_great@yahoo.com~
+-
++VERSION ~Lite V5.0 BWP Fix~
+ LANGUAGE ~English~
+          ~english~ 
+          ~English~ ~Vagrant/English/setup.tra~
+ 
+ BEGIN @1 // Vagrant Kit
++
++COPY ~Vagrant\ids\stats.ids~ ~override/stats.ids~
+ 
+ // Bam files
+ 

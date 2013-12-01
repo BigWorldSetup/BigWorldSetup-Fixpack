@@ -1,11 +1,10 @@
---- SETUP-TheUndying.tp2	Mon Oct 14 02:36:39 2013
-+++ C:\BWP Patchstudio\patched files\SETUP-TheUndying.tp2	Tue Oct 15 23:22:16 2013
-@@ -1,7 +1,7 @@
+--- SETUP-TheUndying.tp2	Wed Oct 16 00:57:20 2013
++++ C:\BWP Patchstudio\patched files\SETUP-TheUndying.tp2	Sun Nov 17 11:20:13 2013
+@@ -1,5 +1,7 @@
  BACKUP ~TheUndying/backup~
  AUTHOR ~"http://www.chosenofmystra.com"~
 +VERSION ~v2.11 BWP Fix~
++
  BEGIN ~ "The Undying" Mod (Requires Throne of Bhaal)~
--
+ 
  PRINT ~/****************************************~
- PRINT ~*The Undying Mod Version 2.11		*~
- PRINT ~*http://www.teambg.org            	*~

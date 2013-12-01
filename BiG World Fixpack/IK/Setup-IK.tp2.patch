@@ -1,0 +1,23 @@
+--- IK\Setup-IK.tp2	Fri Jul 22 16:41:06 2011
++++ C:\BWP Patchstudio\patched files\IK\Setup-IK.tp2	Sun Dec 01 09:25:45 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~IK/backup~
+ AUTHOR ~EmFaza & Lava Del'Vortel <<emfaza.lite@gmail.com>>~
+ 
+-
++VERSION ~v0.9b BWP Fix~
+ 
+                                              
+ LANGUAGE ~English~ ~ENGLISH~ ~IK/Tra/ENGLISH/IK.TRA~
+@@ -104,9 +104,9 @@
+ ACTION_IF NOT FILE_EXISTS ~override/RR#DWF.RR~ THEN BEGIN
+ 
+ ACTION_IF FILE_EXISTS ~override/RR#PPBRD.RR~ THEN BEGIN
+- COPY ~IK/Pyro/2DA/CLABPYR1.2da~           ~override/CLABPYR1.2da~
++ COPY ~IK/MysticPyromaniac/2DA/CLABPYR1.2da~           ~override/CLABPYR1.2da~
+ END ELSE ACTION_IF NOT FILE_EXISTS ~override/RR#PPBRD.RR~ THEN BEGIN
+- COPY ~IK/Pyro/2DA/CLABPYR2.2da~           ~override/CLABPYR1.2da~
++ COPY ~IK/MysticPyromaniac/2DA/CLABPYR2.2da~           ~override/CLABPYR1.2da~
+ END 
+  
+ ADD_KIT ~pyro~

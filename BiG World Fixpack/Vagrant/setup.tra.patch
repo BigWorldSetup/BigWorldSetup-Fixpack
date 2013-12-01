@@ -1,0 +1,22 @@
+--- Vagrant\English\setup.tra	Fri Mar 21 15:53:58 2008
++++ C:\BWP Patchstudio\patched files\Vagrant\English\setup.tra	Fri Nov 08 19:56:14 2013
+@@ -2136,6 +2136,11 @@
+ 
+ This sigil will allow you to pass through a passage inside the maze, which is otherwise magically blocked and unpassable.~
+ 
++@355 = ~Maze Key~
++@356 = ~Maze Key
++
++This key will allow you to pass through a portal inside the maze, which is otherwise blocked.~
++
+ @396 = ~Create Improved Flasher Mates~
+ 
+ @400 = ~Greater Djinni~
+@@ -2509,6 +2514,7 @@
+ Usable By:
+  Necromancer (single class)~
+ 
++@9501 = ~Wing Swing~
+ @9502 = ~Summon Swanmay~
+ @9505 = ~Resistance to Elemental Damage~
+ @9508 = ~Summon Greater Swanmay~

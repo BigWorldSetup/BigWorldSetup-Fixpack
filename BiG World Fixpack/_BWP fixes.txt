@@ -474,6 +474,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Crusade - Crusader Pack v4.3
+
+:: Kit fixes
+:: - LINK NOT FOUND ~
+
+
+----------------------------------------------------------------------------------------
+
+
 :: CtB - Check the Bodies v1.13a
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
@@ -589,9 +598,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Divine Remix v7
+:: Divine_Remix - Divine Remix v7.1
 
-:: White Agnus' Compatibility Fix for Tower of Deception - Setup-Divine_Remix.tp2
+:: White Agnus' Compatibility Fix for Tower of Deception
+:: - LINK NOT FOUND ~
+
+:: Lollorian's patches for ADD_KIT adding kits properly
+:: - LINK NOT FOUND ~
 
 
 ----------------------------------------------------------------------------------------
@@ -754,6 +767,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: IK - InfinityKits c0.9b
+
+:: Kit fixes
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -948,13 +970,16 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Lester NPC v0.9
+:: lester_the_npc - Lester NPC v0.9
 
 :: Lollorian's corrected CreateVisualEffect("SPLFLESHS", -> CreateVisualEffect("SPFLESHS", - lestcut1.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 :: Lollorian's removed ".cre" from inside CreateCreatureDoor() - kufartem.d
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488705
+
+:: Kit fixes
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -1413,6 +1438,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: song_and_silence - Song and Silence v5
+
+:: Lollorian's patches for ADD_KIT adding kits properly
+:: - LINK NOT FOUND ~
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Sovereign (Er'vonyrah) v1.3.1
 
 :: Lollorian's !Dead(Myself) changes - Crdafgt.baf, Crsarfgt.baf, Crsdafgt.baf
@@ -1655,6 +1689,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Taimon's area crash fix - d_and_baf.tph, macro.tph
 :: http://www.shsforums.net/index.php?s=&showtopic=22887&view=findpost&p=392339
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Vagrant - Improved Anvil Lite v5.0
+
+:: Miscellaneous fixes
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------

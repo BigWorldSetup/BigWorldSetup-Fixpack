@@ -1,5 +1,5 @@
---- Setup-Lester.tp2	Wed Jan 27 13:22:12 2010
-+++ C:\BWP Patchstudio\patched files\Setup-Lester.tp2	Tue Jun 01 06:48:20 2010
+--- Setup-Lester.tp2	Sat Jun 20 18:38:20 2009
++++ C:\BWP Patchstudio\patched files\Setup-Lester.tp2	Sun Nov 10 03:49:00 2013
 @@ -1,7 +1,7 @@
  BACKUP ~lester_the_npc\backup~
  AUTHOR "da_tresse@poczta.fm"
@@ -9,3 +9,33 @@
  
  ALLOW_MISSING ~baldur25.bcs~
  
+@@ -11,18 +11,22 @@
+          ~polish~
+          ~lester_the_npc\polish\Setup.tra~
+ 
++LANGUAGE ~German~
++         ~german~
++         ~lester_the_npc\german\Setup.tra~
++
+ BEGIN @0
+ 
+ // Instalacja podklasy
+ ADD_KIT ~WOJKUF~
+-~1  1  1  1  1  1  1  1~
++~WOJKUF  1  1  1  1  1  1  1  1~
+ ~WOJKUF  5  5  1  5  5  5  5  1  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  1  1  1  1  1  2  2  2  3  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0~
+-~0  0  16  7  7  0~
+-~0  0  0  0  0  0~
+-~0  0  0  0  0  0~
+-~0  0  0  0  0  0~
+-~0  0  0  0  0  0  1  1  1~
+-~0  0  0  0  0  0~
++~WOJKUF  0  0  16  7  7  0~
++~WOJKUF  0  0  0  0  0  0~
++~WOJKUF  0  0  0  0  0  0~
++~WOJKUF  0  0  0  0  0  0~
++~WOJKUF  0  0  0  0  0  0  1  1  1~
++~WOJKUF  0  0  0  0  0  0~
+ ~lester_the_npc\wojkuf.2da~
+ ~K_F_H  K_F_D  K_F_G  K_F_E  K_F_HE  K_F_HL  K_F_HO~
+ ~0x00000001    2~
