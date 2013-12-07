@@ -140,6 +140,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's class script trigger fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561215
 
+:: Wisp's missing soundset fix
+:: http://forums.gibberlings3.net/index.php?showtopic=25909
+
 
 ----------------------------------------------------------------------------------------
 
@@ -666,6 +669,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's patch to add B!AMACE.ITM to UDTRAP02.CRE if not present
 :: -LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Faren - Faren NPC v2.1
+
+:: Installation error fix
+:: http://www.shsforums.net/topic/56948-installation-error/
 
 
 ----------------------------------------------------------------------------------------

@@ -1,0 +1,11 @@
+--- Faren\crossmod\luxley\fhflux.d	Sun Nov 10 21:01:12 2013
++++ C:\BWP Patchstudio\patched files\Faren\crossmod\luxley\fhflux.d	Sat Dec 07 23:49:34 2013
+@@ -38,7 +38,7 @@
+ == BFHFRN  @19
+ == BFHLSEB @20
+ == BFHFRN  @21
+-           @21
++//         @21
+ == BFHLSEB @22
+ EXIT
+ 
