@@ -1,0 +1,12 @@
+--- banterpack\dialogue\banter-soa.d	Sun May 18 18:40:40 2008
++++ C:\BWP Patchstudio\patched files\banterpack\dialogue\banter-soa.d	Sat Dec 07 22:28:49 2013
+@@ -1171,7 +1171,8 @@
+ REPLACE BVICONI
+ 
+ IF
+-~Gender(Player1,FEMALE)
++~%CLEVER_EDITORIAL_COMMENT%
++Gender(Player1,FEMALE)
+ !StateCheck(Player1,STATE_SLEEPING)
+ Global("BViconia12","LOCALS",0)~ THEN BEGIN 27
+   SAY #8657 /* ~What brought you to the Life?  Surely some measure of madness.~ [VICONI66] */

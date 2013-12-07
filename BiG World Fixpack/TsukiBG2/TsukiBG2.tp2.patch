@@ -1,0 +1,10 @@
+--- TsukiBG2\TsukiBG2.tp2	Sat Aug 18 12:38:10 2012
++++ C:\BWP Patchstudio\patched files\TsukiBG2\TsukiBG2.tp2	Sat Dec 07 21:43:36 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~TsukiBG2\backup~
+ AUTHOR ~Lava~
+-
++VERSION ~BETA1 BWP Fix~
+ README ~TsukiBG2/ReadMe.txt~
+ 
+ 

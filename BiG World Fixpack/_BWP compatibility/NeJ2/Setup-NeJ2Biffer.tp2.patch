@@ -1,0 +1,17 @@
+--- Setup-NeJ2Biffer.tp2	Sun Nov 24 07:31:52 2013
++++ C:\BWP Patchstudio\patched files\Setup-NeJ2Biffer.tp2	Sun Nov 24 07:29:25 2013
+@@ -38,10 +38,10 @@
+ COPY ~override/START.MOS~ ~override/GUISAVE/START.MOS~
+ COPY ~override/STARTM.MOS~ ~override/GUISAVE/STARTM.MOS~
+ COPY ~override/STONEOPT.MOS~ ~override/GUISAVE/STONEOPT.MOS~
+-COPY ~music/combo1/combo1a.acm~ ~override/GUImusic~
+-COPY ~music/combo1/combo1b.acm~ ~override/GUImusic~
+-COPY ~music/theme/themea.acm~  ~override/GUImusic~
+-AT_INTERACTIVE_EXIT ~Setup-NeJ2.exe~
++//COPY ~music/combo1/combo1a.acm~ ~override/GUImusic~
++//COPY ~music/combo1/combo1b.acm~ ~override/GUImusic~
++//COPY ~music/theme/themea.acm~  ~override/GUImusic~
++//AT_INTERACTIVE_EXIT ~Setup-NeJ2.exe~
+ 
+ 
+ 

@@ -1,45 +1,11 @@
---- Kelsey.tp2	Sat Apr 03 05:41:21 2004
-+++ C:\BWP Patchstudio\patched files\Kelsey.tp2	Thu Dec 16 02:19:44 2010
-@@ -7,6 +7,9 @@
- 
- BACKUP ~kelsey\Backup~
+--- kelsey.tp2	Sat Nov 16 23:36:28 2013
++++ C:\BWP Patchstudio\patched files\kelsey.tp2	Sat Dec 07 22:52:36 2013
+@@ -2,7 +2,7 @@
  AUTHOR ~jcompton@pocketplane.net~
-+
-+VERSION ~v2.1 BWP Fix~
-+
- LANGUAGE ~English~
-          ~english~
-          ~kelsey/english/setup.tra~
-@@ -561,7 +564,6 @@
- COPY ~kelsey\SPWI596.spl~ ~override\SPWI596.spl~
- COPY ~kelsey\SPWI597.spl~ ~override\SPWI597.spl~
- COPY ~kelsey\SPWI603.spl~ ~OVERRIDE\SPWI603.spl~
--COPY ~kelsey\SPWI606.spl~ ~OVERRIDE\SPWI606.spl~
- COPY ~kelsey\SPWI607.spl~ ~OVERRIDE\SPWI607.spl~
- COPY ~kelsey\SPWI609.spl~ ~OVERRIDE\SPWI609.spl~
- COPY ~kelsey\SPWI611.spl~ ~OVERRIDE\SPWI611.spl~
-@@ -580,7 +582,23 @@
- COPY ~kelsey\kelseyaudio.bat~ ~kelseyaudio.bat~
- //COPY ~kelsey\kelseyaudiouninstall.bat~ ~kelseyaudiouninstall.bat~
  
--
-+COPY_EXISTING ~spwi606.spl~ ~override~
-+  READ_LONG 0x64 ~ab_off~
-+  READ_SHORT 0x68 ~ab_num~
-+  FOR (i=0; i<%ab_num%; ++i) BEGIN
-+    READ_SHORT (%ab_off% + %i%*0x28 + 0x10) ~min_lvl~
-+    LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~ INT_VAR
-+      ~opcode~ = 282
-+      ~target~ = 2
-+      ~parameter1~ = 1
-+      ~parameter2~ = 27
-+      ~power~ = 4
-+      ~resist_dispel~ = 3
-+      ~duration~ = %min_lvl% > 12 ? %min_lvl%*60 : 720
-+      ~header~ = %i%+1
-+    END
-+  END
-+BUT_ONLY
+ README ~kelsey/docs/readme.html~
+-VERSION ~V3~
++VERSION ~V3 BWP Fix~
+ ASK_EVERY_COMPONENT
  
- // Beginning Kelsey Flirt Pack .d file
- COMPILE ~kelsey\kelseyflirtmodule.d~
+ ALWAYS

@@ -1,0 +1,16 @@
+--- TsukiBG2\Dialogues\Valen.d	Fri Aug 03 19:42:00 2012
++++ C:\BWP Patchstudio\patched files\TsukiBG2\Dialogues\Valen.d	Tue Nov 26 08:17:27 2013
+@@ -96,10 +96,10 @@
+ IF WEIGHT #-6 ~InParty("Valen")
+ See("Valen")
+ !StateCheck("Valen",STATE_SLEEPING)
+-Global("ValenTsukiTalkS","LOCALS",0)~ THEN L7TsukiB ValenTalk05
++Global("ValenTsukiTalkS","LOCALS",0)
++AreaCheck("AR1512")~ THEN L7TsukiB ValenTalk05
+ ~It seems our pearl has no master.~
+-DO ~SetGlobal("ValenTsukiTalkS","LOCALS",1)
+-AreaCheck("AR1512")~
++DO ~SetGlobal("ValenTsukiTalkS","LOCALS",1)~
+ == VALEN
+ ~That's only my business. I'm here for a purpose.~
+ == L7TsukiB

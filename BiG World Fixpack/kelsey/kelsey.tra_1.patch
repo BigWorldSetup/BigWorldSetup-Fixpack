@@ -1,0 +1,20 @@
+--- kelsey\tra\bgee\english\kelsey.tra	Sat Nov 16 18:18:58 2013
++++ C:\BWP Patchstudio\patched files\kelsey\tra\bgee\english\kelsey.tra	Sat Dec 07 22:51:08 2013
+@@ -1231,7 +1231,7 @@
+ @1341 = ~And you're worried about the bazillion bad guys we still have to fight, right?~
+ @1342 = ~That's it?~
+ @1343 = ~Okay, good. Now you can relax. Saving the world is no big thing. Heck, we're practically making a habit out of it.~
+-@1344 = ~I mean, you know how this stuff works. When the bad guys show up, listen to <CHARNAME> and do whatever <PRO_ HESHE> tells you to do.~
++@1344 = ~I mean, you know how this stuff works. When the bad guys show up, listen to <CHARNAME> and do whatever <PRO_HESHE> tells you to do.~
+ @1345 = ~Unless it's really dumb, in which case you just do whatever seems to make more sense. A few minutes later, and poof! Dead bad guys. I've seen it hundreds of times.~
+ @1346 = ~Right! Besides, I'll be fighting here with you. I promise that if you get in trouble I'll cast my most powerful spell at whoever is giving you a hard time, or I'll sneak up behind them and give them a skull-whomping whack they'll never forget.~
+ @1347 = ~Um, yeah! Unless I decide I'd rather go home and take a bath and bake a cake or something.~
+@@ -1421,7 +1421,7 @@
+ @1629 = ~We've been pushed around by just about everyone since we got here. I think it's time we stop acting automatically and figure out if there isn't a better deal to be had.~
+ @1630 = ~Are you sure? I'll bet your contract is vacated once there's nothing left to guard.~
+ @1631 = ~That was a very good try, <CHARNAME>. You almost had him going.~
+-@1632 = ~This is a despicable deal, <CHARNAME!> You--you are on your own to deal with the consequences.~
++@1632 = ~This is a despicable deal, <CHARNAME>! You--you are on your own to deal with the consequences.~
+ @1633 = ~Begone, demon!  There is nothing for you here.  She who has summoned you is dead.~
+ @1634 = ~(remain silent)~
+ @1635 = ~(Wait)~

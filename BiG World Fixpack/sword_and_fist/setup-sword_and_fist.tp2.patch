@@ -1,0 +1,11 @@
+--- sword_and_fist\setup-sword_and_fist.tp2	Sat May 01 08:17:21 2010
++++ C:\BWP Patchstudio\patched files\sword_and_fist\setup-sword_and_fist.tp2	Sat Dec 07 21:48:15 2013
+@@ -3,7 +3,7 @@
+ 
+ ASK_EVERY_COMPONENT
+ 
+-VERSION ~v7~
++VERSION ~v7 BWP Fix~
+ README ~sword_and_fist/readme-sword_and_fist.html~
+ 
+ AUTO_TRA ~sword_and_fist/%s~

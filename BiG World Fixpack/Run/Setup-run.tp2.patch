@@ -1,0 +1,26 @@
+--- Setup-run.tp2	Mon Nov 17 20:07:08 2003
++++ C:\BWP Patchstudio\patched files\Setup-run.tp2	Sat Dec 07 22:02:05 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~Run/backup~
+ AUTHOR ~www.riklaunim.noi.pl~
++VERSION ~v2.0 BWP Fix~
+ BEGIN ~Runiczny Pieœniarz~
+-
+ ADD_KIT ~runi~
+ //weapons / bronie
+ ~runi 0 0 0 0 0 0 0 0~
+@@ -56,7 +56,7 @@
+ 
+ COPY ~Run/QQSCISZ.spl~                ~override/QQSCISZ.spl~        
+ 
+-COPY ~Run/qqgin.spl~                 ~override/qsgin.spl~         
++COPY ~Run/qqgin.spl~                 ~override/qqgin.spl~         
+ 
+ COPY ~Run/qqsmierc.spl~               ~override/qqsmierc.spl~       
+ 
+@@ -72,4 +72,4 @@
+ 
+ COPY ~Run/qqstrach.spl~               ~override/qqstrach.spl~       
+ 
+-COPY ~Run/qqsuspie.spl~               ~override/qsuspie.spl~       
++COPY ~Run/qqsuspie.spl~               ~override/qqsuspie.spl~       

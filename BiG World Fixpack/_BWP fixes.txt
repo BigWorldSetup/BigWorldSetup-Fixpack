@@ -255,7 +255,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: banterpack - Banter Packs v13
 
-:: White Agnus' Viconia BG2 dialogue in BG1 fix
+:: White Agnus' Viconia BG2 dialogue in BG1 fix - REMADE for moar patchiness
 :: http://forums.pocketplane.net/index.php/topic,26135.0.html
 
 
@@ -866,13 +866,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Kelsey NPC (SoA) v2.1
+:: kelsey - Kelsey NPC v3
 
-:: Lollorian's OR() fix - KelseyAI.bs
-:: http://forums.pocketplane.net/index.php/topic,27206.0.html
+:: TRA Typo-bashing
+:: - LINK NOT FOUND ~
 
-:: Lollorian's LOCALS fixes - j#clinn.BAF
-:: http://forums.pocketplane.net/index.php/topic,27206.0.html
+:: ITM missing icon fixes
+:: - LINK NOT FOUND ~
 
 
 ----------------------------------------------------------------------------------------
@@ -1341,6 +1341,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: ruad - Ruad Ro'fhessa Item Upgrade v27
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Rukrakia NPC v0.7
 
 :: BWP compatibility fixes
@@ -1352,10 +1361,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: ruad - Ruad Ro'fhessa Item Upgrade v27
+:: Run - Runiczny Pieœniarz Klingi (Runic Bladesinger) v2.0
 
-:: Lollorian's assorted ITM fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+:: Typo bashing
+:: - LINK NOT FOUND ~
 
 
 ----------------------------------------------------------------------------------------
@@ -1481,6 +1490,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's portrait installation fix - SBS\Language\English\Setup.tra
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=485886
+
+
+----------------------------------------------------------------------------------------
+
+
+:: sword_and_fist - Sword and Fist v7
+
+:: Missing Monk ability file: GA_NMMONK06 -> GA_NMMONK05
+:: http://forums.gibberlings3.net/index.php?showtopic=25837&view=findpost&p=216105
 
 
 ----------------------------------------------------------------------------------------
@@ -1654,6 +1672,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's replacements - tz25nncf.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
+
+
+----------------------------------------------------------------------------------------
+
+
+:: TsukiBG2 - Tsuki NPC Open Beta 1
+
+:: Moved AreaCheck() from action to trigger block in script
+:: - LINK NOT FOUND ~
 
 
 ----------------------------------------------------------------------------------------
