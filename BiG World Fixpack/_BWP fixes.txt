@@ -143,6 +143,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Wisp's missing soundset fix
 :: http://forums.gibberlings3.net/index.php?showtopic=25909
 
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
 
 ----------------------------------------------------------------------------------------
 
@@ -178,6 +181,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's corrected wrong EXTERN (ARIENAP -> MWArnP) - MWBArn.D
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------
@@ -284,6 +290,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: cmorgan's Beador buglet fix
 :: http://forums.gibberlings3.net/index.php?showtopic=25677&view=findpost&p=214364
 
+:: cmorgan's fix for possible bug with with Edwin's Dialogue about Dynaheir 
+:: http://forums.gibberlings3.net/index.php?showtopic=25863&view=findpost&p=216231
+
 
 ----------------------------------------------------------------------------------------
 
@@ -337,6 +346,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Ascension64's BGT Transition hanging fix
 :: http://www.shsforums.net/topic/47057-setup-bgtnej-makes-transition-stuck/
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
+
+----------------------------------------------------------------------------------------
+
+
+:: BGTNeJ2 - Baldur's Gate Trilogy-Never Ending Journey 2 Compatibility Modification v1.2
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------
@@ -775,6 +796,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Horace - Horace: Skeletal NPC for BGII v1.72
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
+
+----------------------------------------------------------------------------------------
+
+
 :: iiItemMod - igi's Item Mod v5
 
 :: Lollorian's assorted ITM fixes
@@ -982,7 +1012,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: lester_the_npc - Lester NPC v0.9
+:: lester_the_npc - Lester NPC v0.8
 
 :: Lollorian's corrected CreateVisualEffect("SPLFLESHS", -> CreateVisualEffect("SPFLESHS", - lestcut1.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
@@ -992,6 +1022,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Kit fixes
 :: - LINK NOT FOUND -
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------
@@ -1077,13 +1110,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Neh'taniel NPC (Neht) v5.1
-
-:: Lollorian's corrected mistyped areas (AR01800->AR0900 / AR11800->AR1900 / AR21800->AR2900) - SK#NEHTJ.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488705
+:: Neh'taniel - Neh'taniel NPC v5.5
 
 :: Lollorian's added SK#2Fix.baf for COMPILE action - Setup-Neh'taniel.tp2
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=489410
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------
@@ -1221,6 +1254,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+
+----------------------------------------------------------------------------------------
+
+
+:: refinements - Refinements v3.31
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------
@@ -1439,9 +1481,12 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Silver Star NPC v1.92
+:: Star - Silver Star NPC v1.93
 
 :: Traifed the .d-files, too
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------
@@ -1693,6 +1738,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Moved AreaCheck() from action to trigger block in script
 :: - LINK NOT FOUND ~
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Turambar_fixes_tweaks - Turambar's Fixes and Tweaks v1.8.1
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------

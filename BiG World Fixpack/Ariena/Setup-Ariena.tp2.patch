@@ -1,11 +1,33 @@
 --- Setup-Ariena.tp2	Thu Apr 03 00:05:22 2008
-+++ C:\BWP Patchstudio\patched files\Setup-Ariena.tp2	Mon May 17 03:40:18 2010
-@@ -1,5 +1,8 @@
++++ C:\BWP Patchstudio\patched files\Setup-Ariena.tp2	Mon Dec 09 21:40:38 2013
+@@ -1,7 +1,7 @@
  BACKUP ~Ariena\Backup~
  AUTHOR ~Deathsangel deathsangel@spellholdstudios.net~
-+
 +VERSION ~v2.2 BWP Fix~
-+
  AUTO_TRA ~Ariena/%s~
- 
+-
  LANGUAGE ~English~ ~english~ ~Ariena\english\setup.tra~
+ 
+ /************************************************************************
+@@ -95,8 +95,8 @@
+ 
+ COPY ~Ariena\cre\MWArn.cre~ ~override\MWArn.cre~
+  WRITE_SHORT   0x244 0
+- WRITE_BYTE    0x246 ~%PitFighter%~    
+- WRITE_BYTE    0x247 0x40
++ WRITE_SHORT   0x246 0x4000 + ~%PitFighter%~    
++// WRITE_BYTE    0x247 0x40
+  SAY NAME1 @6
+  SAY NAME2 @6
+  SAY MORALE @7 
+@@ -141,8 +141,8 @@
+ 
+ COPY ~Ariena\cre\MWArn25.cre~ ~override\MWArn25.cre~
+  WRITE_SHORT   0x244 0
+- WRITE_BYTE    0x246 ~%PitFighter%~    
+- WRITE_BYTE    0x247 0x40
++ WRITE_SHORT   0x246 0x4000 + ~%PitFighter%~    
++// WRITE_BYTE    0x247 0x40
+  SAY NAME1 @6
+  SAY NAME2 @6
+  SAY MORALE @7 

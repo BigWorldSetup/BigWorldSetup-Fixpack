@@ -1,11 +1,24 @@
 --- Star.tp2	Sun Jul 22 20:53:27 2012
-+++ C:\BWP Patchstudio\patched files\Star.tp2	Fri Jul 27 10:21:49 2012
-@@ -4,6 +4,8 @@
++++ C:\BWP Patchstudio\patched files\Star.tp2	Mon Dec 09 22:03:08 2013
+@@ -1,9 +1,9 @@
+ BACKUP ~Star\backup~
+ AUTHOR ~Olryx2@Yahoo.co.uk~
++VERSION ~v1.93 BWP Fix~
+ AUTO_TRA ~Star/%s~
  ALLOW_MISSING ~aR4500.bcs~
  ~FATESP.dlg~
- 
-+VERSION ~v1.93 BWP Fix~
-+
+-
  LANGUAGE ~English~
  ~English~
  ~Star/English/Setup.tra~
+@@ -77,8 +77,8 @@
+   SAY HIDDEN_IN_SHADOWS ~~ [Innoc5]
+   SAY SET_A_TRAP ~~ [Innoc7]
+   WRITE_SHORT   0x244 0
+-  WRITE_BYTE    0x246 ~%StarHL%~
+-  WRITE_BYTE    0x247 0x40
++  WRITE_SHORT   0x246 0x4000 + ~%StarHL%~
++//WRITE_BYTE    0x247 0x40
+   SAY NAME1 ~Silver Star~
+   SAY NAME2 ~Silver Star~
+   SAY BIO @6

@@ -1,5 +1,5 @@
 --- Setup-BGTNeJ.tp2	Thu Mar 26 23:22:56 2009
-+++ C:\BWP Patchstudio\patched files\Setup-BGTNeJ.tp2	Sun Sep 29 00:45:33 2013
++++ C:\BWP Patchstudio\patched files\Setup-BGTNeJ.tp2	Mon Dec 09 21:44:41 2013
 @@ -2,7 +2,7 @@
  
  AUTHOR ~Vlad~
@@ -19,6 +19,111 @@
  END
   ELSE BEGIN
  /////DO NOTHING/////////	 
+@@ -228,35 +229,35 @@
+ 
+ COPY ~BGTNeJ/misc/IMOEN10.cre~ ~override/IMOEN10.cre~
+ 	WRITE_SHORT 0x244 0 // doesn‘t change
+-  WRITE_BYTE  0x246 ~%CHARMING_ROGUE%~ // the internal name of your kit, surrounded by %
+-  WRITE_BYTE  0x247 0x40 // doesn‘t change
++  WRITE_SHORT 0x246 0x4000 + ~%CHARMING_ROGUE%~ // the internal name of your kit, surrounded by %
++//WRITE_BYTE  0x247 0x40 // doesn‘t change
+   
+ COPY ~BGTNeJ/misc/IMOEN6.cre~ ~override/IMOEN6.cre~
+ 	WRITE_SHORT 0x244 0 // doesn‘t change
+-  WRITE_BYTE  0x246 ~%CHARMING_ROGUE%~ // the internal name of your kit, surrounded by %
+-  WRITE_BYTE  0x247 0x40 // doesn‘t change
++  WRITE_SHORT 0x246 0x4000 + ~%CHARMING_ROGUE%~ // the internal name of your kit, surrounded by %
++//WRITE_BYTE  0x247 0x40 // doesn‘t change
+ 
+ ACTION_IF FILE_EXISTS ~data/BG1ARE.BIF~
+  THEN BEGIN
+ 		COPY_EXISTING ~IMOEN1.cre~ ~override/IMOEN1.cre~
+ 			WRITE_SHORT 0x244 0 // doesn‘t change
+-  		WRITE_BYTE  0x246 ~%CHARMING_ROGUE%~ // the internal name of your kit, surrounded by %
+-  		WRITE_BYTE  0x247 0x40 // doesn‘t change
++  		WRITE_SHORT 0x246 0x4000 + ~%CHARMING_ROGUE%~ // the internal name of your kit, surrounded by %
++// 		WRITE_BYTE  0x247 0x40 // doesn‘t change
+   
+ 		COPY_EXISTING ~IMOEN2.cre~ ~override/IMOEN2.cre~
+ 			WRITE_SHORT 0x244 0 // doesn‘t change
+-  		WRITE_BYTE  0x246 ~%CHARMING_ROGUE%~ // the internal name of your kit, surrounded by %
+- 			WRITE_BYTE  0x247 0x40 // doesn‘t change
++  		WRITE_SHORT 0x246 0x4000 + ~%CHARMING_ROGUE%~ // the internal name of your kit, surrounded by %
++// 			WRITE_BYTE  0x247 0x40 // doesn‘t change
+   
+ 		COPY_EXISTING ~IMOEN4.cre~ ~override/IMOEN4.cre~
+ 			WRITE_SHORT 0x244 0 // doesn‘t change
+- 			WRITE_BYTE  0x246 ~%CHARMING_ROGUE%~ // the internal name of your kit, surrounded by %
+- 			WRITE_BYTE  0x247 0x40 // doesn‘t change
++ 			WRITE_SHORT 0x246 0x4000 + ~%CHARMING_ROGUE%~ // the internal name of your kit, surrounded by %
++// 			WRITE_BYTE  0x247 0x40 // doesn‘t change
+   
+ 		COPY_EXISTING ~IMOEN61.cre~ ~override/IMOEN61.cre~
+ 			WRITE_SHORT 0x244 0 // doesn‘t change
+-  		WRITE_BYTE  0x246 ~%CHARMING_ROGUE%~ // the internal name of your kit, surrounded by %
+-  		WRITE_BYTE  0x247 0x40 // doesn‘t change
++  		WRITE_SHORT 0x246 0x4000 + ~%CHARMING_ROGUE%~ // the internal name of your kit, surrounded by %
++// 		WRITE_BYTE  0x247 0x40 // doesn‘t change
+ END
+ 
+ ACTION_IF FILE_EXISTS ~data/BG1ARE.BIF~
+@@ -392,33 +393,33 @@
+                              
+ COPY ~BGTNeJ/jah/cre/VP_JAH10.CRE~ ~override/JAHEIR7.CRE~
+ 	WRITE_SHORT 0x244 0 // doesn‘t change
+-  WRITE_BYTE  0x246 ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
+-  WRITE_BYTE  0x247 0x40 // doesn‘t change
++  WRITE_SHORT 0x246 0x4000 + ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
++//WRITE_BYTE  0x247 0x40 // doesn‘t change
+ 
+ COPY ~BGTNeJ/jah/cre/VP_JAH12.CRE~ ~override/JAHEIR8.CRE~
+ 	WRITE_SHORT 0x244 0 // doesn‘t change
+-  WRITE_BYTE  0x246 ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
+-  WRITE_BYTE  0x247 0x40 // doesn‘t change
++  WRITE_SHORT 0x246 0x4000 + ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
++//WRITE_BYTE  0x247 0x40 // doesn‘t change
+ 
+ COPY ~BGTNeJ/jah/cre/VP_JAH13.CRE~ ~override/JAHEIR11.CRE~
+ 	WRITE_SHORT 0x244 0 // doesn‘t change
+-  WRITE_BYTE  0x246 ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
+-  WRITE_BYTE  0x247 0x40 // doesn‘t change
++  WRITE_SHORT 0x246 0x4000 + ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
++//WRITE_BYTE  0x247 0x40 // doesn‘t change
+   
+ COPY ~BGTNeJ/jah/cre/VP_JAH14.CRE~ ~override/JAHEIR12.CRE~
+ 	WRITE_SHORT 0x244 0 // doesn‘t change
+-  WRITE_BYTE  0x246 ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
+-  WRITE_BYTE  0x247 0x40 // doesn‘t change
++  WRITE_SHORT 0x246 0x4000 + ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
++//WRITE_BYTE  0x247 0x40 // doesn‘t change
+   
+ COPY ~BGTNeJ/jah/cre/VP_JAH14.CRE~ ~override/JAHEI12B.CRE~
+ 	WRITE_SHORT 0x244 0 // doesn‘t change
+-  WRITE_BYTE  0x246 ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
+-  WRITE_BYTE  0x247 0x40 // doesn‘t change
++  WRITE_SHORT 0x246 0x4000 + ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
++//WRITE_BYTE  0x247 0x40 // doesn‘t change
+ 
+ COPY ~BGTNeJ/jah/cre/VP_JAH14.CRE~ ~override/JAHEI14.CRE~
+ 	WRITE_SHORT 0x244 0 // doesn‘t change
+-  WRITE_BYTE  0x246 ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
+-  WRITE_BYTE  0x247 0x40 // doesn‘t change
++  WRITE_SHORT 0x246 0x4000 + ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
++//WRITE_BYTE  0x247 0x40 // doesn‘t change
+ 
+ ACTION_IF FILE_EXISTS ~data/BG1ARE.BIF~
+ 	THEN BEGIN
+@@ -435,8 +436,8 @@
+   SAY 0x1b4 #30777
+   SAY 0x1c0 #30780
+   WRITE_SHORT 0x244 0 // doesn‘t change
+-  WRITE_BYTE 0x246 ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
+-  WRITE_BYTE 0x247 0x40 // doesn‘t change
++  WRITE_SHORT 0x246 0x4000 + ~%PRIEST_OF_SYLVANUS%~ // the internal name of your kit, surrounded by %
++//WRITE_BYTE 0x247 0x40 // doesn‘t change
+   WRITE_BYTE 0x2c 99 //metal color
+   WRITE_BYTE 0x2d 66 //minor color
+   WRITE_BYTE 0x2e 52 //major color
 @@ -907,7 +908,7 @@
  REQUIRE_FILE ~data/BG1ARE.BIF~ ~Please install BG1 and BGT before installation of this component.~
  

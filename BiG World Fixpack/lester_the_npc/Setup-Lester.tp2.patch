@@ -1,5 +1,5 @@
---- Setup-Lester.tp2	Sat Jun 20 18:38:20 2009
-+++ C:\BWP Patchstudio\patched files\Setup-Lester.tp2	Wed Dec 04 13:27:14 2013
+--- Setup-Lester.tp2	Sat Jun 20 19:38:20 2009
++++ C:\BWP Patchstudio\patched files\Setup-Lester.tp2	Mon Dec 09 21:52:53 2013
 @@ -1,7 +1,7 @@
  BACKUP ~lester_the_npc\backup~
  AUTHOR "da_tresse@poczta.fm"
@@ -31,3 +31,14 @@
  ~lester_the_npc\wojkuf.2da~
  ~K_F_H  K_F_D  K_F_G  K_F_E  K_F_HE  K_F_HL  K_F_HO~
  ~0x00000001    2~
+@@ -38,8 +38,8 @@
+ SAY NAME2 @3
+ SAY BIO @4
+ WRITE_SHORT 0x244 0
+-WRITE_BYTE 0x246 ~%WOJKUF%~
+-WRITE_BYTE 0x247 0x40
++WRITE_SHORT 0x246 0x4000 + ~%WOJKUF%~
++//WRITE_BYTE 0x247 0x40
+ SAY HAPPY @5
+ SAY UNHAPPY_ANNOYED @6
+ SAY UNHAPPY_SERIOUS @7

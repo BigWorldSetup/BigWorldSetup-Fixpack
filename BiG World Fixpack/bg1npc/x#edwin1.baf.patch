@@ -1,0 +1,26 @@
+--- bg1npc\phase1\baf\x#edwin1.baf	Fri Dec 21 02:00:02 2007
++++ C:\BWP Patchstudio\patched files\bg1npc\phase1\baf\x#edwin1.baf	Sun Dec 08 20:08:57 2013
+@@ -15,13 +15,21 @@
+ InParty(Myself)
+ Global("X#EDPCTimerStarted","GLOBAL",0)
+ Global("X#EdwinFriendTalk","GLOBAL",0)
+-Global("X#EdwinDynaheir","GLOBAL",0)
+ THEN
+ RESPONSE #100
+ RealSetGlobalTimer("X#EDFriendTalkTime","GLOBAL",3600)
+-RealSetGlobalTimer("X#EDDynaTalkTime","GLOBAL",7200)
+ SetGlobal("X#EDPCTimerStarted","GLOBAL",1)
+ SetGlobal("X#EdwinFriendTalk","GLOBAL",1)
++END
++
++/* start the timer */
++IF %BGT_VAR%
++InParty(Myself)
++InParty("Dynaheir")
++Global("X#EdwinDynaheir","GLOBAL",0)
++THEN
++RESPONSE #100
++RealSetGlobalTimer("X#EDDynaTalkTime","GLOBAL",7200)
+ SetGlobal("X#EdwinDynaheir","GLOBAL",1)
+ END
+ 

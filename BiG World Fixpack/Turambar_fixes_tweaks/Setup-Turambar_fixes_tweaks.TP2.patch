@@ -1,0 +1,110 @@
+--- Setup-Turambar_fixes_tweaks.TP2	Sun Sep 25 20:13:12 2011
++++ C:\BWP Patchstudio\patched files\Setup-Turambar_fixes_tweaks.TP2	Mon Dec 09 21:33:10 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~Turambar_fixes_tweaks/backup~
+ 
+ AUTHOR ~http://www.shsforums.net/forum/234-miscellaneous-released-mods/~
+-VERSION ~v1.8.1~
++VERSION ~v1.8.1 BWP Fix~
+ AUTO_TRA ~Turambar_fixes_tweaks/%s~
+ README ~Turambar_fixes_tweaks/README.html~
+ 
+@@ -2458,8 +2458,8 @@
+ 	END
+ 	WRITE_BYTE 0x27b 35		//neutral evil
+ 	WRITE_SHORT 0x244 0		// doesn't change
+-	WRITE_BYTE  0x246 3		// kensai
+-	WRITE_BYTE  0x247 0x40	// doesn't change
++	WRITE_SHORT 0x246 0x4003		// kensai
++//	WRITE_BYTE  0x247 0x40	// doesn't change
+ 	READ_BYTE 0x234 lvl
+ 	ADD_KNOWN_SPELL ~SPCL144~ #0 ~innate~
+ 	PATCH_IF lvl >= 5 BEGIN
+@@ -2562,8 +2562,8 @@
+ 		PATCH_FAIL @2040
+ 	END
+ 	WRITE_SHORT 0x244 0 // doesn't change
+-	WRITE_BYTE  0x246 ~%kit%~ // the internal name of your kit, surrounded by %
+-	WRITE_BYTE  0x247 0x40 // doesn't change
++	WRITE_SHORT 0x246 0x4000 + ~%kit%~ // the internal name of your kit, surrounded by %
++//	WRITE_BYTE  0x247 0x40 // doesn't change
+ 	READ_BYTE 0x234 lvl
+ 	// how many weapon proficiencies?
+ 	PATCH_IF lvl>=3 BEGIN
+@@ -2707,8 +2707,8 @@
+ 	END
+ 	
+ 	WRITE_SHORT 0x244 0		// doesn't change
+-	WRITE_BYTE  0x246 %kit%		// shar
+-	WRITE_BYTE  0x247 0x40	// doesn't change
++	WRITE_SHORT 0x246 0x4000 + %kit%		// shar
++//	WRITE_BYTE  0x247 0x40	// doesn't change
+ 	READ_BYTE 0x234 lvl
+ 	READ_BYTE 0x23b sag
+ 	WRITE_BYTE 0x23b (%sag%-1)	//reduce wisdom
+@@ -2765,8 +2765,8 @@
+ 		PATCH_FAIL @2040
+ 	END
+ 	WRITE_SHORT 0x244 0		// doesn't change
+-	WRITE_BYTE  0x246 %kit%		// tempus
+-	WRITE_BYTE  0x247 0x40	// doesn't change
++	WRITE_SHORT 0x246 0x4000 + %kit%		// tempus
++//	WRITE_BYTE  0x247 0x40	// doesn't change
+ 	REMOVE_MEMORIZED_SPELL ~spin113~	//the kit will grant it
+ 	REMOVE_KNOWN_SPELL ~spin113~		//the kit will grant it
+ BUT_ONLY
+@@ -2794,8 +2794,8 @@
+ 	END
+ 	READ_BYTE 0x234 lvl
+ 	WRITE_SHORT 0x244 0		// doesn't change
+-	WRITE_BYTE  0x246 18	// avenger
+-	WRITE_BYTE  0x247 0x40	// doesn't change
++	WRITE_SHORT 0x246 0x4018	// avenger
++//	WRITE_BYTE  0x247 0x40	// doesn't change
+ 	//-2 str and cos
+ 	READ_BYTE 0x238 str
+ 	WRITE_BYTE 0x238 (%str%-2)	//reduce str
+@@ -2853,8 +2853,8 @@
+ 		PATCH_FAIL @2040
+ 	END
+ 	WRITE_SHORT 0x244 0		// doesn't change
+-	WRITE_BYTE  0x246 13	// blade
+-	WRITE_BYTE  0x247 0x40	// doesn't change
++	WRITE_SHORT 0x246 0x4013	// blade
++//	WRITE_BYTE  0x247 0x40	// doesn't change
+ 	PATCH_IF i>0 BEGIN
+ 		READ_BYTE 0x234 lvl
+ 		PATCH_IF (lvl<5 OR lvl>7) AND NOT (VARIABLE_IS_SET failure) BEGIN
+@@ -2933,8 +2933,8 @@
+ 		PATCH_FAIL @2040
+ 	END
+ 	WRITE_SHORT 0x244 0		// doesn't change
+-	WRITE_BYTE  0x246 %kit%	// bladesinger
+-	WRITE_BYTE  0x247 0x40	// doesn't change
++	WRITE_SHORT 0x246 0x4000 + %kit%	// bladesinger
++//	WRITE_BYTE  0x247 0x40	// doesn't change
+ 	PATCH_IF i>0 BEGIN
+ 		READ_BYTE 0x234 lvl
+ 		PATCH_IF (lvl<5 OR lvl>7) AND NOT (VARIABLE_IS_SET failure) BEGIN
+@@ -2982,8 +2982,8 @@
+ 		PATCH_FAIL @2040
+ 	END
+ 	WRITE_SHORT 0x244 0		// doesn't change
+-	WRITE_BYTE  0x246 15	// skald
+-	WRITE_BYTE  0x247 0x40	// doesn't change
++	WRITE_SHORT 0x246 0x4015	// skald
++//	WRITE_BYTE  0x247 0x40	// doesn't change
+ BUT_ONLY
+ /*
+ ACTION_IF VARIABLE_IS_SET failure BEGIN
+@@ -3007,8 +3007,8 @@
+ 		PATCH_FAIL @2040
+ 	END
+ 	WRITE_SHORT 0x244 0		// doesn't change
+-	WRITE_BYTE  0x246 14	// jester
+-	WRITE_BYTE  0x247 0x40	// doesn't change
++	WRITE_SHORT 0x246 0x4014	// jester
++//	WRITE_BYTE  0x247 0x40	// doesn't change
+ BUT_ONLY
+ /*
+ ACTION_IF VARIABLE_IS_SET failure BEGIN
