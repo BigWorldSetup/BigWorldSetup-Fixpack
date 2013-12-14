@@ -1,0 +1,29 @@
+--- touched\Setup-touched.tp2	Wed Apr 11 04:10:28 2012
++++ C:\BWP Patchstudio\patched files\touched\Setup-touched.tp2	Sat Dec 14 22:47:09 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~touched\Backup~
+ AUTHOR ~rabain@borderkingdoms.net~
+ 
+-VERSION ~v1.1~
++VERSION ~v1.1 BWP Fix~
+ 
+ AUTO_TRA ~touched/%s~
+ 
+@@ -431,13 +431,13 @@
+ 
+ COPY_EXISTING ~BKtouch1.cre~ ~override~
+   WRITE_SHORT   0x244 0
+-  WRITE_BYTE    0x246 ~%BKTOUCH%~
+-  WRITE_BYTE    0x247 0x40
++  WRITE_SHORT   0x246 0x4000 + ~%BKTOUCH%~
++//WRITE_BYTE    0x247 0x40
+ 
+ COPY_EXISTING ~BKtouch2.cre~ ~override~
+   WRITE_SHORT   0x244 0
+-  WRITE_BYTE    0x246 ~%BKTOUCH%~
+-  WRITE_BYTE    0x247 0x40
++  WRITE_SHORT   0x246 0x4000 + ~%BKTOUCH%~
++//WRITE_BYTE    0x247 0x40
+ 
+ 
+ ///HLA's

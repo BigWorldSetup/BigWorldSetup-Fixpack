@@ -9,14 +9,3 @@
  
  
  ALWAYS
-@@ -248,8 +248,8 @@
- 			  ~imoen211.cre~ ~override~
- 			  ~imoen213.cre~ ~override~
- 	WRITE_SHORT   0x244 0    //needed to change the the kit
--	WRITE_BYTE    0x246 12   //swashbuckler
--	WRITE_BYTE    0x247 0x40 //needed to change the kit
-+	WRITE_SHORT   0x246 0x4012    //swashbuckler
-+//	WRITE_BYTE    0x247 0x40 //needed to change the kit
- 
- 
- 

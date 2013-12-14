@@ -1,0 +1,22 @@
+--- cliffhistory\setup-cliffhistory.tp2	Fri May 07 16:31:00 2010
++++ C:\BWP Patchstudio\patched files\cliffhistory\setup-cliffhistory.tp2	Sat Dec 14 21:52:55 2013
+@@ -1,7 +1,7 @@
+ BACKUP ~CliffHistory\Backup~
+ AUTHOR ~supercliffette@yahoo.com.au~
+ 
+-VERSION ~v2~
++VERSION ~v2 BWP Fix~
+ 
+ README ~cliffhistory\cliffhistory-readme.txt~
+ 
+@@ -174,8 +174,8 @@
+ 
+ // Assign Delusionist kit to Fonick
+   WRITE_SHORT   0x244 0
+-  WRITE_BYTE    0x246 ~%CLFDBARD%~
+-  WRITE_BYTE    0x247 0x40
++  WRITE_SHORT   0x246 0x4000 + ~%CLFDBARD%~
++//WRITE_BYTE    0x247 0x40
+ 
+ 
+ ///////////////////////////////////

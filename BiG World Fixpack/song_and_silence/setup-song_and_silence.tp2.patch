@@ -1,0 +1,30 @@
+--- song_and_silence\setup-song_and_silence.tp2	Fri Apr 30 14:42:54 2010
++++ C:\BWP Patchstudio\patched files\song_and_silence\setup-song_and_silence.tp2	Sat Dec 14 22:42:12 2013
+@@ -2,7 +2,7 @@
+ AUTHOR ~andyr@gibberlings3.net~
+ // MODDER
+ NO_IF_EVAL_BUG
+-VERSION ~v5~
++VERSION ~v5 BWP Fix~
+ README ~song_and_silence/readme-song_and_silence.html~
+ ALWAYS
+   // hurray for linefeed
+@@ -735,14 +735,14 @@
+       PATCH_IF (("%dv%" STRING_MATCHES_REGEXP ~^imoen2?$~) == 0) && (MOD_IS_INSTALLED npckit.tp2 1400) BEGIN
+         PATCH_PRINT @80
+         WRITE_SHORT 0x244 0x0000
+-        WRITE_BYTE  0x246 %A!ADVENTURER%
+-        WRITE_BYTE  0x247 0x40
++        WRITE_SHORT 0x246 0x4000 + %A!ADVENTURER%
++//      WRITE_BYTE  0x247 0x40
+       END ELSE 
+ 	PATCH_IF (("%dv%" STRING_MATCHES_REGEXP ~^nalia$~) == 0) && (MOD_IS_INSTALLED npckit.tp2 2500) BEGIN
+         PATCH_PRINT @81
+         WRITE_SHORT 0x244 0x0000
+-        WRITE_BYTE  0x246 %A!ADVENTURER%
+-        WRITE_BYTE  0x247 0x40
++        WRITE_SHORT 0x246 0x4000 + %A!ADVENTURER%
++//      WRITE_BYTE  0x247 0x40
+       END
+     END
+   BUT_ONLY_IF_IT_CHANGES

@@ -1,5 +1,5 @@
 --- Chloe\Chloe.tp2	Mon Jan 25 22:00:24 2010
-+++ C:\BWP Patchstudio\patched files\Chloe\Chloe.tp2	Sun Sep 29 17:30:57 2013
++++ C:\BWP Patchstudio\patched files\Chloe\Chloe.tp2	Sat Dec 14 21:49:47 2013
 @@ -2,7 +2,7 @@
  AUTHOR ~Lucythebeast@hotmail.com~
  
@@ -9,3 +9,47 @@
  
  AUTO_TRA ~Chloe/Language/%s~ // This will tell WeiDU the folder where the D's are stored.
  
+@@ -257,8 +257,8 @@
+  * assign this kit to a creature. The "0" and the "0x40" are necessary.
+  * These offsets should be the same for all CREs. */
+   WRITE_SHORT   0x244 0
+-  WRITE_BYTE    0x246 ~%YRKENSAI%~
+-  WRITE_BYTE    0x247 0x40
++  WRITE_SHORT   0x246 0x4000 + ~%YRKENSAI%~
++//WRITE_BYTE    0x247 0x40
+   WRITE_ASCII   0x280 ~RChloe~ #8
+   WRITE_ASCII 	0x2cc ~RChloe~ #8
+   SAY NAME1 @17
+@@ -364,8 +364,8 @@
+  * assign this kit to a creature. The "0" and the "0x40" are necessary. 
+  * These offsets should be the same for all CREs. */
+   WRITE_SHORT   0x244 0
+-  WRITE_BYTE    0x246 ~%YRKENSAI%~
+-  WRITE_BYTE    0x247 0x40
++  WRITE_SHORT   0x246 0x4000 + ~%YRKENSAI%~
++//WRITE_BYTE    0x247 0x40
+   WRITE_ASCII   0x280 ~RChloe~ #8
+   WRITE_ASCII   0x2cc ~RChloe~ #8
+ 	
+@@ -423,8 +423,8 @@
+  * assign this kit to a creature. The "0" and the "0x40" are necessary. 
+  * These offsets should be the same for all CREs. */
+   WRITE_SHORT   0x244 0
+-  WRITE_BYTE    0x246 ~%YRKENSAI%~
+-  WRITE_BYTE    0x247 0x40
++  WRITE_SHORT   0x246 0x4000 + ~%YRKENSAI%~
++//WRITE_BYTE    0x247 0x40
+   WRITE_ASCII   0x280 ~RChloe~ #8
+   WRITE_ASCII   0x2cc ~RChloe~ #8
+ 	
+@@ -478,8 +478,8 @@
+   SAY REACT_TO_DIE_GENERAL @70 
+   SAY BIO @71
+   WRITE_SHORT   0x244 0
+-  WRITE_BYTE    0x246 ~%YRKENSAI%~
+-  WRITE_BYTE    0x247 0x40
++  WRITE_SHORT   0x246 0x4000 + ~%YRKENSAI%~
++//WRITE_BYTE    0x247 0x40
+   WRITE_ASCII   0x280 ~RChloe~ #8
+   WRITE_ASCII   0x2cc ~RChloe~ #8
+ 	

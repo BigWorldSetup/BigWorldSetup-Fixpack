@@ -338,6 +338,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's assorted ARE fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=562853
 
+:: micbaldur's 'game-breaking' arw012.are container bug fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=565184
+
 
 ----------------------------------------------------------------------------------------
 
@@ -438,6 +441,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: ChaosKnight - Askaria Quest and Chaos Knight Kit v1.3
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Charli - Charli, the Fence v2.3
 
 :: micbaldur's corrected spawn
@@ -472,6 +484,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's string tag fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=500837
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
+
+----------------------------------------------------------------------------------------
+
+
+:: cliffhistory - Cliffette's entry for the "History" Blackwyrmm Inn Modding Contest v2
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------
@@ -627,8 +651,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: White Agnus' Compatibility Fix for Tower of Deception
 :: - LINK NOT FOUND ~
 
-:: Lollorian's patches for ADD_KIT adding kits properly
-:: - LINK NOT FOUND ~
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------
@@ -996,22 +1020,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: severian - Les Chroniques de Severian (LCDS) v0.1R
-
-:: Faulty compile order corrected - Setup-Severian.tp2
-
-:: Corrected CreateCreatureObject - #SAr0406.baf
-
-:: Lollorian's corrected CreateCreature("#SMichele", -> CreateCreature("#SMichel", - #SAr1100.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
-
-:: Lollorian's assorted ITM fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
-
-
-----------------------------------------------------------------------------------------
-
-
 :: lester_the_npc - Lester NPC v0.8
 
 :: Lollorian's corrected CreateVisualEffect("SPLFLESHS", -> CreateVisualEffect("SPFLESHS", - lestcut1.baf
@@ -1049,6 +1057,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
+
+
+----------------------------------------------------------------------------------------
+
+
+:: LuxleySoA -  The Luxley Family v1.2
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------
@@ -1106,6 +1123,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: CamDawg's install fix for BGT
 :: http://forums.gibberlings3.net/index.php?showtopic=1541&view=findpost&p=214668
 
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1153,6 +1173,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's PRO_CLASS replacement
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561847
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------
@@ -1207,6 +1230,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: PofKits - Paladins of Faerun Kitpack v4
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------
@@ -1433,6 +1465,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: SC#Hub - Hubelpot the Vegetable Merchant NPC v1.0
+
+:: Lollorian's GLOBAL fixes - SC#AR0530.baf, SC#HubQuest.d
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
+
+:: Lollorian's assorted CRE fixes
+:: NEWLINK
+
+
+----------------------------------------------------------------------------------------
+
+
 :: SDMODS - Shed's Modpack v1.03
 
 :: Lollorian's assorted CRE fixes
@@ -1442,13 +1486,38 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: SC#Hub - Hubelpot the Vegetable Merchant NPC v1.0
+:: severian - Les Chroniques de Severian (LCDS) v0.1R
 
-:: Lollorian's GLOBAL fixes - SC#AR0530.baf, SC#HubQuest.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945
+:: Faulty compile order corrected - Setup-Severian.tp2
 
-:: Lollorian's assorted CRE fixes
-:: NEWLINK
+:: Corrected CreateCreatureObject - #SAr0406.baf
+
+:: Lollorian's corrected CreateCreature("#SMichele", -> CreateCreature("#SMichel", - #SAr1100.baf
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Sheena NPC v1.7
+
+:: Lollorian's !Dead(Myself) change - K#Sheena.baf
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
+
+
+----------------------------------------------------------------------------------------
+
+
+:: song_and_silence - Song and Silence v5
+
+:: Lollorian's patches for ADD_KIT adding kits properly
+:: - LINK NOT FOUND ~
 
 
 ----------------------------------------------------------------------------------------
@@ -1472,21 +1541,21 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Sheena NPC v1.7
-
-:: Lollorian's !Dead(Myself) change - K#Sheena.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Star - Silver Star NPC v1.93
 
 :: Traifed the .d-files, too
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
 :: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
+
+----------------------------------------------------------------------------------------
+
+
+:: sword_and_fist - Sword and Fist v7
+
+:: Missing Monk ability file: GA_NMMONK06 -> GA_NMMONK05
+:: http://forums.gibberlings3.net/index.php?showtopic=25837&view=findpost&p=216105
 
 
 ----------------------------------------------------------------------------------------
@@ -1499,15 +1568,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's corrected 2500 -> AR2500 - RPGSolaFlirts.d
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488705
-
-
-----------------------------------------------------------------------------------------
-
-
-:: song_and_silence - Song and Silence v5
-
-:: Lollorian's patches for ADD_KIT adding kits properly
-:: - LINK NOT FOUND ~
 
 
 ----------------------------------------------------------------------------------------
@@ -1547,15 +1607,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's portrait installation fix - SBS\Language\English\Setup.tra
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=485886
-
-
-----------------------------------------------------------------------------------------
-
-
-:: sword_and_fist - Sword and Fist v7
-
-:: Missing Monk ability file: GA_NMMONK06 -> GA_NMMONK05
-:: http://forums.gibberlings3.net/index.php?showtopic=25837&view=findpost&p=216105
 
 
 ----------------------------------------------------------------------------------------
@@ -1675,6 +1726,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's corrected "NONE" -> "" - WGwitch.d
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
+
+
+----------------------------------------------------------------------------------------
+
+
+:: touched - Touch-the Moon NPC v1.1
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------

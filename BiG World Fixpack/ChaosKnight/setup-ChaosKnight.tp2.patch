@@ -1,0 +1,18 @@
+--- ChaosKnight\setup-ChaosKnight.tp2	Thu Sep 01 21:31:04 2011
++++ C:\BWP Patchstudio\patched files\ChaosKnight\setup-ChaosKnight.tp2	Sat Dec 14 21:45:59 2013
+@@ -1,6 +1,6 @@
+ BACKUP ~ChaosKnight/backup~
+ AUTHOR ~drizztdd@naver.com~
+-
++VERSION ~v1.3 BWP Fix~
+ AUTO_TRA ~ChaosKnight/Language/%s/D~
+ 
+ LANGUAGE ~ÇÑ±¹¾î~ ~korean~ ~ChaosKnight/Language/korean/setup.tra~
+@@ -113,5 +113,6 @@
+   SAY 0x1cc @5	//BIO
+   ADD_CRE_ITEM ~CHAN02~ #0 #0 #0 ~UNSTEALABLE~ ~ARMOR~
+   ADD_CRE_ITEM ~ZYCHMACE~ #0 #0 #0 ~UNSTEALABLE~ ~WEAPON1~ EQUIP
+-  WRITE_SHORT  0x246 ~%CHAOSK%~ // the internal name of your kit, surrounded by %
++  WRITE_SHORT 0x244 0 // doesn't change
++  WRITE_SHORT 0x246 0x4000 + ~%CHAOSK%~ // the internal name of your kit, surrounded by %
+ 

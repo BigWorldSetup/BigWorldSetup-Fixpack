@@ -1,5 +1,5 @@
 --- mur'neth\mur'neth.tp2	Tue Oct 01 15:05:22 2013
-+++ C:\BWP Patchstudio\patched files\mur'neth\mur'neth.tp2	Mon Oct 14 21:40:08 2013
++++ C:\BWP Patchstudio\patched files\mur'neth\mur'neth.tp2	Sat Dec 14 22:07:17 2013
 @@ -1,7 +1,7 @@
  BACKUP ~mur'neth/backup~
  AUTHOR ~Andyr, Andyr@Gibberlings3.net~
@@ -9,3 +9,14 @@
  
  README ~mur'neth/readme-murneth.html~
  
+@@ -210,8 +210,8 @@
+   SAY NAME1 @7
+   SAY NAME2 @7
+   WRITE_SHORT 0x244 0
+-  WRITE_BYTE 0x246 ~%A#GHAUN%~
+-  WRITE_BYTE 0x247 0x40
++  WRITE_SHORT 0x246 0x4000 + ~%A#GHAUN%~
++//WRITE_BYTE 0x247 0x40
+   WRITE_ASCII 0x248 ~A#MURN~ #8 // override
+   WRITE_ASCII 0x2cc ~A#MURN~ #8 // dialogue
+   SAY INITIAL_MEETING @8

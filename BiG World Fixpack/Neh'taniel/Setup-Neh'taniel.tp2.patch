@@ -1,5 +1,5 @@
 --- Setup-Neh'taniel.tp2	Wed Apr 21 03:13:13 2010
-+++ C:\BWP Patchstudio\patched files\Setup-Neh'taniel.tp2	Mon Dec 09 21:56:27 2013
++++ C:\BWP Patchstudio\patched files\Setup-Neh'taniel.tp2	Mon Dec 09 22:07:18 2013
 @@ -107,8 +107,8 @@
    WRITE_ASCII 0x34  ~sk#nehs~ #8     // assign small portrait
    WRITE_ASCII 0x3c  ~sk#nehl~ #8     // assign medium portrait
@@ -11,16 +11,15 @@
    SAY BIO @6
  
  SAY MORALE @7 
-@@ -466,7 +466,7 @@
-         ~Neh'taniel/Scripts/sk#25neh.baf~
+@@ -467,6 +467,7 @@
          ~Neh'taniel/Scripts/SK#25NED.baf~
          ~Neh'taniel/Scripts/SK#NehtD.baf~
--        ~Neh'taniel/Scripts/SK#Fix.baf~
+         ~Neh'taniel/Scripts/SK#Fix.baf~
 +        ~Neh'taniel/Scripts/SK#2Fix.baf~
          
          
  COMPILE ~Neh'taniel/Dialogue/BSK#NEHT.d~
-@@ -516,8 +516,8 @@
+@@ -516,8 +517,8 @@
    WRITE_ASCII 0x34  ~sk#nehts~ #8     // assign small portrait
    WRITE_ASCII 0x3c  ~sk#nehtl~ #8     // assign medium portrait
    WRITE_SHORT   0x244 0
@@ -31,7 +30,7 @@
    SAY NAME1 @5
    SAY NAME2 @5
    SAY BIO @6
-@@ -582,8 +582,8 @@
+@@ -582,8 +583,8 @@
    WRITE_ASCII 0x34  ~sk#nehts~ #8     // assign small portrait
    WRITE_ASCII 0x3c  ~sk#nehtl~ #8     // assign medium portrait
    WRITE_SHORT   0x244 0
@@ -42,7 +41,7 @@
    SAY NAME1 @5
    SAY NAME2 @5
    SAY BIO @6
-@@ -649,8 +649,8 @@
+@@ -649,8 +650,8 @@
    WRITE_ASCII 0x34  ~sk#nehts~ #8     // assign small portrait
    WRITE_ASCII 0x3c  ~sk#nehtl~ #8     // assign medium portrait
    WRITE_SHORT   0x244 0
@@ -53,7 +52,7 @@
    SAY NAME1 @5
    SAY NAME2 @5
    SAY BIO @6
-@@ -805,8 +805,8 @@
+@@ -805,8 +806,8 @@
    WRITE_ASCII 0x34  ~sk#nehts~ #8     // assign small portrait
    WRITE_ASCII 0x3c  ~sk#nehtl~ #8     // assign medium portrait
    WRITE_SHORT   0x244 0

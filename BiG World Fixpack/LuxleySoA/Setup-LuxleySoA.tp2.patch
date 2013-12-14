@@ -1,0 +1,22 @@
+--- LuxleySoA\Setup-LuxleySoA.tp2	Tue Feb 19 14:02:24 2013
++++ C:\BWP Patchstudio\patched files\LuxleySoA\Setup-LuxleySoA.tp2	Sat Dec 14 22:04:00 2013
+@@ -2,7 +2,7 @@
+ 
+ AUTHOR ~feuille_sakaki@spellholdstudios.net~
+ 
+-VERSION ~v1.2~
++VERSION ~v1.2 BWP Fix~
+ 
+ README ~LuxleySoA/LuxleyReadme.htm~
+ 
+@@ -179,8 +179,8 @@
+ 
+ COPY ~LuxleySoA/characters/FHLSEB08.cre~ ~override~
+ WRITE_SHORT 0x244 0
+-WRITE_BYTE 0x246 ~%FHLPLAY%~
+-WRITE_BYTE 0x247 0x40
++WRITE_SHORT 0x246 0x4000 + ~%FHLPLAY%~
++//WRITE_BYTE 0x247 0x40
+ SAY NAME1 ~Sebastian~
+ SAY NAME2 ~Sebastian~
+ SAY INITIAL_MEETING ~~

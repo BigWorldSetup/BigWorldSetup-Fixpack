@@ -1,0 +1,104 @@
+--- PofKits\Setup-Pofkits.tp2	Sun May 06 17:29:20 2007
++++ C:\BWP Patchstudio\patched files\PofKits\Setup-Pofkits.tp2	Sat Dec 14 22:19:35 2013
+@@ -1,5 +1,6 @@
+ BACKUP ~PoFKits\backup~
+ AUTHOR ~Yarpen_AVE@vp.pl~
++VERSION ~v4 BWP Fix~
+ AUTO_TRA ~PoFKits/%s~
+ LANGUAGE "English" "english"
+          ~PoFKits/english/setup.tra~
+@@ -7,7 +8,6 @@
+          ~PoFKits/polski/setup.tra~
+ LANGUAGE "Czech (Tokkar i Sigil)" "czech"
+          ~PoFKits/czech/setup.tra~
+-
+ BEGIN @0
+ // From Gibberlings3 Kit Remover //
+ COPY ~PoFKits/remove~ ~override~
+@@ -1059,8 +1059,8 @@
+ 		  ~Cernd14.cre~ ~override~
+ 		  ~Cernd12.cre~ ~override~
+ WRITE_SHORT 0x244 0
+-WRITE_BYTE 0x246 ~%WEATHER%~
+-WRITE_BYTE 0x247 0x40
++WRITE_SHORT 0x246 0x4000 + ~%WEATHER%~
++//WRITE_BYTE 0x247 0x40
+ 
+ COPY ~PofKits/Fixed_items/Cernd~ ~override~
+ 
+@@ -1074,8 +1074,8 @@
+ 		  ~Keldor12.cre~ ~override~
+ 		  ~Keldor14.cre~ ~override~
+ WRITE_SHORT 0x244 0
+-WRITE_BYTE 0x246 ~%VOTARY%~
+-WRITE_BYTE 0x247 0x40
++WRITE_SHORT 0x246 0x4000 + ~%VOTARY%~
++//WRITE_BYTE 0x247 0x40
+ 
+ COPY ~PofKits/Fixed_items/Keldorn~ ~override~
+ 
+@@ -1089,8 +1089,8 @@
+ 		  ~Keldor12.cre~ ~override~
+ 		  ~Keldor14.cre~ ~override~
+ WRITE_SHORT 0x244 0
+-WRITE_BYTE 0x246 ~%MILITARIST%~
+-WRITE_BYTE 0x247 0x40
++WRITE_SHORT 0x246 0x4000 + ~%MILITARIST%~
++//WRITE_BYTE 0x247 0x40
+ 
+ COPY ~PofKits/Fixed_items/Keldorn~ ~override~
+ 
+@@ -1104,8 +1104,8 @@
+ 		  ~Anomen10.cre~ ~override~
+ 		  ~Anomen12.cre~ ~override~
+ WRITE_SHORT 0x244 0
+-WRITE_BYTE 0x246 ~%KNIGHT%~
+-WRITE_BYTE 0x247 0x40
++WRITE_SHORT 0x246 0x4000 + ~%KNIGHT%~
++//WRITE_BYTE 0x247 0x40
+ 
+ BEGIN @81
+ REQUIRE_PREDICATE     FILE_EXISTS_IN_GAME ~y#knight.2da~ @80
+@@ -1116,8 +1116,8 @@
+ 		  ~Mazzy12.cre~ ~override~
+ 		  ~Mazzy15.cre~ ~override~
+ WRITE_SHORT 0x244 0
+-WRITE_BYTE 0x246 ~%KNIGHT%~
+-WRITE_BYTE 0x247 0x40
++WRITE_SHORT 0x246 0x4000 + ~%KNIGHT%~
++//WRITE_BYTE 0x247 0x40
+ 
+ BEGIN @82
+ REQUIRE_PREDICATE     FILE_EXISTS_IN_GAME ~y#derv.2da~ @83
+@@ -1128,8 +1128,8 @@
+ 		  ~Haer15.cre~ ~override~
+ 		  ~Haer19.cre~ ~override~
+ WRITE_SHORT 0x244 0
+-WRITE_BYTE 0x246 ~%DERVISH%~
+-WRITE_BYTE 0x247 0x40
++WRITE_SHORT 0x246 0x4000 + ~%DERVISH%~
++//WRITE_BYTE 0x247 0x40
+ 
+ 
+ BEGIN @84
+@@ -1142,8 +1142,8 @@
+ 		  ~Valyg12.cre~ ~override~
+ 		  ~Valyg14.cre~ ~override~
+ WRITE_SHORT 0x244 0
+-WRITE_BYTE 0x246 ~%SCOUT%~
+-WRITE_BYTE 0x247 0x40
++WRITE_SHORT 0x246 0x4000 + ~%SCOUT%~
++//WRITE_BYTE 0x247 0x40
+ 
+ BEGIN @87
+ SUBCOMPONENT @85
+@@ -1155,7 +1155,7 @@
+ 		  ~Valyg12.cre~ ~override~
+ 		  ~Valyg14.cre~ ~override~
+ WRITE_SHORT 0x244 0
+-WRITE_BYTE 0x246 ~%TEMPEST%~
+-WRITE_BYTE 0x247 0x40
++WRITE_SHORT 0x246 0x4000 + ~%TEMPEST%~
++//WRITE_BYTE 0x247 0x40
+ 
+ 
