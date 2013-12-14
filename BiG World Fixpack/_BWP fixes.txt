@@ -667,12 +667,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: dq - Fishing for Trouble v2.6
+:: dq - Fishing for Trouble v2.7
 
-:: Lollorian's assorted ARE fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=562853
-
-:: Lollorian's improper file copy fix
+:: Lollorian's improper file copy fix (applied to other individual file copy code)
 :: http://www.shsforums.net/topic/56713-i-have-some-questions-regarding-some-of-the-queststriggers/?p=562918
 
 
