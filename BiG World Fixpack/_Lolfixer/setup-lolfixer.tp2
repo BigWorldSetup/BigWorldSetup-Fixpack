@@ -1,6 +1,6 @@
 BACKUP ~lolfixer/backup~
 AUTHOR ~Lollorian~
-VERSION ~15092013~
+VERSION ~15122013~
 
 BEGIN ~Area Stuff - MAJESTIC Area Fixer~
   GROUP ~Area Stuff~
@@ -123,6 +123,20 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
 
     PATCH_IF (cont_off > 0x11b) THEN BEGIN
       FOR (index = 0 ; index < cont_num ; index = index + 1) BEGIN
+
+        // Non-empty containers that aren't visible get their items dropped on the ground
+        READ_SHORT ("%cont_off%" + 0x24 + (0xc0 * "%index%")) "cont_type"
+        READ_SHORT ("%cont_off%" + 0x38 + (0xc0 * "%index%")) "bound_a"
+        READ_SHORT ("%cont_off%" + 0x3a + (0xc0 * "%index%")) "bound_b"
+        READ_SHORT ("%cont_off%" + 0x3c + (0xc0 * "%index%")) "bound_c"
+        READ_SHORT ("%cont_off%" + 0x3e + (0xc0 * "%index%")) "bound_d"
+        READ_LONG  ("%cont_off%" + 0x44 + (0xc0 * "%index%")) "cont_itm_num"
+        PATCH_IF ("%bound_a%" = 0) AND ("%bound_b%" = 0) AND ("%bound_c%" = 0) AND ("%bound_d%" = 0) AND ("%cont_type%" != 4) AND ("%cont_itm_num%" > 0) BEGIN
+          WRITE_SHORT ("%cont_off%" + 0x24 + (0xc0 * "%index%")) 4
+          PATCH_PRINT "%SOURCE_FILE% error: Container #%index% has no bounding box but contains items! Dropping all items to ground..."
+        END
+
+        // Invalid container content checker
         READ_LONG  ("%cont_off%" + 0x40 + (0xc0 * "%index%")) "cont_itm_idx"
         READ_LONG  ("%cont_off%" + 0x44 + (0xc0 * "%index%")) "cont_itm_num"
         FOR (index2 = 0 ; index2 < cont_itm_num ; index2 = index2 + 1) BEGIN
@@ -145,6 +159,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
             END
           END
         END
+
       END
     END
 
