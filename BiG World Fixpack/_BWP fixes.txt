@@ -542,8 +542,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's PRO_CLASS replacement
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561847
 
-::
-::
+:: horred the plague's 2-handed ITM animation mismatch fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=550226
 
 
 ----------------------------------------------------------------------------------------
@@ -667,7 +667,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: dq - Fishing for Trouble v2.7
+:: dq - Fishing for Trouble v2.8
 
 :: Lollorian's improper file copy fix (applied to other individual file copy code)
 :: http://www.shsforums.net/topic/56713-i-have-some-questions-regarding-some-of-the-queststriggers/?p=562918
@@ -894,10 +894,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Item Revisions v2
+:: item_rev - Item Revisions v3
 
-:: Official hotfixes from 02 June 2010
-:: http://forums.gibberlings3.net/index.php?showtopic=15698
+:: Hotfix Beta 1.16 dated September 12th 2013
+:: http://forums.gibberlings3.net/index.php?showtopic=22692
 
 
 ----------------------------------------------------------------------------------------
@@ -1039,6 +1039,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+
+----------------------------------------------------------------------------------------
+
+
+:: LOHMod - Legion of Hell v1.0
+
+:: horred the plague's 2-handed ITM animation mismatch fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=550226
 
 
 ----------------------------------------------------------------------------------------
@@ -1290,8 +1299,11 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: refinements - Refinements v3.31
 
-:: cmorgan's ToBEx compatible ADD_KIT fix
-:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+:: horred the plague's 2-handed ITM animation mismatch fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=550226
+
+:: Lollorian's !Dead("astAttackerOf(") -> !StateCheck(LastAttackerOf(Myself),STATE_REALLY_DEAD) change
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
 
 ----------------------------------------------------------------------------------------
@@ -1326,6 +1338,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+:: horred the plague's 2-handed ITM animation mismatch fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=550226
 
 
 ----------------------------------------------------------------------------------------
@@ -1398,6 +1413,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+:: horred the plague's 2-handed ITM animation mismatch fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=550226
 
 
 ----------------------------------------------------------------------------------------
@@ -1533,6 +1551,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: spell_rev - Spell Revisions v3.1
+
+:: Demivrgvs' Hotfix 03 dated June 26th 2013
+:: http://forums.gibberlings3.net/index.php?showtopic=24304
+
+:: horred the plague's 2-handed ITM animation mismatch fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=550226
 
 
 ----------------------------------------------------------------------------------------
@@ -1827,9 +1857,12 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Underrepresented Items v5
+:: underrep - Under-represented Items v6
 
 :: The file underrep\dlg\u#conlan.d was not traified yet
+
+:: horred the plague's 2-handed ITM animation mismatch fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=550226
 
 
 ----------------------------------------------------------------------------------------
@@ -1839,6 +1872,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Taimon's area crash fix - d_and_baf.tph, macro.tph
 :: http://www.shsforums.net/index.php?s=&showtopic=22887&view=findpost&p=392339
+
+
+----------------------------------------------------------------------------------------
+
+
+:: UoT - Umbra of Trow v1.0
+
+:: horred the plague's 2-handed ITM animation mismatch fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=550226
 
 
 ----------------------------------------------------------------------------------------
@@ -1892,6 +1934,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: vecna - Vecna v23
+
+:: Lollorian's hotfix compilation v3
+:: http://www.shsforums.net/topic/43975-vecna/?p=562021
 
 
 ----------------------------------------------------------------------------------------

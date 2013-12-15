@@ -1,14 +1,14 @@
---- dq\setup-dq.tp2	Sat Oct 12 11:58:51 2013
-+++ C:\BWP Patchstudio\patched files\dq\setup-dq.tp2	Sat Dec 14 23:19:26 2013
+--- dq\setup-dq.tp2	Sat Dec 14 13:35:37 2013
++++ C:\BWP Patchstudio\patched files\dq\setup-dq.tp2	Sun Dec 15 12:05:35 2013
 @@ -1,6 +1,6 @@
  BACKUP ~dq/backup~
  AUTHOR ~www.shsforums.net/forum/550-fishing-for-trouble/~
 -VERSION ~v2.7~
-+VERSION ~v2.7 BWP Fix~
++VERSION ~v2.8 BWP Fix~
  //MODDER setup_tra NONE
  //launch the ReadMe file immediately
  README ~dq/dq-readme.html~
-@@ -896,13 +896,13 @@
+@@ -897,13 +897,13 @@
  	COPY ~dq/cre/yscdmer3.cre~ ~override/yscdmer3.cre~
  	SAY NAME1 @270
  	SAY NAME2 @270
@@ -25,7 +25,7 @@
  	SAY NAME1 @274
  	SAY NAME2 @274
  	COPY ~dq/cre/yscdcook.cre~ ~override/yscdcook.cre~
-@@ -1169,41 +1169,41 @@
+@@ -1170,41 +1170,41 @@
  //##################################################
  //Stores
  //Athkatla
