@@ -1126,7 +1126,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: mur'neth - Mur'Neth NPC v11
 
-:: CamDawg's install fix for BGT
+:: CamDawg's install fix for BGT (modified by Lollorian to keep State1-16 variables - borrowed from BG1NPC)
 :: http://forums.gibberlings3.net/index.php?showtopic=1541&view=findpost&p=214668
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
