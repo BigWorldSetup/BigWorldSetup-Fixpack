@@ -826,6 +826,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: iepbanters - Infinity Extended Project Banter Pack v4.2
+
+:: Lollorian's Viconia-Valygar Aboleth talk stutter fix
+:: http://www.shsforums.net/topic/33456-viconia-friendship-bug-reports/?p=565431
+
+
+----------------------------------------------------------------------------------------
+
+
 :: iiItemMod - igi's Item Mod v5
 
 :: Lollorian's assorted ITM fixes
