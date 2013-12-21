@@ -1305,6 +1305,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's !Dead("astAttackerOf(") -> !StateCheck(LastAttackerOf(Myself),STATE_REALLY_DEAD) change
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
+:: The Imp's KIT.IDS borkage fixing (all values mapped to their identifiers)
+:: http://www.shsforums.net/topic/56991-v331s-always-block-in-the-refinements-can-flip-the-kitids-badly/
+
 
 ----------------------------------------------------------------------------------------
 
