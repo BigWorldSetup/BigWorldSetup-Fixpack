@@ -1,6 +1,6 @@
 BACKUP ~lolfixer/backup~
 AUTHOR ~Lollorian~
-VERSION ~15122013~
+VERSION ~29122013~
 
 BEGIN ~Area Stuff - MAJESTIC Area Fixer~
   GROUP ~Area Stuff~
@@ -1751,6 +1751,33 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
       PATCH_IF NOT ((FILE_EXISTS_IN_GAME ~%used_itm%.itm~) OR ("%used_itm%" STRING_EQUAL_CASE "") OR ("%used_itm%" STRING_EQUAL_CASE "none")) BEGIN
         PATCH_PRINT "%SOURCE_FILE% error: Non-existent Used Up Item (%used_itm%.ITM)! Nulling..."
         WRITE_ASCII 0x10 ~NONE~ #8
+      END
+
+      // Missing Container Store Linker
+      READ_SHORT 0x1c "type"
+
+      PATCH_IF ("%type%" = 36) BEGIN
+        PATCH_IF NOT (FILE_EXISTS_IN_GAME ~%SOURCE_RES%.sto~) BEGIN
+          PATCH_PRINT "%SOURCE_FILE% error: Container missing corresponding STO file! Linking makeshift store..."
+          INNER_ACTION BEGIN
+
+            ACTION_DEFINE_ASSOCIATIVE_ARRAY lol_stores BEGIN
+              1 => ~Big World Burgers~
+              2 => ~Lollorian's Lulz~
+              3 => ~Leonardo's Locks~
+              4 => ~Jarno's Jams~
+              5 => ~I AM ERROR!~
+            END
+
+            COPY_EXISTING ~BAG04.STO~ ~override/%SOURCE_RES%.STO~ // copy bag of holding's store
+              SET rnb = RANDOM (1 5)
+              PHP_EACH lol_stores AS random_num => random_store BEGIN
+                PATCH_IF ("%rnb%" = "%random_num%") BEGIN
+                  SAY 0xc "%random_store%"
+                END
+              END
+          END
+        END
       END
 
       // Type Fixer

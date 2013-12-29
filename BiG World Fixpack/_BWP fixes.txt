@@ -1869,6 +1869,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: ub - Unfinished Business v23
+
+:: Miloch's missing WWBAG02.STO crash fix
+:: http://www.shsforums.net/topic/56994-an-assertion-failed/?p=565631
+
+
+----------------------------------------------------------------------------------------
+
+
 :: underrep - Under-represented Items v6
 
 :: The file underrep\dlg\u#conlan.d was not traified yet

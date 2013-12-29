@@ -1,0 +1,20 @@
+--- setup-ub.tp2	Thu Nov 14 13:53:28 2013
++++ C:\BWP Patchstudio\patched files\setup-ub.tp2	Sun Dec 29 13:08:10 2013
+@@ -58,7 +58,7 @@
+ 
+ README ~ub/readme_ub.html~
+ 
+-VERSION ~v23~
++VERSION ~v23 BWP Fix~
+ 
+ ////////////////////////
+ ////////////////////////
+@@ -129,7 +129,7 @@
+ UNLESS ~CD_STATE_NOTVALID~
+ 
+ COPY_EXISTING ~bag02.itm~ ~override/wwbag02.itm~ /* Kulyok */
+-
++COPY_EXISTING ~bag02.sto~ ~override/wwbag02.sto~
+ /*
+ DavidW- this is unused (presumably part of Cliffette's not-quite implemented extra area content)
+ COPY_EXISTING ~AR0042.tis~	~Override/arwwbo.tis~
