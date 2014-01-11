@@ -1,0 +1,34 @@
+--- BP\RITUAL\tAR3000.BAF	Sat Nov 16 21:43:20 2013
++++ C:\BWP Patchstudio\patched files\BP\RITUAL\tAR3000.BAF	Sat Jan 11 19:01:32 2014
+@@ -4,7 +4,7 @@
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("RitualPontifexSpawn","GLOBAL",1)
+-		CreateCreature("ritpont",[1562.2618],S)
++		CreateCreature("ritpont",[1562.2618],8)
+ END
+ 
+ IF
+@@ -13,14 +13,14 @@
+ 	RESPONSE #100
+ 		StartCutSceneMode()
+ 		SetGlobal("RitualAccept","GLOBAL",2)
+-		ActionOverride(Player1,LeaveAreaLUAPanic("AR0086","",[2753.571],W))
+-		ActionOverride(Player1,LeaveAreaLUA("AR0088","",[252.571],W))
+-		ActionOverride(Player1,LeaveAreaLUA("AR0088","",[252.571],S))
+-		ActionOverride(Player2,LeaveAreaLUA("AR0088","",[252.571],S))
+-		ActionOverride(Player3,LeaveAreaLUA("AR0088","",[252.571],S))
+-		ActionOverride(Player4,LeaveAreaLUA("AR0088","",[252.571],S))
+-		ActionOverride(Player5,LeaveAreaLUA("AR0088","",[252.571],S))
+-		ActionOverride(Player6,LeaveAreaLUA("AR0088","",[252.571],S))
++		ActionOverride(Player1,LeaveAreaLUAPanic("AR0086","",[2753.571],4))
++		ActionOverride(Player1,LeaveAreaLUA("AR0088","",[252.571],4))
++		ActionOverride(Player1,LeaveAreaLUA("AR0088","",[252.571],8))
++		ActionOverride(Player2,LeaveAreaLUA("AR0088","",[252.571],8))
++		ActionOverride(Player3,LeaveAreaLUA("AR0088","",[252.571],8))
++		ActionOverride(Player4,LeaveAreaLUA("AR0088","",[252.571],8))
++		ActionOverride(Player5,LeaveAreaLUA("AR0088","",[252.571],8))
++		ActionOverride(Player6,LeaveAreaLUA("AR0088","",[252.571],8))
+ 		EndCutSceneMode()
+ END
+ 

@@ -413,6 +413,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: horred the plague's Lavok script issue fix
 :: http://www.shsforums.net/topic/56797-lavok-back-from-the-dead/?p=563869
 
+:: horred the plague's Red Badge and Ritual installation fix
+:: http://www.shsforums.net/topic/56296-bp-181-bugs/?p=565873
+
 
 ----------------------------------------------------------------------------------------
 
