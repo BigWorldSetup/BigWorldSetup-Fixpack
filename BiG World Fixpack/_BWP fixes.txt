@@ -306,15 +306,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: bggraphics - BG Graphics Overhaul for BGT v1.3
-
-:: prozh's hotfix for Gavin and BGGraphics (_bggraphics_gavin_hotfix folder)
-:: http://www.shsforums.net/topic/56117-baldurs-gate-graphics-overhaul/?p=559987
-
-
-----------------------------------------------------------------------------------------
-
-
 :: BGSpawn - BGSpawn v1.12
 
 :: 10th's Troll spawn fix
