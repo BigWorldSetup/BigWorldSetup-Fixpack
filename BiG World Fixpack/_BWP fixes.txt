@@ -140,9 +140,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's class script trigger fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561215
 
-:: Wisp's missing soundset fix
-:: http://forums.gibberlings3.net/index.php?showtopic=25909
-
 :: cmorgan's ToBEx compatible ADD_KIT fix
 :: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 

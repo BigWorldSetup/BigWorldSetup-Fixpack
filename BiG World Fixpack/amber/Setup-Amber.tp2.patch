@@ -3,20 +3,11 @@
 @@ -1,6 +1,6 @@
  BACKUP ~amber/backup~
  AUTHOR ~amber@welho.net~
--VERSION ~v3~
+-VERSION ~v4~
 +VERSION ~v4 BWP Fix~
  README ~amber/readme-amber.html~
  LANGUAGE ~English~ ~english~ ~amber/tra/english/setup.tra~
  LANGUAGE ~Deutsch~ ~german~  ~amber/tra/german/setup.tra~
-@@ -12,7 +12,7 @@
- // use new macro to handle all audio installation
- LAF HANDLE_AUDIO STR_VAR audio_path = ~amber/sounds/ambient~ oggdec_path = ~amber/sounds~ sox_path = ~amber/sounds~ END // ambient area sounds
- ACTION_IF FILE_EXISTS ~amber/sounds/%LANGUAGE%/m#amb001.ogg~ THEN BEGIN
--  LAF HANDLE_AUDIO STR_VAR audio_path = ~amber/sounds/%LANGUAGE%~ oggdec_path = ~amber/sounds~ sox_path = ~amber/sounds~ END // this replaces all the junk below
-+  LAF HANDLE_AUDIO STR_VAR audio_path = EVAL ~amber/sounds/%LANGUAGE%~ oggdec_path = ~amber/sounds~ sox_path = ~amber/sounds~ END // this replaces all the junk below
- END
- 
- LAF HANDLE_TILESETS STR_VAR tiz_path = ~amber/tiz~ tizunpack_path = ~amber/tiz~ END // unpacks area tilesets
 @@ -389,8 +389,8 @@
    SAY HIDDEN_IN_SHADOWS @145
    SAY 0x1cc @144
