@@ -290,6 +290,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: cmorgan's fix for possible bug with with Edwin's Dialogue about Dynaheir 
 :: http://forums.gibberlings3.net/index.php?showtopic=25863&view=findpost&p=216231
 
+:: cmorgan's hostile Karris fix
+:: http://forums.gibberlings3.net/index.php?showtopic=23627&view=findpost&p=194369
+
 
 ----------------------------------------------------------------------------------------
 
