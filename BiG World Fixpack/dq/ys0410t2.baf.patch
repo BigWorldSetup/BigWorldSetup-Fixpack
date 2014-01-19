@@ -1,0 +1,11 @@
+--- dq\area scripts\ys0410t2.baf	Sat Nov 22 22:44:58 2008
++++ C:\BWP Patchstudio\patched files\dq\area scripts\ys0410t2.baf	Sat Jan 18 21:59:42 2014
+@@ -16,7 +16,7 @@
+ 	RESPONSE #100
+ 		DisplayStringHead(Myself,@414)
+ 		TakePartyItem("yscpem")
+-		GiveItemCreate("yscpfl",Protagonist,1,1,0)
++		GiveItemCreate("yscpfl",Player1,1,1,0)
+ 		SetGlobal("ys_SourWater","GLOBAL",1)
+ END
+ 

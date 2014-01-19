@@ -1,0 +1,11 @@
+--- Yikari\Yikari.tp2	Sun May 30 17:06:28 2010
++++ C:\BWP Patchstudio\patched files\Yikari\Yikari.tp2	Sun Jan 19 21:42:24 2014
+@@ -6,7 +6,7 @@
+ BACKUP ~Yikari/backup~
+ 
+ AUTHOR ~shed@spellholdstudios.net~
+-
++VERSION ~v1.7 BWP Fix~
+ AUTO_TRA ~Yikari/Translations/%s~
+ 
+ ALLOW_MISSING ~AR0900.bcs~

@@ -1,0 +1,28 @@
+--- RPG-KP\weaver\baf\w#player.baf	Tue Feb 01 00:25:28 2005
++++ C:\BWP Patchstudio\patched files\RPG-KP\weaver\baf\w#player.baf	Sun Jan 19 21:32:55 2014
+@@ -5,7 +5,7 @@
+         Kit(Protagonist,WILDMAGE)
+ THEN
+ 	RESPONSE #100
+-		GiveItemCreate("w#weave1",Protagonist,1,1,0)
++		GiveItemCreate("w#weave1",Player1,1,1,0)
+ 		SetGlobal("w#wstart","GLOBAL",1)
+ END
+ 
+@@ -16,7 +16,7 @@
+         Kit(Protagonist,WILDMAGE)
+ THEN
+ 	RESPONSE #100
+-		GiveItemCreate("w#weave1",Protagonist,1,1,0)
++		GiveItemCreate("w#weave1",Player1,1,1,0)
+ 		SetGlobal("w#wstart","GLOBAL",1)
+ END
+ 
+@@ -27,6 +27,6 @@
+         Kit(Protagonist,WILDMAGE)
+ THEN
+ 	RESPONSE #100
+-		GiveItemCreate("w#weave1",Protagonist,1,1,0)
++		GiveItemCreate("w#weave1",Player1,1,1,0)
+ 		SetGlobal("w#wstart","GLOBAL",1)
+ END

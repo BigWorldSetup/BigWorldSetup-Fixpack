@@ -1,0 +1,17 @@
+--- Yikari\Dialogue\SDNPCJ.d	Wed Sep 23 21:00:04 2009
++++ C:\BWP Patchstudio\patched files\Yikari\Dialogue\SDNPCJ.d	Sun Jan 19 21:40:42 2014
+@@ -39,12 +39,12 @@
+ IF ~PartyHasItem("sdnpcsw3")~ THEN DO
+ 			~TakePartyItem("sdnpcsw3")
+ 			DestroyItem("sdnpcsw3") // A precaution; Yikari need not be holding his own sword.
+-			GiveItemCreate("sw1h51",Protagonist,1,0,0)
++			GiveItemCreate("sw1h51",Player1,1,0,0)
+ 			SetGlobal("SDNPCQuest","GLOBAL",3)~ EXIT
+ IF ~PartyHasItem("sdnpcsw4")~ THEN DO
+ 			~TakePartyItem("sdnpcsw4")
+ 			DestroyItem("sdnpcsw4") // A precaution; Yikari need not be holding his own sword.
+-			GiveItemCreate("c2sw1h02",Protagonist,1,0,0)
++			GiveItemCreate("c2sw1h02",Player1,1,0,0)
+ 			SetGlobal("SDNPCQuest","GLOBAL",3)~ EXIT
+ END
+ 

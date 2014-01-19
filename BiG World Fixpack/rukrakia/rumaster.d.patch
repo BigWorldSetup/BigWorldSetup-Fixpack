@@ -1,0 +1,20 @@
+--- rukrakia\D\rumaster.d	Sat Sep 08 17:02:19 2007
++++ C:\BWP Patchstudio\patched files\rukrakia\D\rumaster.d	Sun Jan 19 21:35:06 2014
+@@ -251,7 +251,7 @@
+ IF ~~
+   THEN BEGIN rumaster13
+   SAY @53 = @54 = @55 = @56
+-  IF ~~ THEN DO ~GiveItemCreate("rumscrol", Protagonist, 1, 0, 0)
++  IF ~~ THEN DO ~GiveItemCreate("rumscrol", Player1, 1, 0, 0)
+                  ClearAllActions()
+                  StartCutSceneMode()
+                  StartCutScene("rumastgo")~ EXIT
+@@ -267,7 +267,7 @@
+ IF ~~
+   THEN BEGIN rumaster15
+   SAY @61 = @55 = @56
+-  IF ~~ THEN DO ~GiveItemCreate("rumscrol", Protagonist, 1, 0, 0)
++  IF ~~ THEN DO ~GiveItemCreate("rumscrol", Player1, 1, 0, 0)
+                  ClearAllActions()
+                  StartCutSceneMode()
+                  StartCutScene("rumastgo")~ EXIT

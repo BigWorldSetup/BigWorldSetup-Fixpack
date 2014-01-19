@@ -660,6 +660,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's improper file copy fix (applied to other individual file copy code)
 :: http://www.shsforums.net/topic/56713-i-have-some-questions-regarding-some-of-the-queststriggers/?p=562918
 
+:: micbaldur's GiveItemCreate() Protagonist -> Player1 fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566210
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1172,6 +1175,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: NeJ - Neverending Journey v6.94
+
+:: micbaldur's GiveItemCreate() Protagonist -> Player1 fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566210
+
+
+----------------------------------------------------------------------------------------
+
+
 :: nephele - Nephele NPC v2.2
 
 :: Lollorian's PRO_CLASS replacement
@@ -1429,6 +1441,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's unnecessary string fix for dualwielding axes: @243 -> ~Yes, let's do it!~
 :: http://forums.rpgdungeon.net/index.php?topic=1224.0 (only installs for ItemUpgrade's original version components #0 & #1)
 
+:: micbaldur's GiveItemCreate() Protagonist -> Player1 fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566210
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1451,12 +1466,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Rukrakia NPC v0.7
-
-:: BWP compatibility fixes
+:: rukrakia - Rukrakia NPC v.08
 
 :: Lollorian's LOCALS fixes - rukrakia.d
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483384
+
+:: micbaldur's GiveItemCreate() Protagonist -> Player1 fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566210
 
 
 ----------------------------------------------------------------------------------------
@@ -1728,6 +1744,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: THEONEDRIZZT - The One Drizzt v1.41
+
+:: pro5's Tutu reference changes
+:: http://www.shsforums.net/topic/57081-drizzt-saga-bgee-update-and-compatibility-fixes/?p=566066
+
+
+----------------------------------------------------------------------------------------
+
+
 :: TheUndying - The Undying v2.11
 
 :: Lollorian's !Dead(Myself) changes - CMSORA3.baf
@@ -1793,6 +1818,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's replacements - Movie3ba.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
+
+
+----------------------------------------------------------------------------------------
+
+
+:: TS - Tortured Souls v7.04
+
+:: micbaldur's GiveItemCreate() Protagonist -> Player1 fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566210
 
 
 ----------------------------------------------------------------------------------------
@@ -2010,6 +2044,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: xpmod - Ding0's Experience Fixer v6
 
 :: White Agnus' 0 XP Creature Fix - creature_xp.tph
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Yikari - Yikari v1.7
+
+:: micbaldur's GiveItemCreate() Protagonist -> Player1 fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566210
 
 
 ----------------------------------------------------------------------------------------

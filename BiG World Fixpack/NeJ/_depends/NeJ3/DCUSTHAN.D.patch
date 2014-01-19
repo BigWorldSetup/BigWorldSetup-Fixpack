@@ -1,0 +1,48 @@
+--- NeJ\Dfiles\DCUSTHAN.D	Sun Sep 19 23:42:58 2004
++++ C:\BWP Patchstudio\patched files\NeJ\Dfiles\DCUSTHAN.D	Sat Jan 18 22:34:20 2014
+@@ -34,33 +34,33 @@
+ 
+ IF ~~ THEN BEGIN 5
+   SAY ~Feel free to look through the library.  Let me know if you find what you are looking for or if something interests you.~
+-  IF ~Global("WorshipInTheHand","GLOBAL",0)~ THEN REPLY ~I'd like to read "Worship in the Hand."~ DO ~GiveItemCreate("BookWor",Protagonist,0,0,0)
++  IF ~Global("WorshipInTheHand","GLOBAL",0)~ THEN REPLY ~I'd like to read "Worship in the Hand."~ DO ~GiveItemCreate("BookWor",Player1,0,0,0)
+ SetGlobal("WorshipInTheHand","GLOBAL",1)~ GOTO 6
+-  IF ~Global("RockEaters","GLOBAL",0)~ THEN REPLY ~I'd like to read " 'Rock Eaters', they are not."~ DO ~GiveItemCreate("BookRoc",Protagonist,0,0,0)
++  IF ~Global("RockEaters","GLOBAL",0)~ THEN REPLY ~I'd like to read " 'Rock Eaters', they are not."~ DO ~GiveItemCreate("BookRoc",Player1,0,0,0)
+ SetGlobal("RockEaters","GLOBAL",1)~ GOTO 6
+-  IF ~Global("Corellon","GLOBAL",0)~ THEN REPLY ~I'd like to read "Ancient Lore of Corellon Larethian."~ DO ~GiveItemCreate("BookCor",Protagonist,0,0,0)
++  IF ~Global("Corellon","GLOBAL",0)~ THEN REPLY ~I'd like to read "Ancient Lore of Corellon Larethian."~ DO ~GiveItemCreate("BookCor",Player1,0,0,0)
+ SetGlobal("Corellon","GLOBAL",1)~ GOTO 6
+-  IF ~Global("Shevarash","GLOBAL",0)~ THEN REPLY ~I'd like to read "Ancient Lore of Shevarash."~ DO ~GiveItemCreate("BookShe",Protagonist,0,0,0)
++  IF ~Global("Shevarash","GLOBAL",0)~ THEN REPLY ~I'd like to read "Ancient Lore of Shevarash."~ DO ~GiveItemCreate("BookShe",Player1,0,0,0)
+ SetGlobal("Shevarash","GLOBAL",1)~ GOTO 6
+-  IF ~Global("Sehanine","GLOBAL",0)~ THEN REPLY ~I'd like to read "Ancient Lore of Sehanine Moonbow."~ DO ~GiveItemCreate("BookMoo",Protagonist,0,0,0)
++  IF ~Global("Sehanine","GLOBAL",0)~ THEN REPLY ~I'd like to read "Ancient Lore of Sehanine Moonbow."~ DO ~GiveItemCreate("BookMoo",Player1,0,0,0)
+ SetGlobal("Sehanine","GLOBAL",1)~ GOTO 6
+-  IF ~Global("Labelas","GLOBAL",0)~ THEN REPLY ~I'd like to read "Ancient Lore of Labelas Enoreth."~ DO ~GiveItemCreate("BookLab",Protagonist,0,0,0)
++  IF ~Global("Labelas","GLOBAL",0)~ THEN REPLY ~I'd like to read "Ancient Lore of Labelas Enoreth."~ DO ~GiveItemCreate("BookLab",Player1,0,0,0)
+ SetGlobal("Labelas","GLOBAL",1)~ GOTO 6
+-  IF ~Global("Solonar","GLOBAL",0)~ THEN REPLY ~I'd like to read "Ancient Lore of Solonor Thelandira."~ DO ~GiveItemCreate("BookSol",Protagonist,0,0,0)
++  IF ~Global("Solonar","GLOBAL",0)~ THEN REPLY ~I'd like to read "Ancient Lore of Solonor Thelandira."~ DO ~GiveItemCreate("BookSol",Player1,0,0,0)
+ SetGlobal("Solonar","GLOBAL",1)~ GOTO 6
+-  IF ~Global("Elameth","GLOBAL",0)~ THEN REPLY ~I'd like to read "Elameth's Compendium."~ DO ~GiveItemCreate("BookCom",Protagonist,0,0,0)
++  IF ~Global("Elameth","GLOBAL",0)~ THEN REPLY ~I'd like to read "Elameth's Compendium."~ DO ~GiveItemCreate("BookCom",Player1,0,0,0)
+ SetGlobal("Elameth","GLOBAL",1)~ JOURNAL ~Severed Hand.
+ 
+ Custhantos made an interesting comment about an elven warrior who had visited him recently.  She took a book with magical artifact sketches and a book about unicorns.~ GOTO 8
+-  IF ~Global("Unicorn","GLOBAL",0)~ THEN REPLY ~I'd like to read "The Ecology of the Unicorn."~ DO ~GiveItemCreate("BookUni",Protagonist,0,0,0)
++  IF ~Global("Unicorn","GLOBAL",0)~ THEN REPLY ~I'd like to read "The Ecology of the Unicorn."~ DO ~GiveItemCreate("BookUni",Player1,0,0,0)
+ SetGlobal("Unicorn","GLOBAL",1)~ JOURNAL ~Severed Hand.
+ 
+ Custhantos made an interesting comment about an elven warrior who had visited him recently.  She took a book with magical artifact sketches and a book about unicorns.~ GOTO 9
+-  IF ~Global("Training","GLOBAL",0)~ THEN REPLY ~I'd like to read "Code of Training in the Seldarine's Hand."~ DO ~GiveItemCreate("Bookcod",Protagonist,0,0,0)
++  IF ~Global("Training","GLOBAL",0)~ THEN REPLY ~I'd like to read "Code of Training in the Seldarine's Hand."~ DO ~GiveItemCreate("Bookcod",Player1,0,0,0)
+ SetGlobal("Training","GLOBAL",1)~ GOTO 6
+-  IF ~Global("Bladesingers","GLOBAL",0)~ THEN REPLY ~I'd like to read "Lore of the Bladesingers."~ DO ~GiveItemCreate("BookBla",Protagonist,0,0,0)
++  IF ~Global("Bladesingers","GLOBAL",0)~ THEN REPLY ~I'd like to read "Lore of the Bladesingers."~ DO ~GiveItemCreate("BookBla",Player1,0,0,0)
+ SetGlobal("Bladesingers","GLOBAL",1)~ GOTO 6
+-  IF ~Global("Mythal","GLOBAL",0)~ THEN REPLY ~I'd like to read "Mythal Theory."~ DO ~GiveItemCreate("BookMyt",Protagonist,0,0,0)
++  IF ~Global("Mythal","GLOBAL",0)~ THEN REPLY ~I'd like to read "Mythal Theory."~ DO ~GiveItemCreate("BookMyt",Player1,0,0,0)
+ SetGlobal("Mythal","GLOBAL",1)~ GOTO 6
+   IF ~~ THEN REPLY ~Nothing sounds interesting right now.  I'll come back later.~ EXIT
+ END

@@ -1,0 +1,11 @@
+--- dq\area scripts\ys0424t1.baf	Tue Jun 22 21:29:39 2010
++++ C:\BWP Patchstudio\patched files\dq\area scripts\ys0424t1.baf	Sat Jan 18 22:00:35 2014
+@@ -13,7 +13,7 @@
+ 		DisplayStringHead(Myself,@409)
+ 		SetGlobal("ys_GotEye","GLOBAL",1)
+     SetGlobal("ys_TalkedToGarGel","GLOBAL",3)
+-		GiveItemCreate("ysteye",Protagonist,0,0,0)
++		GiveItemCreate("ysteye",Player1,0,0,0)
+ END
+ 
+ IF

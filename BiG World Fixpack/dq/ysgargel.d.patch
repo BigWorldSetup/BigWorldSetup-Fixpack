@@ -1,0 +1,11 @@
+--- dq\dialog\ysgargel.d	Fri Aug 12 14:38:55 2011
++++ C:\BWP Patchstudio\patched files\dq\dialog\ysgargel.d	Sat Jan 18 22:27:11 2014
+@@ -576,7 +576,7 @@
+ IF ~~ THEN BEGIN 61
+ 	SAY @3619
+ 	IF~~THEN REPLY@3559
+-	DO~GiveItemCreate("ysprpt",Protagonist,0,0,0)
++	DO~GiveItemCreate("ysprpt",Player1,0,0,0)
+ 		SetGlobal("ys_TalkedToGarGel","GLOBAL",3)
+   	ActionOverride(Player1,LeaveAreaLUA("ys0410","",[3320.150],0))
+ 		ActionOverride(Player2,LeaveAreaLUA("ys0410","",[3320.170],0))
