@@ -1,0 +1,646 @@
+--- bgt\songlist\music.tp2	Thu Mar 21 20:47:47 2013
++++ C:\BWP Patchstudio\patched files\bgt\songlist\music.tp2	Sat Jan 25 20:02:04 2014
+@@ -1266,29 +1266,29 @@
+ 
+ //AREA_NAME	DAY_SONG	NIGHT_SONG	BATTLE_SONG
+ <<<<<<<< areapatchlist
+-ar0015.are	0	0	18
+-ar3100.are	8	9	26
++ar0015.are	0	0	%bc3%
++ar3100.are	%pday%	%pnite%	%bp3%
+ ar3101.are	-1	-1	-1
+-ar3200.are	6	7	25
+-ar3300.are	8	9	26
+-ar3301.are	15	15	20
+-ar3400.are	17	17	21
+-ar3401.are	16	16	21
++ar3200.are	%fday%	%fnite%	%bf4%
++ar3300.are	%pday%	%pnite%	%bp3%
++ar3301.are	%dung1%	%dung1%	%bd4%
++ar3400.are	%dung3%	%dung3%	%bd5%
++ar3401.are	%dung2%	%dung2%	%bd5%
+ ar3497.are	-1	-1	-1
+-ar3498.are	8	9	27
+-ar3499.are	8	9	27
+-ar3700.are	13	14	18
+-ar3701.are	34	34	-1
+-ar3702.are	10	10	-1
++ar3498.are	%pday%	%pnite%	%bp4%
++ar3499.are	%pday%	%pnite%	%bp4%
++ar3700.are	%tday2%	%tnite%	%bc3%
++ar3701.are	%tav8%	%tav8%	-1
++ar3702.are	%temple%	%temple%	-1
+ ar3703.are	-1	-1	-1
+ ar3704.are	-1	-1	-1
+ ar3705.are	-1	-1	-1
+ ar3706.are	-1	-1	-1
+ ar3707.are	-1	-1	-1
+ ar3708.are	-1	-1	-1
+-ar3709.are	31	31	-1
++ar3709.are	%tav5%	%tav5%	-1
+ ar3710.are	-1	-1	-1
+-ar3800.are	2	9	27
++ar3800.are	%cday2%	%pnite%	%bp4%
+ ar3801.are	-1	-1	-1
+ ar3802.are	-1	-1	-1
+ ar3803.are	-1	-1	-1
+@@ -1298,23 +1298,23 @@
+ ar3807.are	-1	-1	-1
+ ar3808.are	-1	-1	-1
+ ar3809.are	-1	-1	-1
+-ar3900.are	17	17	22
+-ar3901.are	15	15	20
+-ar4100.are	29	29	24
++ar3900.are	%dung3%	%dung3%	%bl1%
++ar3901.are	%dung1%	%dung1%	%bd4%
++ar4100.are	%fort%	%fort%	%bf3%
+ ar4101.are	-1	-1	-1
+ ar4102.are	-1	-1	-1
+ ar4103.are	-1	-1	-1
+ ar4199.are	-1	-1	-1
+-ar4200.are	6	7	25
+-ar4300.are	6	7	25
+-ar4400.are	6	7	25
+-ar4401.are	15	15	21
+-ar4402.are	16	16	21
+-ar4403.are	17	17	20
+-ar4404.are	16	16	20
+-ar4405.are	17	17	21
++ar4200.are	%fday%	%fnite%	%bf4%
++ar4300.are	%fday%	%fnite%	%bf4%
++ar4400.are	%fday%	%fnite%	%bf4%
++ar4401.are	%dung1%	%dung1%	%bd5%
++ar4402.are	%dung2%	%dung2%	%bd5%
++ar4403.are	%dung3%	%dung3%	%bd4%
++ar4404.are	%dung2%	%dung2%	%bd4%
++ar4405.are	%dung3%	%dung3%	%bd5%
+ ar4406.are	-1	-1	-1
+-ar4600.are	6	7	24
++ar4600.are	%fday%	%fnite%	%bf3%
+ ar4700.are	-1	-1	-1
+ ar4701.are	-1	-1	-1
+ ar4800.are	-1	-1	-1
+@@ -1330,37 +1330,37 @@
+ ar6505.are	-1	-1	-1
+ ar6506.are	-1	-1	-1
+ ar6507.are	-1	-1	-1
+-ar6508.are	4	4	20
+-ar6509.are	4	4	20
+-ar6510.are	4	4	20
+-ar6511.are	4	4	20
+-ar6512.are	4	4	20
++ar6508.are	%chants%	%chants%	%bd4%
++ar6509.are	%chants%	%chants%	%bd4%
++ar6510.are	%chants%	%chants%	%bd4%
++ar6511.are	%chants%	%chants%	%bd4%
++ar6512.are	%chants%	%chants%	%bd4%
+ ar6513.are	-1	-1	-1
+-ar6514.are	4	4	20
+-ar6515.are	16	16	16
+-ar6516.are	32	32	-1
++ar6514.are	%chants%	%chants%	%bd4%
++ar6515.are	%dung2%	%dung2%	%dung2%
++ar6516.are	%tav6%	%tav6%	-1
+ ar6517.are	-1	-1	-1
+-ar6518.are	29	29	23
+-ar6519.are	15	15	21
+-ar6526.are	1	3	18
++ar6518.are	%fort%	%fort%	%bl2%
++ar6519.are	%dung1%	%dung1%	%bd5%
++ar6526.are	%cday1%	%cnite%	%bc3%
+ ar6527.are	-1	-1	-1
+ ar6528.are	-1	-1	-1
+-ar6529.are	33	33	-1
++ar6529.are	%tav7%	%tav7%	-1
+ ar6530.are	-1	-1	-1
+ ar6531.are	-1	-1	-1
+ ar6532.are	-1	-1	-1
+ ar6533.are	-1	-1	-1
+ ar6543.are	-1	-1	-1
+-ar6560.are	17	17	20
+-ar6600.are	8	9	26
+-ar6700.are	13	14	19
+-ar6701.are	0	0	19
++ar6560.are	%dung3%	%dung3%	%bd4%
++ar6600.are	%pday%	%pnite%	%bp3%
++ar6700.are	%tday2%	%tnite%	%bc4%
++ar6701.are	0	0	%bc4%
+ ar6702.are	-1	-1	-1
+ ar6703.are	-1	-1	-1
+-ar6704.are	34	34	-1
++ar6704.are	%tav8%	%tav8%	-1
+ ar6705.are	-1	-1	-1
+ ar6706.are	-1	-1	-1
+-ar6707.are	32	32	-1
++ar6707.are	%tav6%	%tav6%	-1
+ ar6708.are	-1	-1	-1
+ ar6709.are	-1	-1	-1
+ ar6710.are	-1	-1	-1
+@@ -1404,77 +1404,77 @@
+ ar6748.are	-1	-1	-1
+ ar6749.are	-1	-1	-1
+ ar6750.are	-1	-1	-1
+-ar6751.are	33	33	-1
++ar6751.are	%tav7%	%tav7%	-1
+ ar6752.are	-1	-1	-1
+ ar6753.are	-1	-1	-1
+ ar6754.are	-1	-1	-1
+ ar6755.are	-1	-1	-1
+ ar6756.are	-1	-1	-1
+-ar6757.are	32	32	-1
+-ar6800.are	12	14	19
+-ar6801.are	31	31	-1
++ar6757.are	%tav6%	%tav6%	-1
++ar6800.are	%tday1%	%tnite%	%bc4%
++ar6801.are	%tav5%	%tav5%	-1
+ ar6802.are	-1	-1	-1
+ ar6803.are	-1	-1	-1
+-ar6804.are	10	10	-1
++ar6804.are	%temple%	%temple%	-1
+ ar6805.are	-1	-1	-1
+ ar6806.are	-1	-1	-1
+-ar6900.are	6	7	25
+-ar7000.are	6	7	24
++ar6900.are	%fday%	%fnite%	%bf4%
++ar7000.are	%fday%	%fnite%	%bf3%
+ ar7015.are	-1	-1	-1
+-ar7100.are	6	7	25
++ar7100.are	%fday%	%fnite%	%bf4%
+ ar7101.are	-1	-1	-1
+-ar7102.are	0	0	24
+-ar7200.are	2	3	19
+-ar7201.are	12	14	18
+-ar7202.are	12	14	18
+-ar7203.are	31	31	-1
++ar7102.are	0	0	%bf3%
++ar7200.are	%cday2%	%cnite%	%bc4%
++ar7201.are	%tday1%	%tnite%	%bc3%
++ar7202.are	%tday1%	%tnite%	%bc3%
++ar7203.are	%tav5%	%tav5%	-1
+ ar7204.are	-1	-1	-1
+-ar7205.are	32	32	-1
+-ar7206.are	32	32	-1
++ar7205.are	%tav6%	%tav6%	-1
++ar7206.are	%tav6%	%tav6%	-1
+ ar7207.are	-1	-1	-1
+-ar7208.are	12	14	18
+-ar7209.are	12	14	18
+-ar7210.are	12	14	18
+-ar7211.are	15	15	20
+-ar7212.are	2	2	-1
+-ar7214.are	34	34	-1
+-ar7215.are	34	34	-1
+-ar7216.are	31	31	-1
++ar7208.are	%tday1%	%tnite%	%bc3%
++ar7209.are	%tday1%	%tnite%	%bc3%
++ar7210.are	%tday1%	%tnite%	%bc3%
++ar7211.are	%dung1%	%dung1%	%bd4%
++ar7212.are	%cday2%	%cday2%	-1
++ar7214.are	%tav8%	%tav8%	-1
++ar7215.are	%tav8%	%tav8%	-1
++ar7216.are	%tav5%	%tav5%	-1
+ ar7217.are	-1	-1	-1
+ ar7218.are	-1	-1	-1
+-ar7219.are	32	32	-1
+-ar7220.are	32	32	-1
++ar7219.are	%tav6%	%tav6%	-1
++ar7220.are	%tav6%	%tav6%	-1
+ ar7221.are	-1	-1	-1
+-ar7223.are	5	5	28
+-ar7225.are	11	11	28
+-ar7226.are	12	14	-1
+-ar7227.are	12	14	-1
+-ar7228.are	12	14	-1
+-ar7229.are	12	14	-1
+-ar7230.are	12	14	18
+-ar7231.are	12	14	18
+-ar7232.are	10	10	18
+-ar7233.are	2	2	-1
+-ar7234.are	2	2	-1
+-ar7235.are	2	2	-1
+-ar7236.are	2	2	-1
++ar7223.are	%dream%	%dream%	%bw1%
++ar7225.are	%bgtheme%	%bgtheme%	%bw1%
++ar7226.are	%tday1%	%tnite%	-1
++ar7227.are	%tday1%	%tnite%	-1
++ar7228.are	%tday1%	%tnite%	-1
++ar7229.are	%tday1%	%tnite%	-1
++ar7230.are	%tday1%	%tnite%	%bc3%
++ar7231.are	%tday1%	%tnite%	%bc3%
++ar7232.are	%temple%	%temple%	%bc3%
++ar7233.are	%cday2%	%cday2%	-1
++ar7234.are	%cday2%	%cday2%	-1
++ar7235.are	%cday2%	%cday2%	-1
++ar7236.are	%cday2%	%cday2%	-1
+ ar7237.are	-1	-1	-1
+ ar7238.are	-1	-1	-1
+ ar7239.are	-1	-1	-1
+ ar7240.are	-1	-1	-1
+ ar7241.are	-1	-1	-1
+ ar7242.are	-1	-1	-1
+-ar7243.are	12	14	18
+-ar7244.are	12	14	18
+-ar7245.are	12	14	18
+-ar7246.are	29	29	25
++ar7243.are	%tday1%	%tnite%	%bc3%
++ar7244.are	%tday1%	%tnite%	%bc3%
++ar7245.are	%tday1%	%tnite%	%bc3%
++ar7246.are	%fort%	%fort%	%bf4%
+ ar7248.are	-1	-1	-1
+-ar7249.are	0	0	20
++ar7249.are	0	0	%bd4%
+ ar7250.are	-1	-1	-1
+ ar7251.are	-1	-1	-1
+ ar7252.are	-1	-1	-1
+ ar7253.are	-1	-1	-1
+-ar7254.are	31	31	-1
++ar7254.are	%tav5%	%tav5%	-1
+ ar7255.are	-1	-1	-1
+ ar7256.are	-1	-1	-1
+ ar7257.are	-1	-1	-1
+@@ -1485,18 +1485,18 @@
+ ar7262.are	-1	-1	-1
+ ar7263.are	-1	-1	-1
+ ar7264.are	-1	-1	-1
+-ar7265.are	33	33	-1
++ar7265.are	%tav7%	%tav7%	-1
+ ar7266.are	-1	-1	-1
+ ar7267.are	-1	-1	-1
+ ar7268.are	-1	-1	-1
+ ar7269.are	-1	-1	-1
+ ar7270.are	-1	-1	-1
+ ar7271.are	-1	-1	-1
+-ar7300.are	1	3	18
+-ar7324.are	16	16	21
+-ar7325.are	15	15	20
+-ar7326.are	15	15	15
+-ar7400.are	2	3	18
++ar7300.are	%cday1%	%cnite%	%bc3%
++ar7324.are	%dung2%	%dung2%	%bd5%
++ar7325.are	%dung1%	%dung1%	%bd4%
++ar7326.are	%dung1%	%dung1%	%dung1%
++ar7400.are	%cday2%	%cnite%	%bc3%
+ ar7402.are	-1	-1	-1
+ ar7403.are	-1	-1	-1
+ ar7404.are	-1	-1	-1
+@@ -1504,12 +1504,12 @@
+ ar7406.are	-1	-1	-1
+ ar7407.are	-1	-1	-1
+ ar7408.are	-1	-1	-1
+-ar7500.are	13	14	18
++ar7500.are	%tday2%	%tnite%	%bc3%
+ ar7501.are	-1	-1	-1
+-ar7600.are	1	3	18
+-ar7601.are	12	14	-1
+-ar7602.are	12	14	-1
+-ar7603.are	12	14	-1
++ar7600.are	%cday1%	%cnite%	%bc3%
++ar7601.are	%tday1%	%tnite%	-1
++ar7602.are	%tday1%	%tnite%	-1
++ar7603.are	%tday1%	%tnite%	-1
+ ar7606.are	-1	-1	-1
+ ar7607.are	-1	-1	-1
+ ar7608.are	-1	-1	-1
+@@ -1519,18 +1519,18 @@
+ ar7613.are	-1	-1	-1
+ ar7614.are	-1	-1	-1
+ ar7615.are	-1	-1	-1
+-ar7616.are	12	14	-1
++ar7616.are	%tday1%	%tnite%	-1
+ ar7617.are	-1	-1	-1
+ ar7618.are	-1	-1	-1
+ ar7619.are	-1	-1	-1
+ ar7620.are	-1	-1	-1
+-ar7621.are	1	3	18
+-ar7700.are	2	3	19
+-ar7702.are	12	14	-1
++ar7621.are	%cday1%	%cnite%	%bc3%
++ar7700.are	%cday2%	%cnite%	%bc4%
++ar7702.are	%tday1%	%tnite%	-1
+ ar7703.are	-1	-1	-1
+ ar7704.are	-1	-1	-1
+-ar7705.are	0	0	18
+-ar7706.are	0	0	18
++ar7705.are	0	0	%bc3%
++ar7706.are	0	0	%bc3%
+ ar7707.are	-1	-1	-1
+ ar7708.are	-1	-1	-1
+ ar7709.are	-1	-1	-1
+@@ -1543,52 +1543,52 @@
+ ar7716.are	-1	-1	-1
+ ar7717.are	-1	-1	-1
+ ar7718.are	-1	-1	-1
+-ar7719.are	12	14	-1
+-ar7720.are	32	32	-1
++ar7719.are	%tday1%	%tnite%	-1
++ar7720.are	%tav6%	%tav6%	-1
+ ar7721.are	-1	-1	-1
+ ar7722.are	-1	-1	-1
+ ar7723.are	-1	-1	-1
+ ar7724.are	-1	-1	-1
+ ar7725.are	-1	-1	-1
+ ar7726.are	-1	-1	-1
+-ar7800.are	1	3	19
++ar7800.are	%cday1%	%cnite%	%bc4%
+ ar7801.are	-1	-1	-1
+ ar7802.are	-1	-1	-1
+ ar7803.are	-1	-1	-1
+ ar7804.are	-1	-1	-1
+ ar7805.are	-1	-1	-1
+ ar7806.are	-1	-1	-1
+-ar7807.are	34	34	-1
+-ar7808.are	34	34	-1
++ar7807.are	%tav8%	%tav8%	-1
++ar7808.are	%tav8%	%tav8%	-1
+ ar7809.are	-1	-1	-1
+ ar7810.are	-1	-1	-1
+ ar7811.are	-1	-1	-1
+ ar7812.are	-1	-1	-1
+ ar7813.are	-1	-1	-1
+ ar7814.are	-1	-1	-1
+-ar7900.are	1	3	19
++ar7900.are	%cday1%	%cnite%	%bc4%
+ ar7901.are	-1	-1	-1
+-ar8000.are	2	3	19
+-ar8001.are	12	14	-1
+-ar8002.are	12	14	-1
++ar8000.are	%cday2%	%cnite%	%bc4%
++ar8001.are	%tday1%	%tnite%	-1
++ar8002.are	%tday1%	%tnite%	-1
+ ar8003.are	-1	-1	-1
+ ar8004.are	-1	-1	-1
+ ar8005.are	-1	-1	-1
+ ar8006.are	-1	-1	-1
+ ar8007.are	-1	-1	-1
+ ar8008.are	-1	-1	-1
+-ar8009.are	31	31	-1
+-ar8010.are	31	31	-1
+-ar8011.are	32	32	-1
++ar8009.are	%tav5%	%tav5%	-1
++ar8010.are	%tav5%	%tav5%	-1
++ar8011.are	%tav6%	%tav6%	-1
+ ar8012.are	-1	-1	-1
+-ar8013.are	33	33	-1
+-ar8014.are	33	33	-1
++ar8013.are	%tav7%	%tav7%	-1
++ar8014.are	%tav7%	%tav7%	-1
+ ar8015.are	-1	-1	-1
+ ar8016.are	-1	-1	-1
+-ar8017.are	34	34	-1
+-ar8100.are	1	3	19
+-ar8101.are	12	14	-1
+-ar8102.are	12	14	-1
++ar8017.are	%tav8%	%tav8%	-1
++ar8100.are	%cday1%	%cnite%	%bc4%
++ar8101.are	%tday1%	%tnite%	-1
++ar8102.are	%tday1%	%tnite%	-1
+ ar8103.are	-1	-1	-1
+ ar8104.are	-1	-1	-1
+ ar8105.are	-1	-1	-1
+@@ -1601,15 +1601,15 @@
+ ar8112.are	-1	-1	-1
+ ar8113.are	-1	-1	-1
+ ar8114.are	-1	-1	-1
+-ar8115.are	32	32	-1
+-ar8200.are	2	3	18
++ar8115.are	%tav6%	%tav6%	-1
++ar8200.are	%cday2%	%cnite%	%bc3%
+ ar8201.are	-1	-1	-1
+ ar8202.are	-1	-1	-1
+ ar8203.are	-1	-1	-1
+ ar8204.are	-1	-1	-1
+ ar8205.are	-1	-1	-1
+-ar8206.are	34	34	-1
+-ar8207.are	34	34	-1
++ar8206.are	%tav8%	%tav8%	-1
++ar8207.are	%tav8%	%tav8%	-1
+ ar8208.are	-1	-1	-1
+ ar8209.are	-1	-1	-1
+ ar8210.are	-1	-1	-1
+@@ -1621,53 +1621,53 @@
+ ar8216.are	-1	-1	-1
+ ar8217.are	-1	-1	-1
+ ar8220.are	-1	-1	-1
+-ar8300.are	8	9	26
+-ar8301.are	15	15	20
++ar8300.are	%pday%	%pnite%	%bp3%
++ar8301.are	%dung1%	%dung1%	%bd4%
+ ar8302.are	-1	-1	-1
+ ar8303.are	-1	-1	-1
+ ar8304.are	-1	-1	-1
+-ar8400.are	6	7	25
++ar8400.are	%fday%	%fnite%	%bf4%
+ ar8401.are	-1	-1	-1
+ ar8402.are	-1	-1	-1
+ ar8403.are	-1	-1	-1
+-ar8500.are	6	7	25
++ar8500.are	%fday%	%fnite%	%bf4%
+ ar8501.are	-1	-1	-1
+-ar8600.are	17	17	23
+-ar8601.are	17	17	22
+-ar8602.are	16	16	23
+-ar8603.are	15	15	22
+-ar8604.are	17	17	23
++ar8600.are	%dung3%	%dung3%	%bl2%
++ar8601.are	%dung3%	%dung3%	%bl1%
++ar8602.are	%dung2%	%dung2%	%bl2%
++ar8603.are	%dung1%	%dung1%	%bl1%
++ar8604.are	%dung3%	%dung3%	%bl2%
+ ar8605.are	-1	-1	-1
+ ar8606.are	-1	-1	-1
+-ar8607.are	16	16	20
++ar8607.are	%dung2%	%dung2%	%bd4%
+ ar8608.are	-1	-1	-1
+ ar8609.are	-1	-1	-1
+-ar8700.are	29	29	25
++ar8700.are	%fort%	%fort%	%bf4%
+ ar8701.are	-1	-1	-1
+ ar8702.are	-1	-1	-1
+-ar8703.are	15	15	21
++ar8703.are	%dung1%	%dung1%	%bd5%
+ ar8704.are	-1	-1	-1
+ ar8705.are	-1	-1	-1
+ ar8706.are	-1	-1	-1
+ ar8707.are	-1	-1	-1
+-ar8800.are	8	9	27
+-ar8801.are	6	7	24
+-ar8900.are	8	9	27
+-ar9000.are	6	7	25
+-ar9100.are	8	9	27
+-ar9200.are	8	9	26
+-ar9300.are	8	9	26
+-ar9301.are	4	4	26
+-ar9302.are	4	4	26
+-ar9400.are	17	17	22
+-ar9500.are	15	15	24
+-ar9501.are	15	15	24
+-ar9600.are	8	9	26
+-ar9700.are	6	7	25
+-ar9702.are	15	15	20
+-ar9798.are	15	15	20
+-ar9799.are	16	16	20
+-ar9900.are	8	9	26
++ar8800.are	%pday%	%pnite%	%bp4%
++ar8801.are	%fday%	%fnite%	%bf3%
++ar8900.are	%pday%	%pnite%	%bp4%
++ar9000.are	%fday%	%fnite%	%bf4%
++ar9100.are	%pday%	%pnite%	%bp4%
++ar9200.are	%pday%	%pnite%	%bp3%
++ar9300.are	%pday%	%pnite%	%bp3%
++ar9301.are	%chants%	%chants%	%bp3%
++ar9302.are	%chants%	%chants%	%bp3%
++ar9400.are	%dung3%	%dung3%	%bl1%
++ar9500.are	%dung1%	%dung1%	%bf3%
++ar9501.are	%dung1%	%dung1%	%bf3%
++ar9600.are	%pday%	%pnite%	%bp3%
++ar9700.are	%fday%	%fnite%	%bf4%
++ar9702.are	%dung1%	%dung1%	%bd4%
++ar9798.are	%dung1%	%dung1%	%bd4%
++ar9799.are	%dung2%	%dung2%	%bd4%
++ar9900.are	%pday%	%pnite%	%bp3%
+ ar9901.are	-1	-1	-1
+ ar9902.are	-1	-1	-1
+ ar9903.are	-1	-1	-1
+@@ -1682,7 +1682,7 @@
+ ar9912.are	-1	-1	-1
+ ar9913.are	-1	-1	-1
+ ar9914.are	-1	-1	-1
+-ara002.are	4	4	18
++ara002.are	%chants%	%chants%	%bc3%
+ ara004.are	-1	-1	-1
+ ara005.are	-1	-1	-1
+ ara006.are	-1	-1	-1
+@@ -1701,76 +1701,77 @@
+ ara019.are	-1	-1	-1
+ ara020.are	-1	-1	-1
+ ara021.are	-1	-1	-1
+-ara100.are	6	7	25
++ara100.are	%fday%	%fnite%	%bf4%
+ ara101.are	-1	-1	-1
+ aram00.are	0	0	0
+-ard000.are	29	29	24
+-ard001.are	17	17	20
+-ard002.are	15	15	20
+-ard003.are	17	17	20
+-ard004.are	17	17	20
+-ard005.are	17	17	20
+-ard006.are	16	16	20
+-ard007.are	16	16	20
+-ard008.are	16	16	20
+-ard009.are	16	16	20
+-ard010.are	16	16	20
+-ard011.are	16	16	20
+-ard012.are	16	16	20
+-ard013.are	16	16	20
+-ard014.are	16	16	20
+-ard015.are	16	16	20
+-ard016.are	16	16	20
+-aru000.are	13	14	18
+-aru001.are	12	14	19
+-aru002.are	16	16	20
+-aru003.are	13	13	20
+-aru004.are	13	14	18
+-aru005.are	13	14	18
+-aru006.are	13	14	18
+-aru007.are	13	14	18
+-aru008.are	15	15	21
+-aru009.are	16	16	20
+-arw000.are	13	14	19
+-arw001.are	13	14	19
+-arw002.are	13	14	19
+-arw003.are	13	14	19
+-arw004.are	13	14	19
+-arw005.are	13	14	19
+-arw006.are	13	14	19
+-arw007.are	13	14	19
+-arw008.are	-1	-1	19
+-arw009.are	-1	-1	19
+-arw010.are	-1	-1	19
+-arw011.are	-1	-1	19
+-arw012.are	16	16	20
+-arw500.are	6	7	24
+-arw501.are	29	29	28
+-arw502.are	29	29	22
+-arw503.are	29	29	22
+-arw504.are	29	29	22
+-arw505.are	6	7	25
++ard000.are	%fort%	%fort%	%bf3%
++ard001.are	%dung3%	%dung3%	%bd4%
++ard002.are	%dung1%	%dung1%	%bd4%
++ard003.are	%dung3%	%dung3%	%bd4%
++ard004.are	%dung3%	%dung3%	%bd4%
++ard005.are	%dung3%	%dung3%	%bd4%
++ard006.are	%dung2%	%dung2%	%bd4%
++ard007.are	%dung2%	%dung2%	%bd4%
++ard008.are	%dung2%	%dung2%	%bd4%
++ard009.are	%dung2%	%dung2%	%bd4%
++ard010.are	%dung2%	%dung2%	%bd4%
++ard011.are	%dung2%	%dung2%	%bd4%
++ard012.are	%dung2%	%dung2%	%bd4%
++ard013.are	%dung2%	%dung2%	%bd4%
++ard014.are	%dung2%	%dung2%	%bd4%
++ard015.are	%dung2%	%dung2%	%bd4%
++ard016.are	%dung2%	%dung2%	%bd4%
++aru000.are	%tday2%	%tnite%	%bc3%
++aru001.are	%tday1%	%tnite%	%bc4%
++aru002.are	%dung2%	%dung2%	%bd4%
++aru003.are	%tday2%	%tday2%	%bd4%
++aru004.are	%tday2%	%tnite%	%bc3%
++aru005.are	%tday2%	%tnite%	%bc3%
++aru006.are	%tday2%	%tnite%	%bc3%
++aru007.are	%tday2%	%tnite%	%bc3%
++aru008.are	%dung1%	%dung1%	%bd5%
++aru009.are	%dung2%	%dung2%	%bd4%
++arw000.are	%tday2%	%tnite%	%bc4%
++arw001.are	%tday2%	%tnite%	%bc4%
++arw002.are	%tday2%	%tnite%	%bc4%
++arw003.are	%tday2%	%tnite%	%bc4%
++arw004.are	%tday2%	%tnite%	%bc4%
++arw005.are	%tday2%	%tnite%	%bc4%
++arw006.are	%tday2%	%tnite%	%bc4%
++arw007.are	%tday2%	%tnite%	%bc4%
++arw008.are	-1	-1	%bc4%
++arw009.are	-1	-1	%bc4%
++arw010.are	-1	-1	%bc4%
++arw011.are	-1	-1	%bc4%
++arw012.are	%dung2%	%dung2%	%bd4%
++arw500.are	%fday%	%fnite%	%bf3%
++arw501.are	%fort%	%fort%	%bw1%
++arw502.are	%fort%	%fort%	%bl1%
++arw503.are	%fort%	%fort%	%bl1%
++arw504.are	%fort%	%fort%	%bl1%
++arw505.are	%fday%	%fnite%	%bf4%
+ >>>>>>>>
+ 
+ //PRINT ~Number of Songs: %num_songs%~
+ 
+ OUTER_SET rows_cnt_bgt=0
+ COPY - ~areapatchlist~ ~areapatchlist~
++  EVALUATE_BUFFER
+   COUNT_2DA_ROWS 4 "rows_cnt_bgt"
+   FOR( cntg=0; cntg<"%rows_cnt_bgt%"; cntg=cntg+1 ) BEGIN
+     READ_2DA_ENTRY cntg 0 4 "bgt_table_file_name"
+     READ_2DA_ENTRY cntg 1 4 "bgt_day_song"
+     READ_2DA_ENTRY cntg 2 4 "bgt_night_song"
+     READ_2DA_ENTRY cntg 3 4 "bgt_battle_song"
+-    PATCH_IF (%bgt_day_song% > 0) BEGIN
+-      SET %bgt_day_song% += %num_songs%
+-    END
+-    PATCH_IF (%bgt_night_song% > 0) BEGIN
+-      SET %bgt_night_song% += %num_songs%
+-    END
+-    PATCH_IF (%bgt_battle_song% > 0) BEGIN
+-      SET %bgt_battle_song% += %num_songs%
+-    END
++//  PATCH_IF (%bgt_day_song% > 0) BEGIN
++//    SET %bgt_day_song% += %num_songs%
++//  END
++//  PATCH_IF (%bgt_night_song% > 0) BEGIN
++//    SET %bgt_night_song% += %num_songs%
++//  END
++//  PATCH_IF (%bgt_battle_song% > 0) BEGIN
++//    SET %bgt_battle_song% += %num_songs%
++//  END
+ 
+     SET fileExistsInGame = 0
+     INNER_PATCH_FILE "%bgt_table_file_name%" BEGIN //thanx to devSin for this idea - from WeiDU forums
