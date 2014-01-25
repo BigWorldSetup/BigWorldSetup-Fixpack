@@ -1,0 +1,10 @@
+--- WhiteQueen\WhiteQueen.tp2	Sun Sep 15 23:05:14 2013
++++ C:\BWP Patchstudio\patched files\WhiteQueen\WhiteQueen.tp2	Sat Jan 25 15:29:45 2014
+@@ -1,6 +1,6 @@
+ BACKUP ~WhiteQueen\backup~
+ AUTHOR ~Lava Del'Vortel~
+-
++VERSION ~v3.4 BWP Fix~
+ AUTO_TRA ~WhiteQueen/Translations/%s~
+ LANGUAGE ~English~ ~English~ ~WhiteQueen/Translations/English/WhiteQueen.tra~
+ LANGUAGE ~German~ ~German~ ~WhiteQueen/Translations/German/WhiteQueen.tra~
