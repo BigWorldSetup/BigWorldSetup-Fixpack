@@ -1,5 +1,5 @@
 --- Setup-frennedan.tp2	Wed Jun 24 09:29:44 2009
-+++ C:\BWP Patchstudio\patched files\Setup-frennedan.tp2	Sat Oct 05 11:50:51 2013
++++ C:\BWP Patchstudio\patched files\Setup-frennedan.tp2	Sun Jan 26 16:21:13 2014
 @@ -1,7 +1,7 @@
  BACKUP ~frenmod/fren-backup~
  AUTHOR ~jastey@web.de~ //Nicolas Peters - darthsabe@web.de~
@@ -9,3 +9,68 @@
  
  AUTO_TRA ~frenmod\%s~
  
+@@ -87,16 +87,62 @@
+ // copy charakter-script and creature-file
+ COMPILE ~frenmod/fren.baf~
+ 	USING ~~
+-COPY ~frenmod/SHAPE.cre~ ~override/SHAPE.cre~
++COPY_EXISTING ~SHAPE.cre~ ~override~
+ SAY NAME1 @2
+ SAY NAME2 @2
+ SAY BIO @3
++WRITE_LONG 0x14 ~6000~
++WRITE_LONG 0x18 ~850000~
++WRITE_SHORT 0x24 ~79~
++WRITE_SHORT 0x26 ~79~
++WRITE_BYTE 0x2c 27
++WRITE_BYTE 0x2d 18
++WRITE_BYTE 0x2e 20
++WRITE_BYTE 0x2f 84
++WRITE_BYTE 0x30 26
++WRITE_BYTE 0x31 30
++WRITE_BYTE 0x32 84
++WRITE_ASCII 0x34 ~FREN01S~ #8
++WRITE_ASCII 0x3c ~FREN01L~ #8
++WRITE_SHORT 0x46 ~-4~
++WRITE_BYTE 0x52 6
++WRITE_BYTE 0x54 8
++WRITE_BYTE 0x55 10
++WRITE_BYTE 0x56 4
++WRITE_BYTE 0x57 9
++WRITE_BYTE 0x58 11
++WRITE_BYTE 0x5d 35
++WRITE_BYTE 0x60 0
++WRITE_BYTE 0x61 0
++WRITE_BYTE 0x62 0
++WRITE_BYTE 0x63 0
++WRITE_BYTE 0x66 24
++WRITE_BYTE 0x234 11
++WRITE_BYTE 0x235 0
++WRITE_BYTE 0x236 0
++WRITE_BYTE 0x237 1
++WRITE_BYTE 0x23f 10
++WRITE_BYTE 0x240 0
++WRITE_BYTE 0x242 1
++WRITE_ASCII 0x248 ~FREN~ #8
++WRITE_ASCII 0x250 ~~ #8
++WRITE_ASCII 0x258 ~~ #8
++WRITE_ASCII 0x260 ~~ #8
++WRITE_ASCII 0x268 ~~ #8
++WRITE_BYTE 0x273 2
++WRITE_BYTE 0x275 1
++WRITE_ASCII 0x280 ~FRENDAN~ #32
++WRITE_ASCII 0x2cc ~FRENJ~ #8
++ADD_CRE_ITEM ~FREN01~ #0 #0 #0 ~NONE~ ~ARMOR~
++ADD_CRE_ITEM ~FREN02~ #0 #0 #0 ~NONE~ ~WEAPON~
+ 
+ // extend scripts
+ EXTEND_BOTTOM ~VICONIA.bcs~ ~frenmod/vicon.bcs~
+ EXTEND_BOTTOM ~UDDOOR2.bcs~ ~frenmod/UDDOOR2.bcs~
+ EXTEND_BOTTOM ~UDDOOR3.bcs~ ~frenmod/UDDOOR3.bcs~
+-
++ACTION_IF (MOD_IS_INSTALLED ~Star.tp2~ 0) BEGIN
++	EXTEND_BOTTOM ~AR0603.BCS~ ~frenmod/AR0603.baf~
++END
+ 
+ // copy spells and items
+ COPY ~frenmod/Spells/frenm.spl~ ~override/frenm.spl~

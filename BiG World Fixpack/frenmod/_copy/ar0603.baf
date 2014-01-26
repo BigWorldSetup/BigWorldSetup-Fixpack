@@ -1,0 +1,9 @@
+IF
+InParty("frendan")
+InParty("D#Silver")
+Global("D#SilverSword","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("D#SilverSword","GLOBAL",1)
+Continue()
+END

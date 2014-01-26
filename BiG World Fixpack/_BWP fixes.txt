@@ -302,6 +302,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's fix for Coran having Eldoth's item
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561388
 
+:: micbaldur's undroppable armor collection made droppable
+:: http://www.shsforums.net/topic/50964-bg1-npcs-for-soa-tob/?p=566437
+
 
 ----------------------------------------------------------------------------------------
 
@@ -740,6 +743,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Guest's patch for duplicate Deidre/Joluvs
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=563378
+
+
+----------------------------------------------------------------------------------------
+
+
+:: frenmod - Frennedan NPC v1.03
+
+:: rbx4's fixed interjection at the Tree of Life
+:: http://www.shsforums.net/topic/55702-frennedan-103-bugfix-at-tree-of-life/
+
+:: micbaldur's scriptlet for Silver Star - Frennedan compatibility (modified a bit by Lollorian) and SHAPE.CRE patched not overwritten
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566376
 
 
 ----------------------------------------------------------------------------------------
@@ -1599,6 +1614,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
 :: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
+:: SHAPE.CRE is now patched instead of overwritten
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566376
 
 
 ----------------------------------------------------------------------------------------

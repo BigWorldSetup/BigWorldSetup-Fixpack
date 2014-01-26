@@ -1,5 +1,5 @@
 --- Star.tp2	Sun Jul 22 20:53:27 2012
-+++ C:\BWP Patchstudio\patched files\Star.tp2	Mon Dec 09 22:03:08 2013
++++ C:\BWP Patchstudio\patched files\Star.tp2	Sun Jan 26 11:14:38 2014
 @@ -1,9 +1,9 @@
  BACKUP ~Star\backup~
  AUTHOR ~Olryx2@Yahoo.co.uk~
@@ -22,3 +22,16 @@
    SAY NAME1 ~Silver Star~
    SAY NAME2 ~Silver Star~
    SAY BIO @6
+@@ -144,7 +144,11 @@
+ REPLACE 4004 @24
+ REPLACE 4005 @25
+ 
+-COPY ~Star\Creature\SHAPE.cre~ ~override\SHAPE.cre~
++COPY_EXISTING ~SHAPE.cre~ ~override~
++  PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
++    ADD_CRE_ITEM ~D#CRYBL1~ #0 #0 #0 ~NONE~ ~INV~
++  END
++BUT_ONLY
+ COPY ~Star\creature\D#Mary.cre~ ~override\D#Mary.cre~
+  SAY NAME1 @26
+  SAY NAME2 @26
