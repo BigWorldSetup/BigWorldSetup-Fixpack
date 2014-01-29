@@ -1,0 +1,26 @@
+--- alassa\dialog\bd0alas.d	Fri Oct 03 07:03:20 2008
++++ C:\BWP Patchstudio\patched files\alassa\dialog\bd0alas.d	Wed Jan 29 22:40:27 2014
+@@ -192,6 +192,7 @@
+ 
+ CHAIN IF
+ ~IsValidForPartyDialog("Jaheira")
++IsValidForPartyDialog("D0Alassa")
+ Global("D0AlasJaheira","GLOBAL",0)~
+ THEN BJAHEIR BA_996
+ @73 DO ~SetGlobal("D0AlasJaheira","GLOBAL",1)~
+@@ -222,6 +223,7 @@
+ 
+ CHAIN IF
+ ~IsValidForPartyDialog("Viconia")
++IsValidForPartyDialog("D0Alassa")
+ Global("D0AlasViconia","GLOBAL",1)~
+ THEN BVICONI BA_994
+ @91 DO ~SetGlobal("D0AlasViconia","GLOBAL",2)~
+@@ -233,6 +235,7 @@
+ 
+ CHAIN IF
+ ~IsValidForPartyDialog("Mazzy")
++IsValidForPartyDialog("D0Alassa")
+ Global("D0AlasMazzy","GLOBAL",1)~
+ THEN BMAZZY BA_993
+ @96

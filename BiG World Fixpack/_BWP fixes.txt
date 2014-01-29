@@ -88,6 +88,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's corrected join dialogue
 :: http://forums.pocketplane.net/index.php/topic,28026.0.html
 
+:: Lollorian's banters now check whether Alassa is IN THE PARTY before they fire fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566548
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1238,6 +1241,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: OldModsPack - Old Mods Pack v2
+
+:: Lollorian's assorted item effect fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=546503
+
+:: micbaldur's MOGIFT.ITM now droppable, displayable, not copyable and magical
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566548
+
+
+----------------------------------------------------------------------------------------
+
+
 :: oversight - Oversight v13
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
@@ -1266,6 +1281,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+:: Lollorian's assorted item effect fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=546503
 
 
 ----------------------------------------------------------------------------------------
