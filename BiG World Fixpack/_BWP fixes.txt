@@ -837,6 +837,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: cmorgan's ToBEx compatible ADD_KIT fix
 :: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
+:: Lollorian's Horace banters only fire if Horace is in the party fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566614
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1805,6 +1808,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+:: micbaldur's locked CM7100.ARE Container 9 unlocked (contains mod-added item)
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566614
 
 
 ----------------------------------------------------------------------------------------
