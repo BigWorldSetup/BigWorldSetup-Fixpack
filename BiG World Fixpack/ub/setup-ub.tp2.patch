@@ -1,15 +1,15 @@
---- setup-ub.tp2	Thu Nov 14 13:53:28 2013
-+++ C:\BWP Patchstudio\patched files\setup-ub.tp2	Sat Feb 01 11:10:23 2014
+--- setup-ub.tp2	Mon Jan 20 11:54:24 2014
++++ C:\BWP Patchstudio\patched files\setup-ub.tp2	Mon Feb 03 21:45:25 2014
 @@ -58,7 +58,7 @@
  
  README ~ub/readme_ub.html~
  
--VERSION ~v23~
-+VERSION ~v23 BWP Fix~
+-VERSION ~v24~
++VERSION ~v24 BWP Fix~
  
  ////////////////////////
  ////////////////////////
-@@ -129,7 +129,7 @@
+@@ -137,7 +137,7 @@
  UNLESS ~CD_STATE_NOTVALID~
  
  COPY_EXISTING ~bag02.itm~ ~override/wwbag02.itm~ /* Kulyok */
@@ -18,7 +18,7 @@
  /*
  DavidW- this is unused (presumably part of Cliffette's not-quite implemented extra area content)
  COPY_EXISTING ~AR0042.tis~	~Override/arwwbo.tis~
-@@ -602,7 +602,7 @@
+@@ -610,7 +610,7 @@
  
  /* The Slums */
  EXTEND_TOP ar0400.bcs ~ub/encount/u!0400.baf~
