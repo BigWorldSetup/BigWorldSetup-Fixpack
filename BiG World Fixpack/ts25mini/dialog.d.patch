@@ -5,7 +5,7 @@
  
  CHAIN HAQUAT tz25___HAQUAT_0.0
 -"éÑÇÕî¸èpè§Ç≈Ç∑Ç©ÇÁÇÀÅAâΩÇ‡ímÇËÇ‹ÇπÇÒÇÊÅB"
-+@9999
++@9990
  END
  IF ~Global("tz25__BL","GLOBAL",1)~ DO ~IncrementGlobal("tz25__BLAskCounter","GLOBAL",1)~ EXTERN HAQUAT tz25___HAQUAT_0.2
  IF ~Global("tz25__BL","GLOBAL",2)~ DO ~IncrementGlobal("tz25__BLAskCounter2","GLOBAL",1)~ EXTERN HAQUAT tz25___HAQUAT_0.2
