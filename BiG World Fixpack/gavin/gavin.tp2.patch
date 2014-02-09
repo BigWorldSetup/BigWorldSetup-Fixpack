@@ -1,6 +1,6 @@
 --- gavin\gavin.tp2	Tue Jun 22 17:21:57 2010
-+++ C:\BWP Patchstudio\patched files\gavin\gavin.tp2	Sat Oct 05 11:52:02 2013
-@@ -15,7 +15,7 @@
++++ C:\BWP Patchstudio\patched files\gavin\gavin.tp2	Sun Feb 09 10:18:04 2014
+@@ -15,11 +15,15 @@
  /* enable all error messages; nothing suppressed. comment this out for release version */
  //MODDER
  
@@ -9,3 +9,19 @@
  
  /* launch the readme file immediately. */
  README ~gavin/readme-gavin.html~
+ 
++ALLOW_MISSING // allow if BG Graphics night WEDs are not installed
++AR6700N.WED
++FW3300N.WED
++
+ ALWAYS
+   ACTION_IF FILE_EXISTS_IN_GAME ~FW0100.are~ THEN BEGIN
+     /* Tell the player it is using Tutu stuff */
+@@ -389,6 +393,7 @@
+ END
+ 
+ COPY_EXISTING ~%Beregost%.wed~ override
++              ~%Beregost%N.wed~ override
+   sz = SOURCE_SIZE
+   PATCH_IF sz > 0x48 BEGIN
+     READ_LONG 0x8 ovr_count //Read initial offsets
