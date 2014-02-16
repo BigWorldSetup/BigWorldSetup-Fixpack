@@ -1,0 +1,12 @@
+--- Exnem\BAF\AR0418.BAF	Wed Sep 01 21:12:00 2004
++++ C:\BWP Patchstudio\patched files\Exnem\BAF\AR0418.BAF	Sun Feb 16 08:32:03 2014
+@@ -6,7 +6,7 @@
+ THEN
+    RESPONSE #100
+       SetGlobal("ExnemSpawnItem","AR0418",1)
+-      TakeItemReplace("XSWD004","AX1H01","slander") // 
+-      ActionOverride("slander",SelectWeaponAbility(SLOT_WEAPON,0))
++      TakeItemReplace("XSWD004","AX1H01","slandor") // 
++      ActionOverride("slandor",SelectWeaponAbility(SLOT_WEAPON,0))
+       Continue()
+ END
