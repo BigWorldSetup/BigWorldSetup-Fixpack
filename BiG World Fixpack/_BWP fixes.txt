@@ -312,6 +312,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: bg2fixpack - BG2 Fixpack v10
+
+:: Hurricane's german Find Familiar tooltip crash fix
+:: http://forums.gibberlings3.net/index.php?showtopic=25208&view=findpost&p=208319
+
+
+----------------------------------------------------------------------------------------
+
+
 :: bggraphics - Baldur's Gate Graphics Overhaul for BGT v1.4
 
 :: Yovaneth's fixed FW0700 WEDs modified by Salk for BGT (AR7700)
