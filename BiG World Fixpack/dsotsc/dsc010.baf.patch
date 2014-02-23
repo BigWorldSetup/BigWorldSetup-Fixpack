@@ -1,0 +1,23 @@
+--- dsotsc\baf\dsc010.baf	Sun Aug 17 19:00:55 2008
++++ C:\BWP Patchstudio\patched files\dsotsc\baf\dsc010.baf	Sun Feb 23 15:52:02 2014
+@@ -1,17 +1,17 @@
+-IF
++/* IF
+ 	OnCreation()
+ 	Global("VampSearch","GLOBAL",0)
+ THEN
+ 	RESPONSE #100
+ 		DayNight(MIDNIGHT)
+ 		Continue()
+-END
++END */
+ 
+ IF
+-	OnCreation()
+ 	Global("VampSearch","GLOBAL",0)
+ THEN
+ 	RESPONSE #100
++		DayNight(MIDNIGHT)
+ 		Weather(RAIN)
+ 		SetGlobal("VampSearch","GLOBAL",1)
+ 		Continue()

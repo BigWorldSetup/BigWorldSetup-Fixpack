@@ -1,0 +1,9 @@
+--- CtB\scripts\ctb\CBYT4446.baf	Mon Oct 31 11:56:29 2005
++++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\CBYT4446.baf	Sun Feb 23 15:32:03 2014
+@@ -1,5 +1,5 @@
+ IF
+-	OnCreation()
++//	OnCreation()
+ 	Global("CbYuanTiGotEquip","LOCALS",0)
+ THEN
+ 	RESPONSE #20

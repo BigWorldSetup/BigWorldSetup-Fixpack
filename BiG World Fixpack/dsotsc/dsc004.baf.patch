@@ -1,0 +1,18 @@
+--- dsotsc\baf\dsc004.baf	Mon Aug 11 01:05:46 2008
++++ C:\BWP Patchstudio\patched files\dsotsc\baf\dsc004.baf	Sun Feb 23 15:53:08 2014
+@@ -1,5 +1,5 @@
+ IF
+-	OnCreation()
++//	OnCreation()
+ 	Global("BansheeMap3","GLOBAL",0)
+ THEN
+ 	RESPONSE #100
+@@ -9,7 +9,7 @@
+ END
+ 
+ IF
+-	OnCreation()
++//	OnCreation()
+ 	Global("DS_MoreStooges","DSC004",0)
+ 	!Difficulty(EASIEST)
+ THEN

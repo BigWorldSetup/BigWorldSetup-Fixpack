@@ -1,0 +1,11 @@
+--- setup-aip.tp2	Wed Jul 08 19:20:10 2009
++++ C:\BWP Patchstudio\patched files\setup-aip.tp2	Sun Feb 23 11:52:59 2014
+@@ -1,7 +1,7 @@
+ BACKUP ~aip\backup~
+ AUTHOR ~Charles Bisson, Badgert(WeiDU)~
+ 
+-VERSION ~v5~
++VERSION ~v5 BWP Fix~
+ 
+ README ~aip/readme-aip.txt~ 
+ 

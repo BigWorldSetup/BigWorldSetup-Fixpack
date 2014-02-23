@@ -1,0 +1,9 @@
+--- CtB\scripts\ctb\CBRYBERG.baf	Tue Dec 15 22:07:06 2009
++++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\CBRYBERG.baf	Sun Feb 23 15:37:54 2014
+@@ -1,5 +1,5 @@
+ IF
+-	OnCreation()
++//	OnCreation()
+ 	Global("CbDearPrudence","GLOBAL",0)
+ THEN
+ 	RESPONSE #100

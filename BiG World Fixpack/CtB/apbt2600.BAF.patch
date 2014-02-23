@@ -1,0 +1,9 @@
+--- CtB\scripts\append\apbt2600.BAF	Wed Dec 09 16:39:01 2009
++++ C:\BWP Patchstudio\patched files\CtB\scripts\append\apbt2600.BAF	Sun Feb 23 15:26:56 2014
+@@ -1,5 +1,5 @@
+ IF
+-        OnCreation()
++//      OnCreation()
+ 	Global("C_Bissons_Famous_C_O_8_Expanded","GLOBAL",0)
+ THEN
+ 	RESPONSE #100

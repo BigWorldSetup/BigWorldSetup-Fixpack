@@ -1,5 +1,12 @@
---- CtB\scripts\ctb\AR3548.baf	Sun Aug 23 19:36:28 2009
-+++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\AR3548.baf	Wed Jun 20 06:51:40 2012
+--- CtB\scripts\ctb\AR3548.baf	Sun Aug 23 18:36:27 2009
++++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\AR3548.baf	Sun Feb 23 15:44:32 2014
+@@ -1,5 +1,5 @@
+ IF
+-	OnCreation()
++//	OnCreation()
+ 	Global("CbClosingTheWTDoor","GLOBAL",2)
+ 	Global("CbHarpDropped","AR3548",0)
+ THEN
 @@ -20,7 +20,7 @@
  IF
  	NumInParty(1)

@@ -1,0 +1,10 @@
+--- dq\area scripts\ys0350.baf	Thu Dec 06 15:33:01 2012
++++ C:\BWP Patchstudio\patched files\dq\area scripts\ys0350.baf	Sun Feb 23 15:47:11 2014
+@@ -1,6 +1,6 @@
+ //Create prisoners
+ IF
+-	OnCreation()
++//	OnCreation()
+   Global("ys_FillCells","LOCALS",0)
+ THEN
+ 	RESPONSE #100

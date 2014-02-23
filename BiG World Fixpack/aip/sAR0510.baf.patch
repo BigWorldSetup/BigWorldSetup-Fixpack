@@ -1,0 +1,9 @@
+--- aip\scripts\sAR0510.baf	Fri Aug 18 23:51:02 2006
++++ C:\BWP Patchstudio\patched files\aip\scripts\sAR0510.baf	Sun Feb 23 11:51:16 2014
+@@ -1,5 +1,5 @@
+ IF
+-	OnCreation()
++//	OnCreation()
+ 	Global("BeatleSpawn","AR0510",0)
+ THEN
+ 	RESPONSE #100

@@ -1,0 +1,9 @@
+--- Bonehillv275\bafs\BH1001.BAF	Fri Aug 27 01:02:38 2004
++++ C:\BWP Patchstudio\patched files\Bonehillv275\bafs\BH1001.BAF	Sun Feb 23 15:21:09 2014
+@@ -1,5 +1,5 @@
+ IF
+-  OnCreation()
++//OnCreation()
+   Global("BP_MoreStooges","BH1001",0)
+   LevelGT(Player1,3)
+   NumInPartyGT(1)

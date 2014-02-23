@@ -1,0 +1,9 @@
+--- Bonehillv275\bafs\BH1002.BAF	Fri Aug 27 01:02:48 2004
++++ C:\BWP Patchstudio\patched files\Bonehillv275\bafs\BH1002.BAF	Sun Feb 23 15:21:04 2014
+@@ -1,5 +1,5 @@
+ IF
+-  OnCreation()
++//OnCreation()
+   Global("BP_MoreStooges","BH1002",0)
+   !Difficulty(EASIEST)
+ THEN

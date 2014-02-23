@@ -1,0 +1,9 @@
+--- dsotsc\baf\area\ar3400.baf	Wed Apr 09 22:48:04 2008
++++ C:\BWP Patchstudio\patched files\dsotsc\baf\area\ar3400.baf	Sun Feb 23 15:53:36 2014
+@@ -1,5 +1,5 @@
+ IF
+-	OnCreation()
++//	OnCreation()
+ 	Global("DS_MoreStooges","AR3400",0)
+ 	!Difficulty(EASIEST)
+ THEN

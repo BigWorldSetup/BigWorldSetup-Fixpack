@@ -1,0 +1,9 @@
+--- Arena\baf\AR4500.baf	Sun Dec 26 22:42:40 2010
++++ C:\BWP Patchstudio\patched files\Arena\baf\AR4500.baf	Sun Feb 23 11:55:49 2014
+@@ -1,5 +1,5 @@
+ IF 
+-	OnCreation()
++//	OnCreation()
+ 	!Global("AR#spawn","GLOBAL",1)
+ THEN 
+ RESPONSE #100 

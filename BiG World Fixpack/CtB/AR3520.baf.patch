@@ -1,0 +1,11 @@
+--- CtB\scripts\ctb\AR3520.baf	Fri May 16 12:51:01 2008
++++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\AR3520.baf	Sun Feb 23 15:31:41 2014
+@@ -7,7 +7,7 @@
+ END
+ 
+ IF
+-	OnCreation()
++//	OnCreation()
+ 	Global("Cb_StopDSACK_Loading","GLOBAL",1)
+ THEN
+ 	RESPONSE #100

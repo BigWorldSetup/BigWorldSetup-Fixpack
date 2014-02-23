@@ -1,0 +1,11 @@
+--- aD&L\Z#1002.baf	Thu Mar 02 17:23:26 2006
++++ C:\BWP Patchstudio\patched files\aD&L\Z#1002.baf	Sun Feb 23 11:47:03 2014
+@@ -2,7 +2,7 @@
+ 
+ // OnCreation
+ 
+-IF	OnCreation()
++IF	// OnCreation()
+ 	Global("Created","Z#1002",0)
+ 	AreaCheckObject("Z#1002","Kiyone")
+ 	AreaCheckObject("Z#1002","Kova")

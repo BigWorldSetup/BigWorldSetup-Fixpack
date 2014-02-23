@@ -14,6 +14,21 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: _aD&L - Beyond The Law v1.35
+
+:: Hoppy's BGT compatibility fix
+:: http://www.shsforums.net/topic/33192-btl-with-bgt/
+
+:: Lollorian's small typo fixes
+:: http://www.shsforums.net/topic/45266-small-typo/
+
+:: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
+
+
+----------------------------------------------------------------------------------------
+
+
 :: 1PP - One Pixel Productions v4.1.0
 
 :: Lollorian's JC Helm animation crash fix for InfinityAnimations BG1 animation compatibility
@@ -60,6 +75,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's Items not being copied fix
 :: http://www.baldursgatemods.com/forums/index.php?topic=8024.0
+
+
+----------------------------------------------------------------------------------------
+
+
+:: aip - Adventures In Papperland v5
+
+:: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
 
 
 ----------------------------------------------------------------------------------------
@@ -159,6 +183,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: arestorationp - Almateria's Restoration Project v3.4
+
+:: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Arena - The Arena Project v1
 
 :: Lollorian's assorted ITM fixes
@@ -166,6 +199,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's Tier 6 rewards fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=554525
+
+:: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
 
 
 ----------------------------------------------------------------------------------------
@@ -296,6 +332,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: cmorgan's hostile Karris fix
 :: http://forums.gibberlings3.net/index.php?showtopic=23627&view=findpost&p=194369
 
+:: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
+
 
 ----------------------------------------------------------------------------------------
 
@@ -404,6 +443,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's fix for Fabio/Pelltar spawning even if part 1 skipped
 :: http://www.shsforums.net/topic/56785-sobh-part-2-started-but-i-didnt-started-part-1-yet/?p=563462
+
+:: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
 
 
 ----------------------------------------------------------------------------------------
@@ -561,6 +603,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: horred the plague's 2-handed ITM animation mismatch fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=550226
 
+:: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
+
 
 ----------------------------------------------------------------------------------------
 
@@ -616,43 +661,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: DNT - Tomoyo and the Underground City v0.9
-
-:: Lollorian's assorted ITM fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
-
-
-----------------------------------------------------------------------------------------
-
-
-:: dsotsc - Dark Side of the Sword Coast v2.17
-
-:: 10th's drow dustification string fix
-:: http://www.shsforums.net/topic/55731-dsotsc-v217-bug-thread/?p=558661
-
-:: micbaldur's 'game breaking bug' aka 50 gold richer fix
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=562991
-
-:: Lollorian's assorted ITM fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
-
-
-----------------------------------------------------------------------------------------
-
-
-:: DSoA - Deeper Shadows of Amn (DSoA) v2.2.4
-
-:: Lollorian's fixed .ids stuff - Setup-DSoA.tp2
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486323
-
-:: Lollorian's corrected typos - Grothgar.baf, sAR0700.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Divine_Remix - Divine Remix v7.1
 
 :: White Agnus' Compatibility Fix for Tower of Deception
@@ -660,6 +668,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
 :: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
+
+----------------------------------------------------------------------------------------
+
+
+:: DNT - Tomoyo and the Underground City v0.9
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
 
 
 ----------------------------------------------------------------------------------------
@@ -681,6 +698,40 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's GiveItemCreate() Protagonist -> Player1 fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566210
+
+:: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
+
+
+----------------------------------------------------------------------------------------
+
+
+:: dsotsc - Dark Side of the Sword Coast v2.17
+
+:: 10th's drow dustification string fix
+:: http://www.shsforums.net/topic/55731-dsotsc-v217-bug-thread/?p=558661
+
+:: micbaldur's 'game breaking bug' aka 50 gold richer fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=562991
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+:: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
+
+
+----------------------------------------------------------------------------------------
+
+
+:: DSoA - Deeper Shadows of Amn (DSoA) v2.2.4
+
+:: Lollorian's fixed .ids stuff - Setup-DSoA.tp2
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486323
+
+:: Lollorian's corrected typos - Grothgar.baf, sAR0700.baf
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
 
 
 ----------------------------------------------------------------------------------------
@@ -1962,6 +2013,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's fix for borked Tourist encounter
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566614
+
+:: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
 
 
 ----------------------------------------------------------------------------------------

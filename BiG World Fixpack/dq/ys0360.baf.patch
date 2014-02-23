@@ -1,0 +1,11 @@
+--- dq\area scripts\ys0360.baf	Sun Oct 06 12:07:45 2013
++++ C:\BWP Patchstudio\patched files\dq\area scripts\ys0360.baf	Sun Feb 23 15:47:04 2014
+@@ -21,7 +21,7 @@
+ 
+ //Initialise timers and setup
+ IF
+-	OnCreation()
++//	OnCreation()
+   Global("ys_ITimers","LOCALS",0)
+ THEN
+ 	RESPONSE #100

@@ -1,0 +1,9 @@
+--- CtB\scripts\ctb\CBBDHELP.baf	Sun Nov 09 10:20:40 2003
++++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\CBBDHELP.baf	Sun Feb 23 15:28:56 2014
+@@ -1,5 +1,5 @@
+ IF
+-	OnCreation()
++//	OnCreation()
+ 	Global("CBBDHELP","GLOBAL",1)
+ THEN
+ 	RESPONSE #100

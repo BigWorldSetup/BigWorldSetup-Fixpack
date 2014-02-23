@@ -1,0 +1,9 @@
+--- dsotsc\baf\area\ar4405.baf	Sat Apr 26 02:22:41 2008
++++ C:\BWP Patchstudio\patched files\dsotsc\baf\area\ar4405.baf	Sun Feb 23 15:53:30 2014
+@@ -1,5 +1,5 @@
+ IF
+-	OnCreation()
++//	OnCreation()
+ 	Global("DS_MoreStooges","AR4405",0)
+ 	!Difficulty(EASIEST)
+ THEN

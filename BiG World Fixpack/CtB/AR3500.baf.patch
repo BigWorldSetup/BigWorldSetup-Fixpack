@@ -1,0 +1,9 @@
+--- CtB\Chores\scripts\AR3500.baf	Thu May 15 20:25:19 2008
++++ C:\BWP Patchstudio\patched files\CtB\Chores\scripts\AR3500.baf	Sun Feb 23 15:25:16 2014
+@@ -1,5 +1,5 @@
+ IF
+-    OnCreation()
++//  OnCreation()
+     Global("CbTagObjectsCreated","AR3500",0)
+ THEN
+     RESPONSE #100

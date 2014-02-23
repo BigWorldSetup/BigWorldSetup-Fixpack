@@ -1,5 +1,12 @@
---- CtB\scripts\ctb\AR3544.baf	Sun Aug 23 19:31:18 2009
-+++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\AR3544.baf	Wed Jun 20 06:51:40 2012
+--- CtB\scripts\ctb\AR3544.baf	Sun Aug 23 18:31:17 2009
++++ C:\BWP Patchstudio\patched files\CtB\scripts\ctb\AR3544.baf	Sun Feb 23 15:43:40 2014
+@@ -1,5 +1,5 @@
+ IF
+-	OnCreation()
++//	OnCreation()
+ 	Global("CbAreaWard_3542_Opened","GLOBAL",0)
+ THEN
+ 	RESPONSE #100
 @@ -103,7 +103,7 @@
  IF
  	NumInParty(1)

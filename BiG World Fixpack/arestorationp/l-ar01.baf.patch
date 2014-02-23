@@ -1,0 +1,9 @@
+--- arestorationp\baf\l-ar01.baf	Wed Apr 17 17:27:56 2013
++++ C:\BWP Patchstudio\patched files\arestorationp\baf\l-ar01.baf	Sat Feb 22 21:32:48 2014
+@@ -1,5 +1,5 @@
+ IF
+-	OnCreation()
++//	OnCreation()
+ 	Global("L-SpawnBandints","GLOBAL",0)
+ THEN
+ 	RESPONSE #100
