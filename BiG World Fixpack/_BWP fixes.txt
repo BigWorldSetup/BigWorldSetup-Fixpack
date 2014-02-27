@@ -466,7 +466,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: BP - Big Picture (BP) v181-b4610
+:: BP - Big Picture (BP) v181-b4611
 
 :: micbaldur's locked container problems fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=561315
@@ -980,6 +980,27 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's Ghouls transforming to Golems fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=562939
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Innershade - Colours of Infinity: Innershade v6.0
+
+:: Lollorian's journal entry eraser loop fix
+:: http://www.shsforums.net/topic/45425-innershade-bug-reports/?p=561404
+
+:: Lollorian's Innershade-Eilistraee Clearing worldmap overlap fix
+:: http://www.shsforums.net/topic/45425-innershade-bug-reports/?p=561404
+
+
+----------------------------------------------------------------------------------------
+
+
+:: ISNF - Colours of Infinity: I Shall Never Forget v4.1
+
+:: micbaldur's looping dialogue fix
+:: http://www.shsforums.net/topic/56298-isnf-bug-reports/?p=567111
 
 
 ----------------------------------------------------------------------------------------
