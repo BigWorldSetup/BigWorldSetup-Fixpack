@@ -396,6 +396,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's softcoded bgtmusic patch
 :: http://www.shsforums.net/topic/57069-bgtmusic-issues/?p=566428
 
+:: micbaldur's IsGabber removal fix for TDD
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=567129
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1872,6 +1875,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+:: micbaldur's IsGabber removal fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=567129
 
 
 ----------------------------------------------------------------------------------------

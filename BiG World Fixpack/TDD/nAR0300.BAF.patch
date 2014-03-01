@@ -1,0 +1,19 @@
+--- TDD\SNIP\nAR0300.BAF	Sat Jul 23 21:06:27 2005
++++ C:\BWP Patchstudio\patched files\TDD\SNIP\nAR0300.BAF	Sat Mar 01 17:33:45 2014
+@@ -1,10 +1,10 @@
+ IF
+-	!IsGabber(Player1)
+-	!IsGabber(Player2)
+-	!IsGabber(Player3)
+-	!IsGabber(Player4)
+-	!IsGabber(Player5)
+-	!IsGabber(Player6)
++//	!IsGabber(Player1)
++//	!IsGabber(Player2)
++//	!IsGabber(Player3)
++//	!IsGabber(Player4)
++//	!IsGabber(Player5)
++//	!IsGabber(Player6)
+ 	OR(2)
+ 		Global("LyrosJob","GLOBAL",3)
+ 		Dead("lyros") // Xzar

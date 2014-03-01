@@ -1,0 +1,21 @@
+--- TDD\SNIP\bAR2800.baf	Fri Jan 08 11:38:41 2010
++++ C:\BWP Patchstudio\patched files\TDD\SNIP\bAR2800.baf	Sat Mar 01 17:31:45 2014
+@@ -8,12 +8,12 @@
+ END
+ 
+ IF
+-	!IsGabber(Player1)
+-	!IsGabber(Player2)
+-	!IsGabber(Player3)
+-	!IsGabber(Player4)
+-	!IsGabber(Player5)
+-	!IsGabber(Player6)
++//	!IsGabber(Player1)
++//	!IsGabber(Player2)
++//	!IsGabber(Player3)
++//	!IsGabber(Player4)
++//	!IsGabber(Player5)
++//	!IsGabber(Player6)
+ 	GlobalGT("TalkEllesime","GLOBAL",2)
+ 	Global("DarkestDayCuts","GLOBAL",0)
+ THEN

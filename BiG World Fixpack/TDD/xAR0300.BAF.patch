@@ -1,0 +1,40 @@
+--- TDD\Compat\BGT\Replace\xAR0300.BAF	Sat Feb 25 00:55:44 2006
++++ C:\BWP Patchstudio\patched files\TDD\Compat\BGT\Replace\xAR0300.BAF	Sat Mar 01 17:36:46 2014
+@@ -28,12 +28,12 @@
+ END
+ 
+ IF
+-	!IsGabber(Player1)
+-	!IsGabber(Player2)
+-	!IsGabber(Player3)
+-	!IsGabber(Player4)
+-	!IsGabber(Player5)
+-	!IsGabber(Player6)
++//	!IsGabber(Player1)
++//	!IsGabber(Player2)
++//	!IsGabber(Player3)
++//	!IsGabber(Player4)
++//	!IsGabber(Player5)
++//	!IsGabber(Player6)
+ 	Global("XzarPartyBG1","GLOBAL",1)
+ 	OR(2)
+ 		Global("LyrosJob","GLOBAL",3)
+@@ -57,12 +57,12 @@
+ END
+ 
+ IF
+-	!IsGabber(Player1)
+-	!IsGabber(Player2)
+-	!IsGabber(Player3)
+-	!IsGabber(Player4)
+-	!IsGabber(Player5)
+-	!IsGabber(Player6)
++//	!IsGabber(Player1)
++//	!IsGabber(Player2)
++//	!IsGabber(Player3)
++//	!IsGabber(Player4)
++//	!IsGabber(Player5)
++//	!IsGabber(Player6)
+ 	Global("XzarPartyBG1","GLOBAL",0)
+ 	OR(2)
+ 		Global("LyrosJob","GLOBAL",3)

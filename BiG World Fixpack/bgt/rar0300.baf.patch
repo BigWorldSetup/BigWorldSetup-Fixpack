@@ -1,0 +1,19 @@
+--- bgt\compat\tdd\replace\rar0300.baf	Tue Jul 26 18:57:36 2005
++++ C:\BWP Patchstudio\patched files\bgt\compat\tdd\replace\rar0300.baf	Sat Mar 01 17:38:50 2014
+@@ -1,10 +1,10 @@
+ IF
+-	!IsGabber(Player1)
+-	!IsGabber(Player2)
+-	!IsGabber(Player3)
+-	!IsGabber(Player4)
+-	!IsGabber(Player5)
+-	!IsGabber(Player6)
++//	!IsGabber(Player1)
++//	!IsGabber(Player2)
++//	!IsGabber(Player3)
++//	!IsGabber(Player4)
++//	!IsGabber(Player5)
++//	!IsGabber(Player6)
+ 	OR(2)
+ 		Global("LyrosJob","GLOBAL",3)
+ 		Dead("lyros") // Xzar
