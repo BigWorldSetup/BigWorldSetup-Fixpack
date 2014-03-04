@@ -4,7 +4,7 @@
  BACKUP ~arestorationp/backup~
  AUTHOR ~Almateria (sylwiabukato@gmail.com)~
 -VERSION ~v3.3~
-+VERSION ~v3.4 BWP Fix~
++VERSION ~v3.4.2 BWP Fix~
  AUTO_TRA ~arestorationp/%s~
  LANGUAGE ~Polski~	~polski~	~arestorationp/polski/setup.tra~
  LANGUAGE ~English~	~english~	~arestorationp/english/setup.tra~

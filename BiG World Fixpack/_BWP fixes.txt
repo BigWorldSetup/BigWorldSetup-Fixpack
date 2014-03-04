@@ -399,6 +399,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's IsGabber removal fix for TDD
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=567129
 
+:: Vlad's SetCursorState() hanging cutscenes fix
+:: http://www.shsforums.net/topic/57177-bug/
+
 
 ----------------------------------------------------------------------------------------
 
@@ -419,6 +422,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
 :: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
+:: Vlad's SetCursorState() hanging cutscenes fix
+:: http://www.shsforums.net/topic/57177-bug/
 
 
 ----------------------------------------------------------------------------------------
@@ -608,6 +614,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
+
+:: Vlad's SetCursorState() hanging cutscenes fix
+:: http://www.shsforums.net/topic/57177-bug/
 
 
 ----------------------------------------------------------------------------------------

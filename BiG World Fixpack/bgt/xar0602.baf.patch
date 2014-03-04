@@ -1,0 +1,33 @@
+--- bgt\compat\bgt\replace\xar0602.baf	Mon Oct 31 14:06:45 2011
++++ C:\BWP Patchstudio\patched files\bgt\compat\bgt\replace\xar0602.baf	Tue Mar 04 20:13:15 2014
+@@ -4,12 +4,12 @@
+   Global("ENDOFBG1","GLOBAL",0)
+ THEN
+   RESPONSE #100
++    SetGlobal("ENDOFBG1","GLOBAL",2)
++    SetGlobal("NewGame","AR0602",1)
+     SetCursorState(TRUE)
+     FadeToColor([1.0],0)
+     SmallWait(10)
+     StartMovie("SOAINTRO")
+-    SetGlobal("ENDOFBG1","GLOBAL",2)
+-    SetGlobal("NewGame","AR0602",1)
+     Continue()
+ END
+ 
+@@ -19,13 +19,13 @@
+   Global("ENDOFBG1","GLOBAL",1)
+ THEN
+   RESPONSE #100
++    SetGlobal("NewGame","AR0602",1)
++    SetGlobal("ENDOFBG1","GLOBAL",2)
+     SetCursorState(TRUE)
+     FadeToColor([1.0],0)
+     SmallWait(10)
+     MoveViewPoint([0.0],INSTANT)
+     StartMovie("SOAINTRO")
+-    SetGlobal("NewGame","AR0602",1)
+-    SetGlobal("ENDOFBG1","GLOBAL",2)
+     Continue()
+ END
+ 
