@@ -1,0 +1,77 @@
+--- Uldar\Setup-Uldar.tp2	Mon Apr 05 18:49:40 2010
++++ C:\BWP Patchstudio\patched files\Uldar\Setup-Uldar.tp2	Sun Mar 09 12:11:46 2014
+@@ -6,7 +6,7 @@
+ //**************************************************************
+ 
+ 
+-VERSION ~v0.77~
++VERSION ~v0.77 BWP Fix~
+ 
+ README ~Uldar/UldarREADME.txt~
+ 
+@@ -361,16 +361,23 @@
+ 
+ //************CORONA DE COBRE**********************
+ 
+-COPY ~Uldar\CRE\glbear.cre~ ~override\glbear.cre~
++COPY_EXISTING ~glbear.cre~ ~override~
+ SAY NAME1 ~Oso~
+ SAY NAME2 ~Oso~
++WRITE_SHORT 0x24 85
++WRITE_SHORT 0x26 85
++WRITE_BYTE 0x238 18
++WRITE_BYTE 0x239 50
++WRITE_BYTE 0x272 103
++WRITE_BYTE 0x273 106
+ 
+ 
+ COPY ~Uldar\CRE\uldgua1.cre~ ~override\uldgua1.cre~
+ COPY ~Uldar\CRE\uldgua2.cre~ ~override\uldgua2.cre~
+ 
+ 
+-COPY ~Uldar\CRE\boy3.cre~ ~override\boy3.cre~
++COPY_EXISTING ~boy3.cre~ ~override~
++WRITE_ASCII 0x248 ~BOY3~ #8
+ COMPILE ~Uldar\baf\boy3.baf~
+ 
+ 
+@@ -437,13 +444,36 @@
+ 
+ //*************BARCO ESCLAVISTA**********************
+ 
+-COPY ~Uldar\areas~ ~override~
++COPY_EXISTING ~AR0405.ARE~ ~override~
++  PATCH_IF (SOURCE_SIZE > 0x11b) THEN BEGIN
++    READ_LONG  0x54 "actor_off" ELSE 0
++    READ_SHORT 0x58 "actor_num" ELSE 0
++    PATCH_IF (actor_off > 0x11b) THEN BEGIN
++      FOR (index = 0 ; index < actor_num ; index = index + 1) BEGIN
++        READ_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "resref"
++		PATCH_IF ("%resref%" STRING_EQUAL_CASE "HAEGAN") BEGIN 
++		  WRITE_SHORT ("%actor_off%" + 0x20 + (0x110 * "%index%")) 2093
++		  WRITE_SHORT ("%actor_off%" + 0x22 + (0x110 * "%index%")) 1256
++		  WRITE_SHORT ("%actor_off%" + 0x24 + (0x110 * "%index%")) 2093
++		  WRITE_SHORT ("%actor_off%" + 0x26 + (0x110 * "%index%")) 1256
++		  WRITE_SHORT ("%actor_off%" + 0x34 + (0x110 * "%index%")) 0
++        END
++      END
++    END
++  END
++BUT_ONLY_IF_IT_CHANGES
+ COMPILE ~Uldar\d\girl2.d~
+ 
+ 
+ 
+-COPY ~Uldar\CRE\Haegan.cre~ ~override\Haegan.cre~
+-COMPILE ~Uldar\baf\Haegan.baf~
++COPY_EXISTING ~Haegan.cre~ ~override~
++WRITE_SHORT 0x24 91
++WRITE_SHORT 0x26 91
++WRITE_BYTE 0x23d 18
++REPLACE_CRE_ITEM ~SW2H01~ #0 #0 #0 ~UNSTEALABLE~ ~WEAPON1~ EQUIP
++REPLACE_CRE_ITEM ~POTN14~ #0 #0 #0 ~NONE~ ~QITEM3~
++REMOVE_CRE_ITEM ~SHLD04~
++EXTEND_BOTTOM ~Haegan.bcs~ ~Uldar\baf\Haegan.baf~
+ 
+ 
+ COPY ~Uldar\CRE\Lasard.cre~ ~override\Lasard.cre~

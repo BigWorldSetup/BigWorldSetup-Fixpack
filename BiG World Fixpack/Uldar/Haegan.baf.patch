@@ -1,0 +1,58 @@
+--- Uldar\baf\Haegan.baf	Tue Apr 15 22:38:12 2008
++++ C:\BWP Patchstudio\patched files\Uldar\baf\Haegan.baf	Sun Mar 09 11:05:16 2014
+@@ -1,15 +1,5 @@
+ 
+ IF
+-	AttackedBy([GOODCUTOFF],DEFAULT)
+-	Allegiance(Myself,NEUTRAL)
+-THEN
+-	RESPONSE #100
+-		Enemy()
+-END
+-
+-
+-
+-IF
+ 	See(NearestEnemyOf(Myself))
+ 	Allegiance(Myself,ENEMY)
+ 	HasItem("POTN14",Myself) // Poción de Velocidad
+@@ -23,38 +13,10 @@
+ 
+ 
+ 
+-
+-IF
+-	See(NearestEnemyOf(Myself))
+-	!Range(NearestEnemyOf(Myself),5)
+-THEN
+-	RESPONSE #100
+-		EquipRanged()
+-		AttackReevaluate(NearestEnemyOf(Myself),30)
+-END
+-
+-IF
+-	See(NearestEnemyOf(Myself))
+-	Range(NearestEnemyOf(Myself),5)
+-THEN
+-	RESPONSE #100
+-		EquipMostDamagingMelee()
+-		AttackReevaluate(NearestEnemyOf(Myself),30)
+-END
+-
+-IF
+-	AttackedBy([ANYONE],DEFAULT)
+-THEN
+-	RESPONSE #100
+-		Attack(LastAttackerOf(Myself))
+-END
+-
+-
+-
+ IF
+ 	HPPercentLT(Myself,50)
+ 	!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+-	HasItem("POTN55",Myself) // Poción de curación extra
++	HasItem("POTN52",Myself) // Poción de curación extra
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("DrankPotionTimer","LOCALS",6)

@@ -2057,6 +2057,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Uldar - Uldar, Half-Orc Barbarian v0.77
+
+:: Lollorian's overwriting code to patchy form
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=567225
+
+
+----------------------------------------------------------------------------------------
+
+
 :: underrep - Under-represented Items v6
 
 :: The file underrep\dlg\u#conlan.d was not traified yet
