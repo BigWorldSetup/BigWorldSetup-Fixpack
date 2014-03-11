@@ -360,16 +360,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: bggraphics - Baldur's Gate Graphics Overhaul for BGT v1.4
-
-:: Yovaneth's fixed FW0700 WEDs modified by Salk for BGT (AR7700)
-:: http://www.shsforums.net/topic/56117-baldurs-gate-graphics-overhaul/?p=566830
-:: http://www.shsforums.net/topic/56117-baldurs-gate-graphics-overhaul/?p=566931
-
-
-----------------------------------------------------------------------------------------
-
-
 :: BGSpawn - BGSpawn v1.12
 
 :: 10th's Troll spawn fix
