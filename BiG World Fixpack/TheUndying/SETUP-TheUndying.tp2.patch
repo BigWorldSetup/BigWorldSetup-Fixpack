@@ -290,8 +290,8 @@
 +COPY_EXISTING ~SENLICH.CRE~ ~override~
 +WRITE_SHORT 0x24 157											// HP1 was 137
 +WRITE_SHORT 0x26 157											// HP2 was 137
-+WRITE_SHORT 0x46 -6												// NATAC was -2
-+WRITE_SHORT 0x48 -6												// EFFAC was -2
++WRITE_SHORT 0x46 "-6"												// NATAC was -2
++WRITE_SHORT 0x48 "-6"												// EFFAC was -2
 +WRITE_BYTE 0x52 4												// THAC0 was 7
 +WRITE_BYTE 0x53 8												// APR was 1
 +REMOVE_KNOWN_SPELL ~SPWI701~
