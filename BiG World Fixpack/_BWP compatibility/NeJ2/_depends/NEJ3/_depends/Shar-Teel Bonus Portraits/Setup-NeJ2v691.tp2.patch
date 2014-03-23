@@ -1,9 +1,10 @@
---- Setup-NeJ2v691.tp2	Fri Feb 23 03:51:00 2007
-+++ C:\BWP Patchstudio\patched files\Setup-NeJ2v691.tp2	Wed Oct 03 11:58:20 2012
-@@ -2,6 +2,111 @@
+--- Setup-NeJ2v691.tp2	Sun Mar 23 20:18:49 2014
++++ C:\BWP Patchstudio\patched files\Setup-NeJ2v691.tp2	Sun Mar 23 20:15:32 2014
+@@ -1,6 +1,111 @@
+ BACKUP ~NeJ2/backup~
  
  AUTHOR ~Vlad & Larrienne~
- 
++VERSION ~v6.91 BWP Fix~
 +DEFINE_PATCH_MACRO are_update_offset BEGIN
 +  SPRINT are_update_offset_datatype_off "%are_update_offset_datatype%_off"
 +  SPRINT are_update_offset_datatype_num "%are_update_offset_datatype%_num"
@@ -108,10 +109,9 @@
 +
 +END
 +
-+
+ 
  BEGIN ~Never Ending Journey Second Edition v6.91~
  
- //______________________________________//
 @@ -11,15 +116,15 @@
  //                                      //
  
@@ -426,6 +426,24 @@
  END
   ELSE BEGIN
    COPY ~NeJ3/fixes/eAR9799.bcs~ ~override/AR9799.bcs~
+@@ -7040,7 +7227,7 @@
+   SAY SPELL_DISRUPTED ~Blast! That spell lost...~ [taficc30]
+   SAY BIO ~Taffic was born into a clan of prolific forest gnomes living in Cloakwood Forest. Your first impression of Taffic is that he is as he seems, a happy-go-lucky forest gnome with small eyes that have a hint of mischief about them. Taffic will tell you of his dream to become a tall hero, not too strange a dream for a gnome you think, but when Taffic speaks of his dream it soon becomes apparent that this dream of his has become an obsession with him and no longer a dream. On looking closer you see a very distraught and unhappy gnome. More frightening is the realisation that Taffic will stop at nothing to achieve his goal. Taffic tells you of the past 15 years that he has spent (not many years given the length of a gnome’s lifespan), following every rumour that reaches his large gnomish ears, of the artifacts he has sought and tried, of the potions and spells that he has experimented with, of the prayers he has offered to his god and even of the combinations of all of these things together. “A lot of wasted time and energy” he will say, “ but now, yes now at last I know how to do it” and Taffic’s voice takes on an excitable tone, a glint comes to his eye and the seemingly harmless gnome suddenly makes you afraid of what he has in mind.~ 
+ 
+-COPY ~NeJ3/taffic/cre_spin/TAFFIC11.CRE~            ~override/TAFFIC91.CRE~          
++COPY ~NeJ3/taffic/cre_spin/TAFFIC11.CRE~            ~override/TAFFIC11.CRE~          
+   SAY NAME1 ~Taffic~ 
+   SAY NAME2 ~Taffic~
+   SAY MORALE ~Quickly! Follow Taffic the Hero, he will save you all!~ [taficc31]
+@@ -7080,7 +7267,7 @@
+   SAY SPELL_DISRUPTED ~Blast! That spell lost...~ [taficc30]
+   SAY BIO ~Taffic was born into a clan of prolific forest gnomes living in Cloakwood Forest. Your first impression of Taffic is that he is as he seems, a happy-go-lucky forest gnome with small eyes that have a hint of mischief about them. Taffic will tell you of his dream to become a tall hero, not too strange a dream for a gnome you think, but when Taffic speaks of his dream it soon becomes apparent that this dream of his has become an obsession with him and no longer a dream. On looking closer you see a very distraught and unhappy gnome. More frightening is the realisation that Taffic will stop at nothing to achieve his goal. Taffic tells you of the past 15 years that he has spent (not many years given the length of a gnome’s lifespan), following every rumour that reaches his large gnomish ears, of the artifacts he has sought and tried, of the potions and spells that he has experimented with, of the prayers he has offered to his god and even of the combinations of all of these things together. “A lot of wasted time and energy” he will say, “ but now, yes now at last I know how to do it” and Taffic’s voice takes on an excitable tone, a glint comes to his eye and the seemingly harmless gnome suddenly makes you afraid of what he has in mind.~ 
+ 
+-COPY ~NeJ3/taffic/cre_spin/TAFFIC12.CRE~            ~override/TAFFIC91.CRE~          
++COPY ~NeJ3/taffic/cre_spin/TAFFIC12.CRE~            ~override/TAFFIC12.CRE~          
+   SAY NAME1 ~Taffic~ 
+   SAY NAME2 ~Taffic~
+   SAY MORALE ~Quickly! Follow Taffic the Hero, he will save you all!~ [taficc31]
 @@ -7235,7 +7422,31 @@
  
  ACTION_IF FILE_EXISTS ~data/BG1ARE.BIF~
