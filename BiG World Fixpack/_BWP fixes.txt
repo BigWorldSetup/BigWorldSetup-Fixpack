@@ -1561,6 +1561,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: horred the plague's 2-handed ITM animation mismatch fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=550226
 
+:: Roxanne's delayed Jarlaxie-Entreri cutscene for Worgas compatibility (revised)
+:: http://www.shsforums.net/topic/56972-freeze-at-game-start-bg-ii/?p=567472
+
 
 ----------------------------------------------------------------------------------------
 
