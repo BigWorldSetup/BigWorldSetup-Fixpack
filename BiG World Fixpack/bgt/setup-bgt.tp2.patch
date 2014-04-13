@@ -1,5 +1,5 @@
 --- setup-bgt.tp2	Sat Apr 27 23:38:33 2013
-+++ C:\BWP Patchstudio\patched files\setup-bgt.tp2	Sun Sep 29 00:43:03 2013
++++ C:\BWP Patchstudio\patched files\setup-bgt.tp2	Sun Apr 13 22:04:16 2014
 @@ -21,7 +21,7 @@
  
  AUTHOR ~http://forums.spellholdstudios.net/index.php?showforum=261~
@@ -9,3 +9,12 @@
  
  README ~bgt/help/[%LANGUAGE%]bgtreadme.htm~ ~bgt/help/[english]bgtreadme.htm~
  
+@@ -4406,7 +4406,7 @@
+ COPY + ~bg1cre/bgshop07.cre~ ~bg1cre/bgshop07.cre~
+   WRITE_ASCII 0x2cc ~BGSHOP07~ // dialogue file
+ COPY + ~bg1cre/bgshop08.cre~ ~bg1cre/bgshop08.cre~
+-  WRITE_ASCII 0x2cc ~BGSHOP07~ // dialogue file
++  WRITE_ASCII 0x2cc ~BGSHOP08~ // dialogue file
+ COPY + ~bg1cre/bgskelwa.cre~ ~bg1cre/bgskelwa.cre~
+  WRITE_ASCII 0x40c ~HELM09~ // Item
+ COPY + ~bg1cre/bgskel02.cre~ ~bg1cre/bgskel02.cre~

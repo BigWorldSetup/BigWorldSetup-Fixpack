@@ -404,6 +404,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Vlad's SetCursorState() hanging cutscenes fix
 :: http://www.shsforums.net/topic/57177-bug/
 
+:: Hurricane's resource typo bashing
+:: http://www.shsforums.net/topic/57241-some-resources-are-not-properly-renamed/
+
 
 ----------------------------------------------------------------------------------------
 
