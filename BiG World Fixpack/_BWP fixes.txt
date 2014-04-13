@@ -89,6 +89,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: ajantisbg2 - Ajantis NPC for BG2 v6
+
+:: micbaldur's Ajantis-Anomen banter problem
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=567823
+
+
+----------------------------------------------------------------------------------------
+
+
 :: AjocMod - Ajoc's Mod v1.6.5
 
 :: Miloch's script fixes
@@ -569,6 +578,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Hoppy's Chang SHOUT fix
 :: http://www.shsforums.net/topic/46469-bwp-and-mod-bugs-not-yet-fixed/?p=501418
 
+:: Lollorian's patchified improved encounters
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=567844
+
 
 ----------------------------------------------------------------------------------------
 
@@ -990,7 +1002,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Innershade - Colours of Infinity: Innershade v6.0
+:: Innershade - Colours of Infinity: Innershade v7.0
 
 :: Lollorian's journal entry eraser loop fix
 :: http://www.shsforums.net/topic/45425-innershade-bug-reports/?p=561404

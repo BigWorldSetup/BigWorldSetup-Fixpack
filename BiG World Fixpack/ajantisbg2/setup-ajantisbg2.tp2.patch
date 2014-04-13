@@ -1,0 +1,11 @@
+--- ajantisbg2\setup-ajantisbg2.tp2	Sat Jan 04 01:30:40 2014
++++ C:\BWP Patchstudio\patched files\ajantisbg2\setup-ajantisbg2.tp2	Sun Apr 13 08:29:48 2014
+@@ -3,7 +3,7 @@
+ 
+ //MODDER
+ 
+-VERSION ~6~
++VERSION ~6 BWP Fix~
+ 
+ README ~AjantisBG2/documentation/readme.%LANGUAGE%.txt~
+ 
