@@ -1,5 +1,5 @@
 --- setup-bgt.tp2	Sat Apr 27 23:38:33 2013
-+++ C:\BWP Patchstudio\patched files\setup-bgt.tp2	Sun Apr 13 22:04:16 2014
++++ C:\BWP Patchstudio\patched files\setup-bgt.tp2	Sat Apr 19 20:58:50 2014
 @@ -21,7 +21,7 @@
  
  AUTHOR ~http://forums.spellholdstudios.net/index.php?showforum=261~
@@ -18,3 +18,12 @@
  COPY + ~bg1cre/bgskelwa.cre~ ~bg1cre/bgskelwa.cre~
   WRITE_ASCII 0x40c ~HELM09~ // Item
  COPY + ~bg1cre/bgskel02.cre~ ~bg1cre/bgskel02.cre~
+@@ -9191,7 +9191,7 @@
+        ~%bg1_dir%/sounds/varon3l.wav~ ~sounds/bgmale3l.wav~
+        ~%bg1_dir%/sounds/varon3m.wav~ ~sounds/bgmale3m.wav~
+ END ELSE BEGIN
+-ACTION_IF (~%LANGUAGE%~ STRING_EQUAL_CASE ~castilian~ AND
++ACTION_IF (~%LANGUAGE%~ STRING_EQUAL_CASE ~polish~ AND
+            FILE_EXISTS ~%bg1_dir%/sounds/ona1a.wav~) THEN BEGIN
+   COPY ~%bg1_dir%/sounds/ona1a.wav~ ~sounds/bgfeml1a.wav~
+        ~%bg1_dir%/sounds/ona1b.wav~ ~sounds/bgfeml1b.wav~

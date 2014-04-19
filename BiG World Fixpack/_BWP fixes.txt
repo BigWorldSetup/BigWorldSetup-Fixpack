@@ -407,6 +407,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Hurricane's resource typo bashing
 :: http://www.shsforums.net/topic/57241-some-resources-are-not-properly-renamed/
 
+:: Isaya's Polish soundset import bug fix
+:: http://www.shsforums.net/topic/57226-likely-bug-with-polish-soundset-not-being-transfered-from-bg1/
+
 
 ----------------------------------------------------------------------------------------
 
