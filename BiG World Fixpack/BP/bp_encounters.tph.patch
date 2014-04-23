@@ -1,0 +1,11 @@
+--- BP\LIB\bp_encounters.tph	Mon Dec 30 05:40:33 2013
++++ C:\BWP Patchstudio\patched files\BP\LIB\bp_encounters.tph	Wed Apr 23 20:08:27 2014
+@@ -1924,7 +1924,7 @@
+   LAF undead_rules END
+ 
+   ACTION_IF NOT FILE_EXISTS_IN_GAME ~bpundead.bcs~ BEGIN
+-    COMPILE ~bp/baf/new_bad/bpundead.baf~
++    COMPILE ~bp/baf/new_baf/undead/bpundead.baf~
+   END
+ 
+   ACTION_IF NOT FILE_EXISTS_IN_GAME ~bpcrypt.bcs~ BEGIN

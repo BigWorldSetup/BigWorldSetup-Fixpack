@@ -1,5 +1,5 @@
---- arestorationp\baf\l-ar01.baf	Wed Apr 17 17:27:56 2013
-+++ C:\BWP Patchstudio\patched files\arestorationp\baf\l-ar01.baf	Sat Feb 22 21:32:48 2014
+--- arestorationp\baf\l-ar01.baf	Mon Apr 21 23:54:22 2014
++++ C:\BWP Patchstudio\patched files\arestorationp\baf\l-ar01.baf	Wed Apr 23 21:10:29 2014
 @@ -1,5 +1,5 @@
  IF
 -	OnCreation()
@@ -7,3 +7,12 @@
  	Global("L-SpawnBandints","GLOBAL",0)
  THEN
  	RESPONSE #100
+@@ -14,7 +14,7 @@
+ END
+ 
+ IF
+-	OnCreation()
++//	OnCreation()
+ 	Global("L-SpawnBandints","GLOBAL",1)
+ 	Global("L-SpawnEler","GLOBAL",0)
+ THEN

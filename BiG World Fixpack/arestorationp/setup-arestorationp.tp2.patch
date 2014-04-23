@@ -1,10 +1,10 @@
---- arestorationp\setup-arestorationp.tp2	Fri Oct 11 04:41:00 2013
-+++ C:\BWP Patchstudio\patched files\arestorationp\setup-arestorationp.tp2	Sat Feb 22 21:36:02 2014
+--- arestorationp\setup-arestorationp.tp2	Wed Apr 23 03:07:09 2014
++++ C:\BWP Patchstudio\patched files\arestorationp\setup-arestorationp.tp2	Wed Apr 23 21:08:19 2014
 @@ -1,6 +1,6 @@
  BACKUP ~arestorationp/backup~
  AUTHOR ~Almateria (sylwiabukato@gmail.com)~
--VERSION ~v3.3~
-+VERSION ~v3.4.2 BWP Fix~
+-VERSION ~v4~
++VERSION ~v4 BWP Fix~
  AUTO_TRA ~arestorationp/%s~
  LANGUAGE ~Polski~	~polski~	~arestorationp/polski/setup.tra~
  LANGUAGE ~English~	~english~	~arestorationp/english/setup.tra~
