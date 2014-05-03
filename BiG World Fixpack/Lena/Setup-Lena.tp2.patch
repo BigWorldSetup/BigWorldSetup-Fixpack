@@ -1,0 +1,11 @@
+--- Setup-Lena.tp2	Sun May 12 11:30:22 2013
++++ C:\BWP Patchstudio\patched files\Setup-Lena.tp2	Tue Apr 29 00:10:25 2014
+@@ -4,7 +4,7 @@
+ 
+ BACKUP ~Lena/backup~
+ AUTHOR ~eugene, 'gungorenu@yahoo.com'~
+-VERSION ~v0.4.1~
++VERSION ~v0.4.1 BWP Fix~
+ 
+ //: lets put a language
+ LANGUAGE ~English~

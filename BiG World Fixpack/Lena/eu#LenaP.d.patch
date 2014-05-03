@@ -1,0 +1,20 @@
+--- Lena\Dialogue\eu#LenaP.d	Sat Nov 17 23:11:24 2012
++++ C:\BWP Patchstudio\patched files\Lena\Dialogue\eu#LenaP.d	Tue Apr 29 00:06:26 2014
+@@ -35,7 +35,7 @@
+     SAY @503
+     IF ~~ DO ~
+         JoinParty()
+-        IncrementGlobal("EU#LenaLike","GLOBAL",-1)~ EXIT
++        IncrementGlobal("EU#LenaLike","LOCALS",-1)~ EXIT
+ END
+ 
+ IF ~~ BEGIN EU#LenaTalk.KickOut.1.2
+@@ -48,7 +48,7 @@
+     SAY @509
+     IF ~~ DO ~
+         JoinParty()
+-        IncrementGlobal("EU#LenaLike","GLOBAL",-1)~ EXIT
++        IncrementGlobal("EU#LenaLike","LOCALS",-1)~ EXIT
+ END
+ 
+ IF ~~ BEGIN EU#LenaTalk.KickOut.2.2

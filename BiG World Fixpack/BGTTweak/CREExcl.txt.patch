@@ -1,6 +1,15 @@
---- BGTTweak\24\CREExcl.txt	Mon Dec 22 19:31:08 2008
-+++ C:\BWP Patchstudio\patched files\BGTTweak\24\CREExcl.txt	Wed Mar 30 08:54:19 2011
-@@ -2144,6 +2144,7 @@
+--- bgttweak\24\creexcl.txt	Mon Dec 22 18:31:08 2008
++++ C:\BWP Patchstudio\patched files\bgttweak\24\creexcl.txt	Tue Apr 29 00:15:09 2014
+@@ -1733,6 +1733,8 @@
+ ISHTHF02
+ ISHTHF03
+ IVAMP01
++JA#FACAP
++JA#LAW03
+ JADE1
+ JADE2
+ JADE3
+@@ -2144,6 +2146,7 @@
  MOURNER7
  MOURNER8
  MTOWN1
@@ -8,3 +17,11 @@
  MTOWN6
  MUGGER1
  MUGGER2
+@@ -3613,6 +3616,7 @@
+ VICG1
+ VICG2
+ VICG3
++VICONI
+ VICONI11
+ VICONI13
+ VICONI16

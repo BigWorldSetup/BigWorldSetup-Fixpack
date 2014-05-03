@@ -434,6 +434,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Ascension64's MTOWN2 installation failure fix
 :: http://www.shsforums.net/topic/47916-bgt-tweaks-hardcoded-to-fail/?p=510618
 
+:: Quiet's additional creature exclusions
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=568145
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1141,6 +1144,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Lena - Lena NPC v0.4.1
+
+:: micbaldur's EU#LenaLike GLOBAL -> LOCALS conversion
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=568155
 
 
 ----------------------------------------------------------------------------------------

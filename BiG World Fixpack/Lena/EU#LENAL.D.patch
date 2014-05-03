@@ -1,0 +1,11 @@
+--- Lena\Dialogue\EU#LENAL.D	Sun Jan 06 22:34:20 2013
++++ C:\BWP Patchstudio\patched files\Lena\Dialogue\EU#LENAL.D	Tue Apr 29 00:06:25 2014
+@@ -322,7 +322,7 @@
+     IF ~~ THEN REPLY @1006 GOTO EU#LenaTalk.LoveTalk03.2
+     IF ~~ THEN REPLY @1032 GOTO EU#LenaTalk.LoveTalk03.3
+     IF ~~ THEN REPLY @1035 GOTO EU#LenaTalk.LoveTalk03.4
+-    IF ~~ THEN REPLY @1038 DO ~IncrementGlobal("EU#LenaLike","GLOBAL",1)~ GOTO EU#LenaTalk.LoveTalk03.5
++    IF ~~ THEN REPLY @1038 DO ~IncrementGlobal("EU#LenaLike","LOCALS",1)~ GOTO EU#LenaTalk.LoveTalk03.5
+     IF ~~ THEN REPLY @1041 GOTO EU#LenaTalk.LoveTalk03.6
+ END
+ 

@@ -1,0 +1,35 @@
+--- Lena\Dialogue\eu#LenaJ.d	Sat Feb 02 22:10:16 2013
++++ C:\BWP Patchstudio\patched files\Lena\Dialogue\eu#LenaJ.d	Mon Apr 28 23:49:01 2014
+@@ -687,9 +687,9 @@
+ 
+ IF ~~ BEGIN EU#LenaTalk.Flirt.5.2-1
+     SAY @680
+-    IF ~GlobalGT("EU#LenaLike","GLOBAL",17)~ THEN REPLY @681 DO ~IncrementGlobal("EU#LenaLike","GLOBAL",-1)~ GOTO EU#LenaTalk.Flirt.5.2-1.1
+-    IF ~!GlobalGT("EU#LenaLike","GLOBAL",17)~ THEN REPLY @681 DO ~IncrementGlobal("EU#LenaLike","GLOBAL",-1)~ GOTO EU#LenaTalk.Flirt.5.2-1.2
+-    IF ~~ THEN REPLY @684 DO ~IncrementGlobal("EU#LenaLike","GLOBAL",-1)~ GOTO EU#LenaTalk.Flirt.5.2.2
++    IF ~GlobalGT("EU#LenaLike","LOCALS",17)~ THEN REPLY @681 DO ~IncrementGlobal("EU#LenaLike","LOCALS",-1)~ GOTO EU#LenaTalk.Flirt.5.2-1.1
++    IF ~!GlobalGT("EU#LenaLike","LOCALS",17)~ THEN REPLY @681 DO ~IncrementGlobal("EU#LenaLike","LOCALS",-1)~ GOTO EU#LenaTalk.Flirt.5.2-1.2
++    IF ~~ THEN REPLY @684 DO ~IncrementGlobal("EU#LenaLike","LOCALS",-1)~ GOTO EU#LenaTalk.Flirt.5.2.2
+     IF ~~ THEN REPLY @686 GOTO EU#LenaTalk.Flirt.5.2.3
+ END
+ 
+@@ -705,8 +705,8 @@
+ 
+ IF ~~ BEGIN EU#LenaTalk.Flirt.5.2-2
+     SAY @688
+-    IF ~~ THEN REPLY @689 DO ~IncrementGlobal("EU#LenaLike","GLOBAL",-1)~ GOTO EU#LenaTalk.Flirt.5.2-2.1
+-    IF ~~ THEN REPLY @691 DO ~IncrementGlobal("EU#LenaLike","GLOBAL",-1)~ GOTO EU#LenaTalk.Flirt.5.2-2.2
++    IF ~~ THEN REPLY @689 DO ~IncrementGlobal("EU#LenaLike","LOCALS",-1)~ GOTO EU#LenaTalk.Flirt.5.2-2.1
++    IF ~~ THEN REPLY @691 DO ~IncrementGlobal("EU#LenaLike","LOCALS",-1)~ GOTO EU#LenaTalk.Flirt.5.2-2.2
+     IF ~~ THEN REPLY @693 GOTO EU#LenaTalk.Flirt.5.2-2.3
+ END
+ 
+@@ -813,7 +813,7 @@
+         RandomNum(6,6)~ THEN REPLY @719 GOTO EU#LenaTalk.Flirt.6.2-6
+ 
+     //: tail
+-    IF ~Global("EU#LenaWarnedTail","GLOBAL",1)~ THEN REPLY @726 DO ~IncrementGlobal("EU#LenaLike","GLOBAL",-1)~ GOTO EU#LenaTalk.Flirt.6.3-1
++    IF ~Global("EU#LenaWarnedTail","GLOBAL",1)~ THEN REPLY @726 DO ~IncrementGlobal("EU#LenaLike","LOCALS",-1)~ GOTO EU#LenaTalk.Flirt.6.3-1
+     IF ~!Global("EU#LenaWarnedTail","GLOBAL",1)~ THEN REPLY @726 DO ~SetGlobal("EU#LenaWarnedTail","GLOBAL",1)~ GOTO EU#LenaTalk.Flirt.6.3-2
+ 
+     //: hair
