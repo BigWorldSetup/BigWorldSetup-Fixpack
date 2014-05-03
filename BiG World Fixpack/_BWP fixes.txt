@@ -1793,27 +1793,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Spell Pack (Beta) v5
-
-:: Ascalon's Spell Revisions and SpellPack compatibility fix
-:: http://kerzenburg.baldurs-gate.eu/showpost.php?p=899187&postcount=1
-
-:: Official hotfixes
-:: http://forums.blackwyrmlair.net/index.php?showtopic=4073
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Spell Revisions v3
-
-:: Official Hotfixes (05/05/2010)
-:: http://forums.gibberlings3.net/index.php?showtopic=18487
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Summon Bhaalspawn (SBS) v3
 
 :: Lollorian's portrait installation fix - SBS\Language\English\Setup.tra
