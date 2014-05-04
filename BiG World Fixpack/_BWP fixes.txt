@@ -1824,7 +1824,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Tactics v25
+:: tactics2 - Weimer's Tactics v25
 
 :: Azazello's BGT adaption - Setup-Tactics.tp2
 :: http://www.shsforums.net/index.php?s=&showtopic=23019&view=findpost&p=272727
@@ -1834,6 +1834,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's replacements - drake01.BAF
 :: http://forums.pocketplane.net/index.php/topic,27207.0.html
+
+:: Lollorian's updated North Forest code
+:: 
 
 
 ----------------------------------------------------------------------------------------
