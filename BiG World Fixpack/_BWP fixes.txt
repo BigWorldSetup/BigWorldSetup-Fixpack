@@ -1068,6 +1068,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: JA#BGT_AdvPack - Jarl's BGT Adventure Pack v0.6
+
+:: Vlar's ja#merc3.d giving rep increase fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=568496
+
+
+----------------------------------------------------------------------------------------
+
+
 :: JA#BGT_Tweak - Jarl's BGT Tweaks v1.73
 
 :: Lollorian's TP2 corrections

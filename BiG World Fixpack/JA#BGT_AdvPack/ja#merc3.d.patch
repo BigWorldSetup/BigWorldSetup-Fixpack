@@ -1,0 +1,11 @@
+--- JA#BGT_AdvPack\DLG\ja#merc3.d	Mon Oct 10 16:12:34 2011
++++ C:\BWP Patchstudio\patched files\JA#BGT_AdvPack\DLG\ja#merc3.d	Sun May 25 17:19:47 2014
+@@ -40,7 +40,7 @@
+ 
+ IF ~~ THEN BEGIN 4
+   SAY ~Ich habe kein Geld, das ich Euch geben könnte. Es... tut mir Leid, aber ich muss gehen.~
+-  IF ~~ THEN DO ~ReputationInc(1)AddExperienceParty(150)EscapeArea()~ EXIT
++  IF ~~ THEN DO ~ReputationInc(-1)AddExperienceParty(150)EscapeArea()~ EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 5
