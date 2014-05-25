@@ -931,6 +931,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Hanna - Hanna NPC v2.4
+
+:: micbaldur's Hanna - Edwin position fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=568738
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Horace - Horace: Skeletal NPC for BGII v1.72
 
 :: cmorgan's ToBEx compatible ADD_KIT fix

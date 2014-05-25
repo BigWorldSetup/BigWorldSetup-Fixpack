@@ -1,0 +1,11 @@
+--- Hanna\Hanna.TP2	Wed Dec 08 02:01:10 2010
++++ C:\BWP Patchstudio\patched files\Hanna\Hanna.TP2	Sun May 25 17:14:05 2014
+@@ -5,7 +5,7 @@
+ // There are several changes to use new features of WeiDU
+ 
+ // Version displayed in the WeiDU.log
+-VERSION ~v2.4~
++VERSION ~v2.4 BWP Fix~
+ 
+ README ~Hanna/Readme_Hanna.doc~
+ 

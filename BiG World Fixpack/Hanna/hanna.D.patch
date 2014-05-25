@@ -1,0 +1,11 @@
+--- Hanna\d\hanna.D	Sat Mar 14 13:27:32 2009
++++ C:\BWP Patchstudio\patched files\Hanna\d\hanna.D	Sun May 25 17:12:43 2014
+@@ -140,7 +140,7 @@
+ !AreaCheck("AR2903")
+ !AreaCheck("AR2904")
+ !AreaCheck("AR2905")
+-!AreaCheck("AR2906")~ THEN REPLY @32 /* ~Espéranos en la corona de cobre, nos veremos allí.~ */ DO ~SetGlobal("KickedOut","LOCALS",1) EscapeAreaMove("AR0406",685,1123,10)~ EXIT
++!AreaCheck("AR2906")~ THEN REPLY @32 /* ~Espéranos en la corona de cobre, nos veremos allí.~ */ DO ~SetGlobal("KickedOut","LOCALS",1) EscapeAreaMove("AR0406",655,1103,10)~ EXIT
+ END
+ 
+ IF ~Global("KickedOut","LOCALS",1)~ THEN BEGIN 5
