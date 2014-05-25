@@ -648,6 +648,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: dace - Dace NPC v2.0
+
+:: Lollorian's duplicate Dace spawn fix
+:: http://www.shsforums.net/topic/55815-dace-bugs-thread/?p=567981
+
+:: Urborg Vengrath's repeating flirt fix
+:: http://www.shsforums.net/topic/55815-dace-bugs-thread/?p=567999
+
+
+----------------------------------------------------------------------------------------
+
+
 :: dark - ???
 
 ::

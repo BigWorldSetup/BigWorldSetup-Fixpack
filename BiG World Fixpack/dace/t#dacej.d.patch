@@ -1,0 +1,11 @@
+--- dace\dialogue\t#dacej.d	Mon Nov 04 18:06:28 2013
++++ C:\BWP Patchstudio\patched files\dace\dialogue\t#dacej.d	Sun May 25 16:48:11 2014
+@@ -3609,7 +3609,7 @@
+ IF ~~ T#DaceInit_RomFlirts1
+   SAY @1140
+   = @1141
+-  = @1141
++  = @11411
+   IF ~~ EXIT
+ END
+ 

@@ -1,0 +1,18 @@
+--- dace\scripts\ar2000.baf	Wed Aug 28 16:53:30 2013
++++ C:\BWP Patchstudio\patched files\dace\scripts\ar2000.baf	Sun May 25 16:55:47 2014
+@@ -5,6 +5,7 @@
+ IF
+     GlobalGT("chapter","GLOBAL",2)
+     GlobalLT("chapter","GLOBAL",6)
++    Global("T#DaceJoined","GLOBAL",0)
+     Global("T#DaceExistsTrademeet","GLOBAL",0)
+ THEN
+   RESPONSE #100
+@@ -15,6 +16,7 @@
+ IF
+      Global("T#DaceExistsTrademeet","GLOBAL",1)
+      Global("geniesgone","GLOBAL",1)
++     Global("T#DaceJoined","GLOBAL",0)
+      !Dead("T#Dace")
+ THEN
+   RESPONSE #100
