@@ -770,6 +770,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
+:: Lollorian's non-permanent Level Drain and 100% wild surges from Troll's Whisper ring
+:: http://www.shsforums.net/topic/37790-100-wild-surge-problem/
+
 
 ----------------------------------------------------------------------------------------
 
