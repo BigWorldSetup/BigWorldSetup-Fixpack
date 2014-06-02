@@ -1,0 +1,11 @@
+--- NTotSC\Language\polish\baf.tra	Tue Jul 04 20:12:26 2006
++++ C:\BWP Patchstudio\patched files\NTotSC\Language\polish\baf.tra	Tue Dec 04 21:42:24 2012
+@@ -2,7 +2,7 @@
+ @0    = ~W drodze powrotnej odkry³eœ ma³¹ wyspê i mimo wielu trudnoœci uda³o Ci siê przybiæ do brzegu by uzupe³niæ zapasy na dalsz¹ podró¿. Wyspa wydaje siê byæ zamieszkana.~
+ 
+ //CUTREST.baf
+-@10    = ~Wreszcie zazna³eœ niezbêdnego Ci wypoczynku~.
++@10    = ~Wreszcie zazna³eœ niezbêdnego Ci wypoczynku.~
+ 
+ //NTTOMBDO.baf
+ @20   = ~Pu³apka!~

@@ -1,0 +1,25 @@
+--- Setup-NTotSCv171.tp2	Wed Dec 31 20:02:51 2008
++++ C:\BWP Patchstudio\patched files\Setup-NTotSCv171.tp2	Mon Jun 02 06:42:11 2014
+@@ -4,7 +4,7 @@
+ 
+ BACKUP ~NTotSCv171/backup~
+ AUTHOR ~erebusant@verizon.net~
+-VERSION ~v1.71~
++VERSION ~v1.71 BWP Fix~
+ 
+ ////////////////////////////////////////////////////////////////////////////////////////////////////
+ // Language Selection
+@@ -16,7 +16,12 @@
+          ~English~
+          ~english~
+          ~NTotSCv171/Language/english/NTotSCDLGFix.tra~
+-         
++
++LANGUAGE 
++         ~Polski (tlumaczenie Hesus)~
++         ~polish~
++         ~NTotSCv171/Language/Polish/NTotSCDLGFix.tra~
++
+ LANGUAGE
+          ~German (translation by Leonard Watson)~
+          ~german~

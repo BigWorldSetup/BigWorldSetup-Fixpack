@@ -1382,13 +1382,25 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: NTotSC- Northern Tales of the Sword Coast (NTotSC) v1.70a
+:: NTotSC- Northern Tales of the Sword Coast v1.70a
 
 :: erebusant's "Original Travel Times" links.tbl fix
 :: http://www.shsforums.net/index.php?showtopic=40767
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+:: ALIEN's Polish TRA fixes
+:: http://www.shsforums.net/topic/38355-ntotscv170a-v171-bug-thread/?p=569216
+
+
+----------------------------------------------------------------------------------------
+
+
+:: NTotSCv171 - Northern Tales of the Sword Coast v1.71 Dialogue Patch
+
+:: ALIEN's Polish translation
+:: http://www.shsforums.net/topic/38355-ntotscv170a-v171-bug-thread/?p=569216
 
 
 ----------------------------------------------------------------------------------------

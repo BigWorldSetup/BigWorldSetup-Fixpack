@@ -1,0 +1,43 @@
+--- NTotSC\Language\polish\setup.tra	Wed Dec 31 19:43:27 2008
++++ C:\BWP Patchstudio\patched files\NTotSC\Language\polish\setup.tra	Tue Dec 04 17:15:44 2012
+@@ -303,7 +303,7 @@
+  Kensai
+  £ucznik
+  W³adca Zwierz¹t
+- Zmiennokszta³tny
++ Zmiennokszta³tny~
+ 
+ @57   = ~Elfia Kolczuga Czarów~
+ @58   = ~Elfie kolczugi s¹ szczególnie cenione z uwagi na to, ¿e nie krêpuj¹ ruchów i umo¿liwiaj¹ rzucanie czarów magom oraz noszenie przez ³otrzyków przy niewielkim dyskomforcie. Ten szczególny egzemplarz podnosi równie¿ inteligencjê, niestety nie za darmo.
+@@ -622,7 +622,7 @@
+  Druid
+  Mag
+  Z³odziej
+- £owca~
++ £owca
+  Mnich
+  £ucznik
+  Tropiciel
+@@ -1108,7 +1108,7 @@
+ @314  = ~Mardoroan~
+ @315  = ~Nadalin~
+ @316  = ~Natalka~
+-@318  = ~Prawdziwy wieœniak rzadko ma czas na pogawêdkê [ELFFF01]
++@318  = ~Prawdziwy wieœniak rzadko ma czas na pogawêdkê.~ [ELFFF01]
+ @319  = ~~ [ELFFF05]
+ @320  = ~~ [ELFFF06]
+ @321  = ~Tatuœ~
+@@ -1191,11 +1191,11 @@
+ @434  = ~Pó³nocna Cytadela~
+ @435  = ~To musia³o byæ to wino lub coœ w tym rodzaju. Nie wiem. Nie pamiêtam.~
+ @436  = ~Œcigany przez niedŸwiedzia, po³o¿y³ siê udaj¹c martwego. PóŸniej nie pamiêta³ jednak jak udawaæ bycie ¿ywym.~
+-@437  = ~Odosobniony w kominku, umieszczony w ogniu i nie maj¹cy wody.
++@437  = ~Odosobniony w kominku, umieszczony w ogniu i nie maj¹cy wody.~
+ @438  = ~Przygotowa³em ekscytuj¹c¹ orgiê, ale nikt nie przyszed³.~
+ @439  = ~Pogoda siê zmieni, czuje to w koœciach.~
+ @440  = ~Wiêc k³amiê.~
+-@441  = ~To beznadziejne. Co chcia³eœ znaleŸæ w tych grobach?~~
++@441  = ~To beznadziejne. Co chcia³eœ znaleŸæ w tych grobach?~
+ @442  = ~Strze¿ siê wilków w ludzkiej skórze.~
+ @443  = ~Nie ma tam w œrodku nic oprócz gnij¹cych cia³.~
+ @444  = ~Te schody musia³y kiedyœ prowadziæ do innych pomieszczeñ.~

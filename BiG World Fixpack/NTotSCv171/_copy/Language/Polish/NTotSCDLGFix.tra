@@ -1,0 +1,240 @@
+// NTotSC Dialog Patch - Plik do Tlumaczenia
+@1   = ~W³aœnie pozwoliliœcie uciec Ghotal’owi z jego grobowca i siaæ spustoszenie na pobliskich ziemiach. Mam nadziejê ze jesteœcie w stanie go ostatecznie powstrzymaæ!~
+@2   = ~Je¿eli nie macie nic przeciwko temu, mia³bym do was jeszcze jedn¹ proœbê lub ofertê - jak wolicie. W pobli¿u mostu Firewine natknêliœmy siê ostatnio na przejœcie do podziemnej czêœci zachowanych ruin. Niestety grasuj¹ tam  z³e duchy, ale dla was to nie powinien byæ problem. Chcia³bym, abyœcie dotarli tam i oczyœcili to miejsce - bêdê móg³ wtedy rozpocz¹æ nowe badania.~
+@3   = ~Dziêkujê wam. Dam wam zwój zawieraj¹cy pieczêæ, która umo¿liwi wam przejœcie do wnêtrza. Teraz jest ono zabezpieczone zaklêciem, które na³o¿y³ mój przyjaciel mag, by nie dopuœciæ do jakiegoœ nieszczêœcia. Sami widzicie jak to bywa...~
+@4   = ~Hej ty, poczekaj kolego!~
+@5   = ~Uhm, to ja ju¿ sobie w takim razie pójdê.~
+@6   = ~Witaj, witaj. Cieszê siê ¿e jakaœ ¿ywa dusza przechodzi tym szlakiem! Jestem Ordolath i tak siê sk³ada ¿e jestem tu na *wakacjach* hehe... Wiesz, czasem dobrze jest odpocz¹æ od wielko-miejskiego zgie³ku Wrót Baldura.~
+@7   = ~Och, to nic takiego przyjaciele, he he. Pech chcia³ ¿e, gdy siê pakowa³em do wyjazdu, zapomnia³em zabraæ ze sob¹  moj¹ œwiecê. Jej brak bardzo przykrzy mój pobyt tutaj, poniewa¿, kiedy nastaje zmrok nie mogê pisaæ mego pamiêtnika ani czytaæ ksi¹¿ek. Nawet nie wyobra¿acie sobie co to oznacza dla takiego mola ksi¹¿kowego jak ja!~
+@8   = ~Wiec mam dla was propozycje. Je¿eli poœwiêcicie jeden dzieñ mojej sprawie i przyniesiecie do mnie ten ma³y skarbek, wynagrodzê Wasz trud z nawi¹zk¹! A wiedzieæ musicie,  ¿e do biedaków nie nale¿ê! Oprócz 2000 sztuk z³ota mogê ofiarowaæ wam Przyjaciele, pewn¹ b³yskotkê, która jak s¹dzê mo¿e siê wam spodobaæ...Wiêc jak? Pomo¿ecie mi?~
+@9   = ~Œwietnie! Od razu wiedzia³em ¿e mo¿na na Was liczyæ! Mój dom, przyjaciele, znajdziecie w pó³nocnej czêœci  Wrót, niedaleko pó³nocnej Bramy a konkretnie w bia³ym domu zaraz za niebiesk¹ wie¿¹. Na pewno znajdziecie! No, a teraz ruszajcie. Bêdê tu czeka³ na was z niecierpliwoœci¹. Do zobaczenia!~
+@10  = ~To na co czekacie? Ruszajcie czym prêdzej i przynieœcie to o co prosi³em!~
+@11  = ~Wspaniale! Macie moje najszczersze podziêkowania. A oto nagroda która wam obieca³em. ¯egnajcie!.~
+@12  = ~Ach wiem, wiem... Przepraszam was przyjaciele za t¹ niespodziankê i za to ¿e narazi³em was na niebezpieczeñstwo ale mam nadziejê, ¿e to co wam zostawiam zadoœæuczyni³o waszym wysi³kom. Ale doœæ ju¿ gadania. ¯egnajcie!~
+@13  = ~Podró¿ni w tych okolicach to rzadkoœæ, ale ostatnio przyby³o tu ciemnych typów i innych niemi³ych stworzeñ. Czym mogê s³u¿yæ??~
+@14  = ~Podró¿ni w tych okolicach s¹ rzadkoœci¹. Kr¹¿¹ plotki o k³opotach na po³udniu, ale czym mogê s³u¿yæ?~
+@15  = ~Przykro mi ale w³aœnie skoñczy³y siê dobre czasy i nie zamierzam ju¿ tolerowaæ waszej obecnoœci, tym bardziej, ¿e nie jesteœcie ju¿ nam potrzebni. Pora umieraæ œmierdz¹ce smarkacze!!!~
+@16  = ~Przepraszam za ba³agan, ale ostatnio Ÿle siê dzieje. Niedawno we Wrotach Baldura zgin¹³ mój przyjaciel, Hasdar. Zleci³em mu zdobycie pewnych informacji i teraz sprawa utknê³a.~
+@17  = ~Powinno siê wstydziæ tego ze zabi³o siê niewinna osobê, ale szczerze to nie by³ moim przyjacielem, tylko ktoœ wynajêtym przeze mnie aby odnaleŸæ pewien artefakt. Zap³aci³em trzykrotnie to co s¹ normalnie warte. No có¿ zdarza siê. Gdybyœcie byli zainteresowani zast¹pieniem go by³bym bardzo wdziêczny i zap³acê wam równie dobrze jak mu.~
+@18  = ~Zatem pos³uchajcie. Poszukujê pewnych przedmiotów, a w³aœciwie wystarczy mi tylko jeden z nich, i chcia³bym, abyœcie zdobyli je dla mnie. Dobrze zap³acê.~
+@19  = ~Jeden z nich to pewien magiczny ³uk, niegdyœ chluba elfich ¿o³nierzy, zaginiony w dawnych czasach. Jednak ostatnio dotar³y do mnie s³uchy, ¿e ma go elf imieniem Fey'doch, który wraz z oddzia³em stacjonuje na pó³noc st¹d, w Elfim Lesie. Mo¿e zdo³acie odkupiæ od niego ten ³uk. Zwrócê wszelkie koszty i do³o¿ê jeszcze 2500 sztuk z³ota.~
+@20  = ~Ten drugi przedmiot - wart znacznie wiêcej, a dla magów mojego pokroju wrêcz bezcenny to Wielka Ksiêga Niewiedzy. Wszyscy utrzymuj¹, ¿e jest on w zbiorach Candlekeep, ale jedyn¹ osob¹, która mo¿e wiedzieæ, gdzie jest naprawdê, jest Lobar, w³aœciciel Pochy³ej Latarni. Na pewno odpowiednia iloœæ z³ota "odœwie¿y" jego pamiêæ. Oczywiœcie kosztami siê nie martwcie, a ja dorzucê jeszcze 5000 sztuk z³ota.~
+@21  = ~TAK SIÊ SK£ADA, ¿e muszê w takim razie zakoñczyæ nasz¹ znajomoœæ, a resztê sam sobie zabiorê - bez ¿adnej ³aski. GIÑCIE NEDZNE ROBAKI!~
+@22  = ~Czy rozwa¿yliœcie moj¹ ofertê?, Jesteœcie mo¿e zainteresowani?~
+@23  = ~Widzê, ¿e z³o w was rozkwita, ha ha ha ha... Tym lepiej.~
+@24  = ~A wiêc, dokona³o siê. Wielka Ksiêga odzyska³a swego w³aœciciela. A w³aœciciel jest pe³en radoœci.~
+@25  = ~Zajmujecie siê poszukiwaniami? D³ugo to trwa, jak na mój gust...~
+@26  = ~Tak siê sk³ada, ¿e mamy ju¿ ten ³uk. Ile jest wart dla ciebie?~
+@27  = ~Ohh.. Mi³o widzieæ ¿e z³o w tobie roœnie He He He, wrócimy do waszej nagrody póŸniej.~
+@28  = ~Skoro tak mówisz...~
+@29  = ~Wspaniale! A teraz wracajcie do szukania ³uku, a rozliczymy siê gdy wrócicie... heh heh...~
+@30  = ~Niech ci bêdzie, powrócimy gdy zdobêdziemy ³uk.~
+@31  = ~Zajmiemy siê tym, ale niczego nie obiecuje.~
+@32  = ~Mag Haeball zamieszkuj¹cy wie¿ê w Knieji Larsa na wschód od "Pomocnej D³oni" zleci³ nam zadanie zdobycia Ksiêgi Niewiedzy oraz ³uku, bêd¹cego podobno w posiadaniu elfa gdzieœ na pó³nocy. Przy odrobinie szczêœcia zdobêdziemy obydwa i nieŸle zarobimy...~
+@33  = ~Wielka Ksiêga Niewiedzy znajduje siê ju¿ w naszym posiadaniu. Ile jest dla ciebie warta?~
+@34  = ~Mag Haeball zamieszkuj¹cy wie¿ê w Knieji Larsa na wschód od "Pomocnej D³oni" zleci³ nam zadanie zdobycia ³uku, bêd¹cego podobno w posiadaniu elfa gdzieœ na pó³nocy. Przy odrobinie szczêœcia zdobêdziemy go i nieŸle zarobimy...~
+@35  = ~Posiadamy ju¿ oba przedmioty.~
+@36  = ~Korzystaj¹c z okazji, ¿e dzielne z was zuchy, mogê wam poradziæ, byœcie unikali Pól Umar³ych. Tradycyjnie jest to kraina zamieszka³a przez duchy i Orki, ale tych drugich jest tam ostatnio wyj¹tkowo du¿o. Sami odczuwamy ich obecnoœæ, bo co rusz próbuj¹ porwaæ tutejszych mieszkañców. Moja s¹siadka - Yness wyruszy³a do Brody Ulgotha po pomoc, po tym jak porwa³y jej mê¿a. Ale nie ma jej ju¿ od tygodnia. Mo¿e nawet nigdy tam nie dotar³a... No có¿, nie wiem jakie macie plany, ale uwa¿ajcie.~
+@37  = ~Dziêkuje ¿e pozbyliœcie siê tych cholernych Zombie i innych stworów. Naprawdê to doceniamy.~
+@38  = ~Plaga umarlaków.
+
+Zabiliœmy z jakieœ dwadzieœcia umarlaków wa³êsaj¹cych siê wokó³ farmy Wenrica. Nie wiem sk¹d siê tam wziê³y ale na pewno ju¿ mu nie bêd¹ zagra¿aæ.~
+@39  = ~Witajcie wêdrowcy i wybaczcie, ¿e oœmielam siê wam przeszkadzaæ, ale kieruje mn¹ sprawa niezwyk³ej wagi.~
+@40  = ~Wiem, ¿e nic wam do tego, ale gdzie, jeœli nie tutaj mo¿emy wraz z ¿on¹ szukaæ pomocy?~
+@41  = ~Podró¿owaliœmy wraz ¿on¹ do Elthurel, kiedy karawana zosta³a napadniêta przez hordê orków. Wszyscy rzucili siê w panice do ucieczki, a my wraz z innymi. Niestety, podró¿owa³y z nami nasze dzieci - Falton i Vanessa. Wstyd siê przyznaæ, ale w ca³ym tym zamieszaniu dzieci gdzieœ siê zagubi³y... Wróciliœmy najszybciej jak to mo¿liwe, ale nie znaleŸliœmy ani œladu po karawanie, ani dzieciach... Jeden z rannych stra¿ników, którego znaleŸliœmy w pobli¿u powiedzia³, ¿e orki mówi³y coœ o Fealn Datoon... To stara nazwa ziem na pó³noc st¹d... Pól Umar³ych. Nawet nie mamy pojêcia jak tam siê dostaæ, nie mówi¹c o pokonaniu Orków.~
+@42  = ~Dziêkujemy wam. Naprawdê doceniamy wasz¹ pomoc, ale wszystko, co w zamian mo¿emy zaproponowaæ, to ten podarunek... Pozwólcie, ¿e odejdziemy ju¿ do naszych dzieci...~
+@43  = ~Witajcie drodzy podró¿nicy...! Czy mog³abym z wami chwile porozmawiaæ?~
+@44  = ~Wybaczcie mi, ze zak³ócam wam spokój, ale jestem zrozpaczona. Mojego mê¿a porwa³y Orki z pó³nocy i na nic zda³y siê me b³agania... Z tego, co zrozumia³am, to zabra³y go do swego obozu na Polach Umar³ych... Proszê o ratunek! Przyby³am tu ju¿ ponad tydzieñ temu i nikt nie chce mi pomóc...~
+@45  = ~Oh, o nie... Byliœcie moja ostatnia nadziej¹, a teraz... Zostawcie mnie sam¹...!~
+@46  = ~Dziêkujê bardzo! Bardzo dziêkujê! Przebycie pustkowi Pól Umar³ych jest bardzo trudne, ale kiedyœ z mê¿em, Pandrisem, przybyliœmy tamtêdy z pó³nocy. To miejsce, o którym s³ysza³am, znajduje siê o dzieñ drogi st¹d lub naszych farm na wschodzie. Bêdê czeka³a na wieœci tutaj. Uratujcie go proszê...~
+@47  = ~Hello! And who have we got here?.... Sorry, you are not the person... Tell me then, what brings you here?~
+@48  = ~Ha, ha, ten stary nicpoñ tak szybko ucieka³, ¿e zapomnia³ swego buta? Ha ha ha. A to dobre! Pewnie to coœ musia³o byæ *doœæ* cenne, skoro wynaj¹³ grupê miêœniaków, ¿eby mu to przynieœli? Ha-ha-ha. Ale to nie wa¿ne! Obchodzi mnie tylko ten nêdzny, pomniejszy magiczyna. Nie umknie mi! Czerwoni Magowie tak ³atwo nie zapominaj¹! Ale doœæ ju¿ tego dobrego! Muszê wy³adowaæ mój gniew. Wy siê nadajecie! Ha-ha-ha. A informacje wydobêdê z waszych czaszek w odpowiednim czasie. Ha ha ha ha!~
+@49  = ~Nie tak szybko, przyjaciele! Nigdzie nie pójdziecie! Ja nie zostawiam po sobie ¿ywych œladów! Ha ha ha!.~
+@50  = ~Hasten~
+@51  = ~W czym mogê pomóc?~
+@52  = ~Ahh!  To szalone!~
+@53  = ~To szalone! Nie musimy walczyæ ze sob¹!~
+@54  = ~~
+@55  = ~Mam jeszcze coœ do powiedzenia.~
+@56  = ~Znacie ju¿ moja historiê. Nic siê nie zmieni³o od kiedy ostatnio rozmawialiœmy.~
+@57  = ~Zostawcie mnie, chcê byæ sam!~
+@58  = ~Wróg! To¿ to jeszcze dziecko! Na pomoc!!~
+@59  = ~Zazwyczaj MAMY odpowiedni¹ liczbê stra¿ników. Ale ostatnio wiêkszoœæ z nich zosta³a wys³ana na po³udnie, ¿eby po³o¿yæ kres napadom na drodze biegn¹cej wzd³u¿ wybrze¿a. I od tamtego czasu zaczê³y siê problemy. Zaginê³o dwóch pozosta³ych tu stra¿ników, a od wczoraj nikt nie widzia³ samego kapitana. Mianowaliœmy zastêpcê, zosta³ nim Eldod powinien znajdowaæ siê  przed twierdza.~
+@60  = ~Znam... zna³am ich wszystkich... ale jednego z nich o wiele lepiej. Byliœmy... my... Montgomery i ja byliœmy... nie mogê o tym mówiæ! I pomyœleæ, ¿e go straci³am... to niesprawiedliwe... Tamtej nocy posprzeczaliœmy siê i on wyszed³ bardzo wzburzony. Takie zwi¹zki s¹... Ÿle na nie tutaj patrz¹, ale teraz on zagin¹³, a ja... Proszê... znajdŸ go. ZnajdŸ ich wszystkich...~
+@61  = ~Roz... rozumiem. Ale weŸ choæ to. Pomo¿e ci w wielu niebezpieczeñstwach, które na ciebie czekaj¹. Bêdê mia³a k³opoty, kiedy siê wyda, ¿e to zginê³o, ale od tego mo¿e zale¿eæ twe zwyciêstwo. U¿yj tego w odpowiednim momencie. Zamartwiam siê co z Satos’em, nie wyobra¿am sobie co zrobilibyœmy gdybyœmy go stracili!~
+@62  = ~Zgodnie z ¿yczeniem za³o¿yciela twierdzy, Monoacha, przechowujemy tam pewien relikt - œwiêty symbol Helma. Ale gdzie jest klucz, nie wiemy. Podobno Monoach, odda³ go na przechowanie zaufanym przyjacio³om, gdzieœ daleko st¹d... na wyspie... Trudno powiedzieæ. Morze gdybyœcie wybrali siê na pó³noc od Bordy Ulgotha, wzd³u¿ wybrze¿a, moglibyœcie napotkaæ jak¹œ lokacje w której znajdziecie jakieœ informacje albo nawet przeprawê na wyspê?~
+@63  = ~Kap³an Helma ze œwi¹tyni powiedzia³ ¿e wiesz coœ o tamtejszym zamkniêtym o³tarzu. Czy móg³byœ nam o tym opowiedzieæ?~
+@64  = ~Nie chcê rozmawiaæ o o³tarzu teraz, bior¹c na wzgl¹d wszystko co siê teraz dzieje. Wróæ i porozmawiaj ze mn¹ póŸniej gdy ju¿ rozgryziesz co siê dzieje w Cytadeli i rozwi¹¿esz ten problem.~
+@65  = ~A wiêc Twierdza zosta³a uratowana. To pomyœlna wiadomoœæ. Czy mogê w czymœ pomóc?~
+@66  = ~Zostaw nas samych, mamy doœæ k³opotów z intruzami...!~
+@67  = ~Wielkie dziêki za usuniecie tych besti. Mo¿e wreszcie bêdziemy mogli wróciæ na nasze ³owiska.~
+@68  = ~Powróciliœcie... ale widzê ¿e nie powiod³o siê wam... inni równie¿ próbowali przed wami i polegli...~
+@69  = ~Te potwory s¹ przera¿aj¹ce, czy¿ nie?~
+@70  = ~Wybawiliœcie nas! To niesamowite! Myœla³em, ze te ogniste potwory doprowadz¹ nas do œmierci g³odowej... Naprawdê doceniamy to co zrobiliœcie...~
+@71  = ~Je¿eli tylko macie ochotê... Otó¿ od lat ³owiliœmy tu ryby, ale od wielu dni nie mo¿emy dostaæ siê do naszych ³odzi. Na pó³noc st¹d, przy naszej zatoce zalêg³y siê jakieœ potwory... Buchaj¹ p³omieniami i zabijaj¹ ka¿dego, kto zbli¿y siê do zatoki. Moglibyœcie siê tym zaj¹æ?~
+@72  = ~Jak¿e mo¿emy siê wam kiedykolwiek odwdziêczyæ?~
+@73  = ~My nie wyp³ywamy zbyt daleko w morze... Ale by³ tu niedawno Nadalin. On p³ywa³ po szerokim morzu i s³ysza³em, jak kiedyœ opowiada³ o wyspie Jaszczurów - podobnych do tych z jaskini..., ale nie p³on¹cych ogniem...
+Musielibyœcie odszukaæ Nadalina. Skoro potwory zosta³y przegnane, byæ mo¿e wróci do  nas... Wiem, ¿e lubi³ swoje zajêcia, ale uciek³, gdy pojawi³y siê te... te Salamandry.~
+@74  = ~Spotkaliœmy ju¿ Nadalina we Wrotach Baldura, na pewno siê ucieszy na wiesc o tym ¿e te potwory zosta³y zabite i mo¿e wróciæ do swoich obowi¹zków.~
+@75  = ~Usunêliœmy problem jaki mieli rybacy mieli wzd³u¿ pó³nocnego wybrze¿a z Sirinami i Ognistymi Salamandrami. Starszy wioski powiedzia³ nam ¿e wyspa, której szukamy, znajduje siê niedaleko. Powiedzia³ nam równie¿ ¿e jedyn¹ osoba która wie jak tam dotrzeæ to rybak imieniem Nadalin, który uciek³ do Wrót Baldura zaraz gdy tylko rozpoczê³y siê k³opoty. Przysiêgliœmy go odnaleœæ.~
+@76  = ~Pierwszaki przyszli do Humbaba...! Pierwszaki ca³kiem zwariowaæ!~
+@77  = ~Oczywiœcie nie zabiæ was sam. Humbaba mieæ przyjaciele, które ju¿ tu s¹... Humbaba walczyæ!~
+@78  = ~Co za furia! Humbaba walczyæ - pierwszaki g³upie - pierwszaki gotowe umrzeæ...!~
+@79  = ~Humbaba mówi albo maluczkie siê wynosz¹ - albo Humbaba ma ubaw zabijaj¹c...!~
+@80  = ~Chcieli przechytrzyæ Humbaba...! Humbaba wœciek³y...! Humbaba zabæ pierwszaki...!~
+@81  = ~Oogoor czuæ krew brata na waszych rêkach! Oogoor wœciek³y! Oogoor i jego kompani zabiæ robactwo!~
+@82  = ~Dotychczas nic sobie nie robiliœcie z naszych ostrze¿eñ. Mo¿e nie zrozumieliœcie ich powagi. Powiadam wam, to jest nasza ziemia i nie chcemy was tutaj! Teraz zostaniecie usuniêci!~
+@83  = ~Mewy s¹ nawet piêkniejsze od wiatru, na którego skrzyd³ach ¿egluj¹, czy¿ nie? Bêdê jedn¹ z nich, kiedyœ. Czekam na to jak na nic innego.~
+@84  = ~Znasz historiê Monoacha?... To dobrze. Ale nie wiesz, ¿e Monoach zwalcza³ pewien kult. Czci on Czarn¹ D³oñ - twór Bhaala i tak d³ugo jak istnieje ich nowa œwi¹tynia, tak d³ugo nie mogê ci pomóc. Wróæ, kiedy zginie ich przywódca. Bêdê ju¿ o tym wiedzieæ. Nie wiem gdzie znajduje siê ich œwi¹tynia ale ich szeregi rosn¹. S³ysza³em ¿e pewien od³am znajduje siê w Brodzie Ulgotha a widziano równie¿ ich agentów na Polach Umar³ych. Byæ mo¿e powinieneœ poszukaæ informacji tam.~
+@85  = ~Dziêkujê wam, kimkolwiek jesteœcie... z ca³¹ pewnoœci¹ skoñczylibyœmy na palach... tych...tych potworów. Przys³a³a was zapewne moja ¿ona, Yness?~
+@86  = ~Trzymaj¹ siê was idiotyczne ¿arty, ale mo¿e i macie racjê, czasy s¹ rzeczywiœcie zwariowane...~
+@87  = ~Moja wdziêcznoœæ nie zna granic, choæ poza ni¹ nie mam nic do zaoferowania. Ale mo¿e to was zainteresuje: z rozmów orków wynika³o, ¿e przyby³y tu na wezwanie, jakiegoœ dawnego wodza, który podobno zosta³ pochowany gdzieœ tu w pobli¿u. Na ca³e szczêœcie lub nie, nie mog¹ znaleŸæ jakiœ magicznych przedmiotów, by uwolniæ tego genera³a. Na razie wznosz¹ mod³y do Grumshara i sk³adaj¹ te ofiary w oczekiwaniu na nowe znaki, które ponoæ ten bo¿ek im obieca³. Próbuj¹ te¿ dostaæ siê do pradawnego sanktuarium w lasach na wschodzie, ale równie bezskutecznie...~
+@88  = ~Poszukuj¹ równie¿ jakichœ tajemniczych kultystów, z którymi podobno popadli w konflikt, ale jedyne imiê jakie us³ysza³em to by³ jakiœ Haanibal... byæ mo¿e coœ przekrêci³em.... Teraz pozwólcie, ¿e siê oddalê, bo œpieszno mi ju¿ do domu. Moja ¿ona zapewne pozosta³a w Brodzie... Napiszê jej kartkê i prosi³bym was o przekazanie jej tego listu, niech wraca do domu. Choæ zapewne tak d³ugo, jak ktoœ nie rozwik³a tej orkowej tajemnicy, okolica pozostanie niebezpieczna - a jest przera¿aj¹ca i bez nich. Jeszcze raz dziêki, niech wam szczêœcie sprzyja!~
+@89  = ~Podró¿ni w tych stronach?! Wszyscy normalni i ceni¹cy swe zdrowie trzymaj¹ siê traktu do Elthurel. Co was tu sprowadza?~
+@90  = ~Ziemie Umar³ych nigdy nie by³y spokojnym miejscem i tylko najwytrwalsi wytrzymuj¹ tu d³u¿ej. A teraz gdy zaroi³o siê tu od Orków, czego najstarsi nie pamiêtaj¹ i ja zamierzam siê st¹d wynieœæ. Orki maj¹ tu swoje sanktuarium i usilnie poszukuj¹ klucza, by wydostaæ z niego ukryt¹ moc... Z tego co zdo³a³em pods³uchaæ, to jak dot¹d nie znalaz³y nic, ale zawziêcie pilnuj¹ sanktuarium. Znajdziecie je na zachód st¹d. Bywajcie!~
+@91  = ~Tutaj? Na waszym miejscu martwi³bym siê o w³asna skórê, chyba ¿e jesteœcie bezmyœlnymi kretynami jakich ostatnio przybywa w Krainach. Ziemie Umar³ych, to miejsce zapomniane, pomimo, ¿e znajduje siê zaledwie kilka dni drogi od Wrót. Nawet elfy s¹ tu rzadkoœci¹, choæ dalej na pó³noc zaczynaj¹ siê ziemie Sy'Tel'Quessir. Tu króluj¹ zjawy i ostatnio Orki. S¹ rozwœcieczone, poniewa¿ szukaj¹ czegoœ zawziêcie.~
+@92  = ~Nie mia³em zamiaru was straszyæ. Przedstawi³em tylko realne zagro¿enia i nic poza tym nie mia³em na myœli. Mo¿na pogadaæ sobie od czasu do czasu, ale dzisiaj chyba nie jest najlepszy dzieñ. Roi siê tu i na Polach Umar³ych od Orków, które czegoœ poszukuj¹, i s¹ agresywne wobec wszystkich, którzy zbli¿¹ siê do ich terytoriów, choæ od dawna nikt ich tu nie widzia³. Je¿eli chcecie wyruszyæ, trzymajcie broñ ca³y czas w pogotowiu.~
+@93  = ~Powinniœcie znaæ w³asne ograniczenia. Nie dbam o to czy jesteœcie wielkimi czarodziejami, czy te¿ wojownikami. Mo¿e macie ochotê na przedwczesn¹ œmieræ, ale ja nie zamierzam wam towarzyszyæ. Ostatnio roi siê tu od Orków, poniewa¿ uwa¿aj¹, ¿e znajduje siê tu sanktuarium ich dawnego wodza. Pods³ucha³em ich rozmowy i ju¿ nie mam ochoty pozostaæ tu d³u¿ej.~
+@94  = ~Stójcie wêdrowcy! Przypadkiem *lub nie* - s³ysza³em wasz¹ rozmowê z Shaell¹ albo jak wolicie Elnaedr¹... Naprawdê jesteœcie zainteresowani odnalezieniem tej dziwnej ksiêgi?~
+@95  = ~Otó¿ Shaella wie co mówi... lub raczej mówi to co jeszcze wie... Ona kiedyœ widzia³a tê ksiêgê i sami mogliœcie dojrzeæ jej skutki... Moim zadaniem jest odnaleŸæ tê ksiêgê i uczyniæ j¹ niedostêpn¹ dla niepowo³anych istot, by nikt nie móg³ doœwiadczyæ losu Shaelli.~
+@96  = ~Je¿eli tak to chcesz nazywaæ... ca³e ¿ycie zbieram pieni¹dze na zdobycie tej ksiêgi. Mogê zaoferowaæ to wam, je¿eli przyjmiecie moj¹ ofertê.~
+@97  = ~Gdyby wszystko by³o takie proste... Nie mogê spotkaæ siê z tym, kto posiada pewn¹ wiedzê na temat tej ksiêgi... Kiedyœ byliœmy przyjació³mi... ale pewna kobieta sta³a siê powodem naszego konfliktu. Nie s¹dzê, ¿e chcia³bym siê z nim spotykaæ. On napewno równie¿ nie.~
+@98  = ~A wiêc zdobyliœcie na... mój cel wieloletnich poszukiwañ... Czas was wynagrodziæ.~
+@99  = ~Witajcie ponownie. Có¿ za rozkosz znowu was widzieæ.~
+@100 = ~Przybyliœmy tu w interesach, jesteœmy zainteresowani pewna niezwyk³¹ ksiêg¹.~
+@101 = ~Wspaniale jest wróciæ.~
+@102 = ~Dlaczego wezwano mnie...? Ludzie! Obrzydliwe kreatury pe³zaj¹ce po ziemi niczym robactwo...~
+@103 = ~To nie jest w naszym stylu, ale w koñcu nie istniejemy od 500 lat... I wcale nie mamy ochoty przebywaæ tu zbyt d³ugo... Mo¿esz nas odes³aæ... Ale... co jest potrzebne...? Cia³o... cia³o tego, kto nas wezwa³... Ten robak jest potrzebny...~
+@104 = ~Haaeebaaallsszzss....haszs...~
+@105 = ~Jak mogliœcie zw¹tpiæ w nasz¹ obietnice?. Ale slusznie, miêliœcie racje...~
+@106 = ~No co¿,... bywamy wybredne i z³oœliwe... £uk... interesuje nas pewien ³uk. Ma go pewien elf, którego rodzina, dawno temu, zasz³a nam za skórê... Tak... chcemy ³uku kapitana Sy'tell'Quessir... Fey'doch! Tym razem nie bêdziemy ju¿ przed³u¿aæ naszej obecnoœci... Zabijcie Fey'Docha i przynieœcie ³uk...~
+@107 = ~Ludzie s¹ naprawdê g³upi... Nic tego nie zmieni...~
+@108 = ~£uk i zemsta... czekam na oba...~
+@109 = ~Czy przypadkiem to nie ciebie zw¹ Haeball?~
+@110 = ~Tak, jest to jedno z wielu moich imion, jak mogê Ci pomóc?~
+@111 = ~Pewne istoty które napotkaliœmy na po³udnie st¹d wspomnia³y ze mo¿esz cos wiedzieæ o magu który je przywo³a³. Odmawiaj¹ odejœæ dopóki nie sprowadzê do nich tego maga.~
+@112 = ~Ahhhh, hah hah hah, yes.... the mageling....who summoned them, you say? Well, we all want something, myself included. I'll make you a deal about this mage if you'll care to listen.~
+@113 = ~No có¿ jeœli chcê dokonaæ jakiegoœ postêpu, nie widzê innego wyjœcia.~
+@114 = ~Haeball, czy móg³bym zadaæ ci pytanie?~
+@115 = ~Kartka jest zabazgrana mnóstwem nieistotnych informacji, ale mo¿na z niej wyczytaæ kilka fragmentów:
+
+"...nareszcie. Hasdar zawsze ma pomyœlne wieœci. Teraz, kiedy œwi¹tynia jest ukoñczona, a Las Ostrych K³ów chroni j¹ przed intruzami, bracia mog¹ skupiæ siê na w³aœciwym powo³aniu Czarnej Rêki..................z tym kultem balora................niezbêdne."
+
+"...Po kiego grzyba nios³o mnie do tej mojej ruiny na po³udniu?... bez tego klucza nie mogê otworzyæ w³asnego biurka.... No có¿, pomimo, ¿e to niebezpieczne muszê tam wróciæ i odszukaæ go... tylko ta cholerna woda.... Zachcia³o siê mieszkania na bagnie..."
+
+"Orki s¹ wœciek³e, ale tylko byli druidzi z naszego krêgu znaj¹ w³aœciw¹ kombinacjê otwieraj¹c¹ kryptê i mamy potrzebne............................ w kamiennym krêgu..."
+
+"...Shaella jest zaiste szalona."~
+@116 = ~Dziêkujê wam, kimkolwiek jesteœcie. Pod¹¿am z wa¿n¹ misj¹ do Brody Ulgotha, a te dranie w³aœnie mnie pojma³y... Nie wiem co by by³o, gdybyœcie nie przybyli na czas...~
+@117 = ~A wiêc ju¿ wiecie o wszystkim... Ja przez te orki nie zd¹¿y³em... teraz czekaj¹ mnie nieprzyjemnoœci w zgromadzeniu... w zasadzie œmieræ...~
+@118 = ~Jesteœmy... kultu "Czarnej D³oni" s¹ zgromadzeniem wojowników, magów... a przewodzi im Draagis... potê¿ny przeciwnik i znawca staro¿ytnych rytua³ów. W³aœnie dlatego interesuj¹ go ró¿ne artefakty i skontaktowa³ siê z kultystami Baalaora... Sami planowaliœmy wezwanie potê¿niejszych sprzymierzeñców - Ksiêcia Baalorów. Ale bez znaku od Tracei nic siê na razie nie wydarzy... Muszê teraz znikn¹æ. Lepiej, by kult mnie nie odnalaz³...~
+@119 = ~Gdybyœcie ich szukali, to wybierzcie siê w podró¿ do Lasu Ostrych K³ów... Daleko na wschodzie. Jednak przygotujcie siê na niemi³e powitanie...~
+@120 = ~Miecz Dwurêczny Generala Ghotala~
+@121 = ~Ten ogromny miecz nale¿a³ niegdyœ do Ghotala, potê¿nego herszta orkowych hord pó³nocy. Dziêki niemu móg³ stawiæ czo³o Luskan, Targos oraz innym miastom takim jak Neverwinter. Miecz jak i jego pan stali siê tacy s³awni ¿e wiêkszoœæ obroñców nieby³o w stanie stan¹æ do obrony swoich miast. Lecz Ghotal poszed³ za daleko gdy przej¹³ Targos i je niemal doszczêtnie zniszczy³. Zjednoczone si³y elfów z Everask i ludzi z innych pó³nocnych miast wci¹gnê³o orkowskie hordy w zasadzkê której g³ównym zadaniem by³o zabicie ich Herszta. W czasie wielkiej bitwy wiêkszoœæ wojsk orków zosta³o z anihilowanych, a sam Ghotal uciek³ œmiertelnie ranny z pola bitwy. Nigdy wiêcej go nie widziano, choæ nadal s³ychaæ orkowskie opowieœci o nim czekaj¹cym na kolejna szanse aby ponownie stan¹æ na czele armii zag³ady i siaæ œmieræ i zniszczenie na polach bitwy.
+
+PARAMETRY:
+
+Obra¿enia: 1k12 +5
+Trak0:  +5
+Specjalny:
+  40% Szansy na petryfikacje celu przy ka¿dym trafieniu
+Typ obra¿eñ: Sieczne
+Waga: 12
+OpóŸnienie: 9
+Rodzaj bieg³oœci: Miecz Oburêczny
+Typ: 2-rêczna
+Wymagana si³a: 13
+
+Nie mo¿e u¿ywaæ:
+ Druid,
+ Kap³an,
+ Mag,
+ Z³odziej,
+ Mnich,
+ W³adca Zwierz¹t~
+
+@122 = ~Witaj ponownie przyjacielu, w czym mogê ci pomóc?~
+@123 = ~Czy móg³byœ zabraæ nas zpowrotem na Wyspê Salamander?~
+@124 = ~Oczywiœcie, w drogê.~
+@125 = ~Wiec jest zrobienie, to dobrze.~
+@126 = ~Kto przybywa do Meandara? Nie przys³a³ was Monoach, ale wiedzieliœcie kogo szukaæ, sk¹d?~
+@127 = ~Meandar wie ¿e kiedyœ przybêdzie ktoœ kto szuka odpowiedzi... Czy Meandar siê myli?~
+@128 = ~Kolchear na pewno wie ¿e tu jesteœcie, jako ¿e od pocz¹tku mu przeszkadzaliœcie, wiec mo¿ecie siê spodziewaæ ¿e spotkacie go jak tylko wyjdziecie z mojego domu. Kolchear jest niebezpieczny powodzenia. A i wródŸcie jak za³atwicie ta sprawie... jeœli nadal bêdziecie ¿yc...~
+@129 = ~Lodowe salamandry mo¿e i nie lubi¹ siê nawzajem ale i tak ze sob¹ nie walcz¹ jako ze nie posiadaj¹ broni która mog³aby zabiæ drug¹ salamandrê.~
+@130 = ~Meandar jest za³amany z powodu œmierci jego braci, ale i tak respektuje i ceni odwagê nowicjuszy. Oto jest klucz którego poszukujesz. Przyjrzyj siê dok³adnie jak jest zrobiony bo za nim stoi skryte z³o... potê¿ne i staro¿ytne...~
+@131 = ~Meandar i Monoach kiedyœ, dawno temu byli przyjació³mi. Ale Monoach nigdy nie powiedzia³ jak u¿yæ klucza ani tez jaka œcie¿kê otwiera… Ale Monoach nigdy by nam nie da³ klucza gdyby nie ba³ siê o jego przeznaczenie. Meandar nie wie niczego wiêcej.~
+@132 = ~Wiem ¿e to zabawne ale nie czujê siê zbyt dobrze bez mojej szczêœliwej strza³y. Jest naprawdê dobra przeciwko gruboskórnym.~
+@133 = ~Charleston Nib, któremu pomogliœmy gdy jego kopacze oszaleli podczas wykopalisk przy krypcie Kozaha zleci³ nam kolejne zadanie. Nieopodal mostu Firewine znajduje siê zejœcie do lochów. Niestety znajduj¹ siê tam "z³e duchy" które nie powalaj¹ mu zbadaæ tego miejsca. Naszym zadaniem jest wyczyœciæ to miejsce.~
+@134 = ~Spadaj stary pryku!~
+@135 = ~To wszystko jest bardzo mile, ale co do cholery chcecie ode mnie?~
+@136 = ~Pewien dziwak imieniem Ordolath którego spotkaliœmy w dziczy na zachód od Nashkel zaoferowa³ mi 2000 sztuk z³ota i pewien cenny przedmiot a przyniesienie mu œwiecy z Wrót Baldura. Jego dom znajduje siê w pó³nocnej czêœci miasta, jest bia³y i znajduje siê za niebieska wie¿¹.~
+@137 = ~Nie mam czasu aby go traciæ na takie g³upie próby, idŸcie sobie.~
+@138 = ~Niestety niemieliœmy jeszcze okazji tego odzyskaæ...~
+@139 = ~Bardzo proszê. B¹dŸcie ostro¿ni w waszych dalszych podró¿ach.~
+@140 = ~Przynieœliœmy Ordolathowi œwiece o która nas prosi³ z jego domu we Wrotach Baldura, trzeba przyznaæ ¿e da³ nam jedna z ró¿d¿ek z jego kolekcji lecz chyba zapomnia³ o tych 2000 sztuk z³ota które mia³ nam zap³aciæ za nasze trudy. No có¿ jeœli spotkamy go kiedykolwiek ponownie na pewno przypomnimy mu o zaleg³ym wynagrodzeniu...~
+@141 = ~Przynieœliœmy Ordolathowi œwiece o która nas prosi³ z jego domu we Wrotach Baldura. Niestety tak szybko jak otrzymaliœmy nasze wynagrodzenie on znik³. Trzeba przyznaæ ¿e trudno poznaæ ludzi których jak trochê poznasz od razu znikaj¹.~
+@142 = ~Czy macie cos na sprzeda¿? Pozwólcie ze siê przyj¿e.~
+@143 = ~Haeball, mag ¿yj¹cy w knieji Larsa ma kilka ciekawych przedmiotów na sprzeda¿.~
+@144 = ~No có¿... Przybyliœmy z przyjazna wizyta do Haeballa lecz zostaliœmy przywitani czarna magia i z broni¹ w reku... Có¿ mo¿e ten Haeball ukrywaæ? Chyba powinniœmy dok³adnie przeszukaæ jego wie¿e.~
+@145 = ~A drugi przedmiot...?~
+@146 = ~Oto wdziêcznoœæ! To my zdzieramy obuwie dla zadowolenia magików, a oni w nagrodê próbuj¹ nas zabiæ. Nie wiem dlaczego, ale odnoszê wra¿enie, ¿e to nie koniec tego sznurka o imieniu Haeball...~
+@147 = ~Czy móg³byœ powtórzyæ jeszcze raz na czym polega³oby twoje zadanie?  Mo¿e zainteresuje to nas tym razem.~
+@148 = ~Nie, jeszcze nie. Potrzepujemy wiêcej czasu aby siê zastanowiæ.~
+@149 = ~Mo¿e i tak, ale mamy jeden z artefaktów i oczekujemy wynagrodzenia.~
+@150 = ~Wygl¹dasz na bardzo zadowolonego, ale "koszta" które ponieœliœmy by odzyskaæ ksi¹¿kê by³y bardzo wysokie, wiec oczekujemy wynagrodzenia.~
+@151 = ~Tak mamy je, a teraz nadszed³ czas abyœ nas ADEKWATNIE wynagrodzi³.~
+@152 = ~Oczywiœcie, ale potrzebujemy spojrzeæ co masz do zaoferowania.~
+@153 = ~Jak widzisz nadal poszukujemy...~
+@154 = ~W porz¹dku, powiedz nam co ciê tak drêczy.~
+@155 = ~Nigdy nie byliœmy na Pó³noc od Wrót Baldura, ale ta sprawa zmartwi³a nas. Zajmiemy siê tym najszybciej jak to mozliwe.~
+@156 = ~We Wrotach Baldura spotkaliœmy Magnada i Winormê, którzy zgubili dzieci, podczas podró¿y do Elthurel, po tym, jak karawanê napad³y Orki. Magnad podejrzewa, ¿e orki uprowadzi³y dzieci na Pola Umar³ych, na pó³noc od Wrót Baldura, ale nie wie dok³adnie gdzie to jest. Zasugerowa³ abyœmy wybrali siê do Brody Ulgotha i poszukali kogoœ kto móg³by wiedzieæ jak tam sie dostaæ.~
+@157 = ~Przynieœliœmy Yness list od jej mê¿a, którego uratowaliœmy przed Orkami. By³a bardzo szczêœliwa lecz niemia³a pieniêdzy by nam zap³aciæ.~
+@158 = ~Pozbyæ siê Ognistych Salamander
+
+Spotkaliœmy we Wrotach Baldura przyjaznego rybaka o imieniu Nadalin. Wygl¹da na to, ¿e tam, gdzie mieszka, na pó³nocy dziej¹ siê dziwne rzeczy. Trzeba siê temu przyjrzeæ, gdy bêdê w okolicy...~
+@159 = ~Pozbyæ siê Ognistych Salamander
+
+OdnaleŸliœmy rybaka i ¿eglarza - Nadalina. Teraz mo¿e wróciæ w swoje rodzinne strony.~
+@160 = ~Tak siê sk³ada, ¿e Ordolath zapomnia³ wzi¹æ pewnej rzeczy. Wynaj¹³ nas, byœmy mu j¹ przynieœli. Jednak nic nie wspomina³ o rezyduj¹cym w jego domu  Czerwonym Magu. Mo¿e wiec teraz Ty zaspokoisz nasz¹ ciekawoœæ i powiesz coœ Ty za jeden?~
+@161 = ~My... my nic nie wiemy. Przybyliœmy do Wrót Baldura w pewnej sprawie, ale widocznie pomyliliœmy domy. Do widzenia!~
+@162 = ~Zbadaj ¯elazny Tron i Tajemnica Pó³nocnej Cytadeli
+
+Ksi¹¿ê Eltan poprosi³ nas abymy zbada³ siedzibê ¯elaznego Tronu, znajduj¹c¹ siê tu we Wrotach Baldura, oraz spyta³ mnie czy uda³bym siê do cytadeli po³o¿onej na pó³noc od Wrót Baldura. Zdaje siê ¿e gin¹ tam ludzie. Chce ¿ebym siê dowiedzia³ co tam naprawdê siê dzieje.~
+@163 = ~K³opoty? To ostatnio nasza specjalnoœæ! Mo¿e jednak mo¿emy wam pomóc?~
+@164 = ~Wzd³u¿ pó³nocnego wybrze¿a ¿yje ma³a spo³ecznoœæ rybacka która widocznie ostatnio napotka³a jakieœ problemy. Wygl¹da na to ¿e coœ na pó³noc od ich wioski ich strasznie przera¿a.~
+@165 = ~Ca³a przyjemnoœæ po naszej stronie.~
+@166 = ~Wzd³u¿ pó³nocnego wybrze¿a ¿yje ma³a spo³ecznoœæ rybacka która widocznie ostatnio napotka³a jakieœ problemy. Wygl¹da na to ¿e coœ na pó³noc od ich wioski ich strasznie przera¿a.~
+@167 = ~Mo¿e jest jakiœ sposób, chcielibyœmy wiedzieæ czy s³yszeliœcie o wyspie... nie wiem dok³adnie czego szukamy, ale mo¿e byæ na niej jakaœ forteca...?~
+@168 = ~Nie jest wymagane.~
+@169 = ~Dziêkujemy, zobaczymy czy uda siê nam odnaleŸæ Nadlina.~
+@170 = ~Usunêliœmy problem jaki mieli rybacy mieli wzd³u¿ pó³nocnego wybrze¿a z Sirinami i Ognistymi Salamandrami. Starszy wioski powiedzia³ nam ¿e wyspa, której szukamy, znajduje siê niedaleko. Powiedzia³ nam równie¿ ¿e jedyn¹ osoba która wie jak tam dotrzeæ to rybak imieniem Nadalin, który uciek³ do Wrót Baldura zaraz gdy tylko rozpoczê³y siê k³opoty. Przysiêgliœmy go odnaleœæ.~
+@171 = ~Na proœbê rybaków z wioski na pó³nocnym Wybrze¿u Mieczy "odwiedziliœmy" grotê zamieszkiwan¹ przez Ogniste Salamandry! Ju¿ przy wejœciu zatrzyma³ nas Humbaba i trzeba by³o go wypatroszyæ.~
+@172 = ~Na dalekiej pó³nocy Wybrze¿a Mieczy spotkaliœmy grupê Ognistych Salamandr, mieszkaj¹cych w wulkanicznej jaskini i terroryzuj¹cych okolicznych mieszkañców.~
+@173 = ~Na proœbê rybaków z wioski na pó³nocnym Wybrze¿u Mieczy "odwiedziliœmy" grotê zamieszkiwan¹ przez Ogniste Salamandry! Ju¿ przy wejœciu zatrzyma³ nas Humbaba i trzeba by³o go wypatroszyæ.~
+@174 = ~Humbaba s³uchaæ - nigdzie nie iœæ - gotowy do walka.~
+@175 = ~Stawaj potworze, a gadulstwo zostaw sobie na spowiedŸ w zaœwiatach!!!~
+@176 = ~ZnaleŸliœmy sposób, by marzenia druidki Olivii siê spe³ni³y i jakie by³o nasze zdziwienie, gdy poznaliœmy prawdziw¹ naturê tej kobiety...~
+@177 = ~Nie spodziewaliœmy siê gor¹cego przyjêcia, ale jednak chcesz z nami rozmawiaæ.~
+@178 = ~Nie mamy czasu na zagadki. Przypuszczamy, ¿e masz pewien klucz, tym bardziej, ¿e znasz Monoacha. Potrzebujemy go.~
+@179 = ~Czyli normalka... Gdzie znajdziemy tego Kolcheara?~
+@180 = ~Znowu to samo? Czy nie da siê unikn¹æ tych odwiecznych konfliktów?~
+@181 = ~Dlaczego Meandar sam nie pokona swojego przeciwnika tylko wys³uguje siê podró¿nymi?~
+@182 = ~Zniszcz kult Czarnej D³oni
+
+Meander, przywódca Lodowych Salamander nie piœnie nawet s³ówkiem o kluczu do zamkniêtego O³tarza znajduj¹cego siê w Pó³nocnej Cytadeli, dopóki nie zniszczymy kultu Czarnej D³oni. Gdybyœmy tylko wiedzieli gdzie szukaæ. Meander zasugerowa³ abyœmy odwiedzili Brodê Ulgotha i Pola Umar³ych, mo¿liwe ze w³aœnie tam zdobêdziemy wiêcej informacji.~
+@183 = ~Ale¿ sk¹d, a twoje ¿ycie dla nas ca³kowicie nic nie znaczy. Nie musisz siê ju¿ martwiæ orkami, sami zakoñczymy twój nêdzny ¿ywot, a potem znajdziemy twoj¹ ¿onê i sprzedamy j¹ tak dal zabawy. W koñcu interes musi siê krêciæ...~
+@184 = ~Tak, twoja ¿ona przebywa w Brodzie Ulgotha i to ona wskaza³a nam, gdzie ciê szukaæ i - uda³o siê - jesteœ wolny.~
+@185 = ~Uratowaliœmy dzieci Magnata oraz Pandrisa, mê¿a Yness, przed orkami na Polach Umar³ych. Pandris opowiedzia³ nam o konflikcie orków z jakimiœ okultystami w tym rejonie. Równie¿ wspomnia³ o tym ¿e orkowie próbuj¹ w dostaæ siê za wszelka cenê do pewnej kaplicy albo grobowca znajduj¹cego siê w Lesie Umar³ych. Powinniœmy to sprawdziæ.~
+@186 = ~W pobli¿u obozu orków na pó³nocy, w jednej z jaskiñ, natknêliœmy siê na mnicha, którego najwyraŸniej orki zamierza³y zamêczyæ. By³ tak wdziêczny, ¿e obieca³ nam zap³aciæ i ulotni³ siê szybko, bo jak twierdzi³, pod¹¿a³ z misj¹ do Brody Ulgotha. Ciekawe dlaczego orkom tak na nim zale¿a³o, bedziemy musieli zbadaæ t¹ sprawê dok³adniej jak wrócimy do Brody Ulgotha.~
+@187 = ~Zaczekaj! Gdzie mogê znaleŸæ kult Czarnej D³oni? Chcê ich odwiedziæ i wybiæ im z g³owy te krwio¿ercze pomys³y...~
+@188 = ~Dotar³y do nas informacje o dziwnych, a raczej niepokoj¹cych rzeczach, które maj¹ miejsce na pó³nocy.~
+@189 = ~Czym nas próbujesz straszyæ? Mamy za sob¹ wiêksze problemy...~
+@190 = ~Na pó³noc od Wrót Baldura spotkaliœmy samotnego ³owcê, Koldara, który ostrzeg³ nas przed Orkami, które podobno ostatnio pojawi³y siê w tych stronach w wiêkszej liczbie. Podobno próbuj¹ odkryæ jak¹œ tajemnicê sanktuarium znajduj¹cego siê w tej okolicy.~
+@191 = ~Wiem, co chcesz powiedzieæ i chêtnie pos³ucham, bo lubimy brzêk z³otych monet, prawda przyjacielu?~
+@192 = ~Dlaczego sam nie mo¿esz zaj¹æ siê t¹ spraw¹, skoro tak ci na nie zale¿y?~
+@193 = ~Dlaczego nie powinniœmy po prostu zabraæ ci twoich oszczêdnoœci i nie zrobiæ tego po swojemu?~
+@194 = ~Dobrze, ju¿ dobrze. Nie przepadam za przemoc¹, zw³aszcza bezsensown¹. Udam siê do Lobara i spojrzê co da siê zrobiæ.~
+@195 = ~Nie podoba mi siê wasze podejœcie... Czas wracaæ w rodzinne strony potwory!~
+@196 = ~No tak, bez dodatkowych ofiar nie mo¿e siê obejœæ... Niech tak bêdzie, przyniesiemy ci cia³o... Ale przyjació³mi raczej nie zostaniemy.~
+@197 = ~Ju¿ siê nam nie chce uganiaæ za jakimœ elfem. Mo¿e jednak siê zmierzymy. Prosimy do tañca...~
+@198 = ~Spotkaliœmy ju¿ Nadlina we Wrotach Baldura! Dziêkujemy, postaramy siê go odnaleŸæ.~
