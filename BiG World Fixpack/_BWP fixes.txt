@@ -71,6 +71,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: ACBre - Ascalon's Breager NPC v6.09
+
+:: micbaldur's Galthur cutscene death fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=569180
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Aeon - Aeon NPC v1.0
 
 :: Lollorian's Items not being copied fix
@@ -1635,6 +1644,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Roxanne's delayed Jarlaxie-Entreri cutscene for Worgas compatibility (revised)
 :: http://www.shsforums.net/topic/56972-freeze-at-game-start-bg-ii/?p=567472
+
+:: micbaldur's locked RR3407 containers unlocked
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=569381
 
 
 ----------------------------------------------------------------------------------------
