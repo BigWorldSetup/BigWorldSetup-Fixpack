@@ -1,29 +1,22 @@
---- npckit\npckit.tp2	Fri Apr 10 09:21:38 2009
-+++ C:\BWP Patchstudio\patched files\npckit\npckit.tp2	Sun Oct 13 18:31:16 2013
+--- npckit\npckit.tp2	Sun Oct 26 17:24:30 2014
++++ C:\BWP Patchstudio\patched files\npckit\npckit.tp2	Tue Nov 04 23:05:37 2014
 @@ -5,7 +5,7 @@
  
  README ~NPCKit/readme-npckit.html~
  
--VERSION ~v3~
-+VERSION ~v3 BWP Fix~
+-VERSION ~v4~
++VERSION ~v4 BWP fix~
  
  ALWAYS
  
-@@ -258,7 +258,7 @@
- 
- ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN BEGIN // tob 
- 
--  EXTEND_BOTTOM ~anom25.bcs~ ~NPCKit/anomen/berserker.baf~
-+  EXTEND_BOTTOM ~anom25.bcs~ ~NPCKit/baf/berserker.baf~
- 
- END
- 
-@@ -289,7 +289,7 @@
- 
- ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN BEGIN // tob 
- 
--  EXTEND_BOTTOM ~anom25.bcs~ ~NPCKit/anomen/no_holy_symbol.baf~
-+  EXTEND_BOTTOM ~anom25.bcs~ ~NPCKit/baf/no_holy_symbol.baf~
- 
- END
- 
+@@ -422,8 +422,8 @@
+ // read conjurer allowed profs from weapprof and use those
+ COPY_EXISTING ~weapprof.2da~ ~override~
+   FOR (row = 0 ; row < 32 ; row = row + 1) BEGIN
+-    READ_2DA_ENTRY row 23                      (22 + "%IK_EDWIN_KIT%") "conj"
+-    SET_2DA_ENTRY  row (21 + "%IK_EDWIN_KIT%") (22 + "%IK_EDWIN_KIT%") ~%conj%~
++    READ_2DA_ENTRY row 23                      (23 + "%IK_EDWIN_KIT%") "conj"
++    SET_2DA_ENTRY  row (22 + "%IK_EDWIN_KIT%") (23 + "%IK_EDWIN_KIT%") ~%conj%~
+   END
+   PRETTY_PRINT_2DA
+   BUT_ONLY_IF_IT_CHANGES

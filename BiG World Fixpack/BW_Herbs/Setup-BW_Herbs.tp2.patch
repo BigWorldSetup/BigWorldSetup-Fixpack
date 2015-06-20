@@ -1,0 +1,11 @@
+--- BW_Herbs\Setup-BW_Herbs.tp2	Tue Aug 18 06:26:56 2009
++++ C:\BWP Patchstudio\patched files\BW_Herbs\Setup-BW_Herbs.tp2	Wed Apr 14 09:41:22 2010
+@@ -9,7 +9,7 @@
+ BACKUP ~BW_Herbs/Install/Backup~
+ AUTHOR ~baronius@blackwyrmlair.net~
+ 
+-VERSION ~v1.0.3~
++VERSION ~v1.0.3 BWP Tweak~
+ 
+ README ~BW_Herbs/Install/readme-BW_Herbs.htm~
+ 

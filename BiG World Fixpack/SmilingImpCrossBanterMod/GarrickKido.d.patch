@@ -1,0 +1,11 @@
+--- SmilingImpCrossBanterMod\GarrickKido.d	Thu Jul 31 11:49:50 2014
++++ C:\BWP Patchstudio\patched files\SmilingImpCrossBanterMod\GarrickKido.d	Sun Jan 04 19:55:54 2015
+@@ -25,7 +25,7 @@
+ Global("KIDOGARRICK","GLOBAL",1)~ THEN ~MWBKID~ KidoGarrick_02
+ ~What a glorious night to be under the watchful eye of the Dark Sun.~ DO ~SetGlobal("KIDOGARRICK","GLOBAL",2)~
+ == B7XGar ~A bit too chilly for my liking.~
+-== MWBKID ~Cyric is the dark light in my life. The winds whisper his will.~
++== MWBKID ~Cyric is the dark light in my life. The winds whisper his will.
+ 
+ The Prince of Lies reveals the truth.. in this life you must kill.~
+ == B7XGar ~Not bad, but how about this...~

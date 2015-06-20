@@ -1,0 +1,11 @@
+--- WBGTAP\dlg\BG1Quest3.d	Thu Jul 17 17:52:07 2014
++++ C:\BWP Patchstudio\patched files\WBGTAP\dlg\BG1Quest3.d	Wed Dec 31 14:41:24 2014
+@@ -29,7 +29,7 @@
+ 
+ ///////////////Erstes Treffen///////////////
+ 1a
+-~(Ihr seht einen uralten, ausgemergelten Mann mit schlohweißen Haaren, einer krummen Hakennase und einem ledrigen Gesicht vor Euch. Er ist in verschlissene Bergarbeiterkleider gehüllt, die gut und gerne zwei Jahrzehnte hinter sich haben.)
++~(Ihr seht einen uralten, ausgemergelten Mann mit schlohweißen Haaren, einer krummen Hakennase und einem ledrigen Gesicht vor Euch. Er ist in verschlissene Bergarbeiterkleider gehüllt, die gut und gerne zwei Jahrzehnte hinter sich haben.)~
+ ~(Der Alte schafft es irgendwie, so auf seinem Hocker zu sitzen, dass es aussieht als ob er wie ein Haufen Match auf ihm angehäuft wurde und zur selben Zeit so am Tresen zu hängen, als ob der das einzige ist, was ihn davor bewart wie schmelzender Schnee von einem Dach zu Boden zu rutschen.)~
+ ~(Vor ihm steht ein großer Humpen Bier, an dem er ab und an ein wenig nippt. Er wiegt seinen Kopf im einem fort von rechts nach links und brummt allen Leuten um ihn herum zu, wie schlimm und aussichtslos doch alles ist.)~
+ 

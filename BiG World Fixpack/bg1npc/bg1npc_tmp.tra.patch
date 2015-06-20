@@ -1,0 +1,8 @@
+--- bg1npc\tra\german\bg1npc_tmp.tra	Thu Dec 04 00:49:38 2014
++++ C:\BWP Patchstudio\patched files\bg1npc\tra\german\bg1npc_tmp.tra	Sun Mar 08 20:16:20 2015
+@@ -1074,3 +1074,5 @@
+ Gewicht: 1
+ Schusswaffe: Armbrust~ 
+ @774 = ~Gesens Kurzbogen~
++
++@775 = ~[SIRINE 05]~ [%tutu_var%SIRIN05]

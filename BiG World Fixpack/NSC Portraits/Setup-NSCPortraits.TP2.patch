@@ -1,28 +1,11 @@
---- Setup-NSCPortraits.TP2	Sat Apr 12 05:39:41 2014
-+++ C:\BWP Patchstudio\patched files\Setup-NSCPortraits.TP2	Wed Apr 23 20:57:00 2014
-@@ -1,6 +1,6 @@
- BACKUP ~NSC Portraits/backup~
- AUTHOR ~Gerri~ 
--VERSION ~v2.5~ 
-+VERSION ~v2.5 BWP Fix~ 
- 
- DEFINE_ACTION_MACRO ~Addpic~ BEGIN
- ACTION_IF FILE_EXISTS_IN_GAME ~%Crename%~
-@@ -446,7 +446,7 @@
+--- Setup-NSCPortraits.TP2	Thu Mar 12 17:41:44 2015
++++ C:\BWP Patchstudio\patched files\Setup-NSCPortraits.TP2	Wed May 13 08:31:00 2015
+@@ -482,7 +482,7 @@
  
  
- BEGIN ~Portraits for Tortured Souls (TS-BP)~ 
--REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~hier File einfügen~ ~You haven't installed TS-BP, skip this component~ 
-+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~KachikoD.cre~ ~You haven't installed TS-BP, skip this component~ 
- DESIGNATED 1050
+ BEGIN ~Portraits for Tower of Deception~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~VA#TIAN~ ~You haven't installed ToD, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~VA#TIAN.cre~ ~You haven't installed ToD, skip this component~ 
+ DESIGNATED 1300
  
- OUTER_SPRINT ~folder~ ~TS~
-@@ -464,7 +464,7 @@
- 
- 
- BEGIN ~Alternate NPC-Portraits for Tortured Souls (TS-BP)~ 
--REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~hier File einfügen~ ~You haven't installed TS-BP, skip this component~ 
-+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~KachikoD.cre~ ~You haven't installed TS-BP, skip this component~ 
- DESIGNATED 1051
- 
- OUTER_SPRINT ~folder~ ~TS~
+ OUTER_SPRINT ~folder~ ~TOD~

@@ -1,0 +1,11 @@
+--- BW_Herbs_BG2\Scripts\AR0700e.baf	Fri Sep 24 20:51:58 2004
++++ C:\BWP Patchstudio\patched files\BW_Herbs_BG2\_depends\BW_Herbs\Scripts\AR0700e.baf	Tue Mar 18 20:58:08 2008
+@@ -3,7 +3,7 @@
+ THEN
+ 	RESPONSE #100
+             SetGlobal("BW02_HerbAddinBG2_HBC","GLOBAL",1)
+-	      CreateCreature("BW02CRE3",[2392.1646],0)
++	      CreateCreature("BW02CRE5",[2392.1646],0)
+             CreateCreature("BW02CRE0",[669.3798],7)
+             CreateCreature("BW02CRE1",[739.3797],7)
+ END

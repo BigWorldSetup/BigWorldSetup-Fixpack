@@ -1,0 +1,1605 @@
+BACKUP ~dq/backup~
+AUTHOR ~www.shsforums.net/forum/550-fishing-for-trouble/~
+VERSION ~v3.0 BWP Fix~
+//MODDER setup_tra NONE
+//launch the ReadMe file immediately
+README ~dq/dq-readme.html~
+
+LANGUAGE ~English (Yovaneth)~ ~english~ ~dq/language/english/english.tra~
+LANGUAGE ~Russian (subzero400)~ ~russian~ ~dq/language/russian/russian.tra~
+
+//Quest title
+BEGIN @20000
+
+INCLUDE ~dq/wmp/worldmap.tph~
+
+//***************************************************
+//Patch the user's ids files as necessary
+//***************************************************
+	APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
+	              UNLESS ~CD_STATE_NOTVALID~
+	APPEND ~state.ids~ ~0x00102029 STATE_HARMLESS~
+								UNLESS ~0x00102029 STATE_HARMLESS~
+	APPEND ~state.ids~ ~0x00400010 STATE_NOT_VISIBLE~
+								UNLESS ~0x00400010 STATE_NOT_VISIBLE~
+
+  APPEND ~shoutids.ids~ ~1001 POISONED~
+								UNLESS ~1001 POISONED~
+  APPEND ~shoutids.ids~ ~2024 SEE_ENEMY~
+								UNLESS ~2024 SEE_ENEMY~
+  APPEND ~shoutids.ids~ ~2001 HELP~
+								UNLESS ~2001 HELP~
+
+  APPEND ~specific.ids~ ~202 HAS_SHIELDS~
+								UNLESS ~202 HAS_SHIELDS~
+  APPEND ~specific.ids~ ~202 HAS_SHIELD~
+								UNLESS ~202 HAS_SHIELD~
+  APPEND ~specific.ids~ ~201 NEEDS_BREACH~
+								UNLESS ~201 NEEDS_BREACH~
+
+	APPEND ~ACTION.IDS~ ~31 SpellRES(S:RES*,O:Target*)~
+	              UNLESS ~31 SpellRES(S:RES\*,O:Target\*)~
+	APPEND ~ACTION.IDS~ ~95 SpellPointRES(S:RES*,P:Target*)~
+	              UNLESS ~95 SpellPointRES(S:RES\*,P:Target\*)~
+	APPEND ~ACTION.IDS~ ~113 ForceSpellRES(S:RES*,O:Target)~
+	              UNLESS ~113 ForceSpellRES(S:RES\*,O:Target)~
+	APPEND ~ACTION.IDS~ ~114 ForceSpellPointRES(S:RES*,P:Target)~
+	              UNLESS ~114 ForceSpellPointRES(S:RES\*,P:Target)~
+	APPEND ~ACTION.IDS~ ~147 RemoveSpellRES(S:Spell*)~
+	              UNLESS ~147 RemoveSpellRES(S:Spell\*)~
+	APPEND ~ACTION.IDS~ ~160 ApplySpellRES(S:RES*,O:Target)~
+	              UNLESS ~160 ApplySpellRES(S:RES\*,O:Target)~
+	APPEND ~ACTION.IDS~ ~181 ReallyForceSpellRES(S:RES*,O:Target)~
+	              UNLESS ~181 ReallyForceSpellRES(S:RES\*,O:Target)~
+	APPEND ~ACTION.IDS~ ~191 SpellNoDecRES(S:RES*,O:Target*)~
+	              UNLESS ~191 SpellNoDecRES(S:RES\*,O:Target\*)~
+	APPEND ~ACTION.IDS~ ~192 SpellPointNoDecRES(S:RES*,P:Target*)~
+	              UNLESS ~192 SpellPointNoDecRES(S:RES\*,P:Target\*)~
+	APPEND ~ACTION.IDS~ ~240 ReallyForceSpellDeadRES(S:RES*,O:Target)~
+	              UNLESS ~240 ReallyForceSpellDeadRES(S:RES\*,O:Target)~
+	APPEND ~ACTION.IDS~ ~318 ForceSpellRangeRES(S:RES*,O:Target)~
+	              UNLESS ~318 ForceSpellRangeRES(S:RES\*,O:Target)~
+	APPEND ~ACTION.IDS~ ~319 ForceSpellPointRangeRES(S:RES*,P:Target)~
+	              UNLESS ~319 ForceSpellPointRangeRES(S:RES\*,P:Target)~
+	APPEND ~ACTION.IDS~ ~336 MakeGlobal()~
+	              UNLESS ~336 MakeGlobal()~
+	APPEND ~ACTION.IDS~ ~337 ReallyForceSpellPointRES(S:RES*,P:Target*)~
+	              UNLESS ~337 ReallyForceSpellPointRES(S:RES\*,P:Target\*)~
+	APPEND ~ACTION.IDS~ ~7 CreateCreature(S:NewObject*,P:Location*,I:Face*)~
+								UNLESS ~7 CreateCreature(S:NewObject*,P:Location*,I:Face*)~
+
+	APPEND ~TRIGGER.IDS~ ~0x00A1 SpellCastOnMeRES(S:Spell*,O:Caster*)~
+	              UNLESS ~0x00A1 SpellCastOnMeRES(S:Spell\*,O:Caster\*)~
+	APPEND ~TRIGGER.IDS~ ~0x0091 SpellCastRES(S:Spell*,O:Object*)~
+	              UNLESS ~0x0091 SpellCastRES(S:Spell\*,O:Object\*)~
+	APPEND ~TRIGGER.IDS~ ~0x00A6 SpellCastPriestRES(S:Spell*,O:Object*)~
+	              UNLESS ~0x00A6 SpellCastPriestRES(S:Spell\*,O:Object\*)~
+	APPEND ~TRIGGER.IDS~ ~0x00A7 SpellCastInnateRES(S:Spell*,O:Object*)~
+	              UNLESS ~0x00A7 SpellCastInnateRES(S:Spell\*,O:Object\*)~
+	APPEND ~TRIGGER.IDS~ ~0x4031 HaveSpellRES(S:Spell*)~
+	              UNLESS ~0x4031 HaveSpellRES(S:Spell\*)~
+	APPEND ~TRIGGER.IDS~ ~0x40D5 ActuallyInCombat()~
+	              UNLESS ~0x40D5 ActuallyInCombat()~
+
+// I can do this because they are my ids files
+	COPY ~dq/ids/face.ids~ ~override/face.ids~
+	COPY ~dq/ids/formatio.ids~ ~override/formatio.ids~
+
+//**********************************************************
+//EXE patches to enable race strrefs and paperdolls are from Taimon and Erephine, respectively
+OUTER_SET tbex = 0 //Assume no TobEx unless detected
+ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~osx~ = 0) BEGIN //if not OS X
+  ACTION_IF ((FILE_EXISTS ~TobEx.ini~) AND (FILE_CONTAINS ~TobEx.ini~ ~Externalise Race Selection StrRef=1~)) BEGIN
+    OUTER_SET tbex = 1
+  END ELSE ACTION_IF (FILE_EXISTS ~TobEx_ini/TobExVer.txt~) BEGIN
+    OUTER_SET tbex = 2
+  END ELSE BEGIN
+    OUTER_PATCH_SAVE orig_bytes_1 ~~ BEGIN
+      INSERT_BYTES 0x000 0xc
+      WRITE_LONG   0x000 0xfe38bd81
+      WRITE_LONG   0x004 0x0098ffff
+      WRITE_LONG   0x008 0x5d770000
+    END
+
+    OUTER_PATCH_SAVE patch_bytes_1 ~~ BEGIN
+      INSERT_BYTES 0x000 0xc
+      WRITE_LONG   0x000 0x68cee850
+      WRITE_LONG   0x004 0x45890022
+      WRITE_LONG   0x008 0x9065eb80
+    END
+
+    OUTER_PATCH_SAVE orig_bytes_2 ~~ BEGIN
+      INSERT_BYTES 0x000 0x12
+      WRITE_LONG   0x000 0xfe4cbd81
+      WRITE_LONG   0x004 0x0098ffff
+      WRITE_LONG   0x008 0x75770000
+      WRITE_LONG   0x00c 0xfe4c958b
+      WRITE_SHORT  0x010 0xffff
+    END
+
+    OUTER_PATCH_SAVE patch_bytes_2 ~~ BEGIN
+      INSERT_BYTES 0x000 0x12
+      WRITE_LONG   0x000 0x14a6e852
+      WRITE_LONG   0x004 0x85890003
+      WRITE_LONG   0x008 0xffffff78
+      WRITE_LONG   0x00c 0x90907deb
+      WRITE_SHORT  0x010 0x9090
+    END
+
+    OUTER_PATCH_SAVE orig_bytes_3 ~~ BEGIN
+      INSERT_BYTES 0x000 0xe
+      WRITE_LONG   0x000 0x99e47d81
+      WRITE_LONG   0x004 0x77000000
+      WRITE_LONG   0x008 0xe4558b63
+      WRITE_SHORT  0x00c 0xc933
+    END
+
+    OUTER_PATCH_SAVE patch_bytes_3 ~~ BEGIN
+      INSERT_BYTES 0x000 0xe
+      WRITE_LONG   0x000 0x00f1e850
+      WRITE_LONG   0x004 0x45890000
+      WRITE_LONG   0x008 0x008ae9f0
+      WRITE_SHORT  0x00c 0x0000
+    END
+
+    OUTER_PATCH_SAVE orig_bytes_4 ~~ BEGIN
+      INSERT_BYTES 0x000 0xc2
+      WRITE_LONG   0x000 0x006d9000
+      WRITE_LONG   0x004 0x006d8fc1
+      WRITE_LONG   0x008 0x006d8fca
+      WRITE_LONG   0x00c 0x006d8fd3
+      WRITE_LONG   0x010 0x006d8fdc
+      WRITE_LONG   0x014 0x006d8fee
+      WRITE_LONG   0x018 0x006d8fe5
+      WRITE_LONG   0x01c 0x006d8ff7
+      WRITE_LONG   0x020 0x006d9009
+      WRITE_LONG   0x024 0x006d9012
+      WRITE_LONG   0x028 0x03020100
+      WRITE_LONG   0x02c 0x07060504
+      WRITE_LONG   0x030 0x09090909
+      WRITE_LONG   0x034 0x09090909
+      WRITE_LONG   0x038 0x09090909
+      WRITE_LONG   0x03c 0x09090909
+      WRITE_LONG   0x040 0x09090909
+      WRITE_LONG   0x044 0x09090909
+      WRITE_LONG   0x048 0x09090909
+      WRITE_LONG   0x04c 0x09090909
+      WRITE_LONG   0x050 0x09090909
+      WRITE_LONG   0x054 0x09090909
+      WRITE_LONG   0x058 0x09090909
+      WRITE_LONG   0x05c 0x09090909
+      WRITE_LONG   0x060 0x09090909
+      WRITE_LONG   0x064 0x09090909
+      WRITE_LONG   0x068 0x09090909
+      WRITE_LONG   0x06c 0x09090909
+      WRITE_LONG   0x070 0x09090909
+      WRITE_LONG   0x074 0x09090909
+      WRITE_LONG   0x078 0x09090909
+      WRITE_LONG   0x07c 0x09090909
+      WRITE_LONG   0x080 0x09090909
+      WRITE_LONG   0x084 0x09090909
+      WRITE_LONG   0x088 0x09090909
+      WRITE_LONG   0x08c 0x09090909
+      WRITE_LONG   0x090 0x09090909
+      WRITE_LONG   0x094 0x09090909
+      WRITE_LONG   0x098 0x09090909
+      WRITE_LONG   0x09c 0x09090909
+      WRITE_LONG   0x0a0 0x09090909
+      WRITE_LONG   0x0a4 0x09090909
+      WRITE_LONG   0x0a8 0x09090909
+      WRITE_LONG   0x0ac 0x09090909
+      WRITE_LONG   0x0b0 0x09090909
+      WRITE_LONG   0x0b4 0x09090909
+      WRITE_LONG   0x0b8 0x09090909
+      WRITE_LONG   0x0bc 0x09090909
+      WRITE_SHORT  0x0c0 0x0809
+    END
+
+    OUTER_PATCH_SAVE patch_bytes_4 ~~ BEGIN
+      INSERT_BYTES 0x000 0xc2
+      WRITE_LONG   0x000 0x83ec8b55
+      WRITE_LONG   0x004 0x4d8d30ec
+      WRITE_LONG   0x008 0x5185e8dc
+      WRITE_LONG   0x00c 0x4f68fff6
+      WRITE_LONG   0x010 0x8d006d91
+      WRITE_LONG   0x014 0xcde8dc4d
+      WRITE_LONG   0x018 0x8bffd29c
+      WRITE_LONG   0x01c 0xc085dc45
+      WRITE_LONG   0x020 0x10a16274
+      WRITE_LONG   0x024 0x8900b720
+      WRITE_LONG   0x028 0x75ffd845
+      WRITE_LONG   0x02c 0x1cb86808
+      WRITE_LONG   0x030 0x558d00b1
+      WRITE_LONG   0x034 0x0de852d8
+      WRITE_LONG   0x038 0x8300374a
+      WRITE_LONG   0x03c 0x58680cc4
+      WRITE_LONG   0x040 0x8d006d91
+      WRITE_LONG   0x044 0x53e8d44d
+      WRITE_LONG   0x048 0x8d003778
+      WRITE_LONG   0x04c 0x8d52d855
+      WRITE_LONG   0x050 0x8d50d445
+      WRITE_LONG   0x054 0xf7e8dc4d
+      WRITE_LONG   0x058 0x8bffd2b6
+      WRITE_LONG   0x05c 0xd0558d00
+      WRITE_LONG   0x060 0x1cb86852
+      WRITE_LONG   0x064 0xe85000b1
+      WRITE_LONG   0x068 0x0035fa03
+      WRITE_LONG   0x06c 0x8d0cc483
+      WRITE_LONG   0x070 0xb9e8d84d
+      WRITE_LONG   0x074 0x8d003777
+      WRITE_LONG   0x078 0xb1e8d44d
+      WRITE_LONG   0x07c 0x8b003777
+      WRITE_LONG   0x080 0x05ebd045
+      WRITE_LONG   0x084 0xffffffb8
+      WRITE_LONG   0x088 0x5de58bff
+      WRITE_LONG   0x08c 0x000004c2
+      WRITE_LONG   0x090 0x00000000
+      WRITE_LONG   0x094 0x00000000
+      WRITE_LONG   0x098 0x00000000
+      WRITE_LONG   0x09c 0x00000000
+      WRITE_LONG   0x0a0 0x00000000
+      WRITE_LONG   0x0a4 0x00000000
+      WRITE_LONG   0x0a8 0x00000000
+      WRITE_LONG   0x0ac 0x00000000
+      WRITE_LONG   0x0b0 0x41520000
+      WRITE_LONG   0x0b4 0x45544543
+      WRITE_LONG   0x0b8 0x53005458
+      WRITE_LONG   0x0bc 0x45525254
+      WRITE_SHORT  0x0c0 0x0046
+    END
+
+    OUTER_PATCH_SAVE orig_bytes_5 ~~ BEGIN
+      INSERT_BYTES 0x000 0x1f
+      WRITE_LONG   0x000 0xff78bd83
+      WRITE_LONG   0x004 0x7706ffff
+      WRITE_LONG   0x008 0x78958b4c
+      WRITE_LONG   0x00c 0xffffffff
+      WRITE_LONG   0x010 0x44589524
+      WRITE_LONG   0x014 0x45c70073
+      WRITE_LONG   0x018 0x001c1980
+      WRITE_SHORT  0x01c 0xeb00
+      WRITE_BYTE   0x01e 0x5f
+    END
+
+    OUTER_PATCH_SAVE patch_bytes_5 ~~ BEGIN
+      INSERT_BYTES 0x000 0x1f
+      WRITE_LONG   0x000 0x04f98341
+      WRITE_LONG   0x004 0xc1830575
+      WRITE_LONG   0x008 0x8308eb02
+      WRITE_LONG   0x00c 0x037506f9
+      WRITE_LONG   0x010 0x5102e983
+      WRITE_LONG   0x014 0xfa4d07e8
+      WRITE_LONG   0x018 0x804589ff
+      WRITE_SHORT  0x01c 0x60eb
+      WRITE_BYTE   0x01e 0x90
+    END
+
+    OUTER_PATCH_SAVE orig_bytes_6 ~~ BEGIN
+      INSERT_BYTES 0x000 0x12
+      WRITE_LONG   0x000 0xfcd8bd81
+      WRITE_LONG   0x004 0x0098ffff
+      WRITE_LONG   0x008 0x75770000
+      WRITE_LONG   0x00c 0xfcd8958b
+      WRITE_SHORT  0x010 0xffff
+    END
+
+    OUTER_PATCH_SAVE patch_bytes_6 ~~ BEGIN
+      INSERT_BYTES 0x000 0x12
+      WRITE_LONG   0x000 0x4f02e852
+      WRITE_LONG   0x004 0x8589ffef
+      WRITE_LONG   0x008 0xffffff78
+      WRITE_LONG   0x00c 0x90907deb
+      WRITE_SHORT  0x010 0x9090
+    END
+  END
+END
+
+ACTION_IF tbex < 2 BEGIN
+  COPY ~bgmain.exe~ ~bgmain.exe~
+    PATCH_IF tbex = 1 BEGIN
+      PATCH_PRINT ~Skipping race strref patching (TobEx already does this).~
+    END ELSE BEGIN
+      READ_ASCII 0x0b27c9 target_bytes_1 ELSE 0 (0xc)
+      READ_ASCII 0x2a7bf1 target_bytes_2 ELSE 0 (0x12)
+      READ_ASCII 0x2d8fa6 target_bytes_3 ELSE 0 (0xe)
+      READ_ASCII 0x2d909d target_bytes_4 ELSE 0 (0xc2)
+      READ_ASCII 0x33437d target_bytes_5 ELSE 0 (0x1f)
+      READ_ASCII 0x3e4195 target_bytes_6 ELSE 0 (0x12)
+      PATCH_IF (~%target_bytes_1%~ STRING_EQUAL ~%orig_bytes_1%~)
+        AND (~%target_bytes_2%~ STRING_EQUAL ~%orig_bytes_2%~)
+        AND (~%target_bytes_3%~ STRING_EQUAL ~%orig_bytes_3%~)
+        AND (~%target_bytes_4%~ STRING_EQUAL ~%orig_bytes_4%~)
+        AND (~%target_bytes_5%~ STRING_EQUAL ~%orig_bytes_5%~)
+        AND (~%target_bytes_6%~ STRING_EQUAL ~%orig_bytes_6%~)
+      THEN BEGIN
+        PATCH_PRINT ~Patching .exe to externalize race strrefs ...~
+        WRITE_ASCIIE 0x000b27c9 ~%patch_bytes_1%~ (0xc)
+        WRITE_ASCIIE 0x002a7bf1 ~%patch_bytes_2%~ (0x12)
+        WRITE_ASCIIE 0x002d8fa6 ~%patch_bytes_3%~ (0xe)
+        WRITE_ASCIIE 0x002d909d ~%patch_bytes_4%~ (0xc2)
+        WRITE_ASCIIE 0x0033437d ~%patch_bytes_5%~ (0x1f)
+        WRITE_ASCIIE 0x003e4195 ~%patch_bytes_6%~ (0x12)
+      END ELSE PATCH_PRINT ~Target bytes not found for .exe race strref patch.~
+    END
+    READ_BYTE 0x41ae67 b1
+    READ_LONG 0x41ae68 b2
+    READ_BYTE 0x41ae86 b3
+    READ_LONG 0x41ae87 b4
+    PATCH_IF (b1 = 0xe9) AND (b2 = 0x1ec) AND (b3 = 0xe9) AND (b4 = 0x1cd) BEGIN
+      PATCH_PRINT ~Patching .exe to enable creature paperdolls ...~
+      WRITE_BYTE 0x41ae67 0xeb
+      WRITE_LONG 0x41ae68 0x90909042
+      WRITE_BYTE 0x41ae86 0xeb
+      WRITE_LONG 0x41ae87 0x90909023
+    END ELSE BEGIN
+      PATCH_PRINT ~Target bytes not found for .exe paperdoll patch.~
+    END
+  BUT_ONLY
+END
+
+//##################################################
+// Copy new material
+//##################################################
+//Spells
+  COPY ~dq/spells/yselmin.spl~ ~override~
+  SAY NAME1 @149
+
+  COPY ~dq/spells/ysghoul.spl~ ~override~
+
+//##################################################
+//Cutscenes
+//Cerendor Hold
+	COMPILE ~dq/cutscenes/yscutgte.baf~
+	COMPILE ~dq/cutscenes/yscut01.baf~
+	COMPILE ~dq/cutscenes/yscut02.baf~
+	COMPILE ~dq/cutscenes/yscut03.baf~
+
+//##################################################
+//Bams
+	COPY ~dq/bams~ ~override~
+
+//##################################################
+//Music
+	COPY ~dq/music/ysblank.mus~ ~music~
+	COPY_EXISTING ~songlist.2da~ ~override~
+	SET_2DA_ENTRY 0 2 3 ~YSBLANK.MUS~
+
+//##################################################
+//Sounds
+	COPY ~dq/sounds~ ~override~
+
+//##################################################
+//Ghoul portrait
+  COPY ~dq/bmp~ ~override~
+
+//##################################################
+//2da
+	COPY_EXISTING ~itemdial.2da~ ~override~
+	BUT_ONLY_IF_IT_CHANGES
+	APPEND ~itemdial.2da~ ~YSPRPT     4978  YSPRPT~
+	              UNLESS ~YSPRPT        4978   YSPRPT~
+	APPEND ~itemdial.2da~ ~YSLABRD    4978  YSLABRD~
+	              UNLESS ~YSLABRD       4978   YSLABRD~
+
+
+  ACTION_IF NOT FILE_EXISTS_IN_GAME ~racetext.2da~ BEGIN
+    COPY ~dq/2da/racetext.2da~ ~override~
+  END ELSE BEGIN
+    APPEND ~racetext.2da~ ~108  15946~ UNLESS ~^108~
+  END
+
+//##################################################
+//Items
+//Cloudpeaks
+	COPY ~dq/items/yslotus.itm~ ~override/yslotus.itm~
+	SAY NAME2 @130
+	SAY IDENTIFIED_DESC @131
+
+//Athkatla
+	COPY ~dq/items/ysletel.itm~ ~override/ysletel.itm~
+	SAY NAME1 @102
+	SAY NAME2 @103
+	SAY UNIDENTIFIED_DESC @104
+	SAY IDENTIFIED_DESC @105
+	COPY ~dq/items/yspotn01.itm~ ~override/yspotn01.itm~
+	SAY NAME2 @116
+	SAY IDENTIFIED_DESC @115
+	COPY ~dq/items/yspotn02.itm~ ~override/yspotn02.itm~
+	SAY NAME2 @120
+	SAY IDENTIFIED_DESC @121
+	COPY ~dq/items/ysdhkey.itm~ ~override/ysdhkey.itm~
+	SAY NAME1 @106
+	SAY NAME2 @107
+	SAY UNIDENTIFIED_DESC @108
+	SAY IDENTIFIED_DESC @100
+	COPY ~dq/items/ysepring.itm~ ~override/ysepring.itm~
+	SAY NAME2 @128
+	SAY IDENTIFIED_DESC @129
+	COPY ~dq/items/ysgldag.itm~ ~override/ysgldag.itm~
+	SAY NAME2 @137
+	SAY IDENTIFIED_DESC @138
+	COPY ~dq/items/ysprpt.itm~ ~override/ysprpt.itm~
+	SAY NAME2 @144
+	SAY IDENTIFIED_DESC @145
+	COPY ~dq/items/ysvmpbld.itm~ ~override/ysvmpbld.itm~
+	SAY NAME2 @122
+	SAY IDENTIFIED_DESC @123
+
+//Porthpentyrch
+	COPY ~dq/items/yslabrd.itm~ ~override/yslabrd.itm~
+	SAY NAME2 @171
+	SAY IDENTIFIED_DESC @171
+	COPY ~dq/items/yscnote.itm~ ~override/yscnote.itm~
+	SAY NAME2 @169
+	SAY IDENTIFIED_DESC @170
+	COPY ~dq/items/yspkhmr.itm~ ~override/yspkhmr.itm~
+	SAY NAME1 @110
+	SAY NAME2 @111
+	SAY UNIDENTIFIED_DESC @112
+	SAY IDENTIFIED_DESC @113
+	COPY ~dq/items/yslhskey.itm~ ~override/yslhskey.itm~
+	SAY NAME1 @107
+	SAY NAME2 @107
+	SAY UNIDENTIFIED_DESC @114
+	SAY IDENTIFIED_DESC @114
+	COPY ~dq/items/ystankey.itm~ ~override/ystankey.itm~
+	SAY NAME1 @107
+	SAY NAME2 @107
+	SAY UNIDENTIFIED_DESC @119
+	SAY IDENTIFIED_DESC @119
+	COPY ~dq/items/ysdltkey.itm~ ~override/ysdltkey.itm~
+	SAY NAME1 @107
+	SAY NAME2 @107
+	SAY UNIDENTIFIED_DESC @132
+	SAY IDENTIFIED_DESC @132
+	COPY ~dq/items/ysorb.itm~ ~override/ysorb.itm~
+	SAY NAME2 @133
+	SAY IDENTIFIED_DESC @134
+  COPY ~dq/items/ysghoul1.itm~ ~override/ysghoul1.itm~
+  SAY 0x1fe @148
+  SAY NAME1 @146
+  SAY NAME2 @146
+  SAY UNIDENTIFIED_DESC @147
+
+//Cerendor Hold
+	COPY ~dq/items/yschdnky.itm~ ~override/yschdnky.itm~
+	SAY NAME2 @107
+	SAY IDENTIFIED_DESC @126
+	COPY ~dq/items/yscelkey.itm~ ~override/yscelkey.itm~
+	SAY NAME2 @107
+	SAY IDENTIFIED_DESC @127
+
+//Imradim
+	COPY ~dq/items/ysteye.itm~ ~override/ysteye.itm~
+	SAY NAME2 @135
+	SAY IDENTIFIED_DESC @136
+	COPY ~dq/items/yscpem.itm~ ~override/yscpem.itm~
+	SAY NAME2 @139
+	SAY IDENTIFIED_DESC @140
+	COPY ~dq/items/yscpfl.itm~ ~override/yscpfl.itm~
+	SAY NAME2 @139
+	SAY IDENTIFIED_DESC @141
+	COPY ~dq/items/yssfrb.itm~ ~override/yssfrb.itm~
+	SAY NAME2 @142
+	SAY IDENTIFIED_DESC @143
+
+//##################################################
+//Dialog files
+//Cloudpeaks
+	COMPILE ~dq/dialog/ysblgrd.d~
+	COMPILE ~dq/dialog/ysblrwz.d~
+	COMPILE ~dq/dialog/ysblmr.d~
+
+//Trademeet
+	COMPILE ~dq/dialog/yselm01.d~
+
+//Athkatla
+	COMPILE ~dq/dialog/ysltor.d~
+	COMPILE ~dq/dialog/ysbran.d~
+	COMPILE ~dq/dialog/ysceinwn.d~
+	COMPILE ~dq/dialog/ysgaelie.d~
+	COMPILE ~dq/dialog/yscwlwiz.d~
+	COMPILE ~dq/dialog/ystelthe.d~
+	COMPILE ~dq/dialog/ysaella.d~
+	COMPILE ~dq/dialog/yselpara.d~
+	COMPILE ~dq/dialog/yssanob1.d~
+	COMPILE ~dq/dialog/yssanob2.d~
+	COMPILE ~dq/dialog/ysapopf.d~
+	COMPILE ~dq/dialog/ysapopm.d~
+	COMPILE ~dq/dialog/ysmcook.d~
+	COMPILE ~dq/dialog/ysoengus.d~
+	COMPILE ~dq/dialog/yslugh.d~
+	COMPILE ~dq/dialog/yshansol.d~
+	COMPILE ~dq/dialog/ysstbboy.d~
+	COMPILE ~dq/dialog/yskeldrl.d~
+	COMPILE ~dq/dialog/ysgibmel.d~
+	COMPILE ~dq/dialog/yselcol2.d~
+	COMPILE ~dq/dialog/ysgargel.d~
+	COMPILE ~dq/dialog/ysanghrd.d~
+	COMPILE ~dq/dialog/ysdrosig.d~
+	COMPILE ~dq/dialog/ystiggrd.d~
+	COMPILE ~dq/dialog/ystignch.d~
+	COMPILE ~dq/dialog/yscolla.d~
+	COMPILE ~dq/dialog/ysserv.d~
+	COMPILE ~dq/dialog/ysbengch.d~
+	COMPILE ~dq/dialog/ysprpt.d~
+	COMPILE ~dq/dialog/ystigres.d~
+
+//Porthpentyrch
+	COMPILE ~dq/dialog/ysboydlg.d~
+	COMPILE ~dq/dialog/ysgrldlg.d~
+	COMPILE ~dq/dialog/ysmandlg.d~
+	COMPILE ~dq/dialog/yswmndlg.d~
+	COMPILE ~dq/dialog/yswmnres.d~
+	COMPILE ~dq/dialog/ysmenres.d~
+	COMPILE ~dq/dialog/bwfishw.d~
+	COMPILE ~dq/dialog/bfisher2.d~
+	COMPILE ~dq/dialog/ysmtown.d~
+	COMPILE ~dq/dialog/ysftown.d~
+	COMPILE ~dq/dialog/ystanarr.d~
+	COMPILE ~dq/dialog/yslkeep.d~
+	COMPILE ~dq/dialog/ysgensto.d~
+	COMPILE ~dq/dialog/ysarmsto.d~
+	COMPILE ~dq/dialog/ysaine.d~
+	COMPILE ~dq/dialog/ysderv.d~
+	COMPILE ~dq/dialog/ysmorv.d~
+	COMPILE ~dq/dialog/ysmorvr.d~
+	COMPILE ~dq/dialog/ysgaol.d~
+	COMPILE ~dq/dialog/yswtchmn.d~
+	COMPILE ~dq/dialog/ysdwfknt.d~
+	COMPILE ~dq/dialog/ysdwflrd.d~
+	COMPILE ~dq/dialog/yslabrd.d~
+
+//Cerendor Hold
+	COMPILE ~dq/dialog/ysblksto.d~
+	COMPILE ~dq/dialog/yshhappr.d~
+	COMPILE ~dq/dialog/yscvmstr.d~
+	COMPILE ~dq/dialog/yschearl.d~
+	COMPILE ~dq/dialog/yscgroad.d~
+	COMPILE ~dq/dialog/yscgtowr.d~
+	COMPILE ~dq/dialog/yschdg.d~
+	COMPILE ~dq/dialog/yscrnbl.d~
+	COMPILE ~dq/dialog/ysserj.d~
+	COMPILE ~dq/dialog/yschcapt.d~
+	COMPILE ~dq/dialog/ysailoth.d~
+	COMPILE ~dq/dialog/yschclr.d~
+	COMPILE ~dq/dialog/yschcom.d~
+	COMPILE ~dq/dialog/yschnob.d~
+	COMPILE ~dq/dialog/yschbnd.d~
+	COMPILE ~dq/dialog/yscado.d~
+	COMPILE ~dq/dialog/yshldgrd.d~
+	COMPILE ~dq/dialog/ysredgrd.d~
+	COMPILE ~dq/dialog/yscook1.d~
+	COMPILE ~dq/dialog/yscook2.d~
+	COMPILE ~dq/dialog/yscntwul.d~
+
+//North Forest and the Forest of Tethyr
+	COMPILE ~dq/dialog/yskalun.d~
+	COMPILE ~dq/dialog/yswdman.d~
+
+//Imradim
+	COMPILE ~dq/dialog/yspashan.d~
+	COMPILE ~dq/dialog/ysaiesha.d~
+	COMPILE ~dq/dialog/ysadara.d~
+	COMPILE ~dq/dialog/yskhoury.d~
+	COMPILE ~dq/dialog/ysnuri.d~
+	COMPILE ~dq/dialog/ysgadil.d~
+	COMPILE ~dq/dialog/ystahir.d~
+	COMPILE ~dq/dialog/yscdmer.d~
+	COMPILE ~dq/dialog/yscdpop.d~
+	COMPILE ~dq/dialog/yscddw.d~
+	COMPILE ~dq/dialog/yscdcg.d~
+	COMPILE ~dq/dialog/yskarim.d~
+	COMPILE ~dq/dialog/ysjehan.d~
+	COMPILE ~dq/dialog/ysmuktar.d~
+	COMPILE ~dq/dialog/ysharem.d~
+	COMPILE ~dq/dialog/yseunch.d~
+	COMPILE ~dq/dialog/ysyasar.d~
+	COMPILE ~dq/dialog/ysqadir.d~
+	COMPILE ~dq/dialog/yscadfan.d~
+	COMPILE ~dq/dialog/ysfirdos.d~
+	COMPILE ~dq/dialog/ysain.d~
+	COMPILE ~dq/dialog/ysgivon.d~
+	COMPILE ~dq/dialog/yswermr.d~
+	COMPILE ~dq/dialog/ysbasima.d~
+	COMPILE ~dq/dialog/ysjalil.d~
+	COMPILE ~dq/dialog/ysakil.d~
+	COMPILE ~dq/dialog/yslevon.d~
+	COMPILE ~dq/dialog/ysakilfr.d~
+	COMPILE ~dq/dialog/ysrimon.d~
+	COMPILE ~dq/dialog/ysakilah.d~
+
+//##################################################
+//Areas
+//Cloudpeak Mountains
+	COPY ~dq/areas/cloudpeaks/.~ ~override/.~
+	COPY ~dq/areas/cloudpeaks/ys0370/.~ ~override/.~
+	SAY 0x11e8 @404
+
+//Athkatla
+	COPY ~dq/areas/Athkatla/.~ ~override/.~
+
+//Porthpentyrch
+	COPY ~dq/areas/porthpentyrch/.~ ~override/.~
+	COPY ~dq/areas/porthpentyrch/ys0030/.~ ~override/.~
+	SAY 0x308 @218
+	COPY ~dq/areas/porthpentyrch/ys1000/.~ ~override/.~
+	SAY 0x4054 @400
+	SAY 0x4118 @401
+	SAY 0x41dc @402
+	COPY ~dq/areas/porthpentyrch/ys1001/.~ ~override/.~
+	SAY 0x4e24 @400
+	SAY 0x4ee8 @401
+	SAY 0x4fac @402
+
+//Cerendor Hold
+	COPY ~dq/areas/Cerendor Hold/.~ ~override/.~
+
+//Imradim
+	COPY ~dq/areas/Calim Desert/.~ ~override/.~
+	COPY ~dq/areas/Calim Desert/cave/.~ ~override/.~
+	SAY 0x664 @411
+	SAY 0x728 @410
+
+//##################################################
+//Actors
+//Cloudpeaks
+	COPY ~dq/cre/ysblgrd.cre~ ~override/ysblgrd.cre~
+	SAY NAME1 @251
+	SAY NAME2 @251
+	COPY ~dq/cre/ysblrwz.cre~ ~override/ysblrwz.cre~
+	SAY NAME1 @252
+	SAY NAME2 @252
+	COPY ~dq/cre/ysblmr.cre~ ~override/ysblmr.cre~
+	SAY NAME1 @253
+	SAY NAME2 @253
+
+//Athkatla
+	COPY ~dq/cre/athkatla/.~ ~override/.~
+	COPY ~dq/cre/ysltor.cre~ ~override/ysltor.cre~
+	SAY NAME1 @200
+	SAY NAME2 @201
+	COPY ~dq/cre/ysceinwn.cre~ ~override/ysceinwn.cre~
+	SAY NAME1 @205
+	SAY NAME2 @206
+	COPY ~dq/cre/ysgaelie.cre~ ~override/ysgaelie.cre~
+	SAY NAME1 @207
+	SAY NAME2 @212
+	COPY ~dq/cre/yscwlwiz.cre~ ~override/yscwlwiz.cre~
+	SAY NAME1 @208
+	SAY NAME2 @208
+	COPY ~dq/cre/ystelthe.cre~ ~override/ystelthe.cre~
+	SAY NAME1 @204
+	SAY NAME2 @204
+	COPY ~dq/cre/yschvam.cre~ ~override/yschvam.cre~
+	SAY NAME1 @213
+	SAY NAME2 @213
+	COPY ~dq/cre/ysaella.cre~ ~override/ysaella.cre~
+	SAY NAME1 @246
+	SAY NAME2 @246
+	COPY ~dq/cre/yselpara.cre~ ~override/yselpara.cre~
+	SAY NAME1 @247
+	SAY NAME2 @247
+	COPY ~dq/cre/ysmcook.cre~ ~override/ysmcook.cre~
+	SAY NAME1 @245
+	SAY NAME2 @245
+	COPY ~dq/cre/ysoengus.cre~ ~override/ysoengus.cre~
+	SAY NAME1 @248
+	SAY NAME2 @248
+	COPY ~dq/cre/yslugh.cre~ ~override/yslugh.cre~
+	SAY NAME1 @255
+	SAY NAME2 @255
+	COPY ~dq/cre/yssthief.cre~ ~override/yssthief.cre~
+	COPY ~dq/cre/yshansol.cre~ ~override/yshansol.cre~
+	SAY NAME1 @249
+	SAY NAME2 @249
+	COPY ~dq/cre/ysstbboy.cre~ ~override/ysstbboy.cre~
+	SAY NAME1 @250
+	SAY NAME2 @250
+	COPY ~dq/cre/yskeldrl.cre~ ~override/yskeldrl.cre~
+	SAY NAME1 @256
+	SAY NAME2 @256
+	COPY ~dq/cre/ysgibmel.cre~ ~override/ysgibmel.cre~
+	SAY NAME1 @258
+	SAY NAME2 @258
+	COPY ~dq/cre/yselcol1.cre~ ~override/yselcol1.cre~
+	SAY NAME1 @259
+	SAY NAME2 @259
+	COPY ~dq/cre/yselcol2.cre~ ~override/yselcol2.cre~
+	SAY NAME1 @259
+	SAY NAME2 @259
+	COPY ~dq/cre/ysgargel.cre~ ~override/ysgargel.cre~
+	SAY NAME1 @244
+	SAY NAME2 @244
+	COPY ~dq/cre/ysanghrd.cre~ ~override/ysanghrd.cre~
+	SAY NAME1 @224
+	SAY NAME2 @224
+	COPY ~dq/cre/ysdrosig.cre~ ~override/ysdrosig.cre~
+	SAY NAME1 @260
+	SAY NAME2 @260
+	COPY ~dq/cre/ystiggrd.cre~ ~override/ystiggrd.cre~
+	SAY NAME1 @273
+	SAY NAME2 @273
+	COPY ~dq/cre/ystignch.cre~ ~override/ystignch.cre~
+	SAY NAME1 @271
+	SAY NAME2 @271
+	COPY ~dq/cre/yscolla.cre~ ~override/yscolla.cre~
+	SAY NAME1 @272
+	SAY NAME2 @272
+	COPY ~dq/cre/ysbran.cre~ ~override/ysbran.cre~
+	SAY NAME1 @290
+	SAY NAME2 @290
+	COPY ~dq/cre/ysadag.cre~ ~override/ysadag.cre~
+	SAY NAME1 @291
+	SAY NAME2 @291
+	COPY ~dq/cre/ysfserv.cre~ ~override/ysfserv.cre~
+	COPY ~dq/cre/ysmserv.cre~ ~override/ysmserv.cre~
+	COPY ~dq/cre/yscdfsrv.cre~ ~override/yscdfsrv.cre~
+	COPY ~dq/cre/yscdmsrv.cre~ ~override/yscdmsrv.cre~
+	COPY ~dq/cre/ysbengch.cre~ ~override/ysbengch.cre~
+	SAY NAME1 @277
+	SAY NAME2 @277
+	COPY ~dq/cre/ysatgrd.cre~ ~override/ysatgrd.cre~
+	SAY NAME1 @230
+	SAY NAME2 @230
+	COPY ~dq/cre/ysatbow.cre~ ~override/ysatbow.cre~
+	SAY NAME1 @230
+	SAY NAME2 @230
+	COPY ~dq/cre/ystres1.cre~ ~override/ystres1.cre~
+	COPY ~dq/cre/ystres2.cre~ ~override/ystres2.cre~
+	COPY ~dq/cre/ystres3.cre~ ~override/ystres3.cre~
+	COPY ~dq/cre/ystres4.cre~ ~override/ystres4.cre~
+	COPY ~dq/cre/ysbehol1.cre~ ~override/ysbehol1.cre~
+	COPY ~dq/cre/ysbehol2.cre~ ~override/ysbehol2.cre~
+
+//Trademeet
+	COPY ~dq/cre/yselm01.cre~ ~override/yselm01.cre~
+
+//Porthpentyrch
+	COPY ~dq/cre/ppt/.~ ~override/.~
+	COPY ~dq/cre/ysogrema.cre~ ~override/ysogrema.cre~
+	COPY ~dq/bcs/ysogmage.bcs~ ~override/ysogmage.bcs~
+	COPY ~dq/cre/ystanarr.cre~ ~override/ystanarr.cre~
+	COPY ~dq/cre/yslkeep.cre~ ~override/yslkeep.cre~
+	SAY NAME1 @202
+	SAY NAME2 @203
+	COPY ~dq/cre/ysgensto.cre~ ~override/ysgensto.cre~
+	SAY NAME1 @215
+	SAY NAME2 @215
+	COPY ~dq/cre/ysarmsto.cre~ ~override/ysarmsto.cre~
+	SAY NAME1 @214
+	SAY NAME2 @214
+	COPY ~dq/cre/ysaine.cre~ ~override/ysaine.cre~
+	SAY NAME1 @239
+	SAY NAME2 @239
+	COPY ~dq/cre/ysderv.cre~ ~override/ysderv.cre~
+	SAY NAME1 @238
+	SAY NAME2 @238
+	COPY ~dq/cre/ysmorv.cre~ ~override/ysmorv.cre~
+	SAY NAME1 @241
+	SAY NAME2 @241
+	COPY ~dq/cre/ysgaol.cre~ ~override/ysgaol.cre~
+	SAY NAME1 @243
+	SAY NAME2 @243
+	COPY ~dq/cre/yswtchmn.cre~ ~override/yswtchmn.cre~
+	SAY NAME1 @257
+	SAY NAME2 @257
+	COPY ~dq/cre/ysdwfknt.cre~ ~override/ysdwfknt.cre~
+	SAY NAME1 @261
+	SAY NAME2 @261
+	COPY ~dq/cre/ysdwfgrd.cre~ ~override/ysdwfgrd.cre~
+	SAY NAME1 @299
+	SAY NAME2 @299
+	COPY ~dq/cre/ysdwfgr2.cre~ ~override/ysdwfgr2.cre~
+	SAY NAME1 @299
+	SAY NAME2 @299
+	COPY ~dq/cre/ysdwflrd.cre~ ~override/ysdwflrd.cre~
+	SAY NAME1 @262
+	SAY NAME2 @262
+	COPY ~dq/cre/ysdldop.cre~ ~override/ysdldop.cre~
+	SAY NAME1 @262
+	SAY NAME2 @262
+	COPY ~dq/cre/ysgrmarc.cre~ ~override/ysgrmarc.cre~
+
+//Cerendor Hold
+	COPY ~dq/cre/cerendor/.~ ~override/.~
+	COPY ~dq/cre/ysblksto.cre~ ~override/ysblksto.cre~
+	SAY NAME1 @222
+	SAY NAME2 @222
+	COPY ~dq/cre/ysgalid.cre~ ~override/ysgalid.cre~
+	SAY NAME1 @225
+	SAY NAME2 @225
+	COPY ~dq/cre/yscvmstr.cre~ ~override/yscvmstr.cre~
+	SAY NAME1 @223
+	SAY NAME2 @223
+	COPY ~dq/cre/yschearl.cre~ ~override/yschearl.cre~
+	SAY NAME1 @237
+	SAY NAME2 @237
+	COPY ~dq/cre/yscntwul.cre~ ~override/yscntwul.cre~
+	SAY NAME1 @240
+	SAY NAME2 @240
+	COPY ~dq/cre/yscgroad.cre~ ~override/yscgroad.cre~
+	SAY NAME1 @219
+	SAY NAME2 @219
+	COPY ~dq/cre/ysgengrd.cre~ ~override/ysgengrd.cre~
+	SAY NAME1 @221
+	SAY NAME2 @221
+	COPY ~dq/cre/yscgtowr.cre~ ~override/yscgtowr.cre~
+	SAY NAME1 @220
+	SAY NAME2 @220
+	COPY ~dq/cre/yschdg.cre~ ~override/yschdg.cre~
+	SAY NAME1 @226
+	SAY NAME2 @226
+	COPY ~dq/cre/yscrnbl.cre~ ~override/yscrnbl.cre~
+	COPY ~dq/cre/yscook1.cre~ ~override/yscook1.cre~
+	COPY ~dq/cre/yscook2.cre~ ~override/yscook2.cre~
+	COPY ~dq/cre/ysserj.cre~ ~override/ysserj.cre~
+	SAY NAME1 @227
+	SAY NAME2 @227
+	COPY ~dq/cre/yschcapt.cre~ ~override/yschcapt.cre~
+	SAY NAME1 @234
+	SAY NAME2 @234
+	COPY ~dq/cre/yshldgrd.cre~ ~override/yshldgrd.cre~
+	SAY NAME1 @235
+	SAY NAME2 @235
+	COPY ~dq/cre/ysredgrd.cre~ ~override/ysredgrd.cre~
+	SAY NAME1 @230
+	SAY NAME2 @230
+	COPY ~dq/cre/yscell1.cre~ ~override/yscell1.cre~
+	SAY NAME1 @220
+	SAY NAME2 @221
+	COPY ~dq/cre/yscell2.cre~ ~override/yscell2.cre~
+	SAY NAME1 @220
+	SAY NAME2 @221
+	COPY ~dq/cre/yscell3.cre~ ~override/yscell3.cre~
+	SAY NAME1 @220
+	SAY NAME2 @221
+	COPY ~dq/cre/yscell4.cre~ ~override/yscell4.cre~
+	SAY NAME1 @220
+	SAY NAME2 @221
+	COPY ~dq/cre/yscell5.cre~ ~override/yscell5.cre~
+	SAY NAME1 @220
+	SAY NAME2 @221
+	COPY ~dq/cre/ysredwiz.cre~ ~override/ysredwiz.cre~
+	SAY NAME1 @228
+	SAY NAME2 @228
+	COPY ~dq/cre/ysailoth.cre~ ~override/ysailoth.cre~
+	SAY NAME1 @229
+	SAY NAME2 @229
+	COPY ~dq/cre/yschclr.cre~ ~override/yschclr.cre~
+	SAY NAME1 @233
+	SAY NAME2 @233
+	COPY ~dq/cre/yschbnd.cre~ ~override/yschbnd.cre~
+	SAY NAME1 @236
+	SAY NAME2 @236
+	COPY ~dq/cre/yscado.cre~ ~override/yscado.cre~
+	SAY NAME1 @289
+	SAY NAME2 @289
+
+//North Forest and the Forest of Tethyr
+	COPY ~dq/cre/yskalun.cre~ ~override/yskalun.cre~
+	SAY NAME1 @210
+	SAY NAME2 @211
+	COPY ~dq/cre/yswdman.cre~ ~override/yswdman.cre~
+	SAY NAME1 @209
+	SAY NAME2 @209
+
+//Imradim
+	COPY ~dq/cre/imradim/.~ ~override/.~
+	COPY ~dq/cre/yspashan.cre~ ~override/yspashan.cre~
+	SAY NAME1 @263
+	SAY NAME2 @263
+	COPY ~dq/cre/ysaiesha.cre~ ~override/ysaiesha.cre~
+	SAY NAME1 @264
+	SAY NAME2 @264
+	COPY ~dq/cre/ysadara.cre~ ~override/ysadara.cre~
+	SAY NAME1 @268
+	SAY NAME2 @268
+	COPY ~dq/cre/yskhoury.cre~ ~override/yskhoury.cre~
+	SAY NAME1 @265
+	SAY NAME2 @265
+	COPY ~dq/cre/ysnuri.cre~ ~override/ysnuri.cre~
+	SAY NAME1 @266
+	SAY NAME2 @266
+	COPY ~dq/cre/ysgadil.cre~ ~override/ysgadil.cre~
+	SAY NAME1 @267
+	SAY NAME2 @267
+	COPY ~dq/cre/ystahir.cre~ ~override/ystahir.cre~
+	SAY NAME1 @269
+	SAY NAME2 @269
+	COPY ~dq/cre/yscdmer1.cre~ ~override/yscdmer1.cre~
+	SAY NAME1 @270
+	SAY NAME2 @270
+	COPY ~dq/cre/yscdmer2.cre~ ~override/yscdmer2.cre~
+	SAY NAME1 @270
+	SAY NAME2 @270
+	COPY ~dq/cre/yscdmer3.cre~ ~override/yscdmer3.cre~
+	SAY NAME1 @270
+	SAY NAME2 @270
+	COPY ~dq/cre/imradim/yscddwm1.cre~ ~override/yscddwm1.cre~
+	SAY NAME1 @274
+	SAY NAME2 @274
+	COPY ~dq/cre/imradim/yscddwm2.cre~ ~override/yscddwm2.cre~
+	SAY NAME1 @274
+	SAY NAME2 @274
+	COPY ~dq/cre/imradim/yscddwf1.cre~ ~override/yscddwf1.cre~
+	SAY NAME1 @274
+	SAY NAME2 @274
+	COPY ~dq/cre/yscdcook.cre~ ~override/yscdcook.cre~
+	SAY NAME1 @275
+	SAY NAME2 @275
+	COPY ~dq/cre/yscdcg.cre~ ~override/yscdcg.cre~
+	SAY NAME1 @276
+	SAY NAME2 @276
+	COPY ~dq/cre/yscdcg1.cre~ ~override/yscdcg1.cre~
+	SAY NAME1 @276
+	SAY NAME2 @276
+	COPY ~dq/cre/yscdcg2.cre~ ~override/yscdcg2.cre~
+	SAY NAME1 @276
+	SAY NAME2 @276
+	COPY ~dq/cre/yskarim.cre~ ~override/yskarim.cre~
+	SAY NAME1 @278
+	SAY NAME2 @278
+	COPY ~dq/cre/ysjehan.cre~ ~override/ysjehan.cre~
+	SAY NAME1 @279
+	SAY NAME2 @279
+	COPY ~dq/cre/ysmuktar.cre~ ~override/ysmuktar.cre~
+	SAY NAME1 @280
+	SAY NAME2 @280
+	COPY ~dq/cre/ysharem1.cre~ ~override/ysharem1.cre~
+	SAY NAME1 @281
+	SAY NAME2 @281
+	COPY ~dq/cre/yseunch.cre~ ~override/yseunch.cre~
+	SAY NAME1 @282
+	SAY NAME2 @282
+	COPY ~dq/cre/ysharem2.cre~ ~override/ysharem2.cre~
+	SAY NAME1 @281
+	SAY NAME2 @281
+	COPY ~dq/cre/ysyasar.cre~ ~override/ysyasar.cre~
+	SAY NAME1 @283
+	SAY NAME2 @283
+	COPY ~dq/cre/ysqadir.cre~ ~override/ysqadir.cre~
+	SAY NAME1 @284
+	SAY NAME2 @284
+	COPY ~dq/cre/yscadfan.cre~ ~override/yscadfan.cre~
+	SAY NAME1 @285
+	SAY NAME2 @285
+	COPY ~dq/cre/ysfirdos.cre~ ~override/ysfirdos.cre~
+	SAY NAME1 @286
+	SAY NAME2 @286
+	COPY ~dq/cre/ysain.cre~ ~override/ysain.cre~
+	SAY NAME1 @287
+	SAY NAME2 @287
+	COPY ~dq/cre/ysgivon.cre~ ~override/ysgivon.cre~
+	SAY NAME1 @288
+	SAY NAME2 @288
+	COPY ~dq/cre/ysbasima.cre~ ~override/ysbasima.cre~
+	SAY NAME1 @292
+	SAY NAME2 @292
+	COPY ~dq/cre/ysjalil.cre~ ~override/ysjalil.cre~
+	SAY NAME1 @293
+	SAY NAME2 @293
+	COPY ~dq/cre/yslevon.cre~ ~override/yslevon.cre~
+	SAY NAME1 @294
+	SAY NAME2 @294
+	COPY ~dq/cre/ysakil.cre~ ~override/ysakil.cre~
+	SAY NAME1 @295
+	SAY NAME2 @295
+	COPY ~dq/cre/ysakilfr.cre~ ~override/ysakilfr.cre~
+	SAY NAME1 @296
+	SAY NAME2 @296
+	COPY ~dq/cre/ysrimon.cre~ ~override/ysrimon.cre~
+	SAY NAME1 @297
+	SAY NAME2 @297
+	COPY ~dq/cre/yslevong.cre~ ~override/yslevong.cre~
+	COPY ~dq/cre/ysakilah.cre~ ~override/ysakilah.cre~
+	SAY NAME1 @298
+	SAY NAME2 @298
+
+//##################################################
+//Actor scripts
+//General
+	COMPILE ~dq/cre scripts/ysreact.baf~
+	COMPILE ~dq/cre scripts/yschild.baf~
+	COMPILE ~dq/cre scripts/ysmorale.baf~
+	COMPILE ~dq/cre scripts/ysstatic.baf~
+
+//Cloudpeaks
+	COMPILE ~dq/cre scripts/ysblgrd.baf~
+	COMPILE ~dq/cre scripts/ysblrwz.baf~
+	COMPILE ~dq/cre scripts/ysblmr.baf~
+
+//Trademeet
+	COMPILE ~dq/cre scripts/yselmov.baf~
+	COMPILE ~dq/cre scripts/yselm01.baf~
+
+//Athkatla
+	COMPILE ~dq/cre scripts/ysltor.baf~
+	COMPILE ~dq/cre scripts/ysbran.baf~
+	COMPILE ~dq/cre scripts/ysbehold.baf~
+	COMPILE ~dq/cre scripts/ysceinwn.baf~
+	COMPILE ~dq/cre scripts/ysgaelie.baf~
+	COMPILE ~dq/cre scripts/ystelthe.baf~
+	COMPILE ~dq/cre scripts/yscvam.baf~
+	COMPILE ~dq/cre scripts/ysaella.baf~
+	COMPILE ~dq/cre scripts/ysoengus.baf~
+	COMPILE ~dq/cre scripts/yslugh.baf~
+	COMPILE ~dq/cre scripts/yssthief.baf~
+	COMPILE ~dq/cre scripts/ysgargel.baf~
+	COMPILE ~dq/cre scripts/ysanghrd.baf~
+	COMPILE ~dq/cre scripts/ysbengch.baf~
+	COMPILE ~dq/cre scripts/ysatgrd.baf~
+	COMPILE ~dq/cre scripts/ysatbow.baf~
+	COMPILE ~dq/cre scripts/yselcol1.baf~
+	COMPILE ~dq/cre scripts/yselcol2.baf~
+
+//Portpentyrch
+	COMPILE ~dq/cre scripts/yspoprnd.baf~
+	COMPILE ~dq/cre scripts/ystanarr.baf~
+	COMPILE ~dq/cre scripts/ysdwfknt.baf~
+	COMPILE ~dq/cre scripts/ysdwflrd.baf~
+	COMPILE ~dq/cre scripts/ysdwfgrd.baf~
+
+//Cerendor Hold
+	COMPILE ~dq/cre scripts/ysgalid.baf~
+	COMPILE ~dq/cre scripts/yscgroad.baf~
+	COMPILE ~dq/cre scripts/ysgengrd.baf~
+	COMPILE ~dq/cre scripts/yscgtowr.baf~
+	COMPILE ~dq/cre scripts/yschdg.baf~
+	COMPILE ~dq/cre scripts/yscrnbl.baf~
+	COMPILE ~dq/cre scripts/yscrncon.baf~
+	COMPILE ~dq/cre scripts/ysserj.baf~
+	COMPILE ~dq/cre scripts/yshldgrd.baf~
+	COMPILE ~dq/cre scripts/ysredgrd.baf~
+	COMPILE ~dq/cre scripts/ysredwiz.baf~
+	COMPILE ~dq/cre scripts/ysailoth.baf~
+	COMPILE ~dq/cre scripts/yschnob.baf~
+	COMPILE ~dq/cre scripts/yschnob1.baf~
+	COMPILE ~dq/cre scripts/yschbnd.baf~
+	COMPILE ~dq/cre scripts/yschearl.baf~
+
+//North Forest and Forest of Tethyr
+	COMPILE ~dq/cre scripts/yskalun.baf~
+	EXTEND_BOTTOM ~hunter.bcs~ ~dq/cre scripts/hunter.baf~
+
+//Imradim
+	COMPILE ~dq/cre scripts/yscdpop.baf~
+	COMPILE ~dq/cre scripts/yscddw.baf~
+	COMPILE ~dq/cre scripts/yscdcg.baf~
+	COMPILE ~dq/cre scripts/yscdcg1.baf~
+	COMPILE ~dq/cre scripts/yscdcg2.baf~
+	COMPILE ~dq/cre scripts/ysfirdos.baf~
+	COMPILE ~dq/cre scripts/ysain.baf~
+	COMPILE ~dq/cre scripts/ysgivon.baf~
+	COMPILE ~dq/cre scripts/ysbasima.baf~
+	COMPILE ~dq/cre scripts/ysakil.baf~
+	COMPILE ~dq/cre scripts/ysakilfr.baf~
+	COMPILE ~dq/cre scripts/yslevon.baf~
+	COMPILE ~dq/cre scripts/yslevong.baf~
+
+//##################################################
+//Area scripts
+//Cloudpeaks
+	COMPILE ~dq/area scripts/ysblcv.baf~
+	COMPILE ~dq/area scripts/ys0370.baf~
+	COMPILE ~dq/area scripts/ys0370t1.baf~
+	COMPILE ~dq/area scripts/ys0370t2.baf~
+	COMPILE ~dq/area scripts/ys0370f1.baf~
+
+//Athkatla
+	COPY_EXISTING ~ar0305.are~ ~override~
+	WRITE_ASCII 0x94 ~ar0305~
+	COMPILE ~dq/area scripts/ar0305.baf~
+	COPY_EXISTING ~ar0306.are~ ~override~
+	WRITE_ASCII 0x94 ~ar0306~
+	COMPILE ~dq/area scripts/ar0306.baf~
+	COMPILE ~dq/area scripts/ys0390.baf~
+	COMPILE ~dq/area scripts/ys0401.baf~
+	COMPILE ~dq/area scripts/ys0405.baf~
+	COMPILE ~dq/area scripts/ys0383.baf~
+	COMPILE ~dq/area scripts/ys0407.baf~
+	COMPILE ~dq/area scripts/ys0407t1.baf~
+	COMPILE ~dq/area scripts/ys0408.baf~
+	COMPILE ~dq/area scripts/ys0409.baf~
+	COMPILE ~dq/area scripts/ys0430t1.baf~
+	COMPILE ~dq/area scripts/ys0431t1.baf~
+	COMPILE ~dq/area scripts/ys0431.baf~
+	EXTEND_BOTTOM ~ar0020.bcs~ ~dq/area scripts/ysar0020.baf~
+	EXTEND_TOP ~ar0709.bcs~ ~dq/area scripts/ysar0709.baf~
+	EXTEND_TOP ~ar1000.bcs~ ~dq/area scripts/ysar1000.baf~
+	EXTEND_TOP ~ar1002.bcs~ ~dq/area scripts/ysar1002.baf~
+	EXTEND_TOP ~ar0801.bcs~ ~dq/area scripts/ysar0801.baf~
+	EXTEND_TOP ~ar0808.bcs~ ~dq/area scripts/ysar0808.baf~
+	EXTEND_TOP ~ar0400.bcs~ ~dq/area scripts/ysar0400.baf~
+	EXTEND_TOP ~ar0300.bcs~ ~dq/area scripts/ysar0300.baf~
+
+//Trademeet
+	EXTEND_TOP ~ar2000.bcs~ ~dq/area scripts/ysar2000.baf~
+
+//Porthpentyrch
+	COMPILE ~dq/area scripts/ysdr0200.baf~
+	COMPILE ~dq/area scripts/ysdr0270.baf~
+	COMPILE ~dq/area scripts/ys0270t1.baf~
+	COMPILE ~dq/area scripts/ys0270t2.baf~
+	COMPILE ~dq/area scripts/ys0270t3.baf~
+	COMPILE ~dq/area scripts/ys0270.baf~
+	COMPILE ~dq/area scripts/ys1000.baf~
+	COMPILE ~dq/area scripts/ys1001.baf~
+	COMPILE ~dq/area scripts/yslhdoor.baf~
+	COMPILE ~dq/area scripts/ys0030.baf~
+	COMPILE ~dq/area scripts/ys0031.baf~
+	COMPILE ~dq/area scripts/ys0040.baf~
+	COMPILE ~dq/area scripts/ys0041.baf~
+	COMPILE ~dq/area scripts/ys0260in.baf~
+	COMPILE ~dq/area scripts/ys0260tp.baf~
+	COMPILE ~dq/area scripts/ys0161.baf~
+	COMPILE ~dq/area scripts/ys0200.baf~
+	COMPILE ~dq/area scripts/ys0200d1.baf~
+	COMPILE ~dq/area scripts/ys0200d2.baf~
+	COMPILE ~dq/area scripts/ys0200d3.baf~
+	COMPILE ~dq/area scripts/ys0200d4.baf~
+	COMPILE ~dq/area scripts/ys0200d5.baf~
+	COMPILE ~dq/area scripts/ys0200d6.baf~
+	COMPILE ~dq/area scripts/ys0200d8.baf~
+	COMPILE ~dq/area scripts/ys0200d9.baf~
+	COMPILE ~dq/area scripts/ys0200et.baf~
+	COMPILE ~dq/area scripts/ys0200ft.baf~
+	COMPILE ~dq/area scripts/ys0200t1.baf~
+	COMPILE ~dq/area scripts/ys0200t2.baf~
+	COMPILE ~dq/area scripts/ys0200t3.baf~
+	COMPILE ~dq/area scripts/ys0200t4.baf~
+	COMPILE ~dq/area scripts/ys020010.baf~
+	COMPILE ~dq/area scripts/ys020011.baf~
+	COMPILE ~dq/area scripts/ys020012.baf~
+  COMPILE ~dq/area scripts/ys0396.baf~
+	COMPILE ~dq/area scripts/ys0282.baf~
+
+//Cerendor Hold
+	COMPILE ~dq/area scripts/ys0330.baf~
+	COMPILE ~dq/area scripts/ys0330cv.baf~
+	COMPILE ~dq/area scripts/ys0350.baf~
+	COMPILE ~dq/area scripts/ys0360.baf~
+
+//North Forest
+	EXTEND_TOP ~ar1800.bcs~ ~dq/area scripts/ysar1800.baf~
+
+//Forest of Tethyr
+	EXTEND_TOP ~ar2600.bcs~ ~dq/area scripts/ysar2600.baf~
+
+//Spellhold
+	EXTEND_TOP ~ar1515.bcs~ ~dq/area scripts/ysar1515.baf~
+
+//Imradim
+	COMPILE ~dq/area scripts/ys0410.baf~
+	COMPILE ~dq/area scripts/ys0410t1.baf~
+	COMPILE ~dq/area scripts/ys0410t2.baf~
+	COMPILE ~dq/area scripts/ys0410t3.baf~
+	COMPILE ~dq/area scripts/ys0410t4.baf~
+	COMPILE ~dq/area scripts/ys0410t5.baf~
+	COMPILE ~dq/area scripts/ys0424t2.baf~
+	COMPILE ~dq/area scripts/ys0424t1.baf~
+	COMPILE ~dq/area scripts/ys0414.baf~
+	COMPILE ~dq/area scripts/ys0441.baf~
+	COMPILE ~dq/area scripts/ys0440.baf~
+
+//##################################################
+//Other area scripts
+	EXTEND_TOP ~baldur.bcs~ ~dq/area scripts/ysbaldur.baf~
+
+//##################################################
+//Stores
+//Athkatla
+	COPY ~dq/stores/ysslvale.sto~ ~override/ysslvale.sto~
+	SAY 0xc @403
+	COPY ~dq/stores/yskeldrl.sto~ ~override/yskeldrl.sto~
+	SAY 0xc @405
+	COPY ~dq/stores/ysgibmel.sto~ ~override/ysgibmel.sto~
+	SAY 0xc @406
+	COPY ~dq/stores/yscolla1.sto~ ~override/yscolla1.sto~
+	SAY 0xc @272
+	COPY ~dq/stores/yscolla2.sto~ ~override/yscolla2.sto~
+	SAY 0xc @272
+
+//Porthpentyrch
+	COPY ~dq/stores/ysstor1c.sto~ ~override/ysstor1c.sto~
+	COPY ~dq/stores/ysstor1e.sto~ ~override/ysstor1e.sto~
+	COPY ~dq/stores/ysstor2c.sto~ ~override/ysstor2c.sto~
+	COPY ~dq/stores/ysstor2e.sto~ ~override/ysstor2e.sto~
+	COPY ~dq/stores/ysmorv.sto~ ~override/ysmorv.sto~
+	SAY 0xc @402
+
+//Cerendor Hold
+	COPY ~dq/stores/yschclr.sto~ ~override/yschclr.sto~
+	SAY 0xc @233
+	COPY ~dq/stores/ysbk1sto.sto~ ~override/ysbk1sto.sto~
+	SAY 0xc @222
+	COPY ~dq/stores/ysblksto.sto~ ~override/ysblksto.sto~
+	SAY 0xc @222
+
+//Imradim
+	COPY ~dq/stores/ysnuri.sto~ ~override/ysnuri.sto~
+	SAY 0xc @266
+	COPY ~dq/stores/yskhoury.sto~ ~override/yskhoury.sto~
+	SAY 0xc @265
+	COPY ~dq/stores/ystahir.sto~ ~override/ystahir.sto~
+	SAY 0xc @407
+	COPY ~dq/stores/ysbasima.sto~ ~override/ysbasima.sto~
+	SAY 0xc @422
+
+//##################################################
+//Uncompressed Tilesets
+	COPY ~dq/tis~ ~override~
+
+//**************************************************
+// SConrad's Worldmap patching - do this last so we can patch the new areas too
+//**************************************************
+// Append mastarea.2da with the new areas
+  APPEND ~MASTAREA.2da~ ~ys0360 value~ UNLESS ~ys0360~ //Cerendor Hold
+  APPEND ~MASTAREA.2da~ ~ys0370 value~ UNLESS ~ys0370~ //Cloudpeak Mountains
+  APPEND ~MASTAREA.2da~ ~ys0410 value~ UNLESS ~ys0410~ //Imradim
+  APPEND ~MASTAREA.2da~ ~ys0390 value~ UNLESS ~ys0390~ //Government District Westside
+  APPEND ~MASTAREA.2da~ ~ys1000 value~ UNLESS ~ys1000~ //Portpentyrch
+  APPEND ~MASTAREA.2da~ ~ys1001 value~ UNLESS ~ys1001~ //Portpentyrch
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Porthpentyrch abandoned
+  OUTER_SPRINT areName "YS1000"   // area reference, like "AR0700"
+  OUTER_SPRINT strName "Porthpentyrch" // area name, like "Waukeen's Promenade"
+  OUTER_SPRINT strDesc "Porthpentyrch" // area description which will show up when hovering the area on the worldmap
+
+  OUTER_SET mapIcon = 13             // map icon
+  OUTER_SET xCoord  = 583            // x coordinate
+  OUTER_SET yCoord  = 630            // y coordinate
+  OUTER_SET tTime   = 2              // travel time, *4, so two means eight hours
+  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
+
+// set up link variables
+
+  // add links from these area(s) to the new area
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
+    "AR0020" => "Exitne"       // City Gates
+    "AR0300" => "Exitne"       // Docks
+    "AR0400" => "Exitne"       // Slums
+    "AR0500" => "Exitne"       // Bridge District
+    "AR0700" => "Exitne"       // Waukeen's Promenade
+    "AR0800" => "Exitne"       // Graveyard
+    "AR0900" => "Exitne"       // Temple District
+    "AR1000" => "Exitne"       // Government
+    "YS0390" => "Exitne"       // Government Westside
+    "AR1100" => "Exitne"       // Umar Hills
+    "AR1300" => "Exitne"       // d'Arnise Keep
+    "AR1304" => "Exitne"       // d'Arnise Keep
+    "AR2000" => "Exite"        // Trademeet
+    "AR1200" => "Exite"        // Windspear Hills
+    "YS0390" => "Exite"        // Govt westside
+    "YS0360" => "Exite"        // Cerendor Hold
+    "YS0370" => "Exite"        // Cloudpeaks
+  END
+
+  // add links from the new area to these area(s)
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
+    "AR0020" => "ExitNE"      // City Gates
+    "AR0300" => "ExitN"       // Docks
+    "AR0400" => "ExitN"       // Slums
+    "AR0500" => "ExitNE"      // Bridge District
+    "AR0700" => "ExitE"       // Waukeen's Promenade
+    "AR0800" => "ExitS"       // Graveyard
+    "AR0900" => "ExitNW"      // Temple District
+    "AR1000" => "ExitN"       // Government
+    "YS0390" => "Exitwmp"     // Government Westside
+    "AR1100" => "ExitSE"      // Umar Hills
+    "AR1300" => "ExitSE"      // d'Arnise Keep
+    "AR1304" => "ExitSE"      // d'Arnise Keep
+    "AR2000" => "ExitSW"      // Trademeet
+    "AR1200" => "ExitW"       // Windspear Hills
+    "YS0390" => "Exitwmp"     // Govt westside
+    "YS0360" => "Exit1"       // Cerendor Hold
+    "YS0370" => "Exits"       // Cloudpeaks
+  END
+
+// call the sc#addWmpAre function
+  // returns the worldmap entry number for the new area
+  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
+  PRINT "Portpentyrch abandoned patched. New area number is: %areNum%"
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Porthpentyrch restored
+  OUTER_SPRINT areName "YS1001"   // area reference, like "AR0700"
+  OUTER_SPRINT strName "Porthpentyrch" // area name, like "Waukeen's Promenade"
+  OUTER_SPRINT strDesc "Porthpentyrch" // area description which will show up when hovering the area on the worldmap
+
+  OUTER_SET mapIcon = 13             // map icon
+  OUTER_SET xCoord  = 583            // x coordinate
+  OUTER_SET yCoord  = 630            // y coordinate
+  OUTER_SET tTime   = 2              // travel time, *4, so two means eight hours
+  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
+
+// set up link variables
+
+  // add links from these area(s) to the new area
+  // add links from these area(s) to the new area
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
+    "AR0020" => "Exitne"       // City Gates
+    "AR0300" => "Exitne"       // Docks
+    "AR0400" => "Exitne"       // Slums
+    "AR0500" => "Exitne"       // Bridge District
+    "AR0700" => "Exitne"       // Waukeen's Promenade
+    "AR0800" => "Exitne"       // Graveyard
+    "AR0900" => "Exitne"       // Temple District
+    "AR1000" => "Exitne"       // Government
+    "YS0390" => "Exitne"	     // Government Westside
+    "AR1100" => "Exitne"       // Umar Hills
+    "AR1300" => "Exitne"       // d'Arnise Keep
+    "AR1304" => "Exitne"       // d'Arnise Keep
+    "AR2000" => "Exite"        // Trademeet
+    "AR1200" => "Exite"        // Windspear Hills
+    "YS0390" => "Exite"        // Govt westside
+    "YS0360" => "Exite"	     	 // Cerendor Hold
+    "YS0370" => "Exite"        // Cloudpeaks
+  END
+
+  // add links from the new area to these area(s)
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
+    "AR0020" => "ExitNE"      // City Gates
+    "AR0300" => "ExitN"       // Docks
+    "AR0400" => "ExitN"       // Slums
+    "AR0500" => "ExitNE"      // Bridge District
+    "AR0700" => "ExitE"       // Waukeen's Promenade
+    "AR0800" => "ExitS"       // Graveyard
+    "AR0900" => "ExitNW"      // Temple District
+    "AR1000" => "ExitN"       // Government
+    "YS0390" => "Exitwmp"     // Government Westside
+    "AR1100" => "ExitSE"      // Umar Hills
+    "AR1300" => "ExitSE"      // d'Arnise Keep
+    "AR1304" => "ExitSE"      // d'Arnise Keep
+    "AR2000" => "ExitSW"      // Trademeet
+    "AR1200" => "ExitW"       // Windspear Hills
+    "YS0390" => "Exitwmp"     // Govt westside
+    "YS0360" => "Exit1"       // Cerendor Hold
+    "YS0370" => "ExitS"       // Cloudpeaks
+  END
+
+// call the sc#addWmpAre function
+  // returns the worldmap entry number for the new area
+  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
+  PRINT "Portpentyrch restored patched. New area number is: %areNum%"
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Government District Westside
+  OUTER_SPRINT areName "YS0390"   // area reference, like "AR0700"
+  OUTER_SPRINT strName "Govt. West" // area name, like "Waukeen's Promenade"
+  OUTER_SPRINT strDesc "Govt. West" // area description which will show up when hovering the area on the worldmap
+
+  OUTER_SET mapIcon = 21             // map icon
+  OUTER_SET xCoord  = 240            // x coordinate
+  OUTER_SET yCoord  = 130            // y coordinate
+  OUTER_SET tTime   = 2              // travel time, *4, so two means eight hours
+  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
+
+// set up link variables
+  // add links from these area(s) to the new area
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
+    "AR0020" => "Exitwmp"       // City Gates
+    "AR0300" => "Exitwmp"       // Docks
+    "AR0400" => "Exitwmp"       // Slums
+    "AR0500" => "Exitwmp"       // Bridge District
+    "AR0700" => "Exitwmp"       // Waukeen's Promenade
+    "AR0800" => "Exitwmp"       // Graveyard
+    "AR0900" => "Exitwmp"       // Temple District
+    "AR1000" => "Exitwmp"       // Government
+    "AR1100" => "Exitwmp"       // Umar Hills
+    "AR1300" => "Exitwmp"       // d'Arnise Keep
+    "AR1304" => "Exitwmp"       // d'Arnise Keep
+    "AR2000" => "Exitwmp"       // Trademeet
+    "AR1200" => "Exitwmp"       // Windspear Hills
+    "YS1000" => "Exitwmp"	     	// Porthpentyrch
+    "YS0360" => "Exitwmp"	     	// Cerendor Hold
+    "YS0370" => "Exitwmp"       // Cloudpeaks
+  END
+
+  // add links from the new area to these area(s)
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
+    "AR0020" => "ExitNE"      // City Gates
+    "AR0300" => "ExitN"       // Docks
+    "AR0400" => "ExitN"       // Slums
+    "AR0500" => "ExitNE"      // Bridge District
+    "AR0700" => "ExitE"       // Waukeen's Promenade
+    "AR0800" => "ExitS"       // Graveyard
+    "AR0900" => "ExitNW"      // Temple District
+    "AR1000" => "ExitN"       // Government
+    "AR1100" => "ExitSE"      // Umar Hills
+    "AR1300" => "ExitSE"      // d'Arnise Keep
+    "AR1304" => "ExitSE"      // d'Arnise Keep
+    "AR2000" => "ExitSW"      // Trademeet
+    "AR1200" => "ExitW"       // Windspear Hills
+    "YS1000" => "Exitne"	    // Porthpentyrch
+    "YS0360" => "Exit2"	     	// Cerendor Hold
+    "YS0370" => "ExitS"       // Cloudpeaks
+  END
+
+// call the sc#addWmpAre function
+  // returns the worldmap entry number for the new area
+  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
+  PRINT "Government District Westside patched. New area number is: %areNum%"
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Cerendor Hold
+  OUTER_SPRINT areName "YS0360"   // area reference, like "AR0700"
+  OUTER_SPRINT strName "Cerendor Hold" // area name, like "Waukeen's Promenade"
+  OUTER_SPRINT strDesc "Cerendor Hold" // area description which will show up when hovering the area on the worldmap
+
+  OUTER_SET mapIcon = 13             // map icon
+  OUTER_SET xCoord  = 912            // x coordinate
+  OUTER_SET yCoord  = 65	            // y coordinate
+  OUTER_SET tTime   = 6              // travel time, *4, so two means eight hours
+  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
+
+// set up link variables
+  // add links from these area(s) to the new area
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
+    "AR0020" => "Exit1"       // City Gates
+    "AR0300" => "Exit1"        // Docks
+    "AR0400" => "Exit1"       // Slums
+    "AR0500" => "Exit1"       // Bridge District
+    "AR0700" => "Exit1"       // Waukeen's Promenade
+    "AR0800" => "Exit1"       // Graveyard
+    "AR0900" => "Exit1"       // Temple District
+    "AR1000" => "Exit1"       // Government
+    "AR1100" => "Exit2"       // Umar Hills
+    "AR1300" => "Exit2"       // d'Arnise Keep
+    "AR1304" => "Exit2"       // d'Arnise Keep
+    "AR2000" => "Exit2"       // Trademeet
+    "AR1200" => "Exit2"       // Windspear Hills
+    "YS1000" => "Exit2"	     	// Porthpentyrch
+    "YS0390" => "Exit1"       // Govt westside
+    "YS0370" => "Exit2"       // Cloudpeaks
+  END
+
+  // add links from the new area to these area(s)
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
+    "AR0020" => "ExitNE"      // City Gates
+    "AR0300" => "ExitN"       // Docks
+    "AR0400" => "ExitN"       // Slums
+    "AR0500" => "ExitNE"      // Bridge District
+    "AR0700" => "ExitE"       // Waukeen's Promenade
+    "AR0800" => "ExitS"       // Graveyard
+    "AR0900" => "ExitNW"      // Temple District
+    "AR1000" => "ExitN"       // Government
+    "AR1100" => "ExitSE"      // Umar Hills
+    "AR1300" => "ExitSE"      // d'Arnise Keep
+    "AR1304" => "ExitSE"      // d'Arnise Keep
+    "AR2000" => "ExitSW"      // Trademeet
+    "AR1200" => "ExitW"       // Windspear Hills
+    "YS1000" => "Exitne"	    // Porthpentyrch
+    "YS0390" => "Exitwmp"     // Govt westside
+    "YS0370" => "Exitn"       // Cloudpeaks
+  END
+
+// call the sc#addWmpAre function
+  // returns the worldmap entry number for the new area
+  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
+  PRINT "Cerendor Hold patched. New area number is: %areNum%"
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Cloudpeak Caravan
+  OUTER_SPRINT areName "YS0370"   // area reference, like "AR0700"
+  OUTER_SPRINT strName "Cloudpeak Mountains" // area name, like "Waukeen's Promenade"
+  OUTER_SPRINT strDesc "Cloudpeak Mountains" // area description which will show up when hovering the area on the worldmap
+
+  OUTER_SET mapIcon = 17             // map icon
+  OUTER_SET xCoord  = 799            // x coordinate
+  OUTER_SET yCoord  = 53	           // y coordinate
+  OUTER_SET tTime   = 6              // travel time, *4, so two means eight hours
+  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
+
+// set up link variables
+  // add links from these area(s) to the new area
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
+    "AR0020" => "Exit1"       // City Gates
+    "AR0300" => "Exit1"       // Docks
+    "AR0400" => "Exit1"       // Slums
+    "AR0500" => "Exit1"       // Bridge District
+    "AR0700" => "Exit1"       // Waukeen's Promenade
+    "AR0800" => "Exit1"       // Graveyard
+    "AR0900" => "Exit1"       // Temple District
+    "AR1000" => "Exit1"       // Government
+    "AR1100" => "Exit2"       // Umar Hills
+    "AR1300" => "Exit2"       // d'Arnise Keep
+    "AR1304" => "Exit2"       // d'Arnise Keep
+    "AR2000" => "Exit2"       // Trademeet
+    "AR1200" => "Exit2"       // Windspear Hills
+    "YS1000" => "Exit2"	     	// Porthpentyrch
+    "YS0390" => "Exit1"       // Govt westside
+    "YS0360" => "Exit2"	      // Cerendor Hold
+  END
+
+  // add links from the new area to these area(s)
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
+    "AR0020" => "ExitNE"      // City Gates
+    "AR0300" => "ExitN"       // Docks
+    "AR0400" => "ExitN"       // Slums
+    "AR0500" => "ExitNE"      // Bridge District
+    "AR0700" => "ExitE"       // Waukeen's Promenade
+    "AR0800" => "ExitS"       // Graveyard
+    "AR0900" => "ExitNW"      // Temple District
+    "AR1000" => "ExitN"       // Government
+    "AR1100" => "ExitSE"      // Umar Hills
+    "AR1300" => "ExitSE"      // d'Arnise Keep
+    "AR1304" => "ExitSE"      // d'Arnise Keep
+    "AR2000" => "ExitSW"      // Trademeet
+    "AR1200" => "ExitW"       // Windspear Hills
+    "YS1000" => "Exitne"	    // Porthpentyrch
+    "YS0390" => "Exitwmp"     // Govt westside
+    "YS0360" => "Exit2"	     	// Cerendor Hold
+  END
+
+// call the sc#addWmpAre function
+  // returns the worldmap entry number for the new area
+  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
+  PRINT "Cloudpeak Mountains patched. New area number is: %areNum%"
+
+//OS-specific .ogg and .tiz conversion
+ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~win32~ = 1) BEGIN
+  AT_NOW ~dq\music\oggdec.exe -o override\ysbhall.wav dq\music\ysbhall.ogg~
+  AT_NOW ~dq\music\oggdec.exe -o override\ysbhshrt.wav dq\music\ysbhshrt.ogg~
+  ACTION_BASH_FOR ~dq/tizpacks~ ~.+\.tiz$~ BEGIN
+    AT_NOW ~dq\tizpacks\tisunpack.exe -s -f -o override\%BASH_FOR_RES%.tis dq\tizpacks\%BASH_FOR_RES%.tiz~
+  END
+  AT_INTERACTIVE_UNINSTALL ~del override\ys*.tis~
+  AT_INTERACTIVE_UNINSTALL ~del override\ysbhall.wav~
+  AT_INTERACTIVE_UNINSTALL ~del override\ysbhshrt.wav~
+END ELSE ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~osx~ = 1) BEGIN
+  AT_NOW ~shopt -s nocaseglob~
+  AT_NOW ~dq/music/sox dq/music/ysbhall.ogg override/ysbhall.wav~
+  AT_NOW ~dq/music/sox dq/music/ysbhshrt.ogg override/ysbhshrt.wav~
+  ACTION_BASH_FOR ~dq/tizpacks~ ~.+\.tiz$~ BEGIN
+    AT_NOW ~dq/tizpacks/tisunpack -s -f -o override/%BASH_FOR_RES%.tis dq/tizpacks/%BASH_FOR_RES%.tiz~
+  END
+  AT_INTERACTIVE_UNINSTALL ~shopt -s nocaseglob~
+  AT_INTERACTIVE_UNINSTALL ~rm -f override/ys*.tis~
+  AT_INTERACTIVE_UNINSTALL ~rm -f override/ysbhall.wav~
+  AT_INTERACTIVE_UNINSTALL ~rm -f override/ysbhshrt.wav~
+END ELSE ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~unix~ = 1) BEGIN
+  AT_NOW ~shopt -s nocaseglob~
+  AT_NOW ~oggdec -o override/ysbhall.wav dq/music/ysbhall.ogg~
+  AT_NOW ~oggdec -o override/ysbhshrt.wav dq/music/ysbhshrt.ogg~
+  ACTION_BASH_FOR ~dq/tizpacks~ ~.+\.tiz$~ BEGIN
+    AT_NOW ~dq/tizpacks/tisunpack -s -f -o override/%BASH_FOR_RES%.tis dq/tizpacks/%BASH_FOR_RES%.tiz~
+  END
+  AT_INTERACTIVE_UNINSTALL ~shopt -s nocaseglob~
+  AT_INTERACTIVE_UNINSTALL ~rm -f override/ys*.tis~
+  AT_INTERACTIVE_UNINSTALL ~rm -f override/ysbhall.wav~
+  AT_INTERACTIVE_UNINSTALL ~rm -f override/ysbhshrt.wav~
+END
+
+//***************************************************
+//***************************************************
+//Optional component - portraits
+//***************************************************
+//***************************************************
+BEGIN @20001
+REQUIRE_COMPONENT ~setup-dq.tp2~ 0 ~This component requires the main component.~
+ACTION_IF NOT MOD_IS_INSTALLED ~setup-dq.tp2~ 0 BEGIN
+  FAIL ~This component requires the main component.~
+END
+
+ COPY ~dq/portraits~ ~override~
+
+BEGIN @20002
+REQUIRE_COMPONENT ~setup-dq.tp2~ 0 ~This component requires the main component.~
+
+ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
+  COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
+   APPEND_FILE ~dq/Worldmap/areas.tbl~
+  COPY ~Worldmap/map_mods_links.tbl~  ~Worldmap~
+   APPEND_FILE ~dq/Worldmap/links.tbl~
+  COPY - ~dq/Worldmap/worldmap.tra~  ~tmp_worldmap.tra~
+  COPY ~Worldmap/map_mods_trans.tra~  ~Worldmap~
+   APPEND_FILE ~tmp_worldmap.tra~
+END
+ELSE BEGIN
+  MKDIR ~Worldmap~
+  COPY ~dq/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
+  COPY ~dq/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
+  COPY ~dq/Worldmap/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
+END

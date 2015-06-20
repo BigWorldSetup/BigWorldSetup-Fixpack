@@ -1,0 +1,51 @@
+--- Setup-NeJ2v68.tp2	Tue Sep 19 23:27:08 2006
++++ C:\BWP Patchstudio\patched files\Setup-NeJ2v68.tp2	Sun Jan 15 08:26:41 2012
+@@ -11,16 +11,16 @@
+ //                                      //
+ 
+ REQUIRE_FILE ~Data/25Dialog.bif~ ~Please install "Throne Of Bhaal" and the official ToB patch before installation of this mod.~
+-REQUIRE_FILE ~override/AR0702.BCS~ ~Please install Baldurdash-WeiDU v1.6.~
++// REQUIRE_FILE ~override/AR0702.BCS~ ~Please install Baldurdash-WeiDU v1.6.~
+ REQUIRE_FILE ~data/BG1ARE.BIF~ ~Please install BG1 and BGT before installation of this mod.~
+ 
+ 
+-ACTION_IF (FILE_EXISTS ~data/CTB-RULE.BIF~)
++/* ACTION_IF (FILE_EXISTS ~data/CTB-RULE.BIF~)
+        OR (FILE_EXISTS ~data/SOS-RULE.BIF~)
+        OR (FILE_EXISTS ~data/TDD-RULE.BIF~)
+ THEN BEGIN
+   FAIL ~You may not install this mod with other big mods!~
+-END
++END */
+ 
+ //Substitute the following string
+ STRING_SET ~shadows of amn~ ~play game~
+@@ -344,6 +344,17 @@
+ 
+ COPY_EXISTING ~AR0603.bcs~ ~override/AR0603.bcs~
+   EXTEND_TOP ~AR0603.bcs~ ~NeJ/sExt/sAR0603.bcs~
++  
++ACTION_IF FILE_EXISTS_IN_GAME ~ENTERJ.bcs~ THEN BEGIN
++COPY_EXISTING ~AR0603.bcs~ ~override~
++DECOMPILE_BCS_TO_BAF
++REPLACE_TEXTUALLY ~ActionOverride("Yoshimo",DestroySelf())~ ~ActionOverride("Yoshimo",DestroySelf())
++SetGlobal("NeJRoT","AR0603",1)~
++COMPILE_BAF_TO_BCS
++REPLACE_BCS_BLOCK ~NeJ/wafixes/oRot.baf~ ~NeJ/wafixes/nRot.baf~
++END
++
++COMPILE ~NeJ/wafixes/yoshfix.d~  
+ 
+ /////////////////////////////////////
+ //Stores 
+@@ -5298,8 +5309,8 @@
+ COPY ~NeJ2/are/TT0079.wed~           ~override/TT0079.wed~
+ COPY ~NeJ2/are/TT0079.are~           ~override/TT0079.are~
+   
+-COPY ~Intro/Combo1/combo1b.acm~				~music/Combo1/combo1b.acm~
+-COPY ~Intro/Theme/themea.acm~					~music/Theme/themea.acm~
++// COPY ~Intro/Combo1/combo1b.acm~				~music/Combo1/combo1b.acm~
++// COPY ~Intro/Theme/themea.acm~					~music/Theme/themea.acm~
+ 
+ ///////////////////////////////
+ // Cleric of Tempus Kit

@@ -1,0 +1,81 @@
+--- Fade\tra\utf8\english\fade.tra	Mon May 26 16:06:50 2014
++++ C:\BWP Patchstudio\patched files\Fade\tra\utf8\english\fade.tra	Sat Feb 07 17:08:00 2015
+@@ -1,4 +1,4 @@
+-@0    = ~So, you're ready to leave now, <CHARNAME>?~
++﻿@0    = ~So, you're ready to leave now, <CHARNAME>?~
+ @1    = ~Yes, let's go.~
+ @2    = ~Not quite. Just wait here for now.~
+ @3    = ~I've changed my mind. I don't think I need you in the party.~
+@@ -183,7 +183,7 @@
+ @180  = ~(smile) Of course we can. No one would know. Just think of the money... ~
+ @181  = ~Money? Is that everything to you? No, hand the gems over, they're going back in the collar.~
+ @182  = ~Yes, the money... they wouldn't notice. Okay... ~
+-@183  = ~Good <PRO_BOYGIRL>. (She winks and drops the gems into her cleavage) For safe keeping... ~
++@183  = ~Good <PRO_GIRLBOY>. (She winks and drops the gems into her cleavage) For safe keeping... ~
+ @184  = ~For safe keeping? Fair enough.~
+ @185  = ~For safe keeping? Well, I shall look forward to... retrieving them from you later, then.~
+ @186  = ~(She gives you a slightly sly look) Tut tut, <CHARNAME>. (She looks thoughtful and then grins) Well, we'll see... ~
+@@ -722,7 +722,7 @@
+ @719  = ~And what do you think people will say when they hear that a Child of Bhaal, the Lord of Murder, has gone on a killing spree, even if it against so called "evil-doers"? Talk sense, <CHARNAME>.~
+ @720  = ~How dare you speak to me in such a manner, Fade? I do not know why I even deign to speak to one such as you.~
+ @721  = ~Hmm. I suppose I can see your point. It wouldn't be easy as all that. So what would you suggest?~
+-@722  = ~Oh, so the conversation of one "such as me" isn't good enough for our resident <PRO_LORDLADY) of Murder? Very well, I'll make sure your divine ears aren't bothered with it again, ever!~
++@722  = ~Oh, so the conversation of one "such as me" isn't good enough for our resident <PRO_LADYLORD> of Murder? Very well, I'll make sure your divine ears aren't bothered with it again, ever!~
+ @723  = ~No, it wouldn't be easy. And if I knew the answer... well, I certainly wouldn't be a Shadow Thief lackey! I suppose we just have to go along our own paths, doing things as we see fit. It's all anyone can ask.~
+ @724  = ~(shrug) Come on... such thinking is giving me a headache!~
+ @725  = ~So, <CHARNAME>, we've spoken of your previous exploits, but what made you choose to take up the adventuring life in the first place?~
+@@ -2003,30 +2003,30 @@
+ @1972 = ~(scramble away from her) Are you crazy? Give in? What in the Nine Hells were you going to do then? I just thought that... that... ~
+ @1973 = ~(grab her wrists) Come on, Fade. You know you want to.~
+ @1974 = ~(Her eyes flare with momentary anger, and you wonder if she will attack you there and then for denying her. She then shakes her head, and when she speaks, her voice is dismayed and desperate)~
+-@1975 = ~I can't help it, <CHARNAME >! I'm sorry... This is why you have to help me. It's almost too much for me... I'm trying to resist, but it gnaws at me so... ~
++@1975 = ~I can't help it, <CHARNAME>! I'm sorry... This is why you have to help me. It's almost too much for me... I'm trying to resist, but it gnaws at me so... ~
+ @1976 = ~(She takes a deep breath and closes her eyes) I must be strong. You're right. But I can't do it alone... ~
+ @1977 = ~I said I'd help you, Fade, and I will. I'm sorry I pushed you. I didn't realise that your... compulsion was so strong. We'll stay here for now, so you can calm down. Everything will be better once you've rested.~
+ @1978 = ~Well, you're going to have to! You're crazy, did you know that? Absolutely crazy! I should have left you back in Athkatla, with your Shadow Thief cronies. Just stay away from me from now on, okay?~
+ @1979 = ~I'll help you, Fade, but I want it made quite plain that I have no intention of ever giving in to you. I don't know what instincts you are acting on at the moment, but I'm not interested, okay?~
+-@1980 = ~(Her eyes flare with momentary anger at being denied, but is soon replaced by a look of resignation) You're right, <CHARNAME >. (sigh) I probably would have ended up killing you if you let me carry on... I can't help it in this place.~
++@1980 = ~(Her eyes flare with momentary anger at being denied, but is soon replaced by a look of resignation) You're right, <CHARNAME>. (sigh) I probably would have ended up killing you if you let me carry on... I can't help it in this place.~
+ @1981 = ~I have to be strong, I have to fight it... but I can't do it alone, that much must be obvious to you now. Please, you have to help me.~
+ @1982 = ~I said I'd help you Fade, and I will. I didn't realise that your... compulsion was so strong. We'll stay here for now, so you can calm down. Everything will be better once you've rested. Trust me.~
+ @1983 = ~You would have killed me? Why?~
+ @1984 = ~(She begins to slowly unlace her tunic, but as her eyes meet yours, she stops and shakes her head, looking confused) No... this is wrong... wrong. Not as drow... ~
+ @1985 = ~What? No! Don't stop now!~
+ @1986 = ~You're right. Not as drow. We would only end up regretting it. I said I'd help you Fade, and I will. Come on, we'll rest here for now, so we can both calm down. It'll be better once we've rested, I'm sure of it.~
+-@1987 = ~You thought what? That you'd get a bit of gratification out of me, and that would be it? <CHARNAME >, I'm part succubus! You may not die if I kiss you, but if I let go... if I let that side of me take over... who knows what would happen?~
++@1987 = ~You thought what? That you'd get a bit of gratification out of me, and that would be it? <CHARNAME>, I'm part succubus! You may not die if I kiss you, but if I let go... if I let that side of me take over... who knows what would happen?~
+ @1988 = ~This place isn't healthy for me! I don't know whether I want to mate with you or rip you into little bits!~
+ @1989 = ~You're crazy, did you know that? Absolutely crazy! I should have left you back in Athkatla, with your Shadow Thief cronies. Just stay away from me from now on, okay?~
+ @1990 = ~Is it that bad? Okay, I'll help you, even if it's just to stop you from ripping my heart out! Come on, we'll rest here for now, so we can both calm down. It'll be better once we've rested, I'm sure of it.~
+-@1991 = ~No!! You think this will be a simple act of gratification? <CHARNAME >, I'm part succubus! You may not die if I kiss you, but if I let go... if I let that side of me take over... who knows what would happen?~
++@1991 = ~No!! You think this will be a simple act of gratification? <CHARNAME>, I'm part succubus! You may not die if I kiss you, but if I let go... if I let that side of me take over... who knows what would happen?~
+ @1992 = ~What? I didn't... Okay, I'll help you, even if it's just to stop you from ripping my heart out! Come on, we'll rest here for now, so we can both calm down. It'll be better once we've rested, I'm sure of it.~
+ @1993 = ~(keep hold of her wrists and pull her closer) I don't believe you, Fade.~
+ @1994 = ~Yes, rest... but keep yourself safe. I want you to promise... if I get out of hand, if I give in and become a danger... you will kill me. I can't live like that again.~
+ @1995 = ~Of course, Fade. But it will never come to that, trust me. Now rest.~
+ @1996 = ~Fade, I can't promise that. I can't kill you. I'll compromise, though. If it happens, and only if, I'll knock you out until we get back to the surface, okay? No arguing. Now rest.~
+-@1997 = ~(A look of dismay crosses her face) Yes, <CHARNAME >... I understand. (She turns away from you and lies on the bed, as if preparing to trance, and says nothing more)~
+-@1998 = ~(sigh) I'm part succubus, <CHARNAME >. You may not die if I kiss you, but if I let go... if I let that side of me take over... who knows what would happen?~
++@1997 = ~(A look of dismay crosses her face) Yes, <CHARNAME>... I understand. (She turns away from you and lies on the bed, as if preparing to trance, and says nothing more)~
++@1998 = ~(sigh) I'm part succubus, <CHARNAME>. You may not die if I kiss you, but if I let go... if I let that side of me take over... who knows what would happen?~
+ @1999 = ~This place isn't healthy for me. I don't know whether I want to mate with you or rip you into little bits! I'm possibly not... safe to be around at the moment.~
+ @2000 = ~(She wrenches her wrists from you and jumps off the bed) No... No! Everything... it's over, <CHARNAME>, possibly even before it began, but it's *over*! I can't believe you want me to become... to allow that side of me to prevail... just for your own pleasure?! Not that you would have been able to have handled me in any way!!~
+ @2001 = ~(She unlocks the door, wrenches it open and storms off)~
+@@ -3336,7 +3336,7 @@
+ @3290 = ~(follow her)~
+ @3291 = ~(leave her alone)~
+ @3292 = ~(She stops a little way from the rest of the group and turns. She is smiling, but it is a nervous smile, with none of the usual teasing undertones)~
+-@3293 = ~I am... glad you chose to follow me, <CHARNAME >. I did wonder if you would take the hint. I... I... ~
++@3293 = ~I am... glad you chose to follow me, <CHARNAME>. I did wonder if you would take the hint. I... I... ~
+ @3294 = ~(She sighs and smiles nervously again, and then begins to play with a lock of her bright crimson hair. You wait for a moment, but it is obvious that she is unsure of what to say next)~
+ @3295 = ~Fade, come on, spit it out. Why did you drag me over here?~
+ @3296 = ~Well, if you're going to play stupid games, I'm going back to the others.~
+@@ -4052,7 +4052,7 @@
+ @4006 = ~*Always* be watching me, Anomen? I'm sure I could have you arrested for that.~
+ @4007 = ~I suppose I should have expected such a response from one of your kind. Never did I think I would have to travel with a Shadow Thief!~
+ @4008 = ~Well, now, that's unfortunate, isn't it? Especially since <CHARNAME>'s joined our ranks and everything. I would say you're outnumbered, Anomen.~
+-@4009 = ~Well, <CHARNAME > is the one calling the shots here, not you, so I think you can just toddle off back to your position and concentrate on being righteous, while the rest of us have some fun.~
++@4009 = ~Well, <CHARNAME> is the one calling the shots here, not you, so I think you can just toddle off back to your position and concentrate on being righteous, while the rest of us have some fun.~
+ @4010 = ~That's some mighty shiny armour you're wearing, Anomen.~
+ @4011 = ~Well, it doesn't do oneself any favours to look a disgrace, does it?~
+ @4012 = ~No, it doesn't. Although I do suppose people may wonder when you get the time to polish it. Considering all the heroic things you've done, I'm surprised you even have the time to sit down, let alone polish your helmet until it gleams... (flutters her eyelashes at Anomen)~

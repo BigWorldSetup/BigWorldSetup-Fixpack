@@ -1,0 +1,17 @@
+--- TutuGUI\Setup-TutuGUI.tp2	Tue Apr 01 16:17:54 2008
++++ C:\BWP Patchstudio\patched files\TutuGUI\Setup-TutuGUI.tp2	Sat Dec 27 19:41:20 2014
+@@ -1,11 +1,12 @@
+ BACKUP  ~TutuGUI\backup~
+ AUTHOR ~LadeJarl (jarloes AT online.no~
+-
++/*
+ ALWAYS
+    ACTION_IF NOT (FILE_SIZE bgmain.exe 7839790 OR FILE_SIZE bgmain.exe 7417902) THEN BEGIN FAIL ~You do not have the correct version of the game. The latest versions of SoA or ToB are required.~ END //Checks the size of the exe to find out if it's the latest SoA or ToB version.
+    AT_INTERACTIVE_EXIT ~VIEW TutuGUI/ReadmeTutuGUI.txt~
+ END
+-
++*/
++// This prevents installation on non-English version of the game.
+ 
+ BEGIN ~Baldurs Gate I GUI for Tutu, SoA/ToB, or BGT~
+ 

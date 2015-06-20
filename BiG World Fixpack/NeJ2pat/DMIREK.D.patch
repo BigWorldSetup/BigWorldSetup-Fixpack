@@ -1,0 +1,18 @@
+--- NeJ2pat\dlg\DMIREK.D	Sat Aug 11 05:19:24 2007
++++ C:\BWP Patchstudio\patched files\NeJ2pat\dlg\DMIREK.D	Tue Aug 18 18:20:50 2009
+@@ -13,6 +13,7 @@
+ END
+ 
+ IF ~GlobalGT("SPRITE_IS_DEADYETITUND","GLOBAL",1)
++!Global("Mirek_Quest","GLOBAL",5)
+ ~ THEN BEGIN 1
+   SAY ~Thanks - I thought the time to join my ancestors had finally come.  Last time I ever step foot anywhere near the Vale, that’s for certain; there’s all sorts of strange creatures roaming around there now.~
+   IF ~~ THEN REPLY ~Vale?~ DO ~SetGlobal("Mirek_Quest","GLOBAL",3)
+@@ -115,6 +116,7 @@
+ IF ~NumberOfTimesTalkedTo(0)
+ Global("TT3000_Visited","GLOBAL",1)
+ Global("Mirek_Yeti","LOCALS",1)
++!Global("Mirek_Quest","GLOBAL",5)
+ ~ THEN BEGIN 14
+   SAY ~Ah, well met.  It’s been a long time since I’ve seen any adventurers pass through town.  I suppose you’re here to explore the Vale.~
+   IF ~~ THEN REPLY ~Vale?~ GOTO 2

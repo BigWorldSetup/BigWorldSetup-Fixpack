@@ -702,10 +702,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Divine_Remix - Divine Remix v7.1
-
-:: White Agnus' Compatibility Fix for Tower of Deception
-:: - LINK NOT FOUND ~
+:: Divine_Remix - Divine Remix v8
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
 :: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
@@ -828,15 +825,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Installation error fix
 :: http://www.shsforums.net/topic/56948-installation-error/
-
-
-----------------------------------------------------------------------------------------
-
-
-:: finch - Finch NPC v3.0
-
-:: Converted to BGT by using Ascension64's Platform Conversion Utility (PCU)
-:: http://kerzenburg.baldurs-gate.eu/showpost.php?p=911087&postcount=36
 
 
 ----------------------------------------------------------------------------------------
@@ -1481,44 +1469,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: questpack - Ding0's Quest Pack v2.3
-
-:: Azazello's Infinite Rune Assassins fix - city_new.baf
-:: http://forums.pocketplane.net/index.php/topic,24876.msg308040.html#msg308040
-
-:: TheBigg's added Start/EndCutSceneMode - harpass1.bcs
-:: http://www.shsforums.net/index.php?s=&showtopic=33538&view=findpost&p=393893
-
-:: TheBigg's addenda
-:: http://www.shsforums.net/index.php?s=&showtopic=36182&view=findpost&p=414114
-
-:: omeletted's hell trial fix
-:: http://www.shsforums.net/index.php?s=&showtopic=31309&view=findpost&p=370565
-
-:: CamDawg's YuanTe-Mage spellcasting fix
-:: http://forums.pocketplane.net/index.php/topic,24754.0.html
-
-:: Steve's fixes
-:: http://www.shsforums.net/index.php?s=&showtopic=37926&view=findpost&p=428254
-:: http://www.shsforums.net/index.php?s=&showtopic=37926&view=findpost&p=428670
-:: http://forums.pocketplane.net/index.php/topic,26020.msg316860.html
-
-:: Temujin's current fixes
-:: http://forums.pocketplane.net/index.php/topic,20010.msg323551.html#msg323551
-
-:: Lollorian's corrected animation typo - sufakeb.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483642
-
-:: Temujin's further fixes (points 13 until 18) done by Lollorian
-:: http://forums.pocketplane.net/index.php?topic=20010.msg324567#msg324567
-
-:: the bigg's KIT.IDS ToBEx compatibility fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
-
-
-----------------------------------------------------------------------------------------
-
-
 :: refinements - Refinements v3.31
 
 :: horred the plague's 2-handed ITM animation mismatch fix
@@ -1859,23 +1809,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Sword Coast Stratagems (SCSI) v14
+:: Sword Coast Stratagems v28
 
-:: Move the guard's starting point so that his dialogues not overlaps with the tutorial dialogue. - addtoarea.baf
-:: This is no fix. The BWP need it for the component "Skip Candlekeep" to customize the gameplay.
-:: http://forums.gibberlings3.net/index.php?showtopic=17036
-
-:: Lollorian's replacements - _wtarsgt.baf
-:: http://forums.gibberlings3.net/index.php?showtopic=19632
-
-:: ScuD's corrected TRA line - setup-scs.tp2
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=19400&view=findpost&p=163833
-
-:: Temujin's "Dark Side-based kobold upgrade" fix - kobold.tph
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=19632&view=findpost&p=166631
-
-:: Temujin's "Improved Endbattle" fix - endbattle.tph
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=19632&view=findpost&p=166631
+:: stratagemsV28 fix V1.5
+:: http://gibberlings3.net/forums/index.php?showtopic=26792&p=228647
 
 
 ----------------------------------------------------------------------------------------

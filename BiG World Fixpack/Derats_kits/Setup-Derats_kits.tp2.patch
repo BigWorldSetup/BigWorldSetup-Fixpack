@@ -1,0 +1,11 @@
+--- Derats_kits\Setup-Derats_kits.tp2	Tue Dec 09 23:53:58 2014
++++ C:\BWP Patchstudio\patched files\Derats_kits\Setup-Derats_kits.tp2	Fri May 29 08:44:49 2015
+@@ -1490,7 +1490,7 @@
+ 
+ COMPILE ~Derats_kits/Essaim/Scripts~
+ 
+-ACTION_IF NOT FILE_EXISTS_IN_GAME ~override/CBCO8SCR.mos~ BEGIN
++ACTION_IF NOT FILE_EXISTS_IN_GAME ~CBCO8SCR.mos~ BEGIN
+ 	PRINT ~~
+ 	PRINT @5001 // Check The Bodies n'est pas installé, installation de composants supplémentaires
+ 	PRINT ~~

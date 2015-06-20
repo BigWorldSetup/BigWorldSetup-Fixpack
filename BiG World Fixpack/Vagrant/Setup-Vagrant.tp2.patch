@@ -1,6 +1,11 @@
---- Setup-Vagrant.tp2	Sat Mar 22 18:28:16 2008
-+++ C:\BWP Patchstudio\patched files\Setup-Vagrant.tp2	Wed Nov 13 13:54:22 2013
-@@ -7,6 +7,8 @@
+--- Setup-Vagrant.tp2	Sat Mar 22 19:28:16 2008
++++ C:\BWP Patchstudio\patched files\Setup-Vagrant.tp2	Fri Jun 12 05:21:51 2015
+@@ -3,10 +3,12 @@
+ 
+ LANGUAGE ~English~
+          ~english~ 
+-         ~English~ ~Vagrant/English/setup.tra~
++         ~Vagrant/English/setup.tra~
  
  BEGIN @1 // Vagrant Kit
  
@@ -9,3 +14,13 @@
  // Bam files
  
  COPY ~Vagrant/bam/spini12b.bam~ ~override/spini12b.bam~
+@@ -899,7 +901,6 @@
+   USING ~Vagrant/English/crom.tra~
+ 
+ COMPILE ~Vagrant/dlg/cespy.d~
+-  USING ~Vagrant/English/crom.tra~
+-        ~Vagrant/English/cespy.tra~
++  USING ~Vagrant/English/cespy.tra~
+ 
+ AT_INTERACTIVE_EXIT ~VIEW Vagrant/Improved_Anvil_Lite_readme.txt~
+\ No newline at end of file

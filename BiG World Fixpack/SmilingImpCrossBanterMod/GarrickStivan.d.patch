@@ -1,0 +1,20 @@
+--- SmilingImpCrossBanterMod\GarrickStivan.d	Fri Mar 21 14:47:10 2014
++++ C:\BWP Patchstudio\patched files\SmilingImpCrossBanterMod\GarrickStivan.d	Sun Jan 11 08:26:47 2015
+@@ -34,7 +34,7 @@
+ ~This plume you sold me has done wonders for my story writing, Stivan. Ever since I have been
+ using it to write with, I have been getting tremendous inspiration.~
+ =
+-~Could it be that it is magical?~ DO ~SetGlobal("StivanGarrick","GLOBAL"2)~
++~Could it be that it is magical?~ DO ~SetGlobal("StivanGarrick","GLOBAL",2)~
+ == TB#STIVB ~Magical? Umm.. why yes! With it you will be able to write the best poems ever.~
+ =
+ ~I found it in the middle of a huge pile of enchanted seagull poo.~
+@@ -63,7 +63,7 @@
+ you have been giving me is pure literary gold!~
+ =
+ ~Hopefully this newest edition of the ballad of brave Brave Sir Garrick will line both our
+-pockets with real gold very, very soon.~ DO ~SetGlobal("StivanGarrick","GLOBAL"3)~
++pockets with real gold very, very soon.~ DO ~SetGlobal("StivanGarrick","GLOBAL",3)~
+ == TB#STIVB ~The important thing to me is that my family's story will be published and preserved
+ for generations to come and finally, everyone will know the truth to the treacherous seagulls.~
+ =

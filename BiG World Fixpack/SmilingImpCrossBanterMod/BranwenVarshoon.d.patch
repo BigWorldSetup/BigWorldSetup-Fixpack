@@ -1,0 +1,11 @@
+--- SmilingImpCrossBanterMod\BranwenVarshoon.d	Fri Mar 21 15:31:00 2014
++++ C:\BWP Patchstudio\patched files\SmilingImpCrossBanterMod\BranwenVarshoon.d	Sun Jan 04 19:59:01 2015
+@@ -13,7 +13,7 @@
+ CHAIN IF ~Global("BranwenVarshoon","GLOBAL",1)
+ InParty("Varshoon")!StateCheck("Varshoon",CD_STATE_NOTVALID)InParty("7XBRAN")
+ !StateCheck("7XBRAN",CD_STATE_NOTVALID)~ THEN VxVarB BranwenVarsh_2
+-~*You possess a strong mental fortitude for a female of your race, mammal, but your need to compete with the expectations the males will lead to your downfall.*~ DO ~Global("BranwenVarshoon","GLOBAL",2)~
++~*You possess a strong mental fortitude for a female of your race, mammal, but your need to compete with the expectations the males will lead to your downfall.*~ DO ~SetGlobal("BranwenVarshoon","GLOBAL",2)~
+ == 7XBRANB ~What do I care what you think, Illithid?~
+ == VxVarB ~*Perhaps because I am just bringing light to a truth already in your mind.*~
+ == 7XBRANB ~Cease your mind probing, creature, or you will find yourself kissing Valkur's strapping buttocks!~ [branwenx]

@@ -1,0 +1,17 @@
+--- edwin\baf\nej2\edwin_degardan.baf	Wed Apr 18 01:00:28 2012
++++ C:\BWP Patchstudio\patched files\edwin\baf\nej2\edwin_degardan.baf	Sat Aug 18 21:47:06 2012
+@@ -1,5 +1,6 @@
+ IF
+ 	!Global("VP_InHalruaa","GLOBAL",1)
++	!Global("VP_OnIsland","GLOBAL",1)
+ 	GlobalTimerExpired("DegardanSpawn","GLOBAL")
+ 	Global("TalkedDegardan","GLOBAL",0)
+ 	Global("DegardanComes","LOCALS",0)
+@@ -25,6 +26,7 @@
+ 
+ IF
+ 	!Global("VP_InHalruaa","GLOBAL",1)
++	!Global("VP_OnIsland","GLOBAL",1)
+ 	GlobalTimerExpired("DegardanSpawn","GLOBAL")
+ 	Global("TalkedDegardan","GLOBAL",1)
+ 	Global("DegardanComesAgain","LOCALS",0)

@@ -1,0 +1,12 @@
+--- npckit\lib\adventurer.tpa	Fri Sep 26 21:38:29 2014
++++ C:\BWP Patchstudio\patched files\npckit\lib\adventurer.tpa	Tue Nov 04 21:49:22 2014
+@@ -32,7 +32,7 @@
+ // read thief allowed profs from weapprof and use those
+ COPY_EXISTING ~weapprof.2da~ ~override~
+   FOR (row = 0 ; row < 32 ; row = row + 1) BEGIN
+-    READ_2DA_ENTRY row 7                        (22 + "%IK_ADVENTURER%") "conj"
+-    SET_2DA_ENTRY  row (21 + "%IK_ADVENTURER%") (22 + "%IK_ADVENTURER%") ~%conj%~
++    READ_2DA_ENTRY row 7                        (23 + "%IK_ADVENTURER%") "conj"
++    SET_2DA_ENTRY  row (22 + "%IK_ADVENTURER%") (23 + "%IK_ADVENTURER%") ~%conj%~
+   END
+   BUT_ONLY_IF_IT_CHANGES

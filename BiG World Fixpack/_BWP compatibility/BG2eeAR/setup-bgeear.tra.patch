@@ -1,0 +1,12 @@
+--- BG2eeAR\translations\english\setup-bgeear.tra	Mon Aug 18 11:22:02 2014
++++ C:\BWP Patchstudio\patched files\BG2eeAR\translations\english\setup-bgeear.tra	Fri Mar 06 14:06:34 2015
+@@ -1,8 +1,4 @@
+-@0    = ~BG:EE install detected~
+-@1    = ~Tutu install detected.~
+-@2    = ~BGT install detected.~
+-@3    = ~Please install on BG:EE, Tutu or BGT.~
+-@4    = ~TeamBG's Armors for BG:EE, BGT and TuTu Version 1.05~
++@4    = ~TeamBG's Armor Pack for BG2EE~
+ @5    = ~Boots~
+ @6    = ~Boots of Evasion~
+ @7    = ~Boots are normally hand-made by cobblers.  Common boots are made by using a form, but good boots are designed for the foot of an individual. 

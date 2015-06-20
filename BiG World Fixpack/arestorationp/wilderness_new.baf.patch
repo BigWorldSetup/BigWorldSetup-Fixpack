@@ -1,9 +1,0 @@
---- arestorationp\baf\wilderness_new.baf	Tue Apr 22 23:09:37 2014
-+++ C:\BWP Patchstudio\patched files\arestorationp\baf\wilderness_new.baf	Wed Apr 23 21:13:13 2014
-@@ -1,5 +1,5 @@
- IF
--	OnCreation()
-+//	OnCreation()
- 	Global("RandomEncounters","GLOBAL",3)
- 	Global("L-SpawnedBogre","GLOBAL",0)
- 	GlobalLT("Chapter","GLOBAL",4)

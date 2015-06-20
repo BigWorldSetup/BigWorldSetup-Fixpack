@@ -1,6 +1,198 @@
 --- AviM\ToB\1xAVI25.baf	Sun Sep 27 20:57:40 2009
-+++ C:\BWP Patchstudio\patched files\AviM\ToB\1xAVI25.baf	Tue May 25 07:35:07 2010
-@@ -455,7 +455,7 @@
++++ C:\BWP Patchstudio\patched files\AviM\ToB\1xAVI25.baf	Sun Oct 05 11:54:07 2014
+@@ -1,5 +1,4 @@
+ ////// rozmowa przy duchu
+-
+ IF
+ Global("AviSummonedTB","GLOBAL",1)
+ Global("AviSumTalked","GLOBAL",0)
+@@ -8,8 +7,8 @@
+ SetGlobal("AviSumTalked","GLOBAL",1)
+ StartDialogueNoSet([PC])
+ Wait(1)
+-END 
+-
++END
++ 
+ //////Romans ToB
+ IF
+ Global("AviRelationsActive","GLOBAL",2)
+@@ -163,7 +162,6 @@
+ END
+ 
+ ////////// Umiejetnosci
+-
+ IF
+ InParty("AviDV")
+ Global("AviToBRomEnemy","GLOBAL",1)
+@@ -261,9 +259,7 @@
+ SetGlobal("AviSkill7","GLOBAL",1)
+ END
+ 
+-
+ ////////// Biale napisiki
+-
+ IF
+ Global("AviGromnitext", "GLOBAL",0)
+ AreaCheck("AR5001")
+@@ -328,7 +324,6 @@
+ END
+ 
+ /////////// Slub
+-
+ IF
+ InParty("AviDV")
+ Global("AviRelationsActive","GLOBAL",2)
+@@ -351,75 +346,74 @@
+ END
+ 
+ ////////// leczenie i umieranie
++IF
++  SpellCastOnMe([ANYONE],CLERIC_CURE_LIGHT_WOUNDS)
++  !StateCheck(Myself,STATE_INVISIBLE)
++THEN
++  RESPONSE #100
++  DisplayStringWait(Myself,~Nie! Moje cia³o! Przestañ!~)
++  SetInterrupt(FALSE)
++  ApplyDamage(Myself,11,PIERCING)
++  SetInterrupt(TRUE)
++END
+ 
+-IF  
+-  SpellCastOnMe([ANYONE],CLERIC_CURE_LIGHT_WOUNDS)  
++IF
++  SpellCastOnMe([ANYONE],CLERIC_CURE_MEDIUM_WOUNDS)
+   !StateCheck(Myself,STATE_INVISIBLE)
+-THEN  RESPONSE #100
+-  DisplayStringWait(Myself,~Nie! Moje cia³o! Przestañ!~)
+-  SetInterrupt(FALSE)  ApplyDamage(Myself,11,PIERCING)
+-  SetInterrupt(TRUE)
+-END
+-
+-
+-IF
+-  SpellCastOnMe([ANYONE],CLERIC_CURE_MEDIUM_WOUNDS)
+-  !StateCheck(Myself,STATE_INVISIBLE)
+-THEN
+-  RESPONSE #100
+-  DisplayStringWait(Myself,~Nie! Moje cia³o! Przestañ!~)
+-  SetInterrupt(FALSE)
+-  ApplyDamage(Myself,20,PIERCING)
+-  SetInterrupt(TRUE)
+-END
+-
+-
+-IF  SpellCastOnMe([ANYONE],CLERIC_CURE_SERIOUS_WOUNDS)
+-  !StateCheck(Myself,STATE_INVISIBLE)
+-THEN
+-  RESPONSE #100
+-  DisplayStringWait(Myself,~Nie! Moje cia³o! Przestañ!~)
+-  SetInterrupt(FALSE)
+-  ApplyDamage(Myself,30,PIERCING)
+-  SetInterrupt(TRUE)END
+-
+-
+-IF
+-  SpellCastOnMe([ANYONE],CLERIC_CURE_CRITICAL_WOUNDS)
+-  !StateCheck(Myself,STATE_INVISIBLE)
+-THEN
+-  RESPONSE #100
+-  DisplayStringWait(Myself,~Nie! Moje cia³o! Przestañ!~)  SetInterrupt(FALSE)
+-  ApplyDamage(Myself,35,PIERCING)
+-  SetInterrupt(TRUE)
+-END
+-
+-
+-IF
+-  SpellCastOnMe([ANYONE],CLERIC_HEAL)
+-THEN
+-  RESPONSE #100
+-  DisplayStringWait(Myself,~Nie! Tylko nie to zaklêcie! NIE!!!~)
+-  SetInterrupt(FALSE)
+-  Kill("AviDV")
++THEN
++  RESPONSE #100
++  DisplayStringWait(Myself,~Nie! Moje cia³o! Przestañ!~)
++  SetInterrupt(FALSE)
++  ApplyDamage(Myself,20,PIERCING)
+   SetInterrupt(TRUE)
+-END
++END
+ 
+ IF
+-  OR(3)
+-  Die()
+-  CheckStatLT(Myself,1,INT)  
++  SpellCastOnMe([ANYONE],CLERIC_CURE_SERIOUS_WOUNDS)
++  !StateCheck(Myself,STATE_INVISIBLE)
++THEN
++  RESPONSE #100
++  DisplayStringWait(Myself,~Nie! Moje cia³o! Przestañ!~)
++  SetInterrupt(FALSE)
++  ApplyDamage(Myself,30,PIERCING)
++  SetInterrupt(TRUE)
++END
++
++IF
++  SpellCastOnMe([ANYONE],CLERIC_CURE_CRITICAL_WOUNDS)
++  !StateCheck(Myself,STATE_INVISIBLE)
++THEN
++  RESPONSE #100
++  DisplayStringWait(Myself,~Nie! Moje cia³o! Przestañ!~)
++  SetInterrupt(FALSE)
++  ApplyDamage(Myself,35,PIERCING)
++  SetInterrupt(TRUE)
++END
++
++IF
++  SpellCastOnMe([ANYONE],CLERIC_HEAL)
++THEN
++  RESPONSE #100
++  DisplayStringWait(Myself,~Nie! Tylko nie to zaklêcie! NIE!!!~)
++  SetInterrupt(FALSE)
++  Kill("AviDV")
++  SetInterrupt(TRUE)
++END
++
++IF
++  OR(3)
++  Die()
++  CheckStatLT(Myself,1,INT)
+   CheckStatLT(Myself,1,STR)
+-THEN
+-  RESPONSE #100  
++THEN
++  RESPONSE #100
+   DestroyItem("Avii1")
+   DestroyItem("Avii2")
+   LeaveParty()
+-  DestroySelf()
+-END
++  DestroySelf()
++END
+ 
+ /////// nowy luk 2
+-
+ IF
+ Dead("1xAVPL")
+ PartyHasItem("AVII4")
+@@ -434,7 +428,6 @@
+ END
+ 
+ /////// wydanie avi
+-
+ IF
+ Global("AviDoNotLikeKeli","GLOBAL",1)
+ Global("AviRelationsActive","GLOBAL",2)
+@@ -445,7 +438,6 @@
+ END
+ 
+ /////// ostatnia rozmowa
+-
+ IF
+ Global("AviRelationsActive","GLOBAL",2)
+ !See([ENEMY])
+@@ -455,8 +447,7 @@
  THEN
  RESPONSE #100
  PlaySong(0)Wait(4)
@@ -9,3 +201,4 @@
  SetGlobal("AviRelationshipEndingS","GLOBAL",1)
  Interact(Player1)
  END
+-

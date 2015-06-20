@@ -1,11 +1,11 @@
---- FR_ROV\Setup-FR_ROV.tp2	Fri Dec 21 19:31:37 2012
-+++ C:\BWP Patchstudio\patched files\FR_ROV\Setup-FR_ROV.tp2	Wed Oct 02 14:14:25 2013
-@@ -8,7 +8,7 @@
- ReWeidu'd by: idobek@yahoo.co.uk
+--- FR_ROV\Setup-FR_ROV.tp2	Sun Oct 26 15:33:01 2014
++++ C:\BWP Patchstudio\patched files\FR_ROV\Setup-FR_ROV.tp2	Fri Oct 31 07:12:39 2014
+@@ -9,7 +9,7 @@
+ "Enhanced" for BG2EE by Solaufein
  Translated by: Clan DLAN~
  
--VERSION ~v7.3~
-+VERSION ~v7.3 BWP Fix~
+-VERSION ~v8~
++VERSION ~v8 BWP fix~
  
  README ~FR_ROV/ReadMe-FR_ROV.txt~
  

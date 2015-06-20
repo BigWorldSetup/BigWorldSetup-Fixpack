@@ -1,15 +1,14 @@
---- Setup-Oversight.tp2	Tue Mar 02 12:44:22 2010
-+++ C:\BWP Patchstudio\patched files\Setup-Oversight.tp2	Sun Oct 13 18:43:25 2013
-@@ -1,7 +1,7 @@
+--- Setup-Oversight.tp2	Sun Oct 05 21:16:30 2014
++++ C:\BWP Patchstudio\patched files\Setup-Oversight.tp2	Sun May 10 19:39:06 2015
+@@ -1,6 +1,6 @@
  BACKUP ~oversight/backup~
- AUTHOR "Kish_K@pacbell.net"
+ AUTHOR "KishKelly@gmail.com"
+-
++VERSION ~14 BWP Fix~
+ README ~oversight/Oversight-ReadMe.docx~
  
--VERSION ~13~ 
-+VERSION ~13 BWP Fix~ 
- 
- README ~oversight/ReadMe-Oversight.html~
- 
-@@ -1440,15 +1440,15 @@
+ ALLOW_MISSING // ToB creatures
+@@ -1443,15 +1443,15 @@
    REPLACE_TEXTUALLY ~.*\bTOTEMIC\b~                ~0x4010 TOTEMIC~
    REPLACE_TEXTUALLY ~.*\bSHAPESHIFTER\b~           ~0x4011 SHAPESHIFTER~
    REPLACE_TEXTUALLY ~.*\bBEASTFRIEND\b~            ~0x4012 BEASTFRIEND~

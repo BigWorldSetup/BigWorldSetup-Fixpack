@@ -1,11 +1,11 @@
---- Setup-DarkHorizons.tp2	Sat Jan 26 20:19:43 2013
-+++ C:\BWP Patchstudio\patched files\Setup-DarkHorizons.tp2	Mon Sep 30 23:42:57 2013
+--- Setup-DarkHorizons.tp2	Sun Jan 25 11:39:46 2015
++++ C:\BWP Patchstudio\patched files\Setup-DarkHorizons.tp2	Mon May 11 08:00:31 2015
 @@ -1,7 +1,7 @@
  BACKUP ~DarkHorizons/backup~
  AUTHOR ~"http://www.teambg.org"~
  
--VERSION ~BGT v210~
-+VERSION ~BGT v210 BWP Fix~
+-VERSION ~BGT v211~
++VERSION ~BGT v211 BWP Fix~
  
- ALWAYS
- ACTION_IF !("%percentage_sign%" STRING_EQUAL "%") THEN BEGIN //do once
+ README ~DarkHorizons/readme-dh.htm~
+ 

@@ -1,0 +1,19 @@
+--- Animus\Animus.tp2	Tue Dec 10 16:29:47 2013
++++ C:\BWP Patchstudio\patched files\Animus\Animus.tp2	Thu Feb 05 08:06:03 2015
+@@ -1,6 +1,6 @@
+ BACKUP ~Animus/Backup~
+ AUTHOR ~Tome & Eleandor (vanbeurden.bart@gmail.com)~
+-VERSION ~v1.1~
++VERSION ~v1.1 BWP adaption~
+ README ~Animus/readme.txt~
+ 
+ LANGUAGE
+@@ -38,7 +38,7 @@
+ USING	~Animus/Lang/English/Dormant.tra~
+ 		~Animus/Lang/%s/Dormant.tra~
+ 		
+-EXTEND_BOTTOM ~AR2613.bcs~ ~Animus/Script/AR2613.baf~
++EXTEND_BOTTOM ~AR6513.bcs~ ~Animus/Script/AR2613.baf~
+ 		
+ OUTER_SET label = RESOLVE_STR_REF(@200)
+ 

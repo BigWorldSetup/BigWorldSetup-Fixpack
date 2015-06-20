@@ -1,0 +1,17 @@
+IF
+  BreakingPoint()
+  OR(2)
+    CharName("Edwin",Myself)
+    CharName("Edwina",Myself)
+  OR(2)
+    Global("EdwinRomanceActive","GLOBAL",0)
+    Global("EdwinRomanceActive","GLOBAL",3)
+THEN
+  RESPONSE #100
+    SetGlobal("IHATEYOUALL","LOCALS",1)
+    SetLeavePartyDialogueFile()
+    Wait(1)
+    StartDialogNoSet(Player1)
+    ChangeAIScript("",DEFAULT)
+    SetGlobal("IHATEYOUALL","LOCALS",0)
+END

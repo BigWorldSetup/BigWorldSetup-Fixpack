@@ -1,0 +1,11 @@
+--- BG2eeAR\dlg\CMTB2EES1~.d	Wed Nov 13 22:03:19 2013
++++ C:\BWP Patchstudio\patched files\BG2eeAR\dlg\CMTB2EES1~.d	Thu Mar 19 12:02:07 2015
+@@ -8,7 +8,7 @@
+ 
+ IF ~~ THEN BEGIN CS1_2
+ SAY ~Here's what I 'ave. Best bloody armor you'll find around these parts.~
+-IF ~~ THEN DO ~StartStore("cmtb2ees1",LastTalkedToBy(Myself))~ EXIT
++IF ~~ THEN DO ~StartStore("cmtb2ee2",LastTalkedToBy(Myself))~ EXIT
+ END
+ 
+ IF ~NumTimesTalkedToGT(0)~ THEN BEGIN CS1_3

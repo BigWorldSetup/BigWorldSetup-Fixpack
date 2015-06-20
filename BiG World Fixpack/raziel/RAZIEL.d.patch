@@ -1,0 +1,19 @@
+--- raziel\dlg\RAZIEL.d	Tue Jun 28 22:39:34 2005
++++ C:\BWP Patchstudio\patched files\raziel\dlg\RAZIEL.d	Mon Aug 24 11:38:44 2009
+@@ -1,6 +1,6 @@
+ BEGIN ~RAZIEL~
+ 
+-IF ~NumTimesTalkedTo()~ THEN BEGIN 0
++IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
+ SAY ~Kimkolwiek jesteœcie, to wspania³y widok! Mam ju¿ serdecznie doœæ tego miejsca!~
+ IF ~~ THEN REPLY ~Kim jesteœ i jak siê tu znalaz³eœ?~ GOTO 1
+ IF ~~ THEN REPLY ~Nie mam czasu, ¿eby go marnowaæ na rozmowê z tob¹.~ GOTO 2
+@@ -25,7 +25,7 @@
+ 
+ IF ~~ THEN BEGIN 4
+ SAY ~Nie pomo¿esz mi? Czy¿ nie masz honoru? Niech bogowie ciê przekln¹, a otch³añ po³knie tw¹ duszê za to, co czynisz!~
+-IF ~~ THEN DO ~SetGlobal("RazielDeclined",GLOBAL,1)~ EXIT
++IF ~~ THEN DO ~SetGlobal("RazielDeclined","GLOBAL",1)~ EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 5

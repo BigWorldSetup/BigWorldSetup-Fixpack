@@ -1,20 +1,11 @@
---- bg1npc.tp2	Sun Nov 27 10:02:04 2011
-+++ C:\BWP Patchstudio\patched files\bg1npc.tp2	Sun Sep 29 00:28:45 2013
+--- bg1npc/bg1npc.tp2	Wed Oct 22 03:05:30 2014
++++ C:\BWP Patchstudio\patched files\bg1npc.tp2	Wed Oct 22 07:34:46 2014
 @@ -15,7 +15,7 @@
- //  MODDER
+ /* MODDER */
  
- /* WeiDU v204 allows tp2 level version listing in the .log, so no more tra changes  */
--VERSION ~v20~
-+VERSION ~v20 BWP Fix~
- 
- /* launch the readme file immediately. If you want to disable the ReadMe, place two slashes before it, like // README  */
+ /* WeiDU versions newer than v203 allow tp2 level version listing in the .log for troubleshooting  */
+-VERSION ~v21_20150210~
++VERSION ~v21_20150210 BWP Fix~
+ /* Launch the readme file immediately. */
  /* Isaya : display in native selected language if available, otherwise english */
-@@ -859,7 +859,7 @@
- 					ADD_MEMORIZED_SPELL ~spwi406~ #3 ~wizard~ // Minor Globe of Invulnerability
- 					ADD_MEMORIZED_SPELL ~spwi502~ #4 ~wizard~ (4) // Cloudkill
- 				END
--				PATCH_IF (~%crefile%~ STRING_COMPARE_CASE ~%tutu_var%minsc.cre~ = 0) BEGIN
-+				PATCH_IF (~%crefile%~ STRING_COMPARE_CASE ~%tutu_var%minsc6.cre~ = 0) BEGIN
- 					WRITE_LONG 0x18 36293 // Current XP
- 				END
- 				PATCH_IF (~%crefile%~ STRING_COMPARE_CASE ~%tutu_var%montar.cre~ = 0) BEGIN
+ README ~bg1npc/readme-bg1npc-%LANGUAGE%.html~ ~bg1npc/readme-bg1npc.html~

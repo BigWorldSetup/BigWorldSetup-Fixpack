@@ -1,6 +1,28 @@
 --- rukrakia\D\rukrakia.d	Thu Jun 23 13:31:46 2011
-+++ C:\BWP Patchstudio\patched files\rukrakia\D\rukrakia.d	Sun Aug 21 19:57:21 2011
-@@ -166,7 +166,7 @@
++++ C:\BWP Patchstudio\patched files\rukrakia\D\rukrakia.D	Fri Oct 03 05:23:51 2014
+@@ -109,9 +109,7 @@
+ IF ~~ 
+   THEN BEGIN TWO9 // from:
+   SAY @23
+-  IF ~~ THEN DO ~EraseJournalEntry(%검은 숲의 괴물?
+-
+-약간 정신이 나간 나무꾼과 이야기를 나눴다. 아마도 검은 숲에서 몬스터에게 동료들을 잃고 그 충격에 정신이 이상해진 것 같다. 대충 검은 숲의 위치를 알려줬지만 찾으려면 고생할 것 같다.%)
++  IF ~~ THEN DO ~EraseJournalEntry(@101)
+                  SetGlobal("CheckRukrakiaMatch1","GLOBAL",6)
+                  JoinParty()~ SOLVED_JOURNAL @73 EXIT
+ END
+@@ -119,9 +117,7 @@
+ IF ~~ 
+   THEN BEGIN TWO10 // from:
+   SAY @26 = @71
+-  IF ~~ THEN DO ~EraseJournalEntry(%검은 숲의 괴물?
+-
+-약간 정신이 나간 나무꾼과 이야기를 나눴다. 아마도 검은 숲에서 몬스터에게 동료들을 잃고 그 충격에 정신이 이상해진 것 같다. 대충 검은 숲의 위치를 알려줬지만 찾으려면 고생할 것 같다.%)
++  IF ~~ THEN DO ~EraseJournalEntry(@101)
+                  SetGlobal("CheckRukrakiaMatch1","GLOBAL",5)~ SOLVED_JOURNAL @72 EXIT
+ END
+ 
+@@ -166,7 +162,7 @@
                   StartCutScene("rukgotp1")~ EXIT
  END
  
@@ -9,3 +31,10 @@
    SAY @48 = @49
    IF ~~ THEN REPLY @50 DO ~SetGlobal("CutScenerukgotp1","LOCALS",2)~ GOTO ruktob3
  END
+@@ -268,4 +264,4 @@
+   SAY @44
+   IF ~~ THEN EXTERN RUKRAKIA TWO13
+ END
+-END
+\ No newline at end of file
++END

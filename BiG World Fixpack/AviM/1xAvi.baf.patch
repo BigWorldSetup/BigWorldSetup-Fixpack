@@ -1,0 +1,431 @@
+--- AviM\SoA\1xAvi.baf	Sun Sep 27 20:55:26 2009
++++ C:\BWP Patchstudio\patched files\AviM\SoA\1xAvi.baf	Sun Oct 05 11:28:05 2014
+@@ -1,92 +1,89 @@
+-IF  
+-  SpellCastOnMe([ANYONE],CLERIC_CURE_LIGHT_WOUNDS)  
++IF
++  SpellCastOnMe([ANYONE],CLERIC_CURE_LIGHT_WOUNDS)
+   !StateCheck(Myself,STATE_INVISIBLE)
+-THEN  RESPONSE #100
+-  DisplayStringWait(Myself,~Nie! Tylko nie to!~)
+-  SetInterrupt(FALSE)  ApplyDamage(Myself,11,PIERCING)
+-  SetInterrupt(TRUE)
+-END
+-
+-
+-IF
+-  SpellCastOnMe([ANYONE],CLERIC_CURE_MEDIUM_WOUNDS)
+-  !StateCheck(Myself,STATE_INVISIBLE)
+-THEN
+-  RESPONSE #100
+-  DisplayStringWait(Myself,~Nie! Tylko nie to!~)
+-  SetInterrupt(FALSE)
+-  ApplyDamage(Myself,20,PIERCING)
+-  SetInterrupt(TRUE)
+-END
+-
+-
+-IF  SpellCastOnMe([ANYONE],CLERIC_CURE_SERIOUS_WOUNDS)
+-  !StateCheck(Myself,STATE_INVISIBLE)
+-THEN
+-  RESPONSE #100
+-  DisplayStringWait(Myself,~Nie! Tylko nie to!~)
+-  SetInterrupt(FALSE)
+-  ApplyDamage(Myself,30,PIERCING)
+-  SetInterrupt(TRUE)END
+-
+-
+-IF
+-  SpellCastOnMe([ANYONE],CLERIC_CURE_CRITICAL_WOUNDS)
+-  !StateCheck(Myself,STATE_INVISIBLE)
+-THEN
+-  RESPONSE #100
+-  DisplayStringWait(Myself,~Nie! Tylko nie to!~)  SetInterrupt(FALSE)
+-  ApplyDamage(Myself,35,PIERCING)
+-  SetInterrupt(TRUE)
+-END
+-
+-
+-IF
+-  SpellCastOnMe([ANYONE],CLERIC_HEAL)
+-THEN
+-  RESPONSE #100
+-  DisplayStringWait(Myself,~Nie! Nie mo¿esz...!~)
+-  SetInterrupt(FALSE)
+-  Kill("AviDV")
++THEN
++  RESPONSE #100
++  DisplayStringWait(Myself,~Nie! Tylko nie to!~)
++  SetInterrupt(FALSE)
++  ApplyDamage(Myself,11,PIERCING)
+   SetInterrupt(TRUE)
+-END
++END
+ 
++IF
++  SpellCastOnMe([ANYONE],CLERIC_CURE_MEDIUM_WOUNDS)
++  !StateCheck(Myself,STATE_INVISIBLE)
++THEN
++  RESPONSE #100
++  DisplayStringWait(Myself,~Nie! Tylko nie to!~)
++  SetInterrupt(FALSE)
++  ApplyDamage(Myself,20,PIERCING)
++  SetInterrupt(TRUE)
++END
+ 
+ IF
+-Global("Underdark","AR2100",0) // Skrypt Neh'taniela. By mog³a podejœæ do duergara.
+-THEN
+-RESPONSE #100
+-SetGlobal("Underdark","AR2100",1)
+-ChangeGeneral(Myself,HUMANOID)
+-END
++  SpellCastOnMe([ANYONE],CLERIC_CURE_SERIOUS_WOUNDS)
++  !StateCheck(Myself,STATE_INVISIBLE)
++THEN
++  RESPONSE #100
++  DisplayStringWait(Myself,~Nie! Tylko nie to!~)
++  SetInterrupt(FALSE)
++  ApplyDamage(Myself,30,PIERCING)
++  SetInterrupt(TRUE)
++END
+ 
++IF
++  SpellCastOnMe([ANYONE],CLERIC_CURE_CRITICAL_WOUNDS)
++  !StateCheck(Myself,STATE_INVISIBLE)
++THEN
++  RESPONSE #100
++  DisplayStringWait(Myself,~Nie! Tylko nie to!~)
++  SetInterrupt(FALSE)
++  ApplyDamage(Myself,35,PIERCING)
++  SetInterrupt(TRUE)
++END
+ 
+-IF
+-Global("Underdark2","AR2200",0) // Skrypt Neh'taniela. Powrót do undead
+-THEN
+-RESPONSE #100
+-SetGlobal("Underdark2","AR2200",1)
+-ChangeGeneral(Myself,UNDEAD)
+-END
++IF
++  SpellCastOnMe([ANYONE],CLERIC_HEAL)
++THEN
++  RESPONSE #100
++  DisplayStringWait(Myself,~Nie! Nie mo¿esz...!~)
++  SetInterrupt(FALSE)
++  Kill("AviDV")
++  SetInterrupt(TRUE)
++END
+ 
++IF
++Global("Underdark","AR2100",0) // Skrypt Neh'taniela. By mog³a podejœæ do duergara.
++THEN
++RESPONSE #100
++SetGlobal("Underdark","AR2100",1)
++ChangeGeneral(Myself,HUMANOID)
++END
+ 
+-IF
+-Global("Suldanesselar","AR2800",0) // Skrypt Neh'taniela. By nie atakowa³y jej elfy
+-THEN
+-RESPONSE #100
+-SetGlobal("Suldanesselar","AR2800",1)
+-ChangeGeneral(Myself,HUMANOID)
+-END
++IF
++Global("Underdark2","AR2200",0) // Skrypt Neh'taniela. Powrót do undead
++THEN
++RESPONSE #100
++SetGlobal("Underdark2","AR2200",1)
++ChangeGeneral(Myself,UNDEAD)
++END
+ 
++IF
++Global("Suldanesselar","AR2800",0) // Skrypt Neh'taniela. By nie atakowa³y jej elfy
++THEN
++RESPONSE #100
++SetGlobal("Suldanesselar","AR2800",1)
++ChangeGeneral(Myself,HUMANOID)
++END
+ 
+-IF
++IF
+ AreaCheck("AR2900")
+-Global("AMAbyss","AR2900",0) // Skrypt Neh'taniela. Powrót do undead
+-THEN
+-RESPONSE #100
+-SetGlobal("AMAbyss","AR2900",1)
+-ChangeGeneral(Myself,UNDEAD)
+-END
++Global("AMAbyss","AR2900",0) // Skrypt Neh'taniela. Powrót do undead
++THEN
++RESPONSE #100
++SetGlobal("AMAbyss","AR2900",1)
++ChangeGeneral(Myself,UNDEAD)
++END
+ 
+ IF
+ Global("AviShadowPalace", "GLOBAL",0)
+@@ -98,7 +95,6 @@
+ DisplayStringWait(Myself,~To miejsce jest pe³ne œmierci i cienia... Powinniœmy uwa¿aæ.~)
+ END
+ 
+-
+ IF
+ Global("AviTannerPlace", "GLOBAL",0)
+ AreaCheck("AR0502")
+@@ -119,7 +115,6 @@
+ DisplayStringWait(Myself,~Podoba mi siê wystój tutaj... ale czuje te¿ obecnoœæ silnych istot. Uwa¿aj, byœ nie przyj¹³ mojej obecnej formy przez wizyte tutaj.~)
+ END
+ 
+-
+ IF
+ Global("AviCementaryPlace", "GLOBAL",0)
+ AreaCheck("AR0800")
+@@ -130,7 +125,6 @@
+ DisplayStringWait(Myself,~Cmentarz...? Prawie jak w domu... Poszukamy skarbów?~)
+ END
+ 
+-
+ IF
+ Global("AviDeeperPlace", "GLOBAL",0)
+ AreaCheck("AR0802")
+@@ -230,7 +224,6 @@
+ THEN
+ RESPONSE #100
+ AddJournalEntry(~Avi Maya i jej brat
+-
+ Avi Maya poprosi³a nas byœmy odwiedzili jej brata. Zazwyczaj mo¿na go odszukaæ w œwi¹tyni Targowa. Widaæ, ¿e bardzo jej na tym zale¿y.~,QUEST)
+ SetGlobal("AviBrotherJour1","GLOBAL",1)
+ END
+@@ -242,10 +235,8 @@
+ THEN
+ RESPONSE #100
+ EraseJournalEntry(~Avi Maya i jej brat
+-
+ Avi Maya poprosi³a nas byœmy odwiedzili jej brata. Zazwyczaj mo¿na go odszukaæ w œwi¹tyni Targowa. Widaæ, ¿e bardzo jej na tym zale¿y.~)
+ AddJournalEntry(~Avi Maya i jej brat
+-
+ Kania pope³ni³a samobójstwo. Przed œmierci¹ powiedziala, ¿e Dost odszed³ z kobiet¹ imieniem Boddi. Spotkali siê na cmentarzu. Powinniœmy sprawdziæ czy ich tam nie ma.~,QUEST)
+ SetGlobal("AviBrotherJour2","GLOBAL",1)
+ Kill("1xAviB2")
+@@ -258,10 +249,8 @@
+ THEN
+ RESPONSE #100
+ EraseJournalEntry(~Avi Maya i jej brat
+-
+ Kania pope³ni³a samobójstwo. Przed œmierci¹ powiedziala, ¿e Dost odszed³ z kobiet¹ imieniem Boddi. Spotkali siê na cmentarzu. Powinniœmy sprawdziæ czy ich tam nie ma.~)
+ AddJournalEntry(~Avi Maya i jej brat
+-
+ Spotkaliœmy Boddi. Powiedzia³a nam, ¿e nie zna nikogo imieniem Dost. Nie posiadamy wiêcej punktów zaczepienia. Zasmucona Avi Maya powiedzia³a byœmy po prostu kontynuowali nasz¹ pracê nad zadaniami. Miejmy nadziejê, ¿e mimo wszystko dowiemy siê gdzie jest Dost.~,QUEST)
+ SetGlobal("AviBrotherJour3","GLOBAL",1)
+ END
+@@ -274,7 +263,6 @@
+ THEN
+ RESPONSE #100
+ AddJournalEntry(~"Upiorne" k³opoty
+-
+ Gdy wêdruje z nami Avi Maya jesteœmy czêsciej zauwa¿ani. Zaatakowa³ nas fanatyczny kap³an Kelemvora. Wygl¹da na to, ¿e jego wyznawcy niezbyt siê ciesz¹ na fakt, ¿e Avi Maya wp³ywa w ten sposób na œwiat ¿ywych. Musimy siê trzymaæ na bacznoœci.~,QUEST)
+ SetGlobal("AviEJour4","GLOBAL",1)
+ SetGlobal("AviEnemyDead","GLOBAL",1)
+@@ -288,10 +276,8 @@
+ THEN
+ RESPONSE #100
+ EraseJournalEntry(~"Upiorne" k³opoty
+-
+ Gdy wêdruje z nami Avi Maya jesteœmy czêsciej zauwa¿ani. Zaatakowa³ nas fanatyczny kap³an Kelemvora. Wygl¹da na to, ¿e jego wyznawcy niezbyt siê ciesz¹ na fakt, ¿e Avi Maya wp³ywa w ten sposób na œwiat ¿ywych. Musimy siê trzymaæ na bacznoœci.~)
+ AddJournalEntry(~"Upiorne" k³opoty
+-
+ Ponownie zostaliœmy zaatakowani przez s³ugê nieznanego wroga.~,QUEST)
+ SetGlobal("AviEJour5","GLOBAL",1)
+ SetGlobal("AviEnemyDead","GLOBAL",2)
+@@ -305,10 +291,8 @@
+ THEN
+ RESPONSE #100
+ EraseJournalEntry(~"Upiorne" k³opoty
+-
+ Ponownie zostaliœmy zaatakowani przez s³ugê nieznanego wroga.~)
+ AddJournalEntry(~"Upiorne" k³opoty
+-
+ Pokaza³ siê nasz wróg. Po pokonaniu Bobiego - dziwnego gibberlinga - pojawi³ siê Amorak. Jego zabicie zakoñczy³o sprawê.~,QUEST_DONE)
+ SetGlobal("AviEJour6","GLOBAL",1)
+ SetGlobal("AviEnemyDead","GLOBAL",3)
+@@ -334,7 +318,7 @@
+ SetGlobal("EchKolejny","GLOBAL",1)
+ SetGlobal("AviRelationsActive","GLOBAL",1)
+ RealSetGlobalTimer("AviRomance","GLOBAL",180)
+-END 
++END
+ 
+ IF
+ InParty(Myself)
+@@ -348,8 +332,6 @@
+ Interact(Player1)
+ END
+ 
+-
+-
+ IF
+ 	InParty(Myself)
+ 	RealGlobalTimerExpired("AviRomance","GLOBAL")
+@@ -413,7 +395,6 @@
+ END
+ 
+ //ustawianie timera do romansu
+-
+ IF
+ 	InParty(Myself)
+ 	RealGlobalTimerExpired("AviRomance","GLOBAL")
+@@ -476,7 +457,6 @@
+ 		Interact(Player1)
+ END
+ 
+-
+ IF
+ 	InParty(Myself)
+ 	Global("AviRelationsActive","GLOBAL",2)
+@@ -612,10 +592,8 @@
+ RESPONSE #100
+ AddexperienceParty(50000)
+ EraseJournalEntry(~Avi Maya i jej brat
+-
+ Spotkaliœmy Boddi. Powiedzia³a nam, ¿e nie zna nikogo imieniem Dost. Nie posiadamy wiêcej punktów zaczepienia. Zasmucona Avi Maya powiedzia³a byœmy po prostu kontynuowali nasz¹ pracê nad zadaniami. Miejmy nadziejê, ¿e mimo wszystko dowiemy siê gdzie jest Dost.~)
+ AddJournalEntry(~Avi Maya i jej brat
+-
+ Brat Avi Mayi zosta³ zamieniony w nieumar³ego. Pokonaliœmy go i zdobyliœmy jego czaszkê. Oddaliœmy j¹ kap³anowi w Targowie. Uda³o siê uratowaæ Dosta. Jak okaza³o siê, kap³an ten jest kochankiem brata Avi. Wszystko dobrze siê zakoñczy³o.~,QUEST_DONE)
+ SetGlobal("AviBrotherAction","GLOBAL",6)
+ END
+@@ -705,7 +683,6 @@
+ SetGlobal("AviSkill4","GLOBAL",1)
+ END
+ 
+-
+ /////// Skrypt Kulyok z Xan NPC
+ IF
+ Global("AviPCIntoxication","GLOBAL",0)
+@@ -798,7 +775,6 @@
+ END
+ 
+ ////// nowy luk
+-
+ IF
+ PartyHasItem("C6LANTHO")
+ PartyHasItem("AVII2")
+@@ -814,7 +790,6 @@
+ END
+ 
+ ///// bantery
+-
+ IF
+ InParty("AVIDV")
+ Global("AviBanterTimer","GLOBAL",0)
+@@ -924,9 +899,7 @@
+ END
+ 
+ //// rozmowy romansowe v2
+-
+-
+-IF
++IF
+ !Global("AviRelationsActive","GLOBAL",0)
+ !Global("AviRelationsActive","GLOBAL",3)
+ Global("AviRelKeep","GLOBAL",0)
+@@ -961,11 +934,11 @@
+ IF
+ !AreaCheck("AR2000")
+ !AreaType(DUNGEON)
+-OR(4)
+-AreaType(OUTDOOR)
++OR(4)
++AreaType(OUTDOOR)
+ AreaType(CITY)
+ AreaType(WEATHER)
+-AreaType(FOREST)
++AreaType(FOREST)
+ !Global("AviRelationsActive","GLOBAL",0)
+ !Global("AviRelationsActive","GLOBAL",3)
+ Global("AviRelRain","GLOBAL",0)
+@@ -974,18 +947,18 @@
+ THEN
+ RESPONSE #100
+ Weather(RAIN)
+-SetGlobal("AviRelRain","GLOBAL",1)
++SetGlobal("AviRelRain","GLOBAL",1)
+ RealSetGlobalTimer("ItsRainingManAvi","GLOBAL",10)
+ END
+ 
+ IF
+ !AreaCheck("AR2000")
+ !AreaType(DUNGEON)
+-OR(4)
+-AreaType(OUTDOOR)
++OR(4)
++AreaType(OUTDOOR)
+ AreaType(CITY)
+ AreaType(WEATHER)
+-AreaType(FOREST)
++AreaType(FOREST)
+ RealGlobalTimerExpired("ItsRainingManAvi","GLOBAL")
+ !Global("AviRelationsActive","GLOBAL",0)
+ !Global("AviRelationsActive","GLOBAL",3)
+@@ -1001,7 +974,6 @@
+ Interact(Player1)
+ END
+ 
+-
+ IF
+ !Global("AviRelationsActive","GLOBAL",0)
+ !Global("AviRelationsActive","GLOBAL",3)
+@@ -1036,34 +1008,35 @@
+ END
+ 
+ IF
+-  OR(3)
+-  Die()
+-  CheckStatLT(Myself,1,INT)  
++  OR(3)
++  Die()
++  CheckStatLT(Myself,1,INT)
+   CheckStatLT(Myself,1,STR)
+ OR(2)
+ Global("AviRelationsActive","GLOBAL",3)
+ Global("AviRelationsActive","GLOBAL",0)
+-THEN
+-  RESPONSE #100  
++THEN
++  RESPONSE #100
+   DestroyItem("Avii1")
+   DestroyItem("Avii2")
+   LeaveParty()
+-  DestroySelf()
+-END
++  DestroySelf()
++END
+ 
+ IF
+-  OR(3)
+-  Die()
+-  CheckStatLT(Myself,1,INT)  
++  OR(3)
++  Die()
++  CheckStatLT(Myself,1,INT)
++  
+   CheckStatLT(Myself,1,STR)
+ OR(2)
+ Global("AviRelationsActive","GLOBAL",1)
+ Global("AviRelationsActive","GLOBAL",2)
+-THEN
+-  RESPONSE #100  
++THEN
++  RESPONSE #100
+   DestroyItem("Avii1")
+   DestroyItem("Avii2")
+   LeaveParty()
+-  DestroySelf()
++  DestroySelf()
+   SetGlobal("AviRelationsActive","GLOBAL",3)
+-END
+\ No newline at end of file
++END
+\ No newline at end of file

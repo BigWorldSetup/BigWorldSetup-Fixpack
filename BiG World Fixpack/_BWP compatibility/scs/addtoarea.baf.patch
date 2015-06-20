@@ -1,9 +1,0 @@
---- scs\candleskip\addtoarea.baf	Sun Jan 30 14:25:00 2005
-+++ C:\BWP Patchstudio\patched files\scs\candleskip\addtoarea.baf	Sat Nov 29 09:25:40 2008
-@@ -3,5 +3,5 @@
- THEN
- 	RESPONSE #100
- 		SetGlobal("DMWWSkipCandlekeep","GLOBAL",1)
--		CreateCreature("dw#skcan",[1178.640],0)
-+		CreateCreature("dw#skcan",[1714.371],0)
- END

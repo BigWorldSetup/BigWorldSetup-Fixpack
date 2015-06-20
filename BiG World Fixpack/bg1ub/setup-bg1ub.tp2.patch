@@ -1,0 +1,13 @@
+--- bg1ub\setup-bg1ub.tp2	Thu Mar 15 09:25:10 2012
++++ C:\BWP Patchstudio\patched files\bg1ub\setup-bg1ub.tp2	Tue Jul 24 07:30:46 2012
+@@ -1749,8 +1749,8 @@
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+ 
+ BEGIN @18
+-FORBID_FILE ~override/NTSHILOC.CRE~ @90003
+-FORBID_FILE ~data/NTotSC1.bif~ @90003
++// FORBID_FILE ~override/NTSHILOC.CRE~ @90003
++// FORBID_FILE ~data/NTotSC1.bif~ @90003
+ 
+ COPY ~bg1ub/bg1ubplaceholder~ ~override/BG1UBShiloChen.UB~
+ 

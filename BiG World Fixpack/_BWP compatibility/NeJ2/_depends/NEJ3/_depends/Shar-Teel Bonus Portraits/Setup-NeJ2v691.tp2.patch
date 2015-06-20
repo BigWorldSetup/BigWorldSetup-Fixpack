@@ -316,20 +316,6 @@
  COPY ~NeJ2/Melora/itm/Ryxyr.itm~        ~override/Ryxyr.itm~
    SAY NAME2 ~Ryxyr~
    SAY DESC ~Adlonn, a famous shadow master of a thief guild, earned his place with two legendary weapons: Ryxyr and Shadow Blade. Some say without the weapons, Adlonn will be no more than the bandits in city streets. Finally, he magically enhanced the weapons to serve only their owner, and granted them to his most trusted friend. Adlonn became a normal thief then, away from his guild. No one knew where he‘d gone. Occasional tales in taverns tell that he‘s still doing what he did, steal from the rich and help the poor.
-@@ -5801,8 +5944,13 @@
- 
- COPY ~NeJ2/Leina/are~		~override~
- 
-+ACTION_IF MOD_IS_INSTALLED ~bg2fixpack/setup-bg2fixpack.tp2~ "0" THEN BEGIN
-+COPY_EXISTING ~AR0400.bcs~ ~override/AR0400.bcs~
-+REPLACE_BCS_BLOCK ~NeJ/wafixes/oAR0400.baf~ ~NeJ2/Leina/scripts/nAR0400.bcs~
-+END ELSE BEGIN
- COPY_EXISTING ~AR0400.bcs~ ~override/AR0400.bcs~
- REPLACE_BCS_BLOCK ~NeJ2/Leina/scripts/oAR0400.bcs~ ~NeJ2/Leina/scripts/nAR0400.bcs~
-+END
- 
- COPY_EXISTING ~AR1002.bcs~ ~override/AR1002.bcs~
-   EXTEND_TOP ~AR1002.bcs~ ~NeJ2/Leina/scripts/sAR1002.bcs~
 @@ -6490,7 +6638,7 @@
   
  COPY ~NeJ2/cre/Kharesse.cre~        ~override/Kharesse.cre~
@@ -444,39 +430,6 @@
    SAY NAME1 ~Taffic~ 
    SAY NAME2 ~Taffic~
    SAY MORALE ~Quickly! Follow Taffic the Hero, he will save you all!~ [taficc31]
-@@ -7235,7 +7422,31 @@
- 
- ACTION_IF FILE_EXISTS ~data/BG1ARE.BIF~
- 	THEN BEGIN
--		// DO NOTHING //
-+		COPY_EXISTING ~AR9799.ARE~ ~override~
-+  	READ_LONG 0x54 actor_off
-+  	READ_LONG 0x5c info_off
-+  	READ_LONG 0x60 spawn_off
-+  	READ_LONG 0x68 entrance_off
-+  	READ_LONG 0x70 container_off
-+  	READ_LONG 0x78 item_off
-+  	READ_LONG 0x7c vertex_off
-+  	READ_LONG 0x84 ambient_off
-+  	READ_LONG 0x88 variable_off
-+  	READ_LONG 0xa8 door_off
-+  	READ_LONG 0xa0 explored_off
-+  	READ_LONG 0xb0 anim_off
-+  	READ_LONG 0xb8 tiled_off
-+  	READ_LONG 0xbc song_off
-+  	READ_LONG 0xc0 rest_off
-+  	READ_LONG 0xc4 automap_off
-+  	READ_LONG 0x6c entrance_num
-+    SPRINT are_update_offset_datatype "entrance"
-+  	SET are_update_offset_increment = 0x68
-+  	LAUNCH_PATCH_MACRO are_update_offset
-+  	INSERT_BYTES "%entrance_off%" 0x68
-+  	WRITE_ASCII "%entrance_off%" "Exit0070"
-+  	WRITE_SHORT ("%entrance_off%" + 0x20) 364
-+  	WRITE_SHORT ("%entrance_off%" + 0x22) 3196
- END
-  ELSE BEGIN
- 	COPY ~NeJ3/bgtcopy~          ~override~
 @@ -7561,8 +7772,13 @@
  
  ACTION_IF FILE_EXISTS_IN_GAME ~CUT01G.bcs~

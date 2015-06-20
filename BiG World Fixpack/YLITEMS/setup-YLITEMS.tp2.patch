@@ -1,5 +1,5 @@
---- setup-YLITEMS.tp2	Thu Dec 09 12:05:16 2010
-+++ C:\BWP Patchstudio\patched files\setup-YLITEMS.tp2	Fri Nov 08 18:01:28 2013
+--- setup-YLITEMS.tp2	Thu Dec 09 08:35:16 2010
++++ C:\BWP Patchstudio\patched files\setup-YLITEMS.tp2	Sun Oct 19 09:37:12 2014
 @@ -1,6 +1,6 @@
  BACKUP ~YLItems\backup~
  AUTHOR ~teno_yl@yahoo.com.cn~
@@ -7,4 +7,4 @@
 +VERSION ~BWP Fix~
  ASK_EVERY_COMPONENT
  
- README ~YLITEMS/readme.txt~
+ ALWAYS

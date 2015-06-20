@@ -1,14 +1,15 @@
---- setup-virtue.tp2	Sun Jan 30 05:03:26 2005
-+++ C:\BWP Patchstudio\patched files\setup-virtue.tp2	Tue Oct 15 00:20:52 2013
-@@ -1,6 +1,6 @@
+--- setup-virtue.tp2	Sun Jan 30 00:33:26 2005
++++ C:\BWP Patchstudio\patched files\setup-virtue.tp2	Sun Nov 23 14:57:59 2014
+@@ -1,6 +1,8 @@
  BACKUP ~virtue/backup~
  AUTHOR ~SimDing0@hotmail.com~
--
+ 
 +VERSION ~v19 BWP Fix~
++
  ALWAYS
  COPY_EXISTING_REGEXP GLOB ~^anomen[0-9]*\.cre~ ~override~
                           ~^imoen[0-9]*\.cre~  ~override~
-@@ -41,7 +41,7 @@
+@@ -41,7 +43,7 @@
  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_INVOKER\b~     ~0x0800 MAGESCHOOL_INVOKER~
  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_NECROMANCER\b~ ~0x1000 MAGESCHOOL_NECROMANCER~
  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_TRANSMUTER\b~  ~0x2000 MAGESCHOOL_TRANSMUTER~
@@ -17,23 +18,347 @@
  REPLACE_TEXTUALLY ~.*\bFERALAN\b~                ~0x4007 FERALAN~
  REPLACE_TEXTUALLY ~.*\bSTALKER\b~                ~0x4008 STALKER~
  REPLACE_TEXTUALLY ~.*\bBEASTMASTER\b~            ~0x4009 BEASTMASTER~
-@@ -57,15 +57,15 @@
- REPLACE_TEXTUALLY ~.*\bTOTEMIC\b~                ~0x4010 TOTEMIC~
- REPLACE_TEXTUALLY ~.*\bSHAPESHIFTER\b~           ~0x4011 SHAPESHIFTER~
- REPLACE_TEXTUALLY ~.*\bBEASTFRIEND\b~            ~0x4012 BEASTFRIEND~
--REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x0000 BARBARIAN~
--REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x0000 WILDMAGE~
-+REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x40000000 BARBARIAN~
-+REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x80000000 WILDMAGE~
- BUT_ONLY_IF_IT_CHANGES
+@@ -168,6 +170,9 @@
+ LANGUAGE ~Chinese (by killmercy)~
+          ~virtue/translations/chinese~
+          ~virtue/translations/chinese/virtue.tra~
++LANGUAGE ~German~
++         ~virtue/translations/german~
++         ~virtue/translations/german/virtue.tra~
  
- APPEND ~kit.ids~ ~0x4000 TRUECLASS~
- UNLESS ~\bTRUECLASS\b~
--APPEND ~kit.ids~ ~0x0000 BARBARIAN~
-+APPEND ~kit.ids~ ~0x40000000 BARBARIAN~
- UNLESS ~\bBARBARIAN\b~
--APPEND ~kit.ids~ ~0x0000 WILDMAGE~
-+APPEND ~kit.ids~ ~0x80000000 WILDMAGE~
- UNLESS ~\bWILDMAGE\b~
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  
- APPEND ~state.ids~ ~0x00000FC0 STATE_REALLY_DEAD~
+@@ -195,15 +200,121 @@
+ // ADD VIRTUE TO RECORD SCREEN
+ STRING_SET 9465 @3
+ 
++// memorize the older happy.2da for scripting purposes in the RAM
++COPY_EXISTING ~happy.2da~ ~override~
++  READ_2DA_ENTRIES_NOW ~_#_#_#happy~ 4
++BUT_ONLY_IF_IT_CHANGES
++
+ // ERADICATE THE REPUTATION SYSTEM
+ COPY ~virtue/system/2da~ ~override~
+ 
++
++// LW: EXTEND REPLACE BLOCKS
++// Addition for Gavin
++ACTION_IF FILE_EXISTS ~override/b!gavin.cre~ BEGIN
++COPY ~virtue\system\scripts\RB_1OLD.baf~ ~virtue\system\scripts\RB_1OLD.baf~
++REPLACE_TEXTUALLY ~BreakingPoint()~
++	~BreakingPoint()
++	!CharName("Gavin",Myself)~
++COPY ~virtue\system\scripts\RB_1NEW.baf~ ~virtue\system\scripts\RB_1NEW.baf~
++REPLACE_TEXTUALLY ~CheckStatLT(Player1,19,CHR)~
++	~CheckStatLT(Player1,19,CHR)
++	!CharName("Gavin",Myself)~
++REPLACE_TEXTUALLY ~!CheckStatGT(Player1,18,CHR)~
++	~!CheckStatGT(Player1,18,CHR)
++	!CharName("Gavin",Myself)~
++END
++
++// Addition for Vynd
++ACTION_IF FILE_EXISTS ~override/GV#VYND.CRE~ BEGIN
++COPY ~virtue\system\scripts\RB_1OLD.baf~ ~virtue\system\scripts\RB_1OLD.baf~
++REPLACE_TEXTUALLY ~BreakingPoint()~
++	~BreakingPoint()
++	!CharName("Vynd",Myself)~
++COPY ~virtue\system\scripts\RB_1NEW.baf~ ~virtue\system\scripts\RB_1NEW.baf~
++REPLACE_TEXTUALLY ~CheckStatLT(Player1,19,CHR)~
++	~CheckStatLT(Player1,19,CHR)
++	!CharName("Vynd",Myself)~
++REPLACE_TEXTUALLY ~!CheckStatGT(Player1,18,CHR)~
++	~!CheckStatGT(Player1,18,CHR)
++	!CharName("Vynd",Myself)~
++END
++
++// Addition for Edwin Romance
++ACTION_IF FILE_EXISTS ~override/Elvira.cre~ BEGIN
++COPY ~virtue\system\scripts\RB_1OLD.baf~ ~virtue\system\scripts\RB_1OLD.baf~
++REPLACE_TEXTUALLY ~BreakingPoint()~
++	~BreakingPoint()
++	!CharName("Edwin",Myself) // Edwin
++	!CharName("Edwina",Myself)~
++COPY ~virtue\system\scripts\RB_1NEW.baf~ ~virtue\system\scripts\RB_1NEW.baf~
++REPLACE_TEXTUALLY ~CheckStatLT(Player1,19,CHR)~
++	~CheckStatLT(Player1,19,CHR)
++	!CharName("Edwin",Myself) // Edwin
++	!CharName("Edwina",Myself)~
++REPLACE_TEXTUALLY ~!CheckStatGT(Player1,18,CHR)~
++	~!CheckStatGT(Player1,18,CHR)
++	!CharName("Edwin",Myself) // Edwin
++	!CharName("Edwina",Myself)~
++END
++
++// Addition for Tsujatha
++ACTION_IF FILE_EXISTS ~override/btsujat.dlg~ BEGIN
++COPY ~virtue\system\scripts\RB_1OLD.baf~ ~virtue\system\scripts\RB_1OLD.baf~
++REPLACE_TEXTUALLY ~BreakingPoint()~
++	~BreakingPoint()
++	!CharName("Tsujatha",Myself)~
++COPY ~virtue\system\scripts\RB_1NEW.baf~ ~virtue\system\scripts\RB_1NEW.baf~
++REPLACE_TEXTUALLY ~CheckStatLT(Player1,19,CHR)~
++	~CheckStatLT(Player1,19,CHR)
++	!CharName("Tsujatha",Myself)~
++REPLACE_TEXTUALLY ~!CheckStatGT(Player1,18,CHR)~
++	~!CheckStatGT(Player1,18,CHR)
++	!CharName("Tsujatha",Myself)~
++END
++
++ACTION_IF FILE_EXISTS ~override/btsujat.dlg~ BEGIN
++COPY ~virtue\system\scripts\RB_3OLD.baf~ ~virtue\system\scripts\RB_3OLD.baf~
++REPLACE_TEXTUALLY ~BreakingPoint()~
++	~BreakingPoint()
++	!CharName("Tsujatha",Myself)~
++END
++
++// Addition for Relationship
++ACTION_IF FILE_EXISTS ~override/M_RNPC.bcs~ BEGIN
++COPY ~virtue\system\scripts\RB_1OLD.baf~ ~virtue\system\scripts\RB_1OLD.baf~
++REPLACE_TEXTUALLY ~BreakingPoint()~
++	~BreakingPoint()
++	GlobalLT("M_RNPC","LOCALS",85)~
++COPY ~virtue\system\scripts\RB_1NEW.baf~ ~virtue\system\scripts\RB_1NEW.baf~
++REPLACE_TEXTUALLY ~CheckStatLT(Player1,19,CHR)~
++	~CheckStatLT(Player1,19,CHR)
++	GlobalLT("M_RNPC","LOCALS",85)~
++REPLACE_TEXTUALLY ~!CheckStatGT(Player1,18,CHR)~
++	~!CheckStatGT(Player1,18,CHR)
++	GlobalLT("M_RNPC","LOCALS",85)~
++END
++
++ACTION_IF FILE_EXISTS ~override/M_RNPC.bcs~ BEGIN
++COPY ~virtue\system\scripts\RB_3OLD.baf~ ~virtue\system\scripts\RB_3OLD.baf~
++REPLACE_TEXTUALLY ~BreakingPoint()~
++	~BreakingPoint()
++	GlobalLT("M_RNPC","LOCALS",85)~
++END
++
+ // ADD THE NEW ONE
+ COPY_EXISTING ~DPLAYER2.BCS~ ~override~
+ REPLACE_BCS_BLOCK ~virtue/system/scripts/RB_1OLD.BAF~ ~virtue/system/scripts/RB_1NEW.BAF~
++
+ COPY_EXISTING ~DPLAYER3.BCS~ ~override~
+ REPLACE_BCS_BLOCK ~virtue/system/scripts/RB_2OLD.BAF~ ~virtue/system/scripts/RB_2NEW.BAF~
+ 
++// if exist EdwinRomance
++ACTION_IF FILE_EXISTS ~override/Elvira.cre~ BEGIN
++COPY_EXISTING ~DPLAYER2.BCS~ ~override~
++REPLACE_BCS_BLOCK ~virtue/system/scripts/RB_3OLD.BAF~ ~virtue/system/scripts/RB_3NEW.BAF~
++END
++
+ COPY_EXISTING ~famcat.cre~ ~override~
+               ~famcat25.cre~ ~override~
+               ~famdust.cre~ ~override~
+@@ -232,48 +343,156 @@
+ 	COMPILE ~virtue/bg2/shouts~ // Commoner shout scripts
+ 
+ 	// SET UP THE BIOWARE NPCS TO WORK WITH IT
+-	EXTEND_TOP ~AERIE.BCS~ ~virtue/bg2/npcs/et_aerie.BAF~
+-	EXTEND_TOP ~AERI25.BCS~ ~virtue/bg2/npcs/et_aerie.BAF~
+-	EXTEND_TOP ~ANOMEN.BCS~ ~virtue/bg2/npcs/et_anome.BAF~
+-	EXTEND_TOP ~ANOM25.BCS~ ~virtue/bg2/npcs/et_anome.BAF~
+-	EXTEND_TOP ~CERND.BCS~ ~virtue/bg2/npcs/et_cernd.BAF~
+-	EXTEND_TOP ~CERN25.BCS~ ~virtue/bg2/npcs/et_cernd.BAF~
+-	EXTEND_TOP ~EDWIN.BCS~ ~virtue/bg2/npcs/et_edwin.BAF~
+-	EXTEND_TOP ~EDWI25.BCS~ ~virtue/bg2/npcs/et_edwin.BAF~
+-	EXTEND_TOP ~HAERDALI.BCS~ ~virtue/bg2/npcs/et_haer.BAF~
+-	EXTEND_TOP ~HAER25.BCS~ ~virtue/bg2/npcs/et_haer.BAF~
+-	EXTEND_TOP ~IMOEN.BCS~ ~virtue/bg2/npcs/et_imoen.BAF~
+-	EXTEND_TOP ~IMOEN2.BCS~ ~virtue/bg2/npcs/et_imoen.BAF~
+-	EXTEND_TOP ~IMOE25.BCS~ ~virtue/bg2/npcs/et_imoen.BAF~
+-	EXTEND_TOP ~JAHEIRA.BCS~ ~virtue/bg2/npcs/et_jahei.BAF~
+-	EXTEND_TOP ~JAHE25.BCS~ ~virtue/bg2/npcs/et_jahei.BAF~
+-	EXTEND_TOP ~JAN.BCS~ ~virtue/bg2/npcs/et_jan.BAF~
+-	EXTEND_TOP ~JAN25.BCS~ ~virtue/bg2/npcs/et_jan.BAF~
+-	EXTEND_TOP ~KELDORN.BCS~ ~virtue/bg2/npcs/et_keldo.BAF~
+-	EXTEND_TOP ~KELD25.BCS~ ~virtue/bg2/npcs/et_keldo.BAF~
+-	EXTEND_TOP ~KORGAN.BCS~ ~virtue/bg2/npcs/et_korga.BAF~
+-	EXTEND_TOP ~KORG25.BCS~ ~virtue/bg2/npcs/et_korga.BAF~
+-	EXTEND_TOP ~MAZZY.BCS~ ~virtue/bg2/npcs/et_mazzy.BAF~
+-	EXTEND_TOP ~MAZZ25.BCS~ ~virtue/bg2/npcs/et_mazzy.BAF~
+-	EXTEND_TOP ~MINSC.BCS~ ~virtue/bg2/npcs/et_minsc.BAF~
+-	EXTEND_TOP ~MINS25.BCS~ ~virtue/bg2/npcs/et_minsc.BAF~
+-	EXTEND_TOP ~NALIA.BCS~ ~virtue/bg2/npcs/et_nalia.BAF~
+-	EXTEND_TOP ~NALI25.BCS~ ~virtue/bg2/npcs/et_nalia.BAF~
+-	EXTEND_TOP ~VALYGAR.BCS~ ~virtue/bg2/npcs/et_valyg.BAF~
+-	EXTEND_TOP ~VALY25.BCS~ ~virtue/bg2/npcs/et_valyg.BAF~
+-	EXTEND_TOP ~VICONIA.BCS~ ~virtue/bg2/npcs/et_vicon.BAF~
+-	EXTEND_TOP ~VICO25.BCS~ ~virtue/bg2/npcs/et_vicon.BAF~
+-	EXTEND_TOP ~YOSHIMO.BCS~ ~virtue/bg2/npcs/et_yoshi.BAF~
+-	EXTEND_TOP ~SAREVOK.BCS~ ~virtue/bg2/npcs/et_sarev.BAF~
++	/* TB: now done in a REGEXP way to catch all mods. */
++// 	EXTEND_TOP ~AERIE.BCS~ ~virtue/bg2/npcs/et_aerie.BAF~
++// 	EXTEND_TOP ~AERI25.BCS~ ~virtue/bg2/npcs/et_aerie.BAF~
++// 	EXTEND_TOP ~ANOMEN.BCS~ ~virtue/bg2/npcs/et_anome.BAF~
++// 	EXTEND_TOP ~ANOM25.BCS~ ~virtue/bg2/npcs/et_anome.BAF~
++// 	EXTEND_TOP ~CERND.BCS~ ~virtue/bg2/npcs/et_cernd.BAF~
++// 	EXTEND_TOP ~CERN25.BCS~ ~virtue/bg2/npcs/et_cernd.BAF~
++// 	EXTEND_TOP ~EDWIN.BCS~ ~virtue/bg2/npcs/et_edwin.BAF~
++// 	EXTEND_TOP ~EDWI25.BCS~ ~virtue/bg2/npcs/et_edwin.BAF~
++// 	EXTEND_TOP ~HAERDALI.BCS~ ~virtue/bg2/npcs/et_haer.BAF~
++// 	EXTEND_TOP ~HAER25.BCS~ ~virtue/bg2/npcs/et_haer.BAF~
++// 	EXTEND_TOP ~IMOEN.BCS~ ~virtue/bg2/npcs/et_imoen.BAF~
++// 	EXTEND_TOP ~IMOEN2.BCS~ ~virtue/bg2/npcs/et_imoen.BAF~
++// 	EXTEND_TOP ~IMOE25.BCS~ ~virtue/bg2/npcs/et_imoen.BAF~
++// 	EXTEND_TOP ~JAHEIRA.BCS~ ~virtue/bg2/npcs/et_jahei.BAF~
++// 	EXTEND_TOP ~JAHE25.BCS~ ~virtue/bg2/npcs/et_jahei.BAF~
++// 	EXTEND_TOP ~JAN.BCS~ ~virtue/bg2/npcs/et_jan.BAF~
++// 	EXTEND_TOP ~JAN25.BCS~ ~virtue/bg2/npcs/et_jan.BAF~
++// 	EXTEND_TOP ~KELDORN.BCS~ ~virtue/bg2/npcs/et_keldo.BAF~
++// 	EXTEND_TOP ~KELD25.BCS~ ~virtue/bg2/npcs/et_keldo.BAF~
++// 	EXTEND_TOP ~KORGAN.BCS~ ~virtue/bg2/npcs/et_korga.BAF~
++// 	EXTEND_TOP ~KORG25.BCS~ ~virtue/bg2/npcs/et_korga.BAF~
++// 	EXTEND_TOP ~MAZZY.BCS~ ~virtue/bg2/npcs/et_mazzy.BAF~
++// 	EXTEND_TOP ~MAZZ25.BCS~ ~virtue/bg2/npcs/et_mazzy.BAF~
++// 	EXTEND_TOP ~MINSC.BCS~ ~virtue/bg2/npcs/et_minsc.BAF~
++// 	EXTEND_TOP ~MINS25.BCS~ ~virtue/bg2/npcs/et_minsc.BAF~
++// 	EXTEND_TOP ~NALIA.BCS~ ~virtue/bg2/npcs/et_nalia.BAF~
++// 	EXTEND_TOP ~NALI25.BCS~ ~virtue/bg2/npcs/et_nalia.BAF~
++// 	EXTEND_TOP ~VALY25.BCS~ ~virtue/bg2/npcs/et_valyg.BAF~
++// 	EXTEND_TOP ~VICONIA.BCS~ ~virtue/bg2/npcs/et_vicon.BAF~
++// 	EXTEND_TOP ~VICO25.BCS~ ~virtue/bg2/npcs/et_vicon.BAF~
++// 	EXTEND_TOP ~YOSHIMO.BCS~ ~virtue/bg2/npcs/et_yoshi.BAF~
++// 	EXTEND_TOP ~SAREVOK.BCS~ ~virtue/bg2/npcs/et_sarev.BAF~
+ 
+-	COMPILE ~virtue/bg2/npcs/npc.D~ // NPC leaving dialogues
++	COMPILE // ~virtue/bg2/npcs/npc.D~ // NPC leaving dialogues
++            /* TB: this one will be in our big loop as well. */
+ 	        ~virtue/bg2/npcs/npc2.D~ // NPC alignment changes
+ 			~virtue/bg2/fam_all.d~ // Familiar dialog
+ 
++/* TB: loop over all .cre files, if it's in pdialog.2da it's an NPC.
++   I'll extract the name of the P dialogue from there and perform
++   all needed extends and dialogue changes. */
++
++// preparation files ; the ones listed here are manually skipped because simply checking for biography != ""
++// and DV in pdialog doesn't filter them. DING0 TAKE NOTE THAT YOU SHOULD CHANGE D0JAREV's DV.
++<<<<<<<< donescript
++d0jahrev
++None
++>>>>>>>>
++<<<<<<<< donepdial
++>>>>>>>>
++COPY ~donescript~ ~virtue/donescript~ // this file will contain the log of already dealt-with scripts
++COPY ~donepdial~ ~virtue/donepdial~ // ...and scripts
++COPY_EXISTING ~pdialog.2da~ ~override~ // needed in the override
++  READ_2DA_ENTRIES_NOW ~_#_#_#pdialog~ 2 // including the header
++
++COPY_EXISTING_REGEXP GLOB ~^.*\.cre$~ ~override~
++  READ_ASCII 0x280 deathvariable
++  READ_BYTE  0x280 check
++  READ_ASCII 0x248 script
++  READ_BYTE  0x27b align
++  READ_LONG  0x1cc biography
++  SPRINT s_r ~%SOURCE_RES%~
++  PATCH_IF FILE_CONTAINS_EVALUATED (~override/pdialog.2da~ ~^%deathvariable%[ \t]~) AND // if it's an NPC
++    check != 0  AND NOT (("%biography%" > 2147483646) OR ("%biography%" < 1)) BEGIN // and the DV is nonempty
++    SPRINT ~pdialogue~ ~void_this_is_void~ // useful to catch missing *p file from the 2da
++    // read all pre-read lines in pdialog and find the one with this DV. find out the SoA *p dialogue
++    // (the TOB *P dialogue doesn't matter).
++    FOR (i = 1; i < _#_#_#pdialog; i+=1) BEGIN // skip the first line, AKA the one with the headers
++      READ_2DA_ENTRY_FORMER ~_#_#_#pdialog~ i 0 thisline
++      PATCH_IF !(~%thisline%~ STRING_COMPARE_CASE ~%deathvariable%~) BEGIN
++        READ_2DA_ENTRY_FORMER ~_#_#_#pdialog~ i 1 pdialogue
++        // R_2_E_F this one manually because SOMEBODY (KULYOK) CAN'T APPEND PROPERLY TO THE 2DA
++        //READ_2DA_ENTRY_FORMER ~_#_#_#pdialog~ i 7 tobscript
++        SPRINT tobscript ~_#_#_#pdialog_%i%_7~
++        SPRINT ~tobscript~ EVALUATE_BUFFER ~%%tobscript%%~
++        SPRINT tobpdial ~_#_#_#pdialog_%i%_4~
++        SPRINT ~tobpdial~ EVALUATE_BUFFER ~%%tobpdial%%~
++//         PATCH_PRINT ~%tobscript%~
++      END
++    END
++    PATCH_IF (NOT FILE_CONTAINS_EVALUATED (~virtue/donescript~ ~^%script% -~)) BEGIN
++                                                      //I didn't already deal with this script
++//       PATCH_PRINT ~%s_r% SoA script~
++      INNER_ACTION BEGIN
++        APPEND_OUTER ~virtue/donescript~ ~%script% -~ // add this to the log!
++        COPY - ~virtue/bg2/npcs/ET_GENER.BAF~ ~virtue/temp/this_et.baf~ // prepare a virtual copy of the generic script
++          REPLACE_TEXTUALLY ~___NPC___~ ~%deathvariable%~ // ... which references our NPC DV.
++
++        EXTEND_TOP ~%script%.bcs~ ~virtue/temp/this_et.baf~ // and append it to the current NPC script
++      END
++    END
++    // manually do TOB script for those tricky not-summonable-in-tob creatures
++    PATCH_IF (NOT FILE_CONTAINS_EVALUATED (~virtue/donescript~ ~^%tobscript% -~)) //I didn't already deal with this script
++        AND FILE_EXISTS_IN_GAME ~%tobscript%.bcs~ BEGIN
++
++//       PATCH_PRINT ~%s_r% ToB script~
++      INNER_ACTION BEGIN
++        APPEND_OUTER ~virtue/donescript~ ~%tobscript% -~ // add this to the log!
++        COPY - ~virtue/bg2/npcs/ET_GENER.BAF~ ~virtue/temp/this_et.baf~ // prepare a virtual copy of the generic script
++          REPLACE_TEXTUALLY ~___NPC___~ ~%deathvariable%~ // ... which references our NPC DV.
++
++        EXTEND_TOP ~%tobscript%.bcs~ ~virtue/temp/this_et.baf~ // and append it to the current NPC script
++      END
++    END
++    PATCH_IF (%pdialogue% STRING_COMPARE_CASE ~void_this_is_void~) // if this P dialogue is different, IE set...
++         AND (NOT FILE_CONTAINS_EVALUATED (~virtue/donepdial~ ~^%pdialogue% -~))
++                                                         //and I didn't already deal with it...
++         AND FILE_EXISTS_IN_GAME ~%pdialogue%.dlg~ BEGIN // and it exists
++//       PATCH_PRINT ~%s_r% P dialogue~
++      // extract the real alignment from the current alignment.ids variable
++      // good = 0x?1 neutral = 0x?2 evil = 0x?3
++      SET gealign = ((align & 3)-3) ? ((align & 1) ? 1 : 2) : 3
++      SET amievil = (gealign = 3) // 1 if evil, 0 otherwise
++      INNER_ACTION BEGIN
++        APPEND_OUTER ~virtue/donepdial~ ~%pdialogue% -~ // add this to the log!
++        COPY_EXISTING ~%pdialogue%.dlg~ ~override~ // get the P dialogue
++          DECOMPILE_DLG_TO_D
++            // and replace all happinessLT(300) calls with references to the d0happiness global.
++            REPLACE_EVALUATE ~Happiness\([GL]\)T(Myself,\([-0-9]*\))~ BEGIN
++              SET incoming_LG = ("%MATCH1%" STRING_COMPARE_CASE "G") ? 1 : 0 // 1 if HappinessLT, 0 if HapGT
++              SET outcoming_LG = (amievil || incoming_LG) && !(amievil && incoming_LG)
++                // 1 if evil and happinessGT or nonevil and happinessLT (so GlobalLT)
++                // 0 if evil and happinessLT or nonevil and happinessGT (so GlobalGT)
++              PATCH_IF outcoming_LG BEGIN SPRINT LorG "LT" END ELSE BEGIN SPRINT LorG "GT" END
++              SET result = 30 // dummy value
++              FOR (i = 0; (i < _#_#_#happy) && (result = 30); i+=1) BEGIN
++                READ_2DA_ENTRY_FORMER ~_#_#_#happy~ i gealign thishap
++                PATCH_IF amievil BEGIN // happiness decreases with virtue
++                  SET result = (thishap < "%MATCH2%") ? (i - 1 + incoming_LG) : result
++                END
++                PATCH_IF ! amievil BEGIN // happiness increases with virtue
++                  SET result = (thishap > "%MATCH2%") ? (i + incoming_LG) : result
++                END
++              END
++            END ~Global%LorG%("D0Happiness","LOCALS",%result%)~
++          COMPILE_D_TO_DLG
++      END
++    END
++  END
++BUT_ONLY_IF_IT_CHANGES
++
++
++/* TB: this one is still needed for the drop his body part */
++	EXTEND_TOP ~VALYGAR.BCS~ ~virtue/bg2/npcs/et_valyg.BAF~
++
+     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     // QUESTS
+ 
+-			~virtue/bg2/quest/quest.d~ // Existing rep changes
++		COMPILE	~virtue/bg2/quest/quest.d~ // Existing rep changes
+ 	        ~virtue/bg2/quest/quest2.d~ // Add new rep changes
+ 	        ~virtue/bg2/quest/quest3.d~ // Existing alignment checks
+ 
+@@ -396,8 +615,8 @@
+ 	      AND FILE_EXISTS ~override/J#KLS25J.DLG~
+ 	THEN BEGIN
+ 	COMPILE ~virtue/bg2/npcs/mod/kelsey.d~
+-	EXTEND_TOP ~J#KLSY.BCS~ ~virtue/bg2/npcs/mod/et_kelse.BAF~
+-	EXTEND_TOP ~J#KLSY25.BCS~ ~virtue/bg2/npcs/mod/et_kelse.BAF~
++// 	EXTEND_TOP ~J#KLSY.BCS~ ~virtue/bg2/npcs/mod/et_kelse.BAF~
++// 	EXTEND_TOP ~J#KLSY25.BCS~ ~virtue/bg2/npcs/mod/et_kelse.BAF~
+ 	COPY_EXISTING ~J#KLSY.BCS~ ~override~
+ 	REPLACE_BCS_BLOCK ~virtue/bg2/npcs/mod/k_RB_1a.BAF~ ~virtue/bg2/npcs/mod/k_RB_1b.BAF~
+ 	END
+@@ -407,7 +626,7 @@
+ 	      AND FILE_EXISTS ~override/KETO.BCS~
+ 	THEN BEGIN
+ 	COMPILE ~virtue/bg2/npcs/mod/keto.d~
+-	EXTEND_TOP ~KETO.BCS~ ~virtue/bg2/npcs/mod/et_keto.BAF~
++// 	EXTEND_TOP ~KETO.BCS~ ~virtue/bg2/npcs/mod/et_keto.BAF~
+ //	EXTEND_TOP ~KETO25.BCS~ ~virtue/bg2/npcs/mod/et_keto.BAF~
+ 	END
+ 

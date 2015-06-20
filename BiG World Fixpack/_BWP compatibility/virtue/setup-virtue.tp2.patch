@@ -1,5 +1,5 @@
---- setup-virtue.tp2	Sun Jan 30 01:33:26 2005
-+++ C:\BWP Patchstudio\patched files\setup-virtue.tp2	Sun Jun 17 07:23:51 2012
+--- setup-virtue.tp2	Sun Jan 30 00:33:26 2005
++++ C:\BWP Patchstudio\patched files\setup-virtue.tp2	Sun Nov 23 14:57:59 2014
 @@ -1,6 +1,8 @@
  BACKUP ~virtue/backup~
  AUTHOR ~SimDing0@hotmail.com~
@@ -18,7 +18,17 @@
  REPLACE_TEXTUALLY ~.*\bFERALAN\b~                ~0x4007 FERALAN~
  REPLACE_TEXTUALLY ~.*\bSTALKER\b~                ~0x4008 STALKER~
  REPLACE_TEXTUALLY ~.*\bBEASTMASTER\b~            ~0x4009 BEASTMASTER~
-@@ -195,15 +197,106 @@
+@@ -168,6 +170,9 @@
+ LANGUAGE ~Chinese (by killmercy)~
+          ~virtue/translations/chinese~
+          ~virtue/translations/chinese/virtue.tra~
++LANGUAGE ~German~
++         ~virtue/translations/german~
++         ~virtue/translations/german/virtue.tra~
+ 
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+@@ -195,15 +200,121 @@
  // ADD VIRTUE TO RECORD SCREEN
  STRING_SET 9465 @3
  
@@ -45,6 +55,21 @@
 +REPLACE_TEXTUALLY ~!CheckStatGT(Player1,18,CHR)~
 +	~!CheckStatGT(Player1,18,CHR)
 +	!CharName("Gavin",Myself)~
++END
++
++// Addition for Vynd
++ACTION_IF FILE_EXISTS ~override/GV#VYND.CRE~ BEGIN
++COPY ~virtue\system\scripts\RB_1OLD.baf~ ~virtue\system\scripts\RB_1OLD.baf~
++REPLACE_TEXTUALLY ~BreakingPoint()~
++	~BreakingPoint()
++	!CharName("Vynd",Myself)~
++COPY ~virtue\system\scripts\RB_1NEW.baf~ ~virtue\system\scripts\RB_1NEW.baf~
++REPLACE_TEXTUALLY ~CheckStatLT(Player1,19,CHR)~
++	~CheckStatLT(Player1,19,CHR)
++	!CharName("Vynd",Myself)~
++REPLACE_TEXTUALLY ~!CheckStatGT(Player1,18,CHR)~
++	~!CheckStatGT(Player1,18,CHR)
++	!CharName("Vynd",Myself)~
 +END
 +
 +// Addition for Edwin Romance
@@ -125,7 +150,7 @@
  COPY_EXISTING ~famcat.cre~ ~override~
                ~famcat25.cre~ ~override~
                ~famdust.cre~ ~override~
-@@ -232,48 +325,156 @@
+@@ -232,48 +343,156 @@
  	COMPILE ~virtue/bg2/shouts~ // Commoner shout scripts
  
  	// SET UP THE BIOWARE NPCS TO WORK WITH IT
@@ -317,7 +342,7 @@
  	        ~virtue/bg2/quest/quest2.d~ // Add new rep changes
  	        ~virtue/bg2/quest/quest3.d~ // Existing alignment checks
  
-@@ -396,8 +597,8 @@
+@@ -396,8 +615,8 @@
  	      AND FILE_EXISTS ~override/J#KLS25J.DLG~
  	THEN BEGIN
  	COMPILE ~virtue/bg2/npcs/mod/kelsey.d~
@@ -328,7 +353,7 @@
  	COPY_EXISTING ~J#KLSY.BCS~ ~override~
  	REPLACE_BCS_BLOCK ~virtue/bg2/npcs/mod/k_RB_1a.BAF~ ~virtue/bg2/npcs/mod/k_RB_1b.BAF~
  	END
-@@ -407,7 +608,7 @@
+@@ -407,7 +626,7 @@
  	      AND FILE_EXISTS ~override/KETO.BCS~
  	THEN BEGIN
  	COMPILE ~virtue/bg2/npcs/mod/keto.d~

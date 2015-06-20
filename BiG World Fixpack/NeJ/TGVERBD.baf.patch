@@ -1,0 +1,11 @@
+--- NeJ\baf\TGVERBD.baf	Tue Dec 02 00:04:08 2003
++++ C:\BWP Patchstudio\patched files\NeJ\baf\TGVERBD.baf	Thu Apr 01 16:51:59 2010
+@@ -57,7 +57,7 @@
+ 	Range([PC],5)
+ 	See([PC])
+ 	!Allegiance(Myself,ENEMY)
+-	!Dead("yself)")
++	!StateCheck(Myself,STATE_REALLY_DEAD)
+ 	Global("RED_ESCAPE","GLOBAL",0)
+ THEN
+ 	RESPONSE #100

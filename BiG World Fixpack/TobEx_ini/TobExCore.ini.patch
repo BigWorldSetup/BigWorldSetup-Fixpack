@@ -1,0 +1,11 @@
+--- TobEx_ini\TobExCore.ini	Sun Jun 07 15:40:50 2015
++++ C:\BWP Patchstudio\patched files\TobEx_ini\TobExCore.ini	Thu Jun 11 22:06:09 2015
+@@ -123,7 +123,7 @@
+ 
+ [Sound]
+ Animation Sound Fix=1
+-Existence Sound Fix=1
++Existence Sound Fix=0
+ Externalise Animation Walking Sounds=1
+ Soundset Subtitles=1
+ 

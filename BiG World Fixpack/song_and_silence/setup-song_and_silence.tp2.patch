@@ -1,15 +1,15 @@
---- song_and_silence\setup-song_and_silence.tp2	Fri Apr 30 14:42:54 2010
-+++ C:\BWP Patchstudio\patched files\song_and_silence\setup-song_and_silence.tp2	Sat Dec 14 22:42:12 2013
-@@ -2,7 +2,7 @@
+--- song_and_silence\setup-song_and_silence.tp2	Thu Sep 25 22:18:56 2014
++++ C:\BWP Patchstudio\patched files\song_and_silence\setup-song_and_silence.tp2	Tue Oct 21 18:09:27 2014
+@@ -1,7 +1,7 @@
+ BACKUP ~song_and_silence/backup~
  AUTHOR ~andyr@gibberlings3.net~
- // MODDER
- NO_IF_EVAL_BUG
--VERSION ~v5~
-+VERSION ~v5 BWP Fix~
+ 
+-VERSION ~v6~
++VERSION ~v6 BWP Fix~
  README ~song_and_silence/readme-song_and_silence.html~
+ 
  ALWAYS
-   // hurray for linefeed
-@@ -735,14 +735,14 @@
+@@ -760,14 +760,14 @@
        PATCH_IF (("%dv%" STRING_MATCHES_REGEXP ~^imoen2?$~) == 0) && (MOD_IS_INSTALLED npckit.tp2 1400) BEGIN
          PATCH_PRINT @80
          WRITE_SHORT 0x244 0x0000

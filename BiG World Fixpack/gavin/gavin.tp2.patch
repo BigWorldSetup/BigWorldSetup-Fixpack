@@ -1,11 +1,11 @@
---- gavin\gavin.tp2	Tue Jun 22 17:21:57 2010
-+++ C:\BWP Patchstudio\patched files\gavin\gavin.tp2	Sun Feb 09 10:18:04 2014
-@@ -15,11 +15,15 @@
+--- Gavin\gavin.tp2	Tue Mar 17 21:19:44 2015
++++ C:\BWP Patchstudio\patched files\Gavin\gavin.tp2	Mon May 11 08:12:51 2015
+@@ -22,11 +22,15 @@
  /* enable all error messages; nothing suppressed. comment this out for release version */
  //MODDER
  
--VERSION ~v8~
-+VERSION ~v8 BWP Fix~
+-VERSION ~v9 beta_150317~
++VERSION ~v9 beta_150317 BWP Fix~
  
  /* launch the readme file immediately. */
  README ~gavin/readme-gavin.html~
@@ -15,9 +15,9 @@
 +FW3300N.WED
 +
  ALWAYS
-   ACTION_IF FILE_EXISTS_IN_GAME ~FW0100.are~ THEN BEGIN
-     /* Tell the player it is using Tutu stuff */
-@@ -389,6 +393,7 @@
+ 
+ /* These actions are processed for every component: reading of variables */
+@@ -253,6 +257,7 @@
  END
  
  COPY_EXISTING ~%Beregost%.wed~ override

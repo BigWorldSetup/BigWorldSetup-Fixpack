@@ -1,0 +1,22 @@
+--- SmilingImpCrossBanterMod\BranwenStivan.d	Fri Mar 21 15:29:36 2014
++++ C:\BWP Patchstudio\patched files\SmilingImpCrossBanterMod\BranwenStivan.d	Sun Jan 04 21:44:49 2015
+@@ -4,7 +4,7 @@
+ 
+ CHAIN IF ~Global("Branwentb#Stiv","GLOBAL",0)
+ InParty("tb#Stiv")
+-See("tb#Stiv")Global!StateCheck("tb#Stiv",CD_STATE_NOTVALID)InParty("7XBRAN")
++See("tb#Stiv")!StateCheck("tb#Stiv",CD_STATE_NOTVALID)InParty("7XBRAN")
+ !StateCheck("7XBRAN",CD_STATE_NOTVALID)~ THEN 7XBRANB BranwenStivan_1
+ ~Stop sharpening your steel on those harmless birds. There are much worthier enemies that deserve to taste your blade~ DO ~SetGlobal("Branwentb#Stiv","GLOBAL",1)~
+ == TB#STIVB ~Well, it's up to you for those. Seeing you is enough to make them run.~
+@@ -19,8 +19,8 @@
+ == 7XBRANB ~So it would seem, but I still haven't thought about what I should prepare.~
+ == TB#STIVB ~Seagull breast, slowly roasted?~
+ == 7XBRANB ~I'd prefer more filling meat, but I'm afraid we'll have to make do.~
+-== TB#STIVB Any idea on how to garnish it? Mine always ends up tasteless.~
+-== 7XBRANB I have some leaves of laurel with me. I usually put them on wounds to make their closing easier, but they're good for this as well. We could also add some fennel seeds. I always keep them to fix a sore throat, but we won't need them here.~
++== TB#STIVB ~Any idea on how to garnish it? Mine always ends up tasteless.~
++== 7XBRANB ~I have some leaves of laurel with me. I usually put them on wounds to make their closing easier, but they're good for this as well. We could also add some fennel seeds. I always keep them to fix a sore throat, but we won't need them here.~
+ == TB#STIVB ~(Nom!) I'm watering already! I didn't know you were a good cook!~
+ == 7XBRANB ~And why not? I answered Tempus' call and took up arms, but I'm still a woman. I'm supposed to know more about these things than a boy.~
+ == TB#STIVB ~Heh, I suppose, you could do all right with a hammer in one hand and a rolling pin in the other.~

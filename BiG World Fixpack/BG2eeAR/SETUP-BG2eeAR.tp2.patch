@@ -1,0 +1,36 @@
+--- SETUP-BG2eeAR.tp2	Thu Sep 11 22:30:37 2014
++++ C:\BWP Patchstudio\patched files\SETUP-BG2eeAR.tp2	Fri Mar 06 13:50:23 2015
+@@ -1,6 +1,6 @@
+ BACKUP ~BG2eeAR/backup~
+ AUTHOR ~CoM_Solaufein @ "http://www.teambg.net"~
+-
++VERSION ~v1.01 BWP adaption~
+ 
+ 
+ // Language Options
+@@ -158,14 +158,14 @@
+  /*STORES */
+  
+  /* CMTBEES1.STO */
+-COPY ~BG2eeAR/sto/cmtb2ees1.sto~ ~Override~
++COPY ~BG2eeAR/sto/cmtb2ee2.sto~ ~Override~
+   SAY 0xC @47
+ 
+ 
+  /*CREATURE */
+  
+  /* CMTBEES1.CRE */
+-COPY ~BG2eeAR/cre/cmtb2ees1.cre~ ~Override~
++COPY ~BG2eeAR/cre/cmtb2ee2.cre~ ~Override~
+   SAY 0x8 @48
+   SAY 0xC @48
+ 
+@@ -180,7 +180,7 @@
+ /*DIALOGS */
+  
+  /* CMTBEES1.dlg */
+-COMPILE ~BG2eeAR/dlg/cmtb2ees1.d~
++COMPILE ~BG2eeAR/dlg/cmtb2ee2.d~
+ 
+ 
+ 

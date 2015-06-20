@@ -3,7 +3,7 @@
 @@ -1,6 +1,6 @@
  BACKUP ~amber/backup~
  AUTHOR ~amber@welho.net~
--VERSION ~v4~
+-VERSION ~v3~
 +VERSION ~v4 BWP Fix~
  README ~amber/readme-amber.html~
  LANGUAGE ~English~ ~english~ ~amber/tra/english/setup.tra~

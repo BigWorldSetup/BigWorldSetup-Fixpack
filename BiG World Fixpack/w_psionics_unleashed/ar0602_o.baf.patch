@@ -1,0 +1,15 @@
+--- w_psionics_unleashed\baf\bgt\ar0602_o.baf	Fri Jan 04 02:27:12 2013
++++ C:\BWP Patchstudio\patched files\w_psionics_unleashed\baf\bgt\ar0602_o.baf	Fri Nov 21 08:46:48 2014
+@@ -4,12 +4,6 @@
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("BGImportIncomplete","AR0602",2)
+-		ActionOverride(Player1,MakeUnselectable(2147483647))
+-		ActionOverride(Player2,MakeUnselectable(2147483647))
+-		ActionOverride(Player3,MakeUnselectable(2147483647))
+-		ActionOverride(Player4,MakeUnselectable(2147483647))
+-		ActionOverride(Player5,MakeUnselectable(2147483647))
+-		ActionOverride(Player6,MakeUnselectable(2147483647))
+ 		SetCursorState(FALSE)
+ 		FadeFromColor([30.0],0)
+ 		DisplayStringHead(Myself,76038) // Your captor may come any time soon. You should go to the RECORD SCREEN and LEVEL UP before continuing. The game will continue as soon as <CHARNAME> is prepared.

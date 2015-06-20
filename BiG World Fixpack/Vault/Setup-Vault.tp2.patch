@@ -1,5 +1,5 @@
---- Setup-Vault.tp2	Sun Aug 26 20:37:16 2012
-+++ C:\BWP Patchstudio\patched files\Setup-Vault.tp2	Sun Sep 29 09:36:42 2013
+--- Setup-Vault.tp2	Sun Aug 26 17:07:16 2012
++++ C:\BWP Patchstudio\patched files\Setup-Vault.tp2	Fri Apr 03 12:25:15 2015
 @@ -10,7 +10,7 @@
  	// where should tell the user to send email if something goes wrong? 
  AUTHOR ~http://www.shsforums.net/topic/55129-the-vault-for-bgt-v72-released/~
@@ -9,3 +9,12 @@
  
  README ~vault/ReadMe-Vault.html~
  
+@@ -1606,7 +1606,7 @@
+   END
+ BUT_ONLY_IF_IT_CHANGES
+ 
+-ACTION_IF FILE_EXISTS_IN_GAME	~alissa8.cre~	THEN BEGIN
++ACTION_IF FILE_EXISTS_IN_GAME	~ALROR.cre~	THEN BEGIN
+ COPY_EXISTING	~cadder2.cre~  ~override~
+ 			~cadder3.cre~  ~override~
+ 			~cadder5.cre~  ~override~

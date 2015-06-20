@@ -1,11 +1,9 @@
---- ISNF\ISNF.tp2	Sun Feb 02 13:43:12 2014
-+++ C:\BWP Patchstudio\patched files\ISNF\ISNF.tp2	Thu Feb 27 21:14:31 2014
-@@ -1,7 +1,7 @@
+--- ISNF\ISNF.tp2	Wed Jan 28 02:05:58 2015
++++ C:\BWP Patchstudio\patched files\ISNF\ISNF.tp2	Mon May 11 08:18:34 2015
+@@ -1,5 +1,6 @@
  BACKUP ~ISNF/backup~
  AUTHOR ~Lava~
-+VERSION ~v4.1 BWP Fix~
++VERSION ~v4.4 BWP Fix~
  README ~ISNF/ReadMe.txt~
--
- AUTO_TRA ~ISNF/Translations/%s~
  
- LANGUAGE ~English~
+ 

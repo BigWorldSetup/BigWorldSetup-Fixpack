@@ -1,27 +1,27 @@
---- Yasraena\Setup-Yasraena.tp2	Sat Aug 31 23:51:09 2013
-+++ C:\BWP Patchstudio\patched files\Yasraena\Setup-Yasraena.tp2	Tue Oct 15 00:23:17 2013
+--- Yasraena\Setup-Yasraena.tp2	Wed Aug 13 13:01:02 2014
++++ C:\BWP Patchstudio\patched files\Yasraena\Setup-Yasraena.tp2	Tue Oct 21 18:00:26 2014
 @@ -1,7 +1,7 @@
- BACKUP ~Yasraena\backup~
+ BACKUP ~Yasraena/backup~
  AUTHOR ~gilalion@gmail.com~
  
--VERSION ~v13~
-+VERSION ~v13 BWP Fix~
+-VERSION ~v15~
++VERSION ~v15 BWP Fix~
  
  README ~Yasraena/README-Yasraena.html~
  
-@@ -178,12 +178,12 @@
+@@ -190,12 +190,12 @@
  
  /* compile .d files into .dlg files which get stored in the Overide directory */
- COMPILE ~Yasraena\Dialogues\YASRAENP.d~ ~Yasraena\Dialogues\YASRA25P.d~
--USING ~Yasraena\English\JOURNAL.tra~
-+USING ~Yasraena\%s\JOURNAL.tra~
- COMPILE ~Yasraena\Dialogues\BYASRAEN.d~ ~Yasraena\Dialogues\BYASRA25.d~
- COMPILE ~Yasraena\Dialogues\YASRAENJ.d~ ~Yasraena\Dialogues\YASRA25J.d~
--USING ~Yasraena\English\JOURNAL.tra~
-+USING ~Yasraena\%s\JOURNAL.tra~
- COMPILE ~Yasraena\Dialogues\YASRAENA.d~ ~Yasraena\Dialogues\DIVALIR.d~ ~Yasraena\Dialogues\DIVALIR1.d~ ~Yasraena\Dialogues\YSCPTN.d~ ~Yasraena\Dialogues\YSTMCPTN.d~ ~Yasraena\Dialogues\YSNETHR.d~ ~Yasraena\Dialogues\YSMOM.d~
--USING ~Yasraena\English\JOURNAL.tra~
-+USING ~Yasraena\%s\JOURNAL.tra~
+ COMPILE ~Yasraena/Dialogues/YASRAENP.d~ ~Yasraena/Dialogues/YASRA25P.d~
+-USING ~Yasraena/English/JOURNAL.tra~
++USING ~Yasraena/%s/JOURNAL.tra~
+ COMPILE ~Yasraena/Dialogues/BYASRAEN.d~ ~Yasraena/Dialogues/BYASRA25.d~
+ COMPILE ~Yasraena/Dialogues/YASRAENJ.d~ ~Yasraena/Dialogues/YASRA25J.d~
+-USING ~Yasraena/English/JOURNAL.tra~
++USING ~Yasraena/%s/JOURNAL.tra~
+ COMPILE ~Yasraena/Dialogues/YASRAENA.d~ ~Yasraena/Dialogues/DIVALIR.d~ ~Yasraena/Dialogues/DIVALIR1.d~ ~Yasraena/Dialogues/YSCPTN.d~ ~Yasraena/Dialogues/YSTMCPTN.d~ ~Yasraena/Dialogues/YSNETHR.d~ ~Yasraena/Dialogues/YSMOM.d~
+-USING ~Yasraena/English/JOURNAL.tra~
++USING ~Yasraena/%s/JOURNAL.tra~
  
  /* compile .baf files into .bcs files which get stored in the Override directory */
- COMPILE ~Yasraena\Scripts\YSAR0603.baf~ ~Yasraena\Scripts\YSAR2200.baf~ ~Yasraena\Scripts\YSAR2800.baf~ ~Yasraena\Scripts\YSAR0300.baf~ ~Yasraena\Scripts\YSAR0704.baf~ ~Yasraena\Scripts\YSAR5202.baf~ ~Yasraena\Scripts\YSAR6100.baf~
+ COMPILE ~Yasraena/Scripts/YSAR0603.baf~ ~Yasraena/Scripts/YSAR2200.baf~ ~Yasraena/Scripts/YSAR2800.baf~ ~Yasraena/Scripts/YSAR0300.baf~ ~Yasraena/Scripts/YSAR0704.baf~ ~Yasraena/Scripts/YSAR5202.baf~ ~Yasraena/Scripts/YSAR6100.baf~

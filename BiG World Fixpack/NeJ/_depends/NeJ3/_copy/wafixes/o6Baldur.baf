@@ -1,0 +1,12 @@
+IF
+  GlobalTimerExpired("JosterPaid","GLOBAL")
+  !Global("JosterLeave","GLOBAL",1)
+  Global("PGFailed","GLOBAL",0)
+  !Global("Chapter","GLOBAL",4)
+  !Global("Chapter","GLOBAL",5)
+  !Global("Chapter","GLOBAL",7)
+THEN
+  RESPONSE #100
+    SetGlobal("PGFailed","GLOBAL",1)
+    DisplayStringHead(Player1,62082)
+END

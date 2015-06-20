@@ -1,0 +1,10 @@
+--- A4Auror\Setup-A4Auror.tp2	Fri Jun 20 18:32:45 2014
++++ C:\BWP Patchstudio\patched files\A4Auror\Setup-A4Auror.tp2	Thu Jun 11 15:01:39 2015
+@@ -22,7 +22,6 @@
+ ASK_EVERY_COMPONENT
+ LANGUAGE ~English~
+          ~English~
+-         ~Language/English~
+          ~A4Auror/Language/A4Auror-Setup_ENG.tra~
+ 
+ BEGIN @1

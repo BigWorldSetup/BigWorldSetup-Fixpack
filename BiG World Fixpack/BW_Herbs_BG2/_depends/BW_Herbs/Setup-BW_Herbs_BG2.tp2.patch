@@ -1,0 +1,20 @@
+--- BW_Herbs_BG2\Setup-BW_Herbs_BG2.tp2	Thu Dec 15 02:54:18 2011
++++ C:\BWP Patchstudio\patched files\BW_Herbs_BG2\Setup-BW_Herbs_BG2.tp2	Mon Aug 13 07:39:41 2012
+@@ -9,7 +9,7 @@
+ BACKUP ~BW_Herbs_BG2/Install/Backup~
+ AUTHOR ~baronius@blackwyrmlair.net~
+ 
+-VERSION ~v1.0.5~
++VERSION ~v1.0.5 BWP Patch~
+ 
+ AUTO_TRA ~BW_Herbs_BG2/Translations/%s~
+ 
+@@ -299,7 +299,7 @@
+ SAY NAME1 @80
+ SAY NAME2 @80
+ 
+-COPY ~BW_Herbs_BG2/Creatures/bw02cre3.cre~ ~Override~
++COPY ~BW_Herbs_BG2/Creatures/bw02cre5.cre~ ~Override~
+ SAY NAME1 @81
+ SAY NAME2 @81
+ 

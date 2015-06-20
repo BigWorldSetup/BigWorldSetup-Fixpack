@@ -1,9 +1,0 @@
---- ub\suna\U!SUNARE.BAF	Thu Aug 15 15:42:32 2013
-+++ C:\BWP Patchstudio\patched files\ub\suna\U!SUNARE.BAF	Sun Feb 23 11:44:48 2014
-@@ -1,5 +1,5 @@
- IF
--  OnCreation()
-+//OnCreation()
-   Global("RandomEncounters","GLOBAL",0)
-   GlobalLT("Chapter","GLOBAL",4)
- THEN

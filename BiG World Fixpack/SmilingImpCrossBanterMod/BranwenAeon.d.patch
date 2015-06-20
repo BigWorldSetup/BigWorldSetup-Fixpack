@@ -1,0 +1,10 @@
+--- SmilingImpCrossBanterMod\BranwenAeon.d	Wed Jul 30 23:43:42 2014
++++ C:\BWP Patchstudio\patched files\SmilingImpCrossBanterMod\BranwenAeon.d	Sun Jan 04 20:02:25 2015
+@@ -1,6 +1,6 @@
+ BEGIN ~BranwenAeon~
+ 
+-Branwen/Aeon
++
+ CHAIN
+ IF ~InParty("AEONDV")!StateCheck("AEONDV",CD_STATE_NOTVALID)
+ InParty("7XBRAN")!StateCheck("7XBRAN",CD_STATE_NOTVALID)

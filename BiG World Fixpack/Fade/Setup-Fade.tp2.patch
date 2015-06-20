@@ -1,9 +1,10 @@
---- Setup-Fade.tp2	Tue Feb 28 20:27:52 2006
-+++ C:\BWP Patchstudio\patched files\Setup-Fade.tp2	Wed Oct 02 09:37:37 2013
-@@ -1,5 +1,6 @@
- BACKUP ~Fade\Backup~
- AUTHOR ~silmarien09@yahoo.com~
-+VERSION ~v3 BWP Fix~
- LANGUAGE ~English~
-          ~english~
-          ~Fade\English\Setup-Fade.tra~
+--- Fade\Setup-Fade.tp2	Sun May 04 21:34:14 2014
++++ C:\BWP Patchstudio\patched files\Fade\Setup-Fade.tp2	Sat Feb 07 16:59:40 2015
+@@ -1,6 +1,6 @@
+ BACKUP ~Fade/Backup~
+ AUTHOR ~Mistress Elysia, Silmarien, Lava Del'Vortel, Kai of Candlekeep~
+-VERSION ~BETA 7.3~
++VERSION ~BETA 7.3 BWP Fix~
+ 
+ README ~Fade/Fade_readme.html~
+ 
