@@ -1,11 +1,11 @@
---- haldamir\setup-haldamir.tp2	Fri Apr 30 17:23:09 2010
-+++ C:\BWP Patchstudio\patched files\haldamir\setup-haldamir.tp2	Sat Oct 05 12:09:02 2013
+--- haldamir\setup-haldamir.tp2	Sun May 31 14:04:10 2015
++++ C:\BWP Patchstudio\patched files\haldamir\setup-haldamir.tp2	Fri Jun 26 22:34:37 2015
 @@ -3,7 +3,7 @@
  
  //MODDER
  
--VERSION ~v2~
-+VERSION ~v2 BWP Fix~
+-VERSION ~v3~
++VERSION ~v3 BWP Fix~
  
  README ~haldamir/readme-haldamir.html~
  

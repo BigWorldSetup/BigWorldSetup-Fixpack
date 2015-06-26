@@ -801,12 +801,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: gavin - Gavin NPC v8
 
-:: the bigg's KIT.IDS ToBEx compatibility fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
-
-:: Lollorian's assorted ITM fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
-
 :: Lollorian's BGGraphics - Gavin compatibility patch
 :: http://www.shsforums.net/topic/57139-bgtbwp-cant-load-beregost-at-night-get-ctd/
 
@@ -842,6 +836,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: gMinion - gMinion v2
+
+:: Lollorian's assorted ITM fixes
+:: http://gibberlings3.net/forums/index.php?showtopic=16272
 
 
 ----------------------------------------------------------------------------------------

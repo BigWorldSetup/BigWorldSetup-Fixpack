@@ -1,5 +1,5 @@
---- F:/Baldur's Gate 2/BiG World Project/NoModdy/haerdalisromance/haerdalisromance.tp2	Wed Jan 02 22:10:38 2013
-+++ F:/Baldur's Gate 2/BiG World Project/NoModdy/haerdalisromance/haerdalisromance_2.tp2	Sun Sep 29 11:07:36 2013
+--- haerdalisromance\haerdalisromance.tp2	Wed Jan 02 22:10:38 2013
++++ C:\BWP Patchstudio\patched files\haerdalisromance\haerdalisromance.tp2	Sun Sep 29 11:07:36 2013
 @@ -4,7 +4,7 @@
  // Basics
  BACKUP ~haerdalisromance/backup~

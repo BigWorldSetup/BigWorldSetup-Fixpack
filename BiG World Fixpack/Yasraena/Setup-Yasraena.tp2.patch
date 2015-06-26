@@ -1,11 +1,11 @@
---- Yasraena\Setup-Yasraena.tp2	Wed Aug 13 13:01:02 2014
-+++ C:\BWP Patchstudio\patched files\Yasraena\Setup-Yasraena.tp2	Tue Oct 21 18:00:26 2014
+--- Yasraena\Setup-Yasraena.tp2	Wed Apr 08 00:35:09 2015
++++ C:\BWP Patchstudio\patched files\Yasraena\Setup-Yasraena.tp2	Fri Jun 26 22:48:57 2015
 @@ -1,7 +1,7 @@
  BACKUP ~Yasraena/backup~
  AUTHOR ~gilalion@gmail.com~
  
--VERSION ~v15~
-+VERSION ~v15 BWP Fix~
+-VERSION ~v16~
++VERSION ~v16 BWP Fix~
  
  README ~Yasraena/README-Yasraena.html~
  

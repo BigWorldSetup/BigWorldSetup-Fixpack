@@ -1,5 +1,5 @@
---- gminion\Setup-gMinion.tp2	Sat Apr 26 21:15:54 2008
-+++ C:\BWP Patchstudio\patched files\gminion\Setup-gMinion.tp2	Wed Apr 24 07:54:45 2013
+--- Setup-gMinion.tp2	Sat Apr 26 21:15:54 2008
++++ C:\BWP Patchstudio\patched files\Setup-gMinion.tp2	Wed Apr 24 07:54:45 2013
 @@ -3,13 +3,18 @@
   *
   * AI scripts for minions summoned by the party
