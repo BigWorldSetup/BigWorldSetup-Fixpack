@@ -327,27 +327,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: bg1npc - BG1 NPC Project v20
-
-:: cmorgan's BGT Minsc XP fix
-:: http://forums.gibberlings3.net/index.php?showtopic=23622&view=findpost&p=194238
-
-:: cmorgan's Beador buglet fix
-:: http://forums.gibberlings3.net/index.php?showtopic=25677&view=findpost&p=214364
-
-:: cmorgan's fix for possible bug with with Edwin's Dialogue about Dynaheir 
-:: http://forums.gibberlings3.net/index.php?showtopic=25863&view=findpost&p=216231
-
-:: cmorgan's hostile Karris fix
-:: http://forums.gibberlings3.net/index.php?showtopic=23627&view=findpost&p=194369
-
-:: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
-
-
-----------------------------------------------------------------------------------------
-
-
 :: BG1NPCSoA - BG1 NPCs for SoA v9
 
 :: Lollorian's fix for Coran having Eldoth's item
@@ -358,15 +337,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's Garrick-Silke encounter script name fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=567729
-
-
-----------------------------------------------------------------------------------------
-
-
-:: bg2fixpack - BG2 Fixpack v10
-
-:: Hurricane's german Find Familiar tooltip crash fix
-:: http://forums.gibberlings3.net/index.php?showtopic=25208&view=findpost&p=208319
 
 
 ----------------------------------------------------------------------------------------
@@ -582,7 +552,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: com_encounters - CoM Encounters v1.04
+:: com_encounters - CoM Encounters v1.10
 
 :: White Agnus' KORSCROO Spell Memorization Fix - KORSCROO.CRE
 :: - LINK NOT FOUND -
@@ -634,24 +604,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Vlad's SetCursorState() hanging cutscenes fix
 :: http://www.shsforums.net/topic/57177-bug/
-
-
-----------------------------------------------------------------------------------------
-
-
-:: d0tweak - Ding0's Tweak pack v20
-
-:: Lollorian's replacements
-:: http://forums.pocketplane.net/index.php/topic,19301.msg324135.html#msg324135
-
-:: Lollorian's WRITE_ASCII padding
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=489586
-
-:: the bigg's KIT.IDS ToBEx compatibility fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
-
-:: Lollorian's KIT.iDS patching fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=542469
 
 
 ----------------------------------------------------------------------------------------
@@ -816,15 +768,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's patch to add B!AMACE.ITM to UDTRAP02.CRE if not present
 :: -LINK NOT FOUND -
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Faren - Faren NPC v2.1
-
-:: Installation error fix
-:: http://www.shsforums.net/topic/56948-installation-error/
 
 
 ----------------------------------------------------------------------------------------

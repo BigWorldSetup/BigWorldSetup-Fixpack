@@ -1,11 +1,11 @@
---- Gavin\gavin.tp2	Tue Mar 17 21:19:44 2015
-+++ C:\BWP Patchstudio\patched files\Gavin\gavin.tp2	Mon May 11 08:12:51 2015
-@@ -22,11 +22,15 @@
+--- L:/BiG World Project/06 Bad - Unpacked/gavin/gavin.tp2	Sun May 31 19:58:32 2015
++++ L:/BiG World Project/06 Bad - Unpacked/gavin/gavin_2.tp2	Wed Jun 24 23:28:09 2015
+@@ -15,11 +15,15 @@
  /* enable all error messages; nothing suppressed. comment this out for release version */
  //MODDER
  
--VERSION ~v9 beta_150317~
-+VERSION ~v9 beta_150317 BWP Fix~
+-VERSION ~v9~
++VERSION ~v9 BWP Fix~
  
  /* launch the readme file immediately. */
  README ~gavin/readme-gavin.html~
@@ -17,7 +17,7 @@
  ALWAYS
  
  /* These actions are processed for every component: reading of variables */
-@@ -253,6 +257,7 @@
+@@ -247,6 +251,7 @@
  END
  
  COPY_EXISTING ~%Beregost%.wed~ override

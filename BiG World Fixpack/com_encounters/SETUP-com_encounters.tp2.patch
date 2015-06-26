@@ -1,21 +1,22 @@
---- SETUP-com_encounters.tp2	Sun Aug 19 16:04:58 2012
-+++ C:\BWP Patchstudio\patched files\SETUP-com_encounters.tp2	Sun Apr 13 21:45:50 2014
+--- SETUP-com_encounters.tp2	Mon Sep 08 00:26:44 2014
++++ C:\BWP Patchstudio\patched files\SETUP-com_encounters.tp2	Wed Jun 24 22:51:18 2015
 @@ -7,7 +7,7 @@
  
  BACKUP ~com_encounters\backup~
  AUTHOR ~"http://chosenofmystra.com"~
 -
-+VERSION ~v1.08 BWP Fix~
++VERSION ~v1.10 BWP Fix~
  LANGUAGE ~English~
           ~english~
           ~com_encounters/translations/english/dialog.tra~
-@@ -556,12 +556,220 @@
+@@ -551,12 +551,222 @@
  // Improved Stuff
  
  BEGIN @10138
 +REQUIRE_PREDICATE MOD_IS_INSTALLED ~SETUP-com_encounters.tp2~ ~0~ ~This component uses items from the main encounters component!~
  
 -COPY ~com_encounters/improved_druids~ ~override~
++// COPY ~com_encounters/improved_druids~ ~override~
 +COPY_EXISTING ~CEDRUID2.CRE~ ~override~
 +  WRITE_LONG  0x14 4500											// XPVAL was 3000
 +  WRITE_SHORT 0x48 5											// EFFAC was 10
@@ -167,6 +168,7 @@
  
 -COPY ~com_encounters/shagbag~ ~override~
 -
++//COPY ~com_encounters/shagbag~ ~override~
 +COPY_EXISTING ~KORCRAZY.CRE~ ~override~
 +  WRITE_LONG  0x1c 20											// GOLD was 2
 +  WRITE_SHORT 0x24 60											// HP1 was 40

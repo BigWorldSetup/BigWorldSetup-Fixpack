@@ -1,5 +1,5 @@
---- setup-dsotsc.tp2	Sun Feb 23 15:56:15 2014
-+++ C:\BWP Patchstudio\patched files\setup-dsotsc.tp2	Sun Feb 23 15:55:18 2014
+--- dsotsc\setup-dsotsc.tp2	Sun Feb 23 15:56:15 2014
++++ C:\BWP Patchstudio\patched files\dsotsc\setup-dsotsc.tp2	Sun Feb 23 15:55:18 2014
 @@ -6,7 +6,7 @@
  
  BACKUP ~DSotSC/backup~

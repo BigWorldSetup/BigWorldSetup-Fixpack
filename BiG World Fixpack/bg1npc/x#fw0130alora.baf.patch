@@ -1,9 +1,0 @@
---- bg1npc\phase3\moveloc\baf\x#fw0130alora.baf	Fri Dec 21 02:00:02 2007
-+++ C:\BWP Patchstudio\patched files\bg1npc\phase3\moveloc\baf\x#fw0130alora.baf	Sat Feb 22 21:44:22 2014
-@@ -1,5 +1,5 @@
- IF
--OnCreation()
-+//OnCreation()
- Global("X#AloraMoved","GLOBAL",4)
- THEN
- RESPONSE #100

@@ -1,11 +1,77 @@
---- Divine_Remix\Setup-Divine_Remix.tp2	Sun Jul 29 14:28:44 2012
-+++ C:\BWP Patchstudio\patched files\Divine_Remix\Setup-Divine_Remix.tp2	Wed Oct 02 08:54:29 2013
-@@ -1,7 +1,7 @@
- BACKUP   ~Divine_Remix/backup~    // location to store files for uninstall purposes
- AUTHOR   ~webmaster@gibberlings3.net or andyr@gibberlings3.net~  // email address displayed if install fails
+--- divine_remix\setup-divine_remix.tp2	Sun Nov 02 11:43:32 2014
++++ C:\BWP Patchstudio\patched files\divine_remix\setup-divine_remix.tp2	Sat Nov 22 14:25:54 2014
+@@ -31,7 +31,7 @@
  
--VERSION  ~v7.1~
-+VERSION  ~v7.1 BWP Fix~
+ END
  
- README   ~Divine_Remix/readme-Divine_Remix.html~
+-VERSION  ~v8~
++VERSION  ~v8 BWP fix~
  
+ README   ~divine_remix/readme-divine_remix.html~
+ 
+@@ -883,8 +883,8 @@
+ 
+     COPY_EXISTING ~%creature%.cre~ ~override~
+       WRITE_SHORT   0x244 0
+-      WRITE_BYTE    0x246 "%kit%"
+-      WRITE_BYTE    0x247 0x40
++      WRITE_SHORT   0x246 0x4000 + "%kit%"
++//    WRITE_BYTE    0x247 0x40
+       BUT_ONLY
+ 
+   END
+@@ -1015,8 +1015,8 @@
+ 
+     COPY_EXISTING ~%creature%.cre~ ~override~
+       WRITE_SHORT   0x244 0
+-      WRITE_BYTE    0x246 "%kit%"
+-      WRITE_BYTE    0x247 0x40
++      WRITE_SHORT   0x246 0x4000 + "%kit%"
++//    WRITE_BYTE    0x247 0x40
+       BUT_ONLY
+ 
+   END
+@@ -1384,8 +1384,8 @@
+ 
+     COPY_EXISTING ~%creature%.cre~ ~override~
+       WRITE_SHORT   0x244 0
+-      WRITE_BYTE    0x246 "%kit%"
+-      WRITE_BYTE    0x247 0x40
++      WRITE_SHORT   0x246 0x4000 + "%kit%"
++//    WRITE_BYTE    0x247 0x40
+       BUT_ONLY
+ 
+   END
+@@ -1743,8 +1743,8 @@
+ 
+     COPY_EXISTING ~%creature%.cre~ ~override~
+       WRITE_SHORT   0x244 0
+-      WRITE_BYTE    0x246 "%kit%"
+-      WRITE_BYTE    0x247 0x40
++      WRITE_SHORT   0x246 0x4000 + "%kit%"
++//    WRITE_BYTE    0x247 0x40
+       BUT_ONLY
+ 
+   END
+@@ -2204,8 +2204,8 @@
+ 
+     COPY_EXISTING ~%creature%.cre~ ~override~
+       WRITE_SHORT   0x244 0
+-      WRITE_BYTE    0x246 "%kit%"
+-      WRITE_BYTE    0x247 0x40
++      WRITE_SHORT   0x246 0x4000 + "%kit%"
++//    WRITE_BYTE    0x247 0x40
+       BUT_ONLY
+ 
+   END
+@@ -2282,8 +2282,8 @@
+ 
+     COPY_EXISTING ~%creature%.cre~ ~override~
+       WRITE_SHORT   0x244 0
+-      WRITE_BYTE    0x246 "%kit%"
+-      WRITE_BYTE    0x247 0x40
++      WRITE_SHORT   0x246 0x4000 + "%kit%"
++//    WRITE_BYTE    0x247 0x40
+       BUT_ONLY
+ 
+   END

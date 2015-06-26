@@ -1,5 +1,5 @@
---- Divine_Remix\cleric\Cyric\cyricpp.d	Sun Jul 29 14:28:44 2012
-+++ C:\BWP Patchstudio\patched files\Divine_Remix\cleric\Cyric\cyricpp.d	Wed Aug 21 08:44:42 2013
+--- divine_remix\dlg\cyricpp.d	Sun Jul 29 14:28:44 2012
++++ C:\BWP Patchstudio\patched files\divine_remix\dlg\cyricpp.d	Wed Aug 21 08:44:42 2013
 @@ -1,6 +1,6 @@
  APPEND CHALCY01
  
