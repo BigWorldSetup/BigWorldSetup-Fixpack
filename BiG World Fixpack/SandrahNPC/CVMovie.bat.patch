@@ -1,0 +1,11 @@
+--- SandrahNPC\mve\CVMovie.bat	Mon Apr 06 18:15:35 2015
++++ C:\BWP Patchstudio\patched files\SandrahNPC\mve\CVMovie.bat	Sun Jun 14 06:52:20 2015
+@@ -9,7 +9,7 @@
+ copy SandrahNPC\mve\CVJonde.mve CVMovie
+ copy SandrahNPC\mve\ToThay.mve CVMovie
+ copy SandrahNPC\mve\RTFinit.mve CVMovie
+-copy SandrahNPC-setup.exe CVMovie.exe
++copy setup-SandrahNPC.exe CVMovie.exe
+ CVMovie --make-biff CVMovie
+ del CVMovie.exe
+ rmdir CVMovie /S /Q

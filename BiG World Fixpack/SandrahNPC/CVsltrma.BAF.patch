@@ -1,0 +1,113 @@
+--- SandrahNPC\BAF\CVsltrma.BAF	Tue Apr 14 15:09:27 2015
++++ C:\BWP Patchstudio\patched files\SandrahNPC\BAF\CVsltrma.BAF	Wed Jun 24 22:01:04 2015
+@@ -10,9 +10,9 @@
+ END
+ 
+ IF
+-	Global("TimeStop","LOCALS",1)
++Global("TimeStop","LOCALS",1)
+ THEN
+-	RESPONSE #30
++RESPONSE #30
+ 		ForceSpell(LastSeenBy(Myself),WIZARD_NPC_SYMBOL_DEATH)
+ 		RemoveSpell(WIZARD_NPC_SYMBOL_DEATH)
+ 		ForceSpell(LastSeenBy(Myself),WIZARD_NPC_SYMBOL_STUN)
+@@ -183,67 +183,6 @@
+ END
+ 
+ IF
+-	CheckStat(Myself,3,PUPPETTYPE)
+-	See([EVILCUTOFF.0.0.LONG_BOW])
+-	CheckStat(LastSeenBy(Myself),3,PUPPETMASTERTYPE)
+-	Range(LastSeenBy(Myself),2)
+-THEN
+-	RESPONSE #100
+-		ActionOverride(LastSeenBy(Myself),RemoveSpell(WIZARD_SIMULACRUM))
+-		ActionOverride(LastSeenBy(Myself),RemoveSpell(WIZARD_PROJECT_IMAGE))
+-		ActionOverride(LastSeenBy(Myself),RemoveSpell(WIZARD_MISLEAD))
+-		ChangeSpecifics(LastSeenBy(Myself),SIMULACRUM)
+-		ChangeGender(LastSeenBy(Myself),EXTRA3)
+-		ActionOverride(LastSeenBy(Myself),ChangeAIScript("GPMAGE1",CLASS))
+-		SpellNoDecRES("SPMISLED",Myself) // 
+-		RunAwayFrom(LastSeenBy(Myself),20)
+-END
+-
+-IF
+-	CheckStat(Myself,2,PUPPETTYPE)
+-	See([EVILCUTOFF.0.0.LONG_BOW.0.ILLUSIONARY])
+-	CheckStat(LastSeenBy(Myself),2,PUPPETMASTERTYPE)
+-	Range(LastSeenBy(Myself),2)
+-THEN
+-	RESPONSE #100
+-		SetInterrupt(FALSE)
+-		ActionOverride(LastSeenBy(Myself),RemoveSpell(WIZARD_PROJECT_IMAGE))
+-		ChangeSpecifics(LastSeenBy(Myself),NEEDS_BREACH)
+-		ChangeGender(LastSeenBy(Myself),EXTRA9)
+-		ActionOverride(LastSeenBy(Myself),ChangeAIScript("MAGE14A",CLASS))
+-		RunAwayFrom(LastSeenBy(Myself),20)
+-		SmallWait(20)
+-		ClearActions(Myself)
+-		SetInterrupt(TRUE)
+-END
+-
+-IF
+-	CheckStat(Myself,1,PUPPETTYPE)
+-	See([EVILCUTOFF.0.0.LONG_BOW.0.ILLUSIONARY])
+-	CheckStat(LastSeenBy(Myself),1,PUPPETMASTERTYPE)
+-	Range(LastSeenBy(Myself),2)
+-THEN
+-	RESPONSE #100
+-		ChangeSpecifics(LastSeenBy(Myself),NEEDS_BREACH)
+-		ChangeGender(LastSeenBy(Myself),EXTRA2)
+-		ActionOverride(LastSeenBy(Myself),ChangeAIScript("BPMISLED",OVERRIDE))
+-		SpellNoDecRES("SPMISLED",Myself) // 
+-		RunAwayFrom(LastSeenBy(Myself),20)
+-END
+-
+-IF
+-	ActionListEmpty()
+-	SpellCast(Myself,0)
+-	HaveAnySpells()
+-	HitBy([ANYONE],CRUSHING)
+-	!GlobalTimerNotExpired("SBN","LOCALS")
+-THEN
+-	RESPONSE #100
+-		SetGlobalTimer("SBN","LOCALS",THREE_MINUTES)
+-		Shout(SUM_ATTACK_EVIL)
+-END
+-
+-IF
+ 	Range(NearestEnemyOf(Myself),4)
+ THEN
+ 	RESPONSE #70
+@@ -396,19 +335,17 @@
+ END
+ 
+ IF
+-	ActionListEmpty()
+-	HaveSpell(WIZARD_TRUE_SIGHT)
+-	!GlobalTimerNotExpired("BPT","LOCALS")
+-	Global("SNAFU","LOCALS",0)
+-	Exists(LastAttackerOf(Myself))
+-	OR(7)
+-		StateCheck(NearestEnemyOfType([GOODCUTOFF]),STATE_ILLUSIONS)
+-		StateCheck(SecondNearest([GOODCUTOFF]),STATE_ILLUSIONS)
+-		StateCheck(ThirdNearest([GOODCUTOFF]),STATE_ILLUSIONS)
+-		StateCheck(FourthNearest([GOODCUTOFF]),STATE_ILLUSIONS)
+-		StateCheck(TenthNearest([GOODCUTOFF]),STATE_ILLUSIONS)
+-		NumCreatureGT([GOODCUTOFF.0.0.0.0.ILLUSIONARY],0)
+-		NumCreatureGT([GOODCUTOFF.0.0.0.NEEDS_BREACH],0)
++ActionListEmpty()
++HaveSpell(WIZARD_TRUE_SIGHT)
++!GlobalTimerNotExpired("BPT","LOCALS")
++Global("SNAFU","LOCALS",0)
++Exists(LastAttackerOf(Myself))
++OR(5)
++StateCheck(NearestEnemyOfType([GOODCUTOFF]),STATE_ILLUSIONS)
++StateCheck(SecondNearest([GOODCUTOFF]),STATE_ILLUSIONS)
++StateCheck(ThirdNearest([GOODCUTOFF]),STATE_ILLUSIONS)
++StateCheck(FourthNearest([GOODCUTOFF]),STATE_ILLUSIONS)
++StateCheck(TenthNearest([GOODCUTOFF]),STATE_ILLUSIONS)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobalTimer("BPT","LOCALS",ONE_ROUND)
