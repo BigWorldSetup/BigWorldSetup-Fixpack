@@ -272,6 +272,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's DOOMSA.CRE script assignment fix
 :: http://www.shsforums.net/topic/52692-script-assignment-of-doomsacre/?p=578546
 
+:: Mad Mate's innate spell compatibility fix
+:: http://www.shsforums.net/topic/56381-auroras-shoes-v-5-bug-reports/?p=578391
+
 
 ----------------------------------------------------------------------------------------
 
