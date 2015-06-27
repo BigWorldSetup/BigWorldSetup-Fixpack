@@ -1,5 +1,5 @@
 --- aurora\setup-aurora.tp2	Mon Feb 08 21:12:20 2010
-+++ C:\BWP Patchstudio\patched files\aurora\setup-aurora.tp2	Fri Sep 27 22:22:20 2013
++++ C:\BWP Patchstudio\patched files\aurora\setup-aurora.tp2	Sat Jun 27 22:30:14 2015
 @@ -1,6 +1,6 @@
  BACKUP ~aurora/backup~
  AUTHOR ~www.shsforums.net/forum/418-auroras-shoes/~
@@ -8,3 +8,34 @@
  README ~aurora/aurora-%LANGUAGE%.html~
  
  //! Platform variables //////////////////////////////////////////////////////
+@@ -365,18 +365,18 @@
+   BUT_ONLY
+ END
+ 
+-COPY_EXISTING ~spwi102.spl~ ~override/spin138.spl~ //Armor
+-              ~spwi416.spl~ ~override/spin139.spl~ //Polymorph Self
+-              ~spwi322.spl~ ~override/spin140.spl~ //Detect Illusion
+-              ~spwi402.spl~ ~override/spin141.spl~ //Dimension Door
+-              ~spwi609.spl~ ~override/spin142.spl~ //True Sight
+-              ~spwi305.spl~ ~override/spin143.spl~ //Haste
+-              ~spwi306.spl~ ~override/spin144.spl~ //Hold Person
+-              ~spwi310.spl~ ~override/spin145.spl~ //Non-Detection
+-              ~spwi701.spl~ ~override/spin146.spl~ //Spell Turning
+-              ~spwi423.spl~ ~override/spin147.spl~ //Spider Spawn
+-              ~sppr403.spl~ ~override/spin148.spl~ //Free Action
+-              ~spwi413.spl~ ~override/spin149.spl~ //Otiluke's Resilient Sphere
++COPY_EXISTING ~spwi102.spl~ ~override/spin170.spl~ //Armor
++              ~spwi416.spl~ ~override/spin171.spl~ //Polymorph Self
++              ~spwi322.spl~ ~override/spin172.spl~ //Detect Illusion
++              ~spwi402.spl~ ~override/spin173.spl~ //Dimension Door
++              ~spwi609.spl~ ~override/spin174.spl~ //True Sight
++              ~spwi305.spl~ ~override/spin175.spl~ //Haste
++              ~spwi306.spl~ ~override/spin176.spl~ //Hold Person
++              ~spwi310.spl~ ~override/spin177.spl~ //Non-Detection
++              ~spwi701.spl~ ~override/spin178.spl~ //Spell Turning
++              ~spwi423.spl~ ~override/spin179.spl~ //Spider Spawn
++              ~sppr403.spl~ ~override/spin180.spl~ //Free Action
++              ~spwi413.spl~ ~override/spin181.spl~ //Otiluke's Resilient Sphere
+   PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+     WRITE_LONG 0xc ~-1~ //Identified name
+     WRITE_SHORT 0x1c 4 //Spell type (innate)
