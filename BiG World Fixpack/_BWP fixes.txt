@@ -680,8 +680,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: DofD - Domains of Dread v3
 
-:: Lollorian's assorted ARE fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=562853
+:: Linthar's ardem.are with proper offsets
+:: http://www.shsforums.net/topic/58146-domains-of-dread-issue/?p=578270
 
 
 ----------------------------------------------------------------------------------------
