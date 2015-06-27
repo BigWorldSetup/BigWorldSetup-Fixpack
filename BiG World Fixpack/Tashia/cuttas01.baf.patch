@@ -1,0 +1,10 @@
+--- tashia\scripts\cuttas01.baf	Thu Apr 24 19:42:00 2003
++++ C:\BWP Patchstudio\patched files\Tashia\Scripts\cuttas01.baf	Sun Jun 28 00:56:48 2015
+@@ -9,6 +9,7 @@
+         CreateCreatureObjectOffScreen("TAGIRL",Myself,0,0,0)
+         CreateCreatureObject("TAKOMT","TAGIRL",0,0,0)
+         CreateCreatureObject("TATUMP","TAGIRL",0,0,0)
++        SetGlobal("SpawnedGirl","GLOBAL",1)
+         MoveViewObject("TAGIRL",VERY_FAST)
+         ActionOverride("TAGIRL",MoveToObject(Player1))
+         ActionOverride("TAKOMT",MoveToObjectFollow("TAGIRL"))

@@ -1666,6 +1666,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: soa - The Stone Of Askavar v1.8
+
+:: Blash2's fixed SOAITM29.ITM
+:: http://www.shsforums.net/topic/56670-big-world-setup-an-attempt-to-update-the-program/?p=577567
+
+
+----------------------------------------------------------------------------------------
+
+
 :: song_and_silence - Song and Silence v5
 
 :: Lollorian's patches for ADD_KIT adding kits properly
@@ -1801,6 +1810,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's fix for bug in finale Solar dialogue
 :: http://www.shsforums.net/topic/44649-bug-reports-for-tashia-v11/?p=545094
+
+:: lynx's looping cutscene fix
+:: http://www.shsforums.net/topic/33190-glitchy-dwarves/?p=578359
 
 
 ----------------------------------------------------------------------------------------
