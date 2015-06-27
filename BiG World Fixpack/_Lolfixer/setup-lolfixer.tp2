@@ -4036,6 +4036,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                     ("%opcode%" = 37)) AND ("%param2%" = 1) AND ("%param1%" < 100) BEGIN
             PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Value sets to %param1%"
           END
+          PATCH_IF (("%opcode%" = 27) OR
+                    ("%opcode%" = 28) OR
+                    ("%opcode%" = 29) OR
+                    ("%opcode%" = 30) OR
+                    ("%opcode%" = 31) OR
+                    ("%opcode%" = 33) OR
+                    ("%opcode%" = 34) OR
+                    ("%opcode%" = 35) OR
+                    ("%opcode%" = 36) OR
+                    ("%opcode%" = 37)) AND ("%param2%" = 2) AND ("%param1%" = 100) BEGIN
+            PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-functional percentage change"
+          END
           PATCH_IF ("%opcode%" = 67) OR
                    ("%opcode%" = 135) OR
                    ("%opcode%" = 151) OR
