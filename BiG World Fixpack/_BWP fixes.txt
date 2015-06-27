@@ -269,6 +269,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
 
+:: Lollorian's DOOMSA.CRE script assignment fix
+:: http://www.shsforums.net/topic/52692-script-assignment-of-doomsacre/?p=578546
+
 
 ----------------------------------------------------------------------------------------
 

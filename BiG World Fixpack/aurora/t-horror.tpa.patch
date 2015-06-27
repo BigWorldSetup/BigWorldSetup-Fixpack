@@ -1,0 +1,17 @@
+--- aurora\lib\t-horror.tpa	Thu Jan 28 10:39:40 2010
++++ C:\BWP Patchstudio\patched files\aurora\lib\t-horror.tpa	Sat Jun 27 22:12:07 2015
+@@ -126,11 +126,11 @@
+           WRITE_BYTE 0x234 20 //Level 1
+           WRITE_BYTE 0x238 22 //Strength
+           WRITE_BYTE 0x239 0 //Strength bonus
+-          READ_ASCII 0x250 cp //Class script
++          READ_ASCII 0x258 cp //Race script
+           PATCH_IF (~%cp%~ STRING_EQUAL_CASE ~none~ = 0) AND (~%cp%~ STRING_EQUAL ~~ = 0) BEGIN
+-            WRITE_ASCIIE 0x258 ~%cp%~ #8 //Race script
++            WRITE_ASCIIE 0x260 ~%cp%~ #8 //General script
+           END
+-          WRITE_ASCII 0x250 ~agbattho~ #8 //Class script
++          WRITE_ASCII 0x258 ~agbattho~ #8 //Race script
+           ADD_MEMORIZED_SPELL ~spwi112~ #0 ~wizard~ (5) //Magic Missile
+           ADD_MEMORIZED_SPELL ~spwi402~ #3 ~wizard~ (3) //Dimension Door
+         END ELSE BEGIN
