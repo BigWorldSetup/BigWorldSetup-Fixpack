@@ -1,5 +1,5 @@
---- iepbanters\dialogue/banters.d	Thu Feb 07 16:44:52 2013
-+++ C:\BWP Patchstudio\patched files\iepbanters\dialogue/banters.d	Sat Dec 21 14:43:07 2013
+--- iepbanters\dialogue\banters.d	Thu Feb 07 16:44:52 2013
++++ C:\BWP Patchstudio\patched files\iepbanters\dialogue\banters.d	Sat Dec 21 14:43:07 2013
 @@ -1725,7 +1725,7 @@
  
  // Valygar

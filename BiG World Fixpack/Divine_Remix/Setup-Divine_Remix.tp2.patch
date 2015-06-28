@@ -1,5 +1,5 @@
---- divine_remix\setup-divine_remix.tp2	Sun Nov 02 11:43:32 2014
-+++ C:\BWP Patchstudio\patched files\divine_remix\setup-divine_remix.tp2	Sat Nov 22 14:25:54 2014
+--- divine_remix\setup-divine_remix.tp2	Tue Mar 17 19:20:30 2015
++++ C:\BWP Patchstudio\patched files\divine_remix\setup-divine_remix.tp2	Sun Jun 28 20:58:23 2015
 @@ -31,7 +31,7 @@
  
  END
@@ -9,7 +9,62 @@
  
  README   ~divine_remix/readme-divine_remix.html~
  
-@@ -883,8 +883,8 @@
+@@ -354,8 +354,8 @@
+ 
+     COPY_EXISTING ~%creature%.cre~ ~override~  
+       WRITE_SHORT   0x244 0
+-      WRITE_BYTE    0x246 "%kit%"
+-      WRITE_BYTE    0x247 0x40
++      WRITE_SHORT   0x246 0x4000 + "%kit%"
++//    WRITE_BYTE    0x247 0x40
+       BUT_ONLY
+ 
+   END
+@@ -369,8 +369,8 @@
+ 
+     COPY_EXISTING ~%creature%.cre~ ~override~  
+       WRITE_SHORT   0x244 0
+-      WRITE_BYTE    0x246 "%kit%"
+-      WRITE_BYTE    0x247 0x40
++      WRITE_SHORT   0x246 0x4000 + "%kit%"
++//    WRITE_BYTE    0x247 0x40
+       BUT_ONLY
+ 
+   END
+@@ -384,8 +384,8 @@
+ 
+     COPY_EXISTING ~%creature%.cre~ ~override~  
+       WRITE_SHORT   0x244 0
+-      WRITE_BYTE    0x246 "%kit%"
+-      WRITE_BYTE    0x247 0x40
++      WRITE_SHORT   0x246 0x4000 + "%kit%"
++//    WRITE_BYTE    0x247 0x40
+       BUT_ONLY
+ 
+   END
+@@ -401,8 +401,8 @@
+ 
+       COPY_EXISTING ~%creature%.cre~ ~override~
+         WRITE_SHORT   0x244 0
+-        WRITE_BYTE    0x246 "%kit%"
+-        WRITE_BYTE    0x247 0x40
++        WRITE_SHORT   0x246 0x4000 + "%kit%"
++//      WRITE_BYTE    0x247 0x40
+         BUT_ONLY
+ 
+     END
+@@ -420,8 +420,8 @@
+ 
+       COPY_EXISTING ~%creature%.cre~ ~override~
+         WRITE_SHORT   0x244 0
+-        WRITE_BYTE    0x246 "%kit%"
+-        WRITE_BYTE    0x247 0x40
++        WRITE_SHORT   0x246 0x4000 + "%kit%"
++//      WRITE_BYTE    0x247 0x40
+         BUT_ONLY
+ 
+     END
+@@ -890,8 +890,8 @@
  
      COPY_EXISTING ~%creature%.cre~ ~override~
        WRITE_SHORT   0x244 0
@@ -20,7 +75,7 @@
        BUT_ONLY
  
    END
-@@ -1015,8 +1015,8 @@
+@@ -1022,8 +1022,8 @@
  
      COPY_EXISTING ~%creature%.cre~ ~override~
        WRITE_SHORT   0x244 0
@@ -31,7 +86,7 @@
        BUT_ONLY
  
    END
-@@ -1384,8 +1384,8 @@
+@@ -1391,8 +1391,8 @@
  
      COPY_EXISTING ~%creature%.cre~ ~override~
        WRITE_SHORT   0x244 0
@@ -42,7 +97,7 @@
        BUT_ONLY
  
    END
-@@ -1743,8 +1743,8 @@
+@@ -1750,8 +1750,8 @@
  
      COPY_EXISTING ~%creature%.cre~ ~override~
        WRITE_SHORT   0x244 0
@@ -53,7 +108,7 @@
        BUT_ONLY
  
    END
-@@ -2204,8 +2204,8 @@
+@@ -2211,8 +2211,8 @@
  
      COPY_EXISTING ~%creature%.cre~ ~override~
        WRITE_SHORT   0x244 0
@@ -64,7 +119,7 @@
        BUT_ONLY
  
    END
-@@ -2282,8 +2282,8 @@
+@@ -2289,8 +2289,8 @@
  
      COPY_EXISTING ~%creature%.cre~ ~override~
        WRITE_SHORT   0x244 0

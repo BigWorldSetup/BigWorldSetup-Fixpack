@@ -1,5 +1,5 @@
---- Setup-gMinion.tp2	Sat Apr 26 21:15:54 2008
-+++ C:\BWP Patchstudio\patched files\Setup-gMinion.tp2	Wed Apr 24 07:54:45 2013
+--- Setup-gMinion.tp2	Mon Mar 01 10:26:34 2010
++++ C:\BWP Patchstudio\patched files\Setup-gMinion.tp2	Sun Jun 28 21:03:28 2015
 @@ -3,13 +3,18 @@
   *
   * AI scripts for minions summoned by the party
@@ -11,19 +11,20 @@
  
  AUTHOR ~cirerrek@hotmail.com~
  
--VERSION ~v2~
-+VERSION ~v2 BGT-Expansion~
+-VERSION ~2~ 
++VERSION ~2 BGT-Expansion~
 +
 +ALLOW_MISSING
 +  // Silver Shadow from The Darkest Day mod - Azazello
 +  ~SILVERSH.CRE~
  
- README ~gminion\build1.8\readme-gminion.html~
- 
-@@ -70,6 +75,260 @@
+ LANGUAGE ~AMERICAN ENGLISH~
+ 		 ~american~
+@@ -67,6 +72,260 @@
+ EXTEND_TOP    ~SUMDJ01.BCS~  ~gminion\build1.8\baf\spell.baf~
  
  EXTEND_BOTTOM ~WIZELSUM.BCS~ ~gminion\build1.8\baf\melee.baf~
- 
++
 +// Additional changes for any (ToB?) type of installation - Azazello
 +EXTEND_TOP    ~WARDOG.BCS~ ~gminion\build1.8\baf\melee.baf~
 +EXTEND_TOP    ~WYVERN.BCS~ ~gminion\build1.8\baf\melee.baf~
@@ -277,16 +278,6 @@
 +
 +  BUT_ONLY_IF_IT_CHANGES
 +END
-+
+ 
  /*
   * Copy the modified .cre files to the override directory
-  *
-@@ -78,7 +337,7 @@
-  * making it more MOD friendly.
-  *
-  */
--  
-+
- // djinnisu has extra spells
- COPY_EXISTING ~djinnisu.cre~ ~override~
-               ~sumdjinn.cre~ ~override~

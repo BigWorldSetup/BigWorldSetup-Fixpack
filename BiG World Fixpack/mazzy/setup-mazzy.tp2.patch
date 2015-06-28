@@ -1,5 +1,5 @@
---- mazzy\setup-mazzy.tp2	Tue Jan 15 12:29:25 2013
-+++ C:\BWP Patchstudio\patched files\mazzy\setup-mazzy.tp2	Sat Jan 26 11:47:42 2013
+--- mazzy\setup-mazzy.tp2	Sun Apr 20 15:33:56 2014
++++ C:\BWP Patchstudio\patched files\mazzy\setup-mazzy.tp2	Sun Jun 28 21:31:59 2015
 @@ -11,7 +11,7 @@
  AUTHOR ~kae@spellholdstudios.net~
  
@@ -8,4 +8,4 @@
 +VERSION ~v2.2_Isaya BWP Fix~
  
  // Readme
- README ~mazzy/translations/%LANGUAGE%/mazzyfriendship.html~
+ // Default to English readme if not found in the selected language

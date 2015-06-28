@@ -1,0 +1,11 @@
+--- Oversight\brynnlaw\ExpandedBrynnlaw.d	Mon Oct 06 17:19:14 2014
++++ C:\BWP Patchstudio\patched files\Oversight\brynnlaw\ExpandedBrynnlaw.d	Mon May 25 08:06:30 2015
+@@ -564,7 +564,7 @@
+ EscapeArea()~ EXIT
+ 
+ CHAIN JAHEIRAJ WhatGoodRep @198
+-@199 DO ~ReputationInc(-6)
++= @199 DO ~ReputationInc(-6)
+ LeaveParty()
+ ActionOverride("Imoen2",JoinParty())
+ SetGlobal("KishJaheiraPissed","GLOBAL",1)
