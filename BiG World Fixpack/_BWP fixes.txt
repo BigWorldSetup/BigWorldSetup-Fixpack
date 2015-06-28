@@ -805,7 +805,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: gavin - Gavin NPC v8
+:: gavin - Gavin NPC v9
 
 :: Lollorian's BGGraphics - Gavin compatibility patch
 :: http://www.shsforums.net/topic/57139-bgtbwp-cant-load-beregost-at-night-get-ctd/
@@ -816,11 +816,17 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: gavin_bg2 - Gavin NPC for BG2 v20
 
-:: Berelinde's BGT hotfix - folder _BG2GavinHotfix
+:: Berelinde's BGT hotfix - folder _Gavin_Hotfixes
 :: http://forums.gibberlings3.net/index.php?showtopic=20056
+
+:: Berelinde's hotfix - b!aley.are
+:: http://gibberlings3.net/forums/index.php?s=6f2d577fb09851ca2b0619bc1f65bde4&app=downloads&showfile=917
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
@@ -849,7 +855,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: gMinion - gMinion v2
 
-:: Lollorian's assorted ITM fixes
+:: Azazello's expanded gMinion TP2 for Mega-Installations
 :: http://gibberlings3.net/forums/index.php?showtopic=16272
 
 
