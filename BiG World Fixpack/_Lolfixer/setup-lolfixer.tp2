@@ -464,13 +464,27 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY tutu_convert_itm BEGIN
   _SW2H01    =>    SW2H01
 
   // Typoed Items
+  2HSW02     =>    SW2H02
   ANKSHELL   =>    MISC1A
+  ARRW01     =>    AROW01
+  BLUNT06    =>    BLUN06
+  CHAM01     =>    CHAN01
+  DWCHA01    =>    DWCHAN01
+  GHOST01    =>    GHOST
   HRZRSHED   =>    SD_HRZR
   IOUNX6     =>    IOUNX8
+  LEATH01    =>    LEAT01
+  LEATH04    =>    LEAT04
   MIN1HP     =>    MINHP1
+  RDNTRE03   =>    RNDTRE03
+  RDNTRE04   =>    RNDTRE04
   RNGDEMN    =>    RINGDEMN
   SCRL1R     =>   "U!SCRL03" // 'cause WeiDU don't like dem exclamations in filenames
+  SH1H04     =>    SW1H04
   SLING04    =>    SLNG04
+  STAFF01    =>    STAF01
+  UMBER1     =>    UMBER01
+  VAMP01     =>    VAMP1
 END
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
@@ -4226,6 +4240,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
 BUT_ONLY_IF_IT_CHANGES
 
 // horred the plague's absolutely awesomerific BCS patching code for innate crashes
+
+APPEND ~TRIGGER.IDS~ ~0x00A7 SpellCastInnateRES(S:Spell*,O:Object*)~
+              UNLESS ~0x00A7 SpellCastInnateRES(S:Spell\*,O:Object\*)~
+
 COPY_EXISTING_REGEXP GLOB ~.*\.bcs$~ ~override~
   DECOMPILE_AND_PATCH BEGIN
     REPLACE_EVALUATE CASE_INSENSITIVE ~SpellCastInnate(\(.*\),\([^0].*\))~
