@@ -1,0 +1,29 @@
+--- CtB\dialogs\translate\CBHLVLNT.D	Sun Sep 26 13:25:25 2010
++++ C:\BWP Patchstudio\patched files\CtB\dialogs\translate\CBHLVLNT.D	Mon Jun 29 22:46:14 2015
+@@ -244,7 +244,7 @@
+   IF ~~ THEN DO ~TakePartyItem("CBHLYTAX")
+ TakePartyItem("MISC44")
+ SetGlobal("CbValiantReforges","LOCALS",1)
+-SetGlobalTimer("CbValiantReforges","LOCALS",FIVE_DAYS)~ GOTO 38
++SetGlobalTimer("CbValiantReforgesTimer","LOCALS",FIVE_DAYS)~ GOTO 38
+ END
+ 
+ IF ~~ THEN BEGIN 38
+@@ -274,7 +274,7 @@
+ IF ~!Global("CbStoleFromValiant","AR3636",1)
+ GlobalLT("CbCloseToHome","GLOBAL",5)
+ Global("CbValiantReforges","LOCALS",1)
+-!GlobalTimerExpired("CbValiantReforges","LOCALS")~ THEN BEGIN 41
++!GlobalTimerExpired("CbValiantReforgesTimer","LOCALS")~ THEN BEGIN 41
+   SAY @62
+   IF ~~ THEN REPLY @59 GOTO 3
+   IF ~Global("CbValiantTellsStory","LOCALS",0)~ THEN REPLY @6 GOTO 4
+@@ -285,7 +285,7 @@
+ IF ~!Global("CbStoleFromValiant","AR3636",1)
+ Global("CbCloseToHome","GLOBAL",5)
+ Global("CbValiantReforges","LOCALS",1)
+-GlobalTimerExpired("CbValiantReforges","LOCALS")~ THEN BEGIN 42
++GlobalTimerExpired("CbValiantReforgesTimer","LOCALS")~ THEN BEGIN 42
+   SAY @63
+   IF ~~ THEN DO ~SetGlobal("CbValiantReforges","LOCALS",2)
+ GiveItemCreate("CBHLYTA2",LastTalkedToBy(Myself),1,0,0)~ EXIT

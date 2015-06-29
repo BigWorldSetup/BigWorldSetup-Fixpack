@@ -611,6 +611,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Vlad's SetCursorState() hanging cutscenes fix
 :: http://www.shsforums.net/topic/57177-bug/
 
+:: micbaldur's Valiant timer variable fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=572339
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1956,6 +1959,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's GiveItemCreate() Protagonist -> Player1 fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566210
+
+:: micbaldur's SolaTS copy fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=572402
 
 
 ----------------------------------------------------------------------------------------
