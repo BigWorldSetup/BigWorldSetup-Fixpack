@@ -79,10 +79,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
     SET "scexists" = 0
     SET "unassigned" = 0
     SET "missing" = 0
-    INNER_PATCH_FILE ~%SOURCE_RES%.bcs~ BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~%SOURCE_RES%.bcs~ BEGIN
       SET "exists" = 1
     END
-    INNER_PATCH_FILE ~%script%.bcs~ BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~%script%.bcs~ BEGIN
       SET "scexists" = 1
     END
     PATCH_IF (("%scexists%" = 0) AND ("%exists%" = 0)) BEGIN
@@ -142,7 +142,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
         FOR (index2 = 0 ; index2 < cont_itm_num ; index2 = index2 + 1) BEGIN
           READ_ASCII ("%itm_off%" + (("%index2%" + "%cont_itm_idx%") * 0x14)) "resref"
           SET "exists" = 0
-          INNER_PATCH_FILE ~%resref%.itm~ BEGIN
+          PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.itm~ BEGIN
             SET "exists" = 1
           END
           PATCH_IF ("%exists%" = 0) BEGIN
@@ -173,7 +173,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
           READ_ASCII ("%amb_off%" + 0x30 + ("%index2%" * 0x08) + (0xd4 * "%index%")) "resref"
           PATCH_IF NOT (("%resref%" STRING_EQUAL_CASE "") OR ("%resref%" STRING_EQUAL_CASE "none")) BEGIN
             SET "exists" = 0
-            INNER_PATCH_FILE ~%resref%.wav~ BEGIN
+            PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.wav~ BEGIN
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
@@ -195,7 +195,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
         READ_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "resref" // cre file
         PATCH_IF ("%resref%" STRING_COMPARE_REGEXP "^[Rr][Dd].+$") BEGIN // ignore creatures starting with RD
           SET "exists" = 0
-          INNER_PATCH_FILE ~%resref%.cre~ BEGIN
+          PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.cre~ BEGIN
             SET "exists" = 1
           END
           PATCH_IF (("%exists%" = 0) AND (("%flags%" BAND 0b00000001) = 0b00000001)) BEGIN
@@ -253,7 +253,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
                     ("%resref%" STRING_COMPARE_CASE "none") AND              // ignore 'none'
                     ("%resref%" STRING_COMPARE_REGEXP "^[Rr][Dd].+$")) BEGIN // ignore creatures starting with RD
             SET "exists" = 0
-            INNER_PATCH_FILE ~%resref%.cre~ BEGIN
+            PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.cre~ BEGIN
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
@@ -291,7 +291,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
                   ("%resref%" STRING_COMPARE_CASE "none") AND              // ignore 'none'
                   ("%resref%" STRING_COMPARE_REGEXP "^[Rr][Dd].+$")) BEGIN // ignore creatures starting with RD
           SET "exists" = 0
-          INNER_PATCH_FILE ~%resref%.cre~ BEGIN
+          PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.cre~ BEGIN
             SET "exists" = 1
           END
           PATCH_IF ("%exists%" = 0) BEGIN
@@ -558,7 +558,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
         PATCH_IF ("%ref%" != 0xffff) BEGIN
           READ_ASCII ("%itm_off%" +        (0x14 * "%ref%")) "item"
           READ_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) "cre_flags"
-          PATCH_IF ((FILE_EXISTS_IN_GAME ~%item%.itm~)) THEN BEGIN
+          PATCH_IF FILE_EXISTS_IN_GAME ~%item%.itm~ THEN BEGIN
             INNER_PATCH_FILE ~%item%.itm~ BEGIN
               READ_SHORT 0x1c "type"
               READ_BYTE  0x18 "flags"
@@ -667,7 +667,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 READ_SHORT ("%slot_off%" + (0x02 * 12)) "refd"
                 PATCH_IF ("%refa%" != 0xffff) BEGIN
                   READ_ASCII ("%itm_off%" + (0x14 * "%refa%")) "item1"
-                  PATCH_IF ((FILE_EXISTS_IN_GAME ~%item1%.itm~)) THEN BEGIN
+                  PATCH_IF FILE_EXISTS_IN_GAME ~%item1%.itm~ THEN BEGIN
                     INNER_PATCH_FILE ~%item1%.itm~ BEGIN
                       READ_SHORT 0x1c "type1"
                       READ_BYTE  0x18 "flags1"
@@ -679,7 +679,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 END
                 PATCH_IF ("%refb%" != 0xffff) BEGIN
                   READ_ASCII ("%itm_off%" + (0x14 * "%refb%")) "item2"
-                  PATCH_IF ((FILE_EXISTS_IN_GAME ~%item2%.itm~)) THEN BEGIN
+                  PATCH_IF FILE_EXISTS_IN_GAME ~%item2%.itm~ THEN BEGIN
                     INNER_PATCH_FILE ~%item2%.itm~ BEGIN
                       READ_SHORT 0x1c "type2"
                       READ_BYTE  0x18 "flags2"
@@ -691,7 +691,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 END
                 PATCH_IF ("%refc%" != 0xffff) BEGIN
                   READ_ASCII ("%itm_off%" + (0x14 * "%refc%")) "item3"
-                  PATCH_IF ((FILE_EXISTS_IN_GAME ~%item3%.itm~)) THEN BEGIN
+                  PATCH_IF FILE_EXISTS_IN_GAME ~%item3%.itm~ THEN BEGIN
                     INNER_PATCH_FILE ~%item3%.itm~ BEGIN
                       READ_SHORT 0x1c "type3"
                       READ_BYTE  0x18 "flags3"
@@ -703,7 +703,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 END
                 PATCH_IF ("%refd%" != 0xffff) BEGIN
                   READ_ASCII ("%itm_off%" + (0x14 * "%refd%")) "item4"
-                  PATCH_IF ((FILE_EXISTS_IN_GAME ~%item4%.itm~)) THEN BEGIN
+                  PATCH_IF FILE_EXISTS_IN_GAME ~%item4%.itm~ THEN BEGIN
                     INNER_PATCH_FILE ~%item4%.itm~ BEGIN
                       READ_SHORT 0x1c "type4"
                       READ_BYTE  0x18 "flags4"
@@ -1289,7 +1289,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
       READ_ASCII (0x248 + (0x08 * "%index%")) "script"
       PATCH_IF NOT (("%script%" STRING_EQUAL_CASE "NONE") OR ("%script%" STRING_EQUAL_CASE "")) BEGIN
         SET exists = 0
-        INNER_PATCH_FILE ~%script%.bcs~ BEGIN
+        PATCH_IF FILE_EXISTS_IN_GAME ~%script%.bcs~ BEGIN
           SET exists = 1
         END
         PATCH_IF ("%exists%" = 0) BEGIN
@@ -1329,10 +1329,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
     PATCH_IF NOT (("%dialog%" STRING_EQUAL_CASE "NONE") OR ("%dialog%" STRING_EQUAL_CASE "")) BEGIN
       SET exists = 0
       SET dlgexists = 0
-      INNER_PATCH_FILE ~%dialog%.dlg~ BEGIN
+      PATCH_IF FILE_EXISTS_IN_GAME ~%dialog%.dlg~ BEGIN
         SET exists = 1
       END
-      INNER_PATCH_FILE ~%SOURCE_RES%.dlg~ BEGIN
+      PATCH_IF FILE_EXISTS_IN_GAME ~%SOURCE_RES%.dlg~ BEGIN
         SET dlgexists = 1
       END
       PATCH_IF ("%exists%" = 0) AND ("%dlgexists%" = 1) BEGIN
@@ -1447,7 +1447,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
       FOR (index = 0 ; index < mem_num ; index = index + 1) BEGIN
         READ_ASCII ("%mem_off%" +        ("%index%" * 0x0c)) "resref"
         SET exists = 0
-        INNER_PATCH_FILE ~%resref%.spl~ BEGIN
+        PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.spl~ BEGIN
           SET exists = 1
         END
         PATCH_IF ("%exists%" = 0) BEGIN
@@ -1847,13 +1847,13 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
       SET "gnd_exists" = 0
       SET "desc_exists" = 0
 
-      INNER_PATCH_FILE ~%inv_icon%.bam~ BEGIN
+      PATCH_IF FILE_EXISTS_IN_GAME ~%inv_icon%.bam~ BEGIN
         SET "inv_exists" = 1
       END
-      INNER_PATCH_FILE ~%gnd_icon%.bam~ BEGIN
+      PATCH_IF FILE_EXISTS_IN_GAME ~%gnd_icon%.bam~ BEGIN
         SET "gnd_exists" = 1
       END
-      INNER_PATCH_FILE ~%desc_icon%.bam~ BEGIN
+      PATCH_IF FILE_EXISTS_IN_GAME ~%desc_icon%.bam~ BEGIN
         SET "desc_exists" = 1
       END
 
@@ -3823,6 +3823,70 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
               READ_SHORT 0x70 "fx_num"
             END
+
+            SET "found" = 0
+            FOR (index1 = fx_idx ; index1 < fx_num ; index1 = index1 + 1) BEGIN // check equipping effects
+              READ_SHORT ("%fx_off%" +        ("%index1%" * 0x30)) "eff_opcode"
+              READ_LONG  ("%fx_off%" + 0x04 + ("%index1%" * 0x30)) "eff_param1"
+              PATCH_IF ("%eff_opcode%" = 267) AND ("%eff_param1%" = 20568) BEGIN
+                SET "found" = 1
+              END
+            END
+            PATCH_IF ("%found%" = 0) BEGIN
+              PATCH_PRINT "%SOURCE_FILE% error: Disabling 'Morale Failure: Panic' String..."
+              LPF ADD_ITEM_EQEFFECT
+                INT_VAR
+                  opcode     = 267
+                  target     = 1
+                  timing     = 2
+                  parameter1 = 20568
+              END
+              READ_SHORT 0x70 "fx_num"
+            END
+
+            SET "found" = 0
+            FOR (index1 = fx_idx ; index1 < fx_num ; index1 = index1 + 1) BEGIN // check equipping effects
+              READ_SHORT ("%fx_off%" +        ("%index1%" * 0x30)) "eff_opcode"
+              READ_LONG  ("%fx_off%" + 0x04 + ("%index1%" * 0x30)) "eff_param1"
+              PATCH_IF ("%eff_opcode%" = 106) AND ("%eff_param1%" = 1) BEGIN
+                SET "found" = 1
+              END
+            END
+            PATCH_IF ("%found%" = 0) BEGIN
+              PATCH_PRINT "%SOURCE_FILE% error: Preventing morale failure..."
+              LPF ADD_ITEM_EQEFFECT
+                INT_VAR
+                  opcode     = 106
+                  target     = 1
+                  timing     = 2
+                  parameter1 = 1
+                  parameter2 = 1
+              END
+              READ_SHORT 0x70 "fx_num"
+            END
+
+            PATCH_IF FILE_EXISTS_IN_GAME ~cdhorror.vvc~ BEGIN
+              SET "found" = 0
+              FOR (index1 = fx_idx ; index1 < fx_num ; index1 = index1 + 1) BEGIN // check equipping effects
+                READ_SHORT ("%fx_off%" +        ("%index1%" * 0x30)) "eff_opcode"
+                READ_ASCII ("%fx_off%" + 0x14 + ("%index1%" * 0x30)) "eff_resref"
+                PATCH_IF ("%eff_opcode%" = 296) AND ("%eff_resref%" STRING_EQUAL_CASE "cdhorror") BEGIN
+                  SET "found" = 1
+                END
+              END
+              PATCH_IF ("%found%" = 0) BEGIN
+                PATCH_PRINT "%SOURCE_FILE% error: Preventing BG2Fixpack confusion Animation..."
+                LPF ADD_ITEM_EQEFFECT
+                  INT_VAR
+                    opcode     = 296
+                    target     = 1
+                    timing     = 2
+                  STR_VAR
+                    resource   = "cdhorror"
+                END
+                READ_SHORT 0x70 "fx_num"
+              END
+            END
           END
 
         END
@@ -3950,7 +4014,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                      ("%opcode%" = 135) OR
                      ("%opcode%" = 151) OR
                      ("%opcode%" = 168) BEGIN
-              INNER_PATCH_FILE ~%resref%.cre~ BEGIN
+              PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.cre~ BEGIN
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
@@ -3958,7 +4022,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%opcode%" = 107) BEGIN
-              INNER_PATCH_FILE ~%resref%.bmp~ BEGIN
+              PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.bmp~ BEGIN
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
@@ -3969,7 +4033,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                      ("%opcode%" = 112) OR
                      ("%opcode%" = 122) OR
                      ("%opcode%" = 143) BEGIN
-              INNER_PATCH_FILE ~%resref%.itm~ BEGIN
+              PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.itm~ BEGIN
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
@@ -3984,7 +4048,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                      ("%opcode%" = 207) OR
                      ("%opcode%" = 232) OR
                      ("%opcode%" = 266) BEGIN
-              INNER_PATCH_FILE ~%resref%.spl~ BEGIN
+              PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.spl~ BEGIN
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
@@ -3992,7 +4056,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%opcode%" = 152) BEGIN
-              INNER_PATCH_FILE ~%resref%.mve~ BEGIN
+              PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.mve~ BEGIN
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
@@ -4000,7 +4064,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%opcode%" = 174) BEGIN
-              INNER_PATCH_FILE ~%resref%.wav~ BEGIN
+              PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.wav~ BEGIN
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
@@ -4010,7 +4074,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             PATCH_IF ("%opcode%" = 177) OR
                      ("%opcode%" = 248) OR
                      ("%opcode%" = 249) BEGIN
-              INNER_PATCH_FILE ~%resref%.eff~ BEGIN
+              PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.eff~ BEGIN
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
@@ -4018,7 +4082,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%opcode%" = 186) BEGIN
-              INNER_PATCH_FILE ~%resref%.are~ BEGIN
+              PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.are~ BEGIN
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
@@ -4066,7 +4130,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                    ("%opcode%" = 135) OR
                    ("%opcode%" = 151) OR
                    ("%opcode%" = 168) BEGIN
-            INNER_PATCH_FILE ~%resref%.cre~ BEGIN
+            PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.cre~ BEGIN
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
@@ -4074,7 +4138,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             END
           END
           PATCH_IF ("%opcode%" = 107) BEGIN
-            INNER_PATCH_FILE ~%resref%.bmp~ BEGIN
+            PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.bmp~ BEGIN
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
@@ -4085,7 +4149,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                    ("%opcode%" = 112) OR
                    ("%opcode%" = 122) OR
                    ("%opcode%" = 143) BEGIN
-            INNER_PATCH_FILE ~%resref%.itm~ BEGIN
+            PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.itm~ BEGIN
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
@@ -4100,7 +4164,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                    ("%opcode%" = 207) OR
                    ("%opcode%" = 232) OR
                    ("%opcode%" = 266) BEGIN
-            INNER_PATCH_FILE ~%resref%.spl~ BEGIN
+            PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.spl~ BEGIN
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
@@ -4108,7 +4172,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             END
           END
           PATCH_IF ("%opcode%" = 152) BEGIN
-            INNER_PATCH_FILE ~%resref%.mve~ BEGIN
+            PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.mve~ BEGIN
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
@@ -4116,7 +4180,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             END
           END
           PATCH_IF ("%opcode%" = 174) BEGIN
-            INNER_PATCH_FILE ~%resref%.wav~ BEGIN
+            PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.wav~ BEGIN
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
@@ -4126,7 +4190,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
           PATCH_IF ("%opcode%" = 177) OR
                    ("%opcode%" = 248) OR
                    ("%opcode%" = 249) BEGIN
-            INNER_PATCH_FILE ~%resref%.eff~ BEGIN
+            PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.eff~ BEGIN
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
@@ -4134,7 +4198,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             END
           END
           PATCH_IF ("%opcode%" = 186) BEGIN
-            INNER_PATCH_FILE ~%resref%.are~ BEGIN
+            PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.are~ BEGIN
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
