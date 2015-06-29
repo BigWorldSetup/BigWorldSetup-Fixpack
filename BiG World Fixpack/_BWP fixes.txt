@@ -473,6 +473,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Quiet's Improved Crypt King Install fix
 :: http://www.shsforums.net/topic/56296-bp-181-bugs/?p=568030
 
+:: micbaldur's Brown Dragon CRE typo fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=572874
+
 
 ----------------------------------------------------------------------------------------
 
@@ -701,6 +704,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
 
+:: micbaldur's Basimah dialogue MySelf fixes
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=572836
+
 
 ----------------------------------------------------------------------------------------
 
@@ -803,6 +809,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's scriptlet for Silver Star - Frennedan compatibility (modified a bit by Lollorian) and SHAPE.CRE patched not overwritten
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566376
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Gahesh - Gahesh NPC BETA 1
+
+:: micbaldur's Gahesh-Gavin compatibility patch
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=573407
 
 
 ----------------------------------------------------------------------------------------

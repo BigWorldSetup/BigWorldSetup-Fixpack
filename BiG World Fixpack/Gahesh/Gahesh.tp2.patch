@@ -1,0 +1,11 @@
+--- Gahesh\Gahesh.tp2	Thu Apr 18 13:02:02 2013
++++ C:\BWP Patchstudio\patched files\Gahesh\Gahesh.tp2	Mon Jun 29 23:29:36 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~Gahesh\backup~
+ AUTHOR ~Lava Del'Vortel~
+ README ~Gahesh/ReadMe.txt~
+-
++VERSION ~BETA1 BWP Fix~
+ BEGIN ~Gahesh NPC~
+ 
+ // Fixing Imoen's dialogue file And CD_STATE

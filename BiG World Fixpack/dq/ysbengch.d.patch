@@ -1,0 +1,24 @@
+--- dq\dialog\ysbengch.d	Thu Feb 19 12:12:53 2015
++++ C:\BWP Patchstudio\patched files\dq\dialog\ysbengch.d	Mon Jun 29 22:58:26 2015
+@@ -84,8 +84,8 @@
+ //---------------------------------------------------------
+ IF ~~ THEN BEGIN 72
+ 	SAY @4228
+-	IF~CheckStatLT(LastTalkedToBy(Myself),15,CHR)~THEN REPLY @4229 GOTO 73
+-	IF~CheckStatGT(LastTalkedToBy(Myself),14,CHR)~THEN REPLY @4230 GOTO 74
++	IF~CheckStatLT(LastTalkedToBy(Player1),15,CHR)~THEN REPLY @4229 GOTO 73
++	IF~CheckStatGT(LastTalkedToBy(Player1),14,CHR)~THEN REPLY @4230 GOTO 74
+ END
+ 
+ //---------------------------------------------------------
+@@ -154,8 +154,8 @@
+ //---------------------------------------------------------
+ IF ~~ THEN BEGIN 83
+ 	SAY @4242
+-	IF~CheckStatLT(LastTalkedToBy(Myself),15,CHR)~THEN REPLY @4243 GOTO 84
+-	IF~CheckStatGT(LastTalkedToBy(Myself),14,CHR)~THEN REPLY @4244 GOTO 85
++	IF~CheckStatLT(LastTalkedToBy(Player1),15,CHR)~THEN REPLY @4243 GOTO 84
++	IF~CheckStatGT(LastTalkedToBy(Player1),14,CHR)~THEN REPLY @4244 GOTO 85
+ END
+ 
+ //---------------------------------------------------------

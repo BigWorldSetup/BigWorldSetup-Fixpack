@@ -1,0 +1,11 @@
+--- BP\BrownDragon\baf\bAR1900.BAF	Sat May 25 13:20:48 2013
++++ C:\BWP Patchstudio\patched files\BP\BrownDragon\baf\bAR1900.BAF	Mon Jun 29 23:14:14 2015
+@@ -5,7 +5,7 @@
+     Global("KR_BrownDragon","GLOBAL",0)
+ THEN
+     RESPONSE #100
+-        CreateCreatureDoor("KRDRGBRN",[600.700],0)
++        CreateCreatureDoor("BPDRGBRN",[600.700],0)
+         SetGlobal("KR_BrownDragon","GLOBAL",1)
+         Continue()
+ END
