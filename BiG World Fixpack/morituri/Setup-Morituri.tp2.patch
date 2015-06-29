@@ -1,0 +1,19 @@
+--- Setup-Morituri.tp2	Wed Aug 13 12:19:08 2008
++++ C:\BWP Patchstudio\patched files\Setup-Morituri.tp2	Mon Jun 29 21:36:25 2015
+@@ -5,7 +5,7 @@
+ 	 ~English~
+ 	 ~Morituri/tra/English/Setup-Morituri.tra~
+ 
+-LANGUAGE ~French~ (Traduit par Deratiseur)
++LANGUAGE ~French (Traduit par Deratiseur)~
+ 	 ~French~
+ 	 ~Morituri/tra/French/Setup-Morituri.tra~
+ 
+@@ -110,6 +110,6 @@
+ EXTEND_TOP ~DPlayer2.bcs~ ~morituri/morstats.baf~
+ EXTEND_TOP ~DPlayer2.bcs~ ~morituri/mortext.baf~
+ 
+-AT_INTERACTIVE_EXIT ~notepad morituri/Morituri-readme.txt~
++// AT_INTERACTIVE_EXIT ~notepad morituri/Morituri-readme.txt~
+ 
+ // EOF: MORITURI.tp2
