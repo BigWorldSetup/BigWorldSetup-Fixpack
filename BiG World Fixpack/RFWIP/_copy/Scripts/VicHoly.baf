@@ -1,0 +1,20 @@
+IF
+  HasItem("Belt12","Viconia")  // ~Holy Symbol of Lathander~
+  Alignment("Viconia",NEUTRAL_GOOD)  // Viconia
+  Global("FWHolySymbol","LOCALS",0)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWBelt05","Belt12","Viconia")
+    SetGlobal("FWHolySymbol","LOCALS",1)
+END
+
+IF
+  HasItem("Belt14","Viconia")  // ~Holy Symbol of Talos~
+  Alignment("Viconia",NEUTRAL_EVIL)  // Viconia
+  Global("FWHolySymbol","LOCALS",0)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWBelt05","Belt15","Viconia")
+    SetGlobal("FWHolySymbol","LOCALS",1)
+END
+

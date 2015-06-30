@@ -1,0 +1,10 @@
+--- RezMod\masamune\baf\AR0334.baf	Fri Jan 14 10:44:21 2011
++++ C:\BWP Patchstudio\patched files\RezMod\masamune\baf\AR0334.baf	Tue Jun 30 22:07:49 2015
+@@ -5,6 +5,7 @@
+ 	RESPONSE #100
+ 		SetGlobal("ForgeStuff","GLOBAL",0)
+ 		SetGlobal("MasaMune#Craft","ar0334",1)
++		SetGlobal("MasaMune","ar0334",0)
+ 		GiveItemCreate("XOMASMUN",Player1,0,0,0) // Masamune +4
+ 		ActionOverride("wsmith01",StartDialogueNoSet([PC]))
+ END

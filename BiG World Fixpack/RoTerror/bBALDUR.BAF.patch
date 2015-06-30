@@ -1,5 +1,23 @@
 --- RoTerror\SNIP\BAF\bBALDUR.BAF	Thu Nov 02 20:47:42 2006
-+++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\bBALDUR.BAF	Sat Apr 14 05:24:13 2012
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\bBALDUR.BAF	Tue Jun 30 20:57:31 2015
+@@ -815,13 +815,13 @@
+ 	Global("BreVil11","GLOBAL",2)
+ THEN
+ 	RESPONSE #100
+-		SetGlobal("BreVil10","GLOBAL",3)
++		SetGlobal("BreVil11","GLOBAL",3)
+ 	RESPONSE #100
+-		SetGlobal("BreVil10","GLOBAL",4)
++		SetGlobal("BreVil11","GLOBAL",4)
+ 	RESPONSE #100
+-		SetGlobal("BreVil10","GLOBAL",5)
++		SetGlobal("BreVil11","GLOBAL",5)
+ 	RESPONSE #100
+-		SetGlobal("BreVil10","GLOBAL",5)
++		SetGlobal("BreVil11","GLOBAL",5)
+ END
+ 
+ IF
 @@ -1138,6 +1138,8 @@
  
  IF

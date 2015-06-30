@@ -1,0 +1,10 @@
+--- BackBrynnlaw\Setup-BackBrynnlaw.tp2	Mon Nov 10 15:36:36 2014
++++ C:\BWP Patchstudio\patched files\BackBrynnlaw\Setup-BackBrynnlaw.tp2	Tue Jun 30 21:53:28 2015
+@@ -1,6 +1,6 @@
+ BACKUP ~BackBrynnlaw/Backup~
+ AUTHOR ~http://forums.pocketplane.net~
+-VERSION ~v4~
++VERSION ~v4 BWP Fix~
+ 
+ README ~BackBrynnlaw/%LANGUAGE%/Readme-BackBrynnlaw.txt~ ~BackBrynnlaw/Readme-BackBrynnlaw.txt~ 
+ 

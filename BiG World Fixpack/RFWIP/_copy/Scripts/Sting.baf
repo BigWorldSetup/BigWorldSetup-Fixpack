@@ -1,0 +1,150 @@
+IF
+  HasItemEquiped("FWSw1H17",Player1)
+  OR(5)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWSw1H18","FWSw1H17",Player1)
+END
+
+IF
+  HasItemEquiped("FWSw1H18",Player1)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWSw1H17","FWSw1H18",Player1)
+END
+
+IF
+  HasItemEquiped("FWSw1H17",Player2)
+  OR(5)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWSw1H18","FWSw1H17",Player2)
+END
+
+IF
+  HasItemEquiped("FWSw1H18",Player2)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWSw1H17","FWSw1H18",Player2)
+END
+
+IF
+  HasItemEquiped("FWSw1H17",Player3)
+  OR(5)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWSw1H18","FWSw1H17",Player3)
+END
+
+IF
+  HasItemEquiped("FWSw1H18",Player3)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWSw1H17","FWSw1H18",Player3)
+END
+
+IF
+  HasItemEquiped("FWSw1H17",Player4)
+  OR(5)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWSw1H18","FWSw1H17",Player4)
+END
+
+IF
+  HasItemEquiped("FWSw1H18",Player4)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWSw1H17","FWSw1H18",Player4)
+END
+
+IF
+  HasItemEquiped("FWSw1H17",Player5)
+  OR(5)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWSw1H18","FWSw1H17",Player5)
+END
+
+IF
+  HasItemEquiped("FWSw1H18",Player5)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWSw1H17","FWSw1H18",Player5)
+END
+
+IF
+  HasItemEquiped("FWSw1H17",Player6)
+  OR(5)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+  Range(NearestEnemyOfType,100)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWSw1H18","FWSw1H17",Player6)
+END
+
+IF
+  HasItemEquiped("FWSw1H18",Player6)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+  !Range(NearestEnemyOfType,100)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWSw1H17","FWSw1H18",Player6)
+END
+

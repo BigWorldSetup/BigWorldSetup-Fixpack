@@ -1,0 +1,11 @@
+--- RezMod\Setup-RezMod.tp2	Wed Oct 31 18:49:27 2012
++++ C:\BWP Patchstudio\patched files\RezMod\Setup-RezMod.tp2	Tue Jun 30 22:08:39 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~RezMod/backup~
+ AUTHOR ~Lollorian~
+ README ~RezMod/Readme.htm~
+-VERSION ~2.6~
++VERSION ~2.6 BWP Fix~
+ 
+ AUTO_TRA ~RezMod/%s~
+ 

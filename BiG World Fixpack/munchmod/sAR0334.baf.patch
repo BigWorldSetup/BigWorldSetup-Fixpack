@@ -1,0 +1,10 @@
+--- munchmod\snip\sAR0334.baf	Thu Feb 04 21:19:14 2010
++++ C:\BWP Patchstudio\patched files\munchmod\snip\sAR0334.baf	Tue Jun 30 22:12:20 2015
+@@ -5,6 +5,7 @@
+ THEN
+     RESPONSE #100
+         SetGlobal("ForgeStuff","GLOBAL",0)
++        SetGlobal("SGForgeItem","AR0334",0)
+         TakePartyItem("SGMISC4")
+         TakePartyItem("SGMISC5")
+         TakePartyItem("SGMISC6")

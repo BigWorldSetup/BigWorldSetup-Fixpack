@@ -306,9 +306,19 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://forums.blackwyrmlair.net/index.php?s=ea3cd08de46ebb4971cd040e3012e512&showtopic=1633
 
 :: White Agnus' Continue() Fix - SharoJMP.baf
+:: - LINK NOT FOUND ~
 
 :: Valiant's correct chapter fix
 :: http://forums.blackwyrmlair.net/index.php?s=&showtopic=1633&view=findpost&p=45078
+
+----------------------------------------------------------------------------------------
+
+
+:: BackBrynnlaw - Back to Brynnlaw v4
+
+:: micbaldur's non-spawning Berlin fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=575218
+
 
 ----------------------------------------------------------------------------------------
 
@@ -475,6 +485,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's Brown Dragon CRE typo fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=572874
+
+:: micbaldur's Mage Construct - Ettin death variable change (Construct now has Death name CONST01)
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=573766
 
 
 ----------------------------------------------------------------------------------------
@@ -809,6 +822,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's scriptlet for Silver Star - Frennedan compatibility (modified a bit by Lollorian) and SHAPE.CRE patched not overwritten
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566376
+
+:: micbaldur's Frennedan - Imrae dialogue bugfix (EXTERNed to frsola00 not harcoded states)
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=573925
 
 
 ----------------------------------------------------------------------------------------
@@ -1490,6 +1506,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: RezMod - Lol's RezMod v2.6
+
+:: micbaldur's Masamune Cromwell looping fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=576467
+
+
+----------------------------------------------------------------------------------------
+
+
 :: RFWIP - Revised Forgotten Wars Item Pack v1.0
 
 :: Lollorian's assorted ITM fixes
@@ -1498,6 +1523,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: horred the plague's 2-handed ITM animation mismatch fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=550226
+
+:: micbaldur's unnecessary BALDUR.BCS script addition commented out (and all scripts BAF-ified for ease of editing)
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=573953
 
 
 ----------------------------------------------------------------------------------------
@@ -1579,6 +1607,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's locked RR3407 containers unlocked
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=569381
+
+:: Mad Mate's Depressed People BALDUR.BCS loop fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=573831
 
 
 ----------------------------------------------------------------------------------------
@@ -1730,6 +1761,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: White Agnus' Sir William's house visual bug fix
 :: http://www.shsforums.net/topic/57086-visual-bug-in-sir-williams-house/
+
+:: micbaldur's Lord Hammerhead Bucko is a cheapskate fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=574746
 
 
 ----------------------------------------------------------------------------------------
@@ -2210,6 +2244,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's \are\W_xxxx.baf's fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486198
+
+
+----------------------------------------------------------------------------------------
+
+
+:: xulaye - Xulaye NPC v1.2
+
+:: micbaldur's Xulaye armor reminder loop fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=573951
 
 
 ----------------------------------------------------------------------------------------

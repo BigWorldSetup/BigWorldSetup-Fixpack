@@ -1,0 +1,9 @@
+IF
+  HasItem("Belt12","Aerie")  // ~Holy Symbol of Lathander~
+  Global("FWHolySymbol","LOCALS",0)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWBelt04","Belt12","Aerie")
+    SetGlobal("FWHolySymbol","LOCALS",1)
+END
+

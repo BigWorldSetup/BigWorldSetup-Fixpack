@@ -1,0 +1,8 @@
+IF
+  Global("FWShop01Summon","AR6400",0)
+THEN
+  RESPONSE #100
+    CreateCreature("FWShop01",[1205.2351],10)  // FWShop01
+    SetGlobal("FWShop01Summon","AR6400",1)
+END
+

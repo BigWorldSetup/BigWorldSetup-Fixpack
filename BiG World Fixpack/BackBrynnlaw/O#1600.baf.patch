@@ -1,0 +1,15 @@
+--- BackBrynnlaw\Scripts\O#1600.baf	Mon Aug 05 19:23:18 2013
++++ C:\BWP Patchstudio\patched files\BackBrynnlaw\Scripts\O#1600.baf	Tue Jun 30 21:52:40 2015
+@@ -128,9 +128,9 @@
+ 
+ IF
+ Global("O#BrynnQuest","GLOBAL",16)
+-Dead("WIZSLA")
+-Dead("WIZSL1")
+-Dead("WIZSL2")
++Dead("O#WIZSLA")
++Dead("O#WIZSL1")
++Dead("O#WIZSL2")
+ AreaCheck("O#1600")
+ AreaType(OUTDOOR)
+ InMyArea(Player1)

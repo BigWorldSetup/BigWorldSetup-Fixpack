@@ -1,0 +1,10 @@
+IF
+  HasItem("Belt12","Anomen")  // ~Holy Symbol of Lathander~
+  Alignment("Anomen",LAWFUL_GOOD)  // Anomen
+  Global("FWHolySymbol","LOCALS",0)
+THEN
+  RESPONSE #100
+    TakeItemReplace("FWBelt06","Belt13","Anomen")
+    SetGlobal("FWHolySymbol","LOCALS",1)
+END
+

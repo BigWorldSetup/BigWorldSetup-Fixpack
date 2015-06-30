@@ -1,5 +1,14 @@
---- frenmod\frenJ.d	Wed Jun 24 08:24:00 2009
-+++ C:\BWP Patchstudio\patched files\frenmod\frenJ.d	Sun Jan 06 17:46:34 2013
+--- frenmod\frenJ.d	Wed Jun 24 09:24:00 2009
++++ C:\BWP Patchstudio\patched files\frenmod\frenJ.d	Tue Jun 30 21:25:34 2015
+@@ -520,7 +520,7 @@
+ 
+ ALTER_TRANS UDIMRAE BEGIN 4 END BEGIN 0 END BEGIN "TRIGGER" ~!InParty("frendan")~ END
+ EXTEND_TOP UDIMRAE 4
+-     IF ~InParty("frendan") !Dead("frendan")~ THEN EXTERN ~UDSOLA01~ 1 //frsola00
++     IF ~InParty("frendan") !Dead("frendan")~ THEN EXTERN ~UDSOLA01~ frsola00
+ END
+ 
+ 
 @@ -703,7 +703,7 @@
  END
  
