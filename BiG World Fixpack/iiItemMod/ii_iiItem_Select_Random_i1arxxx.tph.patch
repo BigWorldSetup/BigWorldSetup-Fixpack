@@ -1,0 +1,28 @@
+--- iiItemMod\tph\ii_iiItem_Select_Random_i1arxxx.tph	Wed Dec 27 20:59:50 2006
++++ C:\BWP Patchstudio\patched files\iiItemMod\tph\ii_iiItem_Select_Random_i1arxxx.tph	Thu Jul 02 22:27:44 2015
+@@ -17,7 +17,7 @@
+ 
+   INNER_ACTION
+   BEGIN    
+-    OUTER_SET i1arxxxresult = RANDOM(1 90)
++    OUTER_SET i1arxxxresult = RANDOM(1 80)
+     OUTER_SET added       = 0
+ 
+     ACTION_IF ((i1arxxxresult <= 10) AND (added = 0)) THEN
+@@ -68,10 +68,10 @@
+       OUTER_SET added = 1
+     END
+ 
+-    ACTION_IF ((i1arxxxresult <= 90) AND (added = 0)) THEN
+-    BEGIN
+-      OUTER_SPRINT iiselecteditem i1ar008
+-      OUTER_SET added = 1
+-    END
++//  ACTION_IF ((i1arxxxresult <= 90) AND (added = 0)) THEN
++//  BEGIN
++//    OUTER_SPRINT iiselecteditem i1ar008
++//    OUTER_SET added = 1
++//  END
+   END
+ END  // define_patch_macro
+\ No newline at end of file

@@ -952,6 +952,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
+:: Lollorian's patch to unlock FLAVOR items for BGT and commenting out blocks that add I1AR008.ITM to the game (item is not added by mod)
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1855,7 +1858,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://forums.pocketplane.net/index.php/topic,27207.0.html
 
 :: Lollorian's updated North Forest code
-:: 
+::
 
 
 ----------------------------------------------------------------------------------------

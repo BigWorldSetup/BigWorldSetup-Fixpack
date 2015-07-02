@@ -1,0 +1,13 @@
+--- iiItemMod\tph\ii_iiItem_Add_Arrows.tph	Wed Dec 27 16:59:36 2006
++++ C:\BWP Patchstudio\patched files\iiItemMod\tph\ii_iiItem_Add_Arrows.tph	Thu Jul 02 22:26:53 2015
+@@ -47,7 +47,7 @@
+     OUTER_SPRINT itemname i1ar007
+     LAUNCH_ACTION_MACRO ~ii_Add_Item_To_Store~
+ 
+-    OUTER_SPRINT itemname i1ar008
+-    LAUNCH_ACTION_MACRO ~ii_Add_Item_To_Store~
++//  OUTER_SPRINT itemname i1ar008
++//  LAUNCH_ACTION_MACRO ~ii_Add_Item_To_Store~
+ 
+ END
+\ No newline at end of file

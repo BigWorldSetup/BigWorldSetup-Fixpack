@@ -1,10 +1,20 @@
 --- iiItemMod\Setup-iiItemMod.tp2	Fri Nov 09 10:16:44 2007
-+++ C:\BWP Patchstudio\patched files\iiItemMod\Setup-iiItemMod.tp2	Sat Oct 05 12:18:36 2013
-@@ -6,6 +6,7 @@
++++ C:\BWP Patchstudio\patched files\iiItemMod\Setup-iiItemMod.tp2	Thu Jul 02 22:29:46 2015
+@@ -6,7 +6,7 @@
  // ----------------------------------------------------------------------------
  BACKUP ~iiItemMod/backup~
  AUTHOR ~igi~
+-
 +VERSION ~v5 BWP Fix~
- 
  LANGUAGE ~English~ ~English~ ~iiItemMod/Languages/English/setup.tra~
  LANGUAGE ~Spanish~ ~Spanish~ ~iiItemMod/Languages/Spanish/setup.tra~
+ 
+@@ -45,7 +45,7 @@
+ DESIGNATED 1
+ 
+ 
+-  ACTION_IF FILE_EXISTS ~override/_sw1h01.itm~ THEN BEGIN // Tutu
++  ACTION_IF GAME_IS ~tutu tutu_totsc bgt~ THEN BEGIN // Tutu, BGT
+     OUTER_SET done = 0
+     OUTER_WHILE (done = 0)
+     BEGIN
