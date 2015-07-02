@@ -1165,6 +1165,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: kittomes - Kit Tomes v2.01
+
+:: micbaldur's installation fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+:: micbaldur's Jamdak script name fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=578583
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Kivan - Kivan and Deheriana Companions v13
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
@@ -1393,6 +1405,12 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: ALIEN's Polish TRA fixes
 :: http://www.shsforums.net/topic/38355-ntotscv170a-v171-bug-thread/?p=569216
+
+:: micbaldur's Charleston script name fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=578583
+
+:: micbaldur's Amazonian encounter fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=578707
 
 
 ----------------------------------------------------------------------------------------
@@ -2173,6 +2191,12 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's Greater Wolfwere dropping Peladan fix
 :: http://www.shsforums.net/topic/55129-the-vault-for-bgt-v72-released/?p=548857
+
+:: micbaldur's Stone Golem typo fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=578583
+
+:: micbaldur's JC_THF04 script name fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=578583
 
 
 ----------------------------------------------------------------------------------------

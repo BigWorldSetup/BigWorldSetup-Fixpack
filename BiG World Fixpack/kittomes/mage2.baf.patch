@@ -1,0 +1,9 @@
+--- kittomes\BAF\mage2.baf	Fri May 24 10:00:04 2013
++++ C:\BWP Patchstudio\patched files\kittomes\BAF\mage2.baf	Thu Jul 02 23:23:34 2015
+@@ -5,5 +5,5 @@
+ 	RESPONSE #100
+ 		SetGlobal("S9J2Created","GLOBAL",1)
+ 		CreateCreature("S9JAMDAK",[312.231],0)
+-		ActionOverride("Jamdak",SetNumTimesTalkedTo(2)
++		ActionOverride("S9JAMDAK",SetNumTimesTalkedTo(2)
+ END

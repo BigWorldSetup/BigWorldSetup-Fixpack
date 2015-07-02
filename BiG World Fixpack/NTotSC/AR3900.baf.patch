@@ -1,0 +1,28 @@
+--- NTotSC\BAF\Area\AR3900.baf	Thu Aug 21 16:46:22 2008
++++ C:\BWP Patchstudio\patched files\NTotSC\BAF\Area\AR3900.baf	Thu Jul 02 23:35:25 2015
+@@ -2,8 +2,8 @@
+   Global("NTotSCSpawn","AR3900",0)
+ THEN
+   RESPONSE #100
+-    CreateCreature("NATALK9",[2248.240],3)
+-    CreateCreature("ELKA9",[2145.205],4)
++    CreateCreature("NATALKA",[2248.240],3)
++    CreateCreature("NTELKA",[2145.205],4)
+     SetGlobal("NTotSCSpawn","AR3900",1)
+ END
+ 
+@@ -11,10 +11,10 @@
+   Global("NTotSCspawn","AR3900",1)
+   OR(2)
+   GlobalGT("DMWWC3Assassin","GLOBAL",0)
+-  !Exists("LAMALHA")
++  !Exists("LAMALH")
+ THEN
+   RESPONSE #100
+-    ActionOverride("NATALK9",DestroySelf())
+-    ActionOverride("ELKA9",DestroySelf())
++    ActionOverride("NATALKA",DestroySelf())
++    ActionOverride("NTELKA",DestroySelf())
+     SetGlobal("NTotSCSpawn","AR3900",2)
+ END
+\ No newline at end of file

@@ -1,0 +1,11 @@
+--- Vault\SNIP\AR4402.baf	Wed Jul 18 07:49:12 2012
++++ C:\BWP Patchstudio\patched files\Vault\SNIP\AR4402.baf	Thu Jul 02 23:15:49 2015
+@@ -73,7 +73,7 @@
+ 		CreateCreature("GOLSTO01",[2605.1410],0)
+ 		CreateCreature("JC_DRW01",[2605.1410],0)
+ 		CreateCreature("JC_DRW01",[2605.1410],0)
+-		CreateCreature("GOSTO01",[2605.1410],0)
++		CreateCreature("GOLSTO01",[2605.1410],0)
+ 		SetGlobal("ReturnNashLevel2","GLOBAL",1)
+ 		Continue()
+ END
