@@ -1,0 +1,21 @@
+--- NeJ2\baf\VPCutT23.baf	Fri Jan 02 22:36:30 2004
++++ C:\BWP Patchstudio\patched files\NeJ2\baf\VPCUTT23.BAF	Fri Oct 10 04:14:59 2014
+@@ -2,10 +2,15 @@
+ 	True()
+ THEN
+ 	RESPONSE #100
+-		CutSceneId("RayVon")
++		CutSceneId(Player1)
++		FadeToColor([20.0],0)
+ 		Wait(1)
+-		ActionOverride("TuAyana",ReallyForceSpell(Myself,DRYAD_TELEPORT))
+-		ReallyForceSpell(Myself,DRYAD_TELEPORT)
++		MultiPlayerSync()
++		Wait(1)
++		FadeFromColor([20.0],0)
++		Wait(1)
++		ActionOverride("TuAyana",ReallyForceSpell(Myself,DRYAD_TELEPORT)) // SPWI995.SPL (Dimension Door)
++		ActionOverride("RayVon",ReallyForceSpell(Myself,DRYAD_TELEPORT)) // SPWI995.SPL (Dimension Door)
+ 		Wait(2)
+ 		EndCutSceneMode()
+ END

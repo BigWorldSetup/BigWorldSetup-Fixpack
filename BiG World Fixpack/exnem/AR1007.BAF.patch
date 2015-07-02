@@ -1,0 +1,12 @@
+--- Exnem\BAF\AR1007.BAF	Fri Apr 08 16:31:07 2005
++++ C:\BWP Patchstudio\patched files\Exnem\BAF\AR1007.BAF	Wed May 15 20:24:06 2013
+@@ -6,7 +6,7 @@
+ THEN
+    RESPONSE #100
+       SetGlobal("ExnemSpawnItem","AR1007",1)
+-      ActionOverride("Table 1",CreateItem("XCLB001",0,0,0) // 
+-      ActionOverride("Table 1",CreateItem("RNDTRE04",0,0,0) // 
++      ActionOverride("Container 1",CreateItem("XCLB001",0,0,0) // 
++      ActionOverride("Container 1",CreateItem("RNDTRE04",0,0,0) // 
+       Continue()
+ END

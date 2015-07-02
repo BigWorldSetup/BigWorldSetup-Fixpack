@@ -1,0 +1,11 @@
+--- TheUndying\dialogs\CMMORIA.D	Mon Sep 01 23:27:16 2014
++++ C:\BWP Patchstudio\patched files\TheUndying\dialogs\CMMORIA.D	Fri Apr 17 23:13:47 2015
+@@ -20,7 +20,7 @@
+ CHAIN CMMORIA DragonHunt
+ @10
+ == CMNINAFJ @11
+-DO ~AddexperienceParty(20000)~
++DO ~AddexperienceParty(20000) ActionOverride("cmmoria",EscapeArea())~
+ EXIT
+ 
+ 

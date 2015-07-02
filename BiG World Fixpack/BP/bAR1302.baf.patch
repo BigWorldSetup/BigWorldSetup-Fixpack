@@ -1,0 +1,16 @@
+--- BP\SNIP\bAR1302.baf	Tue May 25 19:00:30 2010
++++ C:\BWP Patchstudio\patched files\BP\SNIP\bAR1302.baf	Sat Nov 01 16:08:05 2014
+@@ -1,5 +1,4 @@
+ IF
+-  OnCreation()
+   Global("BP_MoreStooges","AR1302",0)
+   DifficultyGT(EASIEST)
+ THEN
+@@ -15,7 +14,6 @@
+ END
+ 
+ IF
+-  OnCreation()
+   Global("BP_MoreStooges","AR1302",1)
+   DifficultyGT(EASY)
+ THEN

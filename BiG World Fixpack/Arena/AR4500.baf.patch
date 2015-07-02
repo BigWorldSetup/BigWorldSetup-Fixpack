@@ -1,9 +1,2975 @@
 --- Arena\baf\AR4500.baf	Sun Dec 26 22:42:40 2010
-+++ C:\BWP Patchstudio\patched files\Arena\baf\AR4500.baf	Sun Feb 23 11:55:49 2014
-@@ -1,5 +1,5 @@
++++ C:\BWP Patchstudio\patched files\Arena\baf\AR4500.baf	Thu Jul 02 22:49:52 2015
+@@ -1,2969 +1,9 @@
  IF 
 -	OnCreation()
 +//	OnCreation()
  	!Global("AR#spawn","GLOBAL",1)
  THEN 
  RESPONSE #100 
+ 	CreateCreature("AR#arema",[1925.1090],1) 
+ 	CreateCreature("AR#rewma",[2050.1090],1) 
+ 	SetGlobal("AR#spawn","GLOBAL",1) 
+-END
+-
+-IF
+-	OnCreation()
+-	Global("EnteredArea","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		FadeToColor([1.0],0)
+-		Wait(1)
+-		CreateVisualEffectObject("SPSTRENH",Player1)
+-		CreateVisualEffectObject("SPSTRENH",Player2)
+-		CreateVisualEffectObject("SPSTRENH",Player3)
+-		CreateVisualEffectObject("SPSTRENH",Player4)
+-		CreateVisualEffectObject("SPSTRENH",Player5)
+-		CreateVisualEffectObject("SPSTRENH",Player6)
+-		SmallWait(7)
+-		SetGlobal("DROWITEMCHECKDONE","GLOBAL",0)
+-		FadeFromColor([30.0],0)
+-END
+-
+-IF
+-	Global("EnteredArea","AR4500",0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("EnteredArea","AR4500",1)
+-		SoundActivate("LavaLoopEvil1",FALSE)
+-		SoundActivate("LavaLoopEvil2",FALSE)
+-		SoundActivate("SingleShotScreams1",FALSE)
+-		SoundActivate("SingleShotScreams2",FALSE)
+-		SoundActivate("SingleShotAnimalMoans",FALSE)
+-		SoundActivate("WaterLoopGood",FALSE)
+-		SoundActivate("AiryVoicesGood1",FALSE)
+-		SoundActivate("AiryVoicesGood2",FALSE)
+-END
+-
+-IF
+-	OpenState("Door1",FALSE)
+-	Global("OpenDoor1","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		OpenDoor("Door1")
+-END
+-
+-IF
+-	OpenState("Door2",FALSE)
+-	Global("OpenDoor2","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		OpenDoor("Door2")
+-END
+-
+-IF
+-	OpenState("Door3",FALSE)
+-	Global("OpenDoor3","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		OpenDoor("Door3")
+-END
+-
+-IF
+-	OpenState("Door4",FALSE)
+-	Global("OpenDoor4","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		OpenDoor("Door4")
+-END
+-
+-IF
+-	OpenState("Door5",FALSE)
+-	Global("OpenDoor5","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		OpenDoor("Door5")
+-END
+-
+-IF
+-	OpenState("Room1",FALSE)
+-	Global("OpenRoom1","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		OpenDoor("Room1")
+-END
+-
+-IF
+-	OpenState("Room1",TRUE)
+-	Global("OpenRoom1","AR4500",0)
+-THEN
+-	RESPONSE #100
+-		CloseDoor("Room1")
+-END
+-
+-IF
+-	OpenState("Room2",FALSE)
+-	Global("OpenRoom2","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		OpenDoor("Room2")
+-END
+-
+-IF
+-	OpenState("Room2",TRUE)
+-	Global("OpenRoom2","AR4500",0)
+-THEN
+-	RESPONSE #100
+-		CloseDoor("Room2")
+-END
+-
+-IF
+-	OpenState("Room3",FALSE)
+-	Global("OpenRoom3","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		OpenDoor("Room3")
+-END
+-
+-IF
+-	OpenState("Room3",TRUE)
+-	Global("OpenRoom3","AR4500",0)
+-THEN
+-	RESPONSE #100
+-		CloseDoor("Room3")
+-END
+-
+-IF
+-	OpenState("Room4",FALSE)
+-	Global("OpenRoom4","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		OpenDoor("Room4")
+-END
+-
+-IF
+-	OpenState("Room4",TRUE)
+-	Global("OpenRoom4","AR4500",0)
+-THEN
+-	RESPONSE #100
+-		CloseDoor("Room4")
+-END
+-
+-IF
+-	OpenState("Room5",FALSE)
+-	Global("OpenRoom5","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		OpenDoor("Room5")
+-END
+-
+-IF
+-	OpenState("Room5",TRUE)
+-	Global("OpenRoom5","AR4500",0)
+-THEN
+-	RESPONSE #100
+-		CloseDoor("Room5")
+-END
+-
+-IF
+-	Global("SarevokAlive","GLOBAL",3)
+-	Global("GavePocketPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("GavePocketPlane","GLOBAL",1)
+-		DisplayStringHead(Player1,71110) // To speak to the Spirit of Fate and summon old companions to join your party, click on the statues next to the door.
+-END
+-
+-IF
+-	Global("AerieSummoned","GLOBAL",1)
+-	Global("AerieSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Aerie12",[1999.1218],0) // Aerie
+-		ActionOverride("Aerie",SetBeenInPartyFlags())
+-		SetGlobal("AerieSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("MinscSummoned","GLOBAL",1)
+-	Global("MinscSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Minsc14",[1999.1218],0) // Minsc
+-		SetGlobal("MinscSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("JaheiraSummoned","GLOBAL",1)
+-	Global("JaheiraSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Jahei14",[1999.1218],0) // Jaheira
+-		SetGlobal("JaheiraSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("CerndSummoned","GLOBAL",1)
+-	Global("CerndSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Cernd14",[1999.1218],0) // Cernd
+-		SetGlobal("CerndSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("AnomenSummoned","GLOBAL",1)
+-	Global("AnomenSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Anomen12",[1999.1218],0) // Anomen
+-		SetGlobal("AnomenSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("EdwinSummoned","GLOBAL",1)
+-	Global("EdwinSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Edwin15",[1999.1218],0) // Edwin
+-		SetGlobal("EdwinSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("HaerDalisSummoned","GLOBAL",1)
+-	Global("HaerDalisSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Haer19",[1999.1218],0) // Haer'Dalis
+-		SetGlobal("HaerDalisSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("ImoenSummoned","GLOBAL",1)
+-	Global("ImoenSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Imoen15",[1999.1218],0) // Imoen
+-		SetGlobal("ImoenSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("JanSummoned","GLOBAL",1)
+-	Global("JanSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Jan15",[1999.1218],0) // Jan
+-		SetGlobal("JanSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("KeldornSummoned","GLOBAL",1)
+-	Global("KeldornSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		SetGlobal("ActiveKeldorn","LOCALS",1)
+-		CreateCreature("Keldor14",[1999.1218],0) // Keldorn
+-		SetGlobal("KeldornSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("KorganSummoned","GLOBAL",1)
+-	Global("KorganSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Korgan15",[1999.1218],0) // Korgan
+-		SetGlobal("KorganSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("MazzySummoned","GLOBAL",1)
+-	Global("MazzySpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Mazzy15",[1999.1218],0) // Mazzy
+-		SetGlobal("MazzySpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("NaliaSummoned","GLOBAL",1)
+-	Global("NaliaSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Nalia18",[1999.1218],0) // Nalia
+-		SetGlobal("NaliaSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("ValygarSummoned","GLOBAL",1)
+-	Global("ValygarSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Valyg14",[1999.1218],0) // Valygar
+-		SetGlobal("ValygarSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("ViconiaSummoned","GLOBAL",1)
+-	Global("ViconiaSpawnPlane","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPPORTAL",[1999.1218])
+-		Wait(2)
+-		CreateCreature("Viconi16",[1999.1218],0) // Viconia
+-		SetGlobal("ViconiaSpawnPlane","GLOBAL",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",1)
+-	Global("Chall1_Diff","AR4500",0)
+-	NumInPartyAliveGT(3)
+-	LevelPartyGT(23)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("Chall1_Diff","AR4500",4)
+-		Continue()
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",1)
+-	Global("Chall1_Diff","AR4500",0)
+-	NumInPartyAliveLT(4)
+-	LevelPartyGT(25)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("Chall1_Diff","AR4500",4)
+-		Continue()
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",1)
+-	Global("Chall1_Diff","AR4500",0)
+-	NumInPartyAliveGT(3)
+-	LevelPartyGT(21)
+-	LevelPartyLT(24)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("Chall1_Diff","AR4500",3)
+-		Continue()
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",1)
+-	Global("Chall1_Diff","AR4500",0)
+-	NumInPartyAliveLT(4)
+-	LevelPartyGT(23)
+-	LevelPartyLT(26)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("Chall1_Diff","AR4500",3)
+-		Continue()
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",1)
+-	Global("Chall1_Diff","AR4500",0)
+-	NumInPartyAliveGT(3)
+-	LevelPartyGT(18)
+-	LevelPartyLT(22)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("Chall1_Diff","AR4500",2)
+-		Continue()
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",1)
+-	Global("Chall1_Diff","AR4500",0)
+-	NumInPartyAliveLT(4)
+-	LevelPartyGT(21)
+-	LevelPartyLT(24)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("Chall1_Diff","AR4500",2)
+-		Continue()
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",1)
+-	Global("Chall1_Diff","AR4500",0)
+-	NumInPartyAliveGT(3)
+-	LevelPartyLT(19)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("Chall1_Diff","AR4500",1)
+-		Continue()
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",1)
+-	Global("Chall1_Diff","AR4500",0)
+-	NumInPartyAliveLT(4)
+-	LevelPartyLT(22)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("Chall1_Diff","AR4500",1)
+-		Continue()
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",1)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",2)
+-		SetGlobal("OpenDoor1","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch1a")
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",3)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",4)
+-		Wait(1)
+-		ActionOverride("chalsp01",DestroyItem("minhp1")) // No such index
+-		Wait(1)
+-		CreateVisualEffectObject("SPDEATH3","chalsp01")
+-		ActionOverride("chalsp01",Kill(Myself))
+-		Wait(2)
+-		SetGlobalTimer("Chal1Wave1","AR4500",30)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",4)
+-	GlobalTimerNotExpired("Chal1Wave1","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",4)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chgood01",[923.433],0) // Commoner
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chgood02",[638.505],0) // Commoner
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chgood03",[561.694],0) // Commoner
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",4)
+-	GlobalTimerNotExpired("Chal1Wave1","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",6)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",2)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chgood01",[923.433],0) // Commoner
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chgood02",[638.505],0) // Commoner
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chgood03",[561.694],0) // Commoner
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",4)
+-	GlobalTimerNotExpired("Chal1Wave1","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",10)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	OR(2)
+-		Global("Chall1_Diff","AR4500",3)
+-		Global("Chall1_Diff","AR4500",4)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chgood01",[923.433],0) // Commoner
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chgood02",[638.505],0) // Commoner
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chgood03",[561.694],0) // Commoner
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",4)
+-	GlobalTimerNotExpired("Chal1Wave1","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",4)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chevil01",[923.433],0) // Kobold Commando
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chevil02",[638.505],0) // Doppelganger
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chevil01",[561.694],0) // Kobold Commando
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",4)
+-	GlobalTimerNotExpired("Chal1Wave1","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",6)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",2)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chevil01",[923.433],0) // Kobold Commando
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chevil02",[638.505],0) // Doppelganger
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chevil01",[561.694],0) // Kobold Commando
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",4)
+-	GlobalTimerNotExpired("Chal1Wave1","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",10)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	OR(2)
+-		Global("Chall1_Diff","AR4500",3)
+-		Global("Chall1_Diff","AR4500",4)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chevil01",[923.433],0) // Kobold Commando
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chevil02",[638.505],0) // Doppelganger
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chevil01",[561.694],0) // Kobold Commando
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",4)
+-	GlobalTimerExpired("Chal1Wave1","AR4500")
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",5)
+-		SetGlobalTimer("Chal1Wave2","AR4500",30)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",5)
+-	GlobalTimerNotExpired("Chal1Wave2","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",1)
+-	GlobalLT("EXTRACOUNT2","MYAREA",3)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chgood04",[923.433],0) // Elven Warrior
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chgood05",[638.505],0) // Elven Warrior
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chgood04",[561.694],0) // Elven Warrior
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",5)
+-	GlobalTimerNotExpired("Chal1Wave2","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",1)
+-	GlobalLT("EXTRACOUNT2","MYAREA",5)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",2)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chgood04",[923.433],0) // Elven Warrior
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chgood05",[638.505],0) // Elven Warrior
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chgood04",[561.694],0) // Elven Warrior
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",5)
+-	GlobalTimerNotExpired("Chal1Wave2","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",1)
+-	GlobalLT("EXTRACOUNT2","MYAREA",6)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",3)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chgood04",[923.433],0) // Elven Warrior
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chgood05",[638.505],0) // Elven Warrior
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chgood04",[561.694],0) // Elven Warrior
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",5)
+-	GlobalTimerNotExpired("Chal1Wave2","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",1)
+-	GlobalLT("EXTRACOUNT2","MYAREA",8)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",4)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chgood04",[923.433],0) // Elven Warrior
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chgood05",[638.505],0) // Elven Warrior
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chgood04",[561.694],0) // Elven Warrior
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",5)
+-	GlobalTimerNotExpired("Chal1Wave2","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",1)
+-	GlobalLT("EXTRACOUNT2","MYAREA",3)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chevil03",[923.433],0) // Ogre Mage
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chevil04",[638.505],0) // Sahuagin
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chevil05",[561.694],0) // Gnoll Captain
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",5)
+-	GlobalTimerNotExpired("Chal1Wave2","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",1)
+-	GlobalLT("EXTRACOUNT2","MYAREA",5)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",2)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chevil03",[923.433],0) // Ogre Mage
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chevil04",[638.505],0) // Sahuagin
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chevil05",[561.694],0) // Gnoll Captain
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",5)
+-	GlobalTimerNotExpired("Chal1Wave2","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",1)
+-	GlobalLT("EXTRACOUNT2","MYAREA",6)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",3)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chevil03",[923.433],0) // Ogre Mage
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chevil04",[638.505],0) // Sahuagin
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chevil05",[561.694],0) // Gnoll Captain
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",5)
+-	GlobalTimerNotExpired("Chal1Wave2","AR4500")
+-	GlobalLT("EXTRACOUNT","MYAREA",1)
+-	GlobalLT("EXTRACOUNT2","MYAREA",8)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",4)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chevil03",[923.433],0) // Ogre Mage
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chevil04",[638.505],0) // Sahuagin
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chevil05",[561.694],0) // Gnoll Captain
+-		IncrementGlobal("EXTRACOUNT2","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",5)
+-	GlobalTimerExpired("Chal1Wave2","AR4500")
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",6)
+-		SetGlobalTimer("Chal1Wave3","AR4500",30)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",6)
+-	GlobalTimerNotExpired("Chal1Wave3","AR4500")
+-	GlobalLT("EXTRACOUNT2","MYAREA",1)
+-	GlobalLT("EXTRACOUNT3","MYAREA",2)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chgood06",[923.433],0) // Knight of the Order
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chgood06",[638.505],0) // Knight of the Order
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chgood06",[561.694],0) // Knight of the Order
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",6)
+-	GlobalTimerNotExpired("Chal1Wave3","AR4500")
+-	GlobalLT("EXTRACOUNT2","MYAREA",1)
+-	GlobalLT("EXTRACOUNT3","MYAREA",3)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",2)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chgood06",[923.433],0) // Knight of the Order
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chgood06",[638.505],0) // Knight of the Order
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chgood06",[561.694],0) // Knight of the Order
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",6)
+-	GlobalTimerNotExpired("Chal1Wave3","AR4500")
+-	GlobalLT("EXTRACOUNT2","MYAREA",1)
+-	GlobalLT("EXTRACOUNT3","MYAREA",5)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",3)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chgood06",[923.433],0) // Knight of the Order
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chgood06",[638.505],0) // Knight of the Order
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chgood06",[561.694],0) // Knight of the Order
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",6)
+-	GlobalTimerNotExpired("Chal1Wave3","AR4500")
+-	GlobalLT("EXTRACOUNT2","MYAREA",1)
+-	GlobalLT("EXTRACOUNT3","MYAREA",6)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",4)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chgood06",[923.433],0) // Knight of the Order
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chgood06",[638.505],0) // Knight of the Order
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chgood06",[561.694],0) // Knight of the Order
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",6)
+-	GlobalTimerNotExpired("Chal1Wave3","AR4500")
+-	GlobalLT("EXTRACOUNT2","MYAREA",1)
+-	GlobalLT("EXTRACOUNT3","MYAREA",2)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chevil06",[923.433],0) // Drow Warrior
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chevil07",[638.505],0) // Drow Priestess
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chevil06",[561.694],0) // Drow Warrior
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",6)
+-	GlobalTimerNotExpired("Chal1Wave3","AR4500")
+-	GlobalLT("EXTRACOUNT2","MYAREA",1)
+-	GlobalLT("EXTRACOUNT3","MYAREA",3)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",2)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chevil06",[923.433],0) // Drow Warrior
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chevil07",[638.505],0) // Drow Priestess
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chevil06",[561.694],0) // Drow Warrior
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",6)
+-	GlobalTimerNotExpired("Chal1Wave3","AR4500")
+-	GlobalLT("EXTRACOUNT2","MYAREA",1)
+-	GlobalLT("EXTRACOUNT3","MYAREA",5)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",3)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chevil06",[923.433],0) // Drow Warrior
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chevil07",[638.505],0) // Drow Priestess
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chevil06",[561.694],0) // Drow Warrior
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",6)
+-	GlobalTimerNotExpired("Chal1Wave3","AR4500")
+-	GlobalLT("EXTRACOUNT2","MYAREA",1)
+-	GlobalLT("EXTRACOUNT3","MYAREA",6)
+-	ActionListEmpty()
+-	InActiveArea(Myself)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",4)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[923.433])
+-		CreateCreature("chevil06",[923.433],0) // Drow Warrior
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[638.505])
+-		CreateCreature("chevil07",[638.505],0) // Drow Priestess
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPFLESHS",[561.694])
+-		CreateCreature("chevil06",[561.694],0) // Drow Warrior
+-		IncrementGlobal("EXTRACOUNT3","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",6)
+-	GlobalTimerExpired("Chal1Wave3","AR4500")
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",7)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",7)
+-	GlobalLT("EXTRACOUNT3","MYAREA",1)
+-	Global("Chall1_Diff","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",9)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",7)
+-	GlobalLT("EXTRACOUNT3","MYAREA",1)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",2)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",8)
+-		CreateVisualEffect("SPGFLSH1",[638.505])
+-		CreateVisualEffect("SPPORTAL",[638.505])
+-		CreateCreature("chgood09",[638.505],13) // Ellesime
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",7)
+-	GlobalLT("EXTRACOUNT3","MYAREA",1)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",3)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",8)
+-		CreateVisualEffect("SPGFLSH1",[638.505])
+-		CreateVisualEffect("SPPORTAL",[638.505])
+-		CreateCreature("chgood09",[638.505],13) // Ellesime
+-		CreateVisualEffect("SPGFLSH1",[923.433])
+-		CreateVisualEffect("SPPORTAL",[923.433])
+-		CreateCreature("chgood08",[923.433],0) // Aran Linvail
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",7)
+-	GlobalLT("EXTRACOUNT3","MYAREA",1)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",4)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",8)
+-		CreateVisualEffect("SPGFLSH1",[638.505])
+-		CreateVisualEffect("SPPORTAL",[638.505])
+-		CreateCreature("chgood09",[638.505],13) // Ellesime
+-		CreateVisualEffect("SPGFLSH1",[923.433])
+-		CreateVisualEffect("SPPORTAL",[923.433])
+-		CreateCreature("chgood08",[923.433],0) // Aran Linvail
+-		CreateVisualEffect("SPGFLSH1",[561.694])
+-		CreateVisualEffect("SPPORTAL",[561.694])
+-		CreateCreature("chgood07",[561.694],10) // Duke Eltan
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",7)
+-	GlobalLT("EXTRACOUNT3","MYAREA",1)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",2)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",8)
+-		CreateVisualEffect("SPGFLSH1",[638.505])
+-		CreateVisualEffect("SPPORTAL",[638.505])
+-		CreateCreature("chevil09",[638.505],13) // Jon Irenicus
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",7)
+-	GlobalLT("EXTRACOUNT3","MYAREA",1)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",3)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",8)
+-		CreateVisualEffect("SPGFLSH1",[638.505])
+-		CreateVisualEffect("SPPORTAL",[638.505])
+-		CreateCreature("chevil09",[638.505],13) // Jon Irenicus
+-		CreateVisualEffect("SPGFLSH1",[923.433])
+-		CreateVisualEffect("SPPORTAL",[923.433])
+-		CreateCreature("chevil08",[923.433],0) // Bodhi
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",7)
+-	GlobalLT("EXTRACOUNT3","MYAREA",1)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",4)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",8)
+-		CreateVisualEffect("SPGFLSH1",[638.505])
+-		CreateVisualEffect("SPPORTAL",[638.505])
+-		CreateCreature("chevil09",[638.505],13) // Jon Irenicus
+-		CreateVisualEffect("SPGFLSH1",[923.433])
+-		CreateVisualEffect("SPPORTAL",[923.433])
+-		CreateCreature("chevil08",[923.433],0) // Bodhi
+-		CreateVisualEffect("SPGFLSH1",[561.694])
+-		CreateVisualEffect("SPPORTAL",[561.694])
+-		CreateCreature("chevil10",[561.694],10) // Sarevok
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",8)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",2)
+-	Dead("chgood09")
+-	CombatCounter(0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",9)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",8)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",3)
+-	Dead("chgood09")
+-	Dead("chgood08")
+-	CombatCounter(0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",9)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",8)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",4)
+-	Dead("chgood09")
+-	Dead("chgood08")
+-	Dead("chgood07")
+-	CombatCounter(0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",9)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",8)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",2)
+-	Dead("chevil09")
+-	CombatCounter(0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",9)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",8)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",3)
+-	Dead("chevil09")
+-	Dead("chevil08")
+-	CombatCounter(0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",9)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",8)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-	Global("Chall1_Diff","AR4500",4)
+-	Dead("chevil09")
+-	Dead("chevil08")
+-	Dead("chevil10")
+-	CombatCounter(0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",9)
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",9)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",10)
+-		ClearAllActions()
+-		StartCutSceneMode()
+-		StartCutScene("cutch1b")
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",11)
+-	OR(2)
+-		Alignment(Player1,MASK_EVIL)
+-		ReputationLT(Player1,8)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",12)
+-		FadeToColor([20.0],0)
+-		Wait(1)
+-		ActionOverride("chalsp01",DestroyItem("minhp1")) // No such index
+-		SetGlobal("OpenRoom1","AR4500",1)
+-		Wait(1)
+-		OpenDoor("Room1")
+-		AmbientActivate("AMB_DOOR01",FALSE)
+-		SoundActivate("EnergyBarrier1",FALSE)
+-		SetGlobal("OpenDoor1","AR4500",1)
+-		OpenDoor("Door1")
+-		ActionOverride("chalsp01",DestroySelf())
+-		Wait(1)
+-		FadeFromColor([20.0],0)
+-		SetGlobal("PPRoom1","GLOBAL",1)
+-		IncrementGlobal("PPEvilChoices","GLOBAL",1)
+-		CreateVisualEffectObject("SPUNHOLY",Player1)
+-		Wait(1)
+-		CreateVisualEffectObject("ICRMPARI",Player1)
+-		SetGlobal("GavePocketPlane","GLOBAL",1)
+-		AddXPObject(Player1,30000)
+-		AddXPObject(Player2,25000)
+-		AddXPObject(Player3,25000)
+-		AddXPObject(Player4,25000)
+-		AddXPObject(Player5,25000)
+-		AddXPObject(Player6,25000)
+-		ActionOverride(Player1,AddSpecialAbility("SPIN649")) // Pocket Plane
+-END
+-
+-IF
+-	Global("BeginChallenge1","GLOBAL",11)
+-	!Alignment(Player1,MASK_EVIL)
+-	!ReputationLT(Player1,8)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge1","GLOBAL",12)
+-		FadeToColor([20.0],0)
+-		Wait(1)
+-		ActionOverride("chalsp01",DestroyItem("minhp1")) // No such index
+-		SetGlobal("OpenRoom1","AR4500",0)
+-		Wait(1)
+-		CloseDoor("Room1")
+-		AmbientActivate("AMB_DOOR01",FALSE)
+-		SoundActivate("EnergyBarrier1",FALSE)
+-		SetGlobal("OpenDoor1","AR4500",1)
+-		OpenDoor("Door1")
+-		ActionOverride("chalsp01",DestroySelf())
+-		Wait(1)
+-		FadeFromColor([20.0],0)
+-		SetGlobal("PPRoom1","GLOBAL",2)
+-		IncrementGlobal("PPGoodChoices","GLOBAL",1)
+-		CreateVisualEffectObject("SPHOLY",Player1)
+-		Wait(1)
+-		CreateVisualEffectObject("ICRMPARI",Player1)
+-		SetGlobal("GavePocketPlane","GLOBAL",1)
+-		AddXPObject(Player1,30000)
+-		AddXPObject(Player2,25000)
+-		AddXPObject(Player3,25000)
+-		AddXPObject(Player4,25000)
+-		AddXPObject(Player5,25000)
+-		AddXPObject(Player6,25000)
+-		ActionOverride(Player1,AddSpecialAbility("SPIN649")) // Pocket Plane
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalGT("Bhaal25Dream1","GLOBAL",0)
+-	OR(2)
+-		Race(Player1,HUMAN)
+-		Race(Player1,HALFORC)
+-	Gender(Player1,MALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2a")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalLT("Bhaal25Dream1","GLOBAL",1)
+-	OR(2)
+-		Race(Player1,HUMAN)
+-		Race(Player1,HALFORC)
+-	Gender(Player1,MALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2b")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalGT("Bhaal25Dream1","GLOBAL",0)
+-	OR(3)
+-		Race(Player1,HALF_ELF)
+-		Race(Player1,ELF)
+-		Race(Player1,TIEFLING)
+-	Gender(Player1,MALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2c")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalLT("Bhaal25Dream1","GLOBAL",1)
+-	OR(3)
+-		Race(Player1,HALF_ELF)
+-		Race(Player1,ELF)
+-		Race(Player1,TIEFLING)
+-	Gender(Player1,MALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2d")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalGT("Bhaal25Dream1","GLOBAL",0)
+-	OR(2)
+-		Race(Player1,DWARF)
+-		Race(Player1,GNOME)
+-	Gender(Player1,MALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2e")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalLT("Bhaal25Dream1","GLOBAL",1)
+-	OR(2)
+-		Race(Player1,DWARF)
+-		Race(Player1,GNOME)
+-	Gender(Player1,MALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2f")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalGT("Bhaal25Dream1","GLOBAL",0)
+-	Race(Player1,HALFLING)
+-	Gender(Player1,MALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2g")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalLT("Bhaal25Dream1","GLOBAL",1)
+-	Race(Player1,HALFLING)
+-	Gender(Player1,MALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2h")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalGT("Bhaal25Dream1","GLOBAL",0)
+-	OR(2)
+-		Race(Player1,HUMAN)
+-		Race(Player1,HALFORC)
+-	Gender(Player1,FEMALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2i")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalLT("Bhaal25Dream1","GLOBAL",1)
+-	OR(2)
+-		Race(Player1,HUMAN)
+-		Race(Player1,HALFORC)
+-	Gender(Player1,FEMALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2j")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalGT("Bhaal25Dream1","GLOBAL",0)
+-	OR(3)
+-		Race(Player1,HALF_ELF)
+-		Race(Player1,ELF)
+-		Race(Player1,TIEFLING)
+-	Gender(Player1,FEMALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2k")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalLT("Bhaal25Dream1","GLOBAL",1)
+-	OR(3)
+-		Race(Player1,HALF_ELF)
+-		Race(Player1,ELF)
+-		Race(Player1,TIEFLING)
+-	Gender(Player1,FEMALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2l")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalGT("Bhaal25Dream1","GLOBAL",0)
+-	OR(2)
+-		Race(Player1,DWARF)
+-		Race(Player1,GNOME)
+-	Gender(Player1,FEMALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2m")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalLT("Bhaal25Dream1","GLOBAL",1)
+-	OR(2)
+-		Race(Player1,DWARF)
+-		Race(Player1,GNOME)
+-	Gender(Player1,FEMALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2n")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalGT("Bhaal25Dream1","GLOBAL",0)
+-	Race(Player1,HALFLING)
+-	Gender(Player1,FEMALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2o")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",1)
+-	GlobalLT("Bhaal25Dream1","GLOBAL",1)
+-	Race(Player1,HALFLING)
+-	Gender(Player1,FEMALE)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",2)
+-		SetGlobal("OpenDoor5","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch2p")
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",2)
+-	GlobalGT("Bhaal25Dream1","GLOBAL",0)
+-	Dead("chalpc01")
+-	Dead("chtaz01")
+-	Dead("chang01")
+-	Dead("chsam01")
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",3)
+-		FadeToColor([20.0],0)
+-		SetGlobal("OpenRoom5","AR4500",0)
+-		Wait(1)
+-		CloseDoor("Room5")
+-		AmbientActivate("AMB_DOOR05",FALSE)
+-		SoundActivate("EnergyBarrier2",FALSE)
+-		SetGlobal("OpenDoor5","AR4500",1)
+-		OpenDoor("Door5")
+-		Wait(1)
+-		FadeFromColor([20.0],0)
+-		SetGlobal("PPRoom2","GLOBAL",2)
+-		IncrementGlobal("PPGoodChoices","GLOBAL",1)
+-		CreateVisualEffectObject("SPHOLY",Player1)
+-		Wait(1)
+-		CreateVisualEffectObject("ICRMPARI",Player1)
+-		AddXPObject(Player1,30000)
+-		AddXPObject(Player2,25000)
+-		AddXPObject(Player3,25000)
+-		AddXPObject(Player4,25000)
+-		AddXPObject(Player5,25000)
+-		AddXPObject(Player6,25000)
+-END
+-
+-IF
+-	Global("BeginChallenge2","GLOBAL",2)
+-	GlobalLT("Bhaal25Dream1","GLOBAL",1)
+-	Dead("chalpc01")
+-	Dead("chtaz01")
+-	Dead("chang01")
+-	Dead("chsam01")
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge2","GLOBAL",3)
+-		FadeToColor([20.0],0)
+-		SetGlobal("OpenRoom5","AR4500",1)
+-		Wait(1)
+-		OpenDoor("Room5")
+-		AmbientActivate("AMB_DOOR05",FALSE)
+-		SoundActivate("EnergyBarrier2",FALSE)
+-		SetGlobal("OpenDoor5","AR4500",1)
+-		OpenDoor("Door5")
+-		Wait(1)
+-		FadeFromColor([20.0],0)
+-		SetGlobal("PPRoom2","GLOBAL",1)
+-		IncrementGlobal("PPEvilChoices","GLOBAL",1)
+-		CreateVisualEffectObject("SPUNHOLY",Player1)
+-		Wait(1)
+-		CreateVisualEffectObject("ICRMPARI",Player1)
+-		AddXPObject(Player1,30000)
+-		AddXPObject(Player2,25000)
+-		AddXPObject(Player3,25000)
+-		AddXPObject(Player4,25000)
+-		AddXPObject(Player5,25000)
+-		AddXPObject(Player6,25000)
+-END
+-
+-IF
+-	Global("BeginChallenge3","GLOBAL",1)
+-	GlobalGT("Bhaal25Dream2","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge3","GLOBAL",2)
+-		SetGlobal("OpenDoor4","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch3a")
+-END
+-
+-IF
+-	Global("BeginChallenge3","GLOBAL",1)
+-	GlobalLT("Bhaal25Dream2","GLOBAL",1)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge3","GLOBAL",2)
+-		SetGlobal("OpenDoor4","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch3b")
+-END
+-
+-IF
+-	Global("BeginChallenge3","GLOBAL",2)
+-	GlobalGT("Bhaal25Dream2","GLOBAL",0)
+-	Dead("chalslay")
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge3","GLOBAL",3)
+-		FadeToColor([20.0],0)
+-		SetGlobal("OpenRoom4","AR4500",0)
+-		Wait(1)
+-		CloseDoor("Room4")
+-		AmbientActivate("AMB_DOOR04",FALSE)
+-		SoundActivate("EnergyBarrier3",FALSE)
+-		SetGlobal("OpenDoor4","AR4500",1)
+-		OpenDoor("Door4")
+-		Wait(1)
+-		FadeFromColor([20.0],0)
+-		SetGlobal("PPRoom3","GLOBAL",2)
+-		IncrementGlobal("PPGoodChoices","GLOBAL",1)
+-		CreateVisualEffectObject("SPHOLY",Player1)
+-		Wait(1)
+-		CreateVisualEffectObject("ICRMPARI",Player1)
+-		AddXPObject(Player1,30000)
+-		AddXPObject(Player2,25000)
+-		AddXPObject(Player3,25000)
+-		AddXPObject(Player4,25000)
+-		AddXPObject(Player5,25000)
+-		AddXPObject(Player6,25000)
+-END
+-
+-IF
+-	Global("BeginChallenge3","GLOBAL",2)
+-	GlobalLT("Bhaal25Dream2","GLOBAL",1)
+-	Dead("chalslay")
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge3","GLOBAL",3)
+-		FadeToColor([20.0],0)
+-		SetGlobal("OpenRoom4","AR4500",1)
+-		Wait(1)
+-		OpenDoor("Room4")
+-		AmbientActivate("AMB_DOOR04",FALSE)
+-		SoundActivate("EnergyBarrier3",FALSE)
+-		SetGlobal("OpenDoor4","AR4500",1)
+-		OpenDoor("Door4")
+-		Wait(1)
+-		FadeFromColor([20.0],0)
+-		SetGlobal("PPRoom3","GLOBAL",1)
+-		IncrementGlobal("PPEvilChoices","GLOBAL",1)
+-		CreateVisualEffectObject("SPUNHOLY",Player1)
+-		Wait(1)
+-		CreateVisualEffectObject("ICRMPARI",Player1)
+-		AddXPObject(Player1,30000)
+-		AddXPObject(Player2,25000)
+-		AddXPObject(Player3,25000)
+-		AddXPObject(Player4,25000)
+-		AddXPObject(Player5,25000)
+-		AddXPObject(Player6,25000)
+-END
+-
+-IF
+-	Global("BeginChallenge4","GLOBAL",1)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge4","GLOBAL",2)
+-		SetGlobal("OpenDoor3","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch4a")
+-END
+-
+-IF
+-	GlobalTimerExpired("FavoredComes","AR4500")
+-	Global("BeginChallenge4","GLOBAL",4)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge4","GLOBAL",5)
+-		CreateVisualEffect("SPDIMNDR",[3339.2046])
+-		CreateVisualEffect("SPDIMNDR",[3084.2147])
+-		CreateVisualEffect("SPDIMNDR",[3163.2449])
+-		SmallWait(5)
+-		CreateCreature("chalcy02",[3339.2046],0) // Favored of Cyric
+-		CreateCreature("chalcy02",[3084.2147],0) // Favored of Cyric
+-		CreateCreature("chalcy02",[3163.2449],0) // Favored of Cyric
+-END
+-
+-IF
+-	Global("BeginChallenge4","GLOBAL",5)
+-	GlobalGT("Bhaal25Dream3","GLOBAL",0)
+-	NumDead("chalcy02",3)
+-	CombatCounter(0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge4","GLOBAL",6)
+-		FadeToColor([20.0],0)
+-		SetGlobal("OpenRoom3","AR4500",0)
+-		Wait(1)
+-		CloseDoor("Room3")
+-		AmbientActivate("AMB_DOOR03",FALSE)
+-		SoundActivate("EnergyBarrier4",FALSE)
+-		SetGlobal("OpenDoor3","AR4500",1)
+-		OpenDoor("Door3")
+-		Wait(1)
+-		FadeFromColor([20.0],0)
+-		SetGlobal("PPRoom4","GLOBAL",2)
+-		IncrementGlobal("PPGoodChoices","GLOBAL",1)
+-		CreateVisualEffectObject("SPHOLY",Player1)
+-		Wait(1)
+-		CreateVisualEffectObject("ICRMPARI",Player1)
+-		AddXPObject(Player1,30000)
+-		AddXPObject(Player2,25000)
+-		AddXPObject(Player3,25000)
+-		AddXPObject(Player4,25000)
+-		AddXPObject(Player5,25000)
+-		AddXPObject(Player6,25000)
+-END
+-
+-IF
+-	Global("BeginChallenge4","GLOBAL",5)
+-	GlobalLT("Bhaal25Dream3","GLOBAL",1)
+-	NumDead("chalcy02",3)
+-	CombatCounter(0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge4","GLOBAL",6)
+-		FadeToColor([20.0],0)
+-		SetGlobal("OpenRoom3","AR4500",1)
+-		Wait(1)
+-		OpenDoor("Room3")
+-		AmbientActivate("AMB_DOOR03",FALSE)
+-		SoundActivate("EnergyBarrier4",FALSE)
+-		SetGlobal("OpenDoor3","AR4500",1)
+-		OpenDoor("Door3")
+-		Wait(1)
+-		FadeFromColor([20.0],0)
+-		SetGlobal("PPRoom4","GLOBAL",1)
+-		IncrementGlobal("PPEvilChoices","GLOBAL",1)
+-		CreateVisualEffectObject("SPUNHOLY",Player1)
+-		Wait(1)
+-		CreateVisualEffectObject("ICRMPARI",Player1)
+-		AddXPObject(Player1,30000)
+-		AddXPObject(Player2,25000)
+-		AddXPObject(Player3,25000)
+-		AddXPObject(Player4,25000)
+-		AddXPObject(Player5,25000)
+-		AddXPObject(Player6,25000)
+-END
+-
+-IF
+-	Global("BeginChallenge5","GLOBAL",1)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge5","GLOBAL",2)
+-		SetGlobal("OpenDoor2","AR4500",0)
+-		StartCutSceneMode()
+-		StartCutScene("cutch5a")
+-END
+-
+-IF
+-	Global("BeginChallenge5","GLOBAL",3)
+-	GlobalLT("EXTRACOUNT","MYAREA",6)
+-	!Dead("chalrv01")
+-	!DifficultyLT(NORMAL)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPGFLSH1",[3193.849])
+-		CreateCreature("bonebld",[3193.849],4) // Bone Blade
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPGFLSH1",[2916.655])
+-		CreateCreature("bonebld",[2916.655],12) // Bone Blade
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPGFLSH1",[2853.833])
+-		CreateCreature("bonebld",[2853.833],8) // Bone Blade
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge5","GLOBAL",3)
+-	GlobalLT("EXTRACOUNT","MYAREA",3)
+-	!Dead("chalrv01")
+-	Difficulty(EASY)
+-THEN
+-	RESPONSE #100
+-		CreateVisualEffect("SPGFLSH1",[3193.849])
+-		CreateCreature("bonebld",[3193.849],4) // Bone Blade
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPGFLSH1",[2916.655])
+-		CreateCreature("bonebld",[2916.655],12) // Bone Blade
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-	RESPONSE #100
+-		CreateVisualEffect("SPGFLSH1",[2853.833])
+-		CreateCreature("bonebld",[2853.833],8) // Bone Blade
+-		IncrementGlobal("EXTRACOUNT","MYAREA",1)
+-END
+-
+-IF
+-	Global("BeginChallenge5","GLOBAL",3)
+-	GlobalGT("Bhaal25Dream5","GLOBAL",0)
+-	Dead("chalrv01")
+-	CombatCounter(0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge5","GLOBAL",4)
+-		FadeToColor([20.0],0)
+-		SetGlobal("OpenRoom2","AR4500",0)
+-		Wait(1)
+-		CloseDoor("Room2")
+-		AmbientActivate("AMB_DOOR02",FALSE)
+-		SoundActivate("EnergyBarrier5",FALSE)
+-		SetGlobal("OpenDoor2","AR4500",1)
+-		OpenDoor("Door2")
+-		Wait(1)
+-		FadeFromColor([20.0],0)
+-		SetGlobal("PPRoom5","GLOBAL",2)
+-		IncrementGlobal("PPGoodChoices","GLOBAL",1)
+-		CreateVisualEffectObject("SPHOLY",Player1)
+-		Wait(1)
+-		CreateVisualEffectObject("ICRMPARI",Player1)
+-		AddXPObject(Player1,30000)
+-		AddXPObject(Player2,25000)
+-		AddXPObject(Player3,25000)
+-		AddXPObject(Player4,25000)
+-		AddXPObject(Player5,25000)
+-		AddXPObject(Player6,25000)
+-END
+-
+-IF
+-	Global("BeginChallenge5","GLOBAL",3)
+-	GlobalLT("Bhaal25Dream5","GLOBAL",1)
+-	Dead("chalrv01")
+-	CombatCounter(0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("BeginChallenge5","GLOBAL",4)
+-		FadeToColor([20.0],0)
+-		SetGlobal("OpenRoom2","AR4500",1)
+-		Wait(1)
+-		OpenDoor("Room2")
+-		AmbientActivate("AMB_DOOR02",FALSE)
+-		SoundActivate("EnergyBarrier5",FALSE)
+-		SetGlobal("OpenDoor2","AR4500",1)
+-		OpenDoor("Door2")
+-		Wait(1)
+-		FadeFromColor([20.0],0)
+-		SetGlobal("PPRoom5","GLOBAL",1)
+-		IncrementGlobal("PPEvilChoices","GLOBAL",1)
+-		CreateVisualEffectObject("SPUNHOLY",Player1)
+-		Wait(1)
+-		CreateVisualEffectObject("ICRMPARI",Player1)
+-		AddXPObject(Player1,30000)
+-		AddXPObject(Player2,25000)
+-		AddXPObject(Player3,25000)
+-		AddXPObject(Player4,25000)
+-		AddXPObject(Player5,25000)
+-		AddXPObject(Player6,25000)
+-END
+-
+-IF
+-	Global("BeginChallenge5","GLOBAL",4)
+-	Global("BeginChallenge4","GLOBAL",6)
+-	Global("BeginChallenge3","GLOBAL",3)
+-	Global("BeginChallenge2","GLOBAL",3)
+-	Global("BeginChallenge1","GLOBAL",12)
+-	Global("ChallengesDone","GLOBAL",0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("ChallengesDone","GLOBAL",1)
+-		Wait(3)
+-		DisplayStringHead(Player1,72484) // With the last Child of Bhaal dead, you may now enter the Abyssal realm of the Throne of Bhaal.  Once you do so, the pocket plane will be destroyed forever.
+-END
+-
+-IF
+-	GlobalGT("BeginChallenge1","GLOBAL",0)
+-	OpenState("ROOM1",TRUE)
+-	Global("SetEvilSounds01","AR4500",0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("SetEvilSounds01","AR4500",1)
+-		SoundActivate("LavaLoopEvil2",TRUE)
+-		Continue()
+-END
+-
+-IF
+-	GlobalGT("BeginChallenge2","GLOBAL",0)
+-	OpenState("ROOM5",TRUE)
+-	Global("SetEvilSounds05","AR4500",0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("SetEvilSounds05","AR4500",1)
+-		SoundActivate("LavaLoopEvil1",TRUE)
+-		Continue()
+-END
+-
+-IF
+-	GlobalGT("BeginChallenge2","GLOBAL",0)
+-	OpenState("ROOM5",FALSE)
+-	Global("SetGoodSounds05","AR4500",0)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("SetGoodSounds05","AR4500",1)
+-		SoundActivate("WaterLoopGood",TRUE)
+-		Continue()
+-END
+-
+-IF
+-	GlobalGT("BeginChallenge3","GLOBAL",0)
+-	OpenState("ROOM4",TRUE)
+-THEN
+-	RESPONSE #20
+-		SoundActivate("SingleShotScreams1",TRUE)
+-		Continue()
+-	RESPONSE #80
+-		SoundActivate("SingleShotScreams1",FALSE)
+-		Continue()
+-END
+-
+-IF
+-	GlobalGT("BeginChallenge4","GLOBAL",0)
+-	OpenState("ROOM3",TRUE)
+-THEN
+-	RESPONSE #20
+-		SoundActivate("SingleShotScreams2",TRUE)
+-		Continue()
+-	RESPONSE #80
+-		SoundActivate("SingleShotScreams2",FALSE)
+-		Continue()
+-END
+-
+-IF
+-	GlobalGT("BeginChallenge4","GLOBAL",0)
+-	OpenState("ROOM3",FALSE)
+-THEN
+-	RESPONSE #20
+-		SoundActivate("AiryVoicesGood1",TRUE)
+-		Continue()
+-	RESPONSE #80
+-		SoundActivate("AiryVoicesGood1",FALSE)
+-		Continue()
+-END
+-
+-IF
+-	GlobalGT("BeginChallenge5","GLOBAL",0)
+-	OpenState("ROOM2",TRUE)
+-THEN
+-	RESPONSE #20
+-		SoundActivate("SingleShotAnimalMoans",TRUE)
+-		Continue()
+-	RESPONSE #80
+-		SoundActivate("SingleShotAnimalMoans",FALSE)
+-		Continue()
+-END
+-
+-IF
+-	GlobalGT("BeginChallenge5","GLOBAL",0)
+-	OpenState("ROOM2",FALSE)
+-THEN
+-	RESPONSE #20
+-		SoundActivate("AiryVoicesGood2",TRUE)
+-		Continue()
+-	RESPONSE #80
+-		SoundActivate("AiryVoicesGood2",FALSE)
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCHAN01",Player1) // Drow Elven Chain +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCHAN01") // Drow Elven Chain +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCHAN01",Player2) // Drow Elven Chain +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCHAN01") // Drow Elven Chain +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCHAN01",Player3) // Drow Elven Chain +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCHAN01") // Drow Elven Chain +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCHAN01",Player4) // Drow Elven Chain +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCHAN01") // Drow Elven Chain +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCHAN01",Player5) // Drow Elven Chain +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCHAN01") // Drow Elven Chain +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCHAN01",Player6) // Drow Elven Chain +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCHAN01") // Drow Elven Chain +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCHAN02",Player1) // Drow Adamantine Chain +5
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCHAN02") // Drow Adamantine Chain +5
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCHAN02",Player2) // Drow Adamantine Chain +5
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCHAN02") // Drow Adamantine Chain +5
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCHAN02",Player3) // Drow Adamantine Chain +5
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCHAN02") // Drow Adamantine Chain +5
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCHAN02",Player4) // Drow Adamantine Chain +5
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCHAN02") // Drow Adamantine Chain +5
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCHAN02",Player5) // Drow Adamantine Chain +5
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCHAN02") // Drow Adamantine Chain +5
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCHAN02",Player6) // Drow Adamantine Chain +5
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCHAN02") // Drow Adamantine Chain +5
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSW1H01",Player1) // Drow Scimitar +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSW1H01") // Drow Scimitar +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSW1H01",Player2) // Drow Scimitar +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSW1H01") // Drow Scimitar +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSW1H01",Player3) // Drow Scimitar +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSW1H01") // Drow Scimitar +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSW1H01",Player4) // Drow Scimitar +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSW1H01") // Drow Scimitar +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSW1H01",Player5) // Drow Scimitar +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSW1H01") // Drow Scimitar +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSW1H01",Player6) // Drow Scimitar +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSW1H01") // Drow Scimitar +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSW1H02",Player1) // Drow Longsword +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSW1H02") // Drow Longsword +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSW1H02",Player2) // Drow Longsword +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSW1H02") // Drow Longsword +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSW1H02",Player3) // Drow Longsword +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSW1H02") // Drow Longsword +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSW1H02",Player4) // Drow Longsword +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSW1H02") // Drow Longsword +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSW1H02",Player5) // Drow Longsword +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSW1H02") // Drow Longsword +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSW1H02",Player6) // Drow Longsword +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSW1H02") // Drow Longsword +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBLUN01",Player1) // Drow Flail +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBLUN01") // Drow Flail +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBLUN01",Player2) // Drow Flail +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBLUN01") // Drow Flail +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBLUN01",Player3) // Drow Flail +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBLUN01") // Drow Flail +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBLUN01",Player4) // Drow Flail +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBLUN01") // Drow Flail +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBLUN01",Player5) // Drow Flail +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBLUN01") // Drow Flail +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBLUN01",Player6) // Drow Flail +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBLUN01") // Drow Flail +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWHALB01",Player1) // Drow Halberd +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWHALB01") // Drow Halberd +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWHALB01",Player2) // Drow Halberd +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWHALB01") // Drow Halberd +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWHALB01",Player3) // Drow Halberd +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWHALB01") // Drow Halberd +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWHALB01",Player4) // Drow Halberd +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWHALB01") // Drow Halberd +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWHALB01",Player5) // Drow Halberd +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWHALB01") // Drow Halberd +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWHALB01",Player6) // Drow Halberd +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWHALB01") // Drow Halberd +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSPER01",Player1) // Drow Lance +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSPER01") // Drow Lance +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSPER01",Player2) // Drow Lance +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSPER01") // Drow Lance +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSPER01",Player3) // Drow Lance +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSPER01") // Drow Lance +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSPER01",Player4) // Drow Lance +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSPER01") // Drow Lance +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSPER01",Player5) // Drow Lance +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSPER01") // Drow Lance +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSPER01",Player6) // Drow Lance +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSPER01") // Drow Lance +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWXBOW01",Player1) // Drow Crossbow of Speed
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWXBOW01") // Drow Crossbow of Speed
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWXBOW01",Player2) // Drow Crossbow of Speed
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWXBOW01") // Drow Crossbow of Speed
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWXBOW01",Player3) // Drow Crossbow of Speed
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWXBOW01") // Drow Crossbow of Speed
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWXBOW01",Player4) // Drow Crossbow of Speed
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWXBOW01") // Drow Crossbow of Speed
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWXBOW01",Player5) // Drow Crossbow of Speed
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWXBOW01") // Drow Crossbow of Speed
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWXBOW01",Player6) // Drow Crossbow of Speed
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWXBOW01") // Drow Crossbow of Speed
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSHLD01",Player1) // Drow Shield +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSHLD01") // Drow Shield +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSHLD01",Player2) // Drow Shield +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSHLD01") // Drow Shield +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSHLD01",Player3) // Drow Shield +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSHLD01") // Drow Shield +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSHLD01",Player4) // Drow Shield +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSHLD01") // Drow Shield +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSHLD01",Player5) // Drow Shield +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSHLD01") // Drow Shield +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWSHLD01",Player6) // Drow Shield +3
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWSHLD01") // Drow Shield +3
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCLCK01",Player1) // Drow Piwafwi Cloak
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCLCK01") // Drow Piwafwi Cloak
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCLCK01",Player2) // Drow Piwafwi Cloak
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCLCK01") // Drow Piwafwi Cloak
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCLCK01",Player3) // Drow Piwafwi Cloak
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCLCK01") // Drow Piwafwi Cloak
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCLCK01",Player4) // Drow Piwafwi Cloak
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCLCK01") // Drow Piwafwi Cloak
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCLCK01",Player5) // Drow Piwafwi Cloak
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCLCK01") // Drow Piwafwi Cloak
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWCLCK01",Player6) // Drow Piwafwi Cloak
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWCLCK01") // Drow Piwafwi Cloak
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT01",Player1) // Drow Bolt of Sleep
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT01") // Drow Bolt of Sleep
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT01",Player2) // Drow Bolt of Sleep
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT01") // Drow Bolt of Sleep
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT01",Player3) // Drow Bolt of Sleep
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT01") // Drow Bolt of Sleep
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT01",Player4) // Drow Bolt of Sleep
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT01") // Drow Bolt of Sleep
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT01",Player5) // Drow Bolt of Sleep
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT01") // Drow Bolt of Sleep
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT01",Player6) // Drow Bolt of Sleep
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT01") // Drow Bolt of Sleep
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT02",Player1) // Drow Bolt of Stunning
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT02") // Drow Bolt of Stunning
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT02",Player2) // Drow Bolt of Stunning
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT02") // Drow Bolt of Stunning
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT02",Player3) // Drow Bolt of Stunning
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT02") // Drow Bolt of Stunning
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT02",Player4) // Drow Bolt of Stunning
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT02") // Drow Bolt of Stunning
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT02",Player5) // Drow Bolt of Stunning
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT02") // Drow Bolt of Stunning
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT02",Player6) // Drow Bolt of Stunning
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT02") // Drow Bolt of Stunning
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT03",Player1) // Drow Bolt +1
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT03") // Drow Bolt +1
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT03",Player2) // Drow Bolt +1
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT03") // Drow Bolt +1
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT03",Player3) // Drow Bolt +1
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT03") // Drow Bolt +1
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT03",Player4) // Drow Bolt +1
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT03") // Drow Bolt +1
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT03",Player5) // Drow Bolt +1
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT03") // Drow Bolt +1
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWBOLT03",Player6) // Drow Bolt +1
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWBOLT03") // Drow Bolt +1
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player1)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWPLAT01",Player1) // Drow Full Plate +5
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player1,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWPLAT01") // Drow Full Plate +5
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player2)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWPLAT01",Player2) // Drow Full Plate +5
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player2,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWPLAT01") // Drow Full Plate +5
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player3)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWPLAT01",Player3) // Drow Full Plate +5
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player3,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWPLAT01") // Drow Full Plate +5
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player4)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWPLAT01",Player4) // Drow Full Plate +5
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player4,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWPLAT01") // Drow Full Plate +5
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player5)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWPLAT01",Player5) // Drow Full Plate +5
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player5,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWPLAT01") // Drow Full Plate +5
+-		Continue()
+-END
+-
+-IF
+-	InMyArea(Player6)
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	HasItem("DWPLAT01",Player6) // Drow Full Plate +5
+-THEN
+-	RESPONSE #100
+-		GiveItemCreate("DWDUST",Player6,0,0,0) // Adamantine Dust
+-		TakePartyItemAll("DWPLAT01") // Drow Full Plate +5
+-		Continue()
+-END
+-
+-IF
+-	Global("DROWITEMCHECKDONE","GLOBAL",0)
+-	InMyArea(Player1)
+-THEN
+-	RESPONSE #100
+-		SetGlobal("DROWITEMCHECKDONE","GLOBAL",1)
+-END
+-
+-IF
+-	Global("PlayGoodSounds","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		SoundActivate("LavaLoopEvil1",FALSE)
+-		SoundActivate("LavaLoopEvil2",FALSE)
+-		SoundActivate("SingleShotScreams1",FALSE)
+-		SoundActivate("SingleShotScreams2",FALSE)
+-		SoundActivate("SingleShotAnimalMoans",FALSE)
+-		SoundActivate("WaterLoopGood",TRUE)
+-		SoundActivate("AiryVoicesGood1",TRUE)
+-		SoundActivate("AiryVoicesGood2",TRUE)
+-		SetGlobal("PlayGoodSounds","AR4500",0)
+-END
+-
+-IF
+-	Global("PlayEvilSounds","AR4500",1)
+-THEN
+-	RESPONSE #100
+-		SoundActivate("LavaLoopEvil1",TRUE)
+-		SoundActivate("LavaLoopEvil2",TRUE)
+-		SoundActivate("SingleShotScreams1",TRUE)
+-		SoundActivate("SingleShotScreams2",TRUE)
+-		SoundActivate("SingleShotAnimalMoans",TRUE)
+-		SoundActivate("WaterLoopGood",FALSE)
+-		SoundActivate("AiryVoicesGood1",FALSE)
+-		SoundActivate("AiryVoicesGood2",FALSE)
+-		SetGlobal("PlayEvilSounds","AR4500",0)
+-END
+-
+-
++END
+\ No newline at end of file

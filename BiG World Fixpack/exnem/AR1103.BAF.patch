@@ -1,0 +1,10 @@
+--- Exnem\BAF\AR1103.BAF	Fri Apr 08 16:31:41 2005
++++ C:\BWP Patchstudio\patched files\Exnem\BAF\AR1103.BAF	Sun Mar 16 04:50:09 2014
+@@ -9,6 +9,6 @@
+       ActionOverride("Container 1",CreateItem("XPOT003",0,0,0) // 
+       ActionOverride("Container 2",CreateItem("RNDTRE03",0,0,0) // 
+       ActionOverride("Container 3",CreateItem("RNDTRE04",0,0,0) // 
+-      ActionOverride("Container 3",CreateItem("XARM002",0,0,0) // 
++      ActionOverride("Container 4",CreateItem("XARM002",0,0,0) // 
+       Continue()
+ END

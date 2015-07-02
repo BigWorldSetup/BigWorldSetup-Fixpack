@@ -1,0 +1,11 @@
+--- Exnem\BAF\AR0505.BAF	Fri Apr 08 16:27:42 2005
++++ C:\BWP Patchstudio\patched files\Exnem\BAF\AR0505.BAF	Sun Mar 16 04:50:02 2014
+@@ -10,7 +10,7 @@
+       ActionOverride("Container 17",CreateItem("SCRXX02",0,0,0) // 
+       ActionOverride("Container 17",CreateItem("SCRXX03",0,0,0) // 
+       ActionOverride("Container 5",CreateItem("SCRXX16",0,0,0) // 
+-      ActionOverride("Container 5",CreateItem("XRNG005",0,0,0) // 
++      ActionOverride("Container 6",CreateItem("XRNG005",0,0,0) // 
+       ActionOverride("Container 7",CreateItem("RNDTRE04",0,0,0) // 
+       ActionOverride("Container 8",CreateItem("CLKX01",0,0,0) // 
+       ActionOverride("Container 9",CreateItem("RNDTRE03",0,0,0) // 

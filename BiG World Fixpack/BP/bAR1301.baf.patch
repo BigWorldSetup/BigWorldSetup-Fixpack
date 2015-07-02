@@ -1,0 +1,8 @@
+--- BP\SNIP\bAR1301.baf	Tue May 25 19:00:30 2010
++++ C:\BWP Patchstudio\patched files\BP\SNIP\bAR1301.baf	Sat Nov 01 16:07:46 2014
+@@ -1,5 +1,4 @@
+ IF
+-  OnCreation()
+   Global("BP_MoreStooges","AR1301",0)
+   LevelGT(Player1,9)
+   NumInPartyGT(1)

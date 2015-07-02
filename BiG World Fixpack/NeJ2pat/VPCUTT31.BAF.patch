@@ -1,0 +1,27 @@
+--- NeJ2Pat\baf\VPCutT31.baf	Sat Aug 11 04:57:18 2007
++++ C:\BWP Patchstudio\patched files\NeJ2Pat\baf\VPCUTT31.BAF	Fri Oct 10 04:15:16 2014
+@@ -2,10 +2,9 @@
+ 	True()
+ THEN
+ 	RESPONSE #100
+-		CutSceneId("TuMalv")
++		CutSceneId(Player1)
+ 		FadeToColor([20.0],0)
+ 		Wait(1)
+-		ActionOverride(Player1,MakeUnselectable(1))
+ 		ActionOverride(Player2,MakeUnselectable(1))
+ 		ActionOverride(Player3,MakeUnselectable(1))
+ 		ActionOverride(Player4,MakeUnselectable(1))
+@@ -15,7 +14,9 @@
+ 		Wait(2)
+ 		FadeFromColor([20.0],0)
+ 		Wait(1)
+-		ReallyForceSpell(Myself,DRYAD_TELEPORT)
++		ActionOverride("TuMalv",ReallyForceSpell(Myself,DRYAD_TELEPORT)) // SPWI995.SPL (Dimension Door)
+ 		Wait(2)
+ 		EndCutSceneMode()
+-END
+\ No newline at end of file
++END
++
++

@@ -1,0 +1,11 @@
+--- RevisedBattles\firkraag\baf\ar1200.baf	Tue Dec 25 15:14:19 2007
++++ C:\BWP Patchstudio\patched files\RevisedBattles\firkraag\baf\ar1200.baf	Thu May 21 21:46:36 2015
+@@ -1,6 +1,6 @@
+ IF
+-	Exists([PC])
+-	!Exists("b#fir03")
++//	Exists([PC])
++	!Exists("firkra02")
+ 	Global("b#firavatar","GLOBAL",2)
+ THEN
+ 	RESPONSE #100

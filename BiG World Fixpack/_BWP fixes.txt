@@ -212,6 +212,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
 
+:: micbaldur's AR4500.BCS block duplication fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=576545
+
 
 ----------------------------------------------------------------------------------------
 

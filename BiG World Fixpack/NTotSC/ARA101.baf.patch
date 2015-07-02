@@ -1,0 +1,10 @@
+--- NTotSC\BAF\Area\ARA101.baf	Fri Dec 02 15:04:40 2005
++++ C:\BWP Patchstudio\patched files\NTotSC\BAF\Area\ARA101.baf	Wed Jun 24 06:46:48 2015
+@@ -3,6 +3,6 @@
+ THEN
+   RESPONSE #100
+     SetGlobal("NTCharlesTalk","ARA101",2)
+-    ActionOverride("CHARLE",StartDialogNoSet([PC]))
++    ActionOverride("CHARLESTON",StartDialogNoSet([PC]))
+ END
+ 

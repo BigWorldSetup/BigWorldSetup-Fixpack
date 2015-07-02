@@ -1,0 +1,28 @@
+--- NeJ2\baf\VPCutT11.baf	Sat Nov 13 07:25:14 2004
++++ C:\BWP Patchstudio\patched files\NeJ2\baf\VPCUTT11.BAF	Fri Oct 10 04:14:25 2014
+@@ -2,11 +2,10 @@
+ 	True()
+ THEN
+ 	RESPONSE #100
+-		CutSceneId("Xan")
++		CutSceneId(Player1)
+ 		FadeToColor([20.0],0)
+ 		Wait(1)
+ 		ActionOverride("TuEnch",DestroySelf())
+-		ActionOverride(Player1,MakeUnselectable(1))
+ 		ActionOverride(Player2,MakeUnselectable(1))
+ 		ActionOverride(Player3,MakeUnselectable(1))
+ 		ActionOverride(Player4,MakeUnselectable(1))
+@@ -16,9 +15,9 @@
+ 		Wait(2)
+ 		FadeFromColor([20.0],0)
+ 		Wait(1)
+-		GiveItem("MASSCHAR",Player1) // Mass Charm
+-		AddXPObject(Player1,15000)
+-		ReallyForceSpell(Myself,DRYAD_TELEPORT)
++		ActionOverride("Xan",GiveItem("MASSCHAR",Player1)) // Mass Charm
++		ActionOverride("Xan",AddXPObject(Player1,11250))
++		ActionOverride("Xan",ReallyForceSpell(Myself,DRYAD_TELEPORT)) // SPWI995.SPL (Dimension Door)
+ 		Wait(2)
+ 		EndCutSceneMode()
+ END

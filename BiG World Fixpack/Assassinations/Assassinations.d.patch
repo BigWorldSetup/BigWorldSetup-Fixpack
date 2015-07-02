@@ -1,0 +1,104 @@
+--- Assassinations\Dialogue\Assassinations.d	Tue Aug 06 17:57:30 2013
++++ C:\BWP Patchstudio\patched files\Assassinations\Dialogue\Assassinations.d	Sun Mar 08 19:09:02 2015
+@@ -2058,13 +2058,17 @@
+ CHAIN O#LYNN f1.10
+ @631
+ == O#RHIN @632 
+-DO ~SetGlobal("O#CrLynnFinalQuest","GLOBAL",3)
++DO ~ClearAllActions()
++StartCutSceneMode()
++SetGlobal("O#CrLynnFinalQuest","GLOBAL",3)
+ EraseJournalEntry(@10450)
+ EraseJournalEntry(@10460)
+ EraseJournalEntry(@10560)
+ AddJournalEntry(@10470,QUEST)
+ ApplySpell("O#Rhin",DRYAD_TELEPORT)
+-ApplySpell("O#Lynn",DRYAD_TELEPORT)~
++ActionOverride("O#Lynn",CreateVisualEffectObject("spdimndr",Myself))
++ActionOverride("O#Lynn",MoveBetweenAreas("AR0800",[1584.790],0))
++EndCutSceneMode()~ 
+ EXIT
+ 
+ CHAIN IF ~Global("O#CrLynnFinalQuest","GLOBAL",3)~ THEN O#LYNN f2
+@@ -2954,9 +2958,10 @@
+ 
+ BEGIN O#DATON   // Inspector Daton
+ 
+-CHAIN IF ~NumTimesTalkedTo(0)~ THEN O#DATON d1
++CHAIN IF ~Global("O#CrSpawnedDatonTalked","GLOBAL",0)~ THEN O#DATON d1
+ @975
+-DO ~SetGlobal("O#CrSpawnedDaton","GLOBAL",2)~
++DO ~SetGlobal("O#CrSpawnedDaton","GLOBAL",2)
++SetGlobal("O#CrSpawnedDatonTalked","GLOBAL",1)~
+ END
+ + ~ReputationGT(Player1,7)~ + @976 EXTERN O#DATON d1.1
+ + ~ReputationLT(Player1,8)~ + @976 EXTERN O#DATON d1.2
+@@ -3015,10 +3020,10 @@
+ CHAIN O#DATON d1.9
+ @993
+ DO ~AddJournalEntry(@10220,QUEST)
+-EscapeAreaMove("AR0300",4304,2458,0)~ 
++EscapeArea()~ 
+ EXIT
+ 
+-CHAIN IF ~NumTimesTalkedToGT(0)~ THEN O#DATON d2
++CHAIN IF ~Global("O#CrSpawnedDatonTalked","GLOBAL",2)~ THEN O#DATON d2
+ @994
+ END
+ ++ @995 EXTERN O#DATON d2.0
+@@ -3094,7 +3099,8 @@
+ == MAZZYJ IF ~InParty("Mazzy") Range(Player1,30) !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN @1034
+ DO ~LeaveParty() Enemy()~
+ == O#DATON @1035
+-DO ~AddJournalEntry(@10240,QUEST)
++DO ~SetGlobal("O#CrSpawnedDatonTalked","GLOBAL",3)
++AddJournalEntry(@10240,QUEST)
+ ReputationInc(-2) 
+ Enemy()~
+ EXIT
+@@ -3118,7 +3124,8 @@
+ 
+ CHAIN O#DATON d2.betray2
+ @1046
+-DO ~SetGlobal("O#CrLynnBetrayed","GLOBAL",1)
++DO ~SetGlobal("O#CrSpawnedDatonTalked","GLOBAL",3)
++SetGlobal("O#CrLynnBetrayed","GLOBAL",1)
+ SetGlobal("O#CrLynnAmbush","GLOBAL",1)
+ AddJournalEntry(@10230,QUEST)
+ EscapeArea()~
+@@ -3605,9 +3612,10 @@
+ 
+ BEGIN O#CRQYR
+ 
+-CHAIN IF ~NumTimesTalkedTo(0)~ THEN O#CRQYR q1
++CHAIN IF ~Global("O#CrLynnQuestSpawnTalked7","GLOBAL",0)~ THEN O#CRQYR q1
+ @1246
+ DO ~SetGlobal("O#CrLynnQuestSpawn7","GLOBAL",2)
++SetGlobal("O#CrLynnQuestSpawnTalked7","GLOBAL",1)
+ AddJournalEntry(@10360,QUEST)~
+ END
+ ++ @1247 EXTERN O#CRQYR q1.1
+@@ -3631,7 +3639,7 @@
+  
+ CHAIN O#CRQYR q1.3
+ @1256
+-DO ~EscapeAreaMove("AR2000",1563,166,0)~
++DO ~EscapeArea()~
+ EXIT
+ 
+ CHAIN O#CRQYR q1.4
+@@ -3646,11 +3654,12 @@
+ 
+ CHAIN O#CRQYR q1.end
+ @1259
+-DO ~EscapeAreaMove("AR2000",1563,166,0)~
++DO ~EscapeArea()~
+ EXIT
+ 
+-CHAIN IF ~NumTimesTalkedToGT(0)~ THEN O#CRQYR q2
++CHAIN IF ~Global("O#CrLynnQuestSpawnTalked7","GLOBAL",2)~ THEN O#CRQYR q2
+ @1260
++DO ~SetGlobal("O#CrLynnQuestSpawnTalked7","GLOBAL",3)~
+ == KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN @1261
+ == VICONIJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN @1262
+ == JANJ IF ~InParty("Jan") InMyArea("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN @1263

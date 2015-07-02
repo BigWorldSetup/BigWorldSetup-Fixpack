@@ -1,5 +1,5 @@
 --- DruidSor\Setup-DruidSor.tp2	Mon Jul 08 11:17:50 2013
-+++ C:\BWP Patchstudio\patched files\DruidSor\Setup-DruidSor.tp2	Thu Jun 11 15:19:00 2015
++++ C:\BWP Patchstudio\patched files\DruidSor\Setup-DruidSor.tp2	Wed Jun 10 03:07:23 2015
 @@ -7,13 +7,9 @@
  ASK_EVERY_COMPONENT
  LANGUAGE ~English~
@@ -14,13 +14,3 @@
           ~druidsor/languages/french/setup.tra~ // French
  
  
-@@ -880,8 +876,7 @@
- // Dialogue changes
- 
- COMPILE ~druidsor/Ds/AATAQAH.d~
--USING   ~druidsor/languages/English/AATAQAH.tra~
--        ~druidsor/languages/%s/AATAQAH.tra~
-+USING   ~druidsor/languages/%s/AATAQAH.tra~
-         
- 
- /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\

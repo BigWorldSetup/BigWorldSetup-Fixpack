@@ -1,0 +1,26 @@
+--- BP\LIB\bp_tob.tph	Mon Oct 14 20:28:07 2013
++++ C:\BWP Patchstudio\patched files\BP\LIB\bp_tob.tph	Sat Nov 01 15:12:18 2014
+@@ -427,7 +427,6 @@
+   PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+     WRITE_ASCII 0x250 ~humansht~ #8 
+     WRITE_ASCII 0x268 ~bpccle2b~ #8 // Default (was WTASIGHT)
+-    REMOVE_CRE_ITEM ~UMBER1~
+     REPLACE_CRE_ITEM ~UMBER01~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
+   END
+ BUT_ONLY
+@@ -440,7 +439,6 @@
+   PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+     WRITE_ASCII 0x250 ~humansht~ #8 
+     WRITE_ASCII 0x268 ~bpcfig2b~ #8 // Default (was WTASIGHT)
+-    REMOVE_CRE_ITEM ~UMBER1~
+     REPLACE_CRE_ITEM ~UMBER01~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
+   END
+ BUT_ONLY
+@@ -455,7 +453,6 @@
+   PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+     WRITE_ASCII 0x250 ~creshout~ #8 
+     WRITE_ASCII 0x268 ~bpwdasgt~ #8 // Default (was WTASIGHT)
+-    REMOVE_CRE_ITEM ~UMBER1~
+     REPLACE_CRE_ITEM ~UMBER01~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
+   END
+ BUT_ONLY

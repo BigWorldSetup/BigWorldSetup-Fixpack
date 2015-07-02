@@ -1,0 +1,11 @@
+--- Eilistraee\SCRIPTS\AR0334.baf	Sat Oct 09 17:46:36 2010
++++ C:\BWP Patchstudio\patched files\Eilistraee\SCRIPTS\AR0334.baf	Fri Jun 12 22:32:38 2015
+@@ -8,7 +8,7 @@
+      TakePartyItem("DWDust")
+      TakePartyItem("MISC27")
+      DestroyItem("ESxTOOT")
+-     DestroyItem("AdamentineDust")
++     DestroyItem("DWDust")
+      GiveItemCreate("ESxDAG",PLAYER1,0,0,0) // completed item
+      ActionOverride("wsmith01",StartDialogueNoSet([PC]))
+ END

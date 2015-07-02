@@ -1,0 +1,11 @@
+--- stivan\setup-stivan.tp2	Sat Aug 20 19:21:12 2011
++++ C:\BWP Patchstudio\patched files\stivan\setup-stivan.tp2	Sat May 16 17:57:48 2015
+@@ -7,7 +7,7 @@
+ VERSION @106
+ README ~stivan/readme-%LANGUAGE%.html~ ~stivan/readme.html~
+ 
+-MODDER SETUP_TRA NONE
++// MODDER SETUP_TRA NONE
+ 
+ LANGUAGE ~English~
+ 	 ~English~

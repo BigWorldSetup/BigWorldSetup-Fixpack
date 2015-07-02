@@ -1,0 +1,23 @@
+--- TDD\BAF\MONTYRA2.BAF	Mon Dec 14 22:44:39 2009
++++ C:\BWP Patchstudio\patched files\TDD\BAF\MONTYRA2.BAF	Sat Mar 07 19:59:16 2015
+@@ -2,16 +2,16 @@
+   True()
+ THEN
+   RESPONSE #100
+-    CutSceneId("xzar")
+-    MoveViewObject("xzar",INSTANT)
++    CutSceneId("xzardd")
++    MoveViewObject("xzardd",INSTANT)
+     Wait(1)
+     ForceSpell(Myself,CLERIC_RESURRECTION)
+     Wait(6)
+-    CreateVisualEffectObject("spresuri","xzar")
++    CreateVisualEffectObject("spresuri","xzardd")
+     TakePartyItem("misc5u")
+     DestroyItem("misc5u")
+     Wait(1)
+-    CreateCreatureObject("montar13","xzar",0,0,0)
++    CreateCreatureObject("montar13","xzardd",0,0,0)
+     SetGlobal("montyxzar","GLOBAL",5)
+     EndCutSceneMode()
+ END

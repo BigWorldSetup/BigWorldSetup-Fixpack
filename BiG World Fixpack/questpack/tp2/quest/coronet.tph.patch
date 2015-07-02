@@ -1,0 +1,17 @@
+--- questpack\tp2\quest\coronet.tph	Sun May 25 19:41:28 2014
++++ C:\BWP Patchstudio\patched files\questpack\tp2\quest\coronet.tph	Wed Jun 17 17:53:37 2015
+@@ -114,6 +114,14 @@
+   END
+ BUT_ONLY
+ 
++COPY_EXISTING ~cut41f.bcs~ ~override~
++  DECOMPILE_AND_PATCH BEGIN
++    REPLACE_TEXTUALLY ~CreateCreature("ppdradee",[742.1323],0)~
++                      ~CreateCreature("ppdradee",[742.1323],0)
++                       CreateCreature("d0lorick",[771.597],12)~
++  END
++BUT_ONLY
++
+ COPY_EXISTING ~mazzy.bcs~ ~override~
+   DECOMPILE_AND_PATCH BEGIN
+     REPLACE_TEXTUALLY ~See("surly")~ ~See("surly") !Dead("surly")~

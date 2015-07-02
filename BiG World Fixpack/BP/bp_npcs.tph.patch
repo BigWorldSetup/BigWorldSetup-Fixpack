@@ -1,0 +1,27 @@
+--- BP\LIB\bp_npcs.tph	Sun May 26 02:31:50 2013
++++ C:\BWP Patchstudio\patched files\BP\LIB\bp_npcs.tph	Sat Apr 18 18:28:04 2015
+@@ -972,15 +972,15 @@
+   END
+ BUT_ONLY
+ 
+-COPY_EXISTING ~arled.cre~ ~override~ //Arledrian
+-  PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+-    WRITE_BYTE 0x64 40
+-    WRITE_BYTE 0x68 50
+-    WRITE_ASCII 0x248 ~bpthfsht~ #8
+-    WRITE_ASCII 0x268 ~bpthief~ #8
+-    ADD_MEMORIZED_SPELL ~spin483~ #0 ~innate~ (2)
+-  END
+-BUT_ONLY
++//COPY_EXISTING ~arled.cre~ ~override~ //Arledrian
++//  PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
++//    WRITE_BYTE 0x64 40
++//    WRITE_BYTE 0x68 50
++//    WRITE_ASCII 0x248 ~bpthfsht~ #8
++//    WRITE_ASCII 0x268 ~bpthief~ #8
++//    ADD_MEMORIZED_SPELL ~spin483~ #0 ~innate~ (2)
++//  END
++//BUT_ONLY
+ 
+ COPY_EXISTING ~bazpat01.cre~ ~override~ //Bondari
+   PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
