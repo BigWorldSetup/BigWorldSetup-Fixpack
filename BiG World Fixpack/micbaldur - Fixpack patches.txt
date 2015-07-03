@@ -1,0 +1,297 @@
+------------
+BWP Fixpack:
+------------
+
+AAR025.ARE (Vecna)
+
+Door 0 and 1: Lock difficulty 90
+
+-----
+
+AAR036.ARE (Vecna)
+
+Container 1: Fixed location with DLTCEP
+
+Container 0: Trap detection difficulty 90
+
+-----
+
+AAR041.ARE (Vecna)
+
+Container 9 and 10: Lock difficulty 90
+
+-----
+
+VP_JAH14.CRE (NEJ)
+
+Changed Override script to JAHE26.BCS and Dialogue to JAHEI25A.DLG
+
+-----
+
+AR0334.baf (Eilistraee's Song)
+
+Fix for item typo from "DestroyItem("AdamentineDust")" to DestroyItem("DWDust")
+
+-----
+
+AR0334.baf (Lol's Rezmod)
+
+Fix for Cromwell enhancement bug
+
+-----
+
+AR0505.BAF (Exnem Vault)
+
+Changed "ActionOverride("Container 5",CreateItem("XRNG005",0,0,0)" to
+        "ActionOverride("Container 6",CreateItem("XRNG005",0,0,0)"
+
+-----
+
+AR1007.BAF (Exnem Vault)
+
+Changed "Table 1" to "Container 1"
+
+-----
+
+AR1103.BAF (Exnem Vault)
+
+Changed "ActionOverride("Container 3",CreateItem("XARM002",0,0,0)" to
+        "ActionOverride("Container 4",CreateItem("XARM002",0,0,0)"
+
+-----
+
+ar1200.baf (Revised Battles)
+
+//	Exists([PC])
+
+-----
+
+AR1600.baf (Gahesh NPC)
+
+Fix for minor incompability problem with Gavin NPC by changing
+"CreateCreature("G1Boy",[1190.1120],3)" to
+"CreateCreature("G1Boy",[1145.1165],3)"
+
+-----
+
+bAR1300.baf (BP)
+
+Fix for possible OnCreation() problem
+
+-----
+
+bAR1301.baf (BP)
+
+Fix for possible OnCreation() problem
+
+-----
+
+bAR1302.baf (BP)
+
+Fix for possible OnCreation() problem
+
+-----
+
+bAR1303.baf (BP)
+
+Fix for possible OnCreation() problem
+
+-----
+
+bAR1900.BAF (BP)
+
+Changed "CreateCreatureDoor("KRDRGBRN",[600.700],0)" to
+        "CreateCreatureDoor("BPDRGBRN",[600.700],0)"
+
+-----
+
+bBALDUR.BAF (RoT)
+
+Fix for global bug also included BWP Fixpack fixes
+
+-----
+
+DDWARP01.BAF (TDD)
+
+Added "ActionOverride("SUELLE2",GiveItemCreate("Amul27",Player1,1,0,0))"
+
+-----
+
+K#Sheena.baf (Sheena NPC)
+
+Romance and multiromance tweak
+
+-----
+
+LK#XULA.BAF (Xulaye NPC)
+
+Added global checks for quest problem
+
+-----
+
+MONTYRA2.BAF (TDD)
+
+Fix for script name problem
+
+-----
+
+O#1600.baf (Back To Brynnlaw)
+
+Fix for Berlin's spawning bug
+
+-----
+
+RA5000.BAF (RoT)
+
+Fix for item problem and str refence issues
+
+-----
+
+sAR0334.baf (Munchmod)
+
+Fix for Cromwell enhancement bug by adding "SetGlobal("SGForgeItem","AR0334",0)"
+
+-----
+
+VPCUTT11.BAF (NEJ2)
+
+Fix for hanging cutscene
+
+-----
+
+VPCUTT20.BAF (NEJ2)
+
+Fix for hanging cutscene
+
+-----
+
+VPCUTT23.BAF (NEJ2)
+
+Fix for hanging cutscene
+
+-----
+
+VPCUTT31.BAF (NEJ2PAT)
+
+Fix for hanging cutscene
+
+-----
+
+Assassinations.d (Assassinations)
+
+Fix for Lynn/Rhin cutscene problem
+
+-----
+
+CBHLVLNT.D (CtB)
+
+Fix for global timer bug by changing "CbValiantReforges" to
+                                     "CbValiantReforgesTimer"
+
+-----
+
+CBLDBUCK.D (SOS)
+
+Fix for reward bug by changing "GivePartyGold" to "GiveGoldForce"
+
+-----
+
+CMMORIA.D (The Undying NPC)
+
+Tweak for Moria possible problems (EscapeArea() added)
+
+-----
+
+hanna.D (Hanna NPC)
+
+Tweak for kickout location and changed quest from AR1300 to AR1304
+
+-----
+
+psbelle.d (Planar Sphere Mod)
+
+Fix for spawning problem
+
+-----
+
+rolles.d (Rolles)
+
+Fix for item bug by changing "sw1h35" to "sw1h30"
+
+-----
+
+Setup-A4Auror.tp2 (Auror Kit)
+
+Fix for install language problem
+
+-----
+
+Setup-DruidSor.tp2 (Geomantic Sorcerer Kit)
+
+Fix for install language problem
+
+-----
+
+setup-RotBArmorSet.tp2 (RotB Armor Set)
+
+Fixed name typo
+
+-----
+
+Setup-Vagrant.tp2 (Improved Anvil)
+
+Fix for install language problem and Nightfarer fix for compiling d-files
+
+-----
+
+Setup-Morituri.tp2 (Morituri Kit)
+
+Nightfarer install bug fix
+
+-----
+
+Setup-RFWIP.tp2 (Revised Forgotten Wars Item Pack)
+
+Removed unnessessary append to Baldur.BCS and Baldur25.BCS
+
+-----
+
+setup-stivan.tp2 (Stivan NPC)
+
+Nightfarer modder flag fix
+
+-----
+
+Setup-TDD.tp2 (TDD)
+
+Fix for script problem and Ninde compability workaround Part 1
+
+-----
+
+Setup-TS.tp2 (Tortured Souls)
+
+Fix for Sola problem
+
+-----
+
+core.tpa (Stivan NPC)
+
+Nightfarer cre bug fix
+
+-----
+
+bp_npcs.tph (BP)
+
+Fix for Arledrian script problem
+
+-----
+
+bp_scripts.tph (BP)
+
+Fix for Razor and Tresham script problem
+
+-----
+
+bp_tob.tph (BP)
+
+Fix for Watcher's Keep Statue item problem

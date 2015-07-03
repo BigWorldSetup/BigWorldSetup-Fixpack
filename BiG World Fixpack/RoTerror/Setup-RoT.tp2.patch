@@ -1,5 +1,5 @@
 --- Setup-RoT.tp2	Sat Jun 14 20:23:08 2008
-+++ C:\BWP Patchstudio\patched files\Setup-RoT.tp2	Wed Oct 09 22:45:25 2013
++++ C:\BWP Patchstudio\patched files\Setup-RoT.tp2	Wed Jun 17 17:52:20 2015
 @@ -2,6 +2,8 @@
  
  AUTHOR ~Gilgamesh, King Diamond (WeiDU conversion)~ NO_IF_EVAL_BUG
@@ -63,7 +63,22 @@
  EXTEND_TOP  ~AR0700.BCS~  ~RoTerror/SNIP/BAF/tAR0700.BAF~
  
  EXTEND_BOTTOM  ~AR1000.BCS~  ~RoTerror/SNIP/BAF/bAR1000.BAF~
-@@ -3545,13 +3558,24 @@
+@@ -3539,19 +3552,39 @@
+  COMPILE_BAF_TO_BCS
+ BUT_ONLY_IF_IT_CHANGES
+ 
++COPY_EXISTING ~CUT41F.BCS~ ~override~
++ DECOMPILE_BCS_TO_BAF
++ REPLACE_TEXTUALLY ~CreateCreature("pptiax",[950.453],0)[^!]*CreateCreature("ppimoen",[1098.537],0)~
++~CreateCreature("pptiax",[950.453],0)
++CreateCreature("RanMarc",[674.623],2)
++CreateCreature("ppimoen",[1098.537],0)~
++ COMPILE_BAF_TO_BCS
++BUT_ONLY_IF_IT_CHANGES
++
+ EXTEND_BOTTOM  ~AR1600.BCS~  ~RoTerror/SNIP/BAF/bAR1600.BAF~
+ 
+ EXTEND_TOP  ~AR2000.BCS~  ~RoTerror/SNIP/BAF/tAR2000.BAF~
  
  EXTEND_BOTTOM  ~AR2100.BCS~  ~RoTerror/SNIP/BAF/bAR2100.BAF~
  
@@ -90,7 +105,7 @@
  
  
  ACTION_IF NOT FILE_EXISTS_IN_GAME ~BPDUEARC.SPL~ THEN BEGIN  //if there's no BP installed
-@@ -8929,8 +8953,8 @@
+@@ -8929,8 +8962,8 @@
  //***********************************************************************************
  BEGIN @1626
  
@@ -101,7 +116,7 @@
  
  ADD_KIT ~Holy_Swordsman~
  ~Holy_Swordsman          1           1           1           1           1           1           1           1~
-@@ -9438,7 +9462,7 @@
+@@ -9438,7 +9471,7 @@
  ~Knight                  0       0       0       0       0       0~
  ~RoTerror/kits/CLABPAKn.2DA~
  ~ K_P_HO  K_P_HL  K_P_HE  K_P_E  K_P_G  K_P_D  K_P_H ~

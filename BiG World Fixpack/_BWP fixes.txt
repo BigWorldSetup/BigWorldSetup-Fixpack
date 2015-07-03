@@ -71,15 +71,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: ACBre - Ascalon's Breager NPC v6.09
-
-:: micbaldur's Galthur cutscene death fix
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=569180
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Aeon - Aeon NPC v1.0
 
 :: Lollorian's Items not being copied fix

@@ -1,0 +1,11 @@
+--- Gahesh\scripts\AR1600.baf	Thu Aug 30 17:40:16 2012
++++ C:\BWP Patchstudio\patched files\Gahesh\scripts\AR1600.baf	Mon Jun 29 23:28:41 2015
+@@ -3,6 +3,6 @@
+ THEN
+ RESPONSE #100
+ SetGlobal("GaheshQuest","GLOBAL",3)
+-CreateCreature("G1Boy",[1190.1120],3)
++CreateCreature("G1Boy",[1145.1165],3)
+ Continue()
+ END
+\ No newline at end of file

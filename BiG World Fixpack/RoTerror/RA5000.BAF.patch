@@ -1,0 +1,38 @@
+--- RoTerror\BAF\RA5000.BAF	Sat Mar 11 20:46:18 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\BAF\RA5000.BAF	Fri Jul 03 23:33:17 2015
+@@ -34,7 +34,7 @@
+ 		PlaySound("EFF_M13")
+ 		CreateCreature("LichGuar",[640.819],12) // Guardian Lich
+ 		Wait(3)
+-		ActionOverride("LichGuar",TakePartyItem("Tabl1")) // Tablet I
++		ActionOverride(Player1,GiveItem("Tabl1","LichGuar")) // Tablet I
+ 		ActionOverride("LichGuar",DisplayStringHead(Myself,@570004))
+ 		Wait(3)
+ 		SetGlobal("Tabone","RA5000",2)
+@@ -71,7 +71,7 @@
+ 		Wait(1)
+ 		CreateCreature("GodDoom4",[1756.1144],8) // Doom Knight
+ 		Wait(1)
+-		ActionOverride("GodDoom1",TakePartyItem("Tabl2")) // Tablet II
++		ActionOverride(Player1,GiveItem("Tabl2","GodDoom1")) // Tablet II
+ 		Wait(1)
+ 		SetGlobal("Tabtwo","RA5000",2)
+ 		UnhideGUI()
+@@ -105,7 +105,7 @@
+ 		PlaySound("EFF_M13")
+ 		CreateCreature("Zagorr",[2454.2533],5) // Za'gorr
+ 		Wait(1)
+-		ActionOverride("Yatolsa",TakePartyItem("Tabl3")) // Tablet III
++		ActionOverride(Player1,GiveItem("Tabl3","Yatolsa")) // Tablet III
+ 		Wait(1)
+ 		SetGlobal("Tabthree","RA5000",2)
+ 		UnhideGUI()
+@@ -141,7 +141,7 @@
+ 		Wait(3)
+ 		CreateCreature("Nuessa",[928.2351],9) // Nu'essa
+ 		Wait(1)
+-		ActionOverride("Valesh",TakePartyItem("Tabl4")) // Tablet IV
++		ActionOverride(Player1,GiveItem("Tabl4","Valesh")) // Tablet IV
+ 		Wait(1)
+ 		SetGlobal("Tabfour","RA5000",2)
+ 		UnhideGUI()
