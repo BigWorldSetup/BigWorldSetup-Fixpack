@@ -842,6 +842,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: garrick-tt - Garrick - Tales of the Troubador v1.23
+
+:: Nightfarer's script compilation fixes
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: gavin - Gavin NPC v9
 
 :: Lollorian's BGGraphics - Gavin compatibility patch
