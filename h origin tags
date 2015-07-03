@@ -1,0 +1,139 @@
+[33mtag v15.2.1[m
+Tagger: omni-axa <kgoon007@gmail.com>
+Date:   Sat Jul 4 00:09:34 2015 +0530
+
+BiG World Fixpack v15.2.1
+
+[33mcommit ff57f9f105c26cd063bfee2615f47bba80df95c4[m
+Author: omni-axa <kgoon007@gmail.com>
+Date:   Sat Jul 4 00:00:22 2015 +0530
+
+    micbaldur moar patches and full integration and cleanup
+
+[1mdiff --git a/BiG World Fixpack/ACBre/ACBREB.D.patch b/BiG World Fixpack/ACBre/ACBREB.D.patch[m
+[1mdeleted file mode 100644[m
+[1mindex 5f75ec7..0000000[m
+Binary files a/BiG World Fixpack/ACBre/ACBREB.D.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/ACBre/ACBREB.D_0.patch b/BiG World Fixpack/ACBre/ACBREB.D_0.patch[m
+[1mdeleted file mode 100644[m
+[1mindex 5f38576..0000000[m
+Binary files a/BiG World Fixpack/ACBre/ACBREB.D_0.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/ACBre/ac_bre_cpmvars.tpa.patch b/BiG World Fixpack/ACBre/ac_bre_cpmvars.tpa.patch[m
+[1mdeleted file mode 100644[m
+[1mindex 1f395c2..0000000[m
+Binary files a/BiG World Fixpack/ACBre/ac_bre_cpmvars.tpa.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/BG2eeAR/CMTB2EES1.d.patch b/BiG World Fixpack/BG2eeAR/CMTB2EES1.d.patch[m
+[1mdeleted file mode 100644[m
+[1mindex 83d12c7..0000000[m
+Binary files a/BiG World Fixpack/BG2eeAR/CMTB2EES1.d.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/BG2eeAR/CMTB2EES1~.d.patch b/BiG World Fixpack/BG2eeAR/CMTB2EES1~.d.patch[m
+[1mdeleted file mode 100644[m
+[1mindex 76130cd..0000000[m
+Binary files a/BiG World Fixpack/BG2eeAR/CMTB2EES1~.d.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/BG2eeAR/SETUP-BG2eeAR.tp2.patch b/BiG World Fixpack/BG2eeAR/SETUP-BG2eeAR.tp2.patch[m
+[1mdeleted file mode 100644[m
+[1mindex b264f4c..0000000[m
+Binary files a/BiG World Fixpack/BG2eeAR/SETUP-BG2eeAR.tp2.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/BG2eeAR/_rename b/BiG World Fixpack/BG2eeAR/_rename[m
+[1mdeleted file mode 100644[m
+[1mindex f94ed0b..0000000[m
+Binary files a/BiG World Fixpack/BG2eeAR/_rename and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/BG2eeAR/cmt0700.baf.patch b/BiG World Fixpack/BG2eeAR/cmt0700.baf.patch[m
+[1mdeleted file mode 100644[m
+[1mindex c7390c9..0000000[m
+Binary files a/BiG World Fixpack/BG2eeAR/cmt0700.baf.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/BG2eeAR/setup-bgeear.tra.patch b/BiG World Fixpack/BG2eeAR/setup-bgeear.tra.patch[m
+[1mdeleted file mode 100644[m
+[1mindex efaf3b5..0000000[m
+Binary files a/BiG World Fixpack/BG2eeAR/setup-bgeear.tra.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/BG2eeAR/setup-bgeear.tra_0.patch b/BiG World Fixpack/BG2eeAR/setup-bgeear.tra_0.patch[m
+[1mdeleted file mode 100644[m
+[1mindex daefa35..0000000[m
+Binary files a/BiG World Fixpack/BG2eeAR/setup-bgeear.tra_0.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/Gahesh/AR1600.baf.patch b/BiG World Fixpack/Gahesh/AR1600.baf.patch[m
+[1mindex 979183e..1aed383 100644[m
+Binary files a/BiG World Fixpack/Gahesh/AR1600.baf.patch and b/BiG World Fixpack/Gahesh/AR1600.baf.patch differ
+[1mdiff --git a/BiG World Fixpack/Gahesh/AR1600.baf.patch.bak b/BiG World Fixpack/Gahesh/AR1600.baf.patch.bak[m
+[1mnew file mode 100644[m
+[1mindex 0000000..979183e[m
+Binary files /dev/null and b/BiG World Fixpack/Gahesh/AR1600.baf.patch.bak differ
+[1mdiff --git a/BiG World Fixpack/RoTerror/RA5000.BAF.patch b/BiG World Fixpack/RoTerror/RA5000.BAF.patch[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1822aad[m
+Binary files /dev/null and b/BiG World Fixpack/RoTerror/RA5000.BAF.patch differ
+[1mdiff --git a/BiG World Fixpack/RoTerror/Setup-RoT.tp2.patch b/BiG World Fixpack/RoTerror/Setup-RoT.tp2.patch[m
+[1mindex 9bca175..5887918 100644[m
+Binary files a/BiG World Fixpack/RoTerror/Setup-RoT.tp2.patch and b/BiG World Fixpack/RoTerror/Setup-RoT.tp2.patch differ
+[1mdiff --git a/BiG World Fixpack/TDD/Setup-TDD.tp2.patch b/BiG World Fixpack/TDD/Setup-TDD.tp2.patch[m
+[1mindex 19b7a71..18b40b1 100644[m
+Binary files a/BiG World Fixpack/TDD/Setup-TDD.tp2.patch and b/BiG World Fixpack/TDD/Setup-TDD.tp2.patch differ
+[1mdiff --git a/BiG World Fixpack/TotDG/Setup-TotDG.tp2.patch b/BiG World Fixpack/TotDG/Setup-TotDG.tp2.patch[m
+[1mindex 6f26292..1042baa 100644[m
+Binary files a/BiG World Fixpack/TotDG/Setup-TotDG.tp2.patch and b/BiG World Fixpack/TotDG/Setup-TotDG.tp2.patch differ
+[1mdiff --git a/BiG World Fixpack/WhiteQueen/WhiteQueen.tp2.patch b/BiG World Fixpack/WhiteQueen/WhiteQueen.tp2.patch[m
+[1mindex 108b33e..7d04266 100644[m
+Binary files a/BiG World Fixpack/WhiteQueen/WhiteQueen.tp2.patch and b/BiG World Fixpack/WhiteQueen/WhiteQueen.tp2.patch differ
+[1mdiff --git a/BiG World Fixpack/_BWP compatibility/BG2eeAR/CMTB2EES1.d.patch b/BiG World Fixpack/_BWP compatibility/BG2eeAR/CMTB2EES1.d.patch[m
+[1mdeleted file mode 100644[m
+[1mindex 83d12c7..0000000[m
+Binary files a/BiG World Fixpack/_BWP compatibility/BG2eeAR/CMTB2EES1.d.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/_BWP compatibility/BG2eeAR/CMTB2EES1~.d.patch b/BiG World Fixpack/_BWP compatibility/BG2eeAR/CMTB2EES1~.d.patch[m
+[1mdeleted file mode 100644[m
+[1mindex 76130cd..0000000[m
+Binary files a/BiG World Fixpack/_BWP compatibility/BG2eeAR/CMTB2EES1~.d.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/_BWP compatibility/BG2eeAR/SETUP-BG2eeAR.tp2.patch b/BiG World Fixpack/_BWP compatibility/BG2eeAR/SETUP-BG2eeAR.tp2.patch[m
+[1mdeleted file mode 100644[m
+[1mindex b264f4c..0000000[m
+Binary files a/BiG World Fixpack/_BWP compatibility/BG2eeAR/SETUP-BG2eeAR.tp2.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/_BWP compatibility/BG2eeAR/_rename b/BiG World Fixpack/_BWP compatibility/BG2eeAR/_rename[m
+[1mdeleted file mode 100644[m
+[1mindex f94ed0b..0000000[m
+Binary files a/BiG World Fixpack/_BWP compatibility/BG2eeAR/_rename and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/_BWP compatibility/BG2eeAR/cmt0700.baf.patch b/BiG World Fixpack/_BWP compatibility/BG2eeAR/cmt0700.baf.patch[m
+[1mdeleted file mode 100644[m
+[1mindex c7390c9..0000000[m
+Binary files a/BiG World Fixpack/_BWP compatibility/BG2eeAR/cmt0700.baf.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/_BWP compatibility/BG2eeAR/setup-bgeear.tra.patch b/BiG World Fixpack/_BWP compatibility/BG2eeAR/setup-bgeear.tra.patch[m
+[1mdeleted file mode 100644[m
+[1mindex efaf3b5..0000000[m
+Binary files a/BiG World Fixpack/_BWP compatibility/BG2eeAR/setup-bgeear.tra.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/_BWP compatibility/BG2eeAR/setup-bgeear.tra_0.patch b/BiG World Fixpack/_BWP compatibility/BG2eeAR/setup-bgeear.tra_0.patch[m
+[1mdeleted file mode 100644[m
+[1mindex daefa35..0000000[m
+Binary files a/BiG World Fixpack/_BWP compatibility/BG2eeAR/setup-bgeear.tra_0.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/_BWP compatibility/bg1ub/setup-bg1ub.tp2.patch b/BiG World Fixpack/_BWP compatibility/bg1ub/setup-bg1ub.tp2.patch[m
+[1mdeleted file mode 100644[m
+[1mindex 3400ea4..0000000[m
+Binary files a/BiG World Fixpack/_BWP compatibility/bg1ub/setup-bg1ub.tp2.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/_BWP fixes.txt b/BiG World Fixpack/_BWP fixes.txt[m
+[1mindex f4e3956..650d70c 100644[m
+Binary files a/BiG World Fixpack/_BWP fixes.txt and b/BiG World Fixpack/_BWP fixes.txt differ
+[1mdiff --git a/BiG World Fixpack/bg1ub/setup-bg1ub.tp2.patch b/BiG World Fixpack/bg1ub/setup-bg1ub.tp2.patch[m
+[1mindex 3400ea4..109f796 100644[m
+Binary files a/BiG World Fixpack/bg1ub/setup-bg1ub.tp2.patch and b/BiG World Fixpack/bg1ub/setup-bg1ub.tp2.patch differ
+[1mdiff --git a/BiG World Fixpack/haerdalisromance/haerdalisromance.tp2.patch b/BiG World Fixpack/haerdalisromance/haerdalisromance.tp2.patch[m
+[1mindex 1747a8b..b33cff2 100644[m
+Binary files a/BiG World Fixpack/haerdalisromance/haerdalisromance.tp2.patch and b/BiG World Fixpack/haerdalisromance/haerdalisromance.tp2.patch differ
+[1mdiff --git a/BiG World Fixpack/micbaldur - Fixpack patches.txt b/BiG World Fixpack/micbaldur - Fixpack patches.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..cdb76ff[m
+Binary files /dev/null and b/BiG World Fixpack/micbaldur - Fixpack patches.txt differ
+[1mdiff --git a/BiG World Fixpack/oversight/ExpandedBrynnlaw.d.patch b/BiG World Fixpack/oversight/ExpandedBrynnlaw.d.patch[m
+[1mdeleted file mode 100644[m
+[1mindex 896da0a..0000000[m
+Binary files a/BiG World Fixpack/oversight/ExpandedBrynnlaw.d.patch and /dev/null differ
+[1mdiff --git a/BiG World Fixpack/stivan/core.tpa.patch b/BiG World Fixpack/stivan/core.tpa.patch[m
+[1mindex d9fbe32..67515ff 100644[m
+Binary files a/BiG World Fixpack/stivan/core.tpa.patch and b/BiG World Fixpack/stivan/core.tpa.patch differ
+[1mdiff --git a/BiG World Fixpack/vecna/_copy/are/AAR025.ARE b/BiG World Fixpack/vecna/_copy/are/AAR025.ARE[m
+[1mnew file mode 100644[m
+[1mindex 0000000..59570ce[m
+Binary files /dev/null and b/BiG World Fixpack/vecna/_copy/are/AAR025.ARE differ
+[1mdiff --git a/BiG World Fixpack/vecna/_copy/are/AAR036.ARE b/BiG World Fixpack/vecna/_copy/are/AAR036.ARE[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7590c0a[m
+Binary files /dev/null and b/BiG World Fixpack/vecna/_copy/are/AAR036.ARE differ
+[1mdiff --git a/BiG World Fixpack/vecna/_copy/are/AAR041.ARE b/BiG World Fixpack/vecna/_copy/are/AAR041.ARE[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8a35d25[m
+Binary files /dev/null and b/BiG World Fixpack/vecna/_copy/are/AAR041.ARE differ

@@ -119,6 +119,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Alchemy - Jan's Alchemy v6
+
+:: Lollorian's Jan Tome causing magical stuckiness
+:: http://www.shsforums.net/topic/50921-jan-jansen-magic-weapon-in-use/?p=578836
+
+
+----------------------------------------------------------------------------------------
+
+
 :: allison - Allison One-Day NPC v1.8
 
 :: Leomar's UNHAPPY_BREAKING to UNHAPPY_BREAKING_POINT fix in r#aldrow.baf

@@ -1,0 +1,11 @@
+--- Alchemy\Setup-Alchemy.tp2	Fri May 28 20:05:02 2010
++++ C:\BWP Patchstudio\patched files\Alchemy\Setup-Alchemy.tp2	Sat Jul 04 00:33:38 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~Alchemy/backup~        
+ AUTHOR ~unknown~ 
+ 
+-VERSION ~v6~
++VERSION ~v6 BWP Fix~
+ 
+ README ~Alchemy/ReadMe-Alchemy.txt~
+ 

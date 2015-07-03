@@ -1,0 +1,9 @@
+--- Alchemy\script\Jan.baf	Wed Feb 04 10:51:00 2009
++++ C:\BWP Patchstudio\patched files\Alchemy\script\Jan.baf	Sat Jul 04 00:31:51 2015
+@@ -4,5 +4,5 @@
+   RESPONSE #100
+     SetGlobal("JanIsAlchemist","GLOBAL",1)
+     ChangeAIScript("Alchem1",RACE)
+-    CreateItem("JanTome",3,0,0)  // JanTome
++    GiveItemCreate("JanTome","Jan",3,0,0)  // JanTome
+ END
