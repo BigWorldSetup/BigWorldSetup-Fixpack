@@ -9,15 +9,6 @@
  BUT_ONLY_IF_IT_CHANGES
  
  
-@@ -4451,7 +4451,7 @@
- //only 3 ToB dialogues modification
- COPY + ~TDD/D_TOB/mPIRCOR5.D~ ~DLGCASH~
- COPY + ~TDD/D_TOB/mBERNARD.D~ ~DLGCASH~
--COPY + ~TDD/D_TOB/mSUELLE2.D~ ~DLGCASH~
-+// COPY + ~TDD/D_TOB/mSUELLE2.D~ ~DLGCASH~
- 
- COMPILE ~DLGCASH~
- 
 @@ -4556,22 +4556,22 @@
    //****** Kivan  ******************************************************************
    EXTEND_TOP ~AR1100.BCS~ ~TDD/Compat/BGT/Replace/xAR1100.BAF~  //BAF modified
@@ -29,7 +20,7 @@
 +//  COPY_EXISTING ~DDKIV1.BCS~ ~override~ //TDD script
 +//   DECOMPILE_BCS_TO_BAF
 +//   REPLACE_TEXTUALLY ~"kivandd"~ ~"Kivan"~  //change DeathVar check
-+ //  COMPILE_BAF_TO_BCS
++//   COMPILE_BAF_TO_BCS
    //********************************************************************************
  
    //****** Kagain ******************************************************************
