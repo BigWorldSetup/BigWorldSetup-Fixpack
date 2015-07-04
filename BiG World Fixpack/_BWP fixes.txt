@@ -37,6 +37,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's patch for Ashes of Embers compatibility
 :: http://www.shsforums.net/topic/56643-1pp-circlets-and-bg2tweaks-issue/?p=561849
 
+:: The Imp's Solar swords without graphic artifacts
+:: http://www.shsforums.net/topic/58208-planetar-animation-glitch/
+
 
 ----------------------------------------------------------------------------------------
 
