@@ -1,5 +1,5 @@
 --- garrick-tt\setup-garrick-tt.tp2	Sun Mar 15 23:46:16 2015
-+++ C:\BWP Patchstudio\patched files\garrick-tt\setup-garrick-tt.tp2	Sat Jul 04 00:56:45 2015
++++ L:\BiG World Project\BWP Patchstudio\patched files\garrick-tt\setup-garrick-tt.tp2	Sun Jul 05 17:20:25 2015
 @@ -1,7 +1,7 @@
  BACKUP ~garrick-tt/backup~
  AUTHOR ~mirandir AT orange DOT fr~
@@ -21,12 +21,15 @@
  END
  
  COPY ~garrick-tt/sto/gtt#nas.sto~ ~override~
-@@ -242,7 +242,7 @@
+@@ -242,7 +242,10 @@
  // dialogues avec Tenya
  COMPILE ~garrick-tt/d/tenya.d~ EVALUATE_BUFFER // 1
  COPY_EXISTING ~tenya.bcs~ ~override/tenya.bcs~
 -COMPILE ~garrick-tt/baf/tenya.baf~ EVALUATE_BUFFER
-+EXTEND_TOP ~tenya.bcs~ ~garrick-tt/baf/tenya.baf~ EVALUATE_BUFFER
++DECOMPILE_AND_PATCH BEGIN
++	REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~GlobalLT("TenyaHit","GLOBAL",2)~ ~GlobalLT("TenyaHit","GLOBAL",2)
++  !Kit(Player1,GODTALOS)~
++END
  COMPILE ~garrick-tt/d/tenya2.d~ EVALUATE_BUFFER // 2
  
  // BGEE change les conditions d'apparition de Tenya à la Porte, il faut donc adapter
