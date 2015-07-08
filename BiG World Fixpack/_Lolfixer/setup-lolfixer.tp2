@@ -347,30 +347,30 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
       READ_LONG  0x1cc ~soundreplace6~
 
       PATCH_IF ("%soundreplace6%" == "-1") THEN BEGIN
+        PATCH_IF ("%soundreplace%" > 0) THEN BEGIN
+          PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : PICKED_POCKET -> EXISTANCE1"
+          WRITE_LONG 0x1b8 ~-1~
+          WRITE_LONG 0x1bc %soundreplace%
+        END
+        PATCH_IF ("%soundreplace2%" > 0) THEN BEGIN
+          PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE1 -> EXISTANCE2"
+          WRITE_LONG 0x1bc %soundreplace%
+          WRITE_LONG 0x1c0 %soundreplace2%
+        END
+        PATCH_IF ("%soundreplace3%" > 0) THEN BEGIN
+          PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE2 -> EXISTANCE3"
+          WRITE_LONG 0x1c0 %soundreplace2%
+          WRITE_LONG 0x1c4 %soundreplace3%
+        END
+        PATCH_IF ("%soundreplace4%" > 0) THEN BEGIN
+          PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE3 -> EXISTANCE4"
+          WRITE_LONG 0x1c4 %soundreplace3%
+          WRITE_LONG 0x1c8 %soundreplace4%
+        END
         PATCH_IF ("%soundreplace5%" > 0) THEN BEGIN
           PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE4 -> EXISTANCE5"
-          WRITE_LONG 0x1cc %soundreplace5%
-          WRITE_LONG 0x1c8 ~-1~
-        END
-        PATCH_IF ("%soundreplace4%" > 0 AND "%soundreplace5%" == "-1") THEN BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE3 -> EXISTANCE4"
           WRITE_LONG 0x1c8 %soundreplace4%
-          WRITE_LONG 0x1c4 ~-1~
-        END
-        PATCH_IF ("%soundreplace3%" > 0 AND "%soundreplace4%" == "-1") THEN BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE2 -> EXISTANCE3"
-          WRITE_LONG 0x1c4 %soundreplace3%
-          WRITE_LONG 0x1c0 ~-1~
-        END
-        PATCH_IF ("%soundreplace2%" > 0 AND "%soundreplace3%" == "-1") THEN BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE1 -> EXISTANCE2"
-          WRITE_LONG 0x1c0 %soundreplace2%
-          WRITE_LONG 0x1bc ~-1~
-        END
-        PATCH_IF ("%soundreplace%" > 0 AND "%soundreplace2%" == "-1") THEN BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : PICKED_POCKET -> EXISTANCE1"
-          WRITE_LONG 0x1bc %soundreplace%
-          WRITE_LONG 0x1b8 ~-1~
+          WRITE_LONG 0x1cc %soundreplace5%
         END
       END
     END
