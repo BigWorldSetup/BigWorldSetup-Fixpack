@@ -1,0 +1,28 @@
+--- SETUP-BG2eeAR.tp2	Fri Sep 12 00:30:37 2014
++++ D:\EE_Patchstudio\patched files\SETUP-BG2eeAR.tp2	Tue Jul 07 23:22:47 2015
+@@ -12,7 +12,7 @@
+ // immediately (e.g., because they contain the translated names of the
+ // modules the user will install).
+ 
+-AUTO_TRA ~BG2eeAR/translations/%s/D~
++AUTO_TRA "BG2eeAR/translations/%s/D" //%"
+ 
+ LANGUAGE ~American English~
+          ~english~
+@@ -158,14 +158,14 @@
+  /*STORES */
+  
+  /* CMTBEES1.STO */
+-COPY ~BG2eeAR/sto/cmtb2ees1.sto~ ~Override~
++COPY ~BG2eeAR/sto/cmtb2ees1.sto~ ~Override/cmtbees2.sto~
+   SAY 0xC @47
+ 
+ 
+  /*CREATURE */
+  
+  /* CMTBEES1.CRE */
+-COPY ~BG2eeAR/cre/cmtb2ees1.cre~ ~Override~
++COPY ~BG2eeAR/cre/cmtb2ees1.cre~ ~Override/cmtbees2.cre~
+   SAY 0x8 @48
+   SAY 0xC @48
+ 
