@@ -1,6 +1,6 @@
 BACKUP ~lolfixer/backup~
 AUTHOR ~Lollorian~
-VERSION ~29122013~
+VERSION ~08072015~
 
 BEGIN ~Area Stuff - MAJESTIC Area Fixer~
   GROUP ~Area Stuff~
@@ -321,10 +321,61 @@ BUT_ONLY_IF_IT_CHANGES
 BEGIN ~Creature Stuff - Creature Resource Fixer (res_fixer for ALL CREATURES)~
   GROUP ~Creature Stuff~
 
+OUTER_SET existence_fix = 0
+ACTION_IF (FILE_EXISTS "TobEx_ini/TobExCore.ini") AND (FILE_CONTAINS "TobEx_ini/TobExCore.ini" "Existence Sound Fix=1") THEN BEGIN
+  PRINT "ToBEx Existence Sound Fix is set! Shifting creature EXISTANCE sounds where applicable..."
+  OUTER_SET existence_fix = 1
+  COPY_EXISTING ~PDIALOG.2DA~ ~override~
+    PRETTY_PRINT_2DA
+  BUT_ONLY_IF_IT_CHANGES
+END
+
 COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
   LPF FJ_CRE_VALIDITY
     INT_VAR do_message = 1
   END
+
+  PATCH_IF (existence_fix == 1) THEN BEGIN
+    READ_ASCII 0x280 "DV" (32) NULL
+
+    PATCH_IF (NOT FILE_CONTAINS_EVALUATED (~PDIALOG.2DA~ ~^%DV% ~)) BEGIN
+      READ_LONG  0x1b8 ~soundreplace~
+      READ_LONG  0x1bc ~soundreplace2~
+      READ_LONG  0x1c0 ~soundreplace3~
+      READ_LONG  0x1c4 ~soundreplace4~
+      READ_LONG  0x1c8 ~soundreplace5~
+      READ_LONG  0x1cc ~soundreplace6~
+
+      PATCH_IF ("%soundreplace6%" == "-1") THEN BEGIN
+        PATCH_IF ("%soundreplace5%" > 0) THEN BEGIN
+          PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE4 -> EXISTANCE5"
+          WRITE_LONG 0x1cc %soundreplace5%
+          WRITE_LONG 0x1c8 ~-1~
+        END
+        PATCH_IF ("%soundreplace4%" > 0 AND "%soundreplace5%" == "-1") THEN BEGIN
+          PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE3 -> EXISTANCE4"
+          WRITE_LONG 0x1c8 %soundreplace4%
+          WRITE_LONG 0x1c4 ~-1~
+        END
+        PATCH_IF ("%soundreplace3%" > 0 AND "%soundreplace4%" == "-1") THEN BEGIN
+          PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE2 -> EXISTANCE3"
+          WRITE_LONG 0x1c4 %soundreplace3%
+          WRITE_LONG 0x1c0 ~-1~
+        END
+        PATCH_IF ("%soundreplace2%" > 0 AND "%soundreplace3%" == "-1") THEN BEGIN
+          PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE1 -> EXISTANCE2"
+          WRITE_LONG 0x1c0 %soundreplace2%
+          WRITE_LONG 0x1bc ~-1~
+        END
+        PATCH_IF ("%soundreplace%" > 0 AND "%soundreplace2%" == "-1") THEN BEGIN
+          PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : PICKED_POCKET -> EXISTANCE1"
+          WRITE_LONG 0x1bc %soundreplace%
+          WRITE_LONG 0x1b8 ~-1~
+        END
+      END
+    END
+  END
+
   PATCH_IF ("%SOURCE_RES%" STRING_EQUAL_CASE "SENDRO03") AND (SOURCE_SIZE > 0x2d3) THEN BEGIN
     READ_LONG  0x2a8 "meminfo_off" ELSE 0
     READ_LONG  0x2ac "meminfo_num" ELSE 0
