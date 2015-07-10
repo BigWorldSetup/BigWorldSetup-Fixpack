@@ -1,0 +1,11 @@
+--- Faren\translations\english\setup.tra	Sat May 02 12:14:22 2015
++++ C:\BWP Patchstudio\patched files\Faren\translations\english\setup.tra	Fri Jul 10 23:16:00 2015
+@@ -145,7 +145,7 @@
+ @129  = ~You do not appear to have Xulaye installed~
+ @130  = ~Yasraena Content~
+ @131  = ~You do not appear to have Yasraena installed~
+-@132  = ~v3~
++@132  = ~v3 BWP Fix~
+ @133  = ~Cat~
+ @134  = ~This is a cat which Faren rescued after the destruction of Saradush. She is a wary creature, but seems to enjoy curling up in the warmth of Faren's pack.~
+ @135  = ~Nadiyya~

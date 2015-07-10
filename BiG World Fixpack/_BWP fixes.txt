@@ -810,6 +810,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Faren - Faren NPC v3
+
+:: Lollorian's Tsujatha crossmod install fix
+:: http://www.shsforums.net/topic/58238-crossmod-install-failure-with-ajantis-and-tsujatha/?p=579147
+
+
+----------------------------------------------------------------------------------------
+
+
 :: FR_ROV - Freedom's Reign / Reign of Virtue v7.3
 
 :: Lollorian's assorted ITM fixes
