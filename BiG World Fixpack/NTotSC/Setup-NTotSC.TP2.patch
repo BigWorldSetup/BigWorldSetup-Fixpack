@@ -1,5 +1,5 @@
---- Setup-NTotSC.TP2	Sat Aug 31 09:32:49 2013
-+++ C:\BWP Patchstudio\patched files\Setup-NTotSC.TP2	Sun Aug 25 09:57:26 2013
+--- Setup-NTotSC.TP2	Thu Jan 01 15:33:28 2009
++++ C:\BWP Patchstudio\patched files\Setup-NTotSC.TP2	Sat Jul 11 09:58:48 2015
 @@ -2,7 +2,7 @@
  
  AUTHOR ~SirBillyBob@gmail.com & erebusant@verizon.net~
@@ -13,14 +13,45 @@
   COPY ~ntotSC/itm/ADISEASE.ITM~       ~override~ 
     SAY NAME2 @69
     SAY DESC @71
-- COPY ~ntotSC/itm/NAMJI.ITM~       ~override~
--   SAY NAME2 @73
--   SAY DESC @75
- END
++END
 +
-+COPY ~ntotSC/itm/NAMJI.ITM~       ~override~
-+  SAY NAME2 @73
-+  SAY DESC @75
+  COPY ~ntotSC/itm/NAMJI.ITM~       ~override~
+    SAY NAME2 @73
+    SAY DESC @75
+-END
  
  COPY ~ntotSC/itm/NTDAGG01.ITM~       ~override~ 
    SAY NAME2 @77
+@@ -719,7 +720,7 @@
+   SAY NAME1 @247 
+   SAY NAME2 @247 
+ 
+-COPY ~NTotSC/CRE/ELKA9.cre~       ~override~         
++COPY ~NTotSC/CRE/NTELKA.cre~       ~override~         
+   SAY NAME1 @248 
+   SAY NAME2 @248 
+ 
+@@ -845,7 +846,7 @@
+   SAY NAME1 @315 
+   SAY NAME2 @315 
+ 
+-COPY ~NTotSC/CRE/NATALK9.cre~       ~override~       
++COPY ~NTotSC/CRE/NTNATALK.cre~       ~override~       
+   SAY NAME1 @316 
+   SAY NAME2 @316
+ 
+@@ -2551,7 +2552,13 @@
+ EXTEND_BOTTOM	~INITGOLV.BCS~	~NTotSC/BAF/NTGOLINV.BAF~
+ 
+ EXTEND_BOTTOM ~AR3400.bcs~       ~NTotSC/BAF/Area/AR3400.BAF~
+-EXTEND_BOTTOM ~AR3900.bcs~       ~NTotSC/BAF/Area/AR3900.BAF~
++EXTEND_BOTTOM ~LAMALHA.bcs~      ~NTotSC/BAF/Area/AR3900.BAF~
++COPY_EXISTING ~LAMALH.DLG~      ~override~
++DECOMPILE_AND_PATCH BEGIN
++  REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~ActionOverride("MANEIRA",Enemy())~ ~ActionOverride("MANEIRA",Enemy())
++                                                                                    ActionOverride("NATALKA",Enemy())
++                                                                                    ActionOverride("NTELKA",Enemy())~
++END
+ EXTEND_BOTTOM ~AR4300.bcs~       ~NTotSC/BAF/Area/AR4300.BAF~
+ EXTEND_BOTTOM ~AR6700.bcs~       ~NTotSC/BAF/Area/AR6700.BAF~
+ EXTEND_BOTTOM ~AR6706.bcs~       ~NTotSC/BAF/Area/AR6706.BAF~

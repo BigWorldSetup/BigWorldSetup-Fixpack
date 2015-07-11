@@ -1433,8 +1433,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's Charleston script name fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=578583
 
-:: micbaldur's Amazonian encounter fix
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=578707
+:: Lollorian's Amazonian encounter fixes
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=579179
 
 
 ----------------------------------------------------------------------------------------
