@@ -1,5 +1,5 @@
 --- infinityanimations\setup-infinityanimations.tp2	Wed May 12 20:49:14 2010
-+++ C:\BWP Patchstudio\patched files\infinityanimations\setup-infinityanimations.tp2	Sun Oct 13 01:12:18 2013
++++ C:\BWP Patchstudio\patched files\infinityanimations\setup-infinityanimations.tp2	Sat Jul 11 12:19:37 2015
 @@ -1,6 +1,6 @@
  BACKUP ~infinityanimations/backup~
  AUTHOR ~www.shsforums.net/forum/594-infinity-animations/~
@@ -65,3 +65,12 @@
    ACTION_IF FILE_EXISTS_IN_GAME ~%nb%.cre~ BEGIN //Ghasts
      COPY_EXISTING ~%nb%.cre~ ~override~
        PATCH_INCLUDE ~infinityanimations/lib/fj_cre_validity.tpp~
+@@ -2476,7 +2480,7 @@
+       PATCH_INCLUDE ~infinityanimations/lib/fj_cre_validity.tpp~
+       PATCH_IF vl BEGIN
+         PATCH_INCLUDE ~infinityanimations/lib/fj_cre_reindex.tpp~
+-        WRITE_SHORT 0x28 0xe310 //Animation (ghoul)
++        WRITE_SHORT 0x28 0x7700 //Animation (ghoul)
+         WRITE_BYTE 0x271 4 //General (undead)
+         WRITE_BYTE 0x272 108 //Race (ghoul)
+         WRITE_BYTE 0x273 116 //Class (ghoul)
