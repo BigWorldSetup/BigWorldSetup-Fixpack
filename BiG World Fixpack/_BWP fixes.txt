@@ -1041,6 +1041,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's Ghouls transforming to Golems fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=562939
 
+:: polytope's Better Doppelganger attack animations
+:: http://gibberlings3.net/forums/index.php?showtopic=23792
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1976,7 +1979,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: TheUndying - The Undying v2.11
+:: TheUndying - The Undying v2.53
 
 :: Lollorian's !Dead(Myself) changes - CMSORA3.baf
 :: http://forums.chosenofmystra.net/index.php?topic=1628.msg18973#msg18973
@@ -2012,24 +2015,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: touched - Touch-the Moon NPC v1.1
-
-:: cmorgan's ToBEx compatible ADD_KIT fix
-:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
-
-
-----------------------------------------------------------------------------------------
-
-
-:: TotDG - Tales of the Deep Gardens v10.0
-
-:: Lollorian's small little item fix
-:: http://www.shsforums.net/topic/54832-coi-bugtypo-thread/?p=547617
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Tortured Souls (TS-BP) v6.10
 
 :: BWP compatibility fixes
@@ -2047,6 +2032,24 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's replacements - Movie3ba.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
+
+
+----------------------------------------------------------------------------------------
+
+
+:: TotDG - Tales of the Deep Gardens v10.0
+
+:: Lollorian's small little item fix
+:: http://www.shsforums.net/topic/54832-coi-bugtypo-thread/?p=547617
+
+
+----------------------------------------------------------------------------------------
+
+
+:: touched - Touch-the Moon NPC v1.1
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
 
 ----------------------------------------------------------------------------------------
