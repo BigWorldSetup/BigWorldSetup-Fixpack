@@ -1080,6 +1080,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Vlar's ja#merc3.d giving rep increase fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=568496
 
+:: Creepin's Bekki - Serving Wench overlap fix
+:: https://www.kerzenburg.baldurs-gate.eu/showpost.php?p=1059335&postcount=85
+
 
 ----------------------------------------------------------------------------------------
 

@@ -1,0 +1,17 @@
+--- JA#BGT_AdvPack\ARE_tph\AR7705.tph	Fri Jul 06 20:05:21 2012
++++ C:\BWP Patchstudio\patched files\JA#BGT_AdvPack\ARE_tph\AR7705.tph	Mon Jul 13 23:10:36 2015
+@@ -72,10 +72,10 @@
+   WRITE_ASCII "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x80        ~JA#SERW1~         #8  // CRE
+   WRITE_ASCII "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x48        ~JA#SERW1~       #8  // DLG
+   WRITE_LONG  "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x38        0xffffffff              // Unknown
+-  WRITE_SHORT "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x20        570                     // Pos X
+-  WRITE_SHORT "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x22        735                    // Pos Y
+-  WRITE_SHORT "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x24        570                       // Des X
+-  WRITE_SHORT "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x26        735                       // Des Y
++  WRITE_SHORT "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x20        560                     // Pos X
++  WRITE_SHORT "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x22        725                    // Pos Y
++  WRITE_SHORT "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x24        560                       // Des X
++  WRITE_SHORT "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x26        725                       // Des Y
+   WRITE_SHORT "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x34        8                        // Orientation
+   WRITE_LONG  "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x40        0x00ffffff             // Present
+   WRITE_SHORT "Q_NewOffset_Actor" + ("Q_Siz_Actor" * 2) + 0x28        1                       // Visible
