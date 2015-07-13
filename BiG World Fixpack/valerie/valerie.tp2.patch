@@ -1,0 +1,11 @@
+--- valerie\valerie.tp2	Thu Jan 17 11:25:44 2013
++++ C:\BWP Patchstudio\patched files\valerie\valerie.tp2	Mon Jul 13 21:58:40 2015
+@@ -2,7 +2,7 @@
+ // Basics
+ BACKUP ~valerie/backup~
+ AUTHOR ~Tempest (tempest@spellholdstudios.net)~
+-VERSION ~v1.1~
++VERSION ~v1.1 BWP Fix~
+ README ~valerie/valerie_readme.html~
+ 
+ // Crossplatform var stuff blatantly stolen from cmorgan/gavin/bg1npc!

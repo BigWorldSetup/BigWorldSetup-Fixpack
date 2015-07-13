@@ -1,0 +1,8 @@
+--- valerie\scripts\fw4800.baf	Sat Dec 01 06:40:00 2012
++++ C:\BWP Patchstudio\patched files\valerie\scripts\fw4800.baf	Mon Jul 13 21:58:08 2015
+@@ -4,4 +4,5 @@
+   RESPONSE #100
+     SetGlobal("T2ValExists","%Nashkel%",1)
+     CreateCreature("T2Val",[2248.1296],6)
++    Continue()
+ END

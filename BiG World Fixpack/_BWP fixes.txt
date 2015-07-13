@@ -810,15 +810,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Faren - Faren NPC v3
-
-:: Lollorian's Tsujatha crossmod install fix
-:: http://www.shsforums.net/topic/58238-crossmod-install-failure-with-ajantis-and-tsujatha/?p=579147
-
-
-----------------------------------------------------------------------------------------
-
-
 :: FR_ROV - Freedom's Reign / Reign of Virtue v7.3
 
 :: Lollorian's assorted ITM fixes
@@ -1028,9 +1019,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Gwendolyne's Bovine axe thing fix
 :: http://www.shsforums.net/topic/55823-fixed-bovine-thing-axe-bug/
-
-:: Miloch's fixed Tanar'ri and Wyvern
-:: http://www.shsforums.net/files/file/1052-ia-content-fixed-tanarri-and-wyvern/
 
 :: Miloch's updated t-pstanims.tpa
 :: http://www.shsforums.net/topic/45383-infinity-animations-from-pst/?p=534274
@@ -1778,15 +1766,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: soa - The Stone Of Askavar v1.8
-
-:: Blash2's fixed SOAITM29.ITM
-:: http://www.shsforums.net/topic/56670-big-world-setup-an-attempt-to-update-the-program/?p=577567
-
-
-----------------------------------------------------------------------------------------
-
-
 :: song_and_silence - Song and Silence v5
 
 :: Lollorian's patches for ADD_KIT adding kits properly
@@ -2183,6 +2162,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Miscellaneous fixes
 :: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
+:: valerie - Valerie v1.1
+
+:: Roxanne's Chapter 3 Transition block fix
+:: http://www.shsforums.net/topic/44452-remove-her-charm-powers/?p=480359
 
 
 ----------------------------------------------------------------------------------------
