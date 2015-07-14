@@ -1032,6 +1032,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: polytope's Better Doppelganger attack animations
 :: http://gibberlings3.net/forums/index.php?showtopic=23792
 
+:: Lollorian's patch to handle non-biffed installations
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=579291
+
 
 ----------------------------------------------------------------------------------------
 
