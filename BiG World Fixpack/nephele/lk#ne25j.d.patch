@@ -1,0 +1,11 @@
+--- nephele\dialogue\lk#ne25j.d	Thu Feb 07 16:53:02 2013
++++ C:\BWP Patchstudio\patched files\nephele\dialogue\lk#ne25j.d	Fri Jul 17 20:30:52 2015
+@@ -493,7 +493,7 @@
+ 
+ // Advice on Godhood
+ INTERJECT_COPY_TRANS FINSOL01 27 LK#Nephele_FinSol
+-  == LK#NE25J @151
++  == LK#NE25J IF ~InParty("Nephele") !StateCheck("Nephele",CD_STATE_NOTVALID)~ THEN @151
+   = @152
+ END
+ 

@@ -5,7 +5,7 @@
  BACKUP ~nephele/backup~
  AUTHOR ~K'aeloree (kae@spellholdstudios.net)~
 -VERSION ~v2.2~
-+VERSION ~v2.2 BWP Fix~
++VERSION ~v2.3 BWP Fix~
  README ~nephele/nephele_readme.html~
  
  AUTO_TRA ~nephele/tra/%s~
