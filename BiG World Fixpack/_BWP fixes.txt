@@ -1378,7 +1378,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: NEJ2 Patch v6.02
+:: NeJ2v602 - NEJ2 Patch v6.02
 
 :: Fixed invcloak.itm, SERPSCA.ITM
 
@@ -1386,13 +1386,16 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: NeJ - Neverending Journey v6.94
+:: NeJ, NeJ2, NeJ2pat, NeJ3 - Neverending Journey v6.94
 
 :: micbaldur's GiveItemCreate() Protagonist -> Player1 fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566210
 
 :: micbaldur's TAFFIC11.CRE and TAFFIC12.CRE missing TP2 corrections
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=567456
+
+:: Quiet's AR8701.WED crash fix
+:: http://www.shsforums.net/topic/57494-assertion-failed/?p=570691
 
 
 ----------------------------------------------------------------------------------------
