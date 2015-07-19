@@ -1194,8 +1194,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's Jamdak script name fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=578583
 
-:: Lollorian's BG1NPC Centeol compatibility fix
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=579477
+:: AstroBryGuy's BG1NPC Centeol compatibility fix
+:: http://gibberlings3.net/forums/index.php?showtopic=27360&p=236922
 
 
 ----------------------------------------------------------------------------------------

@@ -1,0 +1,20 @@
+--- kittomes\DLG\s9magsti.d	Mon Jun 10 02:51:58 2013
++++ C:\BWP Patchstudio\patched files\kittomes\DLG\s9magsti.d	Sun Jul 19 11:38:11 2015
+@@ -2,6 +2,8 @@
+ //Dialogue: Magstine Trannyth (F Human druid)
+ //Author : Smeagolheart
+ 
++ADD_TRANS_ACTION ~%tutu_var%CENTEO~ BEGIN 0 END BEGIN END ~SetGlobal("S9MetCenteol","GLOBAL",1)~
++
+ BEGIN ~S9MAGSTI~
+ 
+ IF WEIGHT #1 ~NumTimesTalkedTo(0)~ THEN BEGIN 0
+@@ -56,7 +58,7 @@
+ 
+ IF ~Global("S9SpiderQuest","GLOBAL",1)~ THEN BEGIN 8
+ SAY ~You return, did you find out what is provoking the spiders?~
+-	IF ~Global("S9CentDead","GLOBAL",1)~ THEN REPLY ~A spider queen named Centeol was directing the spiders.~+ 11
++	IF ~Global("S9MetCenteol","GLOBAL",1)~ THEN REPLY ~A spider queen named Centeol was directing the spiders.~+ 11
+ 	++ ~We haven't found out anything yet.~ + 18
+ END
+ 
