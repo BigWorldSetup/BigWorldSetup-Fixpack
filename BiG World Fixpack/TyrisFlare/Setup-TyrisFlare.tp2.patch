@@ -1,0 +1,11 @@
+--- TyrisFlare\Setup-TyrisFlare.tp2	Thu Feb 19 17:34:15 2015
++++ C:\BWP Patchstudio\patched files\TyrisFlare\Setup-TyrisFlare.tp2	Sun Jul 19 09:58:55 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~TyrisFlare/Backup~
+ AUTHOR ~grim@gibberlings3.net~
+ NO_IF_EVAL_BUG
+-VERSION ~v7~
++VERSION ~v7 BWP Fix~
+ ASK_EVERY_COMPONENT
+ 
+ ALWAYS

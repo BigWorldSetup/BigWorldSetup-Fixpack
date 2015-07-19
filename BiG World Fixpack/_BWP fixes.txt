@@ -2110,11 +2110,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Tyris Flare NPC v3
+:: TyrisFlare - Tyris Flare NPC v7
 
-:: Interjection fix - Interjections.d
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=18726&view=findpost&p=160877
-:: http://forums.gibberlings3.net/index.php?s=&showtopic=18726&view=findpost&p=160892
+:: Roxanne's ToB Finale Solar Romance interjection fix
+:: http://gibberlings3.net/forums/index.php?showtopic=23923&p=236927
 
 
 ----------------------------------------------------------------------------------------
