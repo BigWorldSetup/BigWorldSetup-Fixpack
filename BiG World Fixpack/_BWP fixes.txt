@@ -349,6 +349,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: BG_Travel - New travel system between Baldur's Gate City areas v1.0d
+
+:: Lollorian's proper search map copy fix
+:: http://www.shsforums.net/topic/58259-walkable-regions-all-messed-up-in-waukeens-promanade/?p=579630
+
+
+----------------------------------------------------------------------------------------
+
+
 :: BG1NPCSoA - BG1 NPCs for SoA v9
 
 :: Lollorian's fix for Coran having Eldoth's item
@@ -1748,6 +1757,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted CRE fixes
 :: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Setup-BoM - Boards o' Magick Item Pack v2.0
+
+:: Lollorian's assorted WAV fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483688
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=547608
 
 
 ----------------------------------------------------------------------------------------

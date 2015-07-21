@@ -1,0 +1,27 @@
+--- BG_Travel\Setup-BG_Travel.TP2	Sat May 01 16:08:57 2010
++++ C:\BWP Patchstudio\patched files\BG_Travel\Setup-BG_Travel.TP2	Tue Jul 21 22:02:57 2015
+@@ -1,6 +1,6 @@
+ BACKUP ~BG_Travel/BACKUP~ 
+ AUTHOR ~zed_nocear@wp.pl	(http://free.of.pl/z/zed.nocear/)~
+-
++VERSION ~v1.0d BWP Fix~
+ README ~BG_Travel/Readme-TravelBG.%LANGUAGE%.txt~
+ 
+ AUTO_TRA ~TWM_Pack/Translations/%s~
+@@ -80,7 +80,15 @@
+ 
+ ///////////////////////////////////////////////////////////////////////////////
+ // usuniêcie dotychczasowego systemu podró¿owania miêdzy lokacjami Wrót Baldura
+-COPY ~BG_Travel/BG-SR-BMP~ ~override~
++COPY ~BG_Travel/BG-SR-BMP/AR0100SR.BMP~ ~override/%Z!AreaPrefix%%Z!AreaNumber1%SR.BMP~
++COPY ~BG_Travel/BG-SR-BMP/AR0200SR.BMP~ ~override/%Z!AreaPrefix%%Z!AreaNumber2%SR.BMP~
++COPY ~BG_Travel/BG-SR-BMP/AR0300SR.BMP~ ~override/%Z!AreaPrefix%%Z!AreaNumber3%SR.BMP~
++COPY ~BG_Travel/BG-SR-BMP/AR0600SR.BMP~ ~override/%Z!AreaPrefix%%Z!AreaNumber4%SR.BMP~
++COPY ~BG_Travel/BG-SR-BMP/AR0700SR.BMP~ ~override/%Z!AreaPrefix%%Z!AreaNumber5%SR.BMP~
++COPY ~BG_Travel/BG-SR-BMP/AR0800SR.BMP~ ~override/%Z!AreaPrefix%%Z!AreaNumber6%SR.BMP~
++COPY ~BG_Travel/BG-SR-BMP/AR1100SR.BMP~ ~override/%Z!AreaPrefix%%Z!AreaNumber7%SR.BMP~
++COPY ~BG_Travel/BG-SR-BMP/AR1200SR.BMP~ ~override/%Z!AreaPrefix%%Z!AreaNumber8%SR.BMP~
++COPY ~BG_Travel/BG-SR-BMP/AR1300SR.BMP~ ~override/%Z!AreaPrefix%%Z!AreaNumber9%SR.BMP~
+ 
+ ////////////////////////////////////////////////////////////////////////
+ // definicja funkcji wstawiaj¹cej "entrances" do map ARE na potrzeby TWM
