@@ -1,6 +1,6 @@
---- ACBre\lib\ac_bre_cpmvars.tpa	Thu Feb 12 01:07:26 2015
-+++ C:\BWP Patchstudio\patched files\ACBre\lib\ac_bre_cpmvars.tpa	Wed May 27 13:08:07 2015
-@@ -21,11 +21,10 @@
+--- ACBre\lib\ac_bre_cpmvars.tpa	Thu Feb 12 04:37:26 2015
++++ C:\BWP Patchstudio\patched files\ACBre\lib\ac_bre_cpmvars.tpa	Fri Jul 24 19:29:00 2015
+@@ -21,10 +21,10 @@
  OUTER_SPRINT ~BGT_VAR2~ ~Global("endofbg1","GLOBAL",2)~
  OUTER_SPRINT "SKELWA02" "BGSKEL02"
  OUTER_SPRINT "SLAVLEAD"  "SLAVLEAD"
@@ -8,15 +8,14 @@
 -OUTER_SET "EDWIN_STATE_1" = (STATE_WHICH_SAYS 99992 IN ~ACBre/tra/autotra/%language%/ACStates.tra~ FROM ~%tutu_var%EDWIN~)
 -OUTER_SET "EDWIN_STATE_2" = (STATE_WHICH_SAYS 99993 IN ~ACBre/tra/autotra/%language%/ACStates.tra~ FROM ~%tutu_var%EDWIN~)
 -OUTER_SET "IMOEN_STATE_26" = (STATE_WHICH_SAYS 99990 IN ~ACBre/tra/autotra/%language%/ACStates.tra~ FROM ~%IMOEN_JOINED%~)
--OUTER_SPRINT "Exit3301" "Exit6701"
 +OUTER_SET "EDWIN_STATE_0" = (STATE_WHICH_SAYS ~Contents of @99991 from ACBre/tra/autotra/%language%/ACStates.tra~ FROM ~%tutu_var%EDWIN~)
 +OUTER_SET "EDWIN_STATE_1" = (STATE_WHICH_SAYS ~Contents of @99992 from ACBre/tra/autotra/%language%/ACStates.tra~ FROM ~%tutu_var%EDWIN~)
 +OUTER_SET "EDWIN_STATE_2" = (STATE_WHICH_SAYS ~Contents of @99993 from ACBre/tra/autotra/%language%/ACStates.tra~ FROM ~%tutu_var%EDWIN~)
-+OUTER_SET "IMOEN_STATE_26" = (STATE_WHICH_SAYS ~Contents of @99990 from ACBre/tra/autotra/%language%/ACStates.tra~ FROM ~%IMOEN_JOINED%~)OUTER_SPRINT "Exit3301" "Exit6701"
++OUTER_SET "IMOEN_STATE_26" = (STATE_WHICH_SAYS ~Contents of @99990 from ACBre/tra/autotra/%language%/ACStates.tra~ FROM ~%IMOEN_JOINED%~)
+ OUTER_SPRINT "Exit3301" "Exit6701"
  OUTER_SPRINT "Exit3300" "Exit6700"
  OUTER_SPRINT "Door3300" "Door6700"
- 
-@@ -64,7 +63,7 @@
+@@ -64,7 +64,7 @@
  
  END
  
