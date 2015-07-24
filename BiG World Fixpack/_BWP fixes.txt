@@ -1437,6 +1437,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: ninde - Ninde NPC v2
+
+:: Lollorian's TDD Compatibility patch (affects TDD as well)
+:: http://www.shsforums.net/topic/55469-ellesime-dialogue-problem-saerileth-ninde-kivan-and-re-mods/?p=578879
+
+
+----------------------------------------------------------------------------------------
+
+
 :: npckit - NPC Kitpack v3
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
@@ -1992,6 +2001,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's IsGabber removal fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=567129
+
+:: Lollorian's Ninde Compatibility patch (affects Ninde as well)
+:: http://www.shsforums.net/topic/55469-ellesime-dialogue-problem-saerileth-ninde-kivan-and-re-mods/?p=578879
 
 
 ----------------------------------------------------------------------------------------

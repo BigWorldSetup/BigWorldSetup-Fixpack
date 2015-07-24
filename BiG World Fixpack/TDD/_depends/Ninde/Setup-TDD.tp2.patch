@@ -1,0 +1,11 @@
+--- Setup-TDD.tp2	Sat Jul 04 22:00:47 2015
++++ L:\BiG World Project\BWP Patchstudio\patched files\Setup-TDD.tp2	Sat Jul 04 19:55:24 2015
+@@ -4451,7 +4451,7 @@
+ //only 3 ToB dialogues modification
+ COPY + ~TDD/D_TOB/mPIRCOR5.D~ ~DLGCASH~
+ COPY + ~TDD/D_TOB/mBERNARD.D~ ~DLGCASH~
+-COPY + ~TDD/D_TOB/mSUELLE2.D~ ~DLGCASH~
++// COPY + ~TDD/D_TOB/mSUELLE2.D~ ~DLGCASH~
+ 
+ COMPILE ~DLGCASH~
+ 

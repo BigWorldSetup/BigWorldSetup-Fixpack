@@ -1,0 +1,348 @@
+--- ninde\dialogue\lk#nindj.d	Wed Sep 25 14:31:42 2013
++++ L:\BiG World Project\BWP Patchstudio\patched files\ninde\dialogue\lk#nindj.d	Sun Jul 05 10:14:02 2015
+@@ -3075,15 +3075,89 @@
+   IF ~~ EXIT
+ END
+ 
++// ---------------------------------------------
++// Ninde - TDD Ellesime Transition compatibility
++// ---------------------------------------------
+ 
+-ADD_TRANS_TRIGGER SUELLE2 18 ~OR(3) !InParty("Ninde") Dead("Ninde") !Global("LK#NindeRomanceActive","GLOBAL",2)~
++REPLACE_TRIGGER_TEXT ~SUELLE2~ ~True()~ ~Global("TalkEllesime","GLOBAL",0)~
++
++REPLACE ~SUELLE2~
++IF ~~ THEN BEGIN 17
++  SAY #55254
++  IF ~~ THEN GOTO s21
++END
++END
++
++CHAIN SUELLE2 s21
++  ~As for you, <CHARNAME>...  Perhaps I can offer something that can help reconcile.~
++  = ~You have come far from Candlekeep, and I have arranged a deal with a friend of mine. He will teleport you back to your home... if you choose to go there, that is.~
++END
++  ++ ~Yes, I would like to visit my home once again. Maybe I will see some old friends...~ GOTO s23
++  ++ ~I'm always up for some more traveling.~ GOTO s23
++  ++ ~No, I think I'll take care of some other business first.~ GOTO s24
++  ++ ~There is no way I'm ever going back to that hellhole.~ GOTO s25
++  
++CHAIN SUELLE2 s23
++  ~Excellent. I will summon the wizard right away for you.~
++END
++  IF ~!AreaCheckObject("AR2800",Player1)~ THEN DO ~SetGlobal("TalkEllesime","GLOBAL",3)
++ClearAllActions()
++StartCutSceneMode()
++StartCutScene("DDwarp01")~ EXIT
++  IF ~AreaCheckObject("AR2800",Player1)~ THEN DO ~SetGlobal("TalkEllesime","GLOBAL",3)
++ClearAllActions()
++StartCutSceneMode()
++StartCutScene("DDwarp02")~ EXIT
++
++CHAIN SUELLE2 s24
++  ~Very well, but the offer still stands if you come back.~
++END
++  IF ~~ THEN DO ~SetGlobal("TalkEllesime","GLOBAL",2)~ EXIT
++
++CHAIN SUELLE2 s25
++  ~I wasn't aware that you felt that way about your home. However, my offer still stands if you change your mind.~
++END
++  IF ~~ THEN DO ~SetGlobal("TalkEllesime","GLOBAL",2)~ EXIT
++
++CHAIN IF ~Global("TalkEllesime","GLOBAL",2)~ THEN SUELLE2 s26
++  ~Have you changed your mind? Shall I fetch the wizard?~
++END
++  ++ ~Yes, go get him. I want to go there now.~ GOTO s23
++  ++ ~No, I was just dropping in.~ EXIT
++
++CHAIN IF ~Global("TalkEllesime","GLOBAL",3)~ THEN SUELLE2 s27
++  ~Have you noticed these overhanging clouds lately? They block out the sun entirely and are stunting the growth of our trees.~
++END
++  ++ ~Yes, I have. They do not seem natural to me, and I intend to investigate the matter.~ GOTO s28
++  ++ ~There must be a large storm coming.~ GOTO s29
++  ++ ~Actually, the darkness seems like a nice change from the harsh sun.~ GOTO s30
++
++CHAIN SUELLE2 s28
++  ~Good, good... I hope that they do not hang around too long. My plants will surely die if they do.~
++END
++  IF ~~ THEN EXIT
++
++CHAIN SUELLE2 s29
++  ~I am not so sure about that. Storms usually come off of the ocean, but this one comes from the east... and it is so... dark.~
++END
++  IF ~~ THEN EXIT
++
++CHAIN SUELLE2 s30
++  ~Maybe for a few days at a time, but those clouds look endless. Without the sun, few things can survive very long... And if they do, they become corrupted like the Drow.~
++END
++  IF ~~ THEN EXIT
++
++// ---------------------------------------------
++// Ninde Restoration
++// ---------------------------------------------
++
++ADD_TRANS_TRIGGER SUELLE2 17 ~OR(3) !InParty("Ninde") Dead("Ninde") !Global("LK#NindeRomanceActive","GLOBAL",2)~
+ 
+ // Adding to the transition list in Ellesime's final dialogue state
+-EXTEND_BOTTOM SUELLE2 18
++EXTEND_BOTTOM SUELLE2 17
+   IF ~InParty("Ninde") Global("LK#NindeRomanceActive","GLOBAL",2)~ + LK#NR
+ END
+ 
+-
+ // Restoration scene
+ CHAIN SUELLE2 LK#NR
+   @991 /* You are all our saviours, but to one of you we can offer a more significant gift than our gratitude alone; Anilessa, soulless-one. */
+@@ -3169,8 +3243,7 @@
+   == LK#NINDJ @1035 /* I wouldn't bet on it, dear. */
+   == SUELLE2 @1036 /* Perhaps not.  May the Seldarine protect you, though you have long since strayed from their light; you were snatched by another from the life you should have led, among your people, but it is you who must now pay the price.  Live well, if you can, though it seems there is naught but darkness ahead. */
+ END
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
++  IF ~~ THEN GOTO s21
+ 
+ CHAIN LK#NINDJ LK#NR_CHORELAT
+   @1037 /* You are right, of course, and I can only endeavour to make amends.  Give me the chance to and you shall never hear a spiteful words from me again. */
+@@ -3182,10 +3255,7 @@
+ 
+ CHAIN LK#NINDJ LK#NR_UHEVSED
+   @1042 /* How well I know it.  I may be aware of the meanness with which I have treated you...but rest assured, you shall never have my remorse. */
+-  == SUELLE2 @1043 /* It saddens me to see one so young speak words so sad.  Ninde, soul or no soul, may the Seldarine protect you, though you have long since strayed from their light; you were snatched by another from the life you should have led, among your people, but it is you who must now pay the price.  Live well, if you can, though it seems there is naught but darkness ahead. */
+-END
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
++  == SUELLE2 @1043 /* It saddens me to see one so young speak words so sad.  Ninde, soul or no soul, may the Seldarine protect you, though you have long since strayed from their light; you were snatched by another from the life you should have led, among your people, but it is you who must now pay the price.  Live well, if you can, though it seems there is naught but darkness ahead. */ EXTERN SUELLE2 s21
+ 
+ CHAIN SUELLE2 LK#NR_NAHTEMP
+   @1044 /* Your decision to assist Ninde should not have been made on such superficial grounds, but nonethless, I respect your choice. */
+@@ -3193,15 +3263,13 @@
+   == LK#NINDJ @1046 /* The Seldarine hate me, as I hate you. */
+   == SUELLE2 @1047 /* It saddens me to see one so young speak words so sad. */
+ END
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
++  IF ~~ THEN GOTO s21
+ 
+ CHAIN SUELLE2 LK#NR_NUPARTS
+   @1048 /* It saddens me to know that my kinswoman will not be restored, but I respect your decision, and trust it has been made with the utmost consideration. */
+   = @1045 /* Ninde, soul or no soul, may the Seldarine protect you, though you have long since strayed from their light; you were snatched by another from the life you should have led, among your people, but it is you who must now pay the price.  Live well, if you can, though it seems there is naught but darkness ahead. */
+ END
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
++  IF ~~ THEN GOTO s21
+ 
+ 
+ APPEND LK#NINDJ
+@@ -3325,14 +3393,13 @@
+   ++ @1086 /* I suppose you're right.  Perhaps we should continue in a more...intimate setting, mm?   */ + LK#NLR_MATESET
+   ++ @1096 /* Baby Suldanesselan minds be damned!  (Kiss Ninde) */ + LK#NLR_CONKEES
+ END
+-
+-IF ~~ LK#NLR_WARFUZZ
+-  SAY @1097 /* (Ninde raises a brow as you speak, before recognition gradually begins to creep across her sweet features.  Clearing her throat, she moves away from you slightly, with a platonic pat on the shoulder.) */
+-  = @1098 /* Well in that case, <CHARNAME>...far be it from me to over-romanticise the moment.  Perhaps...well, there is a lot to be done.  We should discuss this later.  Just...help me up. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+ END
+ 
++CHAIN LK#NINDJ LK#NLR_WARFUZZ
++  @1097 /* (Ninde raises a brow as you speak, before recognition gradually begins to creep across her sweet features.  Clearing her throat, she moves away from you slightly, with a platonic pat on the shoulder.) */
++  = @1098 /* Well in that case, <CHARNAME>...far be it from me to over-romanticise the moment.  Perhaps...well, there is a lot to be done.  We should discuss this later.  Just...help me up. */ EXTERN SUELLE2 s21
++
++APPEND LK#NINDJ
+ IF ~~ LK#NLR_TAKHOM2
+   SAY @1099 /* Speaking of my mother, for the first time, I rather wish she was around, since I'm evidently doing the sorts of things an uppity elf could be proud of.  I always thought that if my mother could see me...I would fall rather short of expectation.  But now...well, I've helped save Suldanesselar, and found myself a sturdy Bhaalspawn beau in the process. */
+   = @1100 /* Do you find yourself wondering what Gorion would think about the course you have taken, the things you do? */
+@@ -3410,16 +3477,14 @@
+   SAY @1128 /* Hmm, perhaps we should.  But, before we do--I have one last thing to say to you.  I want to thank you, <CHARNAME>.  You have done more for me than I dared dream you might.  That day you blazed into Bodhi's lair and I was unforgivably rude to you was clearly a fateful one. */
+   IF ~~ + LK#NLR_end
+ END
++END
+ 
+-
+-IF ~~ LK#NLR_SHTILLPER
+-  SAY @1129 /* Then again you show wisdom.  It is good we should be our own, but neither should we forget those who made us who we are...and those who made great sacrifices for us.  I want to thank you, <CHARNAME>.  You have done more for me than I dared dream you might.  That day you blazed into Bodhi's lair and I was unforgivably rude to you was clearly a fateful one. */
++CHAIN LK#NINDJ LK#NLR_SHTILLPER
++  @1129 /* Then again you show wisdom.  It is good we should be our own, but neither should we forget those who made us who we are...and those who made great sacrifices for us.  I want to thank you, <CHARNAME>.  You have done more for me than I dared dream you might.  That day you blazed into Bodhi's lair and I was unforgivably rude to you was clearly a fateful one. */
+   = @1130 /* And now you have proved to me your courage, your passion...your potential.  <CHARNAME>, you will make the realms quake, and hearts burn like young stars.  And I give my life to yours, to you whose light is fiercer than any I have known. */
+-  = @1131 /* So come, my love.  Let us away. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+-END
++  = @1131 /* So come, my love.  Let us away. */ EXTERN SUELLE2 s21
+ 
++APPEND LK#NINDJ
+ IF ~~ LK#NLR_DAESTRES
+   SAY @1132 /* You have always done what you have had to do.  What criticism can be levelled at a man who rises to each challenge?  He would be proud, for it is an overwhelming tide you swim against, and you have not yet faltered. */
+   = @1133 /* Ahh, <CHARNAME>, we will have time to speak of this further.  But, before we do--I have one last thing to say to you.  I want to thank you, <CHARNAME>.  You have done more for me than I dared dream you might.  That day you blazed into Bodhi's lair and I was unforgivably rude to you was clearly a fateful one. */
+@@ -3431,31 +3496,24 @@
+   = @1133 /* Ahh, <CHARNAME>, we will have time to speak of this further.  But, before we do--I have one last thing to say to you.  I want to thank you, <CHARNAME>.  You have done more for me than I dared dream you might.  That day you blazed into Bodhi's lair and I was unforgivably rude to you was clearly a fateful one. */
+   IF ~~ + LK#NLR_end
+ END
++END
+ 
+-IF ~~ LK#NLR_GUIDZIN
+-  SAY @1135 /* (Ninde smiles kindly up at you, stroking the side of your face.) Do not forget to be your own man, <CHARNAME>.  Sooner or later you may have to stray from your ideal if you are to survive.  But it is right we remember those who have made great sacrifices for us.  As you have done for me. */
++CHAIN LK#NINDJ LK#NLR_GUIDZIN
++  @1135 /* (Ninde smiles kindly up at you, stroking the side of your face.) Do not forget to be your own man, <CHARNAME>.  Sooner or later you may have to stray from your ideal if you are to survive.  But it is right we remember those who have made great sacrifices for us.  As you have done for me. */
+   = @1130 /* And now you have proved to me your courage, your passion...your potential.  <CHARNAME>, you will make the realms quake, and hearts burn like young stars.  And I give my life to yours, to you whose light is fiercer than any I have known. */
+-  = @1131 /* So come, my love.  Let us away. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+-END
++  = @1131 /* So come, my love.  Let us away. */ EXTERN SUELLE2 s21
+ 
+-IF ~~ LK#NLR_ANFINFUN
+-  SAY @1136 /* Such fierce independence is most admirable...but we should not forget those who have made great sacrifices for us.  .  As you have done for me. */
++CHAIN LK#NINDJ LK#NLR_ANFINFUN
++  @1136 /* Such fierce independence is most admirable...but we should not forget those who have made great sacrifices for us.  .  As you have done for me. */
+   = @1130 /* And now you have proved to me your courage, your passion...your potential.  <CHARNAME>, you will make the realms quake, and hearts burn like young stars.  And I give my life to yours, to you whose light is fiercer than any I have known. */
+-  = @1131 /* So come, my love.  Let us away. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+-END
++  = @1131 /* So come, my love.  Let us away. */ EXTERN SUELLE2 s21
+ 
+-IF ~~ LK#NLR_NOWTMORE
+-  SAY @1137 /* One good thing about having lived for as long as I have...you grow used to disappointment.  I suppose at--at least I did not yet love you.  I will still never forgot the sacrifice you have made for me. */
++CHAIN LK#NINDJ LK#NLR_NOWTMORE
++  @1137 /* One good thing about having lived for as long as I have...you grow used to disappointment.  I suppose at--at least I did not yet love you.  I will still never forgot the sacrifice you have made for me. */
+   = @1130 /* And now you have proved to me your courage, your passion...your potential.  <CHARNAME>, you will make the realms quake, and hearts burn like young stars.  And I give my life to yours, to you whose light is fiercer than any I have known. */
+-  = @1138 /* So come, my friend.  Let us away. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+-END
++  = @1138 /* So come, my friend.  Let us away. */ EXTERN SUELLE2 s21
+ 
++APPEND LK#NINDJ
+ IF ~~ LK#NLR_NOUDON
+   SAY @1139 /* (Ninde giggles and withdraws her hand.) You are right, this is perhaps best left for a more intimate setting.  But before we go anywhere--I have one last thing I wish to say to you. */
+   = @1140 /* I want to thank you.  You have done more for me than I dared dream you might.  That day you blazed into Bodhi's lair and I was unforgivably rude to you was clearly a fateful one. */
+@@ -3473,15 +3531,10 @@
+   = @1140 /* I want to thank you.  You have done more for me than I dared dream you might.  That day you blazed into Bodhi's lair and I was unforgivably rude to you was clearly a fateful one. */
+   IF ~~ + LK#NLR_end
+ END
+-
+-IF ~~ LK#NLR_end
+-  SAY @1130 /* And now you have proved to me your courage, your passion...your potential.  <CHARNAME>, you will make the realms quake, and hearts burn like young stars.  And I give my life to yours, to you whose light is fiercer than any I have known. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+ END
+ 
+-
+-END
++CHAIN LK#NINDJ LK#NLR_end
++  @1130 /* And now you have proved to me your courage, your passion...your potential.  <CHARNAME>, you will make the realms quake, and hearts burn like young stars.  And I give my life to yours, to you whose light is fiercer than any I have known. */ EXTERN SUELLE2 s21
+ 
+ // Post-restoration, selfish
+ CHAIN IF ~Global("LK#NindeRestored","GLOBAL",1) Global("LK#NindeSelfish","GLOBAL",1)~ THEN LK#NINDJ LK#NLRS
+@@ -3521,14 +3574,11 @@
+   ++ @1162 /* No, Ninde.  I don't want to speak to you.  I just wish to rest, now. */ EXTERN LK#NINDJ LK#NLRS_FINARES
+   ++ @1163 /* For the last time, woman, I'm not interested!  I merely played my part in your restoration so I would no longer have to be audience to your whingeing. */ EXTERN LK#NINDJ LK#NLRS_WHINGYS
+ 
+-APPEND LK#NINDJ
+ 
+-IF ~~ LK#NLRS_MOANTW
+-  SAY @1164 /* Oh.  I--I see.  Well, far be it from me to over-estimate you.  We should go...I too am tired of this.  Tired of everything.  But first I wish to tell you that I am thankful to you.  You are selfish, but I understand selfishness, and I am thankful anyway. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+-END
++CHAIN LK#NINDJ LK#NLRS_MOANTW
++  @1164 /* Oh.  I--I see.  Well, far be it from me to over-estimate you.  We should go...I too am tired of this.  Tired of everything.  But first I wish to tell you that I am thankful to you.  You are selfish, but I understand selfishness, and I am thankful anyway. */ EXTERN SUELLE2 s21
+ 
++APPEND LK#NINDJ
+ IF ~~ LK#NLRS_CASTABI
+   SAY @1154 /* (Ninde raises herself slightly, and gives you a tired smile.) You...you are a selfish man, <CHARNAME>. */
+   ++ @1155 /* Selfish?  I hardly think you can level such a criticism at me after what I have done for you. */ + LK#NLRS_FEROO
+@@ -3537,62 +3587,37 @@
+   ++ @1157 /* No more so than you. */ + LK#NLRS_MARENU
+   ++ @1158 /* I have no time for this.  I just--I just want to finally rest. */ + LK#NLRS_FINARES
+ END
+-
+-IF ~~ LK#NLRS_EIVAR
+-  SAY @1166 /* No, I...I should suspect you are not, though if you are expecting sympathy, I'm afraid you may be disappointed.  I feel warmer now, yet colder.  Colder to you. */
+-  = @1167 /* But worry not, I suppose I am thankful.  Come to me later and you may take what you want from me. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+-END
+-
+-IF ~~ LK#NLRS_HAEXCUS
+-  SAY @1168 /* 'Tis no excuse.  And remember that I am thankful to you. */
+-  = @1169 /* Come to me later and you may take what you want from me. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+-END
+-
+-IF ~~ LK#NLRS_FEROO
+-  SAY @1170 /* It was not criticism, <CHARNAME>.  Selfishness--I understand selfishness, and I am thankful to you regardless of your own. */
+-  = @1169 /* Come to me later and you may take what you want from me. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+-END
+-
+-IF ~~ LK#NLRS_MARENU
+-  SAY @1171 /* I have been very selfish in my time, it is true, but it would be selfish of me now if I was not thankful to you.  So I am. */
+-  = @1169 /* Come to me later and you may take what you want from me. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+-END
+-
+-IF ~~ LK#NLRS_FINARES
+-  SAY @1172 /* Very well, it is more than understandable.  Come to me later, if you desire, and you may take what you want from me. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+-END
+-
+-IF ~~ LK#NLRS_SPAKEIM
+-  SAY @1173 /* I want to thank you.  I am thankful.  I am, but now I wish only for sleep, and you undoubtedly feel the same.  There is so little I want to say to you, but so much I want to do.  You have returned the world to me, yet denied me it.  But no more words. */
+-  = @1169 /* Come to me later and you may take what you want from me. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+-END
+-
+-IF ~~ LK#NLRS_WHINGYS
+-  SAY @1174 /* Very well, it is more than understandable.  Come to me later, if you desire, and you may take what you want from me.  And I shall try not to whine then.  (Ninde's smile is bitter-sweet, now.) */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+-END
+-
+-IF ~~ LK#NLRS_BOOATZ
+-  SAY @1175 /* And no lasting harm has been done to me.  Quite the opposite, the world has been given to me.  It is a shame you hope to keep me caged within it.  But no more words.  Just rest. */
+-  = @1169 /* Come to me later and you may take what you want from me. */
+-  IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
+-  IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+-END
+ END
+ 
++CHAIN LK#NINDJ LK#NLRS_EIVAR
++  @1166 /* No, I...I should suspect you are not, though if you are expecting sympathy, I'm afraid you may be disappointed.  I feel warmer now, yet colder.  Colder to you. */
++  = @1167 /* But worry not, I suppose I am thankful.  Come to me later and you may take what you want from me. */ EXTERN SUELLE2 s21
++
++CHAIN LK#NINDJ LK#NLRS_HAEXCUS
++  @1168 /* 'Tis no excuse.  And remember that I am thankful to you. */
++  = @1169 /* Come to me later and you may take what you want from me. */ EXTERN SUELLE2 s21
++
++CHAIN LK#NINDJ LK#NLRS_FEROO
++  @1170 /* It was not criticism, <CHARNAME>.  Selfishness--I understand selfishness, and I am thankful to you regardless of your own. */
++  = @1169 /* Come to me later and you may take what you want from me. */ EXTERN SUELLE2 s21
++
++CHAIN LK#NINDJ LK#NLRS_MARENU
++  @1171 /* I have been very selfish in my time, it is true, but it would be selfish of me now if I was not thankful to you.  So I am. */
++  = @1169 /* Come to me later and you may take what you want from me. */ EXTERN SUELLE2 s21
++
++CHAIN LK#NINDJ  LK#NLRS_FINARES
++  @1172 /* Very well, it is more than understandable.  Come to me later, if you desire, and you may take what you want from me. */ EXTERN SUELLE2 s21
++
++CHAIN LK#NINDJ LK#NLRS_SPAKEIM
++  @1173 /* I want to thank you.  I am thankful.  I am, but now I wish only for sleep, and you undoubtedly feel the same.  There is so little I want to say to you, but so much I want to do.  You have returned the world to me, yet denied me it.  But no more words. */
++  = @1169 /* Come to me later and you may take what you want from me. */ EXTERN SUELLE2 s21
++
++CHAIN LK#NINDJ  LK#NLRS_WHINGYS
++  @1174 /* Very well, it is more than understandable.  Come to me later, if you desire, and you may take what you want from me.  And I shall try not to whine then.  (Ninde's smile is bitter-sweet, now.) */ EXTERN SUELLE2 s21
++
++CHAIN LK#NINDJ LK#NLRS_BOOATZ
++  @1175 /* And no lasting harm has been done to me.  Quite the opposite, the world has been given to me.  It is a shame you hope to keep me caged within it.  But no more words.  Just rest. */
++  = @1169 /* Come to me later and you may take what you want from me. */ EXTERN SUELLE2 s21
+ 
+ // ---------------------------------------------
+ // Ninde Friendtalks
