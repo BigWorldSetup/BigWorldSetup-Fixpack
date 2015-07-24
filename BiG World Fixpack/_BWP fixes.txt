@@ -74,6 +74,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: ACBre - Ascalon's Breager NPC (White Agnus' Github master branch - 12 Feb, 2015)
+
+:: Nightfarer's installation fixes
+:: - LINK NOT FOUND ~
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Aeon - Aeon NPC v1.0
 
 :: Lollorian's Items not being copied fix
@@ -1055,6 +1064,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's Innershade-Eilistraee Clearing worldmap overlap fix
 :: http://www.shsforums.net/topic/45425-innershade-bug-reports/?p=561404
+
+:: Red Carnelian's Worldmap appending code missing newline at top
+:: http://www.shsforums.net/topic/58265-problem-with-big-world-setup/?p=579703
 
 
 ----------------------------------------------------------------------------------------

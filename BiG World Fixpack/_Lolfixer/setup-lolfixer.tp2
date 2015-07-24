@@ -318,7 +318,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
   END
 BUT_ONLY_IF_IT_CHANGES
 
-BEGIN ~Creature Stuff - Creature Resource Fixer (res_fixer for ALL CREATURES)~
+BEGIN ~Creature Stuff - Creature Resource Fixer~
   GROUP ~Creature Stuff~
 
 OUTER_SET existence_fix = 0
@@ -1689,12 +1689,12 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
   END
 BUT_ONLY_IF_IT_CHANGES
 
-BEGIN ~Item Stuff - Item Resource Fixer (res_fixer for ALL ITEMS)~
+BEGIN ~Item Stuff - Item Resource Fixer~
   GROUP ~Item Stuff~
-
+  
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
-    PATCH_INCLUDE ~lolfixer/lib/fj_spl_itm_reindex.tpp~
+    PATCH_INCLUDE ~lolfixer/lib/fj_spl_itm_reindex.tpp~	
   END
 BUT_ONLY_IF_IT_CHANGES
 
@@ -1774,6 +1774,28 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
       END
     END
     WRITE_SHORT  0x70 "%fx_num%"
+	
+	// Poison Resist Effect Fixer (needs ToBEx)
+    READ_LONG   0x6a "fx_off" ELSE 0
+    READ_SHORT  0x6e "fx_idx" ELSE 0
+    READ_SHORT  0x70 "fx_num" ELSE 0
+
+	PATCH_IF (fx_off > 0x71) BEGIN
+	  FOR (index = fx_idx ; index < fx_num ; index = index + 1) BEGIN
+	    READ_SHORT ("%fx_off%" +        ("%index%" * 0x30)) "opcode"
+	    READ_BYTE  ("%fx_off%" + 0x02 + ("%index%" * 0x30)) "target"
+        READ_LONG  ("%fx_off%" + 0x04 + ("%index%" * 0x30)) "param1"
+        READ_LONG  ("%fx_off%" + 0x08 + ("%index%" * 0x30)) "param2"
+        PATCH_IF ("%opcode%" = 173) AND ("%target%" = 1) AND ("%param1%" < 100) AND ("%param2%" != 1) BEGIN
+          PATCH_PRINT "%SOURCE_FILE% error: Poison Resist set to INCREMENT to %param1%"
+          WRITE_LONG  ("%fx_off%" + 0x08 + ("%index%" * 0x30)) 1
+        END ELSE
+        PATCH_IF ("%opcode%" = 173) AND ("%target%" = 1) AND ("%param1%" > 99) AND ("%param2%" != 0) BEGIN
+          PATCH_PRINT "%SOURCE_FILE% error: Poison Resist set to SET to %param1%"
+          WRITE_LONG  ("%fx_off%" + 0x08 + ("%index%" * 0x30)) 0
+        END
+      END
+    END
   END
 BUT_ONLY
 
@@ -4073,6 +4095,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.CRE)"
               END
             END
+            SET "exists" = 0
             PATCH_IF ("%opcode%" = 107) BEGIN
               PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.bmp~ BEGIN
                 SET "exists" = 1
@@ -4081,6 +4104,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.BMP)"
               END
             END
+            SET "exists" = 0
             PATCH_IF ("%opcode%" = 111) OR
                      ("%opcode%" = 112) OR
                      ("%opcode%" = 122) OR
@@ -4092,6 +4116,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.ITM)"
               END
             END
+            SET "exists" = 0
             PATCH_IF ("%opcode%" = 146) OR
                      ("%opcode%" = 147) OR
                      ("%opcode%" = 148) OR
@@ -4107,6 +4132,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.SPL)"
               END
             END
+            SET "exists" = 0
             PATCH_IF ("%opcode%" = 152) BEGIN
               PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.mve~ BEGIN
                 SET "exists" = 1
@@ -4115,6 +4141,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.MVE)"
               END
             END
+            SET "exists" = 0
             PATCH_IF ("%opcode%" = 174) BEGIN
               PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.wav~ BEGIN
                 SET "exists" = 1
@@ -4123,6 +4150,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.WAV)"
               END
             END
+            SET "exists" = 0
             PATCH_IF ("%opcode%" = 177) OR
                      ("%opcode%" = 248) OR
                      ("%opcode%" = 249) BEGIN
@@ -4133,6 +4161,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.EFF)"
               END
             END
+            SET "exists" = 0
             PATCH_IF ("%opcode%" = 186) BEGIN
               PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.are~ BEGIN
                 SET "exists" = 1
@@ -4150,10 +4179,6 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
           READ_LONG  ("%fx_off%" + 0x08 + (0x30 * "%index%")) "param2"
           READ_BYTE  ("%fx_off%" + 0x0c + (0x30 * "%index%")) "timing"
           READ_ASCII ("%fx_off%" + 0x14 + (0x30 * "%index%")) "resref"
-          SET "exists" = 0
-          PATCH_IF ("%opcode%" = 173) AND ("%param1%" < 100) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Poison Resist set to %param1%"
-          END
           PATCH_IF (("%opcode%" = 27) OR
                     ("%opcode%" = 28) OR
                     ("%opcode%" = 29) OR
@@ -4178,6 +4203,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                     ("%opcode%" = 37)) AND ("%param2%" = 2) AND ("%param1%" = 100) BEGIN
             PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-functional percentage change"
           END
+          SET "exists" = 0
           PATCH_IF ("%opcode%" = 67) OR
                    ("%opcode%" = 135) OR
                    ("%opcode%" = 151) OR
@@ -4189,6 +4215,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.CRE)"
             END
           END
+          SET "exists" = 0
           PATCH_IF ("%opcode%" = 107) BEGIN
             PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.bmp~ BEGIN
               SET "exists" = 1
@@ -4197,6 +4224,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.BMP)"
             END
           END
+          SET "exists" = 0
           PATCH_IF ("%opcode%" = 111) OR
                    ("%opcode%" = 112) OR
                    ("%opcode%" = 122) OR
@@ -4208,6 +4236,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.ITM)"
             END
           END
+          SET "exists" = 0
           PATCH_IF ("%opcode%" = 146) OR
                    ("%opcode%" = 147) OR
                    ("%opcode%" = 148) OR
@@ -4223,6 +4252,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.SPL)"
             END
           END
+          SET "exists" = 0
           PATCH_IF ("%opcode%" = 152) BEGIN
             PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.mve~ BEGIN
               SET "exists" = 1
@@ -4231,6 +4261,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.MVE)"
             END
           END
+          SET "exists" = 0
           PATCH_IF ("%opcode%" = 174) BEGIN
             PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.wav~ BEGIN
               SET "exists" = 1
@@ -4239,6 +4270,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.WAV)"
             END
           END
+          SET "exists" = 0
           PATCH_IF ("%opcode%" = 177) OR
                    ("%opcode%" = 248) OR
                    ("%opcode%" = 249) BEGIN
@@ -4249,6 +4281,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.EFF)"
             END
           END
+          SET "exists" = 0
           PATCH_IF ("%opcode%" = 186) BEGIN
             PATCH_IF FILE_EXISTS_IN_GAME ~%resref%.are~ BEGIN
               SET "exists" = 1
@@ -4263,7 +4296,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   END
 BUT_ONLY_IF_IT_CHANGES
 
-BEGIN ~Spell Stuff - Spell Resource Fixer (res_fixer for ALL THE SPELLS)~
+BEGIN ~Spell Stuff - Spell Resource Fixer~
   GROUP ~Spell Stuff~
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
