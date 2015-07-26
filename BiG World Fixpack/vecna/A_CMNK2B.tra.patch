@@ -1,0 +1,12 @@
+--- vecna\Language\English\A_CMNK2B.tra	Sat Mar 18 19:43:08 2006
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\A_CMNK2B.tra	Sat Sep 20 17:59:13 2014
+@@ -1,6 +1,6 @@
+-@0    = ~Help! I am...poisoned.~
++@0    = ~Help! I am... poisoned.~
+ @1    = ~Knave! Come fight like a warrior...~
+-@2    = ~Come closer and fight me fair!~
++@2    = ~Come closer and fight me fairly!~
+ @3    = ~You coward! Using a ranged weapon to attack me!~
+-@4    = ~Barb-slinger! I bet you`re too weak for melee...~
++@4    = ~Barb-slinger! I bet you're too weak for melee...~
+ @5    = ~Die with your boots on!~

@@ -1,0 +1,23 @@
+--- vecna\Language\English\AACRE023.tra	Wed Mar 17 23:53:23 2010
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\AACRE023.tra	Wed Sep 10 17:42:09 2014
+@@ -1,9 +1,9 @@
+-@95=~So we meet again not in my wildest dreams did I believe you had the courage to seek out the heart of the twisted rune in Anthanka~
+-@96=~Fool !!! Have you never heard of the resurrection spell~
+-@97=~Enough of this ! I assure you this time the outcome will be different, and so to battle worm! Come defenders of the rune fulfill your pact and protect your master~
+-@98=~What Strangers ?! I have no idea how you got here but your curiosity will be your undoing, you have stumbled over powers you cannot comprehend, time to die worms~
+-@99=~Come defenders of the rune fulfill your pact and protect your master~
+-@100=~I have more than enough courage when hunting down evil as great as yours Lich~
+-@101=~Did I not just Kick your ass ?~
+-@102=~Errr I need to be going, dragons to slay and all that....~
+-@103=~Yes but how did you find a cleric dumb enough to resurrect a piece of slime like you ?~
+\ No newline at end of file
++@95=~So we meet again. Not in my wildest dreams would I have believed you couragous or foolish enough to seek out the heart of the Twisted Rune in Athkatla!~
++@96=~You fool. Have you never heard of the resurrection spell?~
++@97=~Enough of this! I assure you, this time the outcome will be different! To battle, worm! Come, defenders of the Rune! Fulfill your pact and protect your master!~
++@98=~Intruders! I have no idea how you got here, but your curiosity will be your undoing. You have stumbled over forces you cannot comprehend. Time to die, worms!~
++@99=~Come, defenders of the Rune! Fulfill your pact and protect your master!~
++@100=~I have more than enough courage to hunt down evil as great as yours, lich!~
++@101=~Didn't I just mop the floor with you?~
++@102=~Err... I need to be going! Dragons to slay and all that...~
++@103=~Indeed, but where did you find a cleric dumb enough to resurrect a piece of slime like you?~
+\ No newline at end of file

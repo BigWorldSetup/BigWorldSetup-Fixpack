@@ -1,0 +1,16 @@
+--- vecna\Language\English\A_CKTH2B.tra	Sat Mar 18 19:42:54 2006
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\A_CKTH2B.tra	Wed Sep 10 08:14:08 2014
+@@ -1,9 +1,9 @@
+-@0    = ~Hmmm....Me neck hairs be springin'...~
+-@1    = ~Singing out! These jerkies slipped me a wet one!~
++@0    = ~Hmmm... Me neck hairs be springin'...~
++@1    = ~Signing out! These jerkies slipped me a wet one!~
+ @2    = ~Knave! Come fight like a warrior...~
+-@3    = ~Come closer and fight me fair!~
++@3    = ~Come closer and fight me fairly!~
+ @4    = ~You coward! Using a ranged weapon to attack me!~
+-@5    = ~Barb-slinger! I bet you`re too weak for melee...~
++@5    = ~Barb-slinger! I bet you're too weak for melee...~
+ @6    = ~Barb-slinger! Come taste some steel...~
+ @7    = ~Somebody shank this bastard!~
+ @8    = ~Die with your boots on!~

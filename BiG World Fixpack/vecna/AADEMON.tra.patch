@@ -1,0 +1,21 @@
+--- vecna\Language\English\AADEMON.tra	Sat Mar 18 20:24:56 2006
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\AADEMON.tra	Tue Sep 09 23:38:30 2014
+@@ -4,13 +4,13 @@
+ @3    = ~Silly mortal. I just flutter my wings...~
+ @4    = ~Damn you, mortal!~
+ @5    = ~You cannot stop me with your petty tricks!~
+-@6    = ~You think you are clever, mortal?~
+-@7    = ~Cover me, you thralls!~
++@6    = ~You think yourself clever, mortal?~
++@7    = ~Cover me, thralls!~
+ @8    = ~Telekinesis~
+-@9    = ~Come closer and fight me fair!~
++@9    = ~Come closer and fight me fairly!~
+ @10   = ~A ranged weapon? Try this!~
+ @11   = ~Knavish mortal! Slinging barbs at me.~
+-@12   = ~Weakling! I'll eat your brains tonight...~
+-@13   = ~You deal with this buffoon..I'm out of here!~
++@12   = ~Weakling! I shall feast on your brain tonight...~
++@13   = ~You deal with this buffoon... I'm out of here!~
+ @14   = ~I'll see you in the abyss!~
+ @15   = ~Somebody slay this bastard!~

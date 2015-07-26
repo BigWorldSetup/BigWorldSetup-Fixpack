@@ -1,0 +1,7 @@
+--- vecna\Language\English\AAR031.tra	Fri Apr 09 10:21:14 2010
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\AAR031.tra	Tue Sep 09 23:12:32 2014
+@@ -1 +1 @@
+-@0=~You assemble the 2 parts of the key to create a complete door key~
+\ No newline at end of file
++@0=~You assemble the two parts of the key to create a complete door key.~
+\ No newline at end of file

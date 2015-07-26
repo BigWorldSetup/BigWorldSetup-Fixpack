@@ -1,0 +1,14 @@
+--- vecna\Language\English\A_MAG18E.tra	Sat Mar 18 19:48:05 2006
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\A_MAG18E.tra	Wed Sep 10 01:40:26 2014
+@@ -1,8 +1,8 @@
+ @0    = ~There you are, you bastard!~
+-@1    = ~Hmmm...must've been a ghost~
++@1    = ~Hmmm... Must've been a ghost.~
+ @2    = ~Ouch! Who did that?~
+ @3    = ~Two can play at that game.~
+ @4    = ~A magic cloud has engulfed me!~
+-@5    = ~Help! I am...poisoned.~
+-@6    = ~Hmmm....Something's not right here...~
++@5    = ~Help! I am... poisoned.~
++@6    = ~Hmmm... Something's not right here.~
+ @7    = ~Die with your boots on!~

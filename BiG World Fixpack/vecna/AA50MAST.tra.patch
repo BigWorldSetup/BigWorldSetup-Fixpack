@@ -1,0 +1,15 @@
+--- vecna\Language\English\AA50MAST.tra	Fri May 20 21:09:15 2011
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\AA50MAST.tra	Wed Sep 10 04:19:57 2014
+@@ -1,5 +1,5 @@
+-@0=~Master power console, Press the large red button to activate~
+-@1=~You press the large red button, a loud metalic voice shouts a warning~
+-@2=~Master power activated without propper authorisation. Guards summoned~
+-@3=~The central red button glows with a soft amber light, the other consoles now appear activated~
+-@4=~There is nothing else to do on this machine, you think it unwise to tamper with the other controls on this unit~
+\ No newline at end of file
++@0=~Master power console. Press the large red button to activate.~
++@1=~You press the large red button. A loud metallic voice shouts a warning:~
++@2=~"Master power activated without proper authorization. Guards summoned."~
++@3=~The central red button glows with a soft light. The other consoles appear to be active.~
++@4=~There is nothing else to do on this machine. You think it unwise to tamper with the other controls on this unit.~
+\ No newline at end of file

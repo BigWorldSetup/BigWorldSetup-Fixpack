@@ -1,0 +1,15 @@
+--- vecna\Language\English\AAMAP.tra	Thu Mar 18 00:04:56 2010
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\AAMAP.tra	Sat Sep 20 17:41:09 2014
+@@ -1,5 +1,5 @@
+-@66=~This Astral map spell transports you to a secret location, Lolths lab complex, within a hidden pocket plane, somewhere in the astral. Do you really want to go there ?~
+-@67=~Yes let the mayhem begin~
+-@68=~No~
+-@69=~This spell must be cast from the astral plane or any pocket planes located therein, you are not in an astral area so the spell fails and is wasted~
+-@70=~Although in an astral area something is blocking your transport, the spell fails and is wasted~
+\ No newline at end of file
++@66=~This Astral map spell transports you to a secret location--Lolth's lab complex, within a hidden pocket dimension, somewhere in the astral plane. Do you really want to go there?~
++@67=~Yes, let the mayhem begin.~
++@68=~No.~
++@69=~This spell must be cast from the astral plane or any pocket planes located therein. You are not in an astral area. The spell fails and is wasted~
++@70=~Although in an astral area something is blocking your transport. The spell fails and is wasted~
+\ No newline at end of file

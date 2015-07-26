@@ -1,0 +1,75 @@
+--- vecna\Language\English\AACRE053.tra	Thu Jul 14 22:32:31 2011
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\AACRE053.tra	Sat Sep 20 18:21:42 2014
+@@ -1,35 +1,36 @@
+-@72=~Hello~
+-@73=~Who are you ?~
+-@74=~What are you doing here ?~
+-@75=~Are you another member of the twisted rune ?~
+-@76=~I am Android Zero~
+-@77=~I am being held captive here, the force shield you see prevents any movement even by me.~
+-@78=~No I am an experiment. I was created by my father the spirit of Dr Hastur, under the patronage of a being calling itself Lolth~
+-@79=~Why are you being held captive ?~
+-@80=~I am the first of three experiments, the final stage of which will be the creation of an unstoppable killing machine, nothing like the heights of Android 17 and 18, but the knowledge that created them has been lost even by my father~
+-@81=~Then you turned on your creators no doubt~
+-@82=~Get to the point creature~
+-@83=~On the contrary~
+-@84=~as the first of my line I am obviously full of bugs , the most serious of which affected the functioning of my mind, I was "born" with what you squashy creatures call compassion, a most fatal flaw in a killing machine.~
+-@85=~Is there any way to free you~
+-@86=~A most "interesting story" but I have people to kill and very little time, farewell.~
+-@87=~Maybe, maybe not, I have not been programmed with any knowledge of the technology that binds me, I believe you call it "magic"~
+-@88=~We have skill in magic maybe there is a scroll or incantation that can free you, we will look about in this complex, is there any information that you can give that would be of help ?~
+-@89=~None that would help free me~
+-@90=~Very well farewell until we find a means extricate you.~
++@72=~Hello.~
++@73=~Who are you?~
++@74=~What are you doing here?~
++@75=~Are you another member of the Twisted Rune?~
++@76=~I am Construct Zero.~
++@77=~I am being held captive here. The barrier you see before you has completely immobilized me.~
++@78=~No. I am an experiment. I was created by the spirit of Dr. Hastur, under the patronage of the being known as Lolth.~
++@79=~Why are you being held captive?~
++@80=~I am the first of three experimental constructs. The purpose of the experiment is the creation of a perfect construct.~
++@81=~Did you turn on your creators?~
++@82=~Get to the point, creature.~
++@83=~On the contrary.~
++@84=~I embody the dead power's compassion--the least developed of its aspects. This outcome could not have been predicted by my creator. My compassion for squishy mortals have branded me a failure in Lolth's eyes.~
++@85=~Is there any way to free you?~
++@86=~Yes, yes, very interesting, but I have so many to people to kill and so little time. Bye now.~
++@87=~I seem to be bound by a strong arcane force. My knowledge on such matters is insufficient, or I would not be trapped.~
++@88=~We have skill in magic. Maybe there is a scroll or incantation that can free you. We will search the complex. Is there any useful information you could share?~
++@89=~None that would help free me.~
++@90=~Very well. Farewell until we find a means to extricate you.~
+ @91=~Is there anything else you can tell us?~
+-@92=~Yes Lolth is nearly at stage 3, her lab complex is located somewhere on the Astral plane, on a pocket plane created by Anubis, if you intend to face the Bitch queen you will need all three pieces of the key wardsto.......URRRRRRKKKKKRRRRR...( goes quiet ) ~
+-@93=~Very well I will get back to my contemplations~
+-@1=~Thank you my new-found friends, it is obviously your efforts that have deactivated the sigma field keeping me captive~
+-@2=~Dont forget the hoard of guards!~
+-@3=~Yes yes very good butchery! The point is that i am suitably greatful and can aid you, if your quest is to destroy the other androids of my line~
+-@4=~Our quest is to destroy all the evil forces plotting against Helms just cause, so yes we will seek to destroy her handi-work also~
+-@5=~We care not about any androids yourself included we care only for cash and magic~
+-@6=~Our quest is our buisness and none of yours!~
+-@7=~Very well, then once again i thank you for your assistance and will take my leave, i intend to use my newfound liberty and travel the planets dimensions and planes, maybe our paths will cross again, untill then farewell, may riches cross your path at every turn~
+-@8=~Very well, then once again i thank you for your assistance and will take my leave, i intend to use my newfound liberty and travel the planets dimensions and planes, maybe our paths will cross again, untill then farewell, may no one ask you an awkward question again~
+-@9=~Good, then listen carefully, as i said her lab complex is located somewhere on the Astral plane, on a pocket plane created by Anubis, there is no way to find it by normal means, one could wander the astral pathways for an eternity and never stumble upon it, the ONLY way of getting there is by teleport ( unfortunatly for you one must picture the location when teleporting hence you must have already have visited the location ) or by the use of an astral map. Very few of these parchments exist, two to be precise, but luckily for you there is one somewhere in this complex. You must obtain the scroll, travel to the astral plane, then use the scroll there, this sequence will transport you Loloths Lab, once there you must gather together three pieces of a teleport key ,in the form a wardstone, to unlock the final Lab where android 2 is incubating. The lab entrance is only accesable by teleport so make sure you have some way of teleporting short distances across spans and the like~
+-@10=~Now once again i thank you for your assistance and will take my leave, i intend to use my newfound liberty and travel the planets dimensions and planes, but my sensors will be monitoring you quest, this communication device can be used to attract my attention, and if possible i will render assistance in times of need, just dial 95438 on the keypad~
+-@11=~MEET ANDROID0
+-After freeing a strange metalic living machine, the thing was greatfull enough to divulge that Loloths lab complex is located somewhere on the Astral plane, on a pocket plane created by Anubis, there is no way to find it by normal means, the ONLY way of getting there is by the use of an astral map.One of these scrolls is hidden somewhere in the twisted rune complex.I must obtain the scroll, travel to the astral plane, then use the scroll there, this will get me to Loloths Lab, once there i must gather together three pieces of a teleport key ,in the form a wardstone, to unlock the final Lab where android 2 is incubating. The lab entrance is only accesable by use of an dimension door spell that will transport me and any companions with me, i hope there is one in the complex aswell~
+-@12=~Urrr ok let me get my quill out, shit where is that squid ink!~
+\ No newline at end of file
++@92=~Lolth's plans are nearing completion. She resides somewhere on the Astral Plane, inside a pocket dimension. If you intend to confront Her, you will need to aquire all three wardstone fragme--URRRRRRKKKKKRRRRR! ...(the construct falls silent)~
++@93=~Very well. I shall resume my contemplations.~
++@1=~Thank you, my newfound friends. Clearly it was your efforts that have dispelled the barrier holding me captive.~
++@2=~Don't forget the army of guards!~
++@3=~Yes, well done. What matters is that I will assist you in destroying the remaining constructs.~
++@4=~Our quest is to destroy all the evil forces plotting against Helm's just cause. Indeed, we will attempt to destroy her inventions, as well.~
++@5=~I don't really care about the constructs. I'm only in it for the loot.~
++@6=~Our quest is none of your business!~
++@7=~Then I will take my leave. I intend to use my newfound freedom to travel the planes. Perchance our paths will cross again. May your pockets be lined forevermore.~
++@8=~Then I will take my leave. I intend to use my newfound freedom to travel the planes. Perchance our paths will cross again. May any and all intrusive questions be averted from your personage.~
++@9=~Lolth's sanctum cannot be found by ordinary means. Only with an Astral Map can the location of Her pocket-dimension be discerned. Only two such maps are known to me. One of them can be found in this very complex. Once you have the parchment, return to the Astral Plane, and use it to teleport to Lolth's sanctum. There you will need to find the three wardstone fragments that will, once assembled, allow entry to Construct Two's chambers. Destroy Construct Two before it can be completed at all costs. It poses a threat most dire. And make sure to bring along some form of teleportation magic.~
++@10=~Then I will take my leave. I intend to use my newfound freedom to travel the planes. Perchance our paths will cross again. If you require may assistence, input the sequence '95438' on this keypad.~
++@11=~Meeting Construnct Zero
++After freeing a strange metallic construct, it told us how to enter Lolth's abode: 
++Once we have the Astral Map, we should return to the Astral Plane, and use the map to teleport to Lolth's sanctum. There we will need to find the three wardstone fragments that will, once assembled, allow entry to Construct Two's chambers. We should destroy Two before it can be completed. We should probably bring along some form of teleportation magic.~
++@12=~Uh... let me fetch my quill! Damn, where is that squid ink?~
+\ No newline at end of file

@@ -1,21 +1,23 @@
---- SETUP-NMR.TP2	Sat Dec 25 21:24:23 2010
-+++ C:\BWP Patchstudio\patched files\SETUP-NMR.TP2	Mon Oct 14 22:18:22 2013
-@@ -7,6 +7,7 @@
+--- SETUP-NMR.TP2	Fri Nov 16 21:14:08 2012
++++ C:\BWP Patchstudio\patched files\SETUP-NMR.TP2	Sun Jul 26 20:39:05 2015
+@@ -7,8 +7,8 @@
   **************************************************************************/
  BACKUP ~NMR/backup~
- AUTHOR ~macholy@live.com~ 
-+VERSION ~v2.8 BWP Fix~ 
+ AUTHOR ~macholy@qq.com~ 
++VERSION ~v2.82 BWP Fix~ 
  AUTO_TRA ~NMR/%s~
- 
+-
  README ~NMR/Readme.TXT~
-@@ -25,6 +26,10 @@
+ 
+ LANGUAGE ~SimplifiedChinese~ 
+@@ -25,6 +25,10 @@
  
  BEGIN @1
  REQUIRE_PREDICATE (!FILE_EXISTS_IN_GAME ~M_RNPC.BCS~) @1000
-+APPEND ~RACE.IDS~		~114 SUCCUBUS~ UNLESS ~SUCCUBUS~
-+APPEND ~RACE.IDS~		~161 DRIDER~ UNLESS ~DRIDER~
-+APPEND ~shoutids.ids~	~57 HELP57~ UNLESS ~HELP57~
-+APPEND ~spell.ids~		~2705 WIZARD_KHELBENS_WARDING_WHIP~ UNLESS ~WIZARD_KHELBENS_WARDING_WHIP~
++APPEND ~RACE.IDS~		~114 SUCCUBUS~						UNLESS ~SUCCUBUS~
++APPEND ~RACE.IDS~		~161 DRIDER~						UNLESS ~DRIDER~
++APPEND ~shoutids.ids~	~57 HELP57~							UNLESS ~HELP57~
++APPEND ~spell.ids~		~2705 WIZARD_KHELBENS_WARDING_WHIP~	UNLESS ~WIZARD_KHELBENS_WARDING_WHIP~
  //baf
  COMPILE ~NMR/CORE/BAF~
  //SPL

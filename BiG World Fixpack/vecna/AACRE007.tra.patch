@@ -1,0 +1,47 @@
+--- vecna\Language\English\AACRE007.tra	Mon May 23 23:10:57 2011
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\AACRE007.tra	Sat Sep 20 18:11:40 2014
+@@ -1,21 +1,21 @@
+-@0=~So is this it? Is this the best Helm can muster? A puny demi mortal and his insignificant minions? Cringe in fear mortal for you now face LoLth~
+-@1=~You do not scare me spider queen, I have killed your servants, as all have died before the forces of good, and now your Avatar will follow quickly!~
+-@2=~Oh SHIT! ok Im running~
+-@3=~Oh come on! I expected a little more out of the queen of spiders. Actually i have no desire to destroy this Avatar of yours, you are just in the way. Give me the hand and eye and no one will get hurt~
+-@4=~You have balls mortal, and obvious power, maybe my initial impression of you was incorrect, maybe you are not just a pawn of that idiot Helm.~
+-@5=~I am no ones pawn Godling so what do you have in mind?~
+-@6=~I am no ones pawn Godling not Helms or YOURS, i will not say this again, GIVE ME THE EYE AND HAND, before i tear this entire pocket plane appart looking for it!~
+-@7=~I see what you are attemting Queen of lies! You will not drive a wedge between us! Defend yourself!~
+-@8=~My "mind" is on a trade mortal, i canot give up the hand and eye, they power the machine behind you which will soon give birth to my wonderfull new creation, a weapon of such immense pow.... ~
+-@9=~Yes yes i know all about it, Android2, end of gods bla bla bla, whats your deal~
+-@10=~Down to the point , good i like that, i was just saying to Orcus how some mortals just...~
+-@11=~For FUCK SAKE, make your deal before i really lose it !~
+-@12=~Right thats it ! Your dead !~
+-@13=~Hmmm.. Ok then this is the deal i have some top rate magic, at least as powerful as the hand and eye, and a lot safer to use without all the nasty side effects of grafting those unbearable items onto onself. I will give you the items on condition that you allow me to teleport you from this place, and if you are thinking of teleporting back  or divulging the astral co-ordinates, dont bother, Anubis has already moved this pocket plane ~
+-@14=~Ok sounds a fair trade that will save a good deal of fighting, i accept~
+-@15=~Thats your deal? Excuse me while i vomit with laughter! You had your chance, i have given you ample oppertunity to give up the hand and eye, now i will feed you the still beating hearts of your two deamon buddies here, then i will make you watch as i destroy all that you have worked so long to achieve, before i finally put you out of my misery~
+-@16=~Very well face the might of LoLth Orcus and Balrog combined, but know even if you succeed in defeating these Avatars, succeed in ruining work that has taken centuries to accomplish, you will never be safe from us, we will always be watching and plotting your downfall~
+-@17=~Yes run mortal, I enjoy a hunt. but know even if you succeed in eluding these Avatars, you will never be safe from us, we will always be the hunters, and you the meek prey!~
+-@18=~You will not have to look far, but first you must face the might of LoLth Orcus and Balrog combined, but know even if you succeed in defeating these Avatars, succeed in ruining work that has taken centuries to accomplish, you will never be safe from us, we will always be watching and plotting your downfall~
+-@19=~No mortal it is you who will die, and we will feast on your soul this night.~
+-@20=~Good then here are the items, now you go back to the backwater planet you came from~
+\ No newline at end of file
++@0=~This is IT? THIS is the best that Helm can muster?! A puny demi-mortal and his insignificant minions?! Cringe in fear, mortal! You now face Lolth!~
++@1=~You do not scare me, Queen of Spiders! I have killed your servants. All of them have fallen before the forces of good! And now your avatar will follow them to the nine hells!~
++@2=~Oh, crap! I'm outta here!~
++@3=~Oh, come on! I expected a little more from the Queen of Spiders! I have no desire to destroy this avatar of yours. You are merely in the way. Give me the Hand and Eye, and I won't have to detroy you!~
++@4=~You have some nerve, mortal. And power. Maybe my initial impression of you was incorrect. Maybe you are more than a mere pawn of that coward Helm.~
++@5=~I am no one's pawn, Godling. So what do you have in mind?~
++@6=~I am no one's pawn, Godling. Not Helm's, or yours! I will not say this again: GIVE ME THE EYE AND HAND, before I tear this entire pocket plane apart to find them!~
++@7=~I see what you are attempting, Queen of Lies! You will not drive a wedge between us! Defend yourself!~
++@8=~I propose a bargain, mortal. I cannot give up the Hand and Eye. They power the creature behind you. Soon it will awaken, a creature of such raw power--~
++@9=~Yes, yes! I know all about it. Construct Two, End of the Gods, blah, blah blah... What's your proposal?~
++@10=~Right to the point! Good, I like that. I was just saying to my buddy Orcus, just now, how some mortals are so long-wind--~
++@11=~FOR CRYING OUT LOUD! Make your proposal before I really lose it!~
++@12=~Right. That's it. You're dead.~
++@13=~Hmm... This is the deal: I have some top-rate magic on sale, for a limited time only! At least as powerful as the Hand and Eye. And a lot safer to use without all the nasty side effects. I will give you these items, on the condition that you are banished you from this place. And if you are thinking of teleporting back or divulging the astral coordinates, don't even bother. This pocket dimension has already shifted and changed locations. Your map is worthless.~
++@14=~Sounds good to me. I accept.~
++@15=~You're kidding! That's your deal?! Forget it! You had your chance. I have given you ample opportunity to give up the Hand and Eye. Now, I will stuff your buddies' still-beating hearts down your fat throat. Then, I will make you witness the destruction of your precious creation, before I finally put you out of *my* misery.~
++@16=~Very well. Face the might of Lolth, Orcus and Balrog combined! And know that even if you succeed in defeating these avatars, even if you succeed in ruining centuries of my work, you will never be safe from us! We will always be watching and plotting your downfall!~
++@17=~Yes! Run, mortal! I enjoy a hunt. And know that even if you succeed in eluding these avatars, you will never be safe from us! We will always be the hunters, and you always be the prey!~
++@18=~You will not have to look far. Now, face the might of Lolth, Orcus and Balrog combined! And know that even if you succeed in defeating these avatars, even if you succeed in ruining centuries of my work, you will never be safe from us! We will always be watching and plotting your downfall!~
++@19=~No, mortal, it is you who will die. We will feast on your soul this night!~
++@20=~Good. Here are the items. Pleasure doing business, good <PRO_SIRMAAM>. Now you will return to the backwater hovel you crawled out of!~
+\ No newline at end of file

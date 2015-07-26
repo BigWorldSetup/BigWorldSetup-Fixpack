@@ -1,0 +1,18 @@
+--- vecna\Language\English\AAPLSHFT.tra	Thu Mar 18 00:06:38 2010
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\AAPLSHFT.tra	Tue Sep 09 23:26:51 2014
+@@ -1,4 +1,4 @@
+-@42=~As the spell nears its zenith you must select which tuning fork to sound~
++@42=~As the spell nears its zenith, you must select which tuning fork to sound.~
+ @43=~A..........Astral Plane.~
+ @44=~F..........Mechanus(Gladsheim).~
+ @45=~F(sharp)...Arcadia.~
+@@ -18,7 +18,7 @@
+ @59=~C..........Acheron.~
+ @60=~C(sharp)...The Outlands.~
+ @61=~E(flat)....Limbo.~
+-@62=~B..........Pandemonium~
+-@63=~Return to previous options~
++@62=~B..........Pandemonium.~
++@63=~Return to previous options.~
+ @64=~You cannot Planeshift from this location.~
+ @65=~Something is blocking your attempt to Planeshift from this location.~

@@ -1,20 +1,20 @@
---- SETUP-BG2eeAR.tp2	Fri Sep 12 00:30:37 2014
-+++ D:\EE_Patchstudio\patched files\SETUP-BG2eeAR.tp2	Tue Jul 07 23:22:47 2015
-@@ -12,7 +12,7 @@
- // immediately (e.g., because they contain the translated names of the
- // modules the user will install).
+--- SETUP-BG2eeAR.tp2	Thu Sep 11 23:30:37 2014
++++ C:\BWP Patchstudio\patched files\SETUP-BG2eeAR.tp2	Sun Jul 26 20:28:16 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~BG2eeAR/backup~
+ AUTHOR ~CoM_Solaufein @ "http://www.teambg.net"~
  
--AUTO_TRA ~BG2eeAR/translations/%s/D~
-+AUTO_TRA "BG2eeAR/translations/%s/D" //%"
+-
++VERSION ~v1.02 BWP Fix~
  
- LANGUAGE ~American English~
-          ~english~
+ // Language Options
+ //
 @@ -158,14 +158,14 @@
   /*STORES */
   
   /* CMTBEES1.STO */
 -COPY ~BG2eeAR/sto/cmtb2ees1.sto~ ~Override~
-+COPY ~BG2eeAR/sto/cmtb2ees1.sto~ ~Override/cmtbees2.sto~
++COPY ~BG2eeAR/sto/cmtb2es1.sto~ ~Override~
    SAY 0xC @47
  
  
@@ -22,7 +22,7 @@
   
   /* CMTBEES1.CRE */
 -COPY ~BG2eeAR/cre/cmtb2ees1.cre~ ~Override~
-+COPY ~BG2eeAR/cre/cmtb2ees1.cre~ ~Override/cmtbees2.cre~
++COPY ~BG2eeAR/cre/cmtb2es1.cre~ ~Override~
    SAY 0x8 @48
    SAY 0xC @48
  

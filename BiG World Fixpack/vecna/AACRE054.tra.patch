@@ -1,0 +1,5 @@
+--- vecna\Language\English\AACRE054.tra	Sat Jun 05 21:05:18 2010
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\AACRE054.tra	Wed Sep 10 20:15:04 2014
+@@ -1 +1 @@
+-@1=~Halt Intruders, You are in breach of Loloth directive 01 ( possesion of life ), you will be terminated ~
++@1=~Halt, intruders! By Lolth's orders, you will be terminated.~

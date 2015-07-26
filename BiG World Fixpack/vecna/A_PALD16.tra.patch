@@ -1,0 +1,14 @@
+--- vecna\Language\English\A_PALD16.tra	Sat Mar 18 20:27:53 2006
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\A_PALD16.tra	Wed Sep 10 01:41:38 2014
+@@ -1,7 +1,7 @@
+-@0    = ~Help! I am...poisoned.~
+-@1    = ~Hmmm....Something's not right here...~
++@0    = ~Help! I am... poisoned.~
++@1    = ~Hmmm... Something's not right here.~
+ @2    = ~Knave! Come fight like a warrior...~
+-@3    = ~Come closer and fight me fair!~
++@3    = ~Come closer and fight me fairly!~
+ @4    = ~You coward! Using a ranged weapon to attack me!~
+-@5    = ~Barb-slinger! I bet you`re too weak for melee...~
++@5    = ~Barb-slinger! I bet you're too weak for melee...~
+ @6    = ~Die with your boots on!~

@@ -1,0 +1,15 @@
+--- vecna\Language\English\AA50ENGY.tra	Sat May 21 22:32:15 2011
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\AA50ENGY.tra	Wed Sep 10 04:20:34 2014
+@@ -1,5 +1,5 @@
+-@0=~This is some kind if advanced control but obviously without power~
+-@1=~Now a screen on the control lights,you could innitiate a sequence if you wished~
+-@2=~The machine behind the control springs into life, you feel every cell infused with energy~
+-@3=~The sequence has finished, it would take the original programmer to reset it~
+-@4=~You feel somehow different, maybe more resistant to something?~
+\ No newline at end of file
++@0=~This is some kind if advanced control panel. It has no power.~
++@1=~A screen on the control panel lights up. You could initiate a sequence.~
++@2=~The machine behind the control panel activates. You feel your very being has been altered.~
++@3=~The sequence has finished. It would take the original programmer to reset it.~
++@4=~You feel different, somehow. You feel more resistant to ...something.~
+\ No newline at end of file

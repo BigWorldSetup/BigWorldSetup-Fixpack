@@ -1,0 +1,38 @@
+--- vecna\Language\English\AANDROD1.tra	Thu Jul 14 22:12:14 2011
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\AANDROD1.tra	Tue Sep 09 23:32:39 2014
+@@ -1,17 +1,17 @@
+-@0=~Press Button 0~
+-@1=~Press Button 1~
+-@2=~Press Button 2~
+-@3=~Press Button 3~
+-@4=~Press Button 4~
+-@5=~Press Button 5~
+-@6=~Press Button 6~
+-@7=~Press Button 7~
+-@8=~Press Button 8~
+-@9=~Press Button 9~
+-@10=~Press The COMPLETE button~
++@0=~Press Button '0'~
++@1=~Press Button '1'~
++@2=~Press Button '2'~
++@3=~Press Button '3'~
++@4=~Press Button '4'~
++@5=~Press Button '5'~
++@6=~Press Button '6'~
++@7=~Press Button '7'~
++@8=~Press Button '8'~
++@9=~Press Button '9'~
++@10=~Press the 'COMPLETE' button~
+ @11=~Dont press any more buttons and put the device away~
+-@12=~You hold the strange device in your hand, immeadiatly it glows and numbers appear on its smooth face. You can press the buttons in sequence, which button do you press first?~
+-@13=~The device vibrates slighly, which button do you press next to input the second number?~
+-@14=~The device vibrates slighly, which button do you press next to input the third number?~
+-@15=~The device vibrates slighly, which button do you press next to input the fourth number?~
+-@16=~The device vibrates slighly, which button do you press next to input the fith number?~
+\ No newline at end of file
++@12=~As you hold the strange device in your hand, it begins to glow. A set of numbers appears on its smooth surface. You can press the buttons in sequence. Which button do you press first?~
++@13=~The device vibrates slighly. Which button do you press next to input the second number?~
++@14=~The device vibrates slighly. Which button do you press next to input the third number?~
++@15=~The device vibrates slighly. Which button do you press next to input the fourth number?~
++@16=~The device vibrates slighly. Which button do you press next to input the fifth number?~
+\ No newline at end of file

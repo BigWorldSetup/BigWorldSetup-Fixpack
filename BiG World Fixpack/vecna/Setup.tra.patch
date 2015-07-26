@@ -1,0 +1,805 @@
+--- vecna\Language\English\Setup.tra	Sun Jul 24 16:09:16 2011
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\Setup.tra	Sat Sep 20 18:55:29 2014
+@@ -1,64 +1,55 @@
+ @1=~Hand~
+-@2=~Hand Of Vecna~
+-@3=~A strange hand like nothing you have ever seen before, attached is a magical tag.~
+-@4=~Once identified the tag reads as follows
+-To understand the history and nature of the hand before Vecna you must start at the beginning with an understanding of the planes and the nature of Gods. So please read my other works before proceeding.
+-
+-I have never used the items but the effects are said to be such. ( by previous owners it has been my good fortune to know)
+-
+-To Attach the hand to an arm, ( put it in the item slot)
+-
+-First remove your own ! ( much damage !)
+-Then offer the fresh bloody stump to the hand and the magics will start the grafting process.( the hand icon under the item ability panel )
+-Once done the joining is only to be broken by the death of the host ( oh sorry did I say host I meant user )
+-
+-Effects
+-The hand can reach into 4 secret pocket planes once per day and summon creatures which have been enslaved therein.
+-The user of the hand will have their body shifted 10% into the ethereal plane, this gives a host of immunities.
+-The user can cast spells through the hand, the hand has no magical build up hence works like improved alacrity.
+-The user can at will punch a hole in the prime material with the hand and thus teleport at will.
+-The gods themselves have damned this item, NO beneficial cleric spells will ever work on the user.
+-The hand cleans the blood of the user but at the same time when some powers are used it injects corrosive materials into the users blood
+-The user will lose innate abilities that interfere with the new multidimensional form
+-The user is faster and more accurate
+-The user ages at an accelerated rate, Elf Human Dwarf or gnome all have a 10 year lifespan from the moment they graft the hand ( and so is explained Vecnas transformation to immortal lich )
++@2=~The Hand~
++@3=~A strange hand like nothing you have ever seen before. A magical tag is attached to it.~
++@4=~You suspect that only a fraction of the artifact's former power remains.
+ 
+-Ps. Will only graft to magic users , multi or dual
++The magical tag attached to the hand reads as follows: 
++"Note: To understand the history and nature of the Hand please consult my other works (such as my newest treaty "Don't eat that: It might be a wizard!") on these subjects before proceeding.
+ 
+-PPS. If ever returned to the twins will mean the death of all gods
++The following information was assembled using the witness-accounts of those with the questionable fortune of experiencing this artifact's power first-hand. I, myself, would never dare to even touch it, lest I catch something. Or something catches me? 
+ 
+-Lum~
++In order to truly make use of the Hand, it has to be grafted to one's arm. Of course, this means that one's own hand must first be removed. Always have a cleric (or at least a swill of pocket-cleric) handy. And please, do try to remove the correct hand on the first attempt! Now, gently offer the bloody, horribly mangled stump to the Hand. If the Hand is willing (it may not.  Please ask your cleric for advice on how to remove your other hand for experimental purposes), it will start grafting itself to the user's (or host's, from its perpective) arm. The process is extremely painful and takes a heavy toll on one's general health and mental disposition. This is to be expected, considering that one becomes at least partially undead (also, you just hacked your hand off!). However, this wonderful union also has its upsides. 
++Apart from the benefit(?) of being somewhat dead (consider all the implications!), the user seems to gains the following abilities: 
++
++The hand can reach into four secret pocket dimensions once per day to summon the creatures enslaved therein.
++The host will have their body partially shifted into the ethereal plane, granting a host of immunities to ordinary forces.
++The host can cast spells through the hand faster, with no magical build-up.
++The host can, at will, punch a hole into the Prime Material Plane in order to teleport.
++The host's blood will be cleansed by the hand, making poisons ineffective. This however builds up a nasty soup of corrosive goo, which is injected into the blood-stream whenever its abilities are used.
++The host will lose innate abilities that interfere with its new multidimensional, semi-undead nature.
++The hand can deal blows much faster and more accurately than a mortal appendage.
++
++Ps.: It will apparently only graft to magic users, to many a disarmed fool's dismay. 
++
++PPS.: Don't listen to the voices!
++
++Lum"~
+ @5=~Vecna~
+ @6=~Vecna has detected that RZTeleport has already performed the functions of this component, hence vecna will skip this~
+ @7=~~
+ @8=~~
+ @9=~Eye~
+-@10=~Eye Of Vecna~
+-@11=~A strange eye, attached is a magical tag.~
+-@12=~Once identified the tag reads as follows
+-To understand the history and nature of the Eye before Vecna you must start at the beginning with an understanding of the planes and the nature of Gods. So please read my other works before proceeding.
+-
+-I have never used the items but the effects are said to be such. ( by previous owners it has been my good fortune to know)
+-
+-To Attach the eye to a head, ( put it in the item slot)
+-
+-First remove your own ! ( much damage !)
+-Then offer the fresh bloody socket to the eye and the magics will start the grafting process.( the eye icon under the item ability panel )
+-Once done the joining is only to be broken by the death of the host ( oh sorry did I say host I meant user )
+-
+-Effects
+-The user can direct the "Stare of Qwill" once per day. This gaze attack is DEATH to mages since it strips all magical protections from the poor victim, and I mean ALL
+-The user is immune to all things which would alter the user?s thoughts
+-The user is immune to all things which would prevent spell casting
+-The user can see invisible continuously
+-The user can once per day use a combined ability of clairvoyance and farsight
+-The gods themselves have damned this item, NO beneficial cleric spells will ever work on the user.
+-The user ages at an accelerated rate, Elf Human Dwarf or gnome all have a 10 year lifespan from the moment they graft the hand ( and so is explained Vecnas transformation to immortal lich )
++@10=~The Eye~
++@11=~A strange eye. A magical tag is attached to it.~
++@12=~You suspect that only a fraction of the artifact's former power remains.
++
++The magical tag attached to the eye reads as follows: 
++"Note: To understand the history and nature of the Eye please consult my other works (such as my newest treaty "Long Red Square: Poetry for bumbling Youths") on these subjects before proceeding.
++
++The following information was assembled using the witness-accounts of those with the questionable fortune of experiencing this artifact's power first-hand (or first-eye, at that). I, myself, would never dare to even touch it, lest I catch something. Or something catches me? 
+ 
+-Ps. Will only graft to magic users , multi or dual
++In order to truly make use of the Eye, it has to be grafted to one's eye-socket. Of course, this means that one's own eye must first be removed. Always have a cleric (or at least a swill of pocket-cleric) handy. Now, gently offer your bloody, disgustingly cavernous eye-socket to this week's evil object of power. If the Eye is willing (in case it is not willing, and you are reading this note, remember: you still have another eye! This step is usually non-repeatable.), it will start grafting itself to the user's (or host's, from its, and soon to be your, perpective) eye-socket. The process is excrutiating and takes a noticable toll on one's phyical and mental health. Don't worry, thich is to be expected, considering that one becomes at least partially undead. However, this wonderful union also has its upsides. 
++Apart from the benefit(?) of being somewhat dead (consider all the implications!), the user seems to gains the following abilities: 
+ 
+-PPS. If ever returned to the twins will mean the death of all gods
++The eye's fierce gaze can, once per day, pierce through any and all magical protections, completely nullyfying them.
++The eye provides full immunity to all mind-affecting magic.
++The eye provodes full immunity to all effects that are detrimental to the host's spell-casting abilities.
++The eye can see invisible or hidden ojects at all times.
++The eye can once per day see the world from a distance.
+ 
++Ps.: It will seemingly only graft to magic users, to many a blind fool's dismay. 
++
++PPS.: Don't believe the lies!
+ 
+ Lum~
+ @13=~Gaze Of Rhinn~
+@@ -78,9 +69,9 @@
+ Area of Effect: Party
+ Saving Throw: None
+ 
+-Explanation/Description: When the plane shift spell is cost, the wizard moves himself or herself to another plane of existence.
+-The recipient of the spell will remain in the new plane until sent forth by some like means. 
+-If several persons link hands in a circle, up to seven can be affected by the plane shift at the same time. 
++Explanation/Description: When the Plane Shift spell is cast, the wizard moves to another plane of existence.
++The recipient of the spell will remain in the new plane until sent forth by similar means. 
++If several persons link hands in a circle, up to seven can be affected by the Plane Shift. 
+ The material component of this spell is a small, forked metal rod - the exact size and metal type dictating to which note is played and hence which plane of existence the spell will send the affected creature(s) to.
+ A..........Astral Plane
+ F..........Mechanus
+@@ -110,14 +101,8 @@
+ Area of Effect: Party
+ Saving Throw: None
+ 
+-With this very special spell the caster may transport himself and his 
+-entire party bodily to a preset location in the outer planes, the caster
+-and party must be in the Astral Plane before the spell is cast otherwise
+-it will be ineffective
+-Note
+-Since each version of this spell "points" to a different location
+-it is only ever found in scroll form ( pointless to learn )
+-and often used as a Astral "Treasure Map" by higher beings.~
++With this very special spell the caster may transport the party to a preset location in the outer planes. The party must be in the Astral Plane before the spell is cast, otherwise it will be ineffective.
++Note: Each version of this spell 'points' to a different location. As such it usually is not practical to memorize it.~
+ @25=~Aleus~
+ @26=~Krom~
+ @27=~Kergen~
+@@ -152,10 +137,9 @@
+ @56=~Diamond Golem~
+ @57=~The Standard Model of The Planes~
+ @58=~A Tome of the Outer and Inner Planes~
+-@59=~The multiverse you stand in is complex beast, most sages give the model of a wheel or onion, and a common description is as follows
++@59=~The multiverse. You stand in this complex beast. Most sages give the model of a wheel or onion. A common description is as follows:
+ 
+-"Since they are without form or dimension, it is not possible to draw a road-map of the
+-planes and their relationships to each other. However, there is a structure and organization to them which can best be visualized as a series of spheres, one inside the other.
++"Since they are without form or dimension, it is not possible to draw a road-map of the planes and their relationships to each other. However, there is a structure and organization to them which can best be visualized as a series of spheres, one inside the other.
+ 
+ The Prime Material Planes
+ At the very center of this series of spheres are the Prime Material planes. These are the planes most familiar to Greyhawk creatures. The prime material planes include the many Earth-like alternate worlds and campaigns that operate from the more or less the same basic realities. There may be variations from prime to prime, but most features remain the same. The inhabitants of each prime always refer to their plane as the Prime Material Plane.
+@@ -191,39 +175,40 @@
+ The Outlands"
+ 
+ Lum~
+-@60=~Advances Cybernetic Organisms, Their design, implementation and weapon styles~
+-@61=~A Tome of Advanced Studies into Killing Machines~
+-@62=~Most of this strange looking book written on strange looking parchment is in some indecipherable script that refuses to be understood despite the best magics you have. Throughout the tome though there are several hand written notes penned in ancient Drow which have obviously been added recently
+-After some effort you translate some of the notes
++@60=~Advanced Constructs, their Design amd Implementation~
++@61=~A Tome of Advanced Studies into Specialized Constructs~
++@62=~Most of this strange-looking book is written on an unfamiliar type of parchment. Despite your best efforts, you are unable to decipher the bulk of the text. Several hand-written notes are found throughout the tome, seemly to written in a fairly modern drow-accent. 
+ 
+-Note1.. "Good all the materials can be magiced made or found"
++Note1.. "Good. All the materials can be magically created or found."
+ 
+-Note2.. "Magic can do this"
++Note2.. "Magic can do this..."
+ 
+-Note3.. "We need HASTUR!!!!!!!"~
++Note3.. "We need Hastur!"~
+ @63=~An Alliance of Dark Powers~
+ @64=~The Secret Pact~
+-@65=~Well met child of Bhal I address you directly for it has come to my attention that a new and terrible threat has emerged to plague the many planes.
+-There has been made a secret alliance of dark gods and powers, headed by Lolth herself.
+-This is not a new thing, often various gods both light and dark have worked together for some common goal but this is different and worrying in two ways.
+-First the alliance is composed of many who had previously been at war, namely Orcus and Balrog who hate one another, to unify such long time opponents there must be such a prize for both that should make the forces of good and light very very worried.
+-Second the alliance obviously has some purpose, since I have been aware of this alliance Lolth , Balrog, Orcus and many other dark minions have been seen in all parts of the multiverse collecting rare minerals, magics and lore.
++@65=~Child of Bhaal, it has come to my attention that a terrible threat to the Planes has emerged. For this reason, I address you directly.
++
++An alliance of dark powers has been forged, spear-headed by Lolth herself.
++It is not unusual for various gods, both light and dark, to operate in unison. However, this matter is different.
++This alliance is composed of many who had previously been at war. For Orcus and Balrog, who have hated one another for ages untold, to unify under Lolth's banner betrays a dangerous confidence in their ability to triumph over the forces of light. Many of their dark minions have been spotted in all parts of the multiverse, pillaging valuable minerals, magics and lore.
+ 
+-Both these things alone would suggest we should investigate further, together they spell real trouble.
++Fortunately, our enemies' inability to keep secrets from me has revealed their motives. The enemy has recovered a set of other-worldy artifacts of arcane power, only known as the Hand and the Eye. Presumably they are the remains of a long-gone evil deity of considerable power. That such artifacts even exist is unsettling on its own. Worse, I have been able to surmise that the enemy is attempting to amass an army of constructs, powered by the foul artifact's energies, capable of challenging Mount Celestia itself. One such construct, only known as Construct One, has already been created. 
+ 
+-What works in our favor is the dark powers inability to hold a secret, already I have discovered that they seek to create a base of operations in a pocket plane made from astral debris, apparently they had hoped to obtain a astral shard to hide the location but that plan was recently foiled, anyway it would take an astral map to find the place and they most certainly would hide that well!!!!
++It is your task to destroy this creature and to return these artifacts safely. 
+ 
+-And then there is that damn prophesy, from the mad Arab, I am sure the two events are linked. So I send you this word child of Bhall, weather you are currently on the side of righteousness or not, you should investigate and play your part in this, I have played my part by bringing you this word, you must do the same and prevent the end Azir has foreseen. For if the end of the gods comes to pass, so will your doom come to pass since the blood of a god flows within you too!
++If this plot is indeed linked to the visions of the Insane Prophet then any further interference on my part might prove disastrous. It would be in your own best interest to challenge the enemy. For if the all the gods are to meet their end, then so shall you, eventually. My part in this ends where yours begins. 
++
++I will be watching,
+ 
+ Helm~
+ @66=~Messenger to the Gods~
+ @67=~Plain silver ring~
+ @68=~Ring of Astral Travel~
+ @69=~A ring is a small band of precious metal that is used as jewelry.  Some rare rings have had enchantments placed upon them that confer various magical abilities.  These rings are highly sought after, especially by those of the adventuring profession~
+-@70=~This powerful and rare ring is of the type often given by minor gods to messengers and emissaries, it gives the wearer the powers to travel to the higher planes. 
++@70=~This powerful and rare ring is of the type often given by minor gods to messengers and emissaries. It gives the wearer the powers to travel to the higher planes. 
+ 
+ STATISTICS:
+-Twice per day the wearer and party can teleport to the astral plane as per the 9th Lv Wizard spell Plane shift
++Twice per day the party can teleport to the astral plane as per the 9th level wizard spell Plane shift.
+ Not Usable by:
+ Wizardslayers~
+ @71=~Faheed~
+@@ -250,20 +235,20 @@
+ @92=~Magic Golem~
+ @93=~Part of Ward stone~
+ @94=~Part of a Ward stone~
+-@95=~When complete these magical stones are often used as keys to transportation portals, this one has obviously been broken into three pieces~
+-@96=~A piece of obviously magical stone, it looks like it?s part of a larger structure~
+-@97=~one third of the Ward stone that unlocks the way to Lolths laboratory~
++@95=~When assembled, these magical stones are often used as keys to transportation portals. This one has obviously been broken into three pieces.~
++@96=~A piece of magical stone. It looks like it is part of a larger structure.~
++@97=~One of three fragments of the wardstone that unlocks the way to Lolth's sanctum.~
+ @98=~Ward stone~
+-@99=~These magical stones are often used as keys to transportation portals~
+-@100=~A obviously magical stone~
+-@101=~This Ward stone unlocks the way to Lolths laboratory~
++@99=~These magical stones are often used as keys to transportation portals.~
++@100=~A magical stone.~
++@101=~This wardstone unlocks the way to Lolth's sanctum.~
+ @102=~Plain silver ring~
+ @103=~Ring of Recall~
+ @104=~A ring is a small band of precious metal that is used as jewelry.  Some rare rings have had enchantments placed upon them that confer various magical abilities.  These rings are highly sought after, especially by those of the adventuring profession~
+-@105=~This rare and most useful ring allows the bearer and party to teleport to a pre defined location usually the creators place of sanctuary, since the destination is fixed it is not often of value to anyone but the creator. 
++@105=~This rare and most useful ring allows the party to teleport to a pre-defined location, usually the creator's sanctuary. Since the destination is fixed, it is not often of value to anyone but its creator. 
+ 
+ STATISTICS:
+-Twice per day the wearer and party can teleport to the Twisted Rune Laboratory Complex
++Twice per day the wearer and party can teleport to the Twisted Rune Laboratory Complex.
+ Not Usable by:
+ Wizardslayers~
+ @106=~Scroll~
+@@ -276,7 +261,7 @@
+ Area of Effect: The caster
+ Saving Throw: None 
+ 
+-This spell transports the caster and entire party to any place within the visual range of the caster.  When the spell is cast, a dimensional portal opens up in front of the caster and party members , which they immediately step through.  Upon passing through the portal, the caster and party  find themselves at their chosen destination.~
++This spell transports the party to any place within the visual range of the caster. When the spell is cast, a dimensional portal opens up in front of the party, which they immediately step through. Upon passing through the portal, party finds itself at their chosen destination.~
+ @109=~Ring~
+ @110=~Ring of Holiness II~
+ @111=~A ring is a small band of precious metal that is used as jewelry.  Some rare rings have had enchantments placed upon them that confer various magical abilities.  These rings are highly sought after, especially by those of the adventuring profession.~
+@@ -340,11 +325,11 @@
+ @119=~Book~
+ @120=~Book of The Dead~
+ @121=~An unusual and very obviously magical tome~
+-@122=~This book known as the 'Necronomicon' contains masses of knowledge poured from the minds of hundreds of the lands greatest casters of the past. The book gives knowledge of cheating death and also causing it. Such information is not only written in the magical book but as soon as one reads the first word the knowledge instantly passes to the mind of the reader.
++@122=~This book known as the 'Necronomicon' contains masses of knowledge poured from the minds of hundreds of the land's greatest casters of the past. The book gives knowledge of cheating death and also causing it. Such information is not only written in the magical book but as soon as one reads the first word the knowledge instantly passes to the mind of the reader.
+ 
+ STATISTICS:
+ 
+-Special: That who reads the book will gain +1 intelligence, +1 saves vs. death and the innate ability to Animate a host of powerful undead servants once per day~
++Special: Those who reads the book will gain +1 intelligence, +1 saves vs. death and the innate ability to Animate a host of powerful undead servants once per day~
+ @123=~Summon Undead Host~
+ @124=~Long Sword~
+ @125=~Volcano Blade +6~
+@@ -352,9 +337,7 @@
+ Its blade is white-hot and radiates an immense power.~
+ @127=~Volcano Blade +6
+ 
+-The origin of this weapon is unknown, perhaps
+-it was forged by the God of Fire himself.
+-Its blade is white-hot, but the hilt of the sword is only warm, so you can easily wield this powerful weapon.
++The origin of this weapon is unknown, perhaps it was forged by the God of Fire himself. Its blade is white-hot, but the hilt of the sword is only warm, so you can easily wield this powerful weapon.
+ 
+ STATISTICS:
+ 
+@@ -383,7 +366,7 @@
+  Monk~
+ @128=~Strange Armor~
+ @129=~Experimental Exo Armor~
+-@130=~A strange armor like nothing you have seen before, for a start it stands by itself and you have to clamber in!~
++@130=~A strange armor like nothing you have seen before. It stands on its own, requiring the 'pilot' to climb in.~
+ @131=~in progress~
+ @132=~Chain Mail~
+ @133=~Drow Adamantine Chain +5~
+@@ -1386,7 +1369,7 @@
+  Monk
+  Beast Master~
+ @294=~Juggernaught Golem~
+-@295=~Advanced studies of the nature of the planes...The Ethreal Plane~
++@295=~Advanced Studies on the Nature of the Planes - The Ethereal Plane~
+ @296=~A old tome~
+ @297=~The Ethereal plane is a plane of swirling proto-matter coexisting alongside Prime Material plane touching the Prime at all points. The Ethereal is the cosmic "glue" that binds together the Prime Material and inner planes.lt also contains the stuff that new demi planes are made of. It is a roiling, chaotic plane filled with swirling fogs and shadowy shapes in various degrees of solidity Travelers and the few natives that exist in this plane appear semi*solid as well and nonliving objects can pass through each other easily.
+ The first-time visitor deep within the plane may find himself completely surrounded by colorful mists, or in areas that resemble small towns on misty, fog-bound evenings. There is gravity in the sense of an up and a down direction, but the ethereal visitor can move in all directions freely. Visitors and other objects are supported by the ethereal medium, so that unsupported objects do not fall in Ethereal plane, despite the existence of a down direction. The traveler in the Ethereal consists of the same base material and therefore has the same density as his surroundings. A traveler can move forward, backward, up, or down by parting the vaporous medium at will.
+@@ -1419,7 +1402,7 @@
+ Spells in the Border Ethereal work under the restrictions for the entire Ethereal plane as far as affecting other ethereal creatures. No spells cast on the Border Ethereal can affect the plane that it adjoins, with the exception of certain divination magics.
+ While the traveler in the Border Ethereal faces a number of problems in this region of the plane, he is free of the greatest danger of the Ethereal: the ether cyclone.
+ The traveler may choose to leave the border region of the Ethereal plane for the depths of the plane itself. This may be desirable to escape pursuit or a powerful foe, or to reach the inner planes and demi-planes. A traveler can only reach the plane that he is now bordering. A traveler desiring to venture deeper into the Ethereal merely wills it so. An individual who witnesses this processes the traveler stepping back into a roiling mist which then closes In on itself. ~
+-@298=~ Advanced studies of the nature of the planes...The Inner Planes ~
++@298=~ Advanced Studies on the Nature of the Planes - The Inner Planes ~
+ @299=~An old Tome~
+ @300=~ The inner planes, also called the elemental planes, are planes consisting primarily of one type of matter. The inner planes consist of six major planes and 12 minor planes, arranged on a sphere The Prime Material planes and Ethereal plane are located Inside that sphere. The following are the six major elemental planes:
+ 
+@@ -1448,7 +1431,7 @@
+ 
+ Each elemental plane has a solid core of its elemental type for example, pure rock in the case of elemental Earth. Each also contains islands of other elemental material that allow a wide
+ variety of creatures to survive in that plane .These elemental, para-elemental, quasi-elemental and Positive and Negative Material planes share a inborn hostility to life forms not from the inner planes, and to life from the Prime Material plane in particular. Travelers. are therefore warned to wander here only if they possess specific protection, or, lacking that protection, remain in the Border Ethereal of these planes. ~
+-@301=~ Advanced studies of the nature of the planes...The Astral Plane ~
++@301=~ Advanced Studies on the Nature of the Planes - The Astral Plane~
+ @302=~An old Tome~
+ @303=~The Astral plane consists of a inter-dimensional nothingness, a barren expanse extending in all directions. The only breaks in this bleakness are small islands of matter broken off from their native dimensions and occasional wide, spinning columns of Astral conduits and wormholes .Wormholes interconnect the outer planes with each other and with the Prime Material plane. The Astral is little more than a plane of transit, a means of moving between the inner and outer planes, It is also secondarily a home for extra-planar creatures. The plane has precious few native creatures, and the only Power that makes his home here  is Anubis of the Egyptian mythos.
+ A traveler finding himself in the Astral sees a bright, well-lit grayness that extends in all directions, as if he is within a thick silver atmosphere, The Astral material is very clear, and vision is unimpaired up to its physical limits. The plane is incredibly grey and dull save for color pools, other travelers, and conduits to other planes. Pools are readily accessable portals into the other planes of existence. Other travelers are natives of other planes who have found a way to enter the Astral. Conduits resemble water spouts on a stormy day at sea, their ends lost in vast expanses of grey at either end. Wormholes are inter dimensional vortices that link the outer planes with the Prime Material planes in much the same way as the elemental vortices link the Prime Material planes with the inner planes. In this case, however the conduit exists through a third plane, the Astral.
+@@ -1499,18 +1482,18 @@
+ 
+ Portals to one's own Prime Material plane are always silvier. Those to alternate Prime Material planes are other metallic colors, such as bronze, gunmetal, tarnished sillier, or brass. The same is true for creatures of alternate Prime Material planes: their home portals appear silver and those of others are other metallic shades.
+ The portals to the Ethereal look like milky water flowing in a spiral pattern. What the astral traveler is seeing is the end point of an ether al cyclone, where it disrupts the barrier between the Ethereal and Astral planes. Individuals passing from the Ethereal to the Astral are treated as physical-form travelers (they lose their ethereal nature). Travelling from the Astral to the Ethereal in physical form endows the travelers with etherealness. Traveling from the Astral to the Ethereal in astral form results in the creation of an ethereal body in a similar fashion to creation of a body in the outer planes. The ethereal-astral form cannot reenter the Prime Material plane in which the original body resides. In either case, the traveler from the Astral to the Ethereal finds himself in the middle of the ether cyclone, with all resultant effects and penalties (including sudden and violent expulsion back into the Astral or other plane of existence)~
+-@304=~ Advanced studies of the nature of the planes...Outer plane Landmarks The river Styx ~
++@304=~ Advanced Studies on the Nature of the Planes - Outer Plane Landmarks: The river Styx~
+ @305=~An old Tome~
+ @306=~The river Styx is a permanent conduit through the lower planes, from the battlefields of Acheron through the Nine Hells, Gehenna, Hades, Tarterus, the Abyss, and Pandemonium. It functions in much the same way as the Yggdrasil as a method of transportation through these planes Contrary to speculation the Styx does not extend into the Astral plane, though portals do stand on the banks of the river, enabling the boatmen of that fell river to reach the Astral plane.
+ The Styx is always in motion as it flows through the top layers of each of the seven lower planes. The fifth level of the Nine Hells, which contains the world-ocean Stygia, is connected to the Styx, as are a number of the deeper layers of the Abyss. The Styx does not appear to have a origin oradinal outflow, nor does it move linearly to adjacent planes. Boatmen have been able to pass from Acheron to the Abyss in a matter of hours, without passing through the planes between them. 
+ The tangled skein that is the full flow of the Styx has not been measured. Perhaps it cannot be measured, seeing as it is an infinitely long river that passes through a number of infinite planes.
+ Those who touch, drink, or are immersed in the Styx forget Their entire past life including spells and all alignments save their original one. ~
+-@307=~Advanced studies of the nature of the planes...Outer plane Landmarks... The river Oceanus ~
++@307=~Advanced Studies on the Nature of the Planes - Outer Plane Landmarks: The river Oceanus~
+ @308=~An Old Tome~
+ @309=~The River Oceanus
+ The river Oceanus links the planes of Elysium, Happy Hunting Grounds, and Olympus in much the same way that the Styx links the lower planes. Like the Styx, the Oceanus disappears and reappears a number of times in different layers of the planes, but it seems to follow a course that begins in Thalasia, the third layer of Elysium, flows through the second and first layers of that plane, then across the topmost layer of the Happy Hunting Grounds, then into the topmost layer of Olympus to its final rest in the second layer of that plane, which is called Ossa.
+ The Oceanus is a more natural river than the Styx, and no harm comes to those who drink of it. The Oceanus, however, does pose all the normal dangers of a large river, and does not have the supernatural boatmen of the lifeblood of the lower planes, the Styx.~
+-@310=~ Advanced studies of the nature of the planes...Nirvana ~
++@310=~ Advanced Studies on the Nature of the Planes - Nirvana~
+ @311=~An old Tome~
+ @312=~ Nirvana
+ Nirvana is the plane of ultimate Law, a perfectly regimented order.
+@@ -1518,22 +1501,22 @@
+ Nirvana is a single infinite plane with planar layers that extend in all directions, without true floor or ceiling. The void is filled, however, with huge interlocking wheels, like the internal cogs 0f an ornately carved clock. These wheels are great platters of matter, however, each 500 miles or more in radius. The plane is filled with an infinite number of these clockwork disks, interlocking along their edges so that the slow revolution of one disk is picked up by adjacent disks and transferred to others so the entire plane spins in unison.
+ Each circular realm has its own gravity, so disks can meet at right angles without disturbing the inhabitants of either one. This gravity extends in a sphere above and below each disk, though usually only one side of a disk is inhabited. Those beyond the bounds of any disk's gravity float as in the Astral plane, but there is a subtle tug from nearby realms, so a traveler suspended in space eventually falls within the pull of a.. The space between the disks is air so flying is possible between the realm-disks.
+ Free-standing portals to the Prime Material plane usually exist in the center of a realm's inhabited ("topmost") side. These usually lead to planes where the realm's Powers are worshiped, or at least acknowledged. There is no equivalent of the Yggdrasil or Styx in the plane of Nirvana. However, if the Greater Babylonian Power Anu must leave his realm, a temporary conduit known as "Anu's Way" (a red carpet, in effect), bridges Nirvana and the Prime Material through the Astral while Anu is gone. On these occasions, Mardukis summoned from Arcadia to mind Anu's realm. ~
+-@313=~ Advanced studies of the nature of the planes...Twin Paradises ~
++@313=~ Advanced Studies on the Nature of the Planes - Twin Paradises~
+ @314=~ An old Tome~
+ @315=~ Twin Paradises
+ The Twin Paradises are the homes of those spirits and powers that believe in the forces of good. They believe in organization only when necessary or when it is the best method of dealing with a problem. This plane is unique among the outer planes in that the barrier between the two is large, encompassing the upper regions of both layers, and very transparent, so that the surface of one layer can be viewed from the other as a ghostly mirror reflection against the sky.
+ The best analogy to the Twin Paradises is a book with no spine. The insides of the two covers are the surfaces of the two layers (facing each other). A traveler standing in one of the layers can look up and see the other layer hanging high overhead (and upside down, according to the traveler's perspective). Gravity functions normally for each layer (each looks look upside down to the other). The two layers are separated by a wide gulf of air (the separation is 20 miles from sea level to sea level). The barrier between the planar layers is in midair, halfway between the layers. A traveler can fly up to the barrier, make the necessary Wisdom Check for crossing the barrier, and then fly down into the other layer. Travelers seeking a more discreet method of traveling between the barriers can climb one of several tall mountains that reach the barrier and connect to a mountain that reaches up from the other layer. Climbing a peak and crossing the barrier without preparation for the reversed direction in gravity can be hazardous, even fatal.
+ Each layer gives off a golden-white glow that provides the illumination for this plane. These facing layers of the Paradises are named Shurrockand Dothion. Dothion is usually considered the topmost plane,(nearest the Astral). Portals to the other planes from either layer appear as caverns with patterns shining within. Those with concentric
+ circle patterns lead to the Seven Heavens, those with radiating lines lead to Elysium, and those with spiderweb patterns lead to Concordant Opposition. ~
+-@316=~Advanced studies of the nature of the planes...Elysium ~
++@316=~Advanced Studies on the Nature of the Planes - Elysium~
+ @317=~An old Tome~
+ @318=~Elysium
+ Elysium is the plane of ultimate good, unsullied by the concerns of hierarchy or anarchy. The spirits that reside here cannot be summoned or controlled, for they are at final rest. The Powers of the plane answer only those callings that they deem worthy (or profitable).
+ The four layers of Elysium are dominated by the River Oceanus, which begins in the fourth (outermost) layer of this plane and flows down to the innermost layer (the layer nearest the Astral). From there Oceanus meanders into the Happy Hunting Grounds and then into the innermost layer of Olympus. These three good planes are linked by the Oceanus in the same manner as the lower planes are linked by the river Styx. The chief difference is that the Oceanus is a slow, peaceful flow, navigable by mere mortals (though its peaceful flow is often broken by rapids, Cascades,waterialls, and occasional fallen trees). The river separates and recombines many times in its passage, So travelers often find themselves journeying down side channels that soon rejoin the main stream. There are no equivalents to Charon or charona daemons for the Oceanus, but there are also no hydrodaemons to threaten travelers. There are other creatures that live in the Oceanus, including nymphs similar to those in the Prime planes. There are the standard chances for boats to capsize and Travelers to drown in the Oceanus, though this flow lacks the dangers of the Lethe or Styx.
+ The lands of Elysium are fertile along the banks of the Oceanus, filled with pines and sweet-smelling flowering trees. Farther from the banks, the vegetation becomes smaller but no Jessrich, until rolling grasslands are reached some hundreds of miles from the river. These grasslands eventually give way to arid rock formations of startling beauty carved by wind or the hand of some artistic Power. Most of the realms are found along the banks of the Oceanus, though there are great Powers who make their homes far from the crowd.~
+-@319=~Advanced studies of the nature of the planes... Happy Hunting Grounds ~
++@319=~Advanced Studies on the Nature of the Planes - Happy Hunting Grounds ~
+ @320=~An old Tome~
+-@321=~ Happy Hunting Grounds
++@321=~Happy Hunting Grounds
+ The Happy Hunting Grounds, also known as the Beastlands, is a triple-layered plane of good tending toward chaos. It is a densely forested plane in all its layers, though its forests vary from giant cycads to pines to sequoias to oaks to beeches to birches and to more alien reaches of huge expanses of hanging moss and vast regions of giant fungi and mushrooms. 
+ The three layers of the Happy Hunting Grounds are all covered with a variety of huge plants and tangled underbrush, but maybe told from each other by their skies:
+ 
+@@ -1547,9 +1530,9 @@
+ 
+ 
+ All spells and special abilities function in the Beastlands with the standard limitations for the outer planes. In addition, those spells and abilities that permit the identification of and communication with plants and animals (though not their summoning or control) function in all layers of this plane. However, any attempt to control winds, weather, or air is prevented by the creatures t hat make the aerial region their home ~
+-@322=~Advanced studies of the nature of the planes... Olympus ~
++@322=~Advanced Studies on the Nature of the Planes - Olympus~
+ @323=~An old Tome~
+-@324=~ Olympus
++@324=~Olympus
+ The vaults of Olympus (and those of neighboring Gladsheim) are at first glance a quandary. Their position in the great wheel of the outer planes places both of them on the chaotic side of the wheel, yet both of them sport organized pantheons. Olympus is the home of the Greek and elvish pantheons, while Gladsheim is the native land of the Norse mythos. In truth ,only the top most layer of each plane is dominated by The realms of these mythoi, but their realms hold sway over such a large area that extraplanar travelers and scholars took the planes names from these mythoi. In the case of Olympus, the Greek pantheon receives the nod (and the name) due to the existence of the permanent multiplanar conduit known as Mt. Olympus
+ Of secondary importance is the fact that most of the barriers in the realms controlled by the elvish and Greek pantheons are tightly controlled by these pantheons. The barriers to the layers adjacent to the elvish lands open into the water layer of Tethys , while those in the Greek realms connect to small islands In that infinite sea.
+ For this reason, in Prime Material planes where the elvish and Greek pantheons are worshiped, this plane is known as Olympus In the planes where Mount Olympus does not exist and the gods of the ancient Greeks are therefore unknown, the plane is known as Arvandor, the High Forest, and its layers are given elvish names. The plane of Olympus is divided into three layers:
+@@ -1563,18 +1546,18 @@
+ 
+ As noted above, the barriers from the first to second layer and those from the second to third layer, tend to be rarer than those found in the other outer planes. The portals from the adjacent planes have been identified by the ruling Powers. They appear as spinning crimson disks that do not reveal their egress points for anything less than divination spells. The Powers of the plane have located the permanent portals from their domains within a few thousand leagues of their abodes in all directions. They have surrounded these portals with stone walls and iron gates, not so much to stop intruders as to slow the curious and prevent dangerous and stupid creatures from wandering in.
+ Neither of the great pantheons worry much about extraplanar viewing points zipping through their realms, but those that are  particularly bothersome (remaining too long in one spot, as if Belonging to a thief casing the joint) are dispelled and the peeping mage and company are brought into the outer plane for instruction in the dangers of such viewing. ~
+-@325=~ Otherworld Gods...... Vecna~
+-@326=~ An old Tome~
++@325=~Otherworld Gods - Vecna~
++@326=~An old Tome~
+ @327=~Many tales are told of the Archlich Vecna.
+ It is said that Vecna was one of the Planes' mightiest sorcerers, able to draw life from dust and send it back again, extinguish lives with a glance, and make the earth shudder beneath his touch. He was said to be so powerful that when the end of his life drew near, death refused to take him into its kingdom. 
+-  And so Vecna died, yet lived on.
+-  Abandoned by death, Vecna became the master of a vast kingdom on a prime world called Oerth. Neither kind nor just, Lord Vecna's rule was one of great horror and suffering, and it is said his reach was so great that even the Powers of Oerth feared to cross him, for fearing of drawing his eye.
+-  Yet, while Vecna's gaze traveled ever outward in search of new conquests, he failed to see his own end when it came for him... in the form of his lieutenant, Kas. 
+-  As was fitting for Vecna's left hand servant, the Archlich had fashioned a terrible weapon for his lieutenant as a symbol of his authority. Vecna made this weapon with such skill it is said that part of the sorcerer entered the blade, and it was this sliver of Vecna that gave the blade its life and its treacherous nature. Where once there was lifeless steel, there became thought, intent, and, perhaps most horrible of all, a voice. 
+-  The sword whispered treacheries to the ambitious Kas, night upon night, month upon month, year upon year, until one night, the remains of Kas' discipline was seduced by the rippling edge of the blade. Convinced by his blade that he was Vecna's superior, Kas confronted his dread master upon his Desiccated Throne, and the two of them fought a terrible battle. 
+-  During the battle, Kas was killed, but before he fell, his blade had dismembered his former master, scattering his remains so that no one may draw them together again. And so it has come to pass that pieces of Vecna have made their way across the Planes... one of these is the hand of Vecna. It carries with it a bloody, violent history, so much so that many scholars refuse to speak of its treacheries, for fear the hand will come to them, seeking to add another victim to its bloody chronology.
+-  The hand of Vecna was instrumental in the extermination of the House of Hyeric, once the ruling dynasty in Nyrond. It is said to have been behind the sundering of the Conclave of Tyssis-on-the-Sea, which led to the three-cycle war that poisoned the seas of Malhatai and left the oceanic world barren of life. On the ashen Plane of Ghalentir, it possessed the gentle father of Sasaran, a babe with the potential to lead his suffering people from their shadowed lands to the Gates of Paradise... had not the hand drove Sasaran's father to murder his son as he lay sleeping in his crib. All these kingdoms, all these futures, the hand of Vecna laid waste.~
+-@328=~The Hand and Eye of Vecna, myth Artifact or more?~
++And so Vecna died, yet lived on.
++Abandoned by death, Vecna became the master of a vast kingdom on a prime world called Oerth. Neither kind nor just, Lord Vecna's rule was one of great horror and suffering, and it is said his reach was so great that even the Powers of Oerth feared to cross him, for fearing of drawing his eye.
++Yet, while Vecna's gaze traveled ever outward in search of new conquests, he failed to see his own end when it came for him... in the form of his lieutenant, Kas. 
++As was fitting for Vecna's left hand servant, the Archlich had fashioned a terrible weapon for his lieutenant as a symbol of his authority. Vecna made this weapon with such skill it is said that part of the sorcerer entered the blade, and it was this sliver of Vecna that gave the blade its life and its treacherous nature. Where once there was lifeless steel, there became thought, intent, and, perhaps most horrible of all, a voice. 
++The sword whispered treacheries to the ambitious Kas, night upon night, month upon month, year upon year, until one night, the remains of Kas' discipline was seduced by the rippling edge of the blade. Convinced by his blade that he was Vecna's superior, Kas confronted his dread master upon his Desiccated Throne, and the two of them fought a terrible battle. 
++During the battle, Kas was killed, but before he fell, his blade had dismembered his former master, scattering his remains so that no one may draw them together again. And so it has come to pass that pieces of Vecna have made their way across the Planes... one of these is the hand of Vecna. It carries with it a bloody, violent history, so much so that many scholars refuse to speak of its treacheries, for fear the hand will come to them, seeking to add another victim to its bloody chronology.
++The hand of Vecna was instrumental in the extermination of the House of Hyeric, once the ruling dynasty in Nyrond. It is said to have been behind the sundering of the Conclave of Tyssis-on-the-Sea, which led to the three-cycle war that poisoned the seas of Malhatai and left the oceanic world barren of life. On the ashen Plane of Ghalentir, it possessed the gentle father of Sasaran, a babe with the potential to lead his suffering people from their shadowed lands to the Gates of Paradise... had not the hand drove Sasaran's father to murder his son as he lay sleeping in his crib. All these kingdoms, all these futures, the hand of Vecna laid waste.~
++@328=~The Hand and Eye of Vecna - Myth, Artifact or more?~
+ @329=~An old Tome~
+ @330=~Most sages know and tell the tale of Vecna the greatest of the arch liches,But some greater scholars ( Elminster for one ! ) have asked questions of the tale, questions such as "why did Vecna become a lich", "how did this ,admittedly powerful, undead mage gain the ability to dominate a huge kingdom and inspire enough fear in the greater and lesser gods to keep it! " and " Given that many of the pieces of Vecna before his ascension are artifacts ( including the First Digit (right thumb), Second Digit (right index finger), Third Digit (right middle finger), Last Digit (right pinky finger), Incisors (a pair of inappropriately named fang-like canines), Molar, Scalp, Skin, Heart, Foot (left), and Right Eye ) Why does Vecna the lesser God always appear without a Eye and Hand.
+ 
+@@ -1612,73 +1595,13 @@
+ 
+ Cuthbert
+ ~
+-@337=~The Hand and Eye of Vecna, the true story..... A secret work by Lum~
++@337=~An Incomprehensible Mess - A secret work by Lum~
+ @338=~An old Tome~
+-@339=~The ethereal plane is not a uniform membrane, the barrier has countless folds tunnels, knots and holes so passage through the ethereal plane can be random at best ( indeed that is why the teleport spell can lead one to appear in a rock or a week in the past! ) this also leads to areas within the prime material where the fundamental forces can vary in strength and it is in one of these places, where magic is so faint as to be undetectable, that our tale begins.
+-
+-
+-There once was a small world at the edge of a magic less galaxy that was home to many humans, they lived without mages clerics or supernatural beings, and even the gods of the outer planes could not send their avatars through the natural barrier of folded ethereal membrane ( with a few extremely rare exceptions ).
+-
+-Naturally these humans, as all humans seem to be, were a warlike race, and without magic or gods they waged war with weapons and machines, time passed, their numbers grew and so did their intelligence, yet the wars still raged, now fought with machines that could inflict damage on a scale unimaginable by even the greatest arch mage, still their intelligence grew, still the wars raged, still the machines got more powerful. One would think this cycle would stop but on this one world ( maybe unique in the multiverse ) it did not.
+-
+-Finally 2 great nations formed and without pause went to war, huge machines fought each other to destruction all over the globe and in nearby space. the  two sides were equally matched in intelligence skill and ruthlessness so the war raged for 500 years then there was born a man ( on the NearAsia side ) who?s intelligence and evil could not be measured and who?s name is now  cursed by gods themselves. Dr Hastur
+-
+-He used his godlike intelligence to create a great thinking machine into which he poured his very soul, his very life-force, leaving his body a lifeless husk, this machine serviced by countless minor machines and humans was given the task of once and for all defeating the NearAEura forces, and so the great machine went  to work. Unfortunately no one thought to check the work and no one wandered weather Dr Hasturs evil could be within the machine along with his life-force, the war was raging after all! Until exactly 1 year later from a fully automated underground bunker the brothers emerged.
+-
+-Two human like machines, golems with powers to destroy mountains and indeed they did end the war. The first day they destroyed all the war machines of both sides, the second day they killed all the human warriors of both sides! In fact any creature which could put up the slightest challenge. Then having nothing left to kill they simply went to sleep watched over by the great machine ( now serviced exclusively by other machines ).
+-
+-The flood of souls from this cataclysm did not go unnoticed in the outer planes, indeed Zeus himself ordered a expedition of greater Olympian deities to find out what was going on, since no avatar could penetrate the ethereal distortions it was decided to ask one of the uber powerful elder beings to help, and curious herself Phoenix agreed, so finally, after some good humored debate as to which god would go, Phoenix flew to the Sol system carrying an avatar of Hermes in her talons, punching a hole in the ethereal membrane ( as only an elder being can do ) and bringing magic to sol for the first time.
+-
+-So it was exactly one year after the twins were "born" that Hermes stood on Sol and marveled at the carnage.
+-The presence of such a powerful somehow being awoke 11 and 12 ( the "names" the great machine had assigned the 2 brothers ) who thinking they were facing a powerful human warrior who had somehow avoided their gaze, did battle with relish.
+-
+-They had a moment of surprise before Hermes turned them into 2 piles of molten scrap.
+-Although the twins had power to destroy mountains and physical strength greater than Hercules himself, they had never seen magic before, they were venerable to the simplest cantrip let alone spells cast by an higher god they could not even teleport!
+-
+-Thinking the problem solved and the souls of the brave human warriors avenged Hermes left to the important task of converting as much of this virgin galaxy to the Olympian pantheon as possible before the other gods of the outer planes found the hole left by Phoenix and came to fight for worshipers.
+-
+-But Hermes was not Helm! Hermes, Quicksilver, on feet of wings always a little too quick even with his gods eyes did not see the great machine observing the battle with the twins, did not see tiny machines recovering the memory components of 11 and 12, did not notice the great machine once again working.
+-
+-100 years roll by and memory of the great machine and the cataclysm of Sol passed into history, sol was now a peaceful place having turned its back on the technology that was blamed for the cataclysm, clerics and the worship of Zeus flourished, all seemed well. Yet in a remote valley beneath a river the great machine had been working hard, and from the same bunker emerged Rhin and Qwill.
+-
+-Stronger faster and more sophisticated than their predecessors, they appeared almost human ( apart from the rather obvious 3 eyes and six fingered hands ), but more than that they were clothed in regenerating flesh essential to contain the magical forces the great machine had analyzed and copied during its observation of Hermes. And what power it was ! They started life as arch mages with no limit on further progression, they could learn and gain experience, more than that they had the ability to effortlessly travel through the ethereal at least as well as Hermes!
+-
+-As everything else had been upgraded so had the brothers wisdom, they could laugh joke and philosophies, yet their basic nature remained the same, they wanted only to fight and kill worthy opponents and in the process become better killers.
+-So pausing only to enjoy their first sunrise they slipped through the now permanent membrane hole into the multiverse proper.
+-
+-The next few weeks saw the mysterious disappearance of many great heroes, demigods and powerful beings throughout widely dispersed locations within the prime material, as the two carved a bloody path gaining magic ability and experience at a exponential rate, the gods made oblivious by powerful anti divination magic?s weaved into the brothers did not see their peril till Rin and Qwill stood before the gates of Olympus politely asking to see Hermes.
+-
+-Naturally Zeus is not to be underestimated, he was warned of the twins arrival centuries back by the fates and warned of the danger, but he was a elder god after all and arrogant in his power especially in his home plane. Thus the twins were greeted by most of the Olympian pantheon reigned against them. The battle raged for 12 hours, Zeus commanded the very substance of Olympus to fight against the intruders, yet Qwill held equilibrium by forming a direct gate to the negative material, and in the equilibrium Rhin dealt with the Olympians. The titans died first, only a few remained to retreat after the first salvo of energy and magic bolts that came from Rhin the rest of the battle was no less bloody, by sun fall Zeus had retreated badly wounded and the rest of the gods were fighting a retreat in the face of both the twins now active ( Qwill no longer had to hold equilibrium since Zeus was out of the picture ). It seemed all was lost for the Olympian gods, then at the last moment Zeus in his desperation allowed access to Olympus, and accepted help from anyone who would give it, And help came.
+-
+-Suddenly the twins faced not only the Olympians but Odin and the Norse pantheon (avatars) and Ra and the Egyptian pantheon (avatars) the combined magical and physical force of these gods smashed into the pair and for a second it seemed that their time was up. But Rhin just smiled for the twins knew they had been given power by the great machine that they had dare not use, until now, power copied from a brief glimpse of phoenix before she had left the sol system, power of an elder being, such was the nature of this power that it had a good chance of destroying the twins if their bodies could not contain it. The twins gambled, and the gamble paid off. Most of the avatars were destroyed in seconds, such was the savagery that Odin lost his real eye as a force wave blew his avatar apart and rippled back down the silver cord to his real body.
++@339=~In this dated tome, the author, Lum, true to his usual form, carefully, meticulously even, outlines a truly astounding and somewhat mesmerizing treatise on the history of the planes. A treatise that you could, despite your best efforts to the contrary, only summarize as pure, unadulterated gibberish. 
+ 
+-Now bright as the sun with pure force the two turned their attention to what remained of the Olympians but before they could unleash the bolt that would turn Olympus into powder chance smiled on the gods. For two others came to see what the commotion was all about, not gods , not heroes, but 2 Elder beings.
++Clearly, Lum has a momentous piece of wisdom to impart to the reader, a secret so terrible, so profoundly important that catching even a glimpse of it could drive you insane. You wonder if this is what happened to Lum. He finally managed to unlock the true nature of the planes, only to go bonkers in the process. At least, that is the only conclusion you can draw from puzzling through his meandering musings on distant planets, unknown realities and huge mechanical men engaged in mortal combat. 
+ 
+-Balor one eye was the first daemon, indeed all daemon kind were created ( by various dark gods )as a homage to this being.
+-Jack the Bodiless was half human half something else and was the greatest of his race of Psionic operant masters.
+-
+-The two were good friends after having a bit of a rumble a few centuries back, and were having tea in a very nice spot of the astral plane when they sensed an almighty disturbance in the astral membrane, so naturally they went to have a look.
+-
+-They were taken aback and a little angry when on arrival the twins took them for enemies and attacked, then when Rhin actually drew blood ( Balors ) and Qwill managed to give jack a headache, then they revealed their true forms and power.
+-
+-Such was the force unleashed in that next second that some sages to the gods have theorized that the multiverse was set of balance at that moment, and all the climactic ages from that moment to now have been a consequence of that one exchange of fire.
+-
+-Rhin and Qwill battled bravely and fiercely pushing their body integrity to the limit. Yet they were forced back, forced from Olympus, forced from the astral and finally fought back to the prime. There the battle paused, becoming very tired and having made their point Balor and Jack left the twins buried under a mountain of rubble, and as a parting shot destroyed the great machine ( with a telekinetic bolt from jack which re/arranged that continent ! )
+-Over the next day all sides took a breather and licked their wounds, the gods especially Olympus had lost many, the twins had lost the great machine which meant no resurrection, and Jack and Balor had left going back to whatever business Elder beings have.
+-
+-This still left the gods in a dilemma, when the twins came back , which surely they would, there would be no elder beings there to save them. But the situation had changed, the great machine was gone which meant the soul of Dr Hastur was now in Hades and no longer tied to the machine, this Zeus knew and after a did of bargaining gained access to.
+-
+-And so Zeus learned the weaknesses of his enemies, and a fatal weakness it was, the two were created in parts and activated by the assembly of the last part, In the case of Rhin the left hand and with Qwill the central eye. Thus if these pieces were to be removed the machines would become inactive. It was Loki greatest of all thieves who took on the task, armed with Dr Hasturs removal instructions, skill, whit and concealment only the greatest of thieves could achieve, the deed was done.
+-
+-Yet Dr Hastur even after his death managed to shield his creations, by withholding from Zeus one final secret, once deactivated the twins would be automatically teleported back to their birth bunker a location that even the doctor did not know, the whereabouts were destroyed along with the great machine.
+-
+-Thus Loki was left alone holding just an eye and hand, 
+-
+-Over the next few millennia much effort was spent trying to find that bunker, but no trace was ever found, as for the eye and hand it was found that these 2 artifacts contained much power, even though they were the weakest parts of Rhin and Qwill, they were still parts of god killers. it was also found with the proper enchantments the items could be grafted onto mortals and godlings alike and that power used to a fashion, but with some nasty side effects.
+-
+-So time moved on, the hand and eye being the centre of many intrigues and fights between the ever warring gods, passing from one god to another, eventually being rejected by all gods because of the trouble ( power imbalances ) owning them caused, eventually passing into the realm of heroes and mortals.
+-
+-Obviously the true tale of these items was lost as the generations passed, of mortals and gods alike since the multiverse was now prone to strange cycles where even gods could die, and as each new owner claimed it for themselves.~
++You decide that even trying to rip a single coherent thought from this canvas of interwoven genius and madness would only lead to your down-fall and resign your-self to your ordinary existence as a plane-shifting demi-god.~
+ @340=~Hequisto~
+ @341=~Azemanties~
+ @342=~Saphire Golem~
+@@ -1875,8 +1798,8 @@
+ Area of Effect: 1 target
+ 
+ This spell is an extremely dangerous spell that can however grant immense benefits to the caster. Upon uttering the phrases the mage sustains 1D10 hit points of damage but this is due to the fact that he has split the very molecules that form his present, upon them splitting he will appear little more than a blur and thoughtless attacks will pass straight through his blurry presence. However the spell is very dangerous, after the duration of 6 rounds the molecular structure of the mage will attempt to reform, this 75% of the time is successful but it can fail and if this happens the mage will simply drop dead in the form of what is left of his body. Also though, the spell will make the recipient of the spell very open to magical attacks and will have a -40% magic resistance and receives more damage from magic despite his immunity to almost any physical attack.~
+-@371=~Android 0~
+-@372=~Android 1~
++@371=~Construct Zero~
++@372=~Construct One~
+ @373=~Skull-headed Club~
+ @374=~Wand of Orcus~
+ @375=~This club fills the beholder with a sense of foreboding. The shaft is forged of some unknown metal. The skull that heads this codgel, although humanoid, seems different, as if "alien" in origin. You can't shake the feeling that you'd rather be elsewhere (for instance, anywhere that the club WASN'T!!)...
+@@ -1965,17 +1888,17 @@
+ @396=~Prince of Doom~
+ @397=~Azuth's Rune of Utter Negativity~
+ @398=~Azuth's Rune of Utter Negativity
+-  (Metamagic)
+-  Level: 9
+-  Range: Visual sight of caster 
+-  Duration: 5 rounds
+-  Casting Time: 15
+-  Area of Effect: Target creature
+-  Saving Throw: None
+-  
+-  Azuth, the lord of spells was once a powerful mortal Archmage until he ascended unto godhood. Shortly before he became a god, it is believed he forged this spell. It is perhaps his crowning achievement, even more so than immortality. However, soon after his ascension, this spell was destroyed, or apparently destroyed, by Mystra, for its power was to be feared, even by the Gods. This spell takes a mage a great deal of time of cast. However, when it is finally unleashed, nothing can withstand it. For a single instant it surrounds the target with total nothingness. This nothingness drains magic from the target, severely weakening them. It is perhaps the only way a mage can battle a God, for only a spell such as this can make a God vulnerable to a mage's magic.
+-  Effects:
+-  This spell wipes away magical resistances. When cast, the targets resistance to fire/ice/cold/magical damage will be set to -25%. Magic resistance will be set to 0. All physical and magical protections surrounding the caster will also be removed.~
++(Metamagic)
++Level: 9
++Range: Visual sight of caster 
++Duration: 5 rounds
++Casting Time: 15
++Area of Effect: Target creature
++Saving Throw: None
++
++Azuth, the lord of spells was once a powerful mortal Archmage until he ascended unto godhood. Shortly before he became a god, it is believed he forged this spell. It is perhaps his crowning achievement, even more so than immortality. However, soon after his ascension, this spell was destroyed, or apparently destroyed, by Mystra, for its power was to be feared, even by the Gods. This spell takes a mage a great deal of time of cast. However, when it is finally unleashed, nothing can withstand it. For a single instant it surrounds the target with total nothingness. This nothingness drains magic from the target, severely weakening them. It is perhaps the only way a mage can battle a God, for only a spell such as this can make a God vulnerable to a mage's magic.
++Effects:
++This spell wipes away magical resistances. When cast, the targets resistance to fire/ice/cold/magical damage will be set to -25%. Magic resistance will be set to 0. All physical and magical protections surrounding the caster will also be removed.~
+ @399=~Hero~
+ @400=~Hero (Conjuration, Summoning)
+ Level: 8
+@@ -1985,7 +1908,7 @@
+ Area of Effect: Special
+ Saving Throw: None
+ 
+-Seven centuries ago a Circle of powerful mages trapped the spirit of the most feared figter of Faêrun into this scroll. The figter is Cal'Zakath, a Shadow Samurai. He is dead but by the means of this spell he can be summoned to fight by the side of the caster for a short period of time. The original spell could not be memorized and thus could only be used once. (after that Cal'Zakath wolud be released to death) But Vecna has modified this spell to be memorisable thus consigning Cal'Zakath to everlasting torment, doing evil and gainig a usefull spell from the deal? it dont get bettet than that :).~
++Seven centuries ago a Circle of powerful mages trapped the spirit of the most feared figter of Faêrun into this scroll. The figter is Cal'Zakath, a Shadow Samurai. He is dead but by the means of this spell he can be summoned to fight by the side of the caster for a short period of time. The original spell could not be memorized and thus could only be used once (after that Cal'Zakath wolud be released to death). But Vecna has modified this spell to be memorisable thus consigning Cal'Zakath to everlasting torment.~
+ @401=~Golden Cloud~
+ @402=~Golden Cloud (Invocation)
+ Level: 7
+@@ -2012,43 +1935,39 @@
+ @416=~Drider Male~
+ @417=~Key~
+ @418=~Twisted Rune Master Key~
+-@419=~Key to some doors or containers in Loloths Lab Complex~
+-@420=~Key to some doors or containers in Loloths Lab Complex~
++@419=~Key to some doors or containers in Lolths Lab Complex~
++@420=~Key to some doors or containers in Lolths Lab Complex~
+ @421=~Part of a key~
+ @422=~Part of a key~
+ @423=~Your ANSI code page is set to a value of %t-acp%. Files in the content folder
+ will be updated to match your code page.~
+ @424=~Vecna has detected no infinityanimations setup
+ now will check if included graphic files are sufficient~
+-@425=~Vecna has detected an installed mod that requires a 
+-full infinityanimations setup.~
+-@426=~NOTE: Either download and install IA step by step 
+-from spellhold studios or download Vecna Depends which
+-although is a much bigger archive, is ready to go.~
++@425=~Vecna has detected an installed mod that requires a full infinityanimations setup.~
++@426=~NOTE: Either download and install IA step by step from spellhold studios or download Vecna Depends which although is a much bigger archive, is ready to go.~
+ @427=~Full IA needed.~
+ @428=~BGMain.exe appears to be patched already; skipping .exe modifications ...~
+ @429=~Patching BGMain.exe to enable new animations ...~
+ @430=~Replacing _LOW creature animations (this may take a while) ...~
+ @431=~Patching IDS files ...~
+-@432=~Now Vecna is happy to install
+-Copying over resources~
++@432=~Now Vecna is happy to install. Copying over resources~
+ @433=~Drow Mage~
+ @434=~Drow Cleric~
+ @435=~Shade of Hastur~
+ @436=~Vecnas Evisiration~
+ @437=~Vecnas Evisiration
+-  (Metamagic)
+-  Level: 10
+-  Range: 60
+-  Duration: 5 rounds
+-  Casting Time: 5
+-  Area of Effect: Target creature
+-  Saving Throw: None
+-  
+-  Vecna one of the most talented and evil mages ever to inhabit the multiverse created this spell and even after his ascension to godhood it remained his favorite spell, it would amuse him to see the fear in enemies eyes as they died a slow very painful death being mercilessly cut apart by very sharp phantom blades. And often ,it is said, he would laugh with gusto when weak enemies would fall quickly and then their bodies be literally cut into small chunks.
+-  Effects:
+-  This spell creates a maelstrom of semi ethereal blades that attack the unfortunate victim of the spell, the blades will pass straight through any armor rematerializing just in time to slash and hack then slipping back into the near ethereal membrane. There is no protection from these blades as they pass straight through common spells such as Stoneskin, Protection from magical weapons etc... and are unaffected by magic resistance. But natural or magical effects which reduce slashing damage do apply since they toughen the entire body rather than act as a shield which the blades may pass through.
+-  The victim will suffer 10hp slashing damage twice per round for 5 rounds from the attacks of the blades, the attack will continue even after the victims death, the blades still doing their grizzly work  ~
++(Metamagic)
++Level: 10
++Range: 60
++Duration: 5 rounds
++Casting Time: 5
++Area of Effect: Target creature
++Saving Throw: None
++
++Vecna, one of the most talented and evil mages ever to inhabit the multiverse, created this spell and even after his ascension to godhood it remained his favorite spell. It would amuse him to see the fear in his enemies' eyes as they died a slow very painful death, being mercilessly cut apart by very sharp phantom blades. And often, it is said, he would laugh with gusto when weak enemies would fall quickly, their bodies literally cut into small chunks.
++Effects:
++This spell creates a maelstrom of semi ethereal blades that attack the unfortunate victim of the spell. The blades will pass straight through any armor, re-materializing just in time to hack and slash, then slipping back into the near ethereal membrane. There is no protection from these blades as they pass straight through common spells, such as Stoneskin, Protection from magical weapons etc... and are unaffected by magic resistance. But natural or magical effects, which reduce slashing damage do apply, since they toughen the entire body rather than act as a shield which the blades may pass through.
++The victim will suffer 10hp slashing damage twice per round for 5 rounds from the attacks of the blades, the attack will continue even after the victim's death, the blades still doing their grizzly work.~
+ @438=~Dead Body~
+ @439=~Target~
+ @440=~aar038text~
+@@ -2072,31 +1991,31 @@
+ @458=~aar028text~
+ @459=~Vecnas Star Portal~
+ @460=~Vecnas Star Portal
+-  (Metamagic)
+-  Level: 10
+-  Range: 60 
+-  Duration: instant
+-  Casting Time: 5
+-  Area of Effect: 250 radius
+-  Saving Throw: Half
+-  
+-  Vecna created this spell to combat powerful crteatures he faced on his many journys to alternate Prime Material Planes. By any definition it is a materpiece of magical script, and a masterwork on lateral thinking. This spell, like the 9th lv spell Gate, creates a gate between one place and another. One end of the gate is located within casting range of the spell, again as the Gate spell, the other end though instead of being created on one of the infernal planes ( and allowing infernal creatures to enter the prime ) is created on the corona of a meadium sized sun. The effect of this is dramatic, for a few seconds, before the massive energy transfer closes the gate, the full force of the stars heat,light,radiation,pressure and gravity blasts throgh the failing gate onto the targert location. Any beings caught within 40ft of the targert location will face the stars energy directly, with no save, all others within 250ft of the bast radius will get a saving throw for half dammage ( this includes the caster ).
+-  Effects:
+-  All within 40ft of the target location will take 20d10 crushing dammage, 15d10 fire dammage, will be poisoned for 6hp per round (untill cured) and be blinded for 1 turn.
+-  All others including the caster can save for half dammage, and are blinded for 2 rounds   ~
++(Metamagic)
++Level: 10
++Range: 60 
++Duration: instant
++Casting Time: 5
++Area of Effect: 250 radius
++Saving Throw: Half
++
++Vecna created this spell to combat powerful creatures he faced on his many journeys to alternate Prime Material Planes. By any definition it is a materpiece of magical script, and a masterwork on lateral thinking. This spell, like the 9th level spell Gate, creates a gate between one place and another. One end of the gate is located within casting range of the spell, again as the Gate spell, the other end though instead of being created on one of the infernal planes ( and allowing infernal creatures to enter the prime ) is created on the corona of a meadium sized sun. The effect of this is dramatic, for a few seconds, before the massive energy transfer closes the gate, the full force of the star's heat, light, radiation, pressure and gravity blasts through the failing gate onto the target location. Any beings caught within 40ft of the targert location will face the star's energy directly, with no save, all others within 250ft of the blast radius will get a saving throw for half damage ( this includes the caster ).
++Effects:
++All within 40ft of the target location will take 20d10 crushing dammage, 15d10 fire dammage, will be poisoned for 6hp per round (until cured) and be blinded for 1 turn.
++All others including the caster can save for half dammage, and are blinded for 2 rounds~
+ @461=~Vecnas Personal Fire Ball~
+ @462=~Vecnas Personal Fire Ball
+-  (Metamagic)
+-  Level: 10
+-  Range: 40 
+-  Duration: instant
+-  Casting Time: 5
+-  Area of Effect: 250 radius
+-  Saving Throw: Half
+-  
+-  Effects:
+-  The tatrget of the spell will take 20d10 crushing dammage, 15d10 fire dammage, will be poisoned for 6hp per round (untill cured) and be blinded for 1 turn.
+-  All others including the caster can save for half dammage, and are blinded for 2 rounds ~
++(Metamagic)
++Level: 10
++Range: 40 
++Duration: instant
++Casting Time: 5
++Area of Effect: 250 radius
++Saving Throw: Half
++
++Effects:
++The tatrget of the spell will take 20d10 crushing dammage, 15d10 fire dammage, will be poisoned for 6hp per round (untill cured) and be blinded for 1 turn.
++All others including the caster can save for half dammage, and are blinded for 2 rounds ~
+ @463=~Undead Orb~
+ @464=~Hive Father~
+ @465=~Hell Orb~
+@@ -2229,14 +2148,14 @@
+ @592=~aar031text~
+ @593=~aar031text~
+ @594=~Assembled Key~
+-@595=~This now whole key fits a door somewhere in the twisted rune complex~
++@595=~The fully assembled key fits a door somewhere in the Twisted Rune complex.~
+ @596=~Door Key~
+ @597=~Raised Cleric~
+ @598=~Raised Assassin~
+ @599=~Raised Mage~
+ @600=~Raised Fighter~
+ @601=~Rod of immense power~
+-@602=~This appears to be a 2ft metal rod with a diamiter about that of an adult thumb, the rod has a slight taper much like a wand, on the thich end is a thumb sized indentation, it is obvious to anyone that to use this object you point and activate the button, the rod humms with trapped magical energy of obvious power~
++@602=~This appears to be a 2ft metal rod with a diameter about that of an adult thumb. The rod has a slight taper, much like a wand. On the thick end is a thumb-sized indentation. It is clear that in order to use this object, you point and activate the button. The rod humms with trapped magical energy of obvious power.~
+ @603=~Summon Pheonix~
+ @604=~Test~
+ @605=~Throwing Axe~
+@@ -2285,7 +2204,7 @@
+ @615=~Since the age of Netheril, mages have learned to bestow a wide variety of magical properties upon the everyday objects that surround them. A favorite item of such enchantment is the common robe. It is lightweight, affordable, and holds its enchantment well, thereby making it ideal equipment for a mage. Due to their magical heritage, however, only single-, dual-, and multi-class mages may wear these enchanted robes.~
+ @616=~Arch-Mage Battle Robe
+ 
+-Wizards across the land simply haven't the proper protection to get into any deadly battles. At least, that was true before the creation of the Arch-Mage Battle Robe. Soaked in the blood of many monsters, this robe has never seen the light of the surface. Created by an unknown arch-mage, it is obvious that it was trapped in a strange plane for longer than you could possibly imagine. When worn, it does what little thought possible... give the Robe of Vecna some much-needed competition. Good protection is hard to come by for wizards.
++Wizards across the land simply haven't the proper protection to get into any deadly battles. At least, that was true before the creation of the Arch-Mage Battle Robe. Soaked in the blood of many monsters, this robe has never seen the light of the surface. Created by an unknown arch-mage, it is obvious that it was trapped in a strange plane for longer than you could possibly imagine. When worn, it does what few thought possible: It gives the Robe of Vecna some much-needed competition. Good protection is hard to come by for wizards.
+ 
+ STATISTICS:
+ 
+@@ -2731,8 +2650,8 @@
+ Fighters
+ Paladins
+ Rangers~
+-@689=~Vecnas Pheonix Summons~
+-@690=~Vecnas Pheonix Summons~
++@689=~Vecnas Phoenix Summons~
++@690=~Vecnas Phoenix Summons~
+ @691=~Vecnas explosive implosion~
+ @692=~Vecnas explosive implosion~
+ @693=~Vecnas elemental fury~
+@@ -2740,18 +2659,18 @@
+ @695=~A strange key~
+ @696=~A strange key made of some light yet incredibly strong metal~
+ @697=~Before History was written, By Abdul Azir The Mad~
+-@698=~In less time than it takes a parched dwarf to drink a pint of mead, most of the planes, all the universes, all the worlds, everything in this big old multiverse came into being.
+-Why and How?, well some have theories some have guesses, but none really know, yet.
++@698=~(TODO) In less time than it takes a parched dwarf to drink a pint of mead, most of the planes, all the universes, all the worlds, everything in this big old multiverse came into being.
++Why and How? Some have theories, some have guesses, but none really know yet.
+ Even as the planes were settling and the first suns sparked into life, things from outside were looking in with much interest, waiting, hungry.
+-Time became then passed for the infant mulitverse, eventually life emerged and spread and became more complex growing everywhere resplendent in mirriad forms till eventually primitive intelligence sprung almost inevitably into being.
++Time happened, then passed, for the infant multiverse. Eventually, life emerged and spread and became more complex , growing everywhere, resplendent in mirriad forms until, eventually, primitive intelligence sprung almost inevitably into being.
+ 
+ Then the things from outside waited no more and came to feed.
+ 
+ Then life was no more.
+ 
+ Again time passed, again life grew, again they fed, again life was no more.
+-So this cycle went , for time impossible to count or comprehend, the butchering of a multiverse.
+-And it would be that way now were it not for an accident. By chance in one of the countless cycles, life sprang forth in a place somehow overlooked by the things from outside, why is again a mystery, but i conjecture that their remoteness, lack of magic and other factors ( some tales say they never ventured far from their planets or universes during their early times) had a part to play.
++So this cycle continued, for time impossible to count or comprehend, the butchering of a multiverse.
++And it would be that way now were it not for an accident. By chance in one of the countless cycles, life sprang forth in a place somehow overlooked by the things from outside. I conjecture that their remoteness, lack of magic and other factors (some tales say they never ventured far from their planets or universes during their early times) had a part to play.
+ Anyway, life there survived through cycles and grew into mighty civilisations, now know as the first races or the "elder gods" to more religious types.
+ 
+ The Ballor grew in a pocket of what now is called Hades.
+@@ -2781,7 +2700,7 @@
+ 
+ About 60,000 years after the end of the great battle recorded history starts as the the life growing throughout the multiverse is allowed to develop ( as opposed to becoming bovine food ). The "new" races are born and flourish, and soon after, like suns, the Gods spark into being.
+ 
+-{ to be written..... Gods history to present day }
++{ to be written... Gods history to present day }
+ 
+ 
+ And so the end of the tale, all is good i hear you say, monsters vanquished, hero returns for a kiss as the sun sets. No.
+@@ -2880,7 +2799,7 @@
+  Druid
+  Mage 
+  Thief~
+-@812=~Vecna says DIE!!!~
++@812=~Vecna says: Die!~
+ @813=~Cal'Zakath~
+ @814=~Soul Rot~
+ @815=~Soul Rot (Necromancy)
+@@ -2890,7 +2809,7 @@
+ Casting Time: 6
+ Area of Effect: 1 target
+ 
+-It is said that the soul is the very centre of every living thing, without it the body will cease to exist and this spell is the mage's attempt to rid a creature of its soul. He will utter a passage that will effect the targets soul if they fail to make a save. The following chart displays the Saving Throws required and the consequences of a failed Save.
++It is said that the soul is the very centre of every living thing. Without it the body will cease to exist. This spell is the mage's attempt to rid a creature of its soul. She will utter a passage that will effect the target's soul if they fail to make a save. The following chart displays the Saving Throws required and the consequences of a failed Save.
+ 
+ 1: Save vs Death at -3 or loss of 1 level of experience
+ 2: Save vs Death at -2 or loss of 2 levels of experience
+@@ -2989,11 +2908,11 @@
+ @850=~Made~
+ @851=~Mass Scan~
+ @852=~Strange looking metalic device~
+-@853=~Device to summon Android 0~
+-@854=~This strange thing was given to you by Android 0~
++@853=~Device to summon Construct Zero~
++@854=~This strange device was given to you by Construct Zero~
+ @855=~STATISTICS:
+-Summon Android 0 to your aid.
+-Pressing the correct sequence of keys on this device will alert Android 0 to your desperate situation, and you hope he will teleport to your aid
++Summon Construct Zero to your aid.
++Pressing the correct sequence of keys on this device will alert Construct Zero to your desperate situation, hopefully to come to your aid.
+ 
+ Usable By:
+ Any~
+@@ -3020,38 +2939,23 @@
+ 
+ 
+ 
+-@1002  = ~Your ANSI code page is set to a value of %t-acp%. Changing it to 1252 (Latin)
+-for mod animation compatibility.~
++@1002  = ~Your ANSI code page is set to a value of %t-acp%. Changing it to 1252 (Latin) for mod animation compatibility.~
+ @1003  = ~You must reboot to continue the installation. Reboot now? [Y]es [N]o~
+ @1004  = ~Rebooting in a few seconds. Please close all other applications.~
+ @1005  = ~This mod is not currently compatible with OS X. If you wish to make it so,
+ please post your interest to www.shsforums.net/forum/594-infinity-animations/.
+ (It may help to examine your game launcher and the contents of the existing
+ patch in an editor if you have any technical expertise.)~
+-@1006  = ~A mod has overwritten BG2 animations in your game. Extract IA_BG2_Restores.rar
+-to your vecna/restore folder.~
+-@1007  = ~An installed mod requires IA_Base_Anims.rar extracted to your
+-vecna/content folder.~
+-@1008  = ~An installed mod requires IA_IWD.rar extracted to your
+-vecna/content folder.~
+-@1009  = ~An installed mod requires IA_BGII_IWDII.rar extracted to your
+-vecna/content folder.~
+-@1010 = ~An installed mod requires Belhifet_and_Marilith.zip extracted to your
+-vecna/content folder.~
+-@1011 = ~An installed mod requires Shadows_harpy_frostgiant.zip extracted to your
+-vecna/content folder.~
+-@1012 = ~An installed mod requires IA_NWN_01_Modron.rar and NWN_Misc_I.rar extracted
+-to your vecna/content folder.~
+-@1013 = ~An installed mod requires IA_Wh_Dr_Wyv_LoP.rar extracted to your
+-vecna/content folder.~
+-@1014 = ~NOTE: Download all content from Spellhold Studios. Each content module is at
+-www.shsforums.net/index.php?autocom=downloads&showcat=98. Extract all archives
+-using the "Do not extract paths" option on the Advanced tab in WinRAR. Also,
+-make sure the "Destination path" on the General tab terminates in /content or
+-/restore after vecna (there are no subfolders beyond that).~
+-@1015 = ~For WinZip, make sure the "Use folder names" box is *unselected*. You should
+-end up with a bunch of .bam files and no subfolders in your "content" and/or
+-restore folders. Rerun this installer once you've extracted all content.~
++@1006  = ~A mod has overwritten BG2 animations in your game. Extract IA_BG2_Restores.rar to your vecna/restore folder.~
++@1007  = ~An installed mod requires IA_Base_Anims.rar extracted to your vecna/content folder.~
++@1008  = ~An installed mod requires IA_IWD.rar extracted to your vecna/content folder.~
++@1009  = ~An installed mod requires IA_BGII_IWDII.rar extracted to your vecna/content folder.~
++@1010 = ~An installed mod requires Belhifet_and_Marilith.zip extracted to your vecna/content folder.~
++@1011 = ~An installed mod requires Shadows_harpy_frostgiant.zip extracted to your vecna/content folder.~
++@1012 = ~An installed mod requires IA_NWN_01_Modron.rar and NWN_Misc_I.rar extracted to your vecna/content folder.~
++@1013 = ~An installed mod requires IA_Wh_Dr_Wyv_LoP.rar extracted to your vecna/content folder.~
++@1014 = ~NOTE: Download all content from Spellhold Studios. Each content module is at www.shsforums.net/index.php?autocom=downloads&showcat=98. Extract all archives using the "Do not extract paths" option on the Advanced tab in WinRAR. Also, make sure the "Destination path" on the General tab terminates in /content or /restore after vecna (there are no subfolders beyond that).~
++@1015 = ~For WinZip, make sure the "Use folder names" box is *unselected*. You should end up with a bunch of .bam files and no subfolders in your "content" and/or restore folders. Rerun this installer once you've extracted all content.~
+ @1016 = ~Required content missing.~
+ @1017 = ~BGMain.exe appears to be patched already; skipping .exe modifications ...~
+ @1018 = ~BGMain.exe not valid - make sure you have a ToB .exe patched to v26498!~
+@@ -3179,9 +3083,7 @@
+ Area of Effect: Party
+ Saving Throw: None
+ 
+-With this powerful spell the caster may teleport himself and his entire
+-party to places they have already visited. There are a few areas, mostly
+-extraplanar, from which you are not permitted to teleport.~
++With this powerful spell the caster may teleport the party to places they have already visited. There are a few areas, mostly extraplanar, from which you are not permitted to teleport.~
+ 
+ @2053  = ~G3 Lv50 and Grand Mastery Patch.~
+ @2054  = ~Modification of NPCs and strongholds quests.~

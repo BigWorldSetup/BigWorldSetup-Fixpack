@@ -1,0 +1,11 @@
+--- vecna\Language\English\AACRE144.tra	Wed Mar 17 23:59:56 2010
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\AACRE144.tra	Wed Sep 10 20:13:43 2014
+@@ -1,3 +1,3 @@
+-@116=~I know not where you have spung from nor how you penetrated the bitch queens defences to arrive at this secret location, but leave immeadiatly! Your very presence could interupt our concentration and free the horror we have trapped in yonder prison ~
+-@117=~Leave go! Flee now least this very conversation intrupts my concentration!~
+-@118=~Please i beg of you leave now!........... oh i cant stand these theatrics anymore, i told that dryder this was a rubbish idea, ok boys lets do this the old fashioned way, time to die whoever you are maggots~
+\ No newline at end of file
++@116=~I know not how you penetrated the Spider Queen's defenses to arrive at this secret location, but leave immediately! Your very presence could interupt our concentration and free the horror we have trapped in yonder prison.~
++@117=~Leave! Flee now, lest this very conversation interrupts my concentration!~
++@118=~Please, I beg of you: Leave now! ...Oh, I can't stand these theatrics anymore. I told that drider this was a rubbish idea. OK, boys! Let's do this the old-fashioned way. Time to die, maggots, whoever you are!~
+\ No newline at end of file

@@ -1,0 +1,13 @@
+--- vecna\Language\English\AARECALL.tra	Sun May 15 23:26:22 2011
++++ C:\BWP Patchstudio\patched files\vecna\Language\English\AARECALL.tra	Sat Sep 20 17:57:12 2014
+@@ -1,5 +1,5 @@
+ @64=~You cannot Recall from this location.~
+ @65=~Something is blocking your attempt to Recall from this location.~
+-@67=~Yes let the mayhem begin~
+-@68=~No~
+-@71=~This Recall will take you to the Twisted Rune Headquarters far beneath Anthanka, Do you really want to go there ?~
+\ No newline at end of file
++@67=~Yes, let the mayhem begin.~
++@68=~No.~
++@71=~This Recall will take you to the Twisted Rune Headquarters far beneath Athkatla. Do you really wish to go there?~
+\ No newline at end of file
