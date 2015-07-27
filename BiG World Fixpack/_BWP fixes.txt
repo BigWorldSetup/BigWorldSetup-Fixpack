@@ -363,6 +363,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's proper search map copy fix
 :: http://www.shsforums.net/topic/58259-walkable-regions-all-messed-up-in-waukeens-promanade/?p=579630
 
+:: Lollorian's STR_VAR evaluation fix
+:: http://www.shsforums.net/topic/58000-bwp-v15/?p=579881
+
 
 ----------------------------------------------------------------------------------------
 

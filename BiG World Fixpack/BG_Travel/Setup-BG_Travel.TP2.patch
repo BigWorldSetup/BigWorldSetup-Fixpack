@@ -1,5 +1,5 @@
 --- BG_Travel\Setup-BG_Travel.TP2	Sat May 01 16:08:57 2010
-+++ C:\BWP Patchstudio\patched files\BG_Travel\Setup-BG_Travel.TP2	Tue Jul 21 22:02:57 2015
++++ C:\BWP Patchstudio\patched files\BG_Travel\Setup-BG_Travel.TP2	Tue	Mon Jul 27 23:27:05 2015
 @@ -1,6 +1,6 @@
  BACKUP ~BG_Travel/BACKUP~ 
  AUTHOR ~zed_nocear@wp.pl	(http://free.of.pl/z/zed.nocear/)~
@@ -25,3 +25,16 @@
  
  ////////////////////////////////////////////////////////////////////////
  // definicja funkcji wstawiaj¹cej "entrances" do map ARE na potrzeby TWM
+@@ -173,9 +181,9 @@
+   ab_RT_Vx_X_3 = "%Z!travel_Xl%"
+   ab_RT_Vx_Y_3 = "%Z!travel_Yh%"
+   STR_VAR
+-  ab_RT_Name = ~%Z!travel_name%~ // Name to assign to new region
+-  ab_RT_Dest = ~%Z!entrance_area%~ // Destination Area
+-  ab_RT_EntN = ~%Z!entrance_name%~ // Entrance Name
++  ab_RT_Name = EVAL ~%Z!travel_name%~ // Name to assign to new region
++  ab_RT_Dest = EVAL ~%Z!entrance_area%~ // Destination Area
++  ab_RT_EntN = EVAL ~%Z!entrance_name%~ // Entrance Name
+  END
+ END
+ 
