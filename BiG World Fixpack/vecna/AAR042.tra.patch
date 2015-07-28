@@ -1,7 +1,0 @@
---- vecna\Language\English\AAR042.tra	Sat Apr 24 22:53:32 2010
-+++ C:\BWP Patchstudio\patched files\vecna\Language\English\AAR042.tra	Sat Sep 20 17:51:57 2014
-@@ -1 +1 @@
--@0=~Hidden in the lid of the chest you find a key, thinking it of some import you decide to add it to your key collection~
-\ No newline at end of file
-+@0=~Hidden in the lid of the chest you find a key. Thinking it of some importance you decide to add it to your key collection.~
-\ No newline at end of file

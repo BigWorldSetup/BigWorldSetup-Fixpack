@@ -1,9 +1,0 @@
---- vecna\Language\English\A_ELFPRE.tra	Sat Mar 18 19:26:41 2006
-+++ C:\BWP Patchstudio\patched files\vecna\Language\English\A_ELFPRE.tra	Tue Sep 09 22:58:35 2014
-@@ -1,4 +1,4 @@
- @0    = ~A magic cloud has engulfed me!~
--@1    = ~Help! I am...poisoned.~
--@2    = ~Hmmm....Something's not right here...~
-+@1    = ~Help! I am... poisoned.~
-+@2    = ~Hmmm... Something's not right here.~
- @3    = ~Die with your boots on!~

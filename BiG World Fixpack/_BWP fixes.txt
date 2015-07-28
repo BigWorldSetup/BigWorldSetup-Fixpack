@@ -2305,9 +2305,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's hotfix compilation v3
 :: http://www.shsforums.net/topic/43975-vecna/?p=562021
 
-:: klatu's Text Overhaul v1.1 (readme included)
-:: http://www.shsforums.net/files/file/5924-vecna-v23-text-overhaul/
-
 
 ----------------------------------------------------------------------------------------
 

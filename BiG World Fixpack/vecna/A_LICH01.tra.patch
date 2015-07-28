@@ -1,9 +1,0 @@
---- vecna\Language\English\A_LICH01.tra	Sat Mar 18 19:27:12 2006
-+++ C:\BWP Patchstudio\patched files\vecna\Language\English\A_LICH01.tra	Wed Sep 10 01:38:45 2014
-@@ -1,5 +1,5 @@
- @0    = ~There you are, you bastard!~
--@1    = ~Hmmm...must've been a ghost~
-+@1    = ~Hmmm... Must've been a ghost.~
- @2    = ~Ouch! Who did that?~
- @3    = ~Two can play at that game.~
- @4    = ~You cannot stop me with your petty tricks!~
