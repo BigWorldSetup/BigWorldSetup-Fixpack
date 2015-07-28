@@ -1,0 +1,29 @@
+--- ACBre\Setup-ACBre.tp2	Thu Feb 12 04:37:26 2015
++++ C:\BWP Patchstudio\patched files\ACBre\Setup-ACBre.tp2	Tue Jul 28 21:25:04 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~ACBre/backup~
+ AUTHOR ~whiteagnus@gmx.de~ //Original von Ascalon (geheimer.herrscher@gmx.de)
+ //MODDER
+-VERSION ~7.00b_20150127~
++VERSION ~7.00b_20150127 BWP Fix~
+ 
+ AUTO_TRA "ACBre/TRA/autotra/%s"//%"
+ 
+@@ -87,7 +87,7 @@
+ THEN BEGIN
+ PRINT ~Bringe Virginie, dem unsichtbaren Wunderbunny, ein paar neue Tricks bei~
+ ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN
+-COMPILE ~ACBre/Virgi/ACVIRGI2.D~
++COMPILE ~ACBre/Virgi/ACVIRGI.D~
+ END
+ EXTEND_BOTTOM ~ACVIRGI.bcs~ ~ACBre/Virgi/ACVIRGI.BAF~
+ END ELSE BEGIN 
+@@ -99,7 +99,7 @@
+ WRITE_ASCII 0x2cc ~ACVIRGI~
+ WRITE_ASCII 0x248 ~ACVIRGI~
+ ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN
+-COMPILE ~ACBre/Virgi/ACVIRGI.D~
++COMPILE ~ACBre/Virgi/ACVIRGI2.D~
+ END
+ COMPILE ~ACBre/Virgi/ACVIRGI.BAF~
+ END

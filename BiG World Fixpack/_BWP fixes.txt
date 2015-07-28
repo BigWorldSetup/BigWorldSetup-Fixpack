@@ -79,6 +79,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Nightfarer's installation fixes
 :: - LINK NOT FOUND ~
 
+:: Lollorian's installation fixes
+:: http://www.shsforums.net/topic/58265-problem-with-big-world-setup/?p=579921
+
 
 ----------------------------------------------------------------------------------------
 
