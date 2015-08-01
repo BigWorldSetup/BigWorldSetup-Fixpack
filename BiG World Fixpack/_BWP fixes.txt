@@ -965,18 +965,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Horace - Horace: Skeletal NPC for BGII v1.72
-
-:: cmorgan's ToBEx compatible ADD_KIT fix
-:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
-
-:: Lollorian's Horace banters only fire if Horace is in the party fix
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566614
-
-
-----------------------------------------------------------------------------------------
-
-
 :: iepbanters - Infinity Extended Project Banter Pack v4.2
 
 :: Lollorian's Viconia-Valygar Aboleth talk stutter fix
