@@ -2146,15 +2146,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: TyrisFlare - Tyris Flare NPC v7
-
-:: Roxanne's ToB Finale Solar Romance interjection fix
-:: http://gibberlings3.net/forums/index.php?showtopic=23923&p=236927
-
-
-----------------------------------------------------------------------------------------
-
-
 :: ub - Unfinished Business v24
 
 :: Miloch's missing WWBAG02.STO crash fix
