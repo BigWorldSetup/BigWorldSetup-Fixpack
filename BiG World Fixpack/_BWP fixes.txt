@@ -685,7 +685,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: DarkHorizons - Dark Horizons v2.10
+:: DarkHorizons - Dark Horizons v2.11
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/55229-khazids-death-sword-bug/?p=546708
@@ -695,6 +695,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=547608
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548590
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=553439
+
+:: micbaldur's fixed Belt of Sune
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=580162
 
 
 ----------------------------------------------------------------------------------------
