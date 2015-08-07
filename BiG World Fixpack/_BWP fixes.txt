@@ -118,6 +118,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=547828
 
+:: Mad Mate's fixed TRAs
+:: http://www.shsforums.net/topic/58000-bwp-v15/?p=580209
+
 
 ----------------------------------------------------------------------------------------
 
@@ -867,15 +870,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's Gahesh-Gavin compatibility patch
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=573407
-
-
-----------------------------------------------------------------------------------------
-
-
-:: garrick-tt - Garrick - Tales of the Troubador v1.23
-
-:: Nightfarer's script compilation fixes
-:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
