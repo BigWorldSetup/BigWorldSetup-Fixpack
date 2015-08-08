@@ -1,0 +1,8 @@
+--- wmart\dlg\WMART2_.d	Wed Dec 26 16:32:42 2012
++++ C:\BWP Patchstudio\patched files\wmart\dlg\WMART2_.d	Sat Aug 08 20:44:31 2015
+@@ -1,4 +1,4 @@
+-BEGIN ~WMART2~
++BEGIN ~WMART2_~
+ 
+ IF ~True()~ THEN BEGIN 0
+   SAY ~Greetings adventurer, I am Deidre. I am a member of the Aurora's magic emporium, and have access to her considerable collection of magical treasures.~ 

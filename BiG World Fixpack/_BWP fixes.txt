@@ -2306,15 +2306,16 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Wikaede One-Day NPC v3.4
+:: Wikaede - Wikaede One-Day NPC v3.4
 
 :: Upgraded to the "Wikaede Revisited v4.1" version
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
 
 
-:: Wild Mage Additions v1.7
+:: WildMage - Wild Mage Additions v1.7
 
 :: Some recommended fixes - Setup-WildMage.TP2, nwm_aram00.baf, owm_aram00.baf
 :: http://www.shsforums.net/index.php?s=&showtopic=43495&view=findpost&p=470908
@@ -2323,7 +2324,16 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Worgas NPC (Beta) v1.1
+:: wmart - Deidre and Joluv in BGT v1.0
+
+:: Lollorian's installation fixes (underscores in TP2 and D files)
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
+:: worgas - Worgas NPC (Beta) v1.1
 
 :: Lollorian's \are\W_xxxx.baf's fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486198
