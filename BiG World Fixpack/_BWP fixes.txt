@@ -426,6 +426,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Isaya's Polish soundset import bug fix
 :: http://www.shsforums.net/topic/57226-likely-bug-with-polish-soundset-not-being-transfered-from-bg1/
 
+:: Vlad's Ender Sai chest blocking fix
+:: http://www.shsforums.net/topic/58299-small-issue/?p=580289
+
 
 ----------------------------------------------------------------------------------------
 

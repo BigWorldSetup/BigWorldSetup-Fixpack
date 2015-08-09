@@ -1,0 +1,20 @@
+--- bgt\base\d_bg1\ender.d	Sun Oct 30 19:59:51 2011
++++ C:\BWP Patchstudio\patched files\bgt\base\d_bg1\ender.d	Sun Aug 09 09:41:40 2015
+@@ -36,7 +36,7 @@
+ 
+ IF ~~ THEN BEGIN 6
+   SAY @20078
+-  IF ~~ THEN DO ~EscapeArea()~ UNSOLVED_JOURNAL @310409 EXIT
++  IF ~~ THEN DO ~MoveToPointNoInterrupt([621.461]) EscapeArea()~ UNSOLVED_JOURNAL @310409 EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 7
+@@ -73,7 +73,7 @@
+ 
+ IF ~~ THEN BEGIN 13
+   SAY @20094
+-  IF ~~ THEN DO ~EscapeArea()~ UNSOLVED_JOURNAL @310808 EXIT
++  IF ~~ THEN DO ~MoveToPointNoInterrupt([621.461]) EscapeArea()~ UNSOLVED_JOURNAL @310808 EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 14

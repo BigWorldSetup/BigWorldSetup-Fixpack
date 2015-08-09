@@ -1,0 +1,11 @@
+--- bgt\fixpack\escape.d	Sat Dec 24 16:39:18 2005
++++ C:\BWP Patchstudio\patched files\bgt\fixpack\escape.d	Sun Aug 09 09:43:09 2015
+@@ -80,7 +80,7 @@
+  ~ELMIN3~
+  ~ELMIN5~
+  ~EMITAR~
+- ~ENDER~
++// ~ENDER~
+  ~ENTAR~
+  ~ENTILL~
+  ~ERIK~
