@@ -2333,15 +2333,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: wmart - Deidre and Joluv in BGT v1.0
-
-:: Lollorian's installation fixes (underscores in TP2 and D files)
-:: - LINK NOT FOUND -
-
-
-----------------------------------------------------------------------------------------
-
-
 :: worgas - Worgas NPC (Beta) v1.1
 
 :: Lollorian's \are\W_xxxx.baf's fixes

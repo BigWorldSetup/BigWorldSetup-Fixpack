@@ -1,8 +1,0 @@
---- wmart\dlg\WMART1_.d	Wed Dec 26 16:32:31 2012
-+++ C:\BWP Patchstudio\patched files\wmart\dlg\WMART1_.d	Sat Aug 08 20:44:26 2015
-@@ -1,4 +1,4 @@
--BEGIN ~WMART1~
-+BEGIN ~WMART1_~
- 
- IF ~True()
- ~ THEN BEGIN 0
