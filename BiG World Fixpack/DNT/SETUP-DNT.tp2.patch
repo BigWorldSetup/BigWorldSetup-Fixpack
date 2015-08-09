@@ -1,9 +1,224 @@
 --- SETUP-DNT.tp2	Thu Jun 12 22:18:21 2008
-+++ C:\BWP Patchstudio\patched files\SETUP-DNT.tp2	Wed Oct 02 09:01:31 2013
-@@ -1,5 +1,6 @@
++++ C:\BWP Patchstudio\patched files\SETUP-DNT.tp2	Sun Aug 09 11:46:45 2015
+@@ -1,6 +1,6 @@
  BACKUP ~DNT\bak~
  AUTHOR ~vira@live.com~
+-
 +VERSION ~v0.9 BWP Fix~
- 
  LANGUAGE~简体中文~
  	~SimChinese~
+ 	~DNT\Language\SimChinese\setup.tra~
+@@ -66,31 +66,31 @@
+ COPY ~DNT\CRE\vira.cre~ ~override\vira.cre~
+ SAY NAME1 @40
+ SAY NAME2 @40
+-COPY ~DNT\CRE\wolf01.cre~ ~override\wolf01.cre~
++COPY ~DNT\CRE\wolf01.cre~ ~override\vr#wolf1.cre~
+ SAY NAME1 @41
+ SAY NAME2 @41
+-COPY ~DNT\CRE\wolf01x.cre~ ~override\wolf01x.cre~
++COPY ~DNT\CRE\wolf01x.cre~ ~override\vrwolf1x.cre~
+ SAY NAME1 @41
+ SAY NAME2 @41
+-COPY ~DNT\CRE\wolf02.cre~ ~override\wolf02.cre~
++COPY ~DNT\CRE\wolf02.cre~ ~override\vr#wolf2.cre~
+ SAY NAME1 @42
+ SAY NAME2 @42
+-COPY ~DNT\CRE\wolf03.cre~ ~override\wolf03.cre~
++COPY ~DNT\CRE\wolf03.cre~ ~override\vr#wolf3.cre~
+ SAY NAME1 @43
+ SAY NAME2 @43
+-COPY ~DNT\CRE\wolf04.cre~ ~override\wolf04.cre~
++COPY ~DNT\CRE\wolf04.cre~ ~override\vr#wolf4.cre~
+ SAY NAME1 @44
+ SAY NAME2 @44
+-COPY ~DNT\CRE\Xwolf01.cre~ ~override\Xwolf01.cre~
++COPY ~DNT\CRE\Xwolf01.cre~ ~override\vrXwolf1.cre~
+ SAY NAME1 @51
+ SAY NAME2 @51
+-COPY ~DNT\CRE\Xwolf02.cre~ ~override\Xwolf02.cre~
++COPY ~DNT\CRE\Xwolf02.cre~ ~override\vrXwolf2.cre~
+ SAY NAME1 @52
+ SAY NAME2 @52
+-COPY ~DNT\CRE\Xwolf03.cre~ ~override\Xwolf03.cre~
++COPY ~DNT\CRE\Xwolf03.cre~ ~override\vrXwolf3.cre~
+ SAY NAME1 @53
+ SAY NAME2 @53
+-COPY ~DNT\CRE\Xwolf04.cre~ ~override\Xwolf04.cre~
++COPY ~DNT\CRE\Xwolf04.cre~ ~override\vrXwolf4.cre~
+ SAY NAME1 @54
+ SAY NAME2 @54
+ COPY ~DNT\CRE\vr#fman.cre~ ~override\vr#fman.cre~
+@@ -112,59 +112,59 @@
+ COPY ~DNT\itm\vr#aegis.itm~ ~override\vr#aegis.itm~
+ SAY NAME2 @101
+ SAY DESC @102
+-COPY ~DNT\itm\vr#bda.itm~~override\vr#bda.itm~
++COPY ~DNT\itm\vr#bda.itm~ ~override\vr#bda.itm~
+ SAY NAME2 @103
+ SAY DESC @104
+-COPY ~DNT\itm\vr#blun.itm~~override\vr#blun.itm~
++COPY ~DNT\itm\vr#blun.itm~ ~override\vr#blun.itm~
+ SAY NAME2 @105
+ SAY DESC @106
+-COPY ~DNT\itm\vr#boot.itm~~override\vr#boot.itm~
++COPY ~DNT\itm\vr#boot.itm~ ~override\vr#boot.itm~
+ SAY NAME2 @107
+ SAY DESC @108
+-COPY ~DNT\itm\vr#ice.itm~~override\vr#ice.itm~
++COPY ~DNT\itm\vr#ice.itm~ ~override\vr#ice.itm~
+ SAY NAME2 @109
+ SAY DESC @110
+-COPY ~DNT\itm\vr#lsw.itm~~override\vr#lsw.itm~
++COPY ~DNT\itm\vr#lsw.itm~ ~override\vr#lsw.itm~
+ SAY NAME2 @111
+ SAY DESC @112
+-COPY ~DNT\itm\vr#reddr.itm~~override\vr#reddr.itm~
++COPY ~DNT\itm\vr#reddr.itm~ ~override\vr#reddr.itm~
+ SAY NAME2 @113
+ SAY DESC @114
+-COPY ~DNT\itm\vr#solak.itm~~override\vr#solak.itm~
++COPY ~DNT\itm\vr#solak.itm~ ~override\vr#solak.itm~
+ SAY NAME2 @115
+ SAY DESC @116
+-COPY ~DNT\itm\vr#ssf.itm~~override\vr#ssf.itm~
++COPY ~DNT\itm\vr#ssf.itm~ ~override\vr#ssf.itm~
+ SAY NAME2 @117
+ SAY DESC @118
+-COPY ~DNT\itm\vr#ts.itm~~override\vr#ts.itm~
++COPY ~DNT\itm\vr#ts.itm~ ~override\vr#ts.itm~
+ SAY NAME2 @119
+ SAY DESC @120
+-COPY ~DNT\itm\vr#wkn.itm~~override\vr#wkn.itm~
++COPY ~DNT\itm\vr#wkn.itm~ ~override\vr#wkn.itm~
+ SAY NAME2 @121
+ SAY DESC @122
+-COPY ~DNT\itm\vr#yj.itm~~override\vr#yj.itm~
++COPY ~DNT\itm\vr#yj.itm~ ~override\vr#yj.itm~
+ SAY NAME2 @123
+ SAY DESC @124
+-COPY ~DNT\itm\vr#bc.itm~~override\vr#bc.itm~
++COPY ~DNT\itm\vr#bc.itm~ ~override\vr#bc.itm~
+ SAY NAME2 @125
+ SAY DESC @126
+-COPY ~DNT\itm\vr#bread.itm~~override\vr#bread.itm~
++COPY ~DNT\itm\vr#bread.itm~ ~override\vr#bread.itm~
+ SAY NAME2 @127
+ SAY DESC @128
+-COPY ~DNT\itm\vr#bbgun.itm~~override\vr#bbgun.itm~
++COPY ~DNT\itm\vr#bbgun.itm~ ~override\vr#bbgun.itm~
+ SAY NAME2 @129
+ SAY DESC @130
+-COPY ~DNT\itm\vr#bb2.itm~~override\vr#bb2.itm~
++COPY ~DNT\itm\vr#bb2.itm~ ~override\vr#bb2.itm~
+ SAY NAME2 @129
+ SAY DESC @130
+ 
+-COPY ~DNT\itm\tomoyo1.itm~~override\tomoyo1.itm~
++COPY ~DNT\itm\tomoyo1.itm~ ~override\tomoyo1.itm~
+ SAY NAME2 @600
+ SAY DESC @601
+-COPY ~DNT\itm\tomoyo2.itm~~override\tomoyo2.itm~
++COPY ~DNT\itm\tomoyo2.itm~ ~override\tomoyo2.itm~
+ SAY NAME2 @602
+ SAY DESC @603
+-COPY ~DNT\itm\vr#cd.itm~~override\vr#cd.itm~
++COPY ~DNT\itm\vr#cd.itm~ ~override\vr#cd.itm~
+ SAY NAME2 @604
+ SAY DESC @605
+ 
+@@ -205,8 +205,92 @@
+ 
+ //添加地图
+ COPY ~DNT\area~ ~override~
+-COPY_EXISTING ~DNT\area\ar0082.are~ ~override\ar0082.are~
+-WRITE_ASCII ~0x94~ ~AR0082~
++
++// Lollorian's patching code for mod compatibility
++COPY_EXISTING ~ar0082.are~ ~override~
++  WRITE_ASCII ~0x94~ ~AR0082~ #8
++  LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++      fj_type             = 2
++      fj_box_left         = 470
++      fj_box_top          = 225
++      fj_box_right        = 512
++      fj_box_bottom       = 363
++      fj_cursor_idx       = 30
++      fj_flags            = 4
++	  fj_loc_x            = 491
++	  fj_loc_y            = 294
++      fj_vertex_0         = 470 + (319 << 16)
++      fj_vertex_1         = 512 + (364 << 16)
++      fj_vertex_2         = 512 + (267 << 16)
++      fj_vertex_3         = 471 + (224 << 16)
++      fj_vertex_4         = 470 + (319 << 16)
++    STR_VAR
++      fj_structure_type   = ~region~
++      fj_name             = ~ar0082out~
++      fj_destination_area = ~VRAR00~
++      fj_destination_name = ~vrar00in~
++  END
++  LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++      fj_loc_x            = 478
++      fj_loc_y            = 361
++      fj_orientation      = 0
++    STR_VAR
++      fj_structure_type   = ~entrance~
++      fj_name             = ~ar0082out~
++  END
++BUT_ONLY_IF_IT_CHANGES
++
++COPY_EXISTING ~vrar01.are~ ~override~
++              ~vrar02.are~ ~override~
++              ~vrar03.are~ ~override~
++              ~vrar05.are~ ~override~
++              ~vrar06.are~ ~override~
++              ~vrar07.are~ ~override~
++              ~vrar08.are~ ~override~
++              ~vrar14.are~ ~override~
++              ~vraren.are~ ~override~
++			  
++  READ_LONG  0x54 "actor_off" ELSE 0
++  READ_SHORT 0x58 "actor_num" ELSE 0
++
++  PATCH_IF (actor_off > 0x11b) THEN BEGIN
++    FOR (index = 0 ; index < actor_num ; index = index + 1) BEGIN
++      READ_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "resref"
++      PATCH_IF ("%resref%" STRING_EQUAL_CASE "wolf01") BEGIN
++        WRITE_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "vr#wolf1" #8
++      END ELSE
++      PATCH_IF ("%resref%" STRING_EQUAL_CASE "wolf01x") BEGIN
++        WRITE_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "vrwolf1x" #8
++      END
++      PATCH_IF ("%resref%" STRING_EQUAL_CASE "wolf02") BEGIN
++        WRITE_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "vr#wolf2" #8
++      END ELSE
++      PATCH_IF ("%resref%" STRING_EQUAL_CASE "wolf02") BEGIN
++        WRITE_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "vr#wolf2" #8
++      END ELSE
++      PATCH_IF ("%resref%" STRING_EQUAL_CASE "wolf03") BEGIN
++        WRITE_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "vr#wolf3" #8
++      END ELSE
++      PATCH_IF ("%resref%" STRING_EQUAL_CASE "wolf04") BEGIN
++        WRITE_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "vr#wolf4" #8
++      END ELSE
++      PATCH_IF ("%resref%" STRING_EQUAL_CASE "Xwolf01") BEGIN
++        WRITE_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "vrXwolf1" #8
++      END ELSE
++      PATCH_IF ("%resref%" STRING_EQUAL_CASE "Xwolf02") BEGIN
++        WRITE_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "vrXwolf2" #8
++      END ELSE
++      PATCH_IF ("%resref%" STRING_EQUAL_CASE "Xwolf03") BEGIN
++        WRITE_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "vrXwolf3" #8
++      END ELSE
++      PATCH_IF ("%resref%" STRING_EQUAL_CASE "Xwolf04") BEGIN
++        WRITE_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "vrXwolf4" #8
++      END
++    END
++  END
++BUT_ONLY_IF_IT_CHANGES
+ 
+ //添加头像
+ COPY ~DNT\Portraits~ ~override~

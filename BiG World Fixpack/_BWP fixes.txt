@@ -732,6 +732,12 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
 
+:: Lollorian's VRAR08.ARE container fix (VR#BU.ITM -> VR#BC.ITM)
+:: - LINK NOT FOUND ~
+
+:: Lollorian's compatibility patches (renamed CREs and patched AR0082.ARE)
+:: - LINK NOT FOUND ~
+
 
 ----------------------------------------------------------------------------------------
 
