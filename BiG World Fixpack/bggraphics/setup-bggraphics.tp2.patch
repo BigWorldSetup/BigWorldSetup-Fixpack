@@ -1,0 +1,10 @@
+--- bggraphics\setup-bggraphics.tp2	Fri Dec 19 11:25:59 2014
++++ C:\BWP Patchstudio\patched files\bggraphics\setup-bggraphics.tp2	Mon Aug 10 22:06:51 2015
+@@ -1,6 +1,6 @@
+ BACKUP ~bggraphics/backup~
+ AUTHOR ~www.shsforums.net/forum/~
+-VERSION ~v1.8~
++VERSION ~v1.8 BWP Fix~
+ MODDER setup_tra NONE
+ //launch the ReadMe file immediately
+ README ~bggraphics/bggraphics-readme.html~
