@@ -1,0 +1,11 @@
+--- BP-Balancer\Lib\ntotsc_action_macro_creatures.tph	Tue Jan 13 13:06:36 2009
++++ C:\BWP Patchstudio\patched files\BP-Balancer\Lib\ntotsc_action_macro_creatures.tph	Mon Aug 10 21:20:39 2015
+@@ -341,7 +341,7 @@
+ 		//SCRL1H (Hast) seems to be a questitem
+ 		//SCRL1F (Flammenpfeil) seems to be a questitem
+ 	BUT_ONLY_IF_IT_CHANGES
+-	COPY_EXISTING ~NATALK9.cre~ ~override~
++	COPY_EXISTING ~NTNATALK.cre~ ~override~
+ 		//Name: Natalka
+ 		WRITE_SHORT 0x14 ~240~ //XP (was: 600)
+ 		//LEAT05 (Beschlagenes Lederwams +1)
