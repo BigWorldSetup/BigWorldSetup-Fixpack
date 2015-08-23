@@ -438,6 +438,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Vlad's Ender Sai chest blocking fix
 :: http://www.shsforums.net/topic/58299-small-issue/?p=580289
 
+:: Salk's AR8011 Music fix
+:: http://www.shsforums.net/topic/58311-bug-in-musictp2/
+
 
 ----------------------------------------------------------------------------------------
 
