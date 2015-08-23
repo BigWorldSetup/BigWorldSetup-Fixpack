@@ -1,0 +1,11 @@
+--- bg2_tweaks\setup-bg2_tweaks.tp2	Mon Oct 13 09:35:34 2014
++++ C:\BWP Patchstudio\patched files\bg2_tweaks\setup-bg2_tweaks.tp2	Sun Aug 23 17:30:57 2015
+@@ -32,7 +32,7 @@
+ 
+ END
+ 
+-VERSION ~v16~
++VERSION ~v16 BWP Fix~
+ 
+ README ~bg2_tweaks/readme-bg2tweaks.html~
+ 

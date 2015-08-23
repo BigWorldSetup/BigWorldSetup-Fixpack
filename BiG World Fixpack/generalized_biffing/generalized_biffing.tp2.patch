@@ -1,0 +1,20 @@
+--- generalized_biffing\generalized_biffing.tp2	Mon Apr 18 23:05:33 2011
++++ C:\BWP Patchstudio\patched files\generalized_biffing\generalized_biffing.tp2	Sun Aug 23 17:25:58 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~generalized_biffing/backup~
+ AUTHOR ~the bigg~
+ 
+-VERSION ~v2.2~
++VERSION ~v2.2 BWP Fix~
+ 
+ LANGUAGE ~English~
+          ~English~
+@@ -42,7 +42,7 @@
+ OUTER_TEXT_SPRINT ~9char~ ~%char%%char%%char%%char%%char%%char%%char%%char%%char%%char%*~
+ OUTER_TEXT_SPRINT ~ext~ ~\(wav\|tis\|bam\)~
+ ACTION_IF selection THEN BEGIN
+-	OUTER_TEXT_SPRINT ext ~\(bmp\|mve\|wav\|wac\|plt\|bam\|wed\|chu\|tis\|mos\|itm\|spl\|bcs\|ids\|cre\|are\|dlg\|2da\|gam\|sto\|wmp\|chr\|eff\|vvc\|vef\|pro\)~
++	OUTER_TEXT_SPRINT ext ~\(bmp\|mve\|wav\|wfx\|plt\|bam\|wed\|chu\|tis\|mos\|itm\|spl\|bcs\|ids\|cre\|are\|dlg\|2da\|gam\|sto\|wmp\|eff\|chr\|vvc\|vef\|pro\|wbm\|fnt\|gui\|sql\|pvrz\|glsl\|ini\)~
+ END
+ 
+ OUTER_TEXT_SPRINT ~myRegExp~ ~^%8char%\.%ext%$~

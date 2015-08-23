@@ -379,6 +379,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: bg2_tweaks - BG2 Tweaks v16
+
+:: Argent77's BG:EE compatibility patch
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=580487
+
+
+----------------------------------------------------------------------------------------
+
+
 :: BG2eeAR - TeamBG's BG2 Armor Pack v1.02
 
 :: White Agnus' installation fix
@@ -918,6 +927,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: generalized_biffing - Generalized Biffing v2.2
+
+:: Argent77's BG:EE compatibility patch
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=580487
 
 
 ----------------------------------------------------------------------------------------
