@@ -1497,6 +1497,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: NSC Portraits - NPC Portraits by Gerri v3.0
+
+:: Nightfarer's fixed TS-BP portrait components
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: NTotSC- Northern Tales of the Sword Coast v1.70a
 
 :: erebusant's "Original Travel Times" links.tbl fix

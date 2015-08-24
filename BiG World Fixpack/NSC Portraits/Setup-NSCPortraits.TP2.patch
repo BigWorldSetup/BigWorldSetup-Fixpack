@@ -1,11 +1,41 @@
---- Setup-NSCPortraits.TP2	Thu Mar 12 17:41:44 2015
-+++ C:\BWP Patchstudio\patched files\Setup-NSCPortraits.TP2	Wed May 13 08:31:00 2015
-@@ -482,7 +482,7 @@
+--- Setup-NSCPortraits.TP2	Mon May 18 05:28:09 2015
++++ C:\BWP Patchstudio\patched files\Setup-NSCPortraits.TP2	Mon Aug 24 21:43:26 2015
+@@ -1,6 +1,6 @@
+ BACKUP ~NSC Portraits/backup~
+ AUTHOR ~Gerri~ 
+-VERSION ~v3.0~ 
++VERSION ~v3.0 BWP Fix~ 
+ 
+ DEFINE_ACTION_MACRO ~Addpic~ BEGIN
+ ACTION_IF FILE_EXISTS_IN_GAME ~%Crename%~
+@@ -464,21 +464,19 @@
+ 
+ 
+ BEGIN ~Alternate NPC-Portraits for Tortured Souls (TS-BP)~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~hier File einfügen~ ~You haven't installed TS-BP, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~Aino.cre~ ~You haven't installed TS-BP, skip this component~ 
+ DESIGNATED 1051
+ 
+ OUTER_SPRINT ~folder~ ~TS~
+ 
+-OUTER_SET rows_cnt_nscp=0
+-COPY - ~NSC Portraits/tbl/ts2.tbl~  ~NSC Portraits/tbl/ts2.tbl~
+-  COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+-  FOR( cntg=0; cntg<"%rows_cnt_nscp%"; cntg=cntg+1 ) BEGIN
+-    READ_2DA_ENTRY cntg  0 2 "Crename"
+-    READ_2DA_ENTRY cntg  1 2 "PictureName"
+-  INNER_ACTION BEGIN
+-		LAUNCH_ACTION_MACRO ~Addpic~ 
+-	END
+-  END
++OUTER_SPRINT ~Crename~ ~Aino.cre~
++OUTER_SPRINT ~SmallPic~ ~AinoS~
++OUTER_SPRINT ~LargePic~ ~AinoL~
++LAUNCH_ACTION_MACRO ~NPCPic~
++OUTER_SPRINT ~Crename~ ~AinoA.cre~
++OUTER_SPRINT ~SmallPic~ ~AinoS~
++OUTER_SPRINT ~LargePic~ ~AinoL~
++LAUNCH_ACTION_MACRO ~NPCPic~
  
  
  BEGIN ~Portraits for Tower of Deception~ 
--REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~VA#TIAN~ ~You haven't installed ToD, skip this component~ 
-+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~VA#TIAN.cre~ ~You haven't installed ToD, skip this component~ 
- DESIGNATED 1300
- 
- OUTER_SPRINT ~folder~ ~TOD~
