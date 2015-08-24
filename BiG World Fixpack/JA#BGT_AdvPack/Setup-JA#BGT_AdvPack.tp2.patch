@@ -1,9 +1,19 @@
 --- JA#BGT_AdvPack\Setup-JA#BGT_AdvPack.tp2	Wed Jul 11 14:32:17 2012
-+++ C:\BWP Patchstudio\patched files\JA#BGT_AdvPack\Setup-JA#BGT_AdvPack.tp2	Wed May 08 21:22:57 2013
-@@ -127,8 +127,8 @@
++++ C:\BWP Patchstudio\patched files\JA#BGT_AdvPack\Setup-JA#BGT_AdvPack.tp2	Mon Aug 24 21:19:32 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~JA#BGT_AdvPack/backup~
+ AUTHOR ~Jarl~
+ 
+-VERSION ~0.6~
++VERSION ~0.6 BWP Fix~
+ 
+ AUTO_TRA ~JA#BGT_AdvPack/Languages/%s~
+ 
+@@ -126,9 +126,8 @@
+ 	COPY ~JA#BGT_AdvPack/Animations/Keg1~ ~override~
  END
  
- 
+-
 -APPEND ~ANIMATE.IDS~ ~0x547C CHICKEN_BROWN~ UNLESS ~^0x547C~
 -APPEND ~ANISND.IDS~ ~0x547C £AC      CGAMEANIMATIONTYPE_CHICKEN_BROWN~ UNLESS ~^0x547C~
 +APPEND ~ANIMATE.IDS~ ~0x547C CHICKEN_BROWN~ UNLESS ~^0x547C~

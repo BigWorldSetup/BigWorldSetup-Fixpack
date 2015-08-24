@@ -1,0 +1,12 @@
+--- JA#BGT_AdvPack\BAF\AR7242.BAF	Tue Mar 20 15:03:56 2012
++++ C:\BWP Patchstudio\patched files\JA#BGT_AdvPack\BAF\AR7242.BAF	Mon Aug 24 21:16:44 2015
+@@ -10,7 +10,7 @@
+ 		CreateCreature("JA#GOLC1",[425.264],15)
+ 		CreateCreature("JA#GOLC1",[91.236],6)
+ 		ActionOverride("Ramazith",SetNumTimesTalkedTo(1))
+-		ActionOverride("RAMAZITH",Enemy())
++//		ActionOverride("RAMAZITH",Enemy())
+ 		Wait(1)
+ 		ActionOverride("RAMAZITH",StartDialogueNoSet([PC]))
+ END
+\ No newline at end of file

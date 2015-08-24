@@ -1,0 +1,22 @@
+--- bg1npc\bg1npc.tp2	Sun Jun 14 09:45:34 2015
++++ C:\BWP Patchstudio\patched files\bg1npc\bg1npc.tp2	Mon Aug 24 21:11:11 2015
+@@ -15,7 +15,7 @@
+ /* MODDER */
+ 
+ /* WeiDU versions newer than v203 allow tp2 level version listing in the .log for troubleshooting  */
+-VERSION ~v22_20150614~
++VERSION ~v22_20150614 BWP Fix~
+ /* Launch the readme file immediately. */
+ /* Isaya : display in native selected language if available, otherwise english */
+ README ~bg1npc/readme-bg1npc-%LANGUAGE%.html~ ~bg1npc/readme-bg1npc.html~
+@@ -2364,6 +2364,10 @@
+ 
+   COPY_EXISTING ~%tutu_var%elmin5.cre~ ~override~
+     WRITE_ASCII 0x280 ~elminster5~ #32 //  death variable
++  BUT_ONLY_IF_IT_CHANGES
++
++  COPY_EXISTING ~%tutu_var%bheren.cre~ ~override~
++    WRITE_ASCII 0x280 ~bheren~ #32 //  death variable
+   BUT_ONLY_IF_IT_CHANGES
+ 
+   /* ToSC death Variables */
