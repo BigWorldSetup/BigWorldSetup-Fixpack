@@ -1,0 +1,11 @@
+--- NTotSC\D\NTORDOL.D	Wed Apr 26 22:45:25 2006
++++ C:\BWP Patchstudio\patched files\NTotSC\D\NTORDOL.D	Tue Aug 25 20:15:14 2015
+@@ -53,7 +53,7 @@
+   SAY @17
+   IF ~~ THEN REPLY @18 GOTO 10
+   IF ~~ THEN REPLY @19 DO ~AddexperienceParty(2000)
+-GiveItem("wand07",LastTalkedToBy)
++GiveItem("wand09",LastTalkedToBy)
+ TakePartyItem("misc74")
+ EscapeArea()~ JOURNAL @20 EXIT
+ END

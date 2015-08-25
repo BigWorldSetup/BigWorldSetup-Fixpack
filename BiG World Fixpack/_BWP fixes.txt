@@ -1523,6 +1523,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's Amazonian encounter fixes
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=579179
 
+:: micbaldur's Ordolath reward fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=580539
+
 
 ----------------------------------------------------------------------------------------
 
