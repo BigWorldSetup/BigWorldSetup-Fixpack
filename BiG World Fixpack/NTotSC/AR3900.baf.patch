@@ -1,5 +1,5 @@
 --- NTotSC\BAF\Area\AR3900.baf	Thu Aug 21 16:46:22 2008
-+++ C:\BWP Patchstudio\patched files\NTotSC\BAF\Area\AR3900.baf	Thu	Sat Jul 11 10:06:57 2015
++++ C:\BWP Patchstudio\patched files\NTotSC\BAF\Area\AR3900.baf	Sat Jul 11 10:06:57 2015
 @@ -2,19 +2,19 @@
    Global("NTotSCSpawn","AR3900",0)
  THEN
