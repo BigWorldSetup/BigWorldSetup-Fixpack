@@ -1,0 +1,28 @@
+--- bgt\base\d_bg1\therel.d	Sun Oct 30 21:01:41 2011
++++ C:\BWP Patchstudio\patched files\bgt\base\d_bg1\therel.d	Sat Aug 29 08:27:19 2015
+@@ -1,6 +1,6 @@
+ BEGIN ~therel~
+ 
+-IF WEIGHT #0 ~NumTimesTalkedTo(0)
++IF WEIGHT #0 ~Global("Therella","GLOBAL",0)
+ ReactionGT(LastTalkedToBy(),HOSTILE_UPPER)~ THEN BEGIN 0
+   SAY @21471
+   IF ~~ THEN REPLY @21484 GOTO 3
+@@ -8,7 +8,7 @@
+   IF ~~ THEN REPLY @21490 GOTO 5
+ END
+ 
+-IF WEIGHT #1 ~NumTimesTalkedTo(0)
++IF WEIGHT #1 ~Global("Therella","GLOBAL",0)
+ ReactionGT(LastTalkedToBy(),NEUTRAL_UPPER)~ THEN BEGIN 1
+   SAY @21472
+   IF ~~ THEN REPLY @21485 GOTO 3
+@@ -16,7 +16,7 @@
+   IF ~~ THEN REPLY @21491 GOTO 5
+ END
+ 
+-IF WEIGHT #2 ~NumTimesTalkedTo(0)
++IF WEIGHT #2 ~Global("Therella","GLOBAL",0)
+ ReactionLT(LastTalkedToBy(),NEUTRAL_LOWER)~ THEN BEGIN 2
+   SAY @21473
+   IF ~~ THEN REPLY @21486 GOTO 3

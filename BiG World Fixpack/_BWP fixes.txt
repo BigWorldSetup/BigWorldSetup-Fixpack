@@ -459,6 +459,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Salk's AR8011 Music fix
 :: http://www.shsforums.net/topic/58311-bug-in-musictp2/
 
+:: Vlad's Therella-Dalton quest fix
+:: http://www.shsforums.net/topic/58318-thereldlg-should-be-fixed/?p=580636
+
 
 ----------------------------------------------------------------------------------------
 
