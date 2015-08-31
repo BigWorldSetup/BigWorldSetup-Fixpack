@@ -1,5 +1,14 @@
---- ACBre\d\bg1\ACBREB.D	Thu Feb 12 01:07:26 2015
-+++ C:\BWP Patchstudio\patched files\ACBre\d\bg1\ACBREB.D	Wed May 27 13:15:15 2015
+--- ACBre\d\bg1\ACBREB.D	Thu Feb 12 04:37:26 2015
++++ C:\BWP Patchstudio\patched files\ACBre\d\bg1\ACBREB.D	Mon Aug 31 21:07:34 2015
+@@ -310,7 +310,7 @@
+ @178 = @179
+ ==%tutu_var%MENDA1 @180
+ END
+-IF ~~ THEN DO ~SetGlobal("ReadyToSail","GLOBAL",1)ActionOverride("MENDA1",EscapeAreaDestroy(90))~ EXIT
++IF ~~ THEN DO ~SetGlobal("ReadyToSail","GLOBAL",1)ActionOverride("MENDAS",EscapeAreaDestroy(90))~ EXIT
+ 
+ INTERJECT %tutu_var%MULAHE 3 ACMULAHE3
+ ==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @@ -738,7 +738,7 @@
  END
  IF ~~ THEN EXTERN %tutu_var%OGRECO 1

@@ -82,6 +82,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's installation fixes
 :: http://www.shsforums.net/topic/58265-problem-with-big-world-setup/?p=579921
 
+:: micbaldur's Mendas interjection fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=580684
+
 
 ----------------------------------------------------------------------------------------
 
