@@ -1,0 +1,20 @@
+--- DarkHorizons\Tutu\dlgs\CMQUEST1.D	Sun Jul 12 11:27:46 2009
++++ C:\BWP Patchstudio\patched files\DarkHorizons\Tutu\dlgs\CMQUEST1.D	Tue Sep 01 20:33:10 2015
+@@ -10,7 +10,7 @@
+ PartyHasItem("_BOOK88")
+ ~ THEN BEGIN 1 
+   SAY @2 
+-  IF ~~ THEN DO ~GiveItem("_RING07",LastTalkedToBy)
++  IF ~~ THEN DO ~GiveItemCreate("_RING07",LastTalkedToBy)
+ TakePartyItem("_BOOK88")
+ AddexperienceParty(1500)
+ EscapeArea()
+@@ -21,7 +21,7 @@
+ PartyHasItem("_BOOK88")
+ ~ THEN BEGIN 2 
+   SAY @4 
+-  IF ~~ THEN DO ~GiveItem("_RING07",LastTalkedToBy)
++  IF ~~ THEN DO ~GiveItemCreate("_RING07",LastTalkedToBy)
+ TakePartyItem("_BOOK88")
+ AddexperienceParty(1500)
+ EscapeArea()
