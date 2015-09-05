@@ -396,6 +396,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Argent77's BG:EE compatibility patch
 :: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=580487
 
+:: Argent77's limited Unlimited potion stacking
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=580825
+
 
 ----------------------------------------------------------------------------------------
 

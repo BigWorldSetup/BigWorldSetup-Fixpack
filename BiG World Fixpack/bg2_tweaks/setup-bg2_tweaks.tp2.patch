@@ -1,5 +1,5 @@
 --- bg2_tweaks\setup-bg2_tweaks.tp2	Mon Oct 13 09:35:34 2014
-+++ C:\BWP Patchstudio\patched files\bg2_tweaks\setup-bg2_tweaks.tp2	Sun Aug 23 17:30:57 2015
++++ C:\BWP Patchstudio\patched files\bg2_tweaks\setup-bg2_tweaks.tp2	Sat Sep 05 21:50:42 2015
 @@ -32,7 +32,7 @@
  
  END
@@ -9,3 +9,13 @@
  
  README ~bg2_tweaks/readme-bg2tweaks.html~
  
+@@ -7706,7 +7706,8 @@
+ PRINT @1
+ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~ // looking for potions
+   READ_SHORT  0x1C "type" ELSE 0
+-  PATCH_IF ("%type%" = 9) BEGIN // potions
++  READ_SHORT  0x38 "count" ELSE 0
++  PATCH_IF ("%type%" = 9 AND "%count%" > 1) BEGIN // potions
+     WRITE_SHORT 0x38 999
+   END
+   BUT_ONLY_IF_IT_CHANGES
