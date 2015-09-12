@@ -1,0 +1,14 @@
+--- Bonehillv275\d\BHHARPER.d	Thu Feb 25 14:19:54 2010
++++ C:\BWP Patchstudio\patched files\Bonehillv275\d\BHHARPER.d	Sat Sep 12 09:35:09 2015
+@@ -17,9 +17,9 @@
+ 
+ IF ~~ THEN BEGIN 3
+   SAY @5
+-  IF ~IfValidForPartyDialogue("BHFabio")
++  IF ~IfValidForPartyDialogue("Fabio")
+ ~ THEN EXTERN ~BFABIO~ 16
+-  IF ~!IfValidForPartyDialogue("BHFabio")
++  IF ~!IfValidForPartyDialogue("Fabio")
+ ~ THEN REPLY @6 GOTO 4
+ END
+ 

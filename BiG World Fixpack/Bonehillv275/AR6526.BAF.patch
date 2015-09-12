@@ -4,7 +4,7 @@
  	Global("Criminal","GLOBAL",1)
  	Global("WatchSpawn","GLOBAL",1)
  	GlobalGT("BHQuestAccept","GLOBAL",3)
-+	GlobalLT("BHQuestAccept","GLOBAL",9)
++	GlobalLT("BHQuestAccept","GLOBAL",10)
  	Global("BHToldOfDeath","GLOBAL",0)
  	!Dead("Fabio")
  THEN
@@ -12,7 +12,7 @@
  	Global("Criminal","GLOBAL",1)
  	Global("WatchSpawn","GLOBAL",1)
  	GlobalGT("BHQuestAccept","GLOBAL",3)
-+	GlobalLT("BHQuestAccept","GLOBAL",9)
++	GlobalLT("BHQuestAccept","GLOBAL",10)
  	Global("BHToldOfDeath","GLOBAL",0)
  	Dead("Fabio")
  THEN

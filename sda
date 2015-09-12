@@ -1,0 +1,85 @@
+[33me4ef84f[m refs/heads/master@{0}: commit: bg2_tweaks Argent77 potion stacking
+[33mf72374c[m refs/heads/master@{1}: commit: DarkHorizons micbaldur CMQUEST1 reward
+[33med53d1f[m refs/heads/master@{2}: commit: ACBre micbaldur MENDAS fix
+[33m5b518f6[m refs/heads/master@{3}: commit: BGT Vlad Therel.dlg fix
+[33me8f8826[m refs/heads/master@{4}: commit: NTotSC Rededge script blocker fix
+[33mf49e13c[m refs/heads/master@{5}: commit: NTotSC micbaldur Ordolath reward fix
+[33md8ef5eb[m refs/heads/master@{6}: commit: NSC Portraits Nightfarer TS-BP component
+[33mf37d1d8[m refs/heads/master@{7}: commit: JA#BGT_AdvPack & bg1npc micbaldur fixes
+[33m22e019a[m refs/heads/master@{8}: commit: iepbanters Argent77 Minsc fix
+[33m541b581[m refs/heads/master@{9}: commit: BG2_tweaks gen_biff Argent77 BGEE patches
+[33m6464fd6[m refs/heads/master@{10}: commit: BGT Salk music.tp2 fix
+[33m87e91d4[m refs/heads/master@{11}: commit: bggraphics prozh AR8100N.WED
+[33mad6e0b0[m refs/heads/master@{12}: commit: BP-Balancer NTNATALK install fail
+[33m0f567bf[m refs/heads/master@{13}: commit: lolfixer removes invalid items from containers
+[33m863b42a[m refs/heads/master@{14}: commit: removed wmart patches
+[33me732b95[m refs/heads/master@{15}: commit: DNT compatibility patches
+[33mb4f9df1[m refs/heads/master@{16}: commit: BGT Vlad Ender Sai blocker fix
+[33m146c54f[m refs/heads/master@{17}: commit: wmart installation fixes
+[33mcb13bcc[m refs/heads/master@{18}: commit: removed garrick-tt patches and AjocMod Mad Mate TRA fixes
+[33m100c066[m refs/heads/master@{19}: commit: micbaldur DarkHorizons 0 charisma belt fix, lolfixer update
+[33m086d29e[m refs/heads/master@{20}: commit: TyrisFlare updated removing patches
+[33me68af0c[m refs/heads/master@{21}: commit: Horace updated removing fixes
+[33m70d4195[m refs/heads/master@{22}: commit: new BG Travel system updated removing patches
+[33mc56c0a5[m refs/heads/master@{23}: commit: removin Vecna textpatch
+[33m57f7d50[m refs/heads/master@{24}: commit: ACBre installation fixes
+[33m8b34ac4[m refs/heads/master@{25}: commit: BG_Travel STR_VAR EVAL
+[33m2e17657[m refs/heads/master@{26}: commit: Vecna textpatch, updated mods
+[33m7b634d2[m refs/heads/master@{27}: commit: fixed ACBre patch
+[33mffcd763[m refs/heads/master@{28}: commit: Ninde-TDD finale compatibility
+[33m4c4f2e1[m refs/heads/master@{29}: commit: deprecated poison effect supplement - lolfixer handles it now
+[33m3bf4c3c[m refs/heads/master@{30}: commit: Lolfixer improvements, ACBre patches and Innershade WMP fix
+[33m7dd08a8[m refs/heads/master@{31}: commit: BG_Travel SR copy fail
+[33mec8e49c[m refs/heads/master@{32}: commit: better kittomes Centeol fix
+[33m90189e9[m refs/heads/master@{33}: commit: adding lolfixer logger bat
+[33m4956498[m refs/heads/master@{34}: commit: TyrisFlare Roxanne ToB Solar fix
+[33m0d44262[m refs/heads/master@{35}: commit: NeJ3 AR8701 crash
+[33m8c97959[m refs/heads/master@{36}: commit: BG1NPC Kittomes Centeol compatibility
+[33m58b9e79[m refs/heads/master@{37}: commit: Nephele Roxanne ToB Solar fix
+[33m60fb551[m refs/heads/master@{38}: commit: reverted IA patch by accident
+[33m5ff3f32[m refs/heads/master@{39}: commit: IA not handling non-biffing
+[33m3fb126d[m refs/heads/master@{40}: commit: Jarl Adventure Creeping
+[33mb32fd8e[m refs/heads/master@{41}: commit: updating mods and adding fixes
+[33md2095ea[m refs/heads/master@{42}: commit: Removing IA Tanarri/Wyvern fixes for standalone patch
+[33m898bb1b[m refs/heads/master@{43}: commit: Doppelganger attack animations
+[33macba77b[m refs/heads/master@{44}: commit: small IA fix
+[33m83cf304[m refs/heads/master@{45}: commit: buttload of changes to the NTotSC amazons
+[33m5645810[m refs/heads/master@{46}: commit: Faren Tsujatha crossmod fix and lolfixer slot shifter changes
+[33mf2a37e5[m refs/heads/master@{47}: commit: logic fail in soundslot shifting
+[33m7c0ca2b[m refs/heads/master@{48}: pull: Merge made by the 'recursive' strategy.
+[33mbebaf62[m refs/heads/master@{49}: commit: ToBEx EXISTANCE soundslot shifting code for lolfixer
+[33me6751e5[m refs/heads/master@{50}: commit: BP micbaldur -Sharteel
+[33m61a6615[m refs/heads/master@{51}: commit: modded garrick-tt patch
+[33ma8bc897[m refs/heads/master@{52}: reset: moving to HEAD^
+[33m8256268[m refs/heads/master@{53}: commit: modded garrick-tt patch
+[33ma8bc897[m refs/heads/master@{54}: commit: Reverting TDD mSUELLE2 commentout
+[33mde7b3ce[m refs/heads/master@{55}: commit: The Imp 1pp
+[33m28451f5[m refs/heads/master@{56}: commit: Nightfarer garrick-tt
+[33m59f43ec[m refs/heads/master@{57}: commit: I dont even O_O
+[33m0da31f3[m refs/heads/master@{58}: commit: Jan Tome magical sticky fix
+[33mff57f9f[m refs/heads/master@{59}: commit: micbaldur moar patches and full integration and cleanup
+[33mbbcf76a[m refs/heads/master@{60}: commit: micbaldur final patches
+[33mc4f8ac6[m refs/heads/master@{61}: commit: micbaldur truckload o patches ahoy!
+[33mb0e40f5[m refs/heads/master@{62}: commit: micbaldur truckload o patches ahoy!
+[33m7a75989[m refs/heads/master@{63}: commit: iiItem tweaks
+[33mb925bcc[m refs/heads/master@{64}: commit: micbaldur thread-bashing pg#22-25
+[33m132d2ba[m refs/heads/master@{65}: commit: micbaldur thread-bashing pg#21
+[33m869392c[m refs/heads/master@{66}: commit: micbaldur thread-bashing pg#20
+[33mb134dd9[m refs/heads/master@{67}: commit: k4thos suggestions for lolfixer goodness
+[33m5c67df2[m refs/heads/master@{68}: commit: Nightfarer fixed morituri french
+[33md08ee1c[m refs/heads/master@{69}: commit: updated Gavin fixes
+[33m48907f1[m refs/heads/master@{70}: commit: expanded lolfixer ITM list
+[33ma36941a[m refs/heads/master@{71}: commit: syncing more mods
+[33mdc51a0d[m refs/heads/master@{72}: commit: lynx Tashia cutscene fix
+[33mf63a727[m refs/heads/master@{73}: commit: fixed DofD ardem.are by Linthar
+[33m8caa6a8[m refs/heads/master@{74}: commit: Mad Mates aurora innate spell overwriting fix - 2
+[33m05ac20c[m refs/heads/master@{75}: commit: Mad Mates aurora innate spell overwriting fix
+[33m0c0e678[m refs/heads/master@{76}: commit: aurora DOOMSA.CRE fix
+[33md3fc6ce[m refs/heads/master@{77}: commit: 100% of something is something itself
+[33m057d8f1[m refs/heads/master@{78}: commit: missed 100 check for some reason
+[33m9c24351[m refs/heads/master@{79}: commit: Syncing more mods
+[33mb4618a8[m refs/heads/master@{80}: commit: typo
+[33mfcd6106[m refs/heads/master@{81}: commit: Syncing with BWP Fixpack 15.2
+[33m225ce1e[m refs/heads/master@{82}: commit: Syncing mod versions
+[33m8fc0368[m refs/heads/master@{83}: commit: Syncing with BWP Fixpack v15.1.1
+[33mafe8dfe[m refs/heads/master@{84}: clone: from https://github.com/omni-axa/BiG-World-Fixpack.git
