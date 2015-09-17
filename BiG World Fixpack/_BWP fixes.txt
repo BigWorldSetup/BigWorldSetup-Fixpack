@@ -880,6 +880,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Fade - Fade NPC v4.0
+
+:: Argent77's missing WAV uninstall fix
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=581001
+
+
+----------------------------------------------------------------------------------------
+
+
 :: fadingpromises - Fading Promises v7
 
 :: the bigg's KIT.IDS ToBEx compatibility fix

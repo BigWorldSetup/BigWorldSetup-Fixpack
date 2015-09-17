@@ -1,0 +1,8 @@
+--- Fade\fadeaudiouninstall.bat	Sun Aug 15 16:09:32 2004
++++ C:\BWP Patchstudio\patched files\Fade\fadeaudiouninstall.bat	Thu Sep 17 13:35:08 2015
+@@ -1,4 +1,5 @@
+ del override\E3FADE*.wav
++del override\E3THEME.wav
+ @ECHO
+ @ECHO Fade Audio Uninstalled
+ @ECHO
