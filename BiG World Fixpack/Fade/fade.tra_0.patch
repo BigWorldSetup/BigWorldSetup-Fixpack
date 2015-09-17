@@ -1,11 +1,5 @@
---- Fade\tra\utf8\english\fade.tra	Mon May 26 16:06:50 2014
-+++ C:\BWP Patchstudio\patched files\Fade\tra\utf8\english\fade.tra	Sat Feb 07 17:08:00 2015
-@@ -1,4 +1,4 @@
--@0    = ~So, you're ready to leave now, <CHARNAME>?~
-+﻿@0    = ~So, you're ready to leave now, <CHARNAME>?~
- @1    = ~Yes, let's go.~
- @2    = ~Not quite. Just wait here for now.~
- @3    = ~I've changed my mind. I don't think I need you in the party.~
+--- Fade\tra\utf8\english\fade.tra	Mon May 26 17:06:50 2014
++++ C:\BWP Patchstudio\patched files\Fade\tra\utf8\english\fade.tra	Thu Sep 17 16:49:36 2015
 @@ -183,7 +183,7 @@
  @180  = ~(smile) Of course we can. No one would know. Just think of the money... ~
  @181  = ~Money? Is that everything to you? No, hand the gems over, they're going back in the collar.~
