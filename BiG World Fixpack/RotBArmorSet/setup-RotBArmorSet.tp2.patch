@@ -14,7 +14,7 @@
  
  COPY ~RotBArmorSet\Items\rbplat01.itm~ ~override\rbplat01.itm~
 -SAY NAME2~  Jyssev Plate +5~
-+SAY NAME2~Jyssev Plate +5~
++SAY NAME2 ~Jyssev Plate +5~
  SAY UNIDENTIFIED_DESC ~James Issiac Jyssev, one of the wealthy nobles of Waterdeep, had this armor forged for him when he was in the service of the army. The armor was used in many battles before it was put in display in one of James's estates. James's wife bore a son, Issiac, and when Issiac grew older, the armor was passed down to him, when he, like his father, joined the army. The Jyssev plate had been handed down for many years until it got to William Jyssev, who is now a traveling merchant.
  
  STATISTICS:

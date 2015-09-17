@@ -1,0 +1,135 @@
+BACKUP ~astScriptPatcher/backup~
+AUTHOR ~erebusant~
+
+BEGIN ~Fix Various "astXXXby triggers in many scripts~
+
+    ACTION_IF MOD_IS_INSTALLED ~SETUP-ASCENSION.tp2~ 0 BEGIN
+COPY_EXISTING		~BALELIT1.BCS~			~override~
+			~BALELIT2.BCS~			~override~
+			~BALELIT3.BCS~			~override~
+			~BALELIT4.BCS~			~override~
+			~BALTALLY.BCS~			~override~
+			~BALTH2.BCS~			~override~
+			~FINABAZ.BCS~			~override~
+			~FINALUF.BCS~			~override~
+			~FINBALOR.BCS~			~override~
+			~FINBALTH.BCS~			~override~
+			~FINBODH.BCS~			~override~
+			~FINGLAB.BCS~			~override~
+			~FINGROM.BCS~			~override~
+			~FINILLA.BCS~			~override~
+			~FINMARIL.BCS~			~override~
+			~FINMEL.BCS~			~override~
+			~FINSAREV.BCS~			~override~
+			~FINSEND.BCS~			~override~
+			~FINSUCC.BCS~			~override~
+			~FINYAGA.BCS~			~override~
+
+DECOMPILE_AND_PATCH BEGIN
+REPLACE_TEXTUALLY %Dead("yself)")% %StateCheck(Myself,STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("yself)")% %!StateCheck(Myself,STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astSeenBy())")% %StateCheck(LastSeenBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astSeenBy())")% %!StateCheck(LastSeenBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astTargetedBy(")% %StateCheck(LastTargetedBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astTargetedBy(")% %!StateCheck(LastTargetedBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astAttackerOf(Myself))")% %StateCheck(LastAttackerOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astAttackerOf(Myself))")% %!StateCheck(LastAttackerOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astTargetedBy(Player1))")% %StateCheck(LastTargetedBy(Player1),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astTargetedBy(Player1))")% %!StateCheck(LastTargetedBy(Player1),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astSeenBy(Myself))")% %StateCheck(LastSeenBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astSeenBy(Myself))")% %!StateCheck(LastSeenBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astHeardBy())")% %StateCheck(LastHeardBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astHeardBy())")% %!StateCheck(LastHeardBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astHeardBy(Myself))")% %StateCheck(LastHeardBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astHeardBy(Myself))")% %!StateCheck(LastHeardBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astAttackerOf(Player1))")% %StateCheck(LastAttackerOf(Player1),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astAttackerOf(Player1))")% %!StateCheck(LastAttackerOf(Player1),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astAttackerOf(")% %StateCheck(LastAttackerOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astAttackerOf(")% %!StateCheck(LastAttackerOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("ixthNearestEnemyOf(Myself))")% %!StateCheck(SixthNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("ifthNearestEnemyOf(Myself))")% %!StateCheck(FifthNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("ourthNearestEnemyOf(Myself))")% %!StateCheck(FourthNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("hirdNearestEnemyOf(Myself))")% %!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("econdNearestEnemyOf(Myself))")% %!StateCheck(SecondNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("earestEnemyOf(Myself))")% %!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("earestEnemyOfType(\[0.0.0.MAGE_ALL\]))")% %!StateCheck(NearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_DEAD)%
+REPLACE_TEXTUALLY %AttackedBy("FINMEL",DEFAULT)% %AttackedBy("FINMEL01",DEFAULT)%
+REPLACE_TEXTUALLY %ApplySpell("runrun",0)% %ApplySpellRES("runrun",Myself)%
+END
+BUT_ONLY_IF_IT_CHANGES
+END
+
+    ACTION_IF MOD_IS_INSTALLED ~SETUP-ASCENSION.tp2~ 1 BEGIN
+COPY_EXISTING		~DRAKE01.BCS~			~override~
+			~DRAKE02.BCS~			~override~
+			~DRAKE03.BCS~			~override~
+			~DRAKE04.BCS~			~override~
+			~ABAZ3.BCS~			~override~
+
+DECOMPILE_AND_PATCH BEGIN
+REPLACE_TEXTUALLY %Dead("yself)")% %StateCheck(Myself,STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("yself)")% %!StateCheck(Myself,STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astSeenBy())")% %StateCheck(LastSeenBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astSeenBy())")% %!StateCheck(LastSeenBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astTargetedBy(")% %StateCheck(LastTargetedBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astTargetedBy(")% %!StateCheck(LastTargetedBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astAttackerOf(Myself))")% %StateCheck(LastAttackerOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astAttackerOf(Myself))")% %!StateCheck(LastAttackerOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astTargetedBy(Player1))")% %StateCheck(LastTargetedBy(Player1),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astTargetedBy(Player1))")% %!StateCheck(LastTargetedBy(Player1),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astSeenBy(Myself))")% %StateCheck(LastSeenBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astSeenBy(Myself))")% %!StateCheck(LastSeenBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astHeardBy())")% %StateCheck(LastHeardBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astHeardBy())")% %!StateCheck(LastHeardBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astHeardBy(Myself))")% %StateCheck(LastHeardBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astHeardBy(Myself))")% %!StateCheck(LastHeardBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astAttackerOf(Player1))")% %StateCheck(LastAttackerOf(Player1),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astAttackerOf(Player1))")% %!StateCheck(LastAttackerOf(Player1),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astAttackerOf(")% %StateCheck(LastAttackerOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astAttackerOf(")% %!StateCheck(LastAttackerOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("ixthNearestEnemyOf(Myself))")% %!StateCheck(SixthNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("ifthNearestEnemyOf(Myself))")% %!StateCheck(FifthNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("ourthNearestEnemyOf(Myself))")% %!StateCheck(FourthNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("hirdNearestEnemyOf(Myself))")% %!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("econdNearestEnemyOf(Myself))")% %!StateCheck(SecondNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("earestEnemyOf(Myself))")% %!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("earestEnemyOfType(\[0.0.0.MAGE_ALL\]))")% %!StateCheck(NearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_DEAD)%
+REPLACE_TEXTUALLY %ApplySpell("runrun",0)% %ApplySpellRES("runrun",Myself)%
+END
+BUT_ONLY_IF_IT_CHANGES
+END
+
+    ACTION_IF MOD_IS_INSTALLED ~SETUP-ASCENSION.tp2~ 3 BEGIN
+COPY_EXISTING		~RAMAZ.BCS~			~override~
+
+DECOMPILE_AND_PATCH BEGIN
+REPLACE_TEXTUALLY %Dead("yself)")% %StateCheck(Myself,STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("yself)")% %!StateCheck(Myself,STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astSeenBy())")% %StateCheck(LastSeenBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astSeenBy())")% %!StateCheck(LastSeenBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astTargetedBy(")% %StateCheck(LastTargetedBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astTargetedBy(")% %!StateCheck(LastTargetedBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astAttackerOf(Myself))")% %StateCheck(LastAttackerOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astAttackerOf(Myself))")% %!StateCheck(LastAttackerOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astTargetedBy(Player1))")% %StateCheck(LastTargetedBy(Player1),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astTargetedBy(Player1))")% %!StateCheck(LastTargetedBy(Player1),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astSeenBy(Myself))")% %StateCheck(LastSeenBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astSeenBy(Myself))")% %!StateCheck(LastSeenBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astHeardBy())")% %StateCheck(LastHeardBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astHeardBy())")% %!StateCheck(LastHeardBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astHeardBy(Myself))")% %StateCheck(LastHeardBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astHeardBy(Myself))")% %!StateCheck(LastHeardBy(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astAttackerOf(Player1))")% %StateCheck(LastAttackerOf(Player1),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astAttackerOf(Player1))")% %!StateCheck(LastAttackerOf(Player1),STATE_DEAD)%
+REPLACE_TEXTUALLY %Dead("astAttackerOf(")% %StateCheck(LastAttackerOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("astAttackerOf(")% %!StateCheck(LastAttackerOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("ixthNearestEnemyOf(Myself))")% %!StateCheck(SixthNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("ifthNearestEnemyOf(Myself))")% %!StateCheck(FifthNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("ourthNearestEnemyOf(Myself))")% %!StateCheck(FourthNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("hirdNearestEnemyOf(Myself))")% %!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("econdNearestEnemyOf(Myself))")% %!StateCheck(SecondNearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("earestEnemyOf(Myself))")% %!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)%
+REPLACE_TEXTUALLY %!Dead("earestEnemyOfType(\[0.0.0.MAGE_ALL\]))")% %!StateCheck(NearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_DEAD)%
+END
+BUT_ONLY_IF_IT_CHANGES
+END

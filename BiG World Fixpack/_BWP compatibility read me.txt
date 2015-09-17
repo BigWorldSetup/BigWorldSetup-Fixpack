@@ -1,4 +1,0 @@
-BWP compatibility
-
-
-This are not really fixes but needed changes for compatibility with BWP.
