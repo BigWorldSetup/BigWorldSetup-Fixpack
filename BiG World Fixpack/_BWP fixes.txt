@@ -74,6 +74,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: AC_QUEST - Ascalon's Questpack v2.00 (11 Jul 2015)
+
+:: micbaldur's proper AR7200 script assignment
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=581031
+
+
+----------------------------------------------------------------------------------------
+
+
 :: ACBre - Ascalon's Breager NPC (White Agnus' Github master branch - 12 Feb, 2015)
 
 :: Nightfarer's installation fixes

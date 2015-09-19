@@ -1,0 +1,20 @@
+--- AC_QUEST\Setup-AC_QUEST.TP2	Sat Jul 11 20:07:21 2015
++++ C:\BWP Patchstudio\patched files\AC_QUEST\Setup-AC_QUEST.TP2	Sat Sep 19 10:13:12 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~AC_QUEST/backup~
+ AUTHOR ~whiteagnus@baldursgatemods.de~ //This is Ascalon's Questpack, but any bugreports about this version should go to jastey
+ 
+-VERSION ~2.00b_150711~
++VERSION ~2.00b_150711 BWP Fix~
+ 
+ AUTO_TRA "AC_QUEST/TRA/autotra/%s"//%"
+ 
+@@ -1001,7 +1001,7 @@
+ BUT_ONLY
+ END
+ 
+-EXTEND_TOP ~%NWBaldursGate_House4_L2_BCS%.bcs~ ~AC_QUEST/baf/AR7200.baf~
++EXTEND_TOP ~%NWBaldursGate_BCS%.bcs~ ~AC_QUEST/baf/AR7200.baf~
+ 
+ ACTION_IF GAME_IS ~tutu_totsc~ THEN BEGIN
+ COPY_EXISTING ~%NBaldursGate_TempleofHelm%.are~ ~override~
