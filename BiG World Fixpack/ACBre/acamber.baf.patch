@@ -1,0 +1,11 @@
+--- ACBre\cross\acamber.baf	Thu Feb 12 04:37:26 2015
++++ C:\BWP Patchstudio\patched files\ACBre\cross\acamber.baf	Wed Sep 23 20:41:42 2015
+@@ -1,7 +1,7 @@
+ IF
+ 	InParty(Myself) 
+ 	See(Player1)
+-	AreaCheck("M#ARE01")
++	AreaCheck("M#AR01")
+ 	CombatCounter(0)
+ 	!See([ENEMY])
+ 	!Global("ACBREFRIEND","GLOBAL",3)
