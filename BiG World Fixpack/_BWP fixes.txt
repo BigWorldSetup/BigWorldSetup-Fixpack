@@ -1463,6 +1463,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: BWP compatibility fixes
 
+:: Lollorian's AR0700.ARE patching code
+:: http://www.shsforums.net/index.php?s=&showtopic=33998&view=findpost&p=400984
+
 :: Included are some reported fixes (sorry no changelog)
 
 :: Miloch's fixed icgob05.cre

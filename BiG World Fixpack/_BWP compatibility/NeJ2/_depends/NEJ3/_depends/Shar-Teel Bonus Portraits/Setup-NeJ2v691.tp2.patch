@@ -1,5 +1,5 @@
---- Setup-NeJ2v691.tp2	Sun Mar 23 20:18:49 2014
-+++ C:\BWP Patchstudio\patched files\Setup-NeJ2v691.tp2	Sun Mar 23 20:15:32 2014
+--- Setup-NeJ2v691.tp2	Fri Feb 23 03:50:58 2007
++++ C:\BWP Patchstudio\patched files\Setup-NeJ2v691.tp2	Sat Sep 26 23:41:41 2015
 @@ -1,6 +1,111 @@
  BACKUP ~NeJ2/backup~
  
@@ -290,7 +290,61 @@
      
  //--------
  // Areas //
-@@ -5294,8 +5429,8 @@
+@@ -5164,7 +5299,52 @@
+ TT0078	value
+ TT0079	value~
+ 
+-COPY ~NeJ2/are/AR0700.are~           ~override/AR0700.are~
++COPY_EXISTING ~AR0700.are~ override
++  LPF fj_are_structure
++    INT_VAR
++      fj_type           = 0
++      fj_box_left       = 2886
++      fj_box_top        = 904
++      fj_box_right      = 3025
++      fj_box_bottom     = 1048
++      fj_cursor_idx     = 0
++      fj_flags          = 0x00000002
++      fj_trap_active    = 1
++      fj_loc_x          = 2946
++      fj_loc_y          = 960
++      fj_vertex_0       = 2886 + ( 955 << 16)
++      fj_vertex_1       = 2948 + (1048 << 16)
++      fj_vertex_2       = 3025 + ( 993 << 16)
++      fj_vertex_3       = 2968 + ( 903 << 16)
++      fj_vertex_4       = 2886 + ( 955 << 16)
++    STR_VAR
++      fj_structure_type = region
++      fj_name           = VPTalk1
++      fj_reg_script     = VPCUTH02
++  END
++  LPF fj_are_structure
++    INT_VAR
++      fj_type           = 0
++      fj_box_left       = 2408
++      fj_box_top        = 843
++      fj_box_right      = 2748
++      fj_box_bottom     = 1116
++      fj_cursor_idx     = 0
++      fj_flags          = 0x00000002
++      fj_trap_active    = 1
++      fj_loc_x          = 2645
++      fj_loc_y          = 937
++      fj_vertex_0       = 2466 + ( 842 << 16)
++      fj_vertex_1       = 2748 + (1050 << 16)
++      fj_vertex_2       = 2692 + (1116 << 16)
++      fj_vertex_3       = 2408 + ( 905 << 16)
++      fj_vertex_4       = 2466 + ( 842 << 16)
++    STR_VAR
++      fj_structure_type = region
++      fj_name           = VPTalk2
++      fj_reg_script     = VPCUTH02
++  END
++BUT_ONLY
+ 
+ COPY ~NeJ2/cre/TilornN.cre~        ~override/TilornN.cre~
+   SAY NAME1 ~Tilorn~
+@@ -5294,8 +5474,8 @@
  COPY ~NeJ2/are/TT0079.wed~           ~override/TT0079.wed~
  COPY ~NeJ2/are/TT0079.are~           ~override/TT0079.are~
    
@@ -301,7 +355,7 @@
  
  ///////////////////////////////
  // Cleric of Tempus Kit
-@@ -5588,6 +5723,14 @@
+@@ -5588,6 +5768,14 @@
    SAY SET_A_TRAP ~Like the spider’s web, my trap is spun.~ [melorc32]
    SAY BIO ~Melora hates men and magic and is quick to tell you so if you happen to be male or adept in the arts of sorcery. Melora’s small Hafling eyes will look at you with even more contempt and her Sturdy Hafling body will take on a stance of defiance as she speaks to you if you happen to be both male and mage! The illegitimate daughter of a mage and a hafling servant girl, Melora’s first years were hapless. Despised by a father that regarded as an “accident” and who treated her like some lesser being, Melora did not even have the comfort of a mother’s love. She too cast Melora aside when she made a wealthy marriage for herself. So perhaps her hatred is justified, or so Melora would have you believe. The young maiden swore to herself that she would ever be on the side of the oppressed. She has become somewhat of a hero to the poorer people on the outskirts of Candlekeep for her generosity with rich men’s money, none of which she keeps for herself. Often widows and poorer families have found their incomes supplemented by her generous nature. None will speak ill of her excepting the authorities of course... but Melora cares very little for what they say.~
  
@@ -316,7 +370,7 @@
  COPY ~NeJ2/Melora/itm/Ryxyr.itm~        ~override/Ryxyr.itm~
    SAY NAME2 ~Ryxyr~
    SAY DESC ~Adlonn, a famous shadow master of a thief guild, earned his place with two legendary weapons: Ryxyr and Shadow Blade. Some say without the weapons, Adlonn will be no more than the bandits in city streets. Finally, he magically enhanced the weapons to serve only their owner, and granted them to his most trusted friend. Adlonn became a normal thief then, away from his guild. No one knew where he‘d gone. Occasional tales in taverns tell that he‘s still doing what he did, steal from the rich and help the poor.
-@@ -6490,7 +6638,7 @@
+@@ -6490,7 +6678,7 @@
   
  COPY ~NeJ2/cre/Kharesse.cre~        ~override/Kharesse.cre~
    SAY NAME1 ~Kharesse~
@@ -325,7 +379,7 @@
  
  //Kharesse confronts party
  
-@@ -6502,13 +6650,27 @@
+@@ -6502,13 +6690,27 @@
  //Well, I did it! I‘ve just removed all messengers and stopped almost
  //all stronghold events whilst the party stays in Halruaa. Enjoy it!
  
@@ -355,7 +409,7 @@
  	REPLACE_BCS_BLOCK ~NeJ2/sFix/o7Baldur.bcs~ ~NeJ2/sFix/n7Baldur.bcs~
  	REPLACE_BCS_BLOCK ~NeJ2/sFix/o8Baldur.bcs~ ~NeJ2/sFix/n8Baldur.bcs~
  	REPLACE_BCS_BLOCK ~NeJ2/sFix/o9Baldur.bcs~ ~NeJ2/sFix/n9Baldur.bcs~
-@@ -6531,10 +6693,18 @@
+@@ -6531,10 +6733,18 @@
  	REPLACE_BCS_BLOCK ~NeJ2/sFix/o26Baldu.bcs~ ~NeJ2/sFix/n26Baldu.bcs~
  	REPLACE_BCS_BLOCK ~NeJ2/sFix/o27Baldu.bcs~ ~NeJ2/sFix/n27Baldu.bcs~
  
@@ -376,7 +430,7 @@
  
  COPY_EXISTING ~Anomen.bcs~ ~override/Anomen.bcs~
  	REPLACE_BCS_BLOCK ~NeJ2/sFix/o1Anomen.bcs~ ~NeJ2/sFix/n1Anomen.bcs~
-@@ -6565,10 +6735,18 @@
+@@ -6565,10 +6775,18 @@
  	REPLACE_BCS_BLOCK ~NeJ2/sFix/o6Edwin.bcs~ ~NeJ2/sFix/n6Edwin.bcs~
  	REPLACE_BCS_BLOCK ~NeJ2/sFix/o7Edwin.bcs~ ~NeJ2/sFix/n7Edwin.bcs~
  
@@ -396,7 +450,7 @@
  
  COPY_EXISTING ~Nalia.bcs~ ~override/Nalia.bcs~
  	REPLACE_BCS_BLOCK ~NeJ2/sFix/o1Nalia.bcs~ ~NeJ2/sFix/n1Nalia.bcs~
-@@ -6856,6 +7034,15 @@
+@@ -6856,6 +7074,15 @@
   THEN BEGIN
  	COPY_EXISTING ~AR9799.bcs~ ~override/AR9799.bcs~
    EXTEND_TOP ~AR9799.bcs~ ~NeJ3/fixes/eAR9799.bcs~
@@ -412,7 +466,7 @@
  END
   ELSE BEGIN
    COPY ~NeJ3/fixes/eAR9799.bcs~ ~override/AR9799.bcs~
-@@ -7040,7 +7227,7 @@
+@@ -7040,7 +7267,7 @@
    SAY SPELL_DISRUPTED ~Blast! That spell lost...~ [taficc30]
    SAY BIO ~Taffic was born into a clan of prolific forest gnomes living in Cloakwood Forest. Your first impression of Taffic is that he is as he seems, a happy-go-lucky forest gnome with small eyes that have a hint of mischief about them. Taffic will tell you of his dream to become a tall hero, not too strange a dream for a gnome you think, but when Taffic speaks of his dream it soon becomes apparent that this dream of his has become an obsession with him and no longer a dream. On looking closer you see a very distraught and unhappy gnome. More frightening is the realisation that Taffic will stop at nothing to achieve his goal. Taffic tells you of the past 15 years that he has spent (not many years given the length of a gnome’s lifespan), following every rumour that reaches his large gnomish ears, of the artifacts he has sought and tried, of the potions and spells that he has experimented with, of the prayers he has offered to his god and even of the combinations of all of these things together. “A lot of wasted time and energy” he will say, “ but now, yes now at last I know how to do it” and Taffic’s voice takes on an excitable tone, a glint comes to his eye and the seemingly harmless gnome suddenly makes you afraid of what he has in mind.~ 
  
@@ -421,7 +475,7 @@
    SAY NAME1 ~Taffic~ 
    SAY NAME2 ~Taffic~
    SAY MORALE ~Quickly! Follow Taffic the Hero, he will save you all!~ [taficc31]
-@@ -7080,7 +7267,7 @@
+@@ -7080,7 +7307,7 @@
    SAY SPELL_DISRUPTED ~Blast! That spell lost...~ [taficc30]
    SAY BIO ~Taffic was born into a clan of prolific forest gnomes living in Cloakwood Forest. Your first impression of Taffic is that he is as he seems, a happy-go-lucky forest gnome with small eyes that have a hint of mischief about them. Taffic will tell you of his dream to become a tall hero, not too strange a dream for a gnome you think, but when Taffic speaks of his dream it soon becomes apparent that this dream of his has become an obsession with him and no longer a dream. On looking closer you see a very distraught and unhappy gnome. More frightening is the realisation that Taffic will stop at nothing to achieve his goal. Taffic tells you of the past 15 years that he has spent (not many years given the length of a gnome’s lifespan), following every rumour that reaches his large gnomish ears, of the artifacts he has sought and tried, of the potions and spells that he has experimented with, of the prayers he has offered to his god and even of the combinations of all of these things together. “A lot of wasted time and energy” he will say, “ but now, yes now at last I know how to do it” and Taffic’s voice takes on an excitable tone, a glint comes to his eye and the seemingly harmless gnome suddenly makes you afraid of what he has in mind.~ 
  
@@ -430,7 +484,7 @@
    SAY NAME1 ~Taffic~ 
    SAY NAME2 ~Taffic~
    SAY MORALE ~Quickly! Follow Taffic the Hero, he will save you all!~ [taficc31]
-@@ -7561,8 +7772,13 @@
+@@ -7561,8 +7788,13 @@
  
  ACTION_IF FILE_EXISTS_IN_GAME ~CUT01G.bcs~
   THEN BEGIN
@@ -444,7 +498,7 @@
  END
   ELSE BEGIN
    COPY ~NeJ/sExt/sCUT01G.bcs~ ~override/CUT01G.bcs~
-@@ -7974,7 +8190,10 @@
+@@ -7974,7 +8206,10 @@
  //                                     //
  
  BEGIN ~"Firewalker" Shar-Teel (custom kit and continuous character)~
@@ -456,7 +510,7 @@
  //Move Shar-Teel BG1 --> BG2
  
  COPY ~BGTcomp/ARAM00.bcs~ ~override/ARAM00.bcs~
-@@ -8236,15 +8455,21 @@
+@@ -8236,15 +8471,21 @@
  
  		COPY ~NeJ3/sharteel/wav~	~override~
  
@@ -481,7 +535,7 @@
  //Lock cell that Shar-teel will be imported into
  
  		COPY ~NeJ3/sharteel/itm/VPShrKey.ITM~           ~override/VPShrKey.ITM~         
-@@ -8364,7 +8589,67 @@
+@@ -8364,7 +8605,67 @@
  COPY ~NeJ3/cre_copy~ ~override~
  
  COMPILE ~NeJ3/baf~
@@ -550,7 +604,7 @@
  
  COPY ~NeJ3/toda/SCENE13.2da~ ~override~
  REPLACE ~sNeJCh41~ ~The Heartstone‘s divination had at last revealed the source of the evil in the mountains. Ahead loomed the solitary peak that housed the dwarven stronghold known as Dorn’s Deep.  With Larrel’s warnings of dwarven treachery still ringing in their ears, the heroes readied their weapons and started towards the cave entrance and whatever challenges lay beyond.~ [narr_ch4]
-@@ -8722,7 +9007,7 @@
+@@ -8722,7 +9023,7 @@
    
  COPY ~NeJ3/cre/Kerish.cre~        ~override/Kerish.cre~
    SAY NAME1 ~Kerish~
@@ -559,7 +613,7 @@
  
  COPY ~NeJ3/cre/WTSALFD.cre~        ~override/WTSALFD.cre~
    SAY NAME1 ~Dead Salamander~
-@@ -8921,7 +9206,7 @@
+@@ -8921,7 +9222,7 @@
    
  COPY ~NeJ3/cre/Frostbit.cre~        ~override/Frostbit.cre~
    SAY NAME1 ~Frostbite~
@@ -568,7 +622,7 @@
  
  COPY ~NeJ3/cre/Wyrm.cre~        ~override/Wyrm.cre~
    SAY NAME1 ~Frost Wyvern~
-@@ -9230,7 +9515,7 @@
+@@ -9230,7 +9531,7 @@
  
  COPY_EXISTING ~ARAM00.BCS~ ~override~
    REPLACE_BCS_BLOCK ~BGTComp/rARAM00.BAF~ ~BGTComp/xARAM00.BAF~
@@ -577,7 +631,7 @@
  ACTION_IF FILE_EXISTS ~BGTTweak/Backup/Place~
   THEN BEGIN
  	COPY_EXISTING ~AR0602.BCS~ ~override/AR0602.BCS~
-@@ -9239,7 +9524,7 @@
+@@ -9239,7 +9540,7 @@
   ELSE BEGIN
    //DO NOTHING//
  END
@@ -586,7 +640,7 @@
  //__________________________________________//
  //                                          //
  //       Skie - Improved Character          //
-@@ -9316,6 +9601,10 @@
+@@ -9316,6 +9617,10 @@
  //////////////////////////////////////////////////////////////////////////////////////////////////
   
  BEGIN ~Areas & Sounds (This component is required to play NeJ2!)~
