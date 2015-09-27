@@ -1186,6 +1186,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's Ramazith no talk fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=580513
 
+:: micbaldur's JA#C05 Door8100 destination fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=560535
+
 
 ----------------------------------------------------------------------------------------
 
