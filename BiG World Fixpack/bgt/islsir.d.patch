@@ -1,0 +1,11 @@
+--- bgt\base\d_bg1\islsir.d	Sun Oct 30 20:08:31 2011
++++ C:\BWP Patchstudio\patched files\bgt\base\d_bg1\islsir.d	Sun Sep 27 17:40:50 2015
+@@ -44,7 +44,7 @@
+   SAY @21537
+   IF ~~ THEN DO ~SetGlobal("IslSir","GLOBAL",1)
+ AddexperienceParty(2000)
+-GiveItem("MISC1E",LastTalkedToBy)~ EXIT
++GiveItem("MISC1E",LastTalkedToBy) EscapeArea()~ EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 7

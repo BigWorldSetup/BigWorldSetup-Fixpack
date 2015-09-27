@@ -480,6 +480,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Vlad's Therella-Dalton quest fix
 :: http://www.shsforums.net/topic/58318-thereldlg-should-be-fixed/?p=580636
 
+:: Roxanne's Islsir double reward fix
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=581233
+
 
 ----------------------------------------------------------------------------------------
 
