@@ -1506,6 +1506,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Quiet's AR8701.WED crash fix
 :: http://www.shsforums.net/topic/57494-assertion-failed/?p=570691
 
+:: micbaldur's Larrel cutscene fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=581309
+
 
 ----------------------------------------------------------------------------------------
 
