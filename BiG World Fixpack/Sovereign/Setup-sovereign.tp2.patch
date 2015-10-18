@@ -1,10 +1,10 @@
 --- Sovereign\Setup-sovereign.tp2	Sun Nov 08 12:40:02 2009
-+++ C:\BWP Patchstudio\patched files\Sovereign\Setup-sovereign.tp2	Thu Apr 15 09:13:24 2010
++++ C:\BWP Patchstudio\patched files\Sovereign\Setup-sovereign.tp2	Sun Oct 18 21:16:05 2015
 @@ -1,5 +1,8 @@
  BACKUP ~sovereign/backup~
  AUTHOR ~L'f (gienio13254@interia.pl)~
 +
-+VERSION ~v1.3.2 BWP Fix~
++VERSION ~v1.3.4 BWP Fix~
 +
  BEGIN ~Er'vonyrah - The Sovereign's Song - Pieœñ W³adaj¹cej~
  

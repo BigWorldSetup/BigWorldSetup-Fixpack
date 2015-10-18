@@ -2012,7 +2012,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Sovereign (Er'vonyrah) v1.3.1
+:: Sovereign - Er'vonyrah NPC v1.3.4
 
 :: Lollorian's !Dead(Myself) changes - Crdafgt.baf, Crsarfgt.baf, Crsdafgt.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
