@@ -1,9 +1,9 @@
---- setup-amber.tp2	Thu Oct 03 11:59:05 2013
-+++ C:\BWP Patchstudio\patched files\setup-amber.tp2	Mon Dec 09 21:37:58 2013
+--- setup-amber.tp2	Tue Jan 07 15:15:55 2014
++++ C:\BWP Patchstudio\patched files\setup-amber.tp2	Sat Oct 03 23:26:48 2015
 @@ -1,6 +1,6 @@
  BACKUP ~amber/backup~
  AUTHOR ~amber@welho.net~
--VERSION ~v3~
+-VERSION ~v4~
 +VERSION ~v4 BWP Fix~
  README ~amber/readme-amber.html~
  LANGUAGE ~English~ ~english~ ~amber/tra/english/setup.tra~
