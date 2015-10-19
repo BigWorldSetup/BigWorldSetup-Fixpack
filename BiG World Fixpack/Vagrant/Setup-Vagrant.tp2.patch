@@ -1,26 +1,59 @@
 --- Setup-Vagrant.tp2	Sat Mar 22 19:28:16 2008
-+++ C:\BWP Patchstudio\patched files\Setup-Vagrant.tp2	Fri Jun 12 05:21:51 2015
-@@ -3,10 +3,12 @@
- 
++++ C:\BWP Patchstudio\patched files\Setup-Vagrant.tp2	Mon Oct 19 22:36:35 2015
+@@ -1,12 +1,12 @@
+ BACKUP ~Vagrant/backup~
+ AUTHOR ~sikret_the_great@yahoo.com~
+-
++VERSION ~V5.0 BWP Fix~
  LANGUAGE ~English~
           ~english~ 
 -         ~English~ ~Vagrant/English/setup.tra~
 +         ~Vagrant/English/setup.tra~
  
  BEGIN @1 // Vagrant Kit
- 
-+COPY ~Vagrant\ids\stats.ids~ ~override/stats.ids~
-+
+-
++COPY ~Vagrant/ids/stats.ids~ ~override/stats.ids~
  // Bam files
  
  COPY ~Vagrant/bam/spini12b.bam~ ~override/spini12b.bam~
-@@ -899,7 +901,6 @@
+@@ -808,6 +808,10 @@
+   SAY NAME2     @9052
+   SAY DESC      @9053
+ 
++COPY ~Vagrant/itm/S!scrl01.itm~      ~override/S!scrl01.itm~
++  SAY NAME2     @9056
++  SAY DESC      @9057
++
+ COPY ~Vagrant/itm/S!misc37.itm~      ~override/S!misc37.itm~
+   SAY NAME2     @9059
+   SAY DESC      @9060
+@@ -842,6 +846,7 @@
+ 
+ COPY ~Vagrant/itm/S!GSCIM.itm~      ~override/S!GSCIM.itm~
+ COPY ~Vagrant/itm/S!spider.itm~      ~override/S!spider.itm~
++COPY ~Vagrant/itm/S!scrl03.itm~      ~override/S!scrl03.itm~
+ 
+ // Spells
+ 
+@@ -887,6 +892,10 @@
+  ADD_STORE_ITEM ~S!misc29~   AFTER  ~S!misc04~ #0 #0 #0 ~IDENTIFIED~ #1   // Adds 1x Black Blood of Orcus
+  ADD_STORE_ITEM ~S!amul01~   AFTER  ~S!amul04~ #0 #0 #0 ~IDENTIFIED~ #1   // Adds 1x Master of Disciplines
+  ADD_STORE_ITEM ~S!misc36~   AFTER  ~S!misc29~ #0 #0 #0 ~IDENTIFIED~ #1   // Adds 1x Essence of Chaos
++ ADD_STORE_ITEM ~S!scrl01~   AFTER  ~S!misc36~ #0 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Ray of Fragmentation
++ ADD_STORE_ITEM ~S!scrl03~   AFTER  ~S!scrl01~ #0 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Bless
++ ADD_STORE_ITEM ~S!clck03~   AFTER  ~S!scrl03~ #0 #0 #0 ~IDENTIFIED~ #1   // Adds 1x Cloak of Magic Shielding
++ ADD_STORE_ITEM ~S!misc12~   AFTER  ~S!clck03~ #0 #0 #0 ~IDENTIFIED~ #1   // Adds 1x Tabitha's Hide
+ 
+ // Compiling Scripts
+ 
+@@ -899,7 +908,7 @@
    USING ~Vagrant/English/crom.tra~
  
  COMPILE ~Vagrant/dlg/cespy.d~
 -  USING ~Vagrant/English/crom.tra~
 -        ~Vagrant/English/cespy.tra~
 +  USING ~Vagrant/English/cespy.tra~
++
  
  AT_INTERACTIVE_EXIT ~VIEW Vagrant/Improved_Anvil_Lite_readme.txt~
 \ No newline at end of file

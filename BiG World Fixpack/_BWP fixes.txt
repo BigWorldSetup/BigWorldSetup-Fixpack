@@ -2322,6 +2322,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Miscellaneous fixes
 :: - LINK NOT FOUND -
 
+:: micbaldur's item restorations
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=581710
+
 
 ----------------------------------------------------------------------------------------
 
