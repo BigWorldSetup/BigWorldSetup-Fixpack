@@ -1,6 +1,6 @@
 BACKUP ~lolfixer/backup~
 AUTHOR ~Lollorian~
-VERSION ~17092015~
+VERSION ~19102015~
 
 BEGIN ~Area Stuff - MAJESTIC Area Fixer~
   GROUP ~Area Stuff~
@@ -157,7 +157,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
               END
             END
             PATCH_IF ("%converted%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Container #%index% Item #%index2% does not exist (%resref%.itm)! Deleting..."
+              PATCH_PRINT "%SOURCE_FILE% error: Container #%index% Item #%index2% does not exist (%resref%.itm)! Removing Item #%index2%..."
               LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
                 INT_VAR fj_delete_mode    = "%index2%"
                 STR_VAR fj_structure_type = ~itm~
@@ -2045,7 +2045,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             DELETE_BYTES ("%abil_off%" + ("%index%" * 0x38)) 0x38
-            PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% is invalid! Deleting..."
+            PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% is invalid! Deleting Ability #%index%..."
             SET "index" = 0 - 1
             SET "abil_num" = "abil_num" - 1
             WRITE_SHORT 0x68 "abil_num"
