@@ -1991,6 +1991,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: soa - The Stone of Askavar V1.9
+
+:: Add Continue() to process the rest of AR4300.baf (AR3200.bcs in game)
+:: http://www.baldursgatemods.com/forums/index.php?topic=8289.0
+
+
+----------------------------------------------------------------------------------------
+
+
 :: sword_and_fist - Sword and Fist v7
 
 :: Missing Monk ability file: GA_NMMONK06 -> GA_NMMONK05
