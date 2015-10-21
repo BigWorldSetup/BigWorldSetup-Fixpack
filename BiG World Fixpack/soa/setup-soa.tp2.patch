@@ -1,0 +1,13 @@
+--- soa\snips\AR4300.BAF
++++ C:\BWP Patchstudio\patched files\soa\snips\AR4300.BAF
+--- soa\setup-soa.tp2
++++ C:\BWP Patchstudio\patched files\soa\setup-soa.tp2
+@@ -12,7 +12,7 @@
+ /* Author */
+ AUTHOR ~Red Carnelian, http://chosenofmystra.net/forums/index.php~
+
++VERSION ~1.9 BWP Fixpack~
+-VERSION ~1.9~
+
+ README ~soa/readme_soa.htm~
+

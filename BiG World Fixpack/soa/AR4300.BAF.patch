@@ -1,0 +1,17 @@
+--- soa\snips\AR4300.BAF
++++ C:\BWP Patchstudio\patched files\soa\snips\AR4300.BAF
+@@ -17,6 +17,7 @@
+ THEN
+        RESPONSE #100
+                TriggerActivation("DoorS001",FALSE)
++               Continue()
+ END
+
+ IF
+@@ -24,4 +25,5 @@
+ THEN
+        RESPONSE #100
+                TriggerActivation("DoorS001",TRUE)
++               Continue()
+ END
+\No newline at end of file
