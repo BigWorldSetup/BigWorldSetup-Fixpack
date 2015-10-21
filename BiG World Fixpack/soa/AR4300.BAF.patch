@@ -1,17 +1,25 @@
---- soa\snips\AR4300.BAF
-+++ C:\BWP Patchstudio\patched files\soa\snips\AR4300.BAF
-@@ -17,6 +17,7 @@
- THEN
-        RESPONSE #100
-                TriggerActivation("DoorS001",FALSE)
-+               Continue()
+--- soa\snips\AR4300.BAF	Thu Jul 02 01:12:26 2015
++++ C:\BWP Patchstudio\patched files\soa\snips\AR4300.BAF	Wed Oct 21 23:21:58 2015
+@@ -13,15 +13,21 @@
  END
-
+ 
  IF
-@@ -24,4 +25,5 @@
++	Global("DoorS001Active","AR4300",1)
+ 	GlobalLT("CearwinQuest","GLOBAL",2)
  THEN
-        RESPONSE #100
-                TriggerActivation("DoorS001",TRUE)
-+               Continue()
+ 	RESPONSE #100
+ 		TriggerActivation("DoorS001",FALSE)
++		SetGlobal("DoorS001Active","AR4300",0)
++		Continue()
  END
-\No newline at end of file
+ 
+ IF
++	Global("DoorS001Active","AR4300",0)
+ 	GlobalGT("CearwinQuest","GLOBAL",1)
+ THEN
+ 	RESPONSE #100
+ 		TriggerActivation("DoorS001",TRUE)
++		SetGlobal("DoorS001Active","AR4300",1)
++		Continue()
+ END
+\ No newline at end of file
