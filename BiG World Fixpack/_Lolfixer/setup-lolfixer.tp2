@@ -1,6 +1,6 @@
 BACKUP ~lolfixer/backup~
 AUTHOR ~Lollorian~
-VERSION ~19102015~
+VERSION ~21102015~
 
 BEGIN ~Area Stuff - MAJESTIC Area Fixer~
   GROUP ~Area Stuff~
@@ -159,7 +159,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
             PATCH_IF ("%converted%" = 0) BEGIN
               PATCH_PRINT "%SOURCE_FILE% error: Container #%index% Item #%index2% does not exist (%resref%.itm)! Removing Item #%index2%..."
               LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
-                INT_VAR fj_delete_mode    = "%index2%"
+                INT_VAR fj_delete_mode    = "%index2%" + "%cont_itm_idx%"
                 STR_VAR fj_structure_type = ~itm~
               END
               READ_LONG  0x70 "cont_off" ELSE 0
