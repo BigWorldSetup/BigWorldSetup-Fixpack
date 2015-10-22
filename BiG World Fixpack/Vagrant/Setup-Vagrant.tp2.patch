@@ -1,5 +1,5 @@
 --- Setup-Vagrant.tp2	Sat Mar 22 19:28:16 2008
-+++ C:\BWP Patchstudio\patched files\Setup-Vagrant.tp2	Mon Oct 19 22:36:35 2015
++++ C:\BWP Patchstudio\patched files\Setup-Vagrant.tp2	Thu Oct 22 19:49:35 2015
 @@ -1,12 +1,12 @@
  BACKUP ~Vagrant/backup~
  AUTHOR ~sikret_the_great@yahoo.com~
@@ -35,7 +35,7 @@
  
  // Spells
  
-@@ -887,6 +892,10 @@
+@@ -887,6 +892,11 @@
   ADD_STORE_ITEM ~S!misc29~   AFTER  ~S!misc04~ #0 #0 #0 ~IDENTIFIED~ #1   // Adds 1x Black Blood of Orcus
   ADD_STORE_ITEM ~S!amul01~   AFTER  ~S!amul04~ #0 #0 #0 ~IDENTIFIED~ #1   // Adds 1x Master of Disciplines
   ADD_STORE_ITEM ~S!misc36~   AFTER  ~S!misc29~ #0 #0 #0 ~IDENTIFIED~ #1   // Adds 1x Essence of Chaos
@@ -43,10 +43,11 @@
 + ADD_STORE_ITEM ~S!scrl03~   AFTER  ~S!scrl01~ #0 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Bless
 + ADD_STORE_ITEM ~S!clck03~   AFTER  ~S!scrl03~ #0 #0 #0 ~IDENTIFIED~ #1   // Adds 1x Cloak of Magic Shielding
 + ADD_STORE_ITEM ~S!misc12~   AFTER  ~S!clck03~ #0 #0 #0 ~IDENTIFIED~ #1   // Adds 1x Tabitha's Hide
++ ADD_STORE_ITEM ~S!catfig~   AFTER  ~S!misc12~ #0 #0 #0 ~IDENTIFIED~ #1   // Adds 1x Golden Cat Figurine
  
  // Compiling Scripts
  
-@@ -899,7 +908,7 @@
+@@ -899,7 +909,7 @@
    USING ~Vagrant/English/crom.tra~
  
  COMPILE ~Vagrant/dlg/cespy.d~
