@@ -2005,8 +2005,12 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: soa - The Stone of Askavar V1.9
 
-:: Add Continue() to process the rest of AR4300.baf (AR3200.bcs in game)
+:: Roxanne's better way to add Continue() to process the rest of AR4300.baf (AR3200.bcs in game)
 :: http://www.baldursgatemods.com/forums/index.php?topic=8289.0
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=582192
+
+:: Roxanne's timely area revealing code
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=582227
 
 
 ----------------------------------------------------------------------------------------

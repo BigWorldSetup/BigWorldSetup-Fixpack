@@ -1,25 +1,27 @@
 --- soa\snips\AR4300.BAF	Thu Jul 02 01:12:26 2015
-+++ C:\BWP Patchstudio\patched files\soa\snips\AR4300.BAF	Wed Oct 21 23:21:58 2015
-@@ -13,15 +13,21 @@
++++ C:\BWP Patchstudio\patched files\soa\snips\AR4300.BAF	Wed Nov 11 20:38:29 2015
+@@ -13,15 +13,23 @@
  END
  
  IF
-+	Global("DoorS001Active","AR4300",1)
++	Global("DoorS001Active","AR3200",0)
  	GlobalLT("CearwinQuest","GLOBAL",2)
  THEN
  	RESPONSE #100
  		TriggerActivation("DoorS001",FALSE)
-+		SetGlobal("DoorS001Active","AR4300",0)
++		HideAreaOnMap("ARS002")
++		HideAreaOnMap("ARS005")
++		SetGlobal("DoorS001Active","AR3200",1)
 +		Continue()
  END
  
  IF
-+	Global("DoorS001Active","AR4300",0)
++	Global("DoorS001Active","AR3200",1)
  	GlobalGT("CearwinQuest","GLOBAL",1)
  THEN
  	RESPONSE #100
  		TriggerActivation("DoorS001",TRUE)
-+		SetGlobal("DoorS001Active","AR4300",1)
++		SetGlobal("DoorS001Active","AR3200",2)
 +		Continue()
  END
 \ No newline at end of file
