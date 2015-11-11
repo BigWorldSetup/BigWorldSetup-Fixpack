@@ -1,0 +1,10 @@
+--- Askaria\setup-Askaria.tp2	Thu Sep 01 21:30:52 2011
++++ Askaria\BAF\AR6700.baf\Askaria\setup-Askaria.tp2	Wed Nov 11 16:25:11 2015
+@@ -1,6 +1,6 @@
+ BACKUP ~Askaria/backup~
+ AUTHOR ~drizztdd@naver.com~
+-VERSION ~v1.3~
++VERSION ~v1.3 BWP Fix~
+ 
+ AUTO_TRA ~Askaria/Language/%s/D~
+ 

@@ -291,6 +291,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Askaria - Askaria & the Chaos Knight Kit v1.3
+
+:: Roxanne's Feldepost non-blocking tweak
+:: http://www.shsforums.net/topic/51321-askaria-quest-chaosknight-kit-mod-v13/?p=582095
+
+
+----------------------------------------------------------------------------------------
+
+
 :: aurora - Aurora's Shoes and Boots v5
 
 :: ScuD's MOVE correction - t-goblin.tpa
@@ -654,6 +663,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
 :: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
+:: Roxanne's Imoen no script assignment
+:: http://www.shsforums.net/topic/58186-anybody-take-on-the-chloe-mod/?p=581732
 
 
 ----------------------------------------------------------------------------------------
@@ -2452,6 +2464,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Some recommended fixes - Setup-WildMage.TP2, nwm_aram00.baf, owm_aram00.baf
 :: http://www.shsforums.net/index.php?s=&showtopic=43495&view=findpost&p=470908
+
+:: Improved engine check (used GAME_IS ~tob bgee bg2ee iwdee~)
+:: https://forums.beamdog.com/discussion/33799/wild-mage-additions
 
 
 ----------------------------------------------------------------------------------------

@@ -1,21 +1,28 @@
 --- WildMage\Setup-WildMage.TP2	Fri Jul 17 11:05:36 2009
-+++ C:\BWP Patchstudio\patched files\WildMage\Setup-WildMage.TP2	Thu Apr 15 18:47:54 2010
-@@ -1,6 +1,8 @@
++++ C:\BWP Patchstudio\patched files\WildMage\Setup-WildMage.TP2	Wed Nov 11 16:16:33 2015
+@@ -1,6 +1,6 @@
  BACKUP ~WildMage/backup~
  AUTHOR ~jo.ge@gmx.net~
- 
+-
 +VERSION ~v1.7 BWP Fix~
-+
  LANGUAGE ~English~
           ~english~
           ~WildMage/translations/english/text.tra~
-@@ -330,7 +332,9 @@
+@@ -28,7 +28,7 @@
+ //******************************************************
+ 
+ BEGIN @1
+-REQUIRE_FILE ~Data/25Dialog.bif~ @10
++REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee iwdee~ @10
+ 
+ //------------------------------------------------------
+ //		Mod-start in Baldur.BCS
+@@ -330,7 +330,8 @@
  
  ACTION_IF FILE_EXISTS ~DATA/BG1ARE.BIF~ THEN BEGIN
  
 -EXTEND_TOP ~aram00.bcs~ ~WildMage/0/baf/wm_aram00.baf~
-+// EXTEND_TOP ~aram00.bcs~ ~WildMage/0/baf/wm_aram00.baf~
-+COPY_EXISTING ~ARAM00.BCS~ ~override~
++COPY_EXISTING ~aram00.BCS~ ~override~
 +  REPLACE_BCS_BLOCK ~WildMage/0/baf/owm_aram00.baf~ ~WildMage/0/baf/nwm_aram00.baf~
  EXTEND_TOP ~ar0602.bcs~ ~WildMage/0/baf/wm_ar0602.baf~
  

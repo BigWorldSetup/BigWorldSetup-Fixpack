@@ -177,7 +177,7 @@
 +    fj_vertex_1     = 55 + (1130 << 16)
 +    fj_vertex_2     = 55 + (1220 << 16)
 +    fj_vertex_3     = 5 + (1220 << 16)
-+	fj_loc_x		= 2
++	fj_loc_x		= 20
 +	fj_loc_y		= 1100
 +    STR_VAR
 +    fj_structure_type   = region

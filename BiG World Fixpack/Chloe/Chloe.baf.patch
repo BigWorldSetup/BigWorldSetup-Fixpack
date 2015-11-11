@@ -1,0 +1,11 @@
+--- Chloe\Chloe.baf	Sun Nov 08 20:32:32 2009
++++ C:\BWP Patchstudio\patched files\Chloe\Chloe.baf	Wed Nov 11 16:58:48 2015
+@@ -69,7 +69,7 @@
+ THEN
+   RESPONSE #100
+     SetGlobal("AssigningImoenScriptCR","GLOBAL",1)
+-    ActionOverride("Imoen2",ChangeAIScript("Imoen2",OVERRIDE))
++//  ActionOverride("Imoen2",ChangeAIScript("Imoen2",OVERRIDE))
+ END
+ 
+ 
