@@ -1,0 +1,11 @@
+--- SOS\Language\German\CBISSON1.tra	Sun Aug 20 09:24:30 2006
++++ C:\BWP Patchstudio\patched files\SOS\Language\German\CBISSON1.tra	Wed Nov 11 13:41:53 2015
+@@ -21,7 +21,7 @@
+ @20 = ~Danke. Ich werde daran denken. ~
+ @21 = ~Was auch immer diese Männer von mir wollen, ich bin sicher, dass ich es erledigen kann. ~
+ @22 = ~Ich soll diese Männer sofort finden, und herausbekommen, was sie wollen. ~
+-@23 = ~Ich bin Ceeb. Ich verfolge Euren Werdegang in dieser Welt so lange, seitdem ich davon Kenntnis habe, dass es Euch gibt. Das, wie ich sagen muss, erst fast vier Jahre nach dem war, dass Ihr Euer Heim, in dem Ihr als <PRO_BOYGIRL> behütet wart, verlassen habt. ~ [CB_77319]
++@23 = ~Ich bin Ceeb. Ich verfolge Euren Werdegang in dieser Welt so lange, seitdem ich davon Kenntnis habe, dass es Euch gibt. Das, wie ich sagen muss, erst fast vier Jahre nach dem war, dass Ihr Euer Heim, in dem Ihr als <PRO_GIRLBOY> behütet wart, verlassen habt. ~ [CB_77319]
+ @24 = ~Warum solltet Ihr Euch für mein Leben interessieren? Meine Taten? Ich denke wirklich nicht, dass es Euch etwas angeht, was ich tue. ~
+ @25 = ~Ihr seid ganz bestimmt nicht einfach. Und Ihr lügt mich an. Ihr wisst genau, wovon ich spreche. So, bis Ihr es Euch nicht selbst eingesteht, könnt Ihr es mir gegenüber nicht zugeben. ~ [CB_77320]
+ @26 = ~Ihr scheint zu viel zu wissen. Aber warum wisst Ihr so viel über mich? Wer seid Ihr, dass Ihr so viel über mich wisst? ~

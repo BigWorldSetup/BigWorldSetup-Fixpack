@@ -1,0 +1,11 @@
+--- xulaye\translations\english\blk#xul.tra	Mon Feb 21 11:57:12 2011
++++ C:\BWP Patchstudio\patched files\xulaye\translations\english\blk#xul.tra	Wed Nov 11 13:43:44 2015
+@@ -154,7 +154,7 @@
+ @153  = ~You are a female of status, are you not?  Your very bearing pronounces it.  Why are you in servitude to Veldrin?~ [lk#xul81]
+ @154  = ~I owe <PRO_HIMHER> a debt, and one not easily repayable.  <PRO_HESHE> chose to take me into service rather than take my sister as a slave.~
+ @155  = ~Veldrin is a most peculiar <PRO_MANWOMAN>.  Weak.~
+-@156  = ~Perhaps <PRO_SHEHE> has more strength than you realise, Xulaye.  Has <PRO_HESHE> not come further than you expected?~
++@156  = ~Perhaps <PRO_HESHE> has more strength than you realise, Xulaye.  Has <PRO_HESHE> not come further than you expected?~
+ @157  = ~Such loyalty is misplaced.  You would do far better in House Despana, girl.~
+ @158  = ~I doubt you mean that, Xulaye.  Strong or weak <PRO_HESHE> may be, there is little chance of having my throat slit whilst I sleep at their side.~
+ @159  = ~So the mistakes you have made are not of stupidity, at least.~

@@ -1,0 +1,11 @@
+--- amber\tra\german\dialogs.tra	Mon Aug 31 11:56:00 2009
++++ C:\BWP Patchstudio\patched files\amber\tra\german\dialogs.tra	Wed Nov 11 13:41:53 2015
+@@ -592,7 +592,7 @@
+ @2031 = ~Ich erteile Befehle, wann immer ich das Bedürfnis danach habe! Und jetzt bedient uns endlich, bevor ich mich vergesse!~
+ @2032 = ~RAUS HIER!~
+ @2033 = ~Seid Ihr bekloppt, Junge? Ich habe gesagt, dass das Geld dieser Kreatur hier nicht willkommen ist, und das gilt auch für das ihrer Kameraden. Und jetzt haut ab.~
+-@2034 = ~Seid Ihr bekloppt, <BOYGIRL>? Ich habe gesagt, dass das Geld dieser Kreatur hier nicht willkommen ist...~
++@2034 = ~Seid Ihr bekloppt, <GIRLBOY>? Ich habe gesagt, dass das Geld dieser Kreatur hier nicht willkommen ist...~
+ @2035 = ~Aber aus reiner Neugier... Über wie viel Geld sprechen wir hier?~
+ @2036 = ~Ich bin sicher, dass 10 Goldmünzen ausreichen sollten, findet Ihr nicht auch?~
+ @2037 = ~Wie wäre es mit 50 Goldmünzen? Würde Euch das diesen kleinen Zwischenfalls vergessen lassen, werte Dame?~

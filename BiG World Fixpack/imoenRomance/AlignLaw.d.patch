@@ -1,0 +1,11 @@
+--- imoenRomance\dialogues\SOA\Banter\AlignLaw.d	Wed Nov 19 20:25:20 2014
++++ C:\BWP Patchstudio\patched files\imoenRomance\dialogues\SOA\Banter\AlignLaw.d	Wed Nov 11 13:41:53 2015
+@@ -182,7 +182,7 @@
+ 	END
+ 
+ 	IF ~~ THEN BEGIN MRLawChaChaPlay
+-		SAY ~Haha! Whoa there <PRO_BOYGIRL>! (She grins at you happily) I'm not sure I trust you with *total* anarchy, you nut.~
++		SAY ~Haha! Whoa there <PRO_GIRLBOY>! (She grins at you happily) I'm not sure I trust you with *total* anarchy, you nut.~
+ 		=
+ 		~I still wanna be 'Her Royal Highness' for at least a day...~
+ 		IF ~~ THEN GOTO MRLawChaLawEnd

@@ -1,0 +1,56 @@
+--- imoenRomance\dialogues\SOA\Banter\Classes.d	Mon Nov 10 09:28:57 2014
++++ C:\BWP Patchstudio\patched files\imoenRomance\dialogues\SOA\Banter\Classes.d	Wed Nov 11 13:51:33 2015
+@@ -83,7 +83,7 @@
+ 	IF ~~ THEN BEGIN MRClassFighterArrow2
+ 		SAY ~(She flashes you a smile) So glad you agree with me.~
+ 		=
+-		~Y'know, most ordinary <PRO_BOYGIRL>friends would have a problem with their partner being the brains of the outfit.~
++		~Y'know, most ordinary <PRO_GIRLBOY>friends would have a problem with their partner being the brains of the outfit.~
+ 		=
+ 		~Lucky for me you aren't ordinary, huh? (She winks at you and gives your butt a slap before continuing on, humming happily.)~
+ 		IF ~~ THEN EXIT
+@@ -396,7 +396,7 @@
+ 	IF ~~ THEN BEGIN MRClassNatureKill
+ 		SAY ~Yeah! Er... uh... you would?~
+ 		=
+-		~Isn't there some tree-huggy nature-<PRO_BOYGIRL> rule against that?~
++		~Isn't there some tree-huggy nature-<PRO_GIRLBOY> rule against that?~
+ 		++ ~Yes, but it only applies to cute fuzzy things like bunnies and baby ducklings.~ GOTO MRClassNatureJoke
+ 		++ ~Nature is a cruel mistress. Some must die so that others may live.~ GOTO MRClassNaturePlace
+ 		++ ~If you don't tell, I won't!~ GOTO MRClassNatureJoke
+@@ -445,7 +445,7 @@
+ 	IF ~~ THEN BEGIN MRClassNatureStumped
+ 		SAY ~Hah! Figures!~
+ 		=
+-		~Nice try, <PRO_LORDLADY> Dances-with-Mushrooms. Now how 'bout we keep walking before these things eat me alive?~
++		~Nice try, <PRO_LADYLORD> Dances-with-Mushrooms. Now how 'bout we keep walking before these things eat me alive?~
+ 		IF ~~ THEN EXIT
+ 	END
+ 
+@@ -639,7 +639,7 @@
+ 	!ActuallyInCombat()~ THEN BEGIN MRClassMonk
+ 		SAY ~You are *weird*, y'know that?~
+ 		=
+-		~Soldier-<PRO_BOYGIRL>s I get – swing a big sword and back it up with fifty pounds of armor just in case they swing back.~
++		~Soldier-<PRO_GIRLBOY>s I get – swing a big sword and back it up with fifty pounds of armor just in case they swing back.~
+ 		=
+ 		~And mages I get, obviously. Sure, you don't get to wear platemail, but you can fry the holy heck out of the poor sod from a hundred feet away.~
+ 		=
+@@ -955,7 +955,7 @@
+ 	END
+ 
+ 	IF ~~ THEN BEGIN MRClassMonkEndSweetExit
+-		SAY ~Guess I'll forgive you for runnin' around half-naked then. C'mon, nature-<PRO_BOYGIRL>, let's get going.~
++		SAY ~Guess I'll forgive you for runnin' around half-naked then. C'mon, nature-<PRO_GIRLBOY>, let's get going.~
+ 		IF ~~ THEN EXIT
+ 	END
+ 
+@@ -986,7 +986,7 @@
+ 
+ 
+ 	IF ~~ THEN BEGIN MRClassMonkEvil
+-		SAY ~Well excuuuuuuse me, <PRO_LORDLADY> Grumpyguts. Just keep punchin' people, see if I care. (She sticks out her tongue at you and walks away.)~
++		SAY ~Well excuuuuuuse me, <PRO_LADYLORD> Grumpyguts. Just keep punchin' people, see if I care. (She sticks out her tongue at you and walks away.)~
+ 		IF ~~ THEN EXIT
+ 	END
+ END

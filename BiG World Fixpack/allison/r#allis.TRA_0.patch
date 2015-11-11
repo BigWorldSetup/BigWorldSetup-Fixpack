@@ -1,0 +1,11 @@
+--- allison\french\r#allis.TRA	Sat Mar 28 08:07:00 2009
++++ C:\BWP Patchstudio\patched files\allison\french\r#allis.TRA	Wed Nov 11 13:51:33 2015
+@@ -116,7 +116,7 @@
+ @115  = ~Par l'enfer, qui êtes vous?~
+ @116  = ~(La câliner pendant qu'elle vous étreint)~
+ @117  = ~Hé bien, de rien.~
+-@118  = ~(elle s'écarte elle-même de vous) Mes excuses, <LORDLADY>. Je vous étais simplement si reconnaissante d'avoir sauvé le bosquet.~
++@118  = ~(elle s'écarte elle-même de vous) Mes excuses, <LADYLORD>. Je vous étais simplement si reconnaissante d'avoir sauvé le bosquet.~
+ @119  = ~Peu importe. Puis-je y aller à présent ?~
+ @120  = ~De rien, mais ce n'était pas vraiment nécessaire.~
+ @121  = ~Oh, désolée. J'ai oublié que nous ne nous sommes pas encore rencontrés.~

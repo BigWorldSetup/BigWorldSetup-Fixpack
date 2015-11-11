@@ -1,0 +1,29 @@
+--- aranw\tra\english\c-aranw.tra	Sat Aug 15 01:14:15 2015
++++ C:\BWP Patchstudio\patched files\aranw\tra\english\c-aranw.tra	Wed Nov 11 13:41:53 2015
+@@ -11479,7 +11479,7 @@
+ @11095 = ~[C-AW01TL] Sure enough. It never rains without a benefit to someone. Lucky you. Except...~
+ @11096 = ~[C-AW01TL] Look. You seem to have plenty going on as it is. My employers are not likey to hire someone who causes trouble. Like being involved with mages blowing the crap out of the Promenade. You pobably should look elsewhere for work.~
+ @11097 = ~[C-AW01TL] For now, yes. And with all the movement, there will be plenty of accounts to manage and enough to keep me going for quite some time. But these things are cyclical. Eventually, I am going to be sitting here keeping dozens of out of work mercenaries entertained and occupied, so that they don't tear half of Amn apart out of sheer boredom and cussedness.~
+-@11098 = ~[C-AW01TL] Supply and demand, m'<PRO_BOYGIRL>, supply and demand. It is great to have strong demand, but when it outstrips supply, I end up on the pointy end of the spear. So far, that last has been only a figure of speech, because I don't subcontract Chill work. Best decision of my life.~
++@11098 = ~[C-AW01TL] Supply and demand, m'<PRO_GIRLBOY>, supply and demand. It is great to have strong demand, but when it outstrips supply, I end up on the pointy end of the spear. So far, that last has been only a figure of speech, because I don't subcontract Chill work. Best decision of my life.~
+ @11099 = ~[C-AW01TL] Hey, what a great idea. I have an even better one. You bend over, and I'll go find something large and spiky to ram up your rear.~
+ @11100 = ~[C-AW01TL] Friend, the less you know the better. I know they have a tight grip on magic use, and getting permits from them is worse than trying to get blood from a stone. They don't like me much. The feeling is mutual.~
+ @11101 = ~[C-AW01TL] Well, suit yourself. I am not planning on going anywhere, so I will keep a spot warm for you.~
+@@ -11991,7 +11991,7 @@
+ @11607 = ~[PC] Dear gods, are you trying to get me into your bed?~
+ @11608 = ~[PC] Dear gods, are you trying to get me into your bed? Again?~
+ @11609 = ~[PC] Look, just shut up already. You talk too much.~
+-@11610 = ~[PC] Can a <PRO_BOYGIRL> get a little peace and quiet around here?~
++@11610 = ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~
+ @11611 = ~[PC] Stop yammering on, will you? Give it a rest.~
+ @11612 = ~[ARAN] Well, not completely. You done told me that was off limits, an' out o' bounds. But still...~
+ @11613 = ~[ARAN] Well, not completely. Just holdin' hands an' kissin' be right hard for me, but I can handle it. What I really be tryin' to say, though... well...~
+@@ -13034,7 +13034,7 @@
+ @12650 = ~[ARAN] I'd bloody well fix myself up, if it didn't hurt so much to breathe. Hey, lend a lad a hand, will you? Just get me one o' them nice potions or a spell or somethin'.~
+ @12651 = ~[ARAN] It's just a flesh wound. I figure if worst comes to worst, I can distract 'em wi' a mite bit o' blood. Mayhap even scare 'em wi' some of my bruises. But thanks for lookin' in on me, eh?~
+ @12652 = ~[ARAN] If that be some kind o' crack about hangin' back in combat, m'<PRO_GIRLBOY>, I go where you be tellin' me an' do what you be tellin' me, so more's th' fault wi' you!.~
+-@12653 = ~[ARAN] Laugh away, monkey<PRO-BOYGIRL>. I know where you sleep!~
++@12653 = ~[ARAN] Laugh away, monkey<PRO-GIRLBOY>. I know where you sleep!~
+ @12654 = ~[ARAN] I keep askin' an' they keep tossin'. Problem is, it be vegetables, not skirts!~
+ @12655 = ~[ARAN] You let me know when you be volunteerin'!~
+ @12656 = ~[ARAN] Funny, funny - I handle my weapon quite well, m'<PRO_GIRLBOY>. I just like it better when some fair maiden handles it for me!~

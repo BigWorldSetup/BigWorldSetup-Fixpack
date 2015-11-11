@@ -1,0 +1,11 @@
+--- BP\LANGUAGE\ITALIAN\IRENIC2.tra	Mon Dec 28 18:37:22 2009
++++ C:\BWP Patchstudio\patched files\BP\LANGUAGE\ITALIAN\IRENIC2.tra	Wed Nov 11 13:41:53 2015
+@@ -18,7 +18,7 @@
+ @17  = ~Non sopravvalutare le tua utilità, 'cara' sorella... e neanche la misura del mio non esistente affetto. O pensi davvero che abbia dimenticato le tue sollecitazioni sottovoce che mi hanno condotto sulla strada del mio esilio?~
+ @18  = ~Basta, sorella. Faremo quello che ci dirà Melissan, con i suoi servi al nostro fianco. Trai piacere, se desideri, dalla vendetta che ora assaggeremo. Vediamo, <CHARNAME>, se riesco a strapparti quell'anima ancora una volta. Sarei così felice di rubarti il tuo fiero destino una seconda volta.~
+ @19  = ~Come al solito oltrepassi i limiti. Non ti ho chiamato qui per gioire nel tuo veleno, Bodhi. Non noti dove siamo? Chi affronteremo?~
+-@20  = ~Pensi di tradirmi, Bodhi? Stupida ragazza. Melissan è colei che detiene il potere qui, e tu speri di trovare aiuto ai piedi di questo folle <PRO_BOYGIRL>? Stai al mio fianco o muori con <PRO_HIMHER>!~ ~Pensi di tradirmi, Bodhi? Stupida ragazza. Melissan è colei che detiene il potere qui, e tu speri di trovare aiuto ai piedi di questa folle <PRO_BOYGIRL>? Stai al mio fianco o muori con <PRO_HIMHER>!~
++@20  = ~Pensi di tradirmi, Bodhi? Stupida ragazza. Melissan è colei che detiene il potere qui, e tu speri di trovare aiuto ai piedi di questo folle <PRO_GIRLBOY>? Stai al mio fianco o muori con <PRO_HIMHER>!~ ~Pensi di tradirmi, Bodhi? Stupida ragazza. Melissan è colei che detiene il potere qui, e tu speri di trovare aiuto ai piedi di questa folle <PRO_GIRLBOY>? Stai al mio fianco o muori con <PRO_HIMHER>!~
+ @21  = ~Quindi, mia ingrata sorella, finalmente stai al mio fianco. Parleremo della tua slealtà in seguito. Per quanto riguarda te, <CHARNAME>, Melissan mi ha garantito il potere per strappare via dal tuo corpo il tuo lato divino. La prima cosa che proverò in mille anni sarà il piacere di vedere il tuo corpo trasformarsi in polvere.~
+ @22  = ~Capisco. Allora mi abbandoni, sorella, esattamente come anche *lei* ha fatto.~
+ @23  = ~Non importa. Melissan mi ha dato abbastanza potere, e i suoi servitori ti insegneranno l'errore della tua via. Svuoterò <CHARNAME> della sua anima e tu, *cara* sorella, non sarai altro che polvere al suo fianco.~

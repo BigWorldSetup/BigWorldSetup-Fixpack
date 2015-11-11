@@ -1,0 +1,11 @@
+--- Isra_bg2\dialogue\rh#quest.d	Tue Sep 24 21:07:47 2013
++++ C:\BWP Patchstudio\patched files\Isra_bg2\dialogue\rh#quest.d	Wed Nov 11 13:41:53 2015
+@@ -391,7 +391,7 @@
+ EXIT
+ 
+ CHAIN IF ~GlobalGT("rh#AlimTalks","GLOBAL",1) !PartyHasItem("rh#ale")~ THEN RH#ALIM q13.3
+-@150 /* Are ye deaf, <PRO_BOYGIRL>? I've got nothing else to say to ye. */
++@150 /* Are ye deaf, <PRO_GIRLBOY>? I've got nothing else to say to ye. */
+ EXIT
+ 
+ CHAIN IF ~GlobalGT("rh#AlimTalks","GLOBAL",1) PartyHasItem("rh#ale")~ THEN RH#ALIM q13.4

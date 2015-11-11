@@ -1,0 +1,11 @@
+--- SOS\Language\Italian\CBSOUMJ3.tra	Fri Sep 12 21:48:44 2008
++++ C:\BWP Patchstudio\patched files\SOS\Language\Italian\CBSOUMJ3.tra	Wed Nov 11 13:51:33 2015
+@@ -63,7 +63,7 @@
+ @62   = ~No, Maggiore.~
+ @63   = ~Ci ho pensato. E credo che sarò un buon Sindaco per Soubar. Lo farò.~
+ @64   = ~Ah, capisco. Se cambierai idea, mi troverai ancora qui in Caserma. Con una grande quantità di lavoro da svolgere.~
+-@65   = ~<PRO_LORDLADY> Sindaco <CHARNAME>. Soubar sarà guidata piuttosto bene con te in carica. No preoccuparti per la difesa della città; sarò io a prendermene cura.~
++@65   = ~<PRO_LADYLORD> Sindaco <CHARNAME>. Soubar sarà guidata piuttosto bene con te in carica. No preoccuparti per la difesa della città; sarò io a prendermene cura.~
+ @66   = ~Questo è tutto, Capitano. Potete andare.~
+ @67   = ~Se hai bisogno di qualcosa prima di compiere il tuo attacco alla Fortezza di Lyrar, fammelo sapere, Tenente.~
+ @68   = ~Tenente, se stai avendo difficoltà nell'aprirti un'entrata alla Fortezza, forse dovresti provare un'altra strada.~

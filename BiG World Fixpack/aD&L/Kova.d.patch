@@ -1,0 +1,11 @@
+--- aD&L\Kova.d	Wed Jan 16 16:16:00 2008
++++ C:\BWP Patchstudio\patched files\aD&L\Kova.d	Wed Nov 11 13:51:33 2015
+@@ -5411,7 +5411,7 @@
+ 
+ CHAIN
+ IF ~~ THEN PRISONK1 seidacaptive
+-~I'm afraid not, my <PRO_LORDLADY>. The court has ordered that he be kept in a special high security prison, away from those who might try to rescue or kill him before his trial.~
++~I'm afraid not, my <PRO_LADYLORD>. The court has ordered that he be kept in a special high security prison, away from those who might try to rescue or kill him before his trial.~
+ = ~If you need information from him, you can ask an inspector to interrogate him on your behalf, since only they and the wardens have the access to the prison.~
+ = ~Sorry about not being able to help. You have earned my deepest respect in your successful handling of this case, but orders are orders.~
+ DO ~SetGlobal("Z#BTLPart7","GLOBAL",1)~ EXIT

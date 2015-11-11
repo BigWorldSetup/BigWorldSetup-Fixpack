@@ -1,0 +1,20 @@
+--- yeslicknpc\dialogue\lk#yesj.d	Tue Aug 21 05:44:09 2012
++++ C:\BWP Patchstudio\patched files\yeslicknpc\dialogue\lk#yesj.d	Wed Nov 11 13:41:53 2015
+@@ -217,7 +217,7 @@
+ // Friendship #5: Irenicus part deux, Murder
+ IF ~Global("LK#YeslickFriendTalks","GLOBAL",9)~ Yftalk4
+   SAY ~Hoi, <CHARNAME>... ye alright o'er there, <PRO_GIRLBOY>? That's quite an intense look ye have in yer eyes...~
+-  = ~<CHARNAME>... ? <CHARNAME>, are ye even listenin' ta me, <PRO_BOYGIRL>?!~
++  = ~<CHARNAME>... ? <CHARNAME>, are ye even listenin' ta me, <PRO_GIRLBOY>?!~
+   ++ ~Oh, Yeslick! You startled me. What is it you need, my friend?~ DO ~SetGlobal("LK#YeslickFriendTalks","GLOBAL",10) RealSetGlobalTimer("LK#YeslickFriendTalksTimer","GLOBAL",7200)~ + Yft4a
+   ++ ~Hm, yes? What is it, Yeslick... ?~ DO ~SetGlobal("LK#YeslickFriendTalks","GLOBAL",10) RealSetGlobalTimer("LK#YeslickFriendTalksTimer","GLOBAL",7200)~ + Yft4a
+   ++ ~Damn, I had hoped if I kept quiet long enough you would leave me be. Why must things never go my way?~ DO ~SetGlobal("LK#YeslickFriendTalks","GLOBAL",10) RealSetGlobalTimer("LK#YeslickFriendTalksTimer","GLOBAL",7200)~ + Yft4b
+@@ -916,7 +916,7 @@
+ APPEND LK#YESJ
+ 
+ IF ~~ LK#YeslickToL_1
+-  SAY ~Ye must be mad, <PRO_BOYGIRL>! Do ye really think ye can take on Irenicus without me? Ha!~
++  SAY ~Ye must be mad, <PRO_GIRLBOY>! Do ye really think ye can take on Irenicus without me? Ha!~
+   = ~I'll be right besides ye the whole time, just like I always have been. Besides, after all this runnin' around he's made us do, I want a piece o' him meself!~
+   COPY_TRANS PLAYER1 33
+ END

@@ -1,0 +1,11 @@
+--- LR\tra\french\LRVICONIA.TRA	Fri Oct 07 18:51:00 2005
++++ C:\BWP Patchstudio\patched files\LR\tra\french\LRVICONIA.TRA	Wed Nov 11 13:43:44 2015
+@@ -8,7 +8,7 @@
+ 
+ @4    = ~Tu ne maîtrises rien du tout ! Tu n'as pas la moindre victoire à ton nom, darthiir ! Ton premier plan pour t'approprier le pouvoir de l'Arbre de Vie a lamentablement échoué et les conséquences ont été terribles pour toi. Ton plan pour récupérer le pouvoir de l'Arbre de Vie une deuxième fois était un échec encore pire, puisque qu'il a mis fin à ta vie futile.~ [VICONI62]
+ 
+-@5    = ~Tu as également essayé de t'emparer de l'âme de <CHARNAME>. Tu as réussi pendant un temps, mais <PRO_SHEHE> t'a rendu la monnaie de ta pièce en ne te détruisant pas une fois, mais deux. Et à présent tu oses te prétendre meilleur que nous alors que tu ne peux même pas te considérer comme notre égal ?~
++@5    = ~Tu as également essayé de t'emparer de l'âme de <CHARNAME>. Tu as réussi pendant un temps, mais <PRO_HESHE> t'a rendu la monnaie de ta pièce en ne te détruisant pas une fois, mais deux. Et à présent tu oses te prétendre meilleur que nous alors que tu ne peux même pas te considérer comme notre égal ?~
+ 
+ @6    = ~Si *je* suis un raté, drow, alors je ne suis pas le seul. Dois-je te rappeler qui a été chassée de chez elle, de sa religion et de sa Maison ? Un remarquable oubli de ta part.~
+ 

@@ -1,0 +1,11 @@
+--- SOS\Language\Italian\CBISSON1.tra	Wed Sep 03 21:23:12 2008
++++ C:\BWP Patchstudio\patched files\SOS\Language\Italian\CBISSON1.tra	Wed Nov 11 13:41:53 2015
+@@ -21,7 +21,7 @@
+ @20   = ~Grazie. Lo terrò a mente.~
+ @21   = ~Qualsiasi cosa questi uomini vogliano da me, sono sicuro di poterli aiutare.~
+ @22   = ~Troverò subito queste persone e scoprirò ciò che vogliono.~
+-@23   = ~Io sono Ceeb Isson. Ho seguito i tuoi progressi in questo mondo da quando so che esisti. Consapevolezza che, devo dirlo, ho acquisito da circa quattro anni, da quando hai lasciato il luogo in cui sei cresciuto da <PRO_BOYGIRL>.~ [CB_77319]
++@23   = ~Io sono Ceeb Isson. Ho seguito i tuoi progressi in questo mondo da quando so che esisti. Consapevolezza che, devo dirlo, ho acquisito da circa quattro anni, da quando hai lasciato il luogo in cui sei cresciuto da <PRO_GIRLBOY>.~ [CB_77319]
+ @24   = ~Perchè saresti interessato alla mia vita e a ciò che faccio? Sinceramente non penso che questi siano affari tuoi.~
+ @25   = ~Mi stai mentendo. Sai bene a cosa mi riferisco. Così finché tu non lo ammetterai a te stesso, non potrai confessarlo a me.~ [CB_77320]
+ @26   = ~Sembri sapere molto. Chi sei? Per quale motivo conosci così tante cose sul mio conto?~

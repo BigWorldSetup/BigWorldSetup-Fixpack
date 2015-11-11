@@ -1,0 +1,11 @@
+--- allison\italian\r#allis.TRA	Sat Jan 10 01:14:48 2009
++++ C:\BWP Patchstudio\patched files\allison\italian\r#allis.TRA	Wed Nov 11 13:51:33 2015
+@@ -116,7 +116,7 @@
+ @115  = ~Chi diavolo sei tu?~
+ @116  = ~(l'accarezzi mentre lei ti abbraccia)~
+ @117  = ~Si beh, non devi ringraziarmi.~
+-@118  = ~(si discosta da te) Scusami, <LORDLADY>. Volevo solamente esserti grata per aver salvato il Bosco.~
++@118  = ~(si discosta da te) Scusami, <LADYLORD>. Volevo solamente esserti grata per aver salvato il Bosco.~
+ @119  = ~Va bene, va bene. Posso andare ora?~
+ @120  = ~Va bene, ma non è necessario essere così affettuosi.~
+ @121  = ~Oh, mi dispiace. Mi sono dimenticata che non ci conosciamo.~

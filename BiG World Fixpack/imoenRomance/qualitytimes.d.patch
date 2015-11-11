@@ -1,0 +1,11 @@
+--- imoenRomance\dialogues\SOA\Love\qualitytimes.d	Wed Nov 26 20:59:21 2014
++++ C:\BWP Patchstudio\patched files\imoenRomance\dialogues\SOA\Love\qualitytimes.d	Wed Nov 11 13:41:53 2015
+@@ -237,7 +237,7 @@
+ 
+ 	IF ~~ THEN BEGIN MRLT0-Sorry
+ 		SAY ~Good! You oughta be!~
+-		= ~Now be a good little <PRO_BOYGIRL>, go back to whatever you were doing and let me watch what I want, I command it! (She pushes you away and goes back to her bird-watching.)~
++		= ~Now be a good little <PRO_GIRLBOY>, go back to whatever you were doing and let me watch what I want, I command it! (She pushes you away and goes back to her bird-watching.)~
+ 		IF ~~ THEN EXIT
+ 	END
+ 

@@ -1,0 +1,11 @@
+--- CtB\Language\Italian\CB513REL.TRA	Tue Nov 03 17:11:24 2009
++++ C:\BWP Patchstudio\patched files\CtB\Language\Italian\CB513REL.TRA	Wed Nov 11 13:51:33 2015
+@@ -49,7 +49,7 @@
+ @49  = ~Come desiderate, mio <LADYLORD>. Ecco, l'atto completo e tutte le carte relative alla proprietà.~
+ @50  = ~E' un piacere fare affari con voi, mio <LADYLORD>.~
+ @51  = ~Mi dispiace, <SIRMAAM>, ma tutte le vendite sono definitive, soprattutto su una vendita di questa importanza. Ma credo che state facendo un buon affare.~
+-@52  = ~Come desiderate, mio <LORDLADY>.~
++@52  = ~Come desiderate, mio <LADYLORD>.~
+ @53  = ~Spero che stiate facendo una bella vita nella vostra lussuosa capanna di montagna.~
+ @54  = ~Hai preso in considerazione di vendere qualche tua proprietà? Venduta veloce con Lerrit, questo é il mio motto.~
+ @55  = ~Si, lo conosco il tuo motto.~

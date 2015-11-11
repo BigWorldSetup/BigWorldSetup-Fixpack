@@ -1,0 +1,11 @@
+--- amber\dialogs\m#interject.d	Fri Aug 21 11:33:00 2009
++++ C:\BWP Patchstudio\patched files\amber\dialogs\m#interject.d	Wed Nov 11 13:41:53 2015
+@@ -378,7 +378,7 @@
+   END
+ 
+   IF ~~ THEN BEGIN M#AmberPatriciaK
+-    SAY @2034 /* @2034 = ~Are you daft or something, <BOYGIRL>? I said that creature's money is no good here...~ */
++    SAY @2034 /* @2034 = ~Are you daft or something, <GIRLBOY>? I said that creature's money is no good here...~ */
+     =
+     @2035 /* @2035 = ~But just out of curiosity... What kind of a sum are we talking about here?~ */
+     IF ~~ THEN REPLY @2036 /* @2036 = ~I am sure 10 gold coins would do the trick, don't you agree?~ */ GOTO M#AmberPatriciaL

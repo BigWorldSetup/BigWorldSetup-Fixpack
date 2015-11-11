@@ -1,0 +1,11 @@
+--- Isra_bg2\translations\english\rh#quest.tra	Tue Sep 24 21:07:47 2013
++++ C:\BWP Patchstudio\patched files\Isra_bg2\translations\english\rh#quest.tra	Wed Nov 11 13:41:53 2015
+@@ -158,7 +158,7 @@
+ @147  = ~I ain't interested in talking with the likes o' ye. Least not unless ye've got a flask o' the Thumb's Bitter Black Ale with ye. I miss that stuff almost as much as freedom itself.~
+ @148  = ~And the ale will loosen your tongue, so to speak?~
+ @149  = ~Ye won't know unless ye try, lady.~
+-@150  = ~Are ye deaf, <PRO_BOYGIRL>? I've got nothing else to say to ye.~
++@150  = ~Are ye deaf, <PRO_GIRLBOY>? I've got nothing else to say to ye.~
+ @151  = ~Well... ain't that a blessed sight? Pity, though, that I've got nothing more to say than I did to your Tyrran friend. Quentin Jysstev is the one what's been payin' me to run goods from Calimshan.~
+ @152  = ~If you've got any Bitter Black Ale in stock, Alim al-Makram wants some.~
+ @153  = ~Do you know anything about a smuggler called Alim al-Makram?~

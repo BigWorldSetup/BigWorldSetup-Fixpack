@@ -1,0 +1,11 @@
+--- SOS\Language\Italian\CBDRAGDP.tra	Thu Sep 04 18:00:26 2008
++++ C:\BWP Patchstudio\patched files\SOS\Language\Italian\CBDRAGDP.tra	Wed Nov 11 13:41:53 2015
+@@ -3,7 +3,7 @@
+ @2    = ~Oh. Mi dispiace. Pensavo che avevi detto 'quello'.~
+ @3    = ~Ora muori, verme!~
+ @4    = ~Um... in realtà... Io non, um... penso che voglio... voglio... che é... er...~
+-@5    = ~No, in realtà hai bisogno di aprire la tua bocca da <RACE> e parlare. E' una cosa che tua madre *avrebbe* dovuto insegnarti quando eri <BOYGIRL>.~
++@5    = ~No, in realtà hai bisogno di aprire la tua bocca da <RACE> e parlare. E' una cosa che tua madre *avrebbe* dovuto insegnarti quando eri <GIRLBOY>.~
+ @6    = ~Ora che ci siamo chiariti, caro avventuriero, che cosa vuoi?~
+ @7    = ~Sputa il rospo, <RACE>. Non ho tutto l'anno a disposizione.~
+ @8    = ~Umm... Io stavo andando... um... andando via.~

@@ -1,0 +1,11 @@
+--- BG1NPCSoA\MISC\TOBBanter1.d	Thu May 02 12:27:58 2013
++++ C:\BWP Patchstudio\patched files\BG1NPCSoA\MISC\TOBBanter1.d	Wed Nov 11 13:51:33 2015
+@@ -267,7 +267,7 @@
+ =
+ ~Tell me.. Do you intend on becoming the new Bhaal?~
+  ++ ~I'd rather avoid that destiny if I could. Becoming a god is not what I desire. I just want to live a normal life.~ DO ~SetGlobal("SharPCTalkToB","GLOBAL",1)~ GOTO SharPCToB1
+- ++ ~It is my destiny! <CHARNAME>, the new <PRO_LORDLADY> of Murder. Don't you like the sound of that?~ DO ~SetGlobal("SharPCTalkToB","GLOBAL",1)~ GOTO SharPCToB2
++ ++ ~It is my destiny! <CHARNAME>, the new <PRO_LADYLORD> of Murder. Don't you like the sound of that?~ DO ~SetGlobal("SharPCTalkToB","GLOBAL",1)~ GOTO SharPCToB2
+  ++ ~I don't know yet, Shar-Teel. Such an important event must be considered carefully.~ DO ~SetGlobal("SharPCTalkToB","GLOBAL",1)~ GOTO SharPCToB3
+ END
+ 

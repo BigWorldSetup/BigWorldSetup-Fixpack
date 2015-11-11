@@ -1,0 +1,11 @@
+--- YoshimoRomance\TRANSLATIONS\English\Yoshimo.tra	Tue Oct 22 18:16:02 2013
++++ C:\BWP Patchstudio\patched files\YoshimoRomance\TRANSLATIONS\English\Yoshimo.tra	Wed Nov 11 13:39:37 2015
+@@ -680,7 +680,7 @@
+ @679  = ~<CHARNAME>... are you afraid?~
+ @680  = ~Excited is the word, Yoshimo. We’re so close to Imoen and Irenicus.~
+ @681  = ~Are you?~
+-@682  = ~I am, but there’s no going back, now. We have to face our fear to<NIGHTDAY>.~
++@682  = ~I am, but there’s no going back, now. We have to face our fear to<DAYNIGHT>.~
+ @683  = ~We don't have time to get distracted, Yoshimo. We need to focus.~
+ @684  = ~You are brave then, my friend.~
+ @685  = ~The great Yoshimo? No...~

@@ -1,0 +1,38 @@
+--- hessa\dialog\suhessa.d	Mon Feb 23 00:54:18 2004
++++ C:\BWP Patchstudio\patched files\hessa\dialog\suhessa.d	Wed Nov 11 13:41:53 2015
+@@ -86,7 +86,7 @@
+ END
+ 
+ IF ~~ THEN BEGIN IfYouChangeYourMind4
+-SAY ~Good <BOYGIRL>. Once you get the necklace, just bring it back here, and we'll make the exchange.~
++SAY ~Good <GIRLBOY>. Once you get the necklace, just bring it back here, and we'll make the exchange.~
+ IF ~~ THEN DO ~RevealAreaOnMap("ARSU10") SetGlobal("ToldNecklace", "GLOBAL", 1)~ EXIT
+ END 
+ 
+@@ -361,7 +361,7 @@
+ END
+ 
+ IF ~~ THEN BEGIN IfYouChangeYourMind3
+-SAY ~Good <PRO_BOYGIRL>. Well, I'm sick of waiting out here for some action, and I'll be damned if I spend another hour drinking the swill they're serving at that dump, The Crooked Crane.~
++SAY ~Good <PRO_GIRLBOY>. Well, I'm sick of waiting out here for some action, and I'll be damned if I spend another hour drinking the swill they're serving at that dump, The Crooked Crane.~
+ =
+ ~When you get the necklace, look me up at The Five Flagons. I'll be renting a room there.~
+ =
+@@ -554,7 +554,7 @@
+ END
+ 
+ IF~~ THEN BEGIN NoStepfather
+-SAY ~Yes, I am an orphan. Only...not like you. You grew up - where? Candlekeep? You had a roof over your head that you could count on. You had a stepfather who, I assume, bothered to clothe you , feed you, and tell you what a nice <PRO_BOYGIRL> you were. Other than things like that, yeah, I'm sure we're exactly alike.~
++SAY ~Yes, I am an orphan. Only...not like you. You grew up - where? Candlekeep? You had a roof over your head that you could count on. You had a stepfather who, I assume, bothered to clothe you , feed you, and tell you what a nice <PRO_GIRLBOY> you were. Other than things like that, yeah, I'm sure we're exactly alike.~
+ ++ ~I was only trying to have a conversation. I'm sorry I said anything.~ GOTO SoAmI
+ ++ ~Get over yourself. It's not as if my life is perfect!~ GOTO HowSo
+ ++ ~Maybe I did have a little more luck than you in my early years, but I'm certainly making up for it now.~ GOTO HowSo
+@@ -1387,7 +1387,7 @@
+ END
+ 
+ IF ~~ THEN BEGIN MakeADeal
+-SAY ~It's burning my own purse, but you look like a nice <BOYGIRL>. I'll make you a deal. How about 900 gold? I can lower the price no more than that.~ 
++SAY ~It's burning my own purse, but you look like a nice <GIRLBOY>. I'll make you a deal. How about 900 gold? I can lower the price no more than that.~ 
+ IF ~PartyGoldGT(899)~ THEN GOTO DealHasTheCash
+ IF ~PartyGoldLT(900)~ THEN GOTO DealNotEnoughCash
+ ++ ~Sorry. That's just too rich for my blood.~ GOTO Farewell

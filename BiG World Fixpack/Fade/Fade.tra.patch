@@ -1,5 +1,5 @@
---- Fade\tra\classic\english\fade.tra	Mon May 26 16:06:36 2014
-+++ C:\BWP Patchstudio\patched files\Fade\tra\classic\english\fade.tra	Sat Feb 07 17:06:27 2015
+--- Fade\tra\classic\english\fade.tra	Mon May 26 17:06:36 2014
++++ C:\BWP Patchstudio\patched files\Fade\tra\classic\english\fade.tra	Wed Nov 11 15:40:49 2015
 @@ -183,7 +183,7 @@
  @180  = ~(smile) Of course we can. No one would know. Just think of the money... ~
  @181  = ~Money? Is that everything to you? No, hand the gems over, they're going back in the collar.~
@@ -55,6 +55,15 @@
  @1999 = ~This place isn't healthy for me. I don't know whether I want to mate with you or rip you into little bits! I'm possibly not... safe to be around at the moment.~
  @2000 = ~(She wrenches her wrists from you and jumps off the bed) No... No! Everything... it's over, <CHARNAME>, possibly even before it began, but it's *over*! I can't believe you want me to become... to allow that side of me to prevail... just for your own pleasure?! Not that you would have been able to have handled me in any way!!~
  @2001 = ~(She unlocks the door, wrenches it open and storms off)~
+@@ -2291,7 +2291,7 @@
+ @2260 = ~I was only trying to see things from all perspectives, <CHARNAME>, nothing more. I can see that you were hurt deeply by what has happened, and I'm sorry for bringing it up.~
+ @2261 = ~No need to apologise, Fade. I shouldn't have blown up like that. You have every right to be curious... as do I. What about your upbringing? How does a Fey'ri upbringing compare to mine?~
+ @2262 = ~It's okay. I shouldn't have flown off the handle like that. I don't blame you for being curious. So, what of you then? What of your childhood?~
+-@2263 = ~Yes, I have. I'll make sure you're no longer troubled by my prattling, oh-so-gracious <PRO_LORDLADY> of Murder.~
++@2263 = ~Yes, I have. I'll make sure you're no longer troubled by my prattling, oh-so-gracious <PRO_LADYLORD> of Murder.~
+ @2264 = ~Perhaps, <CHARNAME>. We'll see.~
+ @2265 = ~Yes, we should get moving.~
+ @2266 = ~<CHARNAME>, I cannot help but feel that I brushed you off rather quickly the last time we spoke. It is only natural for you to want to know about my upbringing, especially since I asked you about yours.~
 @@ -3336,7 +3336,7 @@
  @3290 = ~(follow her)~
  @3291 = ~(leave her alone)~

@@ -1,0 +1,10 @@
+--- Kindrek\English\KIND25J.TRA	Wed Aug 24 03:27:20 2005
++++ C:\BWP Patchstudio\patched files\Kindrek\English\KIND25J.TRA	Wed Nov 11 13:51:33 2015
+@@ -59,6 +59,6 @@
+ @58   = ~That does not matter, lich! I will scatter your bones across this cavern!~
+ @59   = ~So this is the mighty wizard-slayer, the berserker Kindrek. This cavern shall entomb *your* bones along with mine!~
+ @60   = ~Tell me about Kindrek.~
+-@61   = ~Kindrek is the most savage member of <PRO_LORDLADY> <CHARNAME>'s group. His only delight is in the butchering of weaker foes, in spilling their blood. He drinks in fear like a deer drinks water from a stream. Reports of his activities indicate that he despises wizards and slays them whenever possible. Some say this hatred even extends to items imbued with magical properties. Yet many are puzzled by Disruptor, a seemingly magical weapon cherished by Kindrek.~
++@61   = ~Kindrek is the most savage member of <PRO_LADYLORD> <CHARNAME>'s group. His only delight is in the butchering of weaker foes, in spilling their blood. He drinks in fear like a deer drinks water from a stream. Reports of his activities indicate that he despises wizards and slays them whenever possible. Some say this hatred even extends to items imbued with magical properties. Yet many are puzzled by Disruptor, a seemingly magical weapon cherished by Kindrek.~
+ @62   = ~You know me well, historian! But say Disruptor is magical again, and I'll rip your throat out!~ [KINDR109]
+ @63   = ~Bring me Kindrek, the Wizard-Hating Berserker.~

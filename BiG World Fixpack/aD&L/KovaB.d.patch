@@ -1,0 +1,11 @@
+--- aD&L\KovaB.d	Wed Jan 16 16:34:10 2008
++++ C:\BWP Patchstudio\patched files\aD&L\KovaB.d	Wed Nov 11 13:51:33 2015
+@@ -2844,7 +2844,7 @@
+ 
+ CHAIN
+ IF ~~ THEN BAnomen KKAnom6-3
+-~I thank you most deeply, my <LORDLADY>, for this favour. Now, to the necessary task of eradicating evil.~
++~I thank you most deeply, my <LADYLORD>, for this favour. Now, to the necessary task of eradicating evil.~
+ DO ~SetCutSceneLite(TRUE)~
+ = ~Stand, villain! I give you one more chance - free lady Kiyone from the bondage and lies you have woven around her, or face my righteous wrath!~
+ == Z#KOVAB ~There is nothing I can do if in your pathetic attempts at pursuing her attentions, you have fallen flat on your over-inflated ego, and even less I can do for a cowardly dog who will not admit his own inadequacies.~

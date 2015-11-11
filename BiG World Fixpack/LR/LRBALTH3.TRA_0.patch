@@ -1,0 +1,11 @@
+--- LR\tra\french\LRBALTH3.TRA	Fri Oct 07 18:51:02 2005
++++ C:\BWP Patchstudio\patched files\LR\tra\french\LRBALTH3.TRA	Wed Nov 11 13:41:53 2015
+@@ -16,7 +16,7 @@
+ 
+ @8    = ~Nnn... Non !! <CHARNAME>, tu ne vas pas le laisser faire devant toi ! Et tes promesses aux elfes ? Et les promesses que tu m'as faites ?!! Par la grande Balance, je ne serais pas plus longtemps trompée par ta noire trahison ! Je dois arrêter Irenicus maintenant, avant qu'il ne soit trop tard !~
+ 
+-@9    = ~Vil <PRO_BOYGIRL>, <CHARNAME> qu'as-tu fait ? Le mage mauvais nous fixe d'un oeil noir ! A présent il sera plus fort que jamais ! Bouh tremble d'une juste furie et il me dit de CHAAAARGEER !~
++@9    = ~Vil <PRO_GIRLBOY>, <CHARNAME> qu'as-tu fait ? Le mage mauvais nous fixe d'un oeil noir ! A présent il sera plus fort que jamais ! Bouh tremble d'une juste furie et il me dit de CHAAAARGEER !~
+ 
+ @10   = ~<CHARNAME>, je suspecte depuis longtemps que tu es une plaie noire lâchée sur Féérune – Cette fourberie le confirme. Mon devoir envers le pays m'oblige à intervenir et à arrêter les maléfices du mage corrompu avant qu'ils ne se répandent encore plus !~
+ 

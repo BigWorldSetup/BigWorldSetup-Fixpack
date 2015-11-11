@@ -1,0 +1,11 @@
+--- Faren\translations\english\fhfq.tra	Mon Nov 11 14:33:10 2013
++++ C:\BWP Patchstudio\patched files\Faren\translations\english\fhfq.tra	Wed Nov 11 13:41:53 2015
+@@ -105,7 +105,7 @@
+ @92   = ~All...all right, then. I would have preferred that Halmar be eliminated altogether, but I suppose this is the next best thing.~
+ @93   = ~What? No!~
+ @94   = ~Listen, if you do me a favour, I can get you a nice reward. Go and kill Halmar for me.~
+-@95   = ~I don't think I can do that. I'm not an errand<PRO_BOYGIRL> - I have my own things to do.~
++@95   = ~I don't think I can do that. I'm not an errand<PRO_GIRLBOY> - I have my own things to do.~
+ @96   = ~Very well, I'll do it. What will you give me, then?~
+ @97   = ~Is there another alternative? I have no wish to kill anybody.~
+ @98   = ~I don't need payment to rid the city of such a scoundrel. I'll be sure to do it.~

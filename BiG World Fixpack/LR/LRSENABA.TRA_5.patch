@@ -1,0 +1,11 @@
+--- LR\tra\spanish\LRSENABA.TRA	Sat Jun 04 15:41:46 2005
++++ C:\BWP Patchstudio\patched files\LR\tra\spanish\LRSENABA.TRA	Wed Nov 11 13:41:53 2015
+@@ -56,7 +56,7 @@
+ @55   = ~No tan rápido, mi desequilibrado amigo. Primero cogeré mi premio.~
+ @56   = ~(Riendo) Fue de lo más constructivo. La drow fue engañada de modo igualmente sagaz. Y ahora, toda esa aguda inteligencia, todo ese orgullo... están atrapados dentro de un brillante trozo de cristal.~
+ @57   = ~¡¡Nnooo!! ¡<CHARNAME>, no puedes permitir que esto suceda delante de tus propios ojos! ¡¿Qué pasó con tu promesa a los elfos?! ¡¡¿con lo que me prometiste a mí?!! ¡Por el Gran Equilibrio!, ¡No me dejaré engañar por tu viles tretas nunca más! ¡Tengo que detener a Irenicus antes de que sea demasiado tarde!~
+-@58   = ~Maldito <PRO_BOYGIRL> <CHARNAME>, ¿qué has hecho? El Maligno nos vigila de reojo! ¡Ahora va a volverse más fuerte que nunca! Bubú tiembla de bien justificada furia y me dice que debo ATACAAAAAAARR!~
++@58   = ~Maldito <PRO_GIRLBOY> <CHARNAME>, ¿qué has hecho? El Maligno nos vigila de reojo! ¡Ahora va a volverse más fuerte que nunca! Bubú tiembla de bien justificada furia y me dice que debo ATACAAAAAAARR!~
+ @59   = ~<CHARNAME>, hace mucho que sospechaba que no eres más que una cicatriz infecta sobre Faerun; esta traición lo confirma. ¡Mis deberes para con la tierra me obligan a intervenir, y a que detenga a ese maldito mago putrefacto antes de que pueda infligir más daño!~
+ @60   = ~<CHARNAME>, como caballero de Avoreen y siervo del bien, ¡no puedo permitir que semejante vileza quede impune! Mi propio cuerpo y alma casi fueron poseídos por las sombras, y no voy a quedarme mirando como tú, viendo como se levanta otro Poder Oscuro!~
+ @61   = ~<CHARNAME>, te he aguantado muchas cosas, pero este último acto de crueldad calculada me parece demasiado repugnante. Permites que necromancia más vil se desarrolle ante tus propios ojos sin hacer nada por impedirlo. No voy a seguirte en esta ocasión.~
