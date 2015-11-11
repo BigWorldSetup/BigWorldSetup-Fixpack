@@ -1,0 +1,684 @@
+--- Neh'taniel\Dialogue\SK#NEHTJ.d	Fri Feb 18 23:00:21 2011
++++ C:\BWP Patchstudio\patched files\Neh'taniel\Dialogue\SK#NEHTJ.d	Wed Nov 11 22:27:46 2015
+@@ -10,31 +10,31 @@
+ 
+ I_C_T VVPARIS 7 NehtVamp1
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @0
+-== VVPARIS IF ~Inparty("SK#Neht")~ THEN @1
++== VVPARIS IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @1
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @2
+-== VVPARIS IF ~Inparty("SK#Neht")~ THEN @3
++== VVPARIS IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @3
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @4
+ END
+ 
+ // Anomen and Neh't drama, within a PC/Anomen romance banter
+ I_C_T BANOMEN 26 NehtFun
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @5
+-== BANOMEN  IF ~Inparty("SK#Neht")~ THEN @6
++== BANOMEN IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @6
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @7
+-== BANOMEN  IF ~Inparty("SK#Neht")~ THEN @8
++== BANOMEN IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @8
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @9
+-== BANOMEN  IF ~Inparty("SK#Neht")~ THEN @10
++== BANOMEN IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @10
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @11
+-== BANOMEN  IF ~Inparty("SK#Neht")~ THEN @12
++== BANOMEN IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @12
+ END
+ 
+ //Bodhi and Neh't
+ 
+ I_C_T BODHI 36 NehtVamp7
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @13
+-== BODHI IF ~Inparty("SK#Neht")~ THEN @14
++== BODHI IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @14
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @15
+-== BODHI IF ~Inparty("SK#Neht")~ THEN @16
++== BODHI IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @16
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @17
+ END
+ 
+@@ -91,11 +91,11 @@
+ END
+ 
+ I_C_T2 SHAGRL01 4 Nehtspeaks2
+-== SK#NEHTJ @27
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @27
+ END
+ 
+ I_C_T2 SHAGRL01 2 Allisnotwell
+-== SK#NEHTJ @28
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @28
+ = @29
+ END
+ 
+@@ -148,7 +148,7 @@
+ END VVTANOV 6
+ 
+ I_C_T2 VVTANOV 3 NehtVamp5 //Neh't interjects into Tanova attacking
+-== SK#NEHTJ @41
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @41
+ END
+ 
+ INTERJECT VVTANOV 4 NehtVamp3
+@@ -160,7 +160,7 @@
+ END
+ 
+ I_C_T SUDEMIN 2 Friend
+-== SUDEMIN IF ~Inparty("SK#Neht")~ THEN @44
++== SUDEMIN IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @44
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @45
+ END
+ 
+@@ -190,7 +190,7 @@
+         
+ EXTEND_BOTTOM VICONI 2
+ IF ~Global("NehtishVic","GLOBAL",0)
+-Inparty("SK#NEHT")~ THEN DO ~SetGlobal("NehtishVic","GLOBAL",1)~ EXTERN ~SK#NEHTJ~ MeetNV
++InParty("SK#NEHT")~ THEN DO ~SetGlobal("NehtishVic","GLOBAL",1)~ EXTERN ~SK#NEHTJ~ MeetNV
+ END
+ 
+ APPEND SK#NEHTJ
+@@ -203,7 +203,9 @@
+ //Bodhi taunting the wraith x-many times
+ 
+ EXTEND_BOTTOM BODHI 1
+-IF ~Inparty("SK#Neht")~ THEN GOTO teas
++IF ~InParty("SK#Neht")
++InMyArea("SK#Neht")
++!StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN GOTO teas
+ END
+ 
+ CHAIN IF ~Global("NehtTeas","GLOBAL",0)~ THEN BODHI teas
+@@ -247,7 +249,9 @@
+ END
+ 
+ EXTEND_BOTTOM PPBODHI4 7
+-IF ~Inparty("SK#Neht")~ THEN GOTO TauntNeht
++IF ~InParty("SK#Neht")
++InMyArea("SK#Neht")
++!StateCheck("SK#Neht",CD_STATE_NOTVALID)~~ THEN GOTO TauntNeht
+ END
+ 
+ CHAIN IF ~GLOBAL("TauntNeht","GLOBAL",0)~ THEN PPBODHI4 TauntNeht
+@@ -258,9 +262,9 @@
+ 
+ I_C_T BODHI 6 MightAsWell
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @66
+-== BODHI IF ~Inparty("SK#Neht")~ THEN @67
++== BODHI IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @67
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @68
+-== BODHI IF ~Inparty("SK#Neht")~ THEN @69
++== BODHI IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @69
+ END
+ 
+ 
+@@ -275,11 +279,13 @@
+ 
+ IF ~~ THEN BEGIN meff2
+ SAY @73
+-IF ~~ THEN EXTERN ~SK#NEHTJ~ meff3
++IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN EXTERN ~SK#NEHTJ~ meff3
+ END
+ END
+ 
+-CHAIN ~SK#NEHTJ~ meff3
++CHAIN IF ~InParty("SK#Neht")
++InMyArea("SK#Neht")
++!StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN ~SK#NEHTJ~ meff3
+ @74
+ == ~SK#AMAUN~ @75
+ == ~SK#NEHTJ~ @76
+@@ -711,7 +717,7 @@
+ 
+ INTERJECT BRUS3 1 NoST
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID) Global("SK#RENAL","GLOBAL",0)~ THEN @200
+-== BRUS3 IF ~Inparty("SK#Neht")~ THEN  @201
++== BRUS3 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN  @201
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @202
+ END
+ + ~Class(Player1,THIEF_ALL)~ + @203 EXTERN ~SK#NEHTJ~ NoST2
+@@ -761,7 +767,7 @@
+ 
+ INTERJECT RENAL 30 NehtRenal
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @200
+-== RENAL IF ~Inparty("SK#Neht")~ THEN @216
++== RENAL IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @216
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @202
+ END
+ + ~Class(Player1,THIEF_ALL)~ + @203 EXTERN ~SK#NEHTJ~ NoRenal1
+@@ -805,7 +811,7 @@
+ 
+ INTERJECT ARAN 0 NehtAran
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID) Global("ImTooSexyForThisBrus","Global",1) !Global("SK#NehtThieves","GLOBAL",1)~ THEN @200
+-== ARAN IF ~Inparty("SK#Neht")~ THEN @216
++== ARAN IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @216
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @202
+ END
+ + ~Class(Player1,THIEF_ALL)~ + @203 EXTERN ~SK#NEHTJ~ NoARAN1
+@@ -875,7 +881,10 @@
+ 
+ //Relic speaks in temple
+ 
+-CHAIN IF ~Global("RelicNehto1","GLOBAL",2)~ THEN SK#NEHTJ Defiled
++CHAIN IF ~Global("RelicNehto1","GLOBAL",2)
++InParty("SK#Neht")
++InMyArea("SK#Neht")
++!StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN SK#NEHTJ Defiled
+ @227 DO ~SetGlobal("RelicNehto1","GLOBAL",3)~
+ == SW2HOST @228
+ == SK#NEHTJ @229
+@@ -885,7 +894,9 @@
+ 
+ //Spider love? - takes place in the Underdark - added a sound for the spider
+ 
+-CHAIN IF ~Inparty("SK#Neht")
++CHAIN IF ~InParty("SK#Neht")
++InMyArea("SK#Neht")
++!StateCheck("SK#Neht",CD_STATE_NOTVALID)
+ See("SK#UNAT")
+ Global("SpiderLove","LOCALS",0)~ THEN SK#NEHTJ SpiderLove
+ @232 DO ~SetGlobal("SpiderLove","LOCALS",1)~
+@@ -898,7 +909,9 @@
+ //more Shade Lord drama
+ 
+ CHAIN IF WEIGHT #-1 ~Global("NehtTalk","GLOBAL",0)
+-IsValidForpartyDialog("SK#Neht")~ THEN SHADEL Hi_There
++IsValidForpartyDialog("SK#Neht")
++InMyArea("SK#Neht")
++!StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN SHADEL Hi_There
+ @237 DO ~SetGlobal("NehtTalk","GLOBAL",1)~
+ == SK#NEHTJ @238
+ == SHADEL @239
+@@ -964,7 +977,9 @@
+ 
+ APPEND SK#NEHTJ
+ IF WEIGHT #-1 ~Global("NehtE","LOCALS",1)
+-Inparty("SK#Neht")~ THEN BEGIN 1yyy
++InParty("SK#Neht")
++InMyArea("SK#Neht")
++!StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN BEGIN 1yyy
+ SAY @258
+ IF ~~ THEN DO ~Leaveparty()
+ ActionOverride("SK#Neht",Enemy())
+@@ -973,7 +988,9 @@
+ 
+ //Running into Ellesime
+ 
+-IF WEIGHT #-1 ~Inparty("SK#Neht")
++IF WEIGHT #-1 ~InParty("SK#Neht")
++InMyArea("SK#Neht")
++!StateCheck("SK#Neht",CD_STATE_NOTVALID)
+ Global("ElleNeht","GLOBAL",1)~ THEN BEGIN UhohElle
+ SAY @259
+ IF ~~ THEN DO ~SetGlobal("ElleNeht","GLOBAL",2)~ EXIT
+@@ -983,7 +1000,7 @@
+ //Ellesime interject
+ 
+ INTERJECT SUELLEAP 3 AlmostSpotNeht
+-== SUELLEAP IF ~Inparty("SK#Neht")~ THEN @260
++== SUELLEAP IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @260
+ END SUELLEAP 4
+ 
+ //Slayer Evilness
+@@ -1027,7 +1044,7 @@
+ //Wellyn
+ 
+ INTERJECT WELLYN 7 Wellyn
+-== SK#NEHTJ @270
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @270
+ END WELLYN 8
+ 
+ //Kangaxx
+@@ -1045,7 +1062,7 @@
+ END
+ 
+ I_C_T2 HLSKULL 8 NehtKang
+-== SK#NEHTJ @272
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @272
+ END
+ 
+ //Gaal
+@@ -1061,7 +1078,7 @@
+ //Tree of Life
+ 
+ INTERJECT PLAYER1 33 SK#TreeofLife
+-== PLAYER1 IF ~Inparty("SK#Neht")~ THEN @275
++== PLAYER1 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @275
+ END
+ ++ @276 EXTERN SK#NEHTJ risk
+ ++ @277 EXTERN SK#NEHTJ power
+@@ -1169,18 +1186,18 @@
+ // Saemon
+ 
+ INTERJECT PPSAEM 44 NehtBoat
+-== PPSAEM IF ~Inparty("SK#Neht")~ THEN @308
++== PPSAEM IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @308
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @309
+-== PPSAEM IF ~Inparty("SK#Neht")~ THEN @310
++== PPSAEM IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @310
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @311
+ END PPSAEM 45
+ 
+ I_C_T2 PPSAEM 4 NehtBoat2
+-== PPSAEM IF ~Inparty("SK#Neht")~ THEN @308
++== PPSAEM IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @308
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @309
+-== PPSAEM IF ~Inparty("SK#Neht")~ THEN @310
++== PPSAEM IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @310
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @311
+-== PPBODHI3 IF ~Inparty("SK#Neht")~ THEN @312
++== PPBODHI3 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @312
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @313
+ END
+ 
+@@ -1188,13 +1205,13 @@
+ 
+ I_C_T PPSAEM 14 OffBoatB
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @314
+-== PPSAEM IF ~Inparty("SK#Neht")~ THEN @315
++== PPSAEM IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @315
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @316
+ END
+ 
+ I_C_T PPSAEM 53 OffBoatR
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @314
+-== PPSAEM IF ~Inparty("SK#Neht")~ THEN @315
++== PPSAEM IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @315
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @317
+ END
+ 
+@@ -1288,7 +1305,7 @@
+ //How Irenicus got to the wraith
+ 
+ I_C_T2 PPIRENI2 2 WraithIreni
+-== PPIRENI2 IF ~Inparty("SK#Neht")~ THEN @339
++== PPIRENI2 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @339
+ END
+ 
+ //Bad Yoshimo!
+@@ -1310,7 +1327,7 @@
+ CHAIN IF WEIGHT #-1 ~Global("RelicDragon","GLOBAL",2)~ THEN SW2HOST RFirk
+ @342
+ DO ~SetGlobal("RelicDragon","GLOBAL",3)~
+-== SK#NEHTJ @343
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @343
+ == SW2HOST @344 DO ~DestroySelf()~
+ EXIT
+ 
+@@ -1564,9 +1581,9 @@
+ 
+ INTERJECT UHINN01 16 UmarWitch
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @412
+-== UHINN01 IF ~Inparty("SK#Neht")~ THEN @413
+-== UHINN02 IF ~Inparty("SK#Neht")~ THEN @414
+-== UHINN01 IF ~Inparty("SK#Neht")~ THEN @415
++== UHINN01 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @413
++== UHINN02 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @414
++== UHINN01 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @415
+ END UHINN01 17 
+ 
+ //Daar in Imnesvale
+@@ -1576,23 +1593,23 @@
+ END
+ 
+ I_C_T2 JUGDAR01 11 DaarNeht1
+-== SK#NEHTJ @417
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @417
+ END
+ 
+ I_C_T2 JUGDAR01 15 DaarNeht2
+-== SK#NEHTJ @417
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @417
+ END
+ 
+ //Sassar
+ 
+ INTERJECT SASSAR 8 SassWarn
+-== SASSAR IF ~!Inparty("SK#Neht") !Global("PlayerThiefGuild","GLOBAL",1)~ THEN @418
++== SASSAR IF ~!InParty("SK#Neht") !Global("PlayerThiefGuild","GLOBAL",1)~ THEN @418
+ END SASSAR 9
+ 
+ // Cernd
+ 
+ I_C_T2 CERND 0 NegaCerd
+-== CERND IF ~Inparty("SK#Neht")~ THEN @419
++== CERND IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @419
+ END
+ 
+ //Skinner
+@@ -1602,7 +1619,7 @@
+ END
+ 
+ I_C_T2 TRSKIN03 4 DeadSense2
+-== TRSKIN03 IF ~Inparty("SK#Neht")~ THEN @421
++== TRSKIN03 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @421
+ END
+ 
+ I_C_T2 TRSKIN03 7 DeadSense4
+@@ -1610,27 +1627,27 @@
+ END
+ 
+ I_C_T2 TRSKIN03 10 DeadSense1
+-== TRSKIN03 IF ~Inparty("SK#Neht")~ THEN @421
++== TRSKIN03 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @421
+ END
+ 
+ I_C_T2 TRSKIN03 12 DeadSense3
+-== TRSKIN03 IF ~Inparty("SK#Neht")~ THEN @421
++== TRSKIN03 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @421
+ END
+ 
+ //Faldorn
+ 
+ I_C_T2 CEFALDOR 2 DruidHate
+-== CEFALDOR IF ~Inparty("SK#Neht")~ THEN @423
++== CEFALDOR IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @423
+ END
+ 
+ //Diseased One
+ 
+ INTERJECT RIFTM01 0 RiftNeht
+-== RIFTM01 IF ~Inparty("SK#Neht")~ THEN @424
+-== SK#NEHTJ @425
+-== RIFTM01 @426
+-== SK#NEHTJ @427
+-== RIFTM01 @428
++== RIFTM01 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @424
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @425
++== RIFTM01 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @426
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @427
++== RIFTM01 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @428
+ END RIFTM01 6
+ 
+ //Adalon
+@@ -1640,7 +1657,7 @@
+ END
+ 
+ INTERJECT UDSILVER 53 SpiderNeht
+-== UDSILVER IF ~Inparty("SK#Neht")~ THEN @430
++== UDSILVER IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @430
+ = @431
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @154
+ END UDSILVER 35
+@@ -1658,38 +1675,38 @@
+ //handmaiden of lolth
+ 
+ I_C_T UDDROW35 1 blessed
+-== UDDROW35 IF ~Inparty("SK#Neht")~ THEN @433
++== UDDROW35 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @433
+ END
+ 
+ I_C_T UDDROW35 0 blessed2
+-== UDDROW35 IF ~Inparty("SK#Neht")~ THEN @434
++== UDDROW35 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @434
+ END
+ 
+ INTERJECT UDIMRAE 2 blessed3
+-== UDIMRAE IF ~Inparty("SK#Neht")~ THEN @435
++== UDIMRAE IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @435
+ = @436
+ END UDIMRAE 3
+ 
+ INTERJECT DADROW17 0 bleed4
+-== DADROW17 IF ~Inparty("SK#Neht")~ THEN @437
++== DADROW17 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @437
+ END DADROW17 1
+ 
+ //Sola notices the spider
+ 
+ I_C_T UDSOLA01 1 bleed5
+-== UDSOLA01 IF ~Inparty("SK#Neht")~ THEN @438
++== UDSOLA01 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @438
+ END
+ 
+ I_C_T UDSOLA01 18 bleed6
+-== UDSOLA01 IF ~Inparty("SK#Neht")~ THEN @439
++== UDSOLA01 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @439
+ END
+ 
+ I_C_T UDSOLA01 30 bleed7
+-== UDSOLA01 IF ~Inparty("SK#Neht")~ THEN @440
++== UDSOLA01 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @440
+ END
+ 
+ I_C_T UDSOLA01 129 bleed8
+-== UDSOLA01 IF ~Inparty("SK#Neht")~ THEN @441
++== UDSOLA01 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @441
+ END
+ 
+ // Jan's intro
+@@ -1720,7 +1737,7 @@
+ //Underdark stuff
+ 
+ INTERJECT DADROW26 2 hungryspider
+-== DADROW26 IF ~Inparty("SK#Neht")~ THEN @450
++== DADROW26 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @450
+ END
+ ++ @451 EXTERN ~SK#NEHTJ~ hungryspider2
+ ++ @452 EXTERN ~SK#NEHTJ~ hungryspider2
+@@ -1734,21 +1751,21 @@
+ END
+ 
+ I_C_T UDDUER01 1 DSee
+-== UDDUER01 IF ~Inparty("SK#Neht")~ THEN @455
++== UDDUER01 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @455
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @456
+-== UDDUER01 IF ~Inparty("SK#Neht")~ THEN @457
++== UDDUER01 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @457
+ END
+ 
+ I_C_T UDSVIR03 0 UndeadTravel2
+-== UDSVIR03 IF ~Inparty("SK#Neht")~ THEN @458
++== UDSVIR03 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @458
+ END
+ 
+ I_C_T UDDROW16 1 Spiderbattle
+-== UDDROW16 IF ~Inparty("SK#Neht")~ THEN @459
++== UDDROW16 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @459
+ END
+ 
+ EXTEND_BOTTOM UDDROW10 1
+-IF ~Inparty("SK#Neht")~ THEN REPLY @460 EXTERN ~UDDROW10~ Chath
++IF ~InParty("SK#Neht")~ THEN REPLY @460 EXTERN ~UDDROW10~ Chath
+ END
+ 
+ APPEND UDDROW10
+@@ -1771,20 +1788,22 @@
+ // Desharik
+ 
+ EXTEND_BOTTOM PPDESH 12
+-IF ~Inparty("SK#Neht")
++IF ~InParty("SK#Neht")
++InMyArea("SK#Neht")
++!StateCheck("SK#Neht",CD_STATE_NOTVALID)
+ Global("NehtBoo","GLOBAL",0)~ THEN REPLY @464 EXTERN ~SK#NEHTJ~ Boo
+ END
+ 
+ CHAIN IF ~~ THEN SK#NEHTJ Boo
+ @465 DO ~SetGlobal("NehtBoo","GLOBAL",1)~
+-== MINSCJ IF ~Inparty("Minsc")~ THEN @466
+-== PPDESH IF ~Inparty("Minsc")~ THEN @467
+-== SK#NEHTJ IF ~Inparty("Minsc")~ THEN @468
++== MINSCJ IF ~InParty("Minsc")~ THEN @466
++== PPDESH IF ~InParty("Minsc")~ THEN @467
++== SK#NEHTJ IF ~InParty("Minsc")~ THEN @468
+ == PPDESH @469
+ == SK#NEHTJ @470
+ END
+ IF ~~ THEN REPLY @471 EXTERN ~PPDESH~ 18
+-IF ~Inparty("Minsc")~ THEN REPLY @472 EXTERN ~PPDESH~ 14
++IF ~InParty("Minsc")~ THEN REPLY @472 EXTERN ~PPDESH~ 14
+ IF ~~ THEN REPLY @473 EXTERN ~SK#NEHTJ~ Boo2
+ 
+ APPEND SK#NEHTJ
+@@ -1833,7 +1852,7 @@
+ //Jarlaxle
+ 
+ EXTEND_BOTTOM JARLAXLE 16
+-IF ~Inparty("SK#Neht")~ THEN EXTERN ~JARLAXLE~ Goodslaves
++IF ~InParty("SK#Neht")~ THEN EXTERN ~JARLAXLE~ Goodslaves
+ END
+ 
+ APPEND JARLAXLE
+@@ -1846,7 +1865,7 @@
+ //Tanner
+ 
+ EXTEND_TOP TANNER 7
+-IF ~Inparty("SK#Neht")~ THEN EXTERN ~TANNER~ USimi
++IF ~InParty("SK#Neht")~ THEN EXTERN ~TANNER~ USimi
+ END
+ 
+ APPEND TANNER
+@@ -1950,33 +1969,33 @@
+ 
+ I_C_T HLSION 3 BadSL
+ == HLKETTA @518
+-== HLSION IF ~Inparty("SK#Neht")~ THEN @519
++== HLSION IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @519
+ END
+ 
+ //Spider biting drow
+ 
+ I_C_T2 DADROW6 1 BiteDrow1
+-== SK#NEHTJ @520 
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @520 
+ == DADROW6 @521 
+ END
+ 
+ I_C_T2 DADROW6 2 BiteDrow2
+-== SK#NEHTJ @520 
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @520 
+ == DADROW6 @521 
+ END
+ 
+ I_C_T2 DADROW6 5 BiteDrow3
+-== SK#NEHTJ @520 
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @520 
+ == DADROW6 @521 
+ END
+ 
+ I_C_T2 DADROW6 6 BiteDrow4
+-== SK#NEHTJ @520 
++== SK#NEHTJ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @520 
+ == DADROW6 @521 
+ END
+ 
+ I_C_T2 DADROW6 7 BiteDrow5 
+-== DADROW6 @522
++== DADROW6 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @522
+ END
+ 
+ //Enforcer
+@@ -2031,7 +2050,9 @@
+ 
+ //*************************************************************************
+ 
+-CHAIN IF ~Inparty("SK#Neht")
++CHAIN IF ~InParty("SK#Neht")
++InMyArea("SK#Neht")
++!StateCheck("SK#Neht",CD_STATE_NOTVALID)
+ CombatCounter(0)
+ Global("Collarstuff","GLOBAL",0)
+ Global("SK#VaN3","GLOBAL",1)
+@@ -2073,7 +2094,7 @@
+   IF ~~ THEN REPLY @557 GOTO r6
+ END
+ 
+-CHAIN SW2HOST r3  // from: r2.0
++CHAIN IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN SW2HOST r3  // from: r2.0
+ @558
+ == SK#NEHTJ @559
+ == SW2HOST @560
+@@ -2174,10 +2195,10 @@
+ //************************************************************
+ // Mazzy / CHARNAME / NEHT
+ 
+-ADD_TRANS_TRIGGER MAZZYJ 1 ~!Inparty("SK#NEHT")~
++ADD_TRANS_TRIGGER MAZZYJ 1 ~!InParty("SK#NEHT")~
+ 
+ EXTEND_BOTTOM MAZZYJ 1
+-IF ~Inparty("SK#Neht")
++IF ~InParty("SK#Neht")
+     Global("SK#MazzyNo","GLOBAL",0)~ THEN EXTERN ~SK#NEHTJ~ SK#MazzyNo
+ END
+ 
+@@ -2191,16 +2212,16 @@
+ 
+ // Mazzy/Shade Lord/NEHT - Shade Lord
+ 
+-ADD_TRANS_TRIGGER MAZZYJ 63 ~!Inparty("SK#NEHT")~
++ADD_TRANS_TRIGGER MAZZYJ 63 ~!InParty("SK#NEHT")~
+ 
+ EXTEND_BOTTOM MAZZYJ 63
+-IF ~Inparty("SK#NEHT")
++IF ~InParty("SK#NEHT")
+     Global("NehtTalk","GLOBAL",0)~ THEN EXTERN ~SHADEL~ Hi_There
+ END
+ 
+ EXTEND_BOTTOM VVMADMAN 6 //crazy rogue
+ 
+-IF ~Inparty("SK#Neht")~ THEN DO ~ActionOverride("VVMADMAN",EscapeArea())~ EXTERN SK#NEHTJ crazyrogue0
++IF ~InParty("SK#Neht")~ THEN DO ~ActionOverride("VVMADMAN",EscapeArea())~ EXTERN SK#NEHTJ crazyrogue0
+ END
+ 
+ APPEND SK#NEHTJ
+@@ -2256,8 +2277,8 @@
+ END
+ 
+ I_C_T2 PIRMUR10 7 Golin // After Claire's rescue - Golin is an elven priest
+-== SK#NEHTJ IF ~Inparty("SK#Neht") Global("Neht_Golin","LOCALS",0)~ THEN @602 DO ~SetGlobal("Neht_Golin","LOCALS",1)~
+-== PIRMUR10 IF ~Inparty("SK#NEHT")~ THEN @603 
++== SK#NEHTJ IF ~InParty("SK#Neht") Global("Neht_Golin","LOCALS",0)~ THEN @602 DO ~SetGlobal("Neht_Golin","LOCALS",1)~
++== PIRMUR10 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @603 
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @604
+ DO ~ChangeAIScript("",DEFAULT)
+ SetLeavepartyDialogueFile()
+@@ -2267,8 +2288,8 @@
+ END
+ 
+ I_C_T2 PIRMUR10 9 Golin1
+-== SK#NEHTJ IF ~Inparty("SK#Neht") GLOBAL("SK#NEHT_Golin","GLOBAL",0)~ THEN @602 DO ~SetGlobal("Neht_Golin","GLOBAL",1)~
+-== PIRMUR10 IF ~Inparty("SK#Neht")~ THEN @603 
++== SK#NEHTJ IF ~InParty("SK#Neht") GLOBAL("SK#NEHT_Golin","GLOBAL",0)~ THEN @602 DO ~SetGlobal("Neht_Golin","GLOBAL",1)~
++== PIRMUR10 IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @603 
+ == ~SK#NEHTJ~ IF ~InParty("SK#Neht") InMyArea("SK#Neht") !StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN @604
+ DO ~ChangeAIScript("",DEFAULT)
+ SetLeavepartyDialogueFile()
+@@ -2280,10 +2301,10 @@
+ //***************************************************************************
+ //slayer--woke up – added cutscene for more dramatic effect
+ 
+-ADD_TRANS_TRIGGER PLAYER1 7 ~!Inparty("SK#NEHT")~
++ADD_TRANS_TRIGGER PLAYER1 7 ~!InParty("SK#NEHT")~
+ 
+ EXTEND_BOTTOM PLAYER1 7
+-IF ~Inparty("SK#Neht")
++IF ~InParty("SK#Neht")
+     Global("SK#DRAIN","GLOBAL",0)~ THEN DO ~ClearAllActions()
+  StartCutSceneMode() StartCutScene("Neht_Hlp")~ EXIT
+ END
+@@ -2387,7 +2408,7 @@
+ END
+ 
+ EXTEND_BOTTOM STEIN 1
+-IF ~Inparty("SK#NEHT")~ THEN EXTERN SK#NEHTJ STEIN
++IF ~InParty("SK#NEHT")~ THEN EXTERN SK#NEHTJ STEIN
+ END
+ 
+ EXTEND_BOTTOM SHAAVA01 0 
+@@ -5476,10 +5497,10 @@
+ GlobalLT("Chapter","GLOBAL",6)~ THEN REPLY @1650 + HU19
+ IF ~~ THEN REPLY @1653 + HU36
+ IF ~Global("NoVicNeht","GLOBAL",0)
+-Inparty("Viconia")
++InParty("Viconia")
+ Gender(Player1,FEMALE)~ THEN REPLY @1654 + HU37
+ IF ~Global("NoVicNeht","GLOBAL",0)
+-Inparty("Viconia")
++InParty("Viconia")
+ Gender(Player1,MALE)~ THEN REPLY @1654 + HU38
+ IF ~~ THEN REPLY @1655 + SK#FIX
+ IF ~Global("SK#NehtRomanceActive","GLOBAL",1)~ THEN REPLY @1656 + flirt

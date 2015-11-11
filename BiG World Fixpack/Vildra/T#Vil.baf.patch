@@ -1,0 +1,13 @@
+--- Vildra\Script\T#Vil.baf	Mon Mar 24 10:42:41 2008
++++ C:\BWP Patchstudio\patched files\Vildra\Script\T#Vil.baf	Wed Nov 11 23:09:26 2015
+@@ -82,8 +82,10 @@
+ !StateCheck(Player1,STATE_SLEEPING)
+ !StateCheck("T#Vil",STATE_SLEEPING)
+ GlobalTimerExpired("T#PCTalkTimer","GLOBAL")
++!Global("T#VildraTalked","LOCALS",1)
+ THEN
+ RESPONSE #100
++ etGlobal("T#VildraTalked","LOCALS",1)
+ SetGlobal("Baf3","LOCALS",2)
+ Interact(Player1)
+ END

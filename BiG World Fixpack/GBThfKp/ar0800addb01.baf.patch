@@ -1,0 +1,10 @@
+--- GBThfKp\Scripts\ar0800addb01.baf	Tue Jul 25 20:30:00 2006
++++ C:\BWP Patchstudio\patched files\GBThfKp\Scripts\ar0800addb01.baf	Wed Nov 11 21:29:53 2015
+@@ -8,6 +8,7 @@
+     CreateCreature("TSPick4",[846.1814],14)
+     CreateCreature("TSPick2",[1770.861],6)
+     CreateCreature("TSPick8",[1114.1142],14)
++    Wait(120)
+ END
+ 
+ 

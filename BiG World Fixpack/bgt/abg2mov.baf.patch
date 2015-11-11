@@ -1,0 +1,17 @@
+--- bgt\modify\baf\abg2mov.baf	Fri Mar 22 00:16:53 2013
++++ C:\BWP Patchstudio\patched files\bgt\modify\baf\abg2mov.baf	Wed Nov 11 21:23:37 2015
+@@ -5,6 +5,7 @@
+   RESPONSE #100
+     StartMovie("DAYNITE")
+     SetGlobalTimer("A6Sunset","GLOBAL",ONE_HOUR)
++    Wait(120)
+ END
+ 
+ IF
+@@ -14,5 +15,6 @@
+   RESPONSE #100
+     StartMovie("NITEDAY")
+     SetGlobalTimer("A6Sunrise","GLOBAL",ONE_HOUR)
++    Wait(120)
+ END
+ 

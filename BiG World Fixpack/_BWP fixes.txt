@@ -182,6 +182,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: alternatives - Alternatives v11
+
+:: micbaldur's fix for Leyt "bonking"
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=582212
+
+
+----------------------------------------------------------------------------------------
+
+
 :: AM - Alex Macintosh PC Conversion v5
 
 :: Lollorian's assorted ITM fixes
@@ -491,6 +500,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Roxanne's Islsir double reward fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=581233
+
+:: Vlad's Timer setting problem fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=581789
 
 
 ----------------------------------------------------------------------------------------
@@ -912,6 +924,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Argent77's missing WAV uninstall fix
 :: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=581001
 
+:: micbaldur's AR0900 script typo fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=582212
+
 
 ----------------------------------------------------------------------------------------
 
@@ -988,6 +1003,16 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: GBThfKp - Gerard Blucher's Expanded Thief Stronghold v2.20
+
+:: Vlad's Timer problem fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=581787
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=581804
 
 
 ----------------------------------------------------------------------------------------
@@ -1472,6 +1497,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
 :: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
+:: Lollorian's various Neh't checks in dialogue
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -2240,6 +2268,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Tsujatha - Tsujatha NPC v15
+
+:: Non-EE compatible apostrophes for BG2 compatibility
+:: http://www.shsforums.net/topic/58395-tsujatha-dialog-error/?p=582234
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Tower of Deception (ToD) v3.3.1
 
 :: Lollorian's Script fixes - va#lich.baf, va#lizrd.baf, va#shade.baf, va#wiste.baf
@@ -2434,6 +2471,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Vildra - Vildra NPC v1.1
+
+:: micbaldur's looping Gate District talk fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=582185
+
+
+----------------------------------------------------------------------------------------
+
+
 :: virtue - Virtue Mod v19
 
 :: Lollorian's KIT.iDS patching fix
@@ -2441,6 +2487,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+
+----------------------------------------------------------------------------------------
+
+
+:: w_psionics_unleashed - Psionics Unleashed beta 0.30
+
+:: Non-EE compatible apostrophes for BG2 compatibility
+:: http://www.shsforums.net/topic/58395-tsujatha-dialog-error/?p=582234
 
 
 ----------------------------------------------------------------------------------------

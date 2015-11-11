@@ -1,0 +1,16 @@
+--- bgt\modify\baf\abg1mov.baf	Fri Mar 22 00:16:41 2013
++++ C:\BWP Patchstudio\patched files\bgt\modify\baf\abg1mov.baf	Wed Nov 11 21:20:37 2015
+@@ -5,6 +5,7 @@
+   RESPONSE #100
+     StartMovie("BGSUNSET")
+     SetGlobalTimer("A6Sunset","GLOBAL",ONE_HOUR)
++    Wait(120)
+ END
+ 
+ IF
+@@ -14,4 +15,5 @@
+   RESPONSE #100
+     StartMovie("BGSUNRIS")
+     SetGlobalTimer("A6Sunrise","GLOBAL",ONE_HOUR)
++    Wait(120)
+ END

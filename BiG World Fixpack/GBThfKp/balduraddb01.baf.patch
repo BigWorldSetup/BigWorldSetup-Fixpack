@@ -1,0 +1,10 @@
+--- GBThfKp\Scripts\balduraddb01.baf	Tue Jul 25 20:30:00 2006
++++ C:\BWP Patchstudio\patched files\GBThfKp\Scripts\balduraddb01.baf	Wed Nov 11 21:30:29 2015
+@@ -7,6 +7,7 @@
+     DisplayString(Player1,@1001)
+     SetGlobalTimer("TSSmugglerTimer","GLOBAL",FIVE_DAYS)
+     IncrementGlobal("TSSmuggle","GLOBAL",1)
++    Wait(120)
+ END
+ 
+ IF

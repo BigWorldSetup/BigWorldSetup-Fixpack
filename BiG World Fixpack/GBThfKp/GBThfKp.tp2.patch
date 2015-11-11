@@ -1,0 +1,11 @@
+--- GBThfKp\GBThfKp.tp2	Sun Mar 21 14:31:04 2010
++++ C:\BWP Patchstudio\patched files\GBThfKp\GBThfKp.tp2	Wed Nov 11 20:58:17 2015
+@@ -5,7 +5,7 @@
+ BACKUP  ~GBThfKp/_backup~
+ AUTHOR  ~g_blucher@yahoo.com~
+ 
+-VERSION ~v2.20~
++VERSION ~v2.20 BWP Fix~
+ 
+ // Language Options
+ LANGUAGE  ~English~  ~GBThfKp/Translations/English~  ~GBThfKp/Translations/English/GBThfKp.tra~

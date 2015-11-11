@@ -1,0 +1,11 @@
+--- w_psionics_unleashed\setup-w_psionics_unleashed.tp2	Wed Nov 27 05:15:53 2013
++++ C:\BWP Patchstudio\patched files\w_psionics_unleashed\setup-w_psionics_unleashed.tp2	Wed Nov 11 22:58:31 2015
+@@ -1,7 +1,7 @@
+ //liczba mocy w grze: 93
+ BACKUP ~w_psionics_unleashed/backup~
+ AUTHOR ~deadlythoughtsbg2mod[at]gmail.com~
+-
++VERSION ~beta 0.30 BWP Fix~
+ ASK_EVERY_COMPONENT
+ 
+ ALLOW_MISSING ~spwi730.spl~//Teleport

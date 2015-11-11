@@ -1,0 +1,44 @@
+--- Tsujatha\English\Setup-Tsujatha.tra	Thu Aug 14 01:23:23 2014
++++ C:\BWP Patchstudio\patched files\Tsujatha\English\Setup-Tsujatha.tra	Wed Nov 11 22:37:08 2015
+@@ -10,20 +10,20 @@
+ @9    = ~Sorkyst's Ettin~
+ @10   = ~Sillara~
+ @11   = ~Fireheart~
+-@12   = ~This necklace is Tsujatha’s gift to <CHARNAME>.  Forged of Tsujatha’s magic, the chain is lovely gold, and the pendant, a blood-colored gemstone cut into a multi-faceted star, is even more beautiful.  This gift, in addition to symbolizing the love Tsujatha bears for <CHARNAME>, also bears witness to his desire to protect her.
++@12   = ~This necklace is Tsujatha's gift to <CHARNAME>.  Forged of Tsujatha's magic, the chain is lovely gold, and the pendant, a blood-colored gemstone cut into a multi-faceted star, is even more beautiful.  This gift, in addition to symbolizing the love Tsujatha bears for <CHARNAME>, also bears witness to his desire to protect her.
+ 
+ Statistics:
+ Immunity to Level Drain
+ Immunity to Imprisonment~
+ @13   = ~Sillara's Ring~
+-@14   = ~This ring, set with a strange blue-black stone, never leaves Tsujatha’s finger. When asked about the ring, Tsujatha says that it was Sillara’s gift to him, given to aid and protect him. Who Sillara is, or was, he does not say.
++@14   = ~This ring, set with a strange blue-black stone, never leaves Tsujatha's finger. When asked about the ring, Tsujatha says that it was Sillara's gift to him, given to aid and protect him. Who Sillara is, or was, he does not say.
+ Statistics:
+ Base AC: 5
+ 1 bonus spell per level
+ 
+ Usable by:
+ Tsujatha~
+-@15   = ~This ring, set with a strange blue-black stone, never leaves Tsujatha’s finger. When asked about the ring, Tsujatha says that it was Sillara’s gift to him, given to aid and protect him. Who Sillara is, or was, he does not say.
++@15   = ~This ring, set with a strange blue-black stone, never leaves Tsujatha's finger. When asked about the ring, Tsujatha says that it was Sillara's gift to him, given to aid and protect him. Who Sillara is, or was, he does not say.
+ 
+ Statistics:
+ Base AC: 5
+@@ -42,7 +42,7 @@
+ Weight: 20~
+ @20   = ~Sorkyst's Axe~
+ @21   = ~Vahldiek~
+-@22   = ~Sorkyst’s axe pulsates with magic.~
++@22   = ~Sorkyst's axe pulsates with magic.~
+ @23   = ~This axe is so large that it functions as a halberd for humanoids. It radiates a dark, malignant energy and seems almost to have a will of its own. Only the most black-hearted-—or foolhardy—-of adventurers would consider wielding it.
+ 
+ Statistics
+@@ -63,7 +63,7 @@
+ @30   = ~Tsujatha Melalor and Lady <CHARNAME> celebrated their nuptials anew when they returned to Amn.  Together they became the mightiest heroes of their age; even without the blood of Bhaal in <CHARNAME>'s veins, none could stand before their combined power.  They destroyed evil wherever they found it, and they dwelt in bliss for many years.  Their eldest daughter was the paladin who struck the tyranny of the Cowled Wizards from Amn, and they lived to see it.  At last, however, one of their many enemies successfully struck at <CHARNAME>.  The poison of the wound in her heart was drawn out by Tsujatha's own lips, and she survived.  Tsujatha was not so fortunate.  Before he died, however, <CHARNAME> took him in her arms, and they vanished from Toril.  Some claim they went to Arvanaith, others that they went to the Outer Planes.  Their daughter maintained that they returned to Gilalion so that her father could die on the soil of his birth.  Whatever the truth might be, neither <CHARNAME> nor Tsujatha were ever seen again.~
+ @31   = ~Tsujatha Melalor and Lady <CHARNAME> celebrated their nuptials anew when they returned to Amn.  Together they became the mightiest heroes of their age; even without the blood of Bhaal in <CHARNAME>'s veins, none could stand before their combined power.  They destroyed evil wherever they found it, and they dwelt in bliss for many years.  At last, however, one of their many enemies successfully struck at <CHARNAME>.  The poison of the wound in her heart was drawn out by Tsujatha's own lips, and she survived.  Tsujatha was not so fortunate.  He died in the arms of <CHARNAME>, with darkness on his face, and his name has utterly vanished from the world.~
+ @32 = ~Tsujatha's bridal bracelet.~
+-@33 = ~This bracelet is the symbol of Tsujatha and <CHARNAME>'s nuptials.  It is of burnished gold and carved with Tsujatha's name in the runes of his own tongue.  <CHARNAME> suspects that the protection it grants her is due to Tsujatha’s magic.
++@33 = ~This bracelet is the symbol of Tsujatha and <CHARNAME>'s nuptials.  It is of burnished gold and carved with Tsujatha's name in the runes of his own tongue.  <CHARNAME> suspects that the protection it grants her is due to Tsujatha's magic.
+ 
+ Statistics:
+ Magic Resistance: 50%~

@@ -1,0 +1,10 @@
+--- GBThfKp\Scripts\ar0020addb01.baf	Tue Jul 25 20:30:00 2006
++++ C:\BWP Patchstudio\patched files\GBThfKp\Scripts\ar0020addb01.baf	Wed Nov 11 20:55:57 2015
+@@ -7,6 +7,7 @@
+     SetGlobalTimer("TSPickAR0020","AR0020",4320)
+     CreateCreature("TSPick3",[597.459],14)
+     CreateCreature("TSPick4",[553.806],6)
++    Wait(120)
+ END
+ 
+ 

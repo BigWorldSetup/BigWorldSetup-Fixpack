@@ -1,0 +1,662 @@
+--- Tsujatha\English\TSUJATJ.tra	Thu Aug 14 01:23:23 2014
++++ C:\BWP Patchstudio\patched files\Tsujatha\English\TSUJATJ.tra	Wed Nov 11 22:37:08 2015
+@@ -3,7 +3,7 @@
+ @2    = ~This place has no beauty. There is nothing here to compare with the mist-filled gardens of the royal palace where the scent of roses is ever sweet in the air, and the play of the waterfall that splits the city in two.~
+ @3    = ~This is where they hold the mad magicians then. It will not be easy to make our way through it.~ [TSUJA064]
+ @4    = ~Yes, it is here. It is in this place that we shall find the Riosé Sar.~ [TSUJA052]
+-@5    = ~(Tsujatha’s eyes begin to glow so brightly you could almost believe they give off a silver light of their own, and he turns to you.)~
++@5    = ~(Tsujatha's eyes begin to glow so brightly you could almost believe they give off a silver light of their own, and he turns to you.)~
+ @6    = ~You have come here to aid me in finding the Riosé Sar, and it is only just that I tell you more of whom we face.~
+ @7    = ~Sorkyst is a giant. He is powerful, and he is supported by powerful allies. He traveled the Planes, and on my world he found me.~
+ @8    = ~We were allies for a time, but in the end I dismissed him. He was too unruly and untrustworthy. He took his vengeance by stealing my heirloom when he left.~
+@@ -87,8 +87,8 @@
+ @86   = ~You will not hear such words from me again.~
+ @87   = ~(Tsujatha's jaw is clenched tightly, and you wonder what he is thinking.)~
+ @88   = ~(It is with a pang of regret that you realize you will never know.)~
+-@89   = ~(You awaken in Tsujatha’s arms. After your long love-making you were both spent and, despite the stirrings of the others around you, you had both fallen asleep.)~
+-@90   = ~(Now your eyes open to find Tsujatha’s silver ones looking into your soul.)~
++@89   = ~(You awaken in Tsujatha's arms. After your long love-making you were both spent and, despite the stirrings of the others around you, you had both fallen asleep.)~
++@90   = ~(Now your eyes open to find Tsujatha's silver ones looking into your soul.)~
+ @91   = ~Mmmmmm.~
+ @92   = ~Thank you, my love.~
+ @93   = ~Promise me you will never leave me, Tsujatha.~
+@@ -99,14 +99,14 @@
+ @98   = ~But I must change, <CHARNAME>. I have tasted happiness for the first time in my life. It is intoxicating, and I do not wish ever to lose it--or you.~
+ @99   = ~We will be together, Tsujatha.~
+ @100  = ~I am glad, Tsujatha. I want you to be happy.~
+-@101  = ~(There is a flash on Tsujatha’s face of something, something you cannot recognize, and he kisses you fiercely.)~
++@101  = ~(There is a flash on Tsujatha's face of something, something you cannot recognize, and he kisses you fiercely.)~
+ @102  = ~*If it were now to die, ‘twere now to be most happy.*~
+ @103  = ~No, not those lines, my love. Our joy will grow and grow. There is greater happiness ahead for you than this.~
+ @104  = ~I do not want to die, nor do I want you to die. (You smile at him and kiss his cheek.)~
+ @105  = ~No quoting poetry today, Tsujatha. (You smile impishly.) In fact, no more speaking at all! Make love to me again instead.~
+ @106  = ~I can know no greater happiness than to be beloved by you, my only <CHARNAME>. My heart is full.~
+ @107  = ~(Words fail him, and he kisses your mouth softly and sweetly.)~
+-@108  = ~My life is of importance to you? (Tsujatha’s voice holds wonder.) It is difficult--my heart is too full for speech.~
++@108  = ~My life is of importance to you? (Tsujatha's voice holds wonder.) It is difficult--my heart is too full for speech.~
+ @109  = ~(He kisses your mouth softly and sweetly.)~
+ @110  = ~(Tsujatha smiles at you, and, without a word, begins to nibble at your neck and ear. It is not long before you are both thoroughly aroused, and your love-making begins afresh.)~
+ @111  = ~You thank me? For what, my darling? You are the one who has given.~
+@@ -116,7 +116,7 @@
+ @115  = ~(Tsujatha's eyes rest on you.)~
+ @116  = ~(You are weary of trail rations, and you rummage through your pack in the vain hope of finding something else to eat.)~
+ @117  = ~(To your surprise, you find a packet of moist, fresh figs. The packet is tiny, far too small for sharing, and you nibble it in delighted, if guilty, secrecy.)~
+-@118  = ~(Only when you are furtively wiping the last of the traces from your fingers do you notice Tsujatha’s pleased gaze resting on you.)~
++@118  = ~(Only when you are furtively wiping the last of the traces from your fingers do you notice Tsujatha's pleased gaze resting on you.)~
+ @119  = ~(The gift was his, and you are unexpectedly touched by the simple gesture.)~
+ @120  = ~ <CHARNAME>? (Tsujatha approaches you with a smile on his lips.)~
+ @121  = ~I just wanted to tell you that this light highlights the lights in your hair.~
+@@ -124,23 +124,23 @@
+ @123  = ~(You try to catch a glimpse of your reflection in a nearby puddle, and you cannot help but smile.)~
+ @124  = ~(Tsujatha has caused your hair to glow like multi-colored flames, and the image is striking.)~
+ @125  = ~(You find a collection of tiny wildflowers adorns your pack, but you did not place them there.)~
+-@126  = ~(An unguardedly proud glance of Tsujatha’s, however, reveals who did.)~
++@126  = ~(An unguardedly proud glance of Tsujatha's, however, reveals who did.)~
+ @127  = ~(You catch Tsujatha watching you, and you smile at him in return. You have the satisfaction of seeing him change color as he looks hastily away.)~
+ @128  = ~(A strangely haunting melody has been in your mind all day, and you do not know where you heard it.)~
+ @129  = ~(You are about to mention it at last to your companions when you hear the melody being sung.)~
+ @130  = ~(The sounds are so low you might almost have imagined them, but you recognize the voice.)~
+ @131  = ~(You look at Tsujatha and catch his glance. He smiles gravely, and you are left wondering afresh at his alien-ness.)~
+ @132  = ~(You turn to look at Tsujatha, the alien Elf who is becoming ever dearer to you.)~
+-@133  = ~(Touch Tsujatha’s cheek.) ~
+-@134  = ~(Touch Tsujatha’s cheek.)  ~
+-@135  = ~(Hold Tsujatha’s hand.) ~
+-@136  = ~(Hold Tsujatha’s hand.)~
+-@137  = ~(Touch Tsujatha’s hair.)  ~
+-@138  = ~(Touch Tsujatha’s hair.) ~
++@133  = ~(Touch Tsujatha's cheek.) ~
++@134  = ~(Touch Tsujatha's cheek.)  ~
++@135  = ~(Hold Tsujatha's hand.) ~
++@136  = ~(Hold Tsujatha's hand.)~
++@137  = ~(Touch Tsujatha's hair.)  ~
++@138  = ~(Touch Tsujatha's hair.) ~
+ @139  = ~(Hug Tsujatha.)  ~
+ @140  = ~(Hug Tsujatha.) ~
+-@141  = ~(Kiss Tsujatha’s cheek.)  ~
+-@142  = ~(Kiss Tsujatha’s cheek.) ~
++@141  = ~(Kiss Tsujatha's cheek.)  ~
++@142  = ~(Kiss Tsujatha's cheek.) ~
+ @143  = ~(Kiss Tsujatha.)  ~
+ @144  = ~(Kiss Tsujatha.) ~
+ @145  = ~You are awfully big for an Elf. (Bat eyes provocatively.)  ~
+@@ -164,7 +164,7 @@
+ @163  = ~ (Blushing) Nothing. I just wanted to--to touch your face. I thought it would be pleasant. ~
+ @164  = ~ (Tsujatha runs his forefinger down your cheek, causing a shiver to travel your spine.) You are correct, <CHARNAME>. It *is* pleasant. (He smiles at your discomfiture, but as he turns away you catch a softened expression on his face that does not fade for many minutes.)~
+ @165  = ~ Is there something on my face, <CHARNAME>?~
+-@166  = ~Yes, just a speck of dust, but it’s gone now. (You brush his cheek.) ~
++@166  = ~Yes, just a speck of dust, but it's gone now. (You brush his cheek.) ~
+ @167  = ~ Ah. (Tsujatha smiles and catches your hand.) You are not a very good liar.~
+ @168  = ~(There is just the slightest pressure on your hand before he releases it.) ~
+ @169  = ~(Your fingers glide down his cheek, and the golden skin slips from beneath your touch like silk.)~
+@@ -178,25 +178,25 @@
+ @177  = ~(You walk together thus for some time before the needs of the group recall you to your place in formation.) ~
+ @178  = ~ (Tsujatha takes your other hand and turns you around to face him. He studies your eyes for some moments in silence.)~
+ @179  = ~Lovely. (It is the only word he speaks, and he then releases you.) ~
+-@180  = ~(You tentatively wrap a loose lock of Tsujatha’s hair around your forefinger.)~
++@180  = ~(You tentatively wrap a loose lock of Tsujatha's hair around your forefinger.)~
+ @181  = ~(It is as soft as silken ribbon, and it stays twined around your finger.)~
+ @182  = ~(Its softness is a slight surprise to you, for you had not expected anything belonging to Tsujatha to be anything but hard.)~
+-@183  = ~(You do not realize how long you have been walking with Tsujatha’s hair between your fingers, but a sudden shake of his head reminds you that Tsujatha is watching you. You release the tress with a guilty look.) ~
+-@184  = ~(You reach out to place your hand on Tsujatha’s luxuriant black hair, but either you misjudge the distance or else he moves slightly.)~
+-@185  = ~(Your hand passes through his hair to collide with Tsujatha’s shoulder.  He turns to look at you.) Yes, <CHARNAME>?~
++@183  = ~(You do not realize how long you have been walking with Tsujatha's hair between your fingers, but a sudden shake of his head reminds you that Tsujatha is watching you. You release the tress with a guilty look.) ~
++@184  = ~(You reach out to place your hand on Tsujatha's luxuriant black hair, but either you misjudge the distance or else he moves slightly.)~
++@185  = ~(Your hand passes through his hair to collide with Tsujatha's shoulder.  He turns to look at you.) Yes, <CHARNAME>?~
+ @186  = ~ Nothing, Tsujatha.  (You respond with nonchalance, but you can feel your cheeks burning.)~
+ @187  = ~(Tsujatha says nothing, but you know your blush did not go unnoticed.)~
+-@188  = ~(You have been observing the sheen of Tsujatha’s hair for some time, and, without realizing it, you reach up to touch it.)~
++@188  = ~(You have been observing the sheen of Tsujatha's hair for some time, and, without realizing it, you reach up to touch it.)~
+ @189  = ~(The smooth feel of his hair between your fingers is distracting, and you twist it round and round your forefinger. Only then do you realize that you have completely tangled the lock, and you cannot extricate yourself. You glance up helplessly at Tsujatha.)~
+ @190  = ~(His eyes are glowing as he untwists his hair from your finger, and his touch on your hand is longer than strictly necessary.) ~
+-@191  = ~(You thrust your fingers into Tsujatha’s rich, black hair, and you notice a braid on the underside of it.)~
++@191  = ~(You thrust your fingers into Tsujatha's rich, black hair, and you notice a braid on the underside of it.)~
+ @192  = ~(A small sound of surprise escapes you, and Tsujatha looks down into your face.)~
+ @193  = ~It is a custom of my people. (His explanation does not perplex you, but the realization that your thoughts are so open to him does.)  ~
+ @194  = ~(You slip up next to Tsujatha and slide your arms around him.)~
+-@195  = ~ (For an instant you feel the relaxation of the Elf’s muscles as he nearly succumbs to your embrace, but it is only for an instant. Tsujatha swiftly detaches himself from you.)~
++@195  = ~ (For an instant you feel the relaxation of the Elf's muscles as he nearly succumbs to your embrace, but it is only for an instant. Tsujatha swiftly detaches himself from you.)~
+ @196  = ~<CHARNAME>, this is inappropriate. ~
+ @197  = ~(Your arms move smoothly around Tsujatha, and you are unsure of what his response will be.)~
+-@198  = ~(Tsujatha’s eyes close, and he surrenders to your clasp.)~
++@198  = ~(Tsujatha's eyes close, and he surrenders to your clasp.)~
+ @199  = ~(His arms begin to enfold you, but just as you are held against his heart he releases you with a murmured word which you do not catch.) ~
+ @200  = ~(Tsujatha is still obviously unused to such attentions, and his body remains stiff in the circle of your arms.)~
+ @201  = ~(Only the softened silver light in his eyes allows you to realize that he is pleased.) ~
+@@ -204,32 +204,32 @@
+ @203  = ~(Just as he has fully returned your embrace, he releases you and returns to his place in formation.)~
+ @204  = ~(It is only for a moment, but you think you catch a glimpse of something in his eyes that you have never seen before.)~
+ @205  = ~(You cannot be certain, but it seems like fear.) ~
+-@206  = ~(You place a light kiss on Tsujatha’s cheek, and he looks at you in surprise.)~
++@206  = ~(You place a light kiss on Tsujatha's cheek, and he looks at you in surprise.)~
+ @207  = ~I have done nothing to merit this, <CHARNAME>. ~
+-@208  = ~ (You kiss Tsujatha’s cheek, and he smiles.) You are generous, <CHARNAME>. I thank you.~
+-@209  = ~(You lean up to kiss Tsujatha’s cheek, but just as you do so, he turns to face you.)~
+-@210  = ~(You are standing on your toes, and your face is so close to Tsujatha’s that your breath commingles with his.)~
++@208  = ~ (You kiss Tsujatha's cheek, and he smiles.) You are generous, <CHARNAME>. I thank you.~
++@209  = ~(You lean up to kiss Tsujatha's cheek, but just as you do so, he turns to face you.)~
++@210  = ~(You are standing on your toes, and your face is so close to Tsujatha's that your breath commingles with his.)~
+ @211  = ~(Neither of you moves, and you seem drawn into his silver eyes in his golden face.)~
+ @212  = ~(When at last you both turn away, you find that you are breathing heavily, and that he seems to be doing the same.) ~
+ @213  = ~(Tsujatha is absorbed in a book. You have often marveled at his ability to read while walking, for he never seems to run into anything.)~
+ @214  = ~(You decide to break his concentration with a kiss, and you place one on his cheek.)~
+-@215  = ~(Tsujatha’s book nearly slips from his fingers, but the wizard smiles.)~
++@215  = ~(Tsujatha's book nearly slips from his fingers, but the wizard smiles.)~
+ @216  = ~ A welcome interruption. (You are once again astonished at how closely his thoughts have followed your own.)~
+ @217  = ~(Tsujatha turns away from your touch, but there is no displeasure in his face.)~
+ @218  = ~I have not yet earned such a privilege, <CHARNAME>.~
+-@219  = ~(Tsujatha’s lips are unexpectedly soft, and they yield delightfully to your pressure.)~
++@219  = ~(Tsujatha's lips are unexpectedly soft, and they yield delightfully to your pressure.)~
+ @220  = ~(His pleasure in your kiss is evident, but when it is over he does not meet your eyes.) ~
+ @221  = ~(Tsujatha turns toward the sound of your coming just as you lean up to kiss him.)~
+ @222  = ~(You miss his mouth entirely, and you end up kissing his chin.)~
+ @223  = ~(His silver eyes widen in pleasure, however, and he smiles.) Thank you, <CHARNAME>. ~
+-@224  = ~(You kiss Tsujatha’s mouth, but he does not respond.)~
++@224  = ~(You kiss Tsujatha's mouth, but he does not respond.)~
+ @225  = ~(He seems locked in place, and there is pain in his eyes.)~
+ @226  = ~(You return guiltily to your place, wondering why his heart is so raw.) ~
+-@227  = ~Indeed? (Tsujatha’s eyebrows rise.) I think you mean more than you say, <CHARNAME>.~
++@227  = ~Indeed? (Tsujatha's eyebrows rise.) I think you mean more than you say, <CHARNAME>.~
+ @228  = ~ I? Not at all, I assure you.  I am merely commenting on your above-average . . . height.~
+ @229  = ~ Of course I do.  A big strapping Elf like you must have all sorts of hidden talents.~
+ @230  = ~ My height?  Ah, <CHARNAME>, you will have to do better than that.  ~
+-@231  = ~ (Tsujatha’s eyes widen at your forwardness, but he smiles as he leans down to whisper in your ear.) I do indeed. ~
++@231  = ~ (Tsujatha's eyes widen at your forwardness, but he smiles as he leans down to whisper in your ear.) I do indeed. ~
+ @232  = ~ Why, yes. (Tsujatha looks at you with feigned innocence.) I *am* rather larger than usual.~
+ @233  = ~(You blush at his response, and Tsujatha laughs. It is an unusual sound from him, but you find you enjoy it.) ~
+ @234  = ~ And you seem rather smaller than I am accustomed to.~
+@@ -237,15 +237,15 @@
+ @236  = ~(Tsujatha chuckles at your blush, and his face retains its pleased expression.) ~
+ @237  = ~(Tsujatha shakes his head slightly.) Why, <CHARNAME>, I did not know you had it in you.~
+ @238  = ~Oh wait. You have not yet.~
+-@239  = ~(Tsujatha’s golden coloring does not alter in the slightest, but you feel the red rising up in your cheeks.) ~
+-@240  = ~(You catch Tsujatha’s eyes on you, and you suddenly recall a poem you once read as a child.  Knowing his liking for poetry, you recite it.)~
++@239  = ~(Tsujatha's golden coloring does not alter in the slightest, but you feel the red rising up in your cheeks.) ~
++@240  = ~(You catch Tsujatha's eyes on you, and you suddenly recall a poem you once read as a child.  Knowing his liking for poetry, you recite it.)~
+ @241  = ~ Drink to me only with thine eyes,
+ And I will pledge with mine;
+ Or leave a kiss but in the cup,
+-And I’ll not look for wine.~
++And I'll not look for wine.~
+ @242  = ~ The thirst that from the soul doth rise
+ Doth ask a drink divine:
+-But might I of Jove’s nectar sup,
++But might I of Jove's nectar sup,
+ I would not change for thine.~
+ @243  = ~ (You cannot recall the second stanza, but Tsujatha does not know the difference. He is struck into silence, and his silver eyes shine more brightly than you have often seen them.)  ~
+ @244  = ~ (Tsujatha has been silent for so long that you are beginning to wonder if he will ever speak again. You realize that this quality of stillness, this undisturbed patience, is part of the complete control he has over himself.  You wish to disturb this impassivity, and you appeal to him in poetry.) ~
+@@ -260,20 +260,20 @@
+ @247  = ~ Thus, though we cannot make our sun
+ Stand still, yet we will make him run. ~
+ @248  = ~(Tsujatha looks to you in astonishment.) You are a passionate woman, <CHARNAME>. I hope that your passion does not burn you—or me. ~
+-@249  = ~ (You find that your eyes have been resting on Tsujatha’s face for the past quarter of an hour, and you realize that an old poem from your days in Candlekeep has come back to you. It has been replaying in your mind in its entirety, and you want to share it with Tsujatha. You begin reciting in a low voice, but you know he hears.) ~
++@249  = ~ (You find that your eyes have been resting on Tsujatha's face for the past quarter of an hour, and you realize that an old poem from your days in Candlekeep has come back to you. It has been replaying in your mind in its entirety, and you want to share it with Tsujatha. You begin reciting in a low voice, but you know he hears.) ~
+ @250  = ~ He walks in beauty, like the night
+ Of cloudless climes and starry skies;
+-And all that’s best of dark and bright
++And all that's best of dark and bright
+ Meet in his aspect and his eyes:
+-Thus mellow’d to that tender light
++Thus mellow'd to that tender light
+ Which heaven to gaudy day denies. ~
+ @251  = ~ One shade the more, one ray the less,
+-Had half impair’d the nameless grace
++Had half impair'd the nameless grace
+ Which waves in every raven tress,
+-Or softly lightens o’er his face:
++Or softly lightens o'er his face:
+ Where thoughts serenely sweet express
+ How pure, how dear their dwelling place. ~
+-@252  = ~ And on that cheek, and o’er that brow,
++@252  = ~ And on that cheek, and o'er that brow,
+ So soft, so calm, yet eloquent,
+ The smiles that win, the tints that glow,
+ But tell of days in goodness spent,
+@@ -298,26 +298,26 @@
+ @269  = ~There is a vividness to the colors there, a nobility in the very shape of the mountains, that is lacking in any other world.~
+ @270  = ~But this world is the first I have ever seen which offers something to more than make up for that.~
+ @271  = ~(Tsujatha smiles meaningfully at you, and you need no more words.) ~
+-@272  = ~(You catch Tsujatha’s eye and wink. He looks around, startled, searching for what your wink was meant to convey.)~
++@272  = ~(You catch Tsujatha's eye and wink. He looks around, startled, searching for what your wink was meant to convey.)~
+ @273  = ~(Seeing no imminent danger, he relaxes, but the light-hearted mood you sought is absent.) ~
+ @274  = ~ (In an unexpected return, Tsujatha winks back at you.) ~
+ @275  = ~ (Tsujatha touches your face just below your eye.) I think I have gotten it out now.~
+ @276  = ~(He then slides his hand along your jaw, and you know that he feels the increased pace of your pulse beneath his touch.)~
+ @277  = ~(Tsujatha does not seem to have noticed your wink, but then you see shimmering in the air before the outline of his silver eye, winking back at you.)~
+ @278  = ~(The cantrip vanishes almost instantly, but you are pleased with his unwontedly playful response.) ~
+-@279  = ~(Your eyes trace the outline of Tsujatha’s muscular form. You are surprised to notice that the body of any mage is so well-developed, but you do recall a passing reference he once made to his nation being one of warriors.)~
++@279  = ~(Your eyes trace the outline of Tsujatha's muscular form. You are surprised to notice that the body of any mage is so well-developed, but you do recall a passing reference he once made to his nation being one of warriors.)~
+ @280  = ~ (Tsujatha strides like a warrior rather than a wizard, carrying himself with the easy grace of one used to parrying sword-strikes. His robes are rich, despite their severe coloring. Apart from the deep green that lines his cloak, you have never seen any color break up the unrelieved black of his robes.)~
+ @281  = ~(The black contrasts well with his skin, and you follow the flowing lines of the robes up to his face.  There you see his eyes fixed on you quizzically, and you turn away, blushing.) ~
+-@282  = ~ (This time you focus on Tsujatha’s hair. It is longer than most Faerun Elves wear theirs, and you admire its silky thickness. He wears it loose, and its glossiness seems only to emphasize its utter blackness.) ~
+-@283  = ~(From his hair it is an easy step to admiring Tsujatha’s face. His cheekbones are high, and his silver eyes are wide-set. His nose is tall and almost, but not quite, aquiline, recalling the nobility of his blood.) ~
+-@284  = ~(Tsujatha’s lips are firm and full, and you wonder what it would be like to feel those lips on your body. Not wanting Tsujatha to realize he has been the object of your reverie, you focus your eyes on the horizon before he looks at you.) ~
++@282  = ~ (This time you focus on Tsujatha's hair. It is longer than most Faerun Elves wear theirs, and you admire its silky thickness. He wears it loose, and its glossiness seems only to emphasize its utter blackness.) ~
++@283  = ~(From his hair it is an easy step to admiring Tsujatha's face. His cheekbones are high, and his silver eyes are wide-set. His nose is tall and almost, but not quite, aquiline, recalling the nobility of his blood.) ~
++@284  = ~(Tsujatha's lips are firm and full, and you wonder what it would be like to feel those lips on your body. Not wanting Tsujatha to realize he has been the object of your reverie, you focus your eyes on the horizon before he looks at you.) ~
+ @285  = ~ (Tsujatha is absorbed in something to his left, and you seize the opportunity to admire his profile. The height of his nose is once more apparent, as is the unconscious pride in the way he moves. The very tilt of his head seems to bespeak his confidence in his own abilities.)~
+ @286  = ~(His robes do not hide his grace, and he moves with the easy agility of a hunting cat. His brow is slightly furrowed now, as if what he sees has displeased him. You realize that he will be looking your way in a moment, but you do not want to remove your eyes from him.) ~
+ @287  = ~ (He does turn toward you, and the furrow of his brow is replaced with puzzlement as he grasps that you have been staring at him.) ~
+-@288  = ~ (Tsujatha is not looking at you, and you relish the chance to observe him undetected. Tsujatha’s chest is broad, and his height, the most striking thing about him in this world of much smaller Elves, is impressive.) ~
++@288  = ~ (Tsujatha is not looking at you, and you relish the chance to observe him undetected. Tsujatha's chest is broad, and his height, the most striking thing about him in this world of much smaller Elves, is impressive.) ~
+ @289  = ~(His jaw is strong and stubborn, and you realize with chagrin that it probably looks much like your own in this respect. Tsujatha, like you has been an outcast for the sake of his blood, and it shows in his bearing.) ~
+ @290  = ~ (There is wariness in his eyes that you have never seen absent from them, and the unconscious squaring of his shoulders cuts you. He seems always tensed to receive or parry a blow. Sorrow flows over you, and you look away from Tsujatha, unable to watch him any longer for now.) ~
+-@291  = ~ (You notice Tsujatha’s eyes on you, and you smile at him encouragingly.)~
++@291  = ~ (You notice Tsujatha's eyes on you, and you smile at him encouragingly.)~
+ @292  = ~(Perhaps disconcerted at having been caught observing you, Tsujatha glances away without answering your smile.) ~
+ @293  = ~ (Tsujatha slowly smiles in return. The expression seems to sit uneasily on his face, however, and it soon fades.) ~
+ @294  = ~ (Tsujatha tilts his head to the side.) What is it, <CHARNAME>? (Your friendliness seems to be more of a puzzle than a pleasure to him.) ~
+@@ -345,27 +345,27 @@
+ @316  = ~(It glides up and down on your torso, and at last you collapse, laughing.)~
+ @317  = ~(You glance at Tsujatha, and you are pleased to see that he is smiling.) I think we are even now, <CHARNAME>. ~
+ @318  = ~(You begin to tickle Tsujatha, mussing his robes. He retaliates, and your own garments are soon askew.)~
+-@319  = ~(After a few moments, you realize that your bare skin is touching Tsujatha’s, and you feel your already increased heart-rate begin to speed up even more.)~
++@319  = ~(After a few moments, you realize that your bare skin is touching Tsujatha's, and you feel your already increased heart-rate begin to speed up even more.)~
+ @320  = ~(Tsujatha seems to have become aware of the same thing at the same moment, for he smiles, a gleam of desire in his eyes.)~
+ @321  = ~Your games are-—most amusing, <CHARNAME>, if somewhat dangerously intimate. ~
+-@322  = ~ (Tsujatha’s eyes narrow.) Indeed? I am not accustomed to making errors of that kind.~
++@322  = ~ (Tsujatha's eyes narrow.) Indeed? I am not accustomed to making errors of that kind.~
+ @323  = ~If you have changed your mind concerning me, I am at least grateful you have chosen to tell me, even if you have used a lie to do so. ~
+ @324  = ~(Your eyes play over Tsujatha, your love and your lover, and your heart thrills to his presence.)~
+-@325  = ~(Hold Tsujatha’s hand.)  ~
++@325  = ~(Hold Tsujatha's hand.)  ~
+ @326  = ~Tsujatha, tell me about your past. ~
+ @327  = ~(Kiss Tsujatha lightly.) ~
+ @328  = ~(Kiss Tsujatha lightly.)  ~
+-@329  = ~(Leap into Tsujatha’s arms.) ~
++@329  = ~(Leap into Tsujatha's arms.) ~
+ @330  = ~(Shake your booty at Tsujatha.) ~
+ @331  = ~(Kiss Tsujatha passionately.) ~
+-@332  = ~(Nestle your head against Tsujatha’s chest.) ~
++@332  = ~(Nestle your head against Tsujatha's chest.) ~
+ @333  = ~I love you, Tsujatha. ~
+-@334  = ~Tsujatha, could you help me with my hair? I’ve gotten something tangled in it. ~
++@334  = ~Tsujatha, could you help me with my hair? I've gotten something tangled in it. ~
+ @335  = ~You look tense, Tsujatha. Would you like a massage? ~
+ @336  = ~(Flash Tsujatha with your breasts.) ~
+ @337  = ~(Touch Tsujatha intimately.) ~
+ @338  = ~(Pant at Tsujatha.) ~
+-@339  = ~(Kiss Tsujatha’s ear.) ~
++@339  = ~(Kiss Tsujatha's ear.) ~
+ @340  = ~Tsujatha, I am getting rather sore with all this marching. I think that I will need a full body massage tonight to help me rest. ~
+ @341  = ~Tsujatha, I want you to make passionate love to me RIGHT NOW! ~
+ @342  = ~(Bathe with Tsujatha.) ~
+@@ -376,8 +376,8 @@
+ @347  = ~(He says nothing, but neither does he release you until you move.)~
+ @348  = ~(Tsujatha raises your hand to lips and briefly kisses it. He does not let go of your hand when he lowers it, however, and you walk hand-in-hand for some time.)~
+ @349  = ~(Tsujatha intertwines his fingers with yours, and he looks down at you in delight.) I was desirous of your touch. Thank you, my heart.~
+-@350  = ~(The feel of Tsujatha’s hand in your is inexpressibly comforting, and you walk on, feeling safer than you would have imagined possible, considering your circumstances.)~
+-@351  = ~(Tsujatha’s eyes darken.) My past before I met you, Lady-love, is not a pleasant thing. I would rather forget it. For me, my life began the day I saw your face.~
++@350  = ~(The feel of Tsujatha's hand in your is inexpressibly comforting, and you walk on, feeling safer than you would have imagined possible, considering your circumstances.)~
++@351  = ~(Tsujatha's eyes darken.) My past before I met you, Lady-love, is not a pleasant thing. I would rather forget it. For me, my life began the day I saw your face.~
+ @352  = ~What would you know, <CHARNAME>?~
+ @353  = ~I grew up in a tiny village not far from the borders of our desert land.~
+ @354  = ~I was raised without knowledge of my blood and heritage until well after I had come of age.~
+@@ -387,38 +387,38 @@
+ @358  = ~It was not a pleasant life.~
+ @359  = ~Would you hear of my past adventures? I have fought Nohr-—a kind of giant—-and Men.~
+ @360  = ~I have battled wizards and warriors. Together with Sillara, I battled a Dragon before the gates of Halchek, the city of the Tamari King.~
+-@361  = ~It was in Halchek that I dwelt after Sillara’s departure to marry Lord Kan-Terak.~
++@361  = ~It was in Halchek that I dwelt after Sillara's departure to marry Lord Kan-Terak.~
+ @362  = ~(Tsujatha smiles suddenly at you.) Thank you, <CHARNAME>. You have reminded me of the joy I have gained here in Faerun. It is the sweetest of all joys, that of release from sorrow.~
+ @363  = ~Even if you had given me no other gift, the gift of freedom from the weight of jealousy and thwarted revenge would be treasure enough to make me love you the rest of my days.~
+ @364  = ~My past is dark, my fair one. I have killed often.~
+ @365  = ~Sometimes it was blameless in me; I have fought for my life as often as you have for yours.~
+ @366  = ~Other times it was not. I have killed men for being in my way. I have killed men for crossing me.~
+-@367  = ~(Tsujatha’s eyes narrow as he looks into your face.) Say that you forgive me, best beloved one. I need to hear that you can look past this to love me.~
++@367  = ~(Tsujatha's eyes narrow as he looks into your face.) Say that you forgive me, best beloved one. I need to hear that you can look past this to love me.~
+ @368  = ~I do forgive you, Tsujatha.~
+ @369  = ~I am not the one you have injured, Tsujatha. I cannot forgive injuries done to others. But I do love you.~
+ @370  = ~(Tsujatha relaxes, and he impulsively kisses your cheek.) You are too good, <CHARNAME>. You are far too good for me.~
+-@371  = ~(Something akin to awe lights in Tsujatha’s face, and he reverently kisses your hand.) I think that you are holy, <CHARNAME>. You are certainly far too good for me.~
+-@372  = ~(Your lips brush across Tsujatha’s only for an instant. Tsujatha looks down into your face and smiles.)~ ~You can be a tantalizing creature, <CHARNAME>. You offer only a taste of what is sweeter than wine: your lips. ~
+-@373  = ~ (You touch Tsujatha’s mouth with a kiss so brief it seems as if he can hardly have noticed it. Tsujatha lets nothing you do escape him, however.) My butterfly. ~
++@371  = ~(Something akin to awe lights in Tsujatha's face, and he reverently kisses your hand.) I think that you are holy, <CHARNAME>. You are certainly far too good for me.~
++@372  = ~(Your lips brush across Tsujatha's only for an instant. Tsujatha looks down into your face and smiles.)~ ~You can be a tantalizing creature, <CHARNAME>. You offer only a taste of what is sweeter than wine: your lips. ~
++@373  = ~ (You touch Tsujatha's mouth with a kiss so brief it seems as if he can hardly have noticed it. Tsujatha lets nothing you do escape him, however.) My butterfly. ~
+ @374  = ~ (You lean up toward Tsujatha and brush his cheek with a light kiss. His eyes brighten immediately.)~
+ @375  = ~How did you know that I wanted that very thing, my own one? You read me well. ~
+ @376  = ~ (Tsujatha is bending to look at something. You cannot see what, but the proximity of his face is too much.)~
+ @377  = ~ (You plant a soft kiss on the end of his aquiline nose. Tsujatha stands up in surprise, and he laughs.)~
+ @378  = ~You are yet as sweet as a child, my <CHARNAME>.~
+-@379  = ~(Seizing a relatively quiet moment during your march, you leap into Tsujatha’s arms.)~
++@379  = ~(Seizing a relatively quiet moment during your march, you leap into Tsujatha's arms.)~
+ @380  = ~(He is surprised by your attack, but he catches and holds you without difficulty.)~
+-@381  = ~The trouble with voluntary surrender, <CHARNAME>, is that you are held at your foe’s pleasure.~
++@381  = ~The trouble with voluntary surrender, <CHARNAME>, is that you are held at your foe's pleasure.~
+ @382  = ~And my pleasure in holding you is great enough that I have no intention of letting you go. (He smiles and kisses your nose.)~
+ @383  = ~ (Tsujatha has just sat down to remove something from his shoe. As he drops a pebble onto the ground, you spring.)~
+-@384  = ~(You had forgotten how foolish it is to surprise a mage, however, and you find yourself held in place by Tsujatha’s magic, unable to move.)~
+-@385  = ~(Tsujatha’s face turns grey with horror, and his eyes fill with remorse; he instantly dispels the enchantment.)~
++@384  = ~(You had forgotten how foolish it is to surprise a mage, however, and you find yourself held in place by Tsujatha's magic, unable to move.)~
++@385  = ~(Tsujatha's face turns grey with horror, and his eyes fill with remorse; he instantly dispels the enchantment.)~
+ @386  = ~Ah, my love. I am glad that I cast nothing more dangerous. I do not wish ever to hurt you.~
+ @387  = ~(He takes you in his arms, and you can feel his chest heaving.)~
+ @388  = ~ (Tsujatha is standing still, in that deceptively relaxed stance common to warriors.)~
+ @389  = ~(His eyes are surveying the horizon, searching, you know, for possible dangers. Without warning, you leap into his arms.)~
+ @390  = ~(He catches you easily, swinging you around. He smiles as he places you on the ground.)~
+ @391  = ~My own one, you have a talent for giving me exactly what I need at any moment. ~
+-@392  = ~ (You throw yourself into Tsujatha’s arms, and he enfolds you.)~
++@392  = ~ (You throw yourself into Tsujatha's arms, and he enfolds you.)~
+ @393  = ~(He leans his head down toward yours, and his hair falls around you in a silken black curtain.)~
+ @394  = ~(Using it for a veil he kisses your cheek.) You belong always in my arms, beloved. ~
+ @395  = ~(Tsujatha watches your undulations with a widening smile.) Well done, dear-heart. (He gives your backside a meaningful caress.) ~
+@@ -429,14 +429,14 @@
+ @400  = ~(Tsujatha speaks lightly, but the jealousy in his tone is real.) ~
+ @401  = ~ (Tsujatha responds to the brush of your lips against his by crushing you against his chest. His lips cling to yours, refusing to release them.)~ ~(His tongue searches the inside of your mouth, and the feel of his tongue on yours causes your body to shiver in delight and anticipation. You do not end the kiss, leaving it to Tsujatha to do so.)~
+ @402  = ~(He does not, and it is not until one of the others impatiently jogs you that you fall apart from Tsujatha.) ~
+-@403  = ~ (Tsujatha’s tongue duels with yours in a frenetic yet loving battle that leaves you both breathless. You cannot say who was the victor, but you are both happier for the encounter.) ~
++@403  = ~ (Tsujatha's tongue duels with yours in a frenetic yet loving battle that leaves you both breathless. You cannot say who was the victor, but you are both happier for the encounter.) ~
+ @404  = ~ (Tsujatha bends his head to yours, accepting your kiss. He does not touch you except for your mouth, and you wonder whether your act has pleased him.)~
+ @405  = ~(When you step away from him, however, you catch a glimpse of his robes and realize just how much pleasure he received.) ~
+ @406  = ~ (Tsujatha cradles your face as you kiss, and his strong, skilled fingers begin to slide back into your hair.)~
+ @407  = ~(Your body trembles at the touch, and you melt into his arms. When your kiss ends your knees are weak with desire.) ~
+-@408  = ~(You have been watching Tsujatha, and he seems graver than usual. You feel a chill in your spine, and you recall a poem you once read in Candlekeep. It seems appropriate now, and you begin to recite, your eyes fixed on Tsujatha’s face.) ~
++@408  = ~(You have been watching Tsujatha, and he seems graver than usual. You feel a chill in your spine, and you recall a poem you once read in Candlekeep. It seems appropriate now, and you begin to recite, your eyes fixed on Tsujatha's face.) ~
+ @409  = ~ Farewell, thou art too dear for my possessing,
+-And like enough thou know’st thy estimate.
++And like enough thou know'st thy estimate.
+ The charter of thy worth gives thee releasing;
+ My bonds in thee are all determinate. ~
+ @410  = ~ For how do I hold thee but by thy granting,
+@@ -445,17 +445,17 @@
+ And so my patent back again is swerving. ~
+ @411  = ~ (You get only so far, and Tsujatha interrupts you by placing his finger on your lips.) No, my sweet <CHARNAME>, no. ~
+ @412  = ~ It is not you, but I who am undeserving. You are the one too precious for such as I, and *Thus I have had thee as a dream doth flatter, In sleep a king, but waking no such matter.*  Nevertheless, even for the dream I thank you.) ~
+-@413  = ~ (You have been admiring Tsujatha’s beautiful profile for some time as you walk, and at last the poem that has been lurking beneath the surface of your thoughts, bubbles up and out.) ~
++@413  = ~ (You have been admiring Tsujatha's beautiful profile for some time as you walk, and at last the poem that has been lurking beneath the surface of your thoughts, bubbles up and out.) ~
+ @414  = ~ Some glory in their birth, some in their skill,
+-Some in their wealth, some in their body’s force,
++Some in their wealth, some in their body's force,
+ Some in their garments, though newfangled ill,
+ Some in their hawks and hounds, some in their horse— ~
+ @415  = ~ (You suddenly forget the rest as Tsujatha turns to face you. He strokes your cheek with the tip of his finger and takes up the poem.) ~
+ @416  = ~All these I better in one general best.
+ Thy love is better than high birth to me,
+-Richer than wealth, prouder than garments’ cost,
++Richer than wealth, prouder than garments' cost,
+ Of more delight than hawks or horses be; ~
+-@417  = ~ And having thee, of all men’s pride I boast;
++@417  = ~ And having thee, of all men's pride I boast;
+ Wretched in this alone, that thou mayst take
+ All this away, and me most wretched make. ~
+ @418  = ~ (The last two lines he whispers so low that you must strain your ears to catch them.) ~
+@@ -463,10 +463,10 @@
+ @420  = ~ Yet in these thoughts myself almost despising,
+ Haply I think on thee, and then my state,
+ Like to the lark at break of day arising
+-From sullen earth, sings hymns at heaven’s gate; ~
+-@421  = ~ For thy sweet love rememb’red such wealth brings,
++From sullen earth, sings hymns at heaven's gate; ~
++@421  = ~ For thy sweet love rememb'red such wealth brings,
+ That then I scorn to change my state with kings. ~
+-@422  = ~ (Tsujatha’s eyes have grown large during your recitation, and when you have finished, Tsujatha bows his head and kisses your hand.) ~
++@422  = ~ (Tsujatha's eyes have grown large during your recitation, and when you have finished, Tsujatha bows his head and kisses your hand.) ~
+ @423  = ~ If this is even half true, I shall begin to know fear once more. My love, my love. You are all to me. ~
+ @424  = ~(You have been thinking of Irenicus and of your own plight, as well as of Imoen, and you sigh. As you do so, you glance over at Tsujatha, the one who loves you more than you had imagined possible. You find yourself smiling, and you recite some lines of poetry that spring unbidden to your lips.) ~
+ @425  = ~ (You slip up next to Tsujatha and throw your arms around him. He responds with a laugh as he returns your embrace.)~
+@@ -484,11 +484,11 @@
+ @437  = ~(He marches more than a mile before he releases you, and when you are at last on the ground again you hear his whisper.)~
+ @438  = ~My dearest, I wish you never had to be out of my arms. ~
+ @439  = ~(Tsujatha seems to understand your desire to be close to him, and he lovingly strokes your hair as you lean against him.)~
+-@440  = ~ (For a timeless moment you stand motionless, listening to the even beat of Tsujatha’s heart, and you taste peace.) ~
+-@441  = ~ (You draw comfort from Tsujatha’s nearness, and he nuzzles the top of your head.)~
++@440  = ~ (For a timeless moment you stand motionless, listening to the even beat of Tsujatha's heart, and you taste peace.) ~
++@441  = ~ (You draw comfort from Tsujatha's nearness, and he nuzzles the top of your head.)~
+ @442  = ~(You hear whispered words in his native tongue. You do not understand any of them, but you catch your own name repeated like an invocation or a blessing.)~
+-@443  = ~(A shiver travels your body at your realization of the depth of Tsujatha’s love for you.) ~
+-@444  = ~ (Tsujatha’s arms slide around you, and you feel him rock you gently back and forth.)~
++@443  = ~(A shiver travels your body at your realization of the depth of Tsujatha's love for you.) ~
++@444  = ~ (Tsujatha's arms slide around you, and you feel him rock you gently back and forth.)~
+ @445  = ~(You have not felt so safe since you learned of your Bhaalspawn heritage, and a gleam of hope appears in your mind, hope that you and Tsujatha might survive to see a peaceful dawn.)~
+ @446  = ~ (Tsujatha cradles you in his arms; his hair slides down around you, enclosing you in the silken black veil that you so love.)~
+ @447  = ~(Hidden behind his hair, you lean up to kiss his chin.) My sweet love.~
+@@ -505,16 +505,16 @@
+ @458  = ~Like attracts like it seems. ~
+ @459  = ~ (Tsujatha does not answer, but he gently removes your hands from the tangle in your hair.)~
+ @460  = ~(His nimble fingers make short work of the knotted mess, but he does not cease to explore your hair.)~
+-@461  = ~(Almost before you realize it, you are leaning back against him; your eyes have closed, and you give yourself over to the pleasure of feeling Tsujatha’s touch on your skin.) ~
++@461  = ~(Almost before you realize it, you are leaning back against him; your eyes have closed, and you give yourself over to the pleasure of feeling Tsujatha's touch on your skin.) ~
+ @462  = ~ (Tsujatha begins to untangle the knot, and he chides you gently.)~
+ @463  = ~<CHARNAME>, you ought to bind your hair more carefully. Leaving it loose as you do can lead to more serious damage than tangles such as these.~
+ @464  = ~In battle your hair could be grabbed. You ought to braid it like this.~
+-@465  = ~(Tsujatha’s fingers move deftly through your hair, and when he has finished you find that your hair is now a shining, elaborate triple braid.)~
++@465  = ~(Tsujatha's fingers move deftly through your hair, and when he has finished you find that your hair is now a shining, elaborate triple braid.)~
+ @466  = ~You see? The women of my nation wear their hair so. It suits you, beloved. ~
+ @467  = ~ Where? (Tsujatha does not wait for you to answer; before you can, he has spotted the knot.)~
+ @468  = ~I see. How did you get this so tangled? It looks as though a cat has sucked your head.~
+-@469  = ~(This remark, delivered in Tsujatha’s ever-serious tone, sends you into such gales of laughter that Tsujatha has difficulty untangling the knot.) ~
+-@470  = ~(Tsujatha’s surprise is evident.) Tense? (He suddenly smiles, catching your meaning.)~
++@469  = ~(This remark, delivered in Tsujatha's ever-serious tone, sends you into such gales of laughter that Tsujatha has difficulty untangling the knot.) ~
++@470  = ~(Tsujatha's surprise is evident.) Tense? (He suddenly smiles, catching your meaning.)~
+ @471  = ~If ever you wish to touch me, <CHARNAME>, do so.~
+ @472  = ~I would greatly enjoy such a pleasure as the feel of your hands on my skin. ~
+ @473  = ~ (Tsujatha starts, and a look of love settles on his face.)~
+@@ -540,19 +540,19 @@
+ @493  = ~(You notice his hands making the movements that you feel, despite the distance between you.)~
+ @494  = ~(Your pleasure is evident, and Tsujatha at last closes the distance between you.) ~
+ @495  = ~There are advantages in having a magician for a lover.~
+-@496  = ~(Your searching fingers find their way into Tsujatha’s robes with little difficulty. You feel the now-familiar edges of the scar on his chest. You slide your hands downward, below the scar. ~
++@496  = ~(Your searching fingers find their way into Tsujatha's robes with little difficulty. You feel the now-familiar edges of the scar on his chest. You slide your hands downward, below the scar. ~
+ @497  = ~ By the time your fingers have reached his inner thigh, Tsujatha has stopped moving. His silver eyes bore into your face, and you start back guiltily.) ~
+ @498  = ~ I am sorry, Tsujatha. ~
+ @499  = ~ Forgive me, Tsujatha. I forgot myself. ~
+ @500  = ~But *I* am not. (He takes you into his arms then, and you feel the results of your touch pressing into your side.)~
+ @501  = ~I think we should set up camp now, my love.~
+ @502  = ~There is nothing to forgive. (He takes you into his arms then, and you feel the results of your touch pressing into your side.)~
+-@503  = ~ (You slide your hands into Tsujatha’s robes, and he starts back.)~
++@503  = ~ (You slide your hands into Tsujatha's robes, and he starts back.)~
+ @504  = ~Your hands are cold, dear one. (He smiles and takes your hands.) Let me warm them for you before we try that again.~
+-@505  = ~ (Tsujatha’s eyes widen as you touch him, and he stops still to better enjoy your caresses.)~
++@505  = ~ (Tsujatha's eyes widen as you touch him, and he stops still to better enjoy your caresses.)~
+ @506  = ~Sweet <CHARNAME>, you are skilled in the arts of love. I shall have to repay you in kind when we make camp.~
+ @507  = ~(The tantalizing spark in his eyes excites you, and you look forward to the fulfillment of his promise.) ~
+-@508  = ~ (You hear the sudden intake of Tsujatha’s breath as you place your hands on him. He looks down into your eyes, and the silver light of his gaze is twice as bright as usual.)~
++@508  = ~ (You hear the sudden intake of Tsujatha's breath as you place your hands on him. He looks down into your eyes, and the silver light of his gaze is twice as bright as usual.)~
+ @509  = ~(He keeps his eyes fixed on you as you fondle him. Suddenly he closes them and backs away from you.)~
+ @510  = ~Enough, little one. At least for now. I would not spoil your pleasure this evening. ~
+ @511  = ~(Tsujatha laughs at your obvious desire, and he kisses you lightly on the cheek.)~
+@@ -566,7 +566,7 @@
+ @519  = ~(You lean up to kiss Tsujatha on the ear, but he turns toward you just at that moment.)~
+ @520  = ~(Your kiss lands on his cheek instead, and the wizard smiles.)~
+ @521  = ~I think you missed. Let us see if I can aim any better. (He leans down to kiss your mouth.) ~
+-@522  = ~ (You trace the inner edge of Tsujatha’s ear with your tongue, and he stops, savoring the feel of you.)~
++@522  = ~ (You trace the inner edge of Tsujatha's ear with your tongue, and he stops, savoring the feel of you.)~
+ @523  = ~(He reaches for your hand and presses it. His whole carriage betrays his arousal, and you return to your place, well satisfied with your work.) ~
+ @524  = ~ (Tsujatha has paused in marching to survey the horizon, and his head is cocked to one side as though listening.)~
+ @525  = ~(Impulsively, you lean up and kiss his ear. Tsujatha freezes in place, and you begin to nibble the pointed tip.) ~
+@@ -583,35 +583,35 @@
+ @536  = ~ I agree. Will you take your payment now or later? ~
+ @537  = ~Agreed. Tonight then. (He is aroused by the prospect, as your glance in the appropriate direction reveals.) ~
+ @538  = ~Now. (He draws near to you and kisses your breath away.) *And* later.~
+-@539  = ~ Will you now? (There is a lightness to Tsujatha’s tone that brings an answering smile to your lips.) ~
++@539  = ~ Will you now? (There is a lightness to Tsujatha's tone that brings an answering smile to your lips.) ~
+ @540  = ~I think I might be persuaded to oblige you. The thought of massaging your body, of my hands exploring you, is quite an attractive one, I admit. ~
+ @541  = ~(Tsujatha gives you a gentle squeeze on your shoulder and slides his hand down your chest as he returns to his place.)~
+ @542  = ~Just a taste of what is in store for you, little one. ~
+ @543  = ~ A full body massage? That involves a great deal of time and effort to do properly. I think we ought to set up camp early to leave plenty of time for it. ~
+ @544  = ~ I promise you that whatever I do will be pleasurable, but I cannot promise how conducive it will be to your sleeping. ~
+-@545  = ~ (Tsujatha’s voice is inviting, and you find yourself tempted to give the order to halt immediately.) ~
+-@546  = ~(Tsujatha’s eyes widen at your earnestness, and he moves over to stand beside you.)~
++@545  = ~ (Tsujatha's voice is inviting, and you find yourself tempted to give the order to halt immediately.) ~
++@546  = ~(Tsujatha's eyes widen at your earnestness, and he moves over to stand beside you.)~
+ @547  = ~(Seeing the mute plea in your eyes, he leans into your mouth and kisses you. His passion mounts, as does your own, and he lowers you to the ground.) ~
+ @548  = ~(Without making camp, without even a glance to see if anyone is observing you, he complies with your request.)~
+ @549  = ~(Your love-making is intense, and it is not brief.)~
+ @550  = ~(In fact, it lasts so long that when it is over at last, you are forced to make camp.) ~
+-@551  = ~ Now, <CHARNAME>? (Tsujatha’s glance at your surroundings is eloquent. The intensity of your desire does not escape him, however, and he puts his arms around you.) ~
+-@552  = ~ Now it shall be. (Tsujatha’s love-making does not begin in its usual gentle fashion, but rather he is nearly rough in your love-play; and you respond in kind.) ~
++@551  = ~ Now, <CHARNAME>? (Tsujatha's glance at your surroundings is eloquent. The intensity of your desire does not escape him, however, and he puts his arms around you.) ~
++@552  = ~ Now it shall be. (Tsujatha's love-making does not begin in its usual gentle fashion, but rather he is nearly rough in your love-play; and you respond in kind.) ~
+ @553  = ~ (When at last you have finished enjoying each other, you see that the scratches you put on his back have drawn blood.) ~
+ @554  = ~ (Tsujatha takes your hand and raises it to his lips.)~
+ @555  = ~How can I refuse you anything, my love? Especially not something that I myself so desire. ~
+ @556  = ~ (He takes you in his arms, and, with a fervor that you have rarely seen, he makes wild love to you.) ~
+ @557  = ~ (The positions you end up in are beyond anything you have imagined; and you know that you will both be sore later, but as you lie in his arms, utterly spent, you realize that it was worth any amount of soreness. You cannot remember anything like this.) ~
+-@558  = ~ Your eagerness is arousing, <CHARNAME>. (A downward glance gives the truth of Tsujatha’s words, and you smile at his desire for you. As usual, he has followed your thoughts.) ~
++@558  = ~ Your eagerness is arousing, <CHARNAME>. (A downward glance gives the truth of Tsujatha's words, and you smile at his desire for you. As usual, he has followed your thoughts.) ~
+ @559  = ~ It gives me unimaginable pleasure to know that you desire me as I do you. And I *do* want you. I need you. ~
+ @560  = ~ (You know that he is speaking of more than the physical sense, and tears start into your eyes.)~
+-@561  = ~(Your love-making is sweet and gentle, full of deep, rich kisses and lovers’ endearments.) ~
++@561  = ~(Your love-making is sweet and gentle, full of deep, rich kisses and lovers' endearments.) ~
+ @562  = ~(Tsujatha smiles in astonishment.) <CHARNAME>, you would give me such an honor? (At your nod, he leads the way into the bath.) ~
+ @563  = ~ (The attendants are scurrying to serve you in such a hurried, obsequious fashion that you suspect Tsujatha must have paid well above the going rate for such a bath. This suspicion is confirmed when you realize that you have the entire bath-house to yourselves.) ~
+ @564  = ~ (Tsujatha is obviously happy, but there is a serious gleam in his eyes. When the attendants have departed, assured that you will call them if they are needed, Tsujatha speaks again.)  ~
+ @565  = ~ May I undress you, <CHARNAME>? (Again you nod, and Tsujatha begins to slowly remove your garments. When you stand before him, unclothed, he takes you in his arms.) ~
+ @566  = ~ (His own clothes are gone now as well, and you have an instant to think how pleasant it is to have a mage for a lover before he plunges you both into the steaming water. The heat soothes your travel-weary muscles, and Tsujatha begins to aid the water by massaging your shoulders.)~
+-@567  = ~ (Before you can speak, he has begun to wash you. The cloth is rough, but his touch is gentle; you find yourself utterly relaxed. You are humbled by Tsujatha’s humility. He cares for you as though he were your squire or body-servant.) ~
++@567  = ~ (Before you can speak, he has begun to wash you. The cloth is rough, but his touch is gentle; you find yourself utterly relaxed. You are humbled by Tsujatha's humility. He cares for you as though he were your squire or body-servant.) ~
+ @568  = ~ (You give yourself over to the peace of the moment. The moment stretches out so long that the water begins to chill. Tsujatha has never ceased his ministrations to you, and now, just as you begin to feel slightly cold, he lifts you from the water.) ~
+ @569  = ~ (He wraps a large towel, softer and whiter than any you recall seeing in this bath-house, around you. He uses a second towel to dry your hair.) ~
+ @570  = ~ (Your skin is wrinkled from the water, and you feel very much like a child. Tsujatha understands your feeling, for he takes you up to your room and rocks you to sleep.) ~
+@@ -620,7 +620,7 @@
+ @573  = ~(You quickly remove your clothes and jump into the water. The resulting splash draws a chuckle from Tsujatha. You look up to see him watching you admiringly. You continue to observe as he begins to undress.)~
+ @574  = ~(His mage robes drop from his body, and you are struck yet again with the development of his physique. Tsujatha has long, cat-like muscles that even a warrior would envy.)~
+ @575  = ~(Tsujatha slowly eases into the water and slides next to you. He breathes a long sigh of content and closes his eyes. Seeing him so defenseless you cannot help yourself. You splash his face.)~
+-@576  = ~(Tsujatha’s eyes flutter open, and he smiles.) You will pay for that, <CHARNAME>. (Tsujatha splashes you in return, and before you realize it, you are in a full-scale water fight.)~
++@576  = ~(Tsujatha's eyes flutter open, and he smiles.) You will pay for that, <CHARNAME>. (Tsujatha splashes you in return, and before you realize it, you are in a full-scale water fight.)~
+ @577  = ~(Half the water in your tub is lost before you recover yourselves. Tsujatha shakes his head.) I do not know when I have ever played so much. You have given me something most precious, beloved.~
+ @578  = ~(Tsujatha has resumed his serious look, and he takes your hand.) Thank you. (There is not enough water left to properly bathe, so the two of you slip out and dress quickly.)~
+ @579  = ~(You are left with the feeling that for Tsujatha there is nothing frivolous. Everything, even a water fight, is serious to him in the end.)~
+@@ -630,15 +630,15 @@
+ @583  = ~ It will not last very long, but long enough for us. (There is enough room for you both to stretch out, and you thoroughly enjoy it. You lie luxuriating in the water, and your eyes begin to grow heavy.) ~
+ @584  = ~(You are quickly aroused from your drowsy state, however, by Tsujatha leaning in to kiss you.) ~
+ @585  = ~ You look like a Queen, my love. These are the surroundings that are suited to you. The rough roads that you are forced to travel are not suited to your beauty. ~
+-@586  = ~ (Now aroused in more ways than one, you put your arms around Tsujatha’s neck and pull him toward you again. His admiration for your unclothed body has already impassioned him, and he responds to your advances with alacrity.) ~
++@586  = ~ (Now aroused in more ways than one, you put your arms around Tsujatha's neck and pull him toward you again. His admiration for your unclothed body has already impassioned him, and he responds to your advances with alacrity.) ~
+ @587  = ~ (Making love to Tsujatha in the water is an exhilarating experience, and it is one you are resolved to repeat.) ~
+ @588  = ~(Tsujatha has drawn apart from the rest, and a glance at his open pack tells you where he has gone. You are seized with the desire to do something for Tsujatha, and you go to the water.) ~
+-@589  = ~ (You see him floating on the surface, and you pause a moment to appreciate the view. Tsujatha’s gold skin contrasts with the calm blue of the water, and you notice particularly the long scar on his chest.) ~
++@589  = ~ (You see him floating on the surface, and you pause a moment to appreciate the view. Tsujatha's gold skin contrasts with the calm blue of the water, and you notice particularly the long scar on his chest.) ~
+ @590  = ~ (It runs from just below his clavicle to just below his navel. You silently undress and slip into the water, carrying one of your own bathing cloths. You glide over to where Tsujatha is peacefully floating, and you begin to wash him, softly rubbing the cloth across his chest.) ~
+ @591  = ~ (Tsujatha opens his eyes at your touch, and he smiles wonderingly.) I am dreaming, am I not?  This is not real.  It cannot be. ~
+ @592  = ~  It cannot be that such sweetness, such gentleness are for me. (The kiss you give him apparently fails to reassure him of your reality, for he stands up and puts his arms around you.) ~
+ @593  = ~ Do not leave me. (You remain in the water for so long that you both begin to chill, but Tsujatha seems reluctant to leave. At last you are forced to return to your campfire, and as you leave the water you catch a whisper behind you.) It was a dream. ~
+-@594  = ~ (You take Tsujatha’s hand and draw him toward the water. You strip quickly and plunge in. Tsujatha removes his clothes more slowly, seeming struck by the sight of you gliding through the water.) ~
++@594  = ~ (You take Tsujatha's hand and draw him toward the water. You strip quickly and plunge in. Tsujatha removes his clothes more slowly, seeming struck by the sight of you gliding through the water.) ~
+ @595  = ~ (In fact, by the time he does join you in the water, you have already completely washed. Tsujatha seems uninterested in actually bathing, for he immediately draws near to you.) ~
+ @596  = ~ For you, my Lady and my Queen. (He places on your head a crown of flowers; you realize that this was what had delayed him. You reach up to feel the flowers, and you pull one loose to look at it.) ~
+ @597  = ~ (It is a type of flower you have never seen before. Small and star-shaped, its white shows all the more vividly against the blue of the water; its scent is sweet, almost heady, and you know that you have never in all your travels seen anything like this.)  ~
+@@ -646,33 +646,33 @@
+ @599  = ~ It reminds me of you, for your goodness shows up more clearly than ever in the darkness of your surroundings. ~
+ @600  = ~ (Tsujatha takes your hand as you leave the water, and you do not remove the crown of flowers from your head; it remains untouched until the spell expires.) ~
+ @601  = ~ (You have withdrawn to bathe, and you find yourself wishing you had brought Tsujatha with you. Even as the thought enters your mind, you hear footsteps behind you.) ~
+-@602  = ~ It is I, Lady-love. (Tsujatha’s voice is unexpectedly diffident.)  May I join you? ~
++@602  = ~ It is I, Lady-love. (Tsujatha's voice is unexpectedly diffident.)  May I join you? ~
+ @603  = ~ (At your nod of assent, Tsujatha quickly strips and dives into the water. He swims about, enjoying the view as you wash yourself. You smile inwardly, knowing what effect the sight of your nude body will have on Tsujatha.) ~
+ @604  = ~ (You slow the pace of your washing, allowing Tsujatha longer and longer looks. His splashing slowly decreases, and you feel the ripples of the water as he approaches.) ~
+-@605  = ~ (You release your hair from its bond, and you hear the sudden intake of Tsujatha’s breath. Without a word, he takes the soap from your hand and begins to lather it through your hair.) ~
++@605  = ~ (You release your hair from its bond, and you hear the sudden intake of Tsujatha's breath. Without a word, he takes the soap from your hand and begins to lather it through your hair.) ~
+ @606  = ~ (You relax into his touch as he massages your scalp. At last, and yet it still seems too soon to you, he rinses your hair. When he has finished, he turns you around to face him.) ~
+ @607  = ~ (Your hair hangs about your face in heavy, dripping locks, and Tsujatha smiles as you.)  Have you no reward to offer your faithful squire, Lady? ~
+ @608  = ~ (For answer you put your arms around him and kiss him. His excitement at seeing your naked form has not waned during his washing of your hair, and you find you now match his rising ardor.) ~
+ @609  = ~ (Tsujatha murmurs a few words, and then he pulls you below the surface of the water. You find that either you need no air, or else you can breathe the water, for your lungs do not rebel.) ~
+ @610  = ~ (The surface of the water first ripples, then bubbles, then churns as your passion takes its course. When at last you and Tsujatha emerge from the water, you are both cleaner and more relaxed, but you must admit that you are more tired than before your bath.) ~
+-@611  = ~(Your eyes travel over Tsujatha’s form, and you smile possessively, though you have not yet possessed him. Your heart thrills to his mere presence.)~
+-@612  = ~Tsujatha, could you help me with my hair?  I’ve gotten something tangled in it. ~
++@611  = ~(Your eyes travel over Tsujatha's form, and you smile possessively, though you have not yet possessed him. Your heart thrills to his mere presence.)~
++@612  = ~Tsujatha, could you help me with my hair?  I've gotten something tangled in it. ~
+ @613  = ~(He says nothing, but neither does he release you until you move.) ~
+ @614  = ~ (Tsujatha raises your hand to lips and briefly kisses it. He does not let go of your hand when he lowers it, however, and you walk hand-in-hand for some time.) ~
+ @615  = ~ (Tsujatha intertwines his fingers with yours, and he looks down at you in delight.) I was desirous of your touch. Thank you, my heart. ~
+-@616  = ~ (The feel of Tsujatha’s hand in your is inexpressibly comforting, and you walk on, feeling safer than you would have imagined possible, considering your circumstances.) ~
+-@617  = ~(Tsujatha’s eyes darken.) My past before I met you, Lady-love, is not a pleasant thing. I would rather forget it. For me, my life began the day I saw your face.) ~
++@616  = ~ (The feel of Tsujatha's hand in your is inexpressibly comforting, and you walk on, feeling safer than you would have imagined possible, considering your circumstances.) ~
++@617  = ~(Tsujatha's eyes darken.) My past before I met you, Lady-love, is not a pleasant thing. I would rather forget it. For me, my life began the day I saw your face.) ~
+ @618  = ~ What would you know, <CHARNAME>? I grew up in a tiny village not far from the borders of our desert land.~
+ @619  = ~I was mocked by the other children, until I learned to harness the Mir--magic—-in my blood.~
+ @620  = ~It was not a pleasant life. ~
+ @621  = ~ Would you hear of my past adventures? I have fought Nohr—-a kind of giant—-and Men.~
+-@622  = ~It was in Halchek that I dwelt after Sillara’s departure to marry Lord Kan-Terak. ~
++@622  = ~It was in Halchek that I dwelt after Sillara's departure to marry Lord Kan-Terak. ~
+ @623  = ~ (Tsujatha smiles suddenly at you.) Thank you, <CHARNAME>. You have reminded me of the joy I have gained here in Faerun. It is the sweetest of all joys, that of release from sorrow.~
+ @624  = ~ Even if you had given me no other gift, the gift of freedom from the weight of jealousy and thwarted revenge would be treasure enough to make me love you the rest of my days. ~
+ @625  = ~ (My past is dark, my fair one. I have killed often. Sometimes it was blameless in me; I have fought for my life as often as you have for yours. ~
+ @626  = ~ Other times it was not. I have killed men for being in my way. I have killed men for crossing me. ~
+-@627  = ~ (Tsujatha’s eyes narrow as he looks into your face.) Say that you forgive me, best beloved one. I need to hear that you can look past this to love me.~
+-@628  = ~(Your lips brush across Tsujatha’s only for an instant. Tsujatha looks down into your face and smiles.)~
++@627  = ~ (Tsujatha's eyes narrow as he looks into your face.) Say that you forgive me, best beloved one. I need to hear that you can look past this to love me.~
++@628  = ~(Your lips brush across Tsujatha's only for an instant. Tsujatha looks down into your face and smiles.)~
+ @629  = ~You can be a tantalizing creature, <CHARNAME>. You offer only a taste of what is sweeter than wine: your lips. ~
+ @630  = ~(You plant a soft kiss on the end of his aquiline nose. Tsujatha stands up in surprise, and he laughs.)~
+ @631  = ~You are yet as sweet as a child, my <CHARNAME>. ~
+@@ -684,19 +684,19 @@
+ @637  = ~You belong always in my arms, beloved. ~
+ @638  = ~ (Tsujatha responds to the brush of your lips against his by crushing you against his chest. His lips cling to yours, refusing to release them.)~
+ @639  = ~(His tongue searches the inside of your mouth, and the feel of his tongue on yours causes your body to shiver in delight and anticipation. You do not end the kiss, leaving it to Tsujatha to do so.)~
+-@640  = ~(You have been admiring Tsujatha’s beautiful profile for some time as you walk, and at last the poem that has been lurking beneath the surface of your thoughts, bubbles up and out.) ~
++@640  = ~(You have been admiring Tsujatha's beautiful profile for some time as you walk, and at last the poem that has been lurking beneath the surface of your thoughts, bubbles up and out.) ~
+ @641  = ~ (Tsujatha seems to no longer be paying attention to your surroundings, and a far-off look is in his silver eyes.)~
+ @642  = ~My beloved. You are my anchor. (The closeness with which he has followed your thoughts no longer surprises you, but you are pleased anew with it.) ~
+-@643  = ~(For a timeless moment you stand motionless, listening to the even beat of Tsujatha’s heart, and you taste peace.) ~
++@643  = ~(For a timeless moment you stand motionless, listening to the even beat of Tsujatha's heart, and you taste peace.) ~
+ @644  = ~(You have not felt so safe since you learned of your Bhaalspawn heritage, and a gleam of hope appears in your mind, hope that you and Tsujatha might survive to see a peaceful dawn.) ~
+ @645  = ~(Tsujatha stops still, his silver eyes glowing in wonder.)~
+ @646  = ~It is like a dream to hear you say this, <CHARNAME>, a more beautiful dream than any I have ever had. ~
+ @647  = ~ (Tsujatha stares at you in silence, and he seems to have stopped breathing.)~
+ @648  = ~(There is amazement in his eyes, and he catches hold of you.)~
+-@649  = ~(Almost before you realize it, you are leaning back against him; your eyes have closed, and you give yourself over to the pleasure of feeling Tsujatha’s touch on your skin.)~
++@649  = ~(Almost before you realize it, you are leaning back against him; your eyes have closed, and you give yourself over to the pleasure of feeling Tsujatha's touch on your skin.)~
+ @650  = ~You see?  The women of my nation wear their hair so. It suits you, beloved. ~
+-@651  = ~(This remark, delivered in Tsujatha’s ever-serious tone, sends you into such gales of laughter that Tsujatha has difficulty untangling the knot.)~
+-@652  = ~ (Tsujatha’s surprise is evident.) Tense? (He suddenly smiles, catching your meaning.)~
++@651  = ~(This remark, delivered in Tsujatha's ever-serious tone, sends you into such gales of laughter that Tsujatha has difficulty untangling the knot.)~
++@652  = ~ (Tsujatha's surprise is evident.) Tense? (He suddenly smiles, catching your meaning.)~
+ @653  = ~If ever you wish to touch me, <CHARNAME>, do so. I would greatly enjoy such a pleasure as the feel of your hands on my skin. ~
+ @654  = ~(He smiles playfully, and you realize how rare a moment this is. You treasure the lightness in his eyes, and you kiss the top of his head as you begin to knead his shoulders.) ~
+ @655  = ~(There is nothing wrong with me that the touch of your hand cannot cure, <CHARNAME>. Thank you.~
+@@ -763,7 +763,7 @@
+ @716  = ~A knife in the back or fangs at the neck, one or the other is our choice. We gain an enemy no matter which we choose.~
+ @717  = ~(The boy looks blankly at Tsujatha, then turns back to you.)~
+ @718  = ~So, what about it?~
+-@719  = ~(Tsujatha’s face is white with rage, but his voice is even as he speaks.)~
++@719  = ~(Tsujatha's face is white with rage, but his voice is even as he speaks.)~
+ @720  = ~Lord Keldorn, there is no choice to be made. This woman has made a mockery of the most sacred of vows.~
+ @721  = ~She is not worthy to bear the title of “woman,” let alone that of Lady Firecam!~
+ @722  = ~Your honor, your gods demand justice. You must allow the law to take its course.  Or else slay her yourself. And her lover.~
+@@ -773,7 +773,7 @@
+ @726  = ~So she is gone? (Tsujatha smiles, pleased.)~
+ @727  = ~Is it necessary that we retrieve her? Surely she could do the most good for the poor rabble in the prisons by staying amongst them?~
+ @728  = ~And if she is as skilled in picking locks as she claims, she surely need not remain in prison? It seems clear that we need do nothing.~
+-@729  = ~(Tsujatha’s eyebrows rise, and he turns to face the young woman.)~
++@729  = ~(Tsujatha's eyebrows rise, and he turns to face the young woman.)~
+ @730  = ~<CHARNAME> is *not* a yummy little woman. She is a Lady far beyond your comprehension.~
+ @731  = ~Do not presume to speak to her again.~
+ @732  = ~<CHARNAME> is *not* a yummy little woman. She is a Lady--*my* Lady--and she is far beyond your comprehension.~
+@@ -783,9 +783,9 @@
+ @736  = ~She will use you all your days. That you permit it means you must deserve it.~
+ @737  = ~<CHARNAME>, be wary. This wizard is toying with magicks beyond his ability.~
+ @738  = ~Your goodness has brought you to this, Mistress Jaheira. I am sorry for it.~
+-@739  = ~(There is no mockery in Tsujatha’s voice, only genuine pity. Jaheira seems to recognize this, and she weakly smiles in response.)~
++@739  = ~(There is no mockery in Tsujatha's voice, only genuine pity. Jaheira seems to recognize this, and she weakly smiles in response.)~
+ @740  = ~I am pleased to see you well, Mistress Jaheira.~
+-@741  = ~(You look to Tsujatha for a trace of sarcasm in his voice, but there is none. He seems genuinely pleased at Jaheira’s release from the curse.)~
++@741  = ~(You look to Tsujatha for a trace of sarcasm in his voice, but there is none. He seems genuinely pleased at Jaheira's release from the curse.)~
+ @742  = ~A Shadow Dragon? <CHARNAME>, be careful. This is one of the deadliest of all wyrms. His breath will drain away your very life.~
+ @743  = ~We must aid Lady Fentan. <CHARNAME>, we must not let this misdeed go unpunished.~
+ @744  = ~We must find and destroy the one responsible for this outrage.~
+@@ -805,7 +805,7 @@
+ @758  = ~What do you say, Tsujatha? Shall we take vengeance on Irenicus?~
+ @759  = ~Tsujatha, this is not your fight. You ought to go back to Gilalion while you still can.~
+ @760  = ~Please, Tsujatha, stay with me. I need you in this fight.~
+-@761  = ~I say that Irenicus has injured you and insulted me with his presumption. I am with you, <CHARNAME>. Let us go. Together we shall take payment for this debt from Irenicus’ hide.~
++@761  = ~I say that Irenicus has injured you and insulted me with his presumption. I am with you, <CHARNAME>. Let us go. Together we shall take payment for this debt from Irenicus' hide.~
+ @762  = ~Perhaps you are right. It is not my place. Unless you would ask me for aid, of course.~
+ @763  = ~I need you in this fight, Tsujatha. Stay with me.~
+ @764  = ~My need is not so great as to keep you here when your own world beckons. Go home, Tsujatha.~
+@@ -827,12 +827,12 @@
+ @780  = ~(He lifts your hand and tenderly kisses it.)~
+ @781  = ~ Enough. Let us go, beloved. Together we shall face the night.~
+ @782  = ~I came into this world to seek the Riose Sar. I have not yet found it, but I have found that which I value more even than the heirloom of my house.~
+-@783  = ~She sees through all the Planes? If she can see my father’s dwelling, she is indeed to be pitied.~
++@783  = ~She sees through all the Planes? If she can see my father's dwelling, she is indeed to be pitied.~
+ @784  = ~The pomposity of madness is indeed astonishing.~
+ @785  = ~Tsujatha turns to look at you, and jealousy has flamed in his eyes.~
+-@786  = ~Don’t worry, Tsujatha. I would never do something like that.~
+-@787  = ~Oh don’t be so uptight, Tsujatha. A little full-body massage never hurt anyone.~
+-@788  = ~(Tsujatha’s relief is evident, and he furtively presses your hand.) Thank you, <CHARNAME>. It is—-reassuring to hear you speak so.~
++@786  = ~Don't worry, Tsujatha. I would never do something like that.~
++@787  = ~Oh don't be so uptight, Tsujatha. A little full-body massage never hurt anyone.~
++@788  = ~(Tsujatha's relief is evident, and he furtively presses your hand.) Thank you, <CHARNAME>. It is—-reassuring to hear you speak so.~
+ @789  = ~Is it to be this way, then? Am I to be forced to stand by while the hands of other men play over your body?~
+ @790  = ~Not likely. Fare you well. You shall not see me more.~
+ @791  = ~So you have become the owner of a playhouse? It is fitting, I suppose, for a--bard, is it?~

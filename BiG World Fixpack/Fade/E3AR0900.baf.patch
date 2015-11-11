@@ -1,0 +1,9 @@
+--- Fade\Scripts\E3AR0900.baf	Tue Oct 24 21:28:14 2006
++++ C:\BWP Patchstudio\patched files\Fade\Scripts\E3AR0900.baf	Wed Nov 11 23:12:48 2015
+@@ -1,5 +1,5 @@
+ IF
+-   Global("E3TRIGGER","GLOBAL",0)
++   Global("E3TRIGGER","AR0900",0)
+ THEN
+    RESPONSE #100
+       SetGlobal("E3TRIGGER","AR0900",1)

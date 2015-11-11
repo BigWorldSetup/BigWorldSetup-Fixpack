@@ -1,0 +1,11 @@
+--- Tsujatha\Setup-Tsujatha.tp2	Thu Aug 14 01:25:15 2014
++++ C:\BWP Patchstudio\patched files\Tsujatha\Setup-Tsujatha.tp2	Wed Nov 11 22:40:10 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~Tsujatha/backup~
+ AUTHOR ~gilalion@gmail.com~
+ 
+-VERSION ~v15~
++VERSION ~v15 BWP Fix~
+ 
+ README ~Tsujatha/README-Tsujatha.html~
+ 

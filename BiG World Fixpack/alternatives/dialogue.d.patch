@@ -1,0 +1,10 @@
+--- alternatives\dialogue\dialogue.d	Sun Jun 07 21:42:18 2015
++++ C:\BWP Patchstudio\patched files\alternatives\dialogue\dialogue.d	Wed Nov 11 23:15:27 2015
+@@ -2223,6 +2223,7 @@
+ IF ~~ l7
+ SAY @620 
+ IF ~~ THEN DO ~SetGlobal("B!BonkedLeyt","GLOBAL",1) 
++SetGlobal("B!Tourist","GLOBAL",3)
+ StartCutSceneMode()
+ StartCutScene("B!DOLEYT")~ EXIT
+ END 

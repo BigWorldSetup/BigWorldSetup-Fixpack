@@ -1,0 +1,10 @@
+--- GBThfKp\Scripts\ar1000addb02.baf	Tue Jul 25 20:30:00 2006
++++ C:\BWP Patchstudio\patched files\GBThfKp\Scripts\ar1000addb02.baf	Wed Nov 11 21:29:49 2015
+@@ -14,6 +14,7 @@
+     CreateCreature("TSGrd01",[910.1283],2)
+     CreateCreature("TSGrd01",[774.1178],2)
+     CreateCreature("TSGrd00",[794.1261],2)
++    Wait(120)
+ END
+ 
+ IF

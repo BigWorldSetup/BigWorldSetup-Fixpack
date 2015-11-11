@@ -1,0 +1,20 @@
+--- w_psionics_unleashed\tra\english\setup.tra	Wed Nov 27 04:56:23 2013
++++ C:\BWP Patchstudio\patched files\w_psionics_unleashed\tra\english\setup.tra	Wed Nov 11 22:38:10 2015
+@@ -873,7 +873,7 @@
+ 
+ A subject you select is pummeled with telekinetic force for 1d6 points of psionic (magic) damage.
+ 
+-Augment: For every 2 additional power points you spend, this power’s damage increases by 1d6 points.~
++Augment: For every 2 additional power points you spend, this power's damage increases by 1d6 points.~
+ 
+ @22002 = ~1d6 (3pp)~
+ @22003 = ~2d6 (5pp)~
+@@ -2232,7 +2232,7 @@
+ 
+ Power Points: <W_AKT>/<W_MAX>
+ Psychic Warrior~
+-@2002   = ~One  who  turns  the  mind’s  potential  to  the  warrior’s  art  is known as a psychic warrior. Where psions devote themselves wholly to the development of mind-engendered abilities, psychic warriors give emphasis to the development of the body. With mental and physical energy working in union, the psychic warrior strives toward martial perfection.
++@2002   = ~One  who  turns  the  mind's  potential  to  the  warrior's  art  is known as a psychic warrior. Where psions devote themselves wholly to the development of mind-engendered abilities, psychic warriors give emphasis to the development of the body. With mental and physical energy working in union, the psychic warrior strives toward martial perfection.
+ 
+ The sword, axe, and bow are physical tools that psychic warriors  embrace  along  with  their  psionic  abilities.  Well trained in both physical and psionic matters, the psychic warrior is a formidable adversary.~
+ //@2000   = ~~

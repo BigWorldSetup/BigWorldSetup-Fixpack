@@ -1,0 +1,13 @@
+--- Tsujatha\English\setup_ee.tra	Thu Aug 14 01:23:23 2014
++++ C:\BWP Patchstudio\patched files\Tsujatha\English\setup_ee.tra	Wed Nov 11 22:37:08 2015
+@@ -1,8 +1,8 @@
+-@14   = ~This ring, set with a strange blue-black stone, never leaves Tsujatha’s finger. When asked about the ring, Tsujatha says that it was Sillara’s gift to him, given to aid and protect him. Who Sillara is, or was, he does not say.
++@14   = ~This ring, set with a strange blue-black stone, never leaves Tsujatha's finger. When asked about the ring, Tsujatha says that it was Sillara's gift to him, given to aid and protect him. Who Sillara is, or was, he does not say.
+ Statistics:
+ Base AC: 5
+ 1 bonus spell per level~
+-@15   = ~This ring, set with a strange blue-black stone, never leaves Tsujatha’s finger. When asked about the ring, Tsujatha says that it was Sillara’s gift to him, given to aid and protect him. Who Sillara is, or was, he does not say.
++@15   = ~This ring, set with a strange blue-black stone, never leaves Tsujatha's finger. When asked about the ring, Tsujatha says that it was Sillara's gift to him, given to aid and protect him. Who Sillara is, or was, he does not say.
+ 
+ Statistics:
+ Base AC: 5

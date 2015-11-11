@@ -1,0 +1,11 @@
+--- alternatives\setup-alternatives.tp2	Sun Jul 12 08:06:39 2015
++++ C:\BWP Patchstudio\patched files\alternatives\setup-alternatives.tp2	Wed Nov 11 23:16:11 2015
+@@ -4,7 +4,7 @@
+ 
+ README ~alternatives/readme-alternatives.html~ 
+ 
+-VERSION ~v11~ 
++VERSION ~v11 BWP Fix~ 
+ 
+ // Since nothing is currently blocking installation of the mod on BG2EE, add appropriate text handling for it
+ ALWAYS
