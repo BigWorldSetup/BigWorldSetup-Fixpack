@@ -1,0 +1,11 @@
+--- Saerileth\Setup-Saerileth.tp2	Fri Aug 15 02:07:11 2014
++++ C:\BWP Patchstudio\patched files\Saerileth\Setup-Saerileth.tp2	Thu Nov 12 10:04:21 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~Saerileth\backup~
+ AUTHOR ~gilalion@gmail.com~
+ 
+-VERSION ~v18~
++VERSION ~v18 BWP Fix~
+ 
+ README ~Saerileth/Saerileth-ReadMe-ENG.html~
+ 

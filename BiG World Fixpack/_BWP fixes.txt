@@ -1902,6 +1902,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Saerileth - Saerileth NPC v18
+
+:: micbaldur's Sir Havun Clarenshide spawn problem with BG2Tweaks - Sensible Entrance Points fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=582245
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Sarah NPC v3.1
 
 :: Lollorian's corrected PlaySound("") -> PlaySound("K#SarM5") - k#sar25d.baf

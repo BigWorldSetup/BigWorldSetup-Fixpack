@@ -1,0 +1,20 @@
+--- Saerileth\Dialogues\NSHAVUN.d	Wed Dec 28 11:16:00 2005
++++ C:\BWP Patchstudio\patched files\Saerileth\Dialogues\NSHAVUN.d	Thu Nov 12 10:03:35 2015
+@@ -227,7 +227,7 @@
+ SAY @38
+ =
+ @39
+-IF ~~ THEN DO ~SetGlobal("NSDragonQuest","GLOBAL",1)AddJournalEntry(@5024,QUEST)RevealAreaOnMap("AR1100")EscapeAreaMove("AR0903",902,1272,3)~ EXIT
++IF ~~ THEN DO ~SetGlobal("NSDragonQuest","GLOBAL",1)AddJournalEntry(@5024,QUEST)RevealAreaOnMap("AR1100")EscapeAreaMove("AR0903",875,1000,3)~ EXIT
+ END
+ 
+ IF ~~ THEN BEGIN NSHavunOffer8
+@@ -250,7 +250,7 @@
+ @44
+ =
+ @45
+-IF ~~ THEN DO ~SetGlobal("NSDragonQuest","GLOBAL",1)AddJournalEntry(@5024,QUEST)RevealAreaOnMap("AR1100")EscapeAreaMove("AR0903",902,1272,3)~ EXIT
++IF ~~ THEN DO ~SetGlobal("NSDragonQuest","GLOBAL",1)AddJournalEntry(@5024,QUEST)RevealAreaOnMap("AR1100")EscapeAreaMove("AR0903",875,1000,3)~ EXIT
+ END
+ 
+ IF ~~ THEN BEGIN NSHavunOffer11
