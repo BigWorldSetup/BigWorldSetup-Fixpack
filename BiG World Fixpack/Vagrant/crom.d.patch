@@ -1,0 +1,11 @@
+--- Vagrant\dlg\crom.d	Fri Mar 21 16:47:44 2008
++++ C:\BWP Patchstudio\patched files\Vagrant\dlg\crom.d	Thu Nov 12 19:49:11 2015
+@@ -1099,7 +1099,7 @@
+           TakePartyItemNum("misc21",1)   DestroyItem("misc21")
+           TakePartyItemNum("misc21",1)   DestroyItem("misc21")
+           TakePartyItemNum("misc21",1)   DestroyItem("misc21")
+-          TakePartyItemNum("belt011",1)   DestroyItem("belt01")
++          TakePartyItemNum("belt01",1)   DestroyItem("belt01")
+           GiveItemCreate("S!belt02",Player1,1,1,1)
+           CreateVisualEffect("spcrtwpn",[401.348])~ EXIT
+   END

@@ -2176,6 +2176,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's Ninde Compatibility patch (affects Ninde as well)
 :: http://www.shsforums.net/topic/55469-ellesime-dialogue-problem-saerileth-ninde-kivan-and-re-mods/?p=578879
 
+:: Lollorian's DD0903 BG2Tweaks Sensible Areas compatibility fix (Solution #1)
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=569414
+
 
 ----------------------------------------------------------------------------------------
 
@@ -2395,6 +2398,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's item restorations
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=581738
+
+:: micbaldur's belt011 typo fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=582260
 
 
 ----------------------------------------------------------------------------------------
