@@ -99,7 +99,7 @@
 -IF ~Inparty("SK#Neht")~ THEN GOTO TauntNeht
 +IF ~InParty("SK#Neht")
 +InMyArea("SK#Neht")
-+!StateCheck("SK#Neht",CD_STATE_NOTVALID)~~ THEN GOTO TauntNeht
++!StateCheck("SK#Neht",CD_STATE_NOTVALID)~ THEN GOTO TauntNeht
  END
  
  CHAIN IF ~GLOBAL("TauntNeht","GLOBAL",0)~ THEN PPBODHI4 TauntNeht
