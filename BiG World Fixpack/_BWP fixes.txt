@@ -354,6 +354,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: AzenMOD - Azengaard Tactical Encounters v5
+
+:: Roxanne's JC_SEMA fleeing fix
+:: http://www.shsforums.net/topic/38026-azenmod-v5-released/?p=581729
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Azure - Azure NPC (Beta) v3
 
 :: Fixed parsing ERROR at line 258 column 121-167
