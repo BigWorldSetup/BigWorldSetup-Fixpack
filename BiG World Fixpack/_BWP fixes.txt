@@ -2313,9 +2313,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: TS25 MiniMod v2
 
 :: Fennek's mod updates and partial German translation (15 May 2010)
+:: - LINK NOT FOUND ~
 
 :: Lollorian's replacements - tz25nncf.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
+
+:: Nightfarer's major area patching overhaul
+:: - LINK NOT FOUND ~
 
 
 ----------------------------------------------------------------------------------------

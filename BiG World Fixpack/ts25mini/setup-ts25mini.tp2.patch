@@ -1,29 +1,230 @@
 --- ts25mini\setup-ts25mini.tp2	Fri Mar 13 15:42:40 2009
-+++ C:\BWP Patchstudio\patched files\ts25mini\setup-ts25mini.tp2	Fri Jan 07 17:46:35 2011
-@@ -1,14 +1,20 @@
++++ C:\BWP Patchstudio\patched files\ts25mini\setup-ts25mini.tp2	Sat Nov 14 15:45:58 2015
+@@ -1,6 +1,6 @@
  BACKUP ~ts25mini/backup~
  AUTHOR ~TS25~
 -VERSION ~v2~
-+VERSION ~v2 BWP Fix~
++VERSION ~v2, Nightfarer's Update~
  
  ////////////////////////////////////////////////////////////
  
- ASK_EVERY_COMPONENT
+@@ -10,6 +10,8 @@
  
- AUTO_TRA ~ts25mini/tra/%s~
-+ 
-+ALWAYS
-+  INCLUDE ~ts25mini/lib/fj_are_struct.tpp~
+ LANGUAGE ~japanese~ ~japanese~ ~ts25mini/tra/japanese/setup.tra~
+ 
++LANGUAGE ~Deutsch (Fennek der Schwarze; bisher nur Das Geheimnis der Trollhoehle / Der Duft des Schwarzen Lotus / Der Zielort eines Untoten~ ~german~ ~ts25mini/tra/German/Setup.tra~ 
++
+ ////////////////////////////////////////////////////////////
+ 
+ BEGIN @0
+@@ -227,156 +229,56 @@
+ COPY ~ts25mini/grove/area~ ~override~
+ 
+ COPY_EXISTING ~AR1904.are~ ~override~
+-  READ_SHORT ~0x058~ ~#ofActor~
+-  READ_SHORT ~0x054~ ~actorOff~
+-  READ_SHORT ~0x05a~ ~#ofTrigg~
+-  READ_SHORT ~0x05c~ ~triggOff~
+-  READ_SHORT ~0x064~ ~#ofSpawn~
+-  READ_SHORT ~0x060~ ~spawnOff~
+-  READ_SHORT ~0x06c~ ~#ofEntra~
+-  READ_SHORT ~0x068~ ~entraOff~
+-  READ_SHORT ~0x074~ ~#ofConta~
+-  READ_SHORT ~0x070~ ~contaOff~
+-  READ_SHORT ~0x076~ ~#ofItems~
+-  READ_SHORT ~0x078~ ~itemsOff~
+-  READ_SHORT ~0x080~ ~#ofVerti~
+-  READ_SHORT ~0x07c~ ~vertiOff~
+-  READ_SHORT ~0x082~ ~#ofAmbia~
+-  READ_SHORT ~0x084~ ~ambiaOff~
+-  READ_SHORT ~0x08c~ ~#ofVaria~
+-  READ_SHORT ~0x088~ ~variaOff~
+-  READ_SHORT ~0x09c~ ~#ofExplo~
+-  READ_SHORT ~0x0A0~ ~exploOff~
+-  READ_SHORT ~0x0A4~ ~#ofDoors~
+-  READ_SHORT ~0x0A8~ ~doorsOff~
+-  READ_SHORT ~0x0AC~ ~#ofAnima~
+-  READ_SHORT ~0x0B0~ ~animaOff~
+-  READ_SHORT ~0x0B4~ ~#ofTiled~
+-  READ_SHORT ~0x0B8~ ~tiledOff~
+-  READ_SHORT ~0x0BC~ ~songsOff~
+-  READ_SHORT ~0x0C0~ ~restcOff~
+-  READ_SHORT ~0x0C8~ ~#ofAutom~
+-  READ_SHORT ~0x0C4~ ~automOff~
+-  WRITE_SHORT 0x05a (~%#ofTrigg%~ + 1)
+-  WRITE_SHORT 0x060 (~%spawnOff%~ + 196)
+-  WRITE_SHORT 0x068 (~%entraOff%~ + 196)
+-  WRITE_SHORT 0x070 (~%contaOff%~ + 196)
+-  WRITE_SHORT 0x078 (~%itemsOff%~ + 196)
+-  WRITE_SHORT 0x07c (~%vertiOff%~ + 196)
+-  WRITE_SHORT 0x084 (~%ambiaOff%~ + 196)
+-  WRITE_SHORT 0x088 (~%variaOff%~ + 196)
+-  WRITE_SHORT 0x0A8 (~%doorsOff%~ + 196)
+-  INSERT_BYTES (~%triggOff%~ + ~%#ofTrigg%~ * 196) 196
+-  WRITE_SHORT 0x080 (~%#ofVerti%~ + 7)
+-  INSERT_BYTES (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196) 28
+-  WRITE_SHORT 0x0A0 (~%exploOff%~ + 224)
+-  WRITE_SHORT 0x0B0 (~%animaOff%~ + 224)
+-  WRITE_SHORT 0x0B8 (~%tiledOff%~ + 224)
+-  WRITE_SHORT 0x0BC (~%songsOff%~ + 224)
+-  WRITE_SHORT 0x0C0 (~%restcOff%~ + 224)
+-  WRITE_SHORT 0x0C4 (~%automOff%~ + 224)
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196) ~tzcr02tr~
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 8) ~an~
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 16) ~~
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 24) ~~
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 32) 02
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 52) 28
+-  WRITE_ASCII  (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 56) ~tzcr02~
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 64) ~tzex1904~
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 96) 772
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 112) 1250
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 114) 975
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 124) ~tz25!!02~
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 34) 1190
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 36) 955
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 38) 1310
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 40) 1015
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 42) 7
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 44) ~%#ofVerti%~
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196) 1190
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 2) 965
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 4) 1190
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 6) 985
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 8) 1260
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 10) 1015
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 12) 1280
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 14) 1015
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 16) 1310
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 18) 965
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 20) 1285
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 22) 955
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 24) 1260
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 26) 960
+-  READ_SHORT ~0x058~ ~#ofActor~
+-  READ_SHORT ~0x054~ ~actorOff~
+-  READ_SHORT ~0x05a~ ~#ofTrigg~
+-  READ_SHORT ~0x05c~ ~triggOff~
+-  READ_SHORT ~0x064~ ~#ofSpawn~
+-  READ_SHORT ~0x060~ ~spawnOff~
+-  READ_SHORT ~0x06c~ ~#ofEntra~
+-  READ_SHORT ~0x068~ ~entraOff~
+-  READ_SHORT ~0x074~ ~#ofConta~
+-  READ_SHORT ~0x070~ ~contaOff~
+-  READ_SHORT ~0x076~ ~#ofItems~
+-  READ_SHORT ~0x078~ ~itemsOff~
+-  READ_SHORT ~0x080~ ~#ofVerti~
+-  READ_SHORT ~0x07c~ ~vertiOff~
+-  READ_SHORT ~0x082~ ~#ofAmbia~
+-  READ_SHORT ~0x084~ ~ambiaOff~
+-  READ_SHORT ~0x08c~ ~#ofVaria~
+-  READ_SHORT ~0x088~ ~variaOff~
+-  READ_SHORT ~0x09c~ ~#ofExplo~
+-  READ_SHORT ~0x0A0~ ~exploOff~
+-  READ_SHORT ~0x0A4~ ~#ofDoors~
+-  READ_SHORT ~0x0A8~ ~doorsOff~
+-  READ_SHORT ~0x0AC~ ~#ofAnima~
+-  READ_SHORT ~0x0B0~ ~animaOff~
+-  READ_SHORT ~0x0B4~ ~#ofTiled~
+-  READ_SHORT ~0x0B8~ ~tiledOff~
+-  READ_SHORT ~0x0BC~ ~songsOff~
+-  READ_SHORT ~0x0C0~ ~restcOff~
+-  READ_SHORT ~0x0C8~ ~#ofAutom~
+-  READ_SHORT ~0x0C4~ ~automOff~
+-  WRITE_SHORT 0x06c (~%#ofEntra%~ + 1)
+-  WRITE_SHORT 0x070 (~%contaOff%~ + 104)
+-  WRITE_SHORT 0x078 (~%itemsOff%~ + 104)
+-  WRITE_SHORT 0x07c (~%vertiOff%~ + 104)
+-  WRITE_SHORT 0x084 (~%ambiaOff%~ + 104)
+-  WRITE_SHORT 0x088 (~%variaOff%~ + 104)
+-  WRITE_SHORT 0x0A0 (~%exploOff%~ + 104)
+-  WRITE_SHORT 0x0A8 (~%doorsOff%~ + 104)
+-  WRITE_SHORT 0x0B0 (~%animaOff%~ + 104)
+-  WRITE_SHORT 0x0B8 (~%tiledOff%~ + 104)
+-  WRITE_SHORT 0x0BC (~%songsOff%~ + 104)
+-  WRITE_SHORT 0x0C0 (~%restcOff%~ + 104)
+-  WRITE_SHORT 0x0C4 (~%automOff%~ + 104)
+-  INSERT_BYTES (~%entraOff%~ + ~%#ofEntra%~ * 104) 104
+-  WRITE_ASCII (~%entraOff%~ + ~%#ofEntra%~ * 104 + 0) ~tzcr02ex~
+-  WRITE_ASCII (~%entraOff%~ + ~%#ofEntra%~ * 104 + 8) ~it~
+-  WRITE_LONG (~%entraOff%~ + ~%#ofEntra%~ * 104 + 32) 1300
+-  WRITE_LONG (~%entraOff%~ + ~%#ofEntra%~ * 104 + 34) 1065
+-  WRITE_LONG (~%entraOff%~ + ~%#ofEntra%~ * 104 + 36) 14
+-  READ_SHORT ~0x0AC~ ~#ofAnima~
+-  READ_SHORT ~0x0B0~ ~animaOff~
+-  READ_SHORT ~0x0B4~ ~#ofTiled~
+-  READ_SHORT ~0x0B8~ ~tiledOff~
+-  READ_SHORT ~0x0BC~ ~songsOff~
+-  READ_SHORT ~0x0C0~ ~restcOff~
+-  READ_SHORT ~0x0C8~ ~#ofAutom~
+-  READ_SHORT ~0x0C4~ ~automOff~
+-  WRITE_SHORT 0x0AC (~%#ofAnima%~ + 1)
+-  INSERT_BYTES (~%animaOff%~ + ~%#ofAnima%~ * 76) 76
+-  WRITE_SHORT 0x0B8 (~%tiledOff%~ + 76)
+-  WRITE_SHORT 0x0BC (~%songsOff%~ + 76)
+-  WRITE_SHORT 0x0C0 (~%restcOff%~ + 76)
+-  WRITE_SHORT 0x0C4 (~%automOff%~ + 76)
+-  WRITE_ASCII (~%animaOff%~ + ~%#ofAnima%~ * 76) ~tz25!!en~ #32
+-  WRITE_SHORT (~%animaOff%~ + ~%#ofAnima%~ * 76 + 32) 1253
+-  WRITE_SHORT (~%animaOff%~ + ~%#ofAnima%~ * 76 + 34) 972
+-  WRITE_LONG (~%animaOff%~ + ~%#ofAnima%~ * 76 + 36) 65535
+-  WRITE_LONG (~%animaOff%~ + ~%#ofAnima%~ * 76 + 38) 65535
+-  WRITE_ASCII (~%animaOff%~ + ~%#ofAnima%~ * 76 + 40) ~tz25!!en~ #8
+-  WRITE_LONG (~%animaOff%~ + ~%#ofAnima%~ * 76 + 52) 4352
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 2    //travel
++    fj_box_left     = 1190
++    fj_box_top      = 955
++    fj_box_right    = 1310
++    fj_box_bottom   = 1015
++    fj_cursor_idx   = 28   //down stairs
++    fj_vertex_0     = 1190 + (965 << 16)
++    fj_vertex_1     = 1190 + (985 << 16)
++    fj_vertex_2     = 1260 + (1015 << 16)
++    fj_vertex_3     = 1280 + (1015 << 16)
++    fj_vertex_4     = 1310 + (965 << 16)
++    fj_vertex_5     = 1285 + (955 << 16)
++    fj_vertex_6     = 1260 + (960 << 16)
++    fj_loc_x	  = 1250
++    fj_loc_y	  = 975
++    fj_flags        = 0b1100000100
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tzcr02tran~
++    fj_destination_area = tzcr02
++    fj_destination_name = tzex1904
++    fj_reg_script       = ~tz25!!02~
 +END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 1300
++    fj_loc_y       = 1065
++    fj_orientation = 14   //SE
++    STR_VAR
++    fj_structure_type = entrance
++    fj_name           = ~tzcr02exit~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 1253
++    fj_loc_y       = 972
++    fj_schedule    = 0b11111111111111111111111111111111
++    fj_flags       = 0b1000100000000
++    //Draw as background, Don't remove in combat
++    STR_VAR
++    fj_structure_type = animation
++    fj_name           = ~tz25!!en~
++    fj_bam_resref     = ~tz25!!en~
++END
++
+   BUT_ONLY_IF_IT_CHANGES
  
--LANGUAGE ~japanese~ ~japanese~ ~ts25mini/tra/japanese/setup.tra~
-+ LANGUAGE ~japanese~ ~japanese~ ~ts25mini/tra/japanese/setup.tra~
-+ 
-+ LANGUAGE ~Deutsch (Fennek der Schwarze; bisher nur Das Geheimnis der Trollhoehle / Der Duft des Schwarzen Lotus / Der Zielort eines Untoten~ ~german~ ~ts25mini/tra/German/Setup.tra~ 
- 
- ////////////////////////////////////////////////////////////
- 
-@@ -592,8 +598,8 @@
+ COPY ~ts25mini/lib/tisunpack.exe~ ~override~
+@@ -592,8 +494,8 @@
    SAY NAME1 @73
    SAY NAME2 @73
  COPY ~ts25mini/blacklotus/cre/tz25__gz.cre~ ~override~
@@ -34,7 +235,7 @@
  COPY ~ts25mini/blacklotus/cre/tz25__cg.cre~ ~override~
    SAY NAME1 @75
    SAY NAME2 @75
-@@ -619,8 +625,8 @@
+@@ -619,8 +521,8 @@
    SAY NAME1 @78
    SAY NAME2 @78
  COPY ~ts25mini/blacklotus/cre/tz25__j2.cre~ ~override~
@@ -45,7 +246,416 @@
  COPY ~ts25mini/blacklotus/cre/tz25__j3.cre~ ~override~
    SAY NAME1 @79
    SAY NAME2 @79
-@@ -1041,8 +1047,8 @@
+@@ -662,316 +564,101 @@
+ COPY ~ts25mini/blacklotus/area~ ~override~
+ 
+ COPY_EXISTING ~AR0500.are~ ~override~
+-  READ_SHORT ~0x058~ ~#ofActor~
+-  READ_SHORT ~0x054~ ~actorOff~
+-  READ_SHORT ~0x05a~ ~#ofTrigg~
+-  READ_SHORT ~0x05c~ ~triggOff~
+-  READ_SHORT ~0x064~ ~#ofSpawn~
+-  READ_SHORT ~0x060~ ~spawnOff~
+-  READ_SHORT ~0x06c~ ~#ofEntra~
+-  READ_SHORT ~0x068~ ~entraOff~
+-  READ_SHORT ~0x074~ ~#ofConta~
+-  READ_SHORT ~0x070~ ~contaOff~
+-  READ_SHORT ~0x076~ ~#ofItems~
+-  READ_SHORT ~0x078~ ~itemsOff~
+-  READ_SHORT ~0x080~ ~#ofVerti~
+-  READ_SHORT ~0x07c~ ~vertiOff~
+-  READ_SHORT ~0x082~ ~#ofAmbia~
+-  READ_SHORT ~0x084~ ~ambiaOff~
+-  READ_SHORT ~0x08c~ ~#ofVaria~
+-  READ_SHORT ~0x088~ ~variaOff~
+-  READ_SHORT ~0x09c~ ~#ofExplo~
+-  READ_SHORT ~0x0A0~ ~exploOff~
+-  READ_SHORT ~0x0A4~ ~#ofDoors~
+-  READ_SHORT ~0x0A8~ ~doorsOff~
+-  READ_SHORT ~0x0AC~ ~#ofAnima~
+-  READ_SHORT ~0x0B0~ ~animaOff~
+-  READ_SHORT ~0x0B4~ ~#ofTiled~
+-  READ_SHORT ~0x0B8~ ~tiledOff~
+-  READ_SHORT ~0x0BC~ ~songsOff~
+-  READ_SHORT ~0x0C0~ ~restcOff~
+-  READ_SHORT ~0x0C8~ ~#ofAutom~
+-  READ_SHORT ~0x0C4~ ~automOff~
+-  WRITE_SHORT 0x05a (~%#ofTrigg%~ + 1)
+-  WRITE_SHORT 0x060 (~%spawnOff%~ + 196)
+-  WRITE_SHORT 0x068 (~%entraOff%~ + 196)
+-  WRITE_SHORT 0x070 (~%contaOff%~ + 196)
+-  WRITE_SHORT 0x078 (~%itemsOff%~ + 196)
+-  WRITE_SHORT 0x07c (~%vertiOff%~ + 196)
+-  WRITE_SHORT 0x084 (~%ambiaOff%~ + 196)
+-  WRITE_SHORT 0x088 (~%variaOff%~ + 196)
+-  WRITE_SHORT 0x0A8 (~%doorsOff%~ + 196)
+-  INSERT_BYTES (~%triggOff%~ + ~%#ofTrigg%~ * 196) 196
+-  WRITE_SHORT 0x080 (~%#ofVerti%~ + 7)
+-  INSERT_BYTES (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196) 28
+-  WRITE_SHORT 0x0A0 (~%exploOff%~ + 224)
+-  WRITE_SHORT 0x0B0 (~%animaOff%~ + 224)
+-  WRITE_SHORT 0x0B8 (~%tiledOff%~ + 224)
+-  WRITE_SHORT 0x0BC (~%songsOff%~ + 224)
+-  WRITE_SHORT 0x0C0 (~%restcOff%~ + 224)
+-  WRITE_SHORT 0x0C4 (~%automOff%~ + 224)
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196) ~tzbr08tr~
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 8) ~an~
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 16) ~~
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 24) ~~
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 32) 02
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 52) 28
+-  WRITE_ASCII  (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 56) ~tzbr08~
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 64) ~tzex0500~
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 96) 772
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 112) 4090
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 114) 1555
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 124) ~tz25__08~
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 34) 4114
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 36) 1446
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 38) 4221
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 40) 1626
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 42) 7
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 44) ~%#ofVerti%~
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196) 4114
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 2) 1507
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 4) 4114
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 6) 1603
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 8) 4152
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 10) 1626
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 12) 4221
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 14) 1573
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 16) 4221
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 18) 1521
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 20) 4153
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 22) 1479
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 24) 4153
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 26) 1446
+-  READ_SHORT ~0x058~ ~#ofActor~
+-  READ_SHORT ~0x054~ ~actorOff~
+-  READ_SHORT ~0x05a~ ~#ofTrigg~
+-  READ_SHORT ~0x05c~ ~triggOff~
+-  READ_SHORT ~0x064~ ~#ofSpawn~
+-  READ_SHORT ~0x060~ ~spawnOff~
+-  READ_SHORT ~0x06c~ ~#ofEntra~
+-  READ_SHORT ~0x068~ ~entraOff~
+-  READ_SHORT ~0x074~ ~#ofConta~
+-  READ_SHORT ~0x070~ ~contaOff~
+-  READ_SHORT ~0x076~ ~#ofItems~
+-  READ_SHORT ~0x078~ ~itemsOff~
+-  READ_SHORT ~0x080~ ~#ofVerti~
+-  READ_SHORT ~0x07c~ ~vertiOff~
+-  READ_SHORT ~0x082~ ~#ofAmbia~
+-  READ_SHORT ~0x084~ ~ambiaOff~
+-  READ_SHORT ~0x08c~ ~#ofVaria~
+-  READ_SHORT ~0x088~ ~variaOff~
+-  READ_SHORT ~0x09c~ ~#ofExplo~
+-  READ_SHORT ~0x0A0~ ~exploOff~
+-  READ_SHORT ~0x0A4~ ~#ofDoors~
+-  READ_SHORT ~0x0A8~ ~doorsOff~
+-  READ_SHORT ~0x0AC~ ~#ofAnima~
+-  READ_SHORT ~0x0B0~ ~animaOff~
+-  READ_SHORT ~0x0B4~ ~#ofTiled~
+-  READ_SHORT ~0x0B8~ ~tiledOff~
+-  READ_SHORT ~0x0BC~ ~songsOff~
+-  READ_SHORT ~0x0C0~ ~restcOff~
+-  READ_SHORT ~0x0C8~ ~#ofAutom~
+-  READ_SHORT ~0x0C4~ ~automOff~
+-  WRITE_SHORT 0x06c (~%#ofEntra%~ + 1)
+-  WRITE_SHORT 0x070 (~%contaOff%~ + 104)
+-  WRITE_SHORT 0x078 (~%itemsOff%~ + 104)
+-  WRITE_SHORT 0x07c (~%vertiOff%~ + 104)
+-  WRITE_SHORT 0x084 (~%ambiaOff%~ + 104)
+-  WRITE_SHORT 0x088 (~%variaOff%~ + 104)
+-  WRITE_SHORT 0x0A0 (~%exploOff%~ + 104)
+-  WRITE_SHORT 0x0A8 (~%doorsOff%~ + 104)
+-  WRITE_SHORT 0x0B0 (~%animaOff%~ + 104)
+-  WRITE_SHORT 0x0B8 (~%tiledOff%~ + 104)
+-  WRITE_SHORT 0x0BC (~%songsOff%~ + 104)
+-  WRITE_SHORT 0x0C0 (~%restcOff%~ + 104)
+-  WRITE_SHORT 0x0C4 (~%automOff%~ + 104)
+-  INSERT_BYTES (~%entraOff%~ + ~%#ofEntra%~ * 104) 104
+-  WRITE_ASCII (~%entraOff%~ + ~%#ofEntra%~ * 104 + 0) ~tzbr08ex~
+-  WRITE_ASCII (~%entraOff%~ + ~%#ofEntra%~ * 104 + 8) ~it~
+-  WRITE_LONG (~%entraOff%~ + ~%#ofEntra%~ * 104 + 32) 4182
+-  WRITE_LONG (~%entraOff%~ + ~%#ofEntra%~ * 104 + 34) 1621
+-  WRITE_LONG (~%entraOff%~ + ~%#ofEntra%~ * 104 + 36) 15
+-  READ_SHORT ~0x05a~ ~#ofTrigg~
+-  READ_SHORT ~0x080~ ~#ofVerti~
+-  READ_SHORT ~0x05c~ ~triggOff~
+-  READ_SHORT ~0x060~ ~spawnOff~
+-  READ_SHORT ~0x068~ ~entraOff~
+-  READ_SHORT ~0x070~ ~contaOff~
+-  READ_SHORT ~0x078~ ~itemsOff~
+-  READ_SHORT ~0x084~ ~ambiaOff~
+-  READ_SHORT ~0x0A8~ ~doorsOff~
+-  READ_SHORT ~0x07c~ ~vertiOff~
+-  READ_SHORT ~0x0B0~ ~animaOff~
+-  READ_SHORT ~0x0BC~ ~songsOff~
+-  READ_SHORT ~0x0C0~ ~restcOff~
+-  READ_SHORT ~0x0C4~ ~automOff~
+-  WRITE_SHORT 0x05a (~%#ofTrigg%~ + 1)
+-  WRITE_SHORT 0x060 (~%spawnOff%~ + 196)
+-  WRITE_SHORT 0x068 (~%entraOff%~ + 196)
+-  WRITE_SHORT 0x070 (~%contaOff%~ + 196)
+-  WRITE_SHORT 0x078 (~%itemsOff%~ + 196)
+-  WRITE_SHORT 0x084 (~%ambiaOff%~ + 196)
+-  WRITE_SHORT 0x0A8 (~%doorsOff%~ + 196)
+-  WRITE_SHORT 0x07c (~%vertiOff%~ + 196)
+-  INSERT_BYTES (~%triggOff%~ + ~%#ofTrigg%~ * 196) 196
+-  SET ~newVert~ = 4
+-  WRITE_SHORT 0x080 (~%#ofVerti%~ + ~%newVert%~)
+-  INSERT_BYTES (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196) (~%newVert%~ * 4)
+-  WRITE_SHORT 0x0B0 (~%animaOff%~ + 196 + (~%newVert%~ * 4))  
+-  WRITE_SHORT 0x0BC (~%songsOff%~ + 196 + (~%newVert%~ * 4))
+-  WRITE_SHORT 0x0C0 (~%restcOff%~ + 196 + (~%newVert%~ * 4))
+-  WRITE_SHORT 0x0C4 (~%automOff%~ + 196 + (~%newVert%~ * 4))
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196) ~tz25__c8~
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 32) 1
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 34) 4115
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 36) 1475
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 38) 4210
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 40) 1605
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 42) ~%newVert%~
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 44) ~%#ofVerti%~
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 52) 22
+-  WRITE_ASCII  (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 56) ~None~
+-  WRITE_ASCII  (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 124) ~tz25__c8~
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196) 4115
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 2) 1475
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 4) 4115
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 6) 1605
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 8) 4210
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 10) 1605
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 12) 4210
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 14) 1475
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 2    //travel
++    fj_box_left     = 4114
++    fj_box_top      = 1446
++    fj_box_right    = 4221
++    fj_box_bottom   = 1626
++    fj_cursor_idx   = 28   //down stairs
++    fj_vertex_0     = 4114 + (1507 << 16)
++    fj_vertex_1     = 4114 + (1603 << 16)
++    fj_vertex_2     = 4152 + (1626 << 16)
++    fj_vertex_3     = 4221 + (1573 << 16)
++    fj_vertex_4     = 4221 + (1521 << 16)
++    fj_vertex_5     = 4153 + (1479 << 16)
++    fj_vertex_6     = 4153 + (1446 << 16)
++    fj_loc_x	  = 4090
++    fj_loc_y	  = 1555
++    fj_flags        = 0b1100000100
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tzbr08tran~
++    fj_destination_area = tzbr08
++    fj_destination_name = tzex0500
++    fj_reg_script       = ~tz25__08~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 4182
++    fj_loc_y       = 1621
++    fj_orientation = 15   //SSE
++    STR_VAR
++    fj_structure_type = entrance
++    fj_name           = ~tzbr08exit~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 1    //info
++    fj_box_left     = 4115
++    fj_box_top      = 1475
++    fj_box_right    = 4210
++    fj_box_bottom   = 1605
++    fj_cursor_idx   = 22   //down stairs
++    fj_vertex_0     = 4115 + (1475 << 16)
++    fj_vertex_1     = 4115 + (1605 << 16)
++    fj_vertex_2     = 4210 + (1605 << 16)
++    fj_vertex_3     = 4210 + (1475 << 16)
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25__c8~
++    fj_reg_script       = ~tz25__c8~
++END
++
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ COPY_EXISTING ~AR0404.are~ ~override~
+-  READ_SHORT ~0x058~ ~#ofActor~
+-  READ_SHORT ~0x054~ ~actorOff~
+-  READ_SHORT ~0x05a~ ~#ofTrigg~
+-  READ_SHORT ~0x05c~ ~triggOff~
+-  READ_SHORT ~0x064~ ~#ofSpawn~
+-  READ_SHORT ~0x060~ ~spawnOff~
+-  READ_SHORT ~0x06c~ ~#ofEntra~
+-  READ_SHORT ~0x068~ ~entraOff~
+-  READ_SHORT ~0x074~ ~#ofConta~
+-  READ_SHORT ~0x070~ ~contaOff~
+-  READ_SHORT ~0x076~ ~#ofItems~
+-  READ_SHORT ~0x078~ ~itemsOff~
+-  READ_SHORT ~0x080~ ~#ofVerti~
+-  READ_SHORT ~0x07c~ ~vertiOff~
+-  READ_SHORT ~0x082~ ~#ofAmbia~
+-  READ_SHORT ~0x084~ ~ambiaOff~
+-  READ_SHORT ~0x08c~ ~#ofVaria~
+-  READ_SHORT ~0x088~ ~variaOff~
+-  READ_SHORT ~0x09c~ ~#ofExplo~
+-  READ_SHORT ~0x0A0~ ~exploOff~
+-  READ_SHORT ~0x0A4~ ~#ofDoors~
+-  READ_SHORT ~0x0A8~ ~doorsOff~
+-  READ_SHORT ~0x0AC~ ~#ofAnima~
+-  READ_SHORT ~0x0B0~ ~animaOff~
+-  READ_SHORT ~0x0B4~ ~#ofTiled~
+-  READ_SHORT ~0x0B8~ ~tiledOff~
+-  READ_SHORT ~0x0BC~ ~songsOff~
+-  READ_SHORT ~0x0C0~ ~restcOff~
+-  READ_SHORT ~0x0C8~ ~#ofAutom~
+-  READ_SHORT ~0x0C4~ ~automOff~
+-  WRITE_SHORT 0x05a (~%#ofTrigg%~ + 1)
+-  WRITE_SHORT 0x060 (~%spawnOff%~ + 196)
+-  WRITE_SHORT 0x068 (~%entraOff%~ + 196)
+-  WRITE_SHORT 0x070 (~%contaOff%~ + 196)
+-  WRITE_SHORT 0x078 (~%itemsOff%~ + 196)
+-  WRITE_SHORT 0x07c (~%vertiOff%~ + 196)
+-  WRITE_SHORT 0x084 (~%ambiaOff%~ + 196)
+-  WRITE_SHORT 0x088 (~%variaOff%~ + 196)
+-  WRITE_SHORT 0x0A8 (~%doorsOff%~ + 196)
+-  INSERT_BYTES (~%triggOff%~ + ~%#ofTrigg%~ * 196) 196
+-  WRITE_SHORT 0x080 (~%#ofVerti%~ + 7)
+-  INSERT_BYTES (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196) 28
+-  WRITE_SHORT 0x0A0 (~%exploOff%~ + 224)
+-  WRITE_SHORT 0x0B0 (~%animaOff%~ + 224)
+-  WRITE_SHORT 0x0B8 (~%tiledOff%~ + 224)
+-  WRITE_SHORT 0x0BC (~%songsOff%~ + 224)
+-  WRITE_SHORT 0x0C0 (~%restcOff%~ + 224)
+-  WRITE_SHORT 0x0C4 (~%automOff%~ + 224)
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196) ~tzbr99tr~
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 8) ~an~
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 16) ~~
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 24) ~~
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 32) 02
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 52) 28
+-  WRITE_ASCII  (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 56) ~tzbr99~
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 64) ~tzex0404~
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 96) 772
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 112) 1624
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 114) 2633
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 124) ~tz25__99~
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 34) 1478
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 36) 2633
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 38) 1624
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 40) 2745
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 42) 7
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 44) ~%#ofVerti%~
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196) 1548
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 2) 2633
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 4) 1478
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 6) 2678
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 8) 1478
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 10) 2704
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 12) 1547
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 14) 2745
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 16) 1597
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 18) 2745
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 20) 1624
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 22) 2720
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 24) 1624
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 26) 2695
+-  READ_SHORT ~0x058~ ~#ofActor~
+-  READ_SHORT ~0x054~ ~actorOff~
+-  READ_SHORT ~0x05a~ ~#ofTrigg~
+-  READ_SHORT ~0x05c~ ~triggOff~
+-  READ_SHORT ~0x064~ ~#ofSpawn~
+-  READ_SHORT ~0x060~ ~spawnOff~
+-  READ_SHORT ~0x06c~ ~#ofEntra~
+-  READ_SHORT ~0x068~ ~entraOff~
+-  READ_SHORT ~0x074~ ~#ofConta~
+-  READ_SHORT ~0x070~ ~contaOff~
+-  READ_SHORT ~0x076~ ~#ofItems~
+-  READ_SHORT ~0x078~ ~itemsOff~
+-  READ_SHORT ~0x080~ ~#ofVerti~
+-  READ_SHORT ~0x07c~ ~vertiOff~
+-  READ_SHORT ~0x082~ ~#ofAmbia~
+-  READ_SHORT ~0x084~ ~ambiaOff~
+-  READ_SHORT ~0x08c~ ~#ofVaria~
+-  READ_SHORT ~0x088~ ~variaOff~
+-  READ_SHORT ~0x09c~ ~#ofExplo~
+-  READ_SHORT ~0x0A0~ ~exploOff~
+-  READ_SHORT ~0x0A4~ ~#ofDoors~
+-  READ_SHORT ~0x0A8~ ~doorsOff~
+-  READ_SHORT ~0x0AC~ ~#ofAnima~
+-  READ_SHORT ~0x0B0~ ~animaOff~
+-  READ_SHORT ~0x0B4~ ~#ofTiled~
+-  READ_SHORT ~0x0B8~ ~tiledOff~
+-  READ_SHORT ~0x0BC~ ~songsOff~
+-  READ_SHORT ~0x0C0~ ~restcOff~
+-  READ_SHORT ~0x0C8~ ~#ofAutom~
+-  READ_SHORT ~0x0C4~ ~automOff~
+-  WRITE_SHORT 0x06c (~%#ofEntra%~ + 1)
+-  WRITE_SHORT 0x070 (~%contaOff%~ + 104)
+-  WRITE_SHORT 0x078 (~%itemsOff%~ + 104)
+-  WRITE_SHORT 0x07c (~%vertiOff%~ + 104)
+-  WRITE_SHORT 0x084 (~%ambiaOff%~ + 104)
+-  WRITE_SHORT 0x088 (~%variaOff%~ + 104)
+-  WRITE_SHORT 0x0A0 (~%exploOff%~ + 104)
+-  WRITE_SHORT 0x0A8 (~%doorsOff%~ + 104)
+-  WRITE_SHORT 0x0B0 (~%animaOff%~ + 104)
+-  WRITE_SHORT 0x0B8 (~%tiledOff%~ + 104)
+-  WRITE_SHORT 0x0BC (~%songsOff%~ + 104)
+-  WRITE_SHORT 0x0C0 (~%restcOff%~ + 104)
+-  WRITE_SHORT 0x0C4 (~%automOff%~ + 104)
+-  INSERT_BYTES (~%entraOff%~ + ~%#ofEntra%~ * 104) 104
+-  WRITE_ASCII (~%entraOff%~ + ~%#ofEntra%~ * 104 + 0) ~tzbr99ex~
+-  WRITE_ASCII (~%entraOff%~ + ~%#ofEntra%~ * 104 + 8) ~it~
+-  WRITE_LONG (~%entraOff%~ + ~%#ofEntra%~ * 104 + 32) 1607
+-  WRITE_LONG (~%entraOff%~ + ~%#ofEntra%~ * 104 + 34) 2641
+-  WRITE_LONG (~%entraOff%~ + ~%#ofEntra%~ * 104 + 36) 12
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 2    //travel
++    fj_box_left     = 1478
++    fj_box_top      = 2633
++    fj_box_right    = 1624
++    fj_box_bottom   = 2745
++    fj_cursor_idx   = 28   //down stairs
++    fj_vertex_0     = 1548 + (2633 << 16)
++    fj_vertex_1     = 1478 + (2678 << 16)
++    fj_vertex_2     = 1478 + (2704 << 16)
++    fj_vertex_3     = 1547 + (2745 << 16)
++    fj_vertex_4     = 1597 + (2745 << 16)
++    fj_vertex_5     = 1624 + (2720 << 16)
++    fj_vertex_6     = 1624 + (2695 << 16)
++    fj_loc_x	  = 1624
++    fj_loc_y	  = 2633
++    fj_flags        = 0b1100000100
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tzbr99tran~
++    fj_destination_area = tzbr99
++    fj_destination_name = tzex0404
++    fj_reg_script       = ~tz25__99~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 1607
++    fj_loc_y       = 2641
++    fj_orientation = 12   //East
++    STR_VAR
++    fj_structure_type = entrance
++    fj_name           = ~tzbr99exit~
++END
++
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ COPY ~ts25mini/lib/tisunpack.exe~ ~override~
+@@ -1041,8 +728,8 @@
    SAY NAME1 @111
    SAY NAME2 @111
  COPY ~ts25mini/undead/cre/tz25_!cf.cre~ ~override~
@@ -56,7 +666,160 @@
  COPY ~ts25mini/undead/cre/tz25_!cm.cre~ ~override~
    SAY NAME1 @112
    SAY NAME2 @112
-@@ -1292,8 +1298,8 @@
+@@ -1055,8 +742,8 @@
+ COPY ~ts25mini/undead/cre/tz25_!gh.cre~ ~override~
+   SAY NAME1 @115
+   SAY NAME2 @115
+-  SAY INITIAL_MEETING " [tz25_!gs]" [tz25_!gs]
+-  SAY SELECT_COMMON1 " [tz25_!gs]" [tz25_!gs]
++  SAY INITIAL_MEETING " " [tz25_!gs]
++  SAY SELECT_COMMON1 " " [tz25_!gs]
+ 
+ COPY ~ts25mini/undead/cre/tz25_!cf.wav~ ~override~
+ COPY ~ts25mini/undead/cre/tz25_!sk.wav~ ~override~
+@@ -1073,104 +760,43 @@
+ COPY ~ts25mini/undead/item/tz25_!sk.bam~ ~override~
+ 
+ COPY_EXISTING ~AR0800.are~ ~override/AR0800.are~
+-  READ_SHORT ~0x05a~ ~#ofTrigg~
+-  READ_SHORT ~0x080~ ~#ofVerti~
+-  READ_SHORT ~0x05c~ ~triggOff~
+-  READ_SHORT ~0x060~ ~spawnOff~
+-  READ_SHORT ~0x068~ ~entraOff~
+-  READ_SHORT ~0x070~ ~contaOff~
+-  READ_SHORT ~0x078~ ~itemsOff~
+-  READ_SHORT ~0x084~ ~ambiaOff~
+-  READ_SHORT ~0x0A8~ ~doorsOff~
+-  READ_SHORT ~0x07c~ ~vertiOff~
+-  READ_SHORT ~0x0B0~ ~animaOff~
+-  READ_SHORT ~0x0BC~ ~songsOff~
+-  READ_SHORT ~0x0C0~ ~restcOff~
+-  READ_SHORT ~0x0C4~ ~automOff~
+-  WRITE_SHORT 0x05a (~%#ofTrigg%~ + 1)
+-  WRITE_SHORT 0x060 (~%spawnOff%~ + 196)
+-  WRITE_SHORT 0x068 (~%entraOff%~ + 196)
+-  WRITE_SHORT 0x070 (~%contaOff%~ + 196)
+-  WRITE_SHORT 0x078 (~%itemsOff%~ + 196)
+-  WRITE_SHORT 0x084 (~%ambiaOff%~ + 196)
+-  WRITE_SHORT 0x0A8 (~%doorsOff%~ + 196)
+-  WRITE_SHORT 0x07c (~%vertiOff%~ + 196)
+-  INSERT_BYTES (~%triggOff%~ + ~%#ofTrigg%~ * 196) 196
+-  SET ~newVert~ = 4
+-  WRITE_SHORT 0x080 (~%#ofVerti%~ + ~%newVert%~)
+-  INSERT_BYTES (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196) (~%newVert%~ * 4)
+-  WRITE_SHORT 0x0B0 (~%animaOff%~ + 196 + (~%newVert%~ * 4))  
+-  WRITE_SHORT 0x0BC (~%songsOff%~ + 196 + (~%newVert%~ * 4))
+-  WRITE_SHORT 0x0C0 (~%restcOff%~ + 196 + (~%newVert%~ * 4))
+-  WRITE_SHORT 0x0C4 (~%automOff%~ + 196 + (~%newVert%~ * 4))
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196) ~tz25_!t1~
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 32) 1
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 34) 1456
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 36) 1519
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 38) 1483
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 40) 1560
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 42) ~%newVert%~
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 44) ~%#ofVerti%~
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 52) 8
+-  WRITE_ASCII  (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 56) ~None~
+-  WRITE_ASCII  (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 124) ~tz25_!t1~
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196) 1456
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 2) 1519
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 4) 1456
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 6) 1560
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 8) 1483
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 10) 1560
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 12) 1483
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 14) 1519
+-  READ_SHORT ~0x05a~ ~#ofTrigg~
+-  READ_SHORT ~0x080~ ~#ofVerti~
+-  READ_SHORT ~0x05c~ ~triggOff~
+-  READ_SHORT ~0x060~ ~spawnOff~
+-  READ_SHORT ~0x068~ ~entraOff~
+-  READ_SHORT ~0x070~ ~contaOff~
+-  READ_SHORT ~0x078~ ~itemsOff~
+-  READ_SHORT ~0x084~ ~ambiaOff~
+-  READ_SHORT ~0x0A8~ ~doorsOff~
+-  READ_SHORT ~0x07c~ ~vertiOff~
+-  READ_SHORT ~0x0B0~ ~animaOff~
+-  READ_SHORT ~0x0BC~ ~songsOff~
+-  READ_SHORT ~0x0C0~ ~restcOff~
+-  READ_SHORT ~0x0C4~ ~automOff~
+-  WRITE_SHORT 0x05a (~%#ofTrigg%~ + 1)
+-  WRITE_SHORT 0x060 (~%spawnOff%~ + 196)
+-  WRITE_SHORT 0x068 (~%entraOff%~ + 196)
+-  WRITE_SHORT 0x070 (~%contaOff%~ + 196)
+-  WRITE_SHORT 0x078 (~%itemsOff%~ + 196)
+-  WRITE_SHORT 0x084 (~%ambiaOff%~ + 196)
+-  WRITE_SHORT 0x0A8 (~%doorsOff%~ + 196)
+-  WRITE_SHORT 0x07c (~%vertiOff%~ + 196)
+-  INSERT_BYTES (~%triggOff%~ + ~%#ofTrigg%~ * 196) 196
+-  SET ~newVert~ = 4
+-  WRITE_SHORT 0x080 (~%#ofVerti%~ + ~%newVert%~)
+-  INSERT_BYTES (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196) (~%newVert%~ * 4)
+-  WRITE_SHORT 0x0B0 (~%animaOff%~ + 196 + (~%newVert%~ * 4))  
+-  WRITE_SHORT 0x0BC (~%songsOff%~ + 196 + (~%newVert%~ * 4))
+-  WRITE_SHORT 0x0C0 (~%restcOff%~ + 196 + (~%newVert%~ * 4))
+-  WRITE_SHORT 0x0C4 (~%automOff%~ + 196 + (~%newVert%~ * 4))
+-  WRITE_ASCII (~%triggOff%~ + ~%#ofTrigg%~ * 196) ~tz25_!t2~
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 32) 1
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 34) 1456
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 36) 1519
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 38) 1483
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 40) 1560
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 42) ~%newVert%~
+-  WRITE_LONG (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 44) ~%#ofVerti%~
+-  WRITE_SHORT (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 52) 22
+-  WRITE_ASCII  (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 56) ~None~
+-  WRITE_ASCII  (~%triggOff%~ + ~%#ofTrigg%~ * 196 + 124) ~tz25_!t2~
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196) 1456
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 2) 1519
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 4) 1456
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 6) 1560
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 8) 1483
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 10) 1560
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 12) 1483
+-  WRITE_SHORT (~%vertiOff%~ + ~%#ofVerti%~ * 4 + 196 + 14) 1519
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 1    //info point
++    fj_box_left     = 1456
++    fj_box_top      = 1519
++    fj_box_right    = 1483
++    fj_box_bottom   = 1560
++    fj_cursor_idx   = 8    //
++    fj_vertex_0     = 1456 + (1519 << 16)
++    fj_vertex_1     = 1456 + (1560 << 16)
++    fj_vertex_2     = 1483 + (1560 << 16)
++    fj_vertex_3     = 1483 + (1519 << 16)
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25_!t1~
++    fj_reg_script       = ~tz25_!t1~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 1    //info point
++    fj_box_left     = 1456
++    fj_box_top      = 1519
++    fj_box_right    = 1483
++    fj_box_bottom   = 1560
++    fj_cursor_idx   = 22    //Question mark
++    fj_vertex_0     = 1456 + (1519 << 16)
++    fj_vertex_1     = 1456 + (1560 << 16)
++    fj_vertex_2     = 1483 + (1560 << 16)
++    fj_vertex_3     = 1483 + (1519 << 16)
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25_!t2~
++    fj_reg_script       = ~tz25_!t2~
++END
++
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ ////////////////////////////////////////////////////////////
+@@ -1292,8 +918,8 @@
    SAY NAME1 @132
    SAY NAME2 @132
  COPY ~ts25mini/sorcerer/cre/tz25_#l2.cre~ ~override~
@@ -67,7 +830,7 @@
  COPY ~ts25mini/sorcerer/cre/tz25_#l3.cre~ ~override~
    SAY NAME1 @134
    SAY NAME2 @134
-@@ -1304,8 +1310,8 @@
+@@ -1304,8 +930,8 @@
    SAY NAME1 @135
    SAY NAME2 @135
  COPY ~ts25mini/sorcerer/cre/tz25_#s1.cre~ ~override~
@@ -78,7 +841,7 @@
  COPY ~ts25mini/sorcerer/cre/tz25_#s2.cre~ ~override~
    SAY NAME1 @134
    SAY NAME2 @134
-@@ -1322,8 +1328,8 @@
+@@ -1322,8 +948,8 @@
    SAY NAME1 @137
    SAY NAME2 @137
  COPY ~ts25mini/sorcerer/cre/tz25_#w2.cre~ ~override~
@@ -89,7 +852,7 @@
  COPY ~ts25mini/sorcerer/cre/tz25_#of.cre~ ~override~
    SAY NAME1 @138
    SAY NAME2 @138
-@@ -1337,8 +1343,8 @@
+@@ -1337,8 +963,8 @@
    SAY NAME1 @141
    SAY NAME2 @141
  COPY ~ts25mini/sorcerer/cre/tz25_#sp.cre~ ~override~
@@ -100,7 +863,7 @@
  COPY ~ts25mini/sorcerer/cre/tz25_#sq.cre~ ~override~
    SAY NAME1 @134
    SAY NAME2 @134
-@@ -1346,6 +1352,14 @@
+@@ -1346,6 +972,14 @@
    SAY NAME1 @142
    SAY NAME2 @142
  
@@ -115,7 +878,16 @@
  COPY ~ts25mini/sorcerer/item/tz25_#po.itm~ ~override~
    SAY NAME2 @150
    SAY IDENTIFIED_DESC @151
-@@ -1451,51 +1465,38 @@
+@@ -1419,7 +1053,7 @@
+ 0x00000000 \1~
+   UNLESS ~^IDS V1\.0~
+ 
+-INCLUDE ~ts25mini/lib/are_patch.tph~
++//INCLUDE ~ts25mini/lib/are_patch.tph~
+ 
+ ACTION_IF NOT FILE_EXISTS_IN_GAME ~tz25__gw.bcs~ THEN BEGIN
+   COMPILE ~ts25mini/lib/tz25__gw.baf~
+@@ -1451,483 +1085,329 @@
  END
  
  // ar0400
@@ -155,16 +927,12 @@
  COPY_EXISTING ~ar0400.are~ ~override~
 -  LAUNCH_PATCH_MACRO ~add_region~
 -  BUT_ONLY_IF_IT_CHANGES
--
+ 
 -OUTER_SPRINT "name" "tz25nn_ar0400_from_tzdr03"
 -OUTER_SET    "coordinate_x" = 130
 -OUTER_SET    "coordinate_y" = 1200
 -OUTER_SET    "orientation" = 12
--
--COPY_EXISTING ~ar0400.are~ ~override~
--  LAUNCH_PATCH_MACRO ~add_entrance~
--  BUT_ONLY_IF_IT_CHANGES
-+ LPF fj_are_structure
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
 +    INT_VAR
 +    fj_type         = 2    //travel
 +    fj_box_left     = 5
@@ -172,28 +940,1489 @@
 +    fj_box_right    = 55
 +    fj_box_bottom   = 1220
 +    fj_cursor_idx   = 30   //door
-+	fj_flags		= 0x304
 +    fj_vertex_0     = 5 + (1110 << 16)
 +    fj_vertex_1     = 55 + (1130 << 16)
 +    fj_vertex_2     = 55 + (1220 << 16)
 +    fj_vertex_3     = 5 + (1220 << 16)
-+	fj_loc_x		= 20
-+	fj_loc_y		= 1100
++    fj_loc_x	  = 20
++    fj_loc_y	  = 1100
++    fj_flags        = 0b1100000100
 +    STR_VAR
 +    fj_structure_type   = region
-+    fj_name             = tz25nn_ar0400_to_tzdr03
++    fj_name             = ~tz25nn_ar0400_to_tzdr03~
 +    fj_destination_area = tzdr03
 +    fj_destination_name = Exit0400
-+  END
-+  LPF fj_are_structure
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
 +    INT_VAR
 +    fj_loc_x       = 130
 +    fj_loc_y       = 1200
-+    fj_orientation = 12   //NE
++    fj_orientation = 12   //East
 +    STR_VAR
 +    fj_structure_type = entrance
-+    fj_name           = tz25nn_ar0400_from_tzdr03
-+  END
++    fj_name           = ~tz25nn_ar0400_from_tzdr03~
++END
+ 
+-COPY_EXISTING ~ar0400.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_entrance~
+   BUT_ONLY_IF_IT_CHANGES
  
  //ar0900
  // Travel Trigger
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-4336 1039
+-4336 956
+-4269 1019
+-4269 1103
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar0900_to_tzdr01"
+-OUTER_SET    "type" = 2
+-OUTER_SET    "bounding_box_left" = 4269
+-OUTER_SET    "bounding_box_top" = 956
+-OUTER_SET    "bounding_box_right" = 4336
+-OUTER_SET    "bounding_box_bottom" = 1103
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 30
+-OUTER_SPRINT "destination_area" "tzdr01"
+-OUTER_SPRINT "entrance_name" "Exit0900"
+-OUTER_SET    "flag1" = 0b00000100 // bitwise
+-OUTER_SET    "flag2" = 0b00000011 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 4148
+-OUTER_SET    "launch_point_y" = 916
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" ""
+-OUTER_SET    "activation_point_x" = 0
+-OUTER_SET    "activation_point_y" = 0
+-
+-COPY_EXISTING ~ar0900.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-// Dealing with Door Open-State
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-4550 890
+-4560 890
+-4560 900
+-4550 900
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar0900_to_tzdr01_State1"
+-OUTER_SET    "type" = 0
+-OUTER_SET    "bounding_box_left" = 4550
+-OUTER_SET    "bounding_box_top" = 890
+-OUTER_SET    "bounding_box_right" = 4560
+-OUTER_SET    "bounding_box_bottom" = 900
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 0
+-OUTER_SPRINT "destination_area" "None"
+-OUTER_SPRINT "entrance_name" ""
+-OUTER_SET    "flag1" = 0b00000010 // bitwise
+-OUTER_SET    "flag2" = 0b00000000 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 1
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 4555
+-OUTER_SET    "launch_point_y" = 895
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" "tz25nns1"
+-OUTER_SET    "activation_point_x" = 0
+-OUTER_SET    "activation_point_y" = 0
+-
+-COPY_EXISTING ~ar0900.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-// infotrigger after quests
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-4336 1039
+-4336 956
+-4269 1019
+-4269 1103
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nni1"
+-OUTER_SET    "type" = 1
+-OUTER_SET    "bounding_box_left" = 4269
+-OUTER_SET    "bounding_box_top" = 956
+-OUTER_SET    "bounding_box_right" = 4336
+-OUTER_SET    "bounding_box_bottom" = 1103
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 22
+-OUTER_SPRINT "destination_area" "None"
+-OUTER_SPRINT "entrance_name" ""
+-OUTER_SET    "flag1" = 0b00000000 // bitwise
+-OUTER_SET    "flag2" = 0b00000001 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" @2520
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 4148
+-OUTER_SET    "launch_point_y" = 916
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" "tz25nni1"
+-OUTER_SET    "activation_point_x" = 0
+-OUTER_SET    "activation_point_y" = 0
+-
+-COPY_EXISTING ~ar0900.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
+ 
+-// ar0705
+-OUTER_SPRINT "name" "tz25nnpm"
+-OUTER_SET    "coordinate_x" = 1186
+-OUTER_SET    "coordinate_y" = 56	
+-OUTER_SET    "schedule1" = 0b11111111 // bitwise
+-OUTER_SET    "schedule2" = 0b11111111 // bitwise
+-OUTER_SET    "schedule3" = 0b11111111 // bitwise
+-OUTER_SET    "schedule4" = 0b11111111 // bitwise
+-OUTER_SPRINT "animation_bam" "tz25nnpm"
+-OUTER_SET    "sequence" = 0
+-OUTER_SET    "frame" = 0
+-OUTER_SET    "flag1"= 0b01000001 // bitwise
+-OUTER_SET    "flag2"= 0b00000001 // bitwise
+-OUTER_SET    "flag3"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "flag4"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "height" = 0
+-OUTER_SET    "transparency" = 0
+-OUTER_SET    "starting_frame" = 255 // 255 as default?
+-OUTER_SET    "loop_probability" = 0
+-OUTER_SET    "start_delay" = 0
+-OUTER_SPRINT "palette" "none"
++COPY_EXISTING ~AR0900.are~ ~override~
+ 
+-COPY_EXISTING ~ar0705.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_animation~
+-  BUT_ONLY_IF_IT_CHANGES
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 2    //travel
++    fj_box_left     = 4269
++    fj_box_top      = 956
++    fj_box_right    = 4336
++    fj_box_bottom   = 1103
++    fj_cursor_idx   = 30   //door
++    fj_vertex_0     = 4336 + (1039 << 16)
++    fj_vertex_1     = 4336 + (956 << 16)
++    fj_vertex_2     = 4269 + (1019 << 16)
++    fj_vertex_3     = 4269 + (1103 << 16)
++    fj_loc_x	  = 4148
++    fj_loc_y	  = 916
++    fj_flags        = 0b1100000100
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nn_ar0900_to_tzdr01~
++    fj_destination_area = tzdr01
++    fj_destination_name = Exit0900
++END
+ 
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-1180 82
+-1225 53
+-1225 85
+-1180 114
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nnp1"
+-OUTER_SET    "type" = 1
+-OUTER_SET    "bounding_box_left" = 1180
+-OUTER_SET    "bounding_box_top" = 53
+-OUTER_SET    "bounding_box_right" = 1225
+-OUTER_SET    "bounding_box_bottom" = 114
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 22
+-OUTER_SPRINT "destination_area" "None"
+-OUTER_SPRINT "entrance_name" ""
+-OUTER_SET    "flag1" = 0b00000000 // bitwise
+-OUTER_SET    "flag2" = 0b00000000 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 1200
+-OUTER_SET    "launch_point_y" = 50
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" "tz25nnp1"
+-OUTER_SET    "activation_point_x" = 0
+-OUTER_SET    "activation_point_y" = 0
+ 
+-COPY_EXISTING ~ar0705.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
++// Dealing with Door Open-State
+ 
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-1180 82
+-1225 53
+-1225 85
+-1180 114
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nnp2"
+-OUTER_SET    "type" = 1
+-OUTER_SET    "bounding_box_left" = 1180
+-OUTER_SET    "bounding_box_top" = 53
+-OUTER_SET    "bounding_box_right" = 1225
+-OUTER_SET    "bounding_box_bottom" = 114
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 8
+-OUTER_SPRINT "destination_area" "None"
+-OUTER_SPRINT "entrance_name" ""
+-OUTER_SET    "flag1" = 0b00000000 // bitwise
+-OUTER_SET    "flag2" = 0b00000001 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 1200
+-OUTER_SET    "launch_point_y" = 50
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" "tz25nnp2"
+-OUTER_SET    "activation_point_x" = 0
+-OUTER_SET    "activation_point_y" = 0
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 0    //proximity
++    fj_box_left     = 4550
++    fj_box_top      = 890
++    fj_box_right    = 4560
++    fj_box_bottom   = 900
++    fj_cursor_idx   = 0   //door
++    fj_vertex_0     = 4550 + (890 << 16)
++    fj_vertex_1     = 4560 + (890 << 16)
++    fj_vertex_2     = 4560 + (900 << 16)
++    fj_vertex_3     = 4550 + (900 << 16)
++    fj_loc_x	  = 4555
++    fj_loc_y	  = 895
++    fj_flags        = 0b10
++    fj_trap_active  = 1
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nn_ar0900_to_tzdr01_State1~
++    fj_reg_script       = ~tz25nns1~
++END
+ 
+-COPY_EXISTING ~ar0705.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
++// infotrigger after quests
+ 
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-2130 335
+-2175 405
+-2210 380
+-2165 310
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nnu1"
+-OUTER_SET    "type" = 1
+-OUTER_SET    "bounding_box_left" = 2130
+-OUTER_SET    "bounding_box_top" = 310
+-OUTER_SET    "bounding_box_right" = 2210
+-OUTER_SET    "bounding_box_bottom" = 405
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 22
+-OUTER_SPRINT "destination_area" "None"
+-OUTER_SPRINT "entrance_name" ""
+-OUTER_SET    "flag1" = 0b00000000 // bitwise
+-OUTER_SET    "flag2" = 0b00000000 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 2200
+-OUTER_SET    "launch_point_y" = 350
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" "tz25nnu1"
+-OUTER_SET    "activation_point_x" = 0
+-OUTER_SET    "activation_point_y" = 0
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 1    //info
++    fj_box_left     = 4269
++    fj_box_top      = 956
++    fj_box_right    = 4336
++    fj_box_bottom   = 1103
++    fj_cursor_idx   = 22   //door
++    fj_vertex_0     = 4336 + (1039 << 16)
++    fj_vertex_1     = 4336 + (956 << 16)
++    fj_vertex_2     = 4269 + (1019 << 16)
++    fj_vertex_3     = 4269 + (1103 << 16)
++    fj_loc_x	  = 4148
++    fj_loc_y	  = 916
++    fj_flags        = 0b100000000
++    fj_info_point_strref = RESOLVE_STR_REF (@2520)
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nni1~
++    fj_reg_script       = ~tz25nni1~
++END
+ 
+-COPY_EXISTING ~ar0406.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+   BUT_ONLY_IF_IT_CHANGES
+ 
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-2130 335
+-2175 405
+-2210 380
+-2165 310
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar0406_to_tzdr04"
+-OUTER_SET    "type" = 2
+-OUTER_SET    "bounding_box_left" = 2130
+-OUTER_SET    "bounding_box_top" = 310
+-OUTER_SET    "bounding_box_right" = 2210
+-OUTER_SET    "bounding_box_bottom" = 405
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 28
+-OUTER_SPRINT "destination_area" "tzdr04"
+-OUTER_SPRINT "entrance_name" "tz25nn_tzdr04_from_ar0406"
+-OUTER_SET    "flag1" = 0b00000000 // bitwise
+-OUTER_SET    "flag2" = 0b00000111 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 2200
+-OUTER_SET    "launch_point_y" = 350
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" ""
+-OUTER_SET    "activation_point_x" = 2220
+-OUTER_SET    "activation_point_y" = 405
+-
+-COPY_EXISTING ~ar0406.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
++// ar0705
+ 
+-OUTER_SPRINT "name" "tz25nn_ar0406_from_tzdr04"
+-OUTER_SET    "coordinate_x" = 2220
+-OUTER_SET    "coordinate_y" = 405
+-OUTER_SET    "orientation" = 12
++COPY_EXISTING ~AR0705.are~ ~override~
+ 
+-COPY_EXISTING ~ar0406.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_entrance~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-OUTER_SPRINT "name" "tz25nnus"
+-OUTER_SET    "coordinate_x" = 2113
+-OUTER_SET    "coordinate_y" = 306	
+-OUTER_SET    "schedule1" = 0b11111111 // bitwise
+-OUTER_SET    "schedule2" = 0b11111111 // bitwise
+-OUTER_SET    "schedule3" = 0b11111111 // bitwise
+-OUTER_SET    "schedule4" = 0b11111111 // bitwise
+-OUTER_SPRINT "animation_bam" "tz25nnus"
+-OUTER_SET    "sequence" = 0
+-OUTER_SET    "frame" = 0
+-OUTER_SET    "flag1"= 0b00000001 // bitwise
+-OUTER_SET    "flag2"= 0b00000001 // bitwise
+-OUTER_SET    "flag3"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "flag4"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "height" = 0
+-OUTER_SET    "transparency" = 0
+-OUTER_SET    "starting_frame" = 255 // 255 as default?
+-OUTER_SET    "loop_probability" = 0
+-OUTER_SET    "start_delay" = 0
+-OUTER_SPRINT "palette" "none"
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 1186
++    fj_loc_y       = 56
++    fj_schedule    = 0b11111111111111111111111111111111
++    fj_flags       = 0b101000001
++    //Is shown, Not covered by wall, Draw as background
++    fj_init_frame  = 255
++    STR_VAR
++    fj_structure_type = animation
++    fj_name           = ~tz25nnpm~
++    fj_bam_resref     = ~tz25nnpm~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 1    //info
++    fj_box_left     = 1180
++    fj_box_top      = 53
++    fj_box_right    = 1225
++    fj_box_bottom   = 114
++    fj_cursor_idx   = 22   //door
++    fj_vertex_0     = 1180 + (82 << 16)
++    fj_vertex_1     = 1225 + (53 << 16)
++    fj_vertex_2     = 1225 + (85 << 16)
++    fj_vertex_3     = 1180 + (114 << 16)
++    fj_loc_x	  = 1200
++    fj_loc_y	  = 50
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nnp1~
++    fj_reg_script       = ~tz25nnp1~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 1    //info
++    fj_box_left     = 1180
++    fj_box_top      = 53
++    fj_box_right    = 1225
++    fj_box_bottom   = 114
++    fj_cursor_idx   = 8   //door
++    fj_vertex_0     = 1180 + (82 << 16)
++    fj_vertex_1     = 1225 + (53 << 16)
++    fj_vertex_2     = 1225 + (85 << 16)
++    fj_vertex_3     = 1180 + (114 << 16)
++    fj_loc_x	  = 1200
++    fj_loc_y	  = 50
++    fj_flags        = 0b100000000
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nnp2~
++    fj_reg_script       = ~tz25nnp2~
++END
++
++BUT_ONLY_IF_IT_CHANGES
++
++//ar0406
++
++COPY_EXISTING ~AR0406.are~ ~override~
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 1    //info
++    fj_box_left     = 2130
++    fj_box_top      = 310
++    fj_box_right    = 2210
++    fj_box_bottom   = 405
++    fj_cursor_idx   = 22   //door
++    fj_vertex_0     = 2130 + (335 << 16)
++    fj_vertex_1     = 2175 + (405 << 16)
++    fj_vertex_2     = 2210 + (380 << 16)
++    fj_vertex_3     = 2165 + (310 << 16)
++    fj_loc_x	  = 2200
++    fj_loc_y	  = 350
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nnu1~
++    fj_reg_script       = ~tz25nnu1~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 2    //travel
++    fj_box_left     = 2130
++    fj_box_top      = 310
++    fj_box_right    = 2210
++    fj_box_bottom   = 405
++    fj_cursor_idx   = 28   //door
++    fj_vertex_0     = 2130 + (335 << 16)
++    fj_vertex_1     = 2175 + (405 << 16)
++    fj_vertex_2     = 2210 + (380 << 16)
++    fj_vertex_3     = 2165 + (310 << 16)
++    fj_loc_x	   = 2200
++    fj_loc_y	   = 350
++    fj_alt_x       = 2220
++    fj_alt_y       = 405
++    fj_flags        = 0b11100000000
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nn_ar0406_to_tzdr04~
++    fj_destination_area = tzdr04
++    fj_destination_name = tz25nn_tzdr04_from_ar0406
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 2220
++    fj_loc_y       = 405
++    fj_orientation = 12   //East
++    STR_VAR
++    fj_structure_type = entrance
++    fj_name           = ~tz25nn_ar0406_from_tzdr04~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 2113
++    fj_loc_y       = 306
++    fj_schedule    = 0b11111111111111111111111111111111
++    fj_flags       = 0b100000001
++    //Is shown, Draw as background
++    fj_init_frame  = 255
++    STR_VAR
++    fj_structure_type = animation
++    fj_name           = ~tz25nnus~
++    fj_bam_resref     = ~tz25nnus~
++END
+ 
+-COPY_EXISTING ~ar0406.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_animation~
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ // ar0800
+-OUTER_SPRINT "name" "tz25nntd"
+-OUTER_SET    "coordinate_x" = 1219
+-OUTER_SET    "coordinate_y" = 1342	
+-OUTER_SET    "schedule1" = 0b11000000 // bitwise
+-OUTER_SET    "schedule2" = 0b11111111 // bitwise
+-OUTER_SET    "schedule3" = 0b00011111 // bitwise
+-OUTER_SET    "schedule4" = 0b00000000 // bitwise
+-OUTER_SPRINT "animation_bam" "tz25nntd"
+-OUTER_SET    "sequence" = 0
+-OUTER_SET    "frame" = 0
+-OUTER_SET    "flag1"= 0b01000000 // bitwise
+-OUTER_SET    "flag2"= 0b00000001 // bitwise
+-OUTER_SET    "flag3"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "flag4"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "height" = 0
+-OUTER_SET    "transparency" = 0
+-OUTER_SET    "starting_frame" = 255 // 255 as default?
+-OUTER_SET    "loop_probability" = 0
+-OUTER_SET    "start_delay" = 0
+-OUTER_SPRINT "palette" "none"
+-
+-COPY_EXISTING ~ar0800.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_animation~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-1220 1455
+-1220 1365
+-1280 1325
+-1280 1415
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar0800_to_tzdr05"
+-OUTER_SET    "type" = 2
+-OUTER_SET    "bounding_box_left" = 1220
+-OUTER_SET    "bounding_box_top" = 1325
+-OUTER_SET    "bounding_box_right" = 1280
+-OUTER_SET    "bounding_box_bottom" = 1455
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 42
+-OUTER_SPRINT "destination_area" "tzdr05"
+-OUTER_SPRINT "entrance_name" "tz25nn_tzdr05_from_ar0800"
+-OUTER_SET    "flag1" = 0b00000000 // bitwise
+-OUTER_SET    "flag2" = 0b00000011 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 1250
+-OUTER_SET    "launch_point_y" = 1400
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" ""
+-OUTER_SET    "activation_point_x" = 0
+-OUTER_SET    "activation_point_y" = 0
+-
+-COPY_EXISTING ~ar0800.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
+ 
+-OUTER_SPRINT "name" "tz25nn_ar0800_from_tzdr05"
+-OUTER_SET    "coordinate_x" = 1330
+-OUTER_SET    "coordinate_y" = 1485
+-OUTER_SET    "orientation" = 12
++COPY_EXISTING ~override\AR0800.are~ ~override~
+ 
+-COPY_EXISTING ~ar0800.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_entrance~
+-  BUT_ONLY_IF_IT_CHANGES
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 1219
++    fj_loc_y       = 1342
++    fj_schedule    = 0b111111111111111000000
++    fj_flags       = 0b101000000
++    //Not covered by wall, Draw as background
++    fj_init_frame  = 255
++    STR_VAR
++    fj_structure_type = animation
++    fj_name           = ~tz25nntd~
++    fj_bam_resref     = ~tz25nntd~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 2    //travel
++    fj_box_left     = 1220
++    fj_box_top      = 1325
++    fj_box_right    = 1280
++    fj_box_bottom   = 1455
++    fj_cursor_idx   = 42   //door
++    fj_vertex_0     = 1220 + (1455 << 16)
++    fj_vertex_1     = 1220 + (1365 << 16)
++    fj_vertex_2     = 1280 + (1325 << 16)
++    fj_vertex_3     = 1280 + (1415 << 16)
++    fj_loc_x	   = 1250
++    fj_loc_y	   = 1400
++    fj_flags        = 0b1100000000
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nn_ar0800_to_tzdr05~
++    fj_destination_area = tzdr05
++    fj_destination_name = tz25nn_tzdr05_from_ar0800
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 1330
++    fj_loc_y       = 1485
++    fj_orientation = 12   //East
++    STR_VAR
++    fj_structure_type = entrance
++    fj_name           = ~tz25nn_ar0800_from_tzdr05~
++END
+ 
+ // Dealing with Door Open-State
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-1330 1485
+-1340 1485
+-1340 1495
+-1330 1495
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar0800_to_tzdr05_State1"
+-OUTER_SET    "type" = 0
+-OUTER_SET    "bounding_box_left" = 1330
+-OUTER_SET    "bounding_box_top" = 1485
+-OUTER_SET    "bounding_box_right" = 1340
+-OUTER_SET    "bounding_box_bottom" = 1495
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 0
+-OUTER_SPRINT "destination_area" "None"
+-OUTER_SPRINT "entrance_name" ""
+-OUTER_SET    "flag1" = 0b00000010 // bitwise
+-OUTER_SET    "flag2" = 0b00000000 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 1
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 1330
+-OUTER_SET    "launch_point_y" = 1490
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" "tz25nnt1"
+-OUTER_SET    "activation_point_x" = 0
+-OUTER_SET    "activation_point_y" = 0
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 0    //proximity
++    fj_box_left     = 1330
++    fj_box_top      = 1485
++    fj_box_right    = 1340
++    fj_box_bottom   = 1495
++    fj_cursor_idx   = 0   //door
++    fj_vertex_0     = 1330 + (1485 << 16)
++    fj_vertex_1     = 1340 + (1485 << 16)
++    fj_vertex_2     = 1340 + (1495 << 16)
++    fj_vertex_3     = 1330 + (1495 << 16)
++    fj_loc_x	   = 1330
++    fj_loc_y	   = 1490
++    fj_trap_active  = 1
++    fj_flags        = 0b10
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nn_ar0800_to_tzdr05_State1~
++    fj_reg_script       = ~tz25nnt1~
++END
+ 
+-COPY_EXISTING ~ar0800.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ // ar1000wed,sr
+@@ -1957,460 +1437,323 @@
+ // cleanup
+ AT_EXIT ~ts25mini/lib/cleanup.bat~
+ 
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-3785 3085
+-3830 3055
+-3885 3080
+-3870 3105
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar1000_to_tzdr06_a"
+-OUTER_SET    "type" = 2
+-OUTER_SET    "bounding_box_left" = 3785
+-OUTER_SET    "bounding_box_top" = 3055
+-OUTER_SET    "bounding_box_right" = 3885
+-OUTER_SET    "bounding_box_bottom" = 3105
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 28
+-OUTER_SPRINT "destination_area" "tzdr06"
+-OUTER_SPRINT "entrance_name" "tz25nn_tzdr06_from_ar1000_a"
+-OUTER_SET    "flag1" = 0b00000100 // bitwise
+-OUTER_SET    "flag2" = 0b00000111 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 3880
+-OUTER_SET    "launch_point_y" = 3100
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" ""
+-OUTER_SET    "activation_point_x" = 3770
+-OUTER_SET    "activation_point_y" = 3180
+-
+-COPY_EXISTING ~ar1000.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-OUTER_SPRINT "name" "tz25nn_ar1000_from_tzdr06_a"
+-OUTER_SET    "coordinate_x" = 3770
+-OUTER_SET    "coordinate_y" = 3180
+-OUTER_SET    "orientation" = 1
+-
+-COPY_EXISTING ~ar1000.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_entrance~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-OUTER_SPRINT "name" "tz25nndo"
+-OUTER_SET    "coordinate_x" = 3783
+-OUTER_SET    "coordinate_y" = 3019	
+-OUTER_SET    "schedule1" = 0b00011111 // bitwise
+-OUTER_SET    "schedule2" = 0b00000000 // bitwise
+-OUTER_SET    "schedule3" = 0b11100000 // bitwise
+-OUTER_SET    "schedule4" = 0b00000000 // bitwise
+-OUTER_SPRINT "animation_bam" "tz25nndo"
+-OUTER_SET    "sequence" = 0
+-OUTER_SET    "frame" = 0
+-OUTER_SET    "flag1"= 0b00000000 // bitwise
+-OUTER_SET    "flag2"= 0b00000001 // bitwise
+-OUTER_SET    "flag3"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "flag4"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "height" = 0
+-OUTER_SET    "transparency" = 0
+-OUTER_SET    "starting_frame" = 255 // 255 as default?
+-OUTER_SET    "loop_probability" = 0
+-OUTER_SET    "start_delay" = 0
+-OUTER_SPRINT "palette" "none"
+-
+-COPY_EXISTING ~ar1000.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_animation~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-4020 30
+-4100 30
+-4100 80
+-4020 80
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar1000_to_tzdr06_b"
+-OUTER_SET    "type" = 2
+-OUTER_SET    "bounding_box_left" = 4020
+-OUTER_SET    "bounding_box_top" = 30
+-OUTER_SET    "bounding_box_right" = 4100
+-OUTER_SET    "bounding_box_bottom" = 80
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 28
+-OUTER_SPRINT "destination_area" "tzdr06"
+-OUTER_SPRINT "entrance_name" "tz25nn_tzdr06_from_ar1000_b"
+-OUTER_SET    "flag1" = 0b00000100 // bitwise
+-OUTER_SET    "flag2" = 0b00000011 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 4050
+-OUTER_SET    "launch_point_y" = 50
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" ""
+-OUTER_SET    "activation_point_x" = 0
+-OUTER_SET    "activation_point_y" = 0
+-
+-COPY_EXISTING ~ar1000.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-OUTER_SPRINT "name" "tz25nn_ar1000_from_tzdr06_b"
+-OUTER_SET    "coordinate_x" = 4120
+-OUTER_SET    "coordinate_y" = 60
+-OUTER_SET    "orientation" = 14
+-
+-COPY_EXISTING ~ar1000.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_entrance~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-OUTER_SPRINT "name" "tz25nndp"
+-OUTER_SET    "coordinate_x" = 4000
+-OUTER_SET    "coordinate_y" = 10	
+-OUTER_SET    "schedule1" = 0b00011111 // bitwise
+-OUTER_SET    "schedule2" = 0b00000000 // bitwise
+-OUTER_SET    "schedule3" = 0b11100000 // bitwise
+-OUTER_SET    "schedule4" = 0b00000000 // bitwise
+-OUTER_SPRINT "animation_bam" "tz25nndp"
+-OUTER_SET    "sequence" = 0
+-OUTER_SET    "frame" = 0
+-OUTER_SET    "flag1"= 0b00000000 // bitwise
+-OUTER_SET    "flag2"= 0b00000001 // bitwise
+-OUTER_SET    "flag3"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "flag4"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "height" = 0
+-OUTER_SET    "transparency" = 0
+-OUTER_SET    "starting_frame" = 255 // 255 as default?
+-OUTER_SET    "loop_probability" = 0
+-OUTER_SET    "start_delay" = 0
+-OUTER_SPRINT "palette" "none"
+-
+-COPY_EXISTING ~ar1000.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_animation~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-4430 435
+-4495 435
+-4495 500
+-4430 500
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar1000_to_tzdr07"
+-OUTER_SET    "type" = 2
+-OUTER_SET    "bounding_box_left" = 4430
+-OUTER_SET    "bounding_box_top" = 435
+-OUTER_SET    "bounding_box_right" = 4495
+-OUTER_SET    "bounding_box_bottom" = 500
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 30
+-OUTER_SPRINT "destination_area" "tzdr07"
+-OUTER_SPRINT "entrance_name" "tz25nn_tzdr07_from_ar1000"
+-OUTER_SET    "flag1" = 0b00000100 // bitwise
+-OUTER_SET    "flag2" = 0b00000111 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 4450
+-OUTER_SET    "launch_point_y" = 450
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" ""
+-OUTER_SET    "activation_point_x" = 4500
+-OUTER_SET    "activation_point_y" = 515
++COPY_EXISTING ~AR1000.are~ ~override~
+ 
+-COPY_EXISTING ~ar1000.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-OUTER_SPRINT "name" "tz25nn_ar1000_from_tzdr07"
+-OUTER_SET    "coordinate_x" = 4525
+-OUTER_SET    "coordinate_y" = 525
+-OUTER_SET    "orientation" = 14
+-
+-COPY_EXISTING ~ar1000.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_entrance~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-OUTER_SPRINT "name" "tz25nndq"
+-OUTER_SET    "coordinate_x" = 4437
+-OUTER_SET    "coordinate_y" = 414	
+-OUTER_SET    "schedule1" = 0b00011111 // bitwise
+-OUTER_SET    "schedule2" = 0b00000000 // bitwise
+-OUTER_SET    "schedule3" = 0b11100000 // bitwise
+-OUTER_SET    "schedule4" = 0b00000000 // bitwise
+-OUTER_SPRINT "animation_bam" "tz25nndq"
+-OUTER_SET    "sequence" = 0
+-OUTER_SET    "frame" = 0
+-OUTER_SET    "flag1"= 0b00000000 // bitwise
+-OUTER_SET    "flag2"= 0b00000001 // bitwise
+-OUTER_SET    "flag3"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "flag4"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "height" = 0
+-OUTER_SET    "transparency" = 0
+-OUTER_SET    "starting_frame" = 255 // 255 as default?
+-OUTER_SET    "loop_probability" = 0
+-OUTER_SET    "start_delay" = 0
+-OUTER_SPRINT "palette" "none"
+-
+-COPY_EXISTING ~ar1000.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_animation~
+-  BUT_ONLY_IF_IT_CHANGES
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 2    //travel
++    fj_box_left     = 3785
++    fj_box_top      = 3055
++    fj_box_right    = 3885
++    fj_box_bottom   = 3105
++    fj_cursor_idx   = 28   //door
++    fj_vertex_0     = 3785 + (3085 << 16)
++    fj_vertex_1     = 3830 + (3055 << 16)
++    fj_vertex_2     = 3885 + (3080 << 16)
++    fj_vertex_3     = 3870 + (3105 << 16)
++    fj_loc_x	   = 3880
++    fj_loc_y	   = 3100
++    fj_alt_x       = 3770
++    fj_alt_y       = 3180
++    fj_flags        = 0b11100000100
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nn_ar1000_to_tzdr06_a~
++    fj_destination_area = tzdr06
++    fj_destination_name = tz25nn_tzdr06_from_ar1000_a
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 3770
++    fj_loc_y       = 3180
++    fj_orientation = 1   //SSW
++    STR_VAR
++    fj_structure_type = entrance
++    fj_name           = ~tz25nn_ar1000_from_tzdr06_a~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 3783
++    fj_loc_y       = 3019
++    fj_schedule    = 0b111000000000000000011111
++    fj_flags       = 0b100000000
++    //Draw as background
++    fj_init_frame  = 255
++    STR_VAR
++    fj_structure_type = animation
++    fj_name           = ~tz25nndo~
++    fj_bam_resref     = ~tz25nndo~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 2    //travel
++    fj_box_left     = 4020
++    fj_box_top      = 30
++    fj_box_right    = 4100
++    fj_box_bottom   = 80
++    fj_cursor_idx   = 28   //door
++    fj_vertex_0     = 4020 + (30 << 16)
++    fj_vertex_1     = 4100 + (30 << 16)
++    fj_vertex_2     = 4100 + (80 << 16)
++    fj_vertex_3     = 4020 + (80 << 16)
++    fj_loc_x	   = 4050
++    fj_loc_y	   = 50
++    fj_flags        = 0b1100000100
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nn_ar1000_to_tzdr06_b~
++    fj_destination_area = tzdr06
++    fj_destination_name = tz25nn_tzdr06_from_ar1000_b
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 4120
++    fj_loc_y       = 60
++    fj_orientation = 14   //SE
++    STR_VAR
++    fj_structure_type = entrance
++    fj_name           = ~tz25nn_ar1000_from_tzdr06_b~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 4000
++    fj_loc_y       = 10
++    fj_schedule    = 0b111000000000000000011111
++    fj_flags       = 0b100000000
++    //Draw as background
++    fj_init_frame  = 255
++    STR_VAR
++    fj_structure_type = animation
++    fj_name           = ~tz25nndp~
++    fj_bam_resref     = ~tz25nndp~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 2    //travel
++    fj_box_left     = 4430
++    fj_box_top      = 435
++    fj_box_right    = 4495
++    fj_box_bottom   = 500
++    fj_cursor_idx   = 30   //door
++    fj_vertex_0     = 4430 + (435 << 16)
++    fj_vertex_1     = 4495 + (435 << 16)
++    fj_vertex_2     = 4495 + (500 << 16)
++    fj_vertex_3     = 4430 + (500 << 16)
++    fj_loc_x	   = 4450
++    fj_loc_y	   = 450
++    fj_alt_x       = 4500
++    fj_alt_y       = 515
++    fj_flags        = 0b11100000100
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nn_ar1000_to_tzdr07~
++    fj_destination_area = tzdr07
++    fj_destination_name = tz25nn_tzdr07_from_ar1000
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 4525
++    fj_loc_y       = 525
++    fj_orientation = 14   //SE
++    STR_VAR
++    fj_structure_type = entrance
++    fj_name           = ~tz25nn_ar1000_from_tzdr07~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 4437
++    fj_loc_y       = 414
++    fj_schedule    = 0b111000000000000000011111
++    fj_flags       = 0b100000000
++    //Draw as background
++    fj_init_frame  = 255
++    STR_VAR
++    fj_structure_type = animation
++    fj_name           = ~tz25nndq~
++    fj_bam_resref     = ~tz25nndq~
++END
+ 
+ // Dealing with Door Open-State
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-4050 100
+-4060 100
+-4060 110
+-4050 110
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar1000_to_06_07_State1"
+-OUTER_SET    "type" = 0
+-OUTER_SET    "bounding_box_left" = 4050
+-OUTER_SET    "bounding_box_top" = 100
+-OUTER_SET    "bounding_box_right" = 4060
+-OUTER_SET    "bounding_box_bottom" = 110
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 0
+-OUTER_SPRINT "destination_area" "None"
+-OUTER_SPRINT "entrance_name" ""
+-OUTER_SET    "flag1" = 0b00000010 // bitwise
+-OUTER_SET    "flag2" = 0b00000000 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 1
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 4455
+-OUTER_SET    "launch_point_y" = 585
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" "tz25nnd1"
+-OUTER_SET    "activation_point_x" = 0
+-OUTER_SET    "activation_point_y" = 0
+-
+-COPY_EXISTING ~ar1000.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 0    //proximity
++    fj_box_left     = 4050
++    fj_box_top      = 100
++    fj_box_right    = 4060
++    fj_box_bottom   = 110
++    fj_cursor_idx   = 0   //door
++    fj_vertex_0     = 4050 + (100 << 16)
++    fj_vertex_1     = 4060 + (100 << 16)
++    fj_vertex_2     = 4060 + (110 << 16)
++    fj_vertex_3     = 4050 + (110 << 16)
++    fj_loc_x	   = 4455
++    fj_loc_y	   = 585
++    fj_trap_active  = 1
++    fj_flags        = 0b10
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nn_ar1000_to_06_07_State1~
++    fj_reg_script       = ~tz25nnd1~
++END
+ 
+ // "Cowled Wizard Revenge" region animation entrance
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-4430 435
+-4495 435
+-4495 500
+-4430 500
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar1000_tel_to_tzdr07"
+-OUTER_SET    "type" = 1
+-OUTER_SET    "bounding_box_left" = 4430
+-OUTER_SET    "bounding_box_top" = 435
+-OUTER_SET    "bounding_box_right" = 4495
+-OUTER_SET    "bounding_box_bottom" = 500
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 8
+-OUTER_SPRINT "destination_area" "None"
+-OUTER_SPRINT "entrance_name" ""
+-OUTER_SET    "flag1" = 0b00000000 // bitwise
+-OUTER_SET    "flag2" = 0b00000001 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 4450
+-OUTER_SET    "launch_point_y" = 450
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" "tz25nnd2"
+-OUTER_SET    "activation_point_x" = 4500
+-OUTER_SET    "activation_point_y" = 515
+-
+-COPY_EXISTING ~ar1000.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-3450 50
+-3550 50
+-3650 100
+-3550 150
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar1000_to_ar1002"
+-OUTER_SET    "type" = 2
+-OUTER_SET    "bounding_box_left" = 3450
+-OUTER_SET    "bounding_box_top" = 50
+-OUTER_SET    "bounding_box_right" = 3650
+-OUTER_SET    "bounding_box_bottom" = 150
+-OUTER_SET    "adding_vertex_num" = 4
+-OUTER_SET    "cursor" = 42
+-OUTER_SPRINT "destination_area" "ar1002"
+-OUTER_SPRINT "entrance_name" "tz25nn_ar1002_from_ar1000"
+-OUTER_SET    "flag1" = 0b00000100 // bitwise
+-OUTER_SET    "flag2" = 0b00000011 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 3500
+-OUTER_SET    "launch_point_y" = 100
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" ""
+-OUTER_SET    "activation_point_x" = 3600
+-OUTER_SET    "activation_point_y" = 50
+-
+-COPY_EXISTING ~ar1000.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-OUTER_SPRINT "name" "tz25nn_ar1000_from_ar1002"
+-OUTER_SET    "coordinate_x" = 3600
+-OUTER_SET    "coordinate_y" = 50
+-OUTER_SET    "orientation" = 13
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 1    //info
++    fj_box_left     = 4430
++    fj_box_top      = 435
++    fj_box_right    = 4495
++    fj_box_bottom   = 500
++    fj_cursor_idx   = 8   //door
++    fj_vertex_0     = 4430 + (435 << 16)
++    fj_vertex_1     = 4495 + (435 << 16)
++    fj_vertex_2     = 4495 + (500 << 16)
++    fj_vertex_3     = 4430 + (500 << 16)
++    fj_loc_x	   = 4450
++    fj_loc_y	   = 450
++    fj_alt_x       = 4500
++    fj_alt_y       = 515
++    fj_flags        = 0b100000000
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nn_ar1000_tel_to_tzdr07~
++    fj_reg_script       = ~tz25nnd2~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 2    //travel
++    fj_box_left     = 3450
++    fj_box_top      = 50
++    fj_box_right    = 3650
++    fj_box_bottom   = 150
++    fj_cursor_idx   = 42   //door
++    fj_vertex_0     = 3450 + (50 << 16)
++    fj_vertex_1     = 3550 + (50 << 16)
++    fj_vertex_2     = 3650 + (100 << 16)
++    fj_vertex_3     = 3550 + (150 << 16)
++    fj_loc_x	   = 3500
++    fj_loc_y	   = 100
++    fj_alt_x       = 3600
++    fj_alt_y       = 50
++    fj_flags        = 0b1100000100
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nn_ar1000_to_ar1002~
++    fj_destination_area = ar1002
++    fj_destination_name = tz25nn_ar1002_from_ar1000
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 3600
++    fj_loc_y       = 50
++    fj_orientation = 13   //ESE
++    STR_VAR
++    fj_structure_type = entrance
++    fj_name           = ~tz25nn_ar1000_from_ar1002~
++END
+ 
+-COPY_EXISTING ~ar1000.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_entrance~
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ //ar1002
+-OUTER_SPRINT "name" "tz25nnsd"
+-OUTER_SET    "coordinate_x" = 818
+-OUTER_SET    "coordinate_y" = 287	
+-OUTER_SET    "schedule1" = 0b11111111 // bitwise
+-OUTER_SET    "schedule2" = 0b11111111 // bitwise
+-OUTER_SET    "schedule3" = 0b11111111 // bitwise
+-OUTER_SET    "schedule4" = 0b11111111 // bitwise
+-OUTER_SPRINT "animation_bam" "tz25nnsd"
+-OUTER_SET    "sequence" = 0
+-OUTER_SET    "frame" = 0
+-OUTER_SET    "flag1"= 0b00000000 // bitwise
+-OUTER_SET    "flag2"= 0b00000001 // bitwise
+-OUTER_SET    "flag3"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "flag4"= 0b00000000 // bitwise, unknown
+-OUTER_SET    "height" = 0
+-OUTER_SET    "transparency" = 0
+-OUTER_SET    "starting_frame" = 255 // 255 as default?
+-OUTER_SET    "loop_probability" = 0
+-OUTER_SET    "start_delay" = 0
+-OUTER_SPRINT "palette" "none"
+-
+-COPY_EXISTING ~ar1002.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_animation~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-820 280
+-885 270
+-885 340
+-860 375
+-820 350
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar1002_to_ar1000"
+-OUTER_SET    "type" = 2
+-OUTER_SET    "bounding_box_left" = 820
+-OUTER_SET    "bounding_box_top" = 270
+-OUTER_SET    "bounding_box_right" = 885
+-OUTER_SET    "bounding_box_bottom" = 375
+-OUTER_SET    "adding_vertex_num" = 5
+-OUTER_SET    "cursor" = 42
+-OUTER_SPRINT "destination_area" "ar1000"
+-OUTER_SPRINT "entrance_name" "tz25nn_ar1000_from_ar1002"
+-OUTER_SET    "flag1" = 0b00000100 // bitwise
+-OUTER_SET    "flag2" = 0b00000111 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 850
+-OUTER_SET    "launch_point_y" = 300
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" ""
+-OUTER_SET    "activation_point_x" = 825
+-OUTER_SET    "activation_point_y" = 390
++COPY_EXISTING ~AR1002.are~ ~override~
+ 
+-COPY_EXISTING ~ar1002.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
+-
+-OUTER_SPRINT "name" "tz25nn_ar1002_from_ar1000"
+-OUTER_SET    "coordinate_x" = 800
+-OUTER_SET    "coordinate_y" = 400
+-OUTER_SET    "orientation" = 1
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 818
++    fj_loc_y       = 287
++    fj_schedule    = 0b11111111111111111111111111111111
++    fj_flags       = 0b100000000
++    //Draw as background
++    fj_init_frame  = 255
++    STR_VAR
++    fj_structure_type = animation
++    fj_name           = ~tz25nnsd~
++    fj_bam_resref     = ~tz25nnsd~
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 2    //travel
++    fj_box_left     = 820
++    fj_box_top      = 270
++    fj_box_right    = 885
++    fj_box_bottom   = 375
++    fj_cursor_idx   = 42   //door
++    fj_vertex_0     = 820 + (280 << 16)
++    fj_vertex_1     = 885 + (270 << 16)
++    fj_vertex_2     = 885 + (340 << 16)
++    fj_vertex_3     = 860 + (375 << 16)
++    fj_vertex_4     = 820 + (350 << 16)
++    fj_loc_x	   = 850
++    fj_loc_y	   = 300
++    fj_alt_x       = 825
++    fj_alt_y       = 390
++    fj_flags        = 0b11100000100
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nn_ar1002_to_ar1000~
++    fj_destination_area = ar1000
++    fj_destination_name = tz25nn_ar1000_from_ar1002
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 800
++    fj_loc_y       = 400
++    fj_orientation = 1   //SSW
++    STR_VAR
++    fj_structure_type = entrance
++    fj_name           = ~tz25nn_ar1002_from_ar1000~
++END
+ 
+-COPY_EXISTING ~ar1002.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_entrance~
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ //ar1100
+-<<<<<<<< ...ts25mini-inlined/vertex.2da
+-2410 3480
+-2330 3545
+-2330 3584
+-2770 3584
+-2770 3480
+->>>>>>>>
+-
+-OUTER_SPRINT "name" "tz25nn_ar1100_to_tzdr09"
+-OUTER_SET    "type" = 2
+-OUTER_SET    "bounding_box_left" = 2330
+-OUTER_SET    "bounding_box_top" = 3480
+-OUTER_SET    "bounding_box_right" = 2770
+-OUTER_SET    "bounding_box_bottom" = 3584
+-OUTER_SET    "adding_vertex_num" = 5
+-OUTER_SET    "cursor" = 34
+-OUTER_SPRINT "destination_area" "tzdr09"
+-OUTER_SPRINT "entrance_name" "tz25nn_tzdr09_from_ar1100"
+-OUTER_SET    "flag1" = 0b00000100 // bitwise
+-OUTER_SET    "flag2" = 0b00000011 // bitwise
+-OUTER_SET    "flag3" = 0b00000000 // bitwise unknown
+-OUTER_SET    "flag4" = 0b00000000 // bitwise unknown
+-OUTER_SPRINT "info_text" ""
+-OUTER_SET    "trap_detection_difficulty" = 0
+-OUTER_SET    "trap_removal_difficulty" = 0
+-OUTER_SET    "traped" = 0
+-OUTER_SET    "detected" = 0
+-OUTER_SET    "launch_point_x" = 2600
+-OUTER_SET    "launch_point_y" = 3500
+-OUTER_SPRINT "key" ""
+-OUTER_SPRINT "script" ""
+-OUTER_SET    "activation_point_x" = 0
+-OUTER_SET    "activation_point_y" = 0
+-
+ COPY_EXISTING ~ar1100.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_region~
+-  BUT_ONLY_IF_IT_CHANGES
+ 
+-OUTER_SPRINT "name" "tz25nn_ar1100_from_tzdr09"
+-OUTER_SET    "coordinate_x" = 2580
+-OUTER_SET    "coordinate_y" = 3440
+-OUTER_SET    "orientation" = 8
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_type         = 2    //travel
++    fj_box_left     = 2330
++    fj_box_top      = 3480
++    fj_box_right    = 2770
++    fj_box_bottom   = 3584
++    fj_cursor_idx   = 34   //door
++    fj_vertex_0     = 2410 + (3480 << 16)
++    fj_vertex_1     = 2330 + (3545 << 16)
++    fj_vertex_2     = 2330 + (3584 << 16)
++    fj_vertex_3     = 2770 + (3584 << 16)
++    fj_vertex_4     = 2770 + (3480 << 16)
++    fj_loc_x	   = 2600
++    fj_loc_y	   = 3500
++    fj_flags        = 0b1100000100
++    STR_VAR
++    fj_structure_type   = region
++    fj_name             = ~tz25nn_ar1100_to_tzdr09~
++    fj_destination_area = tzdr09
++    fj_destination_name = tz25nn_tzdr09_from_ar1100
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 2580
++    fj_loc_y       = 3440
++    fj_orientation = 8   //North
++    STR_VAR
++    fj_structure_type = entrance
++    fj_name           = ~tz25nn_ar1100_from_tzdr09~
++END
+ 
+-COPY_EXISTING ~ar1100.are~ ~override~
+-  LAUNCH_PATCH_MACRO ~add_entrance~
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ // are, wed, etc. (including bam animationj
