@@ -1,5 +1,5 @@
 --- ACBre\lib\ac_bre_cpmvars.tpa	Thu Feb 12 04:37:26 2015
-+++ C:\BWP Patchstudio\patched files\ACBre\lib\ac_bre_cpmvars.tpa	Tue Jul 28 21:15:28 2015
++++ C:\BWP Patchstudio\patched files\ACBre\lib\ac_bre_cpmvars.tpa	Sat Nov 14 20:33:27 2015
 @@ -21,10 +21,10 @@
  OUTER_SPRINT ~BGT_VAR2~ ~Global("endofbg1","GLOBAL",2)~
  OUTER_SPRINT "SKELWA02" "BGSKEL02"
@@ -15,13 +15,7 @@
  OUTER_SPRINT "Exit3301" "Exit6701"
  OUTER_SPRINT "Exit3300" "Exit6700"
  OUTER_SPRINT "Door3300" "Door6700"
-@@ -64,11 +64,11 @@
- 
- END
- 
--ACTION_IF GAME_IS "tob bg2ee" AND !GAME_IS "bgt eet" BEGIN
-+ACTION_IF GAME_IS "tob bg2ee" BEGIN
- 
+@@ -69,6 +69,6 @@
  OUTER_SPRINT ~BGT_VAR~ ~!Global("endofbg1","GLOBAL",2)~ //This condition is never true ;)
  OUTER_SPRINT ~BGT_VAR2~ ~~
  OUTER_SPRINT "IMOEN_JOINED" "IMOENJ"
