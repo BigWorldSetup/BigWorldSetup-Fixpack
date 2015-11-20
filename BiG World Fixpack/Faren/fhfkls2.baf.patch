@@ -1,0 +1,11 @@
+--- Faren\crossmod\kelsey\fhfkls2.baf	Tue May 05 23:35:50 2009
++++ C:\BWP Patchstudio\patched files\Faren\crossmod\kelsey\fhfkls2.baf	Fri Nov 20 23:41:32 2015
+@@ -4,7 +4,7 @@
+ See(Player1)
+ !StateCheck(Player1,CD_STATE_NOTVALID)
+ !StateCheck("FHFRN",CD_STATE_NOTVALID)
+-!StateCheck("Myself",CD_STATE_NOTVALID)
++!StateCheck(Myself,CD_STATE_NOTVALID)
+ Global("FHFKelsConflict2","GLOBAL",1)
+ THEN
+ RESPONSE #100

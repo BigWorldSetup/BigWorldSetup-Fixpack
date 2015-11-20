@@ -1,0 +1,67 @@
+--- NikitaRedux\bafs\~cmnikita_.baf	Thu Sep 24 15:51:40 2009
++++ C:\BWP Patchstudio\patched files\NikitaRedux\bafs\~cmnikita_.baf	Fri Nov 20 23:41:32 2015
+@@ -140,7 +140,7 @@
+    !HasItem("CMNIKL1",Myself)
+ THEN
+    RESPONSE #100
+- GiveItemCreate("CMNIKL1","Myself",0,0,0)
++ GiveItemCreate("CMNIKL1",Myself,0,0,0)
+ END
+ 
+ 
+@@ -148,7 +148,7 @@
+    !HasItem("CMNIKD1",Myself)
+ THEN
+    RESPONSE #100
+- GiveItemCreate("CMNIKD1","Myself",0,0,0)
++ GiveItemCreate("CMNIKD1",Myself,0,0,0)
+ END
+ 
+ 
+@@ -156,7 +156,7 @@
+    !HasItem("CMNIKS1",Myself)
+ THEN
+    RESPONSE #100
+- GiveItemCreate("CMNIKS1","Myself",0,0,0)
++ GiveItemCreate("CMNIKS1",Myself,0,0,0)
+ END
+ 
+ 
+@@ -164,32 +164,32 @@
+    !HasItem("CMNIKX1",Myself)
+ THEN
+    RESPONSE #100
+- GiveItemCreate("CMNIKX1","Myself",0,0,0)
++ GiveItemCreate("CMNIKX1",Myself,0,0,0)
+ END
+ 
+ IF
+-   NumItemsGT("CMNIKD1","Myself",1)
++   NumItemsGT("CMNIKD1",Myself,1)
+ THEN
+    RESPONSE #100
+       DestroyItem("CMNIKD1")
+ END
+ 
+ IF
+-   NumItemsGT("CMNIKL1","Myself",1)
++   NumItemsGT("CMNIKL1",Myself,1)
+ THEN
+    RESPONSE #100
+       DestroyItem("CMNIKL1")
+ END
+ 
+ IF
+-   NumItemsGT("CMNIKS1","Myself",1)
++   NumItemsGT("CMNIKS1",Myself,1)
+ THEN
+    RESPONSE #100
+       DestroyItem("CMNIKS1")
+ END
+ 
+ IF
+-   NumItemsGT("CMNIKX1","Myself",1)
++   NumItemsGT("CMNIKX1",Myself,1)
+ THEN
+    RESPONSE #100
+       DestroyItem("CMNIKX1")

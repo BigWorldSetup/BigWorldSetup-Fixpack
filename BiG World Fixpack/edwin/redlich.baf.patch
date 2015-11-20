@@ -1,0 +1,11 @@
+--- edwin\baf\compile\redlich.baf	Fri Nov 15 16:07:02 2013
++++ C:\BWP Patchstudio\patched files\edwin\baf\compile\redlich.baf	Fri Nov 20 23:41:32 2015
+@@ -20,7 +20,7 @@
+ IF
+   See(NearestEnemyOf(Myself))
+   Global("Prep","LOCALS",0)
+-  !StateCheck("Myself",STATE_REALLY_DEAD)
++  !StateCheck(Myself,STATE_REALLY_DEAD)
+ THEN
+   RESPONSE #100
+     DisplayString(Myself,39969)

@@ -1,0 +1,56 @@
+--- ninde\scripts\lk#nind.baf	Tue Dec 30 10:07:40 2008
++++ C:\BWP Patchstudio\patched files\ninde\scripts\lk#nind.baf	Fri Nov 20 23:41:32 2015
+@@ -4,7 +4,7 @@
+     InParty("Cernd")
+     See("Cernd")
+     !StateCheck("Cernd",CD_STATE_NOTVALID)
+-    !StateCheck("Myself",CD_STATE_NOTVALID)
++    !StateCheck(Myself,CD_STATE_NOTVALID)
+     CombatCounter(0)
+     Global("LK#NindeCernd","GLOBAL",0)
+ THEN
+@@ -19,7 +19,7 @@
+     RealGlobalTimerExpired("LK#NindeLoveTalksTimer","GLOBAL")
+     InParty(Myself)
+     See(Player1)
+-    !StateCheck("Myself",CD_STATE_NOTVALID)
++    !StateCheck(Myself,CD_STATE_NOTVALID)
+     !StateCheck(Player1,CD_STATE_NOTVALID)
+     CombatCounter(0)
+     !See([ENEMY])
+@@ -39,7 +39,7 @@
+     RealGlobalTimerExpired("LK#NindeLoveTalksTimer","GLOBAL")
+     InParty(Myself)
+     See(Player1)
+-    !StateCheck("Myself",CD_STATE_NOTVALID)
++    !StateCheck(Myself,CD_STATE_NOTVALID)
+     !StateCheck(Player1,CD_STATE_NOTVALID)
+     CombatCounter(0)
+     !See([ENEMY])
+@@ -63,7 +63,7 @@
+     RealGlobalTimerExpired("LK#NindeLoveTalksTimer","GLOBAL")
+     InParty(Myself)
+     See(Player1)
+-    !StateCheck("Myself",CD_STATE_NOTVALID)
++    !StateCheck(Myself,CD_STATE_NOTVALID)
+     !StateCheck(Player1,CD_STATE_NOTVALID)
+     CombatCounter(0)
+     !See([ENEMY])
+@@ -89,7 +89,7 @@
+     RealGlobalTimerExpired("LK#NindeLoveTalksTimer","GLOBAL")
+     InParty(Myself)
+     See(Player1)
+-    !StateCheck("Myself",CD_STATE_NOTVALID)
++    !StateCheck(Myself,CD_STATE_NOTVALID)
+     !StateCheck(Player1,CD_STATE_NOTVALID)
+     CombatCounter(0)
+     !See([ENEMY])
+@@ -110,7 +110,7 @@
+ IF
+     InParty(Myself)
+     See(Player1)
+-    !StateCheck("Myself",CD_STATE_NOTVALID)
++    !StateCheck(Myself,CD_STATE_NOTVALID)
+     !StateCheck(Player1,CD_STATE_NOTVALID)
+     CombatCounter(0)
+     !See([ENEMY])
