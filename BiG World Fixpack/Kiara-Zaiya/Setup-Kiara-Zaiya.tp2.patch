@@ -1,5 +1,5 @@
 --- Setup-Kiara-Zaiya.tp2	Sun Dec 12 17:38:22 2010
-+++ C:\BWP Patchstudio\patched files\Setup-Kiara-Zaiya.tp2	Thu Jan 31 19:32:09 2013
++++ C:\BWP Patchstudio\patched files\Setup-Kiara-Zaiya.tp2	Sun Nov 22 14:53:56 2015
 @@ -4,7 +4,7 @@
  
  // Isaya: version information removed from the tra files and set here (using a new WeiDU feature)
@@ -9,6 +9,15 @@
  
  README ~Kiara-Zaiya/readme_KZ.chm~
  
+@@ -64,7 +64,7 @@
+ ///////////////////////////////////////////////////////////////
+ BEGIN @1
+ 
+-REQUIRE_FILE ~Data/25Dialog.bif~ @2
++REQUIRE_PREDICATE GAME_IS ~tob~ @2
+ 
+ // Isaya : additional code for V1.6.1, retrieved from BG2Fixpack
+ // Addition of STATE_REALLY_DEAD state, used by several scripts modified by Lollorian
 @@ -322,10 +322,23 @@
          ~Kiara-Zaiya\Scripts\CutL1.baf~
          ~Kiara-Zaiya\Scripts\CutL2.baf~
@@ -35,3 +44,105 @@
  COMPILE ~Kiara-Zaiya\Scripts\KiarFigt.baf~
  COPY ~Kiara-Zaiya\Creatures\KZWyvern.cre~ ~override\KZWyvern.cre~
    SAY NAME1 @230
+@@ -757,7 +770,7 @@
+ //ORIGINAL AMARALIS BATTLE IN CHAPTER 2 AND 6
+ ////////////////////////////////////////////////////////////////////////////////////
+ BEGIN @143
+-REQUIRE_FILE ~Data/25Dialog.bif~ @2
++REQUIRE_PREDICATE GAME_IS ~tob~ @2
+ 
+ COPY ~Kiara-Zaiya\Amaralis\C6HROTH.cre~ ~override\C6HROTH.cre~
+   SAY NAME1 @50
+@@ -796,7 +809,7 @@
+ ////////////////////////////////////////////////////////////////////////////////////
+ BEGIN @261 /* ~Tougher Kiara vampire~ */
+ 
+-REQUIRE_FILE ~Data/25Dialog.bif~ @2
++REQUIRE_PREDICATE GAME_IS ~tob~ @2
+ 
+ COMPILE ~Kiara-Zaiya\VampKia\VampKia.baf~
+ COPY ~Kiara-Zaiya\VampKia\vampkiar.cre~ ~override\vampkiar.cre~
+@@ -809,7 +822,7 @@
+ ////////////////////////////////////////////////////////////////////////////////////
+ BEGIN @262 /* ~Revised Suldalanessar~ */
+ 
+-REQUIRE_FILE ~Data/25Dialog.bif~ @2
++REQUIRE_PREDICATE GAME_IS ~tob~ @2
+ 
+ // Isaya's note:
+ // although Hoppy suggested to use the demon lord only if Kiara and Zaiya were in the party
+@@ -825,8 +838,12 @@
+ COMPILE ~Kiara-Zaiya\Sulda\SPWNRAK.BAF~
+ 
+ //DEMON IN REPLACEMENT OF NIMZI: EXTREMELY TOUGH BUT FEASIBLE
+-COPY ~Kiara-Zaiya\Sulda\AR2807.are~ ~override\AR2807.are~
+-COPY ~Kiara-Zaiya\Sulda\AR2807.wed~ ~override\AR2807.wed~
++COPY_EXISTING ~AR2807.are~ ~override~
++  LAUNCH_PATCH_FUNCTION ~ALTER_AREA_ACTOR~
++    STR_VAR  "actor_name" = ~Black Dragon~
++             "cre_file"   = ~KZ#DMLRD~
++  END
++BUT_ONLY
+ COPY ~Kiara-Zaiya\Sulda\KZ#DMLRD.cre~ ~override\KZ#DMLRD.cre~
+ //male polymorph into demon knights no save
+ COPY ~Kiara-Zaiya\Sulda\KZLDLPOL.spl~ ~override\KZLDLPOL.spl~
+@@ -837,30 +854,40 @@
+   SAY NAME1 ~Lesser Demon Gaze~
+   SAY NAME2 ~Lesser Demon Gaze~
+ COMPILE ~Kiara-Zaiya\Sulda\KZ#DMLRD.BAF~
+-        ~Kiara-Zaiya\Sulda\UDDEATH.BAF~
+-        ~Kiara-Zaiya\Sulda\DEMSUC.BAF~
++EXTEND_TOP ~UDDEATH.bcs~ ~Kiara-Zaiya\Sulda\UDDEATH.BAF~
++EXTEND_TOP ~DEMSUC.bcs~ ~Kiara-Zaiya\Sulda\DEMSUC.BAF~
+ 
+ //A LICH AND TWO VAMPIRE ILITHID INSTEAD OF UNDEAD = EASY
+-COMPILE ~Kiara-Zaiya\Sulda\SUSCENE1.BAF~
++COPY_EXISTING ~SUSCENE1.bcs~ ~override~
++  DECOMPILE_AND_PATCH BEGIN
++    REPLACE_TEXTUALLY ~CreateCreature("SUUNDEAD",\[1259\.2912\],8)~ ~CreateCreature("LICH01",[1259.2912],8)~
++    REPLACE_TEXTUALLY ~CreateCreature("SUUNDEAD",\[1394\.2900\],8)~ ~CreateCreature("KZ#FVAMP",[1394.2900],8)~
++    REPLACE_TEXTUALLY ~CreateCreature("SUUNDEAD",\[1132\.2892\],8)~ ~CreateCreature("KZ#FVAMP",[1132.2892],8)~
++  END
++BUT_ONLY_IF_IT_CHANGES
+ COPY ~Kiara-Zaiya\Sulda\KZ#fvamp.cre~ ~override\KZ#fvamp.cre~
+ COMPILE ~Kiara-Zaiya\Sulda\KZ#FLAYU.BAF~
+ 
+ //MARILITH INSTEAD OF TROLLS = EASY
+-COMPILE ~Kiara-Zaiya\Sulda\SUSCENE3.BAF~
++COPY_EXISTING ~SUSCENE3.bcs~ ~override~
++  DECOMPILE_AND_PATCH BEGIN
++    REPLACE_TEXTUALLY ~CreateCreature("SUTROLL",\[3549\.3349\],8)~ ~CreateCreature("DEMOSUM1",[3549.3349],8)~
++    REPLACE_TEXTUALLY ~CreateCreature("SUTROLL",\[3437\.3388\],8)~ ~CreateCreature("DEMOSUM1",[3437.3388],8)~
++  END
++BUT_ONLY_IF_IT_CHANGES
+ 
+ //ASSASSIN-MAGE NEAR THE DRAGON - NOW REPLACED WITH DEMON!
+-//COPY ~Kiara-Zaiya\Sulda\KZNINJA.cre~ ~override\KZNINJA.cre~
+-//COPY ~Kiara-Zaiya\Sulda\KZNINJA.itm~ ~override\KZNINJA.itm~
+-//COPY ~Kiara-Zaiya\Sulda\KZninja.bcs~ ~Override\KzNinja.bcs~
+-//REPLACE ~99999~ ~Irenicus said they would come for the cup. I shall not fail my master.~
+-//EXTEND_TOP ~AR2807.bcs~ ~Kiara-Zaiya\Sulda\KZ#2807A.baf~
++COPY ~Kiara-Zaiya\Sulda\KZNINJA.cre~ ~override\KZNINJA.cre~
++COPY ~Kiara-Zaiya\Sulda\KZNINJA.itm~ ~override\KZNINJA.itm~
++COMPILE ~Kiara-Zaiya\Sulda\KZNINJA.BAF~
++EXTEND_TOP ~AR2807.bcs~ ~Kiara-Zaiya\Sulda\KZ#2807A.baf~
+ 
+ /////////////////////////////////////////////////////////////////////////////////////
+ //JAO AND CO
+ ////////////////////////////////////////////////////////////////////////////////////
+ BEGIN @250
+ 
+-REQUIRE_FILE ~Data/25Dialog.bif~ @2
++REQUIRE_PREDICATE GAME_IS ~tob~ @2
+ 
+ EXTEND_TOP ~AR0300.bcs~ ~Kiara-Zaiya\Wu-Je\APPENDME.baf~
+ COPY ~Kiara-Zaiya\WU-JE\KZJAO.cre~ ~override\KZJAO.cre~
+@@ -892,7 +919,7 @@
+ ////////////////////////////////////////////////////////////////////////////////////
+ BEGIN @260
+ 
+-REQUIRE_FILE ~Data/25Dialog.bif~ @2
++REQUIRE_PREDICATE GAME_IS ~tob~ @2
+ 
+ //TOUGH BUT STILL FEASIBLE
+ COPY ~Kiara-Zaiya\Irentree\sujon.cre~ ~override\sujon.cre~

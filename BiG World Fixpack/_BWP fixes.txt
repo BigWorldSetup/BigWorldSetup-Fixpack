@@ -1271,22 +1271,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Kiara-Zaiya v1.6.1
+:: Kiara-Zaiya v1.6.2
 
-:: Taimon's fixed incompatibility with Saerileth - Kiara.bcs
-:: http://www.shsforums.net/index.php?s=&showtopic=33658&view=findpost&p=394843
-
-:: Hoppy's demon spawn fix - KZ#2807A.baf
-:: http://www.shsforums.net/topic/43574-suldanesselar-bugs/?p=470369
-
-:: Lollorian's corrections
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
-
-:: Lollorian's corrected OR(6) -> OR(4) - Kiar25.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
-
-:: Lollorian's changed some Unknown_error("XXX") lines to InParty("XXX") - Kiara.bcs
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488890
+:: Lollorian's patched Revised Suldanessalar
+:: - LINK NOT FOUND ~
 
 
 ----------------------------------------------------------------------------------------

@@ -1,0 +1,54 @@
+--- Kiara-Zaiya\Sulda\KZNINJA.BAF	Sat Dec 11 16:37:58 2010
++++ C:\BWP Patchstudio\patched files\Kiara-Zaiya\Sulda\KZNINJA.BAF	Sun Nov 22 14:55:23 2015
+@@ -27,7 +27,7 @@
+ THEN
+   RESPONSE #100
+     SetGlobal("KZNinjaTalk","LOCALS",1)
+-    DisplayStringHead(Myself,99999)
++    DisplayStringHead(Myself,~Irenicus said they would come for the cup. I shall not fail my master.~)
+ END
+ 
+ IF
+@@ -166,7 +166,7 @@
+ THEN
+   RESPONSE #100
+     EquipMostDamagingMelee()
+-    AttackReavaluate(LastSeenBy(Myself),15)
++    AttackReevaluate(LastSeenBy(Myself),15)
+ END
+ 
+ IF
+@@ -184,7 +184,7 @@
+ THEN
+   RESPONSE #100
+     EquipRanged()
+-    AttackReavaluate(LastSeenBy(Myself),15)
++    AttackReevaluate(LastSeenBy(Myself),15)
+ END
+ 
+ IF
+@@ -199,7 +199,7 @@
+ THEN
+   RESPONSE #100
+     EquipMostDamagingMelee()
+-    AttackReavaluate(LastSeenBy(Myself),15)
++    AttackReevaluate(LastSeenBy(Myself),15)
+ END
+ 
+ IF
+@@ -210,7 +210,7 @@
+ THEN
+   RESPONSE #100
+     EquipRanged()
+-    AttackReavaluate(LastSeenBy(Myself),15)
++    AttackReevaluate(LastSeenBy(Myself),15)
+ END
+ 
+ IF
+@@ -221,5 +221,5 @@
+ THEN
+   RESPONSE #100
+     EquipMostDamagingMelee()
+-    AttackReavaluate(LastSeenBy(Myself),15)
++    AttackReevaluate(LastSeenBy(Myself),15)
+ END
