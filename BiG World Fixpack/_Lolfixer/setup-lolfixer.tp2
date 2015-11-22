@@ -1,6 +1,6 @@
 BACKUP ~lolfixer/backup~
 AUTHOR ~Lollorian~
-VERSION ~21102015~
+VERSION ~22112015~
 
 BEGIN ~Area Stuff - MAJESTIC Area Fixer~
   GROUP ~Area Stuff~
@@ -71,7 +71,7 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY tutu_convert_itm BEGIN
   _SW2H01    =>    SW2H01
 END
 
-COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
+COPY_EXISTING ~AA0602.ARE~ ~override~
   PATCH_IF (SOURCE_SIZE > 0x11b) THEN BEGIN
 
     // Script Assigner
@@ -1610,7 +1610,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                        ("%savtyp%" = "%eff_savtyp%") AND
                        ("%savbon%" = "%eff_savbon%") BEGIN
                 PATCH_PRINT "%SOURCE_FILE% error: Effect #%index1% (Opcode %opcode%) matches Effect #%index%! Removing..."
-                DELETE_BYTES ("%eff_off%" + ("%index1%" * 0x30)) 0x30
+                offset = "%eff_off%" + ("%index1%" * 0x30)
+                value  = 0x30
+                DELETE_BYTES offset value
+                SOURCE_SIZE = SOURCE_SIZE - value
                 SET "index1" = 0 - 1
                 SET "eff_num" = "eff_num" - 1
                 WRITE_LONG 0x2c8 %eff_num%
@@ -1688,7 +1691,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                        ("%savtyp%" = "%eff_savtyp%") AND
                        ("%savbon%" = "%eff_savbon%") BEGIN
                 PATCH_PRINT "%SOURCE_FILE% error: Effect #%index1% (Opcode %opcode%) matches Effect #%index%! Removing..."
-                DELETE_BYTES ("%eff_off%" + ("%index1%" * 0x108)) 0x108
+                offset = "%eff_off%" + ("%index1%" * 0x108)
+                value  = 0x108
+                DELETE_BYTES offset value
+                SOURCE_SIZE = SOURCE_SIZE - value
                 SET "index1" = 0 - 1
                 SET "eff_num" = "eff_num" - 1
                 WRITE_LONG 0x2c8 %eff_num%
@@ -1726,7 +1732,57 @@ BEGIN ~Item Stuff - Item Resource Fixer~
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
-    PATCH_INCLUDE ~lolfixer/lib/fj_spl_itm_reindex.tpp~
+    READ_LONG  0x64 "abil_off"
+    READ_SHORT 0x68 "abil_num"
+    READ_LONG  0x6a "fx_off"
+    READ_SHORT 0x70 "fx_num"
+    PATCH_IF ((abil_off > fx_off) AND (abil_num > 1)) BEGIN
+      READ_ASCII abil_off ~eh~ ELSE ~fail~ (0x38 * abil_num)
+      PATCH_IF (~%eh%~ STRING_EQUAL ~fail~) BEGIN
+        WHILE ((~%eh%~ STRING_EQUAL ~fail~) AND (abil_num > 0)) BEGIN
+          READ_ASCII abil_off ~eh~ ELSE ~fail~ (0x38 * abil_num)
+          abil_num -= 1
+        END
+      END
+      offset = abil_off
+      value  = 0x38 * abil_num
+      PATCH_PRINT "%SOURCE_FILE% error: Restructuring - Unused Ability Structure found! Trimming %value% bytes from offset %offset%..."
+      DELETE_BYTES offset value
+      SOURCE_SIZE = SOURCE_SIZE - value
+      abil_off = 0x72
+      WRITE_LONG 0x64 abil_off
+      WRITE_SHORT 0x68 abil_num
+      fx_off = (0x72 + (0x38 * abil_num))
+      WRITE_LONG 0x6a fx_off
+      PATCH_IF !(~%eh%~ STRING_EQUAL ~fail~) BEGIN
+        INSERT_BYTES abil_off (0x38 * abil_num)
+        WRITE_ASCIIE abil_off ~%eh%~
+      END
+    END ELSE PATCH_IF ((abil_off != 0x72) AND (abil_num = 0)) BEGIN
+      abil_off = 0x72
+      WRITE_LONG 0x64 abil_off
+    END
+    FOR (i1 = 0; i1 < (0x38 * abil_num); i1 += 0x38) BEGIN
+      WRITE_SHORT (abil_off + i1 + 0x20) fx_num
+      READ_SHORT (abil_off + i1 + 0x1e) cx
+      fx_num += cx
+    END
+    PATCH_IF ((abil_off + (0x38 * abil_num)) < fx_off) BEGIN
+      offset = abil_off + (0x38 * abil_num)
+      value  = fx_off - ((abil_off + (0x38 * abil_num)))
+      PATCH_PRINT "%SOURCE_FILE% error: Restructuring - Unused Inter-structural Bytes found! Trimming %value% bytes from offset %offset%..."
+      DELETE_BYTES offset value
+      SOURCE_SIZE = SOURCE_SIZE - value
+      fx_off = offset
+      WRITE_LONG 0x6a %fx_off%
+    END
+    PATCH_IF (SOURCE_SIZE > (0x72 + (0x38 * abil_num) + (0x30 * fx_num))) BEGIN
+      offset = 0x72 + (0x38 * abil_num) + (0x30 * fx_num)
+      value  = SOURCE_SIZE - (0x72 + (0x38 * abil_num) + (0x30 * fx_num))
+      PATCH_PRINT "%SOURCE_FILE% error: Restructuring - Unused Trailing Bytes found! Trimming %value% bytes from offset %offset%..."
+      DELETE_BYTES offset value
+      SOURCE_SIZE = SOURCE_SIZE - value
+    END
   END
 BUT_ONLY_IF_IT_CHANGES
 
@@ -1776,7 +1832,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
         END
         READ_ASCII   ("%fx_off%" +        ("%index%" * 0x30)) "clone" (48)
         PATCH_PRINT "%SOURCE_FILE% patched for BG2Fixpack EFF fixes..."
-        DELETE_BYTES ("%fx_off%" +        ("%index%" * 0x30)) 0x30
+        offset = "%fx_off%" + ("%index%" * 0x30)
+        value  = 0x30
+        DELETE_BYTES offset value
+        SOURCE_SIZE = SOURCE_SIZE - value
         SET fx_num = (fx_num - 1)
         SET delta  = (delta - 1)
         SET index  = (index - 1)
@@ -2023,7 +2082,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             READ_SHORT ("%abil_off%" + 0x1e + (0x38 * "%index%")) "abil_fx_num"
             READ_SHORT ("%abil_off%" + 0x20 + (0x38 * "%index%")) "abil_fx_idx"
             PATCH_IF ("%abil_fx_num%" > 0) BEGIN
-              DELETE_BYTES ("%fx_off%" + ("%abil_fx_idx%" * 0x30)) (%abil_fx_num% * 0x30)
+              offset = "%fx_off%" + ("%abil_fx_idx%" * 0x30)
+              value  = %abil_fx_num% * 0x30
+              DELETE_BYTES offset value
+              SOURCE_SIZE = SOURCE_SIZE - value
               PATCH_IF ("%abil_off%" > "%fx_off%") BEGIN
                 SET "abil_off" = "abil_off" - (%abil_fx_num% * 0x30)
                 WRITE_LONG  0x64 "abil_off"
@@ -2044,7 +2106,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 END
               END
             END
-            DELETE_BYTES ("%abil_off%" + ("%index%" * 0x38)) 0x38
+            offset = "%abil_off%" + ("%index%" * 0x38)
+            value  = 0x38
+            DELETE_BYTES offset value
+            SOURCE_SIZE = SOURCE_SIZE - value
             PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% is invalid! Deleting Ability #%index%..."
             SET "index" = 0 - 1
             SET "abil_num" = "abil_num" - 1
@@ -2653,7 +2718,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             PATCH_IF ("%foundboth%" = 0) AND ("%foundfireeffect%" = 1) BEGIN
               PATCH_IF ("%foundfireicon%" = 1) BEGIN
                 PATCH_PRINT "%SOURCE_FILE% error: Removing Protection from Fire Portrait..."
-                DELETE_BYTES ("%fx_off%" + ("%fireiconindex%" * 0x30)) 0x30
+                offset = "%fx_off%" + ("%fireiconindex%" * 0x30)
+                value  = 0x30
+                DELETE_BYTES offset value
+                SOURCE_SIZE = SOURCE_SIZE - value
                 PATCH_IF ("%abil_off%" > "%fx_off%") BEGIN
                   SET "abil_off" = "abil_off" - 0x30
                   WRITE_LONG 0x64 %abil_off%
@@ -2674,7 +2742,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
               PATCH_IF ("%foundcoldicon%" = 1) BEGIN
                 PATCH_PRINT "%SOURCE_FILE% error: Removing Protection from Cold Portrait..."
-                DELETE_BYTES ("%fx_off%" + ("%coldiconindex%" * 0x30)) 0x30
+                offset = "%fx_off%" + ("%coldiconindex%" * 0x30)
+                value  = 0x30
+                DELETE_BYTES offset value
+                SOURCE_SIZE = SOURCE_SIZE - value
                 PATCH_IF ("%abil_off%" > "%fx_off%") BEGIN
                   SET "abil_off" = "abil_off" - 0x30
                   WRITE_LONG 0x64 %abil_off%
@@ -2807,7 +2878,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             PATCH_IF ("%foundboth%" = 0) AND ("%foundcoldeffect%" = 1) BEGIN
               PATCH_IF ("%foundfireicon%" = 1) BEGIN
                 PATCH_PRINT "%SOURCE_FILE% error: Removing Protection from Fire Portrait..."
-                DELETE_BYTES ("%fx_off%" + ("%fireiconindex%" * 0x30)) 0x30
+                offset = "%fx_off%" + ("%fireiconindex%" * 0x30)
+                value  = 0x30
+                DELETE_BYTES offset value
+                SOURCE_SIZE = SOURCE_SIZE - value
                 PATCH_IF ("%abil_off%" > "%fx_off%") BEGIN
                   SET "abil_off" = "abil_off" - 0x30
                   WRITE_LONG 0x64 %abil_off%
@@ -2828,7 +2902,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
               PATCH_IF ("%foundcoldicon%" = 1) BEGIN
                 PATCH_PRINT "%SOURCE_FILE% error: Removing Protection from Cold Portrait..."
-                DELETE_BYTES ("%fx_off%" + ("%coldiconindex%" * 0x30)) 0x30
+                offset = "%fx_off%" + ("%coldiconindex%" * 0x30)
+                value  = 0x30
+                DELETE_BYTES offset value
+                SOURCE_SIZE = SOURCE_SIZE - value
                 PATCH_IF ("%abil_off%" > "%fx_off%") BEGIN
                   SET "abil_off" = "abil_off" - 0x30
                   WRITE_LONG 0x64 %abil_off%
@@ -4085,7 +4162,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                      ("%savtyp%" = "%eff_savtyp%") AND
                      ("%savbon%" = "%eff_savbon%") BEGIN
               PATCH_PRINT "%SOURCE_FILE% error: Effect #%index1% (Opcode %opcode%) matches Effect #%index%! Removing..."
-              DELETE_BYTES ("%fx_off%" + ("%index1%" * 0x30)) 0x30
+              offset = "%fx_off%" + ("%index1%" * 0x30)
+              value  = 0x30
+              DELETE_BYTES offset value
+              SOURCE_SIZE = SOURCE_SIZE - value
               PATCH_IF ("%abil_off%" > "%fx_off%") BEGIN
                 SET "abil_off" = "abil_off" - 0x30
                 WRITE_LONG 0x64 %abil_off%
@@ -4356,7 +4436,57 @@ BEGIN ~Spell Stuff - Spell Resource Fixer~
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
   PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
-    PATCH_INCLUDE ~lolfixer/lib/fj_spl_itm_reindex.tpp~
+    READ_LONG  0x64 "abil_off"
+    READ_SHORT 0x68 "abil_num"
+    READ_LONG  0x6a "fx_off"
+    READ_SHORT 0x70 "fx_num"
+    PATCH_IF ((abil_off > fx_off) AND (abil_num > 1)) BEGIN
+      READ_ASCII abil_off ~eh~ ELSE ~fail~ (0x28 * abil_num)
+      PATCH_IF (~%eh%~ STRING_EQUAL ~fail~) BEGIN
+        WHILE ((~%eh%~ STRING_EQUAL ~fail~) AND (abil_num > 0)) BEGIN
+          READ_ASCII abil_off ~eh~ ELSE ~fail~ (0x28 * abil_num)
+          abil_num -= 1
+        END
+      END
+      offset = abil_off
+      value  = 0x28 * abil_num
+      PATCH_PRINT "%SOURCE_FILE% error: Restructuring - Unused Ability Structure found! Trimming %value% bytes from offset %offset%..."
+      DELETE_BYTES offset value
+      SOURCE_SIZE = SOURCE_SIZE - value
+      abil_off = 0x72
+      WRITE_LONG 0x64 abil_off
+      WRITE_SHORT 0x68 abil_num
+      fx_off = (0x72 + (0x28 * abil_num))
+      WRITE_LONG 0x6a fx_off
+      PATCH_IF !(~%eh%~ STRING_EQUAL ~fail~) BEGIN
+        INSERT_BYTES abil_off (0x28 * abil_num)
+        WRITE_ASCIIE abil_off ~%eh%~
+      END
+    END ELSE PATCH_IF ((abil_off != 0x72) AND (abil_num = 0)) BEGIN
+      abil_off = 0x72
+      WRITE_LONG 0x64 abil_off
+    END
+    FOR (i1 = 0; i1 < (0x28 * abil_num); i1 += 0x28) BEGIN
+      WRITE_SHORT (abil_off + i1 + 0x20) fx_num
+      READ_SHORT (abil_off + i1 + 0x1e) cx
+      fx_num += cx
+    END
+    PATCH_IF ((abil_off + (0x28 * abil_num)) < fx_off) BEGIN
+      offset = abil_off + (0x28 * abil_num)
+      value  = fx_off - ((abil_off + (0x28 * abil_num)))
+      PATCH_PRINT "%SOURCE_FILE% error: Restructuring - Unused Inter-structural Bytes found! Trimming %value% bytes from offset %offset%..."
+      DELETE_BYTES offset value
+      SOURCE_SIZE = SOURCE_SIZE - value
+      fx_off = offset
+      WRITE_LONG 0x6a %fx_off%
+    END
+    PATCH_IF (SOURCE_SIZE > (0x72 + (0x28 * abil_num) + (0x30 * fx_num))) BEGIN
+      offset = 0x72 + (0x28 * abil_num) + (0x30 * fx_num)
+      value  = SOURCE_SIZE - (0x72 + (0x28 * abil_num) + (0x30 * fx_num))
+      PATCH_PRINT "%SOURCE_FILE% error: Restructuring - Unused Trailing Bytes found! Trimming %value% bytes from offset %offset%..."
+      DELETE_BYTES offset value
+      SOURCE_SIZE = SOURCE_SIZE - value
+    END
   END
 BUT_ONLY_IF_IT_CHANGES
 
