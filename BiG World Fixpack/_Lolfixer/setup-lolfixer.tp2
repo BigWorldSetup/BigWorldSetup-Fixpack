@@ -71,7 +71,7 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY tutu_convert_itm BEGIN
   _SW2H01    =>    SW2H01
 END
 
-COPY_EXISTING ~AA0602.ARE~ ~override~
+COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
   PATCH_IF (SOURCE_SIZE > 0x11b) THEN BEGIN
 
     // Script Assigner
