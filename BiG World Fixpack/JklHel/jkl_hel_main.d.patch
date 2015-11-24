@@ -1,0 +1,11 @@
+--- JklHel\dialogue\jkl_hel_main.d	Tue Mar 26 20:21:52 2013
++++ C:\BWP Patchstudio\patched files\JklHel\dialogue\jkl_hel_main.d	Tue Nov 24 21:16:36 2015
+@@ -654,7 +654,7 @@
+ Global("JKLHEL_BhaalReveal","GLOBAL",1)~
+ THEN JKLHELJ DeathTalk6
+ ~I shouldn't have doubted. I should have known better... I should have... damn!~
+-DO ~Global("JKL_Helarine_BG1_story3","GLOBAL",1)
++DO ~SetGlobal("JKL_Helarine_BG1_story3","GLOBAL",1)
+ SetGlobal("JKLHEL_BhaalReveal","GLOBAL",2)~
+ END
+ 

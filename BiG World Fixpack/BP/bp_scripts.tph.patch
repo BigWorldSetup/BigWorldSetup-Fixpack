@@ -5,7 +5,7 @@
  
  // But these won't work with them, so they need to be yanked like bad teeth!
 -ACTION_FOR_EACH bpcre IN ~haer10~ ~haer11~ ~haer13~ ~haer15~ ~haer19~ ~shoal~ ~tenya~ ~tenya2~ BEGIN
-+ACTION_FOR_EACH bpcre IN ~haer10~ ~haer11~ ~haer13~ ~haer15~ ~haer19~ ~razor~ ~sharte~ ~sharte12~ ~sharte4~ ~sharte6~ ~sharte8~ ~sharte9~ ~shoal~ ~tenya~ ~tenya2~ ~tresham1~ BEGIN
++ACTION_FOR_EACH bpcre IN ~bolivr09~ ~bolivr15~ ~bolivr20~ ~haer10~ ~haer11~ ~haer13~ ~haer15~ ~haer19~ ~razor~ ~sharte~ ~sharte12~ ~sharte4~ ~sharte6~ ~sharte8~ ~sharte9~ ~shoal~ ~tenya~ ~tenya2~ ~tresham1~ BEGIN
    ACTION_IF FILE_EXISTS_IN_GAME ~%bpcre%.cre~ BEGIN
      COPY_EXISTING ~%bpcre%.cre~ ~override~
        WRITE_ASCII 0x268 ~wtasight~ #8

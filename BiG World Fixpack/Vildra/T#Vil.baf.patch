@@ -7,7 +7,7 @@
 +!Global("T#VildraTalked","LOCALS",1)
  THEN
  RESPONSE #100
-+ etGlobal("T#VildraTalked","LOCALS",1)
++SetGlobal("T#VildraTalked","LOCALS",1)
  SetGlobal("Baf3","LOCALS",2)
  Interact(Player1)
  END

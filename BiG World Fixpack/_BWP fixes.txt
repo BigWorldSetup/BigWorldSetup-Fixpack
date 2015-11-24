@@ -1215,6 +1215,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: iwdification - IWDification Beta 3
+
+:: Angel's miscellaneous fixes
+:: http://gibberlings3.net/forums/index.php?showtopic=25470&p=238063
+
+
+----------------------------------------------------------------------------------------
+
+
 :: iwditempack - IWD Item Pack
 
 :: Lollorian's Blunt Ground Icon fix
@@ -1246,6 +1255,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's TP2 corrections
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=562853
+
+
+----------------------------------------------------------------------------------------
+
+
+:: JklHel - Helarine, Doomguide of Kelemvor NPC for BGEE Beta v1
+
+:: k4thos' fixes
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=582860
 
 
 ----------------------------------------------------------------------------------------

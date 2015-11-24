@@ -1,0 +1,20 @@
+--- JklHel\dialogue\jkl_hel_partyactions.D	Wed Mar 13 20:10:36 2013
++++ C:\BWP Patchstudio\patched files\JklHel\dialogue\jkl_hel_partyactions.D	Tue Nov 24 21:17:52 2015
+@@ -91,7 +91,7 @@
+ 
+ CHAIN
+ IF ~!Global("JKLHEL_Fired","GLOBAL",1)
+-!Area("AR2301")~
++!AreaCheck("AR2301")~
+ THEN JKLHELP LeaveParty
+ ~I'll not remain if you feel I'm not needed... I'll return to the Friendly Arm Inn. If you need my help again, you may find me there.~
+ DO ~SetGlobal("JKLHEL_Fired","GLOBAL",1)
+@@ -100,7 +100,7 @@
+ 
+ CHAIN
+ IF ~!Global("JKLHEL_Fired","GLOBAL",1)
+-Area("AR2301")~
++AreaCheck("AR2301")~
+ THEN JKLHELP LeaveParty
+ ~I'll not remain if you feel I'm not needed... I'll return to the Friendly Arm Inn. If you need my help again, you may find me there.~
+ DO ~SetGlobal("JKLHEL_Fired","GLOBAL",1)

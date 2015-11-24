@@ -1,0 +1,35 @@
+--- iwdification\setup-iwdification.tp2	Sun Aug 18 21:02:20 2013
++++ C:\BWP Patchstudio\patched files\iwdification\setup-iwdification.tp2	Tue Nov 24 21:07:45 2015
+@@ -5,7 +5,7 @@
+ 
+ AUTHOR ~pcamagna@yahoo.com~ // email address displayed if install fails
+ 
+-VERSION ~Beta 2~
++VERSION ~Beta 2 BWP Fix~
+ 
+ README ~iwdification/readme-iwdification.html~
+ 
+@@ -741,7 +741,7 @@
+              (FILE_EXISTS_IN_GAME ~µDAa1.bam~)) THEN BEGIN
+   
+     COPY ~iwdification/cre/cdm4yeti.cre~ ~override~
+-      SAY 0x0c @3051
++      SAY 0x08 @3051
+       SAY 0x0c @3051
+       WRITE_LONG 0x28 IDS_OF_SYMBOL (~animate~ ~TUNDRA_YETI~)
+   
+@@ -1889,12 +1889,12 @@
+          ~iwdification/wav/cdeffm47.wav~ ~override~
+   
+     COPY ~iwdification/cre/cdgibomb.cre~ ~override~
+-      SAY 0x0c @4076
++      SAY 0x08 @4076
+       SAY 0x0c @4076
+       WRITE_LONG 0x28 IDS_OF_SYMBOL (~animate~ ~BEETLE_BLACK~)
+   
+     COPY ~iwdification/cre/cdgiborb.cre~ ~override~
+-      SAY 0x0c @4077
++      SAY 0x08 @4077
+       SAY 0x0c @4077
+       WRITE_LONG 0x28 IDS_OF_SYMBOL (~animate~ ~BEETLE_BLACK~)
+   

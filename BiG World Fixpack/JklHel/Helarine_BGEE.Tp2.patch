@@ -1,0 +1,11 @@
+--- JklHel\Helarine_BGEE.Tp2	Fri Apr 12 17:03:28 2013
++++ C:\BWP Patchstudio\patched files\JklHel\Helarine_BGEE.Tp2	Tue Nov 24 21:15:19 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~JklHel/backup~
+  
+ AUTHOR ~Jackkel Dragon~
+- 
++VERSION ~Beta v1 BWP Fix~
+ BEGIN ~Helarine for BGEE (alpha)~
+ 
+ // stolen from requiem's kitpack
