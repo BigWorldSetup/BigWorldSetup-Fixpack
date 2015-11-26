@@ -1,0 +1,20 @@
+--- bg1ub\setup-bg1ub.tp2	Sun Nov 15 09:15:40 2015
++++ C:\BWP Patchstudio\patched files\bg1ub\setup-bg1ub.tp2	Thu Nov 26 20:36:47 2015
+@@ -276,7 +276,7 @@
+ UNDEDHIT.EFF
+ 
+ 
+-VERSION ~v14.0_beta_151114~
++VERSION ~v14.0_beta_151114 BWP Fix~
+ README ~bg1ub/BG1UB-Readme.html~
+ 
+ ALWAYS
+@@ -3520,7 +3520,7 @@
+ 
+ // Corrections to Lahl's dialog on Isle of Balduran
+ ACTION_IF (GAME_IS ~totsc tutu_totsc bgt~) THEN BEGIN
+-	COMPILE EVALUATE_BUFFER ~/bg1ub/dialogues/ublahl.d~
++	COMPILE EVALUATE_BUFFER ~bg1ub/dialogues/ublahl.d~
+ END // Lahl correction
+ 
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
