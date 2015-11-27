@@ -1,7 +1,7 @@
 BACKUP ~Area_Patcher/backup~
 AUTHOR ~Nightfarer - piol.luca@gmail.com~
 //README ~Area_Patcher/readme.html~
-VERSION ~ALPHA 4~
+VERSION ~ALPHA 6~
 
 ASK_EVERY_COMPONENT
 
@@ -39,11 +39,11 @@ END
 
 BEGIN ~Restore NeJ AR9799 - Exit0070~
 REQUIRE_COMPONENT ~setup-area_patcher.tp2~ 0 ~You must install the dummy component before any other thing.~
-REQUIRE_PREDICATE ((MOD_IS_INSTALLED ~setup-nej2v68.tp2~ 0) OR ((MOD_IS_INSTALLED ~setup-nej2v691.tp2~ 0) AND (MOD_IS_INSTALLED ~setup-nej2v694.tp2~ 0))) AND (GAME_IS ~BGT~) ~This component is needed only if you have installed Never Ending Journey.~
+REQUIRE_PREDICATE ((MOD_IS_INSTALLED ~setup-nej2.tp2~ 0) OR (MOD_IS_INSTALLED ~setup-nej2v602.tp2~ 0) OR (MOD_IS_INSTALLED ~setup-nej2v68.tp2~ 0)) ~This component is needed only if you have installed Never Ending Journey pre-691.~
 GROUP ~Never ending Journey~
 DESIGNATED 1000
-ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher~ 0) AND NOT ((MOD_IS_INSTALLED ~setup-nej2v68.tp2~ 0) OR ((MOD_IS_INSTALLED ~setup-nej2v691.tp2~ 0) AND (MOD_IS_INSTALLED ~setup-nej2v691.tp2~ 0)))    BEGIN
-  FAIL ~BGT and Never ending Journey are required to install this component. Please exit and begin again.~
+ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher~ 0) AND NOT ((MOD_IS_INSTALLED ~setup-nej2.tp2~ 0) OR (MOD_IS_INSTALLED ~setup-nej2v602.tp2~ 0) OR (MOD_IS_INSTALLED ~setup-nej2v68.tp2~ 0)) BEGIN
+  FAIL ~BGT and Never ending Journey pre-691 are required to install this component.~
 END
 
 COPY_EXISTING ~AR9799.are~ ~override~
@@ -71,11 +71,11 @@ BUT_ONLY_IF_IT_CHANGES
 
 BEGIN ~Restore BGT - AR9799 - Exit9900~
 REQUIRE_COMPONENT ~setup-area_patcher.tp2~ 0 ~You must install the dummy component before any other thing.~
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~setup-nej2v691.tp2~ 0) AND (MOD_IS_INSTALLED ~setup-nej2v694.tp2~ 0) AND (GAME_IS ~BGT~) ~This component is needed only if you have installed NeJ v6.91/v6.94.~
+REQUIRE_PREDICATE ((MOD_IS_INSTALLED ~setup-nej2v68.tp2~ 0)) ~This component is needed only if you have installed Never Ending Journey v68.~
 GROUP ~BGT~
 DESIGNATED 2000
-ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher~ 0) AND NOT (MOD_IS_INSTALLED ~setup-nej2v691.tp2~ 0) AND NOT (MOD_IS_INSTALLED ~setup-nej2v694.tp2~ 0) BEGIN
-  FAIL ~BGT and Never ending Journey v6.91/v6.94 are required to install this component. Please exit and begin again.~
+ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher~ 0) OR NOT ((MOD_IS_INSTALLED ~setup-nej2v68.tp2~ 0)) BEGIN
+  FAIL ~BGT and Never ending Journey v68 are required to install this component.~
 END
 
 COPY_EXISTING ~AR9799.are~ ~override~
@@ -103,11 +103,11 @@ BUT_ONLY_IF_IT_CHANGES
 
 BEGIN ~Fix Jarls BGT Adventure Pack - JA#C05.ARE - Trigger 0 - Door8100~
 REQUIRE_COMPONENT ~setup-area_patcher.tp2~ 0 ~You must install the dummy component before any other thing.~
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~setup-ja#bgt_advpack.tp2~ 1) AND (GAME_IS ~BGT~) ~This component is needed only if you have installed Jarls BGT Adventure Pack.~
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~setup-ja#bgt_advpack.tp2~ 1) ~This component is needed only if you have installed Jarls BGT Adventure Pack.~
 GROUP ~Jarls BGT Adventure Pack~
 DESIGNATED 3000
-ACTION_IF NOT (MOD_IS_INSTALLED ~setup-ja#bgt_advpack~ 2) AND NOT (GAME_IS ~BGT~) BEGIN
-  FAIL ~BGT and Jarls BGT Adventure Pack 1.61 are required to install this component. Please exit and begin again.~
+ACTION_IF NOT (MOD_IS_INSTALLED ~setup-ja#bgt_advpack~ 1) OR NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher~ 0) BEGIN
+  FAIL ~Jarls BGT Adventure Pack 1.61 is required to install this component.~
 END
 
 COPY_EXISTING ~JA#C05.are~ ~override~
@@ -162,11 +162,11 @@ BUT_ONLY_IF_IT_CHANGES
 
 BEGIN ~Restore Shadows over Soubar AR0700 Travel Trigger~
 REQUIRE_COMPONENT ~setup-area_patcher.tp2~ 0 ~You must install the dummy component before any other thing.~
-REQUIRE_PREDICATE (GAME_IS ~BGT~) AND (MOD_IS_INSTALLED ~setup-sos.tp2~ 0) ~This component is needed only if you have installed Shadows over Soubar.~
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~setup-sos.tp2~ 0) ~This component is needed only if you have installed Shadows over Soubar.~
 GROUP ~Shadows over Soubar~
 DESIGNATED 4000
-ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher~ 0) AND NOT (MOD_IS_INSTALLED ~setup-sos.tp2~ 0) BEGIN
-  FAIL ~BGT and Shadows over Soubar are required to install this component. Please exit and begin again.~
+ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher~ 0) OR NOT (MOD_IS_INSTALLED ~setup-sos.tp2~ 0) BEGIN
+  FAIL ~Shadows over Soubar is required to install this component.~
 END
 
 //(REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~AR4230.ARE~)
