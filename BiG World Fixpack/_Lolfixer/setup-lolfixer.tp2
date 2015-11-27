@@ -1,6 +1,6 @@
 BACKUP ~lolfixer/backup~
 AUTHOR ~Lollorian~
-VERSION ~22112015~
+VERSION ~28112015~
 
 BEGIN ~Area Stuff - MAJESTIC Area Fixer~
   GROUP ~Area Stuff~
@@ -94,12 +94,12 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
       SET "unassigned" = 1
     END
     PATCH_IF ("%unassigned%" = 1) BEGIN
-      PATCH_PRINT "%SOURCE_FILE% error: Area Script (%SOURCE_RES%.bcs) assigned"
+      PATCH_PRINT "%SOURCE_FILE% issue: Area Script (%SOURCE_RES%.bcs) assigned"
       WRITE_ASCIIE 0x94 ~%SOURCE_RES%~ #8
     END ELSE
     PATCH_IF ("%missing%" = 1) BEGIN
       PATCH_IF NOT (("%script%" STRING_EQUAL_CASE "NONE") OR ("%script%" STRING_EQUAL_CASE "")) BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: Missing area Script (%script%.bcs) created"
+        PATCH_PRINT "%SOURCE_FILE% issue: Missing area Script (%script%.bcs) created"
         INNER_ACTION BEGIN
           <<<<<<<< %script%.BAF
 >>>>>>>>
@@ -107,7 +107,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
         END
       END ELSE
       BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: Missing area Script (%SOURCE_RES%.bcs) created and assigned"
+        PATCH_PRINT "%SOURCE_FILE% issue: Missing area Script (%SOURCE_RES%.bcs) created and assigned"
         INNER_ACTION BEGIN
           <<<<<<<< %SOURCE_RES%.BAF
 >>>>>>>>
@@ -135,7 +135,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
         READ_LONG  ("%cont_off%" + 0x44 + (0xc0 * "%index%")) "cont_itm_num"
         PATCH_IF ("%bound_a%" = 0) AND ("%bound_b%" = 0) AND ("%bound_c%" = 0) AND ("%bound_d%" = 0) AND ("%cont_type%" != 4) AND ("%cont_itm_num%" > 0) BEGIN
           WRITE_SHORT ("%cont_off%" + 0x24 + (0xc0 * "%index%")) 4
-          PATCH_PRINT "%SOURCE_FILE% error: Container #%index% has no bounding box but contains items! Dropping all items to ground..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Container #%index% has no bounding box but contains items! Dropping all items to ground..."
         END
 
         // Invalid container content checker
@@ -153,11 +153,11 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
               PATCH_IF ("%resref%" STRING_EQUAL_CASE "%tutu_itm%") AND (FILE_EXISTS_IN_GAME "%bgt_itm%.itm") BEGIN
                 WRITE_ASCIIE ("%itm_off%" + (("%index2%" + "%cont_itm_idx%") * 0x14)) "%bgt_itm%" #8
                 SET "converted" = 1
-                PATCH_PRINT "%SOURCE_FILE% error: Container #%index% Item #%index2% had Tutu item! (%resref% -> %bgt_itm%)!"
+                PATCH_PRINT "%SOURCE_FILE% issue: Container #%index% Item #%index2% had Tutu item! (%resref% -> %bgt_itm%)!"
               END
             END
             PATCH_IF ("%converted%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Container #%index% Item #%index2% does not exist (%resref%.itm)! Removing Item #%index2%..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Container #%index% Item #%index2% does not exist (%resref%.itm)! Removing Item #%index2%..."
               LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
                 INT_VAR fj_delete_mode    = "%index2%" + "%cont_itm_idx%"
                 STR_VAR fj_structure_type = ~itm~
@@ -190,7 +190,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Ambient #%index% does not exist (%resref%.wav)! Nulling..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Ambient #%index% does not exist (%resref%.wav)! Nulling..."
               WRITE_ASCII ("%amb_off%" + 0x30 + ("%index2%" * 0x08) + (0xd4 * "%index%")) ~NONE~ #8
             END
           END
@@ -212,7 +212,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
             SET "exists" = 1
           END
           PATCH_IF (("%exists%" = 0) AND (("%flags%" BAND 0b00000001) = 0b00000001)) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Actor #%index% does not exist (%resref%.cre)! Removing actor..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Actor #%index% does not exist (%resref%.cre)! Removing actor..."
             LPF fj_are_structure
               INT_VAR fj_delete_mode    = "%index%"
               STR_VAR fj_structure_type = actor
@@ -236,7 +236,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
         READ_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "resref" // cre file
         PATCH_IF NOT (("%resref%" STRING_EQUAL_CASE "NONE") OR ("%resref%" STRING_EQUAL_CASE "")) BEGIN
           PATCH_IF (("%flags%" BAND 0b00000001) = 0b00000000) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Actor #%index% (%resref%.CRE) exists and should not be attached to the ARE..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Actor #%index% (%resref%.CRE) exists and should not be attached to the ARE..."
             WRITE_BYTE ("%actor_off%" + 0x28 + (0x110 * "%index%")) ("%flags%" BOR 0b00000001)
           END
         END
@@ -244,11 +244,11 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
         // Actor Removal Prevention
         READ_LONG  ("%actor_off%" + 0x38 + (0x110 * "%index%")) "removal_timer"
         PATCH_IF ("%removal_timer%" = 0) BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Actor #%index% set to disappear after %removal_timer% seconds! Setting to -1..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Actor #%index% set to disappear after %removal_timer% seconds! Setting to -1..."
           WRITE_LONG ("%actor_off%" + 0x38 + (0x110 * "%index%")) 0xffffffff
         END ELSE
         PATCH_IF ("%removal_timer%" != 0xffffffff) BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Actor #%index% set to disappear after %removal_timer% seconds!"
+          PATCH_PRINT "%SOURCE_FILE% issue: Actor #%index% set to disappear after %removal_timer% seconds!"
 //        WRITE_LONG ("%actor_off%" + 0x38 + (0x110 * "%index%")) 0xffffffff
         END
       END
@@ -270,7 +270,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Spawn Point #%index% creature file does not exist (%resref%.cre)! Nulling..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Spawn Point #%index% creature file does not exist (%resref%.cre)! Nulling..."
               WRITE_ASCII ("%spawn_off%" + 0x24 + ("%index2%" * 0x08) + ("%index%" * 0xc8)) ~NONE~ #8
             END
           END
@@ -283,7 +283,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
           END
         END
         PATCH_IF ("%none_count%" = 10) BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Spawn Point #%index% has no creatures to spawn! Removing spawn entry..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Spawn Point #%index% has no creatures to spawn! Removing spawn entry..."
           LPF fj_are_structure
             INT_VAR fj_delete_mode    = "%index%"
             STR_VAR fj_structure_type = spawn
@@ -308,7 +308,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
             SET "exists" = 1
           END
           PATCH_IF ("%exists%" = 0) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Rest Spawn creature file does not exist (%resref%.cre)! Nulling..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Rest Spawn creature file does not exist (%resref%.cre)! Nulling..."
             WRITE_ASCII ("%rest_off%" + 0x48 + ("%index%" * 0x08)) "NONE" #8
           END
         END
@@ -322,7 +322,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
       END
       READ_SHORT ("%rest_off%" + 0x98) "spawncount"
       PATCH_IF (("%none_count%" = 10) AND ("%spawncount%" != 0)) BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: No creatures in Rest Spawn Entry but area still set to spawn something! Setting number of spawnable creatures to 0..."
+        PATCH_PRINT "%SOURCE_FILE% issue: No creatures in Rest Spawn Entry but area still set to spawn something! Setting number of spawnable creatures to 0..."
         WRITE_SHORT ("%rest_off%" + 0x98) 0
       END
     END
@@ -357,27 +357,27 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
       READ_LONG  0x1c8 ~soundreplace5~
 
       PATCH_IF ("%soundreplace%" > 0) THEN BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : PICKED_POCKET -> EXISTANCE1"
+        PATCH_PRINT "%SOURCE_FILE% issue: Soundset moved : PICKED_POCKET -> EXISTANCE1"
         WRITE_LONG 0x1b8 ~-1~
         WRITE_LONG 0x1bc %soundreplace%
       END
       PATCH_IF ("%soundreplace2%" > 0) THEN BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE1 -> EXISTANCE2"
+        PATCH_PRINT "%SOURCE_FILE% issue: Soundset moved : EXISTANCE1 -> EXISTANCE2"
         WRITE_LONG 0x1bc %soundreplace%
         WRITE_LONG 0x1c0 %soundreplace2%
       END
       PATCH_IF ("%soundreplace3%" > 0) THEN BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE2 -> EXISTANCE3"
+        PATCH_PRINT "%SOURCE_FILE% issue: Soundset moved : EXISTANCE2 -> EXISTANCE3"
         WRITE_LONG 0x1c0 %soundreplace2%
         WRITE_LONG 0x1c4 %soundreplace3%
       END
       PATCH_IF ("%soundreplace4%" > 0) THEN BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE3 -> EXISTANCE4"
+        PATCH_PRINT "%SOURCE_FILE% issue: Soundset moved : EXISTANCE3 -> EXISTANCE4"
         WRITE_LONG 0x1c4 %soundreplace3%
         WRITE_LONG 0x1c8 %soundreplace4%
       END
       PATCH_IF ("%soundreplace5%" > 0) THEN BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: Soundset moved : EXISTANCE4 -> EXISTANCE5"
+        PATCH_PRINT "%SOURCE_FILE% issue: Soundset moved : EXISTANCE4 -> EXISTANCE5"
         WRITE_LONG 0x1c8 %soundreplace4%
         WRITE_LONG 0x1cc %soundreplace5%
       END
@@ -399,7 +399,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
       READ_ASCII ("%mem_spl_off%" +        (0x0c * ("%spl_tbl_idx%" + "%spl_tbl_cnt%" + 2))) "resref3" ELSE 0
       READ_ASCII ("%mem_spl_off%" +        (0x0c * ("%spl_tbl_idx%" + "%spl_tbl_cnt%" + 3))) "resref4" ELSE 0
       PATCH_IF ("%resref1%" STRING_EQUAL_CASE "SPCL900") BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: Known ERROR in SENDRO03.CRE! (%resref1%, %resref2%, %resref3%, %resref4%) unaccounted for! Fixing..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Known ERROR in SENDRO03.CRE! (%resref1%, %resref2%, %resref3%, %resref4%) unaccounted for! Fixing..."
         WRITE_SHORT ("%meminfo_off%" + 0x04 + (0x10 * ("%meminfo_num%" - 1))) 6
         WRITE_SHORT ("%meminfo_off%" + 0x0c + (0x10 * ("%meminfo_num%" - 1))) 6
       END
@@ -421,7 +421,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
         READ_SHORT ("%slot_off%" + (0x02 * "%index%")) "ref" ELSE 0xffff
         PATCH_IF ("%ref%" != 0xffff) BEGIN
           PATCH_IF ((%ref% + 1) > %itm_num%) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Inventory Item Slot #%index% refers to an item outside the Item Table! Setting to -1..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Inventory Item Slot #%index% refers to an item outside the Item Table! Setting to -1..."
             WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
           END
         END
@@ -451,7 +451,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
             END
           END
           PATCH_IF %critical% = 1 BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Inventory Item #%index% (%item%.ITM) is not actually in inventory! Potentially quest-breaking item! Removing..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Inventory Item #%index% (%item%.ITM) is not actually in inventory! Potentially quest-breaking item! Removing..."
             REMOVE_CRE_ITEM ~%item%~
             SET "index" = 0 - 1
             READ_LONG  0x2b8 "slot_off" ELSE 0
@@ -466,7 +466,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
               END
             END
             PATCH_IF ("%foundslot%" > 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Inventory Item #%index% (%item%.ITM) is not actually in inventory! Adding to Inventory Slot #%foundslot%..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Inventory Item #%index% (%item%.ITM) is not actually in inventory! Adding to Inventory Slot #%foundslot%..."
               WRITE_SHORT ("%slot_off%" + (0x02 * "%foundslot%")) "index"
             END ELSE
             BEGIN
@@ -476,7 +476,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "foundslot" = "index1"
                 END
               END
-              PATCH_PRINT "%SOURCE_FILE% error: Inventory Item #%index% (%item%.ITM) is not actually in inventory! No free inventory slot found! Adding to Slot #%foundslot%..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Inventory Item #%index% (%item%.ITM) is not actually in inventory! No free inventory slot found! Adding to Slot #%foundslot%..."
               WRITE_SHORT ("%slot_off%" + (0x02 * "%foundslot%")) "index"
             END
           END
@@ -585,11 +585,11 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
             PATCH_IF ("%item%" STRING_EQUAL_CASE "%tutu_itm%") AND (FILE_EXISTS_IN_GAME "%bgt_itm%.itm") BEGIN
               WRITE_ASCIIE ("%itm_off%" + (0x14 * "%index%")) "%bgt_itm%" #8
               SET "converted" = 1
-              PATCH_PRINT "%SOURCE_FILE% error: Replacing %tutu_itm%.itm with %bgt_itm%.itm..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Replacing %tutu_itm%.itm with %bgt_itm%.itm..."
             END
           END
           PATCH_IF ("%converted%" = 0) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Inventory Item #%index% (%item%.itm) does not exist! Removing item..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Inventory Item #%index% (%item%.itm) does not exist! Removing item..."
             REMOVE_CRE_ITEM ~%item%~
             SET "index" = 0 - 1
             READ_LONG  0x2c0 "itm_num"
@@ -657,7 +657,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid HELM: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid HELM: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -665,7 +665,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid HELM: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid HELM: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -679,7 +679,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid ARMOR: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid ARMOR: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -687,7 +687,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid ARMOR: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid ARMOR: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -701,7 +701,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: 2-HANDED OFFHAND: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: 2-HANDED OFFHAND: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -709,7 +709,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: 2-HANDED OFFHAND: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: 2-HANDED OFFHAND: %item%.itm! Cannot move because Inventory full!~
                 END
               END ELSE
               PATCH_IF (("%type%" != 12) AND (("%flags%" BAND 0b00010100) = 0b00000100)) AND (("%cre_flags%" BAND 0b00001000) = 0b00000000) BEGIN // if not shield, check for valid melee abilities
@@ -732,7 +732,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index3" = "index3" - 1
                   PATCH_IF ("%ref2%" = 0xffff) BEGIN
                     SET "slot" = "index3" - 20
-                    PATCH_PRINT ~%SOURCE_FILE% error: Invalid OFFHAND: %item%.itm! Moving to Inventory Slot #%slot%~
+                    PATCH_PRINT ~%SOURCE_FILE% issue: Invalid OFFHAND: %item%.itm! Moving to Inventory Slot #%slot%~
                     WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                     WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                     WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -740,7 +740,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                     SET "index" = 0 - 1
                   END ELSE
                   BEGIN
-                    PATCH_PRINT ~%SOURCE_FILE% error: Invalid OFFHAND: %item%.itm! Cannot move because Inventory full!~
+                    PATCH_PRINT ~%SOURCE_FILE% issue: Invalid OFFHAND: %item%.itm! Cannot move because Inventory full!~
                   END
                 END
               END ELSE
@@ -805,7 +805,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index3" = "index3" - 1
                   PATCH_IF ("%ref2%" = 0xffff) BEGIN
                     SET "slot" = "index3" - 20
-                    PATCH_PRINT ~%SOURCE_FILE% error: OFFHAND with 2-HAND: %item%.itm! Moving to Inventory Slot #%slot%~
+                    PATCH_PRINT ~%SOURCE_FILE% issue: OFFHAND with 2-HAND: %item%.itm! Moving to Inventory Slot #%slot%~
                     WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                     WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                     WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -813,7 +813,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                     SET "index" = 0 - 1
                   END ELSE
                   BEGIN
-                    PATCH_PRINT ~%SOURCE_FILE% error: OFFHAND with 2-HAND: %item%.itm! Cannot move because Inventory full!~
+                    PATCH_PRINT ~%SOURCE_FILE% issue: OFFHAND with 2-HAND: %item%.itm! Cannot move because Inventory full!~
                   END
                 END
               END
@@ -828,7 +828,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid GLOVES: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid GLOVES: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -836,7 +836,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid GLOVES: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid GLOVES: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -850,7 +850,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid LRING: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid LRING: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -858,7 +858,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid LRING: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid LRING: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -872,7 +872,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid RRING: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid RRING: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -880,7 +880,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid RRING: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid RRING: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -894,7 +894,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid AMULET: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid AMULET: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -902,7 +902,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid AMULET: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid AMULET: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -916,7 +916,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid BELT: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid BELT: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -924,7 +924,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid BELT: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid BELT: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -938,7 +938,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid BOOTS: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid BOOTS: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -946,7 +946,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid BOOTS: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid BOOTS: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -975,7 +975,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid WEAPON1: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid WEAPON1: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -983,7 +983,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid WEAPON1: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid WEAPON1: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -1012,7 +1012,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid WEAPON2: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid WEAPON2: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -1020,7 +1020,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid WEAPON2: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid WEAPON2: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -1049,7 +1049,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid WEAPON3: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid WEAPON3: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -1057,7 +1057,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid WEAPON3: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid WEAPON3: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -1086,7 +1086,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid WEAPON4: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid WEAPON4: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -1094,7 +1094,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid WEAPON4: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid WEAPON4: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -1108,7 +1108,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid QUIVER1: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid QUIVER1: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -1116,7 +1116,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid QUIVER1: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid QUIVER1: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -1130,7 +1130,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid QUIVER2: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid QUIVER2: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -1138,7 +1138,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid QUIVER2: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid QUIVER2: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -1152,7 +1152,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid QUIVER3: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid QUIVER3: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -1160,7 +1160,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid QUIVER3: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid QUIVER3: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -1174,7 +1174,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid QUIVER4: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid QUIVER4: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -1182,7 +1182,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid QUIVER4: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid QUIVER4: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
@@ -1196,7 +1196,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                 SET "index3" = "index3" - 1
                 PATCH_IF ("%ref2%" = 0xffff) BEGIN
                   SET "slot" = "index3" - 20
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid CLOAK: %item%.itm! Moving to Inventory Slot #%slot%~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid CLOAK: %item%.itm! Moving to Inventory Slot #%slot%~
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                   WRITE_SHORT ("%slot_off%" + (0x02 * "%index3%")) "ref"
                   WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -1204,12 +1204,12 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                   SET "index" = 0 - 1
                 END ELSE
                 BEGIN
-                  PATCH_PRINT ~%SOURCE_FILE% error: Invalid CLOAK: %item%.itm! Cannot move because Inventory full!~
+                  PATCH_PRINT ~%SOURCE_FILE% issue: Invalid CLOAK: %item%.itm! Cannot move because Inventory full!~
                 END
               END
             END
             PATCH_IF ((("%type%" =  2) AND ("%armor%" = 0)) AND (("%flags%" BAND 0b00010100) = 0b00000100)) AND ("%index%" > 17) BEGIN
-              PATCH_PRINT ~%SOURCE_FILE% error: Equippable items in inventory: %item%.itm! Equipping ARMOR~
+              PATCH_PRINT ~%SOURCE_FILE% issue: Equippable items in inventory: %item%.itm! Equipping ARMOR~
               WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
               WRITE_SHORT ("%slot_off%" + (0x02))             "ref"
               SET "armor" = 1
@@ -1217,7 +1217,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
             PATCH_IF (((("%type%" =  5) OR
                         ("%type%" = 14) OR
                         ("%type%" = 31)) AND ("%quiver1%" = 0) AND (("%flags%" BAND 0b00010100) = 0b00000100)) AND ("%index%" > 17)) BEGIN
-              PATCH_PRINT ~%SOURCE_FILE% error: Equippable items in inventory: %item%.itm! Equipping QUIVER1~
+              PATCH_PRINT ~%SOURCE_FILE% issue: Equippable items in inventory: %item%.itm! Equipping QUIVER1~
               WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
               WRITE_SHORT ("%slot_off%" + (0x02 * 13))        "ref"
               SET "quiver1" = 1
@@ -1225,7 +1225,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
             PATCH_IF (((("%type%" =  5) OR
                         ("%type%" = 14) OR
                         ("%type%" = 31)) AND ("%quiver2%" = 0) AND (("%flags%" BAND 0b00010100) = 0b00000100)) AND ("%index%" > 17)) BEGIN
-              PATCH_PRINT ~%SOURCE_FILE% error: Equippable items in inventory: %item%.itm! Equipping QUIVER2~
+              PATCH_PRINT ~%SOURCE_FILE% issue: Equippable items in inventory: %item%.itm! Equipping QUIVER2~
               WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
               WRITE_SHORT ("%slot_off%" + (0x02 * 14))        "ref"
               WRITE_BYTE  ("%itm_off%" + 0x10 + (0x14 * "%ref%")) ("%cre_flags%" BOR 0b00000010)
@@ -1234,7 +1234,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
             PATCH_IF (((("%type%" =  5) OR
                         ("%type%" = 14) OR
                         ("%type%" = 31)) AND ("%quiver3%" = 0) AND (("%flags%" BAND 0b00010100) = 0b00000100)) AND ("%index%" > 17)) BEGIN
-              PATCH_PRINT ~%SOURCE_FILE% error: Equippable items in inventory: %item%.itm! Equipping QUIVER3~
+              PATCH_PRINT ~%SOURCE_FILE% issue: Equippable items in inventory: %item%.itm! Equipping QUIVER3~
               WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
               WRITE_SHORT ("%slot_off%" + (0x02 * 15))        "ref"
               SET "quiver3" = 1
@@ -1242,13 +1242,13 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
             PATCH_IF (((("%type%" =  5) OR
                         ("%type%" = 14) OR
                         ("%type%" = 31)) AND ("%quiver4%" = 0)) AND (("%flags%" BAND 0b00010100) = 0b00000100) AND ("%index%" > 17)) BEGIN
-              PATCH_PRINT ~%SOURCE_FILE% error: Equippable items in inventory: %item%.itm! Equipping QUIVER4~
+              PATCH_PRINT ~%SOURCE_FILE% issue: Equippable items in inventory: %item%.itm! Equipping QUIVER4~
               WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
               WRITE_SHORT ("%slot_off%" + (0x02 * 16))        "ref"
               SET "quiver4" = 1
             END ELSE
             PATCH_IF ((("%type%" =  7) AND ("%helm%" = 0)) AND (("%flags%" BAND 0b00010100) = 0b00000100)) AND ("%index%" > 17) BEGIN
-              PATCH_PRINT ~%SOURCE_FILE% error: Equippable items in inventory: %item%.itm! Equipping HELM~
+              PATCH_PRINT ~%SOURCE_FILE% issue: Equippable items in inventory: %item%.itm! Equipping HELM~
               WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
               WRITE_SHORT ("%slot_off%")                      "ref"
               SET "helm" = 1
@@ -1271,7 +1271,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                         ("%type%" = 30) OR // halberd
                         ("%type%" = 44)) AND ("%weapon1%" = 0) AND (("%flags%" BAND 0b00010100) = 0b00000100) AND ("%index%" > 17)))  BEGIN
               PATCH_IF ((("%flags%" BAND 0b00000010) != 0b00000010) AND ("%offhand%" = 0)) BEGIN
-                PATCH_PRINT ~%SOURCE_FILE% error: Equippable items in inventory: %item%.itm! Equipping WEAPON1~
+                PATCH_PRINT ~%SOURCE_FILE% issue: Equippable items in inventory: %item%.itm! Equipping WEAPON1~
                 WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                 WRITE_SHORT ("%slot_off%" + (0x02 * 9))         "ref"
                 SET "weapon1" = 1
@@ -1295,7 +1295,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                         ("%type%" = 30) OR // halberd
                         ("%type%" = 44)) AND ("%weapon2%" = 0) AND (("%flags%" BAND 0b00010100) = 0b00000100) AND ("%index%" > 17)))  BEGIN
               PATCH_IF ((("%flags%" BAND 0b00000010) != 0b00000010) AND ("%offhand%" = 0)) BEGIN
-                PATCH_PRINT ~%SOURCE_FILE% error: Equippable items in inventory: %item%.itm! Equipping WEAPON2~
+                PATCH_PRINT ~%SOURCE_FILE% issue: Equippable items in inventory: %item%.itm! Equipping WEAPON2~
                 WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                 WRITE_SHORT ("%slot_off%" + (0x02 * 10))        "ref"
                 SET "weapon2" = 1
@@ -1319,7 +1319,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                         ("%type%" = 30) OR // halberd
                         ("%type%" = 44)) AND ("%weapon3%" = 0) AND (("%flags%" BAND 0b00010100) = 0b00000100) AND ("%index%" > 17)))  BEGIN
               PATCH_IF ((("%flags%" BAND 0b00000010) != 0b00000010) AND ("%offhand%" = 0)) BEGIN
-                PATCH_PRINT ~%SOURCE_FILE% error: Equippable items in inventory: %item%.itm! Equipping WEAPON3~
+                PATCH_PRINT ~%SOURCE_FILE% issue: Equippable items in inventory: %item%.itm! Equipping WEAPON3~
                 WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                 WRITE_SHORT ("%slot_off%" + (0x02 * 11))        "ref"
                 SET "weapon3" = 1
@@ -1343,14 +1343,14 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                         ("%type%" = 30) OR // halberd
                         ("%type%" = 44)) AND ("%weapon4%" = 0) AND (("%flags%" BAND 0b00010100) = 0b00000100) AND ("%index%" > 17)))  BEGIN
               PATCH_IF ((("%flags%" BAND 0b00000010) != 0b00000010) AND ("%offhand%" = 0)) BEGIN
-                PATCH_PRINT ~%SOURCE_FILE% error: Equippable items in inventory: %item%.itm! Equipping WEAPON4~
+                PATCH_PRINT ~%SOURCE_FILE% issue: Equippable items in inventory: %item%.itm! Equipping WEAPON4~
                 WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
                 WRITE_SHORT ("%slot_off%" + (0x02 * 12))        "ref"
                 SET "weapon4" = 1
               END
             END ELSE
             PATCH_IF ((("%type%" = 12) AND ("%offhand%" = 0) AND ("2handedequip" = 0)) AND (("%flags%" BAND 0b00010100) = 0b00000100)) AND ("%index%" > 17) BEGIN
-              PATCH_PRINT ~%SOURCE_FILE% error: Equippable items in inventory: %item%.itm! Equipping SHIELD~
+              PATCH_PRINT ~%SOURCE_FILE% issue: Equippable items in inventory: %item%.itm! Equipping SHIELD~
               WRITE_SHORT ("%slot_off%" + (0x02 * "%index%")) 0xffff
               WRITE_SHORT ("%slot_off%" + (0x02 * 2))         "ref"
               SET "offhand" = 1
@@ -1378,29 +1378,29 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
         END
         PATCH_IF ("%exists%" = 0) BEGIN
           PATCH_IF ("%script%" STRING_EQUAL_CASE "_DPLAYER") BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Non-existent script (%script%.BCS) changed into DPLAYER.BCS..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Non-existent script (%script%.BCS) changed into DPLAYER.BCS..."
             WRITE_ASCII (0x248 + (0x08 * "%index%")) ~DPLAYER~ #8
           END ELSE
           PATCH_IF ("%script%" STRING_EQUAL_CASE "BPMAG12D") BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Non-existent script (%script%.BCS) changed into MAGE12D.BCS..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Non-existent script (%script%.BCS) changed into MAGE12D.BCS..."
             WRITE_ASCII (0x248 + (0x08 * "%index%")) ~MAGE12D~ #8
           END ELSE
           PATCH_IF ("%script%" STRING_EQUAL_CASE "BPMAG14D") BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Non-existent script (%script%.BCS) changed into MAGE14D.BCS..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Non-existent script (%script%.BCS) changed into MAGE14D.BCS..."
             WRITE_ASCII (0x248 + (0x08 * "%index%")) ~MAGE14D~ #8
           END ELSE
           PATCH_IF ("%script%" STRING_EQUAL_CASE "BPWDASGT") BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Non-existent script (%script%.BCS) changed into WDASIGHT.BCS..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Non-existent script (%script%.BCS) changed into WDASIGHT.BCS..."
             WRITE_ASCII (0x248 + (0x08 * "%index%")) ~WDASIGHT~ #8
           END ELSE
           PATCH_IF ("%script%" STRING_EQUAL_CASE "BPWTSIGT") OR
                    ("%script%" STRING_EQUAL_CASE "WTSIGHT") OR
                    ("%script%" STRING_EQUAL_CASE "WSASIGHT") BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Non-existent script (%script%.BCS) changed into WTASIGHT.BCS..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Non-existent script (%script%.BCS) changed into WTASIGHT.BCS..."
             WRITE_ASCII (0x248 + (0x08 * "%index%")) ~WTASIGHT~ #8
           END ELSE
           BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Non-existent script (%script%.BCS) nulled..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Non-existent script (%script%.BCS) nulled..."
             WRITE_ASCII (0x248 + (0x08 * "%index%")) ~~ #8
           END
         END
@@ -1420,11 +1420,11 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
         SET dlgexists = 1
       END
       PATCH_IF ("%exists%" = 0) AND ("%dlgexists%" = 1) BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: Non-existent dialogue (%dialog%.DLG) changed into %SOURCE_RES%.DLG..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Non-existent dialogue (%dialog%.DLG) changed into %SOURCE_RES%.DLG..."
         WRITE_ASCIIE 0x2cc ~%SOURCE_RES%~ #8
       END ELSE
       PATCH_IF ("%exists%" = 0) BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: Non-existent dialogue (%dialog%.DLG) nulled..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Non-existent dialogue (%dialog%.DLG) nulled..."
         WRITE_ASCII 0x2cc ~~ #8
       END
     END
@@ -1447,37 +1447,37 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
           READ_SHORT ("%known_off%" + 0x0a + ("%index%" * 0x0c)) "type"
           PATCH_IF (("%spl_type%" = 2) AND ("%type%" != 0)) BEGIN // priest
             PATCH_IF ("%type%" = 1) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Known spell (%resref%.SPL) is a PRIEST spell (was MAGE)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Known spell (%resref%.SPL) is a PRIEST spell (was MAGE)..."
             END ELSE
             PATCH_IF ("%type%" = 2) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Known spell (%resref%.SPL) is a PRIEST spell (was INNATE)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Known spell (%resref%.SPL) is a PRIEST spell (was INNATE)..."
             END ELSE
             BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Known spell (%resref%.SPL) is a PRIEST spell (was %type%)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Known spell (%resref%.SPL) is a PRIEST spell (was %type%)..."
             END
             WRITE_SHORT ("%known_off%" + 0x0a + ("%index%" * 0x0c)) 0
           END
           PATCH_IF (("%spl_type%" = 1) AND ("%type%" != 1)) BEGIN // mage
             PATCH_IF ("%type%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Known spell (%resref%.SPL) is a MAGE spell (was PRIEST)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Known spell (%resref%.SPL) is a MAGE spell (was PRIEST)..."
             END ELSE
             PATCH_IF ("%type%" = 2) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Known spell (%resref%.SPL) is a MAGE spell (was INNATE)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Known spell (%resref%.SPL) is a MAGE spell (was INNATE)..."
             END ELSE
             BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Known spell (%resref%.SPL) is a MAGE spell (was %type%)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Known spell (%resref%.SPL) is a MAGE spell (was %type%)..."
             END
             WRITE_SHORT ("%known_off%" + 0x0a + ("%index%" * 0x0c)) 1
           END
           PATCH_IF (("%spl_type%" = 4) AND ("%type%" != 2)) BEGIN // innate
             PATCH_IF ("%type%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Known spell (%resref%.SPL) is an INNATE spell (was PRIEST)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Known spell (%resref%.SPL) is an INNATE spell (was PRIEST)..."
             END ELSE
             PATCH_IF ("%type%" = 1) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Known spell (%resref%.SPL) is an INNATE spell (was MAGE)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Known spell (%resref%.SPL) is an INNATE spell (was MAGE)..."
             END ELSE
             BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Known spell (%resref%.SPL) is an INNATE spell (was %type%)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Known spell (%resref%.SPL) is an INNATE spell (was %type%)..."
             END
             WRITE_SHORT ("%known_off%" + 0x0a + ("%index%" * 0x0c)) 2
           END
@@ -1488,11 +1488,11 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
           SET level = %olevel% + 1
           PATCH_IF (("%level%" != "%spl_level%") AND ("%spl_level%" > 0) AND (("%spl_type%" = 1) OR ("%spl_type%" = 2))) BEGIN
             SET nlevel = %spl_level% - 1
-            PATCH_PRINT "%SOURCE_FILE% error: Known spell (%resref%.SPL) has wrong level (%olevel%)! Should be %nlevel%..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Known spell (%resref%.SPL) has wrong level (%olevel%)! Should be %nlevel%..."
             WRITE_SHORT ("%known_off%" + 0x08 + ("%index%" * 0x0c)) %nlevel%
           END
           PATCH_IF ("%olevel%" > 0) AND ("%spl_type%" = 4) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Known spell (%resref%.SPL) is INNATE with non-zero level (%olevel%)! Setting to 0 to avoid crash..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Known spell (%resref%.SPL) is INNATE with non-zero level (%olevel%)! Setting to 0 to avoid crash..."
             WRITE_SHORT ("%known_off%" + 0x08 + ("%index%" * 0x0c)) 0
           END
 
@@ -1500,13 +1500,13 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
           READ_SHORT ("%known_off%" + 0x08 + ("%index%" * 0x0c)) "olevel"
           SET nlevel = %olevel% + 1
           PATCH_IF ("%olevel%" > 6) AND ("%spl_type%" = 2) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Spell level out of bounds (%resref%.SPL is a level %nlevel% PRIEST spell)! Removing to avoid crash..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Spell level out of bounds (%resref%.SPL is a level %nlevel% PRIEST spell)! Removing to avoid crash..."
             REMOVE_KNOWN_SPELL ~%resref%~
             SET "index" = 0 - 1
             READ_LONG  0x2a4 "known_num"
           END ELSE
           PATCH_IF ("%olevel%" > 8) AND ("%spl_type%" = 1) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Spell level out of bounds (%resref%.SPL is a level %nlevel% MAGE spell)! Removing to avoid crash..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Spell level out of bounds (%resref%.SPL is a level %nlevel% MAGE spell)! Removing to avoid crash..."
             REMOVE_KNOWN_SPELL ~%resref%~
             SET "index" = 0 - 1
             READ_LONG  0x2a4 "known_num"
@@ -1515,7 +1515,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
 
         // Missing Known Spell Remover
         BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Known spell does not exist (%resref%.SPL)! Removing..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Known spell does not exist (%resref%.SPL)! Removing..."
           REMOVE_KNOWN_SPELL ~%resref%~
           SET "index" = 0 - 1
           READ_LONG  0x2a4 "known_num"
@@ -1535,7 +1535,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
           SET exists = 1
         END
         PATCH_IF ("%exists%" = 0) BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Memorized spell does not exist (%resref%.SPL)! Removing..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Memorized spell does not exist (%resref%.SPL)! Removing..."
           REMOVE_MEMORIZED_SPELL ~%resref%~
           SET "index" = 0 - 1
           READ_LONG  0x2b4 "mem_num"
@@ -1609,7 +1609,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                        ("%dicsid%" = "%eff_dicsid%") AND
                        ("%savtyp%" = "%eff_savtyp%") AND
                        ("%savbon%" = "%eff_savbon%") BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Effect #%index1% (Opcode %opcode%) matches Effect #%index%! Removing..."
+                PATCH_PRINT "%SOURCE_FILE% issue: Effect #%index1% (Opcode %opcode%) matches Effect #%index%! Removing..."
                 offset = "%eff_off%" + ("%index1%" * 0x30)
                 value  = 0x30
                 DELETE_BYTES offset value
@@ -1690,7 +1690,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
                        ("%dicsid%" = "%eff_dicsid%") AND
                        ("%savtyp%" = "%eff_savtyp%") AND
                        ("%savbon%" = "%eff_savbon%") BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Effect #%index1% (Opcode %opcode%) matches Effect #%index%! Removing..."
+                PATCH_PRINT "%SOURCE_FILE% issue: Effect #%index1% (Opcode %opcode%) matches Effect #%index%! Removing..."
                 offset = "%eff_off%" + ("%index1%" * 0x108)
                 value  = 0x108
                 DELETE_BYTES offset value
@@ -1746,7 +1746,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
       END
       offset = abil_off
       value  = 0x38 * abil_num
-      PATCH_PRINT "%SOURCE_FILE% error: Restructuring - Unused Ability Structure found! Trimming %value% bytes from offset %offset%..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Restructuring - Unused Ability Structure found! Trimming %value% bytes from offset %offset%..."
       DELETE_BYTES offset value
       SOURCE_SIZE = SOURCE_SIZE - value
       abil_off = 0x72
@@ -1770,7 +1770,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     PATCH_IF ((abil_off + (0x38 * abil_num)) < fx_off) BEGIN
       offset = abil_off + (0x38 * abil_num)
       value  = fx_off - ((abil_off + (0x38 * abil_num)))
-      PATCH_PRINT "%SOURCE_FILE% error: Restructuring - Unused Inter-structural Bytes found! Trimming %value% bytes from offset %offset%..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Restructuring - Unused Inter-structural Bytes found! Trimming %value% bytes from offset %offset%..."
       DELETE_BYTES offset value
       SOURCE_SIZE = SOURCE_SIZE - value
       fx_off = offset
@@ -1779,7 +1779,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     PATCH_IF (SOURCE_SIZE > (0x72 + (0x38 * abil_num) + (0x30 * fx_num))) BEGIN
       offset = 0x72 + (0x38 * abil_num) + (0x30 * fx_num)
       value  = SOURCE_SIZE - (0x72 + (0x38 * abil_num) + (0x30 * fx_num))
-      PATCH_PRINT "%SOURCE_FILE% error: Restructuring - Unused Trailing Bytes found! Trimming %value% bytes from offset %offset%..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Restructuring - Unused Trailing Bytes found! Trimming %value% bytes from offset %offset%..."
       DELETE_BYTES offset value
       SOURCE_SIZE = SOURCE_SIZE - value
     END
@@ -1878,11 +1878,11 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
         READ_LONG  ("%fx_off%" + 0x04 + ("%index%" * 0x30)) "param1"
         READ_LONG  ("%fx_off%" + 0x08 + ("%index%" * 0x30)) "param2"
         PATCH_IF ("%opcode%" = 173) AND ("%target%" = 1) AND ("%param1%" < 100) AND ("%param2%" != 1) BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Poison Resist set to INCREMENT to %param1%"
+          PATCH_PRINT "%SOURCE_FILE% issue: Poison Resist set to INCREMENT to %param1%"
           WRITE_LONG  ("%fx_off%" + 0x08 + ("%index%" * 0x30)) 1
         END ELSE
         PATCH_IF ("%opcode%" = 173) AND ("%target%" = 1) AND ("%param1%" > 99) AND ("%param2%" != 0) BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Poison Resist set to SET to %param1%"
+          PATCH_PRINT "%SOURCE_FILE% issue: Poison Resist set to SET to %param1%"
           WRITE_LONG  ("%fx_off%" + 0x08 + ("%index%" * 0x30)) 0
         END
       END
@@ -1920,7 +1920,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 ("%anim%" STRING_EQUAL_CASE "S2") OR //2-handed sword
                 ("%anim%" STRING_EQUAL_CASE "SP")) AND //spear
                (("%flags%" BAND 0b00000010) = 0b00000000) BEGIN //2-handed
-        PATCH_PRINT "%SOURCE_FILE% error: Item needs to be 2-handed (%anim% anim) to prevent crash!"
+        PATCH_PRINT "%SOURCE_FILE% issue: Item needs to be 2-handed (%anim% anim) to prevent crash!"
         WRITE_BYTE 0x18 ("%flags%" BOR 0b00000010)
       END
 
@@ -1928,7 +1928,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
       READ_ASCII 0x10 "used_itm"
 
       PATCH_IF NOT ((FILE_EXISTS_IN_GAME ~%used_itm%.itm~) OR ("%used_itm%" STRING_EQUAL_CASE "") OR ("%used_itm%" STRING_EQUAL_CASE "none")) BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: Non-existent Used Up Item (%used_itm%.ITM)! Nulling..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Non-existent Used Up Item (%used_itm%.ITM)! Nulling..."
         WRITE_ASCII 0x10 ~NONE~ #8
       END
 
@@ -1937,7 +1937,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 
       PATCH_IF ("%type%" = 36) BEGIN
         PATCH_IF NOT (FILE_EXISTS_IN_GAME ~%SOURCE_RES%.sto~) BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Container missing corresponding STO file! Linking makeshift store..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Container missing corresponding STO file! Linking makeshift store..."
           INNER_ACTION BEGIN
 
             ACTION_DEFINE_ASSOCIATIVE_ARRAY lol_stores BEGIN
@@ -1964,43 +1964,43 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 
       PATCH_IF ("%type%" = 39) OR ("%type%" = 40) OR ("%type%" = 42) OR ("%type%" = 50) OR ("%type%" = 55) OR ("%type%" = 59) BEGIN
         WRITE_SHORT 0x1c 0
-        PATCH_PRINT "%SOURCE_FILE% error: Invalid Item Type (%type%)! Setting to Misc type..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Invalid Item Type (%type%)! Setting to Misc type..."
       END
       PATCH_IF ("%type%" = 41) OR ("%type%" = 47) OR ("%type%" = 49) OR ("%type%" = 53) BEGIN
         WRITE_SHORT 0x1c 12
-        PATCH_PRINT "%SOURCE_FILE% error: Invalid Item Type (%type%)! Setting to Shield type..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Invalid Item Type (%type%)! Setting to Shield type..."
       END
       PATCH_IF ("%type%" = 44) BEGIN
         WRITE_SHORT 0x1c 17
-        PATCH_PRINT "%SOURCE_FILE% error: Invalid Item Type (%type%)! Setting to Mace type..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Invalid Item Type (%type%)! Setting to Mace type..."
       END
       PATCH_IF ("%type%" = 56) OR ("%type%" = 71) BEGIN
         WRITE_SHORT 0x1c 9
-        PATCH_PRINT "%SOURCE_FILE% error: Invalid Item Type (%type%)! Setting to Potion type..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Invalid Item Type (%type%)! Setting to Potion type..."
       END
       PATCH_IF ("%type%" = 57) OR ("%type%" = 69) BEGIN
         WRITE_SHORT 0x1c 20
-        PATCH_PRINT "%SOURCE_FILE% error: Invalid Item Type (%type%)! Setting to Large Sword type..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Invalid Item Type (%type%)! Setting to Large Sword type..."
       END
       PATCH_IF ("%type%" = 58) BEGIN
         WRITE_SHORT 0x1c 36
-        PATCH_PRINT "%SOURCE_FILE% error: Invalid Item Type (%type%)! Setting to Container type..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Invalid Item Type (%type%)! Setting to Container type..."
       END
       PATCH_IF ("%type%" = 60) OR ("%type%" = 61) OR ("%type%" = 62) OR ("%type%" = 63) OR ("%type%" = 64) OR ("%type%" = 65) OR ("%type%" = 66) OR ("%type%" = 67) BEGIN
         WRITE_SHORT 0x1c 2
-        PATCH_PRINT "%SOURCE_FILE% error: Invalid Item Type (%type%)! Setting to Armor type..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Invalid Item Type (%type%)! Setting to Armor type..."
       END
       PATCH_IF ("%type%" = 70) BEGIN
         WRITE_SHORT 0x1c 32
-        PATCH_PRINT "%SOURCE_FILE% error: Invalid Item Type (%type%)! Setting to Cloak type..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Invalid Item Type (%type%)! Setting to Cloak type..."
       END
       PATCH_IF ("%type%" = 72) BEGIN
         WRITE_SHORT 0x1c 7
-        PATCH_PRINT "%SOURCE_FILE% error: Invalid Item Type (%type%)! Setting to Headgear type..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Invalid Item Type (%type%)! Setting to Headgear type..."
       END
       PATCH_IF ("%type%" = 73) BEGIN
         WRITE_SHORT 0x1c 6
-        PATCH_PRINT "%SOURCE_FILE% error: Invalid Item Type (%type%)! Setting to Gauntlet type..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Invalid Item Type (%type%)! Setting to Gauntlet type..."
       END
 
       // Placeholder Icon Assigner
@@ -2024,16 +2024,16 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 
       PATCH_IF ("%inv_exists%" = 0) BEGIN
         PATCH_IF ("%inv_icon%" STRING_EQUAL_CASE "none") OR ("%inv_icon%" STRING_EQUAL_CASE "") BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Unassigned Inventory Icon! Assigning placeholder icon..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Unassigned Inventory Icon! Assigning placeholder icon..."
         END ELSE
         BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Non-existent Inventory Icon (%inv_icon%.BAM)! Assigning placeholder icon..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Non-existent Inventory Icon (%inv_icon%.BAM)! Assigning placeholder icon..."
         END
         WRITE_ASCII 0x3a ~IMISC6V~ #8
       END
       PATCH_IF ("%gnd_exists%" = 0) BEGIN
         PATCH_IF ("%gnd_icon%" STRING_EQUAL_CASE "GCLCKC01") BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Non-existent Ground Icon (%gnd_icon%.BAM)! Assigning GCLCK01.BAM..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Non-existent Ground Icon (%gnd_icon%.BAM)! Assigning GCLCK01.BAM..."
           WRITE_ASCII 0x44 ~GCLCK01~ #8
         END ELSE
         PATCH_IF ("%gnd_icon%" STRING_EQUAL_CASE "_GPOTN01") OR
@@ -2042,28 +2042,28 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                  ("%gnd_icon%" STRING_EQUAL_CASE "PTION2KG") OR
                  ("%gnd_icon%" STRING_EQUAL_CASE "PTION2LG") OR
                  ("%gnd_icon%" STRING_EQUAL_CASE "PTION2MG") BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Non-existent Ground Icon (%gnd_icon%.BAM)! Assigning GPOTN01.BAM..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Non-existent Ground Icon (%gnd_icon%.BAM)! Assigning GPOTN01.BAM..."
           WRITE_ASCII 0x44 ~GPOTN01~ #8
         END ELSE
         PATCH_IF ("%gnd_icon%" STRING_EQUAL_CASE "ICRATE01") BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Non-existent Ground Icon (%gnd_icon%.BAM)! Assigning GCRATE01.BAM..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Non-existent Ground Icon (%gnd_icon%.BAM)! Assigning GCRATE01.BAM..."
           WRITE_ASCII 0x44 ~GCRATE01~ #8
         END ELSE
         PATCH_IF ("%gnd_icon%" STRING_EQUAL_CASE "none") OR ("%gnd_icon%" STRING_EQUAL_CASE "") BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Unassigned Ground Icon! Assigning placeholder icon..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Unassigned Ground Icon! Assigning placeholder icon..."
           WRITE_ASCII 0x44 ~GCRATE01~ #8
         END ELSE
         BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Non-existent Ground Icon (%gnd_icon%.BAM)! Assigning placeholder icon..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Non-existent Ground Icon (%gnd_icon%.BAM)! Assigning placeholder icon..."
           WRITE_ASCII 0x44 ~GCRATE01~ #8
         END
       END
       PATCH_IF ("%desc_exists%" = 0) BEGIN
         PATCH_IF ("%desc_icon%" STRING_EQUAL_CASE "none") OR ("%desc_icon%" STRING_EQUAL_CASE "") BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Unassigned Description Icon! Assigning placeholder icon..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Unassigned Description Icon! Assigning placeholder icon..."
         END ELSE
         BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Non-existent Description Icon (%desc_icon%.BAM)! Assigning placeholder icon..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Non-existent Description Icon (%desc_icon%.BAM)! Assigning placeholder icon..."
         END
         WRITE_ASCII 0x58 ~CMISC6V~ #8
       END
@@ -2093,7 +2093,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             END
             PATCH_IF ("%fx_idx%" > "%abil_fx_idx%") BEGIN
               SET "fx_idx" = "fx_idx" - "abil_fx_num"
-              PATCH_PRINT "%SOURCE_FILE% error: Writing new FX IDX = %fx_idx%!"
+              PATCH_PRINT "%SOURCE_FILE% issue: Writing new FX IDX = %fx_idx%!"
               WRITE_SHORT 0x6e "fx_idx"
             END
             FOR (index1 = 0; index1 < abil_num; index1 = index1 + 1) BEGIN
@@ -2101,7 +2101,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 READ_SHORT ("%abil_off%" + 0x20 + (0x38 * "%index1%")) "abil_fx_idx1"
                 PATCH_IF ("%abil_fx_idx1%" > "%abil_fx_idx%") BEGIN
                   SET "abil_fx_idx1" = "abil_fx_idx1" - "abil_fx_num"
-                  PATCH_PRINT "%SOURCE_FILE% error: Writing new ABIL #%index1% FX IDX = %abil_fx_idx1%!"
+                  PATCH_PRINT "%SOURCE_FILE% issue: Writing new ABIL #%index1% FX IDX = %abil_fx_idx1%!"
                   WRITE_SHORT ("%abil_off%" + 0x20 + (0x38 * "%index1%")) "abil_fx_idx1"
                 END
               END
@@ -2110,7 +2110,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             value  = 0x38
             DELETE_BYTES offset value
             SOURCE_SIZE = SOURCE_SIZE - value
-            PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% is invalid! Deleting Ability #%index%..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% is invalid! Deleting Ability #%index%..."
             SET "index" = 0 - 1
             SET "abil_num" = "abil_num" - 1
             WRITE_SHORT 0x68 "abil_num"
@@ -2133,10 +2133,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
           READ_ASCII ("%abil_off%" + 0x04 + (0x38 * "%index%")) "abil_icon"
           PATCH_IF NOT (FILE_EXISTS_IN_GAME ~%abil_icon%.bam~) AND ("%abil_type%" > 0) BEGIN
             PATCH_IF ("%abil_icon%" STRING_EQUAL_CASE "none") OR ("%abil_icon%" STRING_EQUAL_CASE "") BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% has no icon assigned! Assigning Inventory Icon (%inv_icon%.BAM)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% has no icon assigned! Assigning Inventory Icon (%inv_icon%.BAM)..."
             END ELSE
             BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% has a non-existent icon (%abil_icon%.BAM)! Assigning Inventory Icon (%inv_icon%.BAM)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% has a non-existent icon (%abil_icon%.BAM)! Assigning Inventory Icon (%inv_icon%.BAM)..."
             END
             WRITE_ASCIIE ("%abil_off%" + 0x04 + (0x38 * "%index%")) ~%inv_icon%~ #8
           END
@@ -2148,7 +2148,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
       READ_LONG  0x60 "enchantment"
 
       PATCH_IF (("%enchantment%" > 0) AND (("%flags%" BAND 0b01000000) != 0b01000000)) BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: Item is enchanted but not magical! Setting magical flag..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Item is enchanted but not magical! Setting magical flag..."
         WRITE_BYTE 0x18 ("%flags%" BOR 0b01000000)
       END
 
@@ -2163,31 +2163,31 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
           READ_BYTE  ("%abil_off%" + 0x02 + (0x38 * "%index%")) "slot"
           PATCH_IF ((((%type% > 14) AND (%type% < 31)) OR %type% = 44) AND (("%abil_type%" = 1) OR ("%abil_type%" = 2) OR ("%abil_type%" = 4)) AND ("%slot%" != 1)) BEGIN
             PATCH_IF ("%slot%" = 2) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to WEAPON slot (was SPELL)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to WEAPON slot (was SPELL)..."
             END ELSE
             PATCH_IF ("%slot%" = 3) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to WEAPON slot (was EQUIPMENT)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to WEAPON slot (was EQUIPMENT)..."
             END ELSE
             PATCH_IF ("%slot%" = 4) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to WEAPON slot (was INNATE)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to WEAPON slot (was INNATE)..."
             END ELSE
             BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to WEAPON slot (was %slot%)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to WEAPON slot (was %slot%)..."
             END
             WRITE_BYTE  ("%abil_off%" + 0x02 + (0x38 * "%index%")) 1
           END
           PATCH_IF ((%type% < 15 OR ((%type% > 30) AND (%type% != 44))) AND ("%abil_type%" = 3) AND ("%slot%" != 3)) BEGIN
             PATCH_IF ("%slot%" = 1) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to EQUIPMENT slot (was WEAPON)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to EQUIPMENT slot (was WEAPON)..."
             END ELSE
             PATCH_IF ("%slot%" = 2) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to EQUIPMENT slot (was SPELL)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to EQUIPMENT slot (was SPELL)..."
             END ELSE
             PATCH_IF ("%slot%" = 4) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to EQUIPMENT slot (was INNATE)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to EQUIPMENT slot (was INNATE)..."
             END ELSE
             BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to EQUIPMENT slot (was %slot%)..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to EQUIPMENT slot (was %slot%)..."
             END
             WRITE_BYTE  ("%abil_off%" + 0x02 + (0x38 * "%index%")) 3
           END
@@ -2212,7 +2212,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             WRITE_SHORT ("%abil_off%" + 0x2c + (0x38 * "%index%")) 0
             WRITE_SHORT ("%abil_off%" + 0x30 + (0x38 * "%index%")) 0
             WRITE_SHORT ("%abil_off%" + 0x2e + (0x38 * "%index%")) 0
-            PATCH_PRINT "%SOURCE_FILE% error: Non weapon has animations!"
+            PATCH_PRINT "%SOURCE_FILE% issue: Non weapon has animations!"
             PATCH_PRINT "  Overhand Swing: %anim_overhand% -> 0"
             PATCH_PRINT "  Backhand Swing: %anim_backhand% -> 0"
             PATCH_PRINT "  Thrust        : %anim_thrust% -> 0"
@@ -2228,7 +2228,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               WRITE_SHORT ("%abil_off%" + 0x2c + (0x38 * "%index%")) 0
               WRITE_SHORT ("%abil_off%" + 0x30 + (0x38 * "%index%")) 20
               WRITE_SHORT ("%abil_off%" + 0x2e + (0x38 * "%index%")) 80
-              PATCH_PRINT "%SOURCE_FILE% error: Melee Animations have wrong probabilities! Setting Dagger probabilities..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Melee Animations have wrong probabilities! Setting Dagger probabilities..."
               PATCH_PRINT "  Overhand Swing: %anim_overhand% -> %anim_overhand_new%"
               PATCH_PRINT "  Backhand Swing: %anim_backhand% -> %anim_backhand_new%"
               PATCH_PRINT "  Thrust        : %anim_thrust% -> %anim_thrust_new%"
@@ -2243,7 +2243,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               WRITE_SHORT ("%abil_off%" + 0x2c + (0x38 * "%index%")) 10
               WRITE_SHORT ("%abil_off%" + 0x30 + (0x38 * "%index%")) 25
               WRITE_SHORT ("%abil_off%" + 0x2e + (0x38 * "%index%")) 65
-              PATCH_PRINT "%SOURCE_FILE% error: Melee Animations have wrong probabilities! Setting Short Sword probabilities..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Melee Animations have wrong probabilities! Setting Short Sword probabilities..."
               PATCH_PRINT "  Overhand Swing: %anim_overhand% -> %anim_overhand_new%"
               PATCH_PRINT "  Backhand Swing: %anim_backhand% -> %anim_backhand_new%"
               PATCH_PRINT "  Thrust        : %anim_thrust% -> %anim_thrust_new%"
@@ -2266,7 +2266,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               WRITE_SHORT ("%abil_off%" + 0x2c + (0x38 * "%index%")) 50
               WRITE_SHORT ("%abil_off%" + 0x30 + (0x38 * "%index%")) 50
               WRITE_SHORT ("%abil_off%" + 0x2e + (0x38 * "%index%")) 0
-              PATCH_PRINT "%SOURCE_FILE% error: Melee Animations have wrong probabilities! Setting Generic 1-Hander probabilities..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Melee Animations have wrong probabilities! Setting Generic 1-Hander probabilities..."
               PATCH_PRINT "  Overhand Swing: %anim_overhand% -> %anim_overhand_new%"
               PATCH_PRINT "  Backhand Swing: %anim_backhand% -> %anim_backhand_new%"
               PATCH_PRINT "  Thrust        : %anim_thrust% -> %anim_thrust_new%"
@@ -2289,7 +2289,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               WRITE_SHORT ("%abil_off%" + 0x2c + (0x38 * "%index%")) 60
               WRITE_SHORT ("%abil_off%" + 0x30 + (0x38 * "%index%")) 40
               WRITE_SHORT ("%abil_off%" + 0x2e + (0x38 * "%index%")) 0
-              PATCH_PRINT "%SOURCE_FILE% error: Melee Animations have wrong probabilities! Setting Generic 2-Hander probabilities..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Melee Animations have wrong probabilities! Setting Generic 2-Hander probabilities..."
               PATCH_PRINT "  Overhand Swing: %anim_overhand% -> %anim_overhand_new%"
               PATCH_PRINT "  Backhand Swing: %anim_backhand% -> %anim_backhand_new%"
               PATCH_PRINT "  Thrust        : %anim_thrust% -> %anim_thrust_new%"
@@ -2304,7 +2304,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               WRITE_SHORT ("%abil_off%" + 0x2c + (0x38 * "%index%")) 0
               WRITE_SHORT ("%abil_off%" + 0x30 + (0x38 * "%index%")) 35
               WRITE_SHORT ("%abil_off%" + 0x2e + (0x38 * "%index%")) 65
-              PATCH_PRINT "%SOURCE_FILE% error: Melee Animations have wrong probabilities! Setting Halberd probabilities..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Melee Animations have wrong probabilities! Setting Halberd probabilities..."
               PATCH_PRINT "  Overhand Swing: %anim_overhand% -> %anim_overhand_new%"
               PATCH_PRINT "  Backhand Swing: %anim_backhand% -> %anim_backhand_new%"
               PATCH_PRINT "  Thrust        : %anim_thrust% -> %anim_thrust_new%"
@@ -2319,7 +2319,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               WRITE_SHORT ("%abil_off%" + 0x2c + (0x38 * "%index%")) 0
               WRITE_SHORT ("%abil_off%" + 0x30 + (0x38 * "%index%")) 0
               WRITE_SHORT ("%abil_off%" + 0x2e + (0x38 * "%index%")) 100
-              PATCH_PRINT "%SOURCE_FILE% error: Melee Animations have wrong probabilities! Setting Spear probabilities..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Melee Animations have wrong probabilities! Setting Spear probabilities..."
               PATCH_PRINT "  Overhand Swing: %anim_overhand% -> %anim_overhand_new%"
               PATCH_PRINT "  Backhand Swing: %anim_backhand% -> %anim_backhand_new%"
               PATCH_PRINT "  Thrust        : %anim_thrust% -> %anim_thrust_new%"
@@ -2334,7 +2334,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               WRITE_SHORT ("%abil_off%" + 0x2c + (0x38 * "%index%")) 20
               WRITE_SHORT ("%abil_off%" + 0x30 + (0x38 * "%index%")) 70
               WRITE_SHORT ("%abil_off%" + 0x2e + (0x38 * "%index%")) 10
-              PATCH_PRINT "%SOURCE_FILE% error: Melee Animations have wrong probabilities! Setting Stave probabilities..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Melee Animations have wrong probabilities! Setting Stave probabilities..."
               PATCH_PRINT "  Overhand Swing: %anim_overhand% -> %anim_overhand_new%"
               PATCH_PRINT "  Backhand Swing: %anim_backhand% -> %anim_backhand_new%"
               PATCH_PRINT "  Thrust        : %anim_thrust% -> %anim_thrust_new%"
@@ -2353,7 +2353,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               WRITE_SHORT ("%abil_off%" + 0x2c + (0x38 * "%index%")) 0
               WRITE_SHORT ("%abil_off%" + 0x30 + (0x38 * "%index%")) 0
               WRITE_SHORT ("%abil_off%" + 0x2e + (0x38 * "%index%")) 0
-              PATCH_PRINT "%SOURCE_FILE% error: Ranged Animations have wrong probabilities! Nulling probabilities..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Ranged Animations have wrong probabilities! Nulling probabilities..."
               PATCH_PRINT "  Overhand Swing: %anim_overhand% -> %anim_overhand_new%"
               PATCH_PRINT "  Backhand Swing: %anim_backhand% -> %anim_backhand_new%"
               PATCH_PRINT "  Thrust        : %anim_thrust% -> %anim_thrust_new%"
@@ -2361,19 +2361,19 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 WRITE_SHORT ("%abil_off%" + 0x32 + (0x38 * "%index%")) 1
                 WRITE_SHORT ("%abil_off%" + 0x34 + (0x38 * "%index%")) 0
                 WRITE_SHORT ("%abil_off%" + 0x36 + (0x38 * "%index%")) 0
-                PATCH_PRINT "%SOURCE_FILE% error: Item is supposed to fire ARROWS!"
+                PATCH_PRINT "%SOURCE_FILE% issue: Item is supposed to fire ARROWS!"
               END ELSE
               PATCH_IF (("%type%" = 18) AND (("%is_arrow%" = 1) OR ("%is_bullet%" = 0) OR ("%is_bolt%" = 1))) BEGIN
                 WRITE_SHORT ("%abil_off%" + 0x32 + (0x38 * "%index%")) 0
                 WRITE_SHORT ("%abil_off%" + 0x34 + (0x38 * "%index%")) 0
                 WRITE_SHORT ("%abil_off%" + 0x36 + (0x38 * "%index%")) 1
-                PATCH_PRINT "%SOURCE_FILE% error: Item is supposed to fire BULLETS!"
+                PATCH_PRINT "%SOURCE_FILE% issue: Item is supposed to fire BULLETS!"
               END ELSE
               PATCH_IF (("%type%" = 27) AND (("%is_arrow%" = 1) OR ("%is_bullet%" = 1) OR ("%is_bolt%" = 0))) BEGIN
                 WRITE_SHORT ("%abil_off%" + 0x32 + (0x38 * "%index%")) 0
                 WRITE_SHORT ("%abil_off%" + 0x34 + (0x38 * "%index%")) 1
                 WRITE_SHORT ("%abil_off%" + 0x36 + (0x38 * "%index%")) 0
-                PATCH_PRINT "%SOURCE_FILE% error: Item is supposed to fire BOLTS!"
+                PATCH_PRINT "%SOURCE_FILE% issue: Item is supposed to fire BOLTS!"
               END
             END
             PATCH_IF (("%type%" = 16) OR // dagger
@@ -2396,7 +2396,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               WRITE_SHORT ("%abil_off%" + 0x2c + (0x38 * "%index%")) 100
               WRITE_SHORT ("%abil_off%" + 0x30 + (0x38 * "%index%")) 0
               WRITE_SHORT ("%abil_off%" + 0x2e + (0x38 * "%index%")) 0
-              PATCH_PRINT "%SOURCE_FILE% error: Ranged Animations have wrong probabilities! Setting Generic Ranged probabilities..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Ranged Animations have wrong probabilities! Setting Generic Ranged probabilities..."
               PATCH_PRINT "  Overhand Swing: %anim_overhand% -> %anim_overhand_new%"
               PATCH_PRINT "  Backhand Swing: %anim_backhand% -> %anim_backhand_new%"
               PATCH_PRINT "  Thrust        : %anim_thrust% -> %anim_thrust_new%"
@@ -2404,7 +2404,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 WRITE_SHORT ("%abil_off%" + 0x32 + (0x38 * "%index%")) 0
                 WRITE_SHORT ("%abil_off%" + 0x34 + (0x38 * "%index%")) 0
                 WRITE_SHORT ("%abil_off%" + 0x36 + (0x38 * "%index%")) 0
-                PATCH_PRINT "%SOURCE_FILE% error: Item is not a BOW/SLING/XBOW!"
+                PATCH_PRINT "%SOURCE_FILE% issue: Item is not a BOW/SLING/XBOW!"
               END
             END
           END ELSE
@@ -2421,7 +2421,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               WRITE_SHORT ("%abil_off%" + 0x2c + (0x38 * "%index%")) 0
               WRITE_SHORT ("%abil_off%" + 0x30 + (0x38 * "%index%")) 0
               WRITE_SHORT ("%abil_off%" + 0x2e + (0x38 * "%index%")) 0
-              PATCH_PRINT "%SOURCE_FILE% error: Launcher Animations have wrong probabilities! Nulling probabilities..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Launcher Animations have wrong probabilities! Nulling probabilities..."
               PATCH_PRINT "  Overhand Swing: %anim_overhand% -> %anim_overhand_new%"
               PATCH_PRINT "  Backhand Swing: %anim_backhand% -> %anim_backhand_new%"
               PATCH_PRINT "  Thrust        : %anim_thrust% -> %anim_thrust_new%"
@@ -2429,19 +2429,19 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 WRITE_SHORT ("%abil_off%" + 0x32 + (0x38 * "%index%")) 1
                 WRITE_SHORT ("%abil_off%" + 0x34 + (0x38 * "%index%")) 0
                 WRITE_SHORT ("%abil_off%" + 0x36 + (0x38 * "%index%")) 0
-                PATCH_PRINT "%SOURCE_FILE% error: Item is supposed to fire ARROWS!"
+                PATCH_PRINT "%SOURCE_FILE% issue: Item is supposed to fire ARROWS!"
               END ELSE
               PATCH_IF (("%type%" = 18) AND (("%is_arrow%" = 1) OR ("%is_bullet%" = 0) OR ("%is_bolt%" = 1))) BEGIN
                 WRITE_SHORT ("%abil_off%" + 0x32 + (0x38 * "%index%")) 0
                 WRITE_SHORT ("%abil_off%" + 0x34 + (0x38 * "%index%")) 0
                 WRITE_SHORT ("%abil_off%" + 0x36 + (0x38 * "%index%")) 1
-                PATCH_PRINT "%SOURCE_FILE% error: Item is supposed to fire BULLETS!"
+                PATCH_PRINT "%SOURCE_FILE% issue: Item is supposed to fire BULLETS!"
               END ELSE
               PATCH_IF ("%type%" = 27) AND (("%is_arrow%" = 1) OR ("%is_bullet%" = 1) OR ("%is_bolt%" = 0)) BEGIN
                 WRITE_SHORT ("%abil_off%" + 0x32 + (0x38 * "%index%")) 0
                 WRITE_SHORT ("%abil_off%" + 0x34 + (0x38 * "%index%")) 1
                 WRITE_SHORT ("%abil_off%" + 0x36 + (0x38 * "%index%")) 0
-                PATCH_PRINT "%SOURCE_FILE% error: Item is supposed to fire BOLTS!"
+                PATCH_PRINT "%SOURCE_FILE% issue: Item is supposed to fire BOLTS!"
               END
             END ELSE
             PATCH_IF (("%type%" = 16) OR // dagger
@@ -2464,7 +2464,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               WRITE_SHORT ("%abil_off%" + 0x2c + (0x38 * "%index%")) 100
               WRITE_SHORT ("%abil_off%" + 0x30 + (0x38 * "%index%")) 0
               WRITE_SHORT ("%abil_off%" + 0x2e + (0x38 * "%index%")) 0
-              PATCH_PRINT "%SOURCE_FILE% error: Launcher Animations have wrong probabilities! Setting Generic Ranged probabilities..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Launcher Animations have wrong probabilities! Setting Generic Ranged probabilities..."
               PATCH_PRINT "  Overhand Swing: %anim_overhand% -> %anim_overhand_new%"
               PATCH_PRINT "  Backhand Swing: %anim_backhand% -> %anim_backhand_new%"
               PATCH_PRINT "  Thrust        : %anim_thrust% -> %anim_thrust_new%"
@@ -2472,7 +2472,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 WRITE_SHORT ("%abil_off%" + 0x32 + (0x38 * "%index%")) 0
                 WRITE_SHORT ("%abil_off%" + 0x34 + (0x38 * "%index%")) 0
                 WRITE_SHORT ("%abil_off%" + 0x36 + (0x38 * "%index%")) 0
-                PATCH_PRINT "%SOURCE_FILE% error: Item is not a BOW/SLING/XBOW!"
+                PATCH_PRINT "%SOURCE_FILE% issue: Item is not a BOW/SLING/XBOW!"
               END
             END
           END ELSE
@@ -2481,7 +2481,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             WRITE_SHORT ("%abil_off%" + 0x2c + (0x38 * "%index%")) 0
             WRITE_SHORT ("%abil_off%" + 0x30 + (0x38 * "%index%")) 0
             WRITE_SHORT ("%abil_off%" + 0x2e + (0x38 * "%index%")) 0
-            PATCH_PRINT "%SOURCE_FILE% error: Improper Swing Probabilities! Setting to 0"
+            PATCH_PRINT "%SOURCE_FILE% issue: Improper Swing Probabilities! Setting to 0"
             PATCH_PRINT "  Overhand Swing: %anim_overhand% -> 0"
             PATCH_PRINT "  Backhand Swing: %anim_backhand% -> 0"
             PATCH_PRINT "  Thrust        : %anim_thrust% -> 0"
@@ -2505,7 +2505,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                     ("%opcode%" = 19) OR
                     ("%opcode%" = 44) OR
                     ("%opcode%" = 49)) AND ((("%param2%" = 1) OR ("%param2%" = 2)) AND ("%param1%" = 0)) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Stat Opcode (#%opcode%) setting to 0%! Incrementing by 1..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Stat Opcode (#%opcode%) setting to 0%! Incrementing by 1..."
             WRITE_LONG  ("%fx_off%" + 0x04 + ("%index%" * 0x30)) 1
             WRITE_LONG  ("%fx_off%" + 0x08 + ("%index%" * 0x30)) 0
           END
@@ -2542,7 +2542,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             END
           END
           PATCH_IF ("%found%" = 0) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Adding Cursed Portrait..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Adding Cursed Portrait..."
             LPF ADD_ITEM_EQEFFECT
               INT_VAR
                 opcode     = 142
@@ -2570,18 +2570,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_IF ("%eff_opcode%" = 142) AND ("%eff_param2%" = 33) BEGIN
                   SET "found" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Bad Luck Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Bad Luck Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Bad Luck Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Bad Luck Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Bad Luck Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Bad Luck Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -2604,18 +2604,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_IF ("%eff_opcode%" = 142) AND ("%eff_param2%" = 32) BEGIN
                   SET "found" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Good Luck Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Good Luck Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Good Luck Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Good Luck Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Good Luck Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Good Luck Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -2638,18 +2638,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_IF ("%eff_opcode%" = 142) AND ("%eff_param2%" = 24) BEGIN
                   SET "found" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Acid Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Acid Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Acid Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Acid Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Protection from Acid Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Protection from Acid Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -2682,11 +2682,11 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                   SET "foundfireicon" = 1
                   SET "fireiconindex" = "index1"
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Fire Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Fire Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Fire Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Fire Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
@@ -2694,22 +2694,22 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                   SET "foundcoldicon" = 1
                   SET "coldiconindex" = "index1"
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Cold Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Cold Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Cold Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Cold Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
                 PATCH_IF ("%eff_opcode%" = 142) AND ("%eff_param2%" = 26) BEGIN
                   SET "foundboth" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Resist Fire/Cold Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Resist Fire/Cold Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Resist Fire/Cold Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Resist Fire/Cold Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
@@ -2717,7 +2717,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             END
             PATCH_IF ("%foundboth%" = 0) AND ("%foundfireeffect%" = 1) BEGIN
               PATCH_IF ("%foundfireicon%" = 1) BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Removing Protection from Fire Portrait..."
+                PATCH_PRINT "%SOURCE_FILE% issue: Removing Protection from Fire Portrait..."
                 offset = "%fx_off%" + ("%fireiconindex%" * 0x30)
                 value  = 0x30
                 DELETE_BYTES offset value
@@ -2741,7 +2741,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 WRITE_SHORT 0x70 %fx_num%
               END
               PATCH_IF ("%foundcoldicon%" = 1) BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Removing Protection from Cold Portrait..."
+                PATCH_PRINT "%SOURCE_FILE% issue: Removing Protection from Cold Portrait..."
                 offset = "%fx_off%" + ("%coldiconindex%" * 0x30)
                 value  = 0x30
                 DELETE_BYTES offset value
@@ -2764,7 +2764,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 SET "fx_num" = "fx_num" - 1
                 WRITE_SHORT 0x70 %fx_num%
               END
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Resist Fire/Cold Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Resist Fire/Cold Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -2775,7 +2775,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               READ_SHORT 0x70 "fx_num"
             END ELSE
             PATCH_IF ("%foundboth%" = 0) AND ("%foundcoldicon%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Protection from Cold Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Protection from Cold Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -2798,18 +2798,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_IF ("%eff_opcode%" = 142) AND ("%eff_param2%" = 27) BEGIN
                   SET "found" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Electricity Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Electricity Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Electricity Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Electricity Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Protection from Electricity Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Protection from Electricity Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -2842,11 +2842,11 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                   SET "foundfireicon" = 1
                   SET "fireiconindex" = "index1"
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Fire Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Fire Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Fire Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Fire Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
@@ -2854,22 +2854,22 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                   SET "foundcoldicon" = 1
                   SET "coldiconindex" = "index1"
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Cold Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Cold Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Cold Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Cold Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
                 PATCH_IF ("%eff_opcode%" = 142) AND ("%eff_param2%" = 26) BEGIN
                   SET "foundboth" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Resist Fire/Cold Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Resist Fire/Cold Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Resist Fire/Cold Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Resist Fire/Cold Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
@@ -2877,7 +2877,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             END
             PATCH_IF ("%foundboth%" = 0) AND ("%foundcoldeffect%" = 1) BEGIN
               PATCH_IF ("%foundfireicon%" = 1) BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Removing Protection from Fire Portrait..."
+                PATCH_PRINT "%SOURCE_FILE% issue: Removing Protection from Fire Portrait..."
                 offset = "%fx_off%" + ("%fireiconindex%" * 0x30)
                 value  = 0x30
                 DELETE_BYTES offset value
@@ -2901,7 +2901,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 WRITE_SHORT 0x70 %fx_num%
               END
               PATCH_IF ("%foundcoldicon%" = 1) BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Removing Protection from Cold Portrait..."
+                PATCH_PRINT "%SOURCE_FILE% issue: Removing Protection from Cold Portrait..."
                 offset = "%fx_off%" + ("%coldiconindex%" * 0x30)
                 value  = 0x30
                 DELETE_BYTES offset value
@@ -2924,7 +2924,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 SET "fx_num" = "fx_num" - 1
                 WRITE_SHORT 0x70 %fx_num%
               END
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Resist Fire/Cold Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Resist Fire/Cold Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -2935,7 +2935,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               READ_SHORT 0x70 "fx_num"
             END ELSE
             PATCH_IF ("%foundboth%" = 0) AND ("%foundfireicon%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Protection from Fire Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Protection from Fire Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -2958,18 +2958,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_IF ("%eff_opcode%" = 142) AND (("%eff_param2%" = 28) OR ("%eff_param2%" = 63)) BEGIN
                   SET "found" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Magic Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Magic Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Magic Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Magic Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Protection from Magic Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Protection from Magic Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -2992,18 +2992,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_IF ("%eff_opcode%" = 142) AND ("%eff_param2%" = 103) BEGIN
                   SET "found" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Vocalize Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Vocalize Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Vocalize Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Vocalize Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Vocalize Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Vocalize Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -3026,18 +3026,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_IF ("%eff_opcode%" = 142) AND ("%eff_param2%" = 114) BEGIN
                   SET "found" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Infravision Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Infravision Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Infravision Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Infravision Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Infravision Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Infravision Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -3060,18 +3060,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_IF ("%eff_opcode%" = 142) AND ("%eff_param2%" = 31) BEGIN
                   SET "found" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Non-detection Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Non-detection Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Non-detection Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Non-detection Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Non-detection Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Non-detection Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -3094,18 +3094,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_IF ("%eff_opcode%" = 142) AND (("%eff_param2%" = 42) OR ("%eff_param2%" = 56) OR ("%eff_param2%" = 87)) BEGIN
                   SET "found" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Regeneration Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Regeneration Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Regeneration Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Regeneration Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Regeneration Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Regeneration Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -3128,18 +3128,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_IF ("%eff_opcode%" = 142) AND ("%eff_param2%" = 52) BEGIN
                   SET "found" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Mind Shield Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Mind Shield Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Mind Shield Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Mind Shield Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Mind Shield Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Mind Shield Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -3162,18 +3162,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_IF ("%eff_opcode%" = 142) AND ("%eff_param2%" = 19) BEGIN
                   SET "found" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Free Action Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Free Action Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Free Action Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Free Action Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Free Action Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Free Action Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -3196,18 +3196,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_IF ("%eff_opcode%" = 142) AND ("%eff_param2%" = 30) BEGIN
                   SET "found" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Poison Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Poison Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Protection from Poison Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Protection from Poison Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Protection from Poison Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Protection from Poison Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -3230,18 +3230,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 PATCH_IF ("%eff_opcode%" = 142) AND ("%eff_param2%" = 38) BEGIN
                   SET "found" = 1
                   PATCH_IF ("%eff_target%" != 1) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Haste Portrait now displays on Self..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Haste Portrait now displays on Self..."
                     WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index1%" * 0x30)) 1
                   END
                   PATCH_IF ("%eff_timing%" != 2) BEGIN
-                    PATCH_PRINT "%SOURCE_FILE% error: Haste Portrait now displays while equipped..."
+                    PATCH_PRINT "%SOURCE_FILE% issue: Haste Portrait now displays while equipped..."
                     WRITE_BYTE  ("%fx_off%" + 0x0c + ("%index1%" * 0x30)) 2
                   END
                 END
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Haste Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Haste Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -3296,7 +3296,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Immunity to Charm..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Immunity to Charm..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 101
@@ -3316,7 +3316,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Mind Shield Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Mind Shield Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -3336,7 +3336,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Charm Icon..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Charm Icon..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 169
@@ -3356,7 +3356,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Dire Charm Icon..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Dire Charm Icon..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 169
@@ -3376,7 +3376,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Domination Icon..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Domination Icon..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 169
@@ -3396,7 +3396,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Disabling 'Dominated' String..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Disabling 'Dominated' String..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 267
@@ -3416,7 +3416,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Disabling 'Charmed' String..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Disabling 'Charmed' String..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 267
@@ -3436,7 +3436,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Disabling 'Dire Charmed' String..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Disabling 'Dire Charmed' String..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 267
@@ -3456,7 +3456,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Charm Animation..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Charm Animation..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 296
@@ -3484,7 +3484,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Immunity to Hold..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Immunity to Hold..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 101
@@ -3504,7 +3504,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Immunity to Hold Creature Type 1..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Immunity to Hold Creature Type 1..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 101
@@ -3524,7 +3524,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Immunity to Hold Creature Type 2..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Immunity to Hold Creature Type 2..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 101
@@ -3544,7 +3544,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Held Icon..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Held Icon..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 169
@@ -3564,7 +3564,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Disabling 'Held' String..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Disabling 'Held' String..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 267
@@ -3584,7 +3584,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Hold Animation 1..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Hold Animation 1..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 296
@@ -3605,7 +3605,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Hold Animation 2..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Hold Animation 2..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 296
@@ -3631,7 +3631,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Immunity to Confusion..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Immunity to Confusion..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 101
@@ -3651,7 +3651,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Rigid Thinking Icon..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Rigid Thinking Icon..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 169
@@ -3671,7 +3671,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Confused Icon..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Confused Icon..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 169
@@ -3691,7 +3691,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Chaos Icon..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Chaos Icon..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 169
@@ -3711,7 +3711,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Disabling 'Confused' String..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Disabling 'Confused' String..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 267
@@ -3731,7 +3731,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Disabling 'Rigid Thinking' String..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Disabling 'Rigid Thinking' String..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 267
@@ -3751,7 +3751,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Confusion Animation..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Confusion Animation..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 296
@@ -3776,7 +3776,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Immunity to Feeblemindedness..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Immunity to Feeblemindedness..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 101
@@ -3796,7 +3796,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Feebleminded Icon..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Feebleminded Icon..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 169
@@ -3816,7 +3816,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Feebleminded Animation..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Feebleminded Animation..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 296
@@ -3842,7 +3842,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding effect to Reset Morale..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding effect to Reset Morale..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 23
@@ -3861,7 +3861,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Immunity to Morale Reset..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Immunity to Morale Reset..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 101
@@ -3881,7 +3881,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Immunity to Panic..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Immunity to Panic..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 101
@@ -3901,7 +3901,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Immunity to Morale Break..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Immunity to Morale Break..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 101
@@ -3921,7 +3921,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding Resist Fear Portrait..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding Resist Fear Portrait..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 142
@@ -3940,7 +3940,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding effect to Remove Fear..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding effect to Remove Fear..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 161
@@ -3959,7 +3959,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing Panic Icon..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing Panic Icon..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 169
@@ -3979,7 +3979,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Adding effect to Remove Panic Icon..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Adding effect to Remove Panic Icon..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 240
@@ -3999,7 +3999,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Disabling 'Panic' String..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Disabling 'Panic' String..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 267
@@ -4019,7 +4019,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Disabling 'Panic' String..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Disabling 'Panic' String..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 267
@@ -4039,7 +4039,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Disabling 'Morale Failure: Panic' String..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Disabling 'Morale Failure: Panic' String..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 267
@@ -4059,7 +4059,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               END
             END
             PATCH_IF ("%found%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Preventing morale failure..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Preventing morale failure..."
               LPF ADD_ITEM_EQEFFECT
                 INT_VAR
                   opcode     = 106
@@ -4081,7 +4081,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 END
               END
               PATCH_IF ("%found%" = 0) BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Preventing BG2Fixpack confusion Animation..."
+                PATCH_PRINT "%SOURCE_FILE% issue: Preventing BG2Fixpack confusion Animation..."
                 LPF ADD_ITEM_EQEFFECT
                   INT_VAR
                     opcode     = 296
@@ -4161,7 +4161,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                      ("%dicsid%" = "%eff_dicsid%") AND
                      ("%savtyp%" = "%eff_savtyp%") AND
                      ("%savbon%" = "%eff_savbon%") BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Effect #%index1% (Opcode %opcode%) matches Effect #%index%! Removing..."
+              PATCH_PRINT "%SOURCE_FILE% issue: Effect #%index1% (Opcode %opcode%) matches Effect #%index%! Removing..."
               offset = "%fx_off%" + ("%index1%" * 0x30)
               value  = 0x30
               DELETE_BYTES offset value
@@ -4227,7 +4227,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.CRE)"
+                PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.CRE)"
               END
             END
             SET "exists" = 0
@@ -4236,7 +4236,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.BMP)"
+                PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.BMP)"
               END
             END
             SET "exists" = 0
@@ -4248,7 +4248,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.ITM)"
+                PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.ITM)"
               END
             END
             SET "exists" = 0
@@ -4264,7 +4264,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.SPL)"
+                PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.SPL)"
               END
             END
             SET "exists" = 0
@@ -4273,7 +4273,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.MVE)"
+                PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.MVE)"
               END
             END
             SET "exists" = 0
@@ -4282,7 +4282,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.WAV)"
+                PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.WAV)"
               END
             END
             SET "exists" = 0
@@ -4293,7 +4293,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.EFF)"
+                PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.EFF)"
               END
             END
             SET "exists" = 0
@@ -4302,7 +4302,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                 SET "exists" = 1
               END
               PATCH_IF ("%exists%" = 0) BEGIN
-                PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.ARE)"
+                PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% Effect #%index2% Opcode (%opcode%) - Non-existent Resource (%resref%.ARE)"
               END
             END
           END
@@ -4324,7 +4324,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                     ("%opcode%" = 35) OR
                     ("%opcode%" = 36) OR
                     ("%opcode%" = 37)) AND ("%param2%" = 1) AND ("%param1%" < 100) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Value sets to %param1%"
+            PATCH_PRINT "%SOURCE_FILE% issue: Equipped Effect #%index% Opcode (%opcode%) - Value sets to %param1%"
           END
           PATCH_IF (("%opcode%" = 27) OR
                     ("%opcode%" = 28) OR
@@ -4336,7 +4336,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
                     ("%opcode%" = 35) OR
                     ("%opcode%" = 36) OR
                     ("%opcode%" = 37)) AND ("%param2%" = 2) AND ("%param1%" = 100) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-functional percentage change"
+            PATCH_PRINT "%SOURCE_FILE% issue: Equipped Effect #%index% Opcode (%opcode%) - Non-functional percentage change"
           END
           SET "exists" = 0
           PATCH_IF ("%opcode%" = 67) OR
@@ -4347,7 +4347,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.CRE)"
+              PATCH_PRINT "%SOURCE_FILE% issue: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.CRE)"
             END
           END
           SET "exists" = 0
@@ -4356,7 +4356,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.BMP)"
+              PATCH_PRINT "%SOURCE_FILE% issue: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.BMP)"
             END
           END
           SET "exists" = 0
@@ -4368,7 +4368,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.ITM)"
+              PATCH_PRINT "%SOURCE_FILE% issue: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.ITM)"
             END
           END
           SET "exists" = 0
@@ -4384,7 +4384,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.SPL)"
+              PATCH_PRINT "%SOURCE_FILE% issue: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.SPL)"
             END
           END
           SET "exists" = 0
@@ -4393,7 +4393,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.MVE)"
+              PATCH_PRINT "%SOURCE_FILE% issue: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.MVE)"
             END
           END
           SET "exists" = 0
@@ -4402,7 +4402,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.WAV)"
+              PATCH_PRINT "%SOURCE_FILE% issue: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.WAV)"
             END
           END
           SET "exists" = 0
@@ -4413,7 +4413,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.EFF)"
+              PATCH_PRINT "%SOURCE_FILE% issue: Equipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.EFF)"
             END
           END
           SET "exists" = 0
@@ -4422,7 +4422,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               SET "exists" = 1
             END
             PATCH_IF ("%exists%" = 0) BEGIN
-              PATCH_PRINT "%SOURCE_FILE% error: AEquipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.ARE)"
+              PATCH_PRINT "%SOURCE_FILE% issue: AEquipped Effect #%index% Opcode (%opcode%) - Non-existent Resource (%resref%.ARE)"
             END
           END
         END
@@ -4450,7 +4450,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
       END
       offset = abil_off
       value  = 0x28 * abil_num
-      PATCH_PRINT "%SOURCE_FILE% error: Restructuring - Unused Ability Structure found! Trimming %value% bytes from offset %offset%..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Restructuring - Unused Ability Structure found! Trimming %value% bytes from offset %offset%..."
       DELETE_BYTES offset value
       SOURCE_SIZE = SOURCE_SIZE - value
       abil_off = 0x72
@@ -4474,7 +4474,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
     PATCH_IF ((abil_off + (0x28 * abil_num)) < fx_off) BEGIN
       offset = abil_off + (0x28 * abil_num)
       value  = fx_off - ((abil_off + (0x28 * abil_num)))
-      PATCH_PRINT "%SOURCE_FILE% error: Restructuring - Unused Inter-structural Bytes found! Trimming %value% bytes from offset %offset%..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Restructuring - Unused Inter-structural Bytes found! Trimming %value% bytes from offset %offset%..."
       DELETE_BYTES offset value
       SOURCE_SIZE = SOURCE_SIZE - value
       fx_off = offset
@@ -4483,7 +4483,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
     PATCH_IF (SOURCE_SIZE > (0x72 + (0x28 * abil_num) + (0x30 * fx_num))) BEGIN
       offset = 0x72 + (0x28 * abil_num) + (0x30 * fx_num)
       value  = SOURCE_SIZE - (0x72 + (0x28 * abil_num) + (0x30 * fx_num))
-      PATCH_PRINT "%SOURCE_FILE% error: Restructuring - Unused Trailing Bytes found! Trimming %value% bytes from offset %offset%..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Restructuring - Unused Trailing Bytes found! Trimming %value% bytes from offset %offset%..."
       DELETE_BYTES offset value
       SOURCE_SIZE = SOURCE_SIZE - value
     END
@@ -4502,7 +4502,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
 
     PATCH_IF (%spell_type% = 4) BEGIN
       PATCH_IF (%spell_level% != 1) BEGIN
-        PATCH_PRINT "%SOURCE_FILE% error: Innate Spell is not Level 1! Setting level to 1..."
+        PATCH_PRINT "%SOURCE_FILE% issue: Innate Spell is not Level 1! Setting level to 1..."
         WRITE_LONG 0x34 ~1~
       END
     END
@@ -4517,38 +4517,38 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
 
         // Ability Target Fixer
         PATCH_IF (("%target%"  = 2) OR ("%target%" = 6)) BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% target may crash! (was %target%) Setting to self..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% target may crash! (was %target%) Setting to self..."
           WRITE_BYTE  ("%abil_off%" + 0x0c + (0x28 * "%index%")) 1
         END
 
         // Spell Slot Fixer
         PATCH_IF (("%spell_type%"  = 4) AND ("%slot%" != 4)) BEGIN
           PATCH_IF ("%slot%" = 1) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to INNATE slot (was WEAPON)..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to INNATE slot (was WEAPON)..."
           END ELSE
           PATCH_IF ("%slot%" = 2) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to INNATE slot (was SPELL)..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to INNATE slot (was SPELL)..."
           END ELSE
           PATCH_IF ("%slot%" = 3) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to INNATE slot (was EQUIPMENT)..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to INNATE slot (was EQUIPMENT)..."
           END ELSE
           BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to INNATE slot (was %slot%)..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to INNATE slot (was %slot%)..."
           END
           WRITE_BYTE  ("%abil_off%" + 0x02 + (0x28 * "%index%")) 4
         END
         PATCH_IF (("%spell_type%" != 4) AND ("%slot%" != 2)) BEGIN
           PATCH_IF ("%slot%" = 1) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to SPELL slot (was WEAPON)..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to SPELL slot (was WEAPON)..."
           END ELSE
           PATCH_IF ("%slot%" = 3) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to SPELL slot (was EQUIPMENT)..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to SPELL slot (was EQUIPMENT)..."
           END ELSE
           PATCH_IF ("%slot%" = 4) BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to SPELL slot (was INNATE)..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to SPELL slot (was INNATE)..."
           END ELSE
           BEGIN
-            PATCH_PRINT "%SOURCE_FILE% error: Ability #%index% assigned to SPELL slot (was %slot%)..."
+            PATCH_PRINT "%SOURCE_FILE% issue: Ability #%index% assigned to SPELL slot (was %slot%)..."
           END
           WRITE_BYTE  ("%abil_off%" + 0x02 + (0x28 * "%index%")) 2
         END
@@ -4565,7 +4565,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
         READ_SHORT ("%fx_off%" +        ("%index%" * 0x30)) "opcode"
         READ_BYTE  ("%fx_off%" + 0x02 + ("%index%" * 0x30)) "target"
         PATCH_IF ("%target%" = 2) BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Casting Effect #%index% (opcode %opcode%) targets preset target! Targetting self..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Casting Effect #%index% (opcode %opcode%) targets preset target! Targetting self..."
           WRITE_BYTE  ("%fx_off%" + 0x02 + ("%index%" * 0x30)) 1
         END
       END
@@ -4610,7 +4610,7 @@ COPY_EXISTING_REGEXP GLOB ~.*\.bcs$~ ~override~
         PATCH_PRINT "%SOURCE_FILE%:  Modder chose I:Spell = 0, and it slipped through the cracks somehow."
         TEXT_SPRINT z "BUGGED"
       END
-      PATCH_PRINT "%SOURCE_FILE% error: Replacing SpellCastInnate(%MATCH1%,%MATCH2%) with SpellCastInnateRES('%z%',%MATCH1%)"
+      PATCH_PRINT "%SOURCE_FILE% issue: Replacing SpellCastInnate(%MATCH1%,%MATCH2%) with SpellCastInnateRES('%z%',%MATCH1%)"
     END
     ~SpellCastInnateRES("%z%",%MATCH1%)~
   END
@@ -4632,44 +4632,44 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.sto$~ ~override~
     READ_LONG  0x74 "cures_num"
 
     PATCH_IF (("%flags%" BAND 0b00000001) = 0b00000000) AND ("%sales_num%" > 0) AND ("%type%" = 0) BEGIN
-      PATCH_PRINT "%SOURCE_FILE% error: Stocked Items exist but store set to not sell! Initiating sales..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Stocked Items exist but store set to not sell! Initiating sales..."
       WRITE_BYTE 0x10 ("%flags%" BOR 0b00000001)
     END
     PATCH_IF (("%flags%" BAND 0b00000010) = 0b00000000) AND ("%purch_num%" > 0) AND ("%type%" = 0) BEGIN
-      PATCH_PRINT "%SOURCE_FILE% error: Purchasable Items exist but store set to not buy! Initiating sales..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Purchasable Items exist but store set to not buy! Initiating sales..."
       WRITE_BYTE 0x10 ("%flags%" BOR 0b00000010)
     END
     PATCH_IF (("%flags%" BAND 0b00100000) = 0b00000000) AND ("%cures_num%" > 0) AND ("%type%" = 3) BEGIN
-      PATCH_PRINT "%SOURCE_FILE% error: Stocked Cures exist but temple set to not sell! Initiating sales..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Stocked Cures exist but temple set to not sell! Initiating sales..."
       WRITE_BYTE 0x10 ("%flags%" BOR 0b00100000)
     END
     PATCH_IF (("%flags%" BAND 0b01000000) = 0b00000000) AND ("%drink_num%" > 0) AND ("%type%" = 1) BEGIN
-      PATCH_PRINT "%SOURCE_FILE% error: Stocked Drinks exist but tavern set to not sell! Initiating sales..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Stocked Drinks exist but tavern set to not sell! Initiating sales..."
       WRITE_BYTE 0x10 ("%flags%" BOR 0b01000000)
     END
     PATCH_IF (("%flags%" BAND 0b01000000) = 0b00000000) AND ("%drink_num%" > 0) AND ("%type%" = 2) BEGIN
-      PATCH_PRINT "%SOURCE_FILE% error: Stocked Drinks exist but inn set to not sell! Initiating sales..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Stocked Drinks exist but inn set to not sell! Initiating sales..."
       WRITE_BYTE 0x10 ("%flags%" BOR 0b01000000)
     END
 
     PATCH_IF (("%flags%" BAND 0b00000001) = 0b00000001) AND ("%sales_num%" = 0) AND ("%type%" = 0) BEGIN
-      PATCH_PRINT "%SOURCE_FILE% error: Store selling items but does not have any in stock! Stopping sales..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Store selling items but does not have any in stock! Stopping sales..."
       WRITE_BYTE 0x10 ("%flags%" BAND 0b11111110)
     END
     PATCH_IF (("%flags%" BAND 0b00000010) = 0b00000010) AND ("%purch_num%" = 0) AND ("%type%" = 0) BEGIN
-      PATCH_PRINT "%SOURCE_FILE% error: Store buying items but cannot buy any kind! Stopping sales..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Store buying items but cannot buy any kind! Stopping sales..."
       WRITE_BYTE 0x10 ("%flags%" BAND 0b11111101)
     END
     PATCH_IF (("%flags%" BAND 0b00100000) = 0b00100000) AND ("%cures_num%" = 0) AND ("%type%" = 3) BEGIN
-      PATCH_PRINT "%SOURCE_FILE% error: Temple selling cures but does not have any in stock! Stopping sales..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Temple selling cures but does not have any in stock! Stopping sales..."
       WRITE_BYTE 0x10 ("%flags%" BAND 0b11011111)
     END
     PATCH_IF (("%flags%" BAND 0b01000000) = 0b01000000) AND ("%drink_num%" = 0) AND ("%type%" = 1) BEGIN
-      PATCH_PRINT "%SOURCE_FILE% error: Tavern selling drinks but does not have any in stock! Stopping sales..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Tavern selling drinks but does not have any in stock! Stopping sales..."
       WRITE_BYTE 0x10 ("%flags%" BAND 0b10111111)
     END
     PATCH_IF (("%flags%" BAND 0b01000000) = 0b01000000) AND ("%drink_num%" = 0) AND ("%type%" = 2) BEGIN
-      PATCH_PRINT "%SOURCE_FILE% error: Inn selling drinks but does not have any in stock! Stopping sales..."
+      PATCH_PRINT "%SOURCE_FILE% issue: Inn selling drinks but does not have any in stock! Stopping sales..."
       WRITE_BYTE 0x10 ("%flags%" BAND 0b10111111)
     END
 
@@ -4681,7 +4681,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.sto$~ ~override~
       FOR (index = 0 ; index < sales_num ; index = index + 1) BEGIN
         READ_ASCII ("%sales_off%" +        (0x1c * "%index%")) "resref"
         PATCH_IF NOT (FILE_EXISTS_IN_GAME ~%resref%.itm~) BEGIN
-          PATCH_PRINT "%SOURCE_FILE% error: Stocked Item #%index% does not exist (%resref%.itm)! Removing item..."
+          PATCH_PRINT "%SOURCE_FILE% issue: Stocked Item #%index% does not exist (%resref%.itm)! Removing item..."
           REMOVE_STORE_ITEM ~%resref%~
           SET "index" = 0 - 1
           READ_LONG  0x38 "sales_num"
