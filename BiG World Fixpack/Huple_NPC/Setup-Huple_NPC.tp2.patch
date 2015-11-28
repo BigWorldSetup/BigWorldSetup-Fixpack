@@ -1,0 +1,11 @@
+--- Huple_NPC\Setup-Huple_NPC.tp2	Sun Oct 05 10:54:12 2014
++++ C:\BWP Patchstudio\patched files\Huple_NPC\Setup-Huple_NPC.tp2	Sat Nov 28 22:03:43 2015
+@@ -3,7 +3,7 @@
+ //En AUTHOR hay que poner la dirección del autro para poder avisarle en caso de error.
+ AUTHOR ~garland86@gmail.com~
+ //Con VERSION indicamos la versión del mod
+-VERSION ~v1.4~
++VERSION ~v1.4 BWP Fix~
+ //Con README indicamos donde se encuentra el readme del mod
+ README ~Huple_NPC/readme.htm~
+ //Con ALWAYS lo que hacemos es indicar que lo siguiente debe hacerse siempre.

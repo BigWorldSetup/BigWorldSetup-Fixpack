@@ -1,0 +1,11 @@
+--- homewardbound\setup-homewardbound.tp2	Sun Apr 25 14:14:36 2010
++++ C:\BWP Patchstudio\patched files\homewardbound\setup-homewardbound.tp2	Sat Nov 28 21:49:58 2015
+@@ -2,7 +2,7 @@
+ AUTHOR ~berelinde - berelinde@gmail.com~
+ 
+ README ~homewardbound/readme-homewardbound.txt~ 
+-VERSION ~v7 - 25 April, 2010~ 
++VERSION ~v7 - 25 April, 2010 BWP Fix~ 
+ 
+ AUTO_TRA ~homewardbound/%s~
+ 

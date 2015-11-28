@@ -1,0 +1,11 @@
+--- c#sb_silber\dialoge\silberdrachenblut.d	Mon Jun 22 19:55:26 2009
++++ C:\BWP Patchstudio\patched files\c#sb_silber\dialoge\silberdrachenblut.d	Sat Nov 28 21:45:21 2015
+@@ -108,7 +108,7 @@
+ EraseJournalEntry(@32)
+ EraseJournalEntry(@49)
+ SetGlobal("C#SB_DrowCityHostile","GLOBAL",1)~ SOLVED_JOURNAL @17 + silver_04
+-+ ~Global("DrowCityHostile","GLOBAL",1)~ + @79 DO ~SetGlobal("C#SB_AbolethKampf","GLOBAL",0)~ DO ~EraseJournalEntry(@21)
+++ ~Global("DrowCityHostile","GLOBAL",1)~ + @79 DO ~SetGlobal("C#SB_AbolethKampf","GLOBAL",0) EraseJournalEntry(@21)
+ EraseJournalEntry(@23)
+ EraseJournalEntry(@26)
+ EraseJournalEntry(@32)

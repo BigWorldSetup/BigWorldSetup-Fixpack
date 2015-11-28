@@ -1,0 +1,11 @@
+--- c#sb_silber\setup-c#sb_silber.tp2	Thu Nov 21 22:10:26 2013
++++ C:\BWP Patchstudio\patched files\c#sb_silber\setup-c#sb_silber.tp2	Sat Nov 28 21:46:27 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~C#SB_silber/backup~
+ AUTHOR ~jastey@web.de~ 
+ 
+-VERSION ~13~
++VERSION ~13 BWP Fix~
+ 
+ README ~C#SB_silber/readme.%LANGUAGE%.txt~ ~C#SB_silber/readme.english.txt~
+ 

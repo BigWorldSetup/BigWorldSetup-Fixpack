@@ -221,6 +221,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: cmorgan's ToBEx compatible ADD_KIT fix
 :: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
+:: Roxanne's duplicate DO fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
+
 
 ----------------------------------------------------------------------------------------
 
@@ -430,6 +433,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: bg1re - Romantic Encounters for BG1 v1.3
+
+:: Roxanne's duplicate DO fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
+
+
+----------------------------------------------------------------------------------------
+
+
 :: bg1ub - BG1 Unfinished Business v14.0_beta_151114
 
 :: Lollorian's installation fix
@@ -598,6 +610,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=547608
 
+:: Roxanne's duplicate DO fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
+
 
 ----------------------------------------------------------------------------------------
 
@@ -642,6 +657,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Patches ORC05.CRE's BG1 Long Swords proficiency to 0
 :: - LINK NOT FOUND ~
+
+
+----------------------------------------------------------------------------------------
+
+
+:: c#sb_silber - Adalon's Blood v13
+
+:: Roxanne's duplicate DO fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
 
 
 ----------------------------------------------------------------------------------------
@@ -1105,6 +1129,24 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: homewardbound - Homeward Bound v7
+
+:: Roxanne's duplicate DO fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Huple_NPC - Huple NPC v1.4
+
+:: Roxanne's duplicate DO fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
+
+
+----------------------------------------------------------------------------------------
+
+
 :: iepbanters - Infinity Extended Project Banter Pack v4.2
 
 :: Lollorian's Viconia-Valygar Aboleth talk stutter fix
@@ -1432,6 +1474,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
+
+:: Roxanne's duplicate DO fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
 
 
 ----------------------------------------------------------------------------------------
@@ -1887,6 +1932,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: rpgsolaflirtpack - Solaufein Flirt Pack v4.0
+
+:: Lollorian's corrected AreaCheck - RPGSola.baf
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483544
+
+:: Lollorian's corrected 2500 -> AR2500 - RPGSolaFlirts.d
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488705
+
+
+----------------------------------------------------------------------------------------
+
+
 :: rttitempack - Return To Trademeet Item Pack v1.2
 
 :: Lollorian's assorted ITM fixes
@@ -1944,6 +2001,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: SBS - Summon Bhaalspawn (SBS) v3
+
+:: Lollorian's portrait installation fix - SBS\Language\English\Setup.tra
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=485886
+
+
+----------------------------------------------------------------------------------------
+
+
 :: SC#Hub - Hubelpot the Vegetable Merchant NPC v1.0
 
 :: Lollorian's GLOBAL fixes - SC#AR0530.baf, SC#HubQuest.d
@@ -1951,6 +2017,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted CRE fixes
 :: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
+:: scs - Sword Coast Stratagems v28
+
+:: stratagemsV28 fix V1.5
+:: http://gibberlings3.net/forums/index.php?showtopic=26792&p=228647
 
 
 ----------------------------------------------------------------------------------------
@@ -1996,10 +2071,32 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Sheena NPC v1.7
+:: Sheena - Sheena NPC v1.7
 
 :: Lollorian's !Dead(Myself) change - K#Sheena.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Skie - Skie Redone v3.0
+
+:: Roxanne's duplicate DO fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
+
+
+----------------------------------------------------------------------------------------
+
+
+:: soa - The Stone of Askavar V1.9
+
+:: Roxanne's better way to add Continue() to process the rest of AR4300.baf (AR3200.bcs in game)
+:: http://www.baldursgatemods.com/forums/index.php?topic=8289.0
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=582192
+
+:: Roxanne's timely area revealing code
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=582227
 
 
 ----------------------------------------------------------------------------------------
@@ -2038,6 +2135,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Sovereign - Er'vonyrah NPC v1.3.4
+
+:: Lollorian's !Dead(Myself) changes - Crdafgt.baf, Crsarfgt.baf, Crsdafgt.baf
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
+
+
+----------------------------------------------------------------------------------------
+
+
 :: spell_rev - Spell Revisions v3.1
 
 :: Demivrgvs' Hotfix 03 dated June 26th 2013
@@ -2064,62 +2170,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: soa - The Stone of Askavar V1.9
-
-:: Roxanne's better way to add Continue() to process the rest of AR4300.baf (AR3200.bcs in game)
-:: http://www.baldursgatemods.com/forums/index.php?topic=8289.0
-:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=582192
-
-:: Roxanne's timely area revealing code
-:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=582227
-
-
-----------------------------------------------------------------------------------------
-
-
 :: sword_and_fist - Sword and Fist v7
 
 :: Missing Monk ability file: GA_NMMONK06 -> GA_NMMONK05
 :: http://forums.gibberlings3.net/index.php?showtopic=25837&view=findpost&p=216105
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Solaufein Flirt Pack (RPGSola) v4.0
-
-:: Lollorian's corrected AreaCheck - RPGSola.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483544
-
-:: Lollorian's corrected 2500 -> AR2500 - RPGSolaFlirts.d
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488705
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Sovereign - Er'vonyrah NPC v1.3.4
-
-:: Lollorian's !Dead(Myself) changes - Crdafgt.baf, Crsarfgt.baf, Crsdafgt.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Summon Bhaalspawn (SBS) v3
-
-:: Lollorian's portrait installation fix - SBS\Language\English\Setup.tra
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=485886
-
-
-----------------------------------------------------------------------------------------
-
-
-:: Sword Coast Stratagems v28
-
-:: stratagemsV28 fix V1.5
-:: http://gibberlings3.net/forums/index.php?showtopic=26792&p=228647
 
 
 ----------------------------------------------------------------------------------------
@@ -2137,7 +2191,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://forums.pocketplane.net/index.php/topic,27207.0.html
 
 :: Lollorian's updated North Forest code
-::
+:: - LINK NOT FOUND ~
 
 
 ----------------------------------------------------------------------------------------
@@ -2164,7 +2218,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: The Bigg Quest Pack v2.04
+:: tb#quest - The Bigg Quest Pack v2.04
 
 :: Lollorian's corrected CRE typos - ar0700.baf, tb#lotpr.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486013
@@ -2234,7 +2288,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Throne of Bhaal Revisited (ToBR-Beta) v4
+:: tobr - Throne of Bhaal Revisited v4
 
 :: White Agnus' compatibility fixes for "Longer Road"
 :: http://forums.chosenofmystra.net/index.php?topic=1930.0
@@ -2248,27 +2302,20 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's corrected "NONE" -> "" - WGwitch.d
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488721
 
+:: Roxanne's duplicate DO fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
+
 
 ----------------------------------------------------------------------------------------
 
 
-:: Tortured Souls (TS-BP) v6.10
+:: TOD - Tower of Deception v3.3.1
 
-:: BWP compatibility fixes
+:: Lollorian's Script fixes - va#lich.baf, va#lizrd.baf, va#shade.baf, va#wiste.baf
+:: http://www.shsforums.net/topic/44488-solved-probably-me-but-bwp-83/?p=480898
 
-:: 10th Dakkon's Blade fixes dakkon1.baf - dakkon4.baf
-:: http://www.shsforums.net/index.php?s=&showtopic=29916&view=findpost&p=359285
-
-:: erebusant's animate.ids and anisnd.ids fixes
-:: http://www.shsforums.net/index.php?s=&showtopic=27961&view=findpost&p=367975
-
-:: ScuD's Area TT0307 fix
-:: http://www.shsforums.net/index.php?s=&showtopic=41997&view=findpost&p=459942
-
-:: 10th Solaufein compatibility fix
-
-:: Lollorian's replacements - Movie3ba.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
+:: Lollorian's extended  OR() fixes - va#gitfm.baf, va#ustrn.baf
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483244
 
 
 ----------------------------------------------------------------------------------------
@@ -2304,28 +2351,29 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Tsujatha - Tsujatha NPC v15
+:: TS-BP - Tortured Souls for Big Picture v6.10
 
-:: Non-EE compatible apostrophes for BG2 compatibility
-:: http://www.shsforums.net/topic/58395-tsujatha-dialog-error/?p=582234
+:: BWP compatibility fixes
+
+:: 10th Dakkon's Blade fixes dakkon1.baf - dakkon4.baf
+:: http://www.shsforums.net/index.php?s=&showtopic=29916&view=findpost&p=359285
+
+:: erebusant's animate.ids and anisnd.ids fixes
+:: http://www.shsforums.net/index.php?s=&showtopic=27961&view=findpost&p=367975
+
+:: ScuD's Area TT0307 fix
+:: http://www.shsforums.net/index.php?s=&showtopic=41997&view=findpost&p=459942
+
+:: 10th Solaufein compatibility fix
+
+:: Lollorian's replacements - Movie3ba.baf
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
 
 ----------------------------------------------------------------------------------------
 
 
-:: Tower of Deception (ToD) v3.3.1
-
-:: Lollorian's Script fixes - va#lich.baf, va#lizrd.baf, va#shade.baf, va#wiste.baf
-:: http://www.shsforums.net/topic/44488-solved-probably-me-but-bwp-83/?p=480898
-
-:: Lollorian's extended  OR() fixes - va#gitfm.baf, va#ustrn.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483244
-
-
-----------------------------------------------------------------------------------------
-
-
-:: TS25 MiniMod v2
+:: ts25mini - TS25 MiniMod v2
 
 :: Fennek's mod updates and partial German translation (15 May 2010)
 :: - LINK NOT FOUND ~
@@ -2335,6 +2383,21 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Nightfarer's major area patching overhaul
 :: - LINK NOT FOUND ~
+
+:: Roxanne's duplicate DO fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Tsujatha - Tsujatha NPC v15
+
+:: Non-EE compatible apostrophes for BG2 compatibility
+:: http://www.shsforums.net/topic/58395-tsujatha-dialog-error/?p=582234
+
+:: Roxanne's duplicate DO fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
 
 
 ----------------------------------------------------------------------------------------
@@ -2358,24 +2421,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Turnabout v1
+:: turnabout - Turnabout v1
 
 :: Commented out REQUIRE_FILE for Ascension if Ascionsion is installed before BG2 Fixpack
-
-
-----------------------------------------------------------------------------------------
-
-
-:: ub - Unfinished Business v24
-
-:: Miloch's missing WWBAG02.STO crash fix
-:: http://www.shsforums.net/topic/56994-an-assertion-failed/?p=565631
-
-:: micbaldur's fix for borked Tourist encounter
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566614
-
-:: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -2443,7 +2492,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Valen NPC v45
+:: valen - Valen NPC v45
 
 :: Lollorian's Valen charm dialogue fix - valen.bcs
 :: http://www.shsforums.net/topic/44452-remove-her-charm-powers/?p=480359
@@ -2455,7 +2504,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Vanim (NPC) v1.4
+:: vanim - Vanim NPC v1.4
 
 :: Lollorian's removed ".itm" from inside a PartyHasItem() - vanimJ.d
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488705
@@ -2484,15 +2533,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Vendedor_DLAN - Clan DLAN Vendor v6.1
-
-:: Lollorian's assorted ITM fixes
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
-
-
-----------------------------------------------------------------------------------------
-
-
 :: vecna - Vecna v23
 
 :: Lollorian's hotfix compilation v3
@@ -2502,7 +2542,16 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Victor's Improvements Pack (BGII Improvements Mod) v2.0
+:: Vendedor_DLAN - Clan DLAN Vendor v6.1
+
+:: Lollorian's assorted ITM fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
+
+
+----------------------------------------------------------------------------------------
+
+
+:: vic - Victor's Improvements Pack (BGII Improvements Mod) v2.0
 
 :: Lollorian's !Dead(Myself) changes - LydMag.BAF, marcil.baf, quimb2.baf, salak2.baf, SCMAGE.BAF, SCSHOUT.BAF
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485

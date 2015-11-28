@@ -1,0 +1,10 @@
+--- Skie\DIALOGUES\1xSkii1.d	Sun May 01 16:28:00 2011
++++ C:\BWP Patchstudio\patched files\Skie\DIALOGUES\1xSkii1.d	Sat Nov 28 22:07:43 2015
+@@ -8,5 +8,5 @@
+ 
+ IF~~THEN BEGIN Skitem00x01
+ SAY@1 /* Ja lecê! Muszê kupiæ jeszcze pare rzeczy! Do zobaczenia, kochaniutka! */
+-IF~~ THEN DO ~SetGlobal("SkieItemTalk1","GLOBAL",1)~ DO ~EscapeArea()~ EXIT
++IF~~ THEN DO ~SetGlobal("SkieItemTalk1","GLOBAL",1) EscapeArea()~ EXIT
+ END
+\ No newline at end of file

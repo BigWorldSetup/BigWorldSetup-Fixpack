@@ -1,0 +1,11 @@
+--- homewardbound\dialogue\dialogue.d	Sun Apr 25 14:11:21 2010
++++ C:\BWP Patchstudio\patched files\homewardbound\dialogue\dialogue.d	Sat Nov 28 21:48:47 2015
+@@ -207,7 +207,7 @@
+ + ~Global("B!HBMazzySail","GLOBAL",1) InMyArea("Mazzy")~ + @65 DO ~IncrementGlobal("B!HBQuota","GLOBAL",-1)~ EXTERN MAZZYP maz1 
+ + ~Global("B!HBMinscSail","GLOBAL",1) InMyArea("Minsc")~ + @66 DO ~IncrementGlobal("B!HBQuota","GLOBAL",-1)~ EXTERN MINSCP min1 
+ + ~Global("B!HBNaliaSail","GLOBAL",1) InMyArea("Nalia")~ + @67 DO ~IncrementGlobal("B!HBQuota","GLOBAL",-1)~ EXTERN NALIAP nal1 
+-+ ~Global("B!HBValygarSail","GLOBAL",1) InMyArea("Valygar")~ + @68 DO ~IncrementGlobal("B!HBQuota","GLOBAL",-1)~ DO ~IncrementGlobal("B!HBQuota","GLOBAL",-1)~ EXTERN VALYGARP val1 
+++ ~Global("B!HBValygarSail","GLOBAL",1) InMyArea("Valygar")~ + @68 DO ~IncrementGlobal("B!HBQuota","GLOBAL",-1)~ EXTERN VALYGARP val1 
+ + ~Global("B!HBViconiaSail","GLOBAL",1) InMyArea("Viconia")~ + @69 DO ~IncrementGlobal("B!HBQuota","GLOBAL",-1)~ EXTERN VICONIP vic1 
+ + ~Global("B!HBYoshimoSail","GLOBAL",1) InMyArea("Yoshimo")~ + @70 DO ~IncrementGlobal("B!HBQuota","GLOBAL",-1)~ EXTERN YOSHP yos1 
+ + ~Global("B!HBQuota","GLOBAL",3)~ + @71 + r15 

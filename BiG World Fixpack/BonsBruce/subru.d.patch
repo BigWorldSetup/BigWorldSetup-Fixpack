@@ -1,5 +1,32 @@
 --- BonsBruce\d\subru.d	Mon Nov 15 21:20:10 2004
-+++ C:\BWP Patchstudio\patched files\BonsBruce\d\subru.d	Sun May 23 03:06:46 2010
++++ C:\BWP Patchstudio\patched files\BonsBruce\d\subru.d	Sat Nov 28 22:01:47 2015
+@@ -39,12 +39,12 @@
+ 
+ IF ~Global("BruceMeeting", "GLOBAL", 2) NumTimesTalkedTo(0)~ THEN BEGIN SuBruceFirstMeeting
+ SAY ~Treat me Mum wif respect. Issit so much ta h'ask h'a gang o' drunken donkey spit?~ 
+-++ ~No! You were right to be angry! Those men were horribly rude. Filth! You should ban them from this pub forever!~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ EXTERN SUBRU SuBaned
+-++ ~No, you were right to be angry. Those men were horribly rude. You were a bit rough with them, though. It was obvious they were no match for your brute strength.~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ EXTERN SUBRU SuAskinFerIt
++++ ~No! You were right to be angry! Those men were horribly rude. Filth! You should ban them from this pub forever!~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ EXTERN SUBRU SuBaned
++++ ~No, you were right to be angry. Those men were horribly rude. You were a bit rough with them, though. It was obvious they were no match for your brute strength.~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ EXTERN SUBRU SuAskinFerIt
+ ++ ~Yes! You said it yourself! They were a gang of drunken... donkey spit. The key word there was 'drunken.' People do infamously stupid things when they are intoxicated; that's no reason to beat on them.~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ EXTERN SUBRU SuImDrunkToo
+-++ ~It's too much to ask in this instance. Come on, you know it's true. Your mother IS a cow!~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ EXTERN SUBRU SuFistsOfFury
+-++ ~Just or unjust, anger is not the answer, even in the case of great insult.~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ EXTERN SUBRU SuWotAreYou
+-++ ~Nah! You should have pounded those goons into the floorboards instead of letting them get away!~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ EXTERN SUBRU SuMumsFloors
++++ ~It's too much to ask in this instance. Come on, you know it's true. Your mother IS a cow!~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ EXTERN SUBRU SuFistsOfFury
++++ ~Just or unjust, anger is not the answer, even in the case of great insult.~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ EXTERN SUBRU SuWotAreYou
++++ ~Nah! You should have pounded those goons into the floorboards instead of letting them get away!~ DO ~SetGlobal("BruceMeeting", "GLOBAL", 3)~ EXTERN SUBRU SuMumsFloors
+ END
+ 
+ 
+@@ -128,7 +128,7 @@
+ ++ ~You demonstrated some talent in the area of thumping heads, though you are a bit rough rough around the edges. Would you be interested in engaging in some battles outside the Seven Vales? I could use a strong fist.~ EXTERN SUBRU SuLeaveMeMum
+ ++ ~Have you ever thought of thumping heads outside this place?~ EXTERN SUBRU SuSureCoronet
+ ++ ~On this table? Ick!~ EXTERN SUBRU SuRude
+-+ ~Gender(Player1, FEMALE) InParty("Nalia") Global("SuWooNalia", "LOCALS", 0)~ + ~Hmm. Wanna buy a lady a drink?~ DO ~SetGlobal("SuWooNalia", "LOCALS", 1)~ DO ~SetGlobal("SuWooNalia", "LOCALS", 1)~ EXTERN SUBRU SuWooNalia
+++ ~Gender(Player1, FEMALE) InParty("Nalia") Global("SuWooNalia", "LOCALS", 0)~ + ~Hmm. Wanna buy a lady a drink?~ DO ~SetGlobal("SuWooNalia", "LOCALS", 1)~ EXTERN SUBRU SuWooNalia
+ + ~Gender(Player1, FEMALE) !InParty("Nalia")~ + ~Hmm. Wanna buy a lady a drink?~ EXTERN SUBRU SuIffenSeesOne
+ + ~Gender(Player1, MALE) PartyGoldGT(4)~ + ~Say, fella, what if I buy you a round?~ EXTERN SUBRU SuMeLanguage
+ END
 @@ -187,7 +187,7 @@
  
  IF ~~ THEN BEGIN SuBruceJoins 

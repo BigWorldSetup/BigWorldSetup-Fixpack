@@ -1,5 +1,23 @@
 --- amber\dialogs\m#amber.d	Fri Aug 28 11:48:00 2009
-+++ C:\BWP Patchstudio\patched files\amber\dialogs\m#amber.d	Wed Aug 21 08:39:59 2013
++++ C:\BWP Patchstudio\patched files\amber\dialogs\m#amber.d	Sat Nov 28 21:54:44 2015
+@@ -7534,7 +7534,7 @@
+   IF ~~ THEN REPLY @6554 /* @6554 = ~Blue? I bet the person who wrote that never even saw me, or he would surely have noticed my yellow eyes. I like to think of them as rather striking.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",2)~ GOTO LT1EyesB
+   IF ~~ THEN REPLY @6555 /* @6555 = ~Well, I guess you could make that mistake, although in proper lighting, my eyes are quite clearly emerald green.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",3)~ GOTO LT1EyesC
+   IF ~~ THEN REPLY @6556 /* @6556 = ~Well, they could have gotten that right just by guessing; half the people in the Sword Coast probably have blue eyes like mine. Based on that description they could have caught almost anyone.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",4)~ GOTO LT1EyesD
+-  IF ~~ THEN REPLY @6557 /* @6557 = ~My eyes are actually grey, although in a suitable light, you could surely mistake them for blue.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",5)~ DO ~SetGlobal("M#PCEyeColour","Locals",5)~ GOTO LT1EyesE
++  IF ~~ THEN REPLY @6557 /* @6557 = ~My eyes are actually grey, although in a suitable light, you could surely mistake them for blue.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",5)~ GOTO LT1EyesE
+   IF ~~ THEN REPLY @6558 /* @6558 = ~If they had been paying any attention, they would surely have noticed that my eyes were actually violet. Or perhaps lavender in bright daylight.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",6)~ GOTO LT1EyesF
+   IF ~~ THEN REPLY @6559 /* @6559 = ~Well, that was pretty far off, considering that my eyes are actually pitch black.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",7)~ GOTO LT1EyesG
+   IF ~~ THEN REPLY @6560 /* @6560 = ~Well, I don't blame them for getting confused, since I don't really think there is a way to describe the colour of my eyes. Blue was as good a guess as anything.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",8)~ GOTO LT1EyesH
+@@ -9306,7 +9306,7 @@
+   IF ~~ THEN REPLY @6554 /* @6554 = ~Blue? I bet the person who wrote that never even saw me, or he would surely have noticed my yellow eyes. I like to think of them as rather striking.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",2)~ GOTO P2LT1EyesB
+   IF ~~ THEN REPLY @6555 /* @6555 = ~Well, I guess you could make that mistake, although in proper lighting, my eyes are quite clearly emerald green.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",3)~ GOTO P2LT1EyesC
+   IF ~~ THEN REPLY @6556 /* @6556 = ~Well, they could have gotten that right just by guessing; half the people in the Sword Coast probably have blue eyes like mine. Based on that description they could have caught almost anyone.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",4)~ GOTO P2LT1EyesD
+-  IF ~~ THEN REPLY @6557 /* @6557 = ~My eyes are actually grey, although in a suitable light, you could surely mistake them for blue.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",5)~ DO ~SetGlobal("M#PCEyeColour","Locals",5)~ GOTO P2LT1EyesE
++  IF ~~ THEN REPLY @6557 /* @6557 = ~My eyes are actually grey, although in a suitable light, you could surely mistake them for blue.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",5)~ GOTO P2LT1EyesE
+   IF ~~ THEN REPLY @6558 /* @6558 = ~If they had been paying any attention, they would surely have noticed that my eyes were actually violet. Or perhaps lavender in bright daylight.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",6)~ GOTO P2LT1EyesF
+   IF ~~ THEN REPLY @6559 /* @6559 = ~Well, that was pretty far off, considering that my eyes are actually pitch black.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",7)~ GOTO P2LT1EyesG
+   IF ~~ THEN REPLY @6560 /* @6560 = ~Well, I don't blame them for getting confused, since I don't really think there is a way to describe the colour of my eyes. Blue was as good a guess as anything.~ */ DO ~SetGlobal("M#PCEyeColour","Locals",8)~ GOTO P2LT1EyesH
 @@ -9658,35 +9658,35 @@
    IF ~IsValidForPartyDialog("Imoen2")~ THEN EXTERN IMOEN2J M#P2LT2
    IF ~IsValidForPartyDialog("HaerDalis")

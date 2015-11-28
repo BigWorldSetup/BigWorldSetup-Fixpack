@@ -1,0 +1,10 @@
+--- Skie\Setup-Skie.tp2	Mon Feb 02 00:15:14 2015
++++ C:\BWP Patchstudio\patched files\Skie\Setup-Skie.tp2	Sat Nov 28 22:08:28 2015
+@@ -1,6 +1,6 @@
+ BACKUP ~Skie\backup~
+ AUTHOR ~Lava Del'Vortel~
+-
++VERSION ~3.0 BWP Fix~
+ AUTO_TRA ~Skie/translations/%s~
+ 
+ ALWAYS

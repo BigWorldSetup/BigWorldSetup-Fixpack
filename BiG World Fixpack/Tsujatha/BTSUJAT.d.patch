@@ -1,0 +1,11 @@
+--- Tsujatha\Dialogue\BTSUJAT.d	Wed May 11 13:02:44 2005
++++ C:\BWP Patchstudio\patched files\Tsujatha\Dialogue\BTSUJAT.d	Sat Nov 28 22:22:36 2015
+@@ -2730,7 +2730,7 @@
+  SAY@1113 
+  IF ~~ THEN REPLY @1114 DO ~SetGlobal("TsuLathandarTalk","GLOBAL",1)~ GOTO TsuLathandarPath
+  IF ~~ THEN REPLY @1115 DO ~SetGlobal("TsuLathandarTalk","GLOBAL",1)~ GOTO TsuGenericGoodCleric
+- IF ~~ THEN REPLY @1116 DO ~SetGlobal("TsuLathandarTalk","GLOBAL",1)~ DO ~SetGlobal("TsuLathandarTalk","GLOBAL",1)~ GOTO TSJ_TsujathaLathandar3a
++ IF ~~ THEN REPLY @1116 DO ~SetGlobal("TsuLathandarTalk","GLOBAL",1)~ GOTO TSJ_TsujathaLathandar3a
+ END
+ 
+ IF ~~ THEN BEGIN TsuLathandarPath

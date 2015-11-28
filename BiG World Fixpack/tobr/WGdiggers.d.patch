@@ -1,0 +1,13 @@
+--- tobr\pocketplane\dialogue\WGdiggers.d	Fri Jul 10 21:46:36 2009
++++ C:\BWP Patchstudio\patched files\tobr\pocketplane\dialogue\WGdiggers.d	Sat Nov 28 22:11:24 2015
+@@ -306,8 +306,8 @@
+ IF ~Global("DisurFight","AR5203",1)~ THEN BEGIN 26
+ 	SAY ~Hold a moment!  I yield!~ 
+ 	IF ~~ THEN REPLY ~Answer my questions or I'll finish you off!~ DO ~SetGlobal("DisurFight","AR5203",2)~ GOTO 10
+-	IF ~~ THEN REPLY ~Coward!  Stand and fight me!~ DO ~Enemy()~ DO ~SetGlobal("DisurFight","AR5203",2)~ EXIT
+-	IF ~~ THEN REPLY ~All the easier to kill you.~ DO ~Enemy()~ DO ~SetGlobal("DisurFight","AR5203",2)~ EXIT
++	IF ~~ THEN REPLY ~Coward!  Stand and fight me!~ DO ~Enemy() SetGlobal("DisurFight","AR5203",2)~ EXIT
++	IF ~~ THEN REPLY ~All the easier to kill you.~ DO ~Enemy() SetGlobal("DisurFight","AR5203",2)~ EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 27

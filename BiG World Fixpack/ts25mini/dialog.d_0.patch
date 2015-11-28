@@ -1,0 +1,11 @@
+--- ts25mini\lady\dialog\dialog.d	Sat Mar 14 00:47:24 2009
++++ C:\BWP Patchstudio\patched files\ts25mini\lady\dialog\dialog.d	Sat Nov 28 22:14:38 2015
+@@ -1113,7 +1113,7 @@
+ CHAIN MURCRAG tz25nn_MURCRAG_1.1
+ @7276
+ END
+-+ ~PartyGoldGT(699)~ + @7238 DO ~TakePartyGold(700)~ DO ~SetGlobal("tz25nn_Q","GLOBAL",25) SetGlobal("tz25nn_SC_mage_cragmoon","GLOBAL",1)~ EXTERN MURCRAG tz25nn_MURCRAG_1.2
+++ ~PartyGoldGT(699)~ + @7238 DO ~TakePartyGold(700) SetGlobal("tz25nn_Q","GLOBAL",25) SetGlobal("tz25nn_SC_mage_cragmoon","GLOBAL",1)~ EXTERN MURCRAG tz25nn_MURCRAG_1.2
+ + ~!PartyGoldGT(699)~ + @7239 EXTERN MURCRAG tz25nn_MURCRAG_1.4
+ ++ @7240 EXTERN MURCRAG tz25nn_MURCRAG_1.4
+ 

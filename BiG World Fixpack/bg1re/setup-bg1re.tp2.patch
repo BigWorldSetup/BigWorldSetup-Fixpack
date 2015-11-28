@@ -1,0 +1,11 @@
+--- bg1re\setup-bg1re.tp2	Sat Jan 24 12:24:50 2015
++++ C:\BWP Patchstudio\patched files\bg1re\setup-bg1re.tp2	Sat Nov 28 21:42:18 2015
+@@ -9,7 +9,7 @@
+ AUTHOR ~jastey@web.de~ //for bugreports
+ 
+ //MODDER
+-VERSION ~v1.3~
++VERSION ~v1.3 BWP Fix~
+ 
+ README ~bg1re/readme.%LANGUAGE%.txt~ ~bg1re/readme.english.txt~
+ 

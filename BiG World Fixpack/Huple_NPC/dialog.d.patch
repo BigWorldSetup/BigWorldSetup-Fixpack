@@ -1,0 +1,16 @@
+--- Huple_NPC\dlg\dialog.d	Fri Jan 29 11:59:52 2010
++++ C:\BWP Patchstudio\patched files\Huple_NPC\dlg\dialog.d	Sat Nov 28 22:02:54 2015
+@@ -10,11 +10,11 @@
+ //Lo malo es que no tiene en cuenta otras condiciones que pueden haberse insertado anteriormente, por ejemplo, si en la situación que extiendes antes había una interjección, si pones EXTEND_BOTTOM no se ejecutará la interjección, y si pones EXTEND_TOP se ejecutará la interjección, pero no la extensión que tú incluyes.
+ //Las soluciones que se me ocurren son: 1) Instalar éste mod antes que el que instala las interjecciones, pero eso puede hacer que ocurran situaciones a la inversa. 2) Hacer un COPY_TRANS al final de la extensión, para ello hay que asegurarse que el dialogo añadido termine de forma similar a la que terminaba originalmente, ya que sinó las interjecciones pueden no quedar bien.
+ EXTEND_BOTTOM %Emerson% 0
+-  IF ~Global("EnfadoEmer","GLOBAL",0)~ DO ~SetGlobal("EnfadoEmer","GLOBAL",1)~ DO ~SetGlobal("EmersonPermission","GLOBAL",1) SetGlobal("SpokeToEmerson","GLOBAL",1)~ UNSOLVED_JOURNAL @0 + emer1
++  IF ~Global("EnfadoEmer","GLOBAL",0)~ DO ~SetGlobal("EnfadoEmer","GLOBAL",1) SetGlobal("EmersonPermission","GLOBAL",1) SetGlobal("SpokeToEmerson","GLOBAL",1)~ UNSOLVED_JOURNAL @0 + emer1
+ END
+ 
+ EXTEND_BOTTOM %Emerson% 1
+-  IF ~Global("EnfadoEmer","GLOBAL",0)~ DO ~SetGlobal("EnfadoEmer","GLOBAL",2)~ DO ~SetGlobal("EmersonPermission","GLOBAL",1) SetGlobal("SpokeToEmerson","GLOBAL",1)~ UNSOLVED_JOURNAL @0 + emer1
++  IF ~Global("EnfadoEmer","GLOBAL",0)~ DO ~SetGlobal("EnfadoEmer","GLOBAL",2) SetGlobal("EmersonPermission","GLOBAL",1) SetGlobal("SpokeToEmerson","GLOBAL",1)~ UNSOLVED_JOURNAL @0 + emer1
+ END
+ 
+ //APPEND sirve para añadir las siguientes situaciones al archivo *.dlg que corresponda (en este caso EMERSO)
