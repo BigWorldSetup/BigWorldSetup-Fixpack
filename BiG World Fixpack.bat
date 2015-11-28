@@ -32,6 +32,10 @@
 
 @echo off
 
+:: set proper paths
+SETLOCAL
+cd /d %~dp0
+
 :: variable definitions
 SET MAIN_DIR=BiG World Fixpack
 SET UTILS=%MAIN_DIR%\_utils

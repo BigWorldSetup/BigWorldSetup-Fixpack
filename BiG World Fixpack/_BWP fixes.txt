@@ -442,15 +442,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: bg1ub - BG1 Unfinished Business v14.0_beta_151114
-
-:: Lollorian's installation fix
-:: - LINK NOT FOUND ~
-
-
-----------------------------------------------------------------------------------------
-
-
 :: bg2_tweaks - BG2 Tweaks v16
 
 :: Argent77's BG:EE compatibility patch
