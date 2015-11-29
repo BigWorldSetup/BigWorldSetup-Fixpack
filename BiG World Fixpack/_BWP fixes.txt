@@ -463,6 +463,42 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: bg2fixpack - BG2Fixpack v10
+
+:: Latest commit from FredrikLindgren/BG2-Fixpack used as base
+:: https://github.com/FredrikLindgren/BG2-Fixpack/commit/3b79f4a172366f21acab55c554f34446b5b67344
+
+:: Hurricane's icon fixes
+:: http://gibberlings3.net/forums/index.php?showtopic=25208&p=208507
+
+:: aVENGER's EE fixes
+:: http://gibberlings3.net/forums/index.php?showtopic=25208&p=214380
+:: http://gibberlings3.net/forums/index.php?showtopic=25208&p=214527
+:: http://gibberlings3.net/forums/index.php?showtopic=25208&p=214720
+:: http://gibberlings3.net/forums/index.php?showtopic=25208&p=214727
+
+:: polytope's skipping Staff of Air elven immunity
+:: http://gibberlings3.net/forums/index.php?showtopic=25208&p=214540
+
+:: Ardanis's misc fixes
+:: http://gibberlings3.net/forums/index.php?showtopic=25208&p=214540
+
+:: polytope's Soul Reaver duration fix
+:: http://gibberlings3.net/forums/index.php?showtopic=25208&p=216291
+
+:: Hurricane's better BG:EE check (used NOT GAME_IS ~bgee~)
+:: http://gibberlings3.net/forums/index.php?showtopic=25208&p=221002
+
+:: lynx's Tree of life canopy area marked outdoors
+:: http://gibberlings3.net/forums/index.php?showtopic=27392
+
+:: Alesia_BH's Sunfire power level fix
+:: http://gibberlings3.net/forums/index.php?showtopic=27401
+
+
+----------------------------------------------------------------------------------------
+
+
 :: bggraphics - Baldur's Gate Graphics Overhaul for BGT/Tutu v1.8
 
 :: prozh's fixed AR8100N.WED
@@ -711,6 +747,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Roxanne's Imoen no script assignment
 :: http://www.shsforums.net/topic/58186-anybody-take-on-the-chloe-mod/?p=581732
+
+:: Spurious reference to non-existent oggdec removed
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
