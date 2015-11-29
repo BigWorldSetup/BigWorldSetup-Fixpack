@@ -1,0 +1,11 @@
+--- bg1npc\tra\french\p#centeo.tra	Mon Mar 31 00:19:48 2014
++++ C:\BWP Patchstudio\patched files\bg1npc\tra\french\p#centeo.tra	Sun Sep 20 23:36:04 2015
+@@ -31,7 +31,7 @@
+ @26   = ~Femme, ne comprenez-vous pas que cela ne vous rendra pas plus heureuse ?~
+ @27   = ~Bien sûr que si. Je récupérerai ma vie !~
+ @28   = ~Oui, et puisque cette vie est... oh, à quoi bon ? Retrouvez donc votre corps.~
+-@29   = ~Mon corps... Ah, je suis de nouveau belle ! Je suis splendide...~ [ELFFF03]
++@29   = ~Mon corps... Ah, je suis de nouveau belle ! Je suis splendide...~
+ @30   = ~La tempête sera à la mesure de ma fureur... La pluie tombe pour toutes mes blessures...~
+ @31   = ~La vengeance est tout ce qu'il me reste. Il n'y a rien d'autre. Vengeance pour ce que Jon m'a fait.~
+ @32   = ~Et.. JE... VAIS... L'AVOIR !~

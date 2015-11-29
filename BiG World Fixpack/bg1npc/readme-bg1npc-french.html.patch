@@ -1,0 +1,87 @@
+--- bg1npc\readme-bg1npc-french.html	Thu Jun 18 14:44:42 2015
++++ C:\BWP Patchstudio\patched files\bg1npc\readme-bg1npc-french.html	Sun Sep 20 23:36:04 2015
+@@ -4,7 +4,7 @@
+     <title>Le projet BG1 NPC</title>
+     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+     <link rel="stylesheet" href="style/g3readme.css" type="text/css"/>
+-    <link href="style/g3icon.ico" rel="icon" type="image/bmp"/>
++    <link href="style/g3.ico" rel="icon" type="image/bmp"/>
+   </head>
+   <body>
+     <h1>
+@@ -19,7 +19,7 @@
+       <p>
+         <strong>Coordinateurs du projet (par ordre chronologique) :
+         <br/>
+-        <a href="http://gibberlings3.net/forums/?showuser=721">Blucher</a>, <a href="http://gibberlings3.net/forums/?showuser=62">Kish</a>, <a href="http://gibberlings3.net/forums/?showuser=30">Andyr</a>, <a href="http://gibberlings3.net/forums/?showuser=142">Domi</a>, actuellement : <a href="http://gibberlings3.net/forums/?showuser=844">cmorgan</a></strong>
++        <a href="http://gibberlings3.net/forums/?showuser=721">Blucher</a>, <a href="http://gibberlings3.net/forums/?showuser=62">Kish</a>, <a href="http://gibberlings3.net/forums/?showuser=30">Andyr</a>, <a href="http://gibberlings3.net/forums/?showuser=142">Domi</a>, <a href="http://gibberlings3.net/forums/?showuser=844">cmorgan</a>, actuellement : <a href="http://gibberlings3.net/forums/index.php?showuser=6858">AstroBryGuy</a></strong>
+       </p>
+       <p>
+         <strong>Sur le web : <a href="http://www.gibberlings3.net/bg1npc/">Page d'accueil</a></strong> et <strong><a href="http://gibberlings3.net/forums/index.php?showforum=45">forum de discussion</a></strong>
+@@ -1142,6 +1142,10 @@
+           <li>
+             Lothringen : traductrice (Coran, sauf la romance, Edwin, Kivan, Viconia, Xzar, ajustement de réputation grâce à des bardes)
+           </li>
++          <br/>
++          <strong>Traduction polonaise :</strong> pour tout support, veuillez vous rendre sur <a href="http://athkatla.cob-bg.pl/viewtopic.php?t=5734">Children of Bhaal</a>
++          <li>Traducteurs : Cuttooth (coordinateur), Jinete, Miss misery, Chisette, Yennyfer, Krist Algar, Nero, Morgan, Christoff, Marlong, Parys, Craven, Dead, Thug Poet, Yarpen, Lord Pawel</li>
++          <li>Relecteurs : Cuttooth (coordinateur), Kol (coordinateur), Lua Nova, Claudiad, Morgan, Li, Jinete, Zireael, Soul Reaver, Picollo, Zed Nocear, Arientar, Tinuviel, Euler, Grazin </li>
+         </ul>
+         <br/>
+       </p>
+@@ -1210,7 +1214,7 @@
+         (ceux qui ne sont pas indiqués sont inconnus)
+       </p>
+       <p>
+-        REMARQUE : pour accéder à ce contenu, il vous faudra télécharger et installer <em>The <acronym title="Baldur's Gate">BG</acronym>1<acronym title="Personnages Non-Joueur">NPC</acronym> Music Pack</em>. Vous pouvez le trouver sur la page de téléchargement de The Gibberlings Three, <a href="http://www.gibberlings3.net/downloads/#bg1npc">ici.</a>
++        REMARQUE : pour accéder à ce contenu, il vous faudra télécharger et installer <em>The <acronym title="Baldur's Gate">BG</acronym>1<acronym title="Personnages Non-Joueur">NPC</acronym> Music Pack</em>. Vous pouvez le trouver sur la page de téléchargement de The Gibberlings Three, <a href="http://gibberlings3.net/forums/index.php?app=downloads&showcat=11">ici.</a>
+       </p>
+       <ul>
+         <li>
+@@ -1340,7 +1344,7 @@
+ 			<li>Added code to update SPELDESC.2DA in BGEE for Camdawg's Temple Fix
+ 			<li>For CREs that use BG2 sounds that are unavailable in BGEE, sound references were updated to sounds available in BGEE (with a few exceptions). Note: Tutu and BGT will still use available BG2 sounds.
+ 			<li>Added x#ogref sounds for x#chop and x#cru in Xan's Turnip Quest.
+-			<li>Fixes for x#cutspy creating errors in BGEE.
++			<li>Fixes for x#cutspy creating errors in BGEE. 
+ 			<li>Banter Timing Tweak to adjust average time between dialog banters (replaces Compton's Banter Accelerator for BGEE)
+ 			<li>Fixed spell name for Imoen's Artifact in BGEE. (Mike1072)
+ 			<li>Replace references to BURN01.CRE (unavailable in BGEE) with new x#burn01.cre.
+@@ -1394,7 +1398,7 @@
+         	<li>If you refuse the quest initially, Coran no longer becomes instantly "charmed" before he has been given the roses. He has a more appropriate reaction to your refusal of Amelia.
+         	<li>Scripting updates to account for players force-attacking Amelia.  Amelia will now turn hostile and attack the party. If Natan has not been talked to, remove him if Amelia is force-attacked (quest is aborted). If Natan has been talked to, increment X#CoranSuccubus to 13 to allow quest to complete.
+         	<li>Coran will now become "charmed" by Amelia when in her presence if Natan is "charmed" (i.e., has been shown the roses).
+-        	<li>Amelia was a very difficult battle for BG1, so she has been toned-down to be more appropriate for BG1.
++        	<li>Amelia was a very difficult battle for BG1, so she has been toned-down to be more appropriate for BG1. 
+ 			<ul>
+ 			<li>HP, THAC0, AC, Saving throws updated to be in line with PnP succubus stats.
+ 			<li>Only immune to non-magical weapons
+@@ -1402,7 +1406,7 @@
+ 			<li>Updated combat script, inspired by Kirinhale's from TotSC
+ 			</ul>
+ 		  </ul>
+-        <li>Many dialog typo fixes.
++        <li>Many dialog typo fixes.       
+       </ul>
+       <p>
+         <strong>Version 20 - November 26, 2011</strong>
+@@ -1411,16 +1415,16 @@
+         <li>
+           <font color="red">Added </font><strong>Traduction française</strong> : pour tout support, rendez-vous sur <a href="http://www.baldursgateworld.fr/lacouronne/forum.php">La Couronne de Cuivre</a>
+         </li>
+-        <li>
++        <li> 
+           <font color="green">Repaired </font>From Isaya, reporting translator findings: x#cosqu.tra, < PRO_MANWOAMN > repaired to < PRO_MANWOMAN >
+         </li>
+-        <li>
++        <li> 
+           <font color="green">Repaired </font>From Isaya, reporting translator findings:  x#challenge.tra, string merge; lines across all translations now read:  <br />
+           @112  = ~I am pleased to make your acquaintance, even if it has happened under such... peculiar circumstances. Coran Sullussaer, was it not?~<br />
+           @112  = ~Me alegra conoceros, incluso en tal... circunstancia peculiar. Coran Sullussaer, ¿verdad?~<br />
+           @112  = ~Je suis heureuse de faire votre connaissance, même si elle se produit en des... circonstances aussi particulières. Coran Sullussaer, n'est-ce pas ?~
+         </li>
+-        <li>
++        <li> 
+           <font color="green">Repaired </font>From Isaya, reporting translator findings: I_C_T ~%tutu_scripts%LAVLEAD~ 0 X#CoranRill repaired to correct line; I_C_T ~%tutu_scripts%LAVLEAD~ 2 X#CoranRill
+         </li>
+ 		<li>

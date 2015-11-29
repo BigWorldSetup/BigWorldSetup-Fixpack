@@ -411,8 +411,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: bg1npc - BG1 NPC Project v22_20150614
 
-:: micbaldur's BHEREN DV assignment fix
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=580517
+:: Latest commit from AstroBryGuy/BG1NPC used as base
+:: https://github.com/AstroBryGuy/BG1NPC/commit/d12ab887f8807cb8e3fbc7575795ff035886b431
 
 
 ----------------------------------------------------------------------------------------

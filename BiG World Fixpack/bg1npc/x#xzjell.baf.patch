@@ -1,0 +1,14 @@
+--- bg1npc\phase2\baf\x#xzjell.baf	Mon Mar 31 00:19:44 2014
++++ C:\BWP Patchstudio\patched files\bg1npc\phase2\baf\x#xzjell.baf	Sun Sep 20 23:36:04 2015
+@@ -25,10 +25,9 @@
+ 	
+ IF
+ AttackedBy([GOODCUTOFF],DEFAULT)
+-OR(3)
++OR(2)
+ Allegiance(Myself,EVILBUTBLUE)
+ Allegiance(Myself,NEUTRAL)
+-Allegiance(Myself,0)
+ THEN
+ RESPONSE #100
+ Shout(151)
