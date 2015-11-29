@@ -1,0 +1,13 @@
+--- Vynd\Dialogue\GV#VYNDJ.d	Mon Sep 08 01:02:54 2014
++++ C:\BWP Patchstudio\patched files\Vynd\Dialogue\GV#VYNDJ.d	Sun Nov 29 08:17:20 2015
+@@ -2295,8 +2295,8 @@
+ + ~HPPercentLT("GV#VYND",26)~ + ~How are you?~ + p1.4
+ + ~Global("GV#VyndFriend","GLOBAL",0)~ + ~How do you think we're doing so far?~ + p2.1
+ + ~Global("GV#VyndFriend","GLOBAL",1)~ + ~How do you think we're doing so far?~ + p2.2
+-+ ~!Kit(Player1,ASSASIN) !Kit(Player1,Blackguard) Global("GV#VyndPoison","GLOBAL",0)~ + ~Can you teach me how to poison a weapon?~ + p7.1
+-+ ~!Kit(Player1,ASSASIN) !Kit(Player1,Blackguard) Global("GV#VyndPoison","GLOBAL",1) HPGT(Player1,1)~ + ~Can we go back to the poisoning lessons?~ + p7.3
+++ ~!Kit(Player1,ASSASIN) %BlackguardKitCheck% Global("GV#VyndPoison","GLOBAL",0)~ + ~Can you teach me how to poison a weapon?~ + p7.1
+++ ~!Kit(Player1,ASSASIN) %BlackguardKitCheck% Global("GV#VyndPoison","GLOBAL",1) HPGT(Player1,1)~ + ~Can we go back to the poisoning lessons?~ + p7.3
+ + ~Global("GV#VYNDPidHowLong","GLOBAL",0)~ + ~How long have you been on the surface for?~ DO ~SetGlobal("GV#VYNDPidHowLong","GLOBAL",1)~ + p.howlong
+ + ~Global("GV#VYNDPidSign","GLOBAL",0)~ + ~Teach me drow sign language!~ DO ~SetGlobal("GV#VYNDPidSign","GLOBAL",1)~ + p.sign
+ + ~GlobalGT("GV#VYNDTalk","GLOBAL",4) Global("GV#VYNDPidKnowYou","GLOBAL",0)~ + ~I'd really like to get to know you better.~ DO ~SetGlobal("GV#VYNDPidKnowYou","GLOBAL",1)~ + p3.1

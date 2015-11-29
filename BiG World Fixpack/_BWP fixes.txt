@@ -2575,6 +2575,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Vynd - Vynd NPC v1
+
+:: Variablized Kitcheck for Blackguard for non-EE installs
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: w_psionics_unleashed - Psionics Unleashed beta 0.30
 
 :: Non-EE compatible apostrophes for BG2 compatibility
@@ -2635,6 +2644,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: xpmod - Ding0's Experience Fixer v6
 
 :: White Agnus' 0 XP Creature Fix - creature_xp.tph
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
