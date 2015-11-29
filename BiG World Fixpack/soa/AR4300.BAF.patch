@@ -24,4 +24,3 @@
 +		SetGlobal("DoorS001Active","AR3200",2)
 +		Continue()
  END
-\ No newline at end of file

@@ -1,0 +1,11 @@
+--- Chloe\Bat\DecCR.bat	Sun Jul 26 13:17:50 2015
++++ C:\BWP Patchstudio\patched files\Chloe\Bat\DecCR.bat	Sun Nov 29 08:33:59 2015
+@@ -12,7 +12,7 @@
+ :sounds_add
+ 
+ 
+-oggdec c*.ogg
++:: oggdec c*.ogg
+ 
+ "Chloe\Sounds\oggdec.exe" "Chloe\Sounds\chloe0.ogg"
+ "Chloe\Sounds\oggdec.exe" "Chloe\Sounds\chloe1.ogg"
