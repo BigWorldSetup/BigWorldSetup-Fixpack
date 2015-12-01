@@ -1684,6 +1684,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: ithildurnew's Imoen Adventurer BGT compatibility fix
 :: http://gibberlings3.net/forums/index.php?showtopic=9609&p=233357
 
+:: subtledoctor's EE compatibility patch
+:: http://gibberlings3.net/forums/index.php?showtopic=27262&p=239838
+
 
 ----------------------------------------------------------------------------------------
 

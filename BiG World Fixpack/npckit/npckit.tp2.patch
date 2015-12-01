@@ -1,5 +1,5 @@
 --- npckit\npckit.tp2	Fri Sep 26 23:16:34 2014
-+++ C:\BWP Patchstudio\patched files\npckit\npckit.tp2	Sun Oct 18 20:45:13 2015
++++ C:\BWP Patchstudio\patched files\npckit\npckit.tp2	Tue Dec 01 21:06:16 2015
 @@ -5,7 +5,7 @@
  
  README ~NPCKit/readme-npckit.html~
@@ -9,7 +9,44 @@
  
  ALWAYS
  
-@@ -422,8 +422,8 @@
+@@ -109,6 +109,7 @@
+ // dummy file to allow for detection
+ COPY_EXISTING ~sw1h01.itm~ ~override/iknk0030.g3~
+ 
++ACTION_IF ENGINE_IS ~tob~ BEGIN
+ COPY_EXISTING ~kitlist.2da~ ~override~
+   SET_2DA_ENTRY 22 4 9 ~ikw1~
+   SET_2DA_ENTRY 23 4 9 ~ikw2~
+@@ -126,6 +127,28 @@
+   REPLACE ~ikw6~ @3006
+   REPLACE ~ikw7~ @3007
+   REPLACE ~ikw8~ @3008
++  BUT_ONLY_IF_IT_CHANGES
++END
++ACTION_IF GAME_IS ~bgee bg2ee~ BEGIN
++  COPY_EXISTING ~kitlist.2da~ ~override~
++    SET_2DA_ENTRY 23 4 9 ~ikw1~
++    SET_2DA_ENTRY 24 4 9 ~ikw2~
++    SET_2DA_ENTRY 25 4 9 ~ikw3~
++    SET_2DA_ENTRY 26 4 9 ~ikw4~
++    SET_2DA_ENTRY 27 4 9 ~ikw5~
++    SET_2DA_ENTRY 28 4 9 ~ikw6~
++    SET_2DA_ENTRY 29 4 9 ~ikw7~
++    SET_2DA_ENTRY 30 4 9 ~ikw8~
++    REPLACE ~ikw1~ @3001
++    REPLACE ~ikw2~ @3002
++    REPLACE ~ikw3~ @3003
++    REPLACE ~ikw4~ @3004
++    REPLACE ~ikw5~ @3005
++    REPLACE ~ikw6~ @3006
++    REPLACE ~ikw7~ @3007
++    REPLACE ~ikw8~ @3008
++  BUT_ONLY_IF_IT_CHANGES
++END
+ 
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+@@ -422,8 +445,8 @@
  // read conjurer allowed profs from weapprof and use those
  COPY_EXISTING ~weapprof.2da~ ~override~
    FOR (row = 0 ; row < 32 ; row = row + 1) BEGIN
@@ -20,7 +57,7 @@
    END
    PRETTY_PRINT_2DA
    BUT_ONLY_IF_IT_CHANGES
-@@ -538,7 +538,7 @@
+@@ -538,7 +561,7 @@
  
    END
  
