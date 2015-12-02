@@ -332,6 +332,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Mad Mate's innate spell compatibility fix
 :: http://www.shsforums.net/topic/56381-auroras-shoes-v-5-bug-reports/?p=578391
 
+:: Miloch's kobold patch typo bash
+:: http://www.shsforums.net/topic/45147-install-error/?p=543218
+
 
 ----------------------------------------------------------------------------------------
 
