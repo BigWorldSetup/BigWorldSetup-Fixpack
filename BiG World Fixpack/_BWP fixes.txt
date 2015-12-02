@@ -409,15 +409,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: bg1npc - BG1 NPC Project v22_20150614
-
-:: Latest commit from AstroBryGuy/BG1NPC used as base
-:: https://github.com/AstroBryGuy/BG1NPC/commit/d12ab887f8807cb8e3fbc7575795ff035886b431
-
-
-----------------------------------------------------------------------------------------
-
-
 :: BG1NPCSoA - BG1 NPCs for SoA v9
 
 :: Lollorian's fix for Coran having Eldoth's item
