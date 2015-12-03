@@ -1,5 +1,5 @@
 --- polytweak\polytweak.tp2	Sat Jan 11 19:06:57 2014
-+++ C:\BWP Patchstudio\patched files\polytweak\polytweak.tp2	Thu Dec 03 21:04:11 2015
++++ C:\BWP Patchstudio\patched files\polytweak\polytweak.tp2	Thu Dec 03 21:32:53 2015
 @@ -1,6 +1,6 @@
  BACKUP ~polytweak/backup~
  AUTHOR ~Polytope, hatpinlamma@yahoo.com~
@@ -28,7 +28,7 @@
  COPY_EXISTING ~trolde02.cre~ ~override~
  WRITE_LONG 0x14 0
  WRITE_SHORT 0x0024 1
-+WRITE_ASCII 0x260 TROLDE02 #8
++WRITE_ASCII 0x260 TROLDE02
  ADD_CRE_ITEM ~a^troll2~ #0 #0 #0 ~NONE~ ~RRING~
  
  COPY_EXISTING ~trolic01.cre~ ~override~
@@ -36,7 +36,7 @@
  COPY_EXISTING ~trolic02.cre~ ~override~
  WRITE_LONG 0x14 0
  WRITE_SHORT 0x0024 1
-+WRITE_ASCII 0x260 TROLIC02 #8
++WRITE_ASCII 0x260 TROLIC02
  ADD_CRE_ITEM ~a^troll2~ #0 #0 #0 ~NONE~ ~RRING~
  
  COPY_EXISTING ~trolgi01.cre~ ~override~
@@ -44,7 +44,7 @@
  COPY_EXISTING ~trolgi02.cre~ ~override~
  WRITE_LONG 0x14 0
  WRITE_SHORT 0x0024 1
-+WRITE_ASCII 0x248 TROLGI02 #8
++WRITE_ASCII 0x248 TROLGI02
  ADD_CRE_ITEM ~a^troll2~ #0 #0 #0 ~NONE~ ~RRING~
  
  COPY_EXISTING ~trolsi01.cre~ ~override~
@@ -52,7 +52,7 @@
  COPY_EXISTING ~trolsi02.cre~ ~override~
  WRITE_LONG 0x14 0
  WRITE_SHORT 0x0024 1
-+WRITE_ASCII 0x260 TROLSI02 #8
++WRITE_ASCII 0x260 TROLSI02
  ADD_CRE_ITEM ~a^troll2~ #0 #0 #0 ~NONE~ ~RRING~
  
  COPY_EXISTING ~pptroll1.cre~ ~override~
@@ -69,7 +69,7 @@
  COPY_EXISTING ~trolsn02.cre~ ~override~
  WRITE_LONG 0x14 0
  WRITE_SHORT 0x0024 1
-+WRITE_ASCII 0x260 TROLSN02 #8
++WRITE_ASCII 0x260 TROLSN02
  ADD_CRE_ITEM ~a^troll2~  #0 #0 #0 ~NONE~ ~RRING~
  
  COPY_EXISTING ~trolsp01.cre~ ~override~
@@ -77,7 +77,7 @@
  COPY_EXISTING ~trolsp02.cre~ ~override~
  WRITE_LONG 0x14 0
  WRITE_SHORT 0x0024 1
-+WRITE_ASCII 0x260 TROLSP02 #8
++WRITE_ASCII 0x260 TROLSP02
  ADD_CRE_ITEM ~a^troll2~  #0 #0 #0 ~NONE~ ~RRING~
  
  COPY_EXISTING ~hgtrl01.cre~ ~override~
@@ -89,3 +89,12 @@
  REMOVE_CRE_ITEM ~trollreg~
  ADD_CRE_ITEM ~a^hgtrol~  #0 #0 #0 ~NONE~ ~RRING~
  ADD_CRE_ITEM ~HGTRL01~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
+@@ -1276,7 +1285,7 @@
+ 
+ COPY_EXISTING ~sw1h24.itm~ ~override~
+   WRITE_ASCII 0x3a ~A^ISWFLM~
+-  WRITE_ASCII 0x58 ~PSW1H60~
++  WRITE_ASCII 0x58 ~PSW1H60~ #8
+   READ_LONG   0x64 "abil_off"
+   READ_SHORT  0x68 "abil_num"
+   WHILE ("%abil_num%" > 0) BEGIN

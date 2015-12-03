@@ -1796,6 +1796,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: PPK - Prestige Kit Pack
+
+:: KIT.IDS fixes
+:: - LINK NOT FOUND -
+
+:: Added dependancy on component 0 for all subcomponents
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Questor Revised v1
 
 :: Lollorian's correction - M#Questo.bcs
