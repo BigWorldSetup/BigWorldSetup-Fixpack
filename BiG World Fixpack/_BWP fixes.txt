@@ -1787,6 +1787,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: polytweak - PolyTweaks v2.00
+
+:: Simon280586's Misc Troll fixes
+:: http://gibberlings3.net/forums/index.php?showtopic=25724&p=235372
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Questor Revised v1
 
 :: Lollorian's correction - M#Questo.bcs

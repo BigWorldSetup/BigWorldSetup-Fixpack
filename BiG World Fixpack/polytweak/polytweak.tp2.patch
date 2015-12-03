@@ -1,0 +1,91 @@
+--- polytweak\polytweak.tp2	Sat Jan 11 19:06:57 2014
++++ C:\BWP Patchstudio\patched files\polytweak\polytweak.tp2	Thu Dec 03 21:04:11 2015
+@@ -1,6 +1,6 @@
+ BACKUP ~polytweak/backup~
+ AUTHOR ~Polytope, hatpinlamma@yahoo.com~
+-VERSION ~v2.00~
++VERSION ~v2.00 BWP Fix~
+ LANGUAGE ~English~ ~english~ ~polytweak/english/setup.tra~
+ 
+ BEGIN @50 DESIGNATED 50
+@@ -190,6 +190,7 @@
+ COPY_EXISTING ~troll02.cre~ ~override~
+ WRITE_LONG 0x14 0
+ WRITE_SHORT 0x0024 1
++WRITE_ASCII 0x248 TROLL02 #8
+ ADD_CRE_ITEM ~a^troll2~ #0 #0 #0 ~NONE~ ~RRING~
+ 
+ COPY_EXISTING ~troluo01.cre~ ~override~
+@@ -250,6 +251,7 @@
+ COPY_EXISTING ~troll03.cre~ ~override~
+ WRITE_LONG 0x14 0
+ WRITE_SHORT 0x0024 1
++WRITE_ASCII 0x248 TROLL03 #8
+ ADD_CRE_ITEM ~a^troll2~ #0 #0 #0 ~NONE~ ~RRING~
+ 
+ COPY_EXISTING ~trolde01.cre~ ~override~
+@@ -288,6 +290,7 @@
+ COPY_EXISTING ~trolde02.cre~ ~override~
+ WRITE_LONG 0x14 0
+ WRITE_SHORT 0x0024 1
++WRITE_ASCII 0x260 TROLDE02 #8
+ ADD_CRE_ITEM ~a^troll2~ #0 #0 #0 ~NONE~ ~RRING~
+ 
+ COPY_EXISTING ~trolic01.cre~ ~override~
+@@ -329,6 +332,7 @@
+ COPY_EXISTING ~trolic02.cre~ ~override~
+ WRITE_LONG 0x14 0
+ WRITE_SHORT 0x0024 1
++WRITE_ASCII 0x260 TROLIC02 #8
+ ADD_CRE_ITEM ~a^troll2~ #0 #0 #0 ~NONE~ ~RRING~
+ 
+ COPY_EXISTING ~trolgi01.cre~ ~override~
+@@ -375,6 +379,7 @@
+ COPY_EXISTING ~trolgi02.cre~ ~override~
+ WRITE_LONG 0x14 0
+ WRITE_SHORT 0x0024 1
++WRITE_ASCII 0x248 TROLGI02 #8
+ ADD_CRE_ITEM ~a^troll2~ #0 #0 #0 ~NONE~ ~RRING~
+ 
+ COPY_EXISTING ~trolsi01.cre~ ~override~
+@@ -421,6 +426,7 @@
+ COPY_EXISTING ~trolsi02.cre~ ~override~
+ WRITE_LONG 0x14 0
+ WRITE_SHORT 0x0024 1
++WRITE_ASCII 0x260 TROLSI02 #8
+ ADD_CRE_ITEM ~a^troll2~ #0 #0 #0 ~NONE~ ~RRING~
+ 
+ COPY_EXISTING ~pptroll1.cre~ ~override~
+@@ -438,7 +444,7 @@
+ 
+ COPY_EXISTING ~trolsn01.cre~ ~override~ //Snow trolls, don't ask me why I bother with
+               ~trolsn02.cre~ ~override~ //this rare and trivial creature...
+-	      ~obsice04.cre~ ~override~	//Planar sphere snow troll
++	      ~obsice01.cre~ ~override~	//Planar sphere snow troll
+ WRITE_SHORT 0x24 50
+ WRITE_SHORT 0x26 50
+ WRITE_BYTE 0x53 2
+@@ -473,6 +479,7 @@
+ COPY_EXISTING ~trolsn02.cre~ ~override~
+ WRITE_LONG 0x14 0
+ WRITE_SHORT 0x0024 1
++WRITE_ASCII 0x260 TROLSN02 #8
+ ADD_CRE_ITEM ~a^troll2~  #0 #0 #0 ~NONE~ ~RRING~
+ 
+ COPY_EXISTING ~trolsp01.cre~ ~override~
+@@ -513,6 +520,7 @@
+ COPY_EXISTING ~trolsp02.cre~ ~override~
+ WRITE_LONG 0x14 0
+ WRITE_SHORT 0x0024 1
++WRITE_ASCII 0x260 TROLSP02 #8
+ ADD_CRE_ITEM ~a^troll2~  #0 #0 #0 ~NONE~ ~RRING~
+ 
+ COPY_EXISTING ~hgtrl01.cre~ ~override~
+@@ -549,6 +557,7 @@
+ COPY_EXISTING ~hgtrl02.cre~ ~override~
+ WRITE_LONG 0x14 0
+ WRITE_SHORT 0x0024 1 
++WRITE_ASCII 0x248 HGTRL02 #8
+ REMOVE_CRE_ITEM ~trollreg~
+ ADD_CRE_ITEM ~a^hgtrol~  #0 #0 #0 ~NONE~ ~RRING~
+ ADD_CRE_ITEM ~HGTRL01~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
