@@ -2241,6 +2241,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's updated North Forest code
 :: - LINK NOT FOUND ~
 
+:: Updated all BP mod predicates to newer BP v181-4611 component numbers
+:: - LINK NOT FOUND ~
+
 
 ----------------------------------------------------------------------------------------
 
