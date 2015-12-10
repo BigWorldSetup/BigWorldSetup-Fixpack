@@ -1,6 +1,6 @@
 BACKUP ~lolfixer/backup~
 AUTHOR ~Lollorian~
-VERSION ~28112015~
+VERSION ~10122015~
 
 BEGIN ~Area Stuff - MAJESTIC Area Fixer~
   GROUP ~Area Stuff~
@@ -1367,6 +1367,15 @@ BEGIN ~Creature Stuff - MAJESTIC Creature Fixer~
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
   PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN
+
+    // Missing Animation Fixer
+    READ_SHORT 0x28  "anim"
+	
+    LOOKUP_IDS_SYMBOL_OF_INT animation animate %anim%
+    PATCH_IF ("%anim%" STRING_EQUAL "%animation%") BEGIN
+      PATCH_PRINT "%SOURCE_FILE% issue: Missing animation! Assigning Gibberling animation..."
+      WRITE_SHORT 0x28 30720 // Gibberling
+    END
 
     // Missing Script Remover
     FOR (index = 0 ; index < 5 ; index = index + 1) BEGIN
