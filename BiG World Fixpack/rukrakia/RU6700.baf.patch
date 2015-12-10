@@ -1,0 +1,11 @@
+--- rukrakia\BAF\RU6700.baf	Mon Nov 02 05:55:04 2009
++++ C:\BWP Patchstudio\patched files\rukrakia\BAF\RU6700.baf	Thu Dec 10 22:04:29 2015
+@@ -36,7 +36,7 @@
+    RESPONSE 100
+       SetGlobal("RukrakiaCreation","GLOBAL",1)
+       CreateCreature("rukrakia",[375.695],8)
+-      StartCutScene("ruksfix")
++      StartCutScene("rukfix1")
+       SetGlobalTimer("RU_CorpsesDelay","GLOBAL",ONE_DAY)
+ END
+ 
