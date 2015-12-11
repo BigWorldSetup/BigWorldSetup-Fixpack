@@ -1,0 +1,46 @@
+--- 1pp\install\202_spelltweaks.tph	Sun Aug 05 10:45:35 2012
++++ C:\BWP Patchstudio\patched files\1pp\install\202_spelltweaks.tph	Fri Dec 11 21:07:08 2015
+@@ -14,8 +14,19 @@
+     ACTION_IF (FILE_EXISTS_IN_GAME ~SPWI317.SPL~) THEN BEGIN
+       COPY_EXISTING ~SPWI317.SPL~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_LONG  0x2c2 0
+-    WRITE_ASCII 0x2be ~1WDGARMR~
++    READ_LONG  0x6a "fx_off"
++    READ_SHORT 0x6e "fx_idx"
++    READ_SHORT 0x70 "fx_num"
++
++    PATCH_IF (fx_off > 0x71) BEGIN
++      FOR (index = fx_idx ; index < fx_num ; index = index + 1) BEGIN
++        READ_SHORT ("%fx_off%" +        ("%index%" * 0x30)) "opcode"
++        READ_ASCII ("%fx_off%" + 0x14 + ("%index%" * 0x30)) "resref"
++        PATCH_IF (("%opcode%" = 215) AND ("%resref%" STRING_EQUAL_CASE "ICARMOR"))  BEGIN
++          WRITE_ASCII ("%fx_off%" + 0x14 + ("%index%" * 0x30)) ~1WDGARMR~ #8
++        END
++      END
++    END
+   END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -23,8 +34,19 @@
+  ACTION_IF (FILE_EXISTS_IN_GAME ~SPWI414.SPL~) THEN BEGIN
+       COPY_EXISTING ~SPWI414.SPL~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_LONG  0x472 0
+-    WRITE_ASCII 0x46e ~1WDSARMR~
++    READ_LONG  0x6a "fx_off"
++    READ_SHORT 0x6e "fx_idx"
++    READ_SHORT 0x70 "fx_num"
++
++    PATCH_IF (fx_off > 0x71) BEGIN
++      FOR (index = fx_idx ; index < fx_num ; index = index + 1) BEGIN
++        READ_SHORT ("%fx_off%" +        ("%index%" * 0x30)) "opcode"
++        READ_ASCII ("%fx_off%" + 0x14 + ("%index%" * 0x30)) "resref"
++        PATCH_IF (("%opcode%" = 215) AND ("%resref%" STRING_EQUAL_CASE "SPSARMOR"))  BEGIN
++          WRITE_ASCII ("%fx_off%" + 0x14 + ("%index%" * 0x30)) ~1WDSARMR~ #8
++        END
++      END
++    END
+   END
+   BUT_ONLY_IF_IT_CHANGES
+   END

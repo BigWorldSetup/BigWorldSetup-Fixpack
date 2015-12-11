@@ -40,6 +40,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: The Imp's Solar swords without graphic artifacts
 :: http://www.shsforums.net/topic/58208-planetar-animation-glitch/
 
+:: Lollorian's patchified Armor animation changes
+:: - LINK NOT FOUND ~
+
 
 ----------------------------------------------------------------------------------------
 
