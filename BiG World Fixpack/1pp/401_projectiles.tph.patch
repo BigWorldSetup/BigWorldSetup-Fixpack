@@ -1,0 +1,1161 @@
+--- 1pp\install\401_projectiles.tph	Sun Aug 12 06:34:25 2012
++++ C:\BWP Patchstudio\patched files\1pp\install\401_projectiles.tph	Sat Dec 12 19:13:02 2015
+@@ -15,7 +15,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AROW01.ITM~) THEN BEGIN
+ COPY_EXISTING ~AROW01.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow01%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROWHVY") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow01%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -173,7 +183,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_AROW01.ITM~) THEN BEGIN
+ COPY_EXISTING ~_AROW01.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow01%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROWHVY") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow01%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -183,7 +203,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AROW02.ITM~) THEN BEGIN
+ COPY_EXISTING ~AROW02.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow02%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROWHVY") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow02%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -191,7 +221,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_AROW02.ITM~) THEN BEGIN
+ COPY_EXISTING ~_AROW02.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow02%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROWHVY") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow02%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -201,7 +241,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AROW03.ITM~) THEN BEGIN
+ COPY_EXISTING ~AROW03.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow03%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow03%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -209,7 +259,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_AROW03.ITM~) THEN BEGIN
+ COPY_EXISTING ~_AROW03.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow03%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow03%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -219,7 +279,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AROW04.ITM~) THEN BEGIN
+ COPY_EXISTING ~AROW04.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow04%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow04%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -227,7 +297,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_AROW04.ITM~) THEN BEGIN
+ COPY_EXISTING ~_AROW04.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow04%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow04%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -237,7 +317,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AROW05.ITM~) THEN BEGIN
+ COPY_EXISTING ~AROW05.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow05%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow05%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -245,7 +335,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_AROW05.ITM~) THEN BEGIN
+ COPY_EXISTING ~_AROW05.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow05%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow05%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -255,7 +355,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AROW07.ITM~) THEN BEGIN
+ COPY_EXISTING ~AROW07.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow07%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow07%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -263,7 +373,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_AROW07.ITM~) THEN BEGIN
+ COPY_EXISTING ~_AROW07.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow07%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow07%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -273,7 +393,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AROW10.ITM~) THEN BEGIN
+ COPY_EXISTING ~AROW10.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow10%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow10%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -281,7 +411,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_AROW10.ITM~) THEN BEGIN
+ COPY_EXISTING ~_AROW10.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow10%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow10%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -291,7 +431,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AROW11.ITM~) THEN BEGIN
+ COPY_EXISTING ~AROW11.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow11%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow11%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -299,7 +449,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_AROW11.ITM~) THEN BEGIN
+ COPY_EXISTING ~_AROW11.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow11%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow11%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -309,7 +469,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AROW15.ITM~) THEN BEGIN
+ COPY_EXISTING ~AROW15.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow15%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow15%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -317,7 +487,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_AROW15.ITM~) THEN BEGIN
+ COPY_EXISTING ~_AROW15.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1arow15%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "ARROW") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1arow15%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -327,7 +507,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AX1H05.ITM~) THEN BEGIN
+ COPY_EXISTING ~AX1H05.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1axe05%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "AXE") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1axe05%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -335,7 +525,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_AX1H05.ITM~) THEN BEGIN
+ COPY_EXISTING ~_AX1H05.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1axe05%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "AXE") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1axe05%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -343,7 +543,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~AX1H06.ITM~) THEN BEGIN
+ COPY_EXISTING ~AX1H06.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0xd4 ~%1axe05%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "AXE") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1axe05%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -353,7 +563,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AX1H08.ITM~) THEN BEGIN
+ COPY_EXISTING ~AX1H08.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1axe08%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "AXE") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1axe08%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -363,7 +583,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AX1H09.ITM~) THEN BEGIN
+ COPY_EXISTING ~AX1H09.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1axe09%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "AXE") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1axe09%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -373,7 +603,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AX1H10.ITM~) THEN BEGIN
+ COPY_EXISTING ~AX1H10.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1axe10%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "AXE") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1axe10%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -383,7 +623,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~AX1H16.ITM~) THEN BEGIN
+ COPY_EXISTING ~AX1H16.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1axe16%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "AXE") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1axe16%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -394,7 +644,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~BOLT01.ITM~) THEN BEGIN
+ COPY_EXISTING ~BOLT01.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bolt01%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BOLT") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bolt01%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 27	// colour index
+ 	SET location = wpink		// location
+@@ -557,7 +817,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_BOLT01.ITM~) THEN BEGIN
+ COPY_EXISTING ~_BOLT01.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bolt01%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BOLT") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bolt01%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 27	// colour index
+ 	SET location = wpink		// location
+@@ -571,7 +841,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~BOLT02.ITM~) THEN BEGIN
+ COPY_EXISTING ~BOLT02.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bolt02%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BOLT") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bolt02%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 90	// colour index
+ 	SET location = wpink		// location
+@@ -583,7 +863,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_BOLT02.ITM~) THEN BEGIN
+ COPY_EXISTING ~_BOLT02.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bolt02%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BOLT") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bolt02%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 90	// colour index
+ 	SET location = wpink		// location
+@@ -597,7 +887,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~BOLT03.ITM~) THEN BEGIN
+ COPY_EXISTING ~BOLT03.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bolt03%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BOLT") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bolt03%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 218	// colour index
+ 	SET location = wpink		// location
+@@ -609,7 +909,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_BOLT03.ITM~) THEN BEGIN
+ COPY_EXISTING ~_BOLT03.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bolt03%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BOLT") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bolt03%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 218	// colour index
+ 	SET location = wpink		// location
+@@ -623,7 +933,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~BOLT04.ITM~) THEN BEGIN
+ COPY_EXISTING ~BOLT04.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bolt04%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BOLT") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bolt04%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 252	// colour index
+ 	SET location = wpink		// location
+@@ -635,7 +955,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_BOLT04.ITM~) THEN BEGIN
+ COPY_EXISTING ~_BOLT04.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bolt04%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BOLT") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bolt04%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 252	// colour index
+ 	SET location = wpink		// location
+@@ -649,7 +979,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~BOLT05.ITM~) THEN BEGIN
+ COPY_EXISTING ~BOLT05.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bolt05%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BOLT") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bolt05%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 227	// colour index
+ 	SET location = wpink		// location
+@@ -661,7 +1001,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_BOLT05.ITM~) THEN BEGIN
+ COPY_EXISTING ~_BOLT05.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bolt05%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BOLT") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bolt05%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 227	// colour index
+ 	SET location = wpink		// location
+@@ -675,7 +1025,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~BOLT06.ITM~) THEN BEGIN
+ COPY_EXISTING ~BOLT06.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bolt06%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BOLT") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bolt06%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 81	// colour index
+ 	SET location = wpink		// location
+@@ -687,7 +1047,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_BOLT06.ITM~) THEN BEGIN
+ COPY_EXISTING ~_BOLT06.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bolt06%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BOLT") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bolt06%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 81	// colour index
+ 	SET location = wpink		// location
+@@ -712,7 +1082,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~BOLT09.ITM~) THEN BEGIN
+ COPY_EXISTING ~BOLT06.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bolt09%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BOLT") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bolt09%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 186	// colour index
+ 	SET location = wpink		// location
+@@ -748,7 +1128,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~BULL02.ITM~) THEN BEGIN
+ COPY_EXISTING ~BULL02.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bull02%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BULLET") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bull02%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 218	// colour index
+ 	SET location = wgrey		// location
+@@ -760,7 +1150,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_BULL02.ITM~) THEN BEGIN
+ COPY_EXISTING ~_BULL02.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bull02%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BULLET") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bull02%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 218	// colour index
+ 	SET location = wgrey		// location
+@@ -774,7 +1174,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~BULL03.ITM~) THEN BEGIN
+ COPY_EXISTING ~BULL03.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bull03%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BULLET") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bull03%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 70	// colour index
+ 	SET location = wgrey		// location
+@@ -786,7 +1196,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_BULL03.ITM~) THEN BEGIN
+ COPY_EXISTING ~_BULL03.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bull03%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BULLET") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bull03%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 70	// colour index
+ 	SET location = wgrey		// location
+@@ -800,7 +1220,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~BULL04.ITM~) THEN BEGIN
+ COPY_EXISTING ~BULL04.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bull04%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BULLET") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bull04%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 115	// colour index
+ 	SET location = wgrey		// location
+@@ -814,7 +1244,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~BULL05.ITM~) THEN BEGIN
+ COPY_EXISTING ~BULL05.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bull05%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BULLET") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bull05%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 148	// colour index
+ 	SET location = wgrey		// location
+@@ -828,7 +1268,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~BULL06.ITM~) THEN BEGIN
+ COPY_EXISTING ~BULL06.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1bull06%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "BULLET") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1bull06%~
++        END
++      END
++    END
+ 	LAUNCH_PATCH_MACRO ~clear~
+ 	SET gradient = 19	// colour index
+ 	SET location = wgrey		// location
+@@ -842,7 +1292,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~DAGG05.ITM~) THEN BEGIN
+ COPY_EXISTING ~DAGG05.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dagg05%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DAGGER") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dagg05%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -850,7 +1310,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_DAGG05.ITM~) THEN BEGIN
+ COPY_EXISTING ~_DAGG05.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dagg05%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DAGGER") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dagg05%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -860,7 +1330,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~DAGG11.ITM~) THEN BEGIN
+ COPY_EXISTING ~DAGG11.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dagg11%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DAGGER") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dagg11%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -870,7 +1350,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~DAGG12.ITM~) THEN BEGIN
+ COPY_EXISTING ~DAGG12.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dagg12%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DAGGER") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dagg12%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -880,7 +1370,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~DAGG16.ITM~) THEN BEGIN
+ COPY_EXISTING ~DAGG16.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dagg16%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DAGGER") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dagg16%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -888,7 +1388,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~a!thtd.ITM~) THEN BEGIN
+ COPY_EXISTING ~a!thtd.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dagg16%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DAGGER") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dagg16%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -898,7 +1408,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~DART01.ITM~) THEN BEGIN
+ COPY_EXISTING ~DART01.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dart01%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DART") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dart01%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -906,7 +1426,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_DART01.ITM~) THEN BEGIN
+ COPY_EXISTING ~_DART01.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dart01%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DART") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dart01%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -916,7 +1446,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~DART02.ITM~) THEN BEGIN
+ COPY_EXISTING ~DART02.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dart02%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DART") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dart02%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -924,7 +1464,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_DART02.ITM~) THEN BEGIN
+ COPY_EXISTING ~_DART02.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dart02%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DART") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dart02%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -934,7 +1484,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~DART03.ITM~) THEN BEGIN
+ COPY_EXISTING ~DART03.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dart03%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DART") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dart03%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -942,7 +1502,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_DART03.ITM~) THEN BEGIN
+ COPY_EXISTING ~_DART03.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dart03%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DART") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dart03%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -952,7 +1522,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~DART04.ITM~) THEN BEGIN
+ COPY_EXISTING ~DART04.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dart04%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DART") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dart04%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -960,7 +1540,17 @@
+   ACTION_IF (FILE_EXISTS_IN_GAME ~_DART04.ITM~) THEN BEGIN
+ COPY_EXISTING ~_DART04.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dart04%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DART") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dart04%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -970,7 +1560,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~DART05.ITM~) THEN BEGIN
+ COPY_EXISTING ~DART05.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dart05%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DART") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dart05%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
+@@ -980,7 +1580,17 @@
+ ACTION_IF (FILE_EXISTS_IN_GAME ~DART08.ITM~) THEN BEGIN
+ COPY_EXISTING ~DART08.ITM~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+-    WRITE_SHORT  0x9c ~%1dart08%~
++    READ_LONG  0x64 "abil_off" ELSE 0
++    READ_SHORT 0x68 "abil_num" ELSE 0
++    PATCH_IF (abil_off > 0x71) BEGIN
++      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++        READ_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) "proj"
++        LOOKUP_IDS_SYMBOL_OF_INT projectile projectl %proj%
++        PATCH_IF ("%projectile%" STRING_EQUAL_CASE "DART") BEGIN
++          WRITE_SHORT ("%abil_off%" + 0x2a + (0x38 * "%index%")) ~%1dart08%~
++        END
++      END
++    END
+ 	  END
+   BUT_ONLY_IF_IT_CHANGES
+   END
