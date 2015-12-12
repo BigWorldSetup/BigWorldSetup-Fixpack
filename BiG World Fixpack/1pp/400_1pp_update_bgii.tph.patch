@@ -1,5 +1,5 @@
 --- 1pp\install\400_1pp_update_bgii.tph	Thu Sep 20 12:25:37 2012
-+++ C:\BWP Patchstudio\patched files\1pp\install\400_1pp_update_bgii.tph	Mon Sep 09 17:49:41 2013
++++ C:\BWP Patchstudio\patched files\1pp\install\400_1pp_update_bgii.tph	Sat Dec 12 00:30:15 2015
 @@ -6503,7 +6503,7 @@
    
    
@@ -59,35 +59,35 @@
     
      COPY_EXISTING ~dshop02.sto~ ~override~ 
 -    ADD_STORE_ITEM ~band01~   AFTER  ~potn20~ #0 #0 #0 ~IDENTIFIED~ #1
-+    ADD_STORE_ITEM ~xoband01~   AFTER  ~potn20~ #0 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM ~xoband01~ AFTER  ~potn20~ #0 #0 #0 ~IDENTIFIED~ #1
     
     COPY_EXISTING ~dshop02.sto~ ~override~ 
 -    ADD_STORE_ITEM ~band01~   AFTER  ~potn20~ #0 #0 #0 ~IDENTIFIED~ #1
-+    ADD_STORE_ITEM ~xoband01~   AFTER  ~potn20~ #0 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM ~xoband01~ AFTER  ~potn20~ #0 #0 #0 ~IDENTIFIED~ #1
  	
  	COPY_EXISTING ~bmthief.sto~ ~override~ 
 -    ADD_STORE_ITEM ~band01~   AFTER  ~dagg16~ #0 #0 #0 ~IDENTIFIED~ #1
-+    ADD_STORE_ITEM ~xoband01~   AFTER  ~dagg16~ #0 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM ~xoband01~ AFTER  ~dagg16~ #0 #0 #0 ~IDENTIFIED~ #1
     
     COPY_EXISTING ~bernard.sto~ ~override~ 
 -    ADD_STORE_ITEM ~band01~   AFTER  ~amul13~ #0 #0 #0 ~IDENTIFIED~ #2
-+    ADD_STORE_ITEM ~xoband01~   AFTER  ~amul13~ #0 #0 #0 ~IDENTIFIED~ #2
++    ADD_STORE_ITEM ~xoband01~ AFTER  ~amul13~ #0 #0 #0 ~IDENTIFIED~ #2
     
     COPY_EXISTING ~bmthief.sto~ ~override~ 
 -    ADD_STORE_ITEM ~band01~   AFTER  ~dagg16~ #0 #0 #0 ~IDENTIFIED~ #1
-+    ADD_STORE_ITEM ~xoband01~   AFTER  ~dagg16~ #0 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM ~xoband01~ AFTER  ~dagg16~ #0 #0 #0 ~IDENTIFIED~ #1
     
       COPY_EXISTING ~govwau01.sto~ ~override~ 
 -    ADD_STORE_ITEM ~band02~   BEFORE  ~potn08~ #0 #0 #0 ~IDENTIFIED~ #1
-+    ADD_STORE_ITEM ~xoband02~   BEFORE  ~potn08~ #0 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM ~xoband02~ BEFORE  ~potn08~ #0 #0 #0 ~IDENTIFIED~ #1
  	
  	COPY_EXISTING ~uddrow23.sto~ ~override~ 
 -    ADD_STORE_ITEM ~band02~   AFTER  ~amul10~ #0 #0 #0 ~IDENTIFIED~ #2
-+    ADD_STORE_ITEM ~xoband02~   AFTER  ~amul10~ #0 #0 #0 ~IDENTIFIED~ #2
++    ADD_STORE_ITEM ~xoband02~ AFTER  ~amul10~ #0 #0 #0 ~IDENTIFIED~ #2
     
     COPY_EXISTING ~ppumb01.sto~ ~override~ 
 -    ADD_STORE_ITEM ~band02~   BEFORE  ~potn08~ #0 #0 #0 ~IDENTIFIED~ #1
-+    ADD_STORE_ITEM ~xoband02~   BEFORE  ~potn08~ #0 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM ~xoband02~ BEFORE  ~potn08~ #0 #0 #0 ~IDENTIFIED~ #1
     
     
       END // game is
