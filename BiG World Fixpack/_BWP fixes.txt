@@ -415,6 +415,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: bg1npc - BG1 NPC Project v22.1 (20151201)
+
+:: Lollorian's small typobash for starting location code
+:: - LINK NOT FOUND ~
+
+
+----------------------------------------------------------------------------------------
+
+
 :: BG1NPCSoA - BG1 NPCs for SoA v9
 
 :: Lollorian's fix for Coran having Eldoth's item
