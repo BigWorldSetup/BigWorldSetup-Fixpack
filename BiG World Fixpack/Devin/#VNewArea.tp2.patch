@@ -1,0 +1,66 @@
+--- Devin\Tp2externe\#VNewArea.tp2	Sun Jan 24 13:29:08 2010
++++ C:\BWP Patchstudio\patched files\Devin\Tp2externe\#VNewArea.tp2	Fri Dec 18 22:57:44 2015
+@@ -51,16 +51,57 @@
+ // Implantation du site de la confrérie
+ 
+ COPY ~Devin/New Area/#VAR20.are~ ~override~
+-ADD_MAP_NOTE #1786 #286 ~violet~
+-  ~Salle des réprouvés~
+-ADD_MAP_NOTE #1755 #1440 ~violet~
+-  ~Temple du Grand Sacrant~
+-ADD_MAP_NOTE #505 #743 ~violet~
+-  ~Maison des deux fervents~
++
++FOR( i = SHORT_AT 0xc8 ; i ; --i ) BEGIN
++    LAUNCH_PATCH_FUNCTION ~fj_are_structure~
++        INT_VAR
++        fj_delete_mode = i - 1
++        STR_VAR
++        fj_structure_type = note
++    END
++END
++
++COPY_EXISTING ~override/#VAR20.are~ ~override~
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 1786
++    fj_loc_y       = 286
++    fj_note_strref = RESOLVE_STR_REF (~Salle des réprouvés~)
++    fj_strref_loc  = 0
++    fj_color       = 1
++    STR_VAR
++    fj_structure_type = note
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 1755
++    fj_loc_y       = 1440
++    fj_note_strref = RESOLVE_STR_REF (~Temple du Grand Sacrant~)
++    fj_strref_loc  = 0
++    fj_color       = 1
++    STR_VAR
++    fj_structure_type = note
++END
++
++LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
++    INT_VAR
++    fj_loc_x       = 505
++    fj_loc_y       = 743
++    fj_note_strref = RESOLVE_STR_REF (~Maison des deux fervents~)
++    fj_strref_loc  = 0
++    fj_color       = 1
++    STR_VAR
++    fj_structure_type = note
++END
++
+ SAY 0x3cc ~Vous sentez que les yeux de cette statue ne cessent de vous suivre comme s'ils étaient doué de vie.~
+ SAY 0x490 ~Une aura maléfique émane de cette sculpture, vous ne pouvez retenir un frisson lorsque vos yeux s'attardent dessus.~
+ SAY 0x554 ~Vous pouvez lire une inscription sur l'objet : Deux coeurs qui battent à l'unisson, deux coeurs pour le baiser des justes.~
+ SAY 0x618 ~Ici se trouve une autre inscription : Deux coeurs qui ne cessent de résonner, deux coeurs pour abhorrer le monde.~ 
++
++BUT_ONLY_IF_IT_CHANGES
+ 
+ COPY ~Devin/New Area/#VAR20.mos~ ~override~
+ COPY ~Devin/New Area/#VAR20.tis~ ~override~

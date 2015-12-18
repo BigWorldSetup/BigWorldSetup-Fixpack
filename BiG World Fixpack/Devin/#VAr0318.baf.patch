@@ -1,0 +1,15 @@
+--- Devin\Scripts\Zone\#VAr0318.baf	Wed Nov 11 11:08:26 2009
++++ C:\BWP Patchstudio\patched files\Devin\Scripts\Zone\#VAr0318.baf	Fri Dec 18 22:47:07 2015
+@@ -97,11 +97,11 @@
+   Global("#VFightZent","GLOBAL",5)
+ THEN
+   RESPONSE #100
+-  SetGlobal("#VFightZent","GLOBAL",6)
+   CreateCreatureObjectDoor("#VJack","#VLucie",7,0,0)
+   Wait(4)
+   CreateCreatureObject("#VBardi","#VLucie",7,0,0)
+   ActionOverride("#VJack",StartDialogueNoSet(Player1))
++  SetGlobal("#VFightZent","GLOBAL",6)
+ END
+ 
+ IF
