@@ -1,0 +1,20 @@
+--- stratagems\sfo\general\lib_macro.tpa	Sun Dec 28 17:55:28 2014
++++ C:\BWP Patchstudio\patched files\stratagems\sfo\general\lib_macro.tpa	Fri Dec 18 23:47:11 2015
+@@ -335,7 +335,7 @@
+                      DELETE_BYTES 0x0 3
+                   END
+                   TO_UPPER resource
+-                  PATCH_IF !VARIABLE_IS_SET "RESREF_%resource%_LEVEL" BEGIN
++                  PATCH_IF !VARIABLE_IS_SET "RESREF_%resource%_LEVEL" && FILE_EXISTS_IN_GAME "%resource%.spl" BEGIN
+                       INNER_ACTION BEGIN
+                          COPY_EXISTING "%resource%.spl" "%workspace%"
+                                LPF SPL_read_level RET "RESREF_%resource%_LEVEL"=value END
+@@ -349,7 +349,7 @@
+                      DELETE_BYTES 0x0 3
+                   END
+                   TO_UPPER resource
+-                  PATCH_IF !VARIABLE_IS_SET "RESREF_%resource%_KIT_EFFECTS_ADD" BEGIN
++                  PATCH_IF !VARIABLE_IS_SET "RESREF_%resource%_KIT_EFFECTS_ADD" && FILE_EXISTS_IN_GAME "%resource%.spl" BEGIN
+                       INNER_ACTION BEGIN
+                         ACTION_IF FILE_EXISTS_IN_GAME "%resource%.spl" BEGIN
+                          COPY_EXISTING "%resource%.spl" "%workspace%"

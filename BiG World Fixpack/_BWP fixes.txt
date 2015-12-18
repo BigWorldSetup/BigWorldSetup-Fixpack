@@ -2230,6 +2230,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: stratagems - Sword Coast Stratagems v30
+
+:: CrevsDaak's install failure workaround
+:: http://gibberlings3.net/forums/index.php?showtopic=27692&p=240119
+
+
+----------------------------------------------------------------------------------------
+
+
 :: sword_and_fist - Sword and Fist v7
 
 :: Missing Monk ability file: GA_NMMONK06 -> GA_NMMONK05
@@ -2660,6 +2669,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Non-EE compatible apostrophes for BG2 compatibility
 :: http://www.shsforums.net/topic/58395-tsujatha-dialog-error/?p=582234
+
+
+----------------------------------------------------------------------------------------
+
+
+:: wheels - Wheels of Prophecy v3
+
+:: CrevsDaak's install failure workaround
+:: http://gibberlings3.net/forums/index.php?showtopic=27692&p=240119
 
 
 ----------------------------------------------------------------------------------------
