@@ -1,0 +1,42 @@
+--- BP\BAF\RE-BAF\CORE\BPGPKENS.BAF	Sat Jun 08 05:06:39 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\CORE\BPGPKENS.BAF	Sun Dec 20 19:42:28 2015
+@@ -178,6 +178,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -647,6 +648,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -655,6 +657,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -663,6 +666,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -745,6 +749,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

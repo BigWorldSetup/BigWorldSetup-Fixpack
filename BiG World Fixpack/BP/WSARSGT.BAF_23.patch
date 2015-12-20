@@ -1,0 +1,66 @@
+--- BP\BAF\SHOUTS\NO_STRINGS_2\WSARSGT.BAF	Wed Jan 01 20:17:10 2014
++++ C:\BWP Patchstudio\patched files\BP\BAF\SHOUTS\NO_STRINGS_2\WSARSGT.BAF	Sun Dec 20 19:42:30 2015
+@@ -190,6 +190,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -588,6 +589,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -597,6 +599,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -606,6 +609,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1031,6 +1035,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -1040,6 +1045,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1048,6 +1054,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1140,6 +1147,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

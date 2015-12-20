@@ -1,0 +1,66 @@
+--- BP\BAF\RE-BAF\CORE\BPMAG12D.BAF	Tue Oct 15 06:29:34 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\CORE\BPMAG12D.BAF	Sun Dec 20 19:42:28 2015
+@@ -438,6 +438,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -911,6 +912,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -919,6 +921,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -943,6 +946,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ IF
+@@ -1544,6 +1548,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1552,6 +1557,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1560,6 +1566,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1626,6 +1633,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

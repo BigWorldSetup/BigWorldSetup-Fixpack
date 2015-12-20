@@ -1,0 +1,66 @@
+--- BP\BAF\NO_TDD\DRUID\BPDRU14G.BAF	Sat Jun 08 05:06:38 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\NO_TDD\DRUID\BPDRU14G.BAF	Sun Dec 20 19:42:27 2015
+@@ -319,6 +319,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1093,6 +1094,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -1102,6 +1104,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1133,6 +1136,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1847,6 +1851,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -1856,6 +1861,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1864,6 +1870,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -2040,6 +2047,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

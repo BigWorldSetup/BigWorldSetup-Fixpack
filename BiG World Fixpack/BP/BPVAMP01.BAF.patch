@@ -1,0 +1,57 @@
+--- BP\BAF\NO_TDD\BODHI\BPVAMP01.BAF	Mon May 27 18:09:12 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\NO_TDD\BODHI\BPVAMP01.BAF	Sun Dec 20 19:42:28 2015
+@@ -308,12 +308,14 @@
+     TurnedBy([GOODCUTOFF.0.0.PALADIN_ALL])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+   !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -513,6 +515,7 @@
+     General(LastSeenBy(Myself),UNDEAD)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -534,6 +537,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -800,6 +804,7 @@
+     General(LastSeenBy(Myself),UNDEAD)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -809,6 +814,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -840,6 +846,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

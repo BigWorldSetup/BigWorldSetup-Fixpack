@@ -1,0 +1,122 @@
+--- BP\ASCEND\BAF\finmaril.BAF	Thu May 20 00:13:54 2010
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\BAF\finmaril.BAF	Sun Dec 20 19:42:27 2015
+@@ -261,6 +261,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -279,6 +280,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -292,6 +294,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -305,6 +308,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -318,6 +322,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -331,6 +336,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -346,6 +352,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -364,6 +371,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -381,6 +389,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -398,6 +407,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -415,6 +425,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -428,6 +439,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -441,6 +453,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -458,6 +471,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -475,6 +489,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

@@ -1,0 +1,18 @@
+--- BP\ASCEND\TOUGH\GROM\BAF\NEW\GROMNIR.BAF	Mon Mar 27 21:24:52 2006
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\TOUGH\GROM\BAF\NEW\GROMNIR.BAF	Sun Dec 20 19:42:27 2015
+@@ -233,6 +233,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -250,6 +251,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ IF

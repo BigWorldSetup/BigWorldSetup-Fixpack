@@ -1,0 +1,74 @@
+--- BP\BAF\RE-BAF\CORE\BPPRI10A.BAF	Tue Oct 15 06:29:34 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\CORE\BPPRI10A.BAF	Sun Dec 20 19:42:28 2015
+@@ -401,6 +401,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -486,6 +487,7 @@
+   See([GOODCUTOFF.UNDEAD])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1418,6 +1420,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1426,6 +1429,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -1498,6 +1502,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -2185,6 +2190,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -2193,6 +2199,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -2202,6 +2209,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -2334,6 +2342,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

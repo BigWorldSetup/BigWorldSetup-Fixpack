@@ -1,0 +1,26 @@
+--- BP\BAF\NEW_BAF\CORE\BPDROW.baf	Sun May 26 23:24:24 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\NEW_BAF\CORE\BPDROW.baf	Sun Dec 20 19:42:27 2015
+@@ -31,6 +31,7 @@
+         !Detect([GOODCUTOFF])
+ THEN
+     RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -85,6 +86,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -94,6 +96,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 

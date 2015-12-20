@@ -1,0 +1,74 @@
+--- BP\BAF\RE-BAF\CORE\BPMAG14D.BAF	Tue Oct 15 06:29:34 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\CORE\BPMAG14D.BAF	Sun Dec 20 19:42:28 2015
+@@ -459,6 +459,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -562,6 +563,7 @@
+   Exists([EVILCUTOFF.0.0.0.NEEDS_BREACH.EXTRA10])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1205,6 +1207,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1213,6 +1216,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -1254,6 +1258,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -3139,6 +3144,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -3147,6 +3153,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -3156,6 +3163,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -3278,6 +3286,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

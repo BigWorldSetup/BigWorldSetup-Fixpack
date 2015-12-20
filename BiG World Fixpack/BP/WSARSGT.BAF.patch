@@ -1,0 +1,34 @@
+--- BP\BAF\NEW_BAF\CORE\WSARSGT.BAF	Wed Jan 01 20:38:32 2014
++++ C:\BWP Patchstudio\patched files\BP\BAF\NEW_BAF\CORE\WSARSGT.BAF	Sun Dec 20 19:42:30 2015
+@@ -190,6 +190,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -611,6 +612,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -619,6 +621,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1121,6 +1124,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

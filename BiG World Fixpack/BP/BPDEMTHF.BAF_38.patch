@@ -1,0 +1,49 @@
+--- BP\TDD\BAF\DEMON\BPDEMTHF.BAF	Mon Oct 14 20:12:15 2013
++++ C:\BWP Patchstudio\patched files\BP\TDD\BAF\DEMON\BPDEMTHF.BAF	Sun Dec 20 19:42:27 2015
+@@ -246,6 +246,7 @@
+   !Allegiance(Myself,EVILCUTOFF)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -253,6 +254,7 @@
+   !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -466,6 +468,7 @@
+   !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -754,6 +757,7 @@
+     CheckStatGT(LastSeenBy(Myself),0,PROTECTION_FROM_EVIL)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1020,6 +1024,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF
+@@ -1042,5 +1047,6 @@
+     ChangeSpecifics(Myself,CALLED_FOR_BOULDER)
+     FaceObject(LastSeenBy(Myself))
+   RESPONSE #45
++    NoAction()
+ END
+ 

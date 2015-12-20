@@ -1,0 +1,49 @@
+--- BP\BAF\NEW_BAF\CORE\GB-Summ.BAF	Wed Jan 01 20:37:03 2014
++++ C:\BWP Patchstudio\patched files\BP\BAF\NEW_BAF\CORE\GB-Summ.BAF	Sun Dec 20 19:42:27 2015
+@@ -59,6 +59,7 @@
+   GlobalTimerNotExpired("GBAIInterrupt","LOCALS")
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -83,6 +84,7 @@
+   Global("GBNoAI","LOCALS",1)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ //////////////CLOUDLIKE  EFFECTS//////////////////////
+ 
+@@ -211,6 +213,7 @@
+   ModalState(DETECTTRAPS)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -226,12 +229,14 @@
+   ModalState(TURNUNDEAD)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+   ModalState(STEALTH)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -937,6 +942,7 @@
+   CombatCounter(0)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

@@ -1,0 +1,138 @@
+--- BP\ASCEND\BAF\finilla.BAF	Mon Mar 27 22:23:01 2006
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\BAF\finilla.BAF	Sun Dec 20 19:42:27 2015
+@@ -306,6 +306,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -318,6 +319,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -330,6 +332,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -342,6 +345,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -354,6 +358,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -366,6 +371,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -378,6 +384,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -388,6 +395,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -398,6 +406,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -408,6 +417,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -417,6 +427,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -435,6 +446,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -453,6 +465,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -471,6 +484,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -488,6 +502,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -503,6 +518,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -518,6 +534,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

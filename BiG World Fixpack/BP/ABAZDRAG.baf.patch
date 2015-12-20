@@ -1,0 +1,10 @@
+--- BP\ASCEND\TOUGH\ABAZ\BAF\NEW\ABAZDRAG.baf	Mon Mar 27 22:23:00 2006
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\TOUGH\ABAZ\BAF\NEW\ABAZDRAG.baf	Sun Dec 20 19:42:27 2015
+@@ -111,6 +111,7 @@
+   !Allegiance(Myself,ENEMY)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

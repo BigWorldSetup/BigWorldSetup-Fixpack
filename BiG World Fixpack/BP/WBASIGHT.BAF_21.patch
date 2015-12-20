@@ -1,0 +1,74 @@
+--- BP\BAF\SHOUTS\NO_STRINGS_2\WBASIGHT.BAF	Wed Jan 01 20:17:10 2014
++++ C:\BWP Patchstudio\patched files\BP\BAF\SHOUTS\NO_STRINGS_2\WBASIGHT.BAF	Sun Dec 20 19:42:30 2015
+@@ -190,6 +190,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -220,6 +221,7 @@
+     TurnedBy([GOODCUTOFF.0.0.PALADIN_ALL])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -693,6 +695,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -702,6 +705,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -711,6 +715,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1045,6 +1050,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -1054,6 +1060,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1062,6 +1069,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1154,6 +1162,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

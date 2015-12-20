@@ -1,0 +1,10 @@
+--- BP\ASCEND\BAF\finbalth.BAF	Mon Mar 27 21:24:52 2006
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\BAF\finbalth.BAF	Sun Dec 20 19:42:27 2015
+@@ -524,6 +524,7 @@
+     CheckStatGT(LastSeenBy(Myself),50,RESISTCRUSHING)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

@@ -1,0 +1,42 @@
+--- BP\BAF\RE-BAF\CORE\BPGPMERC.BAF	Sat Jun 08 05:06:39 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\CORE\BPGPMERC.BAF	Sun Dec 20 19:42:28 2015
+@@ -180,6 +180,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -708,6 +709,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -716,6 +718,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -724,6 +727,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -800,6 +804,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

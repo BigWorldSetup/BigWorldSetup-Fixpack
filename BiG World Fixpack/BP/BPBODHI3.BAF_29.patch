@@ -1,0 +1,26 @@
+--- BP\TDD\BAF\BODHI\BPBODHI3.BAF	Tue Mar 21 05:16:52 2006
++++ C:\BWP Patchstudio\patched files\BP\TDD\BAF\BODHI\BPBODHI3.BAF	Sun Dec 20 19:42:27 2015
+@@ -191,6 +191,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -602,6 +603,7 @@
+   Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -861,6 +863,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

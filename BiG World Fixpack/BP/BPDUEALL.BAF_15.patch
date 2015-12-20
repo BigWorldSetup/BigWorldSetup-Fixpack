@@ -1,0 +1,42 @@
+--- BP\BAF\SHOUTS\NO_STRINGS_2\BPDUEALL.BAF	Wed Jan 01 20:17:10 2014
++++ C:\BWP Patchstudio\patched files\BP\BAF\SHOUTS\NO_STRINGS_2\BPDUEALL.BAF	Sun Dec 20 19:42:27 2015
+@@ -178,6 +178,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -427,6 +428,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -436,6 +438,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -445,6 +448,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -698,6 +702,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

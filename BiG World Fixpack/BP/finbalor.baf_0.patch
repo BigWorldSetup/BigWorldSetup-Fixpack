@@ -1,0 +1,25 @@
+--- BP\ASCEND\BAF\TDD\finbalor.baf	Mon Mar 27 21:41:30 2006
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\BAF\TDD\finbalor.baf	Sun Dec 20 19:42:27 2015
+@@ -83,6 +83,7 @@
+   Range(Player1,20)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -322,6 +323,7 @@
+     StateCheck(LastSeenBy(Myself),STATE_DEAD)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -504,5 +506,6 @@
+     ChangeSpecifics(Myself,244)
+     FaceObject(LastSeenBy(Myself))
+   RESPONSE #45
++    NoAction()
+ END
+ 

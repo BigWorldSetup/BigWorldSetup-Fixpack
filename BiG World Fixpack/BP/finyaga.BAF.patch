@@ -1,0 +1,146 @@
+--- BP\ASCEND\BAF\finyaga.BAF	Thu Nov 01 00:52:47 2012
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\BAF\finyaga.BAF	Sun Dec 20 19:42:27 2015
+@@ -485,6 +485,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -493,6 +494,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -507,6 +509,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -525,6 +528,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -543,6 +547,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -561,6 +566,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -574,6 +580,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -587,6 +594,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -595,6 +603,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -613,6 +622,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -631,6 +641,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -649,6 +660,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -667,6 +679,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -685,6 +698,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -703,6 +717,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -715,6 +730,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -728,6 +744,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -741,6 +758,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

@@ -1,0 +1,18 @@
+--- BP\BAF\NO_TDD\HORRED\HORRED.BAF	Mon Oct 14 20:18:06 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\NO_TDD\HORRED\HORRED.BAF	Sun Dec 20 19:42:27 2015
+@@ -382,6 +382,7 @@
+   !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1088,6 +1089,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

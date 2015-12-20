@@ -1,0 +1,42 @@
+--- BP\TDD\BAF\CORE\BPDUEALL.BAF	Sat Jun 08 05:06:38 2013
++++ C:\BWP Patchstudio\patched files\BP\TDD\BAF\CORE\BPDUEALL.BAF	Sun Dec 20 19:42:27 2015
+@@ -185,6 +185,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -499,6 +500,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -507,6 +509,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -515,6 +518,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ IF
+@@ -613,6 +617,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

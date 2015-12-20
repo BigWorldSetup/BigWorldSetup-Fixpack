@@ -1,0 +1,56 @@
+--- BP\BAF\NEW_BAF\CORE\GB-SMage.BAF	Wed Jan 01 20:37:07 2014
++++ C:\BWP Patchstudio\patched files\BP\BAF\NEW_BAF\CORE\GB-SMage.BAF	Sun Dec 20 19:42:27 2015
+@@ -28,6 +28,7 @@
+   GlobalTimerNotExpired("GBAIInterrupt","LOCALS")
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -52,6 +53,7 @@
+   Global("GBNoAI","LOCALS",1)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ //////////////CLOUDLIKE  EFFECTS//////////////////////
+ 
+@@ -180,6 +182,7 @@
+   ModalState(DETECTTRAPS)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -195,18 +198,21 @@
+   ModalState(TURNUNDEAD)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+   ModalState(BATTLESONG)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+   ModalState(STEALTH)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1063,6 +1069,7 @@
+   CombatCounter(0)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

@@ -1,0 +1,66 @@
+--- BP\RITUAL\BAF\ritkt1.BAF	Mon Mar 27 20:57:59 2006
++++ C:\BWP Patchstudio\patched files\BP\RITUAL\BAF\ritkt1.BAF	Sun Dec 20 19:42:29 2015
+@@ -51,6 +51,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -61,6 +62,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -71,6 +73,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -81,6 +84,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -91,6 +95,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -101,6 +106,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -111,6 +117,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -121,6 +128,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

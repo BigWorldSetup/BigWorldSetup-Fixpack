@@ -1,0 +1,40 @@
+--- BP\BAF\NEW_BAF\CORE\BPALLY.BAF	Sat May 25 07:39:18 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\NEW_BAF\CORE\BPALLY.BAF	Sun Dec 20 19:42:27 2015
+@@ -315,6 +315,7 @@
+   ModalState(DETECTTRAPS)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -330,18 +331,21 @@
+   ModalState(TURNUNDEAD)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+   ModalState(BATTLESONG)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+   ModalState(STEALTH)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1112,6 +1116,7 @@
+   CombatCounter(0)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

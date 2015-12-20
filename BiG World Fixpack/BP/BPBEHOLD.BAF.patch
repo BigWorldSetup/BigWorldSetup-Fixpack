@@ -1,0 +1,33 @@
+--- BP\BAF\RE-BAF\BEHOLDER\BPBEHOLD.BAF	Sat May 25 07:48:38 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\BEHOLDER\BPBEHOLD.BAF	Sun Dec 20 19:42:27 2015
+@@ -342,6 +342,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -776,6 +777,7 @@
+   RESPONSE #50
+     Continue()
+   RESPONSE #50
++    NoAction()
+ END
+ 
+ IF
+@@ -784,6 +786,7 @@
+   RESPONSE #90
+     AttackReevaluate(MostDamagedOf,35)
+   RESPONSE #10
++    NoAction()
+ END
+ 
+ IF
+@@ -795,5 +798,6 @@
+     DisplayStringHead(Myself,100660)  // @1
+     ChangeSpecifics(Myself,CALLED_FOR_BOULDER)
+   RESPONSE #45
++    NoAction()
+ END
+ 

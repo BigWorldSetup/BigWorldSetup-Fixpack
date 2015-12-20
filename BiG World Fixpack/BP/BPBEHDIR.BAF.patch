@@ -1,0 +1,10 @@
+--- BP\BAF\RE-BAF\BEHOLDER\BPBEHDIR.BAF	Sat May 25 07:48:38 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\BEHOLDER\BPBEHDIR.BAF	Sun Dec 20 19:42:27 2015
+@@ -332,6 +332,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

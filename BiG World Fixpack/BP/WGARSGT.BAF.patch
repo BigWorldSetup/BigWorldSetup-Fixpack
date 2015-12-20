@@ -1,0 +1,50 @@
+--- BP\BAF\NEW_BAF\CORE\WGARSGT.BAF	Wed Jan 01 20:38:31 2014
++++ C:\BWP Patchstudio\patched files\BP\BAF\NEW_BAF\CORE\WGARSGT.BAF	Sun Dec 20 19:42:30 2015
+@@ -190,6 +190,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -650,6 +651,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -658,6 +660,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1104,6 +1107,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -1113,6 +1117,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1226,6 +1231,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

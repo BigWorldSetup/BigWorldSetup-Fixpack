@@ -1,0 +1,50 @@
+--- BP\BAF\RE-BAF\CORE\BPWDRSGT.BAF	Sat Jun 08 05:06:40 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\CORE\BPWDRSGT.BAF	Sun Dec 20 19:42:29 2015
+@@ -190,6 +190,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -220,6 +221,7 @@
+     TurnedBy([GOODCUTOFF.0.0.PALADIN_ALL])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -538,6 +540,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -546,6 +549,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -555,6 +559,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -652,6 +657,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

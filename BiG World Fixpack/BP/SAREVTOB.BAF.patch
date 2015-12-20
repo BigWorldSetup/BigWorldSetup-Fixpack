@@ -1,0 +1,26 @@
+--- BP\ASCEND\BAF\SAREVTOB.BAF	Sat May 25 07:39:19 2013
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\BAF\SAREVTOB.BAF	Sun Dec 20 19:42:29 2015
+@@ -31,6 +31,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -208,6 +209,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -391,6 +393,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

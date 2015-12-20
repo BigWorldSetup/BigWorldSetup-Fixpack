@@ -1,0 +1,58 @@
+--- BP\BAF\RE-BAF\CORE\BPCTHI2A.BAF	Mon Oct 14 19:29:07 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\CORE\BPCTHI2A.BAF	Sun Dec 20 19:42:27 2015
+@@ -181,6 +181,7 @@
+   !Allegiance(Myself,EVILCUTOFF)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -188,6 +189,7 @@
+   !See([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -449,6 +451,7 @@
+   !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -939,6 +942,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -947,6 +951,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -955,6 +960,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1090,6 +1096,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

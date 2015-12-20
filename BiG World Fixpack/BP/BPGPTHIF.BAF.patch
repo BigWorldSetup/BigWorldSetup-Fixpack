@@ -1,0 +1,50 @@
+--- BP\ASCEND\TOUGH\GROM\BAF\CORE\BPGPTHIF.BAF	Sat May 25 07:39:18 2013
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\TOUGH\GROM\BAF\CORE\BPGPTHIF.BAF	Sun Dec 20 19:42:28 2015
+@@ -56,6 +56,7 @@
+   !Allegiance(Myself,EVILCUTOFF)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -63,6 +64,7 @@
+   !See([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -296,6 +298,7 @@
+   !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -621,6 +624,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -629,6 +633,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ IF
+@@ -724,6 +729,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

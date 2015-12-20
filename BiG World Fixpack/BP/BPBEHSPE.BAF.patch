@@ -1,0 +1,33 @@
+--- BP\BAF\RE-BAF\BEHOLDER\BPBEHSPE.BAF	Sat May 25 07:48:38 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\BEHOLDER\BPBEHSPE.BAF	Sun Dec 20 19:42:27 2015
+@@ -353,6 +353,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -733,6 +734,7 @@
+   RESPONSE #50
+     Continue()
+   RESPONSE #50
++    NoAction()
+ END
+ 
+ IF
+@@ -741,6 +743,7 @@
+   RESPONSE #90
+     AttackReevaluate(MostDamagedOf,35)
+   RESPONSE #10
++    NoAction()
+ END
+ 
+ IF
+@@ -751,5 +754,6 @@
+   RESPONSE #60
+     ChangeSpecifics(Myself,CALLED_FOR_BOULDER)
+   RESPONSE #45
++    NoAction()
+ END
+ 

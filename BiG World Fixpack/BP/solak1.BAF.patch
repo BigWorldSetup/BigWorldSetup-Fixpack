@@ -1,0 +1,10 @@
+--- BP\KUROI\COMPILE\solak1.BAF	Tue Aug 04 03:22:00 2009
++++ C:\BWP Patchstudio\patched files\BP\KUROI\COMPILE\solak1.BAF	Sun Dec 20 19:42:29 2015
+@@ -136,6 +136,7 @@
+   HPPercentLT(Myself,80)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

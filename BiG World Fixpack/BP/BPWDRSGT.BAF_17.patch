@@ -1,0 +1,50 @@
+--- BP\BAF\SHOUTS\NO_STRINGS_2\BPWDRSGT.BAF	Wed Jan 01 20:17:10 2014
++++ C:\BWP Patchstudio\patched files\BP\BAF\SHOUTS\NO_STRINGS_2\BPWDRSGT.BAF	Sun Dec 20 19:42:29 2015
+@@ -190,6 +190,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -220,6 +221,7 @@
+     TurnedBy([GOODCUTOFF.0.0.PALADIN_ALL])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -510,6 +512,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -519,6 +522,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -528,6 +532,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -619,6 +624,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

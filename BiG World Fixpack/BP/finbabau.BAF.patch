@@ -1,0 +1,26 @@
+--- BP\ASCEND\BAF\finbabau.BAF	Mon Mar 27 21:24:52 2006
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\BAF\finbabau.BAF	Sun Dec 20 19:42:27 2015
+@@ -140,6 +140,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -218,6 +219,7 @@
+     StateCheck(LastSeenBy(Myself),STATE_DEAD)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -226,6 +228,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ IF

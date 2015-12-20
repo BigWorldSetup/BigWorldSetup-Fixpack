@@ -1,0 +1,66 @@
+--- BP\ASCEND\BAF\finsol04.BAF	Mon Mar 27 21:24:52 2006
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\BAF\finsol04.BAF	Sun Dec 20 19:42:27 2015
+@@ -222,6 +222,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -267,6 +268,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -366,6 +368,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -381,6 +384,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -398,6 +402,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -412,6 +417,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -680,6 +686,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -804,6 +811,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

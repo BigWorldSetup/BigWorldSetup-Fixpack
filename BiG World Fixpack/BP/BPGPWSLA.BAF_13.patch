@@ -1,0 +1,58 @@
+--- BP\BAF\RE-BAF\CORE\BPGPWSLA.BAF	Mon Oct 14 19:29:07 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\CORE\BPGPWSLA.BAF	Sun Dec 20 19:42:28 2015
+@@ -178,6 +178,7 @@
+   !Allegiance(Myself,EVILCUTOFF)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -185,6 +186,7 @@
+   !See([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -435,6 +437,7 @@
+   !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -954,6 +957,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -962,6 +966,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -970,6 +975,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1103,6 +1109,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

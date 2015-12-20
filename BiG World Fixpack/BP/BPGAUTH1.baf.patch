@@ -1,0 +1,17 @@
+--- BP\BAF\RE-BAF\BEHOLDER\BPGAUTH1.baf	Sat May 25 07:39:21 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\BEHOLDER\BPGAUTH1.baf	Sun Dec 20 19:42:28 2015
+@@ -309,6 +309,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -501,5 +502,6 @@
+   RESPONSE #90
+     AttackReevaluate(NearestEnemyOf(Myself),25)
+   RESPONSE #10
++    NoAction()
+ END
+ 

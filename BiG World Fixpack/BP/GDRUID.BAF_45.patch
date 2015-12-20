@@ -1,0 +1,10 @@
+--- BP\TDD\BAF\DRUID\GDRUID.BAF	Fri May 24 04:50:22 2013
++++ C:\BWP Patchstudio\patched files\BP\TDD\BAF\DRUID\GDRUID.BAF	Sun Dec 20 19:42:27 2015
+@@ -909,6 +909,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

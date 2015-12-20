@@ -1,0 +1,42 @@
+--- BP\BAF\NEW_BAF\CORE\WSASIGHT.BAF	Wed Jan 01 20:38:35 2014
++++ C:\BWP Patchstudio\patched files\BP\BAF\NEW_BAF\CORE\WSASIGHT.BAF	Sun Dec 20 19:42:30 2015
+@@ -190,6 +190,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -220,6 +221,7 @@
+     TurnedBy([GOODCUTOFF.0.0.PALADIN_ALL])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -724,6 +726,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -733,6 +736,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1164,6 +1168,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

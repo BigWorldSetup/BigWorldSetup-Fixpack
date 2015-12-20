@@ -1,0 +1,41 @@
+--- BP\BAF\NEW_BAF\BEHOLDER\BEHHIV02.BAF	Sat May 25 07:48:38 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\NEW_BAF\BEHOLDER\BEHHIV02.BAF	Sun Dec 20 19:42:27 2015
+@@ -384,6 +384,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -793,6 +794,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1128,6 +1130,7 @@
+   RESPONSE #50
+     Continue()
+   RESPONSE #50
++    NoAction()
+ END
+ 
+ IF
+@@ -1146,6 +1149,7 @@
+   RESPONSE #90
+     AttackReevaluate(LastSeenBy(Myself),35)
+   RESPONSE #10
++    NoAction()
+ END
+ 
+ IF
+@@ -1156,5 +1160,6 @@
+   RESPONSE #60
+     ChangeSpecifics(Myself,CALLED_FOR_BOULDER)
+   RESPONSE #45
++    NoAction()
+ END
+ 

@@ -1,0 +1,10 @@
+--- BP\ASCEND\BAF\illasera.baf	Thu May 20 00:13:54 2010
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\BAF\illasera.baf	Sun Dec 20 19:42:29 2015
+@@ -272,6 +272,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

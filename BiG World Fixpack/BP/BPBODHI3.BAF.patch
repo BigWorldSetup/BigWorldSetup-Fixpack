@@ -1,0 +1,26 @@
+--- BP\BAF\NO_TDD\BODHI\BPBODHI3.BAF	Sat May 25 07:39:19 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\NO_TDD\BODHI\BPBODHI3.BAF	Sun Dec 20 19:42:27 2015
+@@ -284,6 +284,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -505,6 +506,7 @@
+     !See(TenthNearest([0.0.0.0.0.0.LAWFUL_GOOD]))    False()THEN    RESPONSE #100        Continue()END
+ IF    Allegiance(LastSeenBy(Myself),EVILCUTOFF)THEN
+     RESPONSE #100
++    NoAction()
+ END
+ IF    ActionListEmpty()    StateCheck(Myself,STATE_INVISIBLE)    Delay(8)THEN    RESPONSE #80        AttackReevaluate(LastSeenBy(Myself),30)    RESPONSE #20
+         Continue()
+@@ -574,6 +576,7 @@
+     RESPONSE #25
+         Continue()
+     RESPONSE #75
++    NoAction()
+ END
+ IF
+     ActionListEmpty()

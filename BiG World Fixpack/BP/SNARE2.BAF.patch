@@ -1,0 +1,10 @@
+--- BP\BAF\NEW_BAF\SNARE\SNARE2.BAF	Sun Mar 19 00:01:32 2006
++++ C:\BWP Patchstudio\patched files\BP\BAF\NEW_BAF\SNARE\SNARE2.BAF	Sun Dec 20 19:42:29 2015
+@@ -16,6 +16,7 @@
+   !Detect([PC])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

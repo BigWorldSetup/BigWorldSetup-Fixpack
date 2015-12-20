@@ -1,0 +1,18 @@
+--- BP\RITUAL\BAF\ritd1.BAF	Mon Mar 27 20:57:59 2006
++++ C:\BWP Patchstudio\patched files\BP\RITUAL\BAF\ritd1.BAF	Sun Dec 20 19:42:29 2015
+@@ -41,6 +41,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -57,6 +58,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

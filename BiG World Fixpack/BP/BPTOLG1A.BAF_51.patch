@@ -1,0 +1,10 @@
+--- BP\TDD\BAF\TOLGER\BPTOLG1A.BAF	Sat Dec 28 21:36:28 2013
++++ C:\BWP Patchstudio\patched files\BP\TDD\BAF\TOLGER\BPTOLG1A.BAF	Sun Dec 20 19:42:28 2015
+@@ -84,6 +84,7 @@
+   GlobalGT("BPSPHERE","GLOBAL",13)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

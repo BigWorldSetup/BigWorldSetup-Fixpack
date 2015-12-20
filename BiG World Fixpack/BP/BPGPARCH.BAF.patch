@@ -1,0 +1,42 @@
+--- BP\BAF\RE-BAF\CORE\BPGPARCH.BAF	Fri Jun 07 08:37:35 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\CORE\BPGPARCH.BAF	Sun Dec 20 19:42:28 2015
+@@ -178,6 +178,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -554,6 +555,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -562,6 +564,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -571,6 +574,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -628,6 +632,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

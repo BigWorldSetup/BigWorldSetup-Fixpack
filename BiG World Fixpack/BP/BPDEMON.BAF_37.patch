@@ -1,0 +1,24 @@
+--- BP\TDD\BAF\DEMON\BPDEMON.BAF	Fri May 24 04:50:22 2013
++++ C:\BWP Patchstudio\patched files\BP\TDD\BAF\DEMON\BPDEMON.BAF	Sun Dec 20 19:42:27 2015
+@@ -314,6 +314,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -539,6 +540,7 @@
+     StateCheck(LastSeenBy(Myself),STATE_DEAD)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -789,4 +791,5 @@
+     ChangeSpecifics(Myself,CALLED_FOR_BOULDER)
+     FaceObject(LastSeenBy(Myself))
+   RESPONSE #45
++    NoAction()
+ END

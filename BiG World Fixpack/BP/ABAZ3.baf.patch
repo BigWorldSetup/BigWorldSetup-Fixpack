@@ -1,0 +1,18 @@
+--- BP\ASCEND\TOUGH\ABAZ\BAF\NEW\ABAZ3.baf	Mon Mar 27 21:02:11 2006
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\TOUGH\ABAZ\BAF\NEW\ABAZ3.baf	Sun Dec 20 19:42:27 2015
+@@ -120,6 +120,7 @@
+   !Allegiance(Myself,ENEMY)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -226,6 +227,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ IF

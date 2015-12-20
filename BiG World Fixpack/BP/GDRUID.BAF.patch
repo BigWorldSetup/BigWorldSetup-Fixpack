@@ -1,0 +1,42 @@
+--- BP\BAF\NO_TDD\DRUID\GDRUID.BAF	Fri Jun 07 09:04:51 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\NO_TDD\DRUID\GDRUID.BAF	Sun Dec 20 19:42:27 2015
+@@ -1512,6 +1512,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -1521,6 +1522,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -1530,6 +1532,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -1539,6 +1542,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1590,6 +1594,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

@@ -1,0 +1,50 @@
+--- BP\BAF\NO_TDD\CORE\BPWTSIGT.BAF	Mon Oct 14 22:02:18 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\NO_TDD\CORE\BPWTSIGT.BAF	Sun Dec 20 19:42:29 2015
+@@ -108,6 +108,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -301,6 +302,7 @@
+   Global("BPTURNED","LOCALS",1)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -582,6 +584,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -591,6 +594,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -600,6 +604,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1148,6 +1153,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

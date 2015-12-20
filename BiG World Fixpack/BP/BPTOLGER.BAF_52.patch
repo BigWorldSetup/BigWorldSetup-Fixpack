@@ -1,0 +1,18 @@
+--- BP\TDD\BAF\TOLGER\BPTOLGER.BAF	Sat Dec 28 21:40:40 2013
++++ C:\BWP Patchstudio\patched files\BP\TDD\BAF\TOLGER\BPTOLGER.BAF	Sun Dec 20 19:42:28 2015
+@@ -757,6 +757,7 @@
+     Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1208,6 +1209,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

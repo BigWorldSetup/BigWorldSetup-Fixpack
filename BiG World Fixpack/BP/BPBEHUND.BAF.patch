@@ -1,0 +1,33 @@
+--- BP\BAF\RE-BAF\BEHOLDER\BPBEHUND.BAF	Sat May 25 07:48:38 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\BEHOLDER\BPBEHUND.BAF	Sun Dec 20 19:42:27 2015
+@@ -380,6 +380,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -784,6 +785,7 @@
+   RESPONSE #50
+     Continue()
+   RESPONSE #50
++    NoAction()
+ END
+ 
+ IF
+@@ -792,6 +794,7 @@
+   RESPONSE #90
+     AttackReevaluate(MostDamagedOf,35)
+   RESPONSE #10
++    NoAction()
+ END
+ 
+ IF
+@@ -802,5 +805,6 @@
+   RESPONSE #60
+     ChangeSpecifics(Myself,CALLED_FOR_BOULDER)
+   RESPONSE #45
++    NoAction()
+ END
+ 

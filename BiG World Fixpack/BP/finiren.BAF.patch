@@ -1,0 +1,90 @@
+--- BP\ASCEND\BAF\finiren.BAF	Mon Mar 27 22:23:01 2006
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\BAF\finiren.BAF	Sun Dec 20 19:42:27 2015
+@@ -791,6 +791,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -910,6 +911,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -963,6 +965,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1075,6 +1078,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1091,6 +1095,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1122,6 +1127,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1138,6 +1144,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1152,6 +1159,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1172,6 +1180,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1985,6 +1994,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -2187,6 +2197,7 @@
+     False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

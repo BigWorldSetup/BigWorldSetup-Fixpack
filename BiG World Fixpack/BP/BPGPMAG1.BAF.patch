@@ -1,0 +1,42 @@
+--- BP\ASCEND\TOUGH\ILLA\BAF\CORE\BPGPMAG1.BAF	Sat May 25 07:39:18 2013
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\TOUGH\ILLA\BAF\CORE\BPGPMAG1.BAF	Sun Dec 20 19:42:28 2015
+@@ -390,6 +390,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -554,6 +555,7 @@
+   Exists([EVILCUTOFF.0.0.0.NEEDS_BREACH.EXTRA9])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1412,6 +1414,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1420,6 +1423,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ IF
+@@ -2542,6 +2546,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

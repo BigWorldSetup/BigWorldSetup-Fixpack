@@ -1,0 +1,26 @@
+--- BP\BAF\NO_TDD\TOLGER\LAVOKBP.BAF	Mon Oct 14 22:41:11 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\NO_TDD\TOLGER\LAVOKBP.BAF	Sun Dec 20 19:42:29 2015
+@@ -415,6 +415,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -756,6 +757,7 @@
+     Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1084,6 +1086,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

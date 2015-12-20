@@ -1,0 +1,33 @@
+--- BP\BAF\RE-BAF\DEMON\BPTANARI.baf	Sun Mar 19 00:23:35 2006
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\DEMON\BPTANARI.baf	Sun Dec 20 19:42:28 2015
+@@ -52,6 +52,7 @@
+     ForceSpell(NearestEnemyOf(Myself),TANARI_VAMPIRIC_TOUCH)
+     AttackOneRound([PC.0.0.0.0.FEMALE])
+   RESPONSE #70
++    NoAction()
+ END
+ 
+ IF
+@@ -67,6 +68,7 @@
+     AttackOneRound([PC.0.0.0.0.FEMALE])
+     AttackOneRound([PC.0.0.0.0.FEMALE])
+   RESPONSE #70
++    NoAction()
+ END
+ 
+ IF
+@@ -81,6 +83,7 @@
+     AttackOneRound([PC.0.0.0.0.FEMALE])
+     AttackOneRound(NearestEnemyOf(Myself))
+   RESPONSE #70
++    NoAction()
+ END
+ 
+ IF
+@@ -94,5 +97,6 @@
+     AttackOneRound([PC])
+     AttackOneRound([PC])
+   RESPONSE #70
++    NoAction()
+ END
+ 

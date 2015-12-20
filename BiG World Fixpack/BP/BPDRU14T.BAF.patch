@@ -1,0 +1,50 @@
+--- BP\BAF\RE-BAF\TREANT\BPDRU14T.BAF	Sun Jun 02 09:04:21 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\TREANT\BPDRU14T.BAF	Sun Dec 20 19:42:27 2015
+@@ -322,6 +322,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -578,6 +579,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -608,6 +610,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -968,6 +971,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -977,6 +981,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -1012,6 +1017,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

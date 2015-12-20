@@ -1,0 +1,26 @@
+--- BP\SULDAN\COMPILE\BPELFPRE.BAF	Mon Oct 14 22:43:23 2013
++++ C:\BWP Patchstudio\patched files\BP\SULDAN\COMPILE\BPELFPRE.BAF	Sun Dec 20 19:42:28 2015
+@@ -54,6 +54,7 @@
+   !Allegiance(Myself,EVILCUTOFF)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -643,6 +644,7 @@
+   Race(LastSeenBy(Myself),ELF)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -861,6 +863,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

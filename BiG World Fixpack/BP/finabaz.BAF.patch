@@ -1,0 +1,10 @@
+--- BP\ASCEND\BAF\finabaz.BAF	Mon Mar 27 21:24:52 2006
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\BAF\finabaz.BAF	Sun Dec 20 19:42:27 2015
+@@ -18,6 +18,7 @@
+   !Allegiance(Myself,ENEMY)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

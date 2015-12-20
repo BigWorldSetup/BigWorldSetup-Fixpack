@@ -1,0 +1,42 @@
+--- BP\ASCEND\TOUGH\ILLA\BAF\CORE\BPGPHEAL.BAF	Sat May 25 07:48:38 2013
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\TOUGH\ILLA\BAF\CORE\BPGPHEAL.BAF	Sun Dec 20 19:42:28 2015
+@@ -313,6 +313,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -400,6 +401,7 @@
+   See([GOODCUTOFF.UNDEAD])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1210,6 +1212,7 @@
+   !StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1218,6 +1221,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ IF
+@@ -1580,6 +1584,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

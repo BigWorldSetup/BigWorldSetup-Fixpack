@@ -1,0 +1,50 @@
+--- BP\RITUAL\BAF\ritac1.BAF	Mon Mar 27 20:57:59 2006
++++ C:\BWP Patchstudio\patched files\BP\RITUAL\BAF\ritac1.BAF	Sun Dec 20 19:42:29 2015
+@@ -30,6 +30,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -39,6 +40,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -48,6 +50,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -57,6 +60,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -66,6 +70,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -75,6 +80,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

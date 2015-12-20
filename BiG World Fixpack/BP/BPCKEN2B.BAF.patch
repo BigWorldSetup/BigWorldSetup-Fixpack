@@ -1,0 +1,34 @@
+--- BP\ASCEND\TOUGH\ILLA\BAF\CORE\BPCKEN2B.BAF	Sat May 25 07:39:18 2013
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\TOUGH\ILLA\BAF\CORE\BPCKEN2B.BAF	Sun Dec 20 19:42:27 2015
+@@ -59,6 +59,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -305,6 +306,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -313,6 +315,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ IF
+@@ -492,6 +495,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

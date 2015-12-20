@@ -1,0 +1,42 @@
+--- BP\BAF\NEW_BAF\UNDEAD\BPUNDEAD.baf	Sat May 25 07:39:19 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\NEW_BAF\UNDEAD\BPUNDEAD.baf	Sun Dec 20 19:42:28 2015
+@@ -88,6 +88,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -260,6 +261,7 @@
+   Global("BPTURNED","LOCALS",1)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -391,6 +393,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -399,6 +402,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ IF
+@@ -603,6 +607,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

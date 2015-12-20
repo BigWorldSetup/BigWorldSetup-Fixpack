@@ -1,0 +1,49 @@
+--- BP\BAF\RE-BAF\BEHOLDER\BPBEHHIV.BAF	Sat May 25 07:48:38 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\RE-BAF\BEHOLDER\BPBEHHIV.BAF	Sun Dec 20 19:42:27 2015
+@@ -401,6 +401,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -457,6 +458,7 @@
+   RESPONSE #25
+     ChangeSpecifics(Myself,CALLED_FOR_BOULDER)
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ 
+@@ -831,6 +833,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1182,6 +1185,7 @@
+   RESPONSE #50
+     Continue()
+   RESPONSE #50
++    NoAction()
+ END
+ 
+ IF
+@@ -1200,6 +1204,7 @@
+   RESPONSE #90
+     AttackReevaluate(LastSeenBy(Myself),35)
+   RESPONSE #10
++    NoAction()
+ END
+ 
+ IF
+@@ -1211,5 +1216,6 @@
+     DisplayStringHead(Myself,100660)  // @1
+     ChangeSpecifics(Myself,CALLED_FOR_BOULDER)
+   RESPONSE #45
++    NoAction()
+ END
+ 

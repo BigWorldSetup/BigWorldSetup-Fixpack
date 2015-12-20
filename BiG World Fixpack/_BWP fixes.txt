@@ -661,6 +661,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's Shar-Teel WTASIGHT fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=578872
 
+:: Lollorian added NoAction() to empty script blocks for engine bugs
+:: - LINK NOT FOUND ~
+
 
 ----------------------------------------------------------------------------------------
 

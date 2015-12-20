@@ -1,0 +1,25 @@
+--- BP\Orcus\COMPILE\BAF\BPORCUS.baf	Mon Oct 14 21:08:24 2013
++++ C:\BWP Patchstudio\patched files\BP\Orcus\COMPILE\BAF\BPORCUS.baf	Sun Dec 20 19:42:28 2015
+@@ -120,6 +120,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -501,6 +502,7 @@
+     StateCheck(LastSeenBy(Myself),STATE_DEAD)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -1356,5 +1358,6 @@
+     ChangeSpecifics(Myself,CALLED_FOR_BOULDER)
+     FaceObject(LastSeenBy(Myself))
+   RESPONSE #45
++    NoAction()
+ END
+ 

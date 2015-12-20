@@ -1,0 +1,18 @@
+--- BP\GBENC\COMPILE\GBene01b.BAF	Mon Mar 27 20:42:33 2006
++++ C:\BWP Patchstudio\patched files\BP\GBENC\COMPILE\GBene01b.BAF	Sun Dec 20 19:42:27 2015
+@@ -5,6 +5,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -143,6 +144,7 @@
+   Global("GB_Attacked","LOCALS",0)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

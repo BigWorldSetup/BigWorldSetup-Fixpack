@@ -1,0 +1,10 @@
+--- BP\BAF\NO_TDD\DROW\BPDROW.BAF	Sat Nov 17 09:41:26 2012
++++ C:\BWP Patchstudio\patched files\BP\BAF\NO_TDD\DROW\BPDROW.BAF	Sun Dec 20 19:42:27 2015
+@@ -31,6 +31,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

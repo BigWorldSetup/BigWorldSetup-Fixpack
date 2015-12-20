@@ -1,0 +1,34 @@
+--- BP\ASCEND\TOUGH\GROM\BAF\CORE\BPCBAR2B.BAF	Sat May 25 07:39:19 2013
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\TOUGH\GROM\BAF\CORE\BPCBAR2B.BAF	Sun Dec 20 19:42:27 2015
+@@ -59,6 +59,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -288,6 +289,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -296,6 +298,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ IF
+@@ -509,6 +512,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

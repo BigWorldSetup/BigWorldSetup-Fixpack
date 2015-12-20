@@ -1,0 +1,50 @@
+--- BP\ASCEND\BAF\FINBODHI.BAF	Mon Mar 27 22:25:53 2006
++++ C:\BWP Patchstudio\patched files\BP\ASCEND\BAF\FINBODHI.BAF	Sun Dec 20 19:42:27 2015
+@@ -245,6 +245,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -417,6 +418,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -474,6 +476,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -518,6 +521,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -560,6 +564,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -636,6 +641,7 @@
+   False()
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

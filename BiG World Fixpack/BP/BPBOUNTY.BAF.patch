@@ -1,0 +1,50 @@
+--- BP\BAF\NEW_BAF\CORE\BPBOUNTY.BAF	Wed Jan 01 20:38:29 2014
++++ C:\BWP Patchstudio\patched files\BP\BAF\NEW_BAF\CORE\BPBOUNTY.BAF	Sun Dec 20 19:42:27 2015
+@@ -67,6 +67,7 @@
+   !Allegiance(Myself,EVILCUTOFF)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -74,6 +75,7 @@
+   !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -368,6 +370,7 @@
+   !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -701,6 +704,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -710,6 +714,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -810,6 +815,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF

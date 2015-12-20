@@ -1,0 +1,10 @@
+--- BP\BAF\SHOUTS\NO_STRINGS\BPSHOUT.BAF	Fri Dec 27 04:27:52 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\SHOUTS\NO_STRINGS\BPSHOUT.BAF	Sun Dec 20 19:42:28 2015
+@@ -50,6 +50,7 @@
+   !Allegiance(Myself,ENEMY)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF

@@ -1,0 +1,42 @@
+--- BP\BAF\NEW_BAF\MISC\BPGOLEM.baf	Sat Dec 28 23:36:21 2013
++++ C:\BWP Patchstudio\patched files\BP\BAF\NEW_BAF\MISC\BPGOLEM.baf	Sun Dec 20 19:42:28 2015
+@@ -61,6 +61,7 @@
+     !Detect([GOODCUTOFF])
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ IF
+@@ -241,6 +242,7 @@
+     Allegiance(LastSeenBy(Myself),GOODBUTRED)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -250,6 +252,7 @@
+   Specifics(LastSeenBy(Myself),65)
+ THEN
+   RESPONSE #100
++    NoAction()
+ END
+ 
+ 
+@@ -259,6 +262,7 @@
+   RESPONSE #80
+     Continue()
+   RESPONSE #20
++    NoAction()
+ END
+ 
+ 
+@@ -310,6 +314,7 @@
+   RESPONSE #25
+     Continue()
+   RESPONSE #75
++    NoAction()
+ END
+ 
+ IF
