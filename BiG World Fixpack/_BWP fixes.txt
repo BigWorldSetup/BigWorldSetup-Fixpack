@@ -2177,6 +2177,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: solarom - Solaufein Romance Modification Pack v104
+
+:: Lollorian's string tag fixes
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=500837
+
+:: Patch to not overwrite IDS files unnecessarily (fix BG2EE installs)
+:: - LINK NOT FOUND ~
+
+
+----------------------------------------------------------------------------------------
+
+
 :: SOS - Shadows over Soubar v1.13
 
 :: Lollorian's Fence fix - Setup-SOS.tp2
