@@ -874,6 +874,12 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Nightfarer's overhauled #VAR20.ARE map notes patching
 :: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=583775
 
+:: micbaldur's AR0314 cutscene fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583857
+
+:: micbaldur's item string fixes
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583857
+
 
 ----------------------------------------------------------------------------------------
 

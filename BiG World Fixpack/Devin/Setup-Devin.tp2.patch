@@ -1,13 +1,14 @@
 --- Devin\Setup-Devin.tp2	Sat Mar 20 10:37:52 2010
-+++ C:\BWP Patchstudio\patched files\Devin\Setup-Devin.tp2	Wed Oct 02 08:51:50 2013
-@@ -1,5 +1,6 @@
++++ C:\BWP Patchstudio\patched files\Devin\Setup-Devin.tp2	Sun Dec 20 14:33:30 2015
+@@ -1,6 +1,6 @@
  BACKUP ~Devin/backup~
  AUTHOR ~Armand~
+-
 +VERSION ~v1 BWP Fix~
  
- 
  LANGUAGE ~Francais~
-@@ -164,7 +165,7 @@
+ 	 ~french~
+@@ -164,7 +164,7 @@
  COPY ~Devin/Creatures/PostQuest/#VDevin.cre~ ~override~
  SAY NAME1 @10
  SAY NAME2 @10
@@ -16,7 +17,7 @@
    USING ~Devin/Translations/French/#VDevin.tra~
  COMPILE ~Devin/Scripts/Perso/#VDevin.baf~
  
-@@ -204,21 +205,21 @@
+@@ -204,21 +204,21 @@
  COPY ~Devin/Creatures/PostQuest/#VJack.cre~ ~override~
  SAY NAME1 @17
  SAY NAME2 @17
@@ -46,7 +47,7 @@
    USING ~Devin/Translations/French/#VJack.tra~
  COMPILE ~Devin/Scripts/Perso/#VMonk1.baf~
  COMPILE ~Devin/Scripts/Perso/#VMonk2.baf~
-@@ -310,17 +311,17 @@
+@@ -310,17 +310,17 @@
  COMPILE ~Devin/Scripts/CutScene/#VCutJ01.baf~
  COMPILE ~Devin/Scripts/CutScene/#VCutJ02.baf~
  COMPILE ~Devin/Scripts/CutScene/#VCutscr.baf~
@@ -70,7 +71,25 @@
    USING ~Devin/Translations/French/#VLucie.tra~
  COPY ~Devin/Items/#vskull.itm~ ~override~ SAY NAME1 @1 SAY NAME2 @1 SAY DESC @2
  COPY ~Devin/Items/#vsku1.itm~ ~override~ SAY NAME1 @3 SAY NAME2 @3 SAY DESC @4
-@@ -393,7 +394,7 @@
+@@ -329,7 +329,7 @@
+ COPY ~Devin/Items/#VSecr02.itm~ ~override~ SAY NAME1 @713 SAY NAME2 @713 SAY DESC @714
+ COPY ~Devin/Items/#VGros.itm~ ~override~ SAY NAME1 @715 SAY NAME2 @717 SAY UNIDENTIFIED_DESC @716 SAY DESC @718
+ COPY ~Devin/Anim/#VGros.bam~ ~override~
+-COPY ~Devin/Items/#vankh.itm~ ~override~ SAY NAME1 @719 SAY NAME2 @719 SAY DESC @720
++COPY ~Devin/Items/#vankh.itm~ ~override~ SAY NAME1 @719 SAY NAME2 @721 SAY UNIDENTIFIED_DESC @720 SAY DESC @722
+ COPY ~Devin/Anim/#vankh.bam~ ~override~
+ 
+ //QUETE N°2
+@@ -348,7 +348,7 @@
+   USING ~Devin/Translations/French/#VSke02.tra~
+ COMPILE ~Devin/Scripts/CutScene/#VCutD02.baf~
+   USING ~Devin/Translations/French/#VSke02.tra~
+-COPY ~Devin/Items/#vnews.itm~ ~override~ SAY NAME1 @720 SAY NAME2 @720 SAY DESC @721
++COPY ~Devin/Items/#vnews.itm~ ~override~ SAY NAME1 @723 SAY NAME2 @723 SAY DESC @724
+ COPY ~Devin/Spell/pxbardi.spl~ ~override~
+ COPY ~Devin/Spell/#VGros.spl~ ~override~
+ 
+@@ -393,7 +393,7 @@
  COPY ~Devin/Creatures/#VAR20Area/#VPros.cre~ ~override~
  SAY NAME1 @44
  SAY NAME2 @44

@@ -1,0 +1,11 @@
+--- Devin\Scripts\Zone\#VAr1304.baf	Sat Mar 20 10:49:52 2010
++++ C:\BWP Patchstudio\patched files\Devin\Scripts\Zone\#VAr1304.baf	Sun Dec 20 14:35:25 2015
+@@ -154,7 +154,7 @@
+   ActionOverride("#VRama",Polymorph(CLERIC_MALE_HUMAN))
+   SetGlobal("#VBatlleSecondPart","GLOBAL",6)  
+   SetGlobal("#VBarbiePrincesse","GLOBAL",1)
+-  SetGlobal("#VTravelDeuxfervents","GLOBAL",2)
++//SetGlobal("#VTravelDeuxfervents","GLOBAL",2)
+ END
+ 
+ 
