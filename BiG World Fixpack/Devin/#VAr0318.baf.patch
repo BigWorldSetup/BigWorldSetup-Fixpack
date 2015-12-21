@@ -1,5 +1,23 @@
 --- Devin\Scripts\Zone\#VAr0318.baf	Wed Nov 11 11:08:26 2009
-+++ C:\BWP Patchstudio\patched files\Devin\Scripts\Zone\#VAr0318.baf	Fri Dec 18 22:47:07 2015
++++ C:\BWP Patchstudio\patched files\Devin\Scripts\Zone\#VAr0318.baf	Mon Dec 21 22:18:54 2015
+@@ -44,7 +44,7 @@
+   CreateVisualEffect("SPPORTAL",[719.271])
+   Wait(2)
+   CreateCreature("BDCOUN03",[436.220],2)
+-  CreateCreature("CLTCUT03",[499.312],2)
++  CreateCreature("BHGUARD2",[499.312],2)
+   CreateCreature("FSDOG",[386.301],2)
+   CreateCreature("GORDECK5",[719.271],2)
+   SetGlobal("#VLucieExist","AR0318",3)
+@@ -60,7 +60,7 @@
+   ActionOverride("#VLucie",ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_ENERGY))
+   ActionOverride("#VLucie",ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS))
+   ActionOverride("BDCOUN03",Enemy())
+-  ActionOverride("CLTCUT03",Enemy())
++  ActionOverride("BHGUARD2",Enemy())
+   ActionOverride("FSDOG",Enemy())
+ END
+ 
 @@ -97,11 +97,11 @@
    Global("#VFightZent","GLOBAL",5)
  THEN

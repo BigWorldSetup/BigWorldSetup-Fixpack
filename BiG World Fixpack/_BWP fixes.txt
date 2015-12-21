@@ -883,6 +883,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's item string fixes
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583857
 
+:: micbaldur's changed Elite Guard (CLTCUT03 -> BHGUARD2)
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583928
+
 
 ----------------------------------------------------------------------------------------
 
