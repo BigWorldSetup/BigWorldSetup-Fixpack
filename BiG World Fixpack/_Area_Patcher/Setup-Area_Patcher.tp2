@@ -1,7 +1,7 @@
 BACKUP ~Area_Patcher/backup~
 AUTHOR ~Nightfarer - piol.luca@gmail.com~
 //README ~Area_Patcher/readme.html~
-VERSION ~ALPHA 6~
+VERSION ~ALPHA 7~
 
 ASK_EVERY_COMPONENT
 
@@ -42,7 +42,7 @@ REQUIRE_COMPONENT ~setup-area_patcher.tp2~ 0 ~You must install the dummy compone
 REQUIRE_PREDICATE ((MOD_IS_INSTALLED ~setup-nej2.tp2~ 0) OR (MOD_IS_INSTALLED ~setup-nej2v602.tp2~ 0) OR (MOD_IS_INSTALLED ~setup-nej2v68.tp2~ 0)) ~This component is needed only if you have installed Never Ending Journey pre-691.~
 GROUP ~Never ending Journey~
 DESIGNATED 1000
-ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher~ 0) AND NOT ((MOD_IS_INSTALLED ~setup-nej2.tp2~ 0) OR (MOD_IS_INSTALLED ~setup-nej2v602.tp2~ 0) OR (MOD_IS_INSTALLED ~setup-nej2v68.tp2~ 0)) BEGIN
+ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher.tp2~ 0) AND NOT ((MOD_IS_INSTALLED ~setup-nej2.tp2~ 0) OR (MOD_IS_INSTALLED ~setup-nej2v602.tp2~ 0) OR (MOD_IS_INSTALLED ~setup-nej2v68.tp2~ 0)) BEGIN
   FAIL ~BGT and Never ending Journey pre-691 are required to install this component.~
 END
 
@@ -74,7 +74,7 @@ REQUIRE_COMPONENT ~setup-area_patcher.tp2~ 0 ~You must install the dummy compone
 REQUIRE_PREDICATE ((MOD_IS_INSTALLED ~setup-nej2v68.tp2~ 0)) ~This component is needed only if you have installed Never Ending Journey v68.~
 GROUP ~BGT~
 DESIGNATED 2000
-ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher~ 0) OR NOT ((MOD_IS_INSTALLED ~setup-nej2v68.tp2~ 0)) BEGIN
+ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher.tp2~ 0) OR NOT ((MOD_IS_INSTALLED ~setup-nej2v68.tp2~ 0)) BEGIN
   FAIL ~BGT and Never ending Journey v68 are required to install this component.~
 END
 
@@ -106,7 +106,7 @@ REQUIRE_COMPONENT ~setup-area_patcher.tp2~ 0 ~You must install the dummy compone
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~setup-ja#bgt_advpack.tp2~ 1) ~This component is needed only if you have installed Jarls BGT Adventure Pack.~
 GROUP ~Jarls BGT Adventure Pack~
 DESIGNATED 3000
-ACTION_IF NOT (MOD_IS_INSTALLED ~setup-ja#bgt_advpack~ 1) OR NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher~ 0) BEGIN
+ACTION_IF NOT (MOD_IS_INSTALLED ~setup-ja#bgt_advpack.tp2~ 1) OR NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher.tp2~ 0) BEGIN
   FAIL ~Jarls BGT Adventure Pack 1.61 is required to install this component.~
 END
 
@@ -165,7 +165,7 @@ REQUIRE_COMPONENT ~setup-area_patcher.tp2~ 0 ~You must install the dummy compone
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~setup-sos.tp2~ 0) ~This component is needed only if you have installed Shadows over Soubar.~
 GROUP ~Shadows over Soubar~
 DESIGNATED 4000
-ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher~ 0) OR NOT (MOD_IS_INSTALLED ~setup-sos.tp2~ 0) BEGIN
+ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher.tp2~ 0) OR NOT (MOD_IS_INSTALLED ~setup-sos.tp2~ 0) BEGIN
   FAIL ~Shadows over Soubar is required to install this component.~
 END
 
