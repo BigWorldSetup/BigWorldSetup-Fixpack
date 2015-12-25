@@ -1,0 +1,11 @@
+--- Eilistraee\Setup-Eilistraee.tp2	Sun Feb 01 01:56:16 2015
++++ C:\BWP Patchstudio\patched files\Eilistraee\Setup-Eilistraee.tp2	Fri Dec 25 21:13:35 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~Eilistraee\backup~
+ AUTHOR ~Lava Del'Vortel~
+ 
+-VERSION ~3.4~
++VERSION ~4.0 BWP Fix~
+ 
+ README ~Eilistraee/ESReadMe.%LANGUAGE%.txt~ ~Eilistraee/ESReadMe.txt~
+ 
