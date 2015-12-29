@@ -1,0 +1,11 @@
+--- g3anniversary\setup-g3anniversary.tp2	Tue Sep 24 13:03:45 2013
++++ C:\BWP Patchstudio\patched files\g3anniversary\setup-g3anniversary.tp2	Mon Dec 28 22:53:46 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~G3Anniversary/backup~
+ AUTHOR ~The Gibberlings Three - webmaster@gibberlings3.net~
+ 
+-VERSION v9
++VERSION ~v9 BWP Fix~
+ 
+ README ~g3anniversary/readme-g3anniversary.html~
+ 

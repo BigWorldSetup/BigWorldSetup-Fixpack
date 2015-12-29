@@ -14,7 +14,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: _aD&L - Beyond The Law v1.35
+:: aD&L - Beyond The Law v1.35
 
 :: Hoppy's BGT compatibility fix
 :: http://www.shsforums.net/topic/33192-btl-with-bgt/
@@ -24,6 +24,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
+
+:: agb1's Face() -> FaceObject() conversion
+:: http://gibberlings3.net/forums/index.php?showtopic=27712
 
 
 ----------------------------------------------------------------------------------------
@@ -1066,6 +1069,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's Frennedan - Imrae dialogue bugfix (EXTERNed to frsola00 not harcoded states)
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=573925
+
+
+----------------------------------------------------------------------------------------
+
+
+:: g3anniversary - The Gibberlings 3 Anniversary Mod v9
+
+:: agb1's Face() -> FaceObject() conversion
+:: http://gibberlings3.net/forums/index.php?showtopic=27712
 
 
 ----------------------------------------------------------------------------------------

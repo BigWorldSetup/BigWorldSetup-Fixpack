@@ -1,0 +1,10 @@
+--- aD&L\Z#2801.baf	Thu Jan 12 14:23:02 2006
++++ C:\BWP Patchstudio\patched files\aD&L\Z#2801.baf	Tue Dec 29 22:58:27 2015
+@@ -25,6 +25,6 @@
+ 	RealGlobalTimerExpired("Z#weddingT","Z#2801")
+ THEN
+ 	RESPONSE #100
+-	ActionOverride("Z#KvWed",Face("Z#KyWed"))
++	ActionOverride("Z#KvWed",FaceObject("Z#KyWed"))
+ 	ActionOverride("Z#KvWed",StartDialogNoSet("Z#KyWed"))	
+ END
