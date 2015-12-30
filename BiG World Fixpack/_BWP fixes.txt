@@ -1092,6 +1092,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: garrick-tt - Garrick: Tales of the Troubador v1.42
+
+:: Roxanne's Script hanging fix
+:: http://www.shsforums.net/topic/58469-no-jeremy-or-strongblade-in-nashkel-inn/?p=584299
+
+
+----------------------------------------------------------------------------------------
+
+
 :: gavin - Gavin NPC v9
 
 :: Lollorian's BGGraphics - Gavin compatibility patch

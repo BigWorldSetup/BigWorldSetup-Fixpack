@@ -1,0 +1,11 @@
+--- garrick-tt\setup-garrick-tt.tp2	Tue Aug 04 16:33:09 2015
++++ C:\BWP Patchstudio\patched files\garrick-tt\setup-garrick-tt.tp2	Wed Dec 30 22:33:46 2015
+@@ -1,7 +1,7 @@
+ BACKUP ~garrick-tt/backup~
+ AUTHOR ~mirandir AT orange DOT fr~
+ AUTO_TRA ~garrick-tt/tra/%LANGUAGE%/%s~
+-VERSION ~1.24~
++VERSION ~1.24 BWP Fix~
+ 
+ README ~garrick-tt/readme/%LANGUAGE%-readme.html~ ~garrick-tt/readme/english-readme.html~
+ 
