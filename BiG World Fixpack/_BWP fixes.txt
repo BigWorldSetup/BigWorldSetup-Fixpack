@@ -2280,6 +2280,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: CrevsDaak's install failure workaround
 :: http://gibberlings3.net/forums/index.php?showtopic=27692&p=240119
 
+:: khelben's modified initialization scripts for Ascension (added USING to the ADD_JOURNAL)
+:: http://www.shsforums.net/topic/56670-big-world-setup-an-attempt-to-update-the-program/?p=584335
+
 
 ----------------------------------------------------------------------------------------
 

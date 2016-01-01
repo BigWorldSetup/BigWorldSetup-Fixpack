@@ -1,0 +1,11 @@
+--- stratagems\initial\initial.tpa	Sat Dec 27 21:22:55 2014
++++ C:\BWP Patchstudio\patched files\stratagems\initial\initial.tpa	Fri Jan 01 20:50:12 2016
+@@ -472,6 +472,8 @@
+    END
+    
+    ADD_JOURNAL EXISTING @314 @315 @316
++      USING  ~%scsroot%/tra/english/player1.tra~
++             ~%s/player1.tra~
+ END
+ 
+ // rudimentary scripting shift to make enemy-summoned Planetars and Devas avoid healing the party
