@@ -1,5 +1,5 @@
 --- valerie\valerie.tp2	Thu Jan 17 11:25:44 2013
-+++ C:\BWP Patchstudio\patched files\valerie\valerie.tp2	Mon Jul 13 21:58:40 2015
++++ C:\BWP Patchstudio\patched files\valerie\valerie.tp2	Fri Jan 01 20:38:09 2016
 @@ -2,7 +2,7 @@
  // Basics
  BACKUP ~valerie/backup~
@@ -9,3 +9,15 @@
  README ~valerie/valerie_readme.html~
  
  // Crossplatform var stuff blatantly stolen from cmorgan/gavin/bg1npc!
+@@ -163,7 +163,10 @@
+   END
+ END
+ 
+-
++// Roxanne's block to enable BGT transition
++ACTION_IF GAME_IS ~bgt~ THEN BEGIN
++  EXTEND_TOP ~aram00.bcs~ ~valerie/scripts/append_aram00.baf~
++END
+ 
+ // Copying images and creatures
+ ACTION_IF (FILE_EXISTS_IN_GAME ~FW0100.are~) OR (FILE_EXISTS_IN_GAME ~ar7200.are~) THEN BEGIN

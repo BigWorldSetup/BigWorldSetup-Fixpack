@@ -1,0 +1,12 @@
+IF
+InParty("t2val")
+Global("Valgo","aram00",0)
+THEN
+RESPONSE #100
+ActionOverride("t2val",LeaveParty())
+ActionOverride("t2val",ChangeAIScript("",DEFAULT))
+ActionOverride("t2val",ClearAllActions())
+ActionOverride("t2val",DestroySelf())
+SetGlobal("Valgo","aram00",1)
+Continue()
+END

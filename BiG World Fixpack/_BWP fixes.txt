@@ -2605,6 +2605,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Roxanne's Chapter 3 Transition block fix
 :: http://www.shsforums.net/topic/44452-remove-her-charm-powers/?p=480359
 
+:: Roxanne's BGT Transition fix
+:: http://www.shsforums.net/topic/56670-big-world-setup-an-attempt-to-update-the-program/?p=584361
+
 
 ----------------------------------------------------------------------------------------
 
