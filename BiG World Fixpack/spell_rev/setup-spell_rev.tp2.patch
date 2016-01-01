@@ -9,11 +9,3 @@
  
  README ~spell_rev\readme-spell_rev.html~
  
-@@ -2788,6 +2788,7 @@
-   COPY_EXISTING ~ca#movsw.itm~ ~override~
-     PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
-       WRITE_ASCII 0x22 ~FS~ // flaming sword
-+      WRITE_BYTE  0x18 (BYTE_AT 0x18 BAND BNOT 0b00000010) // make one-handed
-     END
-     BUT_ONLY
-   

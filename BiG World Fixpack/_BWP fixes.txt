@@ -1335,15 +1335,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: item_rev - Item Revisions v3
-
-:: Hotfix Beta 1.16 dated September 12th 2013
-:: http://forums.gibberlings3.net/index.php?showtopic=22692
-
-
-----------------------------------------------------------------------------------------
-
-
 :: iwdification - IWDification Beta 3
 
 :: Angel's miscellaneous fixes
@@ -2262,9 +2253,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 
 :: spell_rev - Spell Revisions v3.1
-
-:: Demivrgvs' Hotfix 03 dated June 26th 2013
-:: http://forums.gibberlings3.net/index.php?showtopic=24304
 
 :: horred the plague's 2-handed ITM animation mismatch fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=550226
