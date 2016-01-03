@@ -1474,6 +1474,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: AstroBryGuy's BG1NPC Centeol compatibility fix
 :: http://gibberlings3.net/forums/index.php?showtopic=27360&p=236922
+:: http://www.shsforums.net/topic/56670-big-world-setup-an-attempt-to-update-the-program/?p=584483
 
 
 ----------------------------------------------------------------------------------------
@@ -2757,7 +2758,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: WildMage - Wild Mage Additions v1.7
 
-:: Ascension64' recommended fixes - Setup-WildMage.TP2, nwm_aram00.baf, owm_aram00.baf
+:: Ascension64's recommended fixes - Setup-WildMage.TP2, nwm_aram00.baf, owm_aram00.baf
 :: http://www.shsforums.net/index.php?s=&showtopic=43495&view=findpost&p=470908
 
 :: Improved engine check (used GAME_IS ~tob bgee bg2ee iwdee~)

@@ -1,0 +1,9 @@
+--- kittomes\LIB\tbgcom_bgee_vars.tpa	Sat Jun 08 21:54:46 2013
++++ C:\BWP Patchstudio\patched files\kittomes\LIB\tbgcom_bgee_vars.tpa	Sun Jan 03 12:14:27 2016
+@@ -492,5 +492,6 @@
+     OUTER_SPRINT "IceIslandMaze_L1" "AR1009"
+     OUTER_SPRINT "IceIslandMaze_L2" "AR1010"
+ 
++    OUTER_SPRINT "tutu_var" ""
+ 
+ END
