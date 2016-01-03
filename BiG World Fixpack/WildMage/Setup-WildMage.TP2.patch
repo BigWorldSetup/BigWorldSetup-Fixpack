@@ -1,5 +1,5 @@
 --- WildMage\Setup-WildMage.TP2	Fri Jul 17 11:05:36 2009
-+++ C:\BWP Patchstudio\patched files\WildMage\Setup-WildMage.TP2	Wed Nov 11 16:16:33 2015
++++ C:\BWP Patchstudio\patched files\WildMage\Setup-WildMage.TP2	Sun Jan 03 12:05:33 2016
 @@ -1,6 +1,6 @@
  BACKUP ~WildMage/backup~
  AUTHOR ~jo.ge@gmx.net~
@@ -13,17 +13,63 @@
  
  BEGIN @1
 -REQUIRE_FILE ~Data/25Dialog.bif~ @10
-+REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee iwdee~ @10
++REQUIRE_PREDICATE GAME_IS ~tob tutu tutu_totsc bgee bg2ee iwdee~ @10
  
  //------------------------------------------------------
  //		Mod-start in Baldur.BCS
-@@ -330,7 +330,8 @@
+@@ -328,9 +328,16 @@
+ // BGT Compatibility (Retain Spellbook on Transfer from BG1 to BG2)
+ //-----------------------------------------------------------------
  
- ACTION_IF FILE_EXISTS ~DATA/BG1ARE.BIF~ THEN BEGIN
+-ACTION_IF FILE_EXISTS ~DATA/BG1ARE.BIF~ THEN BEGIN
++ACTION_IF GAME_IS ~bgt~ BEGIN
++  OUTER_SPRINT aram00 ~aram00~
++END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
++  OUTER_SPRINT aram00 ~K#TELBGT~
++END
++
++ACTION_IF GAME_IS ~bgt eet~ THEN BEGIN
  
 -EXTEND_TOP ~aram00.bcs~ ~WildMage/0/baf/wm_aram00.baf~
-+COPY_EXISTING ~aram00.BCS~ ~override~
++COPY_EXISTING ~%aram00%.BCS~ ~override~
 +  REPLACE_BCS_BLOCK ~WildMage/0/baf/owm_aram00.baf~ ~WildMage/0/baf/nwm_aram00.baf~
  EXTEND_TOP ~ar0602.bcs~ ~WildMage/0/baf/wm_ar0602.baf~
  
  END
+@@ -674,21 +681,24 @@
+   SAY DESC @69999
+   
+ 
+-ACTION_IF FILE_EXISTS ~DATA/BG1ARE.BIF~ THEN BEGIN			// Outside Candlekeep BGT
+-
+-EXTEND_TOP ~ar6526.bcs~ ~WildMage/4/baf/wm_bgt.baf~
+-COPY_EXISTING ~Gorion.cre~ ~override~
+-ADD_CRE_ITEM ~wm_scrl~ #0 #0 #0 ~IDENTIFIED~ ~INV16~
+-
++ACTION_IF GAME_IS ~bgee~ BEGIN
++  OUTER_SPRINT gorion_cre ~GORION~
++  OUTER_SPRINT LionsWay_BCS ~AR2700~
++END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
++  OUTER_SPRINT gorion_cre ~GORION~
++  OUTER_SPRINT LionsWay_BCS ~BG2700~
++END ELSE ACTION_IF GAME_IS ~bgt~ BEGIN
++  OUTER_SPRINT gorion_cre ~GORION~
++  OUTER_SPRINT LionsWay_BCS ~AR6600~
++END ELSE ACTION_IF GAME_IS ~tutu tutu_totsc~ BEGIN
++  OUTER_SPRINT gorion_cre ~_GORION~
++  OUTER_SPRINT LionsWay_BCS ~_AR2700~
+ END
+ 
+-
+-ACTION_IF FILE_EXISTS ~OVERRIDE/FW2700.ARE~ THEN BEGIN			// Outside Candlekeep BG1-TUTU 
+-
+-EXTEND_TOP ~_AR2700.BCS~ ~WildMage/4/baf/wm_bgt.baf~
+-COPY_EXISTING ~_GORION.CRE~ ~override~
++ACTION_IF GAME_IS ~bgee eet bgt tutu tutu_totsc~ BEGIN // Outside Candlekeep
++  EXTEND_TOP ~%LionsWay_BCS%.bcs~ ~WildMage/4/baf/wm_bgt.baf~
++  COPY_EXISTING ~%gorion_cre%.cre~ ~override~
+ ADD_CRE_ITEM ~wm_scrl~ #0 #0 #0 ~IDENTIFIED~ ~INV16~
+-
+ END
+ 
+ 

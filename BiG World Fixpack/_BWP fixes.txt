@@ -2757,11 +2757,14 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: WildMage - Wild Mage Additions v1.7
 
-:: Some recommended fixes - Setup-WildMage.TP2, nwm_aram00.baf, owm_aram00.baf
+:: Ascension64' recommended fixes - Setup-WildMage.TP2, nwm_aram00.baf, owm_aram00.baf
 :: http://www.shsforums.net/index.php?s=&showtopic=43495&view=findpost&p=470908
 
 :: Improved engine check (used GAME_IS ~tob bgee bg2ee iwdee~)
 :: https://forums.beamdog.com/discussion/33799/wild-mage-additions
+
+:: K4thos' EET Compatibility changes
+:: http://www.shsforums.net/topic/58407-sais-baldurs-gate-enhanced-edition-trilogy-miniature-installation-guide-stable-eet/?p=584455
 
 
 ----------------------------------------------------------------------------------------
