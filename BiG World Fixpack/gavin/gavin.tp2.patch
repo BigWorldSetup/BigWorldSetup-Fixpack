@@ -1,6 +1,6 @@
 --- Gavin\gavin.tp2	Sun May 31 19:58:32 2015
-+++ C:\BWP Patchstudio\patched files\Gavin\gavin.tp2	Wed Jun 24 23:28:09 2015
-@@ -15,11 +15,15 @@
++++ C:\BWP Patchstudio\patched files\Gavin\gavin.tp2	Sun Jan 03 13:13:22 2016
+@@ -15,11 +15,16 @@
  /* enable all error messages; nothing suppressed. comment this out for release version */
  //MODDER
  
@@ -13,11 +13,12 @@
 +ALLOW_MISSING // allow if BG Graphics night WEDs are not installed
 +AR6700N.WED
 +FW3300N.WED
++AR3300N.WED
 +
  ALWAYS
  
  /* These actions are processed for every component: reading of variables */
-@@ -247,6 +251,7 @@
+@@ -247,6 +252,7 @@
  END
  
  COPY_EXISTING ~%Beregost%.wed~ override
