@@ -1,5 +1,5 @@
 --- iwdification\setup-iwdification.tp2	Sun Aug 18 21:02:20 2013
-+++ C:\BWP Patchstudio\patched files\iwdification\setup-iwdification.tp2	Tue Nov 24 21:07:45 2015
++++ C:\BWP Patchstudio\patched files\iwdification\setup-iwdification.tp2	Sun Jan 03 13:04:15 2016
 @@ -5,7 +5,7 @@
  
  AUTHOR ~pcamagna@yahoo.com~ // email address displayed if install fails
@@ -33,3 +33,16 @@
        SAY 0x0c @4077
        WRITE_LONG 0x28 IDS_OF_SYMBOL (~animate~ ~BEETLE_BLACK~)
    
+@@ -3134,10 +3134,10 @@
+ ACTION_IF FILE_EXISTS_IN_GAME ~ar0602.bcs~ THEN BEGIN // soa
+ 
+   EXTEND_BOTTOM ~ar0602.bcs~ ~iwdification/baf/ar0602.baf~ // add generic 2H axe to CI
+-  
++END
++ACTION_IF FILE_EXISTS_IN_GAME ~hlolaf.cre~ THEN BEGIN // Olaf Rasmussen  
+   COPY_EXISTING ~hlolaf.cre~ ~override~
+     REPLACE_CRE_ITEM ~cdax2h3~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP TWOHANDED // add +2 axe to olaf at guarded compound
+-
+ END
+ 
+ ACTION_IF FILE_EXISTS_IN_GAME ~botsmith.bcs~ THEN BEGIN // tob

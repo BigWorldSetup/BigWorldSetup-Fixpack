@@ -1340,6 +1340,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Angel's miscellaneous fixes
 :: http://gibberlings3.net/forums/index.php?showtopic=25470&p=238063
 
+:: Better hlolaf.cre check (used FILE_EXISTS_IN_GAME)
+:: http://www.shsforums.net/topic/56670-big-world-setup-an-attempt-to-update-the-program/?p=584483
+
 
 ----------------------------------------------------------------------------------------
 
