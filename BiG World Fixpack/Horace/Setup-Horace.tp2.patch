@@ -1,0 +1,26 @@
+--- Setup-Horace.tp2	Sun Jan 03 11:56:16 2016
++++ C:\BWP Patchstudio\patched files\Setup-Horace.tp2	Mon Jan 04 22:38:43 2016
+@@ -1,7 +1,7 @@
+ BACKUP ~Horace\backup~
+ AUTHOR ~Seifer~
+ 
+-VERSION ~v1.74~
++VERSION ~v1.74 BWP Fix~
+ 
+ // Readme displayed at the beginning, not the end, now
+ README ~Horace/readme_HR.HTML~
+@@ -38,10 +38,10 @@
+ // ~~ Script Compilation and transfer ~~   //
+ ////\\//\\//\\//\\//\\//\\//\//\\//\\//\\//\\
+ 
+-COPY ~Horace/Scripts/AR2013.bcs~ ~override/AR2013.bcs~ //still being developed.
+-COPY ~Horace/Scripts/Horace.bcs~ ~override/Horace.bcs~ //still being developed.
+-COPY ~Horace/Scripts/Horfight.bcs~ ~override/Horfight.bcs~ //still being developed.
+-EXTEND_TOP ~Horace.bcs~ ~Horace\Scripts\HorFight.bcs~//Battle AI
++EXTEND_TOP ~AR2013.bcs~ ~Horace/Scripts/AR2013.baf~ //still being developed.
++COMPILE ~Horace/Scripts/Horace.baf~ //still being developed.
++COMPILE ~Horace/Scripts/Horfight.baf~ //still being developed.
++EXTEND_TOP ~Horace.bcs~ ~Horace\Scripts\HorFight.baf~//Battle AI
+ 
+ //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//
+ //  ~~ Kit Appending, more in hope then expectation! ~~             //

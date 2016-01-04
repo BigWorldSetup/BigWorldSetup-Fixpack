@@ -1217,6 +1217,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Horace - Horace NPC v1.74
+
+:: Lollorian's patchified installation
+:: -LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Huple_NPC - Huple NPC v1.4
 
 :: Roxanne's duplicate DO fix

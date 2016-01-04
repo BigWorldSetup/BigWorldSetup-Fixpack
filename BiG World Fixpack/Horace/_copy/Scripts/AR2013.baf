@@ -1,0 +1,8 @@
+IF
+	Global("HoraceExists","AR2013",0)
+THEN
+	RESPONSE #100
+		SetGlobal("HoraceExists","AR2013",1)
+		CreateCreature("Horace",[596.345],3)
+END
+
