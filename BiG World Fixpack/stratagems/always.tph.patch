@@ -1,0 +1,12 @@
+--- stratagems\lib\always.tph	Sat Jan 17 15:04:43 2015
++++ D:\EE_Patchstudio\patched files\stratagems\lib\always.tph	Sat Jan 09 22:47:44 2016
+@@ -15,6 +15,9 @@
+   ACTION_IF GAME_IS "bgee bg2ee" BEGIN
+     LOAD_TRA ~%scsroot%/tra/ee/english/english.tra~
+     LOAD_TRA ~%scsroot%/tra/ee/%LANGUAGE%/%LANGUAGE%.tra~
++	OUTER_SPRINT eetra ~ee/~
++  END ELSE BEGIN
++	OUTER_SPRINT eetra ~~  
+   END
+ 
+ 
