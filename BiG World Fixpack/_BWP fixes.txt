@@ -371,6 +371,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Roxanne's JC_SEMA fleeing fix
 :: http://www.shsforums.net/topic/38026-azenmod-v5-released/?p=581729
 
+:: Lollorian's patchified installation (and proper Trademeet Crypt installation)
+:: - LINK NOT FOUND ~
+
 
 ----------------------------------------------------------------------------------------
 
