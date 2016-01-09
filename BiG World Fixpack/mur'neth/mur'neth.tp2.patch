@@ -1,5 +1,5 @@
 --- mur'neth\mur'neth.tp2	Tue Oct 01 15:05:22 2013
-+++ C:\BWP Patchstudio\patched files\mur'neth\mur'neth.tp2	Sat Dec 14 22:07:17 2013
++++ D:\EE_Patchstudio\patched files\mur'neth\mur'neth.tp2	Sat Jan 09 23:54:50 2016
 @@ -1,7 +1,7 @@
  BACKUP ~mur'neth/backup~
  AUTHOR ~Andyr, Andyr@Gibberlings3.net~
@@ -9,7 +9,49 @@
  
  README ~mur'neth/readme-murneth.html~
  
-@@ -210,8 +210,8 @@
+@@ -9,9 +9,40 @@
+   ACTION_IF NOT GAME_IS ~tutu tutu_totsc bgt bgee~ THEN BEGIN
+     FAIL ~Not Tutu, BGT or BG:EE~
+   END
++  
++  ACTION_IF !FILE_EXISTS ~mur'neth/reinstall.mrk~ BEGIN
++  
++	ACTION_DEFINE_ASSOCIATIVE_ARRAY tra#charsets BEGIN
++    english => cp1252
++	british => cp1252
++    french => cp1252
++    spanish => cp1252
++    russian => cp1251
++    german => cp1252
++	italian => cp1252
++    polish => cp1250
++    schinese => cp936
++	END
++	
++	ACTION_DEFINE_ARRAY tra#reload BEGIN setup END
++	ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
++
++	LAF HANDLE_CHARSETS
++		INT_VAR
++			infer_charset = 0
++		STR_VAR
++			tra_path = EVAL ~mur'neth~
++			charset_table = tra#charsets
++			noconvert_array = tra#noconvert
++			reload_array = tra#reload
++			iconv_path = ~mur'neth/tools/iconv~
++	END
++	
++	COPY_EXISTING ~sw1h01.itm~ ~mur'neth/reinstall.mrk~
++  END
+ END
+ 
+-AUTO_TRA ~mur'neth/%s~
++AUTO_TRA "mur'neth/%s" //%"
+ 
+ LANGUAGE ~English~
+ 	 ~British~
+@@ -210,8 +241,8 @@
    SAY NAME1 @7
    SAY NAME2 @7
    WRITE_SHORT 0x244 0
