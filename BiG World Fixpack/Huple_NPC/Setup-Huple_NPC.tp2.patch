@@ -1,5 +1,5 @@
 --- Huple_NPC\Setup-Huple_NPC.tp2	Sun Oct 05 10:54:12 2014
-+++ C:\BWP Patchstudio\patched files\Huple_NPC\Setup-Huple_NPC.tp2	Sat Nov 28 22:03:43 2015
++++ D:\EE_Patchstudio\patched files\Huple_NPC\Setup-Huple_NPC.tp2	Sat Jan 09 23:54:40 2016
 @@ -3,7 +3,7 @@
  //En AUTHOR hay que poner la dirección del autro para poder avisarle en caso de error.
  AUTHOR ~garland86@gmail.com~
@@ -9,3 +9,142 @@
  //Con README indicamos donde se encuentra el readme del mod
  README ~Huple_NPC/readme.htm~
  //Con ALWAYS lo que hacemos es indicar que lo siguiente debe hacerse siempre.
+@@ -13,7 +13,7 @@
+   //Con UNLESS le decimos que si el string indicado ya está en el archivo, entonces no lo haga
+   UNLESS ~CD_STATE_NOTVALID~
+   //Ahora vamos a poner "motes" a distintos archivos, usaremos estos nombres en lugar de los que tienen los archivos, así conseguimos que el mod sea compatible tanto con BGT como con Tutu
+-  ACTION_IF FILE_EXISTS_IN_GAME ~FW5400.ARE~ THEN BEGIN
++  ACTION_IF GAME_IS ~tutu tutu_totsc~ THEN BEGIN
+     OUTER_SPRINT "Nashkel"      "FW4800"
+     OUTER_SPRINT "Cuartel"      "FW4810"
+     OUTER_SPRINT "ScriptCuartel""_AR4810"
+@@ -57,7 +57,8 @@
+     OUTER_SPRINT "Prism"        "_PRISM"
+     OUTER_SPRINT "Zeke"         "_ZEKE"
+     OUTER_SPRINT "Vitiare"      "_VITIAR"
+-  END ELSE BEGIN
++  END
++  ACTION_IF GAME_IS ~bgt~ THEN BEGIN
+     OUTER_SPRINT "Nashkel"      "AR3700"
+     OUTER_SPRINT "Cuartel"      "AR3710"
+     OUTER_SPRINT "ScriptCuartel""AR3710"    
+@@ -102,9 +103,72 @@
+     OUTER_SPRINT "Zeke"         "ZEKE"
+     OUTER_SPRINT "Vitiare"      "VITIAR"
+   END
++  ACTION_IF GAME_IS ~bgee~ THEN BEGIN
++    OUTER_SPRINT "Nashkel"      "AR4800"
++    OUTER_SPRINT "Cuartel"      "AR4810"
++    OUTER_SPRINT "ScriptCuartel""AR4810"    
++    OUTER_SPRINT "MinaNashkel"  "AR5400"
++    OUTER_SPRINT "ScriptMina"   "AR5400"
++    OUTER_SPRINT "MinaNivel1"   "AR5401"
++    OUTER_SPRINT "MinaNivel2"   "AR5402"
++    OUTER_SPRINT "MinaNivel3"   "AR5403"
++    OUTER_SPRINT "MinaNivel4"   "AR5404"
++    OUTER_SPRINT "CuevaMulahey" "AR5405"
++    OUTER_SPRINT "Cabaña"       "AR5406"
++    OUTER_SPRINT "Imoen_DV"     "imoen"
++    OUTER_SPRINT "Emerson"      "EMERSO"
++    OUTER_SPRINT "Hick"         "HICK"
++    OUTER_SPRINT "Nalin"        "NALIN"
++    OUTER_SPRINT "MontaronP"    "MONTAP"
++    OUTER_SPRINT "Khalid"       "BKHALI"
++    OUTER_SPRINT "Minsc"        "BMINSC"
++    OUTER_SPRINT "Ajantis"      "BAJANT"
++    OUTER_SPRINT "Branwen"      "BBRANW"
++    OUTER_SPRINT "Dynaheir"     "BDYNAH"
++    OUTER_SPRINT "Edwin"        "BEDWIN"
++    OUTER_SPRINT "Garrick"      "BGARRI"
++    OUTER_SPRINT "Imoen"        "BIMOEN"
++    OUTER_SPRINT "Jaheira"      "BJAHEI"
++    OUTER_SPRINT "Kagain"       "BKAGAI"
++    OUTER_SPRINT "Kivan"        "BKIVAN"
++    OUTER_SPRINT "Montaron"     "BMONTA"
++    OUTER_SPRINT "Quayle"       "BQUAYL"
++    OUTER_SPRINT "Safana"       "BSAFAN"
++    OUTER_SPRINT "Shar-Teel"    "BSHART"
++    OUTER_SPRINT "Viconia"      "BVICON"
++    OUTER_SPRINT "Xzar"         "BXZAR"
++    OUTER_SPRINT "Laryssa"      "LARYSS"
++    OUTER_SPRINT "Noober"       "NOOBER"
++    OUTER_SPRINT "Oublek"       "OUBLEK"
++    OUTER_SPRINT "Mulahey"      "MULAHE"
++    OUTER_SPRINT "Zordral"      "ZORDRAL"
++    OUTER_SPRINT "Dink"         "DINK"
++    OUTER_SPRINT "Kylee"        "KYLEE"
++    OUTER_SPRINT "Prism"        "PRISM"
++    OUTER_SPRINT "Zeke"         "ZEKE"
++    OUTER_SPRINT "Vitiare"      "VITIAR"
++  END
++  
++  ACTION_IF !FILE_EXISTS ~Huple_NPC/reinstall.mrk~ BEGIN
++	
++	ACTION_DEFINE_ARRAY tra#reload BEGIN Setup-Huple_NPC END
++	ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
++
++	LAF HANDLE_CHARSETS
++		INT_VAR
++			infer_charset = 1
++		STR_VAR
++			tra_path = EVAL ~Huple_NPC/tra~
++			noconvert_array = tra#noconvert
++			reload_array = tra#reload
++			iconv_path = ~Huple_NPC/tools/iconv~
++	END
++	
++	COPY_EXISTING ~sw1h01.itm~ ~Huple_NPC/reinstall.mrk~
++  END
+ END
+ //Con AUTO_TRA se escoge cual es el idioma que se utilizará por defecto, poniendo %s se indica que será el idioma escogido al instalar. Así nos ahorramos el USING (que indica el archivo *.tra a utilizar) después de todos los COMPILE.
+-AUTO_TRA ~Huple_NPC/tra/%s~
++AUTO_TRA "Huple_NPC/tra/%s" //%"
+ //Con LANGUAGE indicamos los idiomas en los que se puede instalar el mod, el primer campo ha de poner el nombre que saldrá durante la instalación, el segundo el nombre de la carpeta donde está los tra en ese idioma y el tercero es el lugar donde se encuentra el archivo *.tra
+ LANGUAGE ~Castellano~ ~castellano~ ~Huple_NPC/tra/castellano/Setup-Huple_NPC.tra~
+ LANGUAGE ~Francais (par Althea)~ ~frances~ ~Huple_NPC/tra/frances/Setup-Huple_NPC.tra~
+@@ -294,10 +358,17 @@
+     SAY SELECT_RARE1 @37
+     SAY SELECT_RARE2 @38
+     SAY MORALE @39
+-
++  ACTION_IF GAME_IS ~bgt tutu tutu_totsc~ THEN BEGIN
+   //En ésta ocasión estamos copiando los Portraits de Huple, se puede ver cómo ahora sí cambiamos el nombre de los archivos
+   COPY ~Huple_NPC/Portraits/PORTM.BMP~ ~override/HUPM.BMP~
+   COPY ~Huple_NPC/Portraits/PORTS.BMP~ ~override/HUPS.BMP~
++  END
++  
++  ACTION_IF GAME_IS ~bgee~ THEN BEGIN
++  COPY ~Huple_NPC/Portraits/bgee/PORTM.BMP~ ~override/HUPM.BMP~
++  COPY ~Huple_NPC/Portraits/bgee/PORTS.BMP~ ~override/HUPS.BMP~
++  END
++  
+   //Ahora compilamos los diálogos y el script de Huple
+   //EVALUATE_BUFFER sirve para utilizar que se reemplacen los "motes" que hemos hecho antes por el nombre real del archivo.
+   COMPILE EVALUATE_BUFFER ~Huple_NPC/dlg/dialog.d~
+@@ -305,6 +376,18 @@
+   //Ahora estamos extendiendo el script de AR4400 para incluirle lo que hay escrito en el AR4400.baf
+   EXTEND_TOP ~%ScriptMina%.bcs~ ~Huple_NPC/baf/AR4400.baf~
+     EVALUATE_BUFFER
++	
++  ACTION_IF GAME_IS ~bgee tutu tutu_totsc~ THEN BEGIN
++  APPEND ~pdialog.2da~
++	~Huple        HupleP             HupleJ            HupleD~
++  UNLESS ~Huple~
++
++  APPEND ~interdia.2da~
++	~Huple       BHuple~
++  UNLESS ~Huple~
++  END
++  
++  ACTION_IF GAME_IS ~bgt~ THEN BEGIN
+   //Ahora se está incluyendo en pdialog.2da cuales serán los archivos de Huple
+   APPEND ~pdialog.2da~
+     ~Huple        HupleP             HupleJ            HupleD         Huple25P           Huple25J             Huple25D               Huple25~
+@@ -313,6 +396,7 @@
+   APPEND ~interdia.2da~
+     ~Huple       BHuple        BHuple25~
+   UNLESS ~Huple~
++  END
+ 
+   COPY ~Huple_NPC/itm/hupsw1.itm~  ~override/hupsw1.itm~
+     SAY NAME1 @41
