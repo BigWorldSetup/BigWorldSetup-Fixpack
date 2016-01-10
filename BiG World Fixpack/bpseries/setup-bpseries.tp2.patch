@@ -1,0 +1,11 @@
+--- bpseries\setup-bpseries.tp2	Fri Jan 10 00:34:45 2014
++++ C:\BWP Patchstudio\patched files\bpseries\setup-bpseries.tp2	Sun Jan 10 13:02:11 2016
+@@ -1,7 +1,7 @@
+ BACKUP ~BPSeries/backup~
+ AUTHOR ~www.shsforums.net/forum/192-big-picture/~
+ //Comment out MODDER and change VERSION on official release
+-VERSION ~v0.3121~
++VERSION ~v0.3121 BWP Fix~
+ //MODDER setup_tra none area_variables warn missing_extern warn missing_resref warn overwriting_file none
+ //Change overwriting_file none to overwriting_file warn when it's fixed in a future WeiDU
+ 

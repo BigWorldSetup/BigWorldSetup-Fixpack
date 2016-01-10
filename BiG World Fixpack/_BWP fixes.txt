@@ -243,6 +243,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: arath - Arath NPC v3
+
+:: Wisp's improved KIT.IDS patching code
+:: http://www.shsforums.net/topic/58487-fixing-the-kitids-megamod-style/?p=584888
+
+
+----------------------------------------------------------------------------------------
+
+
 :: arestorationp - Almateria's Restoration Project v3.4
 
 :: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
@@ -669,6 +678,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian added NoAction() to empty script blocks for engine bugs
 :: - LINK NOT FOUND ~
+
+:: Wisp's improved KIT.IDS patching code
+:: http://www.shsforums.net/topic/58487-fixing-the-kitids-megamod-style/?p=584888
+
+
+----------------------------------------------------------------------------------------
+
+
+:: bpseries - BPSeries AI Scripts v0.3121
+
+:: Wisp's improved KIT.IDS patching code
+:: http://www.shsforums.net/topic/58487-fixing-the-kitids-megamod-style/?p=584888
 
 
 ----------------------------------------------------------------------------------------
@@ -1505,6 +1526,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: laviconia - La'Viconia Tweak v4
+
+:: Wisp's improved KIT.IDS patching code
+:: http://www.shsforums.net/topic/58487-fixing-the-kitids-megamod-style/?p=584888
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Lena - Lena NPC v0.4.1
 
 :: micbaldur's EU#LenaLike GLOBAL -> LOCALS conversion
@@ -1743,6 +1773,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: subtledoctor's EE compatibility patch
 :: http://gibberlings3.net/forums/index.php?showtopic=27262&p=239838
 
+:: Wisp's improved KIT.IDS patching code
+:: http://www.shsforums.net/topic/58487-fixing-the-kitids-megamod-style/?p=584888
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1808,6 +1841,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Pirate - Pirate Kit Mod v1.1
+
+:: Wisp's improved KIT.IDS patching code
+:: http://www.shsforums.net/topic/58487-fixing-the-kitids-megamod-style/?p=584888
 
 
 ----------------------------------------------------------------------------------------
@@ -2040,6 +2082,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's fixed first effect indices for SPLs
 :: http://www.shsforums.net/topic/58031-brand-new-installation/?p=584509
+
+:: Wisp's improved KIT.IDS patching code
+:: http://www.shsforums.net/topic/58487-fixing-the-kitids-megamod-style/?p=584888
 
 
 ----------------------------------------------------------------------------------------
@@ -2428,6 +2473,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: tobaurora - Aurora-ToB NPC v1
+
+:: Wisp's improved KIT.IDS patching code
+:: http://www.shsforums.net/topic/58487-fixing-the-kitids-megamod-style/?p=584888
+
+
+----------------------------------------------------------------------------------------
+
+
 :: tobr - Throne of Bhaal Revisited v4
 
 :: White Agnus' compatibility fixes for "Longer Road"
@@ -2717,11 +2771,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: virtue - Virtue Mod v19
 
-:: Lollorian's KIT.iDS patching fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=542469
-
-:: the bigg's KIT.IDS ToBEx compatibility fix
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+:: Wisp's improved KIT.IDS patching code
+:: http://www.shsforums.net/topic/58487-fixing-the-kitids-megamod-style/?p=584888
 
 
 ----------------------------------------------------------------------------------------
