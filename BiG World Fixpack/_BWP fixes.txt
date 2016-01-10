@@ -372,7 +372,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/38026-azenmod-v5-released/?p=581729
 
 :: Lollorian's patchified installation (and proper Trademeet Crypt installation)
-:: - LINK NOT FOUND ~
+:: http://www.shsforums.net/topic/38026-azenmod-v5-released/?p=585048
 
 
 ----------------------------------------------------------------------------------------

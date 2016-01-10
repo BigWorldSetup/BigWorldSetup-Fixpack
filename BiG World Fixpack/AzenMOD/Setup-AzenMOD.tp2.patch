@@ -93,7 +93,7 @@
  BEGIN	@19
 +
 +COPY_EXISTING ~ceskel01.cre~	~override~	// crypt skeleton
-+  REPLACE_CRE_ITEM ~AMUL12~ #0 #0 #0 ~NONE~ ~AMULET~
++  REPLACE_CRE_ITEM ~AMUL12~ #0 #0 #0 ~NONE~ ~INV1~
 +BUT_ONLY_IF_IT_CHANGES
  
  COPY_EXISTING	~AR2013.ARE~	~override~
