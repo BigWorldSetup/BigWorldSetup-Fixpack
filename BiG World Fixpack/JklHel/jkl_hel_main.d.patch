@@ -1,5 +1,5 @@
 --- JklHel\dialogue\jkl_hel_main.d	Tue Mar 26 20:21:52 2013
-+++ D:\EE_Patchstudio\patched files\JklHel\dialogue\jkl_hel_main.d	Mon Jan 04 21:55:38 2016
++++ D:\EE_Patchstudio\patched files\JklHel\dialogue\jkl_hel_main.d	Sun Jan 10 15:08:57 2016
 @@ -7,20 +7,20 @@
  Global("JKL_Helarine_BG1_track","GLOBAL",2)
  Global("JKL_Helarine_ReadytoTalk","GLOBAL",1)~
@@ -403,9 +403,9 @@
 +IF ~!ReputationLT(Player1,8)~ THEN REPLY @68 + DeathTalk3-6 // med/high reputation version (need trigger!)
 +++ @69 + DeathTalk3-8
 +++ @70 + DeathTalk3-9
-+IF ~!Dead("NEERA") GlobalGT("NEERA_ROMANCE","GLOBAL",1)~ THEN REPLY @71 + DeathTalk3-10 // Neera version
-+IF ~!Dead("RASAAD") !GlobalGT("NEERA_ROMANCE","GLOBAL",1) GlobalGT("RASAAD_ROMANCE","GLOBAL",1)~ THEN REPLY @71 + DeathTalk3-10 // Rasaad version
-+//IF ~!Dead("DORN") !GlobalGT("NEERA_ROMANCE","GLOBAL",1) !GlobalGT("RASAAD_ROMANCE","GLOBAL",1) Global("DORN_ROMANCE_2","LOCALS",2)~ THEN REPLY @71 + DeathTalk3-10 // Dorn version
++IF ~!Dead("NEERA") Global("NEERA_ROMANCE","GLOBAL",2)~ THEN REPLY @71 + DeathTalk3-10 // Neera version
++IF ~!Dead("RASAAD") !Global("NEERA_ROMANCE","GLOBAL",2) Global("RASAAD_ROMANCE","GLOBAL",2)~ THEN REPLY @71 + DeathTalk3-10 // Rasaad version
++IF ~!Dead("DORN") !Global("NEERA_ROMANCE","GLOBAL",2) !Global("RASAAD_ROMANCE","GLOBAL",2) Global("JKLHEL_DornRomance","Global",2)~ THEN REPLY @71 + DeathTalk3-10 // Dorn version
  
  CHAIN
  IF~~
@@ -442,7 +442,7 @@
  END
  
  IF ~~ THEN GOTO DeathTalk3-13
-@@ -375,7 +375,7 @@
+@@ -375,31 +375,31 @@
  CHAIN
  IF~~
  THEN JKLHELJ DeathTalk3-9
@@ -451,27 +451,30 @@
  END
  
  IF ~~ THEN GOTO DeathTalk3-13
-@@ -383,7 +383,7 @@
+ 
  CHAIN
- IF~GlobalGT("NEERA_ROMANCE","GLOBAL",1)~
+-IF~GlobalGT("NEERA_ROMANCE","GLOBAL",1)~
++IF~~
  THEN JKLHELJ DeathTalk3-10
 -~Do you mean Neera? While she is hunted by the Red Wizards, she isn't entirely defenseless on her own. Concern for her safety does explain why you have learned to kill so well, though.~
 +@77
  END
  
  IF ~~ THEN GOTO DeathTalk3-13
-@@ -391,7 +391,7 @@
+ 
  CHAIN
- IF~!GlobalGT("NEERA_ROMANCE","GLOBAL",1) GlobalGT("RASAAD_ROMANCE","GLOBAL",1)~
+-IF~!GlobalGT("NEERA_ROMANCE","GLOBAL",1) GlobalGT("RASAAD_ROMANCE","GLOBAL",1)~
++IF~~
  THEN JKLHELJ DeathTalk3-11
 -~If you're speaking of Rasaad, he's perfectly capable of defending himself. Your association with him might explain how you've become such a skilled killer, however.~
 +@78
  END
  
  IF ~~ THEN GOTO DeathTalk3-13
-@@ -399,7 +399,7 @@
+ 
  CHAIN
- IF~!GlobalGT("NEERA_ROMANCE","GLOBAL",1) !GlobalGT("RASAAD_ROMANCE","GLOBAL",1) Global("DORN_ROMANCE_2","LOCALS",2)~
+-IF~!GlobalGT("NEERA_ROMANCE","GLOBAL",1) !GlobalGT("RASAAD_ROMANCE","GLOBAL",1) Global("DORN_ROMANCE_2","LOCALS",2)~
++IF~~
  THEN JKLHELJ DeathTalk3-12
 -~If anyone is capable of handling things on their own, it would be Dorn. While I doubt you are really concerned for his well-being, his influence may well have shaped you into the killer you've become.~
 +@79

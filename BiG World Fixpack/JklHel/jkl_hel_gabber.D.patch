@@ -1,5 +1,5 @@
 --- JklHel\dialogue\jkl_hel_gabber.D	Fri Mar 08 23:07:40 2013
-+++ D:\EE_Patchstudio\patched files\JklHel\dialogue\jkl_hel_gabber.D	Mon Jan 04 21:55:33 2016
++++ D:\EE_Patchstudio\patched files\JklHel\dialogue\jkl_hel_gabber.D	Sun Jan 10 15:04:16 2016
 @@ -2,11 +2,11 @@
  
  IF ~IsGabber(Player1)

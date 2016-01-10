@@ -1,5 +1,5 @@
 --- JklHel\Helarine_BGEE.Tp2	Fri Apr 12 17:03:28 2013
-+++ D:\EE_Patchstudio\patched files\JklHel\Helarine_BGEE.Tp2	Mon Jan 04 22:04:44 2016
++++ D:\EE_Patchstudio\patched files\JklHel\Helarine_BGEE.Tp2	Sun Jan 10 14:28:03 2016
 @@ -1,8 +1,36 @@
  BACKUP ~JklHel/backup~
   
@@ -54,7 +54,7 @@
 -- 7th Level: Emotion: Hopelessness
 -- 10th Level: Raise Dead
 -- 13th Level: Bolt of Glory
-- 
+-
 -Disadvantages:
 -- None
 -~
@@ -110,7 +110,7 @@
  
  // Kit stuff
  WRITE_SHORT 0x244 0 // doesn't change  
-@@ -123,55 +154,55 @@
+@@ -123,56 +154,65 @@
   
  /* This is the biography. In NearInfinity, go to that side tab and find CHR. Open that and find Sam.BIO You can create your own bio this way by simply deleting the default PC bio and typing your own. Save this.*/
   
@@ -183,10 +183,21 @@
 +SAY CRITICAL_MISS @32
   
 -SAY TARGET_IMMUNE ~I need a different weapon.~
+- 
+-SAY INVENTORY_FULL ~I... don't think I can carry this all.~
 +SAY TARGET_IMMUNE @33
   
--SAY INVENTORY_FULL ~I... don't think I can carry this all.~
 +SAY INVENTORY_FULL @34
-  
++
++//Dorn Romance Check
++<<<<<<<< .../inlined/jkl_dornj.d
++ADD_TRANS_ACTION DORNJ BEGIN 214 END BEGIN END ~SetGlobal("JKLHEL_DornRomance","Global",2)~
++
++>>>>>>>>
++
++COMPILE ~.../inlined/jkl_dornj.d~
++
++
  // This is compiling Sam's dialogue
- 
+  
+ COMPILE ~JklHel/dialogue/jkl_hel_main.d~
