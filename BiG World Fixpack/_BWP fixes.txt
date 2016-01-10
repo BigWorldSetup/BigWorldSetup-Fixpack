@@ -1,6 +1,3 @@
-Since Leomars' absence this file is no longer supported. Read Lollorians excellent reports instead at:
-http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/
-
 ======================================================================================================
 
 
@@ -397,15 +394,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Valiant's correct chapter fix
 :: http://forums.blackwyrmlair.net/index.php?s=&showtopic=1633&view=findpost&p=45078
-
-----------------------------------------------------------------------------------------
-
-
-:: BackBrynnlaw - Back to Brynnlaw v4
-
-:: micbaldur's non-spawning Berlin fix
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=575218
-
 
 ----------------------------------------------------------------------------------------
 

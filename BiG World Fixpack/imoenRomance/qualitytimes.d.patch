@@ -1,5 +1,5 @@
---- imoenRomance\dialogues\SOA\Love\qualitytimes.d	Wed Nov 26 20:59:21 2014
-+++ C:\BWP Patchstudio\patched files\imoenRomance\dialogues\SOA\Love\qualitytimes.d	Wed Nov 11 13:41:53 2015
+--- imoenRomance\dialogues\SOA\Love\qualitytimes.d	Mon Nov 23 19:06:12 2015
++++ C:\BWP Patchstudio\patched files\imoenRomance\dialogues\SOA\Love\qualitytimes.d	Sun Jan 10 22:40:09 2016
 @@ -237,7 +237,7 @@
  
  	IF ~~ THEN BEGIN MRLT0-Sorry

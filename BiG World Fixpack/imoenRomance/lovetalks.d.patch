@@ -1,5 +1,5 @@
---- imoenRomance\dialogues\SOA\Love\lovetalks.d	Sun Dec 07 17:26:58 2014
-+++ C:\BWP Patchstudio\patched files\imoenRomance\dialogues\SOA\Love\lovetalks.d	Wed Nov 11 13:41:53 2015
+--- imoenRomance\dialogues\SOA\Love\lovetalks.d	Fri Jan 01 00:29:18 2016
++++ C:\BWP Patchstudio\patched files\imoenRomance\dialogues\SOA\Love\lovetalks.d	Sun Jan 10 22:40:10 2016
 @@ -469,7 +469,7 @@
  	END
  
@@ -7,5 +7,5 @@
 -	 SAY ~Riiight. Okay then, ear-<PRO_BOYGIRL>, I'm gonna let you and your body parts have a little alone time.~
 +	 SAY ~Riiight. Okay then, ear-<PRO_GIRLBOY>, I'm gonna let you and your body parts have a little alone time.~
  	 = ~What I was gonna say wasn't all that important anyways.~
- 	 IF ~~ THEN DO ~SetGlobal("ImoenRomanceActive","GLOBAL",3)~EXIT
+ 	 IF ~~ THEN DO ~SetGlobal("ImoenRomanceActive","GLOBAL",4)~EXIT
  	END

@@ -1,5 +1,5 @@
---- imoenRomance\dialogues\SOA\Banter\Classes.d	Mon Nov 10 09:28:57 2014
-+++ C:\BWP Patchstudio\patched files\imoenRomance\dialogues\SOA\Banter\Classes.d	Wed Nov 11 13:51:33 2015
+--- imoenRomance\dialogues\SOA\Banter\Classes.d	Sun Dec 06 00:54:02 2015
++++ C:\BWP Patchstudio\patched files\imoenRomance\dialogues\SOA\Banter\Classes.d	Sun Jan 10 22:43:35 2016
 @@ -83,7 +83,7 @@
  	IF ~~ THEN BEGIN MRClassFighterArrow2
  		SAY ~(She flashes you a smile) So glad you agree with me.~
