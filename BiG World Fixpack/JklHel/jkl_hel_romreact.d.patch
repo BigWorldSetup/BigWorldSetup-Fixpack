@@ -1,5 +1,5 @@
 --- JklHel\dialogue\jkl_hel_romreact.d	Fri Mar 22 22:38:22 2013
-+++ D:\EE_Patchstudio\patched files\JklHel\dialogue\jkl_hel_romreact.d	Mon Jan 04 21:55:53 2016
++++ D:\EE_Patchstudio\patched files\JklHel\dialogue\jkl_hel_romreact.d	Sun Jan 10 15:04:16 2016
 @@ -12,18 +12,18 @@
  GlobalGT("NEERA_ROMANCE", "GLOBAL",1)
  Global("JKL_Helarine_NeeraRomance_conv1","GLOBAL",2)~

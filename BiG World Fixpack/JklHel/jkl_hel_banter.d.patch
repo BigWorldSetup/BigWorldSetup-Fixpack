@@ -1,5 +1,5 @@
 --- JklHel\dialogue\jkl_hel_banter.d	Sun Mar 24 14:07:22 2013
-+++ D:\EE_Patchstudio\patched files\JklHel\dialogue\jkl_hel_banter.d	Mon Jan 04 21:55:27 2016
++++ D:\EE_Patchstudio\patched files\JklHel\dialogue\jkl_hel_banter.d	Sun Jan 10 15:04:16 2016
 @@ -9,14 +9,14 @@
  InteractingWith("NEERA")
  Global("JKL_HelNeeraBanter1","GLOBAL",0)~
