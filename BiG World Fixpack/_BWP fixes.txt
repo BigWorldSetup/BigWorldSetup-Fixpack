@@ -1866,6 +1866,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's assorted item effect fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=546503
 
+:: Ineth's EE compatibility patch
+:: http://www.shsforums.net/topic/58465-have-u-played-any-big-mod-vote-for-it/?p=585112
+
 
 ----------------------------------------------------------------------------------------
 

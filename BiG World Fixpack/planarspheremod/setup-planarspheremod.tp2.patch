@@ -1,6 +1,6 @@
---- setup-planarspheremod.tp2	Sun May 01 14:04:17 2011
-+++ C:\BWP Patchstudio\patched files\setup-planarspheremod.tp2	Sun Feb 10 10:35:37 2013
-@@ -8,7 +8,7 @@
+--- setup-planarspheremod.tp2	Sun May 01 17:34:17 2011
++++ C:\BWP Patchstudio\patched files\setup-planarspheremod.tp2	Wed Jan 13 23:14:13 2016
+@@ -8,11 +8,23 @@
  //MODDER
  
  /* WeiDU v204 allows tp2 level version listing in the .log, so no more tra changes  */
@@ -9,7 +9,32 @@
  
  /* launch the readme file immediately. If you want to disable the ReadMe, place two slashes before it, like //README  */
  README ~PlanarSphereMod/readme-planarsphere.html~
-@@ -1021,7 +1021,7 @@
+ 
++/* Ineth - make sure strings are correctly encoded for both EE and non-EE games */
++ALWAYS
++  ACTION_DEFINE_ARRAY tra_reload BEGIN setup END
++  LAF HANDLE_CHARSETS
++    INT_VAR
++      infer_charset = 1
++    STR_VAR
++      tra_path      = EVAL ~%MOD_FOLDER%~
++      reload_array  = tra_reload
++  END
++END
++
+ AUTO_TRA ~PlanarSphereMod/%s~
+ 
+ LANGUAGE ~English~
+@@ -36,7 +48,7 @@
+ 
+ 
+ // TOB Check prior to compiling.
+-REQUIRE_FILE ~Data/25Dialog.bif~ @1 // ToB  check// Base Copy Overs
++REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1 // ToB  check// Base Copy Overs
+ 
+ 
+ COPY ~PlanarSphereMod/are~   ~override~ // Area Files (new area files not previously installed in game)
+@@ -1021,7 +1033,7 @@
      SAY NAME2 @115
      SAY UNIDENTIFIED_DESC @116
      SAY DESC @117
