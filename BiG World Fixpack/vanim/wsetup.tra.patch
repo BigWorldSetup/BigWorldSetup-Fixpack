@@ -1,0 +1,7 @@
+--- vanim\english\wsetup.tra	Tue Jul 08 14:56:34 2003
++++ C:\BWP Patchstudio\patched files\vanim\english\wsetup.tra	Sat Jan 16 12:14:01 2016
+@@ -20,3 +20,4 @@
+ @17 = ~Egram~
+ @18 = ~Eiggam~
+ @19 = ~Asil~
++@20 = ~Amnish Soldier~

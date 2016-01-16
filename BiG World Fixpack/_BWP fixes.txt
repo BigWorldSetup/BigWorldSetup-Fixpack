@@ -2697,6 +2697,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's removed ".itm" from inside a PartyHasItem() - vanimJ.d
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488705
 
+:: micbaldur's M#Verhaf.CRE fixes
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=585409
+
 
 ----------------------------------------------------------------------------------------
 

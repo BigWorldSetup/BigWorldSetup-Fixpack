@@ -1,11 +1,22 @@
 --- Setup-Vanim.tp2	Tue Jul 15 21:00:34 2003
-+++ C:\BWP Patchstudio\patched files\Setup-Vanim.tp2	Tue Jun 01 07:00:25 2010
-@@ -3,6 +3,8 @@
++++ C:\BWP Patchstudio\patched files\Setup-Vanim.tp2	Sat Jan 16 12:16:53 2016
+@@ -2,7 +2,7 @@
+ 
  BACKUP ~vanim/vanim-backup~
  AUTHOR ~maus@fphfslinux.physik.uni-karlsruhe.de~
- 
+-
 +VERSION ~v1.4 BWP Fix~
-+
  // Kompatibilität
  ALLOW_MISSING
          ~Ar4500.bcs~
+@@ -177,6 +177,10 @@
+ 
+ COMPILE ~vanim/m#gonla.d~
+ USING ~vanim/%s/m#gonla.tra~
++
++COPY ~vanim/M#Verhaf.cre~ ~override/M#Verhaf.cre~
++SAY NAME1 @20
++SAY NAME2 @20
+ 
+ // 2DA
+ APPEND ~pdialog.2da~
