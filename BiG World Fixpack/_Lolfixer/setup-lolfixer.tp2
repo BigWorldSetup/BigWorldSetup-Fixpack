@@ -1,6 +1,6 @@
 BACKUP ~lolfixer/backup~
 AUTHOR ~Lollorian~
-VERSION ~10122015~
+VERSION ~10012015~
 
 ALWAYS
   ACTION_CLEAR_ARRAY tutu_convert_itm
