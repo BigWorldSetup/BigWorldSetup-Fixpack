@@ -1,5 +1,5 @@
 --- WhiteQueen\WhiteQueen.tp2	Wed Jan 28 00:52:04 2015
-+++ C:\BWP Patchstudio\patched files\WhiteQueen\WhiteQueen.tp2	Fri Jul 03 23:23:52 2015
++++ C:\BWP Patchstudio\patched files\WhiteQueen\WhiteQueen.tp2	Sat Jan 16 19:23:48 2016
 @@ -1,6 +1,6 @@
  BACKUP ~WhiteQueen\backup~
  AUTHOR ~Lava Del'Vortel~
@@ -8,3 +8,28 @@
  AUTO_TRA ~WhiteQueen/Translations/%s~
  
  ALWAYS
+@@ -60,7 +60,7 @@
+ 
+ //////////AUDIO
+ 
+-COPY ~WhiteQueen/Audio~ ~Override~
++LAF HANDLE_AUDIO END
+ 
+ 
+ 
+@@ -660,11 +660,11 @@
+ 
+ //////////////////////////////////AUDIO INSTALLATION
+ 
+-COPY   ~WhiteQueen/WQxIA.bat~          ~WQxIA.bat~
+-COPY   ~WhiteQueen/WQxUA.bat~          ~WQxUA.bat~
++// COPY   ~WhiteQueen/WQxIA.bat~          ~WQxIA.bat~
++// COPY   ~WhiteQueen/WQxUA.bat~          ~WQxUA.bat~
+     
+-AT_INTERACTIVE_EXIT ~WQxIA.bat~
+-AT_UNINSTALL        ~WQxUA.bat~
++// AT_INTERACTIVE_EXIT ~WQxIA.bat~
++// AT_UNINSTALL        ~WQxUA.bat~
+ 
+ //////////////////////////////////ADD AREA TO MAP
+ MKDIR save

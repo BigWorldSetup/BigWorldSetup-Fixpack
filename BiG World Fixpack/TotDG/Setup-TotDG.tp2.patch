@@ -1,5 +1,5 @@
 --- TotDG\Setup-TotDG.tp2	Wed Jan 28 00:53:58 2015
-+++ C:\BWP Patchstudio\patched files\TotDG\Setup-TotDG.tp2	Fri Jul 03 23:19:36 2015
++++ C:\BWP Patchstudio\patched files\TotDG\Setup-TotDG.tp2	Sat Jan 16 20:42:16 2016
 @@ -1,7 +1,7 @@
  BACKUP ~TotDG\backup~
  AUTHOR ~Lava Del'Vortel~
@@ -9,3 +9,36 @@
  AUTO_TRA ~TotDG/Translations/%s~
  
  ALWAYS
+@@ -405,12 +405,12 @@
+     
+ /////////////////////////////////SOUNDS
+ 
+-COPY ~TotDG/SOUNDS~ ~override/~
+-
+ ACTION_IF ("%LANGUAGE%" STRING_COMPARE_CASE "Polish" =0) BEGIN
++ COPY ~TotDG\DeepAudio\Polish~ ~TotDG\SOUNDS~
++END
+  
+-COPY ~TotDG\DeepAudio\Polish~ ~override\~
+-
++LAF HANDLE_AUDIO
++  STR_VAR audio_path = ~TotDG/SOUNDS~
+ END
+ 
+ /////////////////////////////////SPELLS
+@@ -811,11 +811,11 @@
+ 
+ //////////////////////////////////AUDIO INSTALLATION
+ 
+-COPY   ~TotDG/TotDGIA.bat~          ~TotDGIA.bat~
+-COPY   ~TotDG/TotDGUA.bat~         ~TotDGUA.bat~
++// COPY   ~TotDG/TotDGIA.bat~          ~TotDGIA.bat~
++// COPY   ~TotDG/TotDGUA.bat~         ~TotDGUA.bat~
+     
+-AT_INTERACTIVE_EXIT ~TotDGIA.bat~
+-AT_UNINSTALL        ~TotDGUA.bat~
++// AT_INTERACTIVE_EXIT ~TotDGIA.bat~
++// AT_UNINSTALL        ~TotDGUA.bat~
+ 
+ //////////////////////////////////Possible Content
+ 

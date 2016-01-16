@@ -1344,6 +1344,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Red Carnelian's Worldmap appending code missing newline at top
 :: http://www.shsforums.net/topic/58265-problem-with-big-world-setup/?p=579703
 
+:: Used HANDLE_AUDIO for audio handling
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=585403
+
 
 ----------------------------------------------------------------------------------------
 
@@ -2511,6 +2514,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's small little item fix
 :: http://www.shsforums.net/topic/54832-coi-bugtypo-thread/?p=547617
 
+:: Used HANDLE_AUDIO for audio handling
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=585403
+
 
 ----------------------------------------------------------------------------------------
 
@@ -2803,6 +2809,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Ibanix's Spellbinder gloves made usable by Necromancers
 :: http://www.shsforums.net/topic/57098-white-queen-bugs/?p=566256
+
+:: Used HANDLE_AUDIO for audio handling
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=585403
 
 
 ----------------------------------------------------------------------------------------

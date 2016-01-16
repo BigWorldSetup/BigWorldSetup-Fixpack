@@ -1,9 +1,46 @@
---- Innershade\Setup-Innershade.tp2	Tue May 07 23:39:32 2013
-+++ C:\BWP Patchstudio\patched files\Innershade\Setup-Innershade.tp2	Mon Oct 07 08:41:46 2013
-@@ -1,5 +1,6 @@
+--- Innershade\Setup-Innershade.tp2	Fri Jan 30 01:20:44 2015
++++ C:\BWP Patchstudio\patched files\Innershade\Setup-Innershade.tp2	Sat Jan 16 19:20:29 2016
+@@ -1,7 +1,7 @@
  BACKUP ~Innershade\backup~
  AUTHOR ~Lava Del'Vortel~
-+VERSION ~v7.0 BWP Fix~
  README ~Innershade/+Documents+/Innershade_readme.html~
- 
+-
++VERSION ~v7.2 BWP Fix~
  AUTO_TRA ~Innershade/TRANSLATIONS/%s~
+ 
+ ALWAYS
+@@ -348,13 +348,13 @@
+     
+ /////////////////////////////////SOUNDS
+ 
+-COPY ~Innershade/SOUNDS~ ~override/~
+-
+-
+ ACTION_IF ("%LANGUAGE%" STRING_COMPARE_CASE "Polski" =0) BEGIN
++  COPY ~Innershade\InnerAudio\SOUNDSPolski~ ~Innershade\SOUNDS~
++END
+  
+-COPY ~Innershade\InnerAudio\SOUNDSPolski~ ~override\~
+-
++LAF HANDLE_AUDIO
++  STR_VAR
++    audio_path = ~Innershade/SOUNDS~
+ END
+ 
+ /////////////////////////////////SPELLS
+@@ -496,11 +496,11 @@
+ 
+ //////////////////////////////////AUDIO INSTALLATION
+ 
+-COPY   ~Innershade/InnershadeIA.bat~          ~InnershadeIA.bat~
+-COPY   ~Innershade/InnershadeUA.bat~          ~InnershadeUA.bat~
++// COPY   ~Innershade/InnershadeIA.bat~          ~InnershadeIA.bat~
++// COPY   ~Innershade/InnershadeUA.bat~          ~InnershadeUA.bat~
+     
+-AT_INTERACTIVE_EXIT ~InnershadeIA.bat~
+-AT_UNINSTALL        ~InnershadeUA.bat~
++// AT_INTERACTIVE_EXIT ~InnershadeIA.bat~
++// AT_UNINSTALL        ~InnershadeUA.bat~
+ 
+ 
+ 
