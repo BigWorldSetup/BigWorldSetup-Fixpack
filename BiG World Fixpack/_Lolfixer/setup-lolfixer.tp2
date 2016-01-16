@@ -1,6 +1,91 @@
 BACKUP ~lolfixer/backup~
 AUTHOR ~Lollorian~
-VERSION ~10012016~
+VERSION ~10122015~
+
+ALWAYS
+  ACTION_CLEAR_ARRAY tutu_convert_itm
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY tutu_convert_itm BEGIN
+    _AROW01    =>    AROW01
+    _AROW02    =>    AROW02
+    _AROW07    =>    AROW07
+    _AX1H04    =>    AX1H04
+    _BOW01     =>    BOW01
+    _BOW03     =>    BOW03
+    _BOW08     =>    BOW08
+    _BLUN02    =>    BLUN02
+    _BULL02    =>    BULL02
+    _BRAC04    =>    BRAC04
+    _CHAN01    =>    CHAN01
+    _CHAN04    =>    CHAN04
+    _CHAN05    =>    CHAN05
+    _CHAN07    =>    CHAN07
+    _CLCK17    =>    CLCK17
+    _DAGG01    =>    DAGG01
+    _DAGG03    =>    DAGG03
+    _DAGG05    =>    DAGG05
+    _DART01    =>    DART01
+    _DART02    =>    DART02
+    _HELM01    =>    HELM01
+    _HELM09    =>    HELM09
+    _HELM11    =>    HELM11
+    _JELLGR1   =>    JELLGR1
+    _LEAT01    =>    LEAT01
+    _LEAT02    =>    LEAT02
+    _LEAT04    =>    LEAT04
+    _MAGE01    =>    MAGE02
+    _MAGE02    =>    MAGE02
+    _MAGE05    =>    MAGE05
+    _AGEBRAC   =>    MAGEBRAC
+    _MISC33    =>    MISC33
+    _PLAT01    =>    PLAT01
+    _PLAT04    =>    PLAT04
+    _POTN08    =>    POTN08
+    _POTN20    =>    POTN20
+    _POTN21    =>    POTN21
+    _POTN36    =>    POTN36
+    _POTN37    =>    POTN37
+    _POTN45    =>    POTN45
+    _RING95    =>    RING95
+    _SCRL96    =>    SCRL96
+    _SHLD01    =>    SHLD01
+    _SHLD08    =>    SHLD08
+    _SLNG02    =>    SLNG02
+    _SPER01    =>    SPER01
+    _SPER02    =>    SPER02
+    _STAF01    =>    STAF01
+    _STAF02    =>    STAF02
+    _STAF07    =>    STAF07
+    _SW1H01    =>    SW1H01
+    _SW1H04    =>    SW1H04
+    _SW1H07    =>    SW1H07
+    _SW1H08    =>    SW1H08
+    _SW1H24    =>    SW1H24
+    _SW2H01    =>    SW2H01
+
+    // Typoed Items
+    2HSW02     =>    SW2H02
+    ANKSHELL   =>    MISC1A
+    ARRW01     =>    AROW01
+    BLUNT06    =>    BLUN06
+    CHAM01     =>    CHAN01
+    DWCHA01    =>    DWCHAN01
+    GHOST01    =>    GHOST
+    HRZRSHED   =>    SD_HRZR
+    IOUNX6     =>    IOUNX8
+    LEATH01    =>    LEAT01
+    LEATH04    =>    LEAT04
+    MIN1HP     =>    MINHP1
+    RDNTRE03   =>    RNDTRE03
+    RDNTRE04   =>    RNDTRE04
+    RNGDEMN    =>    RINGDEMN
+    SCRL1R     =>   "U!SCRL03" // 'cause WeiDU don't like dem exclamations in filenames
+    SH1H04     =>    SW1H04
+    SLING04    =>    SLNG04
+    STAFF01    =>    STAF01
+    UMBER1     =>    UMBER01
+    VAMP01     =>    VAMP1
+  END
+END
 
 BEGIN ~Area Stuff - MAJESTIC Area Fixer~
   GROUP ~Area Stuff~
@@ -10,65 +95,6 @@ ACTION_IF !(FILE_EXISTS ~override/xr2400.are~) THEN BEGIN
 END
 ACTION_IF !(FILE_EXISTS ~override/xr2600.are~) THEN BEGIN
   COPY_EXISTING ~ar0087.are~ ~override/xr2600.are~
-END
-
-ACTION_CLEAR_ARRAY tutu_convert_itm
-ACTION_DEFINE_ASSOCIATIVE_ARRAY tutu_convert_itm BEGIN
-  _AROW01    =>    AROW01
-  _AROW02    =>    AROW02
-  _AROW07    =>    AROW07
-  _AX1H04    =>    AX1H04
-  _BOW01     =>    BOW01
-  _BOW03     =>    BOW03
-  _BOW08     =>    BOW08
-  _BLUN02    =>    BLUN02
-  _BULL02    =>    BULL02
-  _BRAC04    =>    BRAC04
-  _CHAN01    =>    CHAN01
-  _CHAN04    =>    CHAN04
-  _CHAN05    =>    CHAN05
-  _CHAN07    =>    CHAN07
-  _DAGG01    =>    DAGG01
-  _DAGG03    =>    DAGG03
-  _DAGG05    =>    DAGG05
-  _DART01    =>    DART01
-  _DART02    =>    DART02
-  _HELM01    =>    HELM01
-  _HELM09    =>    HELM09
-  _HELM11    =>    HELM11
-  _JELLGR1   =>    JELLGR1
-  _LEAT01    =>    LEAT01
-  _LEAT02    =>    LEAT02
-  _LEAT04    =>    LEAT04
-  _MAGE01    =>    MAGE02
-  _MAGE02    =>    MAGE02
-  _MAGE05    =>    MAGE05
-  _AGEBRAC   =>    MAGEBRAC
-  _MISC33    =>    MISC33
-  _PLAT01    =>    PLAT01
-  _PLAT04    =>    PLAT04
-  _POTN08    =>    POTN08
-  _POTN20    =>    POTN20
-  _POTN21    =>    POTN21
-  _POTN36    =>    POTN36
-  _POTN37    =>    POTN37
-  _POTN45    =>    POTN45
-  _RING95    =>    RING95
-  _SCRL96    =>    SCRL96
-  _SHLD01    =>    SHLD01
-  _SHLD08    =>    SHLD08
-  _SLNG02    =>    SLNG02
-  _SPER01    =>    SPER01
-  _SPER02    =>    SPER02
-  _STAF01    =>    STAF01
-  _STAF02    =>    STAF02
-  _STAF07    =>    STAF07
-  _SW1H01    =>    SW1H01
-  _SW1H04    =>    SW1H04
-  _SW1H07    =>    SW1H07
-  _SW1H08    =>    SW1H08
-  _SW1H24    =>    SW1H24
-  _SW2H01    =>    SW2H01
 END
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
@@ -337,9 +363,9 @@ ACTION_IF FILE_EXISTS_IN_GAME ~BGIGIBB.CRE~ BEGIN
     PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN
       PATCH_PRINT "%SOURCE_FILE% issue: Removing RNDTRE06.ITM from tutorial gibberling..."
       LPF DELETE_CRE_ITEM
-	    STR_VAR
-	      item_to_delete = RNDTRE06
-	  END
+        STR_VAR
+          item_to_delete = RNDTRE06
+      END
     END
   BUT_ONLY_IF_IT_CHANGES
 END
@@ -500,88 +526,6 @@ BUT_ONLY_IF_IT_CHANGES
 
 BEGIN ~Creature Stuff - Inventory Cleaner (removes items that don't exist and converts them into already present items where applicable)~
   GROUP ~Creature Stuff~
-
-ACTION_CLEAR_ARRAY tutu_convert_itm
-ACTION_DEFINE_ASSOCIATIVE_ARRAY tutu_convert_itm BEGIN
-  _AROW01    =>    AROW01
-  _AROW02    =>    AROW02
-  _AROW07    =>    AROW07
-  _AX1H04    =>    AX1H04
-  _BOW01     =>    BOW01
-  _BOW03     =>    BOW03
-  _BOW08     =>    BOW08
-  _BLUN02    =>    BLUN02
-  _BULL02    =>    BULL02
-  _BRAC04    =>    BRAC04
-  _CHAN01    =>    CHAN01
-  _CHAN04    =>    CHAN04
-  _CHAN05    =>    CHAN05
-  _CHAN07    =>    CHAN07
-  _DAGG01    =>    DAGG01
-  _DAGG03    =>    DAGG03
-  _DAGG05    =>    DAGG05
-  _DART01    =>    DART01
-  _DART02    =>    DART02
-  _HELM01    =>    HELM01
-  _HELM09    =>    HELM09
-  _HELM11    =>    HELM11
-  _JELLGR1   =>    JELLGR1
-  _LEAT01    =>    LEAT01
-  _LEAT02    =>    LEAT02
-  _LEAT04    =>    LEAT04
-  _MAGE01    =>    MAGE02
-  _MAGE02    =>    MAGE02
-  _MAGE05    =>    MAGE05
-  _AGEBRAC   =>    MAGEBRAC
-  _MISC33    =>    MISC33
-  _PLAT01    =>    PLAT01
-  _PLAT04    =>    PLAT04
-  _POTN08    =>    POTN08
-  _POTN20    =>    POTN20
-  _POTN21    =>    POTN21
-  _POTN36    =>    POTN36
-  _POTN37    =>    POTN37
-  _POTN45    =>    POTN45
-  _RING95    =>    RING95
-  _SCRL96    =>    SCRL96
-  _SHLD01    =>    SHLD01
-  _SHLD08    =>    SHLD08
-  _SLNG02    =>    SLNG02
-  _SPER01    =>    SPER01
-  _SPER02    =>    SPER02
-  _STAF01    =>    STAF01
-  _STAF02    =>    STAF02
-  _STAF07    =>    STAF07
-  _SW1H01    =>    SW1H01
-  _SW1H04    =>    SW1H04
-  _SW1H07    =>    SW1H07
-  _SW1H08    =>    SW1H08
-  _SW1H24    =>    SW1H24
-  _SW2H01    =>    SW2H01
-
-  // Typoed Items
-  2HSW02     =>    SW2H02
-  ANKSHELL   =>    MISC1A
-  ARRW01     =>    AROW01
-  BLUNT06    =>    BLUN06
-  CHAM01     =>    CHAN01
-  DWCHA01    =>    DWCHAN01
-  GHOST01    =>    GHOST
-  HRZRSHED   =>    SD_HRZR
-  IOUNX6     =>    IOUNX8
-  LEATH01    =>    LEAT01
-  LEATH04    =>    LEAT04
-  MIN1HP     =>    MINHP1
-  RDNTRE03   =>    RNDTRE03
-  RDNTRE04   =>    RNDTRE04
-  RNGDEMN    =>    RINGDEMN
-  SCRL1R     =>   "U!SCRL03" // 'cause WeiDU don't like dem exclamations in filenames
-  SH1H04     =>    SW1H04
-  SLING04    =>    SLNG04
-  STAFF01    =>    STAF01
-  UMBER1     =>    UMBER01
-  VAMP01     =>    VAMP1
-END
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
   PATCH_IF ((SOURCE_SIZE > 0x2d3)) THEN BEGIN
