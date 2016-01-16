@@ -1,6 +1,6 @@
 BACKUP ~lolfixer/backup~
 AUTHOR ~Lollorian~
-VERSION ~10122015~
+VERSION ~10012016~
 
 BEGIN ~Area Stuff - MAJESTIC Area Fixer~
   GROUP ~Area Stuff~
@@ -331,6 +331,18 @@ BUT_ONLY_IF_IT_CHANGES
 
 BEGIN ~Creature Stuff - Creature Resource Fixer~
   GROUP ~Creature Stuff~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~BGIGIBB.CRE~ BEGIN
+  COPY_EXISTING ~BGIGIBB.CRE~ ~override~
+    PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN
+      PATCH_PRINT "%SOURCE_FILE% issue: Removing RNDTRE06.ITM from tutorial gibberling..."
+      LPF DELETE_CRE_ITEM
+	    STR_VAR
+	      item_to_delete = RNDTRE06
+	  END
+    END
+  BUT_ONLY_IF_IT_CHANGES
+END
 
 OUTER_SET existence_fix = 0
 ACTION_IF (FILE_EXISTS "TobEx_ini/TobExCore.ini") AND (FILE_CONTAINS "TobEx_ini/TobExCore.ini" "Existence Sound Fix=1") THEN BEGIN
