@@ -227,6 +227,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Roxanne's duplicate DO fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
 
+:: Mike1072's M#PIRBAN.ITM animation fix
+:: https://github.com/Gibberlings3/ItemRevisions/issues/11
+
 
 ----------------------------------------------------------------------------------------
 
