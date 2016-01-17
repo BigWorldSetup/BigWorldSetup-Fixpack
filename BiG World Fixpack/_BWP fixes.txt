@@ -1879,6 +1879,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Ineth's EE compatibility patch
 :: http://www.shsforums.net/topic/58465-have-u-played-any-big-mod-vote-for-it/?p=585112
 
+:: Add iconv to planarspheremod for EE compatibility
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=585557
 
 ----------------------------------------------------------------------------------------
 
