@@ -1,0 +1,11 @@
+--- BG1NPCSoA\7xshar.baf	Fri May 31 14:17:42 2013
++++ C:\BWP Patchstudio\patched files\BG1NPCSoA\7xshar.baf	Sun Jan 17 12:07:03 2016
+@@ -93,7 +93,7 @@
+         AreaCheck("AR0205")         
+         InParty("7XSHAR")
+         !StateCheck("7XSHAR",CD_STATE_NOTVALID)
+-	Dead("BHEYE")
++	Dead("UnseeingEye")
+         Global("SharKilledUnseeingEye","Locals",0)
+ THEN
+ 	RESPONSE #100

@@ -1,0 +1,46 @@
+--- BG1NPCSoA\B7Xshar.d	Sun Sep 15 01:02:36 2013
++++ C:\BWP Patchstudio\patched files\BG1NPCSoA\B7Xshar.d	Sun Jan 17 12:04:46 2016
+@@ -24,7 +24,7 @@
+ SAY ~So the Rashemi dung heap finally managed to get himself killed. Should have taken that advise I gave him about his defensive stance.~
+ =
+ ~Some people only learn though after it is already too late.~
+-IF ~~ THEN DO ~SetGlobal("SharMinscDie","GLOBAL",2)~ EXIT
++IF ~~ THEN DO ~SetGlobal("SharMinscDie","LOCALS",2)~ EXIT
+ END
+ 
+ 
+@@ -33,9 +33,9 @@
+ IF ~~ THEN DO ~SetGlobal("Shar1904troll","GLOBAL",2)~ EXIT
+ END
+ 
+-IF WEIGHT #-99 ~Global("SharKilledUnseeingEye","Locals",1)~ THEN BEGIN SharKilledUnseeingEye1
++IF WEIGHT #-99 ~Global("SharKilledUnseeingEye","LOCALS",1)~ THEN BEGIN SharKilledUnseeingEye1
+ SAY ~To think that those fools worshiped that sickly beholder as a god!~
+-IF ~~ THEN DO ~SetGlobal("SharKilledUnseeingEye","GLOBAL",2)~ EXIT
++IF ~~ THEN DO ~SetGlobal("SharKilledUnseeingEye","LOCALS",2)~ EXIT
+ END
+ 
+ IF WEIGHT #-99 ~PartyHasItem("sw2h10")
+@@ -43,19 +43,19 @@
+ SAY ~Something about that weapon makes my skin crawl! Keep it away from me!~
+ =
+ ~Two-handed weapons are so defensively outdated anyhow. Anyone with a proficiency in a two weapon style will easily defeat a warrior equipped with only a great sword.~
+-IF ~~ THEN DO ~SetGlobal("SharTeelCarsomyr","GLOBAL",2)~ EXIT
++IF ~~ THEN DO ~SetGlobal("SharTeelCarsomyr","LOCALS",2)~ EXIT
+ END
+ 
+ IF WEIGHT #-99 ~PartyHasItem("misc8t")
+  Global("SharTeelCerndBaby","LOCALS",1)~ THEN BEGIN SharTeelCerndBaby1
+ SAY ~Are we warriors or are we nursemaids? This is no place for a baby!~
+-IF ~~ THEN DO ~SetGlobal("SharTeelCerndBaby","GLOBAL",2)~ EXIT
++IF ~~ THEN DO ~SetGlobal("SharTeelCerndBaby","LOCALS",2)~ EXIT
+ END
+ 
+ IF WEIGHT #-99 ~PartyHasItem("misc9h")
+  Global("SharTeelNebHead","LOCALS",1)~ THEN BEGIN SharTeelNebHead1
+ SAY ~We should just stick that dwarf's head on a a pig pole and be done with it! There are far more worthy adversaries to be slain!~
+-IF ~~ THEN DO ~SetGlobal("SharTeelNebHead","GLOBAL",2)~ EXIT
++IF ~~ THEN DO ~SetGlobal("SharTeelNebHead","LOCALS",2)~ EXIT
+ END
+ 
+ 
