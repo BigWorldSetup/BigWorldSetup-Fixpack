@@ -1,5 +1,5 @@
 --- pcvamp/setup-pcvamp.tp2		Wed Aug 27 10:22:12 2014
-+++ pcvamp/setup-pcvamp.tp2		Mon Jan 18 15:22:10 2016
++++ pcvamp/setup-pcvamp.tp2		Mon Jan 18 16:22:10 2016
 @@ -1,16 +1,30 @@
  BACKUP ~pcvamp/Backup~
  AUTHOR ~Nicolas Peters - admin@baldursgate-refugium.de (http://www.baldursgate-refugium.de/)~
@@ -17,7 +17,7 @@
 +      infer_charset = 1
 +    STR_VAR
 +      tra_path      = EVAL ~%MOD_FOLDER%/TRA~
-+	  iconv_path	= ~BiG World Fixpack/_utils/iconv~
++      iconv_path    = EVAL ~%MOD_FOLDER/tools/iconv~
 +      reload_array  = tra_reload
 +  END
 +END

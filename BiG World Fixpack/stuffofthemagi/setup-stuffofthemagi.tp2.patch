@@ -1,5 +1,5 @@
 --- stuffofthemagi\setup-stuffofthemagi.tp2	Fri May 22 16:39:06 2009
-+++ stuffofthemagi\setup-stuffofthemagi.tp2	Mon Jan 18 03:46:34 2016
++++ stuffofthemagi\setup-stuffofthemagi.tp2	Mon Jan 18 04:15:34 2016
 @@ -1,23 +1,40 @@
  ////////////////////////////////////////// warning: reading the tp2 can really spoil things. 
  ////////////////////////////////////////// you might want to wait until you play through before seeing all my code
@@ -18,7 +18,7 @@
 +      infer_charset = 1
 +    STR_VAR
 +      tra_path      = EVAL ~%MOD_FOLDER%/language~
-+	  iconv_path	= EVAL ~BiG World Fixpack/_utils/iconv~
++      iconv_path    = EVAL ~%MOD_FOLDER/tools/iconv~
 +      reload_array  = tra_reload
 +  END
 +END
