@@ -1,0 +1,29 @@
+--- amber\scripts\m#imoen.baf	Fri Aug 21 10:07:00 2009
++++ D:\EE_Patchstudio\patched files\amber\scripts\m#imoen.baf	Fri Jan 15 12:51:46 2016
+@@ -20,7 +20,7 @@
+ IF
+ 	InParty("M#Amber")
+ 	InParty("Imoen2")
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	OR(4)
+ 	  Global("M#AmberImoenTalk","GLOBAL",0)
+@@ -52,7 +52,7 @@
+ 
+ IF
+ 	Global("M#AmberImoenBanter","GLOBAL",0)
+-	GlobalGT("Chapter","GLOBAL",5)
++	GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	Global("M#AmberRomanceActive","GLOBAL",2)
+ 	Global("M#AmberMatch","GLOBAL",1)
+ 	Global("M#AmberImoenBanterTimeActivated","Locals",0)
+@@ -68,7 +68,7 @@
+ 	RealGlobalTimerExpired("M#AmberImoenBanterTime","GLOBAL")
+ 	InParty("M#Amber")
+ 	InParty("Imoen2")
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	CombatCounter(0)
+ 	

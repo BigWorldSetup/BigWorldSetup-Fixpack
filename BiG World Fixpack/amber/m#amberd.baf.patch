@@ -1,0 +1,38 @@
+--- amber\scripts\m#amberd.baf	Sun Dec 30 18:39:00 2007
++++ D:\EE_Patchstudio\patched files\amber\scripts\m#amberd.baf	Fri Jan 15 12:51:46 2016
+@@ -1,7 +1,7 @@
+ // Chapter Talks
+ IF
+ 	GlobalLT("M#AmberChapterTalk","Locals",8)
+-	Global("Chapter","GLOBAL",5)
++	Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	GlobalLT("M#AmberMadForPhaere","Locals",1)
+ 	AreaCheck("AR2100")
+ 	!See("udsvir04")
+@@ -22,7 +22,7 @@
+ 
+ IF
+ 	GlobalLT("M#AmberChapterTalk","Locals",8)
+-	Global("Chapter","GLOBAL",5)
++	Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	AreaCheck("AR2100")
+ 	!See("udsvir04")
+ 	Global("HadSlayerDream","GLOBAL",1)
+@@ -76,7 +76,7 @@
+ 	RealGlobalTimerExpired("M#AmberRomanceTime","GLOBAL")
+ 	Global("M#AmberTalk","Locals",52)
+ 	Global("M#AmberMatch","GLOBAL",1)
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	AreaType(OUTDOOR)
+ 	AreaType(WEATHER)
+@@ -122,7 +122,7 @@
+ 	Global("M#AmberTalk","Locals",52)
+ 	Global("M#AmberMatch","GLOBAL",3)
+ 	!Global("M#AmberRomanceActive","GLOBAL",3)
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	AreaType(OUTDOOR)
+ 	AreaType(WEATHER)

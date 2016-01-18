@@ -1,0 +1,20 @@
+--- amber\scripts\m#viconi.baf	Mon Aug 21 12:13:00 2006
++++ D:\EE_Patchstudio\patched files\amber\scripts\m#viconi.baf	Fri Jan 15 12:51:46 2016
+@@ -15,7 +15,7 @@
+ IF
+ 	RealGlobalTimerExpired("M#AmberViconiaRomanceConflictTime","GLOBAL")
+ 	Global("M#AmberViconiaRomanceConflict","GLOBAL",1)
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	InParty("m#amber")
+ 	InParty("Viconia")
+@@ -46,7 +46,7 @@
+ 	OR(2)
+ 	  Global("M#AmberViconiaTalk","GLOBAL",0)
+ 	  Global("M#AmberViconiaTalk","GLOBAL",4)
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	InParty("M#Amber")
+ 	InParty(Myself)

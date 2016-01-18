@@ -1,0 +1,245 @@
+--- amber\scripts\m#amber.baf	Sun May 04 17:20:00 2008
++++ D:\EE_Patchstudio\patched files\amber\scripts\m#amber.baf	Fri Jan 15 12:51:46 2016
+@@ -815,7 +815,7 @@
+ 	  Global("M#AmberTalk","Locals",6)
+ 	  Global("M#AmberTalk","Locals",8)
+ 	  Global("M#AmberTalk","Locals",10)	  
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	Global("M#JillBracelet","GLOBAL",9)
+ 	InParty("M#Amber")
+@@ -830,7 +830,7 @@
+ 	  Global("M#AmberTalk","Locals",12)
+ 	  Global("M#AmberTalk","Locals",14)
+ 	  Global("M#AmberTalk","Locals",16)
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	Global("M#AmberKidnap","GLOBAL",9)
+ 	InParty("M#Amber")
+@@ -1103,7 +1103,7 @@
+ IF
+ 	GlobalLT("M#AmberChapterTalk","Locals",1)
+ 	GlobalGT("M#AmberTalk","Locals",1)
+-	Global("Chapter","GLOBAL",3)
++	Global("Chapter","GLOBAL",%bg2_chapter_3%)
+ 	CombatCounter(0)
+ 	InParty("M#Amber")
+ THEN
+@@ -1114,7 +1114,7 @@
+ 
+ IF
+ 	GlobalLT("M#AmberChapterTalk","Locals",4)
+-	Global("Chapter","GLOBAL",4)
++	Global("Chapter","GLOBAL",%bg2_chapter_4%)
+ 	GlobalGT("AsylumPlot","GLOBAL",4)
+ 	GlobalGT("M#AmberTalk","Locals",1)
+ 	CombatCounter(0)
+@@ -1128,7 +1128,7 @@
+ IF
+ 	GlobalLT("M#AmberChapterTalk","Locals",6)
+ 	AreaCheck("AR2300") // Sagauhin City
+-	Global("Chapter","GLOBAL",4)
++	Global("Chapter","GLOBAL",%bg2_chapter_4%)
+ 	GlobalGT("M#AmberTalk","Locals",1)
+ 	CombatCounter(0)
+ 	InParty("M#Amber")
+@@ -1141,7 +1141,7 @@
+ IF
+ 	GlobalLT("M#AmberChapterTalk","Locals",10)
+ 	AreaCheck("AR2401")
+-	Global("Chapter","GLOBAL",5)
++	Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	GlobalGT("M#AmberTalk","Locals",1)
+ 	CombatCounter(0)
+ 	InParty("M#Amber")
+@@ -1157,7 +1157,7 @@
+ 	OR(2)
+ 	  TimeOfDay(MORNING)
+  	  TimeOfDay(DAY)
+-	Global("Chapter","GLOBAL",6)
++	Global("Chapter","GLOBAL",%bg2_chapter_6%)
+ 	GlobalGT("M#AmberTalk","Locals",1)
+ 	CombatCounter(0)
+ 	InParty("M#Amber")
+@@ -1169,7 +1169,7 @@
+ 
+ IF
+ 	GlobalLT("M#AmberChapterTalk","Locals",14)
+-	Global("Chapter","GLOBAL",6)
++	Global("Chapter","GLOBAL",%bg2_chapter_6%)
+ 	OR(7)
+ 	  AreaCheck("AR0400") //Slums
+ 	  AreaCheck("AR0300") //Docks
+@@ -1202,7 +1202,7 @@
+ IF
+ 	GlobalLT("M#AmberChapterTalk","Locals",18)
+ 	AreaCheck("AR2800") //Suldanesselar
+-	Global("Chapter","GLOBAL",7)
++	Global("Chapter","GLOBAL",%bg2_chapter_7%)
+ 	GlobalGT("M#AmberTalk","Locals",1)
+ 	CombatCounter(0)
+ 	InParty("M#Amber")
+@@ -1215,7 +1215,7 @@
+ IF
+ 	GlobalLT("M#AmberChapterTalk","Locals",20)
+ 	AreaCheck("AR2900") //Hell
+-	Global("Chapter","GLOBAL",7)
++	Global("Chapter","GLOBAL",%bg2_chapter_7%)
+ 	GlobalGT("M#AmberTalk","Locals",1)
+ 	CombatCounter(0)
+ 	InParty("M#Amber")	
+@@ -1389,7 +1389,7 @@
+ 
+ // Lovetalk Timing
+ IF
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	OR(7)
+ 	  Global("M#AmberTalk","Locals",50)
+@@ -1416,7 +1416,7 @@
+ END
+ 
+ IF
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	Global("M#AmberTalk","Locals",68)
+ 	RealGlobalTimerExpired("M#AmberRomanceTime","GLOBAL")
+@@ -1429,7 +1429,7 @@
+ 	Global("M#IamSorry","Locals",1)
+ 	Global("M#AmberTalk","Locals",70)
+ 	RealGlobalTimerExpired("M#AmberRomanceTime","GLOBAL")
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	InParty("M#Amber")
+ THEN
+@@ -1458,7 +1458,7 @@
+ 	RealGlobalTimerExpired("M#AmberRomanceTime","GLOBAL")
+ 	!AreaType(DUNGEON)
+ 	GlobalLT("M#AmberMad","GLOBAL",1)
+-	GlobalGT("CHAPTER","GLOBAL",5)
++	GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_5%)
+ 	InParty("M#Amber")
+ THEN
+ 	RESPONSE #100
+@@ -1562,7 +1562,7 @@
+ 	Global("M#SoulTalk","Locals",0)
+ 	Global("M#AmberMatch","GLOBAL",1)
+ 	Global("M#AmberRomanceActive","GLOBAL",2)
+-	GlobalGT("CHAPTER","GLOBAL",5)
++	GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_5%)
+ 	InParty("M#Amber")
+ THEN
+ 	RESPONSE #100
+@@ -1873,7 +1873,7 @@
+ 	 Global("M#AmberTalk","Locals",32)
+ 	GlobalGT("M#AmberLike","Locals",101)
+ 	!AreaType(DUNGEON)
+-	GlobalGT("Chapter","GLOBAL",5)
++	GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	InParty("M#Amber")
+ THEN
+ 	RESPONSE #100
+@@ -1886,7 +1886,7 @@
+ 	ReputationGT(Player1,14)
+ 	GlobalGT("M#AmberLike","Locals",101)
+ 	!AreaType(DUNGEON)
+-	GlobalGT("Chapter","GLOBAL",5)
++	GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	InParty("M#Amber")
+ THEN
+ 	RESPONSE #100
+@@ -1920,7 +1920,7 @@
+ // Floating friendship talk timing
+ IF
+ 	Global("M#InLoveTalk","Locals",0)
+-	GlobalGT("Chapter","GLOBAL",5)
++	GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	OR(13)
+ 	 Global("AerieRomanceActive","GLOBAL",2)
+@@ -2339,7 +2339,7 @@
+ 	Global("M#AmberHaerDalisTalk","GLOBAL",6)
+ 	Global("M#AmberHaerDalisTimerActivated","GLOBAL",1)
+ 	!AreaType(DUNGEON)
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	InParty("HaerDalis")
+ 	InParty("m#amber")
+ THEN
+@@ -2365,7 +2365,7 @@
+ 	Global("M#AmberImoenTalk","GLOBAL",4)
+ 	Global("M#AmberImoenTimerActivated","GLOBAL",1)
+ 	!AreaType(DUNGEON)
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	InParty("Imoen2")
+ 	InParty("m#amber")
+ THEN
+@@ -2389,7 +2389,7 @@
+ IF  
+ 	RealGlobalTimerExpired("M#AmberViconiaTalkTime","GLOBAL")
+ 	Global("M#AmberViconiaTimerActivated","GLOBAL",1)
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	OR(2)
+ 	  Global("M#AmberViconiaTalk","GLOBAL",2)
+ 	  Global("M#AmberViconiaTalk","GLOBAL",6)
+@@ -2421,7 +2421,7 @@
+ IF
+ 	GlobalLT("M#AmberUnderdarkBanterActivated","GLOBAL",1)
+  	AreaCheck("AR2100")
+-	Global("Chapter","GLOBAL",5)
++	Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+ 	RESPONSE #100
+    	SetGlobal("M#AmberUnderdarkBanterActivated","GLOBAL",1)
+@@ -2431,7 +2431,7 @@
+ IF
+ 	OR(2)
+  	 !AreaCheck("AR2100")
+-	 !Global("Chapter","GLOBAL",5)
++	 !Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	Global("M#AmberUnderdarkBanterActivated","GLOBAL",1)
+ THEN
+ 	RESPONSE #100
+@@ -2844,7 +2844,7 @@
+ IF
+ 	RealGlobalTimerExpired("M#AmberAerieRomanceConflictTime","GLOBAL")
+ 	Global("M#AmberAerieRomanceConflict","GLOBAL",1)
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	InParty("M#Amber")
+ 	InParty("Aerie")
+@@ -3076,7 +3076,7 @@
+     OR(3)
+       AreaType(DUNGEON)
+       !CombatCounter(0)
+-      Global("Chapter","GLOBAL",5)
++      Global("Chapter","GLOBAL",%bg2_chapter_5%)
+     !Global("M#AmberInitiateFlirt","Locals",2)
+ THEN
+     RESPONSE #100
+@@ -3088,7 +3088,7 @@
+ IF
+     RealGlobalTimerExpired("M#AmberFlirtTimer","Locals")
+     Global("M#AmberInitiateFlirt","Locals",0)
+-    !Global("Chapter","GLOBAL",5)
++    !Global("Chapter","GLOBAL",%bg2_chapter_5%)
+     !AreaType(DUNGEON)
+     !See([ENEMY])
+     !Range([NEUTRAL],10)
+@@ -3118,7 +3118,7 @@
+ IF
+     	RealGlobalTimerExpired("M#AmberFlirtTimer","Locals")
+     	Global("M#AmberInitiateFlirt","Locals",0)
+-    	!Global("Chapter","GLOBAL",5)
++    	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+     	!AreaType(DUNGEON)
+     	!See([ENEMY])
+     	!Range([NEUTRAL],10)

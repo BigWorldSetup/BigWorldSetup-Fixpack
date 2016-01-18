@@ -1,0 +1,11 @@
+--- amber\scripts\m#haerda.baf	Mon Aug 21 12:06:00 2006
++++ D:\EE_Patchstudio\patched files\amber\scripts\m#haerda.baf	Fri Jan 15 12:51:46 2016
+@@ -15,7 +15,7 @@
+ IF
+ 	InParty("M#Amber")
+ 	InParty(Myself)
+-	!Global("Chapter","GLOBAL",5)
++	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ 	!AreaType(DUNGEON)
+ 	OR(3)
+ 	  Global("M#AmberHaerDalisTalk","GLOBAL",0)

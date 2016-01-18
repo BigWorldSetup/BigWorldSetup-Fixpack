@@ -1,14 +1,57 @@
 --- setup-amber.tp2	Tue Jan 07 15:15:55 2014
-+++ C:\BWP Patchstudio\patched files\setup-amber.tp2	Sat Oct 03 23:26:48 2015
-@@ -1,6 +1,6 @@
++++ D:\EE_Patchstudio\patched files\setup-amber.tp2	Mon Jan 18 18:52:59 2016
+@@ -1,7 +1,20 @@
  BACKUP ~amber/backup~
  AUTHOR ~amber@welho.net~
 -VERSION ~v4~
 +VERSION ~v4 BWP Fix~
  README ~amber/readme-amber.html~
++ALWAYS
++  ACTION_IF (GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~EET_JOURNAL~) BEGIN
++    OUTER_SET bg2_chapter = 14
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++END
++
  LANGUAGE ~English~ ~english~ ~amber/tra/english/setup.tra~
  LANGUAGE ~Deutsch~ ~german~  ~amber/tra/german/setup.tra~
-@@ -389,8 +389,8 @@
+ LANGUAGE ~Spanish~ ~spanish~ ~amber/tra/spanish/setup.tra~
+@@ -27,7 +40,7 @@
+ SET_2DA_ENTRY 0 2 3 ~m#blank.mus~
+ ADD_MUSIC  ~Amber~    ~music/mxm#am.mus~
+ 
+-ACTION_IF GAME_IS BG2EE THEN BEGIN
++ACTION_IF GAME_IS ~BG2EE eet~ THEN BEGIN
+ 
+   COPY ~amber/ee~ ~override~ // ee-sized portraits, item description images
+   LOAD_TRA ~amber/tra/%LANGUAGE%/setup_ee.tra~
+@@ -136,7 +149,7 @@
+  SAY @152 /* @152 = ~Fighter~ */
+  SAY @153 /* @153 = ~FIGHTER:  The fighter is a champion, swordsman, soldier, and brawler.  He lives or dies by his knowledge of weapons and tactics.  Fighters can be found at the front of any battle, contesting toe-to-toe with monsters and villains.  A good fighter needs to be strong and healthy if he hopes to survive.~ */
+ 
+-ACTION_IF GAME_IS BG2EE THEN BEGIN
++ACTION_IF GAME_IS ~BG2EE eet~ THEN BEGIN
+ 
+   INCLUDE ~amber/lib/cd_ee_kit_appends.tph~
+   LAUNCH_ACTION_FUNCTION ee_kit_appends STR_VAR class = "FIGHTER" kitname = "m#ambkit" END
+@@ -145,8 +158,8 @@
+ 
+ // Compiling scripts and dialogs
+ 
+-COMPILE ~amber/dialogs~ USING ~amber/tra/%s/dialogs.tra~
+-COMPILE ~amber/scripts~ USING ~amber/tra/%s/dialogs.tra~
++COMPILE EVALUATE_BUFFER ~amber/dialogs~ USING ~amber/tra/%s/dialogs.tra~
++COMPILE EVALUATE_BUFFER ~amber/scripts~ USING ~amber/tra/%s/dialogs.tra~
+ COPY_EXISTING ~m#amber.bcs~ ~override/m#amber.bcs~
+ REPLACE_TEXTUALLY 999997 ~%Amber%~
+ COPY_EXISTING ~m#amberd.bcs~ ~override/m#amberd.bcs~
+@@ -389,8 +402,8 @@
    SAY HIDDEN_IN_SHADOWS @145
    SAY 0x1cc @144
    WRITE_SHORT 0x244 0 // doesn't change
@@ -19,7 +62,7 @@
  
  COPY ~Amber/creatures/m#ambr12.cre~           ~override/m#ambr12.cre~ 
    SAY NAME1 @100
-@@ -441,8 +441,8 @@
+@@ -441,8 +454,8 @@
    SAY HIDDEN_IN_SHADOWS @145
    SAY 0x1cc @144
    WRITE_SHORT 0x244 0 // doesn't change
@@ -30,7 +73,7 @@
  
  COPY ~Amber/creatures/m#ambr14.cre~           ~override/m#ambr14.cre~
    SAY NAME1 @100
-@@ -493,8 +493,8 @@
+@@ -493,8 +506,8 @@
    SAY HIDDEN_IN_SHADOWS @145
    SAY 0x1cc @144
    WRITE_SHORT 0x244 0 // doesn't change
@@ -41,7 +84,7 @@
  
  COPY ~Amber/creatures/m#ambr15.cre~           ~override/m#ambr15.cre~
    SAY NAME1 @100
-@@ -545,8 +545,8 @@
+@@ -545,8 +558,8 @@
    SAY HIDDEN_IN_SHADOWS @145  
    SAY 0x1cc @144
    WRITE_SHORT 0x244 0 // doesn't change
