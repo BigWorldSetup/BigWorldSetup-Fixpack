@@ -41,7 +41,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/58208-planetar-animation-glitch/
 
 :: Lollorian's misc patchified code changes
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -89,7 +89,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: ACBre - Ascalon's Breager NPC (White Agnus' Github master branch - 12 Feb, 2015)
 
 :: Nightfarer's installation fixes
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 :: Lollorian's installation fixes
 :: http://www.shsforums.net/topic/58265-problem-with-big-world-setup/?p=579921
@@ -237,7 +237,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: AnimalCompanions - Ulb's Animal Companions v0.5
 
 :: Added quotes to ApplySpellRES() objects in some scripts
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -393,7 +393,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://forums.blackwyrmlair.net/index.php?s=ea3cd08de46ebb4971cd040e3012e512&showtopic=1633
 
 :: White Agnus' Continue() Fix - SharoJMP.baf
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 :: Valiant's correct chapter fix
 :: http://forums.blackwyrmlair.net/index.php?s=&showtopic=1633&view=findpost&p=45078
@@ -464,7 +464,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: BG2eeAR - TeamBG's BG2 Armor Pack v1.02
 
 :: White Agnus' installation fix
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -672,7 +672,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=578872
 
 :: Lollorian added NoAction() to empty script blocks for engine bugs
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 :: Wisp's improved KIT.IDS patching code
 :: http://www.shsforums.net/topic/58487-fixing-the-kitids-megamod-style/?p=584888
@@ -693,7 +693,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: BranwenNPC - Branwen NPC v2.1
 
 :: White Agnus BGT Compatibility - Setup-BranwenNPC.tp2, WLBRAN.d, BGT-WLBRAN.d
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -705,7 +705,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=524893
 
 :: Patches ORC05.CRE's BG1 Long Swords proficiency to 0
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -813,7 +813,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Crusade - Crusader Pack v4.3
 
 :: Kit fixes
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -927,10 +927,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543158
 
 :: Lollorian's VRAR08.ARE container fix (VR#BU.ITM -> VR#BC.ITM)
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 :: Lollorian's compatibility patches (renamed CREs and patched AR0082.ARE)
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -1005,7 +1005,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Eilistraee - Eilistraee's Song v4.0
 
 :: micbaldur's AdamentineDust -> DWDust fix
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 :: Alex's ESXMSW.SPL fix
 :: http://www.shsforums.net/topic/46613-eilistraees-song/?p=584037
@@ -1435,10 +1435,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: kelsey - Kelsey NPC v3
 
 :: TRA Typo-bashing
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 :: ITM missing icon fixes
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -1447,7 +1447,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Kiara-Zaiya v1.6.2
 
 :: Lollorian's patched Revised Suldanessalar
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -1613,6 +1613,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's replacements - badbadai.BAF, badbadog.BAF
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
+
+
+----------------------------------------------------------------------------------------
+
+
+:: pcvamp - Mal des Vampirismus v1.1
+
+:: Ineth's EE compatibility patch
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -2141,7 +2150,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Run - Runiczny Pieœniarz Klingi (Runic Bladesinger) v2.0
 
 :: Typo bashing
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -2269,7 +2278,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: song_and_silence - Song and Silence v5
 
 :: Lollorian's patches for ADD_KIT adding kits properly
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -2281,7 +2290,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=500837
 
 :: Patch to not overwrite IDS files unnecessarily (fix BG2EE installs)
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -2361,7 +2370,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=585557
 
 :: agb1's setup_ee.tra item description overrides for EE
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -2388,10 +2397,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://forums.pocketplane.net/index.php/topic,27207.0.html
 
 :: Lollorian's updated North Forest code
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 :: Updated all BP mod predicates to newer BP v181-4611 component numbers
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -2588,13 +2597,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: ts25mini - TS25 MiniMod v2
 
 :: Fennek's mod updates and partial German translation (15 May 2010)
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 :: Lollorian's replacements - tz25nncf.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483525
 
 :: Nightfarer's major area patching overhaul
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 :: Roxanne's duplicate DO fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
@@ -2618,7 +2627,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: TsukiBG2 - Tsuki NPC Open Beta 1
 
 :: Moved AreaCheck() from action to trigger block in script
-:: - LINK NOT FOUND ~
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------

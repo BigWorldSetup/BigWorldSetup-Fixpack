@@ -1,0 +1,36 @@
+--- pcvamp/setup-pcvamp.tp2		Wed Aug 27 10:22:12 2014
++++ pcvamp/setup-pcvamp.tp2		Mon Jan 18 15:22:10 2016
+@@ -1,16 +1,30 @@
+ BACKUP ~pcvamp/Backup~
+ AUTHOR ~Nicolas Peters - admin@baldursgate-refugium.de (http://www.baldursgate-refugium.de/)~
+-VERSION "v1.1"
++VERSION "v1.1 BWP Fix"
+ README "pcvamp/Readme.html"
++
+ AUTO_TRA ~pcvamp/TRA/%s~
++
++// Make sure strings are correctly encoded for both EE and non-EE games
++ALWAYS
++  ACTION_DEFINE_ARRAY tra_reload BEGIN setup END
++  LAF HANDLE_CHARSETS
++    INT_VAR
++      infer_charset = 1
++    STR_VAR
++      tra_path      = EVAL ~%MOD_FOLDER%/TRA~
++	  iconv_path	= ~BiG World Fixpack/_utils/iconv~
++      reload_array  = tra_reload
++  END
++END
++
+ LANGUAGE ~Deutsch~ ~german~ ~pcvamp/TRA/german/setup.tra~
+ LANGUAGE ~English~ ~english~ ~pcvamp/TRA/english/setup.tra~
+ 
+ BEGIN @1 // Mal des Vampirismus
+-REQUIRE_FILE ~Data/25Dialog.bif~ @31 // Für eine Installation muss Thron des Bhaal installiert sein!
+-REQUIRE_FILE ~Data/25Scripts.bif~ @31 // Für eine Installation muss Thron des Bhaal installiert sein!
++REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ @31 // Für eine Installation muss Thron des Bhaal installiert sein!
+ 
+ // BMPs
+ COPY ~pcvamp/BMP/amalethS.bmp~ ~override/amalethS.bmp~
+ COPY ~pcvamp/BMP/taericS.bmp~ ~override/taericS.bmp~
+ 
