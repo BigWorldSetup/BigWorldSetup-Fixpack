@@ -1,0 +1,48 @@
+--- Angelo\Dialogue\ADAng25J.d	Tue May 13 07:59:02 2008
++++ D:\EE_Patchstudio\patched files\Angelo\Dialogue\ADAng25J.d	Fri Jan 15 12:51:43 2016
+@@ -1,22 +1,5 @@
+ BEGIN ADANG25J
+ 
+-EXTEND_TOP FATESP 6
+-
+-+ ~!Dead("ADAngel") !InMyArea("ADAngel") Global("ADAngelSummoned","GLOBAL",0)~ + @0
+-DO ~CreateVisualEffect("SPPORTAL",[1999.1228])
+-Wait(2) 
+-CreateCreature("ADAng25",[1999.1228],0) 
+-SetGlobal("ADAngelSummoned","GLOBAL",1)~ GOTO 8
+-
+-+ ~!Dead("ADAngel") !InMyArea("ADAngel") Global("ADAngelSummoned","GLOBAL",0) Gender(Player1,FEMALE) CheckStatGT(Player1,11,CHR)~ + @1
+-DO ~SetGlobal("ADAngelRomanceActive","GLOBAL",2)
+-CreateVisualEffect("SPPORTAL",[1999.1228])
+-Wait(2) 
+-CreateCreature("ADAng25",[1999.1228],0) 
+-SetGlobal("ADAngelSummoned","GLOBAL",1)~ GOTO 8
+-
+-END
+-
+ EXTEND_TOP SARVOLO 9
+ + ~InParty("ADAngel") InMyArea("ADAngel") !StateCheck("ADAngel",CD_STATE_NOTVALID) !Global("ADAngelRomanceActive","GLOBAL",2)~ + @2 + ADAngelVoloBio1
+ + ~InParty("ADAngel") InMyArea("ADAngel") !StateCheck("ADAngel",CD_STATE_NOTVALID) Global("ADAngelRomanceActive","GLOBAL",2)~ + @2 + ADAngelVoloBio2
+@@ -587,7 +570,7 @@
+ 
+ APPEND ADSUU25
+ 
+-IF ~GlobalGT("Chapter","GLOBAL",7) Global("ADAngelSuuSex","GLOBAL",0)~ s1
++IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%) Global("ADAngelSuuSex","GLOBAL",0)~ s1
+ SAY @231
+ ++ @232 + s1.a
+ ++ @233 + s1.a
+@@ -1127,11 +1110,11 @@
+ END
+ 
+ I_C_T GORPOL1 1 ADWatcherKeepToBInt1
+-== ADANG25J IF ~GlobalGT("Chapter","GLOBAL",7) InParty("ADAngel") InMyArea("ADAngel") !StateCheck("ADAngel",CD_STATE_NOTVALID)~ THEN @416
++== ADANG25J IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%) InParty("ADAngel") InMyArea("ADAngel") !StateCheck("ADAngel",CD_STATE_NOTVALID)~ THEN @416
+ END
+ 
+ I_C_T GORPOL1 1 ADWatcherKeepToBInt1
+-== ADANGELJ IF ~GlobalLT("Chapter","GLOBAL",8) InParty("ADAngel") InMyArea("ADAngel") !StateCheck("ADAngel",CD_STATE_NOTVALID)~ THEN @416
++== ADANGELJ IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("ADAngel") InMyArea("ADAngel") !StateCheck("ADAngel",CD_STATE_NOTVALID)~ THEN @416
+ END
+ 
+ I_C_T SARMEL01 7 ADAngelMeetMellyToBInt1

@@ -1,0 +1,10 @@
+--- Angelo\Scripts\ADStart.baf	Tue May 13 07:59:04 2008
++++ D:\EE_Patchstudio\patched files\Angelo\Scripts\ADStart.baf	Fri Jan 15 12:51:44 2016
+@@ -1,6 +1,6 @@
+ IF
+ NumTimesTalkedTo(0)
+-GlobalLT("Chapter","GLOBAL",8)
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+ OR(6)
+ Range(Player1,15)
+ Range(Player2,15)

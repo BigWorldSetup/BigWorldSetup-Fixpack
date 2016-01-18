@@ -1,0 +1,11 @@
+--- Angelo\Scripts\ADSuu.baf	Tue May 13 07:59:04 2008
++++ D:\EE_Patchstudio\patched files\Angelo\Scripts\ADSuu.baf	Fri Jan 15 12:51:44 2016
+@@ -1,7 +1,7 @@
+ // Hi
+ IF
+ See(Player1)
+-GlobalGT("Chapter","GLOBAL",7)
++GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+ Global("ADSuuSaidHi","GLOBAL",0)
+ THEN
+ RESPONSE #100

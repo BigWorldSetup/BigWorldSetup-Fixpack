@@ -1,0 +1,20 @@
+--- Angelo\Scripts\ADAngel.baf	Mon Nov 11 08:13:34 2013
++++ D:\EE_Patchstudio\patched files\Angelo\Scripts\ADAngel.baf	Fri Jan 15 12:51:44 2016
+@@ -585,7 +585,7 @@
+ OR(2)
+ Global("ADAngelRomanceActive","GLOBAL",1)
+ Global("ADAngelRomanceActive","GLOBAL",2)
+-Global("Chapter","GLOBAL",5)
++Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ InParty(Myself)
+ !StateCheck(Player1,CD_STATE_NOTVALID) 
+ !StateCheck(Myself,CD_STATE_NOTVALID)
+@@ -797,7 +797,7 @@
+ IF
+ InParty(Myself)
+ Global("ADAngelImogen","GLOBAL",1)
+-GlobalLT("Chapter","GLOBAL",4)
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+ OR(10)
+ AreaCheck("AR0509")
+ AreaCheck("AR0021")
