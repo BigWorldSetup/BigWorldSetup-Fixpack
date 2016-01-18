@@ -1,5 +1,5 @@
 --- JklHel\Helarine_BGEE.Tp2	Fri Apr 12 17:03:28 2013
-+++ D:\EE_Patchstudio\patched files\JklHel\Helarine_BGEE.Tp2	Sun Jan 10 14:28:03 2016
++++ D:\EE_Patchstudio\patched files\JklHel\Helarine_BGEE.Tp2	Mon Jan 18 18:17:13 2016
 @@ -1,8 +1,36 @@
  BACKUP ~JklHel/backup~
   
@@ -22,7 +22,7 @@
 +		tra_path = EVAL ~JklHel/tra~
 +		noconvert_array = tra#noconvert
 +		reload_array = tra#reload
-+		iconv_path = ~JklHel/tools/iconv~
++		iconv_path = ~BiG World Fixpack/_utils/iconv~
 +END
 +		
 +LOAD_TRA ~JklHel/tra/%LANGUAGE%/Setup.tra~
