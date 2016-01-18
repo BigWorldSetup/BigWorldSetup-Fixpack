@@ -1,5 +1,5 @@
 --- stuffofthemagi\setup-stuffofthemagi.tp2	Fri May 22 16:39:06 2009
-+++ stuffofthemagi\setup-stuffofthemagi.tp2	Mon Jan 18 00:41:34 2016
++++ stuffofthemagi\setup-stuffofthemagi.tp2	Mon Jan 18 03:46:34 2016
 @@ -1,23 +1,40 @@
  ////////////////////////////////////////// warning: reading the tp2 can really spoil things. 
  ////////////////////////////////////////// you might want to wait until you play through before seeing all my code
@@ -35,7 +35,7 @@
 +BEGIN @1 // Stuff of the Magi
 +// override item descriptions for BG2EE and EET (this is not a complete TRA file)
 +ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
-+  LOAD_TRA ~StuffofTheMagi/language/%s/setup_ee.tra~
++  LOAD_TRA ~StuffofTheMagi/language/%LANGUAGE%/setup_ee.tra~
 +END
 +
  // adds custom IsValidForPartyDialogue state
