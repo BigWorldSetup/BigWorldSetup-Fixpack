@@ -1,0 +1,38 @@
+--- Assassinations\Setup-Assassinations.tp2	Mon Nov 10 15:52:22 2014
++++ D:\EE_Patchstudio\patched files\Assassinations\Setup-Assassinations.tp2	Fri Jan 15 12:51:44 2016
+@@ -5,6 +5,17 @@
+ README ~Assassinations/%LANGUAGE%/Readme-Assassinations.txt~ ~Assassinations/Readme-Assassinations.txt~ 
+ 
+ ALWAYS
++  ACTION_IF (GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~EET_JOURNAL~) BEGIN
++    OUTER_SET bg2_chapter = 14
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++
+   // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+   INCLUDE ~%MOD_FOLDER%/handle_charsets.tpa~
+ 
+@@ -38,7 +49,7 @@
+ 
+ BEGIN @0
+ 
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN
++ACTION_IF GAME_IS ~BG2EE eet~ BEGIN
+ ADD_JOURNAL @10000 @10010 @10020 @10030 @10040 @10050 @10060 @10070 @10080 @10090 @10100 @10110 @10120 @10130 @10140 @10150 @10160 @10170 @10180 @10190 @10200 @10210 @10220 @10230 @10240 @10250 @10260 @10270 @10280 @10290 @10300 @10310 @10320 @10330 @10340 @10350 @10360 @10370 @10380 @10390 @10400 @10410 @10420 @10430 @10440 @10450 @10460 @10470 @10480 @10490 @10500 @10510 @10520 @10530 @10540 @10550 @10560
+ END
+ 
+@@ -311,7 +322,7 @@
+ 
+ // Dialogue and scripts
+ 
+-COMPILE ~Assassinations/Dialogue/Assassinations.d~
++COMPILE EVALUATE_BUFFER ~Assassinations/Dialogue/Assassinations.d~
+ 
+ 	~Assassinations/Scripts/O#CrCut1.baf~
+ 	~Assassinations/Scripts/O#CrCut2.baf~

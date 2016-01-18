@@ -1,0 +1,11 @@
+--- Assassinations\Dialogue\Assassinations.d	Tue Aug 06 17:57:30 2013
++++ D:\EE_Patchstudio\patched files\Assassinations\Dialogue\Assassinations.d	Fri Jan 15 12:51:44 2016
+@@ -24,7 +24,7 @@
+ 
+ CHAIN IF WEIGHT #-1 ~Global("O#CrLynnSpawn2","GLOBAL",0) 
+ OR(2) 
+-Global("Chapter","GLOBAL",7) 
++Global("Chapter","GLOBAL",%bg2_chapter_7%) 
+ Dead("C6Bodhi") 
+ Global("O#CrLynnNineQuestsComplete","GLOBAL",1)
+ Global("O#CrLynnFinalQuest","GLOBAL",0)
