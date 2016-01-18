@@ -1,0 +1,80 @@
+--- stuffofthemagi\setup-stuffofthemagi.tp2	Fri May 22 16:39:06 2009
++++ stuffofthemagi\setup-stuffofthemagi.tp2	Mon Jan 18 00:41:34 2016
+@@ -1,23 +1,40 @@
+ ////////////////////////////////////////// warning: reading the tp2 can really spoil things. 
+ ////////////////////////////////////////// you might want to wait until you play through before seeing all my code
+ BACKUP ~StuffofTheMagi/backup~ // so WeiDU can uninstall
+ AUTHOR ~Send a PM to Kevmus at spellholdstudios or send an email to KevmusBG@gmail.com~ // contact address displayed if installation fails
+-VERSION ~v4~ // version number
++VERSION ~v4 BWP Fix~
+ README ~StuffofTheMagi/Readme-SoTM.txt~
+ 
+ AUTO_TRA ~StuffofTheMagi/language/%s~
+ 
++ALWAYS
++  ACTION_DEFINE_ARRAY tra_reload BEGIN setup setup_ee END
++  LAF HANDLE_CHARSETS
++    INT_VAR
++      infer_charset = 1
++    STR_VAR
++      tra_path      = EVAL ~%MOD_FOLDER%/language~
++	  iconv_path	= EVAL ~BiG World Fixpack/_utils/iconv~
++      reload_array  = tra_reload
++  END
++END
++
+ LANGUAGE ~English~
+ 	 ~english~
+ 	 ~StuffofTheMagi/language/english/setup.tra~
+ 
+ LANGUAGE ~Français (par Deratiseur)~
+ 	 ~french~
+ 	 ~StuffofTheMagi/language/french/setup.tra~
+ 
+-BEGIN @1 // name of this component
++BEGIN @1 // Stuff of the Magi
++// override item descriptions for BG2EE and EET (this is not a complete TRA file)
++ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
++  LOAD_TRA ~StuffofTheMagi/language/%s/setup_ee.tra~
++END
++
+ // adds custom IsValidForPartyDialogue state
+ APPEND ~STATE.IDS~
+   ~0x80101FEF CD_STATE_NOTVALID~
+   UNLESS ~CD_STATE_NOTVALID~
+ APPEND ~action.ids~ ~160 ApplySpellRES(S:ResRef*,O:Target)~
+@@ -154,11 +171,11 @@
+   ADD_CRE_ITEM ~wzrdring~ #0 #0 #0 ~NONE~ ~INV16~
+ COPY_EXISTING ~susuneer.cre~ ~override/susuneer.cre~
+   ADD_CRE_ITEM ~wzrdrobe~ #0 #0 #0 ~NONE~ ~INV16~
+ END
+ 
+-EXTEND_TOP ~ar4500.bcs~ ~StuffofTheMagi/scripts/ar4500.baf~
++EXTEND_TOP ~ar4500.bcs~ ~StuffofTheMagi/scripts/ar4500.baf~ // Firewine Bridge
+ EXTEND_TOP ~baldur.bcs~ ~StuffofTheMagi/scripts/wzrdset.baf~
+ COMPILE ~StuffofTheMagi/scripts/wzrdlich.baf~
+   
+ 
+ COPY ~StuffofTheMagi/spells/wzrdset1.spl~ ~override~
+@@ -257,11 +274,11 @@
+   ADD_CRE_ITEM ~wzrdbrac~ #0 #0 #0 ~unstealable&undroppable~ ~GLOVES~
+   ADD_CRE_ITEM ~wzrdhelm~ #0 #0 #0 ~unstealable&undroppable~ ~HELMET~
+   ADD_CRE_ITEM ~wzrdbelt~ #0 #0 #0 ~unstealable&undroppable~ ~BELT~
+   ADD_CRE_ITEM ~wzrdbag1~ #0 #0 #0 ~NONE~ ~INV16~
+   
+-EXTEND_TOP ~ar4500.bcs~ ~StuffofTheMagi/scripts/Oar4500.baf~
++EXTEND_TOP ~ar4500.bcs~ ~StuffofTheMagi/scripts/Oar4500.baf~ // Firewine Bridge
+  END
+  
+ COPY ~StuffofTheMagi/items/wzrdbag1.itm~ ~override~
+ SAY NAME1 @51
+ SAY NAME2 @51
+@@ -281,6 +298,6 @@
+ ADD_STORE_ITEM "scrl9m" #1 #0 #0 ~IDENTIFIED~ #1 //Spellstrike
+ COMPILE ~StuffofTheMagi/scripts/wzrdlich.baf~
+ 
+ //COMPILE ~StuffofTheMagi/scripts/wzrdlic2.baf~
+ COMPILE ~StuffofTheMagi/dialog/wzrdlich.d~
+-EXTEND_TOP ~ar3020.bcs~ ~StuffofTheMagi/scripts/ar3020.baf~
+\ No newline at end of file
++EXTEND_TOP ~ar3020.bcs~ ~StuffofTheMagi/scripts/ar3020.baf~ // Watcher's Keep -- Imprisoned One
