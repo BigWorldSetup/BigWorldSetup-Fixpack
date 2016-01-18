@@ -1,5 +1,5 @@
 --- Huple_NPC\Setup-Huple_NPC.tp2	Sun Oct 05 10:54:12 2014
-+++ D:\EE_Patchstudio\patched files\Huple_NPC\Setup-Huple_NPC.tp2	Sat Jan 09 23:54:40 2016
++++ D:\EE_Patchstudio\patched files\Huple_NPC\Setup-Huple_NPC.tp2	Mon Jan 18 18:13:13 2016
 @@ -3,7 +3,7 @@
  //En AUTHOR hay que poner la dirección del autro para poder avisarle en caso de error.
  AUTHOR ~garland86@gmail.com~
@@ -90,7 +90,7 @@
 +			tra_path = EVAL ~Huple_NPC/tra~
 +			noconvert_array = tra#noconvert
 +			reload_array = tra#reload
-+			iconv_path = ~Huple_NPC/tools/iconv~
++			iconv_path = ~BiG World Fixpack/_utils/iconv~
 +	END
 +	
 +	COPY_EXISTING ~sw1h01.itm~ ~Huple_NPC/reinstall.mrk~
