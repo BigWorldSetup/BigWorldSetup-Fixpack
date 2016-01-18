@@ -1,0 +1,11 @@
+--- aurenaseph\scripts\ar2001.baf	Mon Feb 13 18:20:00 2006
++++ D:\EE_Patchstudio\patched files\aurenaseph\scripts\ar2001.baf	Fri Jan 15 12:51:46 2016
+@@ -2,7 +2,7 @@
+         InParty("K#Auren")
+         InParty("Jaheira")
+         !StateCheck("Jaheira",STATE_SLEEPING)
+-        Global("Chapter","GLOBAL",5)
++        Global("Chapter","GLOBAL",%bg2_chapter_5%)
+         Global("AurenJaheiraBanter3","AR2001",0)
+ THEN
+         RESPONSE #100

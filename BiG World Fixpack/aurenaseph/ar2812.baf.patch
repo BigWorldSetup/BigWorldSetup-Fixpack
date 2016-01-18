@@ -1,0 +1,11 @@
+--- aurenaseph\scripts\ar2812.baf	Mon Feb 13 18:22:00 2006
++++ D:\EE_Patchstudio\patched files\aurenaseph\scripts\ar2812.baf	Fri Jan 15 12:51:46 2016
+@@ -2,7 +2,7 @@
+         InParty("K#Auren")
+         InParty("Imoen")
+         !StateCheck("Imoen",STATE_SLEEPING)
+-        Global("Chapter","GLOBAL",5)
++        Global("Chapter","GLOBAL",%bg2_chapter_5%)
+         Global("AurenImoenBanter2","AR2812",0)
+ THEN
+         RESPONSE #100

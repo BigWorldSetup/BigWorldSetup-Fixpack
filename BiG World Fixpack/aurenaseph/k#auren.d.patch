@@ -1,0 +1,11 @@
+--- aurenaseph\dialogues\k#auren.d	Tue Jun 16 00:13:18 2009
++++ D:\EE_Patchstudio\patched files\aurenaseph\dialogues\k#auren.d	Fri Jan 15 12:51:46 2016
+@@ -4,7 +4,7 @@
+ SAY @0 
+ 
+ 
+-IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN REPLY @1 GOTO InquireIrenicus
++IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_3%)~ THEN REPLY @1 GOTO InquireIrenicus
+ IF ~~ THEN REPLY @2 GOTO Greet
+ IF ~Class(Player1,FIGHTER)~ THEN REPLY @3 GOTO BothFighters
+ IF ~~ THEN REPLY @4 GOTO GoAway

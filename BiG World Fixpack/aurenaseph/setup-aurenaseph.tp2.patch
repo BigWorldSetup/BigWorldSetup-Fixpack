@@ -1,0 +1,143 @@
+--- aurenaseph\setup-aurenaseph.tp2	Wed Oct 02 09:40:08 2013
++++ D:\EE_Patchstudio\patched files\aurenaseph\setup-aurenaseph.tp2	Fri Jan 15 12:51:46 2016
+@@ -6,6 +6,19 @@
+ 
+ VERSION v8
+ 
++ALWAYS
++  ACTION_IF (GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~EET_JOURNAL~) BEGIN
++    OUTER_SET bg2_chapter = 14
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++END
++
+ LANGUAGE ~English~
+          ~English~
+          ~AurenAseph\English\Setup.tra~
+@@ -143,9 +156,9 @@
+ 
+ // Adds Dialogue Files
+ 
+-COMPILE ~AurenAseph/Dialogues/K#Auren.d~
+-COMPILE ~AurenAseph/Dialogues/K#AurenB.d~
+-COMPILE ~AurenAseph/Dialogues/K#AurenJ.d~
++COMPILE EVALUATE_BUFFER ~AurenAseph/Dialogues/K#Auren.d~
++COMPILE EVALUATE_BUFFER ~AurenAseph/Dialogues/K#AurenB.d~
++COMPILE EVALUATE_BUFFER ~AurenAseph/Dialogues/K#AurenJ.d~
+ COMPILE ~AurenAseph/Dialogues/K#Valin.d~
+ 
+ // Adds Items
+@@ -158,29 +171,29 @@
+ 
+ // Adds Scripts
+ 
+-COMPILE ~AurenAseph/Scripts/K#Auren.baf~ USING ~AurenAseph/%s/scripts.tra~
++COMPILE EVALUATE_BUFFER ~AurenAseph/Scripts/K#Auren.baf~ USING ~AurenAseph/%s/scripts.tra~
+ COMPILE ~AurenAseph/Scripts/K#Valin.baf~
+ COMPILE ~AurenAseph/Scripts/K#Arian.baf~
+ EXTEND_BOTTOM ~Ar0406.bcs~ ~AurenAseph/Scripts/ar0406.baf~
+-EXTEND_BOTTOM ~Ar0300.bcs~ ~AurenAseph/Scripts/ar0300.baf~
+-EXTEND_BOTTOM ~Ar0509.bcs~ ~AurenAseph/Scripts/ar0509.baf~
+-EXTEND_BOTTOM ~Ar0701.bcs~ ~AurenAseph/Scripts/ar0701.baf~
+-EXTEND_BOTTOM ~Ar1000.bcs~ ~AurenAseph/Scripts/ar1000.baf~
+-EXTEND_BOTTOM ~Ar1100.bcs~ ~AurenAseph/Scripts/ar1100.baf~
+-EXTEND_BOTTOM ~Ar2001.bcs~ ~AurenAseph/Scripts/ar2001.baf~
+-EXTEND_BOTTOM ~Ar2007.bcs~ ~AurenAseph/Scripts/ar2007.baf~
+-EXTEND_BOTTOM ~Ar0900.bcs~ ~AurenAseph/Scripts/ar0900.baf~
+-EXTEND_BOTTOM ~Ar1600.bcs~ ~AurenAseph/Scripts/ar1600.baf~
+-EXTEND_BOTTOM ~Ar2010.bcs~ ~AurenAseph/Scripts/ar2010.baf~
+-EXTEND_BOTTOM ~Ar1900.bcs~ ~AurenAseph/Scripts/ar1900.baf~
+-EXTEND_BOTTOM ~Ar1202.bcs~ ~AurenAseph/Scripts/ar1202.baf~
+-EXTEND_BOTTOM ~Ar0903.bcs~ ~AurenAseph/Scripts/ar0903.baf~
+-EXTEND_BOTTOM ~Ar2600.bcs~ ~AurenAseph/Scripts/ar2600.baf~
+-EXTEND_BOTTOM ~Ar0302.bcs~ ~AurenAseph/Scripts/ar0302.baf~
+-EXTEND_BOTTOM ~Ar0404.bcs~ ~AurenAseph/Scripts/ar0404.baf~
+-EXTEND_BOTTOM ~Ar0413.bcs~ ~AurenAseph/Scripts/ar0413.baf~
+-EXTEND_BOTTOM ~Ar2812.bcs~ ~AurenAseph/Scripts/ar2812.baf~
+-EXTEND_BOTTOM ~Ar2200.bcs~ ~AurenAseph/Scripts/ar2200.baf~
++EXTEND_BOTTOM ~Ar0300.bcs~ ~AurenAseph/Scripts/ar0300.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar0509.bcs~ ~AurenAseph/Scripts/ar0509.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar0701.bcs~ ~AurenAseph/Scripts/ar0701.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar1000.bcs~ ~AurenAseph/Scripts/ar1000.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar1100.bcs~ ~AurenAseph/Scripts/ar1100.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar2001.bcs~ ~AurenAseph/Scripts/ar2001.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar2007.bcs~ ~AurenAseph/Scripts/ar2007.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar0900.bcs~ ~AurenAseph/Scripts/ar0900.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar1600.bcs~ ~AurenAseph/Scripts/ar1600.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar2010.bcs~ ~AurenAseph/Scripts/ar2010.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar1900.bcs~ ~AurenAseph/Scripts/ar1900.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar1202.bcs~ ~AurenAseph/Scripts/ar1202.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar0903.bcs~ ~AurenAseph/Scripts/ar0903.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar2600.bcs~ ~AurenAseph/Scripts/ar2600.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar0302.bcs~ ~AurenAseph/Scripts/ar0302.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar0404.bcs~ ~AurenAseph/Scripts/ar0404.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar0413.bcs~ ~AurenAseph/Scripts/ar0413.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar2812.bcs~ ~AurenAseph/Scripts/ar2812.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~Ar2200.bcs~ ~AurenAseph/Scripts/ar2200.baf~ EVALUATE_BUFFER
+ COMPILE ~AurenAseph/Scripts/K#WTF.baf~
+ 
+ 
+@@ -286,7 +299,7 @@
+ COMPILE ~AurenAseph/Dialogues/K#Aur25J.d~
+ COMPILE ~AurenAseph/Dialogues/K#ValiT.d~
+ COMPILE ~AurenAseph/Dialogues/K#AriaT.d~
+-COMPILE ~AurenAseph/Dialogues/FATESP.d~
++
+ COMPILE ~AurenAseph/Dialogues/K#Aur25D.d~
+ COMPILE ~AurenAseph/Dialogues/K#AQ.d~
+ 
+@@ -373,7 +386,7 @@
+ 
+ // Adds Portraits
+      
+-ACTION_IF GAME_IS BG2EE THEN BEGIN
++ACTION_IF GAME_IS ~BG2EE eet~ THEN BEGIN
+ 
+   COPY ~AurenAseph/portraits/aurens_ee.bmp~ ~override/aurens.bmp~
+        ~AurenAseph/portraits/aurenm_ee.bmp~ ~override/aurenm.bmp~
+@@ -387,11 +400,29 @@
+ 
+ END
+ 
++ACTION_IF GAME_IS ~eet~ BEGIN
++  LOAD_TRA ~AurenAseph/%LANGUAGE%/fatesp.tra~
++  INCLUDE ~Angelo/EET_functions.tph~
++  LAF ~EET_NPC_TRANSITION~
++    INT_VAR
++      type = 2
++    STR_VAR
++      dv = "K#AUREN"
++      override_SoA = "K#AUREN"
++      override_ToB = "K#AURE25"
++      dialog_ToB = "K#AUR25D"
++      string = "@0" //Bring me Auren, the human fighter.
++      stringPosDV = "Anomen"
++  END
++END ELSE BEGIN
++  COMPILE ~AurenAseph/Dialogues/FATESP.d~
++END
++
+ BEGIN @106
+ SUBCOMPONENT @107
+ REQUIRE_COMPONENT ~AurenAseph/Setup-AurenAseph.tp2~ ~0~ @108
+      
+-ACTION_IF GAME_IS BG2EE THEN BEGIN
++ACTION_IF GAME_IS ~BG2EE eet~ THEN BEGIN
+ 
+   COPY ~AurenAseph/portraits/aurens_alt1_ee.bmp~ ~override/aurens.bmp~
+        ~AurenAseph/portraits/aurenm_alt1_ee.bmp~ ~override/aurenm.bmp~
+@@ -409,7 +440,7 @@
+ SUBCOMPONENT @107
+ REQUIRE_COMPONENT ~AurenAseph/Setup-AurenAseph.tp2~ ~0~ @108
+ 
+-ACTION_IF GAME_IS BG2EE THEN BEGIN
++ACTION_IF GAME_IS ~BG2EE eet~ THEN BEGIN
+ 
+   COPY ~AurenAseph/portraits/aurens_alt2_ee.bmp~ ~override/aurens.bmp~
+        ~AurenAseph/portraits/aurenm_alt2_ee.bmp~ ~override/aurenm.bmp~

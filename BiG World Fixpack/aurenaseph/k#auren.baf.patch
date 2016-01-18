@@ -1,0 +1,15 @@
+--- aurenaseph\scripts\k#auren.baf	Sat Aug 04 09:47:08 2012
++++ D:\EE_Patchstudio\patched files\aurenaseph\scripts\k#auren.baf	Fri Jan 15 12:51:46 2016
+@@ -345,9 +345,9 @@
+ InParty(Myself)
+ GlobalGT("K#BanterO","GLOBAL",11)
+ Global("AriannaValinorExist","GLOBAL",0) 
+-!Global("Chapter","GLOBAL",4) 
+-!Global("Chapter","GLOBAL",5) 
+-!Global("Chapter","GLOBAL",7) 
++!Global("Chapter","GLOBAL",%bg2_chapter_4%) 
++!Global("Chapter","GLOBAL",%bg2_chapter_5%) 
++!Global("Chapter","GLOBAL",%bg2_chapter_7%) 
+ !AreaCheck("AR1900")
+ !AreaCheck("AR1100")
+ !AreaCheck("AR1400")

@@ -1,0 +1,29 @@
+--- aurenaseph\dialogues\k#aurenj.d	Tue Jun 16 00:13:36 2009
++++ D:\EE_Patchstudio\patched files\aurenaseph\dialogues\k#aurenj.d	Fri Jan 15 12:51:46 2016
+@@ -527,7 +527,7 @@
+ 
+ CHAIN
+ IF ~IsGabber(Player1)
+-!Global("Chapter","GLOBAL",5)
++!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ !ActuallyInCombat() 
+ Global("K#Friendship", "GLOBAL", 2)~ THEN K#AurenJ Talk1
+ @79
+@@ -667,7 +667,7 @@
+ 
+ CHAIN
+ IF ~IsGabber(Player1)
+-!Global("Chapter","GLOBAL",5)
++!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ !ActuallyInCombat() 
+ Global("K#Friendship", "GLOBAL", 5)~ THEN K#AurenJ Talk2
+ @79
+@@ -863,7 +863,7 @@
+ 
+ CHAIN
+ IF ~IsGabber(Player1)
+-!Global("Chapter","GLOBAL",5)
++!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ !ActuallyInCombat() 
+ Global("K#Friendship", "GLOBAL", 6)~ THEN K#AurenJ Talk3
+ @79
