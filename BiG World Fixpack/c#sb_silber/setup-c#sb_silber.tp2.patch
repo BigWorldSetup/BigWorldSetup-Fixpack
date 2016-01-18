@@ -1,5 +1,5 @@
 --- c#sb_silber\setup-c#sb_silber.tp2	Thu Nov 21 22:10:26 2013
-+++ C:\BWP Patchstudio\patched files\c#sb_silber\setup-c#sb_silber.tp2	Sat Nov 28 21:46:27 2015
++++ D:\EE_Patchstudio\patched files\c#sb_silber\setup-c#sb_silber.tp2	Mon Jan 18 18:59:32 2016
 @@ -1,7 +1,7 @@
  BACKUP ~C#SB_silber/backup~
  AUTHOR ~jastey@web.de~ 
@@ -9,3 +9,12 @@
  
  README ~C#SB_silber/readme.%LANGUAGE%.txt~ ~C#SB_silber/readme.english.txt~
  
+@@ -10,7 +10,7 @@
+ 
+ 
+ ALWAYS
+-  ACTION_IF GAME_IS ~bg2ee~ BEGIN
++  ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+   /*
+    * Copies UTF8-encoded tra files over the normal ones, for use with AUTO_TRA
+    */
