@@ -18,7 +18,7 @@
 +      infer_charset = 1
 +    STR_VAR
 +      tra_path      = EVAL ~%MOD_FOLDER%~
-+      iconv_path    = EVAL ~%MOD_FOLDER%/tools/iconv~
++      iconv_path    = ~BiG World Fixpack/_utils/iconv~
 +      reload_array  = tra_reload
 +  END
 +END
