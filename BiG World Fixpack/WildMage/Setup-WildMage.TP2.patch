@@ -1,5 +1,5 @@
 --- WildMage\Setup-WildMage.TP2	Fri Jul 17 11:05:36 2009
-+++ D:\EE_Patchstudio\patched files\WildMage\Setup-WildMage.TP2	Sun Jan 10 15:26:16 2016
++++ D:\EE_Patchstudio\patched files\WildMage\Setup-WildMage.TP2	Mon Jan 18 18:23:28 2016
 @@ -1,5 +1,32 @@
  BACKUP ~WildMage/backup~
  AUTHOR ~jo.ge@gmx.net~
@@ -23,7 +23,7 @@
 +      infer_charsets = 0
 +      STR_VAR
 +      tra_path = "WildMage/translations"
-+      iconv_path = "WildMage/translations/iconv" //available as part of the base system on OS X and GNU/Linux
++      iconv_path = ~BiG World Fixpack/_utils/iconv~ //available as part of the base system on OS X and GNU/Linux
 +      charset_table = charsetsTable
 +      convert_array = charsetsConvertArray
 +      reload_array = charsetsReloadArray
