@@ -1,7 +1,6 @@
---- stuffofthemagi\setup-stuffofthemagi.tp2	Fri May 22 16:39:06 2009
-+++ stuffofthemagi\setup-stuffofthemagi.tp2	Mon Jan 18 04:15:34 2016
-@@ -1,23 +1,40 @@
- ////////////////////////////////////////// warning: reading the tp2 can really spoil things. 
+--- StuffofTheMagi\setup-stuffofthemagi.tp2	Fri May 22 16:39:06 2009
++++ D:\EE_Patchstudio\patched files\StuffofTheMagi\setup-stuffofthemagi.tp2	Tue Jan 19 22:33:35 2016
+@@ -2,10 +2,26 @@
  ////////////////////////////////////////// you might want to wait until you play through before seeing all my code
  BACKUP ~StuffofTheMagi/backup~ // so WeiDU can uninstall
  AUTHOR ~Send a PM to Kevmus at spellholdstudios or send an email to KevmusBG@gmail.com~ // contact address displayed if installation fails
@@ -9,25 +8,28 @@
 +VERSION ~v4 BWP Fix~
  README ~StuffofTheMagi/Readme-SoTM.txt~
  
- AUTO_TRA ~StuffofTheMagi/language/%s~
- 
+-AUTO_TRA ~StuffofTheMagi/language/%s~
++AUTO_TRA "StuffofTheMagi/language/%s"//%"
++
 +ALWAYS
++  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN
++	AT_NOW ~if not exist "iconv" mkdir iconv~
++	AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
++  END
 +  ACTION_DEFINE_ARRAY tra_reload BEGIN setup setup_ee END
 +  LAF HANDLE_CHARSETS
 +    INT_VAR
 +      infer_charset = 1
 +    STR_VAR
 +      tra_path      = EVAL ~%MOD_FOLDER%/language~
-+      iconv_path    = EVAL ~%MOD_FOLDER/tools/iconv~
++      iconv_path    = EVAL ~iconv~
 +      reload_array  = tra_reload
 +  END
 +END
-+
+ 
  LANGUAGE ~English~
  	 ~english~
- 	 ~StuffofTheMagi/language/english/setup.tra~
- 
- LANGUAGE ~Français (par Deratiseur)~
+@@ -15,7 +31,12 @@
  	 ~french~
  	 ~StuffofTheMagi/language/french/setup.tra~
  
@@ -41,11 +43,7 @@
  // adds custom IsValidForPartyDialogue state
  APPEND ~STATE.IDS~
    ~0x80101FEF CD_STATE_NOTVALID~
-   UNLESS ~CD_STATE_NOTVALID~
- APPEND ~action.ids~ ~160 ApplySpellRES(S:ResRef*,O:Target)~
-@@ -154,11 +171,11 @@
-   ADD_CRE_ITEM ~wzrdring~ #0 #0 #0 ~NONE~ ~INV16~
- COPY_EXISTING ~susuneer.cre~ ~override/susuneer.cre~
+@@ -156,7 +177,7 @@
    ADD_CRE_ITEM ~wzrdrobe~ #0 #0 #0 ~NONE~ ~INV16~
  END
  
@@ -54,11 +52,7 @@
  EXTEND_TOP ~baldur.bcs~ ~StuffofTheMagi/scripts/wzrdset.baf~
  COMPILE ~StuffofTheMagi/scripts/wzrdlich.baf~
    
- 
- COPY ~StuffofTheMagi/spells/wzrdset1.spl~ ~override~
-@@ -257,11 +274,11 @@
-   ADD_CRE_ITEM ~wzrdbrac~ #0 #0 #0 ~unstealable&undroppable~ ~GLOVES~
-   ADD_CRE_ITEM ~wzrdhelm~ #0 #0 #0 ~unstealable&undroppable~ ~HELMET~
+@@ -259,7 +280,7 @@
    ADD_CRE_ITEM ~wzrdbelt~ #0 #0 #0 ~unstealable&undroppable~ ~BELT~
    ADD_CRE_ITEM ~wzrdbag1~ #0 #0 #0 ~NONE~ ~INV16~
    
@@ -67,11 +61,7 @@
   END
   
  COPY ~StuffofTheMagi/items/wzrdbag1.itm~ ~override~
- SAY NAME1 @51
- SAY NAME2 @51
-@@ -281,6 +298,6 @@
- ADD_STORE_ITEM "scrl9m" #1 #0 #0 ~IDENTIFIED~ #1 //Spellstrike
- COMPILE ~StuffofTheMagi/scripts/wzrdlich.baf~
+@@ -283,4 +304,4 @@
  
  //COMPILE ~StuffofTheMagi/scripts/wzrdlic2.baf~
  COMPILE ~StuffofTheMagi/dialog/wzrdlich.d~
