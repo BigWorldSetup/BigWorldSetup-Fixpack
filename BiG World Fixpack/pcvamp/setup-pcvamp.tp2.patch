@@ -1,23 +1,28 @@
---- pcvamp/setup-pcvamp.tp2		Wed Aug 27 10:22:12 2014
-+++ pcvamp/setup-pcvamp.tp2		Mon Jan 18 16:22:10 2016
-@@ -1,16 +1,30 @@
+--- pcvamp\setup-pcvamp.tp2	Wed Aug 27 16:22:12 2014
++++ D:\EE_Patchstudio\patched files\pcvamp\setup-pcvamp.tp2	Tue Jan 19 22:41:14 2016
+@@ -1,14 +1,32 @@
  BACKUP ~pcvamp/Backup~
  AUTHOR ~Nicolas Peters - admin@baldursgate-refugium.de (http://www.baldursgate-refugium.de/)~
 -VERSION "v1.1"
 +VERSION "v1.1 BWP Fix"
  README "pcvamp/Readme.html"
+-AUTO_TRA ~pcvamp/TRA/%s~
 +
- AUTO_TRA ~pcvamp/TRA/%s~
++AUTO_TRA "pcvamp/TRA/%s"//%"
 +
 +// Make sure strings are correctly encoded for both EE and non-EE games
 +ALWAYS
++  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN
++	AT_NOW ~if not exist "iconv" mkdir iconv~
++	AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
++  END
 +  ACTION_DEFINE_ARRAY tra_reload BEGIN setup END
 +  LAF HANDLE_CHARSETS
 +    INT_VAR
 +      infer_charset = 1
 +    STR_VAR
 +      tra_path      = EVAL ~%MOD_FOLDER%/TRA~
-+      iconv_path    = EVAL ~%MOD_FOLDER/tools/iconv~
++      iconv_path    = EVAL ~iconv~
 +      reload_array  = tra_reload
 +  END
 +END
