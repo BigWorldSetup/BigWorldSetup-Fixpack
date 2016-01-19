@@ -189,7 +189,7 @@ DEFINE_ACTION_FUNCTION fl#add_kit_ee
     sneakatt = ""
     crippstr = ""
 BEGIN
-  ACTION_IF GAME_IS ~bgee bg2ee iwdee~ BEGIN
+  ACTION_IF GAME_IS ~bgee bg2ee iwdee eet~ BEGIN
     PRINT "Doing EE-type kit extensions for kit %kit_name%"
 
     OUTER_SET kit_number = "-1"

@@ -1,6 +1,6 @@
 --- JklHel\Helarine_BGEE.Tp2	Fri Apr 12 17:03:28 2013
-+++ D:\EE_Patchstudio\patched files\JklHel\Helarine_BGEE.Tp2	Tue Jan 19 18:09:20 2016
-@@ -1,8 +1,41 @@
++++ D:\EE_Patchstudio\patched files\JklHel\Helarine_BGEE.Tp2	Tue Jan 19 21:58:35 2016
+@@ -1,8 +1,57 @@
  BACKUP ~JklHel/backup~
   
  AUTHOR ~Jackkel Dragon~
@@ -34,6 +34,22 @@
 +COPY_EXISTING ~sw1h01.itm~ ~JklHel/charsets.mrk~
 +END
 +
++ACTION_IF GAME_IS ~eet~ BEGIN
++OUTER_SPRINT "eet_var" "_"
++OUTER_SPRINT "Candlekeep_Catacombs_L1_BCS" "BG2615"
++OUTER_SPRINT "FriendlyArmInn_BCS" "BG2300"
++OUTER_SPRINT "FriendlyArmInn_L1" "BG2301"
++OUTER_SPRINT "FriendlyArmInn" "BG2300"
++END
++
++ACTION_IF GAME_IS ~bgee~ BEGIN
++OUTER_SPRINT "eet_var" ""
++OUTER_SPRINT "Candlekeep_Catacombs_L1_BCS" "AR2615"
++OUTER_SPRINT "FriendlyArmInn_BCS" "AR2300"
++OUTER_SPRINT "FriendlyArmInn_L1" "AR2301"
++OUTER_SPRINT "FriendlyArmInn" "AR2300"
++END
++
 +END
 +
 +LANGUAGE ~English~ ~english~ ~JklHel/tra/english/setup.tra~
@@ -43,7 +59,7 @@
  
  // stolen from requiem's kitpack
  // ---------------------------------------DPKELEMVOR----------------------------------
-@@ -46,35 +79,38 @@
+@@ -46,35 +95,38 @@
  ~CHAN09 * HELM07 BAG26 RING06 RING31 * BOOT01 AMUL20 BRAC10 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 HAMM07 SW1H27 STAF08~
  
  // description
@@ -103,7 +119,7 @@
  
  //--------------------------SYMBOL, SPELL-ITEM-BAM-----------------------------
  
-@@ -112,9 +148,9 @@
+@@ -112,9 +164,9 @@
   
  /* This allows for your NPC's name to be shown in the game during conversations and also on the character sheet*/
   
@@ -115,7 +131,7 @@
  
  // Kit stuff
  WRITE_SHORT 0x244 0 // doesn't change  
-@@ -123,56 +159,65 @@
+@@ -123,63 +175,72 @@
   
  /* This is the biography. In NearInfinity, go to that side tab and find CHR. Open that and find Sam.BIO You can create your own bio this way by simply deleting the default PC bio and typing your own. Save this.*/
   
@@ -206,3 +222,46 @@
  // This is compiling Sam's dialogue
   
  COMPILE ~JklHel/dialogue/jkl_hel_main.d~
+ 
+ //COMPILE ~JklHel/dialogue/jkl_hel_gabber.d~
+ 
+-COMPILE ~JklHel/dialogue/jkl_hel_partyactions.d~
++COMPILE ~JklHel/dialogue/jkl_hel_partyactions.d~ EVAL
+ 
+ COMPILE ~JklHel/dialogue/jkl_hel_banter.d~
+ 
+@@ -189,27 +250,27 @@
+  
+ // This is adding our area file to the game
+  
+-EXTEND_TOP ~AR2300.bcs~ ~JklHel/scripts/AR2300.baf~
++EXTEND_TOP ~%FriendlyArmInn_BCS%.bcs~ ~JklHel/scripts/AR2300.baf~ EVAL
+ 
+-EXTEND_TOP ~AR2615.bcs~ ~JklHel/scripts/AR2615.baf~
++EXTEND_TOP ~%Candlekeep_Catacombs_L1_BCS%.bcs~ ~JklHel/scripts/AR2615.baf~
+ 
+ // extend NPC scripts for banter accelerators
+ 
+-EXTEND_BOTTOM ~FALDORN.bcs~ ~JklHel/scripts/jklhel_faldorn.baf~
++EXTEND_BOTTOM ~FALDORN%eet_var%.bcs~ ~JklHel/scripts/jklhel_faldorn.baf~
+ 
+ EXTEND_BOTTOM ~ALORA.bcs~ ~JklHel/scripts/jklhel_alora.baf~
+ 
+-EXTEND_BOTTOM ~BRANWEN.bcs~ ~JklHel/scripts/jklhel_branwen.baf~
++EXTEND_BOTTOM ~BRANWEN%eet_var%.bcs~ ~JklHel/scripts/jklhel_branwen.baf~
+ 
+-EXTEND_BOTTOM ~DORN.bcs~ ~JklHel/scripts/jklhel_dorn.baf~
++EXTEND_BOTTOM ~DORN%eet_var%.bcs~ ~JklHel/scripts/jklhel_dorn.baf~
+ 
+-EXTEND_BOTTOM ~EDWIN.bcs~ ~JklHel/scripts/jklhel_edwin.baf~
++EXTEND_BOTTOM ~EDWIN%eet_var%.bcs~ ~JklHel/scripts/jklhel_edwin.baf~
+ 
+ EXTEND_BOTTOM ~ELDOTH.bcs~ ~JklHel/scripts/jklhel_eldoth.baf~
+ 
+ EXTEND_BOTTOM ~KIVAN.bcs~ ~JklHel/scripts/jklhel_kivan.baf~
+ 
+-EXTEND_BOTTOM ~NEERA.bcs~ ~JklHel/scripts/jklhel_neera.baf~
++EXTEND_BOTTOM ~NEERA%eet_var%.bcs~ ~JklHel/scripts/jklhel_neera.baf~
+ 
+ EXTEND_BOTTOM ~XAN.bcs~ ~JklHel/scripts/jklhel_xan.baf~
+ 

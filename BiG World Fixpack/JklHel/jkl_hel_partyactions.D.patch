@@ -1,5 +1,5 @@
 --- JklHel\dialogue\jkl_hel_partyactions.D	Wed Mar 13 20:10:36 2013
-+++ D:\EE_Patchstudio\patched files\JklHel\dialogue\jkl_hel_partyactions.D	Sun Jan 10 15:04:16 2016
++++ D:\EE_Patchstudio\patched files\JklHel\dialogue\jkl_hel_partyactions.D	Tue Jan 19 21:58:10 2016
 @@ -1,86 +1,86 @@
  BEGIN JKLHEL
  
@@ -113,18 +113,19 @@
  CHAIN
  IF ~!Global("JKLHEL_Fired","GLOBAL",1)
 -!Area("AR2301")~
-+!AreaCheck("AR2301")~
++!AreaCheck("%FriendlyArmInn_L1%")~
  THEN JKLHELP LeaveParty
 -~I'll not remain if you feel I'm not needed... I'll return to the Friendly Arm Inn. If you need my help again, you may find me there.~
 +@17
  DO ~SetGlobal("JKLHEL_Fired","GLOBAL",1)
- EscapeAreaMove("AR2301",755,390,SW)~ // copied from Neera, might need to get new coordinates
+-EscapeAreaMove("AR2301",755,390,SW)~ // copied from Neera, might need to get new coordinates
++EscapeAreaMove("%FriendlyArmInn_L1%",755,390,SW)~ // copied from Neera, might need to get new coordinates
  EXIT
  
  CHAIN
  IF ~!Global("JKLHEL_Fired","GLOBAL",1)
 -Area("AR2301")~
-+AreaCheck("AR2301")~
++AreaCheck("%FriendlyArmInn_L1%")~
  THEN JKLHELP LeaveParty
 -~I'll not remain if you feel I'm not needed... I'll return to the Friendly Arm Inn. If you need my help again, you may find me there.~
 +@17
