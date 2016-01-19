@@ -1,0 +1,66 @@
+--- setup-xanbg1friend.tp2	Tue Jan 19 09:26:50 2016
++++ setup-xanbg1friend.tp2	Tue Jan 19 09:31:30 2016
+@@ -1,54 +1,24 @@
+ // Setup
+ BACKUP ~XanBG1Friend/Backup~
+ AUTHOR ~Kulyok http://forums.pocketplane.net~
+-VERSION ~v9bgee~ /* Thanks to Isaya for changes for v9 for BGEE; Kaeloree did the rest, BGEE-wise */
++VERSION ~v9bgee BWP Fix~ /* Thanks to Isaya for changes for v9 for BGEE; Kaeloree did the rest, BGEE-wise */
+ README ~XanBG1Friend/Readme-XanBG1Friend.txt~
+ 
+ 
+ // BG:EE TRA compatibility
+ ALWAYS
+-ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+-  /* It's safe to convert for any language and for all operating systems, no test required */
+-
+-  /* BG:EE tra conversion : Character encoding for BG II for various languages: ensure the name matches the menu choices */
+-  ACTION_DEFINE_ASSOCIATIVE_ARRAY languageencoding BEGIN
+-    "English" => "CP1252"
+-    "Russian" => "CP1251"
+-    "German" => "CP1252"
+-    "French" => "CP1252"
+-    "Italian" => "CP1252"
+-  END
+-  OUTER_SPRINT initialencoding ~~
+-  ACTION_PHP_EACH languageencoding AS lang => encoding BEGIN
+-    ACTION_IF ("%LANGUAGE%" STRING_EQUAL_CASE ~%lang%~ = 1) THEN BEGIN
+-      OUTER_SPRINT initialencoding ~%encoding%~
+-    END
++  ACTION_DEFINE_ARRAY tra_reload BEGIN O#XanBG1 END
++  LAF HANDLE_CHARSETS
++    INT_VAR
++      infer_charset = 1
++    STR_VAR
++      tra_path      = EVAL ~%MOD_FOLDER%~
++      iconv_path    = EVAL ~%MOD_FOLDER%~
++      reload_array  = tra_reload
+   END
+-
+-  /* Since there is only one component, we don't need a marker file to avoid repeating conversion for each component */
+-  ACTION_IF (STRING_LENGTH ~%initialencoding%~ != 0) THEN BEGIN
+-    ACTION_IF ("%WEIDU_OS%" STRING_EQUAL_CASE ~WIN32~ = 1) THEN BEGIN
+-      /* Only convert for the language selected by passing the directory as parameter */
+-      PRINT ~Windows conversion with %initialencoding%~
+-      AT_NOW ~xanbg1friend/conv_tra.bat %LANGUAGE% %initialencoding%~
+-    END
+-    ACTION_IF ("%WEIDU_OS%" STRING_EQUAL_CASE ~OSX~ = 1) OR ("%WEIDU_OS%" STRING_EQUAL_CASE ~UNIX~ = 1) THEN BEGIN
+-      /* Only convert for the language selected by passing the directory as parameter */
+-      PRINT ~Linux and Mac conversion with %initialencoding%~
+-      AT_NOW ~xanbg1friend/conv_tra.sh %LANGUAGE% %initialencoding%~
+-    END
+-
+-    /* The tra files has to be replaced with its counterpart from the utf8 directory, then loaded */
+-    /* Otherwise the tra file for dialogs is still with the Windows 1252 / 1251 encoding */
+-    MOVE ~xanbg1friend/%LANGUAGE%/utf8/o#xanbg1.tra~ ~xanbg1friend/%LANGUAGE%/o#xanbg1.tra~
+-    LOAD_TRA ~xanbg1friend/%LANGUAGE%/o#xanbg1.tra~
+-    PRINT ~re-loaded %LANGUAGE% TRA files~
+-  END
+-END
+ END
+-
+ 
+ // Languages
+ AUTO_TRA ~XanBG1Friend/%s~
+ LANGUAGE ~English~ ~English~ ~XanBG1Friend/English/O#XanBG1.tra~
+ LANGUAGE ~Russian~ ~Russian~ ~XanBG1Friend/Russian/O#XanBG1.tra~

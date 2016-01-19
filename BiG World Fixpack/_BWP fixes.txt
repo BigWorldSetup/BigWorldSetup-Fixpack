@@ -2880,6 +2880,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: xanbg1friend - Xan's friendship path for BG1 v9bgee
+
+:: HANDLE_CHARSETS instead of conv_tra.sh/conv_tra.bat (bat script has incorrect path)
+:: http://forums.pocketplane.net/index.php/topic,29485.0.html
+
+
+----------------------------------------------------------------------------------------
+
+
 :: xulaye - Xulaye NPC v1.2
 
 :: micbaldur's Xulaye armor reminder loop fix
