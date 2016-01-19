@@ -1,5 +1,5 @@
 --- Huple_NPC\Setup-Huple_NPC.tp2	Sun Oct 05 10:54:12 2014
-+++ D:\EE_Patchstudio\patched files\Huple_NPC\Setup-Huple_NPC.tp2	Tue Jan 19 18:10:45 2016
++++ D:\EE_Patchstudio\patched files\Huple_NPC\Setup-Huple_NPC.tp2	Tue Jan 19 21:36:55 2016
 @@ -3,7 +3,7 @@
  //En AUTHOR hay que poner la dirección del autro para poder avisarle en caso de error.
  AUTHOR ~garland86@gmail.com~
@@ -28,7 +28,7 @@
      OUTER_SPRINT "Nashkel"      "AR3700"
      OUTER_SPRINT "Cuartel"      "AR3710"
      OUTER_SPRINT "ScriptCuartel""AR3710"    
-@@ -102,9 +103,77 @@
+@@ -102,9 +103,122 @@
      OUTER_SPRINT "Zeke"         "ZEKE"
      OUTER_SPRINT "Vitiare"      "VITIAR"
    END
@@ -77,6 +77,51 @@
 +    OUTER_SPRINT "Zeke"         "ZEKE"
 +    OUTER_SPRINT "Vitiare"      "VITIAR"
 +  END
++  ACTION_IF GAME_IS ~eet~ THEN BEGIN
++    OUTER_SPRINT "Nashkel"      "BG4800"
++    OUTER_SPRINT "Cuartel"      "BG4810"
++    OUTER_SPRINT "ScriptCuartel""BG4810"    
++    OUTER_SPRINT "MinaNashkel"  "BG5400"
++    OUTER_SPRINT "ScriptMina"   "BG5400"
++    OUTER_SPRINT "MinaNivel1"   "BG5401"
++    OUTER_SPRINT "MinaNivel2"   "BG5402"
++    OUTER_SPRINT "MinaNivel3"   "BG5403"
++    OUTER_SPRINT "MinaNivel4"   "BG5404"
++    OUTER_SPRINT "CuevaMulahey" "BG5405"
++    OUTER_SPRINT "Cabaña"       "BG5406"
++    OUTER_SPRINT "Imoen_DV"     "imoen2"
++    OUTER_SPRINT "Emerson"      "EMERSO"
++    OUTER_SPRINT "Hick"         "HICK"
++    OUTER_SPRINT "Nalin"        "NALIN"
++    OUTER_SPRINT "MontaronP"    "MONTAP"
++    OUTER_SPRINT "Khalid"       "BKHALI"
++    OUTER_SPRINT "Minsc"        "BMINSC"
++    OUTER_SPRINT "Ajantis"      "BAJANT"
++    OUTER_SPRINT "Branwen"      "BBRANW"
++    OUTER_SPRINT "Dynaheir"     "BDYNAH"
++    OUTER_SPRINT "Edwin"        "BEDWIN"
++    OUTER_SPRINT "Garrick"      "BGARRI"
++    OUTER_SPRINT "Imoen"        "BIMOEN2"
++    OUTER_SPRINT "Jaheira"      "BJAHEIR"
++    OUTER_SPRINT "Kagain"       "BKAGAI"
++    OUTER_SPRINT "Kivan"        "BKIVAN"
++    OUTER_SPRINT "Montaron"     "BMONTA"
++    OUTER_SPRINT "Quayle"       "BQUAYL"
++    OUTER_SPRINT "Safana"       "BSAFAN"
++    OUTER_SPRINT "Shar-Teel"    "BSHART"
++    OUTER_SPRINT "Viconia"      "BVICONI"
++    OUTER_SPRINT "Xzar"         "BXZAR"
++    OUTER_SPRINT "Laryssa"      "LARYSS"
++    OUTER_SPRINT "Noober"       "NOOBER"
++    OUTER_SPRINT "Oublek"       "OUBLEK"
++    OUTER_SPRINT "Mulahey"      "MULAHE"
++    OUTER_SPRINT "Zordral"      "ZORDRAL"
++    OUTER_SPRINT "Dink"         "DINK"
++    OUTER_SPRINT "Kylee"        "KYLEE"
++    OUTER_SPRINT "Prism"        "PRISM"
++    OUTER_SPRINT "Zeke"         "ZEKE"
++    OUTER_SPRINT "Vitiare"      "VITIAR"
++  END
 +  
 +  ACTION_IF !FILE_EXISTS ~Huple_NPC/reinstall.mrk~ BEGIN
 +	
@@ -107,7 +152,7 @@
  //Con LANGUAGE indicamos los idiomas en los que se puede instalar el mod, el primer campo ha de poner el nombre que saldrá durante la instalación, el segundo el nombre de la carpeta donde está los tra en ese idioma y el tercero es el lugar donde se encuentra el archivo *.tra
  LANGUAGE ~Castellano~ ~castellano~ ~Huple_NPC/tra/castellano/Setup-Huple_NPC.tra~
  LANGUAGE ~Francais (par Althea)~ ~frances~ ~Huple_NPC/tra/frances/Setup-Huple_NPC.tra~
-@@ -294,10 +363,17 @@
+@@ -294,10 +408,17 @@
      SAY SELECT_RARE1 @37
      SAY SELECT_RARE2 @38
      SAY MORALE @39
@@ -118,7 +163,7 @@
    COPY ~Huple_NPC/Portraits/PORTS.BMP~ ~override/HUPS.BMP~
 +  END
 +  
-+  ACTION_IF GAME_IS ~bgee~ THEN BEGIN
++  ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
 +  COPY ~Huple_NPC/Portraits/bgee/PORTM.BMP~ ~override/HUPM.BMP~
 +  COPY ~Huple_NPC/Portraits/bgee/PORTS.BMP~ ~override/HUPS.BMP~
 +  END
@@ -126,7 +171,7 @@
    //Ahora compilamos los diálogos y el script de Huple
    //EVALUATE_BUFFER sirve para utilizar que se reemplacen los "motes" que hemos hecho antes por el nombre real del archivo.
    COMPILE EVALUATE_BUFFER ~Huple_NPC/dlg/dialog.d~
-@@ -305,6 +381,18 @@
+@@ -305,6 +426,18 @@
    //Ahora estamos extendiendo el script de AR4400 para incluirle lo que hay escrito en el AR4400.baf
    EXTEND_TOP ~%ScriptMina%.bcs~ ~Huple_NPC/baf/AR4400.baf~
      EVALUATE_BUFFER
@@ -141,11 +186,11 @@
 +  UNLESS ~Huple~
 +  END
 +  
-+  ACTION_IF GAME_IS ~bgt~ THEN BEGIN
++  ACTION_IF GAME_IS ~bgt eet~ THEN BEGIN
    //Ahora se está incluyendo en pdialog.2da cuales serán los archivos de Huple
    APPEND ~pdialog.2da~
      ~Huple        HupleP             HupleJ            HupleD         Huple25P           Huple25J             Huple25D               Huple25~
-@@ -313,6 +401,7 @@
+@@ -313,6 +446,7 @@
    APPEND ~interdia.2da~
      ~Huple       BHuple        BHuple25~
    UNLESS ~Huple~
