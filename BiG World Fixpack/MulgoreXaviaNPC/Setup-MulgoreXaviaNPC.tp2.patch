@@ -1,0 +1,145 @@
+--- MulgoreXaviaNPC\Setup-MulgoreXaviaNPC.tp2	Sun May 04 23:37:48 2008
++++ D:\EE_Patchstudio\patched files\MulgoreXaviaNPC\Setup-MulgoreXaviaNPC.tp2	Tue Jan 19 19:36:57 2016
+@@ -16,24 +16,64 @@
+ README ~MulgoreXaviaNPC/Language/%LANGUAGE%/Readme.txt~
+ 
+ ALWAYS
+-  ACTION_IF (FILE_EXISTS_IN_GAME ~FW0100.are~) AND (FILE_EXISTS_IN_GAME ~FW1500.are~) THEN BEGIN
++  ACTION_IF GAME_IS ~tutu_totsc~ THEN BEGIN
+     /* Tell the player it is using Tutu stuff */
+     PRINT @1000 // ~Baldur's Gate Tutu with Tales of the Sword Coast detected.~
+     OUTER_SPRINT "UlgothsBeard_Inn" "FW1001"
+     OUTER_SPRINT "UlgothsBeard_Inn_Script" "_AR1001"
+-  END ELSE BEGIN
+-    ACTION_IF FILE_EXISTS_IN_GAME ~AR7200.are~ THEN BEGIN
++  END
++  
++  ACTION_IF GAME_IS ~bgt~ THEN BEGIN
+       /* Tell the player it is using BGT stuff */
+       PRINT @1001 // ~Baldur's Gate Trilogy detected.~
+       OUTER_SPRINT "UlgothsBeard_Inn" "ARU001"
+       OUTER_SPRINT "UlgothsBeard_Inn_Script" "ARU001"
+       /* Tell the player it is not Tutu or BGT */
+-    END ELSE BEGIN FAIL @1002 // ~Neither Baldur's Gate Trilogy nor Baldur's Gate Tutu with Tales of the Sword Coast detected. Please check that you are installing in the correct folder, and that you have Tales of the Sword Coast installed.~
+-    END
++  END 
++  
++  ACTION_IF GAME_IS ~bgee~ THEN BEGIN
++  	PRINT ~Baldur's Gate: Enhanced Edition detected.~
++	OUTER_SPRINT  "UlgothsBeard_Inn" "AR1001"
++	OUTER_SPRINT "UlgothsBeard_Inn_Script" "AR1001"
++  END
++  
++  ACTION_IF GAME_IS ~eet~ THEN BEGIN
++  	PRINT ~Baldur's Gate: Enhanced Edition Triology detected.~
++	OUTER_SPRINT  "UlgothsBeard_Inn" "BG1001"
++	OUTER_SPRINT "UlgothsBeard_Inn_Script" "BG1001"
++  END
++  
++  
++  ACTION_IF !GAME_IS ~bgt tutu_totsc bgee eet~ THEN BEGIN 
++		FAIL @1002 // ~Neither Baldur's Gate Trilogy nor Baldur's Gate Tutu with Tales of the Sword Coast detected. Please check that you are installing in the correct folder, and that you have Tales of the Sword Coast installed.~
++  END
++  
++  ACTION_IF !FILE_EXISTS ~MulgoreXaviaNPC/reinstall.mrk~ BEGIN
++  
++  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN
++	AT_NOW ~if not exist "iconv" mkdir iconv~
++	AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
+   END
++	
++	ACTION_DEFINE_ARRAY tra#reload BEGIN setup END
++	ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
++
++	LAF HANDLE_CHARSETS
++		INT_VAR
++			infer_charset = 1
++		STR_VAR
++			tra_path = EVAL ~MulgoreXaviaNPC/Language~
++			noconvert_array = tra#noconvert
++			reload_array = tra#reload
++			iconv_path = ~iconv~
++	END
++	
++	COPY_EXISTING ~sw1h01.itm~ ~MulgoreXaviaNPC/reinstall.mrk~
++  END
++  
+ END
+ 
+-AUTO_TRA ~MulgoreXaviaNPC/Language/%s~
++AUTO_TRA "MulgoreXaviaNPC/Language/%s" //%"
+ 
+ LANGUAGE ~English~
+          ~English~
+@@ -50,31 +90,34 @@
+ 
+ 
+ BEGIN @0  /* Mulgore and Xavia NPCs for BGT-WeiDU and Tutu, v4 */
+-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~ar6200.are~) @1003 /* This mod requires that ToB is installed. */
++REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~ar6200.are~) OR (GAME_IS ~bgee eet~) @1003 /* This mod requires that ToB is installed. */
+ 
+-ACTION_IF FILE_EXISTS_IN_GAME ~AR7200.are~ THEN BEGIN
+-APPEND ~PDIALOG.2DA~
+-~XAVIA        XAVIAP             XAVIAJ            ***            XAVIAP             XAVIAJ             ***                 ***
+-MULGORE      MULGOREP           MULGOREJ          ***            MULGOREP           MULGOREJ           ***                 ***~
+-UNLESS ~XAVIA~
++ACTION_IF GAME_IS ~bgt eet~ THEN BEGIN
++APPEND ~PDIALOG.2DA~ ~XAVIA        XAVIAP             XAVIAJ            ***            XAVIAP             XAVIAJ             ***                 ***~  UNLESS ~XAVIA~
++APPEND ~PDIALOG.2DA~ ~MULGORE      MULGOREP           MULGOREJ          ***            MULGOREP           MULGOREJ           ***                 ***~  UNLESS ~MULGORE~
+ END
+ 
+-ACTION_IF FILE_EXISTS_IN_GAME ~FW0100.are~ THEN BEGIN
++ACTION_IF GAME_IS ~tutu_totsc bgee~ THEN BEGIN
+   APPEND ~PDIALOG.2DA~ ~XAVIA        XAVIAP             XAVIAJ~  UNLESS ~XAVIA~
+   APPEND ~PDIALOG.2DA~ ~MULGORE      MULGOREP           MULGOREJ~ UNLESS ~MULGORE~
+ END
+ 
+ //Portraits
+-MKDIR ~portraits~
+-COPY ~MulgoreXaviaNPC/portraits~ ~portraits~
+-
+-//Sounds
+-COPY ~MulgoreXaviaNPC/sounds~ ~override~
++ACTION_IF GAME_IS ~bgt tutu_totsc~ THEN BEGIN
++COPY ~MulgoreXaviaNPC/portraits~ ~override~
++END
+ 
+-COPY ~MulgoreXaviaNPC/oggdec.exe~ ~override~
++ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
++COPY ~MulgoreXaviaNPC/portraits/bgee~ ~override~
++END
+ 
+-AT_NOW ~MulgoreXaviaNPC/MulgoreXaviaNPCInstall.bat~
+-AT_UNINSTALL ~MulgoreXaviaNPC/MulgoreXaviaNPCUninstall.bat~
++//Sounds
++LAF HANDLE_AUDIO
++  STR_VAR
++    audio_path = ~MulgoreXaviaNPC/sounds~
++    oggdec_path = ~MulgoreXaviaNPC~
++    sox_path = ~MulgoreXaviaNPC~
++END
+ 
+ //Dialogue
+ COMPILE ~MulgoreXaviaNPC/dialogue~
+@@ -134,17 +177,13 @@
+ SAY EXISTANCE5 @47
+ 
+ //Spawn the NPCs
+-COPY ~MulgoreXaviaNPC/scripts/AREASCRIPT.BAF~ ~MulgoreXaviaNPC/scripts/%UlgothsBeard_Inn_Script%.BAF~
+ 
+ COPY_EXISTING ~%UlgothsBeard_Inn%.ARE~ ~override~ //BG's AR1001, Ulgoth Beard's Inn (Hurgan Stoneblade)
+   WRITE_EVALUATED_ASCII 0x94 ~%UlgothsBeard_Inn_Script%~ #8
+-BUT_ONLY_IF_IT_CHANGES
++BUT_ONLY
+ 
+-ACTION_IF FILE_EXISTS_IN_GAME ~%UlgothsBeard_Inn_Script%.BCS~ THEN BEGIN
+-  EXTEND_BOTTOM ~%UlgothsBeard_Inn_Script%.BCS~ ~MulgoreXaviaNPC/scripts/%UlgothsBeard_Inn_Script%.BAF~
+-  EVALUATE_BUFFER
+-END ELSE BEGIN
+-  COMPILE EVALUATE_BUFFER ~MulgoreXaviaNPC/scripts/%UlgothsBeard_Inn_Script%.BAF~
+-END
++
++EXTEND_BOTTOM ~%UlgothsBeard_Inn_Script%.BCS~ ~MulgoreXaviaNPC/scripts/AREASCRIPT.BAF~
++EVAL
+ 
+ /* end of file. */
