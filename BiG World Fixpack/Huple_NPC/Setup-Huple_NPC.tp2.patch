@@ -1,5 +1,5 @@
 --- Huple_NPC\Setup-Huple_NPC.tp2	Sun Oct 05 10:54:12 2014
-+++ D:\EE_Patchstudio\patched files\Huple_NPC\Setup-Huple_NPC.tp2	Mon Jan 18 18:13:13 2016
++++ D:\EE_Patchstudio\patched files\Huple_NPC\Setup-Huple_NPC.tp2	Tue Jan 19 18:10:45 2016
 @@ -3,7 +3,7 @@
  //En AUTHOR hay que poner la dirección del autro para poder avisarle en caso de error.
  AUTHOR ~garland86@gmail.com~
@@ -28,7 +28,7 @@
      OUTER_SPRINT "Nashkel"      "AR3700"
      OUTER_SPRINT "Cuartel"      "AR3710"
      OUTER_SPRINT "ScriptCuartel""AR3710"    
-@@ -102,9 +103,72 @@
+@@ -102,9 +103,77 @@
      OUTER_SPRINT "Zeke"         "ZEKE"
      OUTER_SPRINT "Vitiare"      "VITIAR"
    END
@@ -80,6 +80,11 @@
 +  
 +  ACTION_IF !FILE_EXISTS ~Huple_NPC/reinstall.mrk~ BEGIN
 +	
++	ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN
++		AT_NOW ~if not exist "iconv" mkdir iconv~
++		AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
++	END
++	
 +	ACTION_DEFINE_ARRAY tra#reload BEGIN Setup-Huple_NPC END
 +	ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
 +
@@ -90,7 +95,7 @@
 +			tra_path = EVAL ~Huple_NPC/tra~
 +			noconvert_array = tra#noconvert
 +			reload_array = tra#reload
-+			iconv_path = ~BiG World Fixpack/_utils/iconv~
++			iconv_path = ~iconv~
 +	END
 +	
 +	COPY_EXISTING ~sw1h01.itm~ ~Huple_NPC/reinstall.mrk~
@@ -102,7 +107,7 @@
  //Con LANGUAGE indicamos los idiomas en los que se puede instalar el mod, el primer campo ha de poner el nombre que saldrá durante la instalación, el segundo el nombre de la carpeta donde está los tra en ese idioma y el tercero es el lugar donde se encuentra el archivo *.tra
  LANGUAGE ~Castellano~ ~castellano~ ~Huple_NPC/tra/castellano/Setup-Huple_NPC.tra~
  LANGUAGE ~Francais (par Althea)~ ~frances~ ~Huple_NPC/tra/frances/Setup-Huple_NPC.tra~
-@@ -294,10 +358,17 @@
+@@ -294,10 +363,17 @@
      SAY SELECT_RARE1 @37
      SAY SELECT_RARE2 @38
      SAY MORALE @39
@@ -121,7 +126,7 @@
    //Ahora compilamos los diálogos y el script de Huple
    //EVALUATE_BUFFER sirve para utilizar que se reemplacen los "motes" que hemos hecho antes por el nombre real del archivo.
    COMPILE EVALUATE_BUFFER ~Huple_NPC/dlg/dialog.d~
-@@ -305,6 +376,18 @@
+@@ -305,6 +381,18 @@
    //Ahora estamos extendiendo el script de AR4400 para incluirle lo que hay escrito en el AR4400.baf
    EXTEND_TOP ~%ScriptMina%.bcs~ ~Huple_NPC/baf/AR4400.baf~
      EVALUATE_BUFFER
@@ -140,7 +145,7 @@
    //Ahora se está incluyendo en pdialog.2da cuales serán los archivos de Huple
    APPEND ~pdialog.2da~
      ~Huple        HupleP             HupleJ            HupleD         Huple25P           Huple25J             Huple25D               Huple25~
-@@ -313,6 +396,7 @@
+@@ -313,6 +401,7 @@
    APPEND ~interdia.2da~
      ~Huple       BHuple        BHuple25~
    UNLESS ~Huple~

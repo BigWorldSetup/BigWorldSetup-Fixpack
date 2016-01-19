@@ -1,6 +1,6 @@
 --- JklHel\Helarine_BGEE.Tp2	Fri Apr 12 17:03:28 2013
-+++ D:\EE_Patchstudio\patched files\JklHel\Helarine_BGEE.Tp2	Mon Jan 18 18:17:13 2016
-@@ -1,8 +1,36 @@
++++ D:\EE_Patchstudio\patched files\JklHel\Helarine_BGEE.Tp2	Tue Jan 19 18:09:20 2016
+@@ -1,8 +1,41 @@
  BACKUP ~JklHel/backup~
   
  AUTHOR ~Jackkel Dragon~
@@ -12,6 +12,11 @@
 +ALWAYS
 +ACTION_IF !FILE_EXISTS ~JklHel/charsets.mrk~ BEGIN
 +
++ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN
++  AT_NOW ~if not exist "iconv" mkdir iconv~
++  AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
++END
++
 +ACTION_DEFINE_ARRAY tra#reload BEGIN setup END
 +ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
 +
@@ -22,7 +27,7 @@
 +		tra_path = EVAL ~JklHel/tra~
 +		noconvert_array = tra#noconvert
 +		reload_array = tra#reload
-+		iconv_path = ~BiG World Fixpack/_utils/iconv~
++		iconv_path = ~iconv~
 +END
 +		
 +LOAD_TRA ~JklHel/tra/%LANGUAGE%/Setup.tra~
@@ -38,7 +43,7 @@
  
  // stolen from requiem's kitpack
  // ---------------------------------------DPKELEMVOR----------------------------------
-@@ -46,35 +74,38 @@
+@@ -46,35 +79,38 @@
  ~CHAN09 * HELM07 BAG26 RING06 RING31 * BOOT01 AMUL20 BRAC10 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 HAMM07 SW1H27 STAF08~
  
  // description
@@ -98,7 +103,7 @@
  
  //--------------------------SYMBOL, SPELL-ITEM-BAM-----------------------------
  
-@@ -112,9 +143,9 @@
+@@ -112,9 +148,9 @@
   
  /* This allows for your NPC's name to be shown in the game during conversations and also on the character sheet*/
   
@@ -110,7 +115,7 @@
  
  // Kit stuff
  WRITE_SHORT 0x244 0 // doesn't change  
-@@ -123,56 +154,65 @@
+@@ -123,56 +159,65 @@
   
  /* This is the biography. In NearInfinity, go to that side tab and find CHR. Open that and find Sam.BIO You can create your own bio this way by simply deleting the default PC bio and typing your own. Save this.*/
   

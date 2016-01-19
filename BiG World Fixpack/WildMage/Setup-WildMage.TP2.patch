@@ -1,12 +1,18 @@
 --- WildMage\Setup-WildMage.TP2	Fri Jul 17 11:05:36 2009
-+++ D:\EE_Patchstudio\patched files\WildMage\Setup-WildMage.TP2	Mon Jan 18 18:23:28 2016
-@@ -1,5 +1,32 @@
++++ D:\EE_Patchstudio\patched files\WildMage\Setup-WildMage.TP2	Tue Jan 19 18:12:08 2016
+@@ -1,5 +1,38 @@
  BACKUP ~WildMage/backup~
  AUTHOR ~jo.ge@gmx.net~
 +VERSION ~v1.7 BWP Fix~
 +
 +ALWAYS
 +  ACTION_IF ENGINE_IS ~bgee bg2ee iwdee eet~ BEGIN
++  
++	ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN
++		AT_NOW ~if not exist "iconv" mkdir iconv~
++		AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
++	END
++	
 +    ACTION_DEFINE_ASSOCIATIVE_ARRAY charsetsTable BEGIN
 +      "german" => "CP1252"
 +      "english" => "CP1252"
@@ -23,7 +29,7 @@
 +      infer_charsets = 0
 +      STR_VAR
 +      tra_path = "WildMage/translations"
-+      iconv_path = ~BiG World Fixpack/_utils/iconv~ //available as part of the base system on OS X and GNU/Linux
++      iconv_path = ~iconv~ //available as part of the base system on OS X and GNU/Linux
 +      charset_table = charsetsTable
 +      convert_array = charsetsConvertArray
 +      reload_array = charsetsReloadArray
@@ -33,7 +39,7 @@
  
  LANGUAGE ~English~
           ~english~
-@@ -28,7 +55,7 @@
+@@ -28,7 +61,7 @@
  //******************************************************
  
  BEGIN @1
@@ -42,7 +48,7 @@
  
  //------------------------------------------------------
  //		Mod-start in Baldur.BCS
-@@ -328,9 +355,16 @@
+@@ -328,9 +361,16 @@
  // BGT Compatibility (Retain Spellbook on Transfer from BG1 to BG2)
  //-----------------------------------------------------------------
  
@@ -61,7 +67,7 @@
  EXTEND_TOP ~ar0602.bcs~ ~WildMage/0/baf/wm_ar0602.baf~
  
  END
-@@ -674,21 +708,24 @@
+@@ -674,21 +714,24 @@
    SAY DESC @69999
    
  
