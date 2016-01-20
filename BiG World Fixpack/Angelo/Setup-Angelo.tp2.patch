@@ -1,10 +1,44 @@
 --- Angelo\Setup-Angelo.tp2	Mon Nov 11 10:21:32 2013
-+++ D:\EE_Patchstudio\patched files\Angelo\Setup-Angelo.tp2	Fri Jan 15 12:51:44 2016
-@@ -8,6 +8,19 @@
++++ D:\EE_Patchstudio\patched files\Angelo\Setup-Angelo.tp2	Wed Jan 20 19:33:08 2016
+@@ -6,7 +6,51 @@
  
- AUTO_TRA ~Angelo/%s~
+ README ~Angelo/readme-angelo.html~
  
+-AUTO_TRA ~Angelo/%s~
++AUTO_TRA "Angelo/%s"//%"
++
 +ALWAYS
++
++	ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN
++		AT_NOW ~if not exist "iconv" mkdir iconv~
++		AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
++	END
++  
++	ACTION_DEFINE_ASSOCIATIVE_ARRAY tra#charsets BEGIN
++    english => cp1252
++	british => cp1252
++    french => cp1252
++    spanish => cp1252
++    russian => cp1251
++    german => cp1252
++	italian => cp1252
++    polish => cp1250
++    schinese => cp936
++	END
++	
++	ACTION_DEFINE_ARRAY tra#reload BEGIN Setup-Angelo Setup-Angelo-EE END
++	ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
++
++	LAF HANDLE_CHARSETS
++		INT_VAR
++			infer_charset = 0
++		STR_VAR
++			tra_path = EVAL ~Angelo~
++			charset_table = tra#charsets
++			noconvert_array = tra#noconvert
++			reload_array = tra#reload
++			iconv_path = ~iconv~
++	END
 +  ACTION_IF (GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~EET_JOURNAL~) BEGIN
 +    OUTER_SET bg2_chapter = 14
 +  END ELSE BEGIN
@@ -16,11 +50,10 @@
 +    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
 +  END
 +END
-+
+ 
  LANGUAGE ~English~ ~English~ ~Angelo/English/Setup-Angelo.tra~
  
- BEGIN @0
-@@ -25,7 +38,7 @@
+@@ -25,7 +69,7 @@
  
  COPY ~Angelo/Icons~ ~override~
  
@@ -29,7 +62,7 @@
  LOAD_TRA ~Angelo/%LANGUAGE%/Setup-Angelo-EE.tra~
  ADD_JOURNAL EXISTING TITLE (#74337) @10012
  ADD_JOURNAL @10000 @10001 @10002 @10003 @10004 @10005 @10006 @10011
-@@ -33,7 +46,7 @@
+@@ -33,7 +77,7 @@
  
  COPY ~Angelo/Portraits/ADAngelL.bmp~ ~override~
  
@@ -38,7 +71,7 @@
  COPY ~Angelo/Portraits/ADAngEEM.bmp~ ~override/ADAngelM.bmp~
  COPY ~Angelo/Portraits/ADAngEES.bmp~ ~override/ADAngelS.bmp~
  END ELSE BEGIN
-@@ -425,7 +438,7 @@
+@@ -425,7 +469,7 @@
  SAY NAME1 @57
  SAY NAME2 @57
  
@@ -47,7 +80,7 @@
  	~Angelo/Dialogue/ADAngel.d~
  	~Angelo/Dialogue/ADAngelJ.d~
  	~Angelo/Dialogue/ADAngelP.d~
-@@ -469,7 +482,7 @@
+@@ -469,7 +513,7 @@
  ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN
  BEGIN
  
@@ -56,7 +89,7 @@
  ADD_JOURNAL @10007 @10008 @10009 @10010
  END
  
-@@ -569,7 +582,7 @@
+@@ -569,7 +613,7 @@
  WRITE_ASCII 0x2cc ~ADNin02~ #8  // dialogue
  WRITE_ASCII 0x280 ~ADNin02~ #32 // death variable
  
@@ -65,7 +98,7 @@
  	~Angelo/Dialogue/ADAng25.d~
  	~Angelo/Dialogue/ADAng25P.d~
  	~Angelo/Dialogue/ADAng25J.d~
-@@ -630,12 +643,30 @@
+@@ -630,12 +674,30 @@
  
  END
  
@@ -97,7 +130,7 @@
  COPY ~Angelo/PortraitSisterV/ADAngEEM.bmp~ ~override/ADAngelM.bmp~
  COPY ~Angelo/PortraitSisterV/ADAngEES.bmp~ ~override/ADAngelS.bmp~
  END ELSE BEGIN
-@@ -648,7 +679,7 @@
+@@ -648,7 +710,7 @@
  
  COPY ~Angelo/PortraitAmaurea/ADAngelL.bmp~ ~override~
  
@@ -106,7 +139,7 @@
  COPY ~Angelo/PortraitAmaurea/ADAngEEM.bmp~ ~override/ADAngelM.bmp~
  COPY ~Angelo/PortraitAmaurea/ADAngEES.bmp~ ~override/ADAngelS.bmp~
  END ELSE BEGIN
-@@ -661,7 +692,7 @@
+@@ -661,7 +723,7 @@
  
  COPY ~Angelo/PortraitCassinus/ADAngelL.bmp~ ~override~
  

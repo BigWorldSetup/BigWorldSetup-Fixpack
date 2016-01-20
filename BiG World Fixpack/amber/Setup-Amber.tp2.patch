@@ -1,12 +1,43 @@
 --- setup-amber.tp2	Tue Jan 07 15:15:55 2014
-+++ D:\EE_Patchstudio\patched files\setup-amber.tp2	Mon Jan 18 18:52:59 2016
-@@ -1,7 +1,20 @@
++++ D:\EE_Patchstudio\patched files\setup-amber.tp2	Tue Jan 19 19:08:13 2016
+@@ -1,7 +1,51 @@
  BACKUP ~amber/backup~
  AUTHOR ~amber@welho.net~
 -VERSION ~v4~
 +VERSION ~v4 BWP Fix~
  README ~amber/readme-amber.html~
 +ALWAYS
++   ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN
++		AT_NOW ~if not exist "iconv" mkdir iconv~
++		AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
++	END
++  
++	ACTION_DEFINE_ASSOCIATIVE_ARRAY tra#charsets BEGIN
++    english => cp1252
++	british => cp1252
++    french => cp1252
++    spanish => cp1252
++    russian => cp1251
++    german => cp1252
++	italian => cp1252
++    polish => cp1250
++    schinese => cp936
++	END
++	
++	ACTION_DEFINE_ARRAY tra#reload BEGIN setup setup_ee END
++	ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
++
++	LAF HANDLE_CHARSETS
++		INT_VAR
++			infer_charset = 0
++		STR_VAR
++			tra_path = EVAL ~amber/tra~
++			charset_table = tra#charsets
++			noconvert_array = tra#noconvert
++			reload_array = tra#reload
++			iconv_path = ~iconv~
++	END
++
 +  ACTION_IF (GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~EET_JOURNAL~) BEGIN
 +    OUTER_SET bg2_chapter = 14
 +  END ELSE BEGIN
@@ -22,7 +53,7 @@
  LANGUAGE ~English~ ~english~ ~amber/tra/english/setup.tra~
  LANGUAGE ~Deutsch~ ~german~  ~amber/tra/german/setup.tra~
  LANGUAGE ~Spanish~ ~spanish~ ~amber/tra/spanish/setup.tra~
-@@ -27,7 +40,7 @@
+@@ -27,7 +71,7 @@
  SET_2DA_ENTRY 0 2 3 ~m#blank.mus~
  ADD_MUSIC  ~Amber~    ~music/mxm#am.mus~
  
@@ -31,7 +62,7 @@
  
    COPY ~amber/ee~ ~override~ // ee-sized portraits, item description images
    LOAD_TRA ~amber/tra/%LANGUAGE%/setup_ee.tra~
-@@ -136,7 +149,7 @@
+@@ -136,7 +180,7 @@
   SAY @152 /* @152 = ~Fighter~ */
   SAY @153 /* @153 = ~FIGHTER:  The fighter is a champion, swordsman, soldier, and brawler.  He lives or dies by his knowledge of weapons and tactics.  Fighters can be found at the front of any battle, contesting toe-to-toe with monsters and villains.  A good fighter needs to be strong and healthy if he hopes to survive.~ */
  
@@ -40,7 +71,7 @@
  
    INCLUDE ~amber/lib/cd_ee_kit_appends.tph~
    LAUNCH_ACTION_FUNCTION ee_kit_appends STR_VAR class = "FIGHTER" kitname = "m#ambkit" END
-@@ -145,8 +158,8 @@
+@@ -145,8 +189,8 @@
  
  // Compiling scripts and dialogs
  
@@ -51,7 +82,7 @@
  COPY_EXISTING ~m#amber.bcs~ ~override/m#amber.bcs~
  REPLACE_TEXTUALLY 999997 ~%Amber%~
  COPY_EXISTING ~m#amberd.bcs~ ~override/m#amberd.bcs~
-@@ -389,8 +402,8 @@
+@@ -389,8 +433,8 @@
    SAY HIDDEN_IN_SHADOWS @145
    SAY 0x1cc @144
    WRITE_SHORT 0x244 0 // doesn't change
@@ -62,7 +93,7 @@
  
  COPY ~Amber/creatures/m#ambr12.cre~           ~override/m#ambr12.cre~ 
    SAY NAME1 @100
-@@ -441,8 +454,8 @@
+@@ -441,8 +485,8 @@
    SAY HIDDEN_IN_SHADOWS @145
    SAY 0x1cc @144
    WRITE_SHORT 0x244 0 // doesn't change
@@ -73,7 +104,7 @@
  
  COPY ~Amber/creatures/m#ambr14.cre~           ~override/m#ambr14.cre~
    SAY NAME1 @100
-@@ -493,8 +506,8 @@
+@@ -493,8 +537,8 @@
    SAY HIDDEN_IN_SHADOWS @145
    SAY 0x1cc @144
    WRITE_SHORT 0x244 0 // doesn't change
@@ -84,7 +115,7 @@
  
  COPY ~Amber/creatures/m#ambr15.cre~           ~override/m#ambr15.cre~
    SAY NAME1 @100
-@@ -545,8 +558,8 @@
+@@ -545,8 +589,8 @@
    SAY HIDDEN_IN_SHADOWS @145  
    SAY 0x1cc @144
    WRITE_SHORT 0x244 0 // doesn't change
