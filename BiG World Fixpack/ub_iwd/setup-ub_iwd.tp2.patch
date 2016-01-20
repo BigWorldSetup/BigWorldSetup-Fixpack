@@ -1,0 +1,183 @@
+--- ub_iwd\setup-ub_iwd.tp2	Thu Nov 15 11:40:10 2012
++++ D:\EE_Patchstudio\patched files\ub_iwd\setup-ub_iwd.tp2	Wed Jan 20 19:21:53 2016
+@@ -8,11 +8,40 @@
+ 
+ ALWAYS
+ 
+-  ACTION_IF FILE_EXISTS_IN_GAME ~kitlist.2da~ THEN BEGIN // if IWD-in-BG2 instead of true IWD...
++  ACTION_IF !FILE_EXISTS ~ub_iwd/charsets.mrk~ BEGIN
++
++  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN
++    AT_NOW ~if not exist "iconv" mkdir iconv~
++    AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
++  END
++
++  ACTION_DEFINE_ARRAY tra#reload BEGIN setup END
++  ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
++
++  LAF HANDLE_CHARSETS
++	  INT_VAR
++		  infer_charset = 1
++	  STR_VAR
++		  tra_path = EVAL ~ub_iwd/languages~
++		  noconvert_array = tra#noconvert
++		  reload_array = tra#reload
++		  iconv_path = ~iconv~
++  END
++		
++  LOAD_TRA ~ub_iwd/languages/%LANGUAGE%/Setup.tra~
++  COPY_EXISTING ~sw1h01.itm~ ~ub_iwd/charsets.mrk~
++  END
++
++  INCLUDE ~ub_iwd/lib/iwd_cpmvars.tpa~
++  INCLUDE ~ub_iwd/lib/iwd_in_eet_cpmvars.tpa~
++  ACTION_IF (GAME_IS ~iwd_in_bg2 iwdee~) OR ((GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~IWD-in-EET~)) THEN BEGIN // if IWD-in-BG2 instead of true IWD...
+ 
+     OUTER_SET "iwd-in-bg2" =     1 // handy var for checking and simple math
++    ACTION_IF !GAME_IS ~iwdee eet~ BEGIN
+     OUTER_SET "iwd_offset" = 74100 // offset to iwd strings
+-
++    END ELSE BEGIN
++    OUTER_SET "iwd_offset" = 0
++END
+   END ELSE BEGIN
+ 
+     OUTER_SET "iwd-in-bg2" = 0
+@@ -22,7 +51,7 @@
+ 
+ END
+ 
+-AUTO_TRA ~ub_iwd/languages/%s~
++AUTO_TRA "ub_iwd/languages/%s"//%"
+ 
+ LANGUAGE ~English~                                 ~english~ ~ub_iwd/languages/english/setup.tra~
+ LANGUAGE ~French (by Graoumf)~                     ~french~  ~ub_iwd/languages/french/setup.tra~
+@@ -40,7 +69,7 @@
+ 
+ BEGIN @0 DESIGNATED 0
+ REQUIRE_PREDICATE NOT FILE_EXISTS_IN_GAME ~amfaith.itm~ @2 // skip if auril's bane installed
+-  
++REQUIRE_PREDICATE !(GAME_IS ~iwdee~) OR !((GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~IWD-in-EET~)) ~This component is not needed~
+ // patch functions
+ INCLUDE ~ub_iwd/lib/functions.tpa~
+ 
+@@ -181,6 +210,7 @@
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+ 
+ BEGIN @100 DESIGNATED 100
++REQUIRE_PREDICATE !(GAME_IS ~iwdee~) OR !((GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~IWD-in-EET~)) ~This component is not needed~
+ 
+ // iwd in bg2 adjustments
+ ACTION_IF ("%iwd-in-bg2%" = 1) THEN BEGIN
+@@ -261,6 +291,7 @@
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+ 
+ BEGIN @200 DESIGNATED 200
++REQUIRE_PREDICATE !(GAME_IS ~iwdee~) OR !((GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~IWD-in-EET~)) ~This component is not needed~
+ 
+ // iwd in bg2 adjustments
+ ACTION_IF ("%iwd-in-bg2%" = 1) THEN BEGIN
+@@ -330,7 +361,7 @@
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+ 
+ BEGIN @300 DESIGNATED 300
+-
++REQUIRE_PREDICATE (GAME_IS ~iwd_in_bg2 iwd how totlm iwdee~) OR !((GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~IWD-in-EET~)) ~This component needs IWD~
+ /*
+ marketh_ring
+ 0 - not started
+@@ -345,8 +376,8 @@
+ // iwd in bg2 adjustments
+ ACTION_IF ("%iwd-in-bg2%" = 1) THEN BEGIN
+   
+-  // minhp1 item for marketh
+-  COPY_EXISTING ~minhp1.itm~ ~override/cdminhp1.itm~
++// minhp1 item for marketh
++COPY_EXISTING ~minhp1.itm~ ~override/cdminhp1.itm~
+ 
+   // syntax adjustament
+   COPY ~ub_iwd/baf/ldmarkth.baf~ ~ub_iwd/baf/ldmarkth.baf~
+@@ -357,19 +388,20 @@
+   // syntax, strref adjustment
+   COPY ~ub_iwd/dlg/ring.d~ ~ub_iwd/dlg/ring.d~
+     REPLACE_TEXTUALLY ~HideCreature(Myself,TRUE)~ ~Deactivate(Myself)~
++  PATCH_IF !GAME_IS ~iwdee eet~ BEGIN
+     REPLACE_EVALUATE
+         ~#\([0-9]+\)~
+         BEGIN
+           SET "RESULT" = ("%MATCH1%" + "%iwd_offset%")
+         END
+         ~#%RESULT%~
+-
++  END
+ END ELSE BEGIN
+   
+   // minhp1 item for marketh
+   COPY ~ub_iwd/itm/cdminhp1.itm~ ~override~
+   
+-END
++  END
+ 
+ // Isaya : fix (copy from IWD Tweaks) to avoid a warning relative to ldmarkth.baf
+ APPEND ~state.ids~  ~0x00000FC0 STATE_REALLY_DEAD~ UNLESS ~0x00000FC0 STATE_REALLY_DEAD~
+@@ -380,14 +412,14 @@
+ EXTEND_TOP ~ldmarkth.bcs~ ~ub_iwd/baf/ldmarkth.baf~ // force appearance once ring swapped
+ 
+ // teleporting scripts
+-EXTEND_BOTTOM ~ar8001.bcs~ ~ub_iwd/baf/tp8001.baf~
+-EXTEND_BOTTOM ~ar8005.bcs~ ~ub_iwd/baf/tp8005.baf~
+-EXTEND_BOTTOM ~ar8008.bcs~ ~ub_iwd/baf/tp8008.baf~
+-EXTEND_BOTTOM ~ar8009.bcs~ ~ub_iwd/baf/tp8009.baf~
+-EXTEND_BOTTOM ~ar8011.bcs~ ~ub_iwd/baf/tp8011.baf~
++EXTEND_BOTTOM ~%LowerDornsDeep%.bcs~ ~ub_iwd/baf/tp8001.baf~ EVAL
++EXTEND_BOTTOM ~%LowerDornsDeep_OrderoftheKrakenGarde%.bcs~ ~ub_iwd/baf/tp8005.baf~ EVAL
++EXTEND_BOTTOM ~%LowerDornsDeep_Mines%.bcs~ ~ub_iwd/baf/tp8008.baf~ EVAL
++EXTEND_BOTTOM ~%LowerDornsDeep_ArtisansDistrict%.bcs~ ~ub_iwd/baf/tp8009.baf~ EVAL
++EXTEND_BOTTOM ~%LowerDornsDeep_Forge%.bcs~ ~ub_iwd/baf/tp8011.baf~ EVAL
+ 
+ // ginafae's restored dialogue
+-COPY_EXISTING ~ar8006.are~ ~override~
++COPY_EXISTING ~%LowerDornsDeep_OrderoftheKrakenManor_L1%.are~ ~override~
+   READ_LONG  0x54 "actor_off"
+   READ_SHORT 0x58 "actor_num"
+   FOR (index = 0 ; index < actor_num ; index = index + 1) BEGIN
+@@ -417,6 +449,7 @@
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+ 
+ BEGIN @400 DESIGNATED 400
++REQUIRE_PREDICATE !(GAME_IS ~iwdee~) OR !((GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~IWD-in-EET~)) ~This component is not needed~
+ 
+ /*
+ CDPresioDuel
+@@ -531,6 +564,7 @@
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+ 
+ BEGIN @500 DESIGNATED 500
++REQUIRE_PREDICATE !(GAME_IS ~iwdee~) OR !((GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~IWD-in-EET~)) ~This component is not needed~
+ 
+ COMPILE ~ub_iwd/dlg/orrick.d~ // alter dialogue to allow for upgrade
+ 
+@@ -543,6 +577,7 @@
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+ 
+ BEGIN @600 DESIGNATED 600
++REQUIRE_PREDICATE !(GAME_IS ~iwdee~) OR !((GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~IWD-in-EET~)) ~This component is not needed~
+ 
+ // patch functions
+ INCLUDE ~ub_iwd/lib/functions.tpa~
+@@ -609,6 +644,7 @@
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+ 
+ BEGIN @1500 DESIGNATED 1500
++REQUIRE_PREDICATE !(GAME_IS ~iwdee~) OR !((GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~IWD-in-EET~)) ~This component is not needed~
+ 
+ // patch functions
+ INCLUDE ~ub_iwd/lib/functions.tpa~
+@@ -743,6 +779,7 @@
+ 
+ BEGIN @2000 DESIGNATED 2000
+ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ar9100.are~ @2001 // how, totlm only
++REQUIRE_PREDICATE !(GAME_IS ~iwdee~) OR !((GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~IWD-in-EET~)) ~This component is not needed~
+ 
+ CLEAR_ARRAYS
+ ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_rndtres BEGIN

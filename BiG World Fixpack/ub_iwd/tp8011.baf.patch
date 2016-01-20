@@ -1,0 +1,49 @@
+--- ub_iwd\baf\tp8011.baf	Thu Feb 21 21:58:36 2008
++++ D:\EE_Patchstudio\patched files\ub_iwd\baf\tp8011.baf	Sat Jan 16 18:32:42 2016
+@@ -1,27 +1,27 @@
+ IF
+-  Global("CDMarkHere","AR8011",2)
++  Global("CDMarkHere","%LowerDornsDeep_Forge%",2)
+ THEN
+   RESPONSE #25
+     SetGlobal("CDMarkethTeleporting","GLOBAL",1)
+-    SetGlobal("CDMarkHere","AR8011",0)
++    SetGlobal("CDMarkHere","%LowerDornsDeep_Forge%",0)
+     ActionOverride("cdmark",ForceSpellPoint([2566.1425],WIZARD_DIMENSION_DOOR))
+     Wait(1)
+     ActionOverride("cdmark",DestroySelf())
+   RESPONSE #25
+     SetGlobal("CDMarkethTeleporting","GLOBAL",2)
+-    SetGlobal("CDMarkHere","AR8011",0)
++    SetGlobal("CDMarkHere","%LowerDornsDeep_Forge%",0)
+     ActionOverride("cdmark",ForceSpellPoint([2566.1425],WIZARD_DIMENSION_DOOR))
+     Wait(1)
+     ActionOverride("cdmark",DestroySelf())
+   RESPONSE #25
+     SetGlobal("CDMarkethTeleporting","GLOBAL",3)
+-    SetGlobal("CDMarkHere","AR8011",0)
++    SetGlobal("CDMarkHere","%LowerDornsDeep_Forge%",0)
+     ActionOverride("cdmark",ForceSpellPoint([2566.1425],WIZARD_DIMENSION_DOOR))
+     Wait(1)
+     ActionOverride("cdmark",DestroySelf())
+   RESPONSE #25
+     SetGlobal("CDMarkethTeleporting","GLOBAL",4)
+-    SetGlobal("CDMarkHere","AR8011",0)
++    SetGlobal("CDMarkHere","%LowerDornsDeep_Forge%",0)
+     ActionOverride("cdmark",ForceSpellPoint([2566.1425],WIZARD_DIMENSION_DOOR))
+     Wait(1)
+     ActionOverride("cdmark",DestroySelf())
+@@ -29,11 +29,11 @@
+ 
+ IF
+   Global("CDMarkethTeleporting","GLOBAL",5)
+-  Global("CDMarkHere","AR8011",0)
++  Global("CDMarkHere","%LowerDornsDeep_Forge%",0)
+   !Global("Marketh_Ring","GLOBAL",6)
+ THEN
+   RESPONSE #100
+-    SetGlobal("CDMarkHere","AR8011",1)
++    SetGlobal("CDMarkHere","%LowerDornsDeep_Forge%",1)
+     CreateCreature("cdmark",[2566.1425],13)
+     ActionOverride("cdmark",ForceSpellPoint([2566.1425],WIZARD_DIMENSION_DOOR))
+ END

@@ -1,0 +1,49 @@
+--- ub_iwd\baf\tp8001.baf	Thu Feb 21 21:58:58 2008
++++ D:\EE_Patchstudio\patched files\ub_iwd\baf\tp8001.baf	Sat Jan 16 18:34:29 2016
+@@ -1,27 +1,27 @@
+ IF
+-  Global("CDMarkHere","AR8001",2)
++  Global("CDMarkHere","%LowerDornsDeep%",2)
+ THEN
+   RESPONSE #25
+     SetGlobal("CDMarkethTeleporting","GLOBAL",2)
+-    SetGlobal("CDMarkHere","AR8001",0)
++    SetGlobal("CDMarkHere","%LowerDornsDeep%",0)
+     ActionOverride("cdmark",ForceSpellPoint([2007.1946],WIZARD_DIMENSION_DOOR))
+     Wait(1)
+     ActionOverride("cdmark",DestroySelf())
+   RESPONSE #25
+     SetGlobal("CDMarkethTeleporting","GLOBAL",3)
+-    SetGlobal("CDMarkHere","AR8001",0)
++    SetGlobal("CDMarkHere","%LowerDornsDeep%",0)
+     ActionOverride("cdmark",ForceSpellPoint([2007.1946],WIZARD_DIMENSION_DOOR))
+     Wait(1)
+     ActionOverride("cdmark",DestroySelf())
+   RESPONSE #25
+     SetGlobal("CDMarkethTeleporting","GLOBAL",4)
+-    SetGlobal("CDMarkHere","AR8001",0)
++    SetGlobal("CDMarkHere","%LowerDornsDeep%",0)
+     ActionOverride("cdmark",ForceSpellPoint([2007.1946],WIZARD_DIMENSION_DOOR))
+     Wait(1)
+     ActionOverride("cdmark",DestroySelf())
+   RESPONSE #25
+     SetGlobal("CDMarkethTeleporting","GLOBAL",5)
+-    SetGlobal("CDMarkHere","AR8001",0)
++    SetGlobal("CDMarkHere","%LowerDornsDeep%",0)
+     ActionOverride("cdmark",ForceSpellPoint([2007.1946],WIZARD_DIMENSION_DOOR))
+     Wait(1)
+     ActionOverride("cdmark",DestroySelf())
+@@ -29,11 +29,11 @@
+ 
+ IF
+   Global("CDMarkethTeleporting","GLOBAL",1)
+-  Global("CDMarkHere","AR8001",0)
++  Global("CDMarkHere","%LowerDornsDeep%",0)
+   !Global("Marketh_Ring","GLOBAL",6)
+ THEN
+   RESPONSE #100
+-    SetGlobal("CDMarkHere","AR8001",1)
++    SetGlobal("CDMarkHere","%LowerDornsDeep%",1)
+     CreateCreature("cdmark",[2007.1946],10)
+     ActionOverride("cdmark",ForceSpellPoint([2007.1946],WIZARD_DIMENSION_DOOR))
+ END

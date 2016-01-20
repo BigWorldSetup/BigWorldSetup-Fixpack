@@ -1,0 +1,49 @@
+--- ub_iwd\baf\tp8005.baf	Thu Feb 21 21:58:52 2008
++++ D:\EE_Patchstudio\patched files\ub_iwd\baf\tp8005.baf	Sat Jan 16 18:34:04 2016
+@@ -1,27 +1,27 @@
+ IF
+-  Global("CDMarkHere","AR8005",2)
++  Global("CDMarkHere","%LowerDornsDeep_OrderoftheKrakenGarde%",2)
+ THEN
+   RESPONSE #25
+     SetGlobal("CDMarkethTeleporting","GLOBAL",1)
+-    SetGlobal("CDMarkHere","AR8005",0)
++    SetGlobal("CDMarkHere","%LowerDornsDeep_OrderoftheKrakenGarde%",0)
+     ActionOverride("cdmark",ForceSpellPoint([1783.421],WIZARD_DIMENSION_DOOR))
+     Wait(1)
+     ActionOverride("cdmark",DestroySelf())
+   RESPONSE #25
+     SetGlobal("CDMarkethTeleporting","GLOBAL",3)
+-    SetGlobal("CDMarkHere","AR8005",0)
++    SetGlobal("CDMarkHere","%LowerDornsDeep_OrderoftheKrakenGarde%",0)
+     ActionOverride("cdmark",ForceSpellPoint([1783.421],WIZARD_DIMENSION_DOOR))
+     Wait(1)
+     ActionOverride("cdmark",DestroySelf())
+   RESPONSE #25
+     SetGlobal("CDMarkethTeleporting","GLOBAL",4)
+-    SetGlobal("CDMarkHere","AR8005",0)
++    SetGlobal("CDMarkHere","%LowerDornsDeep_OrderoftheKrakenGarde%",0)
+     ActionOverride("cdmark",ForceSpellPoint([1783.421],WIZARD_DIMENSION_DOOR))
+     Wait(1)
+     ActionOverride("cdmark",DestroySelf())
+   RESPONSE #25
+     SetGlobal("CDMarkethTeleporting","GLOBAL",5)
+-    SetGlobal("CDMarkHere","AR8005",0)
++    SetGlobal("CDMarkHere","%LowerDornsDeep_OrderoftheKrakenGarde%",0)
+     ActionOverride("cdmark",ForceSpellPoint([1783.421],WIZARD_DIMENSION_DOOR))
+     Wait(1)
+     ActionOverride("cdmark",DestroySelf())
+@@ -29,11 +29,11 @@
+ 
+ IF
+   Global("CDMarkethTeleporting","GLOBAL",2)
+-  Global("CDMarkHere","AR8005",0)
++  Global("CDMarkHere","%LowerDornsDeep_OrderoftheKrakenGarde%",0)
+   !Global("Marketh_Ring","GLOBAL",6)
+ THEN
+   RESPONSE #100
+-    SetGlobal("CDMarkHere","AR8005",1)
++    SetGlobal("CDMarkHere","%LowerDornsDeep_OrderoftheKrakenGarde%",1)
+     CreateCreature("cdmark",[1783.421],0)
+     ActionOverride("cdmark",ForceSpellPoint([1783.421],WIZARD_DIMENSION_DOOR))
+ END
