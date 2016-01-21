@@ -1783,6 +1783,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Nightfarer's fixed TS-BP portrait components
 :: - LINK NOT FOUND -
 
+:: agb1's improved component checks (EET, TOB, BG1/BG2 RE) and "skipping" messages
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 

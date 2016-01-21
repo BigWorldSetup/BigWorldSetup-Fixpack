@@ -1,19 +1,357 @@
 --- Setup-NSCPortraits.TP2	Mon May 18 05:28:09 2015
-+++ C:\BWP Patchstudio\patched files\Setup-NSCPortraits.TP2	Mon Aug 24 21:43:26 2015
-@@ -1,6 +1,6 @@
++++ Setup-NSCPortraits.TP2	Wed Jan 20 23:02:31 2016
+@@ -1,10 +1,10 @@
  BACKUP ~NSC Portraits/backup~
  AUTHOR ~Gerri~ 
 -VERSION ~v3.0~ 
-+VERSION ~v3.0 BWP Fix~ 
++VERSION ~v3.0 BWP Fix 2~ 
  
  DEFINE_ACTION_MACRO ~Addpic~ BEGIN
  ACTION_IF FILE_EXISTS_IN_GAME ~%Crename%~
-@@ -464,21 +464,19 @@
+ THEN BEGIN
+ COPY_EXISTING ~%Crename%~ ~override~
+  WRITE_EVALUATED_ASCII 0x34 ~%PictureName%~ #8
+ END
+@@ -33,16 +33,16 @@
+ ACTION_IF NOT FILE_EXISTS_IN_GAME ~NSC Portraits/%folder%/%LargePic%.bmp~
+ THEN BEGIN
+ END ELSE BEGIN
+ COPY ~NSC Portraits/%folder%/%LargePic%.bmp~ ~override~
+ END
+ END 
+ 
+-BEGIN ~Portraits for BG1(BGT)~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~BGSHANK.cre~ ~You haven't installed BGT, skip this component~ 
++BEGIN ~Portraits for BG1 (BGT or EET)~ 
++REQUIRE_PREDICATE GAME_IS ~BGT EET~ ~You haven't installed BGT or EET, skipping this component~ 
+ DESIGNATED 0
+ 
+ OUTER_SPRINT ~folder~ ~BG1~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ 
+ COPY - ~NSC Portraits/tbl/bgt.tbl~  ~NSC Portraits/tbl/bgt.tbl~
+@@ -67,35 +67,35 @@
+     READ_2DA_ENTRY cntg  0 2 "Crename"
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+-ACTION_IF FILE_EXISTS_IN_GAME ~BOTSMITH.cre~ THEN BEGIN
++ACTION_IF GAME_INCLUDES ~TOB~ THEN BEGIN
+ OUTER_SPRINT ~folder~ ~TDB~
+ PRINT ~ToB detected~
+ COPY - ~NSC Portraits/tbl/ToB.tbl~  ~NSC Portraits/tbl/ToB.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+   FOR( cntg=0; cntg<"%rows_cnt_nscp%"; cntg=cntg+1 ) BEGIN
+     READ_2DA_ENTRY cntg  0 2 "Crename"
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ END ELSE BEGIN
+-PRINT ~ToB not detected, skip it~
++PRINT ~ToB not detected, skipping it~
+ END
+ 
+ 
+ 
+ 
+ BEGIN ~Portraits for Dark Side of the Sword Coast~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~DSSHAR.cre~ ~You haven't installed DSotSC, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~DSSHAR.cre~ ~You haven't installed Dark Side of the Sword Coast, skipping this component~ 
+ DESIGNATED 10
+ 
+ 
+ OUTER_SPRINT ~folder~ ~DSOTSC~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ 
+@@ -107,15 +107,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Northern Tales of the Sword Coast~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~NTTORDI1.cre~ ~You haven't installed NTotSC, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~NTTORDI1.cre~ ~You haven't installed Northern Tales of the Sword Coast, skipping this component~ 
+ DESIGNATED 20
+ 
+ 
+ OUTER_SPRINT ~folder~ ~NTOTSC~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ 
+@@ -127,15 +127,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Alternate Portrait for Will Scarlet of NTotSC~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~NTTORDI1.cre~ ~You haven't installed NTotSC, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~NTTORDI1.cre~ ~You haven't installed Northern Tales of the Sword Coast, skipping this component~ 
+ DESIGNATED 21
+ 
+ OUTER_SPRINT ~folder~ ~NTOTSC~
+ 
+ OUTER_SPRINT ~Crename~ ~NTWILL2.cre~
+ OUTER_SPRINT ~SmallPic~ ~WillyS~
+ OUTER_SPRINT ~LargePic~ ~WillyL~
+@@ -147,15 +147,15 @@
+ OUTER_SPRINT ~Crename~ ~NTWILL6.cre~
+ OUTER_SPRINT ~SmallPic~ ~WillyS~
+ OUTER_SPRINT ~LargePic~ ~WillyL~
+ LAUNCH_ACTION_MACRO ~NPCPic~ 
+ 
+ 
+ BEGIN ~Portraits for Secret of Bone Hill~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~BHBANDT3.cre~ ~You haven't installed SoBH, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~BHBANDT3.cre~ ~You haven't installed Secret of Bone Hill, skipping this component~ 
+ DESIGNATED 30
+ 
+ OUTER_SPRINT ~folder~ ~SOBH~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ 
+ COPY - ~NSC Portraits/tbl/sobh.tbl~  ~NSC Portraits/tbl/sobh.tbl~
+@@ -168,15 +168,15 @@
+ 	END
+   END
+ 
+ 
+ 
+ /*
+ BEGIN ~Alternate NPC-Portraits for Drizzt Saga~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~~ ~You haven't installed DrizztSaga, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~~ ~You haven't installed DrizztSaga, skipping this component~ 
+ DESIGNATED 41
+ 
+ OUTER_SPRINT ~folder~ ~~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/drizztsaga.tbl~  ~NSC Portraits/tbl/drizztsaga.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -188,15 +188,15 @@
+ 	END
+   END
+ 
+ */
+ 
+ 
+ BEGIN ~Portraits for Stone of Askavar~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~aranor.cre~ ~You haven't installed SoA, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~aranor.cre~ ~You haven't installed Stone of Askavar, skipping this component~ 
+ DESIGNATED 50
+ 
+ OUTER_SPRINT ~folder~ ~Aska~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ 
+ COPY - ~NSC Portraits/tbl/soa.tbl~  ~NSC Portraits/tbl/soa.tbl~
+@@ -207,15 +207,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for BG1 Mini-Quests and Encounters~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~C#Q08001.cre~ ~You haven't installed BGQE, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~C#Q08001.cre~ ~You haven't installed BG1 Mini-Quests and Encounters, skipping this component~ 
+ DESIGNATED 300
+ 
+ OUTER_SPRINT ~folder~ ~jastey~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/bgqe.tbl~  ~NSC Portraits/tbl/bgqe.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -225,15 +225,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Lure of the Sirines Call~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~J#Bren.cre~ ~You haven't installed LotSC, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~J#Bren.cre~ ~You haven't installed Lure of the Sirines Call, skipping this component~ 
+ DESIGNATED 305
+ 
+ OUTER_SPRINT ~folder~ ~SIRINES~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/lotsc.tbl~  ~NSC Portraits/tbl/lotsc.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -243,15 +243,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Grey Clan Episode I~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~BW05ffge.cre~ ~You haven't installed TGC EI, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~BW05ffge.cre~ ~You haven't installed Grey Clan Episode I, skipping this component~ 
+ DESIGNATED 310
+ 
+ OUTER_SPRINT ~folder~ ~TGC~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/tgc.tbl~  ~NSC Portraits/tbl/tgc.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -261,15 +261,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for The Darkest Day~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~DDGULL01.cre~ ~You haven't installed TDD, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~DDGULL01.cre~ ~You haven't installed The Darkest Day, skipping this component~ 
+ DESIGNATED 1000
+ 
+ OUTER_SPRINT ~folder~ ~TDD~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/tdd.tbl~  ~NSC Portraits/tbl/tdd.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -279,15 +279,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Alternate NPC-Portraits for The Darkest Day~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~DDGULL01.cre~ ~You haven't installed TDD, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~DDGULL01.cre~ ~You haven't installed The Darkest Day, skipping this component~ 
+ DESIGNATED 1001
+ 
+ OUTER_SPRINT ~folder~ ~TDD~
+ 
+ OUTER_SPRINT ~Crename~ ~AVAUN9.cre~
+ OUTER_SPRINT ~SmallPic~ ~AVAUNS~
+ OUTER_SPRINT ~LargePic~ ~AVAUNL~
+@@ -312,15 +312,15 @@
+ OUTER_SPRINT ~SmallPic~ ~VESINES~
+ OUTER_SPRINT ~LargePic~ ~VESINEL~
+ LAUNCH_ACTION_MACRO ~NPCPic~
+ 
+ 
+ /*
+ BEGIN ~Shadows over Soubar~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~<hier File einfügen~ ~You haven't installed SoS, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~<hier File einfügen~ ~You haven't installed Shadows over Soubar, skipping this component~ 
+ DESIGNATED 1010
+ 
+ OUTER_SPRINT ~folder~ ~SoS~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/sos.tbl~  ~NSC Portraits/tbl/sos.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -329,15 +329,15 @@
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ BEGIN ~Check the Bodies~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~<hier File einfügen~ ~You haven't installed CtB, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~<hier File einfügen~ ~You haven't installed Check the Bodies, skipping this component~ 
+ DESIGNATED 1020
+ 
+ OUTER_SPRINT ~folder~ ~CTB~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/ctb.tbl~  ~NSC Portraits/tbl/ctb.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -348,15 +348,15 @@
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ */
+ 
+ 
+ BEGIN ~Portraits for Region of Terror~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~RYONN.cre~ ~You haven't installed RoT, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~RYONN.cre~ ~You haven't installed Region of Terror, skipping this component~ 
+ DESIGNATED 1030
+ 
+ OUTER_SPRINT ~folder~ ~RoT~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/RoT.tbl~  ~NSC Portraits/tbl/RoT.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -366,15 +366,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Alternate NPC-Portraits for Region of Terror~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~RYONN.cre~ ~You haven't installed RoT, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~RYONN.cre~ ~You haven't installed Region of Terror, skipping this component~ 
+ DESIGNATED 1031
+ 
+ OUTER_SPRINT ~folder~ ~RoT~
+ 
+ OUTER_SPRINT ~Crename~ ~WULFG2.cre~
+ OUTER_SPRINT ~SmallPic~ ~wulfgarS~
+ OUTER_SPRINT ~LargePic~ ~wulfgarL~
+@@ -423,15 +423,15 @@
+ OUTER_SPRINT ~SmallPic~ ~DrizztS~
+ OUTER_SPRINT ~LargePic~ ~DrizztL~
+ LAUNCH_ACTION_MACRO ~NPCPic~
+ 
+ 
+ /*
+ BEGIN ~Never Ending Journey 2~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~Melora11.cre~ ~You haven't installed NeJ2, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~Melora11.cre~ ~You haven't installed Never Ending Journey 2, skipping this component~ 
+ DESIGNATED 1040
+ 
+ OUTER_SPRINT ~folder~ ~NeJ2~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/nej.tbl~  ~NSC Portraits/tbl/nej.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -442,15 +442,15 @@
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ */
+ 
+ 
+ BEGIN ~Portraits for Tortured Souls (TS-BP)~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~Aino.cre~ ~You haven't installed TS-BP, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~Aino.cre~ ~You haven't installed Tortured Souls (TS-BP), skipping this component~ 
+ DESIGNATED 1050
+ 
+ OUTER_SPRINT ~folder~ ~TS~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/ts.tbl~  ~NSC Portraits/tbl/ts.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -460,33 +460,31 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
  
  
  BEGIN ~Alternate NPC-Portraits for Tortured Souls (TS-BP)~ 
 -REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~hier File einfügen~ ~You haven't installed TS-BP, skip this component~ 
-+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~Aino.cre~ ~You haven't installed TS-BP, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~Aino.cre~ ~You haven't installed Tortured Souls (TS-BP), skipping this component~ 
  DESIGNATED 1051
  
  OUTER_SPRINT ~folder~ ~TS~
@@ -39,3 +377,576 @@
  
  
  BEGIN ~Portraits for Tower of Deception~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~VA#TIAN.cre~ ~You haven't installed ToD, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~VA#TIAN.cre~ ~You haven't installed Tower of Deception, skipping this component~ 
+ DESIGNATED 1300
+ 
+ OUTER_SPRINT ~folder~ ~TOD~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/TOD.tbl~  ~NSC Portraits/tbl/TOD.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -496,15 +494,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Assassinations~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~O#Lynn.cre~ ~You haven't installed Assassinations, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~O#Lynn.cre~ ~You haven't installed Assassinations, skipping this component~ 
+ DESIGNATED 1310
+ 
+ OUTER_SPRINT ~folder~ ~Ass~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/assas.tbl~  ~NSC Portraits/tbl/assas.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -514,15 +512,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Dungeon Crawl~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~O#Bea.cre~ ~You haven't installed DC, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~O#Bea.cre~ ~You haven't installed Dungeon Crawl, skipping this component~ 
+ DESIGNATED 1320
+ 
+ OUTER_SPRINT ~folder~ ~DC~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/dc.tbl~  ~NSC Portraits/tbl/dc.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -531,16 +529,16 @@
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+-BEGIN ~Portraits for Romantic Encounters~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~RE_Jon.cre~ ~You haven't installed RE, skip this component~ 
++BEGIN ~Portraits for BG2 Romantic Encounters~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~override/re_blank.wav~ ~You haven't installed BG2 Romantic Encounters, skipping this component~ 
+ DESIGNATED 1330
+ 
+ OUTER_SPRINT ~folder~ ~RE~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/re.tbl~  ~NSC Portraits/tbl/re.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -548,16 +546,16 @@
+     READ_2DA_ENTRY cntg  0 2 "Crename"
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+-BEGIN ~Portraits for Romantic Encounters BG1~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~RE1Della.cre~ ~You haven't installed REBG1, skip this component~ 
++BEGIN ~Portraits for BG1 Romantic Encounters~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~override/RE1_Installed.G3~ ~You haven't installed BG1 Romantic Encounters, skipping this component~ 
+ DESIGNATED 1780
+ 
+ OUTER_SPRINT ~folder~ ~REBG1~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/REBG1.tbl~  ~NSC Portraits/tbl/REBG1.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -567,15 +565,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Tales of Anegh~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~Z_NOMORA.cre~ ~You haven't installed ToA, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~Z_NOMORA.cre~ ~You haven't installed Tales of Anegh, skipping this component~ 
+ DESIGNATED 1350
+ 
+ OUTER_SPRINT ~folder~ ~ToA~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/ToA.tbl~  ~NSC Portraits/tbl/ToA.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -584,16 +582,16 @@
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+-BEGIN ~Portraits for Ascalons Questpack~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ACQ11001.cre~ ~You haven't installed AcQ, skip this component~ 
++BEGIN ~Portraits for Ascalon's Questpack~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ACQ11001.cre~ ~You haven't installed Ascalon's Questpack, skipping this component~ 
+ DESIGNATED 1380
+ 
+ OUTER_SPRINT ~folder~ ~AcQ~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/AcQ.tbl~  ~NSC Portraits/tbl/AcQ.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -603,15 +601,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Tales of the Deep Gardens~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~0xwizdg.cre~ ~You haven't installed ToDG, skip this component.~
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~0xwizdg.cre~ ~You haven't installed Tales of the Deep Gardens, skipping this component.~
+ DESIGNATED 1360
+ 
+ 
+ OUTER_SPRINT ~folder~ ~ToDG~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ 
+@@ -623,15 +621,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Dark Horizons~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~CMBOU07.cre~ ~You haven't installed Dark Horizons, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~CMBOU07.cre~ ~You haven't installed Dark Horizons, skipping this component~ 
+ DESIGNATED 1370
+ 
+ OUTER_SPRINT ~folder~ ~DH~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/DH.tbl~  ~NSC Portraits/tbl/DH.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -640,16 +638,16 @@
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+-BEGIN ~Portraits for Jans Quest~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~E_JVaela.cre~ ~You haven't installed Jans Quest, skip this component~ 
++BEGIN ~Portraits for Jan's Quest~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~E_JVaela.cre~ ~You haven't installed Jan's Quest, skipping this component~ 
+ DESIGNATED 1390
+ 
+ OUTER_SPRINT ~folder~ ~JanQ~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/JanQ.tbl~  ~NSC Portraits/tbl/JanQ.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -659,15 +657,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Planar Sphere~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~psTeos.cre~ ~You haven't installed Planar Sphere Mod, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~psTeos.cre~ ~You haven't installed Planar Sphere, skipping this component~ 
+ DESIGNATED 1400
+ 
+ OUTER_SPRINT ~folder~ ~Planar~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/Planar.tbl~  ~NSC Portraits/tbl/Planar.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -677,15 +675,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Innershade~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~9xHeal.cre~ ~You haven't installed Innershade Mod, skip this component.~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~9xHeal.cre~ ~You haven't installed Innershade, skipping this component.~ 
+ DESIGNATED 1410
+ 
+ OUTER_SPRINT ~folder~ ~Innershade~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/Innershade.tbl~  ~NSC Portraits/tbl/Innershade.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -695,15 +693,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Fishing for Trouble~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ysltor.cre~ ~You haven't installed Fishing for Trouble Mod, skip this component.~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ysltor.cre~ ~You haven't installed Fishing for Trouble, skipping this component.~ 
+ DESIGNATED 1420
+ 
+ OUTER_SPRINT ~folder~ ~FFT~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/FFT.tbl~  ~NSC Portraits/tbl/FFT.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -713,15 +711,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Eilistraees Song~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ESxMH.cre~ ~You haven't installed Eilistraees Song Mod, skip this component.~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ESxMH.cre~ ~You haven't installed Eilistraees Song, skipping this component.~ 
+ DESIGNATED 1430
+ 
+ OUTER_SPRINT ~folder~ ~Eilist~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/Eilist.tbl~  ~NSC Portraits/tbl/Eilist.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -731,15 +729,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Expanded Thief Stronghold~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~TSNARLEN.cre~ ~You haven't installed Expanded Thief Stronghold, skip this component.~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~TSNARLEN.cre~ ~You haven't installed Expanded Thief Stronghold, skipping this component.~ 
+ DESIGNATED 1440
+ 
+ OUTER_SPRINT ~folder~ ~ExThf~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/ExThf.tbl~  ~NSC Portraits/tbl/ExThf.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -748,16 +746,16 @@
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+-BEGIN ~Portraits for Gavin BG1~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~B!PENNY.cre~ ~You haven't installed Expanded Thief Stronghold, skip this component.~ 
++BEGIN ~Portraits for Gavin in BG1~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~B!PENNY.cre~ ~You haven't installed Gavin in BG1, skipping this component.~ 
+ DESIGNATED 1450
+ 
+ OUTER_SPRINT ~folder~ ~Gavin1~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/Gavin1.tbl~  ~NSC Portraits/tbl/Gavin1.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -767,15 +765,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Return to Brynnlaw~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~O#MYST.cre~ ~You haven't installed Return to Brynnlaw, skip this component.~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~O#MYST.cre~ ~You haven't installed Return to Brynnlaw, skipping this component.~ 
+ DESIGNATED 1470
+ 
+ OUTER_SPRINT ~folder~ ~BackBrynnlaw~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/BackBrynnlaw.tbl~  ~NSC Portraits/tbl/BackBrynnlaw.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -784,15 +782,15 @@
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ BEGIN ~Portraits for Sellswords~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~O#LLBOY.cre~ ~You haven't installed Sellswords, skip this component.~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~O#LLBOY.cre~ ~You haven't installed Sellswords, skipping this component.~ 
+ DESIGNATED 1480
+ 
+ OUTER_SPRINT ~folder~ ~Sellswords~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/Sellswords.tbl~  ~NSC Portraits/tbl/Sellswords.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -801,16 +799,16 @@
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+-BEGIN ~Portraits for Isra~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~rh#isr.cre~ ~You haven't installed Isra, skip this component.~ 
++BEGIN ~Portraits for Isra in BG2~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~rh#isr.cre~ ~You haven't installed Isra in BG2, skipping this component.~ 
+ DESIGNATED 1490
+ 
+ OUTER_SPRINT ~folder~ ~Isra~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/Isra.tbl~  ~NSC Portraits/tbl/Isra.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -820,15 +818,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Longer Road~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~lrelle1.cre~ ~You haven't installed Longer Road, skip this component.~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~lrelle1.cre~ ~You haven't installed Longer Road, skipping this component.~ 
+ DESIGNATED 1500
+ 
+ OUTER_SPRINT ~folder~ ~LR~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/LR.tbl~  ~NSC Portraits/tbl/LR.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -838,15 +836,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Zalnoya~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~AJ#ZAL.cre~ ~You haven't installed Zalnoya, skip this component.~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~AJ#ZAL.cre~ ~You haven't installed Zalnoya, skipping this component.~ 
+ DESIGNATED 1510
+ 
+ OUTER_SPRINT ~folder~ ~Zalno~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/Zalno.tbl~  ~NSC Portraits/tbl/Zalno.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -854,16 +852,16 @@
+     READ_2DA_ENTRY cntg  0 2 "Crename"
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+-BEGIN ~Portraits for D0Questpack~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~BESAMEN.cre~ ~You haven't installed Zalnoya, skip this component.~ 
++BEGIN ~Portraits for Ding0's Questpack~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~BESAMEN.cre~ ~You haven't installed Ding0's Questpack, skipping this component.~ 
+ DESIGNATED 1520
+ 
+ OUTER_SPRINT ~folder~ ~D0Quest~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/D0Quest.tbl~  ~NSC Portraits/tbl/D0Quest.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -872,16 +870,16 @@
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+-BEGIN ~Portraits for Slandor~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~SLANDOR.cre~ ~You haven't installed Slandor, skip this component.~ 
++BEGIN ~Portraits for Slandor (The Minotaur and Lilacor)~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~SLANDOR.cre~ ~You haven't installed Slandor (The Minotaur and Lilacor), skipping this component.~ 
+ DESIGNATED 1530
+ 
+ OUTER_SPRINT ~folder~ ~Slandor~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/Slandor.tbl~  ~NSC Portraits/tbl/Slandor.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -891,15 +889,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Sirines~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~J#Bren.cre~ ~You haven't installed Slandor, skip this component.~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~J#Bren.cre~ ~You haven't installed Sirines, skipping this component.~ 
+ DESIGNATED 1540
+ 
+ OUTER_SPRINT ~folder~ ~Sirines~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/Sirines.tbl~  ~NSC Portraits/tbl/Sirines.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -908,16 +906,16 @@
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+-BEGIN ~Portraits for Afaaq~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~a7afaaq.cre~ ~You haven't installed Afaaq, skip this component.~ 
++BEGIN ~Portraits for Afaaq (Djinni Companion)~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~a7afaaq.cre~ ~You haven't installed Afaaq (Djinni Companion), skipping this component.~ 
+ DESIGNATED 1550
+ 
+ OUTER_SPRINT ~folder~ ~Afaaq~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/Afaaq.tbl~  ~NSC Portraits/tbl/Afaaq.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -926,16 +924,16 @@
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+-BEGIN ~Portraits for Ajoc~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~agloron.cre~ ~You haven't installed Afaaq, skip this component.~ 
++BEGIN ~Portraits for Ajoc Mod~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~agloron.cre~ ~You haven't installed Ajoc Mod, skipping this component.~ 
+ DESIGNATED 1580
+ 
+ OUTER_SPRINT ~folder~ ~Ajoc~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/Ajoc.tbl~  ~NSC Portraits/tbl/Ajoc.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -944,16 +942,16 @@
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+-BEGIN ~Portraits for ISNF~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ISNFxOr.cre~ ~You haven't installed ISNF, skip this component.~ 
++BEGIN ~Portraits for ISNF (I Shall Never Forget)~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ISNFxOr.cre~ ~You haven't installed ISNF (I Shall Never Forget), skipping this component.~ 
+ DESIGNATED 1590
+ 
+ OUTER_SPRINT ~folder~ ~ISNF~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/ISNF.tbl~  ~NSC Portraits/tbl/ISNF.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -963,15 +961,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Sandrah~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~sandrah.cre~ ~You haven't installed Sandrah, skip this component.~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~sandrah.cre~ ~You haven't installed Sandrah, skipping this component.~ 
+ DESIGNATED 1600
+ 
+ OUTER_SPRINT ~folder~ ~Sandrah~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/Sandrah.tbl~  ~NSC Portraits/tbl/Sandrah.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -981,15 +979,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Big Picture~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~OSMADI.cre~ ~You haven't installed BP, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~OSMADI.cre~ ~You haven't installed Big Picture, skipping this component~ 
+ DESIGNATED 1340
+ 
+ OUTER_SPRINT ~folder~ ~BP~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/bp.tbl~  ~NSC Portraits/tbl/bp.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -998,16 +996,16 @@
+     READ_2DA_ENTRY cntg  1 2 "PictureName"
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+-BEGIN ~Portraits for Ascalons Breagar~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ACADAM.cre~ ~You haven't installed Breagar, skip this component~ 
++BEGIN ~Portraits for Ascalon's Breagar~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ACADAM.cre~ ~You haven't installed Ascalon's Breagar, skipping this component~ 
+ DESIGNATED 2000
+ 
+ OUTER_SPRINT ~folder~ ~ACBre~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/ACBre.tbl~  ~NSC Portraits/tbl/ACBre.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -1017,15 +1015,15 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Portraits for Amber NPC~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~m#maxtg.cre~ ~You haven't installed Amber, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~m#maxtg.cre~ ~You haven't installed Amber, skipping this component~ 
+ DESIGNATED 2010
+ 
+ OUTER_SPRINT ~folder~ ~Amber~
+ 
+ OUTER_SET rows_cnt_nscp=0
+ COPY - ~NSC Portraits/tbl/amber.tbl~  ~NSC Portraits/tbl/amber.tbl~
+   COUNT_2DA_ROWS 2 "rows_cnt_nscp"
+@@ -1035,27 +1033,27 @@
+   INNER_ACTION BEGIN
+ 		LAUNCH_ACTION_MACRO ~Addpic~ 
+ 	END
+   END
+ 
+ 
+ BEGIN ~Alternate Portrait for Goo NPC~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~J#GOO5.cre~ ~You haven't installed Goo, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~J#GOO5.cre~ ~You haven't installed Goo, skipping this component~ 
+ DESIGNATED 3000
+ 
+ OUTER_SPRINT ~folder~ ~GOO~
+ 
+ OUTER_SPRINT ~Crename~ ~J#GOO5.cre~
+ OUTER_SPRINT ~SmallPic~ ~J#GOOS~
+ OUTER_SPRINT ~LargePic~ ~J#GOOL~
+ LAUNCH_ACTION_MACRO ~NPCPic~
+ 
+ 
+ BEGIN ~Alternate Portrait for Kim NPC~ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~Kim.cre~ ~You haven't installed Kim, skip this component~ 
++REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~Kim.cre~ ~You haven't installed Kim, skipping this component~ 
+ DESIGNATED 3010
+ 
+ OUTER_SPRINT ~folder~ ~Kim~
+ 
+ OUTER_SPRINT ~Crename~ ~Kim.cre~
+ OUTER_SPRINT ~SmallPic~ ~KimS~
+ OUTER_SPRINT ~LargePic~ ~KimL~
