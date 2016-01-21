@@ -1,11 +1,11 @@
 --- setup-xanbg1friend.tp2	Tue Jan 19 09:26:50 2016
-+++ setup-xanbg1friend.tp2	Tue Jan 19 09:31:30 2016
-@@ -1,54 +1,24 @@
++++ setup-xanbg1friend.tp2	Wed Jan 20 21:44:16 2016
+@@ -1,56 +1,37 @@
  // Setup
  BACKUP ~XanBG1Friend/Backup~
  AUTHOR ~Kulyok http://forums.pocketplane.net~
 -VERSION ~v9bgee~ /* Thanks to Isaya for changes for v9 for BGEE; Kaeloree did the rest, BGEE-wise */
-+VERSION ~v9bgee BWP Fix~ /* Thanks to Isaya for changes for v9 for BGEE; Kaeloree did the rest, BGEE-wise */
++VERSION ~v9bgee BWP Fix 2~ /* Thanks to Isaya for changes for v9 for BGEE; Kaeloree did the rest, BGEE-wise */
  README ~XanBG1Friend/Readme-XanBG1Friend.txt~
  
  
@@ -14,27 +14,31 @@
 -ACTION_IF GAME_IS ~bgee~ THEN BEGIN
 -  /* It's safe to convert for any language and for all operating systems, no test required */
 -
--  /* BG:EE tra conversion : Character encoding for BG II for various languages: ensure the name matches the menu choices */
++  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN
++    AT_NOW ~if not exist "iconv" mkdir iconv~
++    AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
++  END
+   /* BG:EE tra conversion : Character encoding for BG II for various languages: ensure the name matches the menu choices */
 -  ACTION_DEFINE_ASSOCIATIVE_ARRAY languageencoding BEGIN
--    "English" => "CP1252"
--    "Russian" => "CP1251"
--    "German" => "CP1252"
--    "French" => "CP1252"
--    "Italian" => "CP1252"
--  END
++  ACTION_DEFINE_ASSOCIATIVE_ARRAY tra#charsets BEGIN
+     "English" => "CP1252"
+     "Russian" => "CP1251"
+     "German" => "CP1252"
+     "French" => "CP1252"
+     "Italian" => "CP1252"
+   END
 -  OUTER_SPRINT initialencoding ~~
 -  ACTION_PHP_EACH languageencoding AS lang => encoding BEGIN
 -    ACTION_IF ("%LANGUAGE%" STRING_EQUAL_CASE ~%lang%~ = 1) THEN BEGIN
 -      OUTER_SPRINT initialencoding ~%encoding%~
 -    END
-+  ACTION_DEFINE_ARRAY tra_reload BEGIN O#XanBG1 END
++  ACTION_DEFINE_ARRAY tra#reload BEGIN O#XanBG1 END
 +  LAF HANDLE_CHARSETS
-+    INT_VAR
-+      infer_charset = 1
 +    STR_VAR
++      charset_table = tra#charsets
 +      tra_path      = EVAL ~%MOD_FOLDER%~
-+      iconv_path    = EVAL ~%MOD_FOLDER%~
-+      reload_array  = tra_reload
++      iconv_path    = ~iconv~
++      reload_array  = tra#reload
    END
 -
 -  /* Since there is only one component, we don't need a marker file to avoid repeating conversion for each component */
@@ -64,3 +68,5 @@
  AUTO_TRA ~XanBG1Friend/%s~
  LANGUAGE ~English~ ~English~ ~XanBG1Friend/English/O#XanBG1.tra~
  LANGUAGE ~Russian~ ~Russian~ ~XanBG1Friend/Russian/O#XanBG1.tra~
+ LANGUAGE ~German (Translated by Steffen)~ ~German~ ~XanBG1Friend/German/O#XanBG1.tra~
+ LANGUAGE ~French (Translated by Eleima)~ ~French~ ~XanBG1Friend/French/O#XanBG1.tra~
