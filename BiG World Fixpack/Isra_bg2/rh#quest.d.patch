@@ -1,6 +1,33 @@
---- Isra_bg2\dialogue\rh#quest.d	Tue Sep 24 21:07:47 2013
-+++ C:\BWP Patchstudio\patched files\Isra_bg2\dialogue\rh#quest.d	Wed Nov 11 13:41:53 2015
-@@ -391,7 +391,7 @@
+--- rh#quest.d	Thu Jan 21 11:07:00 2016
++++ rh#quest.d	Thu Jan 21 10:59:03 2016
+@@ -262,20 +262,21 @@
+ END
+ END
+  
+ // 4. Jysstev Estate
+ 
+ CHAIN IF WEIGHT #-1 ~InParty("rh#Isra2") Global("rh#QarTalks","GLOBAL",1)~ THEN SCQAR q11
+ @110 /* Lady Isra, I had thought you above boorish gloating. Has your father's common blood finally run true in the end? */
++DO ~SetGlobal("rh#QarTalks","GLOBAL",2)~ /* BWP Fix - http://www.shsforums.net/topic/58514-a-review-of-isra-21-was-posted-on-beamdog-forums/?p=585838 */
+ == RH#ISRJ @111 /* My lord, there is no cause for hostility. Alia is convinced that your cousin is innocent, and Rana... where has my sister gone? */
+ == SCQAR @112 /* She is currently staying with her Crytrapper relatives instead, and good riddance, I say. This house has been too crowded as it is. */
+ == RH#ISRJ @113 /* I see. If you know anything that might clear Quentin's name-- */
+ == SCQAR @114 /* We have already cooperated with the authorities as much as is required by law. There is nothing more that needs to be said. */
+ == SCLJYSS @115 /* Qar, if they can help, surely there is no reason not to let them? */
+-DO ~SetGlobal("rh#QarTalks","GLOBAL",2)~
++/* DO ~SetGlobal("rh#QarTalks","GLOBAL",2)~ BWP Fix */
+ END
+ 	++ @116 /* Any financial information would be useful. */ EXTERN RH#ISRJ q11.1
+ 	++ @117 /* A sensible suggestion if ever I've heard one. */ EXTERN RH#ISRJ q11.2
+ 	++ @118 /* We won't bother if all we're going to get out of it is abuse. */ EXTERN RH#ISRJ q11.3
+ 
+ CHAIN RH#ISRJ q11.1
+ @119 /* Aye, especially concerning any money lent or borrowed. */
+@@ -387,15 +388,15 @@
+ CHAIN RH#ALIM q13.2
+ @147 /* I ain't interested in talking with the likes o' ye. Least not unless ye've got a flask o' the Thumb's Bitter Black Ale with ye. I miss that stuff almost as much as freedom itself. */
+ == RH#ISRJ IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN @148 /* And the ale will loosen your tongue, so to speak? */
+ == RH#ALIM IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN @149 /* Ye won't know unless ye try, lady. */
  EXIT
  
  CHAIN IF ~GlobalGT("rh#AlimTalks","GLOBAL",1) !PartyHasItem("rh#ale")~ THEN RH#ALIM q13.3
@@ -9,3 +36,7 @@
  EXIT
  
  CHAIN IF ~GlobalGT("rh#AlimTalks","GLOBAL",1) PartyHasItem("rh#ale")~ THEN RH#ALIM q13.4
+ @151 /* Well... ain't that a blessed sight? Pity, though, that I've got nothing more to say than I did to your Tyrran friend. Quentin Jysstev is the one what's been payin' me to run goods from Calimshan. */
+ DO ~TakePartyItem("rh#ale")~
+ EXIT
+ 

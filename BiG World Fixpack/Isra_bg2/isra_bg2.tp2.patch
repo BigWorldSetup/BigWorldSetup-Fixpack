@@ -1,0 +1,31 @@
+--- isra_bg2.tp2	Thu Jan 21 10:53:40 2016
++++ isra_bg2.tp2	Thu Jan 21 10:59:18 2016
+@@ -1,25 +1,25 @@
+ BACKUP ~isra_bg2/backup~
+ AUTHOR ~kae@spellholdstudios.net~
+-VERSION ~v2.1~
++VERSION ~v2.1 BWP Fix~
+ README ~isra_bg2/Isra_BG2_Readme.html~
+ 
+ AUTO_TRA ~isra_bg2/translations/%s~
+ LANGUAGE ~English~
+          ~English~
+          ~isra_bg2/translations/english/setup.tra~
+ 
+ BEGIN @0 /* Isra for BGII */
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @1 /* You must have Throne of Bhaal installed. */
++REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1 /* You must have Throne of Bhaal installed. */
+ 
+ APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
+ UNLESS ~CD_STATE_NOTVALID~
+ 
+ // Fixing Imoen's dialogue file
+-ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN BEGIN
++ACTION_IF GAME_INCLUDES ~tob~ THEN BEGIN
+   COPY_EXISTING ~interdia.2da~ ~override~
+     SET_2DA_ENTRY 17 1 2 ~BIMOEN2~ // fixes ToB version
+     BUT_ONLY_IF_IT_CHANGES
+ END ELSE BEGIN
+   APPEND ~interdia.2da~ ~IMOEN       BIMOEN2~ // fixes SoA version
+     UNLESS ~BIMOEN2~
+ END

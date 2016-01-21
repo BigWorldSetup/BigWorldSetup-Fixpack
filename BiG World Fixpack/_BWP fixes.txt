@@ -1358,6 +1358,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Isra_BG2 - Isra for BG2 v2.1
+
+:: PRO_BOYGIRL -> PRO_GIRLBOY correction
+:: - LINK NOT FOUND -
+
+:: Roxanne's looping dialogue fix
+:: http://www.shsforums.net/topic/58514-a-review-of-isra-21-was-posted-on-beamdog-forums/?p=585838
+
+
+----------------------------------------------------------------------------------------
+
+
 :: iwdification - IWDification Beta 3
 
 :: Angel's miscellaneous fixes
