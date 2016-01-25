@@ -1,11 +1,15 @@
---- setup-planarspheremod.tp2	Sun May 01 13:04:17 2011
-+++ D:\EE_Patchstudio\patched files\setup-planarspheremod.tp2	Tue Jan 19 18:15:50 2016
-@@ -8,11 +8,28 @@
+--- setup-planarspheremod.tp2	Mon Jan 25 17:01:34 2016
++++ setup-planarspheremod.tp2	Mon Jan 25 17:03:38 2016
+@@ -4,45 +4,64 @@
+ 
+ AUTHOR ~See_The_Readme (Org: Inferno & M, Updates: Hlid, Duality, Malbolgia)~
+ 
+ /* enable all error messages; nothing suppressed. comment this out for release version - cmorgan */
  //MODDER
  
  /* WeiDU v204 allows tp2 level version listing in the .log, so no more tra changes  */
 -VERSION ~v2.6c~
-+VERSION ~v2.6e BWP Fix~
++VERSION ~v2.6e BWP Fix 2~
  
  /* launch the readme file immediately. If you want to disable the ReadMe, place two slashes before it, like //README  */
  README ~PlanarSphereMod/readme-planarsphere.html~
@@ -13,8 +17,8 @@
 +/* Ineth - make sure strings are correctly encoded for both EE and non-EE games */
 +ALWAYS
 +  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN
-+	AT_NOW ~if not exist "iconv" mkdir iconv~
-+	AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
++    AT_NOW ~if not exist "iconv" mkdir iconv~
++    AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
 +  END
 +  ACTION_DEFINE_ARRAY tra_reload BEGIN setup END
 +  LAF HANDLE_CHARSETS
@@ -30,21 +34,37 @@
  AUTO_TRA ~PlanarSphereMod/%s~
  
  LANGUAGE ~English~
-@@ -36,7 +53,7 @@
+ ~english~
+ //~PlanarSphereMod/english~
+ ~PlanarSphereMod/english/setup.tra~
  
+ LANGUAGE ~Russian~
+ ~russian~
+ //~PlanarSphereMod/russian~
+ ~PlanarSphereMod/russian/setup.tra~
+ 
+ BEGIN @0
+ 
++/*
+ COPY + ~Setup-PlanarSphereMod.exe~ ~WeiDU.exe~
+ 
+ COPY + ~chitin.key~ ~PlanarSphereMod/chitin.psm~
+ COPY_LARGE + ~dialog.tlk~ ~PlanarSphereMod/dialog.psm~
+ MKDIR ~PlanarSphereMod/over.bak~
+ COPY_LARGE + ~override~ ~PlanarSphereMod/over.bak~
+-
++*/
  
  // TOB Check prior to compiling.
 -REQUIRE_FILE ~Data/25Dialog.bif~ @1 // ToB  check// Base Copy Overs
-+REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1 // ToB  check// Base Copy Overs
++REQUIRE_FILE ~Data/25Dialog.bif~ @1 // ToB  check
  
  
++// Base Copy Overs
  COPY ~PlanarSphereMod/are~   ~override~ // Area Files (new area files not previously installed in game)
-@@ -1021,7 +1038,7 @@
-     SAY NAME2 @115
-     SAY UNIDENTIFIED_DESC @116
-     SAY DESC @117
--    SAY 0x1ce @118
-+//  SAY 0x1ce @118
+      ~PlanarSphereMod/Pics~   ~override~ // Mos and Bmp files including additional search regions in AR0412SR.bmp
+      ~PlanarSphereMod/eff~   ~override~ // Eff Files
+      ~PlanarSphereMod/misc/SPPSQ22.2da~   ~override/SPPSQ22.2da~ // Non-.pro file copy
+      ~PlanarSphereMod/bam~   ~override~ // Bam files
  
- COPY ~PlanarSphereMod/itm/psBolt02.itm~ ~override/psBolt02.itm~
-     SAY NAME1 @114
+ ACTION_IF NOT FILE_EXISTS_IN_GAME	~MSPLG1.BAM~	THEN BEGIN
