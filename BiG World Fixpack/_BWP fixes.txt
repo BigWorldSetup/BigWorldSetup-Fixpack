@@ -1626,6 +1626,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Ineth's EE compatibility patch
 :: - LINK NOT FOUND -
 
+:: agb1 commented out Valen script patching (see notes in this file for valen mod)
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
@@ -2729,6 +2732,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's corrected WRITE_ASCII 0x34 "valenS " -> WRITE_ASCII 0x34 "valenS" #8 - Setup-Valen.tp2
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=489410
+
+:: agb1's merged priest.bcs (includes patches from pcvamp mod)
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
