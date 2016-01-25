@@ -16,7 +16,7 @@
  
 +/* Ineth - make sure strings are correctly encoded for both EE and non-EE games */
 +ALWAYS
-+  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN
++  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ THEN BEGIN
 +    AT_NOW ~if not exist "iconv" mkdir iconv~
 +    AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
 +  END
