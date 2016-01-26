@@ -1,0 +1,76 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("Pool","AR0801",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,35875) // The pool is filled with what is obviously blood. You can enter the pool if you dare.
+		SetGlobal("Pool","AR0801",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("Pool","AR0801",1)
+	!Global("PCVamp","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,35877) // You enter the blood pool and find a mace at the bottom. The blood makes you feel sick, however.
+		GiveItemCreate("BLUN12",LastTrigger,0,0,0) // Mace of Disruption +1
+		ReallyForceSpell(LastTrigger,TRAP_UNDERWATER_BITE) // SPWI020.SPL (just ten damage)
+		SetGlobal("Pool","AR0801",2)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("Pool","AR0801",1)
+	Global("PCVamp","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@21) // Ihr watet vorsichtig durch das Blut und nach einigem Tasten findet Ihr einen Streitkolben am Grund des Beckens.
+		GiveItemCreate("BLUN12",LastTrigger,0,0,0) // Mace of Disruption +1
+		SetGlobal("Pool","AR0801",2)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("Pool","AR0801",2)
+	!Global("PCVamp","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,35878) // There is nothing else of interest in the pool.
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("Pool","AR0801",2)
+	Global("PCVamp","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@22) // Das Blut ist warm und verströmt einen süßen verführerischen Geruch. Wenn Ihr wollt, könnt Ihr davon trinken.
+		SetGlobal("Pool","AR0801",3)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("Pool","AR0801",3)
+	Global("PCVamp","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@23) // Ihr trinkt von dem Blut und spürt, wie frisches Leben Euch durchströmt und Euch neue Kraft und Energie verleiht.
+		CreateVisualEffectObject("SPHEALIN",Protagonist)
+		ReallyForceSpell(Protagonist,RESTORE_FULL_HEALTH)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702) // You are too far away to use that.
+END
+

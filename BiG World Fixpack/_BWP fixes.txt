@@ -401,12 +401,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Bdash - Baldurdash v1.6.8
+:: Bdash - Baldurdash v1.68 and v1.73
 
-:: BWP compatibility fixes to use it with or without BG2 Fixpack (updated 31 March 2010).
+:: BWP compatibility fixes to use it with or without BG2 Fixpack (updated 26 Jan 2016).
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+:: Leonardo Watson's BG2 Fixpack adaptation (disable duplicate/conflicting Bdash fixes)
+:: - LINK NOT FOUND -
+
+:: agb1's updated BG2 Fixpack adaptation (reviewed differences from Bdash 1.68 to 1.73)
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=585727
 
 
 ----------------------------------------------------------------------------------------
@@ -1626,7 +1632,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Ineth's EE compatibility patch
 :: - LINK NOT FOUND -
 
-:: agb1 commented out Valen script patching (see notes in this file for valen mod)
+:: agb1's commented out Valen script patching (see notes in this file for valen mod)
+:: - LINK NOT FOUND -
+
+:: agb1's replacement BLPOOL1a.baf and BLPOOL1b.baf to resolve failed BCS patching
 :: - LINK NOT FOUND -
 
 
