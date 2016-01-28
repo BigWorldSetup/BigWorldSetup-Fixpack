@@ -885,6 +885,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: DarkHorizonsBGEE - Dark Horizons v2.13
+
+:: micbaldur's Halabaster Dhunshar reward fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=580693
+
+:: agb1's fixed CMSTQ04.ITM
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Devin - Les Exilés de Lunargent v1.0
 
 :: Lollorian's assorted ITM fixes
