@@ -1,0 +1,20 @@
+--- bAR4300.baf	Sun May 11 13:50:46 2008
++++ bAR4300.baf	Thu Jan 28 14:37:06 2016
+@@ -1,13 +1,17 @@
+ IF
+ 	GlobalLT("TalkedToOupaste","Global",1)
++	Global("CaveOpen","ar4300",0)
+ THEN
+ 	RESPONSE #100
+ 		TriggerActivation("Tran80PB",FALSE)
++		SetGlobal("CaveOpen","ar4300",1)
+ END
+ 
+ IF
+ 	Global("TalkedToOupaste","Global",1)
++	Global("CaveOpen","ar4300",1)
+ THEN
+ 	RESPONSE #100
++		SetGlobal("CaveOpen","ar4300",2)
+ 		TriggerActivation("Tran80PB",TRUE)
+ END

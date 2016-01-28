@@ -1860,6 +1860,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: ALIEN's Polish translation
 :: http://www.shsforums.net/topic/38355-ntotscv170a-v171-bug-thread/?p=569216
 
+:: Roxanne's bAR4300 fix (change blocks to run-once so blocks added after will trigger)
+:: http://www.shsforums.net/topic/40623-haiass/?p=586275
+
 
 ----------------------------------------------------------------------------------------
 
