@@ -1,5 +1,5 @@
---- C:/Users/ggoldman/Downloads/setup-pcvamp.tp2	Mon Jan 25 17:09:39 2016
-+++ C:/Users/ggoldman/Downloads/setup-pcvamp.p.tp2	Mon Jan 25 17:44:03 2016
+--- setup-pcvamp.tp2	Mon Jan 25 17:09:39 2016
++++ setup-pcvamp.tp2	Mon Jan 25 17:44:03 2016
 @@ -1,18 +1,35 @@
  BACKUP ~pcvamp/Backup~
  AUTHOR ~Nicolas Peters - admin@baldursgate-refugium.de (http://www.baldursgate-refugium.de/)~
