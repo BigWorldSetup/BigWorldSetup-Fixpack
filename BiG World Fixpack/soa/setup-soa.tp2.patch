@@ -1,11 +1,11 @@
 --- soa\setup-soa.tp2	Sun Jul 05 01:38:27 2015
-+++ C:\BWP Patchstudio\patched files\soa\setup-soa.tp2	Wed Oct 21 23:23:03 2015
++++ C:\BWP Patchstudio\patched files\soa\setup-soa.tp2	Thu Jan 28 23:23:03 2016
 @@ -12,7 +12,7 @@
  /* Author */
  AUTHOR ~Red Carnelian, http://chosenofmystra.net/forums/index.php~
  
 -VERSION ~1.9~
-+VERSION ~1.9 BWP Fix~
++VERSION ~1.9 BWP Fix 2~
  
  README ~soa/readme_soa.htm~
  
