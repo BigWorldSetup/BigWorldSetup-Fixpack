@@ -44,13 +44,13 @@
  
  BEGIN @0
  
-+/* BWP Fix - this section will only match if Trimpack was applied first
++/* BWP Fix - this section will only match if Trimpack was not applied first
  COPY + ~Setup-PlanarSphereMod.exe~ ~WeiDU.exe~
  
- // COPY + ~chitin.key~ ~PlanarSphereMod/chitin.psm~
- // COPY_LARGE + ~dialog.tlk~ ~PlanarSphereMod/dialog.psm~
- // MKDIR ~PlanarSphereMod/over.bak~
- // COPY_LARGE + ~override~ ~PlanarSphereMod/over.bak~
+ COPY + ~chitin.key~ ~PlanarSphereMod/chitin.psm~
+ COPY_LARGE + ~dialog.tlk~ ~PlanarSphereMod/dialog.psm~
+ MKDIR ~PlanarSphereMod/over.bak~
+ COPY_LARGE + ~override~ ~PlanarSphereMod/over.bak~
 +*/
  
  

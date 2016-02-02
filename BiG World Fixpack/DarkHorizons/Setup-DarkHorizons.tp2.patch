@@ -1,11 +1,11 @@
---- Setup-DarkHorizons.tp2	Sun Jan 25 11:39:46 2015
-+++ C:\BWP Patchstudio\patched files\Setup-DarkHorizons.tp2	Mon May 11 08:00:31 2015
+--- Setup-DarkHorizons.tp2	Tue Feb 2 11:39:46 2015
++++ C:\BWP Patchstudio\patched files\Setup-DarkHorizons.tp2	Tue Feb 2 08:00:31 2015
 @@ -1,7 +1,7 @@
  BACKUP ~DarkHorizons/backup~
  AUTHOR ~"http://www.teambg.org"~
  
--VERSION ~BGT v211~
-+VERSION ~BGT v211 BWP Fix~
+-VERSION ~BGT v212~
++VERSION ~BGT v212 BWP Fix~
  
  README ~DarkHorizons/readme-dh.htm~
  

@@ -1,5 +1,5 @@
---- bAR4300.baf	Sun May 11 13:50:46 2008
-+++ bAR4300.baf	Thu Jan 28 14:37:06 2016
+--- NToTSCv171\bcs\bAR4300.baf	Sun May 11 13:50:46 2008
++++ NToTSCv171\bcs\bAR4300.baf	Thu Jan 28 14:37:06 2016
 @@ -1,13 +1,17 @@
  IF
  	GlobalLT("TalkedToOupaste","Global",1)

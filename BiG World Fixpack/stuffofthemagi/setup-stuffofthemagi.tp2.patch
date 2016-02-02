@@ -1,5 +1,5 @@
---- StuffofTheMagi\setup-stuffofthemagi.tp2	Fri May 22 16:39:06 2009
-+++ D:\EE_Patchstudio\patched files\StuffofTheMagi\setup-stuffofthemagi.tp2	Tue Jan 19 22:33:35 2016
+--- StuffofTheMagi\setup-stuffofthemagi.tp2	Tue Feb 02 16:39:06 2016
++++ D:\EE_Patchstudio\patched files\StuffofTheMagi\setup-stuffofthemagi.tp2	Tue Feb 02 22:33:35 2016
 @@ -2,10 +2,26 @@
  ////////////////////////////////////////// you might want to wait until you play through before seeing all my code
  BACKUP ~StuffofTheMagi/backup~ // so WeiDU can uninstall

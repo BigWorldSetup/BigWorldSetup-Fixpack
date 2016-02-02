@@ -3,7 +3,7 @@
 @@ -1,21 +1,22 @@
  BACKUP ~bdash\Install\Backup~
  AUTHOR ~Kevin Dorner -- the original creator of Baldurdash, King Diamond -- WeiDU conversion, Vladislav Papper (vladp6@gmail.com) -- compilation, maintenance, additional fixes and optional components~
-+VERSION ~v1.73 BWP BG2Fixpack adaptation~
++VERSION ~v1.73 BWP BG2Fixpack adaptation 2~
  
  AUTO_TRA ~bdash\language\%s~
  

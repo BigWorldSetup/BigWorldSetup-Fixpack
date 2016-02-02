@@ -1,5 +1,5 @@
---- rh#quest.d	Thu Jan 21 11:07:00 2016
-+++ rh#quest.d	Thu Jan 21 10:59:03 2016
+--- Isra_bg2\dialogue\rh#quest.d	Thu Jan 21 11:07:00 2016
++++ Isra_bg2\dialogue\rh#quest.d	Thu Jan 21 10:59:03 2016
 @@ -262,20 +262,21 @@
  END
  END

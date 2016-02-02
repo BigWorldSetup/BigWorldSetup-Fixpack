@@ -1,11 +1,11 @@
---- setup-xanbg1friend.tp2	Tue Jan 19 09:26:50 2016
-+++ setup-xanbg1friend.tp2	Wed Jan 20 21:44:16 2016
+--- xanbg1friend\setup-xanbg1friend.tp2	Tue Feb 02 09:26:50 2016
++++ xanbg1friend\setup-xanbg1friend.tp2	Tue Feb 02 21:44:16 2016
 @@ -1,56 +1,37 @@
  // Setup
  BACKUP ~XanBG1Friend/Backup~
  AUTHOR ~Kulyok http://forums.pocketplane.net~
 -VERSION ~v9bgee~ /* Thanks to Isaya for changes for v9 for BGEE; Kaeloree did the rest, BGEE-wise */
-+VERSION ~v9bgee BWP Fix 2~ /* Thanks to Isaya for changes for v9 for BGEE; Kaeloree did the rest, BGEE-wise */
++VERSION ~v9bgee BWP Fix 3~ /* Thanks to Isaya for changes for v9 for BGEE; Kaeloree did the rest, BGEE-wise */
  README ~XanBG1Friend/Readme-XanBG1Friend.txt~
  
  

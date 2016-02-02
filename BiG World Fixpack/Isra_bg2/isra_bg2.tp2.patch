@@ -1,10 +1,10 @@
---- isra_bg2.tp2	Thu Jan 21 10:53:40 2016
-+++ isra_bg2.tp2	Thu Jan 21 10:59:18 2016
+--- Isra_bg2\isra_bg2.tp2	Thu Jan 21 10:53:40 2016
++++ Isra_bg2\isra_bg2.tp2	Thu Jan 21 10:59:18 2016
 @@ -1,25 +1,25 @@
  BACKUP ~isra_bg2/backup~
  AUTHOR ~kae@spellholdstudios.net~
 -VERSION ~v2.1~
-+VERSION ~v2.1 BWP Fix~
++VERSION ~v2.1 BWP Fix 2~
  README ~isra_bg2/Isra_BG2_Readme.html~
  
  AUTO_TRA ~isra_bg2/translations/%s~

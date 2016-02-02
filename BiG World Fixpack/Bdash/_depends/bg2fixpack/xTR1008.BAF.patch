@@ -1,5 +1,5 @@
---- Bdash\BAF_x\xTR1008.BAF	Thu Feb 24 17:56:07 2005
-+++ C:\BWP Patchstudio\patched files\Bdash\BAF_x\xTR1008.BAF	Wed Mar 31 06:31:41 2010
+--- Bdash\BAF_x\xTR1008.BAF	Tue Feb 02 17:56:07 2016
++++ C:\BWP Patchstudio\patched files\Bdash\BAF_x\xTR1008.BAF	Tue Feb 02 18:31:41 2016
 @@ -5,7 +5,6 @@
  THEN
  	RESPONSE #100
@@ -12,7 +12,7 @@
  		PlaySound("PORTAL2")
  		Wait(2)
  		ActionOverride(Player1,LeaveAreaLUAPanic("AR1008","",[495.755],10))
-+		TakePartyItemNUm("MISC45",1) // Rogue Stone
++		TakePartyItemNum("MISC45",1) // Rogue Stone
  		ActionOverride(Player1,LeaveAreaLUA("AR1008","",[495.755],10))
  		ActionOverride(Player2,LeaveAreaLUA("AR1008","",[431.730],10))
  		ActionOverride(Player3,LeaveAreaLUA("AR1008","",[459.777],10))

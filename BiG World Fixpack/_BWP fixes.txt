@@ -403,7 +403,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Bdash - Baldurdash v1.68 and v1.73
 
-:: BWP compatibility fixes to use it with or without BG2 Fixpack (updated 26 Jan 2016).
+:: BWP compatibility fixes to use it with or without BG2 Fixpack (updated 26 Jan 2016)
+:: - LINK NOT FOUND -
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
@@ -864,7 +865,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: DarkHorizons - Dark Horizons v2.11
+:: DarkHorizons - Dark Horizons v2.12
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/55229-khazids-death-sword-bug/?p=546708
@@ -1310,9 +1311,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Imoen Romance v1.202
+:: Imoen Romance v3.4
 
 :: White Agnus' compatibility fix for BGT
+:: - LINK NOT FOUND -
 
 :: TheBigg's fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=478417
@@ -1824,6 +1826,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: agb1's improved component checks (EET, TOB, BG1/BG2 RE) and "skipping" messages
 :: - LINK NOT FOUND -
 
+:: agb1 deleted tbl\ToA.tbl.rej (junk file)
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1897,7 +1902,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: planarspheremod - Planar Sphere v2.6c
+:: planarspheremod - Planar Sphere v2.6e
 
 :: Renamed psglobe5.cre to psglobe5.baf
 :: http://www.shsforums.net/index.php?s=&showtopic=33860&view=findpost&p=453459
