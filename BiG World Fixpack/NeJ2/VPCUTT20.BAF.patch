@@ -17,7 +17,7 @@
 -		AddXPObject(Player1,21000)
 -		ReallyForceSpell(Myself,DRYAD_TELEPORT)
 +		ActionOverride("TuPhin",GiveItem("ANTIMAG",Player1)) // Antimagic Shell
-+		ActionOverride("TuPhin",AddXPObject(Player1,15750))
++		ActionOverride("TuPhin",AddXPObject(Player1,21000))
 +		ActionOverride("TuPhin",ReallyForceSpell(Myself,DRYAD_TELEPORT)) // SPWI995.SPL (Dimension Door)
  		Wait(2)
  		EndCutSceneMode()

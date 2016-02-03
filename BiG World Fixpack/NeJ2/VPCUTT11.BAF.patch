@@ -21,7 +21,7 @@
 -		AddXPObject(Player1,15000)
 -		ReallyForceSpell(Myself,DRYAD_TELEPORT)
 +		ActionOverride("Xan",GiveItem("MASSCHAR",Player1)) // Mass Charm
-+		ActionOverride("Xan",AddXPObject(Player1,11250))
++		ActionOverride("Xan",AddXPObject(Player1,15000))
 +		ActionOverride("Xan",ReallyForceSpell(Myself,DRYAD_TELEPORT)) // SPWI995.SPL (Dimension Door)
  		Wait(2)
  		EndCutSceneMode()
