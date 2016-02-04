@@ -2599,6 +2599,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's SolaTS copy fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=572402
 
+:: agb1's modified TOB and Baldurdash install checks
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
