@@ -1,6 +1,7 @@
---- setup-planarspheremod.tp2	Tue Feb 02 17:01:34 2016
-+++ setup-planarspheremod.tp2	Tue Feb 02 17:03:38 2016
-@@ -5,44 +5,64 @@
+--- setup-planarspheremod.tp2	Wed Feb 03 19:22:06 2016
++++ setup-planarspheremod.tp2	Wed Feb 03 19:22:45 2016
+@@ -4,45 +4,65 @@
+ 
  AUTHOR ~See_The_Readme (Org: Inferno & M, Updates: Hlid, Duality, Malbolgia)~
  
  /* enable all error messages; nothing suppressed. comment this out for release version - cmorgan */
@@ -8,11 +9,11 @@
  
  /* WeiDU v204 allows tp2 level version listing in the .log, so no more tra changes  */
 -VERSION ~v2.6c~
-+VERSION ~v2.6e BWP Fix 3~
++VERSION ~v2.6e BWP Fix 4~
  
  /* launch the readme file immediately. If you want to disable the ReadMe, place two slashes before it, like //README  */
  README ~PlanarSphereMod/readme-planarsphere.html~
-+
+ 
 +/* Ineth - make sure strings are correctly encoded for both EE and non-EE games */
 +ALWAYS
 +  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ THEN BEGIN
@@ -29,7 +30,7 @@
 +      reload_array  = tra_reload
 +  END
 +END
- 
++
  AUTO_TRA ~PlanarSphereMod/%s~
  
  LANGUAGE ~English~
@@ -67,3 +68,20 @@
       ~PlanarSphereMod/bam~   ~override~ // Bam files
  
  ACTION_IF NOT FILE_EXISTS_IN_GAME	~MSPLG1.BAM~	THEN BEGIN
+@@ -1017,15 +1037,15 @@
+     SAY DESC @113
+ 
+ COPY ~PlanarSphereMod/itm/psBolt01.itm~ ~override/psBolt01.itm~
+     SAY NAME1 @114
+     SAY NAME2 @115
+     SAY UNIDENTIFIED_DESC @116
+     SAY DESC @117
+-    SAY 0x1ce @118
++//  SAY 0x1ce @118 // ~Doomed~ (BWP Fix: disabled)
+ 
+ COPY ~PlanarSphereMod/itm/psBolt02.itm~ ~override/psBolt02.itm~
+     SAY NAME1 @114
+     SAY NAME2 @559
+     SAY UNIDENTIFIED_DESC @116
+     SAY DESC @560
+ 

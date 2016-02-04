@@ -1931,6 +1931,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Add iconv to planarspheremod for EE compatibility
 :: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=585557
 
+:: agb1 commented out psbolt01.itm SAY 0x1ce @118 (invalid offset)
+:: http://www.shsforums.net/topic/58540-new-mega-mod-game-using-bws-comments/?p=586675
+
+
 ----------------------------------------------------------------------------------------
 
 
