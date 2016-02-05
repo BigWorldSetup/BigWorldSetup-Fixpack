@@ -1,0 +1,13 @@
+--- setup-w_3kradziej.tp2	Sun Mar 02 05:35:34 2008
++++ setup-w_3kradziej.tp2	Thu Feb 04 19:52:12 2016
+@@ -1,9 +1,10 @@
+ BACKUP ~w_3kradziej/backup~
+ AUTHOR ~kwiatw@gazeta.pl~
++VERSION ~0.2 BWP Fix~
+ 
+ ALWAYS
+   APPEND ~ACTION.IDS~  ~160 ApplySpellRES(S:RES*,O:Target)~ UNLESS ~160 ApplySpellRES(S:RES\*,O:Target)~
+   APPEND ~ACTION.IDS~  ~113 ForceSpellRES(S:RES*,O:Target)~ UNLESS ~113 ForceSpellRES(S:RES\*,O:Target)~
+ END
+ 
+ LANGUAGE ~Polski~ ~polski~   ~w_3kradziej/language/english/setup.tra~

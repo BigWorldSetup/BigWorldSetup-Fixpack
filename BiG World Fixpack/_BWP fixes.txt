@@ -2854,6 +2854,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: w_3kradziej - Pickpocket Options v0.2
+
+:: vGur's "sliding" fix (strength from 3 to 0 for wing buffet effect on w_3drop.spl)
+:: http://www.shsforums.net/topic/58545-new-mod-pickpocket-options-bugged/?p=586727
+
+
+----------------------------------------------------------------------------------------
+
+
 :: w_psionics_unleashed - Psionics Unleashed beta 0.30
 
 :: Non-EE compatible apostrophes for BG2 compatibility
