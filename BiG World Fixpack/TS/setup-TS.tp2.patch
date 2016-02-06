@@ -1,27 +1,7 @@
 --- Setup-TS.tp2	Wed Sep 23 22:53:26 2009
-+++ Setup-TS.tp2	Thu Feb 04 17:03:38 2016
-@@ -1,21 +1,21 @@
- BACKUP ~TS/backup~
- 
- AUTHOR ~Vlad & Domi~
- 
--BEGIN ~TORTURED SOULS v7.04~
-+BEGIN ~TORTURED SOULS v7.04 BWP Fix~
- 
- //______________________________________//
- //                                      //
- //        Tortured Souls v7.04          //
- //______________________________________//
- //                                      //
- 
++++ Setup-TS.tp2	Thu Feb 05 17:03:38 2016
+@@ -13,2 +13,2 @@
 -REQUIRE_FILE ~Data/25Dialog.bif~ ~Please install "Throne Of Bhaal" and the official ToB patch before installation of this mod.~
 -REQUIRE_FILE ~Setup-BDToBv168.exe~ ~Please install Baldurdash-WeiDU v1.67 before installation of this mod.~
 +REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ ~Please install "Throne Of Bhaal" and the official ToB patch before this mod.~
 +REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-BDToBv168.tp2~ ~0~) OR (MOD_IS_INSTALLED ~Setup-BDToBv173.tp2~ ~0~) ~Please install Baldurdash-WeiDU v1.68 or later before this mod.~
- 
- //Substitute the following string
- STRING_SET ~Play Shadows of Amn<TM> with the new area of Watcher’s Keep Dungeon~ ~Play Shadows of Amn<TM> with the new expansion set "Tortured Souls"~
- 
- COPY ~TS/rules~ ~override~
- 
- COPY ~TS/screens/SCRTXT09.2da~ ~override~
