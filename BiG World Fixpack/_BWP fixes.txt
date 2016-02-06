@@ -1910,6 +1910,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: ScuD's update pack
 :: http://www.shsforums.net/topic/42951-planar-sphere/?p=481226
 
+:: Beleg33's PSSW1H02.ITM aura cleansing fix
+:: http://www.shsforums.net/topic/24405-planar-sphere-mod-v26a/?p=542528
+
 :: Lollorian's corrected animation typos - psapp01.baf - psapp05.baf, pscut01.baf, psdwarf.baf, psglab.baf, pstutor1.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483642
 
