@@ -2363,6 +2363,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: SpellPackB6 - Lost Crossroads Spell Pack Beta 6
+
+:: IDS entries for CLERIC_GREATER_SHIELD_OF_LATHANDER and CLERIC_MIST_OF_ELDATH 
+:: - LINK NOT FOUND -
+
+:: Lollorian's corrected REGEXP for Hypnotic Pattern component
+:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=586829
+
+
+----------------------------------------------------------------------------------------
+
+
 :: spell_rev - Spell Revisions v3.1
 
 :: horred the plague's 2-handed ITM animation mismatch fix
@@ -2526,9 +2538,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's patchified Harder In-Game Enemies component
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=567301
-
-:: agb1's fixed SPWI231A.BAM
-:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------

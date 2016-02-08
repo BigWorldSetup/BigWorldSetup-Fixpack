@@ -1,9 +1,9 @@
 --- Setup-SpellPackB6.TP2	Tue May 17 21:11:21 2011
-+++ C:\BWP Patchstudio\patched files\Setup-SpellPackB6.TP2	Mon Oct 14 22:54:59 2013
++++ C:\BWP Patchstudio\patched files\Setup-SpellPackB6.TP2	Sun Feb 07 22:54:59 2016
 @@ -1,7 +1,7 @@
  BACKUP ~SpellPackB6/Backup~
  AUTHOR ~galactygon@baraban.com~
-+VERSION ~BWP Fix~
++VERSION ~BWP Fix 2~
  README ~SpellPackB6/README.html~
 -
  ALWAYS
@@ -29,3 +29,11 @@
  OUTER_SPRINT add_spell_res "LCPR743" // ACTION_MACRO ~ADD_SPELL~ sets this variable to the added spell's SOURCE_RES
  OUTER_SPRINT add_spell_scroll "*" 
  OUTER_SPRINT sphere_restrictions "WEATHER"
+@@ -3996,6 +3998,6 @@
+ // Earlier components used macros to patch REGEXP GLOB spell effects. MACRO_MATRIX makes sure the new files we copied are up to date with the new effects.
+-COPY_EXISTING_REGEXP GLOB ~%add_spell_res%~ ~override~
++COPY_EXISTING_REGEXP GLOB ~%add_spell_res%.spl~ ~override~
+                           ~LCWI240.*.spl~ ~override~
+                           ~LC_HPPA.*.spl~ ~override~
+ 	LAUNCH_PATCH_MACRO ~MACRO_MATRIX~
+ BUT_ONLY_IF_IT_CHANGES
