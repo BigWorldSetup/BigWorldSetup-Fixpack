@@ -504,6 +504,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: BGII-Subrace - Subrace mini-mod for Baldur's Gate 2 v1.0
+
+:: agb1's BGT compatibility fix (IMOEN6, IMOEN10 & IMOENDRM get IMOEN2 as DV)
+:: http://www.shsforums.net/topic/58557-bgii-soa-not-starting/?p=586964
+
+
+----------------------------------------------------------------------------------------
+
+
 :: bggraphics - Baldur's Gate Graphics Overhaul for BGT/Tutu v1.8
 
 :: prozh's fixed AR8100N.WED
