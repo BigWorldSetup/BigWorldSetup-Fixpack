@@ -1,0 +1,26 @@
+--- Setup-BGII-Subrace.tp2	Sun May 16 02:58:28 2004
++++ C:\BWP Patchstudio\patched files\Setup-BGII-Subrace.tp2	Tue Feb 09 21:52:12 2016
+@@ -1,6 +1,6 @@
+ BACKUP ~BGII-Subrace/backup~  
+ AUTHOR "finnjo@suomi24.fi"
+-
++VERSION ~v1.0 BWP Fix~
+ BEGIN ~Subrace mini-mod for BGII v1.0~
+ 
+ ACTION_IF NOT FILE_EXISTS ~override/action.ids~ THEN BEGIN 
+@@ -209,6 +209,15 @@
+      ~BGII-Subrace/npc-subraces/Keldor2S.bmp~ ~override/Keldor2S.bmp~
+      ~BGII-Subrace/npc-subraces/npplat.itm~ ~override/npplat.itm~
+ 
++// BGT Intro cutscene fix
++ACTION_IF GAME_IS ~bgt~ THEN BEGIN
++  COPY_EXISTING ~imoen6.cre~   ~override/imoen6.cre~
++                ~imoen10.cre~  ~override/imoen10.cre~
++                ~imoendrm.cre~ ~override/imoendrm.cre~
++    WRITE_ASCII 0x280 ~Imoen2~ //death variable
++  BUT_ONLY
++END
++	 
+ COPY ~BGII-Subrace/SrHaerD.spl~ ~override/SrImoen.spl~
+   SAY 0x9E ~tiefling~
+ 
