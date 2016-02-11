@@ -91,6 +91,12 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's script typo fixes
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=581055
 
+:: micbaldur's ACPOTN48.ITM dialogue fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=587072
+
+:: micbaldur's ACGAL.CRE cutscene death fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=587072
+
 
 ----------------------------------------------------------------------------------------
 
