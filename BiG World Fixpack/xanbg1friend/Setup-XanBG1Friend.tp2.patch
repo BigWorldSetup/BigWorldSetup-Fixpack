@@ -1,11 +1,11 @@
---- xanbg1friend\setup-xanbg1friend.tp2	Tue Feb 02 09:26:50 2016
-+++ xanbg1friend\setup-xanbg1friend.tp2	Tue Feb 02 21:44:16 2016
+--- XanBG1Friend/setup-xanbg1friend.tp2	Thu May 15 11:23:16 2014
++++ XanBG1Friend/setup-xanbg1friend.tp2	Thu Feb 11 13:09:02 2016
 @@ -1,56 +1,37 @@
  // Setup
  BACKUP ~XanBG1Friend/Backup~
  AUTHOR ~Kulyok http://forums.pocketplane.net~
 -VERSION ~v9bgee~ /* Thanks to Isaya for changes for v9 for BGEE; Kaeloree did the rest, BGEE-wise */
-+VERSION ~v9bgee BWP Fix 3~ /* Thanks to Isaya for changes for v9 for BGEE; Kaeloree did the rest, BGEE-wise */
++VERSION ~v9bgee BWP Fix 4~ /* Thanks to Isaya for changes for v9 for BGEE; Kaeloree did the rest, BGEE-wise */
  README ~XanBG1Friend/Readme-XanBG1Friend.txt~
  
  
@@ -20,12 +20,17 @@
 +  END
    /* BG:EE tra conversion : Character encoding for BG II for various languages: ensure the name matches the menu choices */
 -  ACTION_DEFINE_ASSOCIATIVE_ARRAY languageencoding BEGIN
+-    "English" => "CP1252"
+-    "Russian" => "CP1251"
+-    "German" => "CP1252"
+-    "French" => "CP1252"
+-    "Italian" => "CP1252"
 +  ACTION_DEFINE_ASSOCIATIVE_ARRAY tra#charsets BEGIN
-     "English" => "CP1252"
-     "Russian" => "CP1251"
-     "German" => "CP1252"
-     "French" => "CP1252"
-     "Italian" => "CP1252"
++    "english" => "CP1252"
++    "russian" => "CP1251"
++    "german" => "CP1252"
++    "french" => "CP1252"
++    "italian" => "CP1252"
    END
 -  OUTER_SPRINT initialencoding ~~
 -  ACTION_PHP_EACH languageencoding AS lang => encoding BEGIN
