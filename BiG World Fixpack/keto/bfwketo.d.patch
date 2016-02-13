@@ -1,0 +1,15 @@
+--- keto\d\bfwketo.d	Mon Nov 15 17:05:50 2004
++++ C:\BWP Patchstudio\patched files\keto\d\bfwketo.d	Sat Feb 13 20:52:33 2016
+@@ -2424,9 +2424,9 @@
+ 
+ 
+ CHAIN IF
+-~InParty("Keto")
+-See("Keto")
+-!StateCheck("Keto",STATE_SLEEPING)
++~InParty("Jaheira")
++See("Jaheira")
++!StateCheck("Jaheira",STATE_SLEEPING)
+ GGT("JaheiraBanditPlot",2)
+ OR(2)
+ G("JaheiraRomanceActive",1)

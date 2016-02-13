@@ -1,0 +1,11 @@
+--- Setup-Keto.tp2	Sat Nov 16 11:47:52 2013
++++ C:\BWP Patchstudio\patched files\Setup-Keto.tp2	Sat Feb 13 20:57:45 2016
+@@ -1,7 +1,7 @@
+ BACKUP ~keto\Backup~
+ AUTHOR ~jcompton@pocketplane.net~
++VERSION ~V4 BWP Fix~
+ README ~keto\KetoReadme.txt~
+-
+ LANGUAGE ~English~
+          ~english~
+          ~keto/english/setup.tra~
