@@ -249,6 +249,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: aranw - Aran Whitehand NPC Beta_Luridel August 14 2015
+
+:: micbaldur's Aran epilogue #24 fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=587224
+
+
+----------------------------------------------------------------------------------------
+
+
 :: arestorationp - Almateria's Restoration Project v3.4
 
 :: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
@@ -1493,10 +1502,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Kiara-Zaiya v1.6.2
+:: Kiara-Zaiya - Kiara-Zaiya v1.6.2
 
 :: Lollorian's patched Revised Suldanessalar
 :: - LINK NOT FOUND -
+
+:: micbaldur's Zaiya epilogue fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=587224
 
 
 ----------------------------------------------------------------------------------------
@@ -2566,6 +2578,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's patchified Harder In-Game Enemies component
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=567301
 
+:: micbaldur's Ninafer epilogue fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=587224
+
 
 ----------------------------------------------------------------------------------------
 
@@ -2607,6 +2622,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's extended  OR() fixes - va#gitfm.baf, va#ustrn.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483244
+
+:: micbaldur's gamebreaking Panda cutscene bugfix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=587310
 
 
 ----------------------------------------------------------------------------------------

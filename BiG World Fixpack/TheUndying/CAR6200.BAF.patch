@@ -1,0 +1,11 @@
+--- TheUndying\bafs\CAR6200.BAF	Sun Sep 16 07:00:46 2007
++++ C:\BWP Patchstudio\patched files\TheUndying\bafs\CAR6200.BAF	Tue Feb 16 22:16:43 2016
+@@ -5,7 +5,7 @@
+ THEN
+     RESPONSE #100
+         SetGlobal("CMNinaBio","GLOBAL",1)
+-        TextScreen("CMNINA1")
++        TextScreen("CMNIAND1")
+         SetGlobal("CMNinaBio","GLOBAL",1)
+         SmallWait(1)
+         SetGlobal("CMNinaBio","GLOBAL",1)

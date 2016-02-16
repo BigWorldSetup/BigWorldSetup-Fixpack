@@ -1,0 +1,10 @@
+--- SETUP-TheUndying.tp2	Tue Feb 10 01:52:51 2015
++++ C:\BWP Patchstudio\patched files\SETUP-TheUndying.tp2	Tue Feb 16 22:17:54 2016
+@@ -1,6 +1,6 @@
+ BACKUP ~TheUndying/backup~
+ AUTHOR ~"http://www.teambg.net"~
+-
++VERSION ~v2.53 BWP Fix~
+ AUTO_TRA ~TheUndying/tra/%s/d~
+ 
+ LANGUAGE ~english~

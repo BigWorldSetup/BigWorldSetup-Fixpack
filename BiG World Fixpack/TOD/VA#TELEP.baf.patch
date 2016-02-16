@@ -1,0 +1,11 @@
+--- TOD\Baf\VA#TELEP.baf	Sun Feb 18 20:09:42 2007
++++ C:\BWP Patchstudio\patched files\TOD\Baf\VA#TELEP.baf	Tue Feb 16 22:28:07 2016
+@@ -17,7 +17,7 @@
+     FadeToColor([20.0],0)
+     ClearAllActions()
+     SetGlobal("VA#TowerTeleport","GLOBAL",2)
+-    ActionOverride("va#pand1",DestroySelf())
++    ActionOverride("va#panda",DestroySelf())
+     PlaySound("EFF_M28")
+     Wait(1)
+     MultiPlayerSync()

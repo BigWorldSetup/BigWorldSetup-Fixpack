@@ -1,0 +1,20 @@
+--- aranw\setup-aranw.tp2	Sat Aug 15 01:14:15 2015
++++ C:\BWP Patchstudio\patched files\aranw\setup-aranw.tp2	Tue Feb 16 22:24:41 2016
+@@ -9,7 +9,7 @@
+ */
+ 
+ /* WeiDU versions newer than v203 allow tp2 level version listing in the .log for troubleshooting  */
+-VERSION @30001
++VERSION ~Beta_Luridel August 14 2015 BWP Fix~
+ 
+ README ~aranw/docs/readme-aranw-%LANGUAGE%.html~ ~aranw/docs/readme-aranw.html~
+ 
+@@ -373,7 +373,7 @@
+ 	
+ 	/* PC Refused Godhood, Romance, Not Married With Children, PC as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+ 	/* TextScreen("C-ARNE24") */
+-		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE34.2da~
++		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE24.2da~
+ 			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+ 			REPLACE 99999 @19  
+ 	

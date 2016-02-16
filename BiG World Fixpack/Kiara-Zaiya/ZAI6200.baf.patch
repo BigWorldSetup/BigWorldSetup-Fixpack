@@ -1,0 +1,9 @@
+--- Kiara-Zaiya\Scripts\ZAI6200.baf	Tue Feb 01 09:16:28 2005
++++ C:\BWP Patchstudio\patched files\Kiara-Zaiya\Scripts\ZAI6200.baf	Tue Feb 16 22:20:14 2016
+@@ -32,5 +32,5 @@
+ THEN
+    RESPONSE #100
+       SetGlobal("ZaiyaBio","GLOBAL",1)
+-      TextScreen("ZAIREND3")
++      TextScreen("ZAIEND3")
+ END
