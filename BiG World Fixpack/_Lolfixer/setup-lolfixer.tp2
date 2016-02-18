@@ -1,6 +1,6 @@
 BACKUP ~lolfixer/backup~
 AUTHOR ~Lollorian~
-VERSION ~10012015~
+VERSION ~19022016~
 
 ALWAYS
   ACTION_CLEAR_ARRAY tutu_convert_itm
@@ -361,6 +361,7 @@ BEGIN ~Creature Stuff - Creature Resource Fixer~
 OUTER_SET existence_fix = 0
 ACTION_IF (FILE_EXISTS "TobEx_ini/TobExCore.ini") AND (FILE_CONTAINS "TobEx_ini/TobExCore.ini" "Existence Sound Fix=1") THEN BEGIN
   PRINT "ToBEx Existence Sound Fix is set! Shifting creature EXISTANCE sounds where applicable..."
+  PRINT "Setting Existance Delay Override to BG1 values for all non-joinable creatures..."
   OUTER_SET existence_fix = 1
   COPY_EXISTING ~PDIALOG.2DA~ ~override~
     PRETTY_PRINT_2DA
@@ -381,6 +382,14 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
       READ_LONG  0x1c0 ~soundreplace3~
       READ_LONG  0x1c4 ~soundreplace4~
       READ_LONG  0x1c8 ~soundreplace5~
+
+      LPF ADD_CRE_EFFECT
+        INT_VAR
+           opcode     = 294
+           target     = 1
+           timing     = 9
+           parameter1 = 500
+      END
 
       PATCH_IF ("%soundreplace%" > 0) THEN BEGIN
         PATCH_PRINT "%SOURCE_FILE% issue: Soundset moved : PICKED_POCKET -> EXISTANCE1"
@@ -1314,7 +1323,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
 
     // Missing Animation Fixer
     READ_SHORT 0x28  "anim"
-	
+
     LOOKUP_IDS_SYMBOL_OF_INT animation animate %anim%
     PATCH_IF ("%anim%" STRING_EQUAL "%animation%") BEGIN
       PATCH_PRINT "%SOURCE_FILE% issue: Missing animation! Assigning Gibberling animation..."
