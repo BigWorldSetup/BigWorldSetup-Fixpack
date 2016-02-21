@@ -1,0 +1,11 @@
+--- Varshoon\Setup-Varshoon.tp2	Sun Jul 03 16:46:26 2011
++++ C:\BWP Patchstudio\patched files\Varshoon\Setup-Varshoon.tp2	Sun Feb 21 12:02:05 2016
+@@ -1,7 +1,7 @@
+ BACKUP ~Varshoon\backup~
+ AUTHOR ~Lava Del'Vortel~
+ README ~Varshoon/Varshoon-ReadMe.txt~
+-
++VERSION ~v4.2 BWP Fix~
+ AUTO_TRA ~Varshoon/languages/%s~
+ 
+ LANGUAGE ~English~

@@ -1617,6 +1617,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: cmorgan's ToBEx compatible ADD_KIT fix
 :: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
+:: micbaldur's Kickout move to Copper Coronet fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=587411
+
 
 ----------------------------------------------------------------------------------------
 
@@ -2832,6 +2835,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's M#Verhaf.CRE fixes
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=585409
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Varshoon - Varshoon NPC v4.2
+
+:: micbaldur's Unseeing Eye banter fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=587434
 
 
 ----------------------------------------------------------------------------------------
