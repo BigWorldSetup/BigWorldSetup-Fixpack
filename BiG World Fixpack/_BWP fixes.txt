@@ -2511,6 +2511,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: lynx's looping cutscene fix
 :: http://www.shsforums.net/topic/33190-glitchy-dwarves/?p=578359
 
+:: Roxanne's FINSOL01 dialogue patch
+:: http://www.shsforums.net/topic/58474-tashia-mod-conflict-with-imoen-romance-mod/#entry584737
+
 
 ----------------------------------------------------------------------------------------
 
