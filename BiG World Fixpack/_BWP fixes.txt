@@ -1416,6 +1416,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Isra_BG2 - Isra for BG2 v2.1
+
+:: Greenhorn's BGT fix and compatibility patch for Ulcaster Academy Ring
+:: http://www.shsforums.net/topic/58571-greenhorns-questions-bugs-and-findings-about-bws/?p=587575
+
+
+----------------------------------------------------------------------------------------
+
+
 :: iwdification - IWDification Beta 3
 
 :: Angel's miscellaneous fixes

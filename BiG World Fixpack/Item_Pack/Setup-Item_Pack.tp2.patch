@@ -1,0 +1,30 @@
+--- Setup-Item_Pack.tp2	Sun Aug 11 01:05:06 2013
++++ C:\BWP Patchstudio\patched files\Setup-Item_Pack.tp2	Thu Feb 25 22:58:10 2016
+@@ -7,7 +7,7 @@
+ 
+ BACKUP ~Item_Pack/Backup~                       // This tells where the Backup directory goes so WeiDU can uninstall
+ AUTHOR "Daulmakan, http://www.shsforums.net/topic/41865-item-pack"  // Author and support topic
+-VERSION ~v1.8~                                  // Mod version
++VERSION ~v1.8 BWP Fix~                          // Mod version
+ //MODDER                                        // Flag for testing purposes (should be disabled when not debugging)
+ README ~Item_Pack/README-Item_Pack.htm~         // Offer to display the Readme before installation
+ 
+@@ -1644,15 +1644,15 @@
+ ACTION_IF FILE_EXISTS_IN_GAME ~FW0100.are~ BEGIN                  // If Engine is Tutu
+ COPY_EXISTING ~_ulcast.dlg~   ~override~
+   DECOMPILE_AND_PATCH BEGIN
+-    REPLACE_TEXTUALLY ~GiveItemCreate("_SW1H19",LastTalkedToBy,0,0,0)~ ~GiveItemCreate("d1ULCAST",LastTalkedToBy,1,1,1)~
++    REPLACE_TEXTUALLY ~GiveItemCreate("_SW1H19",LastTalkedToBy,0,0,0)~ ~GiveItemCreate("_SW1H19",LastTalkedToBy,0,0,0)GiveItemCreate("d1ULCAST",LastTalkedToBy,1,1,1)~
+   END
+   BUT_ONLY
+ END
+ 
+-ACTION_IF FILE_EXISTS_IN_GAME ~AR7200~ BEGIN                      // If Engine is BGT
++ACTION_IF FILE_EXISTS_IN_GAME ~AR7200.are~ BEGIN                  // If Engine is BGT
+ COPY_EXISTING ~ulcast.dlg~   ~override~
+   DECOMPILE_AND_PATCH BEGIN
+-    REPLACE_TEXTUALLY ~GiveItemCreate("SW1H19",LastTalkedToBy)~ ~GiveItemCreate("d1ULCAST",LastTalkedToBy)~
++    REPLACE_TEXTUALLY ~GiveItemCreate("SW1H19",LastTalkedToBy,0,0,0)~ ~GiveItemCreate("SW1H19",LastTalkedToBy,0,0,0)GiveItemCreate("d1ULCAST",LastTalkedToBy,1,1,1)~
+   END
+   BUT_ONLY
+ END
