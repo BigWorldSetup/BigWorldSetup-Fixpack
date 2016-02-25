@@ -1416,7 +1416,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Isra_BG2 - Isra for BG2 v2.1
+:: Item_Pack - Daulmakan's Item Pack v1.8
 
 :: Greenhorn's BGT fix and compatibility patch for Ulcaster Academy Ring
 :: http://www.shsforums.net/topic/58571-greenhorns-questions-bugs-and-findings-about-bws/?p=587575
