@@ -2,6 +2,5 @@
 +++ Setup-TS.tp2	Thu Feb 05 17:03:38 2016
 @@ -13,2 +13,2 @@
 -REQUIRE_FILE ~Data/25Dialog.bif~ ~Please install "Throne Of Bhaal" and the official ToB patch before installation of this mod.~
--REQUIRE_FILE ~Setup-BDToBv168.exe~ ~Please install Baldurdash-WeiDU v1.67 before installation of this mod.~
 +REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ ~Please install "Throne Of Bhaal" and the official ToB patch before this mod.~
-+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-BDToBv168.tp2~ ~0~) OR (MOD_IS_INSTALLED ~Setup-BDToBv173.tp2~ ~0~) ~Please install Baldurdash-WeiDU v1.68 or later before this mod.~
+
