@@ -1,6 +1,22 @@
---- stratagems\sfo\general\lib_macro.tpa	Sun Dec 28 17:55:28 2014
-+++ C:\BWP Patchstudio\patched files\stratagems\sfo\general\lib_macro.tpa	Fri Dec 18 23:47:11 2015
-@@ -335,7 +335,7 @@
+--- lib_macro.tpa	Sun Dec 28 17:55:28 2014
++++ lib_macro2.tpa	Fri Mar 25 18:52:49 2016
+@@ -111,9 +111,14 @@
+   ACTION_IF !VARIABLE_IS_SET ~macro_read_in_spellcodes~ BEGIN
+    OUTER_SPRINT ~macro_read_in_spellcodes~ ~~
+ 
++    ACTION_IF ENGINE_IS ~bgee bg2ee eet~ BEGIN
++       OUTER_SET ids_first_row = 1
++    END ELSE BEGIN
++       OUTER_SET ids_first_row = 0
++    END
+     COPY_EXISTING ~spell.ids~ ~override~
+          READ_2DA_ENTRIES_NOW ~spell_array~ 2
+-         FOR (i=0;i<~spell_array~;i=i+1) BEGIN
++         FOR (i=ids_first_row;i<~spell_array~;i=i+1) BEGIN
+            READ_2DA_ENTRY_FORMER ~spell_array~ i 0 ~spellcode~
+            INNER_PATCH_SAVE ~spellcode~ ~%spellcode%~ BEGIN
+               READ_ASCII 0x1 ~level~ (1)
+@@ -335,7 +340,7 @@
                       DELETE_BYTES 0x0 3
                    END
                    TO_UPPER resource
@@ -9,7 +25,7 @@
                        INNER_ACTION BEGIN
                           COPY_EXISTING "%resource%.spl" "%workspace%"
                                 LPF SPL_read_level RET "RESREF_%resource%_LEVEL"=value END
-@@ -349,7 +349,7 @@
+@@ -349,7 +354,7 @@
                       DELETE_BYTES 0x0 3
                    END
                    TO_UPPER resource
@@ -18,3 +34,28 @@
                        INNER_ACTION BEGIN
                          ACTION_IF FILE_EXISTS_IN_GAME "%resource%.spl" BEGIN
                           COPY_EXISTING "%resource%.spl" "%workspace%"
+@@ -666,16 +671,21 @@
+             SET  ~PROFICIENCY_RATE_%MACRO_class%~=MACRO_rate
+        END
+     BUT_ONLY
+-    COPY_EXISTING profsmax.2da "%workspace%"
++	ACTION_IF ENGINE_IS ~bgee bg2ee eet~ BEGIN
++       OUTER_SET 2da_first_row = 1
++	END ELSE BEGIN
++       OUTER_SET 2da_first_row = 0
++	END
++     COPY_EXISTING profsmax.2da "%workspace%"
+           READ_2DA_ENTRIES_NOW MACRO_prof_max_data 3
+-          FOR (i=0;i<MACRO_prof_max_data;i+=1) BEGIN
++          FOR (i=2da_first_row;i<MACRO_prof_max_data;i+=1) BEGIN
+             READ_2DA_ENTRY_FORMER MACRO_prof_max_data i 0 MACRO_class
+             READ_2DA_ENTRY_FORMER MACRO_prof_max_data i 1 MACRO_first_level
+             READ_2DA_ENTRY_FORMER MACRO_prof_max_data i 2 MACRO_other_level
+             SET "PROFICIENCY_FIRST_LEVEL_MAX_%MACRO_class%"=MACRO_first_level
+             SET "PROFICIENCY_OTHER_LEVEL_MAX_%MACRO_class%"=MACRO_other_level
+           END
+-    BUT_ONLY
++     BUT_ONLY
+    END
+ END
+ 
