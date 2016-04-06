@@ -1,0 +1,11 @@
+--- cdtweaks/setup-cdtweaks.tp2	Sat Apr  2 23:01:13 2016
++++ cdtweaks/setup-cdtweaks2.tp2	Sat Apr  2 23:01:01 2016
+@@ -3608,7 +3608,7 @@
+ 
+ BEGIN @117000 DESIGNATED 1170
+ GROUP @13
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt~ @25
++REQUIRE_PREDICATE GAME_IS ~bg2ee eet soa tob bgt~ @25
+ REQUIRE_PREDICATE NOT FILE_EXISTS_IN_GAME ~bpduearc.spl~ @16 // non-BP
+ 
+ ACTION_FOR_EACH file IN ar0406 ar0702 BEGIN

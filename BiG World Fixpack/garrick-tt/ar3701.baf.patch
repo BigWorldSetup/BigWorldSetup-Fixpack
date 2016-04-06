@@ -1,8 +1,0 @@
---- garrick-tt\baf\ar3701.baf	Thu Mar 12 17:08:55 2015
-+++ C:\BWP Patchstudio\patched files\garrick-tt\baf\ar3701.baf	Wed Dec 30 22:32:07 2015
-@@ -6,4 +6,5 @@
- THEN
- 	RESPONSE #100
- 	PlaySong(%NB_AUDIO_NASHKEL%)
-+	Continue()
- END

@@ -1,5 +1,5 @@
---- stratagems\setup-stratagems.tp2	Tue Jan 20 10:27:56 2015
-+++ C:\BWP Patchstudio\patched files\stratagems\setup-stratagems.tp2	Fri Dec 18 23:48:38 2015
+--- stratagems\setup-stratagems.tp2	Fri Mar 25 21:30:33 2016
++++ stratagems\setup-stratagems2.tp2	Fri Mar 25 21:30:18 2016
 @@ -1,6 +1,6 @@
  BACKUP ~stratagems_external/backup/stratagems~
  AUTHOR ~For help troubleshooting installation problems, go to the Sword Coast Stratagems forum at forums.gibberlings3.net.~
@@ -7,4 +7,66 @@
 +VERSION ~v30 BWP Fix~
  README ~stratagems/readme-stratagems.html~
  AUTO_EVAL_STRINGS
+ 
+@@ -1,6 +1,6 @@
+ BACKUP ~stratagems_external/backup/stratagems~
+ AUTHOR ~For help troubleshooting installation problems, go to the Sword Coast Stratagems forum at forums.gibberlings3.net.~
+-VERSION ~v30~
++VERSION ~v30 BWP Fix~
+ README ~stratagems/readme-stratagems.html~
+ AUTO_EVAL_STRINGS
+ 
+@@ -1744,7 +1744,7 @@
+ BEGIN @3306 DESIGNATED 6800 GROUP @6
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
+-REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
++//REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
+ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~illas01.itm~ @3309
+ 
+ 
+@@ -1760,7 +1760,7 @@
+ BEGIN @3312 DESIGNATED 6810 GROUP @6
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
+-REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
++//REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
+ REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~jumjum.bcs~ || FILE_EXISTS_IN_GAME ~fingrom.cre~) @3313
+ 
+ 
+@@ -1777,7 +1777,7 @@
+ BEGIN @3307 DESIGNATED 6820 GROUP @6
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
+-REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
++//REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
+ REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~yagaft.bcs~ || FILE_EXISTS_IN_GAME finyaga.cre) @3310
+ 
+ 
+@@ -1793,7 +1793,7 @@
+ BEGIN @3308 DESIGNATED 6830 GROUP @6
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
+-REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
++//REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
+ REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~abazdg02.cre~ || FILE_EXISTS_IN_GAME ~finabaz.cre~) @3314
+ 
+ 
+@@ -1809,7 +1809,7 @@
+ BEGIN @3324 DESIGNATED 6840 GROUP @6
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
+-REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
++//REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
+ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~fingrom.cre~ @3314
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#mage.mrk~ @16046
+ 
+@@ -1826,7 +1826,7 @@
+ BEGIN @3315 DESIGNATED 6850 GROUP @6
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
+-REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
++//REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
+ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~fingrom.cre~ @3314
+ 
  

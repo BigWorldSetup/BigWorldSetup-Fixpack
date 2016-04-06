@@ -1,0 +1,254 @@
+--- klatu\setup-klatu.tp2	Fri Mar 25 22:07:41 2016
++++ klatu\setup-klatu2.tp2	Fri Mar 25 22:06:09 2016
+@@ -29,7 +29,7 @@
+ 
+ 		BEGIN @0 DESIGNATED 1000
+ 		GROUP @1 // Content Changes
+-		REQUIRE_PREDICATE GAME_IS ~bg2ee~ @2 //Incompatible Game
++		REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @2 //Incompatible Game
+ 		REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ohnrobe1.itm~ @3 //Required file missing
+ 		COPY ~klatu/itm/kla#glvh.itm~ ~override~
+ 			SAY NAME1 @5 // Gloves
+@@ -48,7 +48,7 @@
+ 		
+ 		BEGIN @147 DESIGNATED 1050
+ 		GROUP @1 // Content Changes
+-		REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @2 //Incompatible Game
++		REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @2 //Incompatible Game
+ 		ACTION_DEFINE_ARRAY idxToChar BEGIN
+ 			~0~ ~1~ ~2~ ~3~ ~4~ ~5~
+ 			~6~ ~7~ ~8~ ~9~ ~a~ ~b~
+@@ -294,7 +294,7 @@
+ 		
+ 		BEGIN @8 DESIGNATED 1010
+ 		GROUP @1
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~wish25.dlg~ @3
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		COPY ~klatu/spl/randomWish.spl~ ~override/kla#wprn.spl~
+@@ -403,7 +403,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @131 DESIGNATED 1020
+ 		GROUP @1
+-		REQUIRE_PREDICATE GAME_IS ~bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @2
+ 		REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~rh#isr.bcs~ @3
+ 		EXTEND_TOP ~rh#isr.bcs~ ~klatu/baf/isra_allow_neutral.baf~
+ 	
+@@ -416,7 +416,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @133 DESIGNATED 1030
+ 		GROUP @1
+-		REQUIRE_PREDICATE GAME_IS ~bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @2
+ 		REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ohhex8.cre~ @3
+ 		REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ohhex25.cre~ @3
+ 		INCLUDE ~klatu/lib/common.tpa~
+@@ -478,7 +478,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @0136 DESIGNATED 1040
+ 		GROUP @1
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		ACTION_FOR_EACH cre IN ~cowenf02.cre~ ~cowenf2.cre~ ~cucow1.cre~ ~cucow2.cre~ ~cucow3.cre~ 
+ 			~cuwiz1.cre~ ~cuwiz2.cre~ ~cuwiz3.cre~ ~cuwiz4.cre~ ~cuwiz5.cre~ ~cuwiz6.cre~ ~cuwizc.cre~
+@@ -519,7 +519,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @44 DESIGNATED 2000
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		COPY_EXISTING_REGEXP GLOB ~^.+\.sto$~ ~override~
+ 			PATCH_IF (SOURCE_SIZE >= 0x9c) BEGIN
+ 				WRITE_LONG 0x1c 0x00
+@@ -535,7 +535,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @46 DESIGNATED 2010
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		INCLUDE ~klatu/lib/wildMageFix.tpa~
+ 		ACTION_FOR_EACH res IN ~ohnrobe1~ ~ohnhelm1~ BEGIN
+@@ -554,7 +554,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @47 DESIGNATED 2020
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~wish.dlg~ @3
+ 		REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~wish25.dlg~ @3
+ 		INCLUDE ~klatu/lib/common.tpa~
+@@ -604,7 +604,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @103 DESIGNATED 2030
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		INCLUDE ~klatu/lib/creatureImmunities.tpa~
+ 		COPY ~klatu/eff/effAnim.eff~ ~override/kla#anim.eff~
+@@ -622,7 +622,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @101 DESIGNATED 2040
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		INCLUDE ~klatu/lib/poisonImmunity.tpa~
+ 		LAF PI_IMPLEMENT_STANDARDIZE_POISON_IMMUNITY END
+@@ -636,7 +636,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @142 DESIGNATED 2050
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		INCLUDE ~klatu/lib/freeAction.tpa~
+ 		LAF FA_IMPLEMENT_FREE_ACTION
+@@ -652,7 +652,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @48 DESIGNATED 2060
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		INCLUDE ~klatu/lib/dropEquipment.tpa~
+ 		COPY ~klatu/spl/drop.spl~ ~override/kla#deqd.spl~
+@@ -672,7 +672,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @50 DESIGNATED 2070
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		INCLUDE ~klatu/lib/dropEquipment.tpa~
+ 		COPY ~klatu/spl/drop.spl~ ~override/kla#deqp.spl~
+@@ -692,7 +692,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @51 DESIGNATED 2080
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		INCLUDE ~klatu/lib/dropEquipment.tpa~
+ 		COPY ~klatu/spl/drop.spl~ ~override/kla#deqi.spl~
+@@ -712,7 +712,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @52 DESIGNATED 2090
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		INCLUDE ~klatu/lib/poisonImmunity.tpa~
+ 		INCLUDE ~klatu/lib/shape.tpa~
+@@ -720,7 +720,7 @@
+ 		COPY ~klatu/spl/failTalk.spl~ ~override/kla#ftlk.spl~
+ 	// better to rely on spell failure, no quick-button confusion for cleric/mages
+ 	// plus, works for BG1EE as well
+-	//	ACTION_IF GAME_IS bg2ee BEGIN
++	//	ACTION_IF GAME_IS bg2ee eet BEGIN
+ 	//		COPY ~klatu/spl/failArcane.spl~ ~override/kla#farc.spl~
+ 	//			LPF REMOVE_ABILITY_EFFECT_SPL END
+ 	//			WRITE_SHORT 0x9a 145
+@@ -821,7 +821,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @105 DESIGNATED 2110
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		INCLUDE ~klatu/lib/unaffectWildMagic.tpa~
+ 		LAF UW_IMPLEMENT_UNAFFECT_SPELLS INT_VAR spellType = 4 END
+@@ -835,7 +835,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @106 DESIGNATED 2120
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		INCLUDE ~klatu/lib/unaffectWildMagic.tpa~
+ 		LAF UW_IMPLEMENT_UNAFFECT_SPELLS INT_VAR spellType = 3 END
+@@ -849,7 +849,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @107 DESIGNATED 2130
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		INCLUDE ~klatu/lib/unaffectWildMagic.tpa~
+ 		LAF UW_IMPLEMENT_UNAFFECT_SPELLS INT_VAR spellType = 5 END
+@@ -863,7 +863,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @138 DESIGNATED 2140
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+ 			LPF SANITIZE_ITM RET ok = ok END
+@@ -894,7 +894,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @139 DESIGNATED 2150
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+ 			LPF SANITIZE_ITM RET ok = ok END
+@@ -924,7 +924,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @141 DESIGNATED 2160
+ 		GROUP @45
+-		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt soa tob bgee bg2ee eet~ @2
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		INCLUDE ~klatu/lib/improvedHasteDelay.tpa~
+ 		LAF HD_IMPLEMENT_REMOVE_IMPROVED_HASTE_DELAY END
+@@ -991,7 +991,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @69 DESIGNATED 3000
+ 		GROUP @70
+-		REQUIRE_PREDICATE GAME_IS ~bgt soa tob bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~bgt soa tob bg2ee eet~ @2
+ 		REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~fwksong.wav~ @3
+ 		COPY	~klatu/wav/mute.wav~ ~override/fwksong.wav~
+ 
+@@ -1004,7 +1004,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @71 DESIGNATED 3010
+ 		GROUP @70
+-		REQUIRE_PREDICATE GAME_IS ~bgt soa tob bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~bgt soa tob bg2ee eet~ @2
+ 		REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~O#Xan.wav~ @3
+ 		COPY	~klatu/wav/mute.wav~ ~override/O#Xan.wav~
+ 	
+@@ -1017,7 +1017,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @140 DESIGNATED 3012
+ 		GROUP @70
+-		REQUIRE_PREDICATE GAME_IS ~bgt soa tob bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~bgt soa tob bg2ee eet~ @2
+ 		REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~rh#adrom.wav~ @3
+ 		COPY	~klatu/wav/mute.wav~ ~override/rh#adrom.wav~
+ 	
+@@ -1030,7 +1030,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @137 DESIGNATED 3015
+ 		GROUP @70
+-		REQUIRE_PREDICATE GAME_IS ~bgt soa tob bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~bgt soa tob bg2ee eet~ @2
+ 		REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~rh#isong.wav~ @3
+ 		COPY	~klatu/wav/mute.wav~ ~override/rh#isong.wav~
+ 	
+@@ -1043,7 +1043,7 @@
+ 	/////////////////////////////////////////////////////////////////
+ 		BEGIN @72 DESIGNATED 3020
+ 		GROUP @70
+-		REQUIRE_PREDICATE GAME_IS ~bg2ee~ @2
++		REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @2
+ 		REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ohnrobe1.itm~ @3
+ 		INCLUDE ~klatu/lib/common.tpa~
+ 		COPY_EXISTING ~ohnrobe1.itm~ ~override~
