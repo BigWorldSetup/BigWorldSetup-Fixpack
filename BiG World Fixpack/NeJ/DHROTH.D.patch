@@ -1,0 +1,11 @@
+--- NeJ2\dlg\DHROTH.D	Sun Dec 26 19:39:42 2004
++++ C:\BWP Patchstudio\patched files\NeJ2\dlg\DHROTH.D	Sun Jan 19 13:55:49 2014
+@@ -315,7 +315,7 @@
+ IF ~~ THEN BEGIN 45
+   SAY ~And please talk to Accalia. She is an initiate at the temple of Tempus. I have recently spoken with her. She is willing to join our expedition.~ [HROT_46]
+   IF ~~ THEN REPLY ~Very well. I shall return shortly.~ DO ~SetGlobal("Supply_Quest","GLOBAL",1)
+-GiveItemCreate("List",Protagonist,1,0,0)
++GiveItemCreate("List",Player1,1,0,0)
+ SetGlobal("Join_Accalia","GLOBAL",1)~ EXIT
+ END
+ 

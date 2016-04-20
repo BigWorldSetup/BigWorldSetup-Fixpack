@@ -1,0 +1,11 @@
+--- Bonehillv275\bafs\BH2103.BAF	Sun May 08 06:20:00 2005
++++ C:\BWP Patchstudio\patched files\Bonehillv275\bafs\BH2103.BAF	Mon Feb 01 20:09:43 2016
+@@ -1,7 +1,6 @@
+ IF
+   Global("BHPrisonerSpawn","BH2103",0)
+-  OR(4)
+-    Global("BHEscortSpawn","GLOBAL",3)
++  OR(3)
+     Global("BHAbrahamArrested","GLOBAL",1)
+     Global("BHHarperArrested","GLOBAL",1)
+     Global("BHBardArrested","GLOBAL",1)

@@ -1,0 +1,12 @@
+--- Bonehillv275\d\BHMART1.d	Wed May 17 11:46:48 2006
++++ C:\BWP Patchstudio\patched files\Bonehillv275\d\BHMART1.d	Sun Jan 24 18:16:39 2016
+@@ -58,7 +58,8 @@
+ EscapeArea()~ EXIT
+ END
+ 
+-IF ~AreaCheck("BH2015")~ THEN BEGIN 11
++IF ~AreaCheck("BH2015")
++!Dead("bharrnes")~ THEN BEGIN 11
+   SAY @18
+   IF ~~ THEN REPLY @19 EXIT
+   IF ~OR(3)

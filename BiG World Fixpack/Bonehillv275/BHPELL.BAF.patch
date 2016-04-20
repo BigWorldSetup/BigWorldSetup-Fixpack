@@ -1,0 +1,21 @@
+--- Bonehillv275\BGT\BCS\BHPELL.BAF	Sat Feb 27 03:38:42 2010
++++ C:\BWP Patchstudio\patched files\Bonehillv275\BGT\BCS\BHPELL.BAF	Wed Feb 03 08:19:36 2016
+@@ -191,4 +191,16 @@
+      SetGlobal("BHAllDone","GLOBAL",3)
+      AddexperienceParty(15000)
+      EndCutSceneMode()
+-END  
+\ No newline at end of file
++END  
++
++IF
++	Global("BH_wielblad","BH0500",0)
++	Global("BHToldOfDeath","GLOBAL",5)
++	Exists("fabio")
++	!See("fabio")
++	AreaCheck("BH0500")
++THEN
++	RESPONSE #100
++		CreateCreature("BHFABIO",[2550.1447],14)
++		SetGlobal("BH_wielblad","BH0500",1)
++END

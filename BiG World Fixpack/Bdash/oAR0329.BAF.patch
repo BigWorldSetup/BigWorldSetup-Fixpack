@@ -1,0 +1,9 @@
+--- Bdash\ThirdP\oAR0329.BAF	Sun Sep 06 03:41:36 2015
++++ C:\BWP Patchstudio\patched files\Bdash\ThirdP\oAR0329.BAF	Tue Mar 22 19:05:40 2016
+@@ -1,5 +1,5 @@
+ IF
+-	Dead("aran02")
++	Dead("aran")
+ 	Global("DearAranJournal","AR0329",0)
+ THEN
+ 	RESPONSE #100

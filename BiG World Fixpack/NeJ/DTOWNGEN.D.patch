@@ -1,0 +1,57 @@
+--- NeJ\Dfiles\DTOWNGEN.D	Thu May 26 14:29:06 2005
++++ C:\BWP Patchstudio\patched files\NeJ\Dfiles\DTOWNGEN.D	Sat Jan 18 22:40:41 2014
+@@ -52,7 +52,7 @@
+ IF ~~ THEN BEGIN 4 // from: 3.0
+   SAY ~Hmmmm.  Maybe you *are* fresh to those names.  Here tell, Lower and Upper Dorn's Deep were dwarven citadels that fell to the goblins a few hundred years ago.  The dwarves were supposed to have an alliance with the elves, but it fell apart, and the orcs and goblins ran rampant over the region.  Probably still some great treasures lying around in those halls, too... but I don't need to tell you that.~ 
+   IF ~Global("Dwarf_Cash", "GLOBAL", 0)~ THEN REPLY ~Hmmmm.  Well, maybe I *am* looking to take them back.  If you were willing to contribute some to the expedition, I'm sure the dwarves would return your contribution a hundred-fold... but I'm not making any promises, mind you.~  DO ~SetGlobal("Dwarf_Cash", "GLOBAL", 1)
+-GiveItemCreate("Misc22", Protagonist, 0, 0, 0)~ GOTO 5
++GiveItemCreate("Misc22", Player1, 0, 0, 0)~ GOTO 5
+   IF ~GlobalGT("Know_Hrothgar","GLOBAL",0)~ THEN REPLY ~I see.  Look, I have some questions about Easthaven.~  GOTO 0
+   IF ~~ THEN REPLY ~I must take my leave.  Farewell.~  EXIT
+ END
+@@ -142,7 +142,7 @@
+ IF ~~ THEN BEGIN 15 // from: 17.2 14.3 13.0 11.2 2.4 2.2
+   SAY ~Ha!  Simmer down there, little one.  No harm meant.  Look... you're new here.  Try some of the local catch - knucklehead trout are our local delicacy.~ 
+   IF ~~ THEN REPLY ~All right, then.  Thank you.  Look, I had some questions about Easthaven that you might be able to help me with.~  DO ~SetGlobal("EH_Race_Hostile", "GLOBAL", 1)
+-GiveItemCreate("Fish", Protagonist, 0, 0, 0)~ GOTO 0
++GiveItemCreate("Fish", Player1, 0, 0, 0)~ GOTO 0
+   IF ~~ THEN REPLY ~Keep your jibes and your fish to yourself, Northerner.  Farewell.~  EXIT
+ END
+ 
+@@ -177,7 +177,7 @@
+ 
+ IF ~~ THEN BEGIN 20 // from: 19.0
+   SAY ~Sure would.  Anything'd be better than hearing the wind whistle across the lake.  Let's hear it, then.~ 
+-  IF ~~ THEN REPLY ~All right, then...~  DO ~GiveItemCreate("Misc27", Protagonist, 0, 0, 0)~ GOTO 21
++  IF ~~ THEN REPLY ~All right, then...~  DO ~GiveItemCreate("Misc27", Player1, 0, 0, 0)~ GOTO 21
+ END
+ 
+ IF ~~ THEN BEGIN 21 // from: 20.0
+@@ -371,9 +371,9 @@
+ 
+ IF ~~ THEN BEGIN 50 // from: 53.3 49.0 47.1 45.1 44.1 43.1
+   SAY ~May the Gods bless your weapons, friends.  And may they see fit to punish those who have attacked our town.~ 
+-  IF ~Global("Easthaven_Help", "GLOBAL", 0)~ THEN REPLY ~I'm off to the tower, then.  And thanks for the blessing - I'll need all the help I can get.~  DO ~GiveItemCreate("Potn42", Protagonist, 1, 0, 0)
+-GiveItemCreate("Potn17", Protagonist, 3, 0, 0)
+-GiveItemCreate("Potn07", Protagonist, 1, 0, 0)
++  IF ~Global("Easthaven_Help", "GLOBAL", 0)~ THEN REPLY ~I'm off to the tower, then.  And thanks for the blessing - I'll need all the help I can get.~  DO ~GiveItemCreate("Potn42", Player1, 1, 0, 0)
++GiveItemCreate("Potn17", Player1, 3, 0, 0)
++GiveItemCreate("Potn07", Player1, 1, 0, 0)
+ SetGlobal("Easthaven_Help", "GLOBAL", 1)~ GOTO 51
+   IF ~Global("Easthaven_Help", "GLOBAL", 1)~ THEN REPLY ~Farewell.~  EXIT
+ END
+@@ -400,10 +400,10 @@
+ 
+ IF ~~ THEN BEGIN 54 // from: 53.2 53.0
+   SAY ~Just my luck.  You'd think I'd crossed Tymora the way life's been throwing "fortunes" at me lately.  No matter, then.  It was a risk.  At least I still have my life.~ 
+-  IF ~~ THEN REPLY ~You know, we're thinking about, er... mounting one last expedition into that crystal tower and taking the, uh, treasure within - though we could use a little help, if you have any extra gear you could give us.  We could, uh, pay you back later.  ~  DO ~GiveItemCreate("Bow05", Protagonist, 0, 0, 0)
+-GiveItemCreate("Potn22", Protagonist, 1, 0, 0)
+-GiveItemCreate("Potn11", Protagonist, 1, 0, 0)
+-GiveItemCreate("Arow10", Protagonist, 20, 0, 0)~ GOTO 55
++  IF ~~ THEN REPLY ~You know, we're thinking about, er... mounting one last expedition into that crystal tower and taking the, uh, treasure within - though we could use a little help, if you have any extra gear you could give us.  We could, uh, pay you back later.  ~  DO ~GiveItemCreate("Bow05", Player1, 0, 0, 0)
++GiveItemCreate("Potn22", Player1, 1, 0, 0)
++GiveItemCreate("Potn11", Player1, 1, 0, 0)
++GiveItemCreate("Arow10", Player1, 20, 0, 0)~ GOTO 55
+   IF ~~ THEN REPLY ~That you do.  You'd best get to safety.~  EXIT
+ END
+ 

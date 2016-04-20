@@ -651,6 +651,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's fixed Fabio dialogue DV
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=580936
 
+:: LW's adaption of dradiel's SoBH-part2-fix v1.01
+:: http://athkatla.cob-bg.pl/viewtopic.php?p=94507&sid=171b03f1e3ac29f4e371640a616594b0#94507
 
 ----------------------------------------------------------------------------------------
 

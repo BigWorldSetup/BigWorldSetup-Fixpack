@@ -1,0 +1,14 @@
+--- NeJ2\dlg\DARUNDEL.D	Thu Mar 30 23:38:12 2006
++++ C:\BWP Patchstudio\patched files\NeJ2\dlg\DARUNDEL.D	Mon Aug 17 15:28:25 2009
+@@ -458,8 +458,9 @@
+ 
+ IF ~~ THEN BEGIN 45
+   SAY ~If these rumors are true, then I suspect that whatever is responsible for disturbing their slumber may be behind the other disturbances as well.~ [ARUN_46]
+-  IF ~Global("To3000","GLOBAL",0)
+-~ THEN GOTO 46
++  IF ~OR(2)
++  Global("To3000","GLOBAL",0)
++  GlobalGT("To3000","GLOBAL",0)~ THEN GOTO 46
+ END
+ 
+ IF ~~ THEN BEGIN 46

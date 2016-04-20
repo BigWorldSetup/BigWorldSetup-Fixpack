@@ -1,0 +1,15 @@
+--- Bonehillv275\bafs\BHGZONE.BAF	Sun May 08 06:19:38 2005
++++ C:\BWP Patchstudio\patched files\Bonehillv275\bafs\BHGZONE.BAF	Tue Jan 26 11:39:34 2016
+@@ -1,9 +1,10 @@
+ IF
+-  Entered([ANYONE])
++  Entered([0])
++  !StateCheck(Lasttrigger,STATE_INVISIBLE)
+   GlobalLT("BHGuardWarning","BH2101",3)
+ THEN
+   RESPONSE #100
+     PlaySound("ALARM1")
+-    SetGlobal("BHGuardWarning","BH2101",2)
++    SetGlobal("BHGuardWarning","BH2101",3)
+ END
+ 

@@ -1,0 +1,11 @@
+--- NeJ\baf\SHLARCT1.baf	Sun Jan 02 19:53:20 2005
++++ C:\BWP Patchstudio\patched files\NeJ\baf\SHLARCT1.baf	Fri Oct 02 09:02:29 2015
+@@ -44,6 +44,6 @@
+ 		UnhideGUI()
+ 		MultiPlayerSync()
+ 		EndCutSceneMode()
+-		EscapeArea()
++		DestroySelf()
+ 		ActionOverride(Player1,StartDialog("Player1",Myself))
+ END
+\ No newline at end of file

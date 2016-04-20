@@ -1,0 +1,22 @@
+--- NeJ\Dfiles\DDENAINI.D	Mon Sep 11 23:06:30 2006
++++ C:\BWP Patchstudio\patched files\NeJ\Dfiles\DDENAINI.D	Sat Jan 18 22:36:21 2014
+@@ -157,7 +157,7 @@
+   IF ~~ THEN REPLY ~Farewell, Denaini.~ DO ~AddexperienceParty(18000)
+ SetGlobal("HolyWaterGiven","GLOBAL",1)
+ SetGlobal("Restore5201","GLOBAL",1)
+-GiveItemCreate("CLCK66", Protagonist, 0, 0, 0)
++GiveItemCreate("CLCK66", Player1, 0, 0, 0)
+ EraseJournalEntry(%To restore the pools of the elven shrine.
+ 
+ We came upon Denaini in Solonor‘s Tower of the Severed Hand.  She told us the sad tale of how the Severed Hand fell and Larrel‘s disastrous attempt at saving his people by casting a Mythal, a form of ancient elven magic.%)
+@@ -169,8 +169,8 @@
+ IF ~~ THEN BEGIN 18
+   SAY ~I thank you.  You do not know how much this means to me.  The priests of Seldarine‘s Hand now know peace and can go to the afterlife.  May this help you in your cause.~
+   IF ~~ THEN REPLY ~May you find peace, Denaini.  Farewell.~ DO ~AddexperienceParty(36000)
+-GiveItemCreate("SLINGED", Protagonist, 0, 0, 0)
+-GiveItemCreate("ZZG7TS", Protagonist, 0, 0, 0)
++GiveItemCreate("SLINGED", Player1, 0, 0, 0)
++GiveItemCreate("ZZG7TS", Player1, 0, 0, 0)
+ EraseJournalEntry(%To lay the priests of the Severed Hand to rest.
+ 
+ We spoke with Denaini in Solonor Tower of the Severed Hand about the other priests.  She told us of their horrid existence and has asked us to put them to proper rest.%)~ EXIT

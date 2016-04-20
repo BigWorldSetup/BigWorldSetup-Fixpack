@@ -1,0 +1,27 @@
+--- Bonehillv275\bafs\BHARRNES.BAF	Tue Feb 09 15:01:16 2010
++++ C:\BWP Patchstudio\patched files\Bonehillv275\bafs\BHARRNES.BAF	Tue Jan 26 11:39:05 2016
+@@ -1,6 +1,14 @@
+ IF
++  Die()
++THEN
++  RESPONSE #100
++    SetGlobal("BHMayorGivesWaterQuest","GLOBAL",4)
++    Continue()
++END
++
++IF
+   Range([PC],30)
+-  NumberOfTimesTalkedTo(0)
++  NumTimesTalkedTo(0)
+   See([PC])
+   Allegiance(Myself,NEUTRAL)
+ THEN
+@@ -17,7 +25,7 @@
+     DialogueInterrupt(FALSE)
+     Polymorph(MAGE_FEMALE_HUMAN)
+     SetGlobal("BHStanding","LOCALS",1)
+-    Shout(125)
++    Shout(ALERT)
+     Enemy()
+     MoveToObject(Player1)
+     ActionOverride("BHTELLIS",MoveToObject(Player1))

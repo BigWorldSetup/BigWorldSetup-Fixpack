@@ -1,0 +1,10 @@
+--- Setup-BDToBv174.tp2	Sat Mar 05 21:27:03 2016
++++ C:\BWP Patchstudio\patched files\Setup-BDToBv174.tp2	Mon Mar 21 08:08:35 2016
+@@ -1,5 +1,6 @@
+ BACKUP ~bdash\Install\Backup~
+ AUTHOR ~Kevin Dorner -- the original creator of Baldurdash, King Diamond -- WeiDU conversion, Vladislav Papper (vladp6@gmail.com) -- compilation, maintenance, additional fixes and optional components~
++VERSION ~v1.74 BWP Fix~
+ 
+ AUTO_TRA ~bdash\language\%s~
+ 
+

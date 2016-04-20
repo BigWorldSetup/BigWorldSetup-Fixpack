@@ -1,0 +1,12 @@
+IF
+	Global("NeJRoT","AR0603",1)
+	Global("EnterJ","AR0603",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		SetGlobal("EnterJ","AR0603",1)
+		HideGUI()
+		StartCutSceneMode()
+		StartCutScene("EnterJ")
+		Continue()
+END

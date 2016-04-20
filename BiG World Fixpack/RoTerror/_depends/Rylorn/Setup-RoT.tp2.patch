@@ -1,0 +1,144 @@
+--- Setup-RoT.tp2	Tue Mar 22 09:25:10 2016
++++ C:\BWP Patchstudio\patched files\Setup-RoT.tp2	Tue Mar 22 13:58:48 2016
+@@ -2,6 +2,8 @@
+ 
+ AUTHOR ~Gilgamesh, King Diamond (WeiDU conversion)~ NO_IF_EVAL_BUG
+ 
++VERSION ~v2.1 BWP Fix~
++
+ AUTO_TRA ~RoTerror/Language/%s~
+ 
+ LANGUAGE ~English~
+@@ -179,13 +181,14 @@
+   REPLACE_TEXTUALLY ~0x08000000~ ~0x4010~ // TOTEMIC
+   REPLACE_TEXTUALLY ~0x10000000~ ~0x4011~ // SHAPESHIFTER
+   REPLACE_TEXTUALLY ~0x20000000~ ~0x4012~ // BEASTFRIEND
+-  REPLACE_TEXTUALLY ~0x40000000~ ~0x401F~ // BARBARIAN
++  REPLACE_TEXTUALLY ~0x40000000~ ~0x40000000~ // BARBARIAN
+ BUT_ONLY_IF_IT_CHANGES
+ 
+ // new state needed to fix Dead() triggers that don't use DVs
+ APPEND ~STATE.IDS~ ~0x00000FC0 STATE_REALLY_DEAD~
+ UNLESS ~0x00000FC0 STATE_REALLY_DEAD~
+-
++APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
++UNLESS ~0x80101FEF CD_STATE_NOTVALID~
+ 
+ ACTION_IF FILE_EXISTS ~script compiler/AICompile.exe~ THEN BEGIN
+   COPY_EXISTING ~PROJECTL.IDS~   ~script compiler~
+@@ -291,9 +294,9 @@
+  REPLACE ~66666664~ @11
+  REPLACE ~66666665~ @12
+ 
+-
+-
+-
++COPY_EXISTING tooltip.2da override
++  SET_2DA_ENTRY 0 0 3 ~ ~
++BUT_ONLY_IF_IT_CHANGES
+ 
+ COPY ~RoTerror/2DA/SCRTXT09.2DA~ ~override~
+  REPLACE ~76190~ @13
+@@ -3514,6 +3517,7 @@
+ EXTEND_BOTTOM  ~AR0400.BCS~  ~RoTerror/SNIP/BAF/bAR0400.BAF~
+ EXTEND_BOTTOM  ~AR0406.BCS~  ~RoTerror/SNIP/BAF/bAR0406.BAF~
+ EXTEND_BOTTOM  ~AR0500.BCS~  ~RoTerror/SNIP/BAF/bAR0500.BAF~
++EXTEND_BOTTOM  ~AR0509.BCS~  ~RoTerror/SNIP/BAF/bAR0509.BAF~
+ EXTEND_BOTTOM  ~AR0522.BCS~  ~RoTerror/SNIP/BAF/bAR0522.BAF~
+ 
+ EXTEND_BOTTOM  ~AR0602.BCS~  ~RoTerror/SNIP/BAF/bAR0602.BAF~
+@@ -3521,6 +3525,15 @@
+ EXTEND_TOP  ~AR0603.BCS~  ~RoTerror/SNIP/BAF/tAR0603.BAF~
+ EXTEND_BOTTOM  ~AR0603.BCS~  ~RoTerror/SNIP/BAF/bAR0603.BAF~
+ 
++ACTION_IF (FILE_EXISTS_IN_GAME ~TT0001.ARE~) THEN BEGIN
++COPY_EXISTING ~AR0603.bcs~ ~override~
++DECOMPILE_BCS_TO_BAF
++REPLACE_TEXTUALLY ~SetGlobal("EnterJ","AR0603",1)~ ~SetGlobal("EnterJ","AR0603",1)
++SetGlobal("NeJRoT","AR0603",1)~
++COMPILE_BAF_TO_BCS
++REPLACE_BCS_BLOCK ~RoTerror/NeJComp/oAR0603.baf~ ~RoTerror/NeJComp/nAR0603.baf~
++END
++
+ EXTEND_TOP  ~AR0700.BCS~  ~RoTerror/SNIP/BAF/tAR0700.BAF~
+ 
+ EXTEND_BOTTOM  ~AR1000.BCS~  ~RoTerror/SNIP/BAF/bAR1000.BAF~
+@@ -3539,19 +3552,39 @@
+  COMPILE_BAF_TO_BCS
+ BUT_ONLY_IF_IT_CHANGES
+ 
++COPY_EXISTING ~CUT41F.BCS~ ~override~
++ DECOMPILE_BCS_TO_BAF
++ REPLACE_TEXTUALLY ~CreateCreature("pptiax",[950.453],0)[^!]*CreateCreature("ppimoen",[1098.537],0)~
++~CreateCreature("pptiax",[950.453],0)
++CreateCreature("RanMarc",[674.623],2)
++CreateCreature("ppimoen",[1098.537],0)~
++ COMPILE_BAF_TO_BCS
++BUT_ONLY_IF_IT_CHANGES
++
+ EXTEND_BOTTOM  ~AR1600.BCS~  ~RoTerror/SNIP/BAF/bAR1600.BAF~
+ 
+ EXTEND_TOP  ~AR2000.BCS~  ~RoTerror/SNIP/BAF/tAR2000.BAF~
+ 
+ EXTEND_BOTTOM  ~AR2100.BCS~  ~RoTerror/SNIP/BAF/bAR2100.BAF~
+ 
+-EXTEND_TOP  ~AR2601.BCS~ ~RoTerror/SNIP/BAF/AR2601.BAF~  //overwriting Drizzt encounter
++// EXTEND_TOP  ~AR2601.BCS~ ~RoTerror/SNIP/BAF/AR2601.BAF~  //overwriting Drizzt encounter
++
++COPY_EXISTING ~AR2601.bcs~ ~override~
++DECOMPILE_BCS_TO_BAF
++REPLACE_TEXTUALLY ~Global("DrizztEncounter","GLOBAL",0)~ ~Global("DrizztEncounter","GLOBAL",0)
++!InParty("Driz2")
++!InParty("Wulfgi2")
++!InParty("Reg2")
++!InParty("Brue2")~
++COMPILE_BAF_TO_BCS
++
++EXTEND_BOTTOM  ~AR2601.BCS~ ~RoTerror/SNIP/BAF/AR2601.BAF~  //alternative Encounter, if Drizzt is in Party
+ 
+ EXTEND_BOTTOM  ~BALDUR.BCS~  ~RoTerror/SNIP/BAF/bBALDUR.BAF~
+ 
+ EXTEND_TOP  ~TELE0700.BCS~  ~RoTerror/SNIP/BAF/tTEL0700.BAF~
+ 
+-EXTEND_BOTTOM  ~DPLAYER3.BCS~  ~RoTerror/SNIP/BAF/bDPLR3.BAF~
++// EXTEND_BOTTOM  ~DPLAYER3.BCS~  ~RoTerror/SNIP/BAF/bDPLR3.BAF~
+ 
+ 
+ ACTION_IF NOT FILE_EXISTS_IN_GAME ~BPDUEARC.SPL~ THEN BEGIN  //if there's no BP installed
+@@ -8929,8 +8962,8 @@
+ //***********************************************************************************
+ BEGIN @1626
+ 
+-REQUIRE_COMPONENT "Setup-RoT.tp2"      "0"  ~You must have RoT mod installed~
+-FORBID_COMPONENT  "Setup-TDD.tp2"      "1"  ~You must not have "TDD Kit Pack" installed to activate RoT kits successfully~
++// REQUIRE_COMPONENT "Setup-RoT.tp2"      "0"  ~You must have RoT mod installed~
++// FORBID_COMPONENT  "Setup-TDD.tp2"      "1"  ~You must not have "TDD Kit Pack" installed to activate RoT kits successfully~
+ 
+ ADD_KIT ~Holy_Swordsman~
+ ~Holy_Swordsman          1           1           1           1           1           1           1           1~
+@@ -9438,7 +9471,7 @@
+ ~Knight                  0       0       0       0       0       0~
+ ~RoTerror/kits/CLABPAKn.2DA~
+ ~ K_P_HO  K_P_HL  K_P_HE  K_P_E  K_P_G  K_P_D  K_P_H ~
+-~0x00050000 6~
++~0x00004000 6~
+ ~Pa0~
+ ~ CHAN09  *  HELM07  BAG26  RING06  RING31  *  BOOT01  AMUL20  BRAC10  BELT06  AROW11,40  BULL03,40  BOLT06,40  POTN52,5  POTN04,2  POTN14,5  HAMM07  SW1H27  STAF08 ~
+ 
+@@ -9450,6 +9483,7 @@
+ COPY ~RoTerror/kits/SPCL376.SPL~         ~override~
+ 
+ /**************************************************************************/
++/*
+ ADD_KIT ~Dark_Paladin~
+ ~Dark_Paladin            1           1           1           1           1           1           1           1~
+ ~Dark_Paladin 2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2 ~
+@@ -9476,7 +9510,7 @@
+   SAY NAME1 @1716
+ 
+ COPY ~RoTerror/kits/SPCL378.EFF~         ~override~
+-
++*/
+ /**************************************************************************/
+ ADD_KIT ~Planar_Druid~
+ ~Planar_Druid            1           0           1           1           0           0           0           1~

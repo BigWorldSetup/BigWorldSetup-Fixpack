@@ -4,3 +4,12 @@
 -REQUIRE_FILE ~Data/25Dialog.bif~ ~Please install "Throne Of Bhaal" and the official ToB patch before installation of this mod.~
 +REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ ~Please install "Throne Of Bhaal" and the official ToB patch before this mod.~
 
+@@ -2731,7 +2731,7 @@
+   SAY NAME1 ~Sol~
+   SAY NAME2 ~Sol~
+  
+-COPY~TS/cre/Sola.cre~         ~override/Sola.cre~
++COPY~TS/cre/SolaTS.cre~         ~override/SolaTS.cre~
+   SAY NAME1 ~Sola~
+   SAY NAME2 ~Sola~
+  

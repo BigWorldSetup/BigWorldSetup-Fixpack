@@ -1,0 +1,80 @@
+--- Bonehillv275\bafs\BH2020.BAF	Sat Aug 04 14:39:38 2007
++++ C:\BWP Patchstudio\patched files\Bonehillv275\bafs\BH2020.BAF	Mon Feb 01 20:14:29 2016
+@@ -23,7 +23,7 @@
+     ActionOverride("BHOscar",EscapeArea())
+     ActionOverride("BHPhilma",Polymorph(FIGHTER_MALE_HUMAN))
+     ActionOverride("BHPhilma",EscapeArea())
+-    SetGlobalTimer("BHStupidTalkTime","GLOBAL",3600)
++    SetGlobalTimer("BHStupidTalkTime","GLOBAL",TWELVE_HOURS)
+     SetGlobal("BHSpiesLeft","BH2020",1)
+ END
+ 
+@@ -32,7 +32,7 @@
+   GlobalLT("BHBasmarReturns","Global",1)
+ THEN
+   RESPONSE #100
+-    CreateCreature("BHBasmar",[385.515],0) // Basmar
++    CreateCreature("BHBasmar",[385.515],0)
+     SetGlobal("BHBasmarReturns","Global",1)
+ END
+ 
+@@ -114,13 +114,15 @@
+ END
+ 
+ IF
+-  Global("BHEscortedParty","GLOBAL",2)
++  Global("BH_Ascue","BH2020",0)
++  GlobalGT("BHEscortedParty","GLOBAL",1)
+   GlobalGT("BHEscortSpawn","GLOBAL",0)
+ THEN
+   RESPONSE #100
+     ActionOverride("BHASCUE",DestroySelf())
+     ActionOverride("BHOGUARD",DestroySelf())
+-    SetGlobal("BHEscortSpawn","GLOBAL",3)
++    SetGlobal("BHEscortedParty","GLOBAL",3)
++    SetGlobal("BH_Ascue","BH2020",1)
+ END
+ 
+ IF
+@@ -137,17 +139,20 @@
+   Global("BHAscueToldParty","BH2020",0)
+ THEN
+   RESPONSE #100
+-    SetGlobalTimer("BHGuiltyTime","GLOBAL",3600)
++    SetGlobalTimer("BHGuiltyTime","GLOBAL",TWELVE_HOURS)
+     SetGlobal("BHAscueToldParty","BH2020",1)
+ END
+ 
+ IF
+   GlobalTimerExpired("BHGuiltyTime","GLOBAL")
+-  GlobalLT("BHEscortSpawn","GLOBAL",2)
++  GlobalLT("BHEscortSpawn","GLOBAL",4)
++  Global("BHAbrahamFree","GLOBAL",0)
++  !Dead("bhabraha")
+ THEN
+   RESPONSE #100
+     CreateCreatureObjectDoor("BHASCUE",Player1,0,0,0)
+-    SetGlobal("BHEscortSpawn","GLOBAL",2)
++    SetGlobal("BHEscortSpawn","GLOBAL",4)
++    ActionOverride("BHAscue",StartDialogue("BHAscue",[PC]))
+ END
+ 
+ IF
+@@ -170,7 +175,7 @@
+   RESPONSE #100
+     CreateCreature("BHFalpir",[411.649],13)
+     SetGlobal("BHAscueToldParty","BH2020",3)
+-    ActionOverride("BHFalpir",StartDialogue("BHFALPIR",[PC]))
++    ActionOverride("BHFalpir",StartDialog("BHFALPIR",[PC]))
+ END
+ 
+ IF
+@@ -179,7 +184,7 @@
+   Global("BHAbrahamGuilty","GLOBAL",0)
+ THEN
+   RESPONSE #100
+-    SetGlobalTimer("BHExecuteTime","GLOBAL",3600)
++    SetGlobalTimer("BHExecuteTime","GLOBAL",TWELVE_HOURS)
+     SetGlobal("BHAbrahamGuilty","GLOBAL",1)
+ END
+ 

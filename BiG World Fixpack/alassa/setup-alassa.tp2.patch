@@ -4,8 +4,8 @@
  BACKUP ~alassa\backup~
  AUTHOR ~SimDing0@hotmail.com~
  
--VERSION ~v2~
-+VERSION ~v2 BWP Fix~
+-VERSION ~v3~
++VERSION ~v3 BWP Fix~
  
  AUTO_TRA ~alassa\%s~
  

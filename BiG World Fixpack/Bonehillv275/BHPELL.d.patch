@@ -1,0 +1,54 @@
+--- Bonehillv275\BGT\d\BHPELL.d	Sat Feb 27 14:21:00 2010
++++ C:\BWP Patchstudio\patched files\Bonehillv275\BGT\d\BHPELL.d	Mon Feb 01 14:34:05 2016
+@@ -185,7 +185,7 @@
+   IF ~~ THEN REPLY @63 EXTERN ~BHGELPAS~ 7
+ END
+ 
+-IF ~Global("BHHandQuestAccept","GLOBAL",1) OR(2) AreaCheck("BH0109") AreaCheck("BH0504") Global("BHToldOfDeath","GLOBAL",0) ~ THEN BEGIN 33
++IF ~Global("BHHandQuestAccept","GLOBAL",1) OR(2) AreaCheck("BH0109") AreaCheck("BH0504") Global("BHToldOfDeath","GLOBAL",0)~ THEN BEGIN 33
+   SAY @64
+   IF ~~ THEN REPLY @65 DO ~SetGlobal("BHHandQuestAccept","GLOBAL",2)~ EXIT
+ END
+@@ -262,9 +262,9 @@
+ 
+ IF ~~ THEN BEGIN 43
+   SAY @99
+-  IF ~!InMyArea("Fabio") !InParty("Fabio")~ THEN DO ~TakePartyItem("BHGHAND") TakePartyItem("BHBPEARL") CreateCreature("BHFabio",[380.172],0) SetGlobal("BHQuestAccept","GLOBAL",6)~ EXIT
+-  IF ~InParty("Fabio")~ THEN DO ~TakePartyItem("BHGHAND") TakePartyItem("BHBPEARL") SetGlobal("BHQuestAccept","GLOBAL",6)~ EXIT
+-  IF ~!InParty("Fabio") InMyArea("Fabio")~ THEN DO ~TakePartyItem("BHGHAND") TakePartyItem("BHBPEARL") SetGlobal("BHQuestAccept","GLOBAL",6)~ EXIT
++  IF ~!InMyArea("Fabio") !IfValidForPartyDialogue("Fabio")~ THEN DO ~TakePartyItem("BHGHAND") TakePartyItem("BHBPEARL") CreateCreature("BHFabio",[380.172],0) SetGlobal("BHQuestAccept","GLOBAL",6)~ EXIT
++  IF ~IfValidForPartyDialogue("Fabio")~ THEN DO ~TakePartyItem("BHGHAND") TakePartyItem("BHBPEARL") SetGlobal("BHQuestAccept","GLOBAL",6)~ EXIT
++  IF ~!IfValidForPartyDialogue("Fabio") InMyArea("Fabio")~ THEN DO ~TakePartyItem("BHGHAND") TakePartyItem("BHBPEARL") SetGlobal("BHQuestAccept","GLOBAL",6)~ EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 44
+@@ -377,17 +377,18 @@
+ 
+ IF ~~ THEN BEGIN 65
+   SAY @138
+-  IF ~!InParty("Fabio")~ THEN DO ~SetGlobal("BHAllDone","GLOBAL",2)~ EXTERN ~BFABIO~ 15
+-  IF ~InParty("Fabio")~ THEN DO ~SetGlobal("BHAllDone","GLOBAL",1)~ EXIT
++  IF ~!IfValidForPartyDialogue("Fabio")~ THEN DO ~SetGlobal("BHAllDone","GLOBAL",2)~ EXTERN ~BFABIO~ 15
++  IF ~IfValidForPartyDialogue("Fabio")~ THEN DO ~SetGlobal("BHAllDone","GLOBAL",1)~ EXIT
+ END
+ 
+-IF ~OR(2) PartyHasItem("BHNOTE1") PartyHasItem("BHPLOT04")~ THEN BEGIN 66
++IF ~OR(3) PartyHasItem("BHNOTE1") PartyHasItem("BHPLOT04") Global("BHMayorGivesWaterQuest","GLOBAL",2)~ THEN BEGIN 66
+   SAY @139
+   IF ~Global("BHQualReport","GLOBAL",0) PartyHasItem("BHNOTE1")~ THEN REPLY @140 GOTO 67
+   IF ~Global("BHQualReport","GLOBAL",1) Dead("BHQUAL")~ THEN REPLY @141 GOTO 70
+   IF ~Global("BHToldPellAboutMayor","GLOBAL",0) PartyHasItem("BHPLOT04")~ THEN REPLY @142 GOTO 73
+-  IF ~!PartyHasItem("BHNOTE1") !PartyHasItem("BHPLOT04")~ THEN REPLY @143 GOTO 75
++  IF ~!PartyHasItem("BHNOTE1") !PartyHasItem("BHPLOT04") GlobalLT("BHMayorGivesWaterQuest","GLOBAL",2)~ THEN REPLY @143 GOTO 75
+   IF ~Global("BHMayorGivesWaterQuest","GLOBAL",2) !Dead("BHARRNESS")~ THEN REPLY @144 GOTO 84
++  IF ~Global("BHQualReport","GLOBAL",1) !Dead("BHQUAL")~ THEN EXIT
+ END
+ 
+ IF ~~ THEN BEGIN 67
+@@ -532,4 +533,4 @@
+   IF ~~ THEN REPLY @187 EXIT
+ END
+ 
+-END
+\ No newline at end of file
++END

@@ -1,0 +1,36 @@
+--- Bonehillv275\bafs\BH2018.baf	Sat Aug 04 14:35:14 2007
++++ C:\BWP Patchstudio\patched files\Bonehillv275\bafs\BH2018.baf	Mon Feb 01 19:56:19 2016
+@@ -36,7 +36,7 @@
+   !Global("BHStupidTalk","GLOBAL",1)
+ THEN
+   RESPONSE #100
+-    SetGlobalTimer("BHStupidTalkTime","GLOBAL",3600)
++    SetGlobalTimer("BHStupidTalkTime","GLOBAL",TWELVE_HOURS)
+     SetGlobal("BHStupidTalk","GLOBAL",1)
+ END
+ 
+@@ -53,13 +53,13 @@
+ END
+ 
+ IF
+-  Global("BHEscortedParty","GLOBAL",2)
++  GlobalGT("BHEscortedParty","GLOBAL",1)
+   GlobalGT("BHEscortSpawn","GLOBAL",0)
+ THEN
+   RESPONSE #100
+     ActionOverride("BHASCUE",DestroySelf())
+     ActionOverride("BHOGUARD",DestroySelf())
+-    SetGlobal("BHEscortSpawn","GLOBAL",3)
++    SetGlobal("BHEscortedParty","GLOBAL",3)
+ END
+ 
+ IF
+@@ -76,7 +76,7 @@
+   Global("BHBardGone","BH2018",1)
+ THEN
+   RESPONSE #100
+-    CreateCreature("BHBalmor",[560.940],4)
++    CreateCreature("BHBalmor",[903.651],4)
+     SetGlobal("BHBardGone","BH2018",2)
+ END
+ 
