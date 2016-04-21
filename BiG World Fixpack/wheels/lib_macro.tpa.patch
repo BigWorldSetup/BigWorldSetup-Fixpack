@@ -1,5 +1,5 @@
 --- wheels\sfo\general\lib_macro.tpa	Tue Feb  9 20:03:14 2016
-+++ wheels\sfo\general\lib_macro2.tpa	Sat Apr  2 22:12:54 2016
++++ wheels\sfo\general\lib_macro.tpa	Sat Apr  2 22:12:54 2016
 @@ -110,10 +110,14 @@
    LOCAL_SPRINT spelltype ""
    ACTION_IF !VARIABLE_IS_SET ~macro_read_in_spellcodes~ BEGIN
