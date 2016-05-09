@@ -2779,15 +2779,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Unique Artifacts v1.12
-
-:: Taimon's area crash fix - d_and_baf.tph, macro.tph
-:: http://www.shsforums.net/index.php?s=&showtopic=22887&view=findpost&p=392339
-
-
-----------------------------------------------------------------------------------------
-
-
 :: UoT - Umbra of Trow v1.0
 
 :: horred the plague's 2-handed ITM animation mismatch fix
