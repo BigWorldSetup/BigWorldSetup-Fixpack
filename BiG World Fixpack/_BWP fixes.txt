@@ -2955,7 +2955,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: wheels - Wheels of Prophecy v3
+:: wheels - Wheels of Prophecy v5
 
 :: CrevsDaak's install failure workaround
 :: http://gibberlings3.net/forums/index.php?showtopic=27692&p=240119
