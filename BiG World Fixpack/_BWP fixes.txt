@@ -1256,6 +1256,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Hammers - Thrown Hammers v6.0
+
+:: fix an indexing error that causes mod to append too many values to tooltip.2da
+:: http://www.shsforums.net/topic/34099-thrown-hammers/page-6#entry588879
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Hanna - Hanna NPC v2.4
 
 :: micbaldur's Hanna - Edwin position fix

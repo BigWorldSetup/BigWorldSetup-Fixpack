@@ -1,14 +1,18 @@
---- hammers\setup-hammers.tp2	Mon Sep 15 11:17:54 2014
-+++ C:\BWP Patchstudio\patched files\hammers\setup-hammers.tp2	Fri Jun 26 22:38:54 2015
-@@ -1,6 +1,6 @@
+--- hammers\setup-hammers.tp2	Mon Jul 11 18:38:16 2016
++++ C:\BWP Patchstudio\patched files\hammers\setup-hammers.tp2	Mon Jul 11 18:39:11 2016
+@@ -1,8 +1,8 @@
  BACKUP ~hammers/backup~
  AUTHOR ~www.shsforums.net/topic/34099-thrown-hammers/~
--VERSION ~v4.1~
-+VERSION ~v4.1 BWP Fix~
+-VERSION ~v6.0~
++VERSION ~v6.0 BWP fix~
  README ~hammers/hammers-%LANGUAGE%.html~ ~hammers/hammers-english.html~
  
  ALWAYS
-@@ -82,7 +82,7 @@
+  ACTION_IF ENGINE_IS ~bgee bg2ee iwdee~ BEGIN
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY charsetsTable BEGIN
+@@ -108,11 +108,11 @@
+       SPRINT rz ~$ $ 4~
+       FOR (i = 0; i < (rw - 3); i += 1) BEGIN //Cycle through rows
          SPRINT rz ~%rz%~ ^ ~%rx%~ ^ ~%ry%~
        END
      END ELSE BEGIN
@@ -17,3 +21,5 @@
          SPRINT cz ~%cz%~ ^ ~%rx%~ ^ ~%ry%~
        END
      END
+   BUT_ONLY
+ 
