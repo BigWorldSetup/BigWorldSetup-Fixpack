@@ -744,6 +744,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: cdtweaks - Tweaks Anthology Beta 4
+
+:: Mike1072's reindexing patch for item files with effects before abilities
+:: http://gibberlings3.net/forums/index.php?showtopic=27884&p=245250
+
+
+----------------------------------------------------------------------------------------
+
+
 :: ChaosKnight - Askaria Quest and Chaos Knight Kit v1.3
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
