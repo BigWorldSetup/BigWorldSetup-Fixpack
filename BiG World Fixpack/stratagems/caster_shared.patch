@@ -1,0 +1,24 @@
+--- stratagems\caster_shared\caster_shared.tph	Fri Dec 26 18:58:24 2014
++++ stratagems\caster_shared\caster_shared.tph	Wed Apr  8 21:05:04 2015
+@@ -307,12 +307,20 @@
+ DEFINE_ACTION_MACRO read_in_spells_per_level BEGIN
+   ACTION_IF !VARIABLE_IS_SET macro_read_in_spells_per_level BEGIN
+      OUTER_SET macro_read_in_spells_per_level=1
++// Unnerfed bard spell table compatibility
++// Get number of columns in bard spell table to determine max. bard spell level
++     COPY_EXISTING ~mxsplbrd.2da~ ~override~
++        COUNT_2DA_COLS col_count
++     BUT_ONLY
++     OUTER_SET bard_spell_levels = col_count - 1 
++     PRINT "Max Bard Spell Level %bard_spell_levels%" // Display to user for sanity check
+      ACTION_DEFINE_ASSOCIATIVE_ARRAY macro_spell_2das BEGIN
+           MXSPLWIZ=>9
+           MXSPLDRU=>7
+           MXSPLPRS=>7
+           MXSPLWIS=>7
+-          MXSPLBRD=>6
++//          MXSPLBRD=>6
++          MXSPLBRD=>~%bard_spell_levels%~ // Set max bard spell level for reading in spells per level
+      END
+      ACTION_DEFINE_ASSOCIATIVE_ARRAY macro_spell_name_map BEGIN
+           MXSPLWIZ=>mage
