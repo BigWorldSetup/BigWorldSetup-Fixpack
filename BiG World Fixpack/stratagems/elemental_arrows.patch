@@ -1,5 +1,5 @@
 --- stratagems\item\elemental_arrows.tpa	Wed Jan 14 22:04:20 2015
-+++ stratagems\item\elemental_arrows2.tpa	Tue Feb  3 12:45:12 2015
++++ stratagems\item\elemental_arrows.tpa	Tue Feb  3 12:45:12 2015
 @@ -14,7 +14,14 @@
         END
         LAF edit_item STR_VAR item=arow09 editstring=~patch_effect=>patch_data say_description=>16012~ END
