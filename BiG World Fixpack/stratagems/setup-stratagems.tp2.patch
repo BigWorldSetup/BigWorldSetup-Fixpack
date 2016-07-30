@@ -1,5 +1,5 @@
 --- stratagems\setup-stratagems.tp2	Fri Mar 25 21:30:33 2016
-+++ stratagems\setup-stratagems2.tp2	Fri Mar 25 21:30:18 2016
++++ stratagems\setup-stratagems.tp2	Fri Mar 25 21:30:18 2016
 @@ -1,6 +1,6 @@
  BACKUP ~stratagems_external/backup/stratagems~
  AUTHOR ~For help troubleshooting installation problems, go to the Sword Coast Stratagems forum at forums.gibberlings3.net.~
