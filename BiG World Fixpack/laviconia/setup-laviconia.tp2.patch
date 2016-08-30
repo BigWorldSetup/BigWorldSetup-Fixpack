@@ -3,8 +3,8 @@
 @@ -1,6 +1,6 @@
  BACKUP ~laviconia/backup~
  AUTHOR ~www.shsforums.net/topic/44027-laviconia-tweak/~
--VERSION ~v4~
-+VERSION ~v4 BWP Fix~
+-VERSION ~v5~
++VERSION ~v5 BWP Fix~
  README ~laviconia/laviconia-readme.txt~
  
  AUTO_TRA ~laviconia/translations/%s~
