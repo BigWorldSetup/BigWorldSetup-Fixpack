@@ -1,0 +1,10 @@
+//code adapted from the NPC Kitpack
+
+IF
+  InParty(Myself)
+  Global("QD_Updated_Kit_Xan","LOCALS",0)
+THEN
+  RESPONSE #100
+    AddKit(D5BLADS)
+    SetGlobal("QD_Updated_Kit_Xan","LOCALS",1)
+END
