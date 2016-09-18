@@ -1,5 +1,15 @@
 --- divine_remix\setup-divine_remix.tp2	Tue Mar 17 19:20:30 2015
 +++ C:\BWP Patchstudio\patched files\divine_remix\setup-divine_remix.tp2	Sun Jun 28 20:58:23 2015
+@@ -1797,7 +1797,7 @@
+ 
+ //Alignment changes
+ COPY_EXISTING ~alignmnt.2da~ ~override~
+-   REPLACE_TEXTUALLY ~^\(DRUID\|FIGHTER_DRUID\|TOTEMIC_DRUID\|SHAPESHIFTER\|BEAST_FRIEND\)[ %TAB%]+.+~ ~\1 0 1 0 1 1 1 0 1 0~
++  REPLACE_TEXTUALLY ~^\(DRUID\|FIGHTER_DRUID\|TOTEMIC_DRUID\|SHAPESHIFTER\|BEAST_FRIEND\)[ %TAB%]~ ~\1 0 1 0 1 1 1 0 1 0~
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ PRINT @3
+
 @@ -31,7 +31,7 @@
  
  END
