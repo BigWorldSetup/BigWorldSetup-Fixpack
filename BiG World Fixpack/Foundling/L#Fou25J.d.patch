@@ -1,0 +1,32 @@
+--- Foundling\Dialogues\L#Fou25J.d	2015-05-21 00:24:46.000000000 +0200
++++ Foundling\Dialogues\L#Fou25J.d	2016-10-30 11:26:31.553134600 +0100
+@@ -407,24 +407,24 @@
+ 
+ CHAIN L#Fou25J Love012
+ @188 /* I need to think about it. */
+-DO ~SetGlobal("L#FouToBTimeredTalk","GLOBAL",11)~ EXIT
++DO ~SetGlobal("L#FouToBTimeredTalk","GLOBAL",12)~ EXIT
+ 
+ CHAIN L#Fou25J Love013
+ @189 /* I'm not sure if that's for me, but I may think about it. */
+-DO ~SetGlobal("L#FouToBTimeredTalk","GLOBAL",11)~ EXIT
++DO ~SetGlobal("L#FouToBTimeredTalk","GLOBAL",12)~ EXIT
+ 
+ 
+ CHAIN L#Fou25J Love014
+ @190 /* I'm not everyone, though. */
+-DO ~SetGlobal("L#FouToBTimeredTalk","GLOBAL",11)~ EXIT
++DO ~SetGlobal("L#FouToBTimeredTalk","GLOBAL",12)~ EXIT
+ 
+ CHAIN L#Fou25J Love015
+ @191 /* Maybe. */
+-DO ~SetGlobal("L#FouToBTimeredTalk","GLOBAL",11)~ EXIT
++DO ~SetGlobal("L#FouToBTimeredTalk","GLOBAL",12)~ EXIT
+ 
+ CHAIN L#Fou25J Love002
+ @192 /* Fine.  I won't bother you. */
+-DO ~SetGlobal("L#FouToBTimeredTalk","GLOBAL",11)~ EXIT
++DO ~SetGlobal("L#FouToBTimeredTalk","GLOBAL",12)~ EXIT
+  
+ //////////////////////////
+ ///////SARADUSH///////////
