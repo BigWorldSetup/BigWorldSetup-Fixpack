@@ -1,0 +1,12 @@
+--- Skie\BAF\AR0808.baf	Mon Apr 25 18:09:48 2011
++++ C:\BWP Patchstudio\patched files\Skie\BAF\AR0808.baf	Thu Sep 22 09:06:44 2016
+@@ -7,6 +7,6 @@
+ RESPONSE #100
+ SetGlobal("SkieBodhiServant","GLOBAL",1)
+ CreateCreatureObjectOffset("1xSkieVa",Player1,[10.10])
+-ActionOverride("1xSkieVa",StartDialogueNoSet(Player1))
++ActionOverride("vamold01",StartDialogueNoSet(Player1))
+ Continue()
+-END
+\ No newline at end of file
++END
