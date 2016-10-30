@@ -1,0 +1,15 @@
+--- com_encounters\bafs\UCMG2200.BAF	Sun Jan 10 14:17:44 2010
++++ C:\BWP Patchstudio\patched files\com_encounters\bafs\UCMG2200.BAF	Thu Sep 22 13:58:52 2016
+@@ -9,9 +9,9 @@
+ 		CreateCreature("uddrow33",[1764.2666],14) // Drow Warrior
+ 		CreateCreature("uddrow35",[1490.2665],6) // Priestess of Lolth
+ 		CreateCreature("uddrow35",[1335.3200],0) // Priestess of Lolth
+-		CreateCreature("uddrow33",[4099.2434],6) 		
+-                CreateCreature("uddrow33",[4152.2508],0)
+-                 		SetGlobal("UcmMoreDrow","GLOBAL",1)
++		CreateCreature("uddrow33",[3909.2557],6)
++		CreateCreature("uddrow33",[3952.2618],0)
++		SetGlobal("UcmMoreDrow","GLOBAL",1)
+ END
+ 
+ 
