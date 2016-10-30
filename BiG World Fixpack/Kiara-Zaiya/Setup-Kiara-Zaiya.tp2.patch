@@ -1,5 +1,5 @@
 --- Setup-Kiara-Zaiya.tp2	Sun Dec 12 17:38:22 2010
-+++ C:\BWP Patchstudio\patched files\Setup-Kiara-Zaiya.tp2	Sun Nov 22 14:53:56 2015
++++ C:\BWP Patchstudio\patched files\Setup-Kiara-Zaiya.tp2	Thu Sep 22 10:55:12 2016
 @@ -4,7 +4,7 @@
  
  // Isaya: version information removed from the tra files and set here (using a new WeiDU feature)
@@ -18,6 +18,21 @@
  
  // Isaya : additional code for V1.6.1, retrieved from BG2Fixpack
  // Addition of STATE_REALLY_DEAD state, used by several scripts modified by Lollorian
+@@ -216,10 +216,10 @@
+   SAY UNIDENTIFIED_DESC @26
+ COPY ~Kiara-Zaiya\Amaralis\ALTEIMU.spl~ ~override\ALTEIMU.spl~
+ COPY ~Kiara-Zaiya\Items\AMASWD.itm~ ~override\AMASWD.itm~
+-  SAY NAME1 @190
+-  SAY NAME2 @191
+-  SAY UNIDENTIFIED_DESC @192
+-  SAY DESC @193
++  SAY NAME1 @246
++  SAY NAME2 @247
++  SAY UNIDENTIFIED_DESC @248
++  SAY DESC @249
+ // Isaya : version 1.6.2
+ // Add the default soundset using FEMALE4
+ COPY ~Kiara-Zaiya\Creatures\Zaiya.cre~ ~override\Zaiya.cre~
 @@ -322,10 +322,23 @@
          ~Kiara-Zaiya\Scripts\CutL1.baf~
          ~Kiara-Zaiya\Scripts\CutL2.baf~
