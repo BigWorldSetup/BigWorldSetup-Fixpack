@@ -1,0 +1,11 @@
+--- tb#quest\lotr\compile\tb#001.baf	Wed Jul 28 16:41:12 2004
++++ C:\BWP Patchstudio\patched files\tb#quest\lotr\compile\tb#001.baf	Thu Sep 22 06:12:53 2016
+@@ -267,7 +267,7 @@
+ THEN
+     RESPONSE #100
+     	     CreateCreatureObject("tb#lotrl",Player1,0,0,0)
+-    	     ActionOverride("tb#lotrl",DisplayStringHead("tb#lotr",@33))
++    	     ActionOverride("tb#lotrl",DisplayStringHead("tb#lotrl",@33))
+     	     SetGlobalTimer("tb#lotramn","global",30)
+ END
+ 
