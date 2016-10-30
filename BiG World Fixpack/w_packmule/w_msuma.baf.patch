@@ -1,0 +1,11 @@
+--- w_packmule\w_msuma.baf	Sat Nov 16 10:14:34 2013
++++ C:\BWP Patchstudio\patched files\w_packmule\w_msuma.baf	Thu Oct 27 15:51:50 2016
+@@ -10,7 +10,7 @@
+     AreaCheck("AR2200")
+ THEN
+   RESPONSE #100
+-    MoveGlobalObject("W_MULE",Protagonist)
++    MoveGlobalObject("W_MULE",Player1)
+     ActionOverride("W_MULE",MoveToOffset([2.3]))
+     SetGlobal("W_MuleMo","GLOBAL",2)
+ END

@@ -1,0 +1,16 @@
+--- w_packmule\area_ext.baf	Sat Nov 16 10:14:34 2013
++++ C:\BWP Patchstudio\patched files\w_packmule\area_ext.baf	Thu Oct 27 15:48:44 2016
+@@ -3,11 +3,11 @@
+   !Global("W_MWAIT","GLOBAL",3)
+ //  !InActiveArea("W_MULE")
+   !InActiveArea("W_MSUMA")  
+-  InActiveArea(Protagonist)
++  InActiveArea(Player1)
+ THEN
+   RESPONSE #100
+     SetGlobal("W_MuleMo","GLOBAL",1)
+-    MoveGlobalObjectOffScreen("W_MSUMA",Protagonist)
++    MoveGlobalObjectOffScreen("W_MSUMA",Player1)
+     ActionOverride("W_MSUMA",JumpToPoint([1.1]))
+ END
+ IF

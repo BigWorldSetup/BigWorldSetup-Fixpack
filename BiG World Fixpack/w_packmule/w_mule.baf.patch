@@ -1,0 +1,31 @@
+--- w_packmule\w_mule.baf	Wed Dec 04 00:06:12 2013
++++ C:\BWP Patchstudio\patched files\w_packmule\w_mule.baf	Thu Oct 27 15:52:59 2016
+@@ -84,8 +84,8 @@
+ 
+ IF
+   Or(2)
+-    CheckStat(Protagonist,1,185)
+-    HasItemEquiped("BOOT01",Protagonist)
++    CheckStat(Player1,1,185)
++    HasItemEquiped("BOOT01",Player1)
+   Global("W_MSPEED","LOCALS",0)
+ THEN
+   RESPONSE #100
+@@ -94,8 +94,8 @@
+ END
+ 
+ IF
+-  CheckStat(Protagonist,0,185)
+-  !HasItemEquiped("BOOT01",Protagonist)
++  CheckStat(Player1,0,185)
++  !HasItemEquiped("BOOT01",Player1)
+   Global("W_MSPEED","LOCALS",1)
+ THEN
+   RESPONSE #100
+@@ -288,4 +288,4 @@
+   RESPONSE #100
+     RealSetGlobalTimer("W_TRAWA","LOCALS",45)
+     SpellRES("W_MULE",Myself)
+-END
+\ No newline at end of file
++END
