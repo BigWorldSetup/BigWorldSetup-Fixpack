@@ -1,0 +1,10 @@
+--- dq\dialog\ysakil.d	Mon Oct 07 12:10:28 2013
++++ C:\BWP Patchstudio\patched files\dq\dialog\ysakil.d	Fri Sep 23 17:05:38 2016
+@@ -220,6 +220,7 @@
+ 	IF~~THEN REPLY @4872
+ 	 DO~SetGlobal("ysTalkedToAkil","GLOBAL",2)
+       SetGlobal("ysTalkedToRimon","GLOBAL",3)
++	  SetGlobal("ysTalkedToLeron","GLOBAL",3)
+       ActionOverride("ysakil",EscapeAreaObject("travys0413"))~
+ 	EXIT
+ END

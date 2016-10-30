@@ -1,0 +1,12 @@
+--- dq\dialog\yscado.d	Sat Feb 22 22:05:42 2014
++++ C:\BWP Patchstudio\patched files\dq\dialog\yscado.d	Fri Sep 23 17:01:43 2016
+@@ -110,7 +110,8 @@
+   SAY @1067
+   IF ~~ THEN
+ 	  JOURNAL @63
+-    DO~SetGlobal("ysTalkedToCado","GLOBAL",1)~
++    DO~SetGlobal("ysTalkedToCado","GLOBAL",1)
++	  SetGlobal("ysCerendorThief","GLOBAL",1)~
+   EXIT
+ END
+ 

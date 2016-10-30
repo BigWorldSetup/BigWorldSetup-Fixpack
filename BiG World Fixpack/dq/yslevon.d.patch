@@ -1,0 +1,17 @@
+--- dq\dialog\yslevon.d	Tue Oct 08 12:35:54 2013
++++ C:\BWP Patchstudio\patched files\dq\dialog\yslevon.d	Fri Sep 23 14:49:50 2016
+@@ -67,10 +67,10 @@
+ //---------------------------------------------------------
+ IF ~Global("ysTalkedToAkil","GLOBAL",2)~ THEN BEGIN 6
+ 	SAY @4968
+-	IF~CheckStatLT(Myself,11,CHR)~THEN REPLY @4969 GOTO 7
+-	IF~CheckStatGT(Myself,10,CHR)
+-     CheckStatLT(Myself,14,CHR)~THEN REPLY @4969 GOTO 8
+-	IF~CheckStatGT(Myself,13,CHR)~THEN REPLY @4969 GOTO 9
++	IF~CheckStatLT(LastTalkedToBy(Myself),11,CHR)~THEN REPLY @4969 GOTO 7
++	IF~CheckStatGT(LastTalkedToBy(Myself),10,CHR)
++     CheckStatLT(LastTalkedToBy(Myself),14,CHR)~THEN REPLY @4969 GOTO 8
++	IF~CheckStatGT(LastTalkedToBy(Myself),13,CHR)~THEN REPLY @4969 GOTO 9
+ END
+ 
+ //---------------------------------------------------------

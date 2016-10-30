@@ -1,0 +1,13 @@
+--- dq\dialog\ysailoth.d	Thu Apr 30 01:12:01 2015
++++ C:\BWP Patchstudio\patched files\dq\dialog\ysailoth.d	Fri Sep 23 16:57:29 2016
+@@ -114,10 +114,8 @@
+ 		Global("ys_FoundWizard","GLOBAL",1)~ THEN BEGIN BLK15
+ 	SAY @1651
+ 	IF~InParty("Jaheira")~THEN
+-		DO ~SetGlobal("ys_TalkedToGarGel","GLOBAL",1)~
+ 		EXTERN JAHEIRAJ CHBLK3
+  	IF~!InParty("Jaheira")~THEN
+-		DO ~SetGlobal("ys_TalkedToGarGel","GLOBAL",1)~
+ 	 	REPLY @1652 GOTO BLK16
+ END
+ 
