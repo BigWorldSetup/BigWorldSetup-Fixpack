@@ -1,5 +1,5 @@
 --- Innershade\Setup-Innershade.tp2	Fri Jan 30 01:20:44 2015
-+++ C:\BWP Patchstudio\patched files\Innershade\Setup-Innershade.tp2	Sat Jan 16 19:20:29 2016
++++ C:\BWP Patchstudio\patched files\Innershade\Setup-Innershade.tp2	Mon Oct 24 15:58:37 2016
 @@ -1,7 +1,7 @@
  BACKUP ~Innershade\backup~
  AUTHOR ~Lava Del'Vortel~
@@ -44,3 +44,37 @@
  
  
  
+@@ -642,10 +642,23 @@
+ 
+ MKDIR save
+ 
+-COPY ~Innershade/WMPIcon/mapicons.bam~ ~Override/mapicons.bam~
++//COPY ~Innershade/WMPIcon/mapicons.bam~ ~Override/mapicons.bam~
+ 
+ INCLUDE ~Innershade/WMPIcon/WMP2/worldmap.tph~
++INCLUDE ~Innershade/WMPIcon/WMP2/add_map_icons.tpa~
+ 
++LAUNCH_ACTION_FUNCTION ~ADD_MAP_ICONS~
++  INT_VAR 
++    icon_index = 18
++  STR_VAR 
++    worldmap      = ~worldmap~
++    path_to_icons = ~Innershade/WMPIcon/mapicons.bam~
++  RET 
++    icons_added    = icons_added
++    new_icon_index = new_icon_index
++END
++PRINT ~Innershade mapIcon added. New mapIcons added are: %icons_added%~
++PRINT ~Innershade mapIcon patched. New mapIcon number is: %new_icon_index%~
+ 
+ //**************************************************
+ // Worldmap patching - do this last so we can patch the new areas too
+@@ -659,7 +672,7 @@
+   OUTER_SPRINT strName "Innershade" // area name, like "Waukeen's Promenade"
+   OUTER_SPRINT strDesc "Innershade" // area description which will show up when hovering the area on the worldmap
+ 
+-  OUTER_SET mapIcon = 29              // map icon
++  OUTER_SET mapIcon = %new_icon_index% // map icon
+   OUTER_SET xCoord  = 1023            // x coordinate
+   OUTER_SET yCoord  = 609             // y coordinate
+   OUTER_SET tTime   = 4              // travel time, *4, so two means eight hours
