@@ -1,0 +1,15 @@
+--- ruad\ruad\ruad.d	Thu Jan 20 19:50:55 2011
++++ C:\BWP Patchstudio\patched files\ruad\ruad\ruad.d	Mon Sep 26 18:57:22 2016
+@@ -1053,10 +1053,10 @@
+   SAY @3463 = @3464 = @3101
+   IF ~~ THEN REPLY @3102 GOTO Upgrade
+   IF ~~ THEN REPLY @3103 EXIT
+-  IF ~NumItemsPartyGT("MISC6S",2) NumItemsPartyGT("MISCAU",1) NumItemsPartyGT("RESTORE",1) NumItemsPartyGT("MISC45",1)
++  IF ~NumItemsPartyGT("MISC6W",2) NumItemsPartyGT("MISCAU",1) NumItemsPartyGT("RESTORE",1) NumItemsPartyGT("MISC45",1)
+       PartyGoldGT(49999)~
+       THEN REPLY @3104 DO ~TakePartyGold(50000)			DestroyGold(50000)
+-     		           TakePartyItemNum("MISC6S",3)
++     		           TakePartyItemNum("MISC6W",3)
+      		           TakePartyItemNum("MISCAU",2)
+      		           TakePartyItemNum("RESTORE",2)
+      		           TakePartyItemNum("MISC45",2)		DestroyAllEquipment()
