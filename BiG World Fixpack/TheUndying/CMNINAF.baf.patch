@@ -1,0 +1,10 @@
+--- TheUndying\bafs\CMNINAF.baf	Sat Apr 11 01:54:28 2015
++++ C:\BWP Patchstudio\patched files\TheUndying\bafs\CMNINAF.baf	Tue Sep 27 05:21:34 2016
+@@ -284,6 +284,7 @@
+ IF
+ 	InParty(Myself)
+ 	AreaCheck("AR2807")
++	Dead("dragblac")
+ 	CombatCounter(0)
+ 	Global("NinaDragon1","GLOBAL",0)
+ THEN
