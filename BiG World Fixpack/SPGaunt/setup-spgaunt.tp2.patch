@@ -1,0 +1,9 @@
+--- setup-spgaunt.tp2	Sun Sep 20 10:47:04 2009
++++ C:\BWP Patchstudio\patched files\setup-spgaunt.tp2	Thu Sep 22 07:35:06 2016
+@@ -1,5 +1,6 @@
+ BACKUP ~spgaunt\backup~
+ AUTHOR ~zyraen@hotmail.com~
++VERSION ~1.16 BWP Fix~
+ // ALWAYS
+ //  AT_INTERACTIVE_EXIT ~VIEW readme-btl.html~
+ // END

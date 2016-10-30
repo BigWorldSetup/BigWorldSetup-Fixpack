@@ -1,0 +1,11 @@
+--- SPGaunt\AR1512.baf	Thu Sep 10 23:46:00 2009
++++ C:\BWP Patchstudio\patched files\SPGaunt\AR1512.baf	Thu Sep 22 07:30:36 2016
+@@ -2,7 +2,7 @@
+ 
+ IF 
+ Global("AsylumPlot","GLOBAL",41)
+-!AreaCheckObject("AR1512","ppbodhi")
++!AreaCheckObject("AR1512","ppbodhi4")
+ Global("Z#GauntSpawn","GLOBAL",0)
+ THEN 
+ RESPONSE #100
