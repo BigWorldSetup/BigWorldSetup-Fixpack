@@ -1,0 +1,459 @@
+--- impasylum\setup-impasylum.tp2	Sat Apr 06 17:58:02 2013
++++ C:\BWP Patchstudio\patched files\impasylum\setup-impasylum.tp2	Sun Oct 30 16:54:37 2016
+@@ -16,7 +16,7 @@
+ 
+ README ~impasylum/readme-impasylum.htm~
+ 
+-VERSION ~v101~
++VERSION ~v101 BWP Fix~
+ 
+ LANGUAGE ~English~ ~English~ ~impasylum/English/setup.tra~
+ LANGUAGE ~French~ ~French~ ~impasylum/English/setup.tra~ ~impasylum/French/setup.tra~
+@@ -254,6 +254,447 @@
+ 
+ // I hate having to change the areas this way, but there doesn't seem to be any way around it.
+ COPY ~impasylum/Areas~ ~override~ // Exactly the same as the original areas, but with certain creatures swapped around.  Namely, made resting more difficult.
++
++COPY_EXISTING ~AR1513.ARE~ ~override/AR1513.ARE~
++  PATCH_IF (SOURCE_SIZE > 0x11b) THEN BEGIN
++
++     FOR ( i = SHORT_AT 0x64; i; --i ) BEGIN
++    LAUNCH_PATCH_FUNCTION ~fj_are_structure~
++      INT_VAR
++         fj_delete_mode = i -1
++      STR_VAR
++         fj_structure_type = spawn
++    END
++  END
++
++    LAUNCH_PATCH_FUNCTION ~fj_are_structure~
++      INT_VAR
++         fj_cre_strref0 = RESOLVE_STR_REF (#10134)
++         fj_cre_strref1 = RESOLVE_STR_REF (#10134)
++         fj_cre_strref2 = RESOLVE_STR_REF (#10134)
++         fj_cre_strref3 = RESOLVE_STR_REF (#10134)
++         fj_cre_strref4 = RESOLVE_STR_REF (#10134)
++         fj_cre_strref5 = RESOLVE_STR_REF (#10134)
++         fj_cre_strref6 = RESOLVE_STR_REF (#10134)
++         fj_cre_strref7 = RESOLVE_STR_REF (#10134)
++         fj_cre_strref8 = RESOLVE_STR_REF (#10134)
++         fj_cre_strref9 = RESOLVE_STR_REF (#10134)
++      STR_VAR
++         fj_structure_type =  ~interrupts~
++         fj_cre_resref0 = AR18SKEL
++         fj_cre_resref1 = AR18MAGE
++         fj_cre_resref2 = GRSKEL1
++         fj_cre_resref3 = GRSKEL1
++         fj_spawn_num = 4
++         fj_difficulty = 1
++         fj_duration = 1
++         fj_wander_distance = 1
++         fj_mvmt_distance = 1
++         fj_max_num = 10
++         fj_enable = 1
++         fj_day_prob = 10
++         fj_night_prob = 10
++    END
++  END
++BUT_ONLY_IF_IT_CHANGES
++
++COPY_EXISTING ~AR1514.ARE~ ~override/AR1514.ARE~
++  PATCH_IF (SOURCE_SIZE > 0x11b) THEN BEGIN
++//    LAUNCH_PATCH_FUNCTION DELETE_AREA_ACTOR
++//      STR_VAR
++//         resref_to_delete = ~icmin01~
++//    END
++
++  FOR ( i = SHORT_AT 0x58; i; --i ) BEGIN
++    LAUNCH_PATCH_FUNCTION ~fj_are_structure~
++      INT_VAR
++         fj_delete_mode = i -1
++      STR_VAR
++         fj_structure_type = actor
++    END
++  END
++
++     FOR ( i = SHORT_AT 0x64; i; --i ) BEGIN
++    LAUNCH_PATCH_FUNCTION ~fj_are_structure~
++      INT_VAR
++         fj_delete_mode = i -1
++      STR_VAR
++         fj_structure_type = spawn
++    END
++  END
++
++    LAUNCH_PATCH_FUNCTION ~fj_are_structure~
++      INT_VAR
++         fj_loc_x = 2079
++         fj_loc_y = 400
++         fj_spawn_num = 1
++         fj_difficulty = 2
++         fj_delay = 1
++         fj_method = 1
++         fj_duration = 1000
++         fj_wander_dist_spawn = 1000
++         fj_mvmt_dist_spawn = 1000
++         fj_max_num = 6
++         fj_enable = 1
++         fj_day_prob = 100
++         fj_night_prob = 100
++      STR_VAR
++         fj_structure_type = spawn
++         fj_name = ~Spawn Point 2~
++         fj_cre_resref0 = ~rdwere~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 1839
++         fj_loc_y = 449
++         fj_dest_x = 1839
++         fj_dest_y = 449
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Djinni~
++         fj_cre_resref = ~ppdjinn2~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 2383
++         fj_loc_y = 757
++         fj_dest_x = 2383
++         fj_dest_y = 757
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Gauth~
++         fj_cre_resref = ~behgau01~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 2533
++         fj_loc_y = 467
++         fj_dest_x = 2533
++         fj_dest_y = 467
++//         fj_animation =
++         fj_orientation = 14 //SE
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Iron Golem~
++         fj_cre_resref = ~ppiron~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 2461
++         fj_loc_y = 433
++         fj_dest_x = 2461
++         fj_dest_y = 433
++//         fj_animation =
++         fj_orientation = 14 //SE
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Iron Golem~
++         fj_cre_resref = ~ppiron~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 2394
++         fj_loc_y = 372
++         fj_dest_x = 2494
++         fj_dest_y = 372
++//         fj_animation =
++         fj_orientation = 14 //SE
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Iron Golem~
++         fj_cre_resref = ~ppiron~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 1431
++         fj_loc_y = 179
++         fj_dest_x = 1431
++         fj_dest_y = 179
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Mind Flayer~
++         fj_cre_resref = ~ppmind01~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 2144
++         fj_loc_y = 1892
++         fj_dest_x = 2144
++         fj_dest_y = 1892
++//         fj_animation =
++         fj_orientation = 10 //NE
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Ogre~
++         fj_cre_resref = ~icmin01~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 2258
++         fj_loc_y = 1938
++         fj_dest_x = 2258
++         fj_dest_y = 1938
++//         fj_animation =
++         fj_orientation = 8 //N
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Ogre~
++         fj_cre_resref = ~icmin01~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 2172
++         fj_loc_y = 1968
++         fj_dest_x = 2172
++         fj_dest_y = 1968
++//         fj_animation =
++         fj_orientation = 8 //N
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Ogre~
++         fj_cre_resref = ~icmin01~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 2057
++         fj_loc_y = 1883
++         fj_dest_x = 2057
++         fj_dest_y = 1883
++//         fj_animation =
++         fj_orientation = 10 //NE
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Ogre~
++         fj_cre_resref = ~icmin01~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 822
++         fj_loc_y = 1694
++         fj_dest_x = 822
++         fj_dest_y = 1694
++//         fj_animation =
++         fj_orientation = 8 //N
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Ogre~
++         fj_cre_resref = ~icmin01~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 687
++         fj_loc_y = 1678
++         fj_dest_x = 687
++         fj_dest_y = 1678
++//         fj_animation =
++         fj_orientation = 8 //N
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Ogre~
++         fj_cre_resref = ~icmin01~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 996
++         fj_loc_y = 1544
++         fj_dest_x = 996
++         fj_dest_y = 1544
++//         fj_animation =
++         fj_orientation = 4 //W
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Ogre~
++         fj_cre_resref = ~icmin01~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 867
++         fj_loc_y = 1488
++         fj_dest_x = 867
++         fj_dest_y = 1488
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Ogre~
++         fj_cre_resref = ~icmin01~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 1935
++         fj_loc_y = 670
++         fj_dest_x = 1935
++         fj_dest_y = 670
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Stone Golem~
++         fj_cre_resref = ~golsto01~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 1595
++         fj_loc_y = 256
++         fj_dest_x = 1595
++         fj_dest_y = 256
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Troll~
++         fj_cre_resref = ~r#troll~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 427
++         fj_loc_y = 934
++         fj_dest_x = 427
++         fj_dest_y = 934
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Troll~
++         fj_cre_resref = ~r#troll~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 378
++         fj_loc_y = 967
++         fj_dest_x = 378
++         fj_dest_y = 967
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Troll~
++         fj_cre_resref = ~r#troll~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 481
++         fj_loc_y = 991
++         fj_dest_x = 481
++         fj_dest_y = 991
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Troll~
++         fj_cre_resref = ~r#troll~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 318
++         fj_loc_y = 1011
++         fj_dest_x = 318
++         fj_dest_y = 1011
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Troll~
++         fj_cre_resref = ~r#troll~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 1323
++         fj_loc_y = 1869
++         fj_dest_x = 1323
++         fj_dest_y = 1869
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Troll~
++         fj_cre_resref = ~r#troll~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 1397
++         fj_loc_y = 1816
++         fj_dest_x = 1397
++         fj_dest_y = 1816
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Troll~
++         fj_cre_resref = ~r#troll~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 1724
++         fj_loc_y = 356
++         fj_dest_x = 1724
++         fj_dest_y = 356
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~Umber Hulk~
++         fj_cre_resref = ~ppumb02~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 2078
++         fj_loc_y = 1374
++         fj_dest_x = 2078
++         fj_dest_y = 1374
++//         fj_animation =
++         fj_orientation = 6 //NW
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~vam1514a~
++         fj_cre_resref = ~vamold01~
++    END
++
++    LAUNCH_PATCH_FUNCTION fj_are_structure
++      INT_VAR
++         fj_loc_x = 1999
++         fj_loc_y = 1181
++         fj_dest_x = 1999
++         fj_dest_y = 1181
++//         fj_animation =
++         fj_orientation = 0 //S
++      STR_VAR
++         fj_structure_type = actor
++         fj_name = ~vam1514b~
++         fj_cre_resref = ~vammat01~
++    END
++  END
++BUT_ONLY_IF_IT_CHANGES
+ 
+ // We want to hear the new sounds, don't we?
+ COPY ~impasylum/sounds~ ~override~
