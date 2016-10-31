@@ -1,5 +1,5 @@
 --- Setup-Hubelpot.tp2	Thu Jul 29 21:56:18 2004
-+++ C:\BWP Patchstudio\patched files\Setup-Hubelpot.tp2	Thu Jul 03 21:16:10 2008
++++ C:\BWP Patchstudio\patched files\Setup-Hubelpot.tp2	Sat Sep 24 09:02:39 2016
 @@ -1,11 +1,14 @@
  BACKUP ~SC#Hub/Backup~
 -AUTHOR ~sebastian8987@edu.upplands-bro.se~ //Coder extraordinaire!
@@ -33,7 +33,17 @@
  COMPILE ~SC#Hub\Scripts\SC#AR0509.baf~
    USING ~SC#Hub\Dialogue\SC#Quest.tra~
  
-@@ -368,13 +369,11 @@
+@@ -350,6 +351,9 @@
+ COPY_EXISTING ~AR0707.are~ ~override~
+   WRITE_ASCII 0x94 ~AR0707~
+ EXTEND_BOTTOM ~Ar0707.bcs~ ~SC#Hub\Scripts\SC#AR0707.baf~
++ACTION_IF (MOD_IS_INSTALLED ~Setup-Sellswords.tp2~ 0) BEGIN
++EXTEND_TOP ~Ar0707.bcs~ ~Sellswords\Scripts\AR0707.baf~
++END
+ 
+ ////////////////////////////
+ //			  //
+@@ -368,13 +372,11 @@
  
  //ToB!!!!
  COMPILE ~SC#Hub\Dialogue\SC#FatespiritTD.d~
@@ -48,7 +58,7 @@
  
  //////////
  //      //
-@@ -387,6 +386,11 @@
+@@ -387,6 +389,11 @@
  //AT_INTERACTIVE_EXIT ~VIEW SC#Hub\README-Hubelpot.txt~
  //AudioInstall takes care of this...
  
@@ -60,7 +70,7 @@
  ///////////////////////
  //                   //
  // Village Druid-kit //
-@@ -394,44 +398,25 @@
+@@ -394,44 +401,25 @@
  ///////////////////////
  
  
@@ -108,7 +118,7 @@
   SAY ~Village Druid~
   SAY ~Village Druid~
   SAY ~The Village Druid, also known as the Wise Man or Wise Woman, is found in many small rural communities. He or She is skilled in herbal medicine, animal husbandry, midwifery, agriculture, and the many other tasks so vital to the maintenance of an isolated settlement. Additionally, the Village Druid draws magic from the land to assist in these tasks. The Village Druid will often act formally or informally as a judge and records keeper, and as an advisor to the village headman or council.
-@@ -446,37 +431,40 @@
+@@ -446,37 +434,40 @@
  Disadvantages:
  May not shape-change. May cast one fewer spell per spell level than a standard Druid.~
  
@@ -164,7 +174,7 @@
  
  
  //////////////////////////
-@@ -485,54 +473,48 @@
+@@ -485,54 +476,48 @@
  //                      //
  //////////////////////////
  
@@ -229,7 +239,7 @@
    WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
    WRITE_LONG 0x34 1
    READ_LONG  0x64 "offset_abil"
-@@ -547,37 +529,7 @@
+@@ -547,37 +532,7 @@
        SET "num_abil" = ("%num_abil%" - 1)
      END
  
@@ -268,7 +278,7 @@
    WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
    WRITE_LONG 0x34 1
    READ_LONG  0x64 "offset_abil"
-@@ -592,7 +544,7 @@
+@@ -592,7 +547,7 @@
        SET "num_abil" = ("%num_abil%" - 1)
      END
  
@@ -277,7 +287,7 @@
    WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
    WRITE_LONG 0x34 1
    READ_LONG  0x64 "offset_abil"
-@@ -607,7 +559,7 @@
+@@ -607,7 +562,7 @@
        SET "num_abil" = ("%num_abil%" - 1)
      END
  
@@ -286,7 +296,7 @@
    WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
    WRITE_LONG 0x34 1
    READ_LONG  0x64 "offset_abil"
-@@ -622,7 +574,7 @@
+@@ -622,7 +577,7 @@
        SET "num_abil" = ("%num_abil%" - 1)
      END
  
@@ -295,7 +305,7 @@
    WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
    WRITE_LONG 0x34 1
    READ_LONG  0x64 "offset_abil"
-@@ -657,7 +609,7 @@
+@@ -657,7 +612,7 @@
  // appended to DUALCLAS.2da
   ~SC#VFar                 0       0       0       0       0       0~
  // path to your CLAB-style 2da file
@@ -304,7 +314,7 @@
  // PC races and classes allowed to use this kit, from KITTABLE.2da
   ~~
  // usability flags, added to the end of the KITLIST.2da entry
-@@ -685,6 +637,9 @@
+@@ -685,6 +640,9 @@
  Disadvantages:
  May not shapeshift~
  
@@ -314,7 +324,7 @@
  //Updating Hubelpot.
  COPY_EXISTING ~SC#Hub.cre~ ~override~
   WRITE_SHORT 0x244 0 // doesn't change
-@@ -697,5 +652,9 @@
+@@ -697,5 +655,9 @@
     WRITE_SHORT 0x244 0 // doesn't change
     WRITE_BYTE  0x246 ~%SC#VFar%~ // the internal name of your kit, surrounded by %
     WRITE_BYTE  0x247 0x40 // doesn't change
