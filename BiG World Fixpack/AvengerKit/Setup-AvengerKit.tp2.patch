@@ -1,11 +1,752 @@
 --- Setup-AvengerKit.tp2	Sun Sep 13 15:02:16 2009
-+++ C:\BWP Patchstudio\patched files\Setup-AvengerKit.tp2	Sat Oct 19 15:47:59 2013
++++ C:\BWP Patchstudio\patched files\Setup-AvengerKit.tp2	Sun Oct 02 12:55:41 2016
 @@ -3,7 +3,7 @@
  
  
  //MODDER
 -VERSION ~v1.1~
-+VERSION ~v1.02 BWP Fix~
++VERSION ~v1.1 BWP Fix~
  
  README ~HAKit\Readme.txt~
  
+@@ -171,51 +171,591 @@
+   SUBCOMPONENT ~Sundelessanar NPC changes (boost elven fighters with better stats and some of the new items)REQUIRES EXTRA ITEMS~
+ 
+ 
+-	COPY ~AvengerKit\suelf2.cre~ ~override~
+-	COPY ~AvengerKit\suelf3.cre~ ~override~
+-	COPY ~AvengerKit\suelf6.cre~ ~override~
+-	COPY ~AvengerKit\suelf8.cre~ ~override~
+-	COPY ~AvengerKit\suelf8.cre~ ~override~
+-	COPY ~AvengerKit\suelf10.cre~ ~override~
+-	COPY ~AvengerKit\suelf10.sto~ ~override~
+-	COPY ~AvengerKit\suelf12.cre~ ~override~
+-	COPY ~AvengerKit\suelf13.cre~ ~override~
+-	COPY ~AvengerKit\suelfw1.cre~ ~override~
+-	COPY ~AvengerKit\suelfw2.cre~ ~override~
+-	COPY ~AvengerKit\suelfw3.cre~ ~override~
+-	COPY ~AvengerKit\suelfw4.cre~ ~override~
+-	COPY ~AvengerKit\suelfw5.cre~ ~override~
+-	COPY ~AvengerKit\suelfw6.cre~ ~override~
+-	COPY ~AvengerKit\suelfw7.cre~ ~override~
+-	COPY ~AvengerKit\suelfw8.cre~ ~override~
+-	COPY ~AvengerKit\suelfw9.cre~ ~override~
+-	COPY ~AvengerKit\suelfw10.cre~ ~override~
+-	COPY ~AvengerKit\suelfw11.cre~ ~override~
+-	COPY ~AvengerKit\suelfw12.cre~ ~override~
+-	COPY ~AvengerKit\suelfw13.cre~ ~override~
+-	COPY ~AvengerKit\suelfw14.cre~ ~override~
+-	COPY ~AvengerKit\suelfw15.cre~ ~override~
+-
+-	COPY ~AvengerKit\suendel1.cre~ ~override~
+-	COPY ~AvengerKit\suendel2.cre~ ~override~
+-	COPY ~AvengerKit\suendel3.cre~ ~override~
+-	COPY ~AvengerKit\suendel4.cre~ ~override~
+-	COPY ~AvengerKit\suendel5.cre~ ~override~
+-	COPY ~AvengerKit\suendel7.cre~ ~override~
+-	COPY ~AvengerKit\suendel8.cre~ ~override~
+-
+-	COPY ~AvengerKit\uddrow07.cre~ ~override~
+-	COPY ~AvengerKit\uddrow09.cre~ ~override~
+-	COPY ~AvengerKit\udelf01.cre~ ~override~
+-	COPY ~AvengerKit\udelf02.cre~ ~override~
+-	COPY ~AvengerKit\udelf03.cre~ ~override~
+-	COPY ~AvengerKit\udelf04.cre~ ~override~
+-	COPY ~AvengerKit\udelf05.cre~ ~override~
+-
+-	COPY ~AvengerKit\suelhan.cre~ ~override~
+-	COPY ~AvengerKit\c6elhan.cre~ ~override~
+-	COPY ~AvengerKit\suelleg1.cre~ ~override~
+-	COPY ~AvengerKit\suedemin.cre~ ~override~
++//	COPY ~AvengerKit\suelf2.cre~ ~override~
++	COPY_EXISTING ~suelf2.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_SHORT   0x24        ~10~          // Current HP
++    WRITE_SHORT   0x26        ~10~          // Maximum HP
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelf3.cre~ ~override~
++	COPY_EXISTING ~suelf3.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_SHORT   0x24        ~16~          // Current HP
++    WRITE_SHORT   0x26        ~60~          // Maximum HP
++    WRITE_BYTE    0x234       ~5~           // 1 level
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~10~           // Intelligence
++    WRITE_BYTE    0x23b       ~10~           // Wisdom
++    WRITE_BYTE    0x23c       ~16~           // Dexterity
++    WRITE_BYTE    0x23d       ~10~           // Constitution
++    WRITE_BYTE    0x23e       ~10~           // Charisma
++    ADD_CRE_ITEM            ~CHAN04~ #0 #0 #0 ~NONE~ ~ARMOR~
++    ADD_CRE_ITEM            ~SW1H04~ #0 #0 #0 ~NONE~ ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelf6.cre~ ~override~
++	COPY_EXISTING ~suelf6.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~16~           // Strength
++    WRITE_BYTE    0x23a       ~10~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~18~           // Dexterity
++    WRITE_BYTE    0x23d       ~16~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    WRITE_BYTE    0x23f       ~30~           // Morale
++    REPLACE_CRE_ITEM            ~CHAN14~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~ELFSW03~    #0 #0 #0    ~NONE~    ~WEAPON1~
++    ADD_CRE_ITEM            ~SHLD29~ #0 #0 #0 ~NONE~ ~SHIELD~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelf7.cre~ ~override~
++	COPY_EXISTING ~suelf7.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x234       ~9~           // 1 level
++    WRITE_BYTE    0x238       ~16~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~18~           // Dexterity
++    WRITE_BYTE    0x23d       ~14~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    WRITE_BYTE    0x23f       ~30~           // Morale
++    REPLACE_CRE_ITEM            ~CHAN08~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~BLUN07~    #0 #0 #0    ~NONE~    ~WEAPON1~
++    ADD_CRE_ITEM            ~SHLD04~ #0 #0 #0 ~NONE~ ~SHIELD~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelf8.cre~ ~override~
++	COPY_EXISTING ~suelf8.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~10~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~16~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    REPLACE_CRE_ITEM            ~CHAN14~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~BLUN07~    #0 #0 #0    ~NONE~    ~WEAPON1~
++    ADD_CRE_ITEM            ~SHLD04~ #0 #0 #0 ~NONE~ ~SHIELD~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelf11.cre~ ~override~
++	COPY_EXISTING ~suelf11.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~12~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~15~           // Dexterity
++    WRITE_BYTE    0x23d       ~10~           // Constitution
++    WRITE_BYTE    0x23e       ~10~           // Charisma
++    REPLACE_CRE_ITEM            ~SW1H06~    #0 #0 #0    ~NONE~    ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelf10.cre~ ~override~
++	COPY_EXISTING ~suelf10.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~16~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~16~           // Wisdom
++    WRITE_BYTE    0x23c       ~16~           // Dexterity
++    WRITE_BYTE    0x23d       ~16~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelf10.sto~ ~override~
++	COPY_EXISTING ~suelf10.sto~    ~override~
++    ADD_STORE_ITEM "ELFPLT1" #10 #0 #0 ~IDENTIFIED~ #2
++    ADD_STORE_ITEM "ELFRB1" #10 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM "ELFSW01" #10 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM "ELFSW02" #10 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM "ELFSW03" #10 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM "ELFSW04" #10 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM "m2hsw01" #10 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM "m2hsw02" #10 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM "myhelm01" #10 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM "myplat01" #10 #0 #0 ~IDENTIFIED~ #1
++    ADD_STORE_ITEM "myring1" #10 #0 #0 ~IDENTIFIED~ #2
++    ADD_STORE_ITEM "myring2" #10 #0 #0 ~IDENTIFIED~ #1
++//	COPY ~AvengerKit\suelf12.cre~ ~override~
++	COPY_EXISTING ~suelf12.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_SHORT   0x24        ~140~          // Current HP
++    WRITE_SHORT   0x26        ~140~          // Maximum HP
++    REPLACE_CRE_ITEM            ~ELFPLT1~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~ELFSW03~    #0 #0 #0    ~NONE~    ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelf13.cre~ ~override~
++	COPY_EXISTING ~suelf13.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~14~           // Wisdom
++    WRITE_BYTE    0x23c       ~18~           // Dexterity
++    WRITE_BYTE    0x23d       ~14~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    REPLACE_CRE_ITEM            ~CHAN14~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~SW1H06~    #0 #0 #0    ~NONE~    ~WEAPON1~
++    ADD_CRE_ITEM            ~SHLD04~ #0 #0 #0 ~NONE~ ~SHIELD~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw1.cre~ ~override~
++	COPY_EXISTING ~suelfw5.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x234       ~10~           // 1 level
++    WRITE_BYTE    0x238       ~15~           // Strength
++    WRITE_BYTE    0x23a       ~10~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~18~           // Dexterity
++    WRITE_BYTE    0x23d       ~14~           // Constitution
++    WRITE_BYTE    0x23e       ~10~           // Charisma
++    REPLACE_CRE_ITEM            ~CHAN14~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~ELFSW02~    #0 #0 #0    ~NONE~    ~WEAPON1~
++    ADD_CRE_ITEM            ~SHLD28~ #0 #0 #0 ~NONE~ ~SHIELD~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw2.cre~ ~override~
++	COPY_EXISTING ~suelfw2.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~9~           // Intelligence
++    WRITE_BYTE    0x23b       ~9~           // Wisdom
++    WRITE_BYTE    0x23c       ~14~           // Dexterity
++    WRITE_BYTE    0x23d       ~10~           // Constitution
++    WRITE_BYTE    0x23e       ~9~           // Charisma
++    REPLACE_CRE_ITEM            ~CHAN14~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~SW1H06~    #0 #0 #0    ~NONE~    ~WEAPON1~
++    ADD_CRE_ITEM            ~SHLD04~ #0 #0 #0 ~NONE~ ~SHIELD~
++//    ADD_CRE_ITEM            ~AROW09~ #0 #0 #0 ~NONE~ ~QUIVER3~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw3.cre~ ~override~
++	COPY_EXISTING ~suelfw3.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~9~           // Intelligence
++    WRITE_BYTE    0x23b       ~9~           // Wisdom
++    WRITE_BYTE    0x23c       ~16~           // Dexterity
++    WRITE_BYTE    0x23d       ~10~           // Constitution
++    WRITE_BYTE    0x23e       ~9~           // Charisma
++    REPLACE_CRE_ITEM            ~CHAN14~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~SW1H06~    #0 #0 #0    ~NONE~    ~WEAPON1~
++    ADD_CRE_ITEM            ~DAGG15~ #0 #0 #0 ~NONE~ ~SHIELD~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw4.cre~ ~override~
++	COPY_EXISTING ~suelfw4.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~10~           // Intelligence
++    WRITE_BYTE    0x23b       ~10~           // Wisdom
++    WRITE_BYTE    0x23c       ~16~           // Dexterity
++    WRITE_BYTE    0x23d       ~10~           // Constitution
++    WRITE_BYTE    0x23e       ~9~           // Charisma
++    REPLACE_CRE_ITEM            ~CHAN08~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~SW1H06~    #0 #0 #0    ~NONE~    ~WEAPON1~
++    ADD_CRE_ITEM            ~SHLD04~ #0 #0 #0 ~NONE~ ~SHIELD~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw5.cre~ ~override~
++	COPY_EXISTING ~suelfw5.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~16~           // Strength
++    WRITE_BYTE    0x23a       ~16~           // Intelligence
++    WRITE_BYTE    0x23b       ~16~           // Wisdom
++    WRITE_BYTE    0x23c       ~16~           // Dexterity
++    WRITE_BYTE    0x23d       ~16~           // Constitution
++    WRITE_BYTE    0x23e       ~16~           // Charisma
++    REPLACE_CRE_ITEM            ~CHAN14~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~ELFSW03~    #0 #0 #0    ~NONE~    ~WEAPON1~
++    ADD_CRE_ITEM            ~SW1H21~ #0 #0 #0 ~NONE~ ~SHIELD~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw6.cre~ ~override~
++	COPY_EXISTING ~suelfw6.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_SHORT   0x24        ~100~          // Current HP
++    WRITE_SHORT   0x26        ~100~          // Maximum HP
++    WRITE_BYTE    0x234       ~14~           // 1 level
++    WRITE_BYTE    0x238       ~18~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~18~           // Dexterity
++    WRITE_BYTE    0x23d       ~18~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    REPLACE_CRE_ITEM            ~ELFPLT1~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~ELFSW01~    #0 #0 #0    ~NONE~    ~WEAPON1~
++    ADD_CRE_ITEM            ~SHLD22~ #0 #0 #0 ~NONE~ ~SHIELD~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw7.cre~ ~override~
++	COPY_EXISTING ~suelfw7.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~12~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~14~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    REPLACE_CRE_ITEM            ~CHAN12~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~SW1H06~    #0 #0 #0    ~NONE~    ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw8.cre~ ~override~
++	COPY_EXISTING ~suelfw8.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_SHORT   0x24        ~90~          // Current HP
++    WRITE_SHORT   0x26        ~90~          // Maximum HP
++    WRITE_BYTE    0x234       ~10~           // 1 level
++    WRITE_BYTE    0x23f       ~30~           // Morale
++    REPLACE_CRE_ITEM            ~CHAN12~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~ELFSW02~ #0 #0 #0 ~NONE~ ~WEAPON1~
++    ADD_CRE_ITEM            ~DAGG15~ #0 #0 #0 ~NONE~ ~SHIELD~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw9.cre~ ~override~
++	COPY_EXISTING ~suelfw9.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_SHORT   0x24        ~40~          // Current HP
++    WRITE_SHORT   0x26        ~40~          // Maximum HP
++    WRITE_BYTE    0x234       ~12~           // 1 level
++    WRITE_BYTE    0x23b       ~14~           // Wisdom
++    WRITE_BYTE    0x23f       ~50~           // Morale
++    ADD_CRE_ITEM            ~ELFRB1~    #0 #0 #0    ~NONE~    ~ARMOR~
++    ADD_CRE_ITEM            ~MYRING1~    #0 #0 #0    ~NONE~    ~RRING~
++    ADD_CRE_ITEM            ~STAF07~ #0 #0 #0 ~NONE~ ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw10.cre~ ~override~
++	COPY_EXISTING ~suelfw10.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_SHORT   0x24        ~50~          // Current HP
++    WRITE_SHORT   0x26        ~50~          // Maximum HP
++    WRITE_BYTE    0x234       ~14~           // 1 level
++    WRITE_BYTE    0x238       ~15~           // Strength
++    WRITE_BYTE    0x23a       ~18~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~18~           // Dexterity
++    WRITE_BYTE    0x23d       ~10~           // Constitution
++    WRITE_BYTE    0x23e       ~9~           // Charisma
++    WRITE_BYTE    0x23f       ~50~           // Morale
++    ADD_CRE_ITEM            ~ELFRB1~ #0 #0 #0 ~NONE~ ~ARMOR~
++    ADD_CRE_ITEM            ~MYRING1~ #0 #0 #0 ~NONE~ ~LRING~
++    ADD_CRE_ITEM            ~STAF08~ #0 #0 #0 ~NONE~ ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw11.cre~ ~override~
++	COPY_EXISTING ~suelfw11.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    ADD_CRE_ITEM            ~ELFRB1~ #0 #0 #0 ~NONE~ ~ARMOR~
++    ADD_CRE_ITEM            ~MYRING1~ #0 #0 #0 ~NONE~ ~LRING~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw12.cre~ ~override~
++	COPY_EXISTING ~suelfw12.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    ADD_CRE_ITEM            ~ELFRB1~ #0 #0 #0 ~NONE~ ~ARMOR~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw13.cre~ ~override~
++	COPY_EXISTING ~suelfw13.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x234       ~10~           // 1 level
++    WRITE_BYTE    0x238       ~16~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~16~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    WRITE_BYTE    0x23f       ~50~           // Morale
++    REPLACE_CRE_ITEM            ~CHAN14~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~BOW16~    #0 #0 #0    ~NONE~    ~WEAPON1~
++    REPLACE_CRE_ITEM            ~AROW02~ #0 #0 #0 ~NONE~ ~QUIVER1~
++    ADD_CRE_ITEM            ~AROW08~ #0 #0 #0 ~NONE~ ~QUIVER2~
++    ADD_CRE_ITEM            ~AROW09~ #0 #0 #0 ~NONE~ ~QUIVER3~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw14.cre~ ~override~
++	COPY_EXISTING ~suelfw14.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~12~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~16~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    REPLACE_CRE_ITEM            ~CHAN08~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~BOW16~    #0 #0 #0    ~NONE~    ~WEAPON1~
++    ADD_CRE_ITEM            ~AROW09~ #0 #0 #0 ~NONE~ ~QUIVER2~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suelfw15.cre~ ~override~
++	COPY_EXISTING ~suelfw15.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~12~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~15~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    REPLACE_CRE_ITEM            ~CHAN08~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~BOW16~    #0 #0 #0    ~NONE~    ~WEAPON1~
++    REMOVE_CRE_ITEM            ~AROW08~
++  END
++BUT_ONLY_IF_IT_CHANGES
++
++//	COPY ~AvengerKit\suendel1.cre~ ~override~
++	COPY_EXISTING ~suendel1.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~16~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    ADD_CRE_ITEM            ~SHLD02~    #0 #0 #0    ~NONE~    ~SHIELD~
++    REPLACE_CRE_ITEM            ~CHAN14~    #0 #0 #0    ~NONE~    ~ARMOR~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suendel2.cre~ ~override~
++	COPY_EXISTING ~suendel2.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~18~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    ADD_CRE_ITEM            ~SW1H52~    #0 #0 #0    ~NONE~    ~SHIELD~
++    REPLACE_CRE_ITEM            ~CHAN14~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~SW1H52~ #0 #0 #0 ~NONE~ ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suendel3.cre~ ~override~
++	COPY_EXISTING ~suendel3.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~15~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    ADD_CRE_ITEM            ~SHLD04~    #0 #0 #0    ~NONE~    ~SHIELD~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suendel4.cre~ ~override~
++	COPY_EXISTING ~suendel4.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~12~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~18~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    ADD_CRE_ITEM            ~SHLD04~    #0 #0 #0    ~NONE~    ~SHIELD~
++    REPLACE_CRE_ITEM            ~CHAN14~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~SW1H06~ #0 #0 #0 ~NONE~ ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suendel5.cre~ ~override~
++	COPY_EXISTING ~suendel5.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~12~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~14~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    ADD_CRE_ITEM            ~DAGG15~    #0 #0 #0    ~NONE~    ~SHIELD~
++    REPLACE_CRE_ITEM            ~CHAN13~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~SW1H06~ #0 #0 #0 ~NONE~ ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suendel7.cre~ ~override~
++	COPY_EXISTING ~suendel7.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~15~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\suendel8.cre~ ~override~
++	COPY_EXISTING ~suendel8.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~16~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    ADD_CRE_ITEM            ~CHAN12~    #0 #0 #0    ~NONE~    ~ARMOR~
++    ADD_CRE_ITEM            ~SW1H06~    #0 #0 #0    ~NONE~    ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++
++//	COPY ~AvengerKit\uddrow07.cre~ ~override~
++	COPY_EXISTING ~uddrow07.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_SHORT   0x24        ~60~          // Current HP
++    WRITE_SHORT   0x26        ~60~          // Maximum HP
++    WRITE_BYTE    0x234       ~7~           // 1 level
++    WRITE_BYTE    0x238       ~12~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~12~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    REPLACE_CRE_ITEM            ~DWSW1H02~ #0 #0 #0 ~NONE~ ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\uddrow09.cre~ ~override~
++	COPY_EXISTING ~uddrow09.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~12~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~12~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    REPLACE_CRE_ITEM            ~DWSPER01~ #0 #0 #0 ~NONE~ ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\udelf01.cre~ ~override~
++	COPY_EXISTING ~udelf01.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~14~           // Wisdom
++    WRITE_BYTE    0x23c       ~17~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    REPLACE_CRE_ITEM            ~CHAN14~ #0 #0 #0 ~NONE~ ~ARMOR~
++    REPLACE_CRE_ITEM            ~SHLD04~ #0 #0 #0 ~NONE~ ~SHIELD~
++    REPLACE_CRE_ITEM            ~ELFSW02~ #0 #0 #0 ~NONE~ ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\udelf02.cre~ ~override~
++	COPY_EXISTING ~udelf02.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~12~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~16~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    REPLACE_CRE_ITEM            ~CHAN08~ #0 #0 #0 ~NONE~ ~ARMOR~
++    REPLACE_CRE_ITEM            ~BOW17~ #0 #0 #0 ~NONE~ ~WEAPON1~
++    REPLACE_CRE_ITEM            ~AROW09~ #0 #0 #0 ~NONE~ ~QUIVER1~
++    REMOVE_CRE_ITEM            ~AROW01~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\udelf03.cre~ ~override~
++	COPY_EXISTING ~udelf03.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    REPLACE_CRE_ITEM            ~CHAN12~ #0 #0 #0 ~NONE~ ~ARMOR~
++    REPLACE_CRE_ITEM            ~SW2H02~ #0 #0 #0 ~NONE~ ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\udelf04.cre~ ~override~
++	COPY_EXISTING ~udelf04.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x54        ~13~            // Save vs. Death
++    WRITE_BYTE    0x55        ~9~            // Save vs. Wand
++    WRITE_BYTE    0x56        ~11~            // Save vs. Polymorph
++    WRITE_BYTE    0x57        ~13~            // Save vs. Attacks
++    WRITE_BYTE    0x58        ~10~            // Save vs. Spells
++    WRITE_BYTE    0x238       ~15~           // Strength
++    WRITE_BYTE    0x23a       ~18~           // Intelligence
++    WRITE_BYTE    0x23b       ~14~           // Wisdom
++    WRITE_BYTE    0x23c       ~18~           // Dexterity
++    WRITE_BYTE    0x23d       ~9~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    ADD_CRE_ITEM            ~ELFRB1~    #0 #0 #0    ~NONE~    ~ARMOR~
++    REPLACE_CRE_ITEM            ~STAF07~ #0 #0 #0 ~NONE~ ~WEAPON1~
++  END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\udelf05.cre~ ~override~
++	COPY_EXISTING ~udelf05.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x54        ~6~            // Save vs. Death
++    WRITE_BYTE    0x55        ~10~            // Save vs. Wand
++    WRITE_BYTE    0x56        ~9~            // Save vs. Polymorph
++    WRITE_BYTE    0x57        ~12~            // Save vs. Attacks
++    WRITE_BYTE    0x58        ~11~            // Save vs. Spells
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~14~           // Intelligence
++    WRITE_BYTE    0x23b       ~18~           // Wisdom
++    WRITE_BYTE    0x23c       ~15~           // Dexterity
++    WRITE_BYTE    0x23d       ~10~           // Constitution
++    WRITE_BYTE    0x23e       ~13~           // Charisma
++    REPLACE_CRE_ITEM            ~PLAT06~ #0 #0 #0 ~NONE~ ~ARMOR~
++    REPLACE_CRE_ITEM            ~SHLD02~ #0 #0 #0 ~NONE~ ~SHIELD~
++    REPLACE_CRE_ITEM            ~BLUN07~ #0 #0 #0 ~NONE~ ~WEAPON1~
++    REPLACE_CRE_ITEM            ~DART02~ #0 #0 #0 ~NONE~ ~WEAPON2~
++  END
++BUT_ONLY_IF_IT_CHANGES
++
++//	COPY ~AvengerKit\suelhan.cre~ ~override~
++  COPY_EXISTING ~suelhan.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    REPLACE_CRE_ITEM            ~ELFPLT1~ #0 #0 #0 ~NONE~ ~ARMOR~
++    REPLACE_CRE_ITEM            ~SW1H41~ #0 #0 #0 ~NONE~ ~SHIELD~
++    REPLACE_CRE_ITEM            ~ELFSW01~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
++   END
++BUT_ONLY_IF_IT_CHANGES
++//	COPY ~AvengerKit\c6elhan.cre~ ~override~
++  COPY_EXISTING ~c6elhan.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x54        ~10~            // Save vs. Death
++    WRITE_BYTE    0x55        ~10~            // Save vs. Wand
++    WRITE_BYTE    0x56        ~10~            // Save vs. Polymorph
++    WRITE_BYTE    0x57        ~10~            // Save vs. Attacks
++    WRITE_BYTE    0x58        ~10~            // Save vs. Spells
++    REPLACE_CRE_ITEM            ~ELFPLT1~ #0 #0 #0 ~NONE~ ~ARMOR~
++    REPLACE_CRE_ITEM            ~ELFSW03~ #0 #0 #0 ~NONE~ ~SHIELD~
++    REPLACE_CRE_ITEM            ~ELFSW01~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
++   END
++BUT_ONLY_IF_IT_CHANGES
++	//COPY ~AvengerKit\suelleg1.cre~ ~override~
++	  COPY_EXISTING ~suelleg1.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_BYTE    0x238       ~14~           // Strength
++    WRITE_BYTE    0x23a       ~10~           // Intelligence
++    WRITE_BYTE    0x23b       ~12~           // Wisdom
++    WRITE_BYTE    0x23c       ~17~           // Dexterity
++    WRITE_BYTE    0x23d       ~12~           // Constitution
++    WRITE_BYTE    0x23e       ~12~           // Charisma
++    ADD_CRE_ITEM            ~SHLD02~    #0 #0 #0    ~NONE~    ~SHIELD~
++    REPLACE_CRE_ITEM            ~CHAN14~ #0 #0 #0 ~NONE~ ~ARMOR~
++  END
++BUT_ONLY_IF_IT_CHANGES
++ 
++//	COPY ~AvengerKit\suedemin.cre~ ~override~
++	COPY_EXISTING ~sudemin.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_SHORT   0x24        ~110~          // Current HP
++    WRITE_SHORT   0x26        ~110~          // Maximum HP
++    WRITE_BYTE    0x54        ~8~            // Save vs. Death
++    WRITE_BYTE    0x55        ~6~            // Save vs. Wand
++    WRITE_BYTE    0x56        ~5~            // Save vs. Polymorph
++    WRITE_BYTE    0x57        ~8~            // Save vs. Attacks
++    WRITE_BYTE    0x58        ~6~            // Save vs. Spells
++    WRITE_BYTE    0x238       ~16~           // Strength
++    WRITE_BYTE    0x23a       ~14~           // Intelligence
++    WRITE_BYTE    0x23b       ~19~           // Wisdom
++    WRITE_BYTE    0x23c       ~17~           // Dexterity
++    WRITE_BYTE    0x23d       ~14~           // Constitution
++    WRITE_BYTE    0x23e       ~13~           // Charisma
++    WRITE_BYTE    0x23f       ~13~           // Morale
++    WRITE_BYTE    0x240       ~2~            // Morale Break
++    WRITE_BYTE    0x242       ~60~           // Morale Recovery Time
++    ADD_CRE_ITEM            ~AMUL22~    #0 #0 #0    ~NONE~    ~AMULET~
++    REPLACE_CRE_ITEM            ~HAMM05~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
++  END
++BUT_ONLY_IF_IT_CHANGES
+ 
+ 
+   BEGIN ~Black Dragon Help~ // name of this component
+@@ -226,7 +766,98 @@
+   	SAY NAME1 ~Ellderon~
+   	SAY NAME2 ~Ellderon~
+ 	COPY ~AvengerKit\soronn.bcs~ ~override~
+-	COPY ~AvengerKit\ar2807.are~ ~override~
+-	COPY ~AvengerKit\c6will.cre~ ~override~
+-	COPY ~AvengerKit\c6eric.cre~ ~override~
+-	COPY ~AvengerKit\c6eric3.cre~ ~override~
+\ No newline at end of file
++//	COPY ~AvengerKit\ar2807.are~ ~override~
++COPY_EXISTING ~ar2807.are~ ~override~
++  LPF fj_are_structure
++    INT_VAR
++    fj_loc_x          = 600
++    fj_loc_y          = 500
++    fj_dest_x         = 400
++    fj_dest_y         = 600
++    fj_animation      = 0x6100 //fighter male human
++    fj_orientation    = 2      //SW
++//    fj_schedule       = 0xb111111111111111111111111
++    STR_VAR
++    fj_structure_type = actor
++    fj_name           = Ellderon
++    fj_cre_resref     = soronn
++  END
++BUT_ONLY_IF_IT_CHANGES
++	// COPY ~AvengerKit\c6will.cre~ ~override~
++	COPY_EXISTING ~c6will.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_SHORT   0x24        ~150~          // Current HP
++    WRITE_SHORT   0x26        ~150~          // Maximum HP
++    WRITE_BYTE    0x52        ~6~            // THAC0
++    WRITE_BYTE    0x54        ~10~            // Save vs. Death
++    WRITE_BYTE    0x55        ~6~            // Save vs. Wand
++    WRITE_BYTE    0x56        ~5~            // Save vs. Polymorph
++    WRITE_BYTE    0x57        ~10~            // Save vs. Attacks
++    WRITE_BYTE    0x58        ~7~            // Save vs. Spells
++    WRITE_BYTE    0x234       ~20~           // 1 level
++    WRITE_BYTE    0x238       ~18~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~18~           // Wisdom
++    WRITE_BYTE    0x23c       ~18~           // Dexterity
++    WRITE_BYTE    0x23d       ~18~           // Constitution
++    WRITE_BYTE    0x23e       ~18~           // Charisma
++    WRITE_BYTE    0x23f       ~100~           // Morale
++    WRITE_BYTE    0x240       ~7~            // Morale Break
++    WRITE_BYTE    0x242       ~60~           // Morale Recovery Time
++    ADD_CRE_ITEM            ~HELM06~    #0 #0 #0    ~NONE~    ~HELMET~
++    REPLACE_CRE_ITEM            ~PLAT09~ #0 #0 #0 ~NONE~ ~ARMOR~
++    REPLACE_CRE_ITEM            ~PALASW~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
++  END
++BUT_ONLY_IF_IT_CHANGES
++//    COPY ~AvengerKit\c6eric.cre~ ~override~
++    	COPY_EXISTING ~c6eric.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_SHORT   0x24        ~120~          // Current HP
++    WRITE_SHORT   0x26        ~120~          // Maximum HP
++    WRITE_BYTE    0x54        ~8~            // Save vs. Death
++    WRITE_BYTE    0x55        ~6~            // Save vs. Wand
++    WRITE_BYTE    0x56        ~5~            // Save vs. Polymorph
++    WRITE_BYTE    0x57        ~4~            // Save vs. Attacks
++    WRITE_BYTE    0x58        ~7~            // Save vs. Spells
++    WRITE_BYTE    0x234       ~18~           // 1 level
++    WRITE_BYTE    0x238       ~18~           // Strength
++    WRITE_BYTE    0x23a       ~9~           // Intelligence
++    WRITE_BYTE    0x23b       ~14~           // Wisdom
++    WRITE_BYTE    0x23c       ~15~           // Dexterity
++    WRITE_BYTE    0x23d       ~18~           // Constitution
++    WRITE_BYTE    0x23e       ~18~           // Charisma
++    WRITE_BYTE    0x23f       ~100~           // Morale
++    WRITE_BYTE    0x240       ~7~            // Morale Break
++    WRITE_BYTE    0x242       ~60~           // Morale Recovery Time
++    ADD_CRE_ITEM            ~POTN52~    #0 #0 #0    ~NONE~    ~QITEM1~
++    REPLACE_CRE_ITEM            ~HELM06~ #0 #0 #0 ~NONE~ ~HELMET~
++    REPLACE_CRE_ITEM            ~PLAT09~ #0 #0 #0 ~NONE~ ~ARMOR~
++    REPLACE_CRE_ITEM            ~PALASW~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
++  END
++BUT_ONLY_IF_IT_CHANGES
++//    COPY ~AvengerKit\c6eric3.cre~ ~override~
++    	COPY_EXISTING ~c6eric3.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_SHORT   0x24        ~120~          // Current HP
++    WRITE_SHORT   0x26        ~120~          // Maximum HP
++    WRITE_BYTE    0x54        ~10~            // Save vs. Death
++    WRITE_BYTE    0x55        ~6~            // Save vs. Wand
++    WRITE_BYTE    0x56        ~5~            // Save vs. Polymorph
++    WRITE_BYTE    0x57        ~4~            // Save vs. Attacks
++    WRITE_BYTE    0x58        ~7~            // Save vs. Spells
++    WRITE_BYTE    0x234       ~18~           // 1 level
++    WRITE_BYTE    0x238       ~18~           // Strength
++    WRITE_BYTE    0x23a       ~12~           // Intelligence
++    WRITE_BYTE    0x23b       ~15~           // Wisdom
++    WRITE_BYTE    0x23c       ~14~           // Dexterity
++    WRITE_BYTE    0x23d       ~18~           // Constitution
++    WRITE_BYTE    0x23e       ~18~           // Charisma
++    WRITE_BYTE    0x23f       ~100~           // Morale
++    WRITE_BYTE    0x240       ~7~            // Morale Break
++    WRITE_BYTE    0x242       ~60~           // Morale Recovery Time
++    ADD_CRE_ITEM            ~POTN52~    #0 #0 #0    ~NONE~    ~QITEM1~
++    REPLACE_CRE_ITEM            ~HELM06~ #0 #0 #0 ~NONE~ ~HELMET~
++    REPLACE_CRE_ITEM            ~PLAT09~ #0 #0 #0 ~NONE~ ~ARMOR~
++    REPLACE_CRE_ITEM            ~PALASW~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
++  END
++BUT_ONLY_IF_IT_CHANGES
