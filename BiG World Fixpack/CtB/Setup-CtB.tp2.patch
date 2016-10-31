@@ -1,5 +1,5 @@
---- Setup-CtB.tp2	Sun Sep 26 13:24:18 2010
-+++ C:\BWP Patchstudio\patched files\Setup-CtB.tp2	Fri Feb 08 19:07:11 2013
+--- Setup-CtB.tp2	Fri Feb 04 19:00:14 2011
++++ C:\BWP Patchstudio\patched files\Setup-CtB.tp2	Wed Oct 12 15:30:40 2016
 @@ -2,7 +2,7 @@
  
  AUTHOR ~Charles Bisson, King Diamond (revision)~  NO_IF_EVAL_BUG
@@ -18,4 +18,95 @@
  BUT_ONLY_IF_IT_CHANGES
  
  
-
+@@ -1316,6 +1316,91 @@
+ STRING_SET ~23813~ @559278
+ 
+ COPY ~CtB/creature/nostring~ ~override~
++COPY_EXISTING ~ZILFGT01.CRE~       ~override~
++PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_SHORT   0x24        ~126~          // Current HP
++    WRITE_SHORT   0x26        ~126~          // Maximum HP
++    WRITE_SHORT   0x0028      ~0xe700~       // Animation
++    WRITE_BYTE    0x52        ~6~            // THAC0
++    WRITE_BYTE    0x53        ~3~            // Attacks
++    WRITE_BYTE    0x54        ~4~            // Save vs. Death
++    WRITE_BYTE    0x55        ~6~            // Save vs. Wand
++    WRITE_BYTE    0x56        ~5~            // Save vs. Polymorph
++    WRITE_BYTE    0x57        ~4~            // Save vs. Attacks
++    WRITE_BYTE    0x58        ~7~            // Save vs. Spells
++    WRITE_BYTE    0x5a        ~60~            // Resist Cold
++    WRITE_BYTE    0x5d        ~10~            // Resist Magic
++    WRITE_BYTE    0x5e        ~0~            // Resist Magical Fire
++    WRITE_BYTE    0x5f        ~50~            // Resist Magical Cold
++    WRITE_BYTE    0x60        ~20~            // Resist Slashing
++    WRITE_BYTE    0x61        ~20~            // Resist Crushing
++    WRITE_BYTE    0x62        ~20~            // Resist Piercing
++    WRITE_BYTE    0x63        ~20~            // Resist Missile
++    WRITE_BYTE    0x234       ~15~           // 1 level
++    WRITE_BYTE    0x235       ~0~           // 2 level
++    WRITE_BYTE    0x236       ~0~            // 3 level
++    WRITE_BYTE    0x238       ~19~           // Strength
++    WRITE_BYTE    0x23a       ~6~           // Intelligence
++    WRITE_BYTE    0x23b       ~8~           // Wisdom
++    WRITE_BYTE    0x23c       ~14~           // Dexterity
++    WRITE_BYTE    0x23d       ~18~           // Constitution
++    WRITE_BYTE    0x23e       ~9~           // Charisma
++    WRITE_BYTE    0x242       ~30~           // Morale Recovery Time
++    WRITE_SHORT   0x244       ~0~            // KIT TRUECLASS
++    WRITE_BYTE    0x246        ~0x4000~      // KIT TRUECLASS
++    WRITE_ASCII   0x250       ~~         #8  // Class script
++    WRITE_ASCII   0x268       ~GPMERC~   #8  // Default script
++    WRITE_BYTE    0x271       ~255~            // General
++    WRITE_BYTE    0x272       ~113~            // Race
++    WRITE_BYTE    0x27b       ~0x13~            // Alignment
++    WRITE_ASCII   0x2cc       ~ZILFGT02~ #8  // Dialog script
++REMOVE_CRE_EFFECTS
++REMOVE_KNOWN_SPELLS
++REMOVE_CRE_ITEM ~DAGG02~
++    ADD_CRE_ITEM          ~HELM15~ #0 #0 #0 ~NONE~ ~HELMET~
++    ADD_CRE_ITEM          ~PLAT01~ #0 #0 #0 ~NONE~ ~ARMOR~
++    REPLACE_CRE_ITEM      ~SPER02~ #0 #0 #0 ~NONE~ ~WEAPON1~
++    ADD_CRE_ITEM          ~POTN55~ #1 #0 #0 ~NONE~ ~QITEM1~
++    ADD_CRE_ITEM          ~POTN14~ #1 #0 #0 ~NONE~ ~QITEM2~
++    ADD_CRE_ITEM          ~RNDTRE04~ #0 #0 #0 ~NONE~ ~QITEM3~
++BUT_ONLY_IF_IT_CHANGES
++COPY_EXISTING ~override/zilfgt01.cre~    ~override/zilfgt01.cre~
++LPF ADD_CRE_EFFECT
++INT_VAR
++opcode = 233
++timing = 1
++parameter1 = 5
++parameter2 = 98
++probability1 = 100
++target = 9
++END
++LPF ADD_CRE_EFFECT
++INT_VAR
++opcode = 233
++timing = 1
++parameter1 = 3
++parameter2 = 111
++probability1 = 100
++target = 1
++END
++LPF ADD_CRE_EFFECT
++INT_VAR
++opcode = 126
++timing = 1
++parameter1 = 3
++probability1 = 100
++target = 0
++END
++LPF ADD_CRE_EFFECT
++INT_VAR
++opcode = 31
++timing = 9
++parameter1 = 50
++parameter2 = 0
++probability1 = 100
++target = 1
++END
++BUT_ONLY_IF_IT_CHANGES
+ 
+ COPY ~CtB/creature/translate/CB3545XB.CRE~ ~override~ SAY NAME1 @1    SAY NAME2 @1
+ COPY ~CtB/creature/translate/CB3547BL.CRE~ ~override~ SAY NAME1 @2    SAY NAME2 @2
