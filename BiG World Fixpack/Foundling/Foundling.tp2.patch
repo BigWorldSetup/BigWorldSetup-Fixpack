@@ -1,0 +1,11 @@
+--- Foundling\Foundling.tp2	Fri May 22 00:16:48 2015
++++ C:\BWP Patchstudio\patched files\Foundling\Foundling.tp2	Sat Oct 29 15:54:28 2016
+@@ -1,7 +1,7 @@
+ BACKUP ~Foundling\backup~
+ AUTHOR ~Lava Del'Vortel~
+ README ~Foundling\readme.txt~
+-
++VERSION ~v.BETA1 BWP Fix~
+ AUTO_TRA ~Foundling/TRANSLATIONS/%s~
+ 
+ 
