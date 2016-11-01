@@ -1,7 +1,7 @@
 BACKUP ~Area_Patcher/backup~
 AUTHOR ~Nightfarer - piol.luca@gmail.com~
 //README ~Area_Patcher/readme.html~
-VERSION ~ALPHA 7~
+VERSION ~ALPHA 10~
 
 ASK_EVERY_COMPONENT
 
@@ -19,15 +19,36 @@ ASK_EVERY_COMPONENT
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 BEGIN ~Area Patcher~
-REQUIRE_PREDICATE (GAME_IS ~bgt~) ~BGT is required to install the Area Patcher.~
+REQUIRE_PREDICATE (GAME_IS ~BGT~) ~BGT is required to install the Area Patcher.~
 GROUP ~Area Patcher~
 DESIGNATED 0
 PRINT ~Dummy component required~
 
-ACTION_IF NOT (GAME_IS ~bgt~) BEGIN
+ACTION_IF NOT (GAME_IS ~BGT~) BEGIN
   FAIL ~BGT is required~
 END
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////												    ////////////
+////////////			AR6200 Script							    ////////////
+////////////												    ////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*BEGIN ~Fix AR6200 Script~
+REQUIRE_COMPONENT ~setup-area_patcher.tp2~ 0 ~You must install the dummy component before any other thing.~
+GROUP ~Vanilla~
+DESIGNATED 500
+ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher.tp2~ 0) BEGIN
+  FAIL ~Area Patcher Component 0 is required to install this component.~
+END
+
+COPY_EXISTING ~AR6200.bcs~ ~override~
+
+REPLACE_BCS_BLOCK ~Area_Patcher\bafs\VAR6200.baf~ ~Area_Patcher\bafs\Nar6200.baf~
+*/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,6 +111,31 @@ LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
     fj_name           = Exit9900
   END
 
+BUT_ONLY_IF_IT_CHANGES
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////												    ////////////
+////////////			AR2300 Script Fix							    ////////////
+////////////												    ////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+BEGIN ~Fix AR2300 Script~
+REQUIRE_COMPONENT ~setup-area_patcher.tp2~ 0 ~You must install the dummy component before any other thing.~
+GROUP ~Vanilla~
+DESIGNATED 2001
+ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher.tp2~ 0) BEGIN
+  FAIL ~BGT and Area Patcher Component 0 are required to install this component.~
+END
+
+COPY_EXISTING ~AR2300.bcs~ ~override~
+
+DECOMPILE_AND_PATCH BEGIN
+	REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~Global("villynatyjob","GLOBAL",0)~ ~Global ("villynatyjob","GLOBAL",0)
+!Global("Hostilecity","GLOBAL",1)~
+END
 BUT_ONLY_IF_IT_CHANGES
 
 
