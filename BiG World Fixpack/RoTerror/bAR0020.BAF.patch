@@ -1,0 +1,11 @@
+--- RoTerror\SNIP\BAF\bAR0020.BAF	Fri Mar 03 19:14:31 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\SNIP\BAF\bAR0020.BAF	Tue Nov 01 08:33:19 2016
+@@ -115,7 +115,7 @@
+ 		Wait(1)
+ 		IncrementGlobal("BardPlot1","GLOBAL",80)
+ 		IncrementGlobal("NotifyThiefHead","GLOBAL",80)
+-		IncrementGlobal("JosterLeave","GLOBAL",80)
++		IncrementGlobal("JosterReturn","GLOBAL",80)
+ 		IncrementGlobal("KeepPlot","GLOBAL",80)
+ 		IncrementGlobal("KPRunnerSpawn","GLOBAL",80)
+ 		IncrementGlobal("NatulaSpawn","GLOBAL",80)
