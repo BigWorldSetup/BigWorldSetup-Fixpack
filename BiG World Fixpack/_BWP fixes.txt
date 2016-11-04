@@ -1107,6 +1107,12 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's patch to add B!AMACE.ITM to UDTRAP02.CRE if not present
 :: -LINK NOT FOUND -
 
+:: Made in Heaven's replacement B!AMACE.ITM with fixed targeting (undead, not wielder)
+:: http://www.shsforums.net/topic/58655-fading-promises-v7-bugs/
+
+:: Made in Heaven's B!AIDAN.D dialogue fixes, amended by agb1
+:: http://www.shsforums.net/topic/58655-fading-promises-v7-bugs/
+
 
 ----------------------------------------------------------------------------------------
 

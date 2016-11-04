@@ -1,0 +1,26 @@
+--- fadingpromises\dialogue\b!aidan.d	Wed Oct 05 05:07:46 2016
++++ C:\BWP Patchstudio\patched files\fadingpromises\b!aidan.d	Fri Nov 04 11:32:04 2016
+@@ -1111,7 +1111,7 @@
+ 
+ IF ~~ BA3.8
+ SAY @394
+-IF ~~ THEN EXIT
++IF ~~ THEN + BA3.18
+ END
+ 
+ IF ~~ BA3.9
+@@ -1574,12 +1574,12 @@
+ 
+ IF ~~ BA4.55
+ SAY @557
+-IF ~~ THEN EXIT
++IF ~~ THEN + BA4.59
+ END
+ 
+ IF ~~ BA4.56
+ SAY @558
+-IF ~~ THEN + BA4.59
++IF ~~ THEN EXIT
+ END
+ 
+ IF ~~ BA4.57
