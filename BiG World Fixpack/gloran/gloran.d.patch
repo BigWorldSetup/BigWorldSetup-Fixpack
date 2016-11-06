@@ -1,0 +1,5 @@
+--- gloran\dlg\gloran.d	Sat Apr 22 05:52:19 2006
++++ C:\BWP Patchstudio\patched files\gloran\dlg\gloran.d	Sun Nov 06 07:05:59 2016
+@@ -137 +137 @@
+-~ THEN REPLY @31 DO ~SetGlobal("GloranJoined","LOCALS",0) EscapeAreaMove("AR0406",1178,1386,0)~ EXIT
++~ THEN REPLY @31 DO ~SetGlobal("GloranJoined","LOCALS",0) EscapeAreaMove("AR0406",1211,1420,0)~ EXIT

@@ -1234,6 +1234,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
+:: micbaldur's repositioning in Copper Coronet after leaving party (vs. Kim, Raziel, Minsc from Back to Brynnlaw)
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry587447
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1562,6 +1565,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+
+----------------------------------------------------------------------------------------
+
+
+:: KimNPC - Kim NPC v1.62d
+
+:: micbaldur's repositioning in Copper Coronet after leaving party (vs. Gloran, Raziel, Minsc from Back to Brynnlaw)
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry587447
 
 
 ----------------------------------------------------------------------------------------
@@ -2052,6 +2064,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's correction - M#Questo.bcs
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488681
+
+
+----------------------------------------------------------------------------------------
+
+
+:: raziel - Raziel NPC v1
+
+:: micbaldur's repositioning in Copper Coronet after leaving party (vs. Gloran, Kim, Minsc from Back to Brynnlaw)
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry587447
 
 
 ----------------------------------------------------------------------------------------

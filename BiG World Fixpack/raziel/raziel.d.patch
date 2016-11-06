@@ -1,0 +1,5 @@
+--- raziel\dlg\raziel.d	Tue Jun 28 22:39:34 2005
++++ C:\BWP Patchstudio\patched files\raziel\dlg\raziel.d	Sun Nov 06 07:09:28 2016
+@@ -125 +125 @@
+-~ THEN REPLY ~W ober¿y Pod Miedzianym Diademem.  Gdybym znów ciê potrzebowa³<PRO_HESHE> to bêdê ciê tam szukaæ.~  DO ~SetGlobal("RazielJoined","LOCALS",0) EscapeAreaMove("AR0406",1178,1386,0)~ EXIT
++~ THEN REPLY ~W ober¿y Pod Miedzianym Diademem.  Gdybym znów ciê potrzebowa³<PRO_HESHE> to bêdê ciê tam szukaæ.~  DO ~SetGlobal("RazielJoined","LOCALS",0) EscapeAreaMove("AR0406",1107,1362,0)~ EXIT

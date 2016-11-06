@@ -1,0 +1,5 @@
+--- KimNPC\Kim.d	Sun Nov 06 07:10:28 2016
++++ C:\BWP Patchstudio\patched files\KimNPC\Kim.d	Sun Nov 06 07:10:34 2016
+@@ -433 +433 @@
+-IF ~~ THEN DO ~EscapeAreaMove("AR0406",1178,1386,0)~ EXIT
++IF ~~ THEN DO ~EscapeAreaMove("AR0406",1349,1494,0)~ EXIT
