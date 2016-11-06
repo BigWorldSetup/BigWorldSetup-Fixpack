@@ -56,7 +56,7 @@
  
 +LAUNCH_ACTION_FUNCTION ~ADD_MAP_ICONS~
 +  INT_VAR 
-+    icon_index = 18
++    icon_index = 29
 +  STR_VAR 
 +    worldmap      = ~worldmap~
 +    path_to_icons = ~Innershade/WMPIcon/mapicons.bam~
