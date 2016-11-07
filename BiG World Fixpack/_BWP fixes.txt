@@ -927,7 +927,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=580693
 
 :: agb1's fixed CMSTQ04.ITM
-:: - LINK NOT FOUND -
+:: http://www.shsforums.net/topic/56670-big-world-setup-an-attempt-to-update-the-program/page-138#entry586267
+:: https://forums.beamdog.com/discussion/comment/617757#Comment_617757
 
 
 ----------------------------------------------------------------------------------------
