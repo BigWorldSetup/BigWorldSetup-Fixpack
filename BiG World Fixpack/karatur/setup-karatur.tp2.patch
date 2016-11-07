@@ -1,8 +1,14 @@
---- karatur\setup-karatur.tp2	2016-03-27 20:15:35.023829200 +0200
-+++ karatur\setup-karatur.tp2	2016-03-27 20:15:14.706305100 +0200
-@@ -1,4 +1,4 @@
+--- karatur\setup-karatur.tp2	Mon Feb 11 17:11:17 2013
++++ C:\BWP Patchstudio\patches\karatur\setup-karatur.tp2	Mon Nov 07 12:29:03 2016
+@@ -1 +1 @@
 -BACKUP ~\KaraTur\Kbackup~
 +BACKUP ~karatur/backup~
- AUTHOR ~Corsymyr~
- 
- BEGIN ~T'Was a Slow Boat from Kara-Tur~
+@@ -3,0 +4,2 @@
++VERSION ~v1 BWP fix~
++
+@@ -833,4 +835 @@
+-  SAY 0x8 ~Kara-Tur Store~
+   SAY 0xC ~Store of the Meager Three~
+-  SAY 0x50 ~Kara-Tur Store~
+-  SAY 0x54 ~Store of the Meager Three~
+\ No newline at end of file

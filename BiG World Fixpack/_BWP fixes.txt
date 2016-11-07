@@ -1512,6 +1512,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: karatur - T'was a Slow Boat from Karatur (original release, no version number)
+
+:: Fixed BACKUP folder (was outside game folder)
+:: http://www.shsforums.net/topic/57329-baldurs-gate-bws/?p=570346
+
+:: Removed KTStore invalid file offsets in tp2
+:: http://gibberlings3.net/forums/index.php?showtopic=27741&page=27#entry248231
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Kari the Half-Kobold NPC (Beta) v1.3
 
 :: Upgraded to the "Moongaze's Kari v1" version
