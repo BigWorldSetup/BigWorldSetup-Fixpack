@@ -1,0 +1,11 @@
+--- TGC1e\Dialogues\BW05FFAP.D	Sat Sep 17 14:57:42 2005
++++ C:\BWP Patchstudio\patched files\TGC1e\Dialogues\BW05FFAP.D	Wed Nov 09 06:06:24 2016
+@@ -4,7 +4,7 @@
+ HPLT(Myself,12)~ THEN BEGIN 0
+   SAY @498
+   IF ~PartyHasItem("POTN08")
+-~ THEN REPLY @499 DO ~TakePartyItem("POTN08")
++~ THEN REPLY @499 DO ~TakePartyItemNum("POTN08",1)
+ ~ GOTO 7
+   IF ~!PartyHasItem("POTN08")
+ ~ THEN REPLY @500 GOTO 6
