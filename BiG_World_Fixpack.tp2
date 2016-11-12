@@ -1,0 +1,314 @@
+// BiG World Fixpack WeiDU Script
+// adapted from Leonardo Watson's original Windows batch script
+//
+// Unlike other mods that patch game files directly, this script instead
+//   patches mods' pre-installation files and WeiDU scripts, so you must
+//   extract all of the mods' files to the game folder, and then run this
+//   script, before running the setup-modname.exe's to install the mods
+// Note that some mods are packaged on Windows as self-extracting exe's,
+//   and such mods must also be extracted before running this Fixpack; such
+//   exe's can be unpacked like zip archives using the free tool "7zip"
+//
+// This script iterates over all mod folders in the current game directory
+//
+// For each mod folder, this script looks inside the "BiG World Fixpack"
+//   directory in the main game folder; if a Fixpack subfolder with the
+//   same name as the mod folder is found, this script recursively processes
+//   all files and folders found inside that Fixpack subfolder and performs
+//   actions for each file or folder that matches one of the following names:
+//
+//       *.patch         =>  apply this patch (assumed to be a "diff" patch)
+//                           all patches are applied in the main game folder,
+//                           so all patch files should contain a relative path
+//
+//       _delete         =>  delete all files listed in this file, e.g.:
+//                           path\to\file-to-delete
+//                           (paths are relative to the target mod folder)
+//
+//       _rename         =>  like _delete but a line in this file should
+//                           have the format:
+//                           path\to\original-filename\tnew-filename
+//                           (paths are relative to the target mod folder)
+//                           (\t means insert a literal TAB here)
+//
+//       _copy/          =>  copy all contents to target mod folder
+//
+//       _target         =>  the first line of this file, if present in the
+//                           Fixpack top-level subfolder, will be used as the
+//                           the target folder path for the contents of _copy/
+//
+//       _depends/       =>  process subdirs for which a matching mod is present
+//
+//       _depends_not/   =>  process subdirs for which a matching mod is not present
+//
+
+BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
+AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
+
+VERSION ~v1~
+
+ALWAYS	
+	// special folders and marker file
+	OUTER_TEXT_SPRINT FIXPACK ~BiG_World_Fixpack~ // Fixpack's own folder containing patches, without spaces
+	OUTER_TEXT_SPRINT INSTALL_MARKER ~BiG_World_Fixpack.installed~ // to be created by this script
+
+	// special folder names to match in Fixpack sub-folders
+	OUTER_TEXT_SPRINT COPY_DIR ~_copy~ // exact match
+	OUTER_TEXT_SPRINT DEPENDS_DIR ~_depends~ // exact match
+	OUTER_TEXT_SPRINT DEPENDS_NOT_DIR ~_depends_not~ // exact match
+
+	// special files names to match in Fixpack sub-folders
+	OUTER_TEXT_SPRINT TARGET_FILE ~_target~ // exact match
+	OUTER_TEXT_SPRINT DEL_FILE ~_delete~ // exact match
+	OUTER_TEXT_SPRINT REN_FILE ~_rename~ // exact match
+	OUTER_TEXT_SPRINT PATCH_FILES ~^.*\.patch$~ // regex
+
+	// platform specific syntax and utilities
+	ACTION_IF (~%WEIDU_OS%~ STR_EQ ~win32~) THEN BEGIN
+		AT_NOW ~move "BiG World Fixpack" "%FIXPACK%"~ // rename Fixpack folder to remove spaces (backwards compatibility)
+		OUTER_TEXT_SPRINT os_slash ~\~
+		OUTER_TEXT_SPRINT os_quote ~"~
+		OUTER_TEXT_SPRINT DISPLAY_FILE_CMD ~type~
+		OUTER_TEXT_SPRINT DEEP_COPY_CMD ~xcopy /Y /E /R /V~
+		OUTER_TEXT_SPRINT PATCH_CMD ~%FIXPACK%\_utils\patch.exe -p0 -f --no-backup-if-mismatch --ignore-whitespace~
+	END ELSE BEGIN
+		AT_NOW ~mv 'BiG World Fixpack' '%FIXPACK%'~ // rename Fixpack folder to remove spaces (backwards compatibility)
+		OUTER_TEXT_SPRINT os_slash ~/~
+		OUTER_TEXT_SPRINT os_quote ~'~
+		OUTER_TEXT_SPRINT DISPLAY_FILE_CMD ~cat~
+		OUTER_TEXT_SPRINT DEEP_COPY_CMD ~cp -rf~
+		OUTER_TEXT_SPRINT PATCH_CMD ~patch -p0 -f --no-backup-if-mismatch --ignore-whitespace~
+	END
+
+	// last special folder
+	OUTER_TEXT_SPRINT MESSAGES ~%FIXPACK%%os_slash%_messages~ // contains text messages for display
+
+	DEFINE_ACTION_FUNCTION ~show_message~
+	STR_VAR
+		msg_file_path = ~~
+	BEGIN
+		ACTION_IF %INTERACTIVE% THEN BEGIN
+			PRINT ~~
+			AT_NOW ~%DISPLAY_FILE_CMD% %msg_file_path%~
+			PRINT ~~
+			ACTION_IF (NOT DIRECTORY_EXISTS "BiG World Installpack\Big World Smoothpack") THEN BEGIN
+				PRINT ~Press any key to continue...~
+				ACTION_READLN ~pause~
+			END
+		END
+	END
+
+	DEFINE_ACTION_FUNCTION ~checks~
+	BEGIN
+		ACTION_IF (NOT DIRECTORY_EXISTS ~%MESSAGES%~) THEN BEGIN
+			PRINT ~~
+			PRINT ~Can't locate the directory "%MESSAGES%".~
+			PRINT ~Make sure the Fixpack resides in the current directory~
+			PRINT ~~
+			PRINT ~Das Verzeichnis "%MESSAGES%" konnnte nicht gefunden werden.~
+			PRINT ~Es ist fÅr die Installation zwingend erforderlich~
+			PRINT ~und muss im aktuellen Verzeichnis vorhanden sein.~
+			PRINT ~~
+			PRINT ~Ne trouve pas le repertoire "%MESSAGES%".~
+			PRINT ~Assurez-vous qu'il se trouve dans le repertoire actuel.~
+			PRINT ~~
+			PRINT ~No se puede localizar el directorio "%MESSAGES%".~
+			PRINT ~Es necesario para la instalacion y debe estar en el~
+			PRINT ~directorio actual.~
+			PRINT ~~
+			FAIL ~Missing Fixpack Sub-Folder~
+		END
+
+		ACTION_IF (NOT FILE_EXISTS ~%INSTALL_MARKER%~) THEN BEGIN
+	<<<<<<<< .../BiG_World_Fixpack-inlined/%INSTALL_MARKER%
+	>>>>>>>>
+			COPY ~.../BiG_World_Fixpack-inlined/%INSTALL_MARKER%~ ~%INSTALL_MARKER%~
+		END ELSE BEGIN
+			LAF ~show_message~ STR_VAR msg_file_path = EVAL ~%os_quote%%MESSAGES%%os_slash%previous_install.txt%os_quote%~ END
+			FAIL ~Previous Installation Marker File Found~
+		END
+	END
+
+	DEFINE_ACTION_FUNCTION ~process_mod_folders~
+	BEGIN	
+		GET_DIRECTORY_ARRAY ~folder_array~ ~.~ ~^.*$~
+		ACTION_PHP_EACH ~folder_array~ AS index => folder BEGIN
+			ACTION_IF (~%folder%~ STRING_MATCHES_REGEXP ~^.*/\.\.?$~ != 0) THEN BEGIN // exclude /. and /..
+				LAF FILE_OF_FILESPEC // trim leading ./
+					STR_VAR
+						filespec = EVAL ~%folder%~
+					RET
+						mod_folder = file
+				END
+				OUTER_TEXT_SPRINT ~fixpack_subfolder~ ~%FIXPACK%%os_slash%%mod_folder%~
+				ACTION_IF (DIRECTORY_EXISTS ~%fixpack_subfolder%~) THEN BEGIN
+					OUTER_SET skip = 0
+					ACTION_FOR_EACH reserved IN ~data~ ~lang~ ~Manuals~ ~movies~ ~mpsave~ ~music~ ~override~ ~save~ ~scripts~ BEGIN
+						ACTION_IF (~%reserved%~ STR_EQ ~%mod_folder%~) THEN BEGIN
+							OUTER_SET skip = 1
+						END
+					END
+					ACTION_IF (skip = 0) THEN BEGIN
+						LAF ~process_fixpack_subfolder~ STR_VAR target_folder = EVAL ~%mod_folder%~ source_folder = EVAL ~%fixpack_subfolder%~ END
+						LAF ~process_nested_subfolders~ INT_VAR if_present = 1 STR_VAR dir_with_subdirs = EVAL ~%fixpack_subfolder%/%DEPENDS_DIR%~ END
+						LAF ~process_nested_subfolders~ INT_VAR if_present = 0 STR_VAR dir_with_subdirs = EVAL ~%fixpack_subfolder%/%DEPENDS_NOT_DIR%~ END
+					END
+				END
+			END
+		END
+	END
+
+	DEFINE_ACTION_FUNCTION ~process_nested_subfolders~
+		INT_VAR
+			if_present = 1
+		STR_VAR
+			dir_with_subdirs = ~~
+	BEGIN
+		ACTION_IF (DIRECTORY_EXISTS ~%dir_with_subdirs%~) THEN BEGIN
+			GET_DIRECTORY_ARRAY ~folder_array~ ~%dir_with_subdirs%~ ~^.*$~ // subdirs inside this directory
+			ACTION_PHP_EACH ~folder_array~ AS index => folder BEGIN
+				ACTION_IF (~%folder%~ STRING_MATCHES_REGEXP ~^.*/\.\.?$~ != 0) THEN BEGIN // exclude /. and /..
+					LAF FILE_OF_FILESPEC // trim leading ./
+						STR_VAR
+							filespec = EVAL ~%folder%~
+						RET
+							mod_folder = file
+					END
+					ACTION_IF (DIRECTORY_EXISTS ~%mod_folder%~ == %if_present%) THEN BEGIN // a mod folder matching the dependency subdir was (not?) found
+						LAF ~process_fixpack_subfolder~ STR_VAR target_folder = EVAL ~%mod_folder%~ source_folder = EVAL ~%dir%%os_slash%%mod_folder%~ END
+					END
+				END
+			END
+		END
+	END
+
+	DEFINE_ACTION_FUNCTION ~process_fixpack_subfolder~
+		STR_VAR
+			target_folder = ~~
+			source_folder = ~~
+	BEGIN
+		PRINT ~processing fixes for mod folder "%target_folder%"~
+
+		ACTION_IF (DIRECTORY_EXISTS ~%source_folder%/%COPY_DIR%~) THEN BEGIN
+			PRINT ~copying files ...~
+			OUTER_SPRINT ~copy_target_folder~ ~%target_folder%~
+			// look for TARGET_FILE which can override target directory for _copy
+			ACTION_IF (FILE_EXISTS ~%source_folder%/%TARGET_FILE%~) THEN BEGIN
+				SILENT // suppress "copying 1 file..." log message
+				COPY - ~%source_folder%/%TARGET_FILE%~ ~%FIXPACK%/%tmp~
+					READ_2DA_ENTRY 0 0 1 copy_target_folder // top-level mod directory name
+				BUT_ONLY
+				VERBOSE
+				ACTION_IF (NOT DIRECTORY_EXISTS ~%copy_target_folder%~) THEN BEGIN
+					MKDIR ~%copy_target_folder%~ // if the target folder doesn't exist, create it 
+				END
+			END
+			LAF ~recursive_deep_copy~ STR_VAR current_dir = EVAL ~%source_folder%/%COPY_DIR%~ target_dir = EVAL ~%copy_target_folder%~ END
+		END
+
+		ACTION_IF (FILE_EXISTS ~%source_folder%/%DEL_FILE%~) THEN BEGIN
+			SILENT // suppress "copying 1 file..." log message
+			COPY - ~%source_folder%/%DEL_FILE%~ ~%FIXPACK%/tmp~
+				COUNT_2DA_ROWS 1 num_files // 1 column
+				PATCH_IF (num_files > 0) THEN BEGIN
+					PATCH_PRINT ~deleting files ...~
+					FOR (i = 0; i < num_files; ++i) BEGIN
+						READ_2DA_ENTRY i 0 1 file_to_delete
+						INNER_ACTION BEGIN
+							PRINT "- DELETE ~%target_folder%/%file_to_delete%~"
+							ACTION_IF (FILE_EXISTS ~%target_folder%/%file_to_delete%~) THEN BEGIN
+								DELETE ~%target_folder%/%file_to_delete%~
+							END ELSE BEGIN
+								PRINT ~File to delete not found. Skipping.~
+							END
+						END
+					END
+				END
+			BUT_ONLY
+			VERBOSE
+		END
+		
+		ACTION_IF (FILE_EXISTS ~%source_folder%/%REN_FILE%~) THEN BEGIN
+			SILENT // suppress "copying 1 file..." log message
+			COPY - ~%source_folder%/%REN_FILE%~ ~%FIXPACK%/tmp~
+				COUNT_2DA_ROWS 2 num_files // 2 columns
+				PATCH_IF (num_files > 0) THEN BEGIN
+					PATCH_PRINT ~renaming files ...~
+					FOR (i = 0; i < num_files; ++i) BEGIN
+						READ_2DA_ENTRY i 0 1 file_to_rename
+						READ_2DA_ENTRY i 1 1 new_filename
+						INNER_ACTION BEGIN
+							LAF DIRECTORY_OF_FILESPEC // get leading path
+								STR_VAR
+									filespec = EVAL ~%target_folder%/%file_to_rename%~
+								RET
+									destpath = directory
+							END
+							PRINT "> MOVE ~%target_folder%/%file_to_rename%~ ~%destpath%/%new_filename%~"
+							ACTION_IF (FILE_EXISTS ~%target_folder%/%file_to_rename%~ AND DIRECTORY_EXISTS ~%destpath%~) THEN BEGIN
+								MOVE ~%target_folder%/%file_to_rename%~ ~%destpath%/%new_filename%~
+							END ELSE BEGIN
+								PRINT ~Source file or target path invalid. Skipping.~
+							END
+						END
+					END
+				END
+			BUT_ONLY
+			VERBOSE
+		END
+
+		// apply patches
+		GET_FILE_ARRAY ~patchfiles_array~ ~%source_folder%~ ~%PATCH_FILES%~
+		ACTION_PHP_EACH patchfiles_array AS ind => file BEGIN
+			PRINT "! %PATCH_CMD% < %os_quote%%file%%os_quote%"
+			AT_NOW ~%PATCH_CMD% < %os_quote%%file%%os_quote%~
+		END
+	END
+
+	DEFINE_ACTION_FUNCTION ~recursive_deep_copy~ // will skip empty directories
+		STR_VAR
+			current_dir = ~~
+			target_dir = ~~
+	BEGIN
+		OUTER_TEXT_SPRINT file_arr ~%current_dir%_files~
+		OUTER_TEXT_SPRINT folder_arr ~%current_dir%_folders~
+
+		GET_FILE_ARRAY EVAL ~%file_arr%~ ~%current_dir%~ ~^.*$~
+		GET_DIRECTORY_ARRAY EVAL ~%folder_arr%~ ~%current_dir%~ ~^.*$~
+
+		ACTION_PHP_EACH ~%file_arr%~ AS ind => file_full_path BEGIN
+			LAF FILE_OF_FILESPEC // trim leading path
+				STR_VAR
+					filespec = EVAL ~%file_full_path%~
+				RET
+					file_name = file
+			END
+			PRINT "+ COPY_LARGE ~%file_full_path%~ ~%target_dir%~"
+			COPY_LARGE ~%file_full_path%~ ~%target_dir%~
+		END
+
+		ACTION_PHP_EACH ~%folder_arr%~ AS ind => subdir_full_path BEGIN
+			ACTION_IF (~%subdir_full_path%~ STRING_MATCHES_REGEXP ~^.*/\.\.?$~ != 0) BEGIN // exclude /. and /..
+				LAF FILE_OF_FILESPEC // trim leading path
+					STR_VAR
+						filespec = EVAL ~%subdir_full_path%~
+					RET
+						folder_name = file
+				END
+				ACTION_IF (NOT DIRECTORY_EXISTS ~%target_dir%/%folder_name%~) THEN BEGIN
+					PRINT "+ MKDIR ~%target_dir%/%folder_name%~"
+					MKDIR ~%target_dir%/%folder_name%~
+				END
+				LAF ~recursive_deep_copy~ STR_VAR current_dir = EVAL ~%subdir_full_path%~ target_dir = EVAL ~%target_dir%/%folder_name%~ END
+			END
+		END
+	END
+END // ALWAYS
+
+BEGIN ~Apply Patches To Unpacked Mod Folders In Game Directory~ INSTALL_BY_DEFAULT NO_LOG_RECORD
+
+LAUNCH_ACTION_FUNCTION ~checks~ END
+LAUNCH_ACTION_FUNCTION ~show_message~ STR_VAR msg_file_path = EVAL ~%os_quote%%MESSAGES%%os_slash%header.txt%os_quote%~ END
+LAUNCH_ACTION_FUNCTION ~show_message~ STR_VAR msg_file_path = EVAL ~%os_quote%%MESSAGES%%os_slash%start.txt%os_quote%~ END
+LAUNCH_ACTION_FUNCTION ~process_mod_folders~ END
+LAUNCH_ACTION_FUNCTION ~show_message~ STR_VAR msg_file_path = EVAL ~%os_quote%%MESSAGES%%os_slash%end.txt%os_quote%~ END
