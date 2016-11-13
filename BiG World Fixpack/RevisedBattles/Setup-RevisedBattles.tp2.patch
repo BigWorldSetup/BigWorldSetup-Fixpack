@@ -1,15 +1,53 @@
---- Setup-RevisedBattles.tp2	Sat Aug 23 00:00:58 2008
-+++ C:\BWP Patchstudio\patched files\Setup-RevisedBattles.tp2	Sat Jan 09 10:57:36 2016
-@@ -4,7 +4,7 @@
- 
+--- Setup-RevisedBattles.tp2	Sat Aug 23 01:00:56 2008
++++ RevisedBattles_v6.3/Setup-RevisedBattles.tp2	Sun Nov 13 12:14:57 2016
+@@ -5,6 +5,24 @@
  BACKUP ~RevisedBattles/backup~
  AUTHOR ~erebusant@verizon.net~
--
-+VERSION ~v6.3 BWP Fix~
+ 
++VERSION ~v6.3 BWP Fix 3~
++
++// EET / BGT chapter numbering compatibility 
++ALWAYS
++  OUTER_SPRINT ~BGT_VAR~ ~GlobalLT("endofbg1","GLOBAL",2)~ // Only true in BG1/BGEE/SoD part of BGT/EET
++
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++END
++
  // Modified to Patch vs. Overwrite by erebusant based entirely upon the original ideas and concepts
  // of moonfruit & tyrus
  
-@@ -1108,7 +1108,7 @@
+@@ -80,10 +98,10 @@
+ BEGIN @7001
+ AT_INTERACTIVE_EXIT ~VIEW RevisedBattles\README-RevisedBattles.html~
+ 
+-COPY + ~Setup-RevisedBattles.exe~ ~WeiDU.exe~
++/*COPY + ~Setup-RevisedBattles.exe~ ~WeiDU.exe~
+ 
+ COPY + ~chitin.key~ ~RevisedBattles/chitin.ib~
+-COPY_LARGE + ~dialog.tlk~ ~RevisedBattles/dialog.ib~
++COPY_LARGE + ~dialog.tlk~ ~RevisedBattles/dialog.ib~*/
+ 
+ //MKDIR ~RevisedBattles/over.bak~
+ //COPY_LARGE + ~override~ ~RevisedBattles/over.bak~
+@@ -501,7 +519,7 @@
+ EXTEND_BOTTOM ~sevpat04.bcs~ ~RevisedBattles/mencar/baf/sevpat04.baf~
+ EXTEND_BOTTOM ~sevpat05.bcs~ ~RevisedBattles/mencar/baf/sevpat05.baf~
+ 
+-EXTEND_TOP ~baldur.bcs~	 ~RevisedBattles/mencar/baf/pookpar.baf~
++EXTEND_TOP ~baldur.bcs~	 ~RevisedBattles/mencar/baf/pookpar.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~sevpat01.CRE~	~override~
+   PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // protects against invalid files
+@@ -1108,7 +1126,7 @@
  REQUIRE_COMPONENT ~Setup-RevisedBattles.TP2~ ~0~ ~Requires Improved Battles - "erebusant's Patching Version" v6~
  REQUIRE_COMPONENT ~Setup-NEJ2V691.TP2~ ~0~ ~Never Ending Journey Second Edition v6.91~
  
@@ -18,7 +56,7 @@
    READ_2DA_ENTRIES_NOW ~_#_#_#weidu~ 1
    SET good_install = 0
    SET row = 0
-@@ -1134,7 +1134,7 @@
+@@ -1134,7 +1152,7 @@
    END
  ACTION_IF (good_install = 0) BEGIN
    FAIL ~NeJ2 needs to be installed directly after BGT and/or BGTMusic.~
@@ -27,7 +65,7 @@
  
  COMPILE ~RevisedBattles/firkraag/dlg/NEJv691 Compat~
  
-@@ -1936,7 +1936,7 @@
+@@ -1936,7 +1954,7 @@
    END
  BUT_ONLY_IF_IT_CHANGES
  
@@ -36,3 +74,12 @@
  COPY_EXISTING ~gall.CRE~	~override~
    PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // protects against invalid files
      ADD_CRE_ITEM			~BOW17~	#0 #0 #0	~NONE~	~WEAPON1~	EQUIP
+@@ -2690,7 +2708,7 @@
+         ~RevisedBattles/knights/dlg~
+ USING   ~RevisedBattles/Language/%s/b#knight.tra~
+ 
+-EXTEND_TOP ~baldur.bcs~				~RevisedBattles/knights/baf/b#knitsp.baf~
++EXTEND_TOP ~baldur.bcs~				~RevisedBattles/knights/baf/b#knitsp.baf~ EVALUATE_BUFFER
+ EXTEND_TOP ~baldur.bcs~				~RevisedBattles/knights/baf/b#fallen.baf~
+ EXTEND_TOP ~ar0406.bcs~				~RevisedBattles/knights/baf/b#ar0406.baf~
+ 

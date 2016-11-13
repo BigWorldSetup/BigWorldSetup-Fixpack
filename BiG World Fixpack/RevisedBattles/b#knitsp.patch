@@ -1,0 +1,19 @@
+--- RevisedBattles/knights/baf/b#knitsp.baf	Sun Jun 01 12:47:56 2003
++++ RevisedBattles_v6.3/RevisedBattles/knights/baf/b#knitsp.baf	Sun Nov 13 09:15:23 2016
+@@ -6,13 +6,14 @@
+ 
+ IF
+   CheckStatGT(Player1,14,LEVEL)
++  !%BGT_VAR% // block spawning in BG1 part of BGT and EET
+   AreaType(OUTDOOR)
+   AreaType(CITY)
+   CombatCounter(0)
+   OR(2)
+-    GlobalLT("Chapter","GLOBAL",4)
+-    GlobalGT("Chapter","GLOBAL",5)
++    GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
++    GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+   Global("b#CreateLug","GLOBAL",0)
+ THEN
+   RESPONSE #100
+     SetGlobal("b#CreateLug","GLOBAL",1)

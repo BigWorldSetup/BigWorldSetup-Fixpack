@@ -2126,6 +2126,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
+:: Nightfarer's fixed Master Brain overwriting - removed udmaster.cre
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589068
+
+:: agb1's don't spawn Lug in BG1 fix - Setup-RevisedBattles.tp2, b#knitsp.baf
+:: http://www.shsforums.net/topic/34387-revised-battles-v6-released/page-5#entry590939
+
+:: agb1's BGT/EET chapter numbering patch - Setup-RevisedBattles.tp2, b#knitsp.baf, pookpar.baf
+:: - LINK NOT FOUND -
+
+:: agb1's disabled dialog.tlk/chitin.key/WeiDU.exe copies (EE install error) - Setup-RevisedBattles.tp2
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 

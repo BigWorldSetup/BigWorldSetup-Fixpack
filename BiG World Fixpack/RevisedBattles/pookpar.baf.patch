@@ -1,6 +1,25 @@
---- RevisedBattles\mencar\baf\pookpar.baf	Sat Jun 14 01:02:56 2003
-+++ C:\BWP Patchstudio\patched files\RevisedBattles\mencar\baf\pookpar.baf	Sat May 02 10:03:01 2009
-@@ -26,10 +26,10 @@
+--- RevisedBattles/mencar/baf/pookpar.baf	Sat Jun 14 01:02:56 2003
++++ RevisedBattles_v6.3/RevisedBattles/mencar/baf/pookpar.baf	Sun Nov 13 09:24:08 2016
+@@ -5,8 +5,8 @@
+   CombatCounter(0)
+   Global("b#PookyParents","GLOBAL",0)
+   OR(2)
+-    GlobalLT("Chapter","GLOBAL",4)
+-    GlobalGT("Chapter","GLOBAL",5)
++    GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
++    GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+   RESPONSE #100
+     IncrementGlobal("b#PookyParents","GLOBAL",1)
+@@ -20,16 +20,16 @@
+   Global("b#PookyParents","GLOBAL",1)
+   GlobalTimerExpired("b#PookyParentsTimer","GLOBAL")
+   OR(2)
+-    GlobalLT("Chapter","GLOBAL",4)
+-    GlobalGT("Chapter","GLOBAL",5)
++    GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
++    GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
    RESPONSE #100
      IncrementGlobal("b#PookyParents","GLOBAL",1)
      CreateCreatureObjectOffset("b#pdad",Player1,[75.100])  // Walter
