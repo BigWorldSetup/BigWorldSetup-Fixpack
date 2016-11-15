@@ -2699,21 +2699,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: TOD - Tower of Deception v3.3.1
-
-:: Lollorian's Script fixes - va#lich.baf, va#lizrd.baf, va#shade.baf, va#wiste.baf
-:: http://www.shsforums.net/topic/44488-solved-probably-me-but-bwp-83/?p=480898
-
-:: Lollorian's extended  OR() fixes - va#gitfm.baf, va#ustrn.baf
-:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483244
-
-:: micbaldur's gamebreaking Panda cutscene bugfix
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=587310
-
-
-----------------------------------------------------------------------------------------
-
-
 :: TotDG - Tales of the Deep Gardens v10.0
 
 :: Lollorian's small little item fix
