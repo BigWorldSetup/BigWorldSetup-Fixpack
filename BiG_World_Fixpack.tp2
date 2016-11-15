@@ -13,9 +13,9 @@
 //
 // For each mod folder, this script looks inside the "BiG World Fixpack"
 //   directory in the main game folder; if a Fixpack subfolder with the
-//   same name as the mod folder is found, this script recursively processes
-//   all files and folders found inside that Fixpack subfolder and performs
-//   actions for each file or folder that matches one of the following names:
+//   same name as the mod folder is found, this script processes all files
+//   and folders found inside that Fixpack subfolder and performs actions
+//   for each file or folder that matches one of the following names:
 //
 //       *.patch         =>  apply this patch (assumed to be a "diff" patch)
 //                           all patches are applied in the main game folder,
@@ -31,7 +31,7 @@
 //                           (paths are relative to the target mod folder)
 //                           (\t means insert a literal TAB here)
 //
-//       _copy/          =>  copy all contents to target mod folder
+//       _copy/          =>  recursively copy all contents to target mod folder
 //
 //       _target         =>  the first line of this file, if present in the
 //                           Fixpack top-level subfolder, will be used as the
@@ -45,12 +45,12 @@
 BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v1~
+VERSION ~v1.1~
 
-ALWAYS	
+ALWAYS
 	// special folders and marker file
 	OUTER_TEXT_SPRINT FIXPACK ~BiG_World_Fixpack~ // Fixpack's own folder containing patches, without spaces
-	OUTER_TEXT_SPRINT INSTALL_MARKER ~BiG_World_Fixpack.installed~ // to be created by this script
+	OUTER_TEXT_SPRINT INSTALL_MARKER ~BWP_Fixpack.installed~ // to be created by this script (name chosen for backwards compatibility)
 
 	// special folder names to match in Fixpack sub-folders
 	OUTER_TEXT_SPRINT COPY_DIR ~_copy~ // exact match
@@ -65,18 +65,16 @@ ALWAYS
 
 	// platform specific syntax and utilities
 	ACTION_IF (~%WEIDU_OS%~ STR_EQ ~win32~) THEN BEGIN
-		AT_NOW ~move "BiG World Fixpack" "%FIXPACK%"~ // rename Fixpack folder to remove spaces (backwards compatibility)
+		AT_NOW ~move "BiG World Fixpack" "%FIXPACK%"~ // rename Fixpack folder to remove spaces (packaged folder name has spaces for backwards compatibility)
 		OUTER_TEXT_SPRINT os_slash ~\~
 		OUTER_TEXT_SPRINT os_quote ~"~
 		OUTER_TEXT_SPRINT DISPLAY_FILE_CMD ~type~
-		OUTER_TEXT_SPRINT DEEP_COPY_CMD ~xcopy /Y /E /R /V~
 		OUTER_TEXT_SPRINT PATCH_CMD ~%FIXPACK%\_utils\patch.exe -p0 -f --no-backup-if-mismatch --ignore-whitespace~
 	END ELSE BEGIN
-		AT_NOW ~mv 'BiG World Fixpack' '%FIXPACK%'~ // rename Fixpack folder to remove spaces (backwards compatibility)
+		AT_NOW ~mv 'BiG World Fixpack' '%FIXPACK%'~ // rename Fixpack folder to remove spaces (packaged folder name has spaces for backwards compatibility)
 		OUTER_TEXT_SPRINT os_slash ~/~
 		OUTER_TEXT_SPRINT os_quote ~'~
 		OUTER_TEXT_SPRINT DISPLAY_FILE_CMD ~cat~
-		OUTER_TEXT_SPRINT DEEP_COPY_CMD ~cp -rf~
 		OUTER_TEXT_SPRINT PATCH_CMD ~patch -p0 -f --no-backup-if-mismatch --ignore-whitespace~
 	END
 
