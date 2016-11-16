@@ -1,7 +1,7 @@
 BACKUP ~Area_Patcher/backup~
 AUTHOR ~Nightfarer - piol.luca@gmail.com~
 //README ~Area_Patcher/readme.html~
-VERSION ~ALPHA 10~
+VERSION ~ALPHA 11~
 
 ASK_EVERY_COMPONENT
 
@@ -19,12 +19,12 @@ ASK_EVERY_COMPONENT
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 BEGIN ~Area Patcher~
-REQUIRE_PREDICATE (GAME_IS ~BGT~) ~BGT is required to install the Area Patcher.~
+REQUIRE_PREDICATE (GAME_IS ~bgt~) ~BGT is required to install the Area Patcher.~
 GROUP ~Area Patcher~
 DESIGNATED 0
 PRINT ~Dummy component required~
 
-ACTION_IF NOT (GAME_IS ~BGT~) BEGIN
+ACTION_IF NOT (GAME_IS ~bgt~) BEGIN
   FAIL ~BGT is required~
 END
 
@@ -137,6 +137,38 @@ DECOMPILE_AND_PATCH BEGIN
 !Global("Hostilecity","GLOBAL",1)~
 END
 BUT_ONLY_IF_IT_CHANGES
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////												    ////////////
+////////////			AR0701 Script Fix							    ////////////
+////////////												    ////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+BEGIN ~Fix AR0701 Script~
+REQUIRE_COMPONENT ~setup-area_patcher.tp2~ 0 ~You must install the dummy component before any other thing.~
+GROUP ~Vanilla~
+DESIGNATED 2002
+ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Area_Patcher.tp2~ 0) BEGIN
+  FAIL ~BGT and Area Patcher Component 0 are required to install this component.~
+END
+
+COPY_EXISTING ~AR0701.bcs~ ~override~
+
+<<<<<<<< .../Area_Patcher/baf-inlined/rogerfix.baf
+IF
+    Global("ROGERFIX","AR0701",0)
+THEN
+    RESPONSE #100
+        SetGlobal("SPRITE_IS_DEADROGTRO02","GLOBAL",0)
+        SetGlobal("ROGERFIX","AR0701",1)
+        Continue()
+END
+>>>>>>>>
+
+EXTEND_TOP ~AR0701.bcs~ ~.../Area_Patcher/baf-inlined/rogerfix.baf~
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
