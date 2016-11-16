@@ -360,10 +360,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: AvengerKit - Holy Avenger Kit + Extras v1.02
+:: AvengerKit - Holy Avenger Kit + Extra v1.1 (tp2 version) / v1.02 (Readme.txt version)
 
 :: Rename sudemin.cre -> suedemin.cre
 :: http://www.shsforums.net/topic/42248-holy-avenger-kit-extra/?p=509983
+
+:: Nightfarer's Suldanesselar and Black Dragon component patching instead of overwriting areas and creatures
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-51#entry589788
 
 
 ----------------------------------------------------------------------------------------
