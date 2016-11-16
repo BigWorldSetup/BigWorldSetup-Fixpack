@@ -1143,6 +1143,19 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's Frennedan - Imrae dialogue bugfix (EXTERNed to frsola00 not harcoded states)
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=573925
 
+:: agb1's tweak to Frennedan - Imrae dialogue bugfix (removed Dead check from new dialogue branch)
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=591037
+
+
+----------------------------------------------------------------------------------------
+
+
+:: foundling - Foundling: Between the Shades NPC v.BETA1
+
+:: micbaldur's and Artemius_I's fix for repeating ToB friendship talk 11
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-52#entry590637
+:: https://forums.beamdog.com/discussion/41586/foundling-between-the-shades-beta-is-available#Comment_667153
+
 
 ----------------------------------------------------------------------------------------
 

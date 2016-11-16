@@ -5,7 +5,7 @@
  ALTER_TRANS UDIMRAE BEGIN 4 END BEGIN 0 END BEGIN "TRIGGER" ~!InParty("frendan")~ END
  EXTEND_TOP UDIMRAE 4
 -     IF ~InParty("frendan") !Dead("frendan")~ THEN EXTERN ~UDSOLA01~ 1 //frsola00
-+     IF ~InParty("frendan") !Dead("frendan")~ THEN EXTERN ~UDSOLA01~ frsola00
++     IF ~InParty("frendan")~ THEN EXTERN ~UDSOLA01~ frsola00 // dead or alive, take new branch if Frennedan is in the party
  END
  
  
