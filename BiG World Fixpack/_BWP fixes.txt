@@ -365,7 +365,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Rename sudemin.cre -> suedemin.cre
 :: http://www.shsforums.net/topic/42248-holy-avenger-kit-extra/?p=509983
 
-:: Nightfarer's Suldanesselar and Black Dragon component patching instead of overwriting areas and creatures
+:: Nightfarer's Suldanesselar and Black Dragon component patching instead of overwriting stores, areas and creatures
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-51#entry589788
 
 
@@ -703,6 +703,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Wisp's improved KIT.IDS patching code
 :: http://www.shsforums.net/topic/58487-fixing-the-kitids-megamod-style/?p=584888
+
+:: agb1's ascension dialog patching (don't overwrite ILLASERA.DLG, YAGA01.DLG, GROMNIR.DLG)
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-51#entry590211
 
 
 ----------------------------------------------------------------------------------------
