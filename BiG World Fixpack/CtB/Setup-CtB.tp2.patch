@@ -81,7 +81,7 @@
 +		WRITE_BYTE    0x23e       ~9~            // Charisma
 +		WRITE_BYTE    0x242       ~30~           // Morale Recovery Time
 +		WRITE_SHORT   0x244       ~0~            // KIT TRUECLASS
-+		WRITE_BYTE    0x246       ~0x4000~       // KIT TRUECLASS
++		WRITE_SHORT   0x246       ~0x4000~       // KIT TRUECLASS
 +		WRITE_ASCII   0x250       ~~         #8  // Class script
 +		WRITE_ASCII   0x268       ~GPMERC~   #8  // Default script
 +		WRITE_BYTE    0x271       ~255~          // General
