@@ -1,0 +1,11 @@
+--- AviM\SoA\1xAviB.d	Sun Sep 27 20:41:48 2009
++++ C:\BWP Patchstudio\patched files\AviM\SoA\1xAviB.d	Thu Nov 17 11:02:41 2016
+@@ -902,7 +902,7 @@
+ 
+ IF~~THEN BEGIN Avi16x06
+ SAY~(Trwa to pewien czas. Stan tego upojenia sprawia, ¿e zaczynasz czuæ zmêczenie. S³yszysz w swojej g³owie szept.) To jest coœ, co tylko ja mogê ci pokazaæ.~
+-IF~~THEN DO ~SetGlobal("AviRelations3","GLOBAL",1)
++IF~~THEN DO ~SetGlobal("AviRelations3","GLOBAL",2)
+ RestParty()~EXIT
+ END
+ 
