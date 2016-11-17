@@ -1,0 +1,41 @@
+BACKUP ~Cre_Patcher/backup~
+AUTHOR ~Nightfarer - piol.luca@gmail.com~
+//README ~Cre_Patcher/readme.html~
+VERSION ~ALPHA 1~
+
+ASK_EVERY_COMPONENT
+
+BEGIN ~Cre Patcher~
+REQUIRE_PREDICATE (GAME_IS ~bgt~) ~BGT is required to install the Cre Patcher.~
+GROUP ~Cre Patcher~
+DESIGNATED 0
+PRINT ~Dummy component required~
+
+ACTION_IF NOT (GAME_IS ~bgt~) BEGIN
+  FAIL ~BGT is required~
+END
+
+///Sos Selence
+BEGIN ~Fix Shadows over Soubar Selence's proficiencies~
+REQUIRE_COMPONENT ~setup-cre_patcher.tp2~ 0 ~You must install the dummy component before any other thing.~
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~setup-sos.tp2~ 0) ~This component is needed only if you have installed Shadows over Soubar.~
+GROUP ~Shadows over Soubar~
+DESIGNATED 100
+ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Cre_Patcher.tp2~ 0) OR NOT (MOD_IS_INSTALLED ~setup-sos.tp2~ 0) BEGIN
+  FAIL ~Shadows over Soubar is required to install this component.~
+END
+
+ACTION_FOR_EACH npc IN ~selenc07~ ~selenc09~ ~selenc12~ ~selenc17~ BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~%npc%.cre~ BEGIN
+    COPY_EXISTING ~%npc%.cre~ ~override~ //Selence
+      WRITE_BYTE 0x6e ~0~ //BG1 Large swords proficiency
+      WRITE_BYTE 0x6f ~0~ //BG1 Small Swords proficiency
+      WRITE_BYTE 0x70 ~0~ //BG1 Bows proficiency
+      WRITE_BYTE 0x71 ~0~ //BG1 Spears proficiency
+      WRITE_BYTE 0x72 ~0~ //BG1 Blunt proficiency
+      WRITE_BYTE 0x73 ~0~ //BG1 Spiked proficiency
+      WRITE_BYTE 0x74 ~0~ //BG1 Axe proficiency
+      WRITE_BYTE 0x75 ~0~ //BG1 Missile proficiency
+    BUT_ONLY_IF_IT_CHANGES
+  END
+END
