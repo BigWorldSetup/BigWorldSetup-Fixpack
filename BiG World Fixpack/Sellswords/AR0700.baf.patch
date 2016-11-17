@@ -1,0 +1,11 @@
+--- Sellswords/Scripts/AR0700.baf	Wed Nov 16 20:43:51 2016
++++ Fixpack/Sellswords/Scripts/AR0700.baf	Wed Oct 05 04:07:46 2016
+@@ -4,7 +4,7 @@
+ AreaType(OUTDOOR)
+ InMyArea(Player1)
+ Global("O#LLFirstBoySpawn","GLOBAL",0)
+-GlobalGT("Chapter","GLOBAL",5)
++GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ CombatCounter(0)
+ THEN
+ RESPONSE #100

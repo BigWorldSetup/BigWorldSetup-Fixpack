@@ -836,6 +836,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's patchified improved encounters
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=567844
 
+:: micbaldur's fixed spawning points for Drow Warriors in AR2200 to prevent premature Solaufein trigger
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589067
+
 
 ----------------------------------------------------------------------------------------
 
@@ -892,6 +895,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Urborg Vengrath's repeating flirt fix
 :: http://www.shsforums.net/topic/55815-dace-bugs-thread/?p=567999
+
+:: micbaldur's typo fix for Dace spawning in ToB start area (AR4000)
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-51#entry590211
 
 
 ----------------------------------------------------------------------------------------
@@ -1379,6 +1385,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's typo fixes - easy\duAR1100.BAF, hard\duAR1100.BAF, impossible\duAR1100.BAF
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=487571
+
+:: micbaldur's fix for dialogue issue with Jugend after Arimayus is dead
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589068
 
 
 ----------------------------------------------------------------------------------------
@@ -2399,6 +2408,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Sellswords - The Sellswords v5
+
+:: Sellswords - micbaldur's Enge shop compatibility fix mods that change AR0707.ARE script from AR003.BCS to AR0707.BCS
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589069
+
+:: K4thos' EET compatibility patches
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Setup-BoM - Boards o' Magick Item Pack v2.0
 
 :: Lollorian's assorted WAV fixes
@@ -2497,6 +2518,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's !Dead(Myself) changes - Crdafgt.baf, Crsarfgt.baf, Crsdafgt.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483485
+
+
+----------------------------------------------------------------------------------------
+
+
+:: SPGaunt - Spellhold Gauntlet v1.16
+
+:: Spellhold Maze area script typo: ppbodhi --> ppbodhi4
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589067
 
 
 ----------------------------------------------------------------------------------------

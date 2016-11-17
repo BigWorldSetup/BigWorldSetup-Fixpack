@@ -1,0 +1,11 @@
+--- Sellswords/Scripts/AR0707.baf	Wed Nov 16 20:43:45 2016
++++ Fixpack/Sellswords/Scripts/AR0707.baf	Wed Oct 05 04:07:46 2016
+@@ -1,7 +1,7 @@
+ // Athkatla: Endge's fruit shop, meeting the drow messenger
+ IF
+ Global("O#LLQuest","GLOBAL",0)
+-GlobalGT("Chapter","GLOBAL",5)
++GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+ RESPONSE #100
+ CreateCreature("O#LLMess",[377.487],12)
