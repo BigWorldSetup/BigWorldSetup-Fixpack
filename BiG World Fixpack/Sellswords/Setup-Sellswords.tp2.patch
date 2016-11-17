@@ -1,5 +1,5 @@
---- Setup-Sellswords.tp2	Wed Nov 16 20:29:01 2016
-+++ Fixpack/Setup-Sellswords.tp2	Wed Nov 16 20:40:30 2016
+--- Sellswords/Setup-Sellswords.tp2	Thu Nov 17 01:00:03 2016
++++ Fixpack/Sellswords/Setup-Sellswords.tp2	Thu Nov 17 01:00:10 2016
 @@ -1,12 +1,20 @@
  BACKUP ~Sellswords/Backup~
  AUTHOR ~http://forums.pocketplane.net~
@@ -46,7 +46,7 @@
  LOAD_TRA ~Sellswords/%LANGUAGE%/Setup-Sellswords-EE.tra~
  ADD_JOURNAL @9999 @10000 @10001
  ADD_JOURNAL @10002 @10003 @10004 @10005 @10006 @10007 @10008 @10009 @10010 @10011 @10012 @10013 @10014 @10015 @10016 @10017 @10018 @10019 @10020 @10021 @10022 @10023 @10024 @10025 @10026 
-@@ -121,17 +129,15 @@
+@@ -121,7 +129,7 @@
  	~Sellswords/Scripts/O#LLTALK.baf~
  	~Sellswords/Scripts/O#LLZEDE.baf~
  
@@ -55,16 +55,3 @@
  EXTEND_TOP ~AR0701.bcs~ ~Sellswords/Scripts/AR0701.baf~
  
  // Drow items
- EXTEND_BOTTOM ~AR0900.bcs~ ~Sellswords/Scripts/AR0900.baf~
- 
--// Enge's shop, AR0707, is assigned AR0003.bcs in vanilla game. But someone might set it to AR0707.bcs, so we edit whichever script is available, thanks to Argent77 and K'aeloree:
--COPY_EXISTING ~ar0707.are~ ~override~
--READ_ASCII 0x94 ar0707_script
--
--EXTEND_TOP ~%ar0707_script%.bcs~ ~Sellswords/Scripts/AR0707.baf~
-+// Enge's shop, AR0707, is assigned AR0003.bcs in vanilla game. But another mod might set it to AR0707.bcs, so we edit both.
-+EXTEND_TOP ~ar0003.bcs~ ~Sellswords/Scripts/AR0707.baf~ EVALUATE_BUFFER
-+EXTEND_TOP ~ar0707.bcs~ ~Sellswords/Scripts/AR0707.baf~ EVALUATE_BUFFER
- 
- // Map notes
- 

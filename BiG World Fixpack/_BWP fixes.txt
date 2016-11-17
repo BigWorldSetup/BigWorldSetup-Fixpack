@@ -884,6 +884,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's Valiant timer variable fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=572339
 
+:: Nightfarer's patching for ZILFGT01.CRE instead of overwriting creature file
+:: 
+
 
 ----------------------------------------------------------------------------------------
 
@@ -2410,9 +2413,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Sellswords - The Sellswords v5
 
-:: Sellswords - micbaldur's Enge shop compatibility fix mods that change AR0707.ARE script from AR003.BCS to AR0707.BCS
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589069
-
 :: K4thos' EET compatibility patches
 :: - LINK NOT FOUND -
 
@@ -2464,6 +2464,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Roxanne's duplicate DO fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
+
+:: micbaldur's Lower Tombs Vampire wrong script fix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589069
 
 
 ----------------------------------------------------------------------------------------
