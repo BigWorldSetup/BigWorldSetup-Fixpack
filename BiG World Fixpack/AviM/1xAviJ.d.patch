@@ -1,0 +1,11 @@
+--- AviM\SoA\1xAviJ.d	Wed Sep 23 16:16:06 2009
++++ C:\BWP Patchstudio\patched files\AviM\SoA\1xAviJ.d	Tue Sep 20 16:19:20 2016
+@@ -164,7 +164,7 @@
+ EXIT
+ 
+ INTERJECT_COPY_TRANS PLAYER1 2 aviatplay01
+-== 1xAVIJ IF ~InParty("AVIDV") Global("AviRelationshipActive","GLOBAL",2)~ THEN
++== 1xAVIJ IF ~InParty("AVIDV") Global("AviRelationsActive","GLOBAL",2)~ THEN
+ ~<CHARNAME>! Nie! On... Ja nie wyczówam twojego ducha... coœ jest nie tak! Pieprzony Irenicus!~
+ == 1xAviJ
+ ~Nic nie mów i przyjmij to.~
