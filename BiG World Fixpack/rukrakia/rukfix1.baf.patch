@@ -1,0 +1,12 @@
+--- rukrakia\BAF\rukfix1.baf	Sun Sep 02 07:39:32 2007
++++ C:\BWP Patchstudio\patched files\rukrakia\BAF\rukfix1.baf	Mon Sep 19 17:02:51 2016
+@@ -8,6 +8,7 @@
+                 ReallyForceSpellRES("ruksnw3",Myself)
+                 Wait(2)
+                 SetGlobal("RukrakiaGetFirst","GLOBAL",1)
++                IncrementGlobal("LoveTalk","LOCALS",1)
+                 ActionOverride(Protagonist,StartDialog("player1",Protagonist))
+                 EndCutSceneMode()
+-END
+\ No newline at end of file
++END

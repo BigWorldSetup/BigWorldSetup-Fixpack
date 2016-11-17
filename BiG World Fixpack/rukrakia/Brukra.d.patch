@@ -1,0 +1,11 @@
+--- rukrakia\D\Brukra.d	Fri Sep 21 09:48:27 2007
++++ C:\BWP Patchstudio\patched files\rukrakia\D\Brukra.d	Mon Sep 19 17:12:36 2016
+@@ -1525,7 +1525,7 @@
+ IF ~Global("RukrakiaGetFirst","GLOBAL",1)~ BEGIN rukgetfirst
+   SAY @322
+   IF ~~ THEN REPLY @323 EXTERN ~Brukra~ Brukra114
+-  IF ~~ THEN REPLY @324 EXTERN ~Brukra~ Brukra114
++  IF ~~ THEN DO ~SetGlobal("RukrakiaGetFirst","GLOBAL",2)~ REPLY @324 EXTERN ~Brukra~ Brukra114
+ END
+ END
+ 

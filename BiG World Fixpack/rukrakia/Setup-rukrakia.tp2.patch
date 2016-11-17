@@ -1,5 +1,5 @@
---- rukrakia\Setup-rukrakia.tp2	Thu Jun 23 16:27:04 2011
-+++ C:\BWP Patchstudio\patched files\rukrakia\Setup-rukrakia.tp2	Mon Oct 14 22:40:55 2013
+--- rukrakia\Setup-rukrakia.tp2	Thu Jun 23 12:57:04 2011
++++ C:\BWP Patchstudio\patched files\rukrakia\Setup-rukrakia.tp2	Mon Oct 24 13:52:02 2016
 @@ -1,6 +1,6 @@
  BACKUP ~rukrakia/backup~
  AUTHOR ~darktn@naver.com~
@@ -8,3 +8,713 @@
  LANGUAGE ~korean~
           ~korean~
           ~rukrakia/korean/setup.tra~
+@@ -559,9 +559,9 @@
+ // updates :  01-02-2006
+ //****************************************************************
+ 
+-PRINT ~이제부터 루크라키아 로맨스 모드를 설치합니다.~
++//PRINT ~이제부터 루크라키아 로맨스 모드를 설치합니다.~
+ 
+-PRINT ~이 모드는 월드맵변경을 포함합니다. 월드맵을 건드리는 모드와는 호환되지 않습니다.~
++//PRINT ~이 모드는 월드맵변경을 포함합니다. 월드맵을 건드리는 모드와는 호환되지 않습니다.~
+ 
+ APPEND ~CLASS.ids~ ~202 LONG_BOW~
+  UNLESS ~LONG_BOW~
+@@ -591,11 +591,11 @@
+ INSERT_2DA_ROW "%songnum%" 3 ~%songnum%      rumaster        Fantazi.mus~
+ EVALUATE_BUFFER
+ 
+-COPY ~rukrakia/AREA/worldmap.wmp~ ~override~
+-SAY 0x1878 @142
++// COPY ~rukrakia/AREA/worldmap.wmp~ ~override~
++// SAY 0x1878 @142
+ 
+-COPY ~rukrakia/AREA/worldm25.wmp~ ~override~
+-SAY 0xb58 @244
++// COPY ~rukrakia/AREA/worldm25.wmp~ ~override~
++// SAY 0xb58 @244
+ 
+ COPY ~rukrakia/AREA/RU6800.are~ ~override~
+ WRITE_LONG 0x358 "%songnum%"
+@@ -2020,13 +2020,671 @@
+ USING ~rukrakia/STAGE/host/RU_host.tra~
+ 
+ 
+-////////////////////////////////////////////////////////////////////
+-////////////////////////////////////////////////////////////////////
++//**************************************************
++//  WORLDMAP
++//**************************************************
++BEGIN ~Add Rukrakia Areas to SOA Worldmap~
++
++PRINT ~월드맵을 업데이트 합니다...~
++
++INCLUDE ~rukrakia/LIB/add_map_icons.tpa~
++//INCLUDE ~rukrakia/LIB/worldmap.tph~
++
++APPEND ~MASTAREA.2da~ ~RU6700 value~ UNLESS ~RU6700~
++APPEND ~MASTAREA.2da~ ~RU6800 value~ UNLESS ~RU6800~
++APPEND ~MASTAREA.2da~ ~RU6801 value~ UNLESS ~RU6801~
++APPEND ~MASTAREA.2da~ ~RU6900 value~ UNLESS ~RU6900~
++APPEND ~MASTAREA.2da~ ~RU6901 value~ UNLESS ~RU6901~
++APPEND ~MASTAREA.2da~ ~RU6902 value~ UNLESS ~RU6902~
++
++//RU6700
++LAUNCH_ACTION_FUNCTION ~ADD_MAP_ICONS~
++  INT_VAR 
++    icon_index = 29
++  STR_VAR 
++    worldmap      = ~worldmap~
++    path_to_icons = ~rukrakia/Worldmap/mapicons.bam~
++  RET 
++    icons_added    = icons_added
++    new_icon_index = new_icon_index
++END
++PRINT ~RU6700 mapIcon added. New mapIcons added are: %icons_added%~
++PRINT ~RU6700 mapIcon patched. New mapIcon number is: %new_icon_index%~
++
++
++// set up link variables
++
++// call the sc#addWmpAre function
++  // returns the worldmap entry number for the new area
++   LAUNCH_ACTION_FUNCTION sc#addWmpAre 
++    INT_VAR mapIcon = %new_icon_index%
++            xCoord  = 1424
++            yCoord  = 567
++            tTime   = 2
++            inclSv  = 1
++    STR_VAR areName = "RU6700"
++            strName = "Black Forest"
++            strDesc = "Black Forest"
++            worldmap = "worldmap"
++    RET areNum = areNum END
++
++  // remove if not desired
++  PRINT ~RU6700 patched. New area number is: %areNum%~
++
++COPY_EXISTING ~worldmap.wmp~ ~override~
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 6
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR0020"
++          from_node    = "N"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++          random_area1 = "AR0043"
++          random_area2 = "AR0044"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 6
++          default_entry = 1
++          encounter_probability = 104
++  STR_VAR from_area    = "AR0020"
++          from_node    = "E"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++          random_area1 = "AR0043"
++          random_area2 = "AR0044"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "AR1100"
++          from_node    = "E"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "AR1100"
++          from_node    = "S"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "AR1100"
++          from_node    = "W"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "AR1200"
++          from_node    = "N"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "AR1200"
++          from_node    = "E"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "AR1200"
++          from_node    = "S"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "AR1200"
++          from_node    = "W"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 4
++          default_entry = 1
++  STR_VAR from_area    = "AR1300"
++          from_node    = "N"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 4
++          default_entry = 1
++  STR_VAR from_area    = "AR1300"
++          from_node    = "E"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 4
++          default_entry = 1
++  STR_VAR from_area    = "AR1300"
++          from_node    = "S"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 4
++          default_entry = 1
++  STR_VAR from_area    = "AR1304"
++          from_node    = "N"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 4
++          default_entry = 1
++  STR_VAR from_area    = "AR1304"
++          from_node    = "E"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 3
++          default_entry = 1
++  STR_VAR from_area    = "AR1400"
++          from_node    = "E"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 3
++          default_entry = 1
++  STR_VAR from_area    = "AR1400"
++          from_node    = "S"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 3
++          default_entry = 1
++  STR_VAR from_area    = "AR1404"
++          from_node    = "S"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 4
++          default_entry = 1
++  STR_VAR from_area    = "AR1800"
++          from_node    = "N"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "AR1900"
++          from_node    = "N"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "AR2000"
++          from_node    = "N"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "AR2000"
++          from_node    = "E"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "AR2000"
++          from_node    = "S"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "AR2000"
++          from_node    = "W"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 3
++          default_entry = 1
++  STR_VAR from_area    = "AR2500"
++          from_node    = "E"
++          to_area      = "RU6700"
++          entry        = "ENTRANCE1"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 3
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "N"
++          to_area      = "AR1404"
++          entry        = "ExitE"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "N"
++          to_area      = "AR1100"
++          entry        = "ExitSE"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 3
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "N"
++          to_area      = "AR1400"
++          entry        = "ExitW"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "N"
++          to_area      = "AR1200"
++          entry        = "ExitW"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "S"
++          to_area      = "AR2000"
++          entry        = "ExitSW"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "S"
++          to_area      = "AR1900"
++          entry        = "ExitW"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 4
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "S"
++          to_area      = "AR1700"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 3
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "S"
++          to_area      = "AR2500"
++          entry        = "Exit2401"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 3
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "S"
++          to_area      = "AR1404"
++          entry        = "ExitE"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 6
++          default_entry = 1
++          encounter_probability = 104
++  STR_VAR from_area    = "RU6700"
++          from_node    = "S"
++          to_area      = "AR0020"
++          entry        = "ExitNE"
++          random_area1 = "AR0043"
++          random_area2 = "AR0044"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 4
++          default_entry = 1
++          encounter_probability = 104
++  STR_VAR from_area    = "RU6700"
++          from_node    = "S"
++          to_area      = "AR1300"
++          entry        = "ExitSE"
++          random_area1 = "AR0043"
++          random_area2 = "AR0044"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 4
++          default_entry = 1
++          encounter_probability = 104
++  STR_VAR from_area    = "RU6700"
++          from_node    = "S"
++          to_area      = "AR1304"
++          entry        = "ExitSE"
++          random_area1 = "AR0043"
++          random_area2 = "AR0044"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "S"
++          to_area      = "AR1100"
++          entry        = "ExitSE"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "S"
++          to_area      = "AR2000"
++          entry        = "ExitSW"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "S"
++          to_area      = "AR1900"
++          entry        = "ExitW"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 3
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "S"
++          to_area      = "AR1400"
++          entry        = "ExitW"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 2
++          default_entry = 1
++  STR_VAR from_area    = "RU6700"
++          from_node    = "S"
++          to_area      = "AR1200"
++          entry        = "ExitW"
++END
++BUT_ONLY_IF_IT_CHANGES
++
++BEGIN ~Add Rukrakia Areas to ToB Worldmap~
++
++//RU6901
++LAUNCH_ACTION_FUNCTION ~ADD_MAP_ICONS~
++  INT_VAR 
++    icon_index = 18
++  STR_VAR 
++    worldmap      = ~worldm25~
++    path_to_icons = ~rukrakia/Worldmap/25mapic.bam~
++  RET 
++    icons_added    = icons_added
++    new_icon_index = new_icon_index
++END
++PRINT ~RU6901 mapIcon added. New mapIcons added are: %icons_added%~
++PRINT ~RU6901 mapIcon patched. New mapIcon number is: %new_icon_index%~
++
++
++// set up link variables
++
++// call the sc#addWmpAre function
++  // returns the worldmap entry number for the new area
++LAUNCH_ACTION_FUNCTION sc#addWmpAre 
++    INT_VAR mapIcon = %new_icon_index%
++            xCoord  = 116
++            yCoord  = 455
++            tTime   = 2
++            inclSv  = 1
++    STR_VAR areName = "RU6901"
++            strName = "Sleeping Desert"
++            strDesc = "Sleeping Desert"
++            worldmap = "worldm25"
++RET areNum = areNum END
++
++  // remove if not desired
++  PRINT ~RU6901 patched. New area number is: %areNum%~
++
++COPY_EXISTING ~worldm25.wmp~ ~override~
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 8
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR3000"
++          from_node    = "S"
++          to_area      = "RU6901"
++          entry        = "TORU6901"
++          random_area1 = "RU6902"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 11
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR5200"
++          from_node    = "E"
++          to_area      = "RU6901"
++          entry        = "TORU6901"
++          random_area1 = "RU6902"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 7
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR5202"
++          from_node    = "S"
++          to_area      = "RU6901"
++          entry        = "TORU6901"
++          random_area1 = "RU6902"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 6
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR5203"
++          from_node    = "S"
++          to_area      = "RU6901"
++          entry        = "TORU6901"
++          random_area1 = "RU6902"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 5
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR5500"
++          from_node    = "E"
++          to_area      = "RU6901"
++          entry        = "TORU6901"
++          random_area1 = "RU6902"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 5
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR5500"
++          from_node    = "S"
++          to_area      = "RU6901"
++          entry        = "TORU6901"
++          random_area1 = "RU6902"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 5
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR5500"
++          from_node    = "W"
++          to_area      = "RU6901"
++          entry        = "TORU6901"
++          random_area1 = "RU6902"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 6
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR6000"
++          from_node    = "E"
++          to_area      = "RU6901"
++          entry        = "TORU6901"
++          random_area1 = "RU6902"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 6
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR6000"
++          from_node    = "S"
++          to_area      = "RU6901"
++          entry        = "TORU6901"
++          random_area1 = "RU6902"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 3
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR6100"
++          from_node    = "S"
++          to_area      = "RU6901"
++          entry        = "TORU6901"
++          random_area1 = "RU6902"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 3
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR6100"
++          from_node    = "W"
++          to_area      = "RU6901"
++          entry        = "TORU6901"
++          random_area1 = "RU6902"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 5
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR6300"
++          from_node    = "W"
++          to_area      = "RU6901"
++          entry        = "TORU6901"
++          random_area1 = "RU6902"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 7
++          default_entry = 1
++          encounter_probability = 100
++  STR_VAR from_area    = "AR6400"
++          from_node    = "S"
++          to_area      = "RU6901"
++          entry        = "TORU6901"
++          random_area1 = "RU6902"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 6
++          default_entry = 1
++  STR_VAR from_area    = "RU6901"
++          from_node    = "N"
++          to_area      = "AR5203"
++          entry        = "ExitNE"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 7
++          default_entry = 1
++  STR_VAR from_area    = "RU6901"
++          from_node    = "N"
++          to_area      = "AR6400"
++          entry        = "ExitS"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 5
++          default_entry = 1
++  STR_VAR from_area    = "RU6901"
++          from_node    = "N"
++          to_area      = "AR5200"
++          entry        = "ExitS"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 5
++          default_entry = 1
++  STR_VAR from_area    = "RU6901"
++          from_node    = "N"
++          to_area      = "AR5500"
++          entry        = "ExitS"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 7
++          default_entry = 1
++  STR_VAR from_area    = "RU6901"
++          from_node    = "N"
++          to_area      = "AR5202"
++          entry        = "ExitS"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 8
++          default_entry = 1
++  STR_VAR from_area    = "RU6901"
++          from_node    = "N"
++          to_area      = "AR3000"
++          entry        = "ExitSW"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 5
++          default_entry = 1
++  STR_VAR from_area    = "RU6901"
++          from_node    = "N"
++          to_area      = "AR6300"
++          entry        = "ExitW"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 6
++          default_entry = 1
++  STR_VAR from_area    = "RU6901"
++          from_node    = "E"
++          to_area      = "AR6000"
++          entry        = "ExitS"
++END
++LAUNCH_PATCH_FUNCTION ~ADD_WORLDMAP_LINKS~
++  INT_VAR distance_scale = 3
++          default_entry = 1
++  STR_VAR from_area    = "RU6901"
++          from_node    = "E"
++          to_area      = "AR6100"
++          entry        = "ExitS"
++END
++BUT_ONLY_IF_IT_CHANGES
+ 
+-APPEND ~MASTAREA.2da~
+-  ~RU6700  value
+-RU6800  value
+-RU6801  value
+-RU6900  value
+-RU6901  value
+-RU6902  value~
+\ No newline at end of file
++//**************************************************
++//  BP-BGT-WORLDMAP
++//**************************************************
++BEGIN ~Add Rukrakia Areas to BP-BGT-Worldmap~
++
++PRINT ~월드맵을 업데이트 합니다...~
++
++//INCLUDE ~rukrakia/LIB/add_map_icons.tpa~
++//INCLUDE ~rukrakia/LIB/worldmap.tph~
++
++APPEND ~MASTAREA.2da~ ~RU6700 value~ UNLESS ~RU6700~
++APPEND ~MASTAREA.2da~ ~RU6800 value~ UNLESS ~RU6800~
++APPEND ~MASTAREA.2da~ ~RU6801 value~ UNLESS ~RU6801~
++APPEND ~MASTAREA.2da~ ~RU6900 value~ UNLESS ~RU6900~
++APPEND ~MASTAREA.2da~ ~RU6901 value~ UNLESS ~RU6901~
++APPEND ~MASTAREA.2da~ ~RU6902 value~ UNLESS ~RU6902~
++
++ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
++  COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
++   APPEND_FILE ~rukrakia/Worldmap/areas.tbl~
++  COPY ~Worldmap/map_mods_links.tbl~  ~Worldmap~
++   APPEND_FILE ~rukrakia/Worldmap/links.tbl~
++  COPY ~Worldmap/map_mods_trans.tra~  ~Worldmap~
++   APPEND_FILE_EVALUATE ~rukrakia/Worldmap/%LANGUAGE%/worldmap.tra~
++END
++ELSE BEGIN
++  MKDIR ~Worldmap~
++  COPY ~rukrakia/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
++  COPY ~rukrakia/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
++  COPY ~rukrakia/Worldmap/%LANGUAGE%/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
++END

@@ -1,0 +1,6 @@
+
+//Rukrakia New Areas Table
+SHORT_NAME  CONTENT  LONG_NAME  FLAGS  BAM_ANIM  X_POS  Y_POS  NAME         TOOLTIP      LOAD_IM
+
+RU6700      RU6700   RU6700     2      39       1915    3350   @RUK_790001  @RUK_790001  N        //검은 숲
+RU6901      RU6901   RU6901     2      77       1560    4500   @RUK_790002  @RUK_790002  N        //잠자는 사막
