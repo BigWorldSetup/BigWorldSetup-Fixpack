@@ -1,0 +1,8 @@
+--- karatur\setup-karatur.tp2	2016-03-27 20:15:35.023829200 +0200
++++ karatur\setup-karatur.tp2	2016-03-27 20:15:14.706305100 +0200
+@@ -1,4 +1,4 @@
+-BACKUP ~\KaraTur\Kbackup~
++BACKUP ~karatur/backup~
+ AUTHOR ~Corsymyr~
+ 
+ BEGIN ~T'Was a Slow Boat from Kara-Tur~

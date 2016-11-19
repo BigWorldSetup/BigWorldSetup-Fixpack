@@ -1,0 +1,14 @@
+--- Setup-BoM.tp2	Fri May 11 01:00:00 2007
++++ C:\BWP Patchstudio\patched files\Setup-BoM.tp2	Mon Oct 17 19:50:22 2016
+@@ -1,5 +1,6 @@
+ BACKUP ~Setup-BoM/backup~
+ AUTHOR ~Olimikrig(vesterberg@gmail.com)~
++VERSION ~v2.1 BWP Fix~
+ 
+ LANGUAGE ~English~ ~american~
+          ~Setup-BoM/UK English/setup.tra~
+@@ -520,3 +521,4 @@
+ 
+ 
+ AT_INTERACTIVE_EXIT ~VIEW Setup-BoM/documentation/index.html~
++

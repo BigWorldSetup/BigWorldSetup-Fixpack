@@ -1,0 +1,22 @@
+--- Setup-Keldornv101.tp2	Fri Mar 11 23:04:53 2016
++++ C:\BWP Patchstudio\patched files\Setup-Keldornv101.tp2	Tue Jun 14 09:20:00 2016
+@@ -11,16 +11,16 @@
+ //                                      //
+ 
+ REQUIRE_FILE ~Data/25Dialog.bif~ ~Please install "Throne Of Bhaal" and the official ToB patch before installation of this mod.~
+-REQUIRE_FILE ~Setup-BDToBv174.exe~ ~Please install Baldurdash-WeiDU v1.74~
+-
++REQUIRE_FILE ~Setup-BDToBv175.exe~ ~Please install Baldurdash-WeiDU v1.75~
+ 
++/*
+ ACTION_IF (FILE_EXISTS ~data/CTB-RULE.BIF~)
+        OR (FILE_EXISTS ~data/SOS-RULE.BIF~)
+        OR (FILE_EXISTS ~data/TDD-RULE.BIF~)
+ THEN BEGIN
+   FAIL ~You have incompatible mods installed!~
+ END
+-
++*/
+ STRING_SET ~This amulet grants its wearer fleetness of foot.  Not surprisingly it is popular among fleeing felons, travelers and cowards.    
+ 
+ STATISTICS

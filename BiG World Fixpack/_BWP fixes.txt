@@ -173,7 +173,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: alora - Alora NPC v1.5
+:: alora - Alora NPC v1.5 (tp2 version is still 1.3)
 
 :: Lollorian's class script trigger fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561215
@@ -262,6 +262,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
+
+:: Nightfarer's expansion (added components 1, 2 and 3) adding The Grove (AR2700) to regular/BP-BGT worldmap
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589069
 
 
 ----------------------------------------------------------------------------------------
@@ -367,6 +370,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Nightfarer's Suldanesselar and Black Dragon component patching instead of overwriting stores, areas and creatures
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-51#entry589788
+:: The mod overwrites vanilla creatures with its own - Prevented by patching every single creature (terrific!!!)
+:: The mod overwrites AR2807.ARE with its own - Prevented by patching (it only adds a new actor - fixed to patching)
+:: The mod overwrites SUELF10.STO with its own - Prevented by patching
 
 
 ----------------------------------------------------------------------------------------
@@ -407,6 +413,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Valiant's correct chapter fix
 :: http://forums.blackwyrmlair.net/index.php?s=&showtopic=1633&view=findpost&p=45078
 
+
 ----------------------------------------------------------------------------------------
 
 
@@ -432,6 +439,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: agb1's updated BG2 Fixpack adaptation (reviewed differences from Bdash 1.68 to 1.73)
 :: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=585727
+
+:: nAR0329.BAF swapped Aran/Aran02 Dead trigger conditions
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -633,6 +643,16 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Boards o' Magick Item Pack (BoM Item Pack)
+
+:: Nightfarer's fix:
+:: In AR5500, O!Bion2 is spawned near to an Er'vonyrah creature (crstma) and his servant (crmamess) and it gets killed making it impossible to buy Taluntain's items.
+:: Just moved a bit away spawning point of O!Bion2 creature.
+
+
+----------------------------------------------------------------------------------------
+
+
 :: bolsa - Bolsa v4.1
 
 :: micbaldur's AR0511 script compilation fix
@@ -656,6 +676,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: LW's adaption of dradiel's SoBH-part2-fix v1.01
 :: http://athkatla.cob-bg.pl/viewtopic.php?p=94507&sid=171b03f1e3ac29f4e371640a616594b0#94507
+
+:: BWP Trimpack v16 patches incorporated into Fixpack
+:: - LINK NOT FOUND -
+
+:: agb1's HANDLE_AUDIO, HANDLE_TILESETS and MAKE_BIFF adaptation
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
@@ -750,15 +777,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: cdtweaks - Tweaks Anthology Beta 4
-
-:: Mike1072's reindexing patch for item files with effects before abilities
-:: http://gibberlings3.net/forums/index.php?showtopic=27884&p=245250
-
-
-----------------------------------------------------------------------------------------
-
-
 :: ChaosKnight - Askaria Quest and Chaos Knight Kit v1.3
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
@@ -825,7 +843,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: com_encounters - CoM Encounters v1.10
+:: com_encounters - CoM Encounters v1.10_charsets
 
 :: White Agnus' KORSCROO Spell Memorization Fix - KORSCROO.CRE
 :: - LINK NOT FOUND -
@@ -885,7 +903,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=572339
 
 :: Nightfarer's patching for ZILFGT01.CRE instead of overwriting creature file
-:: 
+:: - LINK NOT FOUND -
+
+:: BWP Trimpack v16 patches incorporated into Fixpack
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -932,6 +953,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's Halabaster Dhunshar reward fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=580693
 
+:: BWP Trimpack v16 patches incorporated into Fixpack
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
@@ -973,6 +997,24 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Divine_Remix - Divine Remix v7
+
+:: cmorgan's ToBEx compatible ADD_KIT fix
+:: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
+
+:: Chaltier's unlimited Dark Bolts fix for Nightcloak of Shar kit (cdshar2.itm)
+:: http://gibberlings3.net/forums/index.php?showtopic=26860&p=241482
+
+:: WRITE_SHORT 0x246 instead of WRITE_BYTE 0x247 for creature kits and spellbook macros
+:: - LINK NOT FOUND -
+
+:: cyricpp.d - A#CYRIC not "A#CYRIC"
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Divine_Remix - Divine Remix v8
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
@@ -980,6 +1022,13 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Chaltier's unlimited Dark Bolts fix for Nightcloak of Shar kit (cdshar2.itm)
 :: http://gibberlings3.net/forums/index.php?showtopic=26860&p=241482
+
+:: WRITE_SHORT 0x246 instead of WRITE_BYTE 0x247 for creature kits and spellbook macros
+:: - LINK NOT FOUND -
+
+:: cyricpp.d - A#CYRIC not "A#CYRIC"
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1021,6 +1070,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's Basimah dialogue MySelf fixes
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=572836
+
+:: Nightfarer's dialogue fixes ysakil.d yscado.d yschearl.d yslevon.d ysailoth.d
 
 
 ----------------------------------------------------------------------------------------
@@ -1128,6 +1179,17 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Made in Heaven's B!AIDAN.D dialogue fixes, amended by agb1
 :: http://www.shsforums.net/topic/58655-fading-promises-v7-bugs/
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Foundling v.BETA1
+
+:: Nightfarer's Fixes:
+:: Changed SetGlobal("L#FouToBTimeredTalk","GLOBAL",11) to SetGlobal("L#FouToBTimeredTalk","GLOBAL",12)
+
+:: The global is already set to 11 so when it comes to one of the five instances of L#Fou25J dialogue and it is re-set to 11, the dialogue loops endlessly
 
 
 ----------------------------------------------------------------------------------------
@@ -1389,14 +1451,14 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's typo fixes - easy\duAR1100.BAF, hard\duAR1100.BAF, impossible\duAR1100.BAF
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=487571
 
-:: micbaldur's fix for dialogue issue with Jugend after Arimayus is dead
+:: micbaldur's fix for dialogue issue in imnes.d with Jugend after Arimayus is dead
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589068
 
 
 ----------------------------------------------------------------------------------------
 
 
-:: Imoen Romance v3.4
+:: imoenromance - Imoen Romance v3.8
 
 :: White Agnus' compatibility fix for BGT
 :: - LINK NOT FOUND -
@@ -1451,6 +1513,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Used HANDLE_AUDIO for audio handling
 :: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=585403
+
+:: Nightfarer fixed the overwriting of mapicons.bam by patching
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -1592,6 +1657,8 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's Zaiya epilogue fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=587224
 
+:: Nightfarer's item description fix
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1676,7 +1743,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: laviconia - La'Viconia Tweak v4
+:: laviconia - La'Viconia Tweak v5 (tp2 version is v4)
 
 :: Wisp's improved KIT.IDS patching code
 :: http://www.shsforums.net/topic/58487-fixing-the-kitids-megamod-style/?p=584888
@@ -1963,7 +2030,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: NTotSC- Northern Tales of the Sword Coast v1.70a
+:: NTotSC - Northern Tales of the Sword Coast v1.70a
 
 :: erebusant's "Original Travel Times" links.tbl fix
 :: http://www.shsforums.net/index.php?showtopic=40767
@@ -1986,6 +2053,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's Rededge activation blocking area script blocks fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=580588
 
+:: BWP Trimpack v16 patches incorporated into Fixpack
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
@@ -1997,6 +2067,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Roxanne's bAR4300 fix (change blocks to run-once so blocks added after will trigger)
 :: http://www.shsforums.net/topic/40623-haiass/?p=586275
+
+:: BWP Trimpack v16 patches incorporated into Fixpack
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -2018,6 +2091,14 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: the bigg's KIT.IDS ToBEx compatibility fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=548858
+
+
+----------------------------------------------------------------------------------------
+
+
+:: W_Packmule 1.4a
+
+:: Nightfarer changed several Protagonist into Player1
 
 
 ----------------------------------------------------------------------------------------
@@ -2069,6 +2150,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's 'game-breaking' gold fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=587127
+
+:: BWP Trimpack v16 patches incorporated into Fixpack
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -2166,7 +2250,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: agb1's BGT/EET chapter numbering patch - Setup-RevisedBattles.tp2, b#knitsp.baf, pookpar.baf
 :: - LINK NOT FOUND -
 
-:: agb1's disabled dialog.tlk/chitin.key/WeiDU.exe copies (EE install error) - Setup-RevisedBattles.tp2
+:: BWP Trimpack v16 patches incorporated into Fixpack
 :: - LINK NOT FOUND -
 
 
@@ -2278,6 +2362,12 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Mad Mate's Depressed People BALDUR.BCS loop fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=573831
 
+:: Nightfarer's typo fixes in RA5100.BAF and bAR0020.BAF
+:: - LINK NOT FOUND -
+
+:: BWP Trimpack v16 patches incorporated into Fixpack
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
@@ -2329,6 +2419,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
 
+:: Nightfarer's typo fix in ruad.d
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
@@ -2354,7 +2447,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Saerileth - Saerileth NPC v18
+:: Saerileth - Saerileth NPC v18_charsets
 
 :: micbaldur's Sir Havun Clarenshide spawn problem with BG2Tweaks - Sensible Entrance Points fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=582245
@@ -2388,6 +2481,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's assorted CRE fixes
 :: - LINK NOT FOUND -
+
+:: Nightfarer's compatibility with Sellswords (Setup-Hubelpot.tp2)
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589069
 
 
 ----------------------------------------------------------------------------------------
@@ -2465,7 +2561,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Roxanne's duplicate DO fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
 
-:: micbaldur's Lower Tombs Vampire wrong script fix
+:: micbaldur's Lower Tombs AR0808.BAF Vampire wrong scriptname fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589069
 
 
@@ -2493,6 +2589,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: SPGaunt - Spellhold Gauntlet
+
+:: Nightfarer's typo fix AR1512.baf, setup-spgaunt.tp2
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: SOS - Shadows over Soubar v1.13
 
 :: Lollorian's Fence fix - Setup-SOS.tp2
@@ -2512,6 +2617,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's Lord Hammerhead Bucko is a cheapskate fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=574746
+
+:: Nightfarer's fix AR4203.BAF, AR4204.BAF
+:: Using DAWN_END and DUSK_START prevents spawning of Greater Werewolves
+
+:: BWP Trimpack v16 patches incorporated into Fixpack
+:: - LINK NOT FOUND -
+
+:: Nightfarer's removed inappropriate BG1 proficiencies from Selence
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589069
 
 
 ----------------------------------------------------------------------------------------
@@ -2656,11 +2770,14 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's corrected tireless rage typo: tb#tles -> tg#tles - tb#lotr1.baf
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=488890
 
+:: Nightfarer's typo fix TB#001.BAF
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
 
-:: TDD - The Darkest Day v1.13
+:: TDD - The Darkest Day v1.14
 
 :: Lollorian's replacement - BGWARD.BAF
 :: http://www.shsforums.net/topic/38117-the-darkest-day-112-forumthread/?p=483651
@@ -2686,6 +2803,12 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's DD0903 BG2Tweaks Sensible Areas compatibility fix (Solution #1)
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=569414
+
+:: Nightfarer's travel trigger fix DD0300CT.ARE
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry588120
+
+:: BWP Trimpack v16 patches incorporated into Fixpack
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -2716,6 +2839,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: micbaldur's Ninafer epilogue fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=587224
+
+:: Nightfarer's dialogue fix CMNINAF.BAF
+:: Ninafer should begin dialogue after dragon is dead. However due to a missing BAF line, she tries to begin dialogue when dragon is not dead and there comes stuttering (AR2807).
 
 
 ----------------------------------------------------------------------------------------
@@ -2751,6 +2877,21 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: TOD - Tower of Deception v3.3.1
+
+:: Lollorian's Script fixes - va#lich.baf, va#lizrd.baf, va#shade.baf, va#wiste.baf
+:: http://www.shsforums.net/topic/44488-solved-probably-me-but-bwp-83/?p=480898
+
+:: Lollorian's extended  OR() fixes - va#gitfm.baf, va#ustrn.baf
+:: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=483244
+
+:: micbaldur's gamebreaking Panda cutscene bugfix
+:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=587310
+
+
+----------------------------------------------------------------------------------------
+
+
 :: TotDG - Tales of the Deep Gardens v10.0
 
 :: Lollorian's small little item fix
@@ -2772,7 +2913,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: TS - Tortured Souls v7.04
+:: TS - Tortured Souls v7.06
 
 :: micbaldur's GiveItemCreate() Protagonist -> Player1 fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566210
@@ -2827,7 +2968,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Tsujatha - Tsujatha NPC v15
+:: Tsujatha - Tsujatha NPC v15_charsets
 
 :: Non-EE compatible apostrophes for BG2 compatibility
 :: http://www.shsforums.net/topic/58395-tsujatha-dialog-error/?p=582234
@@ -2871,6 +3012,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's overwriting code to patchy form
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=567225
 
+:: Nightfarer's patching code (don't overwrite creatures) + removed udprince.cre
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
@@ -2881,6 +3025,21 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: horred the plague's 2-handed ITM animation mismatch fix
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=550226
+
+
+----------------------------------------------------------------------------------------
+
+
+:: Unique Artifacts v1.12
+
+:: Taimon's area crash fix - d_and_baf.tph, macro.tph
+:: http://www.shsforums.net/index.php?s=&showtopic=22887&view=findpost&p=392339
+
+:: typo fix (kyle2 -> kayl2) in d_and_baf.tph
+:: - LINK NOT FOUND -
+
+:: removed 0x78 from offsets list in macro.tph
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -3161,6 +3320,4 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/57112-minor-yvette-bug/?p=566415
 
 
-----------------------------------------------------------------------------------------
-
-----------------------------------------------------------------------------------------
+======================================================================================================

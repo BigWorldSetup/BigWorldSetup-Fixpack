@@ -1,6 +1,6 @@
---- imoenRomance\dialogues\SOA\Banter\AlignLaw.d	Sun Dec 06 00:54:02 2015
-+++ C:\BWP Patchstudio\patched files\imoenRomance\dialogues\SOA\Banter\AlignLaw.d	Sun Jan 10 22:40:08 2016
-@@ -182,7 +182,7 @@
+--- imoenRomance\dialogues\SOA\Banter\AlignLaw.d	Mon Jul 25 12:49:44 2016
++++ C:\BWP Patchstudio\patched files\imoenRomance\dialogues\SOA\Banter\AlignLaw.d	Sat Oct 08 19:40:23 2016
+@@ -183,7 +183,7 @@
  	END
  
  	IF ~~ THEN BEGIN MRLawChaChaPlay

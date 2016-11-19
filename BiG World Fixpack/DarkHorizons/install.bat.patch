@@ -1,0 +1,47 @@
+--- DarkHorizons\BGT\install.bat	Sat Oct 10 14:51:12 2009
++++ C:\BWP Patchstudio\patched files\DarkHorizons\BGT\install.bat	Sat Apr 17 11:48:14 2010
+@@ -99,22 +99,29 @@
+ move override\CM3374.mos dhare\CM3374.mos
+ move override\CM3375.mos dhare\CM3375.mos
+ move override\CM3376.mos dhare\CM3376.mos
+-move override\CM0750.ARE dhare\CM0750.ARE
+-move override\CM0751.ARE dhare\CM0751.ARE
+-move override\CM0752.ARE dhare\CM0752.ARE
+-move override\CM0753.are dhare\CM0753.are
+-move override\CM2680.are dhare\CM2680.are
+-move override\CM2681.are dhare\CM2681.are
+-move override\CM3370.are dhare\CM3370.are
+-move override\CM3371.are dhare\CM3371.are
+-move override\CM3372.are dhare\CM3372.are
+-move override\CM3373.ARE dhare\CM3373.ARE
+-move override\CM3374.are dhare\CM3374.ARE
+-move override\CM3375.are dhare\CM3375.ARE
+-move override\CM3376.are dhare\CM3376.ARE
++:: move override\CM0750.ARE dhare\CM0750.ARE
++:: move override\CM0751.ARE dhare\CM0751.ARE
++:: move override\CM0752.ARE dhare\CM0752.ARE
++:: move override\CM0753.are dhare\CM0753.are
++:: move override\CM2680.are dhare\CM2680.are
++:: move override\CM2681.are dhare\CM2681.are
++:: move override\CM3370.are dhare\CM3370.are
++:: move override\CM3371.are dhare\CM3371.are
++:: move override\CM3372.are dhare\CM3372.are
++:: move override\CM3373.ARE dhare\CM3373.ARE
++:: move override\CM3374.are dhare\CM3374.ARE
++:: move override\CM3375.are dhare\CM3375.ARE
++:: move override\CM3376.are dhare\CM3376.ARE
+ 
+ del tis2bg2.exe
+ _weidu --make-biff dhare
+ 
+ del _weidu.exe
+-rd /s /q dhare
+\ No newline at end of file
++rd /s /q dhare
++
++FOR %%s IN (
++override\*.baf
++override\*.d
++override\*.ogg
++override\*.tiz
++) DO del %%s

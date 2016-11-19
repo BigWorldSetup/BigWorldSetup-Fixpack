@@ -1,1 +1,15 @@
-* binary
+*.ps1 text eol=crlf
+*.au3 text eol=crlf
+*.ini diff -text eol=crlf
+*.vbs text eol=crlf
+*.txt diff -text eol=crlf
+*.patch diff -text eol=crlf
+*.htm text eol=crlf
+*.html text eol=crlf
+*.gitignore text eol=crlf
+*.gitattributes text eol=crlf
+*.gif binary
+*.ico binary
+*.jpg binary
+*.png binary
+*.exe binary

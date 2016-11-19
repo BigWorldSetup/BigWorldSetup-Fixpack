@@ -1,0 +1,11 @@
+--- Divine_Remix\Setup-Divine_Remix.tp2	Sun Jul 29 14:28:44 2012
++++ C:\BWP Patchstudio\patched files\Divine_Remix\Setup-Divine_Remix.tp2	Wed Oct 02 08:54:29 2013
+@@ -1,7 +1,7 @@
+ BACKUP   ~Divine_Remix/backup~    // location to store files for uninstall purposes
+ AUTHOR   ~webmaster@gibberlings3.net or andyr@gibberlings3.net~  // email address displayed if install fails
+ 
+-VERSION  ~v7.1~
++VERSION  ~v7.1 BWP Fix~
+ 
+ README   ~Divine_Remix/readme-Divine_Remix.html~
+ 

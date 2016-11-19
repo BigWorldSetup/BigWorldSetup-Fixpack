@@ -1,0 +1,10 @@
+--- Bdash\BAF_r\rTR1008.BAF	Tue Feb 02 05:17:31 2016
++++ C:\BWP Patchstudio\patched files\Bdash\BAF_r\rTR1008.BAF	Tue Feb 02 06:32:34 2016
+@@ -15,6 +15,7 @@
+ 		PlaySound("PORTAL2")
+ 		Wait(2)
+ 		ActionOverride(Player1,LeaveAreaLUAPanic("AR1008","",[495.755],10))
++		TakePartyItemNum("MISC45",1) // Rogue Stone
+ 		ActionOverride(Player1,LeaveAreaLUA("AR1008","",[495.755],10))
+ 		ActionOverride(Player2,LeaveAreaLUA("AR1008","",[431.730],10))
+ 		ActionOverride(Player3,LeaveAreaLUA("AR1008","",[459.777],10))

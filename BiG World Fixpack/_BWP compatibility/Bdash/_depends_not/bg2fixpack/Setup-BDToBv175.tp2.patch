@@ -1,0 +1,144 @@
+--- Setup-BDToBv175.tp2	Fri Apr 29 17:25:13 2016
++++ C:\BWP Patchstudio\patched files\Setup-BDToBv175.tp2	Fri May 27 08:53:55 2016
+@@ -1,5 +1,6 @@
+ BACKUP ~bdash\Install\Backup~
+ AUTHOR ~Kevin Dorner -- the original creator of Baldurdash, King Diamond -- WeiDU conversion, Vladislav Papper (vladp6@gmail.com) -- compilation, maintenance, additional fixes and optional components~
++VERSION ~v1.75 BWP Fix~
+ 
+ AUTO_TRA ~bdash\language\%s~
+ 
+@@ -67,7 +68,7 @@
+ /////////////////////////////////////////////////////////                                               
+ // Improved Monk Class                                    
+ /////////////////////////////////////////////////////////
+-PRINT ~Improved Monk Class (by Vlad)~
++BEGIN ~Improved Monk Class (by Vlad)~
+ 
+ //Substitute the following string 45867
+ STRING_SET ~MONK: Monks are warriors who pursue perfection through contemplation as well as action.  They are versatile fighters, especially skilled in combat without weapons or armor.  Though monks cannot cast spells, they have a unique magic of their own.  They channel a subtle energy, called ki, which allows them to perform amazing feats.  The monk's best known feat is their ability to stun an opponent with an unarmed blow.  
+@@ -237,7 +238,7 @@
+ //COPY ~Bdash/monk/itm~ ~override~
+ COPY ~Bdash/monk/spl~ ~override~
+ 
+-PRINT ~Core Baldurdash Fixes (by Kevin Dorner)~
++BEGIN ~Core Baldurdash Fixes (by Kevin Dorner)~
+ 
+ //***********************************************************************************************
+ //   RULESETS
+@@ -7529,7 +7530,7 @@
+ 
+ //My version of multi-strongholds
+ 
+-PRINT ~Multi-Strongholds (by Vlad)~
++BEGIN ~Multi-Strongholds (by Vlad)~
+ 
+ //-------------------------------------------------------------------------
+ //Multiple Strongholds Fixes
+@@ -7545,7 +7546,7 @@
+ //Restored Slave Lord\Twisted Rune Quest
+ //////////////////////////////\
+ 
+-PRINT ~Restored Twisted Rune Quest (by Vlad)~
++BEGIN ~Restored Twisted Rune Quest (by Vlad)~
+ 
+ EXTEND_TOP ~ar0313.bcs~ ~BDash\BAF_t\tAR0313.BAF~
+ 
+@@ -7615,7 +7616,7 @@
+ 
+ //////////////////////////////////////////////////////////////////
+ 
+-PRINT ~Restored Hindo's Doom (by Vlad)~
++BEGIN ~Restored Hindo's Doom (by Vlad)~
+  
+ COPY ~Bdash\twistrun\SW1H70.ITM~ ~override~
+   SAY DESC ~Hindo was a samurai of great renown, a staunch defender of his people against the evil undead that often ravaged his homelands.  
+@@ -7673,7 +7674,7 @@
+ //James Shumacher’s Grandmastery Patch
+ //////////////////////////////////////\
+ 
+-PRINT ~Grand Mastery Fix (by James Schumacher)~
++BEGIN ~Grand Mastery Fix (by James Schumacher)~
+ 
+ COPY ~BDash\grandm\WSPATCK.2DA~ ~override\WSPATCK.2DA~
+ COPY ~BDash\grandm\WSPECIAL.2DA~ ~override\WSPECIAL.2DA~
+@@ -7682,7 +7683,7 @@
+ // Improved Copper Coronet
+ //////////////////////////
+ 
+-PRINT ~Improved Copper Coronet (by Vlad)~
++BEGIN ~Improved Copper Coronet (by Vlad)~
+ 
+ COPY ~BDash\coppercr~ ~override~
+ 
+@@ -7696,7 +7697,7 @@
+ // Dak'kon's Blade
+ ////////////////////
+ 
+-PRINT ~Restored Dak'kon's Blade (by Vlad)~
++BEGIN ~Restored Dak'kon's Blade (by Vlad)~
+ 
+ COPY ~BDash/newfixes/WA2DAK.ITM~         ~override/WA2DAK.ITM~
+ 	SAY NAME2 ~Dak’kon’s Zerth Blade~
+@@ -7831,7 +7832,7 @@
+ //Improved Nymph Script
+ //////////////////////////////\
+ 
+-PRINT ~Improved Nymph (Woodland Being) Script (by Goeran Rimen)~
++BEGIN ~Improved Nymph (Woodland Being) Script (by Goeran Rimen)~
+ 
+ COMPILE ~BDash/nymph/NYMPH.BAF~
+ 
+@@ -7839,7 +7840,7 @@
+ // Rogue ReBalancing - Proper Dual Wielding
+ //////////////////////////////////////////////////////////////////////\
+ 
+-PRINT ~Dual Wielding Fix for Rogues (by aVENGER)~
++BEGIN ~Dual Wielding Fix for Rogues (by aVENGER)~
+ 
+ COPY_EXISTING ~WEAPPROF.2DA~                 ~override\WEAPPROF.2DA~
+ SET_2DA_ENTRY 34 7 1 ~3~
+@@ -7857,7 +7858,7 @@
+ SET_2DA_ENTRY 34 44 1 ~3~
+ BUT_ONLY_IF_IT_CHANGES
+ 
+-PRINT ~Additional fixes for v1.73 (by Vlad)~
++BEGIN ~Additional fixes for v1.73 (by Vlad)~
+ 
+ ////////////////
+ //	v 1.70
+@@ -7899,7 +7900,7 @@
+ Not Usable By:
+  Wizard Slayer~
+ 
+-PRINT ~Restored Anti-Dragon Items (by Vlad)~
++BEGIN ~Restored Anti-Dragon Items (by Vlad)~
+ 
+ STRING_SET ~Dragon Scale Shield +2~ ~Dragon Scale Shield +5~
+ COPY ~BDash/v170/SHLD21.ITM~        ~override/SHLD21.ITM~
+@@ -8135,7 +8136,7 @@
+ //Third Path
+ ///////////////////////////
+ 
+-PRINT ~Third Path (by Vlad)~
++BEGIN ~Third Path (by Vlad)~
+ 
+ STRING_SET ~The MDK2 Spell~ ~Aran Linvail, the Shadowmaster of the Shadow Thieves in Athkatla, is dead. Now I need to find another way to get my Imoen back.~
+ 
+@@ -8441,7 +8442,7 @@
+ //   Cromwell in Brynnlaw
+ /////////////////////////////////
+ 
+-PRINT ~Cromwell in Brynnlaw (by Vlad)~
++BEGIN ~Cromwell in Brynnlaw (by Vlad)~
+ 
+ COPY_EXISTING ~AR1603.ARE~ ~override~
+  WRITE_ASCII 0x94 ~AR1603~                 //setting area script
+@@ -9270,7 +9271,7 @@
+ ACTION_IF FILE_EXISTS ~data/BG1ARE.BIF~
+  THEN BEGIN
+ 	COPY_EXISTING ~AR0602.bcs~ ~override/AR0602.bcs~
+-  REPLACE_BCS_BLOCK ~Bdash/BGTcomp/trans/oiAR0602.bcs~ ~Bdash/BGTcomp/trans/niAR0602.bcs~
++//  REPLACE_BCS_BLOCK ~Bdash/BGTcomp/trans/oiAR0602.bcs~ ~Bdash/BGTcomp/trans/niAR0602.bcs~
+   REPLACE_BCS_BLOCK ~Bdash/BGTcomp/trans/opAR0602.bcs~ ~Bdash/BGTcomp/trans/blank.bcs~
+   REPLACE_BCS_BLOCK ~Bdash/BGTcomp/trans/otAR0602.bcs~ ~Bdash/BGTcomp/trans/blank.bcs~
+   REPLACE_BCS_BLOCK ~Bdash/BGTcomp/trans/olAR0602.bcs~ ~Bdash/BGTcomp/trans/nlAR0602.bcs~

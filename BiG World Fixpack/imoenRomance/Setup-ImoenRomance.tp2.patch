@@ -1,11 +1,11 @@
---- imoenRomance\Setup-ImoenRomance.tp2	Tue Feb 02 20:45:44 2016
-+++ C:\BWP Patchstudio\patched files\imoenRomance\Setup-ImoenRomance.tp2	Tue Feb 02 22:40:22 2016
+--- imoenRomance\Setup-ImoenRomance.tp2	Mon Jul 25 13:07:52 2016
++++ C:\BWP Patchstudio\patched files\imoenRomance\Setup-ImoenRomance.tp2	Tue Nov 01 10:20:26 2016
 @@ -5,7 +5,7 @@
  BACKUP ~imoenRomance/backup~
  AUTHOR ~Israel Blargh,vanatos, T.C Dale~
  
--VERSION ~3.4~
-+VERSION ~3.4 BWP Fix~
+-VERSION ~3.8~
++VERSION ~3.8 BWP fix~
  README ~imoenRomance/README.txt~
  
  LANGUAGE ~American English~

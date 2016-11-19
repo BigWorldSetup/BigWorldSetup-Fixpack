@@ -1,0 +1,119 @@
+--- RoTerror\RoT-Install.bat	Sat May 26 13:31:50 2007
++++ C:\BWP Patchstudio\patched files\RoTerror\RoT-Install.bat	Sat Apr 03 18:29:19 2010
+@@ -138,13 +138,13 @@
+ tisunpack -s -h -o ROT-TIS3\rr3453.tis RoTerror\TIZ\rr3453.tiz
+ tisunpack -s -h -o ROT-TIS3\rr3700.tis RoTerror\TIZ\rr3700.tiz
+ tisunpack -s -h -o ROT-TIS3\rr3701.tis RoTerror\TIZ\rr3701.tiz
+-tisunpack -s -h -o ROT-TIS3\rr3702.tis RoTerror\TIZ\rr3702.tiz
+-tisunpack -s -h -o ROT-TIS3\rr3801.tis RoTerror\TIZ\rr3801.tiz
+-tisunpack -s -h -o ROT-TIS3\rr3900.tis RoTerror\TIZ\rr3900.tiz
+-tisunpack -s -h -o ROT-TIS3\rr3950.tis RoTerror\TIZ\rr3950.tiz
+-tisunpack -s -h -o ROT-TIS3\rr4001.tis RoTerror\TIZ\rr4001.tiz
+-tisunpack -s -h -o ROT-TIS3\rr4002.tis RoTerror\TIZ\rr4002.tiz
+-tisunpack -s -h -o ROT-TIS3\rr4003.tis RoTerror\TIZ\rr4003.tiz
++tisunpack -s -h -o ROT-BAM\rr3702.tis RoTerror\TIZ\rr3702.tiz
++tisunpack -s -h -o ROT-BCS\rr3801.tis RoTerror\TIZ\rr3801.tiz
++tisunpack -s -h -o ROT-CRE\rr3900.tis RoTerror\TIZ\rr3900.tiz
++tisunpack -s -h -o ROT-DLG\rr3950.tis RoTerror\TIZ\rr3950.tiz
++tisunpack -s -h -o ROT-ITM\rr4001.tis RoTerror\TIZ\rr4001.tiz
++tisunpack -s -h -o ROT-RULE\rr4002.tis RoTerror\TIZ\rr4002.tiz
++tisunpack -s -h -o ROT-SPL\rr4003.tis RoTerror\TIZ\rr4003.tiz
+ tisunpack -s -h -o ROT-TIS3\rr4004.tis RoTerror\TIZ\rr4004.tiz
+ tisunpack -s -h -o ROT-TIS3\rr4005.tis RoTerror\TIZ\rr4005.tiz
+ tisunpack -s -h -o ROT-TIS3\rr9000.tis RoTerror\TIZ\rr9000.tiz
+@@ -174,8 +174,8 @@
+ 
+ move override\*.ogg ROT-WAV1
+ move override\*.WAV ROT-WAV1
+-xcopy /q RoTerror\OGG1\*.* ROT-WAV1\*.*
+-xcopy /q RoTerror\OGG2\*.* ROT-WAV2\*.*
++xcopy /q /y RoTerror\OGG1\*.* ROT-WAV1\*.*
++xcopy /q /y RoTerror\OGG2\*.* ROT-WAV2\*.*
+ 
+ copy RoTerror\oggdec.exe ROT-WAV1\*.*
+ cd ROT-WAV1
+@@ -192,53 +192,53 @@
+ cd..
+ 
+ 
+-move override\*.ARE ROT-ARE
++:: move override\*.ARE ROT-ARE
+ move override\*.WED ROT-ARE
+-xcopy /q RoTerror\WED\*.* ROT-ARE\*.*
++xcopy /q /y RoTerror\WED\*.* ROT-ARE\*.*
+ weidu --make-biff ROT-ARE
+ call RoTerror\deldir ROT-ARE
+ 
+-move override\*.BAM ROT-BAM
+-xcopy /q RoTerror\BAM\*.* ROT-BAM\*.*
++:: move override\*.BAM ROT-BAM
++xcopy /q /y RoTerror\BAM\*.* override\*.*
+ weidu --make-biff ROT-BAM
+ call RoTerror\deldir ROT-BAM
+ 
+-move override\*.BCS ROT-BCS
++:: move override\*.BCS ROT-BCS
+ weidu --make-biff ROT-BCS
+ call RoTerror\deldir ROT-BCS
+ 
+-move override\*.CRE ROT-CRE
++:: move override\*.CRE ROT-CRE
+ weidu --make-biff ROT-CRE
+ call RoTerror\deldir ROT-CRE
+ 
+-move override\*.DLG ROT-DLG
++:: move override\*.DLG ROT-DLG
+ weidu --make-biff ROT-DLG
+ call RoTerror\deldir ROT-DLG
+ call RoTerror\deldir ROTDLG
+ 
+-move override\*.ITM ROT-ITM
++:: move override\*.ITM ROT-ITM
+ weidu --make-biff ROT-ITM
+ call RoTerror\deldir ROT-ITM
+ 
+ move override\*.MOS ROT-MOS
+ move override\*.BMP ROT-MOS
+-xcopy /q RoTerror\BMP\*.* ROT-MOS\*.*
++xcopy /q /y RoTerror\BMP\*.* ROT-MOS\*.*
+ weidu --make-biff ROT-MOS
+ call RoTerror\deldir ROT-MOS
+ 
+-move override\*.2DA ROT-RULE
+-move override\*.CH* ROT-RULE
++:: move override\*.2DA ROT-RULE
++:: move override\*.CH* ROT-RULE
+ ::move override\*.IDS ROT-RULE
+-move override\*.WMP ROT-RULE
+-move override\*.EFF ROT-RULE
+-move override\*.PRO ROT-RULE
+-move override\*.VVC ROT-RULE
+-move override\*.STO ROT-RULE
+-xcopy /q RoTerror\SFX\*.* ROT-RULE\*.*
++:: move override\*.WMP ROT-RULE
++:: move override\*.EFF ROT-RULE
++:: move override\*.PRO ROT-RULE
++:: move override\*.VVC ROT-RULE
++:: move override\*.STO ROT-RULE
++xcopy /q /y RoTerror\SFX\*.* override\*.*
+ weidu --make-biff ROT-RULE
+ call RoTerror\deldir ROT-RULE
+ 
+-move override\*.SPL ROT-SPL
++:: move override\*.SPL ROT-SPL
+ weidu --make-biff ROT-SPL
+ call RoTerror\deldir ROT-SPL
+ 
+@@ -257,6 +257,12 @@
+ weidu --make-biff ROT-WAV2
+ call RoTerror\deldir ROT-WAV2
+ 
++FOR %%s IN (
++override\*.baf
++override\*.d
++override\*.ogg
++override\*.tiz
++) DO del %%s
+ 
+ @echo.
+ @echo Installation complete.

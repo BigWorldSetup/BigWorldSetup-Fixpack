@@ -1,0 +1,110 @@
+--- SOS\SOS-TISOGGBIFF.bat	Mon Sep 22 17:42:47 2008
++++ C:\BWP Patchstudio\patched files\SOS\SOS-TISOGGBIFF.bat	Sat Apr 17 09:24:36 2010
+@@ -81,18 +81,18 @@
+ tisunpack -s -h -o SOS-TIS2/AR4311.tis SOS\TIZ/AR4311.tiz
+ tisunpack -s -h -o SOS-TIS2/AR4312.tis SOS\TIZ/AR4312.tiz
+ tisunpack -s -h -o SOS-TIS2/AR4313.tis SOS\TIZ/AR4313.tiz
+-tisunpack -s -h -o SOS-TIS2/AR4320.tis SOS\TIZ/AR4320.tiz
+-tisunpack -s -h -o SOS-TIS2/AR4325.tis SOS\TIZ/AR4325.tiz
+-tisunpack -s -h -o SOS-TIS2/AR4330.tis SOS\TIZ/AR4330.tiz
+-tisunpack -s -h -o SOS-TIS2/AR4340.tis SOS\TIZ/AR4340.tiz
+-tisunpack -s -h -o SOS-TIS2/AR4350.tis SOS\TIZ/AR4350.tiz
+-tisunpack -s -h -o SOS-TIS2/AR4360.tis SOS\TIZ/AR4360.tiz
+-tisunpack -s -h -o SOS-TIS2/AR4370.tis SOS\TIZ/AR4370.tiz
++tisunpack -s -h -o SOS-BAM/AR4320.tis SOS\TIZ/AR4320.tiz
++tisunpack -s -h -o SOS-BCS/AR4325.tis SOS\TIZ/AR4325.tiz
++tisunpack -s -h -o SOS-CRE/AR4330.tis SOS\TIZ/AR4330.tiz
++tisunpack -s -h -o SOS-DLG/AR4340.tis SOS\TIZ/AR4340.tiz
++tisunpack -s -h -o SOS-ITM/AR4350.tis SOS\TIZ/AR4350.tiz
++tisunpack -s -h -o SOS-RULE/AR4360.tis SOS\TIZ/AR4360.tiz
++tisunpack -s -h -o SOS-SPL/AR4370.tis SOS\TIZ/AR4370.tiz
+ del tisunpack.exe
+ 
+ move override\*.ogg SOS-WAV1
+-xcopy /q SoS\OGG1\*.* SOS-WAV1\*.*
+-xcopy /q SoS\OGG2\*.* SOS-WAV2\*.*
++xcopy /q /y SoS\OGG1\*.* SOS-WAV1\*.*
++xcopy /q /y SoS\OGG2\*.* SOS-WAV2\*.*
+ 
+ copy SOS\oggdec.exe SOS-WAV1\*.*
+ cd SOS-WAV1
+@@ -108,50 +108,50 @@
+ del oggdec.exe
+ cd..
+ 
+-move override\*.ARE SOS-ARE
++:: move override\*.ARE SOS-ARE
+ move override\*.WED SOS-ARE
+ weidu --make-biff SOS-ARE
+ call SOS\deldir SOS-ARE
+ 
+-move override\*.BAM SOS-BAM
++:: move override\*.BAM SOS-BAM
+ weidu --make-biff SOS-BAM
+ call SOS\deldir SOS-BAM
+ 
+-move override\*.BCS SOS-BCS
++:: move override\*.BCS SOS-BCS
+ weidu --make-biff SOS-BCS
+ call SOS\deldir SOS-BCS
+ 
+-move override\*.CRE SOS-CRE
++:: move override\*.CRE SOS-CRE
+ weidu --make-biff SOS-CRE
+ call SOS\deldir SOS-CRE
+ 
+-move override\*.DLG SOS-DLG
++:: move override\*.DLG SOS-DLG
+ weidu --make-biff SOS-DLG
+ call SOS\deldir SOS-DLG
+ call SOS\deldir SOSDLG
+ 
+-move override\*.ITM SOS-ITM
++:: move override\*.ITM SOS-ITM
+ weidu --make-biff SOS-ITM
+ call SOS\deldir SOS-ITM
+ 
+ move override\*.MOS SOS-MOS
+ move override\*.BMP SOS-MOS
+-move override\*.PLT SOS-MOS
++:: move override\*.PLT SOS-MOS
+ weidu --make-biff SOS-MOS
+ call SOS\deldir SOS-MOS
+ 
+-move override\*.2DA SOS-RULE
+-move override\*.CH* SOS-RULE
++:: move override\*.2DA SOS-RULE
++:: move override\*.CH* SOS-RULE
+ ::move override\*.IDS SOS-RULE
+-move override\*.WMP SOS-RULE
+-move override\*.EFF SOS-RULE
+-move override\*.PRO SOS-RULE
+-move override\*.VVC SOS-RULE
+-move override\*.STO SOS-RULE
++:: move override\*.WMP SOS-RULE
++:: move override\*.EFF SOS-RULE
++:: move override\*.PRO SOS-RULE
++:: move override\*.VVC SOS-RULE
++:: move override\*.STO SOS-RULE
+ weidu --make-biff SOS-RULE
+ call SOS\deldir SOS-RULE
+ 
+-move override\*.SPL SOS-SPL
++:: move override\*.SPL SOS-SPL
+ weidu --make-biff SOS-SPL
+ call SOS\deldir SOS-SPL
+ 
+@@ -171,6 +171,13 @@
+ copy SOS\MVE\*.* SOS-MVE\*.*
+ weidu --make-biff SOS-MVE
+ call SOS\deldir SOS-MVE
++
++FOR %%s IN (
++override\*.baf
++override\*.d
++override\*.ogg
++override\*.tiz
++) DO del %%s
+ 
+ @echo.
+ @echo Installation complete.

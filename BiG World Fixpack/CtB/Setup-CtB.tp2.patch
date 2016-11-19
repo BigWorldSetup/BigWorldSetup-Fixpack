@@ -1,17 +1,20 @@
---- Setup-CtB.tp2	Fri Feb 04 19:00:14 2011
-+++ C:\Fixpack\Setup-CtB.tp2	Wed Nov 16 10:51:10 2016
+--- Temp\setup-CtB.tp2	2011-02-04 19:00:14.826545100 -0500
++++ setup-CtB.tp2	2016-11-18 20:40:38.605352000 -0500
 @@ -2,7 +2,7 @@
  
  AUTHOR ~Charles Bisson, King Diamond (revision)~  NO_IF_EVAL_BUG
  
 -VERSION ~1.13~
-+VERSION ~1.13a BWP Fix 2~
++VERSION ~1.13a BWP Trim + Fix~
  
  AUTO_TRA ~CtB/Language/%s~
  
-@@ -37,10 +37,10 @@
+@@ -35,12 +35,12 @@
  
- COPY + ~Setup-CtB.exe~ ~WeiDU.exe~
+ BEGIN ~Check The Bodies~
+ 
+-COPY + ~Setup-CtB.exe~ ~WeiDU.exe~
++// COPY + ~Setup-CtB.exe~ ~WeiDU.exe~
  COPY + ~Setup-CtB.exe~ ~Setup-CtB-Chores.exe~
 -COPY + ~chitin.key~ ~CtB/chitin.ctb~
 -COPY_LARGE + ~dialog.tlk~ ~CtB/dialog.ctb~
@@ -43,11 +46,10 @@
  PRINT ~Installing new creatures...~
  //DKNIGHT soundset
  STRING_SET ~23804~ @559136
-@@ -1316,6 +1313,93 @@
- STRING_SET ~23813~ @559278
+@@ -1317,6 +1314,93 @@
  
  COPY ~CtB/creature/nostring~ ~override~
-+
+ 
 +//ZILFGT01.CRE is a "cutscene-only" creature, so we can overwrite it
 +
 +COPY_EXISTING ~ZILFGT01.CRE~ ~override~       // Black Reaver
@@ -134,6 +136,7 @@
 +		END
 +	END // PATCH_IF
 +BUT_ONLY_IF_IT_CHANGES
- 
++
  COPY ~CtB/creature/translate/CB3545XB.CRE~ ~override~ SAY NAME1 @1    SAY NAME2 @1
  COPY ~CtB/creature/translate/CB3547BL.CRE~ ~override~ SAY NAME1 @2    SAY NAME2 @2
+ COPY ~CtB/creature/translate/CB363501.CRE~ ~override~ SAY NAME1 @3    SAY NAME2 @3

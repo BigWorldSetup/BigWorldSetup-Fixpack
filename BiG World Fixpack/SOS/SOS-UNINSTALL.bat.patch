@@ -1,0 +1,33 @@
+--- SOS\SOS-UNINSTALL.bat	Tue Mar 07 15:40:40 2006
++++ C:\BWP Patchstudio\patched files\SOS\SOS-UNINSTALL.bat	Wed Feb 13 21:04:17 2013
+@@ -29,14 +29,14 @@
+ attrib -r data\SOS-MVE.bif
+ del data\SOS-MVE.bif
+ 
+-del chitin.key
+-copy SOS\chitin.sos chitin.key
+-del SOS\chitin.sos
++:: del chitin.key
++:: copy SOS\chitin.sos chitin.key
++:: del SOS\chitin.sos
+ 
+-call SOS\deldir override
+-md override
+-xcopy /y /s /q SOS\over.bak override
+-call SOS\deldir SOS\over.bak
++:: call SOS\deldir override
++:: md override
++:: xcopy /y /s /q SOS\over.bak override
++:: call SOS\deldir SOS\over.bak
+ 
+ del tisunpack.exe
+ call SOS\deldir SOS-ARE
+@@ -57,6 +57,6 @@
+ 
+ @echo.
+ @echo Bif removal complete. 
+-@echo Original .key file restored
+-@echo Original \override\ folder also restored.
++:: @echo Original .key file restored
++:: @echo Original \override\ folder also restored.
+ @echo.

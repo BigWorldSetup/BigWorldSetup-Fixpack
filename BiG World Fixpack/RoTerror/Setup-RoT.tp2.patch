@@ -1,14 +1,32 @@
---- Setup-RoT.tp2	Sat Jun 14 20:23:08 2008
-+++ C:\BWP Patchstudio\patched files\Setup-RoT.tp2	Wed Jun 17 17:52:20 2015
+--- BWP_Fixpack_Originals\Setup-RoT.tp2	2016-11-19 03:12:42.247331500 -0500
++++ Setup-RoT.tp2	2016-11-18 20:39:10.636217700 -0500
 @@ -2,6 +2,8 @@
  
  AUTHOR ~Gilgamesh, King Diamond (WeiDU conversion)~ NO_IF_EVAL_BUG
  
-+VERSION ~v2.1 BWP Fix~
++VERSION ~v2.1 BWP Trim + Fix~
 +
  AUTO_TRA ~RoTerror/Language/%s~
  
  LANGUAGE ~English~
+@@ -81,12 +83,12 @@
+ //***********************************************************************************
+ PRINT @2
+ 
+-MKDIR ~RoTerror/over.bak~
+-COPY_LARGE + ~override~      ~RoTerror/over.bak~
++// MKDIR ~RoTerror/over.bak~
++// COPY_LARGE + ~override~      ~RoTerror/over.bak~
+ 
+-COPY + ~Setup-RoT.exe~     ~WeiDU.exe~
+-COPY + ~chitin.key~        ~RoTerror/chitin.rot~
+-COPY_LARGE + ~dialog.tlk~  ~RoTerror/dialog.rot~
++// COPY + ~Setup-RoT.exe~     ~WeiDU.exe~
++// COPY + ~chitin.key~        ~RoTerror/chitin.rot~
++// COPY_LARGE + ~dialog.tlk~  ~RoTerror/dialog.rot~
+ 
+ MKDIR ~ROT-ARE~
+ MKDIR ~ROT-BAM~
 @@ -179,13 +181,14 @@
    REPLACE_TEXTUALLY ~0x08000000~ ~0x4010~ // TOTEMIC
    REPLACE_TEXTUALLY ~0x10000000~ ~0x4011~ // SHAPESHIFTER

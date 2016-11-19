@@ -1,0 +1,23 @@
+--- Bonehillv275\BHUninstaller.bat	Sat Feb 27 07:42:50 2010
++++ C:\BWP Patchstudio\patched files\Bonehillv275\BHUninstaller.bat	Wed Feb 13 20:47:09 2013
+@@ -7,13 +7,13 @@
+ attrib -r data\BH-REST.bif
+ del data\BH-REST.bif
+ 
+-del chitin.key
+-copy BoneHillv275\chitin.bh chitin.key
+-del BoneHillv275\chitin.bh
++:: del chitin.key
++:: copy BoneHillv275\chitin.bh chitin.key
++:: del BoneHillv275\chitin.bh
+ 
+-call BoneHillv275\deldir override
+-md override
+-xcopy /y /s /q BoneHillv275\over.bak override
+-call BoneHillv275\deldir BoneHillv275\over.bak
++:: call BoneHillv275\deldir override
++:: md override
++:: xcopy /y /s /q BoneHillv275\over.bak override
++:: call BoneHillv275\deldir BoneHillv275\over.bak
+ 
+ 

@@ -1,0 +1,18 @@
+--- Bdash\ThirdP\nAR0329.BAF	Sat Dec 19 23:25:04 2015
++++ C:\BWP Patchstudio\patched files\Bdash\ThirdP\nAR0329.BAF	Tue May 17 18:39:47 2016
+@@ -1,5 +1,5 @@
+ IF
+-	Dead("aran")
++	Dead("aran02")
+ 	Global("DearAranJournal","AR0329",0)
+ 	Global("VP_Guild_Attacked","GLOBAL",1)
+ THEN
+@@ -9,7 +9,7 @@
+ END
+ 
+ IF
+-	Dead("aran02")
++	Dead("aran")
+ 	Global("DearAranJournal","AR0329",0)
+ 	Global("VP_Guild_Attacked","GLOBAL",0)
+ THEN

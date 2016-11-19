@@ -1,0 +1,33 @@
+--- RoTerror\RoT-Uninstall.bat	Sat May 06 20:30:32 2006
++++ C:\BWP Patchstudio\patched files\RoTerror\RoT-Uninstall.bat	Wed Feb 13 21:01:44 2013
+@@ -29,14 +29,14 @@
+ attrib -r data\ROT-BCS.bif
+ del data\ROT-BCS.bif
+ 
+-del chitin.key
+-copy RoTerror\chitin.rot chitin.key
+-del RoTerror\chitin.rot
++:: del chitin.key
++:: copy RoTerror\chitin.rot chitin.key
++:: del RoTerror\chitin.rot
+ 
+-call RoTerror\deldir override
+-md override
+-xcopy /y /s /q RoTerror\over.bak override
+-call RoTerror\deldir RoTerror\over.bak
++:: call RoTerror\deldir override
++:: md override
++:: xcopy /y /s /q RoTerror\over.bak override
++:: call RoTerror\deldir RoTerror\over.bak
+ 
+ del tisunpack.exe
+ call RoTerror\deldir ROT-ARE
+@@ -62,6 +62,6 @@
+ 
+ @echo.
+ @echo Bif removal complete.
+-@echo Original .key file restored
+-@echo Original \override\ folder also restored.
++:: @echo Original .key file restored
++:: @echo Original \override\ folder also restored.
+ @echo.

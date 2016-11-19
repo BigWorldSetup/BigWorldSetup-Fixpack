@@ -1,15 +1,98 @@
---- SETUP-com_encounters.tp2	Mon Sep 08 00:26:44 2014
-+++ C:\BWP Patchstudio\patched files\SETUP-com_encounters.tp2	Wed Jun 24 22:51:18 2015
-@@ -7,7 +7,7 @@
- 
- BACKUP ~com_encounters\backup~
+--- SETUP-com_encounters.tp2	Sat Apr 23 11:14:42 2016
++++ C:\BWP Patchstudio\patched files\SETUP-com_encounters.tp2	Mon Aug 08 08:26:31 2016
+@@ -9,7 +9,7 @@
  AUTHOR ~"http://chosenofmystra.com"~
--
-+VERSION ~v1.10 BWP Fix~
- LANGUAGE ~English~
-          ~english~
-          ~com_encounters/translations/english/dialog.tra~
-@@ -551,12 +551,222 @@
+ 
+ // Isaya: version, readme displayed at the beginning, UTF-8 conversion on the fly
+-VERSION ~v1.10_charsets~
++VERSION ~v1.10_charsets BWP Fix~
+ 
+ README ~com_encounters/readme_ce.html~
+ 
+@@ -206,7 +206,6 @@
+ 
+ // Items
+ 
+-/*
+ COPY ~com_encounters/item/UHALB4A.ITM~ ~override/UHALB4A.ITM~        
+   SAY NAME1 ~Halberd~
+   SAY NAME2 ~Doom Halberd +3~
+@@ -220,7 +219,10 @@
+ Speed Factor: 9 
+ Proficiency Type: Halberd 
+ Type: 2-handed Not 
+-~
++Usable By:  
++Druid  
++Cleric  
++Mage~
+   SAY DESC ~Like others of its type, this halberd consists of a cleaver-like axe blade mounted on a staff approximately six feet in length. It has also been bestowed with a small number of magical properties, however, thus making it more effective in combat. Its keen blade, for instance, will shear through your opponent's flesh to find the bone while its barbed tip will seek out gaps in their armor. This halberd has had various enchantments placed on it to increase its effectiveness in battle. 
+ 
+ STATISTICS:  
+@@ -235,7 +237,11 @@
+ Speed Factor: 8 
+ Proficiency Type: Halberds 
+ Type: 2-handed 
+-~
++Not Usable By:  
++Druid 
++Cleric
++Mage
++Thief~
+ 
+ COPY ~com_encounters/item/UHALB4B.ITM~ ~override/UHALB4B.ITM~        
+   SAY NAME1 ~Halberd~
+@@ -250,7 +256,10 @@
+ Speed Factor: 9 
+ Proficiency Type: Halberd 
+ Type: 2-handed Not 
+-~
++Usable By:  
++Druid  
++Cleric  
++Mage~
+   SAY DESC ~Like others of its type, this halberd consists of a cleaver-like axe blade mounted on a staff approximately six feet in length. It has also been bestowed with a small number of magical properties, however, thus making it more effective in combat. Its keen blade, for instance, will shear through your opponent's flesh to find the bone while its barbed tip will seek out gaps in their armor. This halberd has had various enchantments placed on it to increase its effectiveness in battle.
+ 
+ STATISTICS:
+@@ -267,7 +276,11 @@
+ Speed Factor: 8
+ Proficiency Type: Halberds
+ Type: 2-handed
+-~
++Not Usable By:
++ Druid
++ Cleric
++ Mage
++ Thief~
+ 
+ COPY ~com_encounters/item/UHALB5A.ITM~ ~override/UHALB5A.ITM~        
+   SAY NAME1 ~Halberd~
+@@ -282,7 +295,10 @@
+ Speed Factor: 9 
+ Proficiency Type: Halberd 
+ Type: 2-handed Not 
+-~
++Usable By:  
++Druid
++Cleric  
++Mage~
+   SAY DESC ~Like others of its type, this halberd consists of a cleaver-like axe blade mounted on a staff approximately six feet in length. It has also been bestowed with a small number of magical properties, however, thus making it more effective in combat. Its keen blade, for instance, will shear through your opponent's flesh to find the bone while its barbed tip will seek out gaps in their armor. This halberd has had various enchantments placed on it to increase its effectiveness in battle.
+ 
+ STATISTICS:
+@@ -296,7 +312,11 @@
+ Speed Factor: 8
+ Proficiency Type: Halberds
+ Type:  2-handed
+-~    */
++Not Usable By:
++ Druid
++ Cleric
++ Mage
++ Thief~
+ 
+ // load up ee-specific tra files on BG2EE - Isaya: fixed path and missing .tra in file name
+ ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
+@@ -575,12 +595,223 @@
  // Improved Stuff
  
  BEGIN @10138
@@ -167,7 +250,6 @@
 +REQUIRE_PREDICATE MOD_IS_INSTALLED ~SETUP-com_encounters.tp2~ ~0~ ~This component uses items from the main encounters component!~
  
 -COPY ~com_encounters/shagbag~ ~override~
--
 +//COPY ~com_encounters/shagbag~ ~override~
 +COPY_EXISTING ~KORCRAZY.CRE~ ~override~
 +  WRITE_LONG  0x1c 20											// GOLD was 2
@@ -234,4 +316,5 @@
 +  ADD_CRE_ITEM ~POTN14~ #5 #0 #0 ~IDENTIFIED~ ~QITEM~
 +BUT_ONLY_IF_IT_CHANGES
  
- AT_INTERACTIVE_EXIT ~VIEW com_encounters/readme_ce.html~
+ // Isaya: now displayed at the beginning of installation with README
+ //AT_INTERACTIVE_EXIT ~VIEW com_encounters/readme_ce.html~

@@ -1,0 +1,10 @@
+--- setup-bp-bgt-worldmap.tp2	Mon Jan 04 21:49:50 2016
++++ C:\BWP Patchstudio\patched files\setup-bp-bgt-worldmap.tp2	Wed Nov 09 09:42:48 2016
+@@ -1,6 +1,6 @@
+ BACKUP ~bp-bgt_worldmap/backup~
+ AUTHOR ~www.shsforums.net/forum/401-worldmap/~
+-VERSION "v10.2.1"
++VERSION "v10.2.1 - Nightfarer's new map Fix"
+ README "bp-bgt_worldmap/language/%LANGUAGE%/readme.html" "bp-bgt_worldmap/language/english/readme.html"
+ 
+ ALWAYS

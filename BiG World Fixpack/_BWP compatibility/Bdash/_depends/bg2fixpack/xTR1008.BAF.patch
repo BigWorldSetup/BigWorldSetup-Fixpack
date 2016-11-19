@@ -1,0 +1,18 @@
+--- Bdash\BAF_x\xTR1008.BAF	Tue Feb 02 17:56:07 2016
++++ C:\BWP Patchstudio\patched files\Bdash\BAF_x\xTR1008.BAF	Tue Feb 02 18:31:41 2016
+@@ -5,7 +5,6 @@
+ THEN
+ 	RESPONSE #100
+ 		SaveGame(0)
+-		TakePartyItem("MISC45") // Rogue Stone
+ 		DisplayString(Myself,8639) // You peer into the nothingness behind the door and the Rogue Stone in your backpack glows fiercely and disappears. You are pulled into the blackness.
+ 		StartCutSceneMode()
+ 		CreateVisualEffectObject("SPDIMNDR",Player1)
+@@ -15,6 +14,7 @@
+ 		PlaySound("PORTAL2")
+ 		Wait(2)
+ 		ActionOverride(Player1,LeaveAreaLUAPanic("AR1008","",[495.755],10))
++		TakePartyItemNum("MISC45",1) // Rogue Stone
+ 		ActionOverride(Player1,LeaveAreaLUA("AR1008","",[495.755],10))
+ 		ActionOverride(Player2,LeaveAreaLUA("AR1008","",[431.730],10))
+ 		ActionOverride(Player3,LeaveAreaLUA("AR1008","",[459.777],10))

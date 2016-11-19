@@ -1,0 +1,162 @@
+--- Setup-CtB-Chores.tp2	Sat Sep 25 18:49:52 2010
++++ C:\BWP Patchstudio\patched files\Setup-CtB-Chores.tp2	Tue Feb 12 00:43:19 2013
+@@ -54,9 +54,9 @@
+ COPY ~CtB/Chores/tis~ ~override~
+ 
+ 
+-COPY ~CtB/Chores/ctbareas/nostring~ ~CTB-CHRS~
++COPY ~CtB/Chores/ctbareas/nostring~ ~override~
+ 
+-COPY ~CtB/Chores/ctbareas/translate/AR3500.ARE~ ~CTB-CHRS~
++COPY ~CtB/Chores/ctbareas/translate/AR3500.ARE~ ~override~
+   SAY 0xd30 @154
+   SAY 0xdf4 @155
+   SAY 0xeb8 @154
+@@ -65,7 +65,7 @@
+   SAY 0x1414 @159
+   SAY 0x18ac @155
+ 
+-COPY ~CtB/Chores/ctbareas/translate/AR3502.ARE~ ~CTB-CHRS~
++COPY ~CtB/Chores/ctbareas/translate/AR3502.ARE~ ~override~
+   SAY 0xa78 @161
+   SAY 0xb3c @162
+   SAY 0xc00 @163
+@@ -92,15 +92,15 @@
+   SAY 0x1c14 @184
+   SAY 0x1cd8 @185
+ 
+-COPY ~CtB/Chores/ctbareas/translate/AR3505.ARE~ ~CTB-CHRS~
++COPY ~CtB/Chores/ctbareas/translate/AR3505.ARE~ ~override~
+   SAY 0x8f0 @154
+ 
+ //***********************************************************
+ PRINT ~Installing new creatures...~
+ 
+-COPY ~CtB/Chores/creature/nostring~ ~CTB-CHRS~
+-COPY ~CtB/Chores/creature/translate/CB502LBR.CRE~ ~CTB-CHRS~ SAY NAME1 @6    SAY NAME2 @6
+-COPY ~CtB/Chores/creature/translate/CBMILKMD.CRE~ ~CTB-CHRS~ SAY NAME1 @54   SAY NAME2 @54
++COPY ~CtB/Chores/creature/nostring~ ~override~
++COPY ~CtB/Chores/creature/translate/CB502LBR.CRE~ ~override~ SAY NAME1 @6    SAY NAME2 @6
++COPY ~CtB/Chores/creature/translate/CBMILKMD.CRE~ ~override~ SAY NAME1 @54   SAY NAME2 @54
+ 
+ //***********************************************************
+ PRINT ~Installing new scripts...~
+@@ -115,61 +115,61 @@
+ //***********************************************************
+ PRINT ~Installing new items...~
+ 
+-COPY ~CtB/Chores/items/nostring~ ~CTB-CHRS~
++COPY ~CtB/Chores/items/nostring~ ~override~
+ 
+-COPY ~CtB/Chores/items/translate/CBLINENF.ITM~ ~CTB-CHRS~
++COPY ~CtB/Chores/items/translate/CBLINENF.ITM~ ~override~
+   SAY NAME1 @650349
+   SAY NAME2 @650349
+   SAY UNIDENTIFIED_DESC @650350
+   SAY DESC @650350
+-COPY ~CtB/Chores/items/translate/CBLINENP.ITM~ ~CTB-CHRS~
++COPY ~CtB/Chores/items/translate/CBLINENP.ITM~ ~override~
+   SAY NAME1 @650351
+   SAY NAME2 @650351
+   SAY UNIDENTIFIED_DESC @650352
+   SAY DESC @650352
+-COPY ~CtB/Chores/items/translate/CBMLKBKE.ITM~ ~CTB-CHRS~
++COPY ~CtB/Chores/items/translate/CBMLKBKE.ITM~ ~override~
+   SAY NAME1 @650381
+   SAY NAME2 @650381
+   SAY UNIDENTIFIED_DESC @650382
+   SAY DESC @650382
+-COPY ~CtB/Chores/items/translate/CBMLKBKF.ITM~ ~CTB-CHRS~
++COPY ~CtB/Chores/items/translate/CBMLKBKF.ITM~ ~override~
+   SAY NAME1 @650381
+   SAY NAME2 @650381
+   SAY UNIDENTIFIED_DESC @650383
+   SAY DESC @650383
+-COPY ~CtB/Chores/items/translate/CBPOWDR1.ITM~ ~CTB-CHRS~
++COPY ~CtB/Chores/items/translate/CBPOWDR1.ITM~ ~override~
+   SAY NAME1 @650464
+   SAY NAME2 @650465
+   SAY UNIDENTIFIED_DESC @650466
+   SAY DESC @650467
+-COPY ~CtB/Chores/items/translate/CBPOWDR2.ITM~ ~CTB-CHRS~
++COPY ~CtB/Chores/items/translate/CBPOWDR2.ITM~ ~override~
+   SAY NAME1 @650464
+   SAY NAME2 @650468
+   SAY UNIDENTIFIED_DESC @650466
+   SAY DESC @650469
+-COPY ~CtB/Chores/items/translate/CBPOWDR3.ITM~ ~CTB-CHRS~
++COPY ~CtB/Chores/items/translate/CBPOWDR3.ITM~ ~override~
+   SAY NAME1 @650464
+   SAY NAME2 @650470
+   SAY UNIDENTIFIED_DESC @650466
+   SAY DESC @650471
+-COPY ~CtB/Chores/items/translate/CBPOWDR4.ITM~ ~CTB-CHRS~
++COPY ~CtB/Chores/items/translate/CBPOWDR4.ITM~ ~override~
+   SAY NAME1 @650464
+   SAY NAME2 @650472
+   SAY UNIDENTIFIED_DESC @650466
+   SAY DESC @650473
+-COPY ~CtB/Chores/items/translate/CBPOWDR5.ITM~ ~CTB-CHRS~
++COPY ~CtB/Chores/items/translate/CBPOWDR5.ITM~ ~override~
+   SAY NAME1 @650464
+   SAY NAME2 @650474
+   SAY UNIDENTIFIED_DESC @650466
+   SAY DESC @650475
+-COPY ~CtB/Chores/items/translate/CBPOWDR6.ITM~ ~CTB-CHRS~
++COPY ~CtB/Chores/items/translate/CBPOWDR6.ITM~ ~override~
+   SAY NAME1 @650464
+   SAY NAME2 @650476
+   SAY UNIDENTIFIED_DESC @650466
+   SAY DESC @650477
+ 
+ 
+-COPY ~CtB/Chores/items/translate/CBPLANT.ITM~ ~CTB-CHRS~
++COPY ~CtB/Chores/items/translate/CBPLANT.ITM~ ~override~
+   SAY NAME1 @550627
+   SAY NAME2 @550627
+   SAY DESC @550628
+@@ -177,7 +177,7 @@
+ //***********************************************************
+ PRINT ~Installing new spells...~
+ 
+-COPY ~CtB/Chores/spells~ ~CTB-CHRS~
++COPY ~CtB/Chores/spells~ ~override~
+ 
+ // Making spells casting detectable
+ 
+@@ -190,7 +190,7 @@
+ //------------------------------------------
+ // already implemented in G3 Fixpack v6
+ //------------------------------------------
+-COPY_EXISTING ~SPCL922.SPL~ ~CTB-CHRS~    //Tracking
++COPY_EXISTING ~SPCL922.SPL~ ~override~    //Tracking
+   READ_LONG  0x64 abil_offset
+   READ_SHORT 0x68 abil_num
+   READ_LONG  0x6a eff_offset
+@@ -256,7 +256,7 @@
+ 
+ 
+ 
+-COPY_EXISTING ~SPCL919.SPL~ ~CTB-CHRS~    //Scribe Scrolls innate
++COPY_EXISTING ~SPCL919.SPL~ ~override~    //Scribe Scrolls innate
+   READ_LONG  0x64 abil_offset
+   READ_SHORT 0x68 abil_num
+   READ_LONG  0x6a eff_offset
+@@ -331,14 +331,14 @@
+    END
+  END
+ 
+-COPY_EXISTING ~CTB-CHRS/AR3500.ARE~  ~CTB-CHRS~
++COPY_EXISTING ~AR3500.ARE~  ~override~
+   READ_LONG  0xbc "song_offset"
+   WRITE_LONG ("%song_offset%")   "%song_88%"  //day song
+   WRITE_LONG ("%song_offset%"+4) "%song_88%"  //night song
+ BUT_ONLY_IF_IT_CHANGES
+ 
+-COPY_EXISTING ~CTB-CHRS/AR3505.ARE~  ~CTB-CHRS~
+-              ~CTB-CHRS/AR3508.ARE~  ~CTB-CHRS~
++COPY_EXISTING ~AR3505.ARE~  ~override~
++              ~AR3508.ARE~  ~override~
+   READ_LONG  0xbc "song_offset"
+   WRITE_LONG ("%song_offset%")   "%song_89%"  //day song
+   WRITE_LONG ("%song_offset%"+4) "%song_89%"  //night song

@@ -1,0 +1,132 @@
+--- Setup-TDD.tp2	Mon Oct 17 08:29:09 2016
++++ C:\BWP Patchstudio\patched files\Setup-TDD.tp2	Thu Nov 10 10:13:40 2016
+@@ -2,7 +2,7 @@
+ 
+ AUTHOR ~Max and Minto, Horred The Plague (WeiDU), King Diamond (WeiDU revision), Hoppy (Further updates)~ NO_IF_EVAL_BUG
+ 
+-VERSION ~v1.14~
++VERSION ~v1.14 BWP fix~
+ 
+ AUTO_TRA ~TDD/Language/%s~
+ 
+@@ -3523,7 +3523,7 @@
+   REPLACE_TEXTUALLY ~0x08000000~ ~0x4010~ // TOTEMIC
+   REPLACE_TEXTUALLY ~0x10000000~ ~0x4011~ // SHAPESHIFTER
+   REPLACE_TEXTUALLY ~0x20000000~ ~0x4012~ // BEASTFRIEND
+-  REPLACE_TEXTUALLY ~0x40000000~ ~0x401F~ // BARBARIAN
++  REPLACE_TEXTUALLY ~0x40000000~ ~0x40000000~ // BARBARIAN
+ BUT_ONLY_IF_IT_CHANGES
+ 
+ 
+@@ -4451,7 +4451,7 @@
+ //only 3 ToB dialogues modification
+ COPY + ~TDD/D_TOB/mPIRCOR5.D~ ~DLGCASH~
+ COPY + ~TDD/D_TOB/mBERNARD.D~ ~DLGCASH~
+-COPY + ~TDD/D_TOB/mSUELLE2.D~ ~DLGCASH~
++// COPY + ~TDD/D_TOB/mSUELLE2.D~ ~DLGCASH~
+ 
+ COMPILE ~DLGCASH~
+ 
+@@ -4556,22 +4556,22 @@
+   //****** Kivan  ******************************************************************
+   EXTEND_TOP ~AR1100.BCS~ ~TDD/Compat/BGT/Replace/xAR1100.BAF~  //BAF modified
+ 
+-  COPY_EXISTING ~DDKIV1.BCS~ ~override~ //TDD script
+-   DECOMPILE_BCS_TO_BAF
+-   REPLACE_TEXTUALLY ~"kivandd"~ ~"Kivan"~  //change DeathVar check
+-   COMPILE_BAF_TO_BCS
++//  COPY_EXISTING ~DDKIV1.BCS~ ~override~ //TDD script
++//   DECOMPILE_BCS_TO_BAF
++//   REPLACE_TEXTUALLY ~"kivandd"~ ~"Kivan"~  //change DeathVar check
++//   COMPILE_BAF_TO_BCS
+   //********************************************************************************
+ 
+   //****** Kagain ******************************************************************
+   EXTEND_TOP ~AR0020.BCS~ ~TDD/Compat/BGT/Replace/xAR0200.BAF~ //BAF modified
+ 
+-  COPY_EXISTING ~BALDUR.BCS~ ~override~
+-   DECOMPILE_BCS_TO_BAF
+-   REPLACE_TEXTUALLY ~"kagaindd"~ ~"Kagain"~    //change DeathVar check
+-   REPLACE_TEXTUALLY ~"yeslicdd"~ ~"Yeslick"~   //change DeathVar check
+-   REPLACE_TEXTUALLY ~"montydd"~  ~"Montaron"~  //change DeathVar check
+-   REPLACE_TEXTUALLY ~"xzardd"~   ~"Xzar"~      //change DeathVar check
+-   COMPILE_BAF_TO_BCS
++//  COPY_EXISTING ~BALDUR.BCS~ ~override~
++//   DECOMPILE_BCS_TO_BAF
++//   REPLACE_TEXTUALLY ~"kagaindd"~ ~"Kagain"~    //change DeathVar check
++//   REPLACE_TEXTUALLY ~"yeslicdd"~ ~"Yeslick"~   //change DeathVar check
++//   REPLACE_TEXTUALLY ~"montydd"~  ~"Montaron"~  //change DeathVar check
++//   REPLACE_TEXTUALLY ~"xzardd"~   ~"Xzar"~      //change DeathVar check
++//   COMPILE_BAF_TO_BCS
+   //********************************************************************************
+ 
+   //****** Yeslick *****************************************************************
+@@ -4581,16 +4581,16 @@
+   //****** Shar-Teel ***************************************************************
+   EXTEND_TOP ~AR1005.BCS~ ~TDD/Compat/BGT/Replace/xAR1005.BAF~
+ 
+-  COPY_EXISTING ~AR0400.BCS~   ~override~    //TDD scripts
+-                ~SHARFIT1.BCS~ ~override~
+-   DECOMPILE_BCS_TO_BAF
+-   REPLACE_TEXTUALLY ~"shartedd"~ ~"Sharteel"~   //change DeathVar check
+-   COMPILE_BAF_TO_BCS
+-
+-  COPY_EXISTING ~SHARWINS.DLG~   ~override~  //TDD dialogue
+-   DECOMPILE_DLG_TO_D
+-   REPLACE_TEXTUALLY ~"shartedd"~ ~"Sharteel"~   //change DeathVar check
+-   COMPILE_D_TO_DLG
++//  COPY_EXISTING ~AR0400.BCS~   ~override~    //TDD scripts
++//                ~SHARFIT1.BCS~ ~override~
++//   DECOMPILE_BCS_TO_BAF
++//   REPLACE_TEXTUALLY ~"shartedd"~ ~"Sharteel"~   //change DeathVar check
++//   COMPILE_BAF_TO_BCS
++
++//  COPY_EXISTING ~SHARWINS.DLG~   ~override~  //TDD dialogue
++//   DECOMPILE_DLG_TO_D
++//   REPLACE_TEXTUALLY ~"shartedd"~ ~"Sharteel"~   //change DeathVar check
++//   COMPILE_D_TO_DLG
+   //********************************************************************************
+ 
+   //****** Montaron ****************************************************************
+@@ -4602,19 +4602,19 @@
+   COPY_EXISTING ~AR0300.BCS~ ~override~
+    REPLACE_BCS_BLOCK ~TDD/Compat/BGT/Replace/rAR0300.BAF~ ~TDD/Compat/BGT/Replace/xAR0300.BAF~
+ 
+-  COPY_EXISTING ~MONTYRAS.BCS~   ~override~    //TDD scripts
+-                ~DPLAYER2.BCS~   ~override~    //TDD scripts
+-                ~HARPASS2.BCS~   ~override~    //TDD scripts
+-   DECOMPILE_BCS_TO_BAF
+-   REPLACE_TEXTUALLY ~"xzardd"~  ~"Xzar"~        //change DeathVar check
+-   COMPILE_BAF_TO_BCS
+-
+-  COPY_EXISTING ~MONTAP.DLG~   ~override~  //TDD dialogue
+-                ~XZARDD.DLG~   ~override~
+-                ~XZARTHXB.DLG~   ~override~
+-   DECOMPILE_DLG_TO_D
+-   REPLACE_TEXTUALLY ~"xzardd"~  ~"Xzar"~        //change DeathVar check
+-   COMPILE_D_TO_DLG
++//  COPY_EXISTING ~MONTYRAS.BCS~   ~override~    //TDD scripts
++//                ~DPLAYER2.BCS~   ~override~    //TDD scripts
++//                ~HARPASS2.BCS~   ~override~    //TDD scripts
++//   DECOMPILE_BCS_TO_BAF
++//   REPLACE_TEXTUALLY ~"xzardd"~  ~"Xzar"~        //change DeathVar check
++//   COMPILE_BAF_TO_BCS
++
++//  COPY_EXISTING ~MONTAP.DLG~   ~override~  //TDD dialogue
++//                ~XZARDD.DLG~   ~override~
++//                ~XZARTHXB.DLG~   ~override~
++//   DECOMPILE_DLG_TO_D
++//   REPLACE_TEXTUALLY ~"xzardd"~  ~"Xzar"~        //change DeathVar check
++//   COMPILE_D_TO_DLG
+   //********************************************************************************
+ 
+ 
+@@ -12419,7 +12419,7 @@
+ //*********************************************************************************************
+ BEGIN @21467
+ REQUIRE_COMPONENT "Setup-TDD.tp2"      "0"  @21468
+-FORBID_COMPONENT  "Setup-RoT.tp2"      "1"  @214680
++//FORBID_COMPONENT  "Setup-RoT.tp2"      "1"  @214680
+ 
+ 
+ COPY_EXISTING + ~LAYHANDS.2DA~ ~override~  //to be sure that the originals will come to backup folder, even if everything is or will be biffed

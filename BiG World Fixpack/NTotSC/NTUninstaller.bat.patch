@@ -1,0 +1,22 @@
+--- NTotSC\NTUninstaller.bat	Sun Mar 16 15:52:17 2008
++++ C:\BWP Patchstudio\patched files\NTotSC\NTUninstaller.bat	Wed Feb 13 20:55:33 2013
+@@ -9,12 +9,12 @@
+ attrib -r data\NTOTSC3.bif
+ del data\NTOTSC3.bif
+ 
+-del chitin.key
+-copy NTotSC\chitin.nts chitin.key
+-del NTotSC\chitin.nts
++:: del chitin.key
++:: copy NTotSC\chitin.nts chitin.key
++:: del NTotSC\chitin.nts
+ 
+-call NTotSC\deldir override
+-md override
+-xcopy /y /s /q NTotSC\over.bak override
+-call NTotSC\deldir NTotSC\over.bak
++:: call NTotSC\deldir override
++:: md override
++:: xcopy /y /s /q NTotSC\over.bak override
++:: call NTotSC\deldir NTotSC\over.bak
+ 

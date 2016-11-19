@@ -1,11 +1,11 @@
---- Setup-NTotSCv171.tp2	Wed Dec 31 20:02:51 2008
-+++ C:\BWP Patchstudio\patched files\Setup-NTotSCv171.tp2	Mon Jun 02 06:42:11 2014
+--- Temp\setup-NTotSCv171.tp2	2008-12-31 20:02:51.274375000 -0500
++++ setup-NTotSCv171.tp2	2016-11-18 20:30:32.337581700 -0500
 @@ -4,7 +4,7 @@
  
  BACKUP ~NTotSCv171/backup~
  AUTHOR ~erebusant@verizon.net~
 -VERSION ~v1.71~
-+VERSION ~v1.71 BWP Fix 2~
++VERSION ~v1.71 BWP Trim + Fix~
  
  ////////////////////////////////////////////////////////////////////////////////////////////////////
  // Language Selection
@@ -23,3 +23,16 @@
  LANGUAGE
           ~German (translation by Leonard Watson)~
           ~german~
+@@ -35,9 +40,9 @@
+ 
+ BEGIN ~Fix NTotSC Issues~
+ 
+-COPY + ~Setup-NTotSCv171.exe~ ~WeiDU.exe~
+-COPY + ~chitin.key~ ~NTotSCv171/chitin.ntf~
+-COPY_LARGE + ~dialog.tlk~ ~NTotSCv171/dialog.ntf~
++// COPY + ~Setup-NTotSCv171.exe~ ~WeiDU.exe~
++// COPY + ~chitin.key~ ~NTotSCv171/chitin.ntf~
++// COPY_LARGE + ~dialog.tlk~ ~NTotSCv171/dialog.ntf~
+ 
+ DEFINE_PATCH_MACRO ~DELETE_INFO_TRIGGER~ BEGIN
+   READ_LONG 0x54 "DIT_actor_off"

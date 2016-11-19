@@ -1,6 +1,6 @@
---- questpack\tp2\quest\coronet.tph	Sun May 25 19:41:28 2014
-+++ C:\BWP Patchstudio\patched files\questpack\tp2\quest\coronet.tph	Wed Jun 17 17:53:37 2015
-@@ -114,6 +114,14 @@
+--- questpack\tp2\quest\coronet.tph	Sun Sep 06 00:50:58 2015
++++ C:\BWP Patchstudio\patched files\questpack\tp2\quest\coronet.tph	Fri Aug 26 07:42:29 2016
+@@ -125,6 +125,15 @@
    END
  BUT_ONLY
  
@@ -11,6 +11,7 @@
 +                       CreateCreature("d0lorick",[771.597],12)~
 +  END
 +BUT_ONLY
++
 +
  COPY_EXISTING ~mazzy.bcs~ ~override~
    DECOMPILE_AND_PATCH BEGIN

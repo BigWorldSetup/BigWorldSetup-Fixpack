@@ -1,0 +1,11 @@
+--- Setup-BoM\baf\ar5500.baf	Sat Feb 04 05:56:48 2006
++++ C:\BWP Patchstudio\patched files\Setup-BoM\baf\ar5500.baf	Mon Oct 17 19:48:16 2016
+@@ -3,5 +3,5 @@
+ THEN
+         RESPONSE #100
+                 SetGlobal("O!BionStillExists","ar5500",1)
+-                CreateCreature("O!Bion2",[2314.371],2)
+-END
+\ No newline at end of file
++                CreateCreature("O!Bion2",[3120.100],2)
++END

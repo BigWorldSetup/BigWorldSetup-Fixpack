@@ -1,11 +1,1573 @@
---- Setup-BoneHillv275.tp2	Sat Jul 13 12:48:48 2013
-+++ C:\BWP Patchstudio\patched files\Setup-BoneHillv275.tp2	Wed Oct 23 21:29:57 2013
+--- BWP_Fixpack_Originals\Setup-Bonehillv275.tp2	2013-07-13 13:48:48.000000000 -0400
++++ Setup-Bonehillv275.tp2	2016-11-19 03:52:33.169808000 -0500
 @@ -2,7 +2,7 @@
  BACKUP ~Bonehillv275/backup~ 
  AUTHOR ~SirBillyBob@gmail.com and erebusant@verizon.net~
  
 -VERSION ~v2.75c~
-+VERSION ~v2.75c BWP Fix~
++VERSION ~v2.75c BWP Trim + Fix~
  
  // Isaya: readme at the beginning of installation, if missing in a language, use English
  README ~bonehillv275/language/%LANGUAGE%/ReadMe-Bonehill.html~ ~bonehillv275/language/english/ReadMe-Bonehill.html~
+@@ -40,17 +40,19 @@
+          ~bonehillv275/Language/french/setup.tra~
+ 
+ BEGIN @0
++REQUIRE_PREDICATE GAME_IS ~bgt tutu~ ~~
+ 
+-MKDIR ~bonehillv275/over.bak~
+-COPY_LARGE + ~override~      ~bonehillv275/over.bak~
++// MKDIR ~bonehillv275/over.bak~
++// COPY_LARGE + ~override~      ~bonehillv275/over.bak~
+ 
+-COPY + ~Setup-BoneHillv275.exe~  ~WeiDU.exe~
+-COPY + ~chitin.key~        ~bonehillv275/chitin.bh~
+-COPY_LARGE + ~dialog.tlk~  ~bonehillv275/dialog.bh~
+-
+-MKDIR ~BH-TIS1~
+-MKDIR ~BH-TIS2~
+-MKDIR ~BH-REST~
++// COPY + ~Setup-BoneHillv275.exe~  ~WeiDU.exe~
++// COPY + ~chitin.key~        ~bonehillv275/chitin.bh~
++// COPY_LARGE + ~dialog.tlk~  ~bonehillv275/dialog.bh~
++
++// MKDIR ~BH-TIS1~
++// MKDIR ~BH-TIS2~
++MKDIR ~%MOD_FOLDER%/BH-CORE~ // almost all files created or changed by this mod will be collected here and then biffed into data/BH-CORE.bif
++MKDIR ~%MOD_FOLDER%/BH-TIS~ // all TIZ files from this mod will be unpacked to here by HANDLE_TILESETS and then biffed into data/BH-TIS.bif
+ 
+ APPEND ~GTIMES.IDS~ ~600 TWO_HOURS~ UNLESS ~600 TWO_HOURS~
+ APPEND ~GTIMES.IDS~ ~600 TEN_TURNS~ UNLESS ~600 TEN_TURNS~
+@@ -61,7 +63,7 @@
+ //////////////////////
+ 
+ PRINT @1
+-COPY ~bonehillv275/bams~ ~override~
++COPY ~bonehillv275/bams~ ~%MOD_FOLDER%/BH-CORE~
+ 
+ /////////////////////
+ //  Install Items  //
+@@ -77,7 +79,7 @@
+  BEGIN
+   PRINT @5
+    ADD_PROJECTILE  ~bonehillv275/ITEMS/BOULDER.PRO~
+-   COPY ~bonehillv275/ITEMS/BOULDER.ITM~  ~override~
++   COPY ~bonehillv275/ITEMS/BOULDER.ITM~ ~%MOD_FOLDER%/BH-CORE~
+     SAY NAME1 @6 
+     SAY NAME2 @6 
+     SAY UNIDENTIFIED_DESC @7 
+@@ -85,182 +87,182 @@
+      WRITE_SHORT  0x09c ~%BOULDER%~
+ END
+ 
+-COPY ~bonehillv275/items/BERSERKR.ITM~ ~override~
++COPY ~bonehillv275/items/BERSERKR.ITM~ ~%MOD_FOLDER%/BH-CORE~
+ 
+-COPY ~bonehillv275/items/BHAMUL01.itm~ ~override~       
++COPY ~bonehillv275/items/BHAMUL01.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME2 @8 
+   SAY DESC @9 
+ 
+-COPY ~bonehillv275/items/bhbardr.itm~ ~override~        
++COPY ~bonehillv275/items/bhbardr.itm~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME2 @10 
+   SAY DESC @11 
+ 
+-COPY ~bonehillv275/items/bhbhorn.itm~ ~override~        
++COPY ~bonehillv275/items/bhbhorn.itm~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @12 
+   SAY NAME2 @13 
+   SAY UNIDENTIFIED_DESC @14 
+   SAY DESC @15
+ 
+-COPY ~bonehillv275/items/BHBPEARL.ITM~ ~override~ 
++COPY ~bonehillv275/items/BHBPEARL.ITM~ ~%MOD_FOLDER%/BH-CORE~ 
+   SAY NAME1 @16 
+   SAY NAME2 @16 
+   SAY UNIDENTIFIED_DESC @17
+   SAY DESC @17
+ 
+-COPY ~bonehillv275/items/BHBUDSTF.itm~ ~override~       
++COPY ~bonehillv275/items/BHBUDSTF.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @18 
+   SAY NAME2 @19 
+   SAY UNIDENTIFIED_DESC @20 
+   SAY DESC @21 
+ 
+-COPY ~bonehillv275/items/BHCLCK01.itm~ ~override~       
++COPY ~bonehillv275/items/BHCLCK01.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME2 @22 
+   SAY DESC @23 
+ 
+-COPY ~bonehillv275/items/bhclub01.itm~ ~override~       
++COPY ~bonehillv275/items/bhclub01.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @24
+   SAY NAME2 @25
+   SAY DESC @26 
+ 
+-COPY ~bonehillv275/items/bhfablut.itm~ ~override~
++COPY ~bonehillv275/items/bhfablut.itm~ ~%MOD_FOLDER%/BH-CORE~
+   SAY NAME1 @27 
+   SAY NAME2 @28 
+   SAY UNIDENTIFIED_DESC @29 
+   SAY DESC @30 
+ 
+-COPY ~bonehillv275/items/BHFSW1.ITM~ ~override~         
++COPY ~bonehillv275/items/BHFSW1.ITM~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME1 @31 
+   SAY NAME2 @32 
+   SAY UNIDENTIFIED_DESC @33 
+   SAY DESC @34 
+ 
+-COPY ~bonehillv275/items/bhghand.itm~ ~override~        
++COPY ~bonehillv275/items/bhghand.itm~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME2 @35 
+   SAY UNIDENTIFIED_DESC @36 
+   SAY DESC @37 
+ 
+-COPY ~bonehillv275/items/bhghandn.itm~ ~override~       
++COPY ~bonehillv275/items/bhghandn.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @38 
+   SAY NAME2 @38 
+   SAY UNIDENTIFIED_DESC @39 
+   SAY DESC @39 
+ 
+-COPY ~bonehillv275/items/BHGHNOTE.ITM~ ~override~       
++COPY ~bonehillv275/items/BHGHNOTE.ITM~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @40 
+   SAY NAME2 @40 
+   SAY UNIDENTIFIED_DESC @41 
+ 
+-COPY ~bonehillv275/items/BHGSKELJ.ITM~ ~override~       
++COPY ~bonehillv275/items/BHGSKELJ.ITM~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @42 
+   SAY NAME2 @42 
+   SAY UNIDENTIFIED_DESC @43 
+   SAY DESC @43 
+ 
+-COPY ~bonehillv275/items/bhkey01.itm~ ~override~        
++COPY ~bonehillv275/items/bhkey01.itm~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @44 
+   SAY NAME2 @44 
+   SAY UNIDENTIFIED_DESC @45 
+ 
+-COPY ~bonehillv275/items/BHMESSG.ITM~ ~override~        
++COPY ~bonehillv275/items/BHMESSG.ITM~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @46 
+   SAY NAME2 @46
+   SAY UNIDENTIFIED_DESC @47 
+ 
+-COPY ~bonehillv275/items/BHMHELM.ITM~ ~override~       
++COPY ~bonehillv275/items/BHMHELM.ITM~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @48 
+   SAY NAME2 @49 
+   SAY UNIDENTIFIED_DESC @50 
+   SAY DESC @51 
+ 
+-COPY ~bonehillv275/items/BHMISC01.itm~ ~override~ 
++COPY ~bonehillv275/items/BHMISC01.itm~ ~%MOD_FOLDER%/BH-CORE~ 
+   SAY NAME1 @52 
+   SAY NAME2 @52 
+   SAY UNIDENTIFIED_DESC @53 
+   SAY DESC @53 
+ 
+-COPY ~bonehillv275/items/bhmisc4f.itm~ ~override~       
++COPY ~bonehillv275/items/bhmisc4f.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY UNIDENTIFIED_DESC @54 
+ 
+-COPY ~bonehillv275/items/bhnote1.itm~ ~override~        
++COPY ~bonehillv275/items/bhnote1.itm~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @55 
+   SAY NAME2 @55 
+   SAY UNIDENTIFIED_DESC @56 
+   SAY DESC @56
+ 
+-COPY ~bonehillv275/items/BHOSPREM.itm~ ~override~       
++COPY ~bonehillv275/items/BHOSPREM.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @57 
+   SAY NAME2 @57 
+   SAY UNIDENTIFIED_DESC @58 
+   SAY DESC @58 
+ 
+-COPY ~bonehillv275/items/bhpelltr.itm~ ~override~       
++COPY ~bonehillv275/items/bhpelltr.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @59 
+   SAY NAME2 @59 
+   SAY UNIDENTIFIED_DESC @60 
+ 
+-COPY ~bonehillv275/items/bhplot01.itm~ ~override~        
++COPY ~bonehillv275/items/bhplot01.itm~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @61 
+   SAY NAME2 @61 
+   SAY UNIDENTIFIED_DESC @62 
+   SAY DESC @62
+ 
+-COPY ~bonehillv275/items/bhplot02.itm~ ~override~
++COPY ~bonehillv275/items/bhplot02.itm~ ~%MOD_FOLDER%/BH-CORE~
+   SAY NAME1 @63 
+   SAY NAME2 @63 
+   SAY UNIDENTIFIED_DESC @64 
+   SAY DESC @64
+ 
+-COPY ~bonehillv275/items/bhplot03.itm~ ~override~        
++COPY ~bonehillv275/items/bhplot03.itm~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @65 
+   SAY NAME2 @65 
+   SAY UNIDENTIFIED_DESC @66 
+   SAY DESC @66
+ 
+-COPY ~bonehillv275/items/BHPLOT04.itm~ ~override~       
++COPY ~bonehillv275/items/BHPLOT04.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @67 
+   SAY NAME2 @67 
+   SAY UNIDENTIFIED_DESC @68 
+   SAY DESC @68 
+ 
+-COPY ~bonehillv275/items/BHRATBIT.ITM~ ~override~       
++COPY ~bonehillv275/items/BHRATBIT.ITM~ ~%MOD_FOLDER%/BH-CORE~       
+ 
+-COPY ~bonehillv275/items/bhsirius.itm~ ~override~       
++COPY ~bonehillv275/items/bhsirius.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @69 
+   SAY NAME2 @69 
+   SAY UNIDENTIFIED_DESC @70 
+ 
+-COPY ~bonehillv275/items/BHSW1H01.itm~ ~override~       
++COPY ~bonehillv275/items/BHSW1H01.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME2 @71 
+   SAY DESC @72 
+ 
+-COPY ~bonehillv275/items/bhtelvbk.itm~ ~override~       
++COPY ~bonehillv275/items/bhtelvbk.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @73 
+   SAY NAME2 @73 
+   SAY UNIDENTIFIED_DESC @74 
+   SAY DESC @74 
+ 
+-COPY ~bonehillv275/items/bhtelvsb.itm~ ~override~       
++COPY ~bonehillv275/items/bhtelvsb.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @75 
+   SAY NAME2 @75 
+   SAY UNIDENTIFIED_DESC @76 
+ 
+-COPY ~bonehillv275/items/bhwand1.itm~ ~override~        
++COPY ~bonehillv275/items/bhwand1.itm~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME2 @77
+   SAY DESC @78 
+ 
+-COPY ~bonehillv275/items/BHWATCHR.ITM~ ~override~       
++COPY ~bonehillv275/items/BHWATCHR.ITM~ ~%MOD_FOLDER%/BH-CORE~       
+ 
+-COPY ~bonehillv275/items/bhxspell.itm~ ~override~       
++COPY ~bonehillv275/items/bhxspell.itm~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @79 
+   SAY NAME2 @79 
+   SAY UNIDENTIFIED_DESC @80 
+ 
+-COPY ~bonehillv275/items/bhzahr.itm~ ~override~         
++COPY ~bonehillv275/items/bhzahr.itm~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME1 @81 
+   SAY NAME2 @81 
+   SAY UNIDENTIFIED_DESC @82 
+ 
+-COPY ~bonehillv275/items/bhzahrj.itm~ ~override~        
++COPY ~bonehillv275/items/bhzahrj.itm~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @83 
+   SAY NAME2 @83 
+   SAY UNIDENTIFIED_DESC @84 
+@@ -272,69 +274,69 @@
+ 
+ PRINT @85
+ 
+-COPY ~bonehillv275/items/BH2010.STO~ ~override~
++COPY ~bonehillv275/items/BH2010.STO~ ~%MOD_FOLDER%/BH-CORE~
+ 
+-COPY ~bonehillv275/items/bhalmax.sto~ ~override~        
++COPY ~bonehillv275/items/bhalmax.sto~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME2 @86 
+ 
+-COPY ~bonehillv275/items/bhalton.sto~ ~override~        
++COPY ~bonehillv275/items/bhalton.sto~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME2 @87 
+ 
+-COPY ~bonehillv275/items/BHCLERI1.sto~ ~override~       
++COPY ~bonehillv275/items/BHCLERI1.sto~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME2 @88 
+ 
+-COPY ~bonehillv275/items/bhcleric.sto~ ~override~       
++COPY ~bonehillv275/items/bhcleric.sto~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME2 @89 
+ 
+-COPY ~bonehillv275/items/bhfalco.sto~ ~override~
++COPY ~bonehillv275/items/bhfalco.sto~ ~%MOD_FOLDER%/BH-CORE~
+   SAY NAME2 @90 
+ 
+-COPY ~bonehillv275/items/BHGILMI.sto~ ~override~ 
++COPY ~bonehillv275/items/BHGILMI.sto~ ~%MOD_FOLDER%/BH-CORE~ 
+   SAY NAME2 @91 
+ 
+-COPY ~bonehillv275/items/BHGLAMI.sto~ ~override~        
++COPY ~bonehillv275/items/BHGLAMI.sto~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME2 @92 
+ 
+-COPY ~bonehillv275/items/BHABRAHA.sto~ ~override~        
++COPY ~bonehillv275/items/BHABRAHA.sto~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME2 @92 
+ 
+-COPY ~bonehillv275/items/bhhestal.sto~ ~override~       
++COPY ~bonehillv275/items/bhhestal.sto~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME2 @93 
+ 
+-COPY ~bonehillv275/items/BHKRAK.sto~ ~override~         
++COPY ~bonehillv275/items/BHKRAK.sto~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME2 @94 
+ 
+-COPY ~bonehillv275/items/bhohlatt.sto~ ~override~       
++COPY ~bonehillv275/items/bhohlatt.sto~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME2 @95 
+ 
+-COPY ~bonehillv275/items/bhpellt.sto~ ~override~        
++COPY ~bonehillv275/items/bhpellt.sto~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME2 @96 
+ 
+-COPY ~bonehillv275/items/bhpelltr.sto~ ~override~       
++COPY ~bonehillv275/items/bhpelltr.sto~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME2 @97 
+ 
+-COPY ~bonehillv275/items/bhperk.sto~ ~override~         
++COPY ~bonehillv275/items/bhperk.sto~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME2 @98 
+ 
+-COPY ~bonehillv275/items/bhst0102.sto~ ~override~       
++COPY ~bonehillv275/items/bhst0102.sto~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME2 @99 
+ 
+-COPY ~bonehillv275/items/bhst0103.sto~ ~override~       
++COPY ~bonehillv275/items/bhst0103.sto~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME2 @100 
+ 
+-COPY ~bonehillv275/items/bhst0108.sto~ ~override~       
++COPY ~bonehillv275/items/bhst0108.sto~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME2 @101 
+ 
+-COPY ~bonehillv275/items/bhtelvsb.sto~ ~override~       
++COPY ~bonehillv275/items/bhtelvsb.sto~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME2 @75 
+ 
+-COPY ~bonehillv275/items/bhxspell.sto~ ~override~       
++COPY ~bonehillv275/items/bhxspell.sto~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME2 @102 
+ 
+-COPY ~bonehillv275/items/bhzahr.sto~ ~override~
++COPY ~bonehillv275/items/bhzahr.sto~ ~%MOD_FOLDER%/BH-CORE~
+   SAY NAME2 @81
+ 
+-COPY ~bonehillv275/items/bhzelmar.sto~ ~override~
++COPY ~bonehillv275/items/bhzelmar.sto~ ~%MOD_FOLDER%/BH-CORE~
+   SAY NAME2 @103
+ 
+ 
+@@ -344,16 +346,16 @@
+ 
+ PRINT @104
+ 
+-COPY ~bonehillv275/creatures/HOBGO2.CRE~ ~override~
+-COPY ~bonehillv275/creatures/JELLYCO.CRE~ ~override~
++COPY ~bonehillv275/creatures/HOBGO2.CRE~ ~%MOD_FOLDER%/BH-CORE~
++COPY ~bonehillv275/creatures/JELLYCO.CRE~ ~%MOD_FOLDER%/BH-CORE~
+ 
+-COPY ~bonehillv275/creatures/GNOLL02.CRE~  ~override~
+-COPY ~bonehillv275/creatures/GNOLL03.CRE~  ~override~
+-COPY ~bonehillv275/creatures/GNOLL3.CRE~   ~override~
+-COPY ~bonehillv275/creatures/SKELET02.CRE~ ~override~
++COPY ~bonehillv275/creatures/GNOLL02.CRE~  ~%MOD_FOLDER%/BH-CORE~
++COPY ~bonehillv275/creatures/GNOLL03.CRE~  ~%MOD_FOLDER%/BH-CORE~
++COPY ~bonehillv275/creatures/GNOLL3.CRE~   ~%MOD_FOLDER%/BH-CORE~
++COPY ~bonehillv275/creatures/SKELET02.CRE~ ~%MOD_FOLDER%/BH-CORE~
+ 
+ 
+-COPY ~bonehillv275/creatures/BHABRAC.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHABRAC.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @105 
+   SAY NAME2 @105
+   SAY 0xa4 @106  
+@@ -361,15 +363,15 @@
+   SAY 0xf0 @108  
+   SAY 0x10c @106  
+ 
+-COPY ~bonehillv275/creatures/BHABRAHA.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHABRAHA.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @109 
+   SAY NAME2 @109 
+ 
+-COPY ~bonehillv275/creatures/BHALMAX.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHALMAX.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @110 
+   SAY NAME2 @110 
+ 
+-COPY ~bonehillv275/creatures/bhalmon.cre~ ~override~        
++COPY ~bonehillv275/creatures/bhalmon.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @111 
+   SAY NAME2 @111 
+   SAY 0xa4 @112  
+@@ -377,7 +379,7 @@
+   SAY 0xf0 @108  
+   SAY 0x10c @113  
+ 
+-COPY ~bonehillv275/creatures/bhalton.cre~ ~override~        
++COPY ~bonehillv275/creatures/bhalton.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @114 
+   SAY NAME2 @114 
+   SAY 0xa4 @115
+@@ -389,23 +391,23 @@
+   SAY 0x110 @119 
+   SAY 0x114 @120 
+ 
+-COPY ~bonehillv275/creatures/BHAMOS.cre~ ~override~         
++COPY ~bonehillv275/creatures/BHAMOS.cre~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME1 @121 
+   SAY NAME2 @121 
+ 
+-COPY ~bonehillv275/creatures/BHANDRE.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHANDRE.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @122 
+   SAY NAME2 @122 
+ 
+-COPY ~bonehillv275/creatures/bharmax.cre~ ~override~        
++COPY ~bonehillv275/creatures/bharmax.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @123 
+   SAY NAME2 @123 
+ 
+-COPY ~bonehillv275/creatures/BHARRNES.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHARRNES.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @124 
+   SAY NAME2 @124 
+ 
+-COPY ~bonehillv275/creatures/BHARTHUR.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHARTHUR.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @125
+   SAY NAME2 @125
+   SAY 0xa4 @106  
+@@ -413,7 +415,7 @@
+   SAY 0xf0 @108  
+   SAY 0x10c @106  
+ 
+-COPY ~bonehillv275/creatures/BHASCUE.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHASCUE.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @126 
+   SAY NAME2 @126 
+   SAY 0xa4 @127  
+@@ -423,7 +425,7 @@
+   SAY 0xf0 @131  
+   SAY 0x10c @128
+ 
+-COPY ~bonehillv275/creatures/bhbalmar.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhbalmar.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @132 
+   SAY NAME2 @132 
+   SAY 0xa4 @106  
+@@ -431,26 +433,26 @@
+   SAY 0xf0 @108  
+   SAY 0x10c @106  
+ 
+-COPY ~bonehillv275/creatures/bhbalmor.cre~ ~override~        
++COPY ~bonehillv275/creatures/bhbalmor.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @133 
+   SAY NAME2 @133 
+ 
+-COPY ~bonehillv275/creatures/bhbandt1.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhbandt1.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY 0xa4 @134  
+   SAY 0xc8 @134  
+   SAY 0x124 @135  
+   SAY 0x128 @136  
+ 
+-COPY ~bonehillv275/creatures/bhbandt2.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhbandt2.cre~ ~%MOD_FOLDER%/BH-CORE~       
+ 
+-COPY ~bonehillv275/creatures/bhbandt3.cre~ ~override~
++COPY ~bonehillv275/creatures/bhbandt3.cre~ ~%MOD_FOLDER%/BH-CORE~
+   SAY NAME1	@750
+   SAY NAME2 @750
+   SAY 0xa4 @135  
+   SAY 0x10c @136  
+   SAY 0x110 @134  
+ 
+-COPY ~bonehillv275/creatures/bhbasil.cre~ ~override~        
++COPY ~bonehillv275/creatures/bhbasil.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @137 
+   SAY NAME2 @137 
+   SAY 0xa4 @115 
+@@ -462,7 +464,7 @@
+   SAY 0x110 @119 
+   SAY 0x114 @120 
+ 
+-COPY ~bonehillv275/creatures/bhbasmar.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhbasmar.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @138 
+   SAY NAME2 @138
+   SAY 0xa4 @106  
+@@ -470,14 +472,14 @@
+   SAY 0xf0 @108  
+   SAY 0x10c @106  
+ 
+-COPY ~bonehillv275/creatures/BHBBOB.cre~ ~override~         
++COPY ~bonehillv275/creatures/BHBBOB.cre~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME1 @139 
+   SAY NAME2 @139 
+   SAY 0x110 @140
+ 
+-COPY ~bonehillv275/creatures/bhberser.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhberser.cre~ ~%MOD_FOLDER%/BH-CORE~       
+ 
+-COPY ~bonehillv275/creatures/BHBESHKA.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHBESHKA.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @141 
+   SAY NAME2 @141 
+   SAY 0xa4 @142  
+@@ -486,7 +488,7 @@
+   SAY 0xf0 @145  
+   SAY 0x10c @142  
+ 
+-COPY ~bonehillv275/creatures/BHBESS.cre~ ~override~         
++COPY ~bonehillv275/creatures/BHBESS.cre~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME1 @146 
+   SAY NAME2 @146 
+   SAY 0xa4 @142  
+@@ -495,17 +497,17 @@
+   SAY 0xf0 @145  
+   SAY 0x10c @142  
+ 
+-COPY ~bonehillv275/creatures/bhblacki.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhblacki.cre~ ~%MOD_FOLDER%/BH-CORE~       
+ 
+-COPY ~bonehillv275/creatures/bhbomarc.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhbomarc.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @147 
+   SAY NAME2 @147 
+ 
+-COPY ~bonehillv275/creatures/bhcleri1.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhcleri1.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @148 
+   SAY NAME2 @148 
+ 
+-COPY ~bonehillv275/creatures/BHCLERI2.cre~ ~override~
++COPY ~bonehillv275/creatures/BHCLERI2.cre~ ~%MOD_FOLDER%/BH-CORE~
+   SAY NAME1 @149 
+   SAY NAME2 @149 
+   SAY 0xa4 @115 
+@@ -517,11 +519,11 @@
+   SAY 0x110 @119 
+   SAY 0x114 @120 
+ 
+-COPY ~bonehillv275/creatures/bhcleric.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhcleric.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @150 
+   SAY NAME2 @150 
+ 
+-COPY ~bonehillv275/creatures/BHCOMB01.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHCOMB01.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @151 
+   SAY NAME2 @151 
+   SAY 0xa4 @152  
+@@ -531,7 +533,7 @@
+   SAY 0x198 @155 
+   SAY 0x1b8 @156  
+ 
+-COPY ~bonehillv275/creatures/BHCOMB02.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHCOMB02.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @151 
+   SAY NAME2 @151 
+   SAY 0xa4 @152  
+@@ -541,25 +543,25 @@
+   SAY 0x198 @155 
+   SAY 0x1b8 @156  
+ 
+-COPY ~bonehillv275/creatures/BHCOMF01.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHCOMF01.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY 0xa4 @142  
+   SAY 0xc8 @143  
+   SAY 0xec @144  
+   SAY 0xf0 @145  
+   SAY 0x10c @142
+ 
+-COPY ~bonehillv275/creatures/BHCOMF02.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHCOMF02.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY 0xa4 @142  
+   SAY 0xc8 @143  
+   SAY 0xec @144  
+   SAY 0xf0 @145  
+   SAY 0x10c @142  
+ 
+-COPY ~bonehillv275/creatures/BHCOMG01.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHCOMG01.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+ 
+-COPY ~bonehillv275/creatures/BHCOMG02.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHCOMG02.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+ 
+-COPY ~bonehillv275/creatures/BHCOMM01.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHCOMM01.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @157 
+   SAY NAME2 @157 
+   SAY 0xa4 @106  
+@@ -567,7 +569,7 @@
+   SAY 0xf0 @108  
+   SAY 0x10c @106  
+ 
+-COPY ~bonehillv275/creatures/BHCOMM02.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHCOMM02.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @157 
+   SAY NAME2 @157 
+   SAY 0xa4 @158  
+@@ -578,13 +580,13 @@
+   SAY 0x1b8 @160  
+   SAY 0x1bc @161  
+ 
+-COPY ~bonehillv275/creatures/BHCOMM05.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHCOMM05.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY 0xa4 @106  
+   SAY 0xec @107  
+   SAY 0xf0 @108  
+   SAY 0x10c @106  
+ 
+-COPY ~bonehillv275/creatures/BHCOMM06.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHCOMM06.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY 0xa4 @162  
+   SAY 0xc8 @163 
+   SAY 0xec @164
+@@ -593,13 +595,13 @@
+   SAY 0x110 @162  
+   SAY 0x198 @162  
+ 
+-COPY ~bonehillv275/creatures/BHCOMM07.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHCOMM07.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY 0xa4 @106  
+   SAY 0xec @107  
+   SAY 0xf0 @108  
+   SAY 0x10c @106  
+ 
+-COPY ~bonehillv275/creatures/BHCOMM08.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHCOMM08.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @166 
+   SAY NAME2 @166 
+   SAY 0xa4 @162  
+@@ -610,14 +612,14 @@
+   SAY 0x110 @162  
+   SAY 0x198 @162  
+ 
+-COPY ~bonehillv275/creatures/BHCOOK1.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHCOOK1.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY 0xa4 @142  
+   SAY 0xc8 @143  
+   SAY 0xec @144  
+   SAY 0xf0 @145  
+   SAY 0x10c @142  
+ 
+-COPY ~bonehillv275/creatures/BHCOOK2.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHCOOK2.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @167 
+   SAY NAME2 @167 
+   SAY 0xa4 @142  
+@@ -626,7 +628,7 @@
+   SAY 0xf0 @145  
+   SAY 0x10c @142  
+ 
+-COPY ~bonehillv275/creatures/BHELESS.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHELESS.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @168 
+   SAY NAME2 @168 
+   SAY 0xa4 @115 
+@@ -638,7 +640,7 @@
+   SAY 0x110 @119 
+   SAY 0x114 @120 
+ 
+-COPY ~bonehillv275/creatures/bhfabio.cre~ ~override~        
++COPY ~bonehillv275/creatures/bhfabio.cre~ ~override~ // for COPY_EXISTING later
+   SAY NAME1 @169 
+   SAY NAME2 @169 
+   SAY 0xa4 @170  
+@@ -685,15 +687,15 @@
+   SAY 0x1b8 @210  
+   SAY 0x1cc @211 
+ 
+-COPY ~bonehillv275/creatures/BHFAIR.cre~ ~override~         
++COPY ~bonehillv275/creatures/BHFAIR.cre~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME1 @212 
+   SAY NAME2 @212 
+ 
+-COPY ~bonehillv275/creatures/bhfalco.cre~ ~override~        
++COPY ~bonehillv275/creatures/bhfalco.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @213 
+   SAY NAME2 @213 
+ 
+-COPY ~bonehillv275/creatures/BHFALPIR.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHFALPIR.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @214 
+   SAY NAME2 @214 
+   SAY 0xa4 @152  
+@@ -703,7 +705,7 @@
+   SAY 0x198 @155 
+   SAY 0x1b8 @156  
+ 
+-COPY ~bonehillv275/creatures/BHFARM.CRE~ ~override~         
++COPY ~bonehillv275/creatures/BHFARM.CRE~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY 0xa4 @162  
+   SAY 0xc8 @163 
+   SAY 0xec @164  
+@@ -712,7 +714,7 @@
+   SAY 0x110 @162  
+   SAY 0x198 @162  
+ 
+-COPY ~bonehillv275/creatures/BHFELWIN.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHFELWIN.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @215 
+   SAY NAME2 @215 
+   SAY 0xa4 @216  
+@@ -721,23 +723,23 @@
+   SAY 0x10c @219  
+   SAY 0x110 @216  
+ 
+-COPY ~bonehillv275/creatures/BHFGIANT.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHFGIANT.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @220 
+   SAY NAME2 @220
+ 
+-COPY ~bonehillv275/creatures/BHFLIBAN.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHFLIBAN.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @221 
+   SAY NAME2 @221
+ 
+-COPY ~bonehillv275/creatures/bhgap.cre~ ~override~          
++COPY ~bonehillv275/creatures/bhgap.cre~ ~%MOD_FOLDER%/BH-CORE~          
+   SAY NAME1 @222 
+   SAY NAME2 @222 
+ 
+-COPY ~bonehillv275/creatures/bhgelliu.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhgelliu.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @223 
+   SAY NAME2 @223 
+ 
+-COPY ~bonehillv275/creatures/BHGELMAR.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHGELMAR.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @224 
+   SAY NAME2 @224 
+   SAY 0xa4 @225  
+@@ -745,56 +747,56 @@
+   SAY 0xf0 @227  
+   SAY 0x110 @228  
+ 
+-COPY ~bonehillv275/creatures/BHGELPAS.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHGELPAS.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @229 
+   SAY NAME2 @229 
+ 
+-COPY ~bonehillv275/creatures/BHGILMI.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHGILMI.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @230 
+   SAY NAME2 @230 
+ 
+-COPY ~bonehillv275/creatures/BHGLAMI.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHGLAMI.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @231 
+   SAY NAME2 @231 
+   SAY 0xcc @232  
+   SAY 0x114 @233  
+ 
+-COPY ~bonehillv275/creatures/BHGOLEM.CRE~ ~override~        
++COPY ~bonehillv275/creatures/BHGOLEM.CRE~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @234
+   SAY NAME2 @234
+ 
+-COPY ~bonehillv275/creatures/BHGORHRG.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHGORHRG.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @235 
+   SAY NAME2 @235 
+ 
+-COPY ~bonehillv275/creatures/BHGRECKO.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHGRECKO.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @236 
+   SAY NAME2 @236 
+ 
+-COPY ~bonehillv275/creatures/BHGRELU1.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHGRELU1.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @237 
+   SAY NAME2 @237 
+ 
+-COPY ~bonehillv275/creatures/BHGRELUS.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHGRELUS.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @237 
+   SAY NAME2 @237 
+ 
+-COPY ~bonehillv275/creatures/BHGRIST.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHGRIST.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @238 
+   SAY NAME2 @238 
+ 
+-COPY ~bonehillv275/creatures/BHGSKEL.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHGSKEL.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @239 
+   SAY NAME2 @239 
+ 
+-COPY ~bonehillv275/creatures/bhguarde.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhguarde.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY 0xec @240  
+   SAY 0xf0 @241  
+   SAY 0x10c @242  
+   SAY 0x198 @243 
+   SAY 0x1b8 @244  
+ 
+-COPY ~bonehillv275/creatures/BHGUARDG.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHGUARDG.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @245 
+   SAY NAME2 @245 
+   SAY 0xa4 @242  
+@@ -804,7 +806,7 @@
+   SAY 0x198 @243 
+   SAY 0x1b8 @244  
+ 
+-COPY ~bonehillv275/creatures/BHGUILD1.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHGUILD1.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @246 
+   SAY NAME2 @246 
+   SAY 0xa4 @134  
+@@ -812,15 +814,15 @@
+   SAY 0x124 @135  
+   SAY 0x128 @136  
+ 
+-COPY ~bonehillv275/creatures/BHHAKI.cre~ ~override~         
++COPY ~bonehillv275/creatures/BHHAKI.cre~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME1 @247 
+   SAY NAME2 @247 
+ 
+-COPY ~bonehillv275/creatures/BHHARMIN.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHHARMIN.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @248 
+   SAY NAME2 @248 
+ 
+-COPY ~bonehillv275/creatures/bhharper.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhharper.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @249
+   SAY NAME2 @249
+   SAY 0xa4 @115 
+@@ -832,22 +834,22 @@
+   SAY 0x110 @119 
+   SAY 0x114 @120 
+ 
+-COPY ~bonehillv275/creatures/BHHESTAL.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHHESTAL.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @250 
+   SAY NAME2 @250 
+   SAY 0xa4 @251  
+   SAY 0xec @252 
+   SAY 0xf0 @253 
+ 
+-COPY ~bonehillv275/creatures/bhhoirag.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhhoirag.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @254 
+   SAY NAME2 @254 
+ 
+-COPY ~bonehillv275/creatures/bhholga.cre~ ~override~        
++COPY ~bonehillv275/creatures/bhholga.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @255 
+   SAY NAME2 @255 
+ 
+-COPY ~bonehillv275/creatures/BHKRAK.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHKRAK.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @256 
+   SAY NAME2 @256 
+   SAY 0xa4 @257 
+@@ -858,7 +860,7 @@
+   SAY 0x10c @257 
+   SAY 0x110 @262 
+ 
+-COPY ~bonehillv275/creatures/BHKRELUS.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHKRELUS.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @263 
+   SAY NAME2 @263 
+   SAY 0xa4 @127  
+@@ -868,19 +870,19 @@
+   SAY 0xf0 @131  
+   SAY 0x10c @128  
+ 
+-COPY ~bonehillv275/creatures/BHLIZGRD.cre~ ~override~ 
++COPY ~bonehillv275/creatures/BHLIZGRD.cre~ ~%MOD_FOLDER%/BH-CORE~ 
+   SAY NAME1 @264 
+   SAY NAME2 @264 
+ 
+-COPY ~bonehillv275/creatures/BHLIZKNG.cre~ ~override~ 
++COPY ~bonehillv275/creatures/BHLIZKNG.cre~ ~%MOD_FOLDER%/BH-CORE~ 
+   SAY NAME1 @265 
+   SAY NAME2 @265 
+ 
+-COPY ~bonehillv275/creatures/BHLIZSHA.cre~ ~override~ 
++COPY ~bonehillv275/creatures/BHLIZSHA.cre~ ~%MOD_FOLDER%/BH-CORE~ 
+   SAY NAME1 @266 
+   SAY NAME2 @266 
+ 
+-COPY ~bonehillv275/creatures/BHLOCIDA.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHLOCIDA.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @267 
+   SAY NAME2 @267 
+   SAY 0xa4 @142  
+@@ -889,11 +891,11 @@
+   SAY 0xf0 @145  
+   SAY 0x10c @142  
+ 
+-COPY ~bonehillv275/creatures/BHLOTHAR.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHLOTHAR.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @268 
+   SAY NAME2 @268 
+ 
+-COPY ~bonehillv275/creatures/BHLYDIA.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHLYDIA.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @269 
+   SAY NAME2 @269 
+   SAY 0xa4 @142  
+@@ -902,7 +904,7 @@
+   SAY 0xf0 @145  
+   SAY 0x10c @142  
+ 
+-COPY ~bonehillv275/creatures/BHMARTI1.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHMARTI1.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @270 
+   SAY NAME2 @270 
+   SAY 0xa4 @271  
+@@ -912,7 +914,7 @@
+   SAY 0x110 @274  
+   SAY 0x114 @275  
+ 
+-COPY ~bonehillv275/creatures/BHMARTIN.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHMARTIN.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @270 
+   SAY NAME2 @270 
+   SAY 0xa4 @271  
+@@ -922,11 +924,11 @@
+   SAY 0x110 @274  
+   SAY 0x114 @275  
+ 
+-COPY ~bonehillv275/creatures/BHMARVIN.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHMARVIN.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @276 
+   SAY NAME2 @276 
+ 
+-ACTION_IF NOT FILE_EXISTS_IN_GAME ~AR6526.ARE~ THEN BEGIN
++ACTION_IF GAME_IS ~tutu~ THEN BEGIN //NOT FILE_EXISTS_IN_GAME ~AR6526.ARE~ THEN BEGIN
+   COPY_EXISTING	~_OGREMA.CRE~	~override/BHOGREMA.CRE~
+     PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN	// protects against invalid files
+ 	SAY 0xc8 @278  
+@@ -941,7 +943,7 @@
+     END
+   BUT_ONLY_IF_IT_CHANGES
+ END
+-  ELSE BEGIN
++  ELSE ACTION_IF GAME_IS ~bgt~ THEN BEGIN
+     COPY_EXISTING	~OGREMA.CRE~	~override/BHOGREMA.CRE~
+       PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN	// protects against invalid files
+ 	SAY 0xc8 @278  
+@@ -957,7 +959,7 @@
+   BUT_ONLY_IF_IT_CHANGES
+ END
+ 
+-COPY ~bonehillv275/creatures/BHOGUARD.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHOGUARD.cre~ ~override~ // for COPY_EXISTING later       
+   SAY NAME1 @285 
+   SAY NAME2 @285 
+   SAY 0xa4 @257 
+@@ -968,7 +970,7 @@
+   SAY 0x10c @257 
+   SAY 0x110 @262 
+ 
+-COPY ~bonehillv275/creatures/BHOHLATT.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHOHLATT.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @286 
+   SAY NAME2 @286 
+   SAY 0xa4 @142  
+@@ -977,7 +979,7 @@
+   SAY 0xf0 @145  
+   SAY 0x10c @142  
+ 
+-COPY ~bonehillv275/creatures/BHOLIEUT.CRE~ ~override~        
++COPY ~bonehillv275/creatures/BHOLIEUT.CRE~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @287 
+   SAY NAME2 @287 
+   SAY 0xa4 @257 
+@@ -988,7 +990,7 @@
+   SAY 0x10c @257 
+   SAY 0x110 @262 
+ 
+-COPY ~bonehillv275/creatures/BHORC01.CRE~ ~override~        
++COPY ~bonehillv275/creatures/BHORC01.CRE~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @288 
+   SAY NAME2 @288 
+   SAY 0xa4 @257 
+@@ -999,11 +1001,11 @@
+   SAY 0x10c @257 
+   SAY 0x110 @262 
+ 
+-COPY ~bonehillv275/creatures/BHORC01D.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHORC01D.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @288 
+   SAY NAME2 @288 
+ 
+-COPY ~bonehillv275/creatures/BHORC03.CRE~ ~override~        
++COPY ~bonehillv275/creatures/BHORC03.CRE~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @289 
+   SAY NAME2 @289 
+   SAY 0xa4 @257 
+@@ -1014,48 +1016,48 @@
+   SAY 0x10c @257 
+   SAY 0x110 @262 
+ 
+-COPY ~bonehillv275/creatures/BHOSCAR.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHOSCAR.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @290 
+   SAY NAME2 @290 
+ 
+-COPY ~bonehillv275/creatures/bhpell.cre~ ~override~         
++COPY ~bonehillv275/creatures/bhpell.cre~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME1 @96 
+   SAY NAME2 @96 
+ 
+-COPY ~bonehillv275/creatures/BHPERK.cre~ ~override~         
++COPY ~bonehillv275/creatures/BHPERK.cre~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME1 @291 
+   SAY NAME2 @291 
+   SAY 0xa4 @292  
+   SAY 0x10c @292  
+ 
+-COPY ~bonehillv275/creatures/BHPHILMA.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHPHILMA.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @293 
+   SAY NAME2 @293 
+ 
+-COPY ~bonehillv275/creatures/BHPHYLLI.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHPHYLLI.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @294 
+   SAY NAME2 @294 
+ 
+-COPY ~bonehillv275/creatures/BHPRISKA.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHPRISKA.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @295 
+   SAY NAME2 @295 
+ 
+-COPY ~bonehillv275/creatures/bhqual.cre~ ~override~         
++COPY ~bonehillv275/creatures/bhqual.cre~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME1 @296 
+   SAY NAME2 @296 
+   SAY 0xec @297  
+   SAY 0xf0 @298  
+   SAY 0x120 @299  
+ 
+-COPY ~bonehillv275/creatures/BHQUENEX.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHQUENEX.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @300 
+   SAY NAME2 @300 
+ 
+-COPY ~bonehillv275/creatures/BHRAT.CRE~ ~override~          
++COPY ~bonehillv275/creatures/BHRAT.CRE~ ~%MOD_FOLDER%/BH-CORE~          
+   SAY NAME1 @301 
+   SAY NAME2 @301 
+ 
+-COPY ~bonehillv275/creatures/bhravela.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhravela.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @302 
+   SAY NAME2 @302 
+   SAY 0xa4 @142  
+@@ -1066,7 +1068,7 @@
+   SAY 0x198 @243 
+   SAY 0x1b8 @244  
+ 
+-COPY ~bonehillv275/creatures/BHRELBA.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHRELBA.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @307 
+   SAY NAME2 @307 
+   SAY 0xa4 @142  
+@@ -1075,7 +1077,7 @@
+   SAY 0xf0 @145  
+   SAY 0x10c @142  
+ 
+-COPY ~bonehillv275/creatures/bhrgslep.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhrgslep.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @245 
+   SAY NAME2 @245 
+   SAY 0xa4 @242  
+@@ -1085,7 +1087,7 @@
+   SAY 0x198 @243 
+   SAY 0x1b8 @244  
+ 
+-COPY ~bonehillv275/creatures/bhrguard.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhrguard.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @245 
+   SAY NAME2 @245 
+   SAY 0xa4 @242  
+@@ -1095,7 +1097,7 @@
+   SAY 0x198 @243 
+   SAY 0x1b8 @244  
+ 
+-COPY ~bonehillv275/creatures/BHROGAN.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHROGAN.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @308 
+   SAY NAME2 @308 
+   SAY 0xa4 @309  
+@@ -1104,7 +1106,7 @@
+   SAY 0xf0 @241  
+   SAY 0x10c @309  
+ 
+-COPY ~bonehillv275/creatures/BHSANGST.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHSANGST.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @310 
+   SAY NAME2 @310 
+   SAY 0xa4 @311  
+@@ -1113,11 +1115,11 @@
+   SAY 0xf0 @313  
+   SAY 0x10c @315  
+ 
+-COPY ~bonehillv275/creatures/bhselmo.cre~ ~override~        
++COPY ~bonehillv275/creatures/bhselmo.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @316 
+   SAY NAME2 @316 
+ 
+-COPY ~bonehillv275/creatures/BHSHARG1.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHSHARG1.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @317
+   SAY NAME2 @317
+   SAY 0xa4 @309  
+@@ -1126,7 +1128,7 @@
+   SAY 0xf0 @241  
+   SAY 0x10c @309  
+ 
+-COPY ~bonehillv275/creatures/BHSHARG2.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHSHARG2.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @317
+   SAY NAME2 @317
+   SAY 0xa4 @309  
+@@ -1135,7 +1137,7 @@
+   SAY 0xf0 @241  
+   SAY 0x10c @309  
+ 
+-COPY ~bonehillv275/creatures/BHSHARG3.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHSHARG3.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @317
+   SAY NAME2 @317
+   SAY 0xa4 @309  
+@@ -1144,7 +1146,7 @@
+   SAY 0xf0 @241  
+   SAY 0x10c @309  
+ 
+-COPY ~bonehillv275/creatures/BHSHARGR.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHSHARGR.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @318 
+   SAY NAME2 @318
+   SAY 0xc8 @319  
+@@ -1152,7 +1154,7 @@
+   SAY 0xd0 @321  
+   SAY 0x110 @322  
+ 
+-COPY ~bonehillv275/creatures/bhsirius.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhsirius.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @323 
+   SAY NAME2 @323 
+   SAY 0xa4 @309  
+@@ -1162,11 +1164,11 @@
+   SAY 0x10c @309
+   WRITE_ASCII 0x248 ~BHSHOUT2~ #8 // Override (was BHSHOUT)
+ 
+-COPY ~bonehillv275/creatures/bhsmyth.cre~ ~override~        
++COPY ~bonehillv275/creatures/bhsmyth.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @324 
+   SAY NAME2 @324 
+ 
+-COPY ~bonehillv275/creatures/BHSOOT.cre~ ~override~         
++COPY ~bonehillv275/creatures/BHSOOT.cre~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME1 @325 
+   SAY NAME2 @325 
+   SAY 0xec @326  
+@@ -1179,7 +1181,7 @@
+   SAY 0x1c4 @326  
+   SAY 0x1c8 @327  
+ 
+-COPY ~bonehillv275/creatures/bhst0102.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhst0102.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @330 
+   SAY NAME2 @330 
+   SAY 0xa4 @225  
+@@ -1187,15 +1189,15 @@
+   SAY 0xf0 @227  
+   SAY 0x110 @228  
+ 
+-COPY ~bonehillv275/creatures/BHTELLI1.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHTELLI1.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @331 
+   SAY NAME2 @331 
+ 
+-COPY ~bonehillv275/creatures/bhtellis.cre~ ~override~        
++COPY ~bonehillv275/creatures/bhtellis.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @332 
+   SAY NAME2 @332 
+ 
+-COPY ~bonehillv275/creatures/bhtelv.cre~ ~override~         
++COPY ~bonehillv275/creatures/bhtelv.cre~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME1 @333 
+   SAY NAME2 @333 
+   SAY 0xa4 @334  
+@@ -1209,7 +1211,7 @@
+   SAY 0x110 @337  
+   SAY 0x114 @322  
+ 
+-COPY ~bonehillv275/creatures/bhthief.cre~ ~override~        
++COPY ~bonehillv275/creatures/bhthief.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @338 
+   SAY NAME2 @338 
+   SAY 0xa4 @309  
+@@ -1218,7 +1220,7 @@
+   SAY 0xf0 @241  
+   SAY 0x10c @309  
+ 
+-COPY ~bonehillv275/creatures/BHTHIEF1.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHTHIEF1.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @338 
+   SAY NAME2 @338 
+   SAY 0xa4 @309  
+@@ -1227,23 +1229,23 @@
+   SAY 0xf0 @241  
+   SAY 0x10c @309  
+ 
+-COPY ~bonehillv275/creatures/BHTOLVAR.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHTOLVAR.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @339 
+   SAY NAME2 @339 
+ 
+-COPY ~bonehillv275/creatures/BHTWEN01.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHTWEN01.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @340
+   SAY NAME2 @340
+ 
+-COPY ~bonehillv275/creatures/BHVOICE.cre~ ~override~ 
++COPY ~bonehillv275/creatures/BHVOICE.cre~ ~%MOD_FOLDER%/BH-CORE~ 
+   SAY NAME1 @341 
+   SAY NAME2 @341 
+ 
+-COPY ~bonehillv275/creatures/BHVOLCFR.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHVOLCFR.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @342 
+   SAY NAME2 @342 
+ 
+-COPY ~bonehillv275/creatures/BHWARDOG.CRE~ ~override~       
++COPY ~bonehillv275/creatures/BHWARDOG.CRE~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @343
+   SAY NAME2 @343
+   SAY 0xc8 @344  
+@@ -1255,11 +1257,11 @@
+   SAY 0x10c @350  
+   SAY 0x110 @351  
+ 
+-COPY ~bonehillv275/creatures/BHWATCHR.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHWATCHR.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @352
+   SAY NAME2 @352
+ 
+-COPY ~bonehillv275/creatures/BHWELCAR.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHWELCAR.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @353 
+   SAY NAME2 @353 
+   SAY 0xa4 @106  
+@@ -1268,7 +1270,7 @@
+   SAY 0x10c @106  
+   SAY 0x114 @233  
+ 
+-COPY ~bonehillv275/creatures/bhwilbur.cre~ ~override~       
++COPY ~bonehillv275/creatures/bhwilbur.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @354 
+   SAY NAME2 @354 
+   SAY 0xa4 @106  
+@@ -1277,7 +1279,7 @@
+   SAY 0x10c @106  
+   SAY 0x114 @233  
+ 
+-COPY ~bonehillv275/creatures/BHWILFON.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHWILFON.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @355 
+   SAY NAME2 @355 
+   SAY 0xa4 @106  
+@@ -1286,7 +1288,7 @@
+   SAY 0x10c @106  
+   SAY 0x114 @233  
+ 
+-COPY ~bonehillv275/creatures/BHWILLIS.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHWILLIS.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @356 
+   SAY NAME2 @356 
+   SAY 0xa4 @106  
+@@ -1295,23 +1297,23 @@
+   SAY 0x10c @106  
+   SAY 0x114 @233  
+ 
+-COPY ~bonehillv275/creatures/BHWOLFD.CRE~ ~override~        
++COPY ~bonehillv275/creatures/BHWOLFD.CRE~ ~%MOD_FOLDER%/BH-CORE~        
+ 
+-COPY ~bonehillv275/creatures/BHWRAITH.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHWRAITH.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @357 
+   SAY NAME2 @357 
+ 
+-COPY ~bonehillv275/creatures/BHYALTA.cre~ ~override~        
++COPY ~bonehillv275/creatures/BHYALTA.cre~ ~%MOD_FOLDER%/BH-CORE~        
+   SAY NAME1 @358 
+   SAY NAME2 @358 
+ 
+-COPY ~bonehillv275/creatures/BHZAHR.cre~ ~override~         
++COPY ~bonehillv275/creatures/BHZAHR.cre~ ~%MOD_FOLDER%/BH-CORE~         
+   SAY NAME1 @359 
+   SAY NAME2 @359 
+   SAY 0xcc @232  
+   SAY 0x114 @233  
+ 
+-COPY ~bonehillv275/creatures/BHZELMAR.cre~ ~override~       
++COPY ~bonehillv275/creatures/BHZELMAR.cre~ ~%MOD_FOLDER%/BH-CORE~       
+   SAY NAME1 @360 
+   SAY NAME2 @360 
+ 
+@@ -1350,7 +1352,7 @@
+ 
+ // Check to see if Tutu or BGT
+ 
+-ACTION_IF FILE_EXISTS ~data/BG1ARE.bif~
++ACTION_IF GAME_IS ~bgt~ //FILE_EXISTS ~data/BG1ARE.bif~
+  THEN BEGIN
+   PRINT @435
+   COPY ~bonehillv275/BGT/ARE~ ~override~ 
+@@ -1533,7 +1535,7 @@
+   COPY ~bonehillv275/BGT/BH2301.are~ ~override/BH2301.are~         
+     SAY 0x274c @387
+  END
+-ELSE
++ELSE ACTION_IF GAME_IS ~tutu~ THEN
+  BEGIN
+   PRINT @364
+   COPY ~bonehillv275/Tutu/ARE~ ~override~
+@@ -1730,16 +1732,16 @@
+     SAY 0x274c @387
+ END
+ 
+-ACTION_IF FILE_EXISTS ~data/BG1ARE.bif~
++ACTION_IF GAME_IS ~bgt~ //FILE_EXISTS ~data/BG1ARE.bif~
+  THEN BEGIN
+-  COPY	~Bonehillv275/creatures/spawns~	~BH-REST~
++  COPY	~Bonehillv275/creatures/spawns~	~%MOD_FOLDER%/BH-CORE~
+   COMPILE	~Bonehillv275/BGT/spawns~
+  END ELSE BEGIN
+-  COPY	~Bonehillv275/creatures/spawns~	~BH-REST~
++  COPY	~Bonehillv275/creatures/spawns~	~%MOD_FOLDER%/BH-CORE~
+   COMPILE	~Bonehillv275/Tutu/spawns~
+ END
+ 
+-COPY_EXISTING	~BH1301.ARE~	~override~
++COPY_EXISTING	~BH1301.ARE~	~%MOD_FOLDER%/BH-CORE~
+   READ_LONG  0x54 "actor_off"
+   READ_SHORT 0x58 "actor_num"
+   WHILE ("%actor_num%" > 0) BEGIN
+@@ -1752,40 +1754,40 @@
+   END
+ BUT_ONLY_IF_IT_CHANGES
+ 
+-COPY_EXISTING	~BH2000.BCS~	~override~
++COPY_EXISTING	~BH2000.BCS~	~%MOD_FOLDER%/BH-CORE~
+   REPLACE_BCS_BLOCK	~bonehillv275/bcs/oBH2000.BCS~	~bonehillv275/bcs/nBH2000.BCS~
+ BUT_ONLY_IF_IT_CHANGES
+-COPY_EXISTING	~BH2018.BCS~	~override~
++COPY_EXISTING	~BH2018.BCS~	~%MOD_FOLDER%/BH-CORE~
+   REPLACE_BCS_BLOCK	~bonehillv275/bcs/oBH2018.BCS~	~bonehillv275/bcs/nBH2018.BCS~
+ BUT_ONLY_IF_IT_CHANGES
+-COPY_EXISTING	~BH2100.BCS~	~override~
++COPY_EXISTING	~BH2100.BCS~	~%MOD_FOLDER%/BH-CORE~
+   REPLACE_BCS_BLOCK	~bonehillv275/bcs/oBH2100.BCS~	~bonehillv275/bcs/nBH2100.BCS~
+ BUT_ONLY_IF_IT_CHANGES
+-COPY_EXISTING	~BH2101.BCS~	~override~
++COPY_EXISTING	~BH2101.BCS~	~%MOD_FOLDER%/BH-CORE~
+   REPLACE_BCS_BLOCK	~bonehillv275/bcs/oBH2101.BCS~	~bonehillv275/bcs/nBH2101.BCS~
+ BUT_ONLY_IF_IT_CHANGES
+ 
+-COPY	~bonehillv275/bcs/BH0200.BCS~	~override~
++COPY	~bonehillv275/bcs/BH0200.BCS~	~%MOD_FOLDER%/BH-CORE~
+ EXTEND_TOP	~BH0100.BCS~	~bonehillv275/bcs/BH0200.BCS~
+ 
+-COPY_EXISTING	~BH2100.BCS~	~override~
+-			~BH2101.BCS~	~override~
++COPY_EXISTING	~BH2100.BCS~	~%MOD_FOLDER%/BH-CORE~
++			~BH2101.BCS~	~%MOD_FOLDER%/BH-CORE~
+   DECOMPILE_BCS_TO_BAF
+     REPLACE_TEXTUALLY ~OnCreation()~ ~~
+   COMPILE_BAF_TO_BCS
+ BUT_ONLY
+ 
+-COPY_EXISTING	~BHASCUE.BCS~	~override~
++COPY_EXISTING	~BHASCUE.BCS~	~%MOD_FOLDER%/BH-CORE~
+   REPLACE_BCS_BLOCK	~bonehillv275/bcs/oBHASCUE.BCS~	~bonehillv275/bcs/nBHASCUE.BCS~
+ BUT_ONLY
+ 
+-COPY_EXISTING	~BHOGUARD.CRE~	~override~
++COPY_EXISTING	~BHOGUARD.CRE~	~%MOD_FOLDER%/BH-CORE~
+   PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // protects against invalid files
+     WRITE_ASCII	0x248		~GCSHOUT~ #8		// Override 
+   END
+ BUT_ONLY_IF_IT_CHANGES
+ 
+-COPY	~bonehillv275/bcs/gcshout.bcs~	~override~
++COPY	~bonehillv275/bcs/gcshout.bcs~	~%MOD_FOLDER%/BH-CORE~
+ 
+ EXTEND_TOP ~BH1300.BCS~	~bonehillv275/bcs/BH1300.baf~
+ 
+@@ -1929,9 +1931,9 @@
+ END
+ 
+ COPY_EXISTING ~j#hp1.spl~ ~override/dw#hp.spl~ 
+-COPY ~bonehillv275/misc/dw#rang.spl~ ~override~ //grants rangers' 2-weapon proficiencies
++COPY ~bonehillv275/misc/dw#rang.spl~ ~%MOD_FOLDER%/BH-CORE~ //grants rangers' 2-weapon proficiencies
+ 
+-COPY_EXISTING	~bhfabio.cre~	~override~
++COPY_EXISTING	~bhfabio.cre~	~%MOD_FOLDER%/BH-CORE~
+ 	PATCH_IF (SOURCE_SIZE>0x1) THEN BEGIN 
+ 
+ 	WRITE_LONG 0x18 0 //current XP
+@@ -2017,6 +2019,139 @@
+   END
+ END
+ 
++// finishing installation ...  everything following replaces BHAreas.bat and BHUninstaller.bat
++LAF HANDLE_AUDIO
++  STR_VAR
++    audio_path = EVAL ~%MOD_FOLDER%/sounds~
++    oggdec_path = EVAL ~%MOD_FOLDER%~
++    sox_path = EVAL ~%MOD_FOLDER%~ // sox for OSX supplied by _copy from BWP Fixpack
++END
++
++// collect files we created or modified for biffing (skip 2DA files)
++ACTION_IF (FILE_EXISTS ~override/25SPELL.dlg~) THEN BEGIN MOVE + ~override/25SPELL.dlg~ ~%MOD_FOLDER%/BH-CORE~ END
++ACTION_IF (FILE_EXISTS ~override/BALDUR.BCS~) THEN BEGIN MOVE + ~override/BALDUR.BCS~  ~%MOD_FOLDER%/BH-CORE~ END
++
++ACTION_IF (GAME_IS ~tutu~) THEN BEGIN
++	ACTION_IF (FILE_EXISTS ~override/FW3402.ARE~) THEN BEGIN MOVE + ~override/FW3402.ARE~   ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/FW3400.ARE~) THEN BEGIN MOVE + ~override/FW3400.ARE~   ~%MOD_FOLDER%/BH-CORE~ END
++
++	ACTION_IF (FILE_EXISTS ~override/_AR3402.BCS~) THEN BEGIN MOVE + ~override/_AR3402.BCS~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_AR3400.BCS~) THEN BEGIN MOVE + ~override/_AR3400.BCS~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_AR2626.BCS~) THEN BEGIN MOVE + ~override/_AR2626.BCS~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_AR0800.BCS~) THEN BEGIN MOVE + ~override/_AR0800.BCS~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_AR0123.BCS~) THEN BEGIN MOVE + ~override/_AR0123.BCS~  ~%MOD_FOLDER%/BH-CORE~ END
++
++	ACTION_IF (FILE_EXISTS ~override/_BGARRI.DLG~) THEN BEGIN MOVE + ~override/_BGARRI.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_BMINSC.DLG~) THEN BEGIN MOVE + ~override/_BMINSC.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_BRANWJ.DLG~) THEN BEGIN MOVE + ~override/_BRANWJ.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_DYNAHJ.DLG~) THEN BEGIN MOVE + ~override/_DYNAHJ.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_EDWINJ.DLG~) THEN BEGIN MOVE + ~override/_EDWINJ.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_GARRIJ.DLG~) THEN BEGIN MOVE + ~override/_GARRIJ.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_IMOEN2.DLG~) THEN BEGIN MOVE + ~override/_IMOEN2.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_JAHEIJ.DLG~) THEN BEGIN MOVE + ~override/_JAHEIJ.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_KAGAIJ.DLG~) THEN BEGIN MOVE + ~override/_KAGAIJ.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_KHALIJ.DLG~) THEN BEGIN MOVE + ~override/_KHALIJ.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_KIVANJ.DLG~) THEN BEGIN MOVE + ~override/_KIVANJ.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_MINSCJ.DLG~) THEN BEGIN MOVE + ~override/_MINSCJ.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_MONTAJ.DLG~) THEN BEGIN MOVE + ~override/_MONTAJ.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_SAFANJ.DLG~) THEN BEGIN MOVE + ~override/_SAFANJ.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_SHARTJ.DLG~) THEN BEGIN MOVE + ~override/_SHARTJ.DLG~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_xANJ.DLG~) THEN BEGIN MOVE + ~override/_xANJ.DLG~    ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/_XZARJ.DLG~) THEN BEGIN MOVE + ~override/_XZARJ.DLG~   ~%MOD_FOLDER%/BH-CORE~ END
++END ELSE ACTION_IF (GAME_IS ~bgt~) THEN BEGIN
++	ACTION_IF (FILE_EXISTS ~override/AR9300.are~) THEN BEGIN MOVE + ~override/AR9300.are~  ~%MOD_FOLDER%/BH-CORE~ END
++
++	ACTION_IF (FILE_EXISTS ~override/AR6526.BCS~) THEN BEGIN MOVE + ~override/AR6526.BCS~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/AR7223.bcs~) THEN BEGIN MOVE + ~override/AR7223.bcs~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/AR7800.bcs~) THEN BEGIN MOVE + ~override/AR7800.bcs~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/AR9300.bcs~) THEN BEGIN MOVE + ~override/AR9300.bcs~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/AR9302.bcs~) THEN BEGIN MOVE + ~override/AR9302.bcs~  ~%MOD_FOLDER%/BH-CORE~ END
++	
++	ACTION_IF (FILE_EXISTS ~override/BGARRI.dlg~) THEN BEGIN MOVE + ~override/BGARRI.dlg~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/BMINSC.dlg~) THEN BEGIN MOVE + ~override/BMINSC.dlg~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/BRANWJ.dlg~) THEN BEGIN MOVE + ~override/BRANWJ.dlg~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/DYNAJ.dlg~) THEN BEGIN MOVE + ~override/DYNAJ.dlg~   ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/EDWINJ.dlg~) THEN BEGIN MOVE + ~override/EDWINJ.dlg~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/GARRIJ.dlg~) THEN BEGIN MOVE + ~override/GARRIJ.dlg~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/IMOEN2J.dlg~) THEN BEGIN MOVE + ~override/IMOEN2J.dlg~ ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/JAHEIRAJ.dlg~) THEN BEGIN MOVE + ~override/JAHEIRAJ.dlg~ ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/KAGAIJ.dlg~) THEN BEGIN MOVE + ~override/KAGAIJ.dlg~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/KHALIJ.dlg~) THEN BEGIN MOVE + ~override/KHALIJ.dlg~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/KIVANJ.dlg~) THEN BEGIN MOVE + ~override/KIVANJ.dlg~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/MINSCJ.dlg~) THEN BEGIN MOVE + ~override/MINSCJ.dlg~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/MONTAJ.dlg~) THEN BEGIN MOVE + ~override/MONTAJ.dlg~  ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/SAFANJ.dlg~) THEN BEGIN MOVE + ~override/SAFANJ.dlg~   ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/SHARTJ.dlg~) THEN BEGIN MOVE + ~override/SHARTJ.dlg~   ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/XANJ.dlg~) THEN BEGIN MOVE + ~override/XANJ.dlg~     ~%MOD_FOLDER%/BH-CORE~ END
++	ACTION_IF (FILE_EXISTS ~override/XZARJ.dlg~) THEN BEGIN MOVE + ~override/XZARJ.dlg~    ~%MOD_FOLDER%/BH-CORE~ END
++END
++
++ACTION_IF (FILE_EXISTS ~override/DUDOORE.bcs~) THEN BEGIN MOVE + ~override/DUDOORE.bcs~ ~%MOD_FOLDER%/BH-CORE~ END
++ACTION_IF (FILE_EXISTS ~override/DUDOORW.bcs~) THEN BEGIN MOVE + ~override/DUDOORW.bcs~ ~%MOD_FOLDER%/BH-CORE~ END
++ACTION_IF (FILE_EXISTS ~override/DUTRIGE.bcs~) THEN BEGIN MOVE + ~override/DUTRIGE.bcs~ ~%MOD_FOLDER%/BH-CORE~ END
++ACTION_IF (FILE_EXISTS ~override/DUTRIGW.bcs~) THEN BEGIN MOVE + ~override/DUTRIGW.bcs~ ~%MOD_FOLDER%/BH-CORE~ END
++ACTION_IF (FILE_EXISTS ~override/NETRIG1.bcs~) THEN BEGIN MOVE + ~override/NETRIG1.bcs~  ~%MOD_FOLDER%/BH-CORE~ END
++ACTION_IF (FILE_EXISTS ~override/NWTRIG1.bcs~) THEN BEGIN MOVE + ~override/NWTRIG1.bcs~  ~%MOD_FOLDER%/BH-CORE~ END
++ACTION_IF (FILE_EXISTS ~override/SWTRIG1.bcs~) THEN BEGIN MOVE + ~override/SWTRIG1.bcs~  ~%MOD_FOLDER%/BH-CORE~ END
++ACTION_IF (FILE_EXISTS ~override/SETRIG1.bcs~) THEN BEGIN MOVE + ~override/SETRIG1.bcs~  ~%MOD_FOLDER%/BH-CORE~ END
++
++ACTION_IF (FILE_EXISTS ~override/BFABIO.dlg~) THEN BEGIN MOVE + ~override/BFABIO.dlg~  ~%MOD_FOLDER%/BH-CORE~ END
++
++COPY_EXISTING // get from original game BIFFs if unchanged
++	~AR0334.WED~ ~%MOD_FOLDER%/BH-CORE~
++	~AR0334SR.BMP~ ~%MOD_FOLDER%/BH-CORE~
++	~AR0334LM.BMP~ ~%MOD_FOLDER%/BH-CORE~
++	~AR0334HT.BMP~ ~%MOD_FOLDER%/BH-CORE~
++	~AM0335.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM0500K.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM0508.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM0700E1.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM0700E2.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM0700E3.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM0706.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM0806.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1000.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1100A1.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1100A2.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1100A3.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1100A4.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1100A5.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1100A6.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1100A7.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1100A8.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1100A9.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1300.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1300N.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1301.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1304.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1304N.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1306.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM1600B1.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AM6003.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AMB_E46A.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~AMB_E46B.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~GAFIREP1.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~GAHOSMAG.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	~GASMITH.WAV~ ~%MOD_FOLDER%/BH-CORE~
++	
++MOVE + (~override~ ~^BH.*$~) ~%MOD_FOLDER%/BH-CORE~
++
++MAKE_BIFF ~BH-CORE~ BEGIN ~%MOD_FOLDER%/BH-CORE~ ~^.*$~ END // biff everything in BH-CORE folder
++DELETE + ~%MOD_FOLDER%/BH-CORE~ // delete BH-CORE temporary working folder after biffing (+ no backup)
++
++// unpack TIZ files
++MKDIR ~%MOD_FOLDER%/TIZ/win32~
++MOVE + ~%MOD_FOLDER%/tisunpack.exe~ ~%MOD_FOLDER%/TIZ/win32~ // required path for HANDLE_TILESETS
++// OSX note:  tisunpack (not included) must be placed in %MOD_FOLDER%/TIZ/osx for next step to work
++
++LAF HANDLE_TILESETS
++  STR_VAR
++    tiz_path = EVAL ~%MOD_FOLDER%/TIZ~
++	output_path = EVAL ~%MOD_FOLDER%/BH-TIS~
++END
++
++MAKE_BIFF ~BH-TIS~ BEGIN ~%MOD_FOLDER%/BH-TIS~ ~^.*$~ END // biff everything in BH-TIS folder
++DELETE + ~%MOD_FOLDER%/BH-TIS~ // delete BH-TIS temporary working folder after biffing (+ no backup)
+ 
+-AT_INTERACTIVE_EXIT ~bonehillv275/BHAreas.bat~
+-AT_INTERACTIVE_UNINSTALL ~bonehillv275/BHUninstaller.bat~
++// AT_INTERACTIVE_EXIT ~bonehillv275/BHAreas.bat~
++// AT_INTERACTIVE_UNINSTALL ~bonehillv275/BHUninstaller.bat~

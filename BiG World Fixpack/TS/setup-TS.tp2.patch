@@ -1,10 +1,15 @@
---- Setup-TS.tp2	Wed Sep 23 22:53:26 2009
-+++ Setup-TS.tp2	Thu Feb 05 17:03:38 2016
-@@ -13,2 +13,2 @@
--REQUIRE_FILE ~Data/25Dialog.bif~ ~Please install "Throne Of Bhaal" and the official ToB patch before installation of this mod.~
-+REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ ~Please install "Throne Of Bhaal" and the official ToB patch before this mod.~
-
-@@ -2731,7 +2731,7 @@
+--- Setup-TS.tp2	Thu Apr 28 00:26:53 2016
++++ C:\BWP Patchstudio\patched files\Setup-TS.tp2	Sat Aug 27 10:33:16 2016
+@@ -2,7 +2,7 @@
+ 
+ AUTHOR ~Vlad & Domi~
+ 
+-BEGIN ~TORTURED SOULS v7.06~
++BEGIN ~TORTURED SOULS v7.06 BWP fix~
+ 
+ //______________________________________//
+ //                                      //
+@@ -2726,7 +2726,7 @@
    SAY NAME1 ~Sol~
    SAY NAME2 ~Sol~
   

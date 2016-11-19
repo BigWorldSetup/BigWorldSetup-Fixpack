@@ -1,0 +1,66 @@
+--- com_encounters\translations\english\dialog.tra	Mon Sep 08 00:37:07 2014
++++ C:\BWP Patchstudio\patched files\com_encounters\translations\english\dialog.tra	Tue Aug 16 07:25:03 2016
+@@ -865,4 +865,61 @@
+ @10136 = ~Magic Carpet Ride~
+ @10137 = ~Scrolls R Us~
+ @10138 = ~Would you like to install improved druid encounters?~
+-@10139 = ~Would you like to install improved Shagbag encounters?~
+\ No newline at end of file
++@10139 = ~Would you like to install improved Shagbag encounters?~
++@10140 = ~Halberd~
++@10141 = ~Doom Halberd +3~
++@10142 = ~By far the oldest and most often used pole-arm, the halberd consists of a cleaver-like axe blade mounted on a staff averaging six feet in length. The axe blade is balanced at the rear with a fluke, and surmounted by a sharp spike, usually of quadrangular design. The fluke is sometimes replaced by a hook used to dismount cavalry. A halberd can be best described as a cross between a spear and an axe.
++
++STATISTICS:  
++
++Damage: 1D10 
++Damage Type: Piercing 
++Weight: 15 
++Speed Factor: 9 
++Proficiency Type: Halberd 
++Type: 2-handed Not~
++@10143 = ~Like others of its type, this halberd consists of a cleaver-like axe blade mounted on a staff approximately six feet in length. It has also been bestowed with a small number of magical properties, however, thus making it more effective in combat. Its keen blade, for instance, will shear through your opponent's flesh to find the bone while its barbed tip will seek out gaps in their armor. This halberd has had various enchantments placed on it to increase its effectiveness in battle. 
++
++STATISTICS:  
++
++Damage: 1D10 +3 
++THAC0: +3 
++Damage type: Piercing 
++Special:   
++50% chance +2D3 fire damage
++15% chance target is Stunned 
++Weight: 14 
++Speed Factor: 8 
++Proficiency Type: Halberds 
++Type: 2-handed~
++@10144 = ~Star Forged Halberd +3~
++@10145 = ~Like others of its type, this halberd consists of a cleaver-like axe blade mounted on a staff approximately six feet in length. It has also been bestowed with a small number of magical properties, however, thus making it more effective in combat. Its keen blade, for instance, will shear through your opponent's flesh to find the bone while its barbed tip will seek out gaps in their armor. This halberd has had various enchantments placed on it to increase its effectiveness in battle.
++
++STATISTICS:
++
++Damage: 1D10 +3
++THAC0: +3
++Damage type: Piercing
++Dexterity: +1 bonus
++Special: 15% chance target is Stunned
++Resistance Bonuses
++  +5% Slashing Resistance
++  +5% Piercing Resistance
++Weight: 14
++Speed Factor: 8
++Proficiency Type: Halberds
++Type: 2-handed~
++@10146 = ~Great Halberd +4~
++@10147 = ~Like others of its type, this halberd consists of a cleaver-like axe blade mounted on a staff approximately six feet in length. It has also been bestowed with a small number of magical properties, however, thus making it more effective in combat. Its keen blade, for instance, will shear through your opponent's flesh to find the bone while its barbed tip will seek out gaps in their armor. This halberd has had various enchantments placed on it to increase its effectiveness in battle.
++
++STATISTICS:
++
++Damage: 1D10 +4
++THAC0: +4
++Damage type: Piercing
++Special: 50% chance +2D3 acid damage
++Resistance Bonus: +10% Magic Resistance
++Weight: 14
++Speed Factor: 8
++Proficiency Type: Halberds
++Type:  2-handed~

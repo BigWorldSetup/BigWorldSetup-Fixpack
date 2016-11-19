@@ -1,0 +1,22 @@
+--- Bdash\BGTComp\trans\nlAR0602.BAF	Sat Sep 13 02:04:10 2014
++++ C:\BWP Patchstudio\patched files\Bdash\BGTComp\trans\nlAR0602.BAF	Sat Sep 10 19:39:54 2016
+@@ -1,5 +1,6 @@
+ IF
+ 	Global("TakeImportItems","AR0602",0)
++	Gender(Player1,MALE)
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("TakeImportItems","AR0602",1)
+@@ -9,10 +10,11 @@
+ 		ActionOverride("Shelf1",TakeItemListPartyNum("IMPORT03",1))
+ 		SmallWait(4)
+ 		TakePartyGold(2147483647)
++		ActionOverride(Player1,MakeUnselectable(0))
+ 		CreateCreature("CSJON",[3210.3304],10) // Mage
+ 		ActionOverride(Player1,PlayDead(165))
+ 		Wait(1)
+ 		FadeFromColor([30.0],0)
+ 		StartCutSceneMode()
+-		StartCutScene("NewGame")
++		StartCutScene("CBNEWGMM")
+ END

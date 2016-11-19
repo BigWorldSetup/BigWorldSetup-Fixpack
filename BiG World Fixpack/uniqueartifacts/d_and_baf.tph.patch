@@ -1,0 +1,11 @@
+--- uniqueartifacts\core\d_and_baf.tph	Thu Sep 13 10:09:56 2007
++++ C:\BWP Patchstudio\patched files\uniqueartifacts\core\d_and_baf.tph	Sat May 10 07:29:44 2008
+@@ -16,7 +16,7 @@
+   OR (~%SOURCE_RES%~ STRING_COMPARE_CASE ~renal~ = 0) //Renal Bloodscalp: sw1h10 Short Sword of Backstabbing +3
+   OR (~%SOURCE_RES%~ STRING_COMPARE_CASE ~tolger~ = 0) //Tolgerias: ring33 Ring of the Ram
+   OR (~%SOURCE_RES%~ STRING_COMPARE_CASE ~hellfear~ = 0) //Fear (hell trials): clck30 Cloak of Bravery
+-  OR (~%SOURCE_RES%~ STRING_COMPARE_CASE ~kyle2~ = 0) //Sir Ryan Trawl quest reward: brac20 Gloves of Healing
++  OR (~%SOURCE_RES%~ STRING_COMPARE_CASE ~kayl2~ = 0) //Sir Ryan Trawl quest reward: brac20 Gloves of Healing
+   OR (~%SOURCE_RES%~ STRING_COMPARE_CASE ~elelev01~ = 0) //another machine in Spellhold: brac13 Bracers of Defense AC 5
+   OR (~%SOURCE_RES%~ STRING_COMPARE_CASE ~scsain~ = 0) //cleric of Lathander (stronghold illitium): amul23 Periapt of Life Protection
+ 

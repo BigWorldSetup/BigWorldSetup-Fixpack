@@ -1,0 +1,4 @@
+//Almateria's Restoration Project New Areas Table
+SHORT_NAME  CONTENT  LONG_NAME  FLAGS  BAM_ANIM  X_POS   Y_POS  NAME         TOOLTIP  LOAD_IM
+
+AR2700      AR2700   AR2700     6      16        1724    3739   @AR2700      N        N        //The Grove

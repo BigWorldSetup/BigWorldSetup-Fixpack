@@ -1,14 +1,32 @@
---- Setup-NTotSC.TP2	Thu Jan 01 15:33:28 2009
-+++ C:\BWP Patchstudio\patched files\Setup-NTotSC.TP2	Sat Jul 11 09:58:48 2015
+--- Temp\setup-NTotSC.tp2	2009-01-01 15:33:28.977500000 -0500
++++ setup-NTotSC.tp2	2016-11-18 20:30:37.523849100 -0500
 @@ -2,7 +2,7 @@
  
  AUTHOR ~SirBillyBob@gmail.com & erebusant@verizon.net~
  
 -VERSION ~v1.70a~
-+VERSION ~v1.70a BWP Fix~
++VERSION ~v1.70a BWP Trim + Fix~
  
  ALWAYS
    ACTION_IF NOT FILE_EXISTS_IN_GAME ~DSC001.are~ THEN BEGIN FAIL ~This mod should be installed after DSotSC.~ END
+@@ -47,12 +47,12 @@
+ 
+ BEGIN @0
+ 
+-MKDIR ~NTotSC/over.bak~
+-COPY_LARGE + ~override~    ~NTotSC/over.bak~
++// MKDIR ~NTotSC/over.bak~
++// COPY_LARGE + ~override~    ~NTotSC/over.bak~
+ 
+-COPY + ~Setup-NTotSC.exe~  ~WeiDU.exe~
+-COPY + ~chitin.key~        ~NTotSC/chitin.nts~
+-COPY_LARGE + ~dialog.tlk~  ~NTotSC/dialog.nts~
++// COPY + ~Setup-NTotSC.exe~  ~WeiDU.exe~
++// COPY + ~chitin.key~        ~NTotSC/chitin.nts~
++// COPY_LARGE + ~dialog.tlk~  ~NTotSC/dialog.nts~
+ 
+ MKDIR ~NTOTSC1~
+ MKDIR ~NTOTSC2~
 @@ -234,10 +234,11 @@
   COPY ~ntotSC/itm/ADISEASE.ITM~       ~override~ 
     SAY NAME2 @69

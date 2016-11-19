@@ -1,0 +1,99 @@
+--- CtB\CtbFinishInstall.bat	Fri Jan 14 10:43:10 2011
++++ C:\BWP Patchstudio\patched files\CtB\CtbFinishInstall.bat	Tue Feb 12 00:50:26 2013
+@@ -91,14 +91,14 @@
+ tisunpack -s -h -o CTB-TIS3/CB3661.tis CtB\TIZ/CB3661.TIZ
+ tisunpack -s -h -o CTB-TIS3/CB3662.tis CtB\TIZ/CB3662.TIZ
+ tisunpack -s -h -o CTB-TIS3/CB3663.tis CtB\TIZ/CB3663.TIZ
+-tisunpack -s -h -o CTB-TIS3/CB3664.tis CtB\TIZ/CB3664.TIZ
+-tisunpack -s -h -o CTB-TIS3/CB3665.tis CtB\TIZ/CB3665.TIZ
+-tisunpack -s -h -o CTB-TIS3/CB3666.tis CtB\TIZ/CB3666.TIZ
+-tisunpack -s -h -o CTB-TIS3/CB3667.tis CtB\TIZ/CB3667.TIZ
+-tisunpack -s -h -o CTB-TIS3/CB3668.tis CtB\TIZ/CB3668.TIZ
++tisunpack -s -h -o CTB-ARE/CB3664.tis CtB\TIZ/CB3664.TIZ
++tisunpack -s -h -o CTB-BAM/CB3665.tis CtB\TIZ/CB3665.TIZ
++tisunpack -s -h -o CTB-BCS/CB3666.tis CtB\TIZ/CB3666.TIZ
++tisunpack -s -h -o CTB-CRE/CB3667.tis CtB\TIZ/CB3667.TIZ
++tisunpack -s -h -o CTB-ITM/CB3668.tis CtB\TIZ/CB3668.TIZ
+ del tisunpack.exe
+ 
+-xcopy /q CtB\sound\*.* CTB-WAV\*.*
++xcopy /q /y CtB\sound\*.* CTB-WAV\*.*
+ 
+ move override\*.ogg CTB-WAV
+ copy CtB\oggdec.exe CTB-WAV\*.*
+@@ -110,26 +110,26 @@
+ 
+ xcopy /q /e /y CTB\music\*.* music\*.*
+ 
+-move override\*.ARE CTB-ARE
++:: move override\*.ARE CTB-ARE
+ move override\*.WED CTB-ARE
+ weidu --make-biff CTB-ARE
+ call CtB\deldir CTB-ARE
+ 
+-move override\*.BAM CTB-BAM
++:: move override\*.BAM CTB-BAM
+ weidu --make-biff CTB-BAM
+ call CtB\deldir CTB-BAM
+ 
+-move override\*.BCS CTB-BCS
++:: move override\*.BCS CTB-BCS
+ weidu --make-biff CTB-BCS
+ call CtB\deldir CTB-BCS
+ 
+-move override\*.CRE CTB-CRE
+-move override\*.DLG CTB-CRE
++:: move override\*.CRE CTB-CRE
++:: move override\*.DLG CTB-CRE
+ weidu --make-biff CTB-CRE
+ call CtB\deldir CTB-CRE
+ call CtB\deldir CTBDLG
+ 
+-move override\*.ITM CTB-ITM
++:: move override\*.ITM CTB-ITM
+ weidu --make-biff CTB-ITM
+ call CtB\deldir CTB-ITM
+ 
+@@ -138,15 +138,15 @@
+ weidu --make-biff CTB-MOS
+ call CtB\deldir CTB-MOS
+ 
+-move override\*.2DA CTB-RULE
+-move override\*.CH* CTB-RULE
++:: move override\*.2DA CTB-RULE
++:: move override\*.CH* CTB-RULE
+ ::move override\*.IDS CTB-RULE
+-move override\*.WMP CTB-RULE
+-move override\*.EFF CTB-RULE
+-move override\*.PRO CTB-RULE
+-move override\*.VVC CTB-RULE
+-move override\*.SPL CTB-RULE
+-move override\*.STO CTB-RULE
++:: move override\*.WMP CTB-RULE
++:: move override\*.EFF CTB-RULE
++:: move override\*.PRO CTB-RULE
++:: move override\*.VVC CTB-RULE
++:: move override\*.SPL CTB-RULE
++move override\*.WAV CTB-RULE
+ weidu --make-biff CTB-RULE
+ call CtB\deldir CTB-RULE
+ 
+@@ -162,10 +162,17 @@
+ weidu --make-biff CTB-TIS3
+ call CtB\deldir CTB-TIS3
+ 
+-move override\*.WAV CTB-WAV
++:: move override\*.WAV CTB-WAV
+ move override\*.MVE CTB-WAV
+ weidu --make-biff CTB-WAV
+ call CtB\deldir CTB-WAV
++
++FOR %%s IN (
++override\*.baf
++override\*.d
++override\*.ogg
++override\*.tiz
++) DO del %%s
+ 
+ @echo.
+ @echo Installation of the core CtB package is complete.

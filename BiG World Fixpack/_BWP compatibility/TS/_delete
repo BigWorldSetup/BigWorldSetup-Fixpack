@@ -1,6 +1,5 @@
 mos\GUIERR1B.MOS
 mos\GUIERR2B.MOS
-mos\Start25.mos
 mos\start.MOS
 mos\startOld.mos
 gui\106X32.BAM
@@ -8,3 +7,6 @@ gui\GUILOAD.chu
 gui\GUIOPT.chu
 gui\Start.bam
 gui\START.chu
+gui\Normal.bam
+gui\Realms.bam
+gui\Stonesml.bam

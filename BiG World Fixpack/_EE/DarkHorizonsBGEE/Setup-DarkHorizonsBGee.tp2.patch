@@ -1,0 +1,15 @@
+--- Setup-DarkHorizonsBGee.tp2	Sun Nov 29 18:07:51 2015
++++ Setup-DarkHorizonsBGee.tp2	Wed Jan 27 20:18:59 2016
+@@ -1,11 +1,11 @@
+ BACKUP ~DarkHorizonsBGee/backup~
+ AUTHOR ~"http://www.teambg.net"~
+ 
+-VERSION ~BG:EE v213~
++VERSION ~BG:EE v213 BWP Fix~
+ 
+ README ~DarkHorizonsBGee/readme-dh.htm~
+ 
+ // Game platform check
+ ALWAYS
+ ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+   /*Tell the player it is using BG:EE stuff */

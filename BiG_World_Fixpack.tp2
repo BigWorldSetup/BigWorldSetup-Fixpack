@@ -69,13 +69,13 @@ ALWAYS
 		OUTER_TEXT_SPRINT os_slash ~\~
 		OUTER_TEXT_SPRINT os_quote ~"~
 		OUTER_TEXT_SPRINT DISPLAY_FILE_CMD ~type~
-		OUTER_TEXT_SPRINT PATCH_CMD ~%FIXPACK%\_utils\patch.exe -p0 -f --no-backup-if-mismatch --ignore-whitespace~
+		OUTER_TEXT_SPRINT PATCH_CMD ~%FIXPACK%\_utils\patch.exe -p0 -f --verbose --no-backup-if-mismatch --ignore-whitespace~
 	END ELSE BEGIN
 		AT_NOW ~mv 'BiG World Fixpack' '%FIXPACK%'~ // rename Fixpack folder to remove spaces (packaged folder name has spaces for backwards compatibility)
 		OUTER_TEXT_SPRINT os_slash ~/~
 		OUTER_TEXT_SPRINT os_quote ~'~
 		OUTER_TEXT_SPRINT DISPLAY_FILE_CMD ~cat~
-		OUTER_TEXT_SPRINT PATCH_CMD ~patch -p0 -f --no-backup-if-mismatch --ignore-whitespace~
+		OUTER_TEXT_SPRINT PATCH_CMD ~patch -p0 -f --verbose --no-backup-if-mismatch --ignore-whitespace~
 	END
 
 	// last special folder
@@ -139,7 +139,9 @@ ALWAYS
 						mod_folder = file
 				END
 				OUTER_TEXT_SPRINT ~fixpack_subfolder~ ~%FIXPACK%%os_slash%%mod_folder%~
-				ACTION_IF (DIRECTORY_EXISTS ~%fixpack_subfolder%~) THEN BEGIN
+				ACTION_IF (~%folder%~ STRING_CONTAINS_REGEXP ~ ~ == 0) THEN BEGIN // skip directories with spaces
+					PRINT ~Skipping "%folder%"~
+				END ELSE ACTION_IF (DIRECTORY_EXISTS ~%fixpack_subfolder%~) THEN BEGIN
 					OUTER_SET skip = 0
 					ACTION_FOR_EACH reserved IN ~data~ ~lang~ ~Manuals~ ~movies~ ~mpsave~ ~music~ ~override~ ~save~ ~scripts~ BEGIN
 						ACTION_IF (~%reserved%~ STR_EQ ~%mod_folder%~) THEN BEGIN
@@ -193,7 +195,7 @@ ALWAYS
 			// look for TARGET_FILE which can override target directory for _copy
 			ACTION_IF (FILE_EXISTS ~%source_folder%/%TARGET_FILE%~) THEN BEGIN
 				SILENT // suppress "copying 1 file..." log message
-				COPY - ~%source_folder%/%TARGET_FILE%~ ~%FIXPACK%/%tmp~
+				COPY - ~%source_folder%/%TARGET_FILE%~ ~%FIXPACK%/tmpfile~ // fake copy
 					READ_2DA_ENTRY 0 0 1 copy_target_folder // top-level mod directory name
 				BUT_ONLY
 				VERBOSE
@@ -206,7 +208,7 @@ ALWAYS
 
 		ACTION_IF (FILE_EXISTS ~%source_folder%/%DEL_FILE%~) THEN BEGIN
 			SILENT // suppress "copying 1 file..." log message
-			COPY - ~%source_folder%/%DEL_FILE%~ ~%FIXPACK%/tmp~
+			COPY - ~%source_folder%/%DEL_FILE%~ ~%FIXPACK%/tmpfile~ // fake copy
 				COUNT_2DA_ROWS 1 num_files // 1 column
 				PATCH_IF (num_files > 0) THEN BEGIN
 					PATCH_PRINT ~deleting files ...~
@@ -228,7 +230,7 @@ ALWAYS
 		
 		ACTION_IF (FILE_EXISTS ~%source_folder%/%REN_FILE%~) THEN BEGIN
 			SILENT // suppress "copying 1 file..." log message
-			COPY - ~%source_folder%/%REN_FILE%~ ~%FIXPACK%/tmp~
+			COPY - ~%source_folder%/%REN_FILE%~ ~%FIXPACK%/tmpfile~ // fake copy
 				COUNT_2DA_ROWS 2 num_files // 2 columns
 				PATCH_IF (num_files > 0) THEN BEGIN
 					PATCH_PRINT ~renaming files ...~

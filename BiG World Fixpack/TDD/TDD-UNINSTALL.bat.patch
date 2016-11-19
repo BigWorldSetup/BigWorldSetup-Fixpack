@@ -1,0 +1,33 @@
+--- TDD\TDD-UNINSTALL.bat	Tue Mar 07 16:40:53 2006
++++ C:\BWP Patchstudio\patched files\TDD\TDD-UNINSTALL.bat	Wed Feb 13 21:06:17 2013
+@@ -29,14 +29,14 @@
+ attrib -r data\TDD-WAV.bif
+ del data\TDD-WAV.bif
+ 
+-del chitin.key
+-copy TDD\chitin.tdd chitin.key
+-del TDD\chitin.tdd
++:: del chitin.key
++:: copy TDD\chitin.tdd chitin.key
++:: del TDD\chitin.tdd
+ 
+-call TDD\deldir override
+-md override
+-xcopy /y /s /q TDD\over.bak override
+-call TDD\deldir TDD\over.bak
++:: call TDD\deldir override
++:: md override
++:: xcopy /y /s /q TDD\over.bak override
++:: call TDD\deldir TDD\over.bak
+ 
+ call TDD\deldir TDD-ARE
+ call TDD\deldir TDD-BAM
+@@ -56,6 +56,6 @@
+ 
+ @echo.
+ @echo Bif removal complete. 
+-@echo Original .key file restored
+-@echo Original \override\ folder also restored.
++:: @echo Original .key file restored
++:: @echo Original \override\ folder also restored.
+ @echo.

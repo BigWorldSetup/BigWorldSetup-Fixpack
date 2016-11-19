@@ -1,0 +1,8 @@
+--- stivan\tra\english\setup.tra	Sat Aug 25 23:59:54 2012
++++ C:\BWP Patchstudio\patched files\stivan\tra\english\setup.tra	Sat Aug 27 09:55:51 2016
+@@ -1,4 +1,4 @@
+-@106  = ~Stivan the Hunter, version 1.00~
++@106  = ~Stivan the Hunter, version 1.00 BWP fix~
+ 
+ 
+ @0    = ~G.. Good luck, Stivan.~

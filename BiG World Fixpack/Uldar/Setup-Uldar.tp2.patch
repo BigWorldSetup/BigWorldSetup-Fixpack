@@ -1,5 +1,5 @@
 --- Uldar\Setup-Uldar.tp2	Mon Apr 05 18:49:40 2010
-+++ C:\BWP Patchstudio\patched files\Uldar\Setup-Uldar.tp2	Sun Mar 09 12:11:46 2014
++++ C:\BWP Patchstudio\patched files\Uldar\Setup-Uldar.tp2	Sat Sep 24 17:16:34 2016
 @@ -6,7 +6,7 @@
  //**************************************************************
  
@@ -9,7 +9,48 @@
  
  README ~Uldar/UldarREADME.txt~
  
-@@ -361,16 +361,23 @@
+@@ -310,6 +310,40 @@
+ COPY ~Uldar/Monstruos/sahu~ ~override~
+ //SAHKNG01.CRE SAHGOR2.CRE
+ 
++COPY_EXISTING ~udprince.CRE~    ~override~
++  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN  // protects against invalid files
++    WRITE_LONG    0x14        ~6000~         // XP
++    WRITE_SHORT   0x24        ~154~          // Current HP
++    WRITE_SHORT   0x26        ~154~          // Maximum HP
++    WRITE_BYTE    0x52        ~1~            // THAC0
++    WRITE_BYTE    0x53        ~3~            // Attacks
++    WRITE_BYTE    0x54        ~3~            // Save vs. Death
++    WRITE_BYTE    0x55        ~6~            // Save vs. Wand
++    WRITE_BYTE    0x56        ~5~            // Save vs. Polymorph
++    WRITE_BYTE    0x57        ~8~            // Save vs. Attacks
++    WRITE_BYTE    0x58        ~8~            // Save vs. Spells
++    WRITE_BYTE    0x59        ~-25~          // Resist Fire
++    WRITE_BYTE    0x5a        ~0~            // Resist Cold
++    WRITE_BYTE    0x5b        ~50~           // Resist Electricity
++    WRITE_BYTE    0x5c        ~100~          // Resist Acid
++    WRITE_BYTE    0x5d        ~0~            // Resist Magic
++    WRITE_BYTE    0x5e        ~0~            // Resist Magical Fire
++    WRITE_BYTE    0x5f        ~0~            // Resist Magical Cold
++    WRITE_BYTE    0x234       ~18~           // 1 level
++    WRITE_BYTE    0x235       ~18~           // 2 level
++    WRITE_BYTE    0x236       ~1~            // 3 level
++    WRITE_BYTE    0x238       ~20~           // Strength
++    WRITE_BYTE    0x23a       ~14~           // Intelligence
++    WRITE_BYTE    0x23b       ~14~           // Wisdom
++    WRITE_BYTE    0x23c       ~20~           // Dexterity
++    WRITE_BYTE    0x23d       ~18~           // Constitution
++    WRITE_BYTE    0x23e       ~16~           // Charisma
++    WRITE_BYTE    0x23f       ~10~           // Morale
++    WRITE_BYTE    0x240       ~5~            // Morale Break
++    WRITE_BYTE    0x242       ~60~           // Morale Recovery Time
++  END
++BUT_ONLY_IF_IT_CHANGES
++
+ COPY ~Uldar/Monstruos/drows~ ~override~
+ 
+ 
+@@ -361,16 +395,23 @@
  
  //************CORONA DE COBRE**********************
  
@@ -35,7 +76,7 @@
  COMPILE ~Uldar\baf\boy3.baf~
  
  
-@@ -437,13 +444,36 @@
+@@ -437,13 +478,36 @@
  
  //*************BARCO ESCLAVISTA**********************
  

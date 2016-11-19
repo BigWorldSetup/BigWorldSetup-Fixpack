@@ -1,6 +1,6 @@
 --- NeJ\Dfiles\DJHONEN.D	Wed Jul 14 16:22:02 2004
 +++ C:\BWP Patchstudio\patched files\NeJ\Dfiles\DJHONEN.D	Sat Jan 18 22:37:45 2014
-@@ -86,10 +86,10 @@
+@@ -88,10 +88,10 @@
  
  IF ~~ THEN BEGIN 10 // from: 9.1 8.0 7.1
    SAY ~A... sea spirit?  Eh... what does she *want,* then?  Why the *dreams?*~ 
@@ -15,7 +15,7 @@
  ReputationInc(-1)
  EraseJournalEntry(%Blade of Aihonen.
  
-@@ -139,9 +139,9 @@
+@@ -141,9 +141,9 @@
  
  IF ~~ THEN BEGIN 17 // from: 9.0 8.2 1.1
    SAY ~A... sea spirit?  Really?!  Many thanks to you, then... my father always warned me to be wary of creatures of the sea.  But - please, take these for your efforts.  It's all I can offer, but...~ 
@@ -28,7 +28,7 @@
  SetGlobal("Siren_Quest", "GLOBAL", 4)
  EraseJournalEntry(%Blade of Aihonen.
  
-@@ -184,7 +184,7 @@
+@@ -186,7 +186,7 @@
  
  IF ~~ THEN BEGIN 22 // from: 21.1 20.1 19.3
    SAY ~There is one thing I can do - that blade you brought me, so long ago?  It's... healed.  I simply fell asleep with it on the table beside me one night - and in the dream, it melted together again.  When I awoke; it was restored.  I want you to use it.  Use it to defend Easthaven from these monsters.~ 

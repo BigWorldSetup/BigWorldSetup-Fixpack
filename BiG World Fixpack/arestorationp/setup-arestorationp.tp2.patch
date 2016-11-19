@@ -1,0 +1,38 @@
+--- arestorationp\setup-arestorationp.tp2	Tue Aug 09 21:23:18 2016
++++ C:\BWP Patchstudio\patched files\arestorationp\setup-arestorationp.tp2	Thu Nov 03 08:55:48 2016
+@@ -1,6 +1,6 @@
+ BACKUP ~arestorationp/backup~
+ AUTHOR ~Almateria (sylwiabukato@gmail.com)~
+-VERSION ~v8.2.7~
++VERSION ~v8.2.7 BWP Fix~
+ README "arestorationp/language/%LANGUAGE%/readme.html" "arestorationp/language/english/readme.html"
+ AUTO_TRA ~arestorationp/language/%s~
+ //%
+@@ -2612,6 +2612,27 @@
+     strDesc = EVAL "%GrovName%"
+     worldmap = "worldmap"
+ RET areNum = areNum END
++
++ACTION_IF (MOD_IS_INSTALLED ~setup-bp-bgt-worldmap.tp2~ 0) BEGIN
++
++APPEND ~MASTAREA.2da~ ~AR2700 value~ UNLESS ~AR2700~
++
++ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
++  COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
++   APPEND_FILE ~arestorationp/Worldmap/areas.tbl~
++  COPY ~Worldmap/map_mods_links.tbl~  ~Worldmap~
++   APPEND_FILE ~arestorationp/Worldmap/links.tbl~
++  COPY ~Worldmap/map_mods_trans.tra~  ~Worldmap~
++   APPEND_FILE_EVALUATE ~arestorationp/Worldmap/%LANGUAGE%/worldmap.tra~
++END
++ELSE BEGIN
++  MKDIR ~Worldmap~
++  COPY ~arestorationp/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
++  COPY ~arestorationp/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
++  COPY ~arestorationp/Worldmap/%LANGUAGE%/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
++END
++
++END
+ 
+  BEGIN @1400
+  REQUIRE_COMPONENT "setup-arestorationp.tp2" "11" ~Requires the previous component.~

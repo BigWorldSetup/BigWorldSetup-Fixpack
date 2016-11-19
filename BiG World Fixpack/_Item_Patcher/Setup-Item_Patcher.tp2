@@ -250,9 +250,9 @@ ACTION_FOR_EACH item IN ~lv16rob~ BEGIN
 END
 
 ///Tasha Items
-BEGIN ~Gives some Tasha items the Droppable Flag~
+BEGIN ~Gives some Tashia items the Droppable Flag~
 REQUIRE_COMPONENT ~setup-item_patcher.tp2~ 0 ~You must install the dummy component before any other thing.~
-GROUP ~Tasha Items~
+GROUP ~Tashia Items~
 DESIGNATED 113
 ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Item_Patcher.tp2~ 0) BEGIN
   FAIL ~Item Patcher dummy component is required to install this component.~

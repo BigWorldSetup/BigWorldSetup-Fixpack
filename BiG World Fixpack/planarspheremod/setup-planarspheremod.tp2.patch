@@ -1,6 +1,6 @@
---- setup-planarspheremod.tp2	Sun May 01 17:34:17 2011
-+++ setup-planarspheremod.tp2	Sat Feb 06 17:44:55 2016
-@@ -8,11 +8,28 @@
+--- Temp\setup-planarspheremod.tp2	2011-05-01 08:04:17.594000000 -0400
++++ setup-planarspheremod.tp2	2016-11-18 18:39:48.814870500 -0500
+@@ -8,11 +8,30 @@
  //MODDER
  
  /* WeiDU v204 allows tp2 level version listing in the .log, so no more tra changes  */
@@ -12,17 +12,19 @@
  
 +/* Ineth - make sure strings are correctly encoded for both EE and non-EE games */
 +ALWAYS
-+  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ THEN BEGIN
-+    AT_NOW ~if not exist "iconv" mkdir iconv~
-+    AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
++  ACTION_IF (DIRECTORY_EXISTS ~BiG_World_Fixpack~) THEN BEGIN
++	OUTER_SPRINT ~FIXPACK~ ~BiG_World_Fixpack~ // tp2 version of Fixpack renames the folder
++  END ELSE BEGIN
++    OUTER_SPRINT ~FIXPACK~ ~BiG World Fixpack~ // bat version of Fixpack doesn't
 +  END
++
 +  ACTION_DEFINE_ARRAY tra_reload BEGIN setup END
 +  LAF HANDLE_CHARSETS
 +    INT_VAR
-+      infer_charset = 1
++      infer_charsets = 1
 +    STR_VAR
 +      tra_path      = EVAL ~%MOD_FOLDER%~
-+      iconv_path    = ~iconv~
++      iconv_path    = EVAL ~%FIXPACK%\_utils\iconv~
 +      reload_array  = tra_reload
 +  END
 +END
@@ -30,17 +32,24 @@
  AUTO_TRA ~PlanarSphereMod/%s~
  
  LANGUAGE ~English~
-@@ -26,6 +43,8 @@
+@@ -26,17 +45,17 @@
  ~PlanarSphereMod/russian/setup.tra~
  
  BEGIN @0
 +// TOB Check prior to compiling.
 +REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ @1 // ToB  check// Base Copy Overs
  
- COPY + ~Setup-PlanarSphereMod.exe~ ~WeiDU.exe~
+-COPY + ~Setup-PlanarSphereMod.exe~ ~WeiDU.exe~
++// COPY + ~Setup-PlanarSphereMod.exe~ ~WeiDU.exe~
  
-@@ -35,8 +54,6 @@
- // COPY_LARGE + ~override~ ~PlanarSphereMod/over.bak~
+-COPY + ~chitin.key~ ~PlanarSphereMod/chitin.psm~
+-COPY_LARGE + ~dialog.tlk~ ~PlanarSphereMod/dialog.psm~
+-MKDIR ~PlanarSphereMod/over.bak~
+-COPY_LARGE + ~override~ ~PlanarSphereMod/over.bak~
++// COPY + ~chitin.key~ ~PlanarSphereMod/chitin.psm~
++// COPY_LARGE + ~dialog.tlk~ ~PlanarSphereMod/dialog.psm~
++// MKDIR ~PlanarSphereMod/over.bak~
++// COPY_LARGE + ~override~ ~PlanarSphereMod/over.bak~
  
  
 -// TOB Check prior to compiling.
@@ -48,7 +57,7 @@
  
  
  COPY ~PlanarSphereMod/are~   ~override~ // Area Files (new area files not previously installed in game)
-@@ -966,7 +983,20 @@
+@@ -966,7 +985,20 @@
      SAY NAME2 @96
      SAY UNIDENTIFIED_DESC @97
      SAY DESC @98
@@ -70,7 +79,7 @@
  
    COPY ~PlanarSphereMod/itm/psHelm01.itm~ ~override/psHelm01.itm~
      SAY NAME1 @82
-@@ -1021,7 +1051,20 @@
+@@ -1021,7 +1053,20 @@
      SAY NAME2 @115
      SAY UNIDENTIFIED_DESC @116
      SAY DESC @117
@@ -92,7 +101,7 @@
  
  COPY ~PlanarSphereMod/itm/psBolt02.itm~ ~override/psBolt02.itm~
      SAY NAME1 @114
-@@ -1063,7 +1106,20 @@
+@@ -1063,7 +1108,20 @@
      SAY NAME2 @138
      SAY UNIDENTIFIED_DESC @139
      SAY DESC @140
@@ -114,7 +123,7 @@
  
  COPY ~PlanarSphereMod/itm/psBook02.itm~ ~override/psBook02.itm~
      SAY NAME1 @150
-@@ -1135,8 +1191,24 @@
+@@ -1135,8 +1193,24 @@
      SAY NAME2 @177
      SAY UNIDENTIFIED_DESC @112
      SAY DESC @178
@@ -141,7 +150,7 @@
  
    COPY ~PlanarSphereMod/itm/psRobe06.itm~ ~override/psRobe06.itm~
      SAY NAME1 @181
-@@ -1972,7 +2044,20 @@
+@@ -1972,7 +2046,20 @@
  
  COPY ~PlanarSphereMod/spl/SPPSMYS.SPL~ ~override/SPPSMYS.SPL~
    SAY NAME1 @456
@@ -163,7 +172,7 @@
  
  COPY ~PlanarSphereMod/spl/Sppsnms.spl~ ~override/Sppsnms.spl~
    SAY NAME1 @363
-@@ -2097,12 +2182,38 @@
+@@ -2097,12 +2184,38 @@
  COPY ~PlanarSphereMod/spl/SPpsq8.spl~ ~override/SPpsq8.spl~
    SAY NAME1 @308
    SAY UNIDENTIFIED_DESC @309

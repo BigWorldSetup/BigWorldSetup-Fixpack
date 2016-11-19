@@ -1,0 +1,108 @@
+--- TDD\TDD-TISBIFF.bat	Sun Mar 07 23:05:44 2010
++++ C:\BWP Patchstudio\patched files\TDD\TDD-TISBIFF.bat	Tue Mar 23 10:37:25 2010
+@@ -44,17 +44,17 @@
+ tisunpack -s -h -o TDD-TIS4/ARPO06.tis TDD\TIZ/ARPO06.TIZ
+ tisunpack -s -h -o TDD-TIS4/ARPO07.tis TDD\TIZ/ARPO07.TIZ
+ tisunpack -s -h -o TDD-TIS4/ARPO08.tis TDD\TIZ/ARPO08.TIZ
+-tisunpack -s -h -o TDD-TIS4/ARPO10.tis TDD\TIZ/ARPO10.TIZ
+-tisunpack -s -h -o TDD-TIS4/ARPO25.tis TDD\TIZ/ARPO25.TIZ
+-tisunpack -s -h -o TDD-TIS4/ARPO27.tis TDD\TIZ/ARPO27.TIZ
+-tisunpack -s -h -o TDD-TIS4/ARPO28.tis TDD\TIZ/ARPO28.TIZ
+-tisunpack -s -h -o TDD-TIS4/ARPO29.tis TDD\TIZ/ARPO29.TIZ
+-tisunpack -s -h -o TDD-TIS4/ARPO30.tis TDD\TIZ/ARPO30.TIZ
+-tisunpack -s -h -o TDD-TIS4/ARPO31.tis TDD\TIZ/ARPO31.TIZ
++tisunpack -s -h -o TDD-BAM/ARPO10.tis TDD\TIZ/ARPO10.TIZ
++tisunpack -s -h -o TDD-BCS/ARPO25.tis TDD\TIZ/ARPO25.TIZ
++tisunpack -s -h -o TDD-CRE/ARPO27.tis TDD\TIZ/ARPO27.TIZ
++tisunpack -s -h -o TDD-DLG/ARPO28.tis TDD\TIZ/ARPO28.TIZ
++tisunpack -s -h -o TDD-ITM/ARPO29.tis TDD\TIZ/ARPO29.TIZ
++tisunpack -s -h -o TDD-RULE/ARPO30.tis TDD\TIZ/ARPO30.TIZ
++tisunpack -s -h -o TDD-SPL/ARPO31.tis TDD\TIZ/ARPO31.TIZ
+ del tisunpack.exe
+ 
+ move override\*.ogg TDD-WAV
+-xcopy /q TDD\OGG\*.* TDD-WAV\*.*
++xcopy /q /y TDD\OGG\*.* TDD-WAV\*.*
+ copy TDD\oggdec.exe TDD-WAV\*.*
+ cd TDD-WAV
+ oggdec *.ogg
+@@ -62,50 +62,50 @@
+ del oggdec.exe
+ cd..
+ 
+-move override\*.ARE TDD-ARE
++:: move override\*.ARE TDD-ARE
+ move override\*.WED TDD-ARE
+ weidu --make-biff TDD-ARE
+ call TDD\deldir TDD-ARE
+ 
+-move override\*.BAM TDD-BAM
++:: move override\*.BAM TDD-BAM
+ weidu --make-biff TDD-BAM
+ call TDD\deldir TDD-BAM
+ 
+-move override\*.BCS TDD-BCS
++:: move override\*.BCS TDD-BCS
+ weidu --make-biff TDD-BCS
+ call TDD\deldir TDD-BCS
+ 
+-move override\*.CRE TDD-CRE
++:: move override\*.CRE TDD-CRE
+ weidu --make-biff TDD-CRE
+ call TDD\deldir TDD-CRE
+ 
+-move override\*.DLG TDD-DLG
++:: move override\*.DLG TDD-DLG
+ weidu --make-biff TDD-DLG
+ call TDD\deldir TDD-DLG
+ call TDD\deldir DLGCASH
+ 
+-move override\*.ITM TDD-ITM
++:: move override\*.ITM TDD-ITM
+ weidu --make-biff TDD-ITM
+ call TDD\deldir TDD-ITM
+ 
+ move override\*.BMP TDD-MOS
+ move override\*.MOS TDD-MOS
+-move override\*.PLT TDD-MOS
++:: move override\*.PLT TDD-MOS
+ weidu --make-biff TDD-MOS
+ call TDD\deldir TDD-MOS
+ 
+-move override\*.2DA TDD-RULE
+-move override\*.CH* TDD-RULE
++:: move override\*.2DA TDD-RULE
++:: move override\*.CH* TDD-RULE
+ ::move override\*.IDS TDD-RULE
+-move override\*.WMP TDD-RULE
+-move override\*.EFF TDD-RULE
+-move override\*.VVC TDD-RULE
+-move override\*.PRO TDD-RULE
+-move override\*.STO TDD-RULE
++:: move override\*.WMP TDD-RULE
++:: move override\*.EFF TDD-RULE
++:: move override\*.VVC TDD-RULE
++:: move override\*.PRO TDD-RULE
++:: move override\*.STO TDD-RULE
+ weidu --make-biff TDD-RULE
+ call TDD\deldir TDD-RULE
+ 
+-move override\*.SPL TDD-SPL
++:: move override\*.SPL TDD-SPL
+ weidu --make-biff TDD-SPL
+ call TDD\deldir TDD-SPL
+ 
+@@ -125,6 +125,13 @@
+ move override\*.WAV TDD-WAV
+ weidu --make-biff TDD-WAV
+ call TDD\deldir TDD-WAV
++
++FOR %%s IN (
++override\*.baf
++override\*.d
++override\*.ogg
++override\*.tiz
++) DO del %%s
+ 
+ @echo.
+ @echo Installation complete.

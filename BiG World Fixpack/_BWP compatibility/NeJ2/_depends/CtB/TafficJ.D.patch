@@ -1,6 +1,6 @@
---- NeJ2\dlg\TafficJ.D	Sun Jul 30 22:41:22 2006
-+++ C:\BWP Patchstudio\patched files\NeJ2\dlg\TafficJ.D	Sun Aug 02 19:08:58 2009
-@@ -68,36 +68,36 @@
+--- NEJ2\bgtdlg\TafficJ.D	Fri Apr 08 17:45:40 2016
++++ C:\BWP Patchstudio\patched files\NEJ2\bgtdlg\TafficJ.D	Thu Jun 09 21:48:34 2016
+@@ -66,36 +66,36 @@
  
  IF ~~ THEN BEGIN 9
    SAY ~I am in no mood for jests Deidre... you know my reasons for coming here! You promised me that on your return you would have the necessary knowledge for me to achieve the greatness I am destined for. Well, have you discovered the secret or not?~
@@ -47,7 +47,7 @@
  END
  
  IF ~~ THEN BEGIN 15
-@@ -141,7 +141,7 @@
+@@ -137,7 +137,7 @@
  
  IF ~~ THEN BEGIN 20
    SAY ~Nooo! If the witch won’t give us the information then you must force it out of her <CHARNAME>! If you will not then I shall, there is no way I am leaving here without knowing all that she has to tell!~

@@ -1,5 +1,5 @@
---- NeJ2\dlg\aWMART2.d	Sat Apr 29 13:57:44 2006
-+++ C:\BWP Patchstudio\patched files\NeJ2\dlg\aWMART2.d	Sun Aug 02 19:19:12 2009
+--- NEJ2\bgtdlg\aWMART2.d	Mon Jan 19 14:53:50 2015
++++ C:\BWP Patchstudio\patched files\NEJ2\bgtdlg\aWMART2.d	Sun Aug 02 20:19:12 2009
 @@ -7,140 +7,142 @@
    IF ~~ THEN GOTO 1
  END

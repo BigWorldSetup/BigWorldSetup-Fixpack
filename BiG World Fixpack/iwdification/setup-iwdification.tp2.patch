@@ -5,7 +5,7 @@
  AUTHOR ~pcamagna@yahoo.com~ // email address displayed if install fails
  
 -VERSION ~Beta 2~
-+VERSION ~Beta 3 BWP Fix~
++VERSION ~Beta 2 BWP Fix~
  
  README ~iwdification/readme-iwdification.html~
  
@@ -33,14 +33,16 @@
        SAY 0x0c @4077
        WRITE_LONG 0x28 IDS_OF_SYMBOL (~animate~ ~BEETLE_BLACK~)
    
-@@ -3134,7 +3134,9 @@
+@@ -3134,10 +3134,10 @@
  ACTION_IF FILE_EXISTS_IN_GAME ~ar0602.bcs~ THEN BEGIN // soa
  
    EXTEND_BOTTOM ~ar0602.bcs~ ~iwdification/baf/ar0602.baf~ // add generic 2H axe to CI
 -  
 +END
-+
 +ACTION_IF FILE_EXISTS_IN_GAME ~hlolaf.cre~ THEN BEGIN // Olaf Rasmussen  
    COPY_EXISTING ~hlolaf.cre~ ~override~
      REPLACE_CRE_ITEM ~cdax2h3~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP TWOHANDED // add +2 axe to olaf at guarded compound
+-
+ END
  
+ ACTION_IF FILE_EXISTS_IN_GAME ~botsmith.bcs~ THEN BEGIN // tob

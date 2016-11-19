@@ -1,10 +1,10 @@
---- Setup-AzenMOD.tp2	Thu Jan 01 10:52:38 2009
-+++ C:\BWP Patchstudio\patched files\Setup-AzenMOD.tp2	Sat Jan 09 17:01:54 2016
+--- Temp\setup-AzenMOD.tp2	2016-11-18 20:11:24.407804500 -0500
++++ setup-AzenMOD.tp2	2016-11-18 20:13:10.669321300 -0500
 @@ -3,7 +3,7 @@
  
  AUTHOR	~erebusant@verizon.net~
  
--VERSION	~v5~
+-VERSION	~v5 BWP Trim + Fix~
 +VERSION	~v5 BWP Fix~
  
  AUTO_TRA ~AzenMOD/Language/%s/D~
@@ -17,7 +17,7 @@
  	~azenMOD/bcs~		~override~
  	~azenMOD/portrait~	~override~
  	~azenMOD/sound~		~override~
-@@ -44,33 +45,43 @@
+@@ -44,34 +45,43 @@
    COPY	~azenMOD/bcs/add/shout20.bcs~	~override~	// sare override script
  END
  
@@ -47,12 +47,14 @@
 -
 -ACTION_IF NOT FILE_EXISTS_IN_GAME	~sw1h24.itm~	THEN BEGIN
 -  COPY	~azenMOD/sw1h24.itm~	~override~	// Flame Tongue
+-END
+-
 +COPY_EXISTING ~sw1h06.itm~	~override~	// Varscona
 +  WRITE_ASCII 0x3a ~ISW1VAR~ #8
 +  READ_LONG  0x64 "abil_off" ELSE 0
 +  READ_SHORT 0x68 "abil_num" ELSE 0
 +  PATCH_IF (abil_off > 0x71) BEGIN
-+    FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++   FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 +      WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * "%index%")) ~ISW1VAR~ #8
 +    END
 +  END
@@ -82,19 +84,19 @@
 +      dicesize = 6
 +      header = 1
 +      type = 1
- END
++  END
 +BUT_ONLY_IF_IT_CHANGES
- 
  COPY_EXISTING	~kpchap01.sto~	~override~
  	ADD_STORE_ITEM ~JC_BT01~ AFTER ~scrl63~ #0 #0 #0 ~IDENTIFIED~ #1
-@@ -136,6 +147,10 @@
- AT_INTERACTIVE_EXIT ~VIEW AzenMOD\ReadMe-AzenMOD.html~
+ 	ADD_STORE_ITEM ~SW1H06~ AFTER ~JC_BT01~ #0 #0 #0 ~IDENTIFIED~ #1
+@@ -137,6 +147,10 @@
  
  BEGIN	@19
-+
-+COPY_EXISTING ~ceskel01.cre~	~override~	// crypt skeleton
+ 
++COPY_EXISTING ~ceskel01.cre~	~override~	// give amulet to crypt skeleton here to avoid dependency on previous component
 +  REPLACE_CRE_ITEM ~AMUL12~ #0 #0 #0 ~NONE~ ~INV1~
 +BUT_ONLY_IF_IT_CHANGES
- 
++
  COPY_EXISTING	~AR2013.ARE~	~override~
  	READ_LONG 0x54 ~actoroffset~
+ 	READ_SHORT 0x58 ~actornum~

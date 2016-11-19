@@ -1,5 +1,5 @@
 --- setup-virtue.tp2	Sun Jan 30 00:33:26 2005
-+++ C:\BWP Patchstudio\patched files\setup-virtue.tp2	Sun Jan 10 12:57:42 2016
++++ C:\BWP Patchstudio\patched files\setup-virtue.tp2	Sun Nov 13 16:10:20 2016
 @@ -1,6 +1,6 @@
  BACKUP ~virtue/backup~
  AUTHOR ~SimDing0@hotmail.com~
@@ -94,17 +94,7 @@
  
  APPEND ~state.ids~ ~0x00000FC0 STATE_REALLY_DEAD~
  
-@@ -168,6 +168,9 @@
- LANGUAGE ~Chinese (by killmercy)~
-          ~virtue/translations/chinese~
-          ~virtue/translations/chinese/virtue.tra~
-+LANGUAGE ~German~
-+         ~virtue/translations/german~
-+         ~virtue/translations/german/virtue.tra~
- 
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- 
-@@ -195,9 +198,108 @@
+@@ -195,15 +195,120 @@
  // ADD VIRTUE TO RECORD SCREEN
  STRING_SET 9465 @3
  
@@ -213,7 +203,6 @@
  // ADD THE NEW ONE
  COPY_EXISTING ~DPLAYER2.BCS~ ~override~
  REPLACE_BCS_BLOCK ~virtue/system/scripts/RB_1OLD.BAF~ ~virtue/system/scripts/RB_1NEW.BAF~
-@@ -204,6 +307,12 @@
  COPY_EXISTING ~DPLAYER3.BCS~ ~override~
  REPLACE_BCS_BLOCK ~virtue/system/scripts/RB_2OLD.BAF~ ~virtue/system/scripts/RB_2NEW.BAF~
  
@@ -226,7 +215,7 @@
  COPY_EXISTING ~famcat.cre~ ~override~
                ~famcat25.cre~ ~override~
                ~famdust.cre~ ~override~
-@@ -232,48 +341,156 @@
+@@ -232,48 +337,156 @@
  	COMPILE ~virtue/bg2/shouts~ // Commoner shout scripts
  
  	// SET UP THE BIOWARE NPCS TO WORK WITH IT
@@ -418,7 +407,7 @@
  	        ~virtue/bg2/quest/quest2.d~ // Add new rep changes
  	        ~virtue/bg2/quest/quest3.d~ // Existing alignment checks
  
-@@ -396,8 +613,8 @@
+@@ -396,8 +609,8 @@
  	      AND FILE_EXISTS ~override/J#KLS25J.DLG~
  	THEN BEGIN
  	COMPILE ~virtue/bg2/npcs/mod/kelsey.d~
@@ -429,7 +418,7 @@
  	COPY_EXISTING ~J#KLSY.BCS~ ~override~
  	REPLACE_BCS_BLOCK ~virtue/bg2/npcs/mod/k_RB_1a.BAF~ ~virtue/bg2/npcs/mod/k_RB_1b.BAF~
  	END
-@@ -407,7 +624,7 @@
+@@ -407,7 +620,7 @@
  	      AND FILE_EXISTS ~override/KETO.BCS~
  	THEN BEGIN
  	COMPILE ~virtue/bg2/npcs/mod/keto.d~

@@ -1,0 +1,339 @@
+--- Setup-NeJ3v702.tp2	Fri Apr 29 14:02:51 2016
++++ C:\BWP Patchstudio\patched files\Setup-NeJ3v702.tp2	Tue Sep 13 18:52:43 2016
+@@ -2,6 +2,112 @@
+ 
+ AUTHOR ~Vlad & Larrienne~
+ 
++VERSION ~v7.02 BWP compatibility~
++
++DEFINE_PATCH_MACRO are_update_offset BEGIN
++  SPRINT are_update_offset_datatype_off "%are_update_offset_datatype%_off"
++  SPRINT are_update_offset_datatype_num "%are_update_offset_datatype%_num"
++
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "actor")=0))
++            AND (("%actor_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%actor_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0x54 ("%actor_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "info")=0))   
++            AND (("%info_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%info_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0x5c ("%info_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "spawn")=0))
++            AND (("%spawn_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%spawn_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0x60 ("%spawn_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "entrance")=0))
++            AND (("%entrance_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%entrance_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0x68 ("%entrance_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "container")=0))
++            AND (("%container_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%container_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0x70 ("%container_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "item")=0))
++            AND (("%item_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%item_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0x78 ("%item_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "vertex")=0))
++            AND (("%vertex_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%vertex_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0x7c ("%vertex_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "ambient")=0))
++            AND (("%ambient_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%ambient_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0x84 ("%ambient_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "variable")=0))
++            AND (("%variable_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%variable_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0x88 ("%variable_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "door")=0))
++            AND (("%door_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%door_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0xa8 ("%door_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "explored")=0))
++            AND (("%explored_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%explored_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0xa0 ("%explored_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "anim")=0))
++            AND (("%anim_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%anim_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0xb0 ("%anim_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "tiled")=0))
++            AND (("%tiled_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%tiled_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0xb8 ("%tiled_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "song")=0))
++            AND (("%song_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%song_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0xbc ("%song_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "rest")=0))
++            AND (("%rest_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%rest_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0xc0 ("%rest_off%" + "%are_update_offset_increment%")
++  END
++  PATCH_IF (NOT (("%are_update_offset_datatype%" STRING_COMPARE_CASE "automap")=0))
++            AND (("%automap_off%" > EVALUATE_BUFFER "%%are_update_offset_datatype_off%%")
++            OR (("%automap_off%" = EVALUATE_BUFFER "%%are_update_offset_datatype_off%%") AND (EVALUATE_BUFFER "%%are_update_offset_datatype_num%%" = 0))) BEGIN
++    WRITE_LONG 0xc4 ("%automap_off%" + "%are_update_offset_increment%")
++  END
++
++  READ_LONG 0x54 actor_off
++  READ_LONG 0x5c info_off
++  READ_LONG 0x60 spawn_off
++  READ_LONG 0x68 entrance_off
++  READ_LONG 0x70 container_off
++  READ_LONG 0x78 items_off
++  READ_LONG 0x7c vertex_off
++  READ_LONG 0x84 ambient_off
++  READ_LONG 0x88 variable_off
++  READ_LONG 0xa8 door_off
++  READ_LONG 0xa0 explored_off
++  READ_LONG 0xb0 anim_off
++  READ_LONG 0xb8 tiled_off
++  READ_LONG 0xbc song_off
++  READ_LONG 0xc0 rest_off
++  READ_LONG 0xc4 automap_off
++
++END
++
+ BEGIN ~Never Ending Journey Third Edition v7.02~
+ 
+ //______________________________________//
+@@ -17,12 +123,12 @@
+ REQUIRE_FILE ~Setup-BDToBv175.exe~ ~Please install Baldurdash-WeiDU v1.75~
+ 
+ 
+-ACTION_IF (FILE_EXISTS ~data/CTB-RULE.BIF~)
++/* ACTION_IF (FILE_EXISTS ~data/CTB-RULE.BIF~)
+        OR (FILE_EXISTS ~data/SOS-RULE.BIF~)
+        OR (FILE_EXISTS ~data/TDD-RULE.BIF~)
+ THEN BEGIN
+   FAIL ~You may not install this mod with other big mods!~
+-END
++END */
+ 
+ ///////////////////////////////////////
+ // 2. String replacements
+@@ -90,7 +196,7 @@
+ ///////////////////////////////////////
+ // 4. Preventing possible errors
+ ///////////////////////////////////////
+-ACTION_IF NOT FILE_EXISTS_IN_GAME ~override/MASAKI.dlg~
++ACTION_IF NOT FILE_EXISTS_IN_GAME ~MASAKI.dlg~
+  THEN BEGIN  
+ 		COMPILE ~NeJ/notsfix/KachiJ.d~
+ 		COMPILE ~NeJ/notsfix/BKACHI.d~
+@@ -373,7 +479,19 @@
+ COPY_EXISTING ~Minsc.bcs~ ~override/Minsc.bcs~
+   EXTEND_TOP ~Minsc.bcs~ ~NeJ/sExt/sMinsc.baf~
+ 
+-COPY ~NeJ/sExt/AR0603.bcs~ ~override/AR0603.bcs~
++COPY_EXISTING ~AR0603.bcs~ ~override/AR0603.bcs~
++  EXTEND_TOP ~AR0603.bcs~ ~NeJ/sExt/AR0603.bcs~
++
++ACTION_IF FILE_EXISTS_IN_GAME ~ENTERJ.bcs~ THEN BEGIN
++COPY_EXISTING ~AR0603.bcs~ ~override~
++DECOMPILE_BCS_TO_BAF
++REPLACE_TEXTUALLY ~ActionOverride("Yoshimo",DestroySelf())~ ~ActionOverride("Yoshimo",DestroySelf())
++SetGlobal("NeJRoT","AR0603",1)~
++COMPILE_BAF_TO_BCS
++REPLACE_BCS_BLOCK ~NeJ/wafixes/oRot.bcs~ ~NeJ/wafixes/nRot.bcs~
++END
++
++COMPILE ~NeJ/wafixes/yoshfix.d~
+ 
+ /////////////////////////////////////
+ //Stores 
+@@ -2873,6 +2991,14 @@
+   SAY SPELL_DISRUPTED ~Curses, my link with Ilmater is broken... my spell has gone adrift.~ [DAR_C33]
+   SAY BIO ~Dar‘s conception is the usual one for a half-orc: his mother was mercilessly raped by raiding orcs. The woman was in terrifying condition. She was picked up by priests of Ilmater and taken to their Temple, where she was restored to physical health. Unfortunately, her mind was gone. She, however, gave birth to a half-monstrous child, to whom she was so attached to in her madness that none dared to kill the child, as it is customary done. Dar grew in the sanctuary of Ilmater. He was educated and tutored by priests, though he does not exhibit slurry speech and after knowing him for a while you‘d come to a conclusion that he might not be the brightest fellow, but he has a heart of gold, and a gentle and noble soul, and shows no trait of the savagery of his orcish heritage. He displays great loyalty to those that take the time to befriend him. When you ask him about his atypically fluent speech, he tells you that he owes his excellent knowledge and usage of the common tongue, rarely found in his kind, to the patience and tutoring of the priests that raised him. "It is because of them", he says, "that I am what I am today".~ 
+ 
++COPY_EXISTING ~DAR67.cre~ ~override~
++              ~DAR77.cre~ ~override~
++              ~DAR78.cre~ ~override~
++              ~DAR88.cre~ ~override~
++SPRINT "flags" "IDENTIFIED"
++SPRINT "item_to_change" "BLUN02"
++LAUNCH_PATCH_MACRO ADD_CRE_ITEM_FLAGS
++
+ COPY ~NeJ/cre/DDGUARD3.CRE~         ~override/DDGUARD3.CRE~
+ 
+ COPY ~NeJ/cre/DEADVIL.CRE~          ~override/DEADVIL.CRE~        
+@@ -3734,9 +3860,14 @@
+ ~ACCALIA      ACCALIP            ACCALIJ           ACCALID        ACCAL25P           ACCAL25J              ACCAL25D              acca25~
+ UNLESS ~ACCALIA~ // we are already there, skip it
+ 
++ACTION_IF FILE_EXISTS_IN_GAME ~ADARIO12.cre~ THEN BEGIN
++COPY_EXISTING ~pdialog.2da~ ~override~
++APPEND_FILE ~NeJ/wafixes/dar1.tbl~
++END ELSE BEGIN
+ APPEND ~pdialog.2da~ // TOB append
+ ~DAR          DARP               DARJ              DARD           DAR25P             DAR25J                DAR25D                dar25~
+ UNLESS ~DAR~ // we are already there, skip it
++END
+ 
+ APPEND ~interdia.2da~
+ ~HROTHGAR    BHROTH	  BHROTH25~
+@@ -3746,9 +3877,14 @@
+ ~ACCALIA     BACCALI	  BACCAL25~
+ UNLESS ~ACCALIA~ // we are already there, skip it
+ 
++ACTION_IF FILE_EXISTS_IN_GAME ~ADARIO12.cre~ THEN BEGIN
++COPY_EXISTING ~interdia.2da~ ~override~
++APPEND_FILE ~NeJ/wafixes/dar2.tbl~
++END ELSE BEGIN
+ APPEND ~interdia.2da~
+ ~DAR         BDAR 	  BDAR25~
+ UNLESS ~DAR~ // we are already there, skip it
++END
+ 
+ ////////////////////////////////////////////////
+ 
+@@ -5364,7 +5500,53 @@
+ TT0078	value
+ TT0079	value~
+ 
+-COPY ~NeJ2/are/AR0700.are~           ~override/AR0700.are~
++COPY_EXISTING ~AR0700.are~ override
++  LPF fj_are_structure
++    INT_VAR
++      fj_type           = 0
++      fj_box_left       = 2886
++      fj_box_top        = 904
++      fj_box_right      = 3025
++      fj_box_bottom     = 1048
++      fj_cursor_idx     = 0
++      fj_flags          = 0x00000002
++      fj_trap_active    = 1
++      fj_loc_x          = 2946
++      fj_loc_y          = 960
++      fj_vertex_0       = 2886 + ( 955 << 16)
++      fj_vertex_1       = 2948 + (1048 << 16)
++      fj_vertex_2       = 3025 + ( 993 << 16)
++      fj_vertex_3       = 2968 + ( 903 << 16)
++      fj_vertex_4       = 2886 + ( 955 << 16)
++    STR_VAR
++      fj_structure_type = region
++      fj_name           = VPTalk1
++      fj_reg_script     = VPCUTH02
++  END
++  LPF fj_are_structure
++    INT_VAR
++      fj_type           = 0
++      fj_box_left       = 2408
++      fj_box_top        = 843
++      fj_box_right      = 2748
++      fj_box_bottom     = 1116
++      fj_cursor_idx     = 0
++      fj_flags          = 0x00000002
++      fj_trap_active    = 1
++      fj_loc_x          = 2645
++      fj_loc_y          = 937
++      fj_vertex_0       = 2466 + ( 842 << 16)
++      fj_vertex_1       = 2748 + (1050 << 16)
++      fj_vertex_2       = 2692 + (1116 << 16)
++      fj_vertex_3       = 2408 + ( 905 << 16)
++      fj_vertex_4       = 2466 + ( 842 << 16)
++    STR_VAR
++      fj_structure_type = region
++      fj_name           = VPTalk2
++      fj_reg_script     = VPCUTH02
++  END
++BUT_ONLY
++
+ COPY ~NeJ2/are/AR9801.are~           ~override/AR9801.are~
+ 
+ COPY ~NeJ2/cre/TilornN.cre~        ~override/TilornN.cre~
+@@ -5495,8 +5677,8 @@
+ COPY ~NeJ2/are/TT0079.wed~           ~override/TT0079.wed~
+ COPY ~NeJ2/are/TT0079.are~           ~override/TT0079.are~
+   
+-COPY ~Intro/Combo1/combo1b.acm~				~music/Combo1/combo1b.acm~
+-COPY ~Intro/Theme/themea.acm~					~music/Theme/themea.acm~
++// COPY ~Intro/Combo1/combo1b.acm~				~music/Combo1/combo1b.acm~
++// COPY ~Intro/Theme/themea.acm~					~music/Theme/themea.acm~
+ 
+ ///////////////////////////////
+ // Cleric of Tempus Kit
+@@ -5788,6 +5970,14 @@
+   SAY 0x1c4 ~~ [MELORA06] //SET_A_TRAP
+   SAY BIO ~Melora hates men and magic and is quick to tell you so if you happen to be male or adept in the arts of sorcery. Melora’s small Hafling eyes will look at you with even more contempt and her Sturdy Hafling body will take on a stance of defiance as she speaks to you if you happen to be both male and mage! The illegitimate daughter of a mage and a hafling servant girl, Melora’s first years were hapless. Despised by a father that regarded as an “accident” and who treated her like some lesser being, Melora did not even have the comfort of a mother’s love. She too cast Melora aside when she made a wealthy marriage for herself. So perhaps her hatred is justified, or so Melora would have you believe. The young maiden swore to herself that she would ever be on the side of the oppressed. She has become somewhat of a hero to the poorer people on the outskirts of Candlekeep for her generosity with rich men’s money, none of which she keeps for herself. Often widows and poorer families have found their incomes supplemented by her generous nature. None will speak ill of her excepting the authorities of course... but Melora cares very little for what they say.~
+ 
++COPY_EXISTING ~MELORA11.cre~ ~override~
++              ~MELORA12.cre~ ~override~
++              ~MELORA13.cre~ ~override~
++              ~MELORA14.cre~ ~override~
++SPRINT "flags" "IDENTIFIED"
++SPRINT "item_to_change" "LEAT02"
++LAUNCH_PATCH_MACRO ADD_CRE_ITEM_FLAGS
++  
+ COPY ~NeJ2/Melora/itm/Ryxyr.itm~        ~override/Ryxyr.itm~
+   SAY NAME2 #6865
+   SAY NAME2 ~Ryxyr~
+@@ -6866,7 +7056,8 @@
+   SAY NAME1 ~Marky~ 
+   SAY NAME2 ~Marky~
+ 
+-COPY ~NeJ2/Dar/scripts/AR0015.bcs~ ~override~ 
++COPY_EXISTING ~AR0015.bcs~ ~override/AR0015.bcs~
++  EXTEND_BOTTOM ~AR0015.bcs~ ~NeJ2/Dar/scripts/AR0015.bcs~
+ 
+ ACTION_IF FILE_EXISTS_IN_GAME ~AR1900.bcs~
+  THEN BEGIN
+@@ -7817,6 +8008,15 @@
+  THEN BEGIN
+ 	COPY_EXISTING ~AR9799.bcs~ ~override/AR9799.bcs~
+   EXTEND_TOP ~AR9799.bcs~ ~NeJ3/fixes/eAR9799.baf~
++  EXTEND_TOP ~AR9799.bcs~ ~NeJ/wafixes/eAR9799.baf~
++  ACTION_IF FILE_EXISTS ~Worldmap/map_mods_links.tbl~ THEN BEGIN
++    COPY ~Worldmap/map_mods_links.tbl~  ~Worldmap~
++     APPEND_FILE ~NeJ/wafixes//links.tbl~
++  END
++  ELSE BEGIN
++    MKDIR ~Worldmap~
++    COPY ~NeJ/wafixes/links.tbl~ ~Worldmap/map_mods_links.tbl~
++  END
+ END
+  ELSE BEGIN
+   COMPILE ~NeJ3/fixes/AR9799.baf~
+@@ -10286,16 +10486,23 @@
+   		SAY CRITICAL_MISS ~I spit on your manhood.~ [SHART36]
+   		SAY BIO ~When asked about her past, Shar-Teel has very little to say.  From the little she speaks of it can be gleaned that she is an orphan. She also seems to harbor an intense dislike for Flaming Fist mercenaries, as well as an obvious disrespect for men in general. She seems to have something to prove, and likely her childhood was not of storybook quality.~ 
+ 
+-COPY ~NeJ3/sharteel/wav~	~override~
++		COPY ~NeJ3/sharteel/wav~	~override~
+ 
++		ACTION_IF FILE_EXISTS ~data/BG1ARE.bif~ THEN BEGIN
++		COPY_EXISTING ~pdialog.2da~ ~override~
++		REPLACE_TEXTUALLY ~SHARTEEL     SHARTP             SHARTJ            ***            SHARTP             SHARTJ             ***                 ***~ ~SHARTEEL     SHARTP             SHARTJ            SHARTD         SHARTP           SHARTJ              SHARTD              shar25~
++		BUT_ONLY
++		COPY_EXISTING ~interdia.2da~ ~override~
++		REPLACE_TEXTUALLY ~SHARTEEL    BSHART        NONE~ ~SHARTEEL    BSHART	  BSHART~
++		BUT_ONLY
++		END ELSE BEGIN
+ 		APPEND ~pdialog.2da~ // TOB append
+ 			~SHARTEEL     SHARTP             SHARTJ            SHARTD         SHARTP           SHARTJ              SHARTD              shar25~
+ 			UNLESS ~SHARTEEL~ // we are already there, skip it
+-
+ 		APPEND ~interdia.2da~
+ 			~SHARTEEL    BSHART	  BSHART~
+ 			UNLESS ~SHARTEEL~ // we are already there, skip it
+-
++		END
+ //Lock cell that Shar-teel will be imported into
+ 
+ COPY ~NeJ3/sharteel/itm/VPShrKey.ITM~           ~override/VPShrKey.ITM~         
