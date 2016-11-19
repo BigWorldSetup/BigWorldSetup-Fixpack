@@ -41,11 +41,14 @@
 //
 //       _depends_not/   =>  process subdirs for which a matching mod is not present
 //
+//
+// The script can be run multiple times; it will record in the BWP_Fixpack.installed
+// file the mod folders that it has patched, and will skip those folders when re-run
 
 BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v1.1~
+VERSION ~v1.2~
 
 ALWAYS
 	// special folders and marker file
@@ -117,13 +120,13 @@ ALWAYS
 			FAIL ~Missing Fixpack Sub-Folder~
 		END
 
-		ACTION_IF (NOT FILE_EXISTS ~%INSTALL_MARKER%~) THEN BEGIN
-	<<<<<<<< .../BiG_World_Fixpack-inlined/%INSTALL_MARKER%
-	>>>>>>>>
+		ACTION_IF (NOT FILE_EXISTS ~%INSTALL_MARKER%~) THEN BEGIN // create empty installation marker file
+<<<<<<<< .../BiG_World_Fixpack-inlined/%INSTALL_MARKER%
+>>>>>>>>
 			COPY ~.../BiG_World_Fixpack-inlined/%INSTALL_MARKER%~ ~%INSTALL_MARKER%~
-		END ELSE BEGIN
-			LAF ~show_message~ STR_VAR msg_file_path = EVAL ~%os_quote%%MESSAGES%%os_slash%previous_install.txt%os_quote%~ END
-			FAIL ~Previous Installation Marker File Found~
+//		END ELSE BEGIN
+//			LAF ~show_message~ STR_VAR msg_file_path = EVAL ~%os_quote%%MESSAGES%%os_slash%previous_install.txt%os_quote%~ END
+//			FAIL ~Previous Installation Marker File Found~
 		END
 	END
 
@@ -140,10 +143,13 @@ ALWAYS
 				END
 				OUTER_TEXT_SPRINT ~fixpack_subfolder~ ~%FIXPACK%%os_slash%%mod_folder%~
 				ACTION_IF (~%folder%~ STRING_CONTAINS_REGEXP ~ ~ == 0) THEN BEGIN // skip directories with spaces
-					PRINT ~Skipping "%folder%"~
+					PRINT ~Skipping "%folder%" because it contains spaces...~
 				END ELSE ACTION_IF (DIRECTORY_EXISTS ~%fixpack_subfolder%~) THEN BEGIN
 					OUTER_SET skip = 0
-					ACTION_FOR_EACH reserved IN ~data~ ~lang~ ~Manuals~ ~movies~ ~mpsave~ ~music~ ~override~ ~save~ ~scripts~ BEGIN
+					ACTION_IF (FILE_CONTAINS_EVALUATED (~%INSTALL_MARKER%~ ~Processed '%mod_folder%'~)) THEN BEGIN
+						PRINT ~Found "%mod_folder%" in %INSTALL_MARKER% - skipping...~
+						OUTER_SET skip = 1
+					END ELSE ACTION_FOR_EACH reserved IN ~data~ ~lang~ ~Manuals~ ~movies~ ~mpsave~ ~music~ ~override~ ~save~ ~scripts~ BEGIN
 						ACTION_IF (~%reserved%~ STR_EQ ~%mod_folder%~) THEN BEGIN
 							OUTER_SET skip = 1
 						END
@@ -152,6 +158,7 @@ ALWAYS
 						LAF ~process_fixpack_subfolder~ STR_VAR target_folder = EVAL ~%mod_folder%~ source_folder = EVAL ~%fixpack_subfolder%~ END
 						LAF ~process_nested_subfolders~ INT_VAR if_present = 1 STR_VAR dir_with_subdirs = EVAL ~%fixpack_subfolder%/%DEPENDS_DIR%~ END
 						LAF ~process_nested_subfolders~ INT_VAR if_present = 0 STR_VAR dir_with_subdirs = EVAL ~%fixpack_subfolder%/%DEPENDS_NOT_DIR%~ END
+						APPEND_OUTER + ~%INSTALL_MARKER%~ ~Processed '%mod_folder%'~ UNLESS ~Processed '%mod_folder%'~
 					END
 				END
 			END
