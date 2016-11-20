@@ -1,0 +1,12 @@
+--- stratagems/priest/ssl/bg2/combatblocks/implosion.ssl	2016-11-20 18:27:15.506547200 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/implosion.ssl	2016-11-20 18:27:39.852126800 -0500
+@@ -9,8 +9,7 @@
+ 	ConditionalTargetBlock(PCsPreferringWeak;CheckStatGT(scstarget,40,RESISTMAGIC))
+ 	TargetBlock(PCsPreferringWeak)
+ 	TargetBlock(Celestials)
+-	TriggerBlock(SpellTurn|SIEvocation|Enemy|Helpless)
+-	TriggerBlock(DirectDamageSafe)
++	TriggerBlock(SpellTurnNew|Enemy|Helpless)
+ THEN DO
+ 	Action(Spell,CLERIC_IMPLOSION|150|50)
+ END

@@ -1,0 +1,11 @@
+--- stratagems/priest/ssl/bg2/combatblocks/creeping_doom.ssl	2016-11-20 18:27:15.496540600 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/creeping_doom.ssl	2016-11-20 18:27:39.832113400 -0500
+@@ -9,7 +9,7 @@
+ 	TargetBlock(PCSpellcasters)
+ 	TargetBlock(PCsInOrderShort)
+ 	TargetBlock(Celestials)
+-	TriggerBlock(MR100Touch|SIConjuration|Enemy|Helpless)
++	TriggerBlock(MR100Touch|Enemy|Helpless)
+ THEN DO
+ 	Action(Spell,CLERIC_CREEPING_DOOM|200|50)
+ END

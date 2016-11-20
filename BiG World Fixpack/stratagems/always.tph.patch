@@ -1,7 +1,15 @@
---- stratagems\lib\always.tph	Sat Jan 17 15:04:43 2015
-+++ D:\EE_Patchstudio\patched files\stratagems\lib\always.tph	Sat Jan 09 22:47:44 2016
-@@ -15,6 +15,9 @@
-   ACTION_IF GAME_IS "bgee bg2ee" BEGIN
+--- stratagems/lib/always.tph	2015-01-17 15:04:43.859196000 -0500
++++ Fixpack/stratagems/lib/always.tph	2016-11-20 18:06:50.552288800 -0500
+@@ -9,12 +9,15 @@
+   OUTER_SET initialise=1
+ 
+ ////////////////////////////////////////////////////////
+-//// load languages for BGEE
++//// load language files for Enhanced Edition
+ ////////////////////////////////////////////////////////
+ 
+-  ACTION_IF GAME_IS "bgee bg2ee" BEGIN
++  ACTION_IF GAME_IS ~bgee sod bg2ee eet~ BEGIN
      LOAD_TRA ~%scsroot%/tra/ee/english/english.tra~
      LOAD_TRA ~%scsroot%/tra/ee/%LANGUAGE%/%LANGUAGE%.tra~
 +	OUTER_SPRINT eetra ~ee/~
@@ -10,3 +18,12 @@
    END
  
  
+@@ -153,7 +156,7 @@
+ // String localisation
+ ///////////////////////////////////////////////////
+ 
+-ACTION_IF GAME_IS BGEE BEGIN
++ACTION_IF GAME_IS ~bgee sod~ BEGIN
+    OUTER_SPRINT trigger_string 25101
+    OUTER_SPRINT minor_sequencer_string 26469
+    OUTER_SPRINT sequencer_string 24618

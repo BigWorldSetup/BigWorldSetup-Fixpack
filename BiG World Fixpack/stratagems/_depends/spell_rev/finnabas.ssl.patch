@@ -1,0 +1,11 @@
+--- stratagems/ascension/ssl/finnabas.ssl	2016-11-20 18:27:15.322433500 -0500
++++ Fixpack/stratagems/ascension/ssl/finnabas.ssl	2016-11-20 18:27:39.662993700 -0500
+@@ -133,7 +133,7 @@
+ IF TRIGGER
+ 	ConditionalTargetBlock(PCsInOrder;HPPercentLT(scstarget,30))
+ 	TargetBlock(PCsInOrderShort)
+-	TriggerBlock(Enemy|Disabled|MR|SINecromancy|SpellTurn|Helpless)
++	TriggerBlock(Enemy|Disabled|MR|SpellTurnNew|Helpless)
+ 	Range(scstarget,10)
+ THEN DO
+ 	Combine()

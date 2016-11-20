@@ -1,0 +1,12 @@
+--- stratagems/firegiant/ssl/elemimix.ssl	2016-11-20 18:27:15.388462700 -0500
++++ Fixpack/stratagems/firegiant/ssl/elemimix.ssl	2016-11-20 18:27:39.726037000 -0500
+@@ -162,8 +162,7 @@
+ IF TRIGGER
+ 	!StateCheck(Myself,STATE_DISABLED)
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(Disabled|MR|ResistFire|Enemy|SIEvocation)
+-	TriggerBlock(DirectDamageSafe)
++	TriggerBlock(Disabled|MR|ResistFire|Enemy|SpellTurnNew)
+ THEN DO
+ 	Action(ForceSpellRES,"spimix01"|80|20)
+ 	DisplayStringHead(Myself,72787) // Feel the wrath of Imix!

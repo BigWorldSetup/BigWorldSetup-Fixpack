@@ -1,0 +1,10 @@
+--- stratagems/mage/ssl/bg1/combatblocks/paralyze_wand.ssl	2016-11-20 18:27:15.408477700 -0500
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/paralyze_wand.ssl	2016-11-20 18:27:39.745052700 -0500
+@@ -6,7 +6,6 @@
+ IF TRIGGER
+ 	TargetBlock(PCsPreferringStrong)
+ 	TriggerBlock(Disabled|Paralyse|Enemy|MR)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+ THEN DO
+ 	Action(Wand,"%tutu_var%wand04"|700|300)
+ END

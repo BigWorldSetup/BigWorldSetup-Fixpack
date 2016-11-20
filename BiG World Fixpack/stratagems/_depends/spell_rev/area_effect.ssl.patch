@@ -1,0 +1,20 @@
+--- stratagems/mage/ssl/bg1/combatblocks/area_effect.ssl	2016-11-20 18:27:15.397470100 -0500
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/area_effect.ssl	2016-11-20 18:27:39.734043500 -0500
+@@ -9,7 +9,7 @@
+ 	IgnoreBlock(SpellsAreBG1)
+ 	RequireBlock(HasL5)
+ 	TargetBlock(EnemiesInOrder)
+-	TriggerBlock(Enemy|MR|ResistFire|SIEvocation)
++	TriggerBlock(Enemy|MR|ResistFire)
+ 	Range(scstarget,10)
+ 	OR(2)
+              !Range(NearestMyGroupOfType,20)
+@@ -140,7 +140,7 @@
+ 		HasItem("dw#area",Myself)
+ 	TargetBlock(PCsInOrder)
+ 	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(MR|Enemy|MinorGlobe)
++	TriggerBlock(MR|Enemy)
+ THEN DO
+ 	Action(SpellArea,WIZARD_CONE_OF_COLD|80|20)
+ END

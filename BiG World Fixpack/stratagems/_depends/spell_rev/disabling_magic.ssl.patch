@@ -1,0 +1,20 @@
+--- stratagems/priest/ssl/bg2/combatblocks/disabling_magic.ssl	2016-11-20 18:27:15.498541600 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/disabling_magic.ssl	2016-11-20 18:27:39.833113100 -0500
+@@ -29,7 +29,7 @@
+ 	IgnoreBlock(IsDruid)
+ 	RequireBlock(HasL2)
+ 	TargetBlock(PCsPreferringStrong)
+-	TriggerBlock(Disabled|Hold|MinorGlobe|MR|Enemy|L2safe)
++	TriggerBlock(Disabled|Hold|MinorGlobe|MR|Enemy)
+ 	CheckStatGT(scstarget,4,SAVEVSSPELL)
+ THEN DO
+ 	Action(Spell,CLERIC_HOLD_PERSON|50|50)
+@@ -52,7 +52,7 @@
+ 	IgnoreBlock(IsCleric)
+ 	RequireBlock(HasL2)
+ 	TargetBlock(PCsPreferringStrong)
+-	TriggerBlock(Disabled|Charm|MinorGlobe|MR|Enemy|L1safe)
++	TriggerBlock(Disabled|Charm|MinorGlobe|MR|Enemy)
+ 	CheckStatGT(scstarget,4,SAVEVSSPELL)
+ THEN DO
+ 	Action(Spell,CLERIC_CHARM_PERSON|50|50)

@@ -1,0 +1,21 @@
+--- stratagems/ascension/ssl/finglab.ssl	2016-11-20 18:27:15.321434300 -0500
++++ Fixpack/stratagems/ascension/ssl/finglab.ssl	2016-11-20 18:27:39.660991900 -0500
+@@ -82,7 +82,7 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(EnemiesInOrder)
+-	TriggerBlock(MR|SpellTurn|Stun|Helpless|SIConjuration)
++	TriggerBlock(MR|SpellTurnNew|Stun|Helpless|SIEnchantment)
+ 	OR(3)
+ 		HPPercentLT(scstarget,60)
+ 		Class(scstarget,MAGE)
+@@ -97,8 +97,7 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(MR100|Enemy|Helpless|SINecromancy)
+-	Alignment(scstarget,MASK_GOOD)	
++	TriggerBlock(MR100|Enemy|Helpless)	
+ THEN DO
+ 	Action(SpellNoDec,CLERIC_UNHOLY_BLIGHT|200|100)
+ END

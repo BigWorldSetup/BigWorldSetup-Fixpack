@@ -1,0 +1,34 @@
+--- stratagems/beholder/ssl/gauth01.ssl	2016-11-20 18:27:15.331422900 -0500
++++ Fixpack/stratagems/beholder/ssl/gauth01.ssl	2016-11-20 18:27:39.667028200 -0500
+@@ -109,7 +109,6 @@
+ 	Global("BeholderBehavior","LOCALS",0)
+ 	TargetBlock(PCsPreferringWeak)
+ 	HPPercentLT(scstarget,40)
+-	!HasItem("clck26",scstarget)
+ 	TriggerBlock(Enemy|Disabled)
+ THEN DO
+ 	Combine()
+@@ -120,7 +119,6 @@
+ 	Global("BeholderBehavior","LOCALS",0)
+ 	TargetBlock(PCsPreferringWeak)
+ 	TargetBlock(EnemiesInOrder)
+-	!HasItem("clck26",scstarget)
+ 	TriggerBlock(Enemy|Disabled)
+ THEN DO
+ 	Combine()
+@@ -248,7 +246,6 @@
+ 	TargetBlock(PCsPreferringWeak)
+ 	TargetBlock(EnemiesInOrder)
+ 	TriggerBlock(Enemy|MR100)
+-	!HasItem("clck26",scstarget)
+ THEN DO
+ 	Combine()
+ 	Action(Eyestalk,BEHOLDER_CAUSE_SERIOUS_WOUNDS,woundingeye)
+@@ -283,7 +280,6 @@
+ 	OR(2)
+ 		!GlobalTimerExpired("SeeBounce","LOCALS")
+ 		!HasItem("wa2shiel",scstarget)
+-	!HasItem("clck26",scstarget)
+ THEN DO
+ 	Action(Literal,SetGlobalTimer("woundingeye"\"LOCALS"\6)&SetGlobalTimer("lightning"\"LOCALS"\6)&ForceSpell(scstarget\BEHOLDER_CAUSE_SERIOUS_WOUNDS)&ForceSpell(scstarget\BEHOLDER_LIGHTNING_BOLT))
+ END	

@@ -1,0 +1,63 @@
+--- stratagems/mage/ssl/bg2/combatblocks/finger_of_death.ssl	2016-11-20 18:27:15.418484400 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/finger_of_death.ssl	2016-11-20 18:27:39.754057700 -0500
+@@ -11,8 +11,7 @@
+ 	IgnoreBlock(IsConjurerStreamline)
+ 	ConditionalTargetBlock(PCsPreferringStrong;!CheckStatGT(scstarget,50,RESISTMAGIC))
+ 	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(MR100|SpellTurn|Slay|SINecromancy|Enemy)
+-	TriggerBlock(DirectDamageSafe)
++	TriggerBlock(MR100|SpellTurnNew|Enemy)
+ 	RequireBlock(HasL7)
+ 	slowspell
+ THEN DO
+@@ -24,8 +23,7 @@
+ 	IgnoreBlock(IsEnchanterStreamline)
+ 	IgnoreBlock(IsConjurerStreamline)
+ 	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(MR100|SpellTurn|Slay|SINecromancy)
+-	TriggerBlock(DirectDamageSafe)
++	TriggerBlock(MR100|SpellTurnNew)
+ 	RequireBlock(HasL7)
+ 	slowspell
+ THEN DO
+@@ -41,10 +39,9 @@
+ 	IgnoreBlock(Indiscriminate)
+ 	ConditionalTargetBlock(PCsPreferringStrong;!CheckStatGT(scstarget,50,RESISTMAGIC))
+ 	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(MR100|SpellTurn|SIAlteration|Enemy)
+-	TriggerBlock(DirectDamageSafe)
++	TriggerBlock(MR100|SpellTurnNew|Enemy)
+ 	RequireBlock(HasL6)
+-	CheckStatGT(scstarget,6,SAVEVSSPELL)
++	CheckStatGT(scstarget,6,SAVEVSPOLY)
+ 	slowspell
+ THEN DO
+ 	Action(Spell,WIZARD_FLESH_TO_STONE|150|50)
+@@ -53,10 +50,9 @@
+ IF TRIGGER
+ 	RequireBlock(Indiscriminate)
+ 	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(MR100|SpellTurn|SIAlteration)
+-	TriggerBlock(DirectDamageSafe)
++	TriggerBlock(MR100|SpellTurnNew)
+ 	RequireBlock(HasL6)
+-	CheckStatGT(scstarget,6,SAVEVSSPELL)
++	CheckStatGT(scstarget,6,SAVEVSPOLY)
+ 	slowspell
+ THEN DO
+ 	Action(Spell,WIZARD_FLESH_TO_STONE|150|50)
+--- stratagems/priest/ssl/bg2/combatblocks/finger_of_death.ssl	2016-11-20 18:27:15.500543000 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/finger_of_death.ssl	2016-11-20 18:27:39.837115900 -0500
+@@ -5,10 +5,9 @@
+ ///////////////////////////////////////////////////////////////////////////
+ 
+ IF TRIGGER
+-	ConditionalTargetBlock(PCsPreferringStrong;!CheckStatGT(scstarget,50,RESISTMAGIC))
++	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
+ 	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(MR100|SpellTurn|Slay|SINecromancy|Enemy)
+-	TriggerBlock(DirectDamageSafe)
++	TriggerBlock(MR100|SpellTurnNew|Enemy)
+ THEN DO
+ 	Action(Spell,CLERIC_FINGER_OF_DEATH|100|300)
+ END

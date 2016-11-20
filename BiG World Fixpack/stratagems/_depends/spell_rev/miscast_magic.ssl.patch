@@ -1,0 +1,24 @@
+--- stratagems/priest/ssl/bg1/combatblocks/miscast_magic.ssl	2016-11-20 18:27:15.482530200 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/miscast_magic.ssl	2016-11-20 18:27:39.820103700 -0500
+@@ -1,8 +1,7 @@
+ IF TRIGGER
+    RequireBlock(HasL3)
+-   IgnoreBlock(Demivrgvs)
+    TargetBlock(PCSpellcasters)
+-   TriggerBlock(SpellTurn|Enemy|Disabled|MinorGlobe)
++   TriggerBlock(SpellTurnNew|Enemy|Disabled|MinorGlobe)
+    !CheckStatGT(scstarget,80,SPELLFAILUREMAGE)
+ THEN DO
+      Action(Spell,CLERIC_MISCAST_MAGIC|100|100)
+--- stratagems/priest/ssl/bg2/combatblocks/miscast_magic.ssl	2016-11-20 18:27:15.512551100 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/miscast_magic.ssl	2016-11-20 18:27:39.859132000 -0500
+@@ -1,8 +1,7 @@
+ IF TRIGGER
+    RequireBlock(HasL3)
+-   IgnoreBlock(Demivrgvs)
+    TargetBlock(PCSpellcasters)
+-   TriggerBlock(SpellTurn|Enemy|Disabled|MinorGlobe)
++   TriggerBlock(SpellTurnNew|Enemy|Disabled|MinorGlobe)
+    !CheckStatGT(scstarget,80,SPELLFAILUREMAGE)
+ THEN DO
+      Action(Spell,CLERIC_MISCAST_MAGIC|100|100)

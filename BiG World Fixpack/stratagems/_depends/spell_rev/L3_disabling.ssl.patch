@@ -1,0 +1,38 @@
+--- stratagems/mage/ssl/bg1/combatblocks/L3_disabling.ssl	2016-11-20 18:27:15.396468800 -0500
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/L3_disabling.ssl	2016-11-20 18:27:39.733043000 -0500
+@@ -7,7 +7,7 @@
+ 	IgnoreBlock(Indiscriminate)
+ 	RequireBlock(HasL3)
+ 	TargetBlock(PCsPreferringStrong)
+-	TriggerBlock(MR|Charm|SpellTurn|Enemy|Helpless|MinorGlobe)
++	TriggerBlock(MR|Charm|SpellTurnNew|Enemy|Helpless|MinorGlobe)
+ 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+ THEN DO
+ 	Combine()
+@@ -19,7 +19,7 @@
+ 	RequireBlock(Indiscriminate)
+ 	RequireBlock(HasL3)
+ 	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(MR|Charm|SpellTurn|Helpless|MinorGlobe)
++	TriggerBlock(MR|Charm|SpellTurnNew|Helpless|MinorGlobe)
+ 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+ THEN DO
+ 	Combine()
+@@ -37,7 +37,7 @@
+ 	IgnoreBlock(Indiscriminate)
+ 	RequireBlock(HasL3)
+ 	TargetBlock(PCsPreferringStrong)
+-	TriggerBlock(MR100|SpellTurn|Hold|Enemy|Helpless)
++	TriggerBlock(MR100|SpellTurnNew|Hold|Enemy|Helpless)
+ 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+ 	Target(NearestEnemyOf(Myself))
+ THEN DO
+@@ -50,7 +50,7 @@
+ 	RequireBlock(Indiscriminate)
+ 	RequireBlock(HasL3)
+ 	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(MR|Charm|SpellTurn|Helpless|MinorGlobe)
++	TriggerBlock(MR|Charm|SpellTurnNew|Helpless|MinorGlobe)
+ 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+ THEN DO
+ 	Combine()

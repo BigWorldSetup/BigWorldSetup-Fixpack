@@ -1,0 +1,35 @@
+--- stratagems/beholder/ssl/beholder_attack2.ssl	2016-11-20 18:27:15.328420600 -0500
++++ Fixpack/stratagems/beholder/ssl/beholder_attack2.ssl	2016-11-20 18:27:39.665994400 -0500
+@@ -146,7 +146,6 @@
+ 	TriggerBlock(MR100|Slay|Enemy)
+ 	TargetBlock(PlayersInRandomOrder)
+ 	TargetBlock(EnemiesInOrder)
+-	!HasItemEquiped("clck26",scstarget)
+ THEN DO
+ 	Combine()
+ 	Action(Eyestalk,BEHOLDER_DEATH_RAY,deathray)
+@@ -158,8 +157,6 @@
+ 	TargetBlock(PCsPreferringWeak)
+ 	TargetBlock(EnemiesInOrder)
+ 	TriggerBlock(Enemy|MR100)
+-	!HasItem("clck26",scstarget)
+-	!HasItemEquiped("clck26",scstarget)
+ 	!StateCheck(scstarget,STATE_STONE_DEATH)
+ THEN DO
+ 	Combine()
+@@ -172,7 +169,6 @@
+ 	TargetBlock(PCsInOrder)
+ 	TargetBlock(EnemiesInOrder)
+ 	TriggerBlock(Enemy|MR100|Petrify)
+-	!HasItemEquiped("clck26",scstarget)
+ THEN DO
+ 	Combine()
+ 	Action(Eyestalk,BEHOLDER_FLESH_TO_STONE,petrify)
+@@ -210,7 +206,6 @@
+ 	OR(2)
+ 		!GlobalTimerExpired("SeeBounce","LOCALS")
+ 		!HasItem("wa2shiel",scstarget)
+-	!HasItem("clck26",scstarget)
+ THEN DO
+ 	Action(Literal,SetGlobalTimer("woundingeye"\"LOCALS"\6)&SetGlobalTimer("deathray"\"LOCALS"\6)&SetGlobalTimer("petrify"\"LOCALS"\6)&ForceSpell(scstarget\BEHOLDER_CAUSE_SERIOUS_WOUNDS)&ForceSpell(scstarget\BEHOLDER_FLESH_TO_STONE)&ForceSpell(scstarget\BEHOLDER_DEATH_RAY))
+ END	

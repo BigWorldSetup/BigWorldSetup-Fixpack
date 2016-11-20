@@ -1,5 +1,5 @@
---- stratagems\initial\initial.tpa	Sat Dec 27 21:22:55 2014
-+++ D:\EE_Patchstudio\patched files\stratagems\initial\initial.tpa	Sat Jan 09 23:18:28 2016
+--- stratagems/initial/initial.tpa	2014-12-27 21:22:55.000000000 -0500
++++ Fixpack/stratagems/initial/initial.tpa	2016-11-20 18:06:50.548284300 -0500
 @@ -465,13 +465,14 @@
        PATCH_IF !(FILE_CONTAINS ~override/player1.dlg~ ~slayer3~) BEGIN
            INNER_ACTION BEGIN

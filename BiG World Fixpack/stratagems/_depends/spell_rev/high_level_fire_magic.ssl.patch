@@ -1,0 +1,48 @@
+--- stratagems/mage/ssl/bg2/combatblocks/high_level_fire_magic.ssl	2016-11-20 18:27:15.421486700 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/high_level_fire_magic.ssl	2016-11-20 18:27:39.763063500 -0500
+@@ -4,12 +4,11 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(EnemiesInOrder)
+-	TriggerBlock(MR100|ResistFire|SIEvocation|Enemy)
++	TriggerBlock(MR100|ResistFire|Enemy)
+ 	RequireBlock(HasL8)
+ 	IgnoreBlock(IsEnchanter)
+ 	IgnoreBlock(IsNecromancerStreamline)
+ 	IgnoreBlock(IsConjurerStreamline)
+-	TriggerBlock(DirectDamageSafe)
+ THEN DO
+ 	Action(SpellArea,WIZARD_INCENDIARY_CLOUD|200|100)
+ END
+@@ -31,12 +30,11 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(EnemiesInOrder)
+-	TriggerBlock(MR100|ResistFire|SIEvocation|Enemy)
++	TriggerBlock(MR100|ResistFire|Enemy)
+ 	RequireBlock(HasL7)
+ 	IgnoreBlock(IsEnchanter)
+ 	IgnoreBlock(IsNecromancerStreamline)
+ 	IgnoreBlock(IsConjurerStreamline)
+-	TriggerBlock(DirectDamageSafe)
+ THEN DO
+ 	Action(SpellArea,WIZARD_DELAYED_BLAST_FIREBALL|100|100)
+ END
+@@ -58,15 +56,14 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(EnemiesInOrder)
+-	TriggerBlock(Enemy|MR|ResistFire|SIEvocation)
++	TriggerBlock(Enemy|MR|ResistFire)
+ 	Range(scstarget,10)
+ 	RequireBlock(IsL5)
+ 	IgnoreBlock(IsEnchanter)
+ 	IgnoreBlock(IsNecromancerStreamline)
+ 	!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL") // sunfire + timestop --> mage not protected from sunfire
+ 	TriggerBlock(DirectDamageSafe)
+-	OR(2)
+-		!StateCheck(scstarget,STATE_MIRRORIMAGE)
++	OR (1)
+ 		GlobalTimerNotExpired("ignoremirror","LOCALS")
+ THEN DO
+ 	Combine()

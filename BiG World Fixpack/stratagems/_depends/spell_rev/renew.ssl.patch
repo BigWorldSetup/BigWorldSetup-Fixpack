@@ -1,0 +1,94 @@
+--- stratagems/priest/ssl/bg1/generalblocks/renew.ssl	2016-11-20 18:27:15.488534900 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/generalblocks/renew.ssl	2016-11-20 18:27:39.824106900 -0500
+@@ -207,6 +207,28 @@
+ 	Action(Spell,CLERIC_REMOVE_PARALYSIS)
+ END
+ 
++IF TRIGGER
++	RequireBlock(HasL3)
++	IgnoreBlock(IsDruid)
++	TargetBlock(HumanoidVillains)
++	StateCheck(scstarget,STATE_CHARMED)
++	Allegiance(scstarget,GOODCUTOFF)
++THEN DO
++    Combine()
++	Action(Spell,CLERIC_REMOVE_CURSE)
++END
++
++IF TRIGGER
++	RequireBlock(HasL3)
++	IgnoreBlock(IsDruid)
++	TargetBlock(HumanoidVillains)
++	StateCheck(scstarget,STATE_DISABLED)
++	Allegiance(scstarget,ENEMY)
++THEN DO
++	Combine()
++	Action(Spell,CLERIC_REMOVE_CURSE)
++END
++
+ 
+ 
+ ///////////////////////////////////////////////////////////////////////////////////////
+--- stratagems/priest/ssl/bg2/generalblocks/renew.ssl	2016-11-20 18:27:15.523559500 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/generalblocks/renew.ssl	2016-11-20 18:27:39.867137200 -0500
+@@ -104,6 +104,7 @@
+ //////////////////////////////////////////////////////////////////////
+ 
+ IF TRIGGER
++    IgnoreBlock(IsDruid)
+ 	RequireBlock(HasL6)
+ 	TargetBlock(EnemiesInOrderShort)
+ 	GlobalTimerExpired("redefend","LOCALS")
+@@ -297,6 +298,7 @@
+ /////////////////////////////////////////////////////////////////////////////
+ 
+ IF TRIGGER
++    IgnoreBlock(IsDruid)
+ 	RequireBlock(HasL6)
+ 	TargetBlock(HumanoidVillains)
+ 	StateCheck(scstarget,STATE_PANIC)
+@@ -308,6 +310,7 @@
+ END
+ 
+ IF TRIGGER
++    IgnoreBlock(IsDruid)
+ 	IgnoreBlock(HasL6)
+ 	TargetBlock(HumanoidVillains)
+ 	StateCheck(scstarget,STATE_PANIC)
+@@ -332,7 +335,6 @@
+ 
+ IF TRIGGER
+ 	RequireBlock(HasL3)
+-	RequireBlock(HasL6)
+ 	IgnoreBlock(IsDruid)
+ 	TargetBlock(HumanoidVillains)
+ 	CheckStatGT(scstarget,0,HELD)
+@@ -342,6 +344,28 @@
+ 	Action(SpellArea,CLERIC_REMOVE_PARALYSIS)
+ END
+ 
++IF TRIGGER
++	RequireBlock(HasL3)
++	IgnoreBlock(IsDruid)
++	TargetBlock(HumanoidVillains)
++	StateCheck(scstarget,STATE_CHARMED)
++	Allegiance(scstarget,GOODCUTOFF)
++THEN DO
++    Combine()
++	Action(Spell,CLERIC_REMOVE_CURSE)
++END
++
++IF TRIGGER
++	RequireBlock(HasL3)
++	IgnoreBlock(IsDruid)
++	TargetBlock(HumanoidVillains)
++	StateCheck(scstarget,STATE_DISABLED)
++	Allegiance(scstarget,ENEMY)
++THEN DO
++	Combine()
++	Action(Spell,CLERIC_REMOVE_CURSE)
++END
++
+ ///////////////////////////////////////////////////////////////////////////////////////
+ ////	More healing, if it's appropriate
+ //////////////////////////////////////////////////////////////////////////////////////

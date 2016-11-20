@@ -1,0 +1,8 @@
+--- stratagems/priest/ssl/bg2/combatblocks/harmony.ssl	2016-11-20 18:27:15.502544400 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/harmony.ssl	2016-11-20 18:27:39.848124400 -0500
+@@ -1,4 +1,5 @@
+ IF TRIGGER
++    IgnoreBlock(IsDruid)
+ 	TargetBlock(VillainsInOrder)
+ 	GlobalTimerExpired("redefend","LOCALS")
+ 	NumCreatureGT([ENEMY],3)

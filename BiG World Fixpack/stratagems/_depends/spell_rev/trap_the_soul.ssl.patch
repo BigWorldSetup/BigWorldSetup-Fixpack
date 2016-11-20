@@ -1,0 +1,34 @@
+--- stratagems/demilich/ssl/trap_the_soul.ssl	2016-11-20 18:27:15.339428200 -0500
++++ Fixpack/stratagems/demilich/ssl/trap_the_soul.ssl	2016-11-20 18:27:39.687009900 -0500
+@@ -72,7 +72,7 @@
+ 	TargetBlock(Celestials)
+ 	!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
+ 	!GlobalTimerNotExpired("timestop","LOCALS")
+-	TriggerBlock(SpellTurn|Enemy|Helpless)
++	TriggerBlock(SpellTurnNew|Enemy|Helpless)
+ 	OR(2)
+ 		GlobalTimerNotExpired("seeabjuration","LOCALS")
+ 		!CheckStat(scstarget,1,WIZARD_SPELL_IMMUNITY)
+--- stratagems/mage/ssl/bg2/combatblocks/trap_the_soul.ssl	2016-11-20 18:27:15.440500400 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/trap_the_soul.ssl	2016-11-20 18:27:39.785079500 -0500
+@@ -8,7 +8,7 @@
+ 	OR(2)
+ 		!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
+ 		!GlobalTimerNotExpired("timestopmaze","LOCALS")
+-	TriggerBlock(SpellTurn|Enemy|Helpless|Imprisonment)
++	TriggerBlock(SpellTurnNew|Enemy|Helpless|Imprisonment)
+ 	OR(2)
+ 		GlobalTimerNotExpired("seeabjuration","LOCALS")
+ 		!CheckStat(scstarget,1,WIZARD_SPELL_IMMUNITY)
+@@ -31,10 +31,7 @@
+ 	OR(2)
+ 		!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
+ 		!GlobalTimerNotExpired("timestopmaze","LOCALS")
+-	TriggerBlock(SpellTurn|Enemy|Helpless|Imprisonment)
+-	OR(2)
+-		GlobalTimerNotExpired("seeabjuration","LOCALS")
+-		!CheckStat(scstarget,1,WIZARD_SPELL_IMMUNITY)
++	TriggerBlock(SpellTurnNew|Enemy|Helpless|Imprisonment)
+ 	OR(2)
+ 		!InPartySlot(scstarget,0) // isn't Player 1
+ 		Global("DMWWImprisonPlayer","GLOBAL",1)

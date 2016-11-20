@@ -1,0 +1,11 @@
+--- stratagems/mage/ssl/bg1/combatblocks/slow.ssl	2016-11-20 18:27:15.410479100 -0500
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/slow.ssl	2016-11-20 18:27:39.747052100 -0500
+@@ -3,7 +3,7 @@
+ 	RequireBlock(HasL3)
+ 	TargetBlock(PCsPreferringStrong)
+ 	TriggerBlock(MR100|Slow|Enemy|MinorGlobe|Helpless)
+-	!CheckStatLT(scstarget,0,SAVEVSSPELL)
++	!CheckStatLT(scstarget,0,SAVEVSPOLY)
+ 	!StateCheck(scstarget,STATE_SLOWED)
+ THEN DO
+ 	Combine()

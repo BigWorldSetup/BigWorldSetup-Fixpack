@@ -1,0 +1,22 @@
+--- stratagems/priest/ssl/bg1/combatblocks/insect_plague.ssl	2016-11-20 18:27:15.479527900 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/insect_plague.ssl	2016-11-20 18:27:39.819103600 -0500
+@@ -10,7 +10,7 @@
+ 	IgnoreBlock(Galactygon_Swarm)
+ 	TargetBlock(PCSpellcasters)
+ 	TargetBlock(PCsInOrderShort)
+-	TriggerBlock(MR100Touch|SIConjuration|Enemy|Helpless)
++	TriggerBlock(Enemy|Helpless)
+ 	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
+ 	Global("shapeshift","LOCALS",0)
+ THEN DO
+--- stratagems/priest/ssl/bg2/combatblocks/insect_plague.ssl	2016-11-20 18:27:15.508548700 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/insect_plague.ssl	2016-11-20 18:27:39.855129100 -0500
+@@ -10,7 +10,7 @@
+ 	IgnoreBlock(Galactygon_Swarm)
+ 	TargetBlock(PCSpellcasters)
+ 	TargetBlock(PCsInOrderShort)
+-	TriggerBlock(MR100|SIConjuration|Enemy|Helpless)
++	TriggerBlock(Enemy|Helpless)
+ 	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
+ 	Global("shapeshift","LOCALS",0)
+ THEN DO

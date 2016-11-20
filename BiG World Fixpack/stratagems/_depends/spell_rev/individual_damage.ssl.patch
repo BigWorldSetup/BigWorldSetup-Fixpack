@@ -1,0 +1,34 @@
+--- stratagems/priest/ssl/bg2/combatblocks/individual_damage.ssl	2016-11-20 18:27:15.507548200 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/individual_damage.ssl	2016-11-20 18:27:39.854128200 -0500
+@@ -5,9 +5,7 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(Disabled|MR|ResistElectric|MinorGlobe|Enemy|SIAlteration)
+-	AreaType(OUTDOOR)
+-	TriggerBlock(DirectDamageSafe)
++	TriggerBlock(Disabled|MR|ResistElectric|MinorGlobe|Enemy)
+ THEN DO
+ 	Combine()
+ 	Action(Spell,CLERIC_CALL_LIGHTNING|70|30)
+@@ -20,9 +18,8 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(Disabled|MR|ResistFire|Enemy|SIEvocation)
++	TriggerBlock(Disabled|MR|ResistFire|Enemy|SpellTurnNew)
+ 	Global("shapeshift","LOCALS",0)
+-	TriggerBlock(DirectDamageSafe)
+ THEN DO
+ 	Combine()
+ 	Action(Wand,"wand11"|70|30)
+@@ -37,8 +34,7 @@
+ 	ConditionalTargetBlock(PCsPreferringStrong;!CheckStatGT(scstarget,50,RESISTMAGIC))
+ 	TargetBlock(EnemiesInOrderShort)
+ 	Range(scstarget,15)
+-	TriggerBlock(SpellTurn|MR100|Enemy|SINecromancy)
+-	TriggerBlock(DirectDamageSafe)
++	TriggerBlock(SpellTurnNew|MR100|Enemy)
+ THEN DO
+         Combine()
+ 	Action(Spell,CLERIC_POISON|100|100)

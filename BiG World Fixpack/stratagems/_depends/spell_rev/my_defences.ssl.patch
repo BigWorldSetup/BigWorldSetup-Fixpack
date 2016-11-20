@@ -1,0 +1,54 @@
+--- stratagems/priest/ssl/bg1/combatblocks/my_defences.ssl	2016-11-20 18:27:15.483530300 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/my_defences.ssl	2016-11-20 18:27:39.821104600 -0500
+@@ -11,7 +11,7 @@
+ 	GlobalTimerExpired("redefend","LOCALS")
+ 	Range(NearestEnemyOf(Myself),10)
+ THEN DO
+-	Action(SpellMyself,NPC_BLADE_BARRIER|100|50)
++	Action(SpellMyself,CLERIC_BLADE_BARRIER|100|50)
+ END
+ 
+ IF TRIGGER
+@@ -39,6 +39,7 @@
+ END
+ 
+ IF TRIGGER
++    IgnoreBlock(IsDruid)
+ 	RequireBlock(HasL6)
+ 	!CheckStatGT(Myself,0,CLERIC_PHYSICAL_MIRROR)
+ 	GlobalTimerExpired("redefend","LOCALS")
+@@ -50,6 +51,7 @@
+ 
+ 
+ IF TRIGGER
++    IgnoreBlock(IsDruid)
+ 	RequireBlock(HasL5)
+ 	!CheckStatGT(Myself,0,CLERIC_CHAOTIC_COMMANDS)
+ 	GlobalTimerExpired("redefend","LOCALS")
+--- stratagems/priest/ssl/bg2/combatblocks/my_defences.ssl	2016-11-20 18:27:15.513552000 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/my_defences.ssl	2016-11-20 18:27:39.860132500 -0500
+@@ -11,7 +11,7 @@
+ 	GlobalTimerExpired("redefend","LOCALS")
+ 	Range(NearestEnemyOf(Myself),10)
+ THEN DO
+-	Action(SpellMyself,NPC_BLADE_BARRIER|100|50)
++	Action(SpellMyself,CLERIC_BLADE_BARRIER|100|50)
+ END
+ 
+ IF TRIGGER
+@@ -65,6 +65,7 @@
+ 
+ IF TRIGGER
+ 	RequireBlock(HasL6)
++	IgnoreBlock(IsDruid)
+ 	!CheckStatGT(Myself,0,CLERIC_PHYSICAL_MIRROR)
+ 	GlobalTimerExpired("redefend","LOCALS")
+ 	!Range(NearestEnemyOf(Myself),10)
+@@ -75,6 +76,7 @@
+ 
+ 
+ IF TRIGGER
++    IgnoreBlock(IsDruid)
+ 	RequireBlock(HasL5)
+ 	!CheckStatGT(Myself,0,CLERIC_CHAOTIC_COMMANDS)
+ 	GlobalTimerExpired("redefend","LOCALS")

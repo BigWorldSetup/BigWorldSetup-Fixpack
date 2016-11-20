@@ -1,0 +1,11 @@
+--- stratagems/fiend/ssl/demmau01.ssl	2016-11-20 18:27:15.377455900 -0500
++++ Fixpack/stratagems/fiend/ssl/demmau01.ssl	2016-11-20 18:27:39.702020000 -0500
+@@ -48,7 +48,7 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(PCsPreferringStrong)
+-	TriggerBlock(MR100|SpellTurn|Hold|SIEnchantment|Enemy|Helpless)
++	TriggerBlock(MR100|SpellTurnNew|Hold|SIEnchantment|Enemy|Helpless)
+ 	Target(NearestEnemyOf(Myself))
+ THEN DO
+ 	Combine()

@@ -1,0 +1,11 @@
+--- stratagems/priest/ssl/bg2/combatblocks/insects.ssl	2016-11-20 18:27:15.509549200 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/insects.ssl	2016-11-20 18:27:39.856129200 -0500
+@@ -7,7 +7,7 @@
+ 	TargetBlock(PCSpellcasters)
+ 	TargetBlock(PCsInOrderShort)
+ 	TargetBlock(Celestials)
+-	TriggerBlock(MR100|SIConjuration|Enemy|Helpless)
++	TriggerBlock(MR100|Enemy|Helpless)
+ 	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
+ THEN DO
+ 	Action(Spell,CLERIC_INSECT_PLAGUE|200|100)

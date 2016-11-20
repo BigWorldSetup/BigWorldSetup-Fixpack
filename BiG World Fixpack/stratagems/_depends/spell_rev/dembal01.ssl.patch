@@ -1,0 +1,47 @@
+--- stratagems/fiend/ssl/dembal01.ssl	2016-11-20 18:27:15.374453600 -0500
++++ Fixpack/stratagems/fiend/ssl/dembal01.ssl	2016-11-20 18:27:39.699019700 -0500
+@@ -86,7 +86,7 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(PCsInOrder)
+-	TriggerBlock(SpellTurn|Enemy|Helpless)
++	TriggerBlock(SpellTurn|Enemy|Helpless|SpellTurnNew)
+ 	OR(5)
+ 		CheckStatGT(scstarget,0,WIZARD_PROTECTION_FROM_MAGIC_ENERGY)
+ 		CheckStatGT(scstarget,0,SCRIPTINGSTATE2)
+@@ -110,7 +110,7 @@
+ 	!GlobalTimerNotExpired("implosion","LOCALS")
+ 	!Gender(scstarget,SUMMONED)
+ 	!Gender(scstarget,20)
+-	TriggerBlock(SpellTurn|Enemy|Helpless)
++	TriggerBlock(SpellTurnNew|Enemy|Helpless)
+ THEN DO
+ 	SetGlobalTimer("implosion","LOCALS",1000)
+ 	Action(SpellNoDec,CLERIC_IMPLOSION|100|100)
+@@ -146,7 +146,7 @@
+ 	TargetBlock(EnemiesInOrder)
+ 	!Gender(scstarget,SUMMONED)
+ 	!Gender(scstarget,20)
+-	TriggerBlock(Stun|MR|SIConjuration|Enemy|Helpless)
++	TriggerBlock(Stun|MR|Enemy|Helpless)
+ THEN DO
+ 	Combine()
+ 	Action(SpellNoDec,WIZARD_NPC_SYMBOL_STUN|100|100)
+@@ -160,7 +160,7 @@
+ 	TargetBlock(EnemiesInOrder)
+ 	!Gender(scstarget,SUMMONED)
+ 	!Gender(scstarget,20)
+-	TriggerBlock(Slay|MR|SIConjuration)
++	TriggerBlock(Slay|MR)
+ THEN DO
+ 	Combine()
+ 	Action(SpellNoDec,WIZARD_NPC_SYMBOL_DEATH|100|100)
+@@ -172,7 +172,7 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(PCsPreferringStrong)
+-	TriggerBlock(MR|Charm|SIEnchantment|SpellTurn|Enemy|Helpless)
++	TriggerBlock(MR|Charm|SIEnchantment|SpellTurnNew|Enemy|Helpless)
+ THEN DO
+ 	Combine()
+ 	Action(SpellNoDec,WIZARD_DOMINATION)

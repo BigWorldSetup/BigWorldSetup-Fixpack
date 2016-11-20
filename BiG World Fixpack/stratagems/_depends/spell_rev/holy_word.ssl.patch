@@ -1,0 +1,20 @@
+--- stratagems/priest/ssl/bg2/combatblocks/holy_word.ssl	2016-11-20 18:27:15.505546300 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/holy_word.ssl	2016-11-20 18:27:39.850125400 -0500
+@@ -8,7 +8,7 @@
+         RequireBlock(HasL7)
+ 	TargetBlock(EnemiesInOrderShort)
+ 	Range(scstarget,10)
+-	TriggerBlock(MR|Enemy|Helpless|SIConjuration)
++	TriggerBlock(MR|Enemy|Helpless)
+ 	Alignment(scstarget,MASK_GOOD)
+ 	!Alignment(Myself,MASK_GOOD)
+ THEN DO
+@@ -22,7 +22,7 @@
+         IgnoreBlock(IsEvil)
+ 	TargetBlock(EnemiesInOrderShort)
+ 	Range(scstarget,10)
+-	TriggerBlock(MR|Enemy|Helpless|SIConjuration)
++	TriggerBlock(MR|Enemy|Helpless)
+ 	Alignment(scstarget,MASK_EVIL)
+ 	!Alignment(Myself,MASK_EVIL)
+ THEN DO

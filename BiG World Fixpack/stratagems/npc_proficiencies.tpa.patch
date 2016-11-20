@@ -1,0 +1,11 @@
+--- stratagems/gameplay/npc_proficiencies.tpa	2013-11-10 16:49:43.000000000 -0500
++++ Fixpack/stratagems/gameplay/npc_proficiencies.tpa	2016-11-20 18:06:50.545286100 -0500
+@@ -47,7 +47,7 @@
+       END
+    END
+ 
+-   LAF edit_creature STR_VAR creature= ~%tutu_scriptbg%quayle %tutu_scriptbg%xan %tutu_scriptbg%xzar
++   LAF edit_creature STR_VAR creature= ~%tutu_scriptbg%quayle%eet_var% %tutu_scriptbg%xan%eet_var% %tutu_scriptbg%xzar%eet_var%
+                                                        %tutu_var%imoen %tutu_var%imoen2 %tutu_var%imoen4 %tutu_imoen6%~
+                              edits=patch_data
+    END

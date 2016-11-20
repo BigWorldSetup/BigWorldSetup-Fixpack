@@ -1,0 +1,18 @@
+--- stratagems/tactical_bg1/demoncult.tpa	2013-10-28 11:10:48.000000000 -0400
++++ Fixpack/stratagems/tactical_bg1/demoncult.tpa	2016-11-20 18:06:50.574290100 -0500
+@@ -8,13 +8,13 @@
+     LAF edit_creature STR_VAR creature=tanar tv=1 editstring=~nabassu=>null~ END
+     LAF install STR_VAR file=~dw#demvt.spl dw#dmvta.spl dw#dmvtb.spl~ location=resource locbase=fiend END
+ 
+-    ACTION_IF GAME_IS bgt BEGIN
++    ACTION_IF GAME_IS ~bgt eet~ BEGIN
+        OUTER_SPRINT tanari_gaze BGIN996
+     END ELSE BEGIN
+        OUTER_SPRINT ~tanari_gaze~ ~%TANARI_DEATH_GAZE%~
+     END
+ 
+-    LAF ssl_to_bcs STR_VAR script=tanari location=~ssl~ rename_to=~%tutu_scriptbg%tanari~ END
++    LAF ssl_to_bcs STR_VAR script=tanari location=~ssl~ rename_to=~%tutu_scriptbg%tanari%eet_var%~ END
+ 
+     // resources
+     

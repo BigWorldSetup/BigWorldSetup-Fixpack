@@ -1,0 +1,30 @@
+--- stratagems/firegiant/ssl/gorsku01.ssl	2016-11-20 18:27:15.389464000 -0500
++++ Fixpack/stratagems/firegiant/ssl/gorsku01.ssl	2016-11-20 18:27:39.727038300 -0500
+@@ -78,8 +78,7 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(EnemiesInOrder)
+-	TriggerBlock(DirectDamageSafe)
+-	TriggerBlock(MR|ResistFire|Enemy|MinorGlobe|SIEvocation)
++	TriggerBlock(MR|ResistFire|Enemy|MinorGlobe)
+ THEN DO
+ 	Combine()
+ 	Action(Psionic,DEATHKNIGHT_FIREBALL,fireball,18|200|100)
+@@ -98,8 +97,7 @@
+ IF TRIGGER
+ 	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTFIRE))
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(DirectDamageSafe)
+-	TriggerBlock(MR|Enemy|ArrowSafe|SpellTurn|Stoneskin|MinorGlobe|MirrorImage|Helpless|SIConjuration)
++	TriggerBlock(MR|Enemy|ArrowSafe|SpellTurnNew|MinorGlobe|Helpless)
+ THEN DO
+ 	Action(Psionic,WIZARD_FLAME_ARROW,flamearrow,18|150|50)
+ END
+@@ -111,7 +109,6 @@
+ IF TRIGGER
+ 	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTFIRE))
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(DirectDamageSafe)
+ 	TriggerBlock(MR|Enemy|MinorGlobe)
+ THEN DO
+ 	Action(PsionicRES,"spin539",magma,6)

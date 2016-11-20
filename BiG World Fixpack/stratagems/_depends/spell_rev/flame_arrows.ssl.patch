@@ -1,0 +1,49 @@
+--- stratagems/mage/ssl/bg2/combatblocks/flame_arrows.ssl	2016-11-20 18:27:15.420485800 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/flame_arrows.ssl	2016-11-20 18:27:39.761062400 -0500
+@@ -21,7 +21,7 @@
+ 	ConditionalTargetBlock(PCsPreferringWeak;HPPercentLT(scstarget,40))
+ 	TargetBlock(PCsPreferringWeak)
+ 	Range(scstarget,10)
+-	TriggerBlock(MR|Enemy|SpellTurn|MinorGlobe|Helpless|SINecromancy)
++	TriggerBlock(MR|Enemy|SpellTurnNew|MinorGlobe|Helpless)
+ THEN DO
+ 	Action(Spell,WIZARD_VAMPIRIC_TOUCH|100|50)
+ END
+@@ -35,8 +35,7 @@
+ 	TargetBlock(PCsPreferringWeak)
+ 	RequireBlock(HasL3)
+ 	IgnoreBlock(IsEvoker)
+-	TriggerBlock(DirectDamageSafe)
+-	TriggerBlock(MR|ResistFire|Enemy|ArrowSafe|SpellTurn|MinorGlobe|MirrorImage|Helpless|SIConjuration)
++	TriggerBlock(MR|ResistFire|Enemy|ArrowSafe|SpellTurnNew|MinorGlobe|MirrorImage|Helpless)
+ THEN DO
+ 	Action(Spell,WIZARD_FLAME_ARROW|150|50)
+ END
+@@ -46,8 +45,7 @@
+ 	TargetBlock(EnemiesInOrder)
+ 	RequireBlock(HasL3)
+ 	IgnoreBlock(IsEvoker)
+-	TriggerBlock(DirectDamageSafe)
+-	TriggerBlock(MR|ResistFire|ArrowSafe|SpellTurn|MinorGlobe|MirrorImage|Helpless|SIConjuration)
++	TriggerBlock(MR|ResistFire|ArrowSafe|SpellTurnNew|MinorGlobe|MirrorImage|Helpless)
+ THEN DO
+ 	Action(Spell,WIZARD_FLAME_ARROW|150|100)
+ END
+@@ -61,7 +59,7 @@
+         RequireBlock(Demivrgvs)
+ 	ConditionalTargetBlock(PCsPreferringWeak;HPPercentLT(scstarget,40))
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(MR|ResistElectric|Enemy|SpellTurn|MinorGlobe|MirrorImage|Helpless|SIEvocation)
++	TriggerBlock(MR|ResistElectric|Enemy|SpellTurnNew|MinorGlobe|MirrorImage|Helpless)
+ THEN DO
+ 	Action(Spell,WIZARD_LIGHTNING_BOLT|150|50)
+ END
+@@ -74,7 +72,7 @@
+         HPPercentLT(Myself,75)
+ 	ConditionalTargetBlock(PCsPreferringWeak;HPPercentLT(scstarget,40))
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(MR|Enemy|SpellTurn|MinorGlobe|MirrorImage|Helpless|SINecromancy)
++	TriggerBlock(MR|Enemy|SpellTurnNew|MinorGlobe|Helpless)
+ THEN DO
+ 	Action(Spell,WIZARD_LARLOCH_MINOR_DRAIN|150|50)
+ END

@@ -1,0 +1,20 @@
+--- stratagems/gameplay/bonus_merchant/bonus.baf	2011-03-01 14:13:44.000000000 -0500
++++ Fixpack/stratagems/gameplay/bonus_merchant/bonus.baf	2016-11-20 18:06:50.544281900 -0500
+@@ -86,7 +86,7 @@
+   Global("DMWWBonusMerchantSpawn","GLOBAL",0)
+   OR(2)
+      GlobalGT("DMWWBonusMerchant","GLOBAL",3)
+-     GlobalGT("chapter","GLOBAL",5)
++     GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+     RESPONSE #100
+         SetGlobal("DMWWBonusMerchantSpawn","GLOBAL",1)
+@@ -99,7 +99,7 @@
+ IF
+   GlobalGT("DMWWBonusMerchantSpawn","GLOBAL",0)
+   GlobalGT("DMWWBonusMerchant","GLOBAL",3)
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+     RESPONSE #100
+     	     SetGlobal("DMWWBonusMerchantSpawn","GLOBAL",3)

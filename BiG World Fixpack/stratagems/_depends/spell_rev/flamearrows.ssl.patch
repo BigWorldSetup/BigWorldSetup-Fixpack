@@ -1,0 +1,20 @@
+--- stratagems/mage/ssl/bg1/combatblocks/flamearrows.ssl	2016-11-20 18:27:15.404474500 -0500
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/flamearrows.ssl	2016-11-20 18:27:39.741047800 -0500
+@@ -4,7 +4,7 @@
+         IgnoreBlock(IsEvoker)
+ 	ConditionalTargetBlock(PCsPreferringWeak;HPPercentLT(scstarget,40))
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(MR|ResistFire|Enemy|ArrowSafe|SpellTurn|Stoneskin|MinorGlobe|MirrorImage|Helpless|SIConjuration)
++	TriggerBlock(MR|ResistFire|Enemy|ArrowSafe|SpellTurnNew|MinorGlobe|MirrorImage|Helpless)
+ THEN DO
+ 	Action(Spell,WIZARD_FLAME_ARROW|150|50)
+ END
+@@ -15,7 +15,7 @@
+         RequireBlock(Demivrgvs)
+ 	ConditionalTargetBlock(PCsPreferringWeak;HPPercentLT(scstarget,40))
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(MR|ResistElectric|Enemy|SpellTurn|MinorGlobe|MirrorImage|Helpless|SIEvocation)
++	TriggerBlock(MR|ResistElectric|Enemy|SpellTurnNew|MinorGlobe|MirrorImage|Helpless)
+ THEN DO
+ 	Action(Spell,WIZARD_LIGHTNING_BOLT|150|50)
+ END

@@ -1,0 +1,12 @@
+--- stratagems/caster_shared/clericmage/ssl/hssequencer.ssl	2016-11-20 18:27:15.332423400 -0500
++++ Fixpack/stratagems/caster_shared/clericmage/ssl/hssequencer.ssl	2016-11-20 18:27:39.668013500 -0500
+@@ -1,8 +1,7 @@
+ IF TRIGGER
+ 	ConditionalTargetBlock(PCsPreferringStrong;!CheckStatGT(scstarget,50,RESISTMAGIC))
+ 	TargetBlock(EnemiesInOrderShort)
+-	Alignment(scstarget,MASK_GOOD)
+-	TriggerBlock(MR100|SINecromancy|ResistMagicDamage|Enemy)
++	TriggerBlock(MR100|ResistMagicDamage|Enemy)
+ THEN DO
+ 	Action(Sequencer,21,CLERIC_UNHOLY_BLIGHT,CLERIC_UNHOLY_BLIGHT,CLERIC_UNHOLY_BLIGHT)
+ END

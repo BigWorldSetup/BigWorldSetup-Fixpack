@@ -1,0 +1,15 @@
+--- stratagems/fiend/ssl/demalu01.ssl	2016-11-20 18:27:15.373452700 -0500
++++ Fixpack/stratagems/fiend/ssl/demalu01.ssl	2016-11-20 18:27:39.698019200 -0500
+@@ -78,11 +78,10 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(PCsInOrder)
+-	OR(5)
++	OR(4)
+ 		CheckStatGT(scstarget,0,WIZARD_SPELL_TURNING)
+ 		CheckStatGT(scstarget,0,WIZARD_SPELL_DEFLECTION)
+ 		CheckStat(scstarget,1,WIZARD_SPELL_TRAP)
+-		CheckStatGT(scstarget,0,WIZARD_SPELL_IMMUNITY)
+ 		CheckStatGT(scstarget,0,MINORGLOBE)
+ 	TriggerBlock(Enemy|Helpless)
+ 	!GlobalGT("secretword","LOCALS",2)

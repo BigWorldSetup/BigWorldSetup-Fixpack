@@ -1,0 +1,21 @@
+--- stratagems/mage/ssl/bg2/combatblocks/kruin_special.ssl	2016-11-20 18:27:15.433495700 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/kruin_special.ssl	2016-11-20 18:27:39.777073400 -0500
+@@ -6,7 +6,7 @@
+ 	TargetBlock(EnemiesInOrder)
+ 	!Gender(scstarget,SUMMONED)
+ 	!NumCreatureGT([ENEMY.HUMANOID],1)
+-	TriggerBlock(Stun|MR100|SIConjuration|Enemy|Helpless)
++	TriggerBlock(Stun|MR100|Enemy|Helpless)
+ 	HaveSpell(2124)
+ THEN DO
+ 	Combine()
+@@ -24,8 +24,7 @@
+ 	OR(2)
+ 		!Gender(scstarget,SUMMONED)
+ 		HasItem("morsword",scstarget)
+-	TriggerBlock(ResistMagicDamage|MR|SINecromancy|Enemy)
+-	!HasItem("clck26",scstarget)
++	TriggerBlock(ResistMagicDamage|MR|Enemy)
+ 	HaveSpell(2124)
+ THEN DO
+ 	Combine()

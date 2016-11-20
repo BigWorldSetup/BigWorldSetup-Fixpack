@@ -1,0 +1,21 @@
+--- stratagems/fiend/ssl/erinyes.ssl	2016-11-20 18:27:15.385460800 -0500
++++ Fixpack/stratagems/fiend/ssl/erinyes.ssl	2016-11-20 18:27:39.719032600 -0500
+@@ -100,7 +100,7 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(PCsPreferringStrong)
+-	TriggerBlock(Enemy|Helpless|MR|SpellTurn|Charm)
++	TriggerBlock(Enemy|Helpless|MR|SpellTurnNew|Charm)
+ 	CheckStatGT(scstarget,1,SAVEVSSPELL)
+ THEN DO
+ 	Action(SpellNoDec,ERINYES_CHARM|200|100)
+@@ -112,8 +112,7 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(MR100|Enemy|Helpless|SINecromancy|MirrorImage)
+-	Alignment(scstarget,MASK_GOOD)	
++	TriggerBlock(MR100|Enemy|Helpless|MinorGlobe)
+ THEN DO
+ 	Action(SpellNoDec,CLERIC_UNHOLY_BLIGHT)
+ END

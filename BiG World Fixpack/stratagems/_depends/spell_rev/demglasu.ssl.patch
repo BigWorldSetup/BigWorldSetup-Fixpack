@@ -1,0 +1,21 @@
+--- stratagems/fiend/ssl/demglasu.ssl	2016-11-20 18:27:15.376454600 -0500
++++ Fixpack/stratagems/fiend/ssl/demglasu.ssl	2016-11-20 18:27:39.701032600 -0500
+@@ -51,7 +51,7 @@
+ 	Target([0.0.0.CLERIC_ALL])
+ 	Target([0.0.0.BARD])
+ 	Target([0.0.0.DRUID_ALL])
+-	TriggerBlock(MR|SpellTurn|Stun|Helpless|SIConjuration)
++	TriggerBlock(MR|SpellTurnNew|Stun|Helpless|SIEnchantment)
+ 	OR(3)
+ 		HPPercentLT(scstarget,60)
+ 		Class(scstarget,MAGE)
+@@ -66,8 +66,7 @@
+ 
+ IF TRIGGER
+ 	Target([ANYONE])
+-	TriggerBlock(SINecromancy)
+-	Alignment(scstarget,MASK_GOOD)	
++	TriggerBlock(Enemy)
+ THEN DO
+ 	Action(SpellNoDec,CLERIC_UNHOLY_BLIGHT|200|100)
+ END

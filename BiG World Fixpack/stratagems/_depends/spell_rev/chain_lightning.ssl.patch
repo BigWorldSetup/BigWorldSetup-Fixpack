@@ -1,0 +1,22 @@
+--- stratagems/priest/ssl/bg1/combatblocks/chain_lightning.ssl	2016-11-20 18:27:15.465518400 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chain_lightning.ssl	2016-11-20 18:27:39.812098800 -0500
+@@ -3,7 +3,7 @@
+ 	RequireBlock(IsAvenger)
+ 	IgnoreBlock(SpellsAreBG1)
+ 	TargetBlock(EnemiesInOrder)
+-	TriggerBlock(Enemy|MR|ResistElectric|SIEvocation)
++	TriggerBlock(Enemy|MR|ResistElectric)
+ THEN DO
+ 	Combine()
+ 	Action(SpellRES,"spdr601"|150|50)
+--- stratagems/priest/ssl/bg2/combatblocks/chain_lightning.ssl	2016-11-20 18:27:15.493537800 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chain_lightning.ssl	2016-11-20 18:27:39.828109800 -0500
+@@ -3,7 +3,7 @@
+ 	RequireBlock(IsAvenger)
+ 	IgnoreBlock(SpellsAreBG1)
+ 	TargetBlock(EnemiesInOrder)
+-	TriggerBlock(Enemy|MR|ResistElectric|SIEvocation)
++	TriggerBlock(Enemy|MR|ResistElectric|SpellTurnNew)
+ THEN DO
+ 	Combine()
+ 	Action(SpellRES,"spdr601"|150|50)

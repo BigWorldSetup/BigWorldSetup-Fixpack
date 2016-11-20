@@ -1,0 +1,30 @@
+--- stratagems/fiend/ssl/demglab2.ssl	2016-11-20 18:27:15.375454100 -0500
++++ Fixpack/stratagems/fiend/ssl/demglab2.ssl	2016-11-20 18:27:39.700044800 -0500
+@@ -49,7 +49,7 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(MR|SpellTurn|Stun|Enemy|Helpless|SIConjuration)
++	TriggerBlock(MR|SpellTurnNew|Stun|Enemy|Helpless|SIEnchantment)
+ 	OR(3)
+ 		HPPercentLT(scstarget,60)
+ 		Class(scstarget,MAGE)
+@@ -64,8 +64,7 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(MR100|Enemy|Helpless|SINecromancy)
+-	Alignment(scstarget,MASK_GOOD)	
++	TriggerBlock(MR100|Enemy|Helpless|ResistMagicDamage)	
+ THEN DO
+ 	Action(SpellNoDec,CLERIC_UNHOLY_BLIGHT|200|100)
+ END
+@@ -76,7 +75,7 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(EnemiesInOrder)
+-	TriggerBlock(MR100|Confused|SIEnchantment|Enemy|Helpless)
++	TriggerBlock(MR100|Confused|SIEnchantment|Enemy|Helpless|ConfuseProof)
+ THEN DO
+ 	Combine()
+ 	Action(SpellNoDec,WIZARD_CONFUSION|200|100)

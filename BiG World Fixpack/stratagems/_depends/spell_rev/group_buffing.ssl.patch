@@ -1,0 +1,34 @@
+--- stratagems/priest/ssl/bg1/combatblocks/group_buffing.ssl	2016-11-20 18:27:15.477526900 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/group_buffing.ssl	2016-11-20 18:27:39.816101700 -0500
+@@ -1,5 +1,6 @@
+ IF TRIGGER
+ 	RequireBlock(HasL4)
++	IgnoreBlock(IsDruid)
+ 	TargetBlock(VillainsInOrder)
+ 	GlobalTimerExpired("redefend","LOCALS")
+ 	NumCreatureGT([ENEMY],3)
+@@ -23,6 +24,7 @@
+ 
+ 
+ IF TRIGGER
++    IgnoreBlock(IsDruid)
+ 	TargetBlock(VillainsInOrder)
+ 	GlobalTimerExpired("redefend","LOCALS")
+ 	NumCreatureGT([ENEMY],3)
+--- stratagems/priest/ssl/bg2/combatblocks/group_buffing.ssl	2016-11-20 18:27:15.501543500 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/group_buffing.ssl	2016-11-20 18:27:39.844121500 -0500
+@@ -1,5 +1,6 @@
+ IF TRIGGER
+ 	RequireBlock(HasL4)
++	IgnoreBlock(IsDruid)
+ 	TargetBlock(VillainsInOrder)
+ 	GlobalTimerExpired("redefend","LOCALS")
+ 	NumCreatureGT([ENEMY],3)
+@@ -23,6 +24,7 @@
+ 
+ 
+ IF TRIGGER
++    IgnoreBlock(IsDruid)
+ 	TargetBlock(VillainsInOrder)
+ 	GlobalTimerExpired("redefend","LOCALS")
+ 	NumCreatureGT([ENEMY],3)

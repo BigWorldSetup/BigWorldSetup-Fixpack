@@ -1,0 +1,27 @@
+--- stratagems/ssl/library.slb	2016-11-20 18:27:15.540571400 -0500
++++ Fixpack/stratagems/ssl/library.slb	2016-11-20 18:27:39.874142400 -0500
+@@ -51,8 +51,10 @@
+ TRIGGER=SpellTurn
+ 		!CheckStatGT(scstarget,0,WIZARD_SPELL_DEFLECTION)
+ 		!CheckStatGT(scstarget,0,WIZARD_SPELL_TURNING)
+-		!CheckStatGT(scstarget,0,WIZARD_SPELL_TRAP)
++TRIGGER=SpellTurnNew
++        !CheckStatGT(scstarget,0,WIZARD_SPELL_TRAP)
+ 		!CheckStat(scstarget,1,CLERIC_SHIELD_OF_THE_ARCHONS)
++        
+ TRIGGER=BackstabSafeNew
+ 	!StateCheck(scstarget,STATE_MIRRORIMAGE)
+ 	!CheckStatGT(scstarget,0,STONESKINS)
+@@ -195,12 +197,8 @@
+ 	/* blank */
+ TRIGGER=Slay
+ 	!CheckStatGT(scstarget,0,SCRIPTINGSTATE2)
+-	!HasItemEquiped("IKKAT71A",scstarget)
+-	!HasItemEquiped("IKKAT71B",scstarget)
+ TRIGGER=Disintegrate
+ 	!CheckStatGT(scstarget,0,SCRIPTINGSTATE2)
+-	!HasItemEquiped("IKKAT71A",scstarget)
+-	!HasItemEquiped("IKKAT71B",scstarget)
+ TRIGGER=Hold
+ 	!Kit(scstarget,UNDEADHUNTER)
+ 	!Kit(scstarget,INQUISITOR)

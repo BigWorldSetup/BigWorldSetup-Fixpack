@@ -1,0 +1,26 @@
+--- stratagems/setup-stratagems.tp2	2016-11-20 18:27:15.530564300 -0500
++++ Fixpack/stratagems/setup-stratagems.tp2	2016-11-20 18:27:39.871140100 -0500
+@@ -1,6 +1,6 @@
+ BACKUP ~stratagems_external/backup/stratagems~
+ AUTHOR ~For help troubleshooting installation problems, go to the Sword Coast Stratagems forum at forums.gibberlings3.net.~
+-VERSION ~v30 BWP fix + K4thos' EET compatibility~
++VERSION ~v30 BWP fix + K4thos' EET compatibility + kreso's Spell Revisions compatibility~
+ README ~stratagems/readme-stratagems.html~
+ AUTO_EVAL_STRINGS
+ 
+@@ -180,6 +180,7 @@
+ 
+ BEGIN @13 DESIGNATED 2020 GROUP @2
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
++REQUIRE_PREDICATE !FILE_EXISTS ~override/dvimhere.mrk~ @3352 // added by kreso
+ 
+ LAF make_label STR_VAR label=dw#antimagicII END
+ 
+@@ -411,6 +412,7 @@
+ 
+ BEGIN @3392 DESIGNATED 2170 GROUP @2
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
++REQUIRE_PREDICATE !FILE_EXISTS ~override/dvimhere.mrk~ @3352 // added by kreso
+ REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
+ 
+ LAF make_label STR_VAR label=dw#truesight_blindness  END

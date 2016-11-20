@@ -1,0 +1,30 @@
+--- stratagems/priest/ssl/bg2/meleeblocks/touchattack.ssl	2016-11-20 18:27:15.526561400 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/meleeblocks/touchattack.ssl	2016-11-20 18:27:39.869138600 -0500
+@@ -1,13 +1,14 @@
+ DEFAULT TRIGGER(OR(2) HasItem("harm",Myself) HasItem("dw#harmn",Myself))
+ 
+ IF TRIGGER
+-          RequireBlock(HasL6)
++
++	IgnoreBlock(IsDruid)
++    RequireBlock(HasL6)
+ 	Target(WorstAC())
+ 	TargetBlock(PCsInOrder)
+ 	TargetBlock(EnemiesInOrderShort)
+ 	Range(scstarget,10)
+-	TriggerBlock(SpellTurn|SINecromancy|MirrorImage|MR)
+-	!CheckStat(scstarget,4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
++	TriggerBlock(Slay|MR|SpellTurnNew)
+ THEN DO
+ 	Action(Attack)
+ END
+@@ -21,8 +22,7 @@
+ 	TargetBlock(PCsInOrder)
+ 	TargetBlock(EnemiesInOrderShort)
+ 	Range(scstarget,10)
+-	TriggerBlock(SpellTurn|SINecromancy|MR|MirrorImage|Slay)
+-	!CheckStat(scstarget,4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
++	TriggerBlock(Slay)
+ THEN DO
+ 	Action(Attack)
+ END

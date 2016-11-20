@@ -1,0 +1,11 @@
+--- stratagems/priest/ssl/bg2/combatblocks/doom.ssl	2016-11-20 18:27:15.499542100 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/doom.ssl	2016-11-20 18:27:39.834114000 -0500
+@@ -3,7 +3,7 @@
+ 
+       IF TRIGGER
+          Target(Playerscsplayer)
+-         TriggerBlock(Enemy|Disabled|SpellTurn|MinorGlobe)
++         TriggerBlock(Enemy|Disabled|SpellTurnNew|MinorGlobe)
+          !GlobalTimerNotExpired("doomedscsplayer","LOCALS")
+          !GlobalTimerNotExpired("doomed","LOCALS")
+       THEN DO

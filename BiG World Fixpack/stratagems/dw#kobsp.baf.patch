@@ -1,0 +1,82 @@
+--- stratagems/kobold/resource/dw#kobsp.baf	2013-08-08 09:47:52.000000000 -0400
++++ Fixpack/stratagems/kobold/resource/dw#kobsp.baf	2016-11-20 18:06:50.551290800 -0500
+@@ -1,6 +1,6 @@
+ IF
+ 	RandomNum(3,1)
+-	Global("Chapter","GLOBAL",2)
++	Global("Chapter","GLOBAL",%tutu_chapter_2%)
+ 	Global("spawnedkobolds","LOCALS",0)
+ THEN
+ 	RESPONSE #100
+@@ -10,7 +10,7 @@
+ 
+ IF
+ 	RandomNum(3,1)
+-	Global("Chapter","GLOBAL",3)
++	Global("Chapter","GLOBAL",%tutu_chapter_3%)
+ 	Global("spawnedkobolds","LOCALS",0)
+ THEN
+ 	RESPONSE #100
+@@ -21,7 +21,7 @@
+ 
+ IF
+ 	RandomNum(3,1)
+-	GlobalGT("Chapter","GLOBAL",3)
++	GlobalGT("Chapter","GLOBAL",%tutu_chapter_3%)
+ 	Global("spawnedkobolds","LOCALS",0)
+ THEN
+ 	RESPONSE #100
+@@ -32,7 +32,7 @@
+ 
+ IF
+ 	RandomNum(3,2)
+-	Global("Chapter","GLOBAL",2)
++	Global("Chapter","GLOBAL",%tutu_chapter_2%)
+ 	Global("spawnedkobolds","LOCALS",0)
+ THEN
+ 	RESPONSE #100
+@@ -42,7 +42,7 @@
+ 
+ IF
+ 	RandomNum(3,2)
+-	Global("Chapter","GLOBAL",3)
++	Global("Chapter","GLOBAL",%tutu_chapter_3%)
+ 	Global("spawnedkobolds","LOCALS",0)
+ THEN
+ 	RESPONSE #100
+@@ -53,7 +53,7 @@
+ 
+ IF
+ 	RandomNum(3,2)
+-	GlobalGT("Chapter","GLOBAL",3)
++	GlobalGT("Chapter","GLOBAL",%tutu_chapter_3%)
+ 	Global("spawnedkobolds","LOCALS",0)
+ THEN
+ 	RESPONSE #100
+@@ -65,7 +65,7 @@
+ 
+ IF
+ 	RandomNum(3,3)
+-	Global("Chapter","GLOBAL",2)
++	Global("Chapter","GLOBAL",%tutu_chapter_2%)
+ 	Global("spawnedkobolds","LOCALS",0)
+ THEN
+ 	RESPONSE #100
+@@ -75,7 +75,7 @@
+ 
+ IF
+ 	RandomNum(3,3)
+-	Global("Chapter","GLOBAL",3)
++	Global("Chapter","GLOBAL",%tutu_chapter_3%)
+ 	Global("spawnedkobolds","LOCALS",0)
+ THEN
+ 	RESPONSE #100
+@@ -86,7 +86,7 @@
+ 
+ IF
+ 	RandomNum(3,3)
+-	GlobalGT("Chapter","GLOBAL",4)
++	GlobalGT("Chapter","GLOBAL",%tutu_chapter_4%)
+ 	Global("spawnedkobolds","LOCALS",0)
+ THEN
+ 	RESPONSE #100

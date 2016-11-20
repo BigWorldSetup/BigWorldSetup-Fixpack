@@ -1,0 +1,15 @@
+--- stratagems/ascension/ssl/finaluf.ssl	2016-11-20 18:27:15.319431200 -0500
++++ Fixpack/stratagems/ascension/ssl/finaluf.ssl	2016-11-20 18:27:39.659991000 -0500
+@@ -110,11 +110,10 @@
+ 
+ IF TRIGGER
+ 	TargetBlock(EnemiesInOrder)
+-	OR(5)
++	OR(4)
+ 		CheckStatGT(scstarget,0,WIZARD_SPELL_TURNING)
+ 		CheckStatGT(scstarget,0,WIZARD_SPELL_DEFLECTION)
+ 		CheckStat(scstarget,1,WIZARD_SPELL_TRAP)
+-		CheckStatGT(scstarget,0,WIZARD_SPELL_IMMUNITY)
+ 		CheckStatGT(scstarget,0,MINORGLOBE)
+ 	TriggerBlock(Helpless)
+ 	!GlobalGT("secretword","LOCALS",2)

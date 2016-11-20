@@ -1,0 +1,11 @@
+--- stratagems/mage/ssl/bg1/combatblocks/wand_of_frost.ssl	2016-11-20 18:27:15.411479600 -0500
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/wand_of_frost.ssl	2016-11-20 18:27:39.748052600 -0500
+@@ -6,7 +6,7 @@
+         RequireBlock(EasyOptionAvailable)
+         TriggerBlock(CorePlus)
+ 	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(Disabled|MR|ResistCold|Enemy|MirrorImage)
++	TriggerBlock(Disabled|MR|ResistCold|Enemy)
+ THEN DO
+ 	Action(Wand,"%tutu_var%wand06"|70|30)
+ END

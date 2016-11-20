@@ -1,0 +1,11 @@
+--- stratagems/fiend/ssl/cornugon.ssl	2016-11-20 18:27:15.372451800 -0500
++++ Fixpack/stratagems/fiend/ssl/cornugon.ssl	2016-11-20 18:27:39.697018300 -0500
+@@ -49,7 +49,7 @@
+ IF TRIGGER
+ 	TargetBlock(PCsInOrder)
+ 	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(Enemy|Disabled|MR100|ResistElectric|SIEvocation)
++	TriggerBlock(Enemy|Disabled|MR100|ResistElectric|SpellTurnNew)
+ THEN DO
+ 	Action(SpellNoDec,WIZARD_LIGHTNING_BOLT)
+ END

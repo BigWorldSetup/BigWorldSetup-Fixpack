@@ -1,0 +1,28 @@
+--- stratagems/priest/ssl/bg1/combatblocks/chaos_confusion.ssl	2016-11-20 18:27:15.473523600 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chaos_confusion.ssl	2016-11-20 18:27:39.813098900 -0500
+@@ -6,9 +6,8 @@
+         RequireBlock(IsAvenger)
+ 	RequireBlock(HasL5)
+ 	TargetBlock(PCsInReverseOrder)
+-	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(Confused|ConfuseProof|MR|Enemy|NotUndead)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
++	TargetBlock(EnemiesInOrder)
++	TriggerBlock(MR100|ResistCold|Enemy)
+ THEN DO
+ 	Action(SpellAreaRES,"spdr501"|200|100)
+ END
+--- stratagems/priest/ssl/bg2/combatblocks/chaos_confusion.ssl	2016-11-20 18:27:15.494538300 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chaos_confusion.ssl	2016-11-20 18:27:39.829110700 -0500
+@@ -6,9 +6,8 @@
+         RequireBlock(IsAvenger)
+ 	RequireBlock(HasL5)
+ 	TargetBlock(PCsInReverseOrder)
+-	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(Confused|ConfuseProof|MR|Enemy|NotUndead)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
++	TargetBlock(EnemiesInOrder)
++	TriggerBlock(MR100|ResistCold|Enemy)
+ THEN DO
+ 	Action(SpellAreaRES,"spdr501"|200|100)
+ END

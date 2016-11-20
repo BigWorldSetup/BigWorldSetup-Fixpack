@@ -1,0 +1,37 @@
+--- stratagems/mage/ssl/bg2/prepblocks/longprep_core.ssl	2016-11-20 18:27:15.447505200 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/longprep_core.ssl	2016-11-20 18:27:39.789081500 -0500
+@@ -138,3 +138,14 @@
+ 		Continue()
+ END
+ 
++IF
++	Global("longprep","LOCALS",0)
++	scsvar
++	RequireBlock(HasL8)
++	IgnoreBlock(HasNoPrep)
++	!HasItem("dw#nopre",Myself)
++THEN
++	RESPONSE #100
++		ReallyForceSpellRES("spwi802",Myself)
++		Continue()
++END
+--- stratagems/priest/ssl/bg1/prepblocks/longprep_core.ssl	2016-11-20 18:27:15.490535900 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/prepblocks/longprep_core.ssl	2016-11-20 18:27:39.826107900 -0500
+@@ -38,6 +38,7 @@
+    HaveSpell(CLERIC_CHAOTIC_COMMANDS)
+    RequireBlock(HasL5)
+    IgnoreBlock(SpellsAreBG1)
++   IgnoreBlock(IsDruid)
+ THEN 
+      RESPONSE #100
+               ApplySpellRES("%CLERIC_CHAOTIC_COMMANDS%",Myself)
+--- stratagems/priest/ssl/bg2/prepblocks/longprep_core.ssl	2016-11-20 18:27:15.528562400 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/prepblocks/longprep_core.ssl	2016-11-20 18:27:39.870139200 -0500
+@@ -43,6 +43,7 @@
+ IF TRIGGER
+    Global("longprep","LOCALS",0)
+    RequireBlock(HasL5)
++   IgnoreBlock(IsDruid)
+ THEN DO
+      Action(SpellPrecast,CLERIC_CHAOTIC_COMMANDS)
+ END
