@@ -1,11 +1,11 @@
-// BiG World Fixpack Create Patches Script
+// BiG World Fixpack Create Patches WeiDU Script
 //
 // To use this script:
-//   1. Copy this tp2 file to your game folder and make a copy of WeiDU.exe named Setup-CreatePatches.exe
-//   2. In your game directory, create a new folder called BWP_Fixpack_Prepatch/
+//   1. Put this tp2 file where your "final" (after-patch) files are located (e.g., your game folder)
+//   2. In your after-patch folder / game directory, create a new folder called BWP_Fixpack_Prepatch/
 //   3. Unpack into that folder the original files of any mods for which you want to generate patches
-//   4. On Windows, also copy into that folder the Fixpack's '_diffgawk' subfolder (contains diff.exe, gawk.exe, libiconv2.dll, libintl3.dll)
-//   5. Run Setup-CreatePatches.exe in your game directory
+//   4. On Windows, also copy Fixpack's '_utils\_diffgawk' subfolder (contains diff.exe, gawk.exe, libiconv2.dll, libintl3.dll) into that folder
+//   5. Either make a copy of WeiDU.exe named Setup-CreatePatches.exe and run it, or run the _CreatePatches.bat script
 //
 // You can re-run this script as many times as you want.  It will not leave a record in the WeiDU.log.
 //
@@ -28,18 +28,18 @@
 BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v0.2~
+VERSION ~v0.3~
 
 ALWAYS
 	OUTER_SPRINT PREPATCH ~BWP_Fixpack_Prepatch~
-	OUTER_SPRINT ALREADY_PROCESSED_FILE ~%PREPATCH%/AlreadyProcessed.txt~
+	OUTER_SPRINT ALREADY_PROCESSED_LIST ~%PREPATCH%/_AlreadyProcessed.txt~
 
 	// platform specific syntax and utilities
 	ACTION_IF (~%WEIDU_OS%~ STR_EQ ~win32~) THEN BEGIN
-		OUTER_TEXT_SPRINT DIFF_CMD ~%PREPATCH%\diffgawk\diff.exe -u --strip-trailing-cr --ignore-file-name-case~
-		OUTER_TEXT_SPRINT GAWK_CMD ~%PREPATCH%\diffgawk\gawk.exe~
-		ACTION_IF (NOT FILE_EXISTS ~%PREPATCH%\diffgawk\diff.exe~ OR NOT FILE_EXISTS ~%PREPATCH%\diffgawk\gawk.exe~) THEN BEGIN
-			FAIL ~Copy the 'diffgawk' folder from Fixpack _utils to %PREPATCH%/ before running this script~
+		OUTER_TEXT_SPRINT DIFF_CMD ~%PREPATCH%\_diffgawk\diff.exe -u --strip-trailing-cr --ignore-file-name-case~
+		OUTER_TEXT_SPRINT GAWK_CMD ~%PREPATCH%\_diffgawk\gawk.exe~
+		ACTION_IF (NOT FILE_EXISTS ~%PREPATCH%\_diffgawk\diff.exe~ OR NOT FILE_EXISTS ~%PREPATCH%\_diffgawk\gawk.exe~) THEN BEGIN
+			FAIL ~Copy the '_diffgawk' subfolder from Fixpack's _utils subfolder to %PREPATCH%/ before running this script~
 		END
 	END ELSE BEGIN // Linux/OSX
 		OUTER_TEXT_SPRINT DIFF_CMD ~diff -u --strip-trailing-cr --ignore-file-name-case~
@@ -62,17 +62,17 @@ ALWAYS
 				ACTION_IF (~%folder%~ STRING_CONTAINS_REGEXP ~ ~ == 0) THEN BEGIN // skip directories with spaces
 					PRINT ~Skipping "%folder%" because it contains spaces...~
 					OUTER_SET skip = 1
-				END ELSE ACTION_IF (FILE_CONTAINS_EVALUATED (~%ALREADY_PROCESSED_FILE%~ ~Processed '%mod_folder%'~)) THEN BEGIN
+				END ELSE ACTION_IF (FILE_CONTAINS_EVALUATED (~%ALREADY_PROCESSED_LIST%~ ~Processed '%mod_folder%'~)) THEN BEGIN
 					PRINT ~@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ %WNL%~ ^ // %WNL% = Windows New Line, ^ = concatenate with next
 					      ~Do you want to re-generate patches for "%mod_folder%"? %WNL%~ ^
 						  ~Enter Y if yes, anything else to skip. %WNL%~ ^
 						  ~@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@~
 					ACTION_READLN answer
 					ACTION_IF NOT (~%answer%~ STR_EQ ~y~) THEN BEGIN // STR_EQ matches 'y' or 'Y'
-						PRINT ~Skipping "%mod_folder%" because it is in %ALREADY_PROCESSED_FILE%...~
+						PRINT ~Skipping "%mod_folder%" because it is in %ALREADY_PROCESSED_LIST%...~
 						OUTER_SET skip = 1
 					END
-				END ELSE ACTION_FOR_EACH reserved IN ~data~ ~lang~ ~Manuals~ ~movies~ ~mpsave~ ~music~ ~override~ ~save~ ~scripts~ ~%PREPATCH%~ ~diffgawk~ ~BWFIX~ BEGIN
+				END ELSE ACTION_FOR_EACH reserved IN ~data~ ~lang~ ~Manuals~ ~movies~ ~mpsave~ ~music~ ~override~ ~save~ ~scripts~ ~%PREPATCH%~ ~_diffgawk~ ~BWFIX~ BEGIN
 					ACTION_IF (~%reserved%~ STR_EQ ~%mod_folder%~) THEN BEGIN // skip reserved folder names
 						//PRINT ~Skipping "%mod_folder%" because the name is reserved...~
 						OUTER_SET skip = 1
@@ -173,7 +173,7 @@ ALWAYS
 					DELETE + ~%tmp_patch%~ // delete combined patch file after splitting
 					DELETE + ~%tmp_patch%.bak~ // delete combined patch file after splitting
 					
-					APPEND_OUTER + ~%ALREADY_PROCESSED_FILE%~ ~Processed '%mod_folder%'~ UNLESS ~Processed '%mod_folder%'~
+					APPEND_OUTER + ~%ALREADY_PROCESSED_LIST%~ ~Processed '%mod_folder%'~ UNLESS ~Processed '%mod_folder%'~
 				END // processing mod folder
 			END
 		END
@@ -194,10 +194,10 @@ END
 <<<<<<<< .../BWP_Fixpack-inlined/empty_file
 >>>>>>>>
 
-ACTION_IF (NOT FILE_EXISTS ~%ALREADY_PROCESSED_FILE%~) THEN BEGIN
-	COPY ~.../BWP_Fixpack-inlined/empty_file~ ~%ALREADY_PROCESSED_FILE%~
+ACTION_IF (NOT FILE_EXISTS ~%ALREADY_PROCESSED_LIST%~) THEN BEGIN
+	COPY ~.../BWP_Fixpack-inlined/empty_file~ ~%ALREADY_PROCESSED_LIST%~
 END
 
 LAUNCH_ACTION_FUNCTION ~process_mod_folders~ END // for each "original" mod folder in %PREPATCH%/, if there is an identically named mod folder in ./,
                                                  //   generate patches in %PREPATCH%/BWFIX/mod_folder/
-                                                 // be careful, don't create a %PREPATCH%/override/ or %PREPATCH%/data/!
+                                                 // be careful, don't create a %PREPATCH%/override/ or %PREPATCH%/data/
