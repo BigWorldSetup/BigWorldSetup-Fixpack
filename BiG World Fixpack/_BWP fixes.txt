@@ -1458,7 +1458,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: imoenromance - Imoen Romance v3.8
+:: imoenrom - Imoen Romance v1.202 (last Lord Mirrabbo version, not the new ImoenRomance)
 
 :: White Agnus' compatibility fix for BGT
 :: - LINK NOT FOUND -
