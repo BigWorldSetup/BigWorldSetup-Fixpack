@@ -14,7 +14,7 @@
     
 -   ADD_JOURNAL EXISTING @314 @315 @316
 +   ADD_JOURNAL EXISTING @314 @315 @316 USING ~%scsroot%/tra/%eetra%english/player1.tra~
-+											 ~%scsroot%/tra/%eetra%%s/player1.tra~
++											  ~%scsroot%/tra/%eetra%%s/player1.tra~
  END
  
  // rudimentary scripting shift to make enemy-summoned Planetars and Devas avoid healing the party

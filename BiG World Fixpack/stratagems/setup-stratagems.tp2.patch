@@ -30,7 +30,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE !FILE_EXISTS ~override/dvimhere.mrk~ @3352
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#spellstrikevsPM END
  
@@ -39,7 +39,7 @@
  REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dvimhere.mrk~ @3352
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#harm1 END
  
@@ -48,7 +48,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE !FILE_EXISTS ~tobex.dll~ @16045
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  
  LAF make_label STR_VAR label=dw#spellimm END
@@ -58,7 +58,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
 -REQUIRE_PREDICATE !GAME_IS bg2ee @15999
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
 +REQUIRE_PREDICATE !GAME_IS ~bg2ee eet~ @15999
  
  
@@ -68,7 +68,7 @@
  REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dvimhere.mrk~ @3352
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#blades END
  
@@ -77,7 +77,7 @@
  REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dvimhere.mrk~ @3352
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#skulltrap END
  
@@ -86,7 +86,7 @@
  REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dvimhere.mrk~ @3352
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#PWblind END
  
@@ -95,7 +95,7 @@
  REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dvimhere.mrk~ @3352
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#meteor END
  
@@ -104,7 +104,7 @@
  REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dvimhere.mrk~ @3352
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#mantle  END
  
@@ -113,7 +113,7 @@
  BEGIN @3387 DESIGNATED 2160 GROUP @2
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  
  LAF make_label STR_VAR label=dw#extra_scrolls  END
@@ -122,7 +122,7 @@
  BEGIN @3392 DESIGNATED 2170 GROUP @2
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#truesight_blindness  END
  
@@ -131,7 +131,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE !FILE_EXISTS ~override/dvimhere.mrk~ @3352
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#clone_slots  END
  
@@ -140,7 +140,7 @@
  BEGIN @16003 DESIGNATED 3000 GROUP @3
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE (GAME_IS ~tutu tutu_totsc bgee~) @16002
-+REQUIRE_PREDICATE (GAME_IS ~tutu tutu_totsc bgee sod~) @16002
++REQUIRE_PREDICATE (GAME_IS ~tutu tutu_totsc bgee~) @16002
  
  LAF make_label STR_VAR label=dw#elemental_arrows  END
  
@@ -149,7 +149,7 @@
  
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~bgt tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~bgt eet tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~bgt eet tutu tutu_totsc bgee~ @16000
  REQUIRE_PREDICATE !(MOD_IS_INSTALLED ~item_rev/item_rev.tp2~ 0) @3376
  
  
@@ -158,7 +158,7 @@
  BEGIN @20073 DESIGNATED 3021 GROUP @3 SUBCOMPONENT @36 // no-shatter
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE GAME_IS ~bgt tutu tutu_totsc bgee~ @16001
-+REQUIRE_PREDICATE GAME_IS ~bgt eet tutu tutu_totsc bgee sod~ @16001
++REQUIRE_PREDICATE GAME_IS ~bgt eet tutu tutu_totsc bgee~ @16001
  REQUIRE_PREDICATE !(MOD_IS_INSTALLED ~item_rev/item_rev.tp2~ 0) @3376
  
  LAF make_label STR_VAR label=dw#fine_weapons_no_shatter  END
@@ -167,7 +167,7 @@
  BEGIN @20008 DESIGNATED 3030 GROUP @3 // BG2 only
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc~  || FILE_EXISTS_IN_GAME ~dorn.cre~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#extra_healing  END
  
@@ -176,7 +176,7 @@
  REQUIRE_PREDICATE (MOD_IS_INSTALLED ~item_rev/item_rev.tp2~ 0)=0 @3377
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#balduran END
  
@@ -185,7 +185,7 @@
  REQUIRE_PREDICATE (MOD_IS_INSTALLED ~item_rev/item_rev.tp2~ 0)=0 @3376
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#magistaff END
  
@@ -194,7 +194,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE (MOD_IS_INSTALLED ~item_rev/item_rev.tp2~ 0)=0 @3376
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#vhailor END
  
@@ -203,7 +203,7 @@
  REQUIRE_PREDICATE (MOD_IS_INSTALLED ~item_rev/item_rev.tp2~ 0)=0 @3376
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#mirror END
  
@@ -212,7 +212,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE (MOD_IS_INSTALLED ~item_rev/item_rev.tp2~ 0)=0 @3376
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#vecna END
  
@@ -221,7 +221,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE (MOD_IS_INSTALLED ~item_rev/item_rev.tp2~ 0)=0 @3376
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#resurrectrod END
  
@@ -230,7 +230,7 @@
  REQUIRE_PREDICATE (MOD_IS_INSTALLED ~item_rev/item_rev.tp2~ 0)=0 @3376
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#carsomyr END
  
@@ -239,7 +239,7 @@
  BEGIN @24118 DESIGNATED 4020 GROUP @4
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#wolves END
  
@@ -249,8 +249,8 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
 -REQUIRE_PREDICATE !GAME_IS bgee ~This component isn't quite ready for BG:EE yet~
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
-+REQUIRE_PREDICATE !GAME_IS ~bgee sod eet~ ~This component isn't quite ready for BG:EE or EET yet~
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
++REQUIRE_PREDICATE !GAME_IS ~bgee eet~ ~This component isn't quite ready for BG:EE or EET yet~
  
  LAF make_label STR_VAR label=dw#npc_profs END
  
@@ -259,7 +259,7 @@
  BEGIN @20011 DESIGNATED 4110 GROUP @4
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#npc_profs END
  
@@ -268,7 +268,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE !FILE_EXISTS ~override/X#WaitAtInn.G3~ @20066
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#npc_profs END
  
@@ -277,7 +277,7 @@
  BEGIN @20016 DESIGNATED 4130 GROUP @4
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  
  LAF make_label STR_VAR label=dw#npc_start_loc END
@@ -286,7 +286,7 @@
  BEGIN @20014 DESIGNATED 4140 GROUP @4
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#yeslick_axe END
  
@@ -295,7 +295,7 @@
  BEGIN @16029 DESIGNATED 4145  GROUP @4  SUBCOMPONENT  @16028
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#candleskip END
  
@@ -304,7 +304,7 @@
  BEGIN @3372 DESIGNATED 4150 GROUP @4
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#licenseextension END
  
@@ -313,7 +313,7 @@
  BEGIN @3367  DESIGNATED 4160 GROUP @4 SUBCOMPONENT @3366
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#licensecost END
  
@@ -322,7 +322,7 @@
  BEGIN @42 DESIGNATED 4170 GROUP @4 SUBCOMPONENT @41
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  LAF make_label STR_VAR label=dw#spellholdcost END
  
  OUTER_SPRINT component_loc gameplay
@@ -331,7 +331,7 @@
  BEGIN @196 DESIGNATED 4180 GROUP @4
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#freedomscroll END
  
@@ -341,7 +341,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
 -REQUIRE_PREDICATE !GAME_IS bg2ee @15999
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
 +REQUIRE_PREDICATE !GAME_IS ~bg2ee eet~ @15999
  REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dw#hellloot.mrk~ @219
  
@@ -352,7 +352,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
 -REQUIRE_PREDICATE !GAME_IS bg2ee @15999
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
 +REQUIRE_PREDICATE !GAME_IS ~bg2ee eet~ @15999
  
  LAF make_label STR_VAR label=dw#hellloot END
@@ -362,7 +362,7 @@
  BEGIN @3365 DESIGNATED 4210 GROUP @4
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#maze END
  
@@ -371,7 +371,7 @@
  BEGIN @47 DESIGNATED 4215 GROUP @4
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  LAF make_label STR_VAR label=dw#nochimp END
  
  OUTER_SPRINT component_loc gameplay
@@ -380,7 +380,7 @@
  BEGIN @3321 DESIGNATED 4216 SUBCOMPONENT @48 GROUP @4
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#noammo END
  
@@ -389,7 +389,7 @@
  BEGIN @3373 DESIGNATED 4230 GROUP @4
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#bonus END
  
@@ -398,7 +398,7 @@
  BEGIN @3397 DESIGNATED 4240 GROUP @4
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#hla_innate END
  
@@ -407,7 +407,7 @@
  BEGIN @50 DESIGNATED 5030 GROUP @5
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#mirrorcloak END
  
@@ -416,7 +416,7 @@
  BEGIN @20007 DESIGNATED 5050  GROUP @5
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#ankhegstack END
  
@@ -425,7 +425,7 @@
  /// --- /// DEFAULT_SKIP
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#protectshar END
  
@@ -434,7 +434,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#genai.mrk~ @3350
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  
  LAF make_label STR_VAR label=dw#hla END
@@ -443,7 +443,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#genai.mrk~ @3350
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#dryad END
  
@@ -452,7 +452,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#genai.mrk~ @3350
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#carrion END
  
@@ -461,7 +461,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#genai.mrk~ @3350
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#basilisk END
  
@@ -470,7 +470,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#genai.mrk~ @3350
 -REQUIRE_PREDICATE !(GAME_IS ~tutu tutu_totsc bgee~) @16000
-+REQUIRE_PREDICATE !(GAME_IS ~tutu tutu_totsc bgee sod~) @16000
++REQUIRE_PREDICATE !(GAME_IS ~tutu tutu_totsc bgee~) @16000
  
  LAF make_label STR_VAR label=dw#golem END
  
@@ -479,7 +479,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#fiend END
  
@@ -488,7 +488,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#genie END
  
@@ -497,7 +497,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#celestial END
  
@@ -506,7 +506,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#dragon END
  
@@ -515,7 +515,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#beholder END
  
@@ -524,7 +524,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#flayer END
  
@@ -533,7 +533,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#genai.mrk~ @3350
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#githyanki END
  
@@ -542,7 +542,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#vampire END
  
@@ -551,7 +551,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#melissan END
  
@@ -560,7 +560,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~illas01.itm~ @3309
  
  
@@ -569,7 +569,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~jumjum.bcs~ || FILE_EXISTS_IN_GAME ~fingrom.cre~) @3313
  
  
@@ -578,7 +578,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~yagaft.bcs~ || FILE_EXISTS_IN_GAME finyaga.cre) @3310
  
  
@@ -587,7 +587,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~abazdg02.cre~ || FILE_EXISTS_IN_GAME ~finabaz.cre~) @3314
  
  
@@ -596,7 +596,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~fingrom.cre~ @3314
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#mage.mrk~ @16046
  
@@ -605,7 +605,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @16000 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dorn.cre~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~fingrom.cre~ @3314
  
  
@@ -614,7 +614,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#doppelganger END
  
@@ -623,7 +623,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#blacktalon END
  
@@ -632,7 +632,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#c3assassin END
  
@@ -641,7 +641,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#kobold END
  
@@ -650,7 +650,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#ogreassassin END
  
@@ -659,7 +659,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#ulcaster END
  
@@ -668,7 +668,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#werewolf END
  
@@ -677,7 +677,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#durlag END
  
@@ -686,7 +686,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#demoncult END
  
@@ -695,7 +695,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#priest.mrk~ @16047
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#druid END
  
@@ -704,7 +704,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#bassilus END
  
@@ -713,7 +713,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#drasus END
  
@@ -722,7 +722,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#mage.mrk~ @16046
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#redwizard END
  
@@ -731,7 +731,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#c7throne END
  
@@ -740,7 +740,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#c2end END
  
@@ -749,7 +749,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#c3end END
  
@@ -758,7 +758,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#c4end END
  
@@ -767,7 +767,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#c5end END
  
@@ -776,7 +776,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#c7end END
  
@@ -785,7 +785,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE (GAME_IS ~bgt tutu tutu_totsc bgee~) @16001
-+REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee sod~) @16001
++REQUIRE_PREDICATE (GAME_IS ~bgt eet tutu tutu_totsc bgee~) @16001
  
  LAF make_label STR_VAR label=dw#bg1minor END
  
@@ -794,7 +794,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#startingdungeon END
  
@@ -803,7 +803,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#shadelord END
  
@@ -812,7 +812,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#mage.mrk~ @16046
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#demilich END
  
@@ -821,7 +821,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#resilienttrolls END
  
@@ -830,7 +830,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#spawns END
  
@@ -839,7 +839,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
  
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#random END
  
@@ -848,7 +848,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#darnise END
  
@@ -857,7 +857,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#beholder.mrk~ @3399
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#unseeing END
  
@@ -866,7 +866,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#vampire.mrk~ @16049
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#bodhi END
  
@@ -875,7 +875,7 @@
  BEGIN @181 DESIGNATED 8090 GROUP @16041
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#spellholditems END
  
@@ -884,7 +884,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#spellholdirenicus END
  
@@ -893,7 +893,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#sahuagin END
  
@@ -902,7 +902,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#beholderhive END
  
@@ -911,7 +911,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#illithidrest END
  
@@ -920,7 +920,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#drow END
  
@@ -929,7 +929,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#wk END
  
@@ -938,7 +938,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#firegiant END
  
@@ -947,7 +947,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#sendai END
  OUTER_SPRINT component_loc sendai
@@ -956,7 +956,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#abazigal END
  
@@ -965,7 +965,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#AIsetup.mrk~ @16025
 -REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee sod~ @16000
++REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  LAF make_label STR_VAR label=dw#bg2minor END
  

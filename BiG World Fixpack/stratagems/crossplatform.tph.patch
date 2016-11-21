@@ -3,7 +3,7 @@
 @@ -1,9 +1,9 @@
  
 -  ACTION_IF GAME_IS BGEE BEGIN
-+  ACTION_IF GAME_IS ~bgee sod~ BEGIN
++  ACTION_IF GAME_IS ~bgee~ BEGIN
  
  
      /* tp2, d, and baf parsing variables based on conversion */

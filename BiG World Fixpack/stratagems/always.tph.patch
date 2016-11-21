@@ -9,7 +9,7 @@
  ////////////////////////////////////////////////////////
  
 -  ACTION_IF GAME_IS "bgee bg2ee" BEGIN
-+  ACTION_IF GAME_IS ~bgee sod bg2ee eet~ BEGIN
++  ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
      LOAD_TRA ~%scsroot%/tra/ee/english/english.tra~
      LOAD_TRA ~%scsroot%/tra/ee/%LANGUAGE%/%LANGUAGE%.tra~
 +	OUTER_SPRINT eetra ~ee/~
@@ -23,7 +23,7 @@
  ///////////////////////////////////////////////////
  
 -ACTION_IF GAME_IS BGEE BEGIN
-+ACTION_IF GAME_IS ~bgee sod~ BEGIN
++ACTION_IF GAME_IS ~bgee~ BEGIN
     OUTER_SPRINT trigger_string 25101
     OUTER_SPRINT minor_sequencer_string 26469
     OUTER_SPRINT sequencer_string 24618
