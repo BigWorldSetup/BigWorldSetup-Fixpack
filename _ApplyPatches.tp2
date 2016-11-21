@@ -45,10 +45,10 @@
 // The script can be run multiple times; it will record in the BWP_Fixpack.installed
 // file the mod folders that it has patched, and will skip those folders when re-run
 
-BACKUP ~BWP_Fixpack_tmp/backup~ // not the same folder as the one containing Fixpack patches
+BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v1.3~
+VERSION ~v1.4~
 
 ALWAYS
 	// special folders and marker file
@@ -76,6 +76,7 @@ ALWAYS
 		OUTER_TEXT_SPRINT os_quote ~"~
 		OUTER_TEXT_SPRINT DISPLAY_FILE_CMD ~type~
 		OUTER_TEXT_SPRINT PATCH_CMD ~%FIXPACK%\_utils\patch.exe -p0 -f --verbose --no-backup-if-mismatch --ignore-whitespace~
+		OUTER_TEXT_SPRINT TEE_CMD ~%FIXPACK%\_utils\tee.exe -a "_ApplyPatches_verbose.log"~
 	END ELSE BEGIN
 		AT_NOW ~mv 'BiG World Fixpack' '%FIXPACK%'~ // rename Fixpack folder to remove spaces (packaged folder name has spaces for backwards compatibility)
 		AT_EXIT ~mv '%FIXPACK%' 'BiG World Fixpack'~ // restore Fixpack folder name
@@ -83,6 +84,7 @@ ALWAYS
 		OUTER_TEXT_SPRINT os_quote ~'~
 		OUTER_TEXT_SPRINT DISPLAY_FILE_CMD ~cat~
 		OUTER_TEXT_SPRINT PATCH_CMD ~patch -p0 -f --verbose --no-backup-if-mismatch --ignore-whitespace~
+		OUTER_TEXT_SPRINT TEE_CMD ~tee -a '_ApplyPatches_verbose.log'~
 	END
 
 	// last special folder
@@ -160,8 +162,8 @@ ALWAYS
 					END
 					ACTION_IF (skip == 0) THEN BEGIN
 						LAF ~process_fixpack_subfolder~ STR_VAR target_folder = EVAL ~%mod_folder%~ source_folder = EVAL ~%fixpack_subfolder%~ END
-						LAF ~process_nested_subfolders~ INT_VAR if_present = 1 STR_VAR dir_with_subdirs = EVAL ~%fixpack_subfolder%/%DEPENDS_DIR%~ END
-						LAF ~process_nested_subfolders~ INT_VAR if_present = 0 STR_VAR dir_with_subdirs = EVAL ~%fixpack_subfolder%/%DEPENDS_NOT_DIR%~ END
+						LAF ~process_nested_subfolders~ INT_VAR if_present = 1 STR_VAR dir_with_subdirs = EVAL ~%fixpack_subfolder%/%DEPENDS_DIR%~ original_target_folder = EVAL ~%mod_folder%~ END
+						LAF ~process_nested_subfolders~ INT_VAR if_present = 0 STR_VAR dir_with_subdirs = EVAL ~%fixpack_subfolder%/%DEPENDS_NOT_DIR%~ original_target_folder = EVAL ~%mod_folder%~ END
 						APPEND_OUTER + ~%INSTALL_MARKER%~ ~Processed '%mod_folder%'~ UNLESS EVAL ~Processed '%mod_folder%'~
 					END
 				END
@@ -174,6 +176,7 @@ ALWAYS
 			if_present = 1
 		STR_VAR
 			dir_with_subdirs = ~~
+			original_target_folder = ~~
 	BEGIN
 		ACTION_IF (DIRECTORY_EXISTS ~%dir_with_subdirs%~) THEN BEGIN
 			GET_DIRECTORY_ARRAY EVAL ~subfolder_array_%dir_with_subdirs%~ ~%dir_with_subdirs%~ ~^.*$~ // subdirs inside this directory
@@ -186,7 +189,11 @@ ALWAYS
 							mod_folder = file
 					END
 					ACTION_IF (DIRECTORY_EXISTS ~%mod_folder%~ == %if_present%) THEN BEGIN // a mod folder matching the dependency subdir was (not?) found
-						LAF ~process_fixpack_subfolder~ STR_VAR target_folder = EVAL ~%mod_folder%~ source_folder = EVAL ~%dir_with_subdirs%/%mod_folder%~ END
+						LAF ~process_fixpack_subfolder~
+							STR_VAR
+								target_folder = EVAL ~%original_target_folder%~
+								source_folder = EVAL ~%dir_with_subdirs%/%mod_folder%~
+						END
 					END
 				END
 			END
@@ -271,8 +278,8 @@ ALWAYS
 		// apply patches
 		GET_FILE_ARRAY EVAL ~patchfiles_array_%source_folder%~ ~%source_folder%~ ~%PATCH_FILES%~
 		ACTION_PHP_EACH ~patchfiles_array_%source_folder%~ AS ind => file BEGIN
-			PRINT "! %PATCH_CMD% < %os_quote%%file%%os_quote%"
-			AT_NOW ~%PATCH_CMD% < %os_quote%%file%%os_quote%~
+			PRINT "! %PATCH_CMD% < %os_quote%%file%%os_quote% | %TEE_CMD%"
+			AT_NOW ~%PATCH_CMD% < %os_quote%%file%%os_quote% | %TEE_CMD%~
 		END
 	END
 
