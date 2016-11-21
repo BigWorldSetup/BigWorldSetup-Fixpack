@@ -2692,6 +2692,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: khelben's modified initialization scripts for Ascension (added USING to the ADD_JOURNAL)
 :: http://www.shsforums.net/topic/56670-big-world-setup-an-attempt-to-update-the-program/?p=584335
 
+:: Incorporated K4thos' EET compatibility patches for SCS v30 ... these patches will always be applied, as they do not interfere with installation on other game types
+:: http://gibberlings3.net/forums/index.php?showtopic=28293
+
+:: Incorporated Kreso's Revised SCS in patch form ... these patches are additive to K4thos' EET compatibility and will only be applied when spell_rev folder (Demivrvgs's Spell Revisions) exists in game directory 
+:: http://gibberlings3.net/forums/index.php?showtopic=28249&page=1
+
+:: subtledoctor's SCS hotfixes are fully covered as well
+:: https://forums.beamdog.com/discussion/60969/scs-with-hotfixes-get-it-here/p2
+
 
 ----------------------------------------------------------------------------------------
 
