@@ -2701,6 +2701,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: subtledoctor's SCS hotfixes are fully covered as well
 :: https://forums.beamdog.com/discussion/60969/scs-with-hotfixes-get-it-here/p2
 
+:: Bartek's Polish translation for v29, updated for v30 by Etamin
+:: http://gibberlings3.net/forums/index.php?showtopic=25059&p=248377
+
 
 ----------------------------------------------------------------------------------------
 
