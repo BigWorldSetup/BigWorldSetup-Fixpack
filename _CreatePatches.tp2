@@ -28,7 +28,7 @@
 BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v0.3~
+VERSION ~v0.4~
 
 ALWAYS
 	OUTER_SPRINT PREPATCH ~BWP_Fixpack_Prepatch~
@@ -122,7 +122,7 @@ ALWAYS
 							READ_2DA_ENTRY i 0 4 only
 							READ_2DA_ENTRY i 1 4 in
 							READ_2DA_ENTRY i 2 4 path
-							READ_2DA_ENTRY i 3 4 filename
+							READ_2DA_ENTRY i 3 4 filename // will only get first part of file names containing spaces
 							INNER_ACTION BEGIN
 								ACTION_IF (~%only%~ STR_EQ ~Only~ AND ~%in%~ STR_EQ ~in~ AND ~%path%~ STRING_CONTAINS_REGEXP ~backup:$~) THEN // ignore backup folder
 								BEGIN
@@ -142,13 +142,17 @@ ALWAYS
 										END
 										ACTION_IF (NOT FILE_EXISTS ~%PREPATCH%/%mod_folder%%relpath%/%filename%~)
 										BEGIN  // if version in %PREPATCH% folder doesn't have file -> _copy (relpath will be blank or have leading slash)
-											ACTION_IF (NOT DIRECTORY_EXISTS ~%output_dir%/_copy%relpath%~) THEN BEGIN
-												//PRINT "MKDIR ~%output_dir%/_copy%relpath%~"
-												MKDIR ~%output_dir%/_copy%relpath%~
+											ACTION_IF (NOT FILE_EXISTS ~%mod_folder%%relpath%/%filename%~) THEN BEGIN // will be true for file names containing spaces
+												PRINT ~WARNING:  Unable to copy a file whose path starts with "%mod_folder%%relpath%/%filename%" because it contains spaces in the filename.  It should be copied to "%output_dir%/_copy%relpath%"...~
+											END ELSE BEGIN
+												ACTION_IF (NOT DIRECTORY_EXISTS ~%output_dir%/_copy%relpath%~) THEN BEGIN // create output folder if needed
+													//PRINT "MKDIR ~%output_dir%/_copy%relpath%~"
+													MKDIR ~%output_dir%/_copy%relpath%~
+												END
+												PRINT ~Copying "%mod_folder%%relpath%/%filename%" to "%output_dir%/_copy%relpath%"~
+												COPY_LARGE + ~%mod_folder%%relpath%/%filename%~ ~%output_dir%/_copy%relpath%~
 											END
-											PRINT ~Copying "%mod_folder%%relpath%/%filename%" to "%output_dir%/_copy%relpath%"~
-											COPY + ~%mod_folder%%relpath%/%filename%~ ~%output_dir%/_copy%relpath%~
-										END ELSE
+										END ELSE // file does exist in %PREPATCH% mod folder
 										BEGIN  // if version in game folder doesn't have file -> _delete (relpath will be blank or no leading slash)
 											OUTER_PATCH_SAVE delpath ~%relpath%/~ BEGIN // add trailing slash
 												REPLACE_TEXTUALLY ~^\/~ ~~ // if was empty string, return to empty string (remove slash just added)
