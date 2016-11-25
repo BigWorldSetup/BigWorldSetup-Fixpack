@@ -4,8 +4,16 @@
  BACKUP ~alora\backup~
  AUTHOR ~"http://chosenofmystra.com"~
  
+-VERSION ~1.5~
++VERSION ~1.5 BWP Fix~ // EE version
+ 
+ AUTO_TRA ~alora\%s~
+@@ -8,7 +8,7 @@
+ BACKUP ~alora\backup~
+ AUTHOR ~"http://chosenofmystra.com"~
+ 
 -VERSION ~1.3~
-+VERSION ~1.5 BWP Fix~
++VERSION ~1.3 BWP Fix~ // non-EE version
  
  AUTO_TRA ~alora\%s~
  
