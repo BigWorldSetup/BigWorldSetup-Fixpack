@@ -65,6 +65,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: atweaks - aTweaks v4.50b1
+
+:: Added Polish translation by Kinski, Bartek and Cahir
+:: http://www.shsforums.net/topic/59018-atweaks-v450-polish-translation/?p=591288
+
+
+----------------------------------------------------------------------------------------
+
+
 :: AbyStore - The Unusual Oddities Shop v3.0
 
 :: Lollorian's GLOBAL fixes

@@ -1,0 +1,20 @@
+--- atweaks/setup-atweaks.tp2	Mon Aug 24 11:12:25 2015
++++ Fixpack/atweaks/setup-atweaks.tp2	Fri Nov 25 13:48:07 2016
+@@ -8,7 +8,7 @@
+ 
+ BACKUP ~atweaks/backup~
+ AUTHOR "Wisp, shsforums.net"                                                       // Author and e-mail address
+-VERSION ~v4.50b1~                                                                    // Mod version
++VERSION ~v4.50b1 BWP Fix~                                                          // Mod version
+ ALWAYS                                                                             // Always do this block
+   INCLUDE ~aTweaks/LIB/RR#AGLEF.TPH~                                               // Include my custom "Add Global Effect" function
+   INCLUDE ~aTweaks/LIB/RR#SP2IN.TPH~                                               // Include my custom "Spell to Innate" function
+@@ -57,6 +57,8 @@
+ LANGUAGE ~Russian (by the Aerie.ru team and the Arcanecoast.ru team)~ ~RUSSIAN~ ~atweaks/tra/english/setup.tra~ ~atweaks/tra/english/game.tra~
+                                                                                 ~atweaks/tra/russian/game.tra~
+ 
++LANGUAGE ~Polish (by Kinski, Bartek and Cahir)~ ~POLISH~ ~atweaks/tra/english/setup.tra~ ~atweaks/tra/english/game.tra~
++                                                         ~atweaks/tra/polish/setup.tra~ ~atweaks/tra/polish/game.tra~
+ 
+ 
+ // ******************************************************* PnP tweaks *************************************************************************************
