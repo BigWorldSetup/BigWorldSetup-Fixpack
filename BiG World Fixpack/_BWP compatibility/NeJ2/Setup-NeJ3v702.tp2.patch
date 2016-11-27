@@ -208,7 +208,7 @@
  TT0079	value~
  
 -COPY ~NeJ2/are/AR0700.are~           ~override/AR0700.are~
-+COPY_EXISTING ~AR0700.are~ override
++COPY_EXISTING ~AR0700.are~ ~override~
 +  LPF fj_are_structure
 +    INT_VAR
 +      fj_type           = 0

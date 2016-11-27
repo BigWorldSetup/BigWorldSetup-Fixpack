@@ -24,24 +24,35 @@
 //
 // The script will ignore mod folders that have spaces in the name, and will ask you about mods that have been processed by the script on previous runs.
 
-BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
+BACKUP ~_ORIGINALS/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v0.5~
+VERSION ~v0.6~
 
 ALWAYS
 	OUTER_SPRINT PREPATCH ~_ORIGINALS~
-	OUTER_SPRINT ALREADY_PROCESSED_LIST ~%PREPATCH%/_AlreadyProcessed.txt~
+	OUTER_SPRINT ALREADY_PROCESSED_LIST ~%PREPATCH%/_PATCHES/_AlreadyProcessed.txt~
+
+	PRINT ~...................................... %WNL%~ ^ // %WNL% = Windows New Line, ^ = concatenate with next
+		  ~.Do you want to patch whitespace too?. %WNL%~ ^
+		  ~.Enter Y if yes, anything else for no. %WNL%~ ^
+		  ~......................................~
+	ACTION_READLN answer
+	ACTION_IF (~%answer%~ STR_EQ ~y~) THEN BEGIN // STR_EQ matches 'y' or 'Y'
+		OUTER_SPRINT whitespace_option ~~ // DON'T ignore whitespace
+	END ELSE BEGIN // answered no => ignore all changes that are only whitespace
+		OUTER_SPRINT whitespace_option ~--ignore-all-space --ignore-blank-lines~
+	END
 
 	// platform specific syntax and utilities
 	ACTION_IF (~%WEIDU_OS%~ STR_EQ ~win32~) THEN BEGIN
-		OUTER_TEXT_SPRINT DIFF_CMD ~%PREPATCH%\_diffgawk\diff.exe -u --strip-trailing-cr --ignore-file-name-case~
+		OUTER_TEXT_SPRINT DIFF_CMD ~%PREPATCH%\_diffgawk\diff.exe -u --strip-trailing-cr --ignore-file-name-case %whitespace_option%~
 		OUTER_TEXT_SPRINT GAWK_CMD ~%PREPATCH%\_diffgawk\gawk.exe~
 		ACTION_IF (NOT FILE_EXISTS ~%PREPATCH%\_diffgawk\diff.exe~ OR NOT FILE_EXISTS ~%PREPATCH%\_diffgawk\gawk.exe~) THEN BEGIN
 			FAIL ~Copy the '_diffgawk' subfolder from Fixpack's _utils subfolder to %PREPATCH%/ before running this script~
 		END
 	END ELSE BEGIN // Linux/OSX
-		OUTER_TEXT_SPRINT DIFF_CMD ~diff -u --strip-trailing-cr --ignore-file-name-case~
+		OUTER_TEXT_SPRINT DIFF_CMD ~diff -u --strip-trailing-cr --ignore-file-name-case %whitespace_option%~
 		OUTER_TEXT_SPRINT GAWK_CMD ~gawk~
 	END
 	
