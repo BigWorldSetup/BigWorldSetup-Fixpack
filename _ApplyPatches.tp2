@@ -48,7 +48,7 @@
 BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v1.4~
+VERSION ~v1.5~
 
 ALWAYS
 	// special folders and marker file
@@ -221,7 +221,8 @@ ALWAYS
 					MKDIR ~%copy_target_folder%~ // if the target folder doesn't exist, create it 
 				END
 			END
-			LAF ~recursive_deep_copy~ STR_VAR current_dir = EVAL ~%source_folder%/%COPY_DIR%~ target_dir = EVAL ~%copy_target_folder%~ END
+			LAF ~recursive_deep_copy~ INT_VAR second_pass = 0 STR_VAR current_dir = EVAL ~%source_folder%/%COPY_DIR%~ target_dir = EVAL ~%copy_target_folder%~ END
+			LAF ~recursive_deep_copy~ INT_VAR second_pass = 1 STR_VAR current_dir = EVAL ~%source_folder%/%COPY_DIR%~ target_dir = EVAL ~%copy_target_folder%~ END
 		END
 
 		ACTION_IF (FILE_EXISTS ~%source_folder%/%DEL_FILE%~) THEN BEGIN
@@ -234,10 +235,10 @@ ALWAYS
 						READ_2DA_ENTRY i 0 1 file_to_delete
 						INNER_ACTION BEGIN
 							PRINT "- DELETE ~%target_folder%/%file_to_delete%~"
-							ACTION_IF (FILE_EXISTS ~%target_folder%/%file_to_delete%~) THEN BEGIN
+							ACTION_IF (DIRECTORY_EXISTS ~%target_folder%/%file_to_delete%~ OR FILE_EXISTS ~%target_folder%/%file_to_delete%~) THEN BEGIN
 								DELETE ~%target_folder%/%file_to_delete%~
 							END ELSE BEGIN
-								PRINT ~File to delete not found. Skipping.~
+								PRINT ~No file or folder at deletion path. Skipping deletion.~
 							END
 						END
 					END
@@ -284,19 +285,30 @@ ALWAYS
 	END
 
 	DEFINE_ACTION_FUNCTION ~recursive_deep_copy~ // will skip empty directories
+		INT_VAR
+			second_pass = 0
 		STR_VAR
 			current_dir = ~~
 			target_dir = ~~
 	BEGIN
+		//PRINT ~... RDC %second_pass% %current_dir% >>> %target_dir% ...~
+		
 		OUTER_TEXT_SPRINT file_arr ~%current_dir%_files~
 		OUTER_TEXT_SPRINT folder_arr ~%current_dir%_folders~
-
-		GET_FILE_ARRAY EVAL ~%file_arr%~ ~%current_dir%~ ~^.*$~
-		GET_DIRECTORY_ARRAY EVAL ~%folder_arr%~ ~%current_dir%~ ~^.*$~
-
-		ACTION_PHP_EACH ~%file_arr%~ AS ind => file_full_path BEGIN
-			PRINT "+ COPY_LARGE ~%file_full_path%~ ~%target_dir%~"
-			COPY_LARGE ~%file_full_path%~ ~%target_dir%~
+		
+		ACTION_IF (NOT DIRECTORY_EXISTS ~%target_dir%~) THEN BEGIN
+			//PRINT "+ MKDIR ~%target_dir%~"
+			MKDIR ~%target_dir%~
+		END
+		
+		GET_FILE_ARRAY EVAL ~%file_arr%~ ~%current_dir%~ ~^.+$~
+		GET_DIRECTORY_ARRAY EVAL ~%folder_arr%~ ~%current_dir%~ ~^.+$~
+		
+		ACTION_IF (second_pass == 1) THEN BEGIN
+			ACTION_PHP_EACH ~%file_arr%~ AS ind => file_full_path BEGIN
+				//PRINT "+ COPY_LARGE ~%file_full_path%~ ~%target_dir%~"
+				COPY_LARGE ~%file_full_path%~ ~%target_dir%~
+			END
 		END
 
 		ACTION_PHP_EACH ~%folder_arr%~ AS ind => subdir_full_path BEGIN
@@ -307,11 +319,13 @@ ALWAYS
 					RET
 						folder_name = file
 				END
+				
 				ACTION_IF (NOT DIRECTORY_EXISTS ~%target_dir%/%folder_name%~) THEN BEGIN
-					PRINT "+ MKDIR ~%target_dir%/%folder_name%~"
+					//PRINT "++ MKDIR ~%target_dir%/%folder_name%~"
 					MKDIR ~%target_dir%/%folder_name%~
 				END
-				LAF ~recursive_deep_copy~ STR_VAR current_dir = EVAL ~%subdir_full_path%~ target_dir = EVAL ~%target_dir%/%folder_name%~ END
+				
+				LAF ~recursive_deep_copy~ INT_VAR second_pass = second_pass STR_VAR current_dir = EVAL ~%subdir_full_path%~ target_dir = EVAL ~%target_dir%/%folder_name%~ END
 			END
 		END
 	END
