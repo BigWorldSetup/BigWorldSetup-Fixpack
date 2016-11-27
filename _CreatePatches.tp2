@@ -2,36 +2,35 @@
 //
 // To use this script:
 //   1. Put this tp2 file where your "final" (after-patch) files are located (e.g., your game folder)
-//   2. In your after-patch folder / game directory, create a new folder called BWP_Fixpack_Prepatch/
+//   2. In your after-patch folder / game directory, create a new folder called _ORIGINALS/
 //   3. Unpack into that folder the original files of any mods for which you want to generate patches
-//   4. On Windows, also copy Fixpack's '_utils\_diffgawk' subfolder (contains diff.exe, gawk.exe, libiconv2.dll, libintl3.dll) into that folder
+//   4. On Windows, copy Fixpack's '_utils\_diffgawk' subfolder (contains diff.exe, gawk.exe, libiconv2.dll, libintl3.dll) into that folder
 //   5. Either make a copy of WeiDU.exe named Setup-CreatePatches.exe and run it, or run the _CreatePatches.bat script
 //
 // You can re-run this script as many times as you want.  It will not leave a record in the WeiDU.log.
 //
-// For each folder name found in BWP_Fixpack_Prepatch/, if there is a matching folder name in your game directory, this script will
-// generate patches in BWP_Fixpack_Prepatch/BWFIX/[mod_folder] that reflect any changes necessary to convert BWP_Fixpack_Prepatch/[mod_folder]
-// to match your game_directory/[mod_folder]: i.e., the version in your game directory is the desired result of patching the one in BWP_Fixpack_Prepatch/
+// For each folder name found in _ORIGINALS/, if there is a matching folder name in your game directory, this script will generate
+// patches in _ORIGINALS/_PATCHES/[mod_folder] that reflect any changes necessary to convert _ORIGINALS/[mod_folder] to match your
+// game_directory/[mod_folder]: i.e., the version in your game directory is the desired result of patching the one in _ORIGINALS/
 //
 // The script will also look for a setup-[mod_folder].tp2 or [mod_folder].tp2 file in your game folder, and if found, will look for a tp2 file
-// with the same name in BWP_Fixpack_Prepatch/.  If there is a match, the script will create a patch for the tp2 file in BWP_Fixpack_Prepatch/BWFIX/
-// (note: the tp2 patch will be outside the BWP_Fixpack_Prepatch/BWFIX/[mod_folder] in this case).
+// with the same name in _ORIGINALS/.  If there is a match, the script will create a patch for the tp2 file in _ORIGINALS/_PATCHES/[mod_folder].
 //
-//     If a tp2 is found in your game directory but you forgot to provide the original tp2 in BWP_Fixpack_Prepatch/, this script will stop with an error
+//     If a tp2 is found in your game directory but you forgot to provide the original tp2 in _ORIGINALS/, this script will stop with an error
+//
+// The script WILL also compare tp2 files that are in both the game folder and in _ORIGINALS/ and whose mod_folder is different from the tp2
+//     (e.g., Setup-RoT.tp2 vs. RoTerror folder).  But it will not warn you if you forget to provide either the original or modified tp2, and
+//     the resulting patches will be placed directly in _ORIGINALS/_PATCHES (instead of _ORIGINALS/PATCHES/[mod_folder] like all other patches).
 //
 // The script will ignore mod folders that have spaces in the name, and will ask you about mods that have been processed by the script on previous runs.
-//
-// The script will NOT compare tp2 files in the game folder whose mod_folder is different from the tp2 (e.g., Setup-RoT.tp2 vs. RoTerror folder)
-//     As a workaround, temporarily rename the tp2 file to be the same as the folder name, then manually correct the path in the generated tp2 patch file
-//     It is better to rename the tp2, not the mod folder itself, because any patch files generated will have the wrong path; one file to fix vs. many
 
 BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v0.4~
+VERSION ~v0.5~
 
 ALWAYS
-	OUTER_SPRINT PREPATCH ~BWP_Fixpack_Prepatch~
+	OUTER_SPRINT PREPATCH ~_ORIGINALS~
 	OUTER_SPRINT ALREADY_PROCESSED_LIST ~%PREPATCH%/_AlreadyProcessed.txt~
 
 	// platform specific syntax and utilities
@@ -72,7 +71,7 @@ ALWAYS
 						PRINT ~Skipping "%mod_folder%" because it is in %ALREADY_PROCESSED_LIST%...~
 						OUTER_SET skip = 1
 					END
-				END ELSE ACTION_FOR_EACH reserved IN ~data~ ~lang~ ~Manuals~ ~movies~ ~mpsave~ ~music~ ~override~ ~save~ ~scripts~ ~%PREPATCH%~ ~_diffgawk~ ~BWFIX~ BEGIN
+				END ELSE ACTION_FOR_EACH reserved IN ~_diffgawk~ ~backup~ ~_PATCHES~ ~%PREPATCH%~ ~data~ ~lang~ ~Manuals~ ~movies~ ~mpsave~ ~music~ ~override~ ~save~ ~scripts~ BEGIN
 					ACTION_IF (~%reserved%~ STR_EQ ~%mod_folder%~) THEN BEGIN // skip reserved folder names
 						//PRINT ~Skipping "%mod_folder%" because the name is reserved...~
 						OUTER_SET skip = 1
@@ -80,7 +79,7 @@ ALWAYS
 				END
 				
 				ACTION_IF (NOT skip AND DIRECTORY_EXISTS ~%mod_folder%~) THEN BEGIN
-					OUTER_SPRINT ~output_dir~ ~%PREPATCH%/BWFIX/%mod_folder%~
+					OUTER_SPRINT ~output_dir~ ~%PREPATCH%/_PATCHES/%mod_folder%~
 					OUTER_SPRINT ~tmp_patch~ ~%output_dir%/combined.patch~
 					
 					ACTION_IF (DIRECTORY_EXISTS ~%output_dir%~) THEN BEGIN
@@ -96,12 +95,15 @@ ALWAYS
 					ACTION_FOR_EACH tp2_file IN ~%mod_folder%.tp2~ ~setup-%mod_folder%.tp2~ BEGIN
 						ACTION_IF (FILE_EXISTS ~%tp2_file%~) THEN BEGIN // if it is in the game folder...
 							ACTION_IF (FILE_EXISTS ~%PREPATCH%/%tp2_file%~) THEN BEGIN // and also in the %PREPATCH% folder...
-								//PRINT "AT_NOW ~%DIFF_CMD% %PREPATCH%/%tp2_file% %tp2_file% > %PREPATCH%/BWFIX/%tp2_file%.patch~"
-								AT_NOW ~%DIFF_CMD% %PREPATCH%/%tp2_file% %tp2_file% > %PREPATCH%/BWFIX/%tp2_file%.patch~ // compare old version (in %PREPATCH%) to version in game folder
+								//PRINT "AT_NOW ~%DIFF_CMD% %PREPATCH%/%tp2_file% %tp2_file% > %PREPATCH%/_PATCHES/%tp2_file%.patch~"
+								AT_NOW ~%DIFF_CMD% %PREPATCH%/%tp2_file% %tp2_file% > %PREPATCH%/_PATCHES/%tp2_file%.patch~ EXACT // compare old version (in %PREPATCH%) to version in game folder
 								
-								ACTION_IF (FILE_SIZE ~%PREPATCH%/BWFIX/%tp2_file%.patch~ 0) THEN BEGIN
-									DELETE + ~%PREPATCH%/BWFIX/%tp2_file%.patch~ // delete empty patch - no difference in tp2 files
+								ACTION_IF (SIZE_OF_FILE ~%PREPATCH%/_PATCHES/%tp2_file%.patch~) THEN BEGIN // if no difference, patch file will be zero bytes
+									COPY + ~%PREPATCH%/_PATCHES/%tp2_file%.patch~ ~%output_dir%~ // there were differences, move patch to _PATCHES/mod_folder/
+										REPLACE_TEXTUALLY   ~^--- %PREPATCH%\/~    ~--- ~         // standardize --- path in patch
+										REPLACE_TEXTUALLY   ~^\+\+\+ ~             ~+++ Fixpack/~ // standardize +++ path in patch
 								END
+								DELETE + ~%PREPATCH%/_PATCHES/%tp2_file%.patch~ // delete original patch (either zero bytes and skipped or an edited copy was made)
 							END ELSE BEGIN
 								FAIL ~%tp2_file% found in game folder but not in %PREPATCH% folder~
 							END
@@ -110,7 +112,7 @@ ALWAYS
 
 					// generate remaining patches recursively (-r) and save to temporary file (one file containing all patches)
 					//PRINT "AT_NOW ~%DIFF_CMD% -r %PREPATCH%/%mod_folder% %mod_folder% > %tmp_patch%~"
-					AT_NOW ~%DIFF_CMD% -r %PREPATCH%/%mod_folder% %mod_folder% > %tmp_patch%~ // compare old version (in %PREPATCH%) to version in game folder
+					AT_NOW ~%DIFF_CMD% -r %PREPATCH%/%mod_folder% %mod_folder% > %tmp_patch%~ EXACT // compare old version (in %PREPATCH%) to version in game folder
 
 					MOVE + ~%tmp_patch%~ ~%tmp_patch%.bak~ // need to rename so we can overwrite
 					COPY + ~%tmp_patch%.bak~ ~%tmp_patch%~ // read and modify combined patch file
@@ -158,7 +160,7 @@ ALWAYS
 												REPLACE_TEXTUALLY ~^\/~ ~~ // if was empty string, return to empty string (remove slash just added)
 											END
 											ACTION_IF (NOT FILE_EXISTS ~%output_dir%/_delete~) THEN BEGIN
-												COPY ~.../BWP_Fixpack-inlined/empty_file~ ~%output_dir%/_delete~ // create _delete file from inlined empty file
+												COPY ~.../_ORIGINALS-inlined/empty_file~ ~%output_dir%/_delete~ // create _delete file from inlined empty file
 											END
 											PRINT ~Appending "%delpath%%filename%" to "%output_dir%/_delete"~
 											APPEND_OUTER + ~%output_dir%/_delete~ ~%delpath%%filename%~
@@ -170,7 +172,7 @@ ALWAYS
 					
 					PRINT ~Writing patches for any files inside the mod directory that are different...~
 					// splitting combined patch file into individual patch files
-					AT_NOW ~%GAWK_CMD% "/^(-|\+| |@)/ { if ( match($0, /^--- (.+\/)?([^\t]+)/, m) ) { f = \"%PREPATCH%/BWFIX/%mod_folder%/\" m[2] \".patch\" ; print f } ; print $0 > f }" %tmp_patch%~ EXACT
+					AT_NOW ~%GAWK_CMD% "/^(-|\+| |@)/ { if ( match($0, /^--- (.+\/)?([^\t]+)/, m) ) { f = \"%PREPATCH%/_PATCHES/%mod_folder%/\" m[2] \".patch\" ; print f } ; print $0 > f }" %tmp_patch%~ EXACT
 					// ^--- (.+\/)? captures leading path, if any, and ([^\t]+) captures the filename, without slashes or path, as match group 2
 					// example 1:  --- Angelo/Dialogue/ADAng25J.d	2008-05-13 02:59:02.000000000 -0400
 					// example 2:  --- Setup-Angelo.tp2	2008-05-13 02:59:02.000000000 -0400
@@ -191,17 +193,36 @@ ACTION_IF (NOT DIRECTORY_EXISTS ~%PREPATCH%~) THEN BEGIN
 	FAIL ~%PREPATCH% folder created.  Unpack pre-patch mod folders and setup-tp2 files into that folder before running this script!~
 END
 
-ACTION_IF (NOT DIRECTORY_EXISTS ~%PREPATCH%/BWFIX~) THEN BEGIN
-	MKDIR ~%PREPATCH%/BWFIX~ // output folder for patches
+ACTION_IF (NOT DIRECTORY_EXISTS ~%PREPATCH%/_PATCHES~) THEN BEGIN
+	MKDIR ~%PREPATCH%/_PATCHES~ // output folder for patches
 END
 
-<<<<<<<< .../BWP_Fixpack-inlined/empty_file
+<<<<<<<< .../_ORIGINALS-inlined/empty_file
 >>>>>>>>
 
 ACTION_IF (NOT FILE_EXISTS ~%ALREADY_PROCESSED_LIST%~) THEN BEGIN
-	COPY ~.../BWP_Fixpack-inlined/empty_file~ ~%ALREADY_PROCESSED_LIST%~
+	COPY ~.../_ORIGINALS-inlined/empty_file~ ~%ALREADY_PROCESSED_LIST%~
 END
 
 LAUNCH_ACTION_FUNCTION ~process_mod_folders~ END // for each "original" mod folder in %PREPATCH%/, if there is an identically named mod folder in ./,
-                                                 //   generate patches in %PREPATCH%/BWFIX/mod_folder/
+                                                 //   generate patches in %PREPATCH%/_PATCHES/mod_folder/
                                                  // be careful, don't create a %PREPATCH%/override/ or %PREPATCH%/data/
+
+// special special case - create patches for tp2 files that are in the prepatch folder and in the game folder whose name does not match any mod folder
+ACTION_BASH_FOR ~%PREPATCH%~ ~^.*\.tp2$~ BEGIN // for each tp2 file in the prepatch folder ...
+	ACTION_IF (FILE_EXISTS ~%BASH_FOR_FILE%~) THEN BEGIN // if it is also in the game folder...
+		OUTER_PATCH_SAVE nosetup_tp2name ~%BASH_FOR_RES%~ BEGIN REPLACE_TEXTUALLY ~^[sS][eE][tT][uU][pP][-]~ ~~ END // strip "setup-" from tp2 name
+		ACTION_IF (NOT DIRECTORY_EXISTS ~%nosetup_tp2name%~) THEN BEGIN // and its name does not match a mod folder (so we didn't process it earlier)...
+			//PRINT "AT_NOW ~%DIFF_CMD% %PREPATCH%/%BASH_FOR_FILE% %BASH_FOR_FILE% > %PREPATCH%/%BASH_FOR_FILE%.patch~"
+			AT_NOW ~%DIFF_CMD% %PREPATCH%/%BASH_FOR_FILE% %BASH_FOR_FILE% > %PREPATCH%/%BASH_FOR_FILE%.patch~ EXACT // compare old version (in %PREPATCH%) to version in game folder
+			
+			ACTION_IF (SIZE_OF_FILE ~%PREPATCH%/%BASH_FOR_FILE%.patch~) THEN BEGIN // if no difference, patch file will be zero bytes
+				PRINT ~## Found a modified tp2 that doesn't have the same name as any folder!  Creating %BASH_FOR_FILE%.patch in %PREPATCH%/_PATCHES...~
+				COPY + ~%PREPATCH%/%BASH_FOR_FILE%.patch~ ~%PREPATCH%/_PATCHES~ // we don't know exactly which mod folder it is ... move to _PATCHES/ 
+					REPLACE_TEXTUALLY   ~^--- %PREPATCH%\/~    ~--- ~         // standardize --- path in patch
+					REPLACE_TEXTUALLY   ~^\+\+\+ ~             ~+++ Fixpack/~ // standardize +++ path in patch
+			END
+			DELETE + ~%PREPATCH%/%BASH_FOR_FILE%.patch~ // delete original patch (either zero bytes and skipped or an edited copy was made)
+		END
+	END
+END
