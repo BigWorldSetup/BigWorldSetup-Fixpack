@@ -1,0 +1,156 @@
+--- ajantisbg2/dialogues/c#ajanj_pid.d	2014-01-30 22:18:24.000000000 -0500
++++ Fixpack/ajantisbg2/dialogues/c#ajanj_pid.d	2016-11-04 14:55:56.979713800 -0400
+@@ -340,12 +340,12 @@
+ !StateCheck("C#ajantis",STATE_BLIND)
+ !StateCheck("C#ajantis",STATE_POISONED)~ + @18 + how_04 
+ 
+-+ ~Global("Chapter","GLOBAL",2)~ + @19 + C#Advice1
+-+ ~Global("Chapter","GLOBAL",3)~ + @19 + C#Advice2
+-+ ~Global("Chapter","GLOBAL",4)~ + @19 + C#Advice3
+-+ ~Global("Chapter","GLOBAL",5)~ + @19 + C#Advice4
+-+ ~Global("Chapter","GLOBAL",6)~ + @19 + C#Advice5
+-+ ~Global("Chapter","GLOBAL",7)~ + @19 + C#Advice6
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_2%)~ + @19 + C#Advice1
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_3%)~ + @19 + C#Advice2
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_4%)~ + @19 + C#Advice3
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_5%)~ + @19 + C#Advice4
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_6%)~ + @19 + C#Advice5
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_7%)~ + @19 + C#Advice6
+ 
+ + ~Alignment(Player1,MASK_GOOD) Alignment(Player2,MASK_GOOD) Alignment(Player3,MASK_GOOD) Alignment(Player4,MASK_GOOD) Alignment(Player5,MASK_GOOD) Alignment(Player6,MASK_GOOD)~ + @20 + C#AreYouContent1
+ + ~Alignment(Player1,MASK_GOOD) OR(5) !Alignment(Player2,MASK_GOOD) !Alignment(Player3,MASK_GOOD) !Alignment(Player4,MASK_GOOD) !Alignment(Player5,MASK_GOOD) !Alignment(Player6,MASK_GOOD)~ + @20 + C#AreYouContent2
+@@ -813,12 +813,12 @@
+ !StateCheck("C#ajantis",STATE_BLIND)
+ !StateCheck("C#ajantis",STATE_POISONED)~ + @18 + how_04
+ 
+-+ ~Global("Chapter","GLOBAL",2)~ + @19 + C#Advice1
+-+ ~Global("Chapter","GLOBAL",3)~ + @19 + C#Advice2
+-+ ~Global("Chapter","GLOBAL",4)~ + @19 + C#Advice3
+-+ ~Global("Chapter","GLOBAL",5)~ + @19 + C#Advice4
+-+ ~Global("Chapter","GLOBAL",6)~ + @19 + C#Advice5
+-+ ~Global("Chapter","GLOBAL",7)~ + @19 + C#Advice6
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_2%)~ + @19 + C#Advice1
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_3%)~ + @19 + C#Advice2
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_4%)~ + @19 + C#Advice3
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_5%)~ + @19 + C#Advice4
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_6%)~ + @19 + C#Advice5
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_7%)~ + @19 + C#Advice6
+ 
+ + ~Alignment(Player1,MASK_GOOD) Alignment(Player2,MASK_GOOD) Alignment(Player3,MASK_GOOD) Alignment(Player4,MASK_GOOD) Alignment(Player5,MASK_GOOD) Alignment(Player6,MASK_GOOD)~ + @20 + C#AreYouContent1
+ + ~Alignment(Player1,MASK_GOOD) OR(5) !Alignment(Player2,MASK_GOOD) !Alignment(Player3,MASK_GOOD) !Alignment(Player4,MASK_GOOD) !Alignment(Player5,MASK_GOOD) !Alignment(Player6,MASK_GOOD)~ + @20 + C#AreYouContent2
+@@ -2300,14 +2300,14 @@
+ SAY @16 
+ ++ @204 + PID_rom_thinking_01
+ ++ @205 + PID_rom_thinking_02
+-//+ ~GlobalGT("Chapter","GLOBAL",5)~ + ~Was beschäftigt Euch, Ajantis? Bitte, teilt Euch mir mit.~ + thinking_PID_ ## coden, so dass die beiden "thinking"-Dialoge direkt aufgerufen werden können.
++//+ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)~ + ~Was beschäftigt Euch, Ajantis? Bitte, teilt Euch mir mit.~ + thinking_PID_ ## coden, so dass die beiden "thinking"-Dialoge direkt aufgerufen werden können.
+ 
+-+ ~GlobalLT("Chapter","GLOBAL",6) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4) Global("C#AjantisVerlLoesenPID","GLOBAL",0)~ + @206 DO ~SetGlobal("C#AjantisVerlLoesenPID","GLOBAL",1)~ + PID_rom_thinking_03
+-+ ~GlobalGT("Chapter","GLOBAL",5) ReputationGT(Player1,15)
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4) Global("C#AjantisVerlLoesenPID","GLOBAL",0)~ + @206 DO ~SetGlobal("C#AjantisVerlLoesenPID","GLOBAL",1)~ + PID_rom_thinking_03
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) ReputationGT(Player1,15)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5) Global("C#AjantisVerlLoesenPID","GLOBAL",0)~ + @206 DO ~SetGlobal("C#AjantisVerlLoesenPID","GLOBAL",1)~ + PID_rom_thinking_03
+-+ ~GlobalLT("Chapter","GLOBAL",6) 
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) 
+ OR(2) ReputationLT(Player1,12) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3) Global("C#AjantisVerlLoesenPID","GLOBAL",0)~ + @206 DO ~SetGlobal("C#AjantisVerlLoesenPID","GLOBAL",1)~ + PID_rom_thinking_04
+-+ ~GlobalGT("Chapter","GLOBAL",5) 
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) 
+ OR(2) ReputationLT(Player1,16)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4) Global("C#AjantisVerlLoesenPID","GLOBAL",0)~ + @206 DO ~SetGlobal("C#AjantisVerlLoesenPID","GLOBAL",1)~ + PID_rom_thinking_04
+ ++ @207 + PID_rom_thinking_05
+@@ -2537,19 +2537,19 @@
+ HasItem("C#AJCHBE","C#Ajantis")~ + @18 + how_engaged_drow
+ 
+ + ~GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",1)~ + @257 + C#AjantisPID1.17_drow
+-+ ~GlobalLT("Chapter","GLOBAL",6) 
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) 
+ ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",0)~ + @257 + C#AjantisPID1.18
+-+ ~GlobalGT("Chapter","GLOBAL",5) 
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) 
+ ReputationGT(Player1,15)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",0)~ + @257 + C#AjantisPID1.18
+-+ ~GlobalLT("Chapter","GLOBAL",6) 
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) 
+ OR(2) 
+ ReputationLT(Player1,12) 
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",0)~ + @257 + C#AjantisPID1.19
+-+ ~GlobalGT("Chapter","GLOBAL",5) 
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) 
+ OR(2) 
+ ReputationLT(Player1,16)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4) 
+@@ -2875,19 +2875,19 @@
+ !StateCheck("C#ajantis",STATE_POISONED)~ + @18 + how_engaged_hell
+ 
+ + ~GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",1)~ + @257 + C#AjantisPID1.17
+-+ ~GlobalLT("Chapter","GLOBAL",6) 
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) 
+ ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",0)~ + @257 + C#AjantisPID1.18
+-+ ~GlobalGT("Chapter","GLOBAL",5) 
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) 
+ ReputationGT(Player1,15)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",0)~ + @257 + C#AjantisPID1.18
+-+ ~GlobalLT("Chapter","GLOBAL",6) 
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) 
+ OR(2) 
+ ReputationLT(Player1,12) 
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",0)~ + @257 + C#AjantisPID1.19
+-+ ~GlobalGT("Chapter","GLOBAL",5) 
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) 
+ OR(2) 
+ ReputationLT(Player1,16)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4) 
+@@ -3346,19 +3346,19 @@
+ 
+ 
+ + ~GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",1)~ + @257 + C#AjantisPID1.17
+-+ ~GlobalLT("Chapter","GLOBAL",6) 
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) 
+ ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",0)~ + @257 + C#AjantisPID1.18
+-+ ~GlobalGT("Chapter","GLOBAL",5) 
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) 
+ ReputationGT(Player1,15)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",0)~ + @257 + C#AjantisPID1.18
+-+ ~GlobalLT("Chapter","GLOBAL",6) 
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) 
+ OR(2) 
+ ReputationLT(Player1,12) 
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",0)~ + @257 + C#AjantisPID1.19
+-+ ~GlobalGT("Chapter","GLOBAL",5) 
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) 
+ OR(2) 
+ ReputationLT(Player1,16)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4) 
+@@ -3369,19 +3369,19 @@
+ + ~RandomNum(3,3)~ + @317 + reunition_03
+ 
+ + ~GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",1)~ + @318 + C#AjantisPID1.20
+-+ ~GlobalLT("Chapter","GLOBAL",6) 
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) 
+ ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",0)~ + @318 + C#AjantisPID1.21
+-+ ~GlobalGT("Chapter","GLOBAL",5) 
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) 
+ ReputationGT(Player1,15)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",0)~ + @318 + C#AjantisPID1.21
+-+ ~GlobalLT("Chapter","GLOBAL",6) 
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) 
+ OR(2) 
+ ReputationLT(Player1,12) 
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",0)~ + @318 + C#AjantisPID1.22
+-+ ~GlobalGT("Chapter","GLOBAL",5) 
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) 
+ OR(2) 
+ ReputationLT(Player1,16)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4) 

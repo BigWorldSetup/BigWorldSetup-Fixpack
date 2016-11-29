@@ -1,0 +1,13 @@
+--- ajantisbg2/scripts/romance_add.baf	2009-05-21 09:40:46.000000000 -0400
++++ Fixpack/ajantisbg2/scripts/romance_add.baf	2016-11-04 14:55:56.987718600 -0400
+@@ -46,8 +46,8 @@
+ 	Global("C#AjantisEngaged","GLOBAL",1)
+ 	Global("C#AjantisEngagedMatch","GLOBAL",1)
+ 	OR(2)
+-		Global("Chapter","GLOBAL",2)
+-		Global("Chapter","GLOBAL",3)
++		Global("Chapter","GLOBAL",%bg2_chapter_2%)
++		Global("Chapter","GLOBAL",%bg2_chapter_3%)
+ 	Global("C#AjanPCWorkingBodhi","GLOBAL",0)
+ THEN
+ 	RESPONSE #100

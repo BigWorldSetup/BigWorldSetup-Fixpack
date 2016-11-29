@@ -1,5 +1,5 @@
---- amber\scripts\m#amberd.baf	Sun Dec 30 18:39:00 2007
-+++ D:\EE_Patchstudio\patched files\amber\scripts\m#amberd.baf	Fri Jan 15 12:51:46 2016
+--- amber/scripts/m#amberd.baf	2007-12-30 18:39:00.000000000 -0500
++++ Fixpack/amber/scripts/m#amberd.baf	2016-11-21 20:19:21.095017900 -0500
 @@ -1,7 +1,7 @@
  // Chapter Talks
  IF

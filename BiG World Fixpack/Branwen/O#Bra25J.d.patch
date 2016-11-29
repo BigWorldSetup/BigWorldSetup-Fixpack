@@ -1,0 +1,96 @@
+--- Branwen/Dialogue/O#Bra25J.d	2013-09-04 17:01:28.000000000 -0400
++++ Fixpack/Branwen/Dialogue/O#Bra25J.d	2016-11-21 16:28:24.719388700 -0500
+@@ -3,25 +3,6 @@
+ 
+ BEGIN O#BRA25J
+ 
+-// Branwen is summoned via Fate Spirit. This code is taken directly from the game.
+-// #2 means that Branwen's line(summoning Branwen) will be placed right after the first two lines, Anomen's and Aerie's. Unfortunately, we can't account for all NPCs like Adrian and Arath, but at least it's best to have an option to summon Branwen right after Yoshimo. 
+-// Lots of lines here, I know. 
+-
+-EXTEND_TOP FATESP 6 #2
+-+ ~!Dead("O#Bran") !InMyArea("O#Bran") Global("O#BranSummoned","GLOBAL",0)~ + ~Bring me Branwen, the priestess of Tempus.~
+-DO ~CreateVisualEffect("SPPORTAL",[1999.1228])
+-Wait(2) 
+-CreateCreature("O#Bran25",[1999.1228],0) 
+-SetGlobal("O#BranSummoned","GLOBAL",1)~ GOTO 8
+-+ ~!Dead("O#Bran") !InMyArea("O#Bran") Global("O#BranSummoned","GLOBAL",0)
+-Gender(Player1,MALE) OR(4) Race(Player1,HUMAN) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,HALFORC)~ + ~Bring me my lover, Branwen.~
+-DO ~CreateVisualEffect("SPPORTAL",[1999.1228])
+-Wait(2)
+-SetGlobal("O#BranRomanceActive","GLOBAL",2)
+-CreateCreature("O#Bran25",[1999.1228],0) 
+-SetGlobal("O#BranSummoned","GLOBAL",1)~ GOTO 8
+-END
+-
+ // Volo's obligatory interjection in Saradush.
+ 
+ EXTEND_TOP SARVOLO 9 #2
+@@ -217,27 +198,27 @@
+ // Watcher's Keep interjections, ToB
+ 
+ I_C_T GORPOL1 1 O#BranMetKnightsOfTheVigil1
+-== O#BRA25J IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",7)~ THEN ~It must be bringing great disquiet to your ranks, surely.~
++== O#BRA25J IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN ~It must be bringing great disquiet to your ranks, surely.~
+ END
+ 
+ I_C_T GORCHR 2 O#BranChromaticDemon2
+-== O#BRA25J IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",7)~ THEN ~And, of course, you're just bursting with desire to give us the key. Or not.~
++== O#BRA25J IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN ~And, of course, you're just bursting with desire to give us the key. Or not.~
+ END
+ 
+ I_C_T GORIMP01 4 O#BranImpDeadWizards1
+-== O#BRA25J IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",7)~ THEN ~You don't seem very concerned, imp.~
++== O#BRA25J IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN ~You don't seem very concerned, imp.~
+ END
+ 
+ I_C_T GORCAMB 9 O#BranCambion9
+-== O#BRA25J IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",7)~ THEN ~But you could try and get yourself out, yes?~
++== O#BRA25J IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN ~But you could try and get yourself out, yes?~
+ END
+ 
+ I_C_T GORDEMO 1 O#BranImprisonedOneMet1
+-== O#BRA25J IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",7)~ THEN ~I feel some alien presence here. Do not trust it. I doubt these manacles are here for nothing.~
++== O#BRA25J IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN ~I feel some alien presence here. Do not trust it. I doubt these manacles are here for nothing.~
+ END
+ 
+ I_C_T GORODR1 35 O#BranOdrenFoolishness1
+-== O#BRA25J IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",7)~ THEN ~You betrayed us! <CHARNAME>, if you wish to kill these craven cowards now, just say the word.~
++== O#BRA25J IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN ~You betrayed us! <CHARNAME>, if you wish to kill these craven cowards now, just say the word.~
+ END
+ 
+ // Same lines, different dialogue file - O#BRANJ, if Chapter<8(SoA). We're compiling all Watcher's Keep interjection in this ToB file, so all of them are together here.
+@@ -245,27 +226,27 @@
+ // Watcher's Keep interjections, SoA
+ 
+ I_C_T GORPOL1 1 O#BranMetKnightsOfTheVigil1
+-== O#BRANJ IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",8)~ THEN ~It must be bringing great disquiet to your ranks, surely.~
++== O#BRANJ IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN ~It must be bringing great disquiet to your ranks, surely.~
+ END
+ 
+ I_C_T GORCHR 2 O#BranChromaticDemon2
+-== O#BRANJ IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",8)~ THEN ~And, of course, you're just bursting with desire to give us the key. Or not.~
++== O#BRANJ IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN ~And, of course, you're just bursting with desire to give us the key. Or not.~
+ END
+ 
+ I_C_T GORIMP01 4 O#BranImpDeadWizards1
+-== O#BRANJ IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",8)~ THEN ~You don't seem very concerned, imp.~
++== O#BRANJ IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN ~You don't seem very concerned, imp.~
+ END
+ 
+ I_C_T GORCAMB 9 O#BranCambion9
+-== O#BRANJ IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",8)~ THEN ~But you could try and get yourself out, yes?~
++== O#BRANJ IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN ~But you could try and get yourself out, yes?~
+ END
+ 
+ I_C_T GORDEMO 1 O#BranImprisonedOneMet1
+-== O#BRANJ IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",8)~ THEN ~I feel some alien presence here. Do not trust it. I doubt these manacles are here for nothing.~
++== O#BRANJ IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN ~I feel some alien presence here. Do not trust it. I doubt these manacles are here for nothing.~
+ END
+ 
+ I_C_T GORODR1 35 O#BranOdrenFoolishness1
+-== O#BRANJ IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",8)~ THEN ~You betrayed us! <CHARNAME>, if you wish to kill these craven cowards now, just say the word.~
++== O#BRANJ IF ~InParty("O#Bran") InMyArea("O#Bran") !StateCheck("O#Bran",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN ~You betrayed us! <CHARNAME>, if you wish to kill these craven cowards now, just say the word.~
+ END
+ 
+ APPEND O#BRA25J

@@ -1,0 +1,118 @@
+--- SETUP-EDWINROMANCE.TP2	2016-01-24 06:27:05.000000000 -0500
++++ Fixpack/SETUP-EDWINROMANCE.TP2	2016-11-23 15:04:38.407084000 -0500
+@@ -6,11 +6,23 @@
+ AUTHOR ~laufeygreen@hotmail.com~
+ 
+ README ~Edwin/edwinromance-readme.html~
+-VERSION ~v2.0.7~
++
++VERSION ~v2.0.7 BWP Fix~
+ 
+ AUTO_TRA ~edwin/tra/%s~
+ 
+ ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++
+   /*
+    * For the purposes of HANDLE_CHARSETS, disregard this variable. It is used elsewhere.
+    */
+@@ -35,11 +47,11 @@
+    * This array is included for illustrative purposes.
+    * It is a mapping of language-directory names to the charsets used
+    * by that language. Using an array like this is not necessary when
+-   * you use %infer_charset%. However, in some situations it holds
+-   * advantages over %infer_charset%, such as when your
+-   * language-directory name is not recognised by %infer_charset%,
++   * you use %infer_charsets%. However, in some situations it holds
++   * advantages over %infer_charsets%, such as when your
++   * language-directory name is not recognised by %infer_charsets%,
+    * or when the actual charset used is different from what
+-   * %infer_charset% thinks is used.
++   * %infer_charsets% thinks is used.
+    */
+ /*
+   ACTION_DEFINE_ASSOCIATIVE_ARRAY fl#charsets BEGIN
+@@ -59,7 +71,7 @@
+    * optionally reload some of the TRA files it converted (typically
+    * the same TRA files as loaded by LANGUAGE).
+    *
+-   * This function requires that %infer_charset% is set to 1 OR it
++   * This function requires that %infer_charsets% is set to 1 OR it
+    * requires a valid declaration for %charset_table%.
+    * It additionally requires that %tra_path% is specified such that
+    * %tra_path%/%LANGUAGE% is a valid directory containing TRA files.
+@@ -120,15 +132,15 @@
+          ~edwin/tra/german/game.tra~
+          ~edwin/tra/german/setup-%WEIDU_OS%.tra~
+ 
+-LANGUAGE Polish
+-         polish
++LANGUAGE ~Polish~
++         ~polish~
+          ~edwin/tra/english/game.tra~
+          ~edwin/tra/english/setup.tra~
+          ~edwin/tra/polish/game.tra~
+          ~edwin/tra/polish/setup-%WEIDU_OS%.tra~
+ 
+ LANGUAGE ~Simplified Chinese~
+-         schinese
++         ~schinese~
+          ~edwin/tra/english/game.tra~
+          ~edwin/tra/english/setup.tra~
+          ~edwin/tra/schinese/game.tra~
+@@ -138,7 +150,7 @@
+ 
+ BEGIN @0 //Edwin Romance
+ FORBID_COMPONENT ~setup-ease.tp2~ ~20~ @31 //Edwin Romance is not compatible with Ease of Use's Female Edwina Component. It must be uninstalled in order to install Edwin Romance.
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @34
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @34
+ DESIGNATED 0
+ 
+ COPY_EXISTING sw1h01.itm "override/EdwinRomanceV2.mrk"
+@@ -152,7 +164,7 @@
+ 
+ 
+ //Dialogues
+-COMPILE
++COMPILE EVALUATE_BUFFER
+ ~edwin/dlg/eredwinp.d~
+ ~edwin/dlg/eredwinj.d~
+ ~edwin/dlg/ervicon.d~
+@@ -186,7 +198,7 @@
+ ADD_JOURNAL EXISTING @469 @471 USING ~%tra_path%/english/erlovetalk2.tra~ ~%tra_path%/%LANGUAGE%/erlovetalk2.tra~
+ 
+ // Copy, assorted
+-ACTION_IF GAME_IS ~bg2ee~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+   COPY ~edwin/bmp/ee~ override
+   COPY ~edwin/bam/ee~ override
+ END ELSE BEGIN
+@@ -237,8 +249,8 @@
+ EXTEND_TOP ~edwin.bcs~ ~edwin/baf/EDWIN_romance_fix.baf~
+ EXTEND_BOTTOM ~anomen.bcs~ ~edwin/baf/romfix.baf~
+ EXTEND_BOTTOM ~imoen2.bcs~ ~edwin/baf/er_imoen.baf~ //This is for the Imoen banters. Necessary because Imoen doesn't have a banter file.
+-EXTEND_BOTTOM edwind.bcs ~edwin/baf/edwind.baf~
+-EXTEND_BOTTOM edwin.bcs ~edwin/baf/edwin.baf~
++EXTEND_BOTTOM edwind.bcs ~edwin/baf/edwind.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM edwin.bcs ~edwin/baf/edwin.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~edwinD.bcs~ ~override/edwinD.bcs~
+   REPLACE_TEXTUALLY 999990 ~%MxEdwin%~
+@@ -478,7 +490,7 @@
+ 
+ 
+ // ToB Portion
+-ACTION_IF GAME_IS ~tob bgt bg2ee~ BEGIN
++ACTION_IF GAME_IS ~tob bgt bg2ee eet~ BEGIN
+ 
+   COPY_EXISTING ~AR6200.bcs~ ~override~
+     REPLACE_BCS_BLOCK ~edwin/baf/tob/erfiold.baf~ ~edwin/baf/tob/erfinew.baf~

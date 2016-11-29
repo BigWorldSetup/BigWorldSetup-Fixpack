@@ -1,0 +1,42 @@
+--- questpack/tp2/quest/paladins.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/paladins.tph	2016-11-21 22:35:09.218782600 -0500
+@@ -1,4 +1,4 @@
+-COMPILE ~questpack/reynald/dialog.d~ USING
++COMPILE EVALUATE_BUFFER ~questpack/reynald/dialog.d~ USING
+         ~%tra_path%/english/paladins.tra~
+         ~%tra_path%/%LANGUAGE%/paladins.tra~
+ 
+@@ -6,17 +6,17 @@
+             ~%tra_path%/english/paladins.tra~
+             ~%tra_path%/%LANGUAGE%/paladins.tra~
+ 
+-COMPILE ~questpack/reynald/d0kaypal.baf~
++COMPILE EVALUATE_BUFFER ~questpack/reynald/d0kaypal.baf~
+ 
+ COPY ~questpack/reynald/d0kaypal.cre~ ~override~
+ 
+-EXTEND_TOP ~ar0500.bcs~ ~questpack/reynald/ar0500.baf~
+-EXTEND_TOP ~ar0800.bcs~ ~questpack/reynald/ar0800.baf~
+-EXTEND_TOP ~ar0808.bcs~ ~questpack/reynald/ar0808.baf~
+-EXTEND_TOP ~ar0809.bcs~ ~questpack/reynald/ar0809.baf~
++EXTEND_TOP ~ar0500.bcs~ ~questpack/reynald/ar0500.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~ar0800.bcs~ ~questpack/reynald/ar0800.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~ar0808.bcs~ ~questpack/reynald/ar0808.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~ar0809.bcs~ ~questpack/reynald/ar0809.baf~ EVALUATE_BUFFER
+ 
+-EXTEND_TOP ~c6eric.bcs~ ~questpack/reynald/c6eric.baf~
+-EXTEND_TOP ~kaysmg01.bcs~ ~questpack/reynald/et_smug.baf~
++EXTEND_TOP ~c6eric.bcs~ ~questpack/reynald/c6eric.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~kaysmg01.bcs~ ~questpack/reynald/et_smug.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~ar0808.are~ ~override~
+   GET_OFFSET_ARRAY paladins#triggers 0x5c 4 0x5a 2 0 0 0xc4
+@@ -52,6 +52,6 @@
+   WRITE_ASCII 0x260 "D0KAYL" #8
+ BUT_ONLY
+ 
+-COMPILE ~questpack/reynald/d0kayl.baf~
++COMPILE EVALUATE_BUFFER ~questpack/reynald/d0kayl.baf~
+ 
+-EXTEND_TOP ~kaypal01.bcs~ ~questpack/reynald/anarg.baf~
++EXTEND_TOP ~kaypal01.bcs~ ~questpack/reynald/anarg.baf~ EVALUATE_BUFFER

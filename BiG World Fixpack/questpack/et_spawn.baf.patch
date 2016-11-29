@@ -1,0 +1,27 @@
+--- questpack/thieves/scripts/et_spawn.baf	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/scripts/et_spawn.baf	2016-11-21 16:24:13.615063700 -0500
+@@ -1,5 +1,5 @@
+ IF
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   OR(8)
+     AreaCheckObject("AR0020",Player1)
+     AreaCheckObject("AR0300",Player1)
+@@ -29,7 +29,7 @@
+ END
+ 
+ IF
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   OR(8)
+     AreaCheckObject("AR0020",Player1)
+     AreaCheckObject("AR0300",Player1)
+@@ -54,7 +54,7 @@
+ END
+ 
+ IF
+-  GlobalLT("chapter","GLOBAL",6)
++  GlobalLT("chapter","GLOBAL",%bg2_chapter_6%)
+   OR(8)
+     AreaCheckObject("AR0020",Player1)
+     AreaCheckObject("AR0300",Player1)

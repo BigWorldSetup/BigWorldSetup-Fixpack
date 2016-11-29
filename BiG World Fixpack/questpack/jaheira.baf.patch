@@ -1,0 +1,57 @@
+--- questpack/harpers/jaheira.baf	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/harpers/jaheira.baf	2016-11-21 11:39:21.310139600 -0500
+@@ -11,8 +11,8 @@
+   GlobalLT("D0JahShaz","GLOBAL",2)
+   InParty(Myself)
+   OR(2)
+-    GlobalLT("chapter","GLOBAL",4)
+-    GlobalGT("chapter","GLOBAL",5)
++    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
++    GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+   RESPONSE #100
+     SetGlobal("D0JahShaz","GLOBAL",2)
+@@ -32,8 +32,8 @@
+   !AreaCheckObject("ar0407",Player1)
+   !Dead("Bernard")
+   OR(2)
+-    GlobalLT("chapter","GLOBAL",4)
+-    GlobalGT("chapter","GLOBAL",5)
++    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
++    GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+   RESPONSE #100
+     SetGlobal("D0JahShaz","GLOBAL",3)
+@@ -45,8 +45,8 @@
+   Global("D0JahShaz","GLOBAL",0)
+   InParty(Myself)
+   OR(2)
+-    GlobalLT("chapter","GLOBAL",4)
+-    GlobalGT("chapter","GLOBAL",5)
++    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
++    GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+   RESPONSE #100
+     SetGlobal("D0JahShaz","GLOBAL",1)
+@@ -64,8 +64,8 @@
+   !AreaCheckObject("ar0407",Player1)
+   !Dead("Bernard")
+   OR(2)
+-    GlobalLT("chapter","GLOBAL",4)
+-    GlobalGT("chapter","GLOBAL",5)
++    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
++    GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+   RESPONSE #100
+     SetGlobal("D0JahShaz","GLOBAL",3)
+@@ -80,8 +80,8 @@
+   CombatCounter(0)
+   InParty(Myself)
+   OR(2)
+-    GlobalLT("chapter","GLOBAL",4)
+-    GlobalGT("chapter","GLOBAL",5)
++    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
++    GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+   RESPONSE #100
+     StartDialogNoSet(Player1)

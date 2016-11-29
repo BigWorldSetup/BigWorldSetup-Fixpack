@@ -1,5 +1,5 @@
---- Assassinations\Dialogue\Assassinations.d	Tue Aug 06 17:57:30 2013
-+++ D:\EE_Patchstudio\patched files\Assassinations\Dialogue\Assassinations.d	Fri Jan 15 12:51:44 2016
+--- Assassinations/Dialogue/Assassinations.d	2013-08-06 18:57:30.000000000 -0400
++++ Fixpack/Assassinations/Dialogue/Assassinations.d	2016-11-04 14:55:56.828581800 -0400
 @@ -24,7 +24,7 @@
  
  CHAIN IF WEIGHT #-1 ~Global("O#CrLynnSpawn2","GLOBAL",0) 

@@ -1,0 +1,11 @@
+--- ub/suna/ar0326.baf	2004-03-08 08:42:00.000000000 -0500
++++ Fixpack/ub/suna/ar0326.baf	2016-11-21 23:25:38.224163600 -0500
+@@ -1,7 +1,7 @@
+ IF
+   Global("U!RakshasaAmbush","GLOBAL",0)
+   Global("U!SunaLeaveSpellhold","GLOBAL",1)
+-  GlobalGT("Chapter","GLOBAL",4)
++  GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+ THEN
+   RESPONSE #100
+     CreateCreature("VARAKMAH",[475.268],0)  // ~Maharadjah~

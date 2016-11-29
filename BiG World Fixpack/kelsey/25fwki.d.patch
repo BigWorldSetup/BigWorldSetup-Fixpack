@@ -1,0 +1,62 @@
+--- kelsey/d/25fwki.d	2013-11-16 13:01:58.000000000 -0500
++++ Fixpack/kelsey/d/25fwki.d	2016-11-21 10:40:14.310368300 -0500
+@@ -333,48 +333,48 @@
+ /* INTERJECT_COPY_TRANS mania! */
+ 
+ INTERJECT_COPY_TRANS GORODR1 11 FWkintgorodr1
+-== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",7)~ THEN @27
++== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @27
+ END
+ 
+ INTERJECT_COPY_TRANS GORODR1 35 FWkintgorodr135
+-== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",7)~ THEN @28
++== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @28
+ END
+ 
+ INTERJECT_COPY_TRANS IMOEN25J 30 FWkintimoen30
+ == J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey")
+-GlobalGT("Chapter","GLOBAL",7)
++GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+ OR(2)
+ Global("FWImoenRomanceActive","GLOBAL",1)
+ Global("FWImoenRomanceActive","GLOBAL",2)~ THEN @29
+ END
+ 
+ INTERJECT_COPY_TRANS GORCAMB 20 FWkintgorcamb
+-== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",7)~ THEN @29
++== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @29
+ END
+ 
+ INTERJECT_COPY_TRANS GORIMP01 13 FWKintgorimp
+-== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",7)~ THEN @31
++== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @31
+ END
+ 
+ INTERJECT_COPY_TRANS GORDEMO 0 FWkintgordemo0
+-== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",7)~ THEN @32
++== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @32
+ END
+ 
+ INTERJECT_COPY_TRANS GORDEMO 29 FWkintgordemo29
+-== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",7)~ THEN @33
+-== IMOEN25J IF ~IsValidForPartyDialog("J#Kelsey") IsValidForPartyDialog("Imoen2") GlobalGT("Chapter","GLOBAL",7)~ THEN @34
++== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @33
++== IMOEN25J IF ~IsValidForPartyDialog("J#Kelsey") IsValidForPartyDialog("Imoen2") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @34
+ END
+ 
+ INTERJECT_COPY_TRANS GORAPR 10 FWkintgorapr
+-== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",7)~ THEN @35
++== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @35
+ END
+ 
+ INTERJECT_COPY_TRANS GORAPP1 6 FWkintgorapp6
+-== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",7)~ THEN @36 = @37
++== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @36 = @37
+ END
+ 
+ INTERJECT_COPY_TRANS GORAPP1 10 FWkintgorapp10
+-== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",7)~ THEN @38 = @39
++== J#KLS25J IF ~IsValidForPartyDialog("J#Kelsey") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @38 = @39
+ END
+ 
+ INTERJECT_COPY_TRANS SOLAR 11 FWkintsolar11

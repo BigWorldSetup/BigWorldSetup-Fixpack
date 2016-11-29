@@ -1,0 +1,1 @@
+Patching viconia/setup-viconia.tp2: GAME_IS ~bg2ee tob bgt~  => GAME_IS ~bg2ee eet tob bgt~ 

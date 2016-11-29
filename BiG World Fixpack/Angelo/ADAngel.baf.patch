@@ -1,5 +1,5 @@
---- Angelo\Scripts\ADAngel.baf	Mon Nov 11 08:13:34 2013
-+++ D:\EE_Patchstudio\patched files\Angelo\Scripts\ADAngel.baf	Fri Jan 15 12:51:44 2016
+--- Angelo/Scripts/ADAngel.baf	2013-11-11 02:13:34.000000000 -0500
++++ Fixpack/Angelo/Scripts/ADAngel.baf	2016-11-04 14:55:56.825569600 -0400
 @@ -585,7 +585,7 @@
  OR(2)
  Global("ADAngelRomanceActive","GLOBAL",1)

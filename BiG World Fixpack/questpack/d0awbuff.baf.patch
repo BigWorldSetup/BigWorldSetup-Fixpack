@@ -1,0 +1,47 @@
+--- questpack/thieves/scripts/d0awbuff.baf	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/scripts/d0awbuff.baf	2016-11-21 16:23:36.335661100 -0500
+@@ -43,7 +43,7 @@
+ 
+ IF
+   GlobalLT("D0Potions","LOCALS",2)
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   DifficultyGT(NORMAL)
+ THEN
+   RESPONSE #100
+@@ -65,7 +65,7 @@
+ 
+ IF
+   GlobalLT("D0Potions","LOCALS",2)
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   !DifficultyGT(NORMAL)
+ THEN
+   RESPONSE #100
+@@ -122,7 +122,7 @@
+   !StateCheck(Myself,STATE_REALLY_DEAD)
+   AreaCheck("ar0329")
+   !Specifics(Myself,241)
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   Global("SpawnHelp","LOCALS",0)
+   !Name("arnman05",Myself)
+   GlobalGT("D0Maevar2","GLOBAL",0)
+@@ -179,7 +179,7 @@
+   !StateCheck(Myself,STATE_REALLY_DEAD)
+   !Specifics(Myself,241)
+   AreaCheck("ar0307")
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   Global("SpawnHelp","LOCALS",0)
+   !Name("arnman05",Myself)
+   !Difficulty(HARDEST)
+@@ -237,7 +237,7 @@
+   !StateCheck(Myself,STATE_REALLY_DEAD)
+   !Specifics(Myself,241)
+   AreaCheck("ar0307")
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   Global("SpawnHelp","LOCALS",0)
+   !Name("arnman05",Myself)
+   OR(2)

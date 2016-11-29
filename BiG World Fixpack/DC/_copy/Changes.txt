@@ -1,0 +1,1 @@
+Patching DC/Setup-DC.tp2: GAME_IS ~BG2EE~ BEGIN => GAME_IS ~BG2EE eet~ BEGIN

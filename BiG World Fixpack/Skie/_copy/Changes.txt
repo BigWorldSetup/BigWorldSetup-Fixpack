@@ -1,0 +1,53 @@
+Patching Skie/BAF/1xSkie.baf: Global("CHAPTER","GLOBAL",6) => Global("CHAPTER","GLOBAL",%bg2_chapter_6%)
+Patching Skie/BAF/1xSkie.baf: Global("CHAPTER","GLOBAL",6) => Global("CHAPTER","GLOBAL",%bg2_chapter_6%)
+Patching Skie/DIALOGUES/1xSkieJ.d: Global("CHAPTER","GLOBAL",6) => Global("CHAPTER","GLOBAL",%bg2_chapter_6%)
+Patching Skie/Setup-Skie.tp2: ALWAYS command expanded
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+-----------
+
+Manual edits:
+
+2. Below code from Skie/DIALOGUES/1xSki25J.d:
+
+EXTEND_BOTTOM FATESP 6 #4
+IF ~ !Dead("SkieDV") !InMyArea("SkieDV") Global("SkieSummonedTB","GLOBAL",0) ~ THEN REPLY @132 /*  Sprowadź tutaj Skie, tą wiecznie marudzącą złodziejkę.  */ DO ~CreateVisualEffect("SPPORTAL",[1999.1228])
+Wait(2) 
+CreateCreature("1xSkie3",[1999.1228],0) 
+SetGlobal("SkieSummonedTB","GLOBAL",1) ~ GOTO 8
+END
+
+Moved to new file: Skie/DIALOGUES/FATESP.d
+
+3. New code added at the end of Skie/Setup-Skie.tp2
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+  INCLUDE ~EET/other/EET_functions.tph~
+  LAF ~EET_NPC_TRANSITION~
+    INT_VAR
+      type = 2
+      clean_ToB = 1
+    STR_VAR
+      dv = "SKIEDV"
+      override_SoA = "1XSKIE"
+      override_ToB = "1XSKI25"
+      dialog_ToB = "1XSKI25"
+      traFile = EVAL "Skie/translations/%LANGUAGE%/1XSKI25J.TRA"
+      string = "@132" //Bring Skie, the constantly-complaining thief.
+      stringPosDV = "Tiax"
+      clean_ToB_DV = "Skie"
+  END
+END ELSE BEGIN
+  COMPILE ~Skie/DIALOGUES/FATESP.d~ USING ~Skie/translations/%LANGUAGE%/1XSKI25J.TRA~
+END
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

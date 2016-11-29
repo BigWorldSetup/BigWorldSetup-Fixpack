@@ -1,0 +1,11 @@
+--- edwin/dlg/eredwinj.d	2014-12-29 08:13:24.000000000 -0500
++++ Fixpack/edwin/dlg/eredwinj.d	2016-11-21 16:19:30.437015800 -0500
+@@ -377,7 +377,7 @@
+   IF ~Global("EdwinRomanceActive","GLOBAL",2) !Global("BancoDead","GLOBAL",1)~ THEN REPLY #43076 EXTERN ~EDWINJ~ NOWAY
+ END
+ 
+-IF ~Global("AranJob","GLOBAL",3) Global("LassalVampires","GLOBAL",3) Global("spokeTrip","LOCALS",1) !Global("Chapter","GLOBAL",6)~ THEN BEGIN 48
++IF ~Global("AranJob","GLOBAL",3) Global("LassalVampires","GLOBAL",3) Global("spokeTrip","LOCALS",1) !Global("Chapter","GLOBAL",%bg2_chapter_6%)~ THEN BEGIN 48
+   SAY #43081
+   IF ~~ THEN REPLY #43082 GOTO 46
+   IF ~!Global("EdwinRomanceActive","GLOBAL",2)~ THEN REPLY #43083 GOTO 47

@@ -1,0 +1,18 @@
+--- w_packmule/lib/w_mule.tpa	2013-12-03 16:30:40.000000000 -0500
++++ Fixpack/w_packmule/lib/w_mule.tpa	2016-11-21 23:24:28.669298400 -0500
+@@ -90,7 +90,14 @@
+   EVALUATE_BUFFER
+ END
+ //bg1
+-ACTION_IF FILE_EXISTS_IN_GAME  ~ar2300.are~
++ACTION_IF GAME_IS ~eet~
++THEN BEGIN
++EXTEND_TOP ~bg2300.bcs~ ~.../script.baf~
++  SPRINT ~file_name~ ~bg2300~
++  SPRINT ~coords~ ~1740.1910~
++  SPRINT ~coords2~ ~1825.1910~
++  EVALUATE_BUFFER
++END ELSE ACTION_IF FILE_EXISTS_IN_GAME  ~ar2300.are~
+ THEN BEGIN
+ EXTEND_TOP ~ar2300.bcs~ ~.../script.baf~
+   SPRINT ~file_name~ ~ar2300~

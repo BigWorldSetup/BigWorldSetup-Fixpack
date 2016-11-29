@@ -1,0 +1,11 @@
+--- crossmodbg2/soa/banters/soa_adrian-kivanofshilmista/soa_adrian-kivanofshilmista_banters.d	2016-11-27 13:18:35.579195300 -0500
++++ Fixpack/crossmodbg2/soa/banters/soa_adrian-kivanofshilmista/soa_adrian-kivanofshilmista_banters.d	2016-11-07 03:31:14.000000000 -0500
+@@ -68,7 +68,7 @@
+ !StateCheck("P#Kivan",CD_STATE_NOTVALID)
+ CombatCounter(0)
+ !See([ENEMY])
+-OR(2) AreaType(FOREST) Global("Chapter","GLOBAL",7)
++OR(2) AreaType(FOREST) Global("Chapter","GLOBAL",%bg2_chapter_7%)
+ Global("G#XB.AdrianKivanBanter3","GLOBAL",2)
+ Global("G#XB.AdrianKivanBanter4","GLOBAL",0)~ THEN BRH#ADR AdrianKivanBanter#4.1
+ @33 /* You look somewhat happier than usual, Kivan. */

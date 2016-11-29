@@ -1,0 +1,11 @@
+--- wsr/lib/regexp.tph	2014-07-21 15:56:44.979000000 -0400
++++ Fixpack/wsr/lib/regexp.tph	2016-11-21 23:24:37.231047200 -0500
+@@ -10,7 +10,7 @@
+ 
+ //Load UTF8-encoded tra files if the game is BGEE
+ DEFINE_ACTION_MACRO bgee_language BEGIN
+-  ACTION_IF GAME_IS ~bgee bg2ee~ BEGIN
++  ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+     LOAD_TRA ~wsr/tra/bgee/english/wsr.tra~
+     LOAD_TRA ~wsr/tra/bgee/%LANGUAGE%/wsr.tra~
+   END

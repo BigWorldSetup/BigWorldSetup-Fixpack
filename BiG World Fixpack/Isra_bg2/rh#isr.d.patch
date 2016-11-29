@@ -1,0 +1,33 @@
+--- Isra_bg2/dialogue/rh#isr.d	2013-10-08 17:12:41.125528900 -0400
++++ Fixpack/Isra_bg2/dialogue/rh#isr.d	2016-11-21 23:01:57.303017900 -0500
+@@ -766,20 +766,20 @@
+ 
+ IF ~~ q7.5
+  SAY @209 /* Might I ask what brings you to Amn, <CHARNAME>? I wouldn't have expected to find you so far south, and... I know you well enough to suspect that this is no mere social call. */
+-	+ ~GlobalLT("chapter","GLOBAL",4)~ + @210 /* I'm sure you've noticed by now that Imoen is missing. Her absence isn't voluntary. */ + q7.7
+-	+ ~GlobalLT("chapter","GLOBAL",4)~ + @211 /* I have my own grievances with the Cowled Wizards. They've arrested Imoen, alongside the mage that captured us. */ + q7.7
+-	+ ~GlobalLT("chapter","GLOBAL",4)~ + @212 /* I'm hunting a mage called Irenicus. His people kidnapped me in Baldur's Gate. */ + q7.8
+-	+ ~!GlobalLT("chapter","GLOBAL",4)~ + @213 /* It's a long story, but a mage called Irenicus stole my soul. */ + q7.9
+-	+ ~!GlobalLT("chapter","GLOBAL",4)~ + @214 /* I'm trying to help the elves of Suldanessellar. They're being threatened by a powerful wizard. */ + q7.10
++	+ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @210 /* I'm sure you've noticed by now that Imoen is missing. Her absence isn't voluntary. */ + q7.7
++	+ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @211 /* I have my own grievances with the Cowled Wizards. They've arrested Imoen, alongside the mage that captured us. */ + q7.7
++	+ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @212 /* I'm hunting a mage called Irenicus. His people kidnapped me in Baldur's Gate. */ + q7.8
++	+ ~!GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @213 /* It's a long story, but a mage called Irenicus stole my soul. */ + q7.9
++	+ ~!GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @214 /* I'm trying to help the elves of Suldanessellar. They're being threatened by a powerful wizard. */ + q7.10
+ END
+ 
+ IF ~~ q7.6
+  SAY @215 /* Unless I am very much mistaken, you seem to have pressing business in the city of your own. Might I ask as to its nature? */
+-	+ ~GlobalLT("chapter","GLOBAL",4)~ + @216 /* Aid is hard to come by in Athkatla, and I'm trying to rescue an old friend. */ + q7.11
+-	+ ~GlobalLT("chapter","GLOBAL",4)~ + @217 /* I have my own grievances with the Cowled Wizards. They've arrested a friend, alongside the mage that captured us. */ + q7.11
+-	+ ~GlobalLT("chapter","GLOBAL",4)~ + @212 /* I'm hunting a mage called Irenicus. His people kidnapped me in Baldur's Gate. */ + q7.8
+-	+ ~!GlobalLT("chapter","GLOBAL",4)~ + @213 /* It's a long story, but a mage called Irenicus stole my soul. */ + q7.9
+-	+ ~!GlobalLT("chapter","GLOBAL",4)~ + @214 /* I'm trying to help the elves of Suldanessellar. They're being threatened by a powerful wizard. */ + q7.10
++	+ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @216 /* Aid is hard to come by in Athkatla, and I'm trying to rescue an old friend. */ + q7.11
++	+ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @217 /* I have my own grievances with the Cowled Wizards. They've arrested a friend, alongside the mage that captured us. */ + q7.11
++	+ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @212 /* I'm hunting a mage called Irenicus. His people kidnapped me in Baldur's Gate. */ + q7.8
++	+ ~!GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @213 /* It's a long story, but a mage called Irenicus stole my soul. */ + q7.9
++	+ ~!GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @214 /* I'm trying to help the elves of Suldanessellar. They're being threatened by a powerful wizard. */ + q7.10
+ END
+ 
+ IF ~~ q7.7

@@ -1,0 +1,37 @@
+Patching deArnise/Setup-deArnise.tp2: GAME_IS ~BG2EE~ BEGIN => GAME_IS ~BG2EE eet~ BEGIN
+Patching deArnise/Dialogue/PGNalFL.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching deArnise/Dialogue/PGNalFL.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching deArnise/Dialogue/PGNalFL.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching deArnise/Dialogue/PGNalLT.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching deArnise/Dialogue/PGNalLT.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching deArnise/Dialogue/PGNalLT.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching deArnise/Dialogue/PGNalLT.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching deArnise/Dialogue/PGNalLT.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching deArnise/Dialogue/PGNalLT.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching deArnise/Dialogue/PGNalLT.d: GlobalGT("Chapter","GLOBAL",4) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching deArnise/Dialogue/PGNalLT.d: GlobalGT("Chapter","GLOBAL",4) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching deArnise/Dialogue/PGNalLT.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching deArnise/Dialogue/PGNalLT.d: GlobalGT("Chapter","GLOBAL",3) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching deArnise/Dialogue/PGNalQ.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching deArnise/Dialogue/PGNalQ.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching deArnise/Dialogue/PGNalQ.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching deArnise/Scripts/PGNalia.baf: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching deArnise/Scripts/PGNalia.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching deArnise/Scripts/PGNalia.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching deArnise/Scripts/PGNalia.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching deArnise/Scripts/PGNalia.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching deArnise/Scripts/PGNaliaD.baf: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching deArnise/Scripts/PGNaliaD.baf: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching deArnise/Setup-deArnise.tp2: ALWAYS command expanded
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

@@ -1,0 +1,35 @@
+Patching Setup-Keto.tp2: GAME_IS ~bg2ee~ BEGIN => GAME_IS ~bg2ee eet~ BEGIN
+Patching Setup-Keto.tp2: GAME_IS ~bg2ee~ BEGIN => GAME_IS ~bg2ee eet~ BEGIN
+Patching keto/baf/j#klsyd.baf: GlobalGT("Chapter","GLOBAL",4) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching keto/baf/j#klsyd.baf: GlobalGT("Chapter","GLOBAL",4) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching keto/d/bfwketo.d: GlobalLT("Chapter","GLOBAL",5) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keto/d/fwketo.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching keto/d/fwketo.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching keto/d/fwketo.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching keto/d/fwketo.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching keto/d/fwketo.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching keto/d/fwketoi.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keto/d/fwketoi.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keto/d/ketoquest.d: GlobalLT("Chapter","GLOBAL",5) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keto/d/ketoquest.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keto/d/ketoquest.d: GlobalLT("Chapter","GLOBAL",5) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keto/d/ketoquest.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keto/d/ketoquest.d: GlobalLT("Chapter","GLOBAL",5) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keto/d/ketoquest.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching Setup-Keto.tp2: ALWAYS command added
+ALWAYS
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+END
+
+Keto doesn't have ToB content, so EET_functions.tph usage is not needed.
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

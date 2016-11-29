@@ -1,0 +1,13 @@
+--- Isra_bg2/dialogue/rh#isrp.d	2013-11-29 20:50:57.373008400 -0500
++++ Fixpack/Isra_bg2/dialogue/rh#isrp.d	2016-11-21 22:55:29.529908600 -0500
+@@ -2,8 +2,8 @@
+ 
+ IF ~Global("rh#IsraJoined","GLOBAL",1)~ p1
+  SAY @0 /* You truly wish to part company, <CHARNAME>? */ 
+- 	+ ~!Global("Chapter","GLOBAL",4) !Global("Chapter","GLOBAL",5) !Global("Chapter","GLOBAL",7)~ + @1 /* For the moment, yes. */ + p2
+-  	+ ~OR(3) Global("Chapter","GLOBAL",4) Global("Chapter","GLOBAL",5) Global("Chapter","GLOBAL",7)~ + @1 /* For the moment, yes. */ + p3
++ 	+ ~!Global("Chapter","GLOBAL",%bg2_chapter_4%) !Global("Chapter","GLOBAL",%bg2_chapter_5%) !Global("Chapter","GLOBAL",%bg2_chapter_7%)~ + @1 /* For the moment, yes. */ + p2
++  	+ ~OR(3) Global("Chapter","GLOBAL",%bg2_chapter_4%) Global("Chapter","GLOBAL",%bg2_chapter_5%) Global("Chapter","GLOBAL",%bg2_chapter_7%)~ + @1 /* For the moment, yes. */ + p3
+  	++ @2 /* Sorry, no. I'd rather not. */ + p4
+ END
+  

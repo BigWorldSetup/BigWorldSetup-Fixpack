@@ -1,0 +1,43 @@
+--- DC/Setup-DC.tp2	2015-05-10 05:35:46.666313400 -0400
++++ Fixpack/DC/Setup-DC.tp2	2016-11-22 19:33:20.859313700 -0500
+@@ -1,26 +1,23 @@
+ BACKUP ~DC\Backup~
+ AUTHOR ~http://forums.pocketplane.net~
+-VERSION ~v9~
++
++VERSION ~v9 BWP Fix~
+ 
+ README ~DC/%LANGUAGE%/Readme-DC.txt~ ~DC/Readme-DC.txt~ 
+ 
+ ALWAYS
+-  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+-  INCLUDE ~%MOD_FOLDER%/handle_charsets.tpa~
+-
+   // No exception, everything needs to be converted
+   ACTION_DEFINE_ARRAY O#noconvert BEGIN END
+ 
+-  // Only setup-Mod.tra needs to be reloaded
++  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
+   ACTION_DEFINE_ARRAY O#reload BEGIN Setup-DC END
+ 
+-  // There is no "language" folder so the root of all languages in %MOD_FOLDER%
++  // There is no "language" folder so the root of all languages is %MOD_FOLDER%
+   LAF HANDLE_CHARSETS
+     INT_VAR
+-      infer_charset = 1
++      infer_charsets = 1
+     STR_VAR
+       tra_path = EVAL ~%MOD_FOLDER%~
+-      // charset_table = O#charsets // Included for illustrative purposes.
+       noconvert_array = O#noconvert
+       reload_array = O#reload
+   END
+@@ -38,7 +35,7 @@
+ 
+ COPY ~DC/Areas~ ~override~
+ 
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ LOAD_TRA ~DC/%LANGUAGE%/Setup-DC-EE.tra~
+ ADD_JOURNAL @10001 @10002 @10003 @10004 @10005 @10006 @10007 @10008 @10009 @10010 @10011 @10012
+ COPY ~DC/Areas/ARO#01EE.MOS~ ~override/ARO#01.MOS~

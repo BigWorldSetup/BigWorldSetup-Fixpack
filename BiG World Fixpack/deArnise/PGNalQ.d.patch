@@ -1,0 +1,15 @@
+--- deArnise/Dialogue/PGNalQ.d	2008-02-26 15:04:42.000000000 -0500
++++ Fixpack/deArnise/Dialogue/PGNalQ.d	2016-11-21 16:21:58.416810700 -0500
+@@ -302,9 +302,9 @@
+ ++ @127 EXTERN PGNALGHA Q2.never
+ ++ @131 EXTERN NALIAJ Q2.naliano
+ ++ @129 EXTERN PGNALWIV Q2.imagination
+-+ ~GlobalGT("Chapter","GLOBAL",5)~ + @132 EXTERN PGNALGHA Q2.liar
+-+ ~GlobalLT("Chapter","GLOBAL",6) CheckStatLT(Player1,15,CHR)~ + @132 EXTERN PGNALGHA Q2.liar2
+-+ ~GlobalLT("Chapter","GLOBAL",6) CheckStatGT(Player1,14,CHR)~ + @132 EXTERN PGNALGHA Q2.takehim
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)~ + @132 EXTERN PGNALGHA Q2.liar
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) CheckStatLT(Player1,15,CHR)~ + @132 EXTERN PGNALGHA Q2.liar2
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) CheckStatGT(Player1,14,CHR)~ + @132 EXTERN PGNALGHA Q2.takehim
+ 
+ CHAIN PGNALGHA Q2.liar
+ @133

@@ -1,0 +1,20 @@
+--- divine_remix/lib/macros.tph	2014-11-01 19:36:09.000000000 -0400
++++ Fixpack/divine_remix/lib/macros.tph	2016-11-21 16:18:09.325029200 -0500
+@@ -220,7 +220,7 @@
+ 
+       END ELSE BEGIN // hlas
+ 
+-        ACTION_IF GAME_IS ~tob bg2ee bgt~ THEN BEGIN // sanity check
++        ACTION_IF GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN // sanity check
+ 
+           COPY ~divine_remix/spheres/hla_%sphere%.2da~ ~divine_remix/spheres/hla_%sphere%.2da~
+             APPEND_FILE ~divine_remix/spheres/template.2da~
+@@ -920,7 +920,7 @@
+         PATCH_IF ("%war%" STRING_COMPARE_CASE "minor" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_wa_minor.2da~ END
+         PATCH_IF ("%wards%" STRING_COMPARE_CASE "minor" = 0)                   THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_wd_minor.2da~ END
+         PATCH_IF ("%weather%" STRING_COMPARE_CASE "minor" = 0)                 THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_we_minor.2da~ END
+-        PATCH_IF ((!GAME_IS ~tob bg2ee bgt~) OR                       // if no hlas, clean up
++        PATCH_IF ((!GAME_IS ~tob bg2ee eet bgt~) OR                       // if no hlas, clean up
+                   ("%class%" STRING_COMPARE_CASE "paladin" = 0) OR    // paladins don't get casting hlas
+                   ("%class%" STRING_COMPARE_CASE "ranger" = 0)) BEGIN // neither do rangers
+           REPLACE_TEXTUALLY ~[%LNL%%MNL%%WNL%]CD_HLA[0-9][0-9][0-9][ %TAB%]+.+$~ ~~ // delete temp placeholders

@@ -1,0 +1,13 @@
+--- Isra_bg2/dialogue/rh#is25p.d	2013-09-24 21:50:49.931132000 -0400
++++ Fixpack/Isra_bg2/dialogue/rh#is25p.d	2016-11-21 23:17:00.500318700 -0500
+@@ -2,8 +2,8 @@
+ 
+ IF ~Global("rh#IsraJoined","GLOBAL",1)~ p1
+  SAY @0 /* You truly wish to part company, <CHARNAME>? */
+-  + ~!AreaCheck("AR4500") GlobalLT("chapter","GLOBAL",9)~ + @1 /* For the moment, yes. */ + p2
+-  + ~!AreaCheck("AR4500") GlobalGT("chapter","GLOBAL",8)~ + @1 /* For the moment, yes. */ + p3
++  + ~!AreaCheck("AR4500") GlobalLT("chapter","GLOBAL",%bg2_chapter_9%)~ + @1 /* For the moment, yes. */ + p2
++  + ~!AreaCheck("AR4500") GlobalGT("chapter","GLOBAL",%bg2_chapter_8%)~ + @1 /* For the moment, yes. */ + p3
+   + ~AreaCheck("AR4500")~ + @1 /* For the moment, yes. */ + p4
+  	++ @2 /* Sorry, no. I'd rather not. */ + p5
+ END

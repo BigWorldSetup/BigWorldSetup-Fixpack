@@ -1,0 +1,98 @@
+--- keldorn_rom/script/b!keldorn_rom_d.baf	2015-01-06 22:54:14.000000000 -0500
++++ Fixpack/keldorn_rom/script/b!keldorn_rom_d.baf	2016-11-21 10:34:35.157718600 -0500
+@@ -6,7 +6,7 @@
+     RealGlobalTimerExpired("B!KelTime","GLOBAL") 
+     Global("B!KeldornRA","GLOBAL",1) 
+     !AreaType(DUNGEON) 
+-    !Global("Chapter","GLOBAL",5) 
++    !Global("Chapter","GLOBAL",%bg2_chapter_5%) 
+     !StateCheck(Myself,CD_STATE_NOTVALID) 
+     !StateCheck(Player1,CD_STATE_NOTVALID) 
+     CombatCounter(0) 
+@@ -45,13 +45,13 @@
+     TimeOfDay(NIGHT) 
+     Global("B!KeldornRA","GLOBAL",1) 
+     !AreaType(DUNGEON) 
+-    !Global("Chapter","GLOBAL",5) 
++    !Global("Chapter","GLOBAL",%bg2_chapter_5%) 
+     !StateCheck(Myself,CD_STATE_NOTVALID) 
+     !StateCheck(Player1,CD_STATE_NOTVALID) 
+     CombatCounter(0) 
+     !See([ENEMY]) 
+     Global("B!KelLT","GLOBAL",67) 
+-	GlobalLT("Chapter","GLOBAL",8) //not in ToB
++	GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) //not in ToB
+ THEN 
+     RESPONSE #100 
+         IncrementGlobal("B!KelLT","GLOBAL",1) 
+@@ -114,7 +114,7 @@
+     RealGlobalTimerExpired("B!KelTime","GLOBAL") 
+     Global("B!KeldornRA","GLOBAL",1) 
+     !AreaType(DUNGEON) 
+-    !Global("Chapter","GLOBAL",5) 
++    !Global("Chapter","GLOBAL",%bg2_chapter_5%) 
+     !StateCheck(Myself,CD_STATE_NOTVALID) 
+     !StateCheck(Player1,CD_STATE_NOTVALID) 
+     CombatCounter(0) 
+@@ -149,12 +149,12 @@
+     GlobalTimerExpired("B!KelNightTime","GLOBAL") 
+     Global("B!KeldornRA","GLOBAL",1) 
+     !AreaType(DUNGEON) 
+-    !Global("Chapter","GLOBAL",5) 
++    !Global("Chapter","GLOBAL",%bg2_chapter_5%) 
+     !StateCheck(Myself,CD_STATE_NOTVALID) 
+     !StateCheck(Player1,CD_STATE_NOTVALID) 
+     CombatCounter(0) 
+     !See([ENEMY]) 
+-	GlobalLT("Chapter","GLOBAL",8) //not in ToB
++	GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) //not in ToB
+     OR(4) 
+         Global("B!KelNT","GLOBAL",1) 
+         Global("B!KelNT","GLOBAL",3) 
+@@ -176,7 +176,7 @@
+     !StateCheck(Player1,CD_STATE_NOTVALID) 
+     CombatCounter(0) 
+     !See([ENEMY]) 
+-	GlobalLT("Chapter","GLOBAL",8) //not in ToB
++	GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) //not in ToB
+ THEN 
+     RESPONSE #100 
+         IncrementGlobal("B!KelBandage","LOCALS",1) 
+--- keldorn_rom/script/with_music/b!keldorn_rom_d.baf	2010-06-24 10:30:22.000000000 -0400
++++ Fixpack/keldorn_rom/script/with_music/b!keldorn_rom_d.baf	2016-11-21 10:33:28.902677900 -0500
+@@ -6,7 +6,7 @@
+     RealGlobalTimerExpired("B!KelTime","GLOBAL") 
+     Global("B!KeldornRA","GLOBAL",1) 
+     !AreaType(DUNGEON) 
+-    !Global("Chapter","GLOBAL",5) 
++    !Global("Chapter","GLOBAL",%bg2_chapter_5%) 
+     !StateCheck(Myself,CD_STATE_NOTVALID) 
+     !StateCheck(Player1,CD_STATE_NOTVALID) 
+     CombatCounter(0) 
+@@ -25,7 +25,7 @@
+     TimeOfDay(NIGHT) 
+     Global("B!KeldornRA","GLOBAL",1) 
+     !AreaType(DUNGEON) 
+-    !Global("Chapter","GLOBAL",5) 
++    !Global("Chapter","GLOBAL",%bg2_chapter_5%) 
+     !StateCheck(Myself,CD_STATE_NOTVALID) 
+     !StateCheck(Player1,CD_STATE_NOTVALID) 
+     CombatCounter(0) 
+@@ -43,7 +43,7 @@
+     RealGlobalTimerExpired("B!KelTime","GLOBAL") 
+     Global("B!KeldornRA","GLOBAL",1) 
+     !AreaType(DUNGEON) 
+-    !Global("Chapter","GLOBAL",5) 
++    !Global("Chapter","GLOBAL",%bg2_chapter_5%) 
+     !StateCheck(Myself,CD_STATE_NOTVALID) 
+     !StateCheck(Player1,CD_STATE_NOTVALID) 
+     CombatCounter(0) 
+@@ -77,7 +77,7 @@
+     GlobalTimerExpired("B!KelNightTime","GLOBAL") 
+     Global("B!KeldornRA","GLOBAL",1) 
+     !AreaType(DUNGEON) 
+-    !Global("Chapter","GLOBAL",5) 
++    !Global("Chapter","GLOBAL",%bg2_chapter_5%) 
+     !StateCheck(Myself,CD_STATE_NOTVALID) 
+     !StateCheck(Player1,CD_STATE_NOTVALID) 
+     CombatCounter(0) 

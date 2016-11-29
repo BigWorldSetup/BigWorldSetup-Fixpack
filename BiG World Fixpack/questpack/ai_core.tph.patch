@@ -1,0 +1,48 @@
+--- questpack/tp2/tactical/ai_core.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/tactical/ai_core.tph	2016-11-21 22:35:19.210471500 -0500
+@@ -5,26 +5,26 @@
+ STRING_SET 49767 @296
+ 
+ // Basic scripts
+-COMPILE ~questpack/AI/compile~
++COMPILE EVALUATE_BUFFER ~questpack/AI/compile~
+ 
+ // If Drow Innates are already installed
+ ACTION_IF FILE_EXISTS_IN_GAME KRIN400.SPL BEGIN
+-  EXTEND_TOP ~WTASIGHT.BCS~ ~questpack/AI/ET_WTA.BAF~
+-  EXTEND_TOP ~WTARSGT.BCS~ ~questpack/AI/ET_WTA.BAF~
+-  EXTEND_TOP ~WDASIGHT.BCS~ ~questpack/AI/ET_WTA.BAF~
+-  EXTEND_TOP ~WDARSGT.BCS~ ~questpack/AI/ET_WTA.BAF~
++  EXTEND_TOP ~WTASIGHT.BCS~ ~questpack/AI/ET_WTA.BAF~ EVALUATE_BUFFER
++  EXTEND_TOP ~WTARSGT.BCS~ ~questpack/AI/ET_WTA.BAF~ EVALUATE_BUFFER
++  EXTEND_TOP ~WDASIGHT.BCS~ ~questpack/AI/ET_WTA.BAF~ EVALUATE_BUFFER
++  EXTEND_TOP ~WDARSGT.BCS~ ~questpack/AI/ET_WTA.BAF~ EVALUATE_BUFFER
+ END
+ 
+ // If Spider Web is already installed
+ ACTION_IF FILE_EXISTS_IN_GAME d0spiweb.spl BEGIN
+-  EXTEND_TOP ~WTASIGHT.BCS~ ~questpack/AI/ET_WTA2.BAF~
+-  EXTEND_TOP ~WTARSGT.BCS~ ~questpack/AI/ET_WTA2.BAF~
+-  EXTEND_TOP ~WDASIGHT.BCS~ ~questpack/AI/ET_WTA2.BAF~
+-  EXTEND_TOP ~WDARSGT.BCS~ ~questpack/AI/ET_WTA2.BAF~
++  EXTEND_TOP ~WTASIGHT.BCS~ ~questpack/AI/ET_WTA2.BAF~ EVALUATE_BUFFER
++  EXTEND_TOP ~WTARSGT.BCS~ ~questpack/AI/ET_WTA2.BAF~ EVALUATE_BUFFER
++  EXTEND_TOP ~WDASIGHT.BCS~ ~questpack/AI/ET_WTA2.BAF~ EVALUATE_BUFFER
++  EXTEND_TOP ~WDARSGT.BCS~ ~questpack/AI/ET_WTA2.BAF~ EVALUATE_BUFFER
+ END
+ 
+ // Druid AI
+-COMPILE ~questpack/AI/druid10a.baf~
++COMPILE EVALUATE_BUFFER ~questpack/AI/druid10a.baf~
+ COPY_EXISTING ~druid10a.bcs~ ~override/druid10b.bcs~
+               ~druid10a.bcs~ ~override/druid12a.bcs~
+               ~druid10a.bcs~ ~override/druid12b.bcs~
+@@ -34,7 +34,7 @@
+               ~druid10a.bcs~ ~override/druid8b.bcs~
+ 
+ // Paladin AI
+-COMPILE ~questpack/AI/palad10.baf~
++COMPILE EVALUATE_BUFFER ~questpack/AI/palad10.baf~
+ COPY_EXISTING ~palad10.bcs~ ~override/palad16.bcs~
+ 
+ // Mage AI

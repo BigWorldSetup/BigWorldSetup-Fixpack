@@ -1,0 +1,56 @@
+Patching ub/setup-ub.tp2: GAME_IS BG2EE => GAME_IS ~BG2EE~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ BEGIN COPY ~ub => GAME_IS ~BG2EE eet~ BEGIN COPY ~ub
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ BEGIN => GAME_IS ~BG2EE eet~ BEGIN
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~  => GAME_IS ~BG2EE eet~ 
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~  => GAME_IS ~BG2EE eet~ 
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ BEGIN => GAME_IS ~BG2EE eet~ BEGIN
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/setup-ub.tp2: GAME_IS ~BG2EE~ => GAME_IS ~BG2EE eet~
+Patching ub/encount/u!vamps.baf: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ub/encount/u!vamps.baf: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ub/misc/ubimoen2.baf: GlobalGT("Chapter","GLOBAL",1) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_1%)
+Patching ub/suna/ar0326.baf: GlobalGT("Chapter","GLOBAL",4) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ub/suna/u!sunare.baf: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ub/setup-ub.tp2: ALWAYS command expanded
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+Patching ub/kalah/kalah.tp2: ALWAYS command added
+ALWAYS
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+END
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

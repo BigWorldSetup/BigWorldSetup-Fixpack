@@ -1,5 +1,5 @@
---- Angelo\Dialogue\ADAngelJ.d	Mon Nov 11 09:30:24 2013
-+++ D:\EE_Patchstudio\patched files\Angelo\Dialogue\ADAngelJ.d	Fri Jan 15 12:51:43 2016
+--- Angelo/Dialogue/ADAngelJ.d	2013-11-11 03:30:24.000000000 -0500
++++ Fixpack/Angelo/Dialogue/ADAngelJ.d	2016-11-04 14:55:56.824567000 -0400
 @@ -1672,7 +1672,7 @@
  END
  IF ~~ EXTERN ADSAWARA s11.duel

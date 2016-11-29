@@ -1,0 +1,20 @@
+--- Xan/Dialogue/O#XanP.d	2013-07-23 15:35:46.000000000 -0400
++++ Fixpack/Xan/Dialogue/O#XanP.d	2016-11-21 16:31:49.004083700 -0500
+@@ -10,7 +10,7 @@
+ 
+ // Graveyard, Bodhi
+ 
+-IF ~Global("Chapter","GLOBAL",6) AreaCheck("AR0800") Global("O#XanRomanceActive","GLOBAL",2)~ O#XanGraveyardKickedOut
++IF ~Global("Chapter","GLOBAL",%bg2_chapter_6%) AreaCheck("AR0800") Global("O#XanRomanceActive","GLOBAL",2)~ O#XanGraveyardKickedOut
+ SAY @0
+ = @1
+ IF ~~ DO ~SetGlobal("O#XanRomanceActive","GLOBAL",3) TakePartyItem("O#XanMB") TakePartyItem("O#XanMS") TakePartyItem("O#XanIMB") TakePartyItem("O#XanIMS") EscapeArea()~ EXIT
+@@ -168,7 +168,7 @@
+ ++ @22 + O#XanRK01
+ ++ @23 + O#XanRK02
+ ++ @24 + O#XanRK03
+-+ ~Global("Chapter","GLOBAL",6)~ + @25 + O#XanRK07
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_6%)~ + @25 + O#XanRK07
+ END
+ 
+ IF ~~ O#XanRK01

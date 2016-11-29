@@ -1,0 +1,32 @@
+--- questpack/tp2/quest/incomplete/faldorn.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/incomplete/faldorn.tph	2016-11-21 22:34:47.369211700 -0500
+@@ -1,9 +1,9 @@
+-COMPILE ~questpack/druid/dialog.d~
++COMPILE EVALUATE_BUFFER ~questpack/druid/dialog.d~
+ 
+ COPY_EXISTING ~cefald02.cre~ ~override~
+ WRITE_BYTE 0x237 2
+ WRITE_BYTE 0x275 2
+-COMPILE ~questpack/druid/cefald01.baf~
++COMPILE EVALUATE_BUFFER ~questpack/druid/cefald01.baf~
+         ~questpack/druid/cefaldor.baf~
+ COPY_EXISTING ~wolfdr01.cre~ ~override/wolfd1.cre~
+ WRITE_ASCII 0x280 "wolfd1"
+@@ -26,7 +26,7 @@
+ WRITE_BYTE 0x240 1
+ REPLACE_TEXTUALLY ~minhp1~ ~ring95~
+ 
+-COMPILE ~questpack/druid/d0trgrd.baf~
++COMPILE EVALUATE_BUFFER ~questpack/druid/d0trgrd.baf~
+ COPY_EXISTING ~trgrd01.cre~ ~override~
+               ~trgrd02.cre~ ~override~
+ WRITE_ASCII 0x250 "d0trgrd"
+@@ -35,6 +35,6 @@
+ COPY_EXISTING ~trgrd03.cre~ ~override~
+ WRITE_ASCII 0x258 "d0trgrd"
+ 
+-EXTEND_TOP ~shout.bcs~ ~questpack/druid/d0trgrd.baf~
++EXTEND_TOP ~shout.bcs~ ~questpack/druid/d0trgrd.baf~ EVALUATE_BUFFER
+ 
+-EXTEND_TOP ~ar1901.bcs~ ~questpack/druid/et_1901.baf~
++EXTEND_TOP ~ar1901.bcs~ ~questpack/druid/et_1901.baf~ EVALUATE_BUFFER

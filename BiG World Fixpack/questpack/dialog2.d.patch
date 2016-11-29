@@ -1,0 +1,83 @@
+--- questpack/thieves/dialog2.d	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/dialog2.d	2016-11-21 16:18:56.772615400 -0500
+@@ -161,7 +161,7 @@
+ Global("d0WarnedAran","GLOBAL",0)
+ !Global("D0AranHostile","GLOBAL",1)
+ GlobalGT("D0LarellHostile","GLOBAL",0)
+-GlobalGT("chapter","GLOBAL",5)
++GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ GlobalGT("D0Maevar","GLOBAL",0)
+ !Dead("d0nightk")
+ !Dead("Maevar")~ THEN BEGIN AR_2
+@@ -180,7 +180,7 @@
+ Global("d0WarnedAran","GLOBAL",0)
+ !Global("D0AranHostile","GLOBAL",1)
+ GlobalGT("D0LarellHostile","GLOBAL",0)
+-GlobalGT("chapter","GLOBAL",5)
++GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ GlobalGT("D0Maevar","GLOBAL",0)
+ !Dead("d0nightk")
+ Dead("Maevar")~ THEN BEGIN AR_3
+@@ -199,7 +199,7 @@
+ Global("d0WarnedAran","GLOBAL",0)
+ !Global("D0AranHostile","GLOBAL",1)
+ GlobalGT("D0LarellHostile","GLOBAL",0)
+-GlobalGT("chapter","GLOBAL",5)
++GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ GlobalGT("D0Maevar","GLOBAL",0)
+ Dead("d0nightk")
+ !Dead("Maevar")~ THEN BEGIN AR_4
+@@ -218,7 +218,7 @@
+ Global("d0WarnedAran","GLOBAL",0)
+ !Global("D0AranHostile","GLOBAL",1)
+ GlobalGT("D0LarellHostile","GLOBAL",0)
+-GlobalGT("chapter","GLOBAL",5)
++GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ GlobalGT("D0Maevar","GLOBAL",0)
+ Dead("d0nightk")
+ Dead("Maevar")~ THEN BEGIN AR_5
+@@ -426,7 +426,7 @@
+ AddXPObject(Player6,21500)~ EXIT
+ END
+ 
+-IF WEIGHT #-1 ~Global("Chapter","GLOBAL",6)
++IF WEIGHT #-1 ~Global("Chapter","GLOBAL",%bg2_chapter_6%)
+ !Global("D0AranHostile","GLOBAL",1)
+ Dead("c6bodhi")
+ Global("D0Maevar","GLOBAL",8)~ THEN BEGIN AR_26
+@@ -434,7 +434,7 @@
+   IF ~~ THEN EXIT
+ END
+ 
+-IF WEIGHT #17 ~Global("Chapter","GLOBAL",6)
++IF WEIGHT #17 ~Global("Chapter","GLOBAL",%bg2_chapter_6%)
+ Dead("d0nightk")
+ Dead("Maevar")
+ Global("ShadowFightBodhi","GLOBAL",2)
+@@ -454,7 +454,7 @@
+ END
+ 
+ REPLACE ARAN
+-IF WEIGHT #17 ~Global("Chapter","GLOBAL",6)
++IF WEIGHT #17 ~Global("Chapter","GLOBAL",%bg2_chapter_6%)
+ Global("ShadowFightBodhi","GLOBAL",1)
+ !Global("D0AranHostile","GLOBAL",1)
+ !Dead("c6bodhi")~ THEN BEGIN 106 // from:
+@@ -468,7 +468,7 @@
+ GlobalGT("D0Maevar","GLOBAL",4)~ THEN REPLY @285 GOTO AR_20e
+ END
+ 
+-IF ~Global("Chapter","GLOBAL",6)
++IF ~Global("Chapter","GLOBAL",%bg2_chapter_6%)
+ OR(2)
+ !Dead("d0nightk")
+ !Dead("Maevar")
+@@ -487,7 +487,7 @@
+ GlobalGT("D0Maevar","GLOBAL",4)~ THEN REPLY @282 GOTO AR_20d
+ END
+ 
+-IF ~Global("Chapter","GLOBAL",6)
++IF ~Global("Chapter","GLOBAL",%bg2_chapter_6%)
+ !Global("D0AranHostile","GLOBAL",1)
+ Dead("c6bodhi")~ THEN BEGIN 108 // from:
+   SAY #53238 /* ~So... finally, Bodhi is dead, is she?  I am very pleased.  The Shadow Thieves at large can breathe a sigh of relief, now.  A job well done, <CHARNAME>.~ */

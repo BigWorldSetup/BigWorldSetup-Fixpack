@@ -1,5 +1,5 @@
---- divine_remix\dlg\cyricpp.d	Thu Oct 30 03:55:28 2014
-+++ C:\BWP Patchstudio\patched files\divine_remix\dlg\cyricpp.d	Sun Jun 28 20:53:26 2015
+--- divine_remix/dlg/cyricpp.d	2014-10-30 04:55:28.000000000 -0400
++++ Fixpack/divine_remix/dlg/cyricpp.d	2016-11-26 02:07:14.799362600 -0500
 @@ -1,6 +1,6 @@
  APPEND CHALCY01
  

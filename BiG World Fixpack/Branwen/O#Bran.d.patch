@@ -1,0 +1,13 @@
+--- Branwen/Dialogue/O#Bran.d	2013-09-05 13:02:42.000000000 -0400
++++ Fixpack/Branwen/Dialogue/O#Bran.d	2016-11-21 16:31:38.130921500 -0500
+@@ -38,8 +38,8 @@
+ CHAIN O#BRAN b1.1
+ ~I am glad to be part of your war party. I will not make you regret your decision!~
+ END
+-+ ~GlobalLT("Chapter","GLOBAL",4)~ + ~I should probably tell you that I am going to rescue Imoen from the Cowled Wizards.~ EXTERN O#BRAN b1.3
+-+ ~GlobalLT("Chapter","GLOBAL",4)~ + ~I am going to find Irenicus, the mage who kidnapped and tortured me.~ EXTERN O#BRAN b1.4
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + ~I should probably tell you that I am going to rescue Imoen from the Cowled Wizards.~ EXTERN O#BRAN b1.3
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + ~I am going to find Irenicus, the mage who kidnapped and tortured me.~ EXTERN O#BRAN b1.4
+ ++ ~All right, let's go.~ EXTERN O#BRAN b1.join
+ 
+ CHAIN O#BRAN b1.2

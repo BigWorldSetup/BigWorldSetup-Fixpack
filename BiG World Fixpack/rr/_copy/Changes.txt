@@ -1,0 +1,36 @@
+Patching rr/setup-rr.tp2: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching rr/setup-rr.tp2: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching rr/setup-rr.tp2: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching rr/setup-rr.tp2: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching rr/setup-rr.tp2: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching rr/setup-rr.tp2: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching rr/rr_core/compile/amncen1.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching rr/rr_core/compile/amncen1.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching rr/setup-rr.tp2: ALWAYS command expanded
+ALWAYS
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+-------------
+
+Manual changes:
+
+1. rr/lib/rr#thvry.tph
+COMPILE ~RR/RR_CORE/COMPILE/AMNCEN1.D~
+=>
+COMPILE EVALUATE_BUFFER ~RR/RR_CORE/COMPILE/AMNCEN1.D~
+
+2. rr/setup-rr.tp2
+ ~HaveSpell(2402)~  #12082 DO ~TakePartyGold(250) DestroyGold(250) RemoveSpell(2402) GiveItemCreate("scrl1v_",Myself,1,1,1)~ EXIT //Dimension Door
+=>
++ ~HaveSpell(2402)~ + #12082 DO ~TakePartyGold(250) DestroyGold(250) RemoveSpell(2402) GiveItemCreate("scrl1v_",Myself,1,1,1)~ EXIT //Dimension Door
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

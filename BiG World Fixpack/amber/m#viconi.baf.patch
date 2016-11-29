@@ -1,5 +1,5 @@
---- amber\scripts\m#viconi.baf	Mon Aug 21 12:13:00 2006
-+++ D:\EE_Patchstudio\patched files\amber\scripts\m#viconi.baf	Fri Jan 15 12:51:46 2016
+--- amber/scripts/m#viconi.baf	2006-08-21 13:13:00.000000000 -0400
++++ Fixpack/amber/scripts/m#viconi.baf	2016-11-21 16:26:17.554494400 -0500
 @@ -15,7 +15,7 @@
  IF
  	RealGlobalTimerExpired("M#AmberViconiaRomanceConflictTime","GLOBAL")

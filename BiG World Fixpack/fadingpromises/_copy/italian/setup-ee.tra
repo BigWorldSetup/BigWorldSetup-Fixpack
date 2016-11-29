@@ -1,0 +1,23 @@
+@3    = ~Il Pugno di Amaunator
+Questa mazza è stata forgiata dai servi di Amaunator, l'antico dio sole Netherese, per combattere le forze dei malvagi non morti. Gli incantesimi di questa reliquia consentono al portatore di evocare Raggio di Sole, la cui pura energia vitale è la rovina dei non viventi.
+
+STATISTICHE:
+Abilità speciali (una volta al giorno):
+Raggio di Sole
+ Danno: 3D6 (tiro salvezza contro incantesimi o accecati per 10 round)
+ Non morti: ulteriori 1d6 danni per livello di incantatore (tiro salvezza contro incantesimi o distrutti)
+ Raggio d'Azione: 6 mt
+ Area: 6 mt. raggio
+
+THAC0:  +2 bonus, +2 aggiuntivi contro le creature malvagie
+Danno: 1D8 +2, +2 aggiuntivi contro le creature malvagie, danno doppio sui non morti
+Tipo di danno: schiacciamento
+Peso: 2
+Fattore Velocità: 3
+Tipo di Capacità: Mazza
+Tipo: A 1 mano
+Richiede: Forza 6
+
+Non utilizzabile da:
+ Druido
+ Mago~

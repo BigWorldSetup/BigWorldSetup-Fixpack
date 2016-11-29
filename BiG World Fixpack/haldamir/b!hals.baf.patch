@@ -1,0 +1,56 @@
+--- haldamir/script/b!hals.baf	2010-04-19 02:39:18.450800000 -0400
++++ Fixpack/haldamir/script/b!hals.baf	2016-11-21 11:38:18.148348200 -0500
+@@ -147,7 +147,7 @@
+   InParty(Myself)
+   Global("PlayerLooksLikeDrow","GLOBAL",1)
+   Global("B!HalLooksLikeDrow","GLOBAL",0)
+-  GlobalGT("Chapter","GLOBAL",5)
++  GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+   See(Player1)
+   !See([ENEMY])
+   !StateCheck(Myself,CD_STATE_NOTVALID)
+@@ -161,7 +161,7 @@
+   InParty(Myself)
+   Global("BodhiAppear","GLOBAL",1)
+   Global("B!HalValen","GLOBAL",0)
+-  GlobalGT("Chapter","GLOBAL",2)
++  GlobalGT("Chapter","GLOBAL",%bg2_chapter_2%)
+   See(Player1)
+   !See([ENEMY])
+   !StateCheck(Myself,CD_STATE_NOTVALID)
+@@ -368,7 +368,7 @@
+ IF 
+   InParty(Myself)
+   GlobalGT("AsylumDaceGone","GLOBAL",0)
+-  Global("Chapter","GLOBAL",4) 
++  Global("Chapter","GLOBAL",%bg2_chapter_4%) 
+   Global("B!HaldamirDace","GLOBAL",0)
+   See(Player1)
+   !See([ENEMY])
+@@ -397,7 +397,7 @@
+   GlobalGT("SelfTalk","GLOBAL",1)
+   Global("B!HalSlayer","GLOBAL",1)
+   AreaCheck("AR1514") 
+-  Global("Chapter","GLOBAL",4) 
++  Global("Chapter","GLOBAL",%bg2_chapter_4%) 
+   See(Player1)
+   !See([ENEMY])
+   !StateCheck(Myself,CD_STATE_NOTVALID)
+@@ -422,7 +422,7 @@
+ ///* Second Slayer change */
+ IF
+   InParty(Myself)
+-  Global("Chapter","GLOBAL",4) 
++  Global("Chapter","GLOBAL",%bg2_chapter_4%) 
+   Global("DrowTalk","GLOBAL",5) 
+   Global("B!HalSlayer","GLOBAL",3)
+   See(Player1)
+@@ -584,7 +584,7 @@
+   InParty(Myself)
+   Global("B!HalSolaufein1","GLOBAL",1)
+   AreaCheck("AR2204") 
+-  Global("Chapter","GLOBAL",5) 
++  Global("Chapter","GLOBAL",%bg2_chapter_5%) 
+   See(Player1)
+   !See([ENEMY])
+   !StateCheck(Myself,CD_STATE_NOTVALID)

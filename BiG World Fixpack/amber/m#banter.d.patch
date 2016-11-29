@@ -1,5 +1,5 @@
---- amber\dialogs\m#banter.d	Fri Aug 21 11:25:00 2009
-+++ C:\BWP Patchstudio\patched files\amber\dialogs\m#banter.d	Wed Aug 21 08:40:26 2013
+--- amber/dialogs/m#banter.d	2009-08-21 12:25:00.000000000 -0400
++++ Fixpack/amber/dialogs/m#banter.d	2016-11-26 02:07:11.437037600 -0500
 @@ -739,91 +739,91 @@
  == BM#AMBER
  @1178 /* @1178 = ~No, I don't think so. I'm not foolish enough to be lured into a riddling competition with a word twister like you. Been there, done that, and ended up losing every time.~ */

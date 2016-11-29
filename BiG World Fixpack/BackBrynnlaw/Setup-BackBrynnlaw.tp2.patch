@@ -1,0 +1,62 @@
+--- BackBrynnlaw/Setup-BackBrynnlaw.tp2	2016-01-10 08:49:15.797682600 -0500
++++ Fixpack/BackBrynnlaw/Setup-BackBrynnlaw.tp2	2016-11-22 15:23:51.951473800 -0500
+@@ -1,26 +1,34 @@
+ BACKUP ~BackBrynnlaw/Backup~
+ AUTHOR ~http://forums.pocketplane.net~
+-VERSION ~v5~
++
++VERSION ~v5 BWP Fix~
+ 
+ README ~BackBrynnlaw/%LANGUAGE%/Readme-BackBrynnlaw.txt~ ~BackBrynnlaw/Readme-BackBrynnlaw.txt~ 
+ 
+ ALWAYS
+-  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+-  INCLUDE ~%MOD_FOLDER%/handle_charsets.tpa~
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
+ 
+   // No exception, everything needs to be converted
+   ACTION_DEFINE_ARRAY O#noconvert BEGIN END
+ 
+-  // Only setup-Mod.tra needs to be reloaded
++  // any tra files used in LANGUAGE need to be reloaded after conversion
+   ACTION_DEFINE_ARRAY O#reload BEGIN Setup-BackBrynnlaw END
+ 
+-  // There is no "language" folder so the root of all languages in %MOD_FOLDER%
++  // There is no "language" folder so the root of all languages is %MOD_FOLDER%
+   LAF HANDLE_CHARSETS
+     INT_VAR
+-      infer_charset = 1
++      infer_charsets = 1
+     STR_VAR
+       tra_path = EVAL ~%MOD_FOLDER%~
+-      // charset_table = O#charsets // Included for illustrative purposes.
+       noconvert_array = O#noconvert
+       reload_array = O#reload
+   END
+@@ -34,7 +42,7 @@
+ 
+ BEGIN @0
+ 
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ LOAD_TRA ~BackBrynnlaw/%LANGUAGE%/Setup-BackBrynnlaw-EE.tra~
+ ADD_JOURNAL @10012 @10013 @10014 @10015 @10016 @10017 @10018 @10019 @10020 @10021 @10022 @10023 @10024 @10025 @10026 @10027 @10028 @10029 @10030 @10031 @10032 @10033 @10034 @10035 @10036 @10037 @10038 @10039 @10040 @10041 @10042 @10086 @10087 @10088 @10089
+ END
+@@ -101,7 +109,7 @@
+         ~BackBrynnlaw/Scripts/O#BrynT9.baf~
+         ~BackBrynnlaw/Scripts/O#Bryn11.baf~
+ 
+-EXTEND_TOP ~AR0700.bcs~ ~BackBrynnlaw/Scripts/AR0700.baf~
++EXTEND_TOP ~AR0700.bcs~ ~BackBrynnlaw/Scripts/AR0700.baf~ EVALUATE_BUFFER
+ EXTEND_TOP ~AR0318.bcs~ ~BackBrynnlaw/Scripts/AR0318.baf~
+ EXTEND_TOP ~AR0300.bcs~ ~BackBrynnlaw/Scripts/AR0300.baf~
+ EXTEND_TOP ~AR0500.bcs~ ~BackBrynnlaw/Scripts/AR0500.baf~

@@ -1,5 +1,5 @@
---- amber\scripts\m#imoen.baf	Fri Aug 21 10:07:00 2009
-+++ D:\EE_Patchstudio\patched files\amber\scripts\m#imoen.baf	Fri Jan 15 12:51:46 2016
+--- amber/scripts/m#imoen.baf	2009-08-21 11:07:00.000000000 -0400
++++ Fixpack/amber/scripts/m#imoen.baf	2016-11-21 20:18:22.562774800 -0500
 @@ -20,7 +20,7 @@
  IF
  	InParty("M#Amber")

@@ -1,0 +1,45 @@
+Patching RE/Setup-RE.tp2: GAME_IS ~BG2EE~ BEGIN => GAME_IS ~BG2EE eet~ BEGIN
+Patching RE/Setup-RE.tp2: GAME_IS ~BG2EE~ BEGIN => GAME_IS ~BG2EE eet~ BEGIN
+Patching RE/Setup-RE.tp2: GAME_IS ~BG2EE~ BEGIN => GAME_IS ~BG2EE eet~ BEGIN
+Patching RE/Setup-RE.tp2: GAME_IS ~BG2EE~ BEGIN => GAME_IS ~BG2EE eet~ BEGIN
+Patching RE/Setup-RE.tp2: GAME_IS ~BG2EE~ BEGIN => GAME_IS ~BG2EE eet~ BEGIN
+Patching RE/Cambion/RE_Camb.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching RE/Cambion/RE_Camb.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching RE/HaerDalis/RE_Haer.baf: GlobalGT("Chapter","GLOBAL",4) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching RE/Laran/Dialogue/B!LARAN2.D: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching RE/Ribald/dialogue/RE_Riba.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching RE/Ribald/dialogue/RE_Riba.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching RE/Ribald/dialogue/RE_Riba.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching RE/Ribald/dialogue/RE_Riba.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching RE/Ribald/scripts/RE_Riba.baf: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching RE/Ryan/RE_Ryan.d: Global("Chapter","GLOBAL",6) => Global("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching RE/Ryan/RE_Ryan.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching RE/Ryan/RE_Ryan.d: GlobalGT("Chapter","GLOBAL",3) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching RE/Ryan/RE_Ryan.d: Global("Chapter","GLOBAL",6) => Global("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching RE/Ryan/RE_Ryan.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching RE/Sendai/Player1d.baf: Global("Chapter","GLOBAL",9) => Global("Chapter","GLOBAL",%bg2_chapter_9%)
+Patching RE/Valygar/RE_Valyg.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching RE/Valygar/RE_Valyg.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching RE/Valygar/RE_Valyg.d: GlobalLT("Chapter","GLOBAL",3) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching RE/Valygar/Valy25.baf: Global("Chapter","GLOBAL",8) => Global("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching RE/Valygar/Valy25.baf: Global("Chapter","GLOBAL",10) => Global("Chapter","GLOBAL",%bg2_chapter_10%)
+Patching RE/Valygar/Valy25.baf: Global("Chapter","GLOBAL",10) => Global("Chapter","GLOBAL",%bg2_chapter_10%)
+Patching RE/Valygar/Valy25d.baf: Global("Chapter","GLOBAL",9) => Global("Chapter","GLOBAL",%bg2_chapter_9%)
+Patching RE/Yoshimo/Yoshimo.baf: GlobalGT("Chapter","GLOBAL",1) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_1%)
+Patching RE/Setup-RE.tp2: ALWAYS command added
+ALWAYS
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+END
+
+----------------
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

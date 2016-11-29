@@ -1,0 +1,184 @@
+--- Xan/Dialogue/O#XanJ.d	2014-02-14 13:51:42.000000000 -0500
++++ Fixpack/Xan/Dialogue/O#XanJ.d	2016-11-21 16:26:51.372417800 -0500
+@@ -1136,7 +1136,7 @@
+ END
+ 
+ I_C_T VVSTAND3 1 O#XanMarksVampires1
+-== O#XANJ IF ~InParty("O#Xan") InMyArea("O#Xan") !StateCheck("O#Xan",CD_STATE_NOTVALID) Global("Chapter","GLOBAL",2)~ THEN @326
++== O#XANJ IF ~InParty("O#Xan") InMyArea("O#Xan") !StateCheck("O#Xan",CD_STATE_NOTVALID) Global("Chapter","GLOBAL",%bg2_chapter_2%)~ THEN @326
+ END
+ 
+ I_C_T WCUST02 5 O#XanHotelDebutante1
+@@ -1889,21 +1889,21 @@
+ 
+ BEGIN O#DROWF
+ 
+-CHAIN IF ~OR(3) !InParty("O#Xan") !InMyArea("O#Xan") StateCheck("O#Xan",CD_STATE_NOTVALID) NumTimesTalkedToLT(3) Global("Chapter","GLOBAL",5)~ THEN O#DROWF O#XanDF1
++CHAIN IF ~OR(3) !InParty("O#Xan") !InMyArea("O#Xan") StateCheck("O#Xan",CD_STATE_NOTVALID) NumTimesTalkedToLT(3) Global("Chapter","GLOBAL",%bg2_chapter_5%)~ THEN O#DROWF O#XanDF1
+ @3561
+ EXIT
+ 
+-CHAIN IF ~OR(3) !InParty("O#Xan") !InMyArea("O#Xan") StateCheck("O#Xan",CD_STATE_NOTVALID) NumTimesTalkedToGT(2) NumTimesTalkedToLT(5) Global("Chapter","GLOBAL",5)~ THEN O#DROWF O#XanDF2
++CHAIN IF ~OR(3) !InParty("O#Xan") !InMyArea("O#Xan") StateCheck("O#Xan",CD_STATE_NOTVALID) NumTimesTalkedToGT(2) NumTimesTalkedToLT(5) Global("Chapter","GLOBAL",%bg2_chapter_5%)~ THEN O#DROWF O#XanDF2
+ @3562
+ EXIT
+ 
+-CHAIN IF ~OR(3) !InParty("O#Xan") !InMyArea("O#Xan") StateCheck("O#Xan",CD_STATE_NOTVALID) NumTimesTalkedToGT(4) Global("Chapter","GLOBAL",5)~ THEN O#DROWF O#XanDF3
++CHAIN IF ~OR(3) !InParty("O#Xan") !InMyArea("O#Xan") StateCheck("O#Xan",CD_STATE_NOTVALID) NumTimesTalkedToGT(4) Global("Chapter","GLOBAL",%bg2_chapter_5%)~ THEN O#DROWF O#XanDF3
+ @3563
+ = @3564
+ DO ~SetGlobal("DrowCityHostile","GLOBAL",1) EscapeArea()~
+ EXIT
+ 
+-CHAIN IF ~InParty("O#Xan") InMyArea("O#Xan") !StateCheck("O#Xan",CD_STATE_NOTVALID) Global("Chapter","GLOBAL",5)~ THEN O#DROWF O#XanDF4
++CHAIN IF ~InParty("O#Xan") InMyArea("O#Xan") !StateCheck("O#Xan",CD_STATE_NOTVALID) Global("Chapter","GLOBAL",%bg2_chapter_5%)~ THEN O#DROWF O#XanDF4
+ @3565
+ == O#XANJ @3566 
+ == O#DROWF @3567
+@@ -2774,10 +2774,10 @@
+ @5065
+ == O#HIEL IF ~Race(Player1,ELF)~ THEN @5066
+ == O#HIEL IF ~!Race(Player1,ELF)~ THEN @5067
+-== O#HIEL IF ~GlobalLT("Chapter","GLOBAL",4)~ THEN @5068
+-== O#XANJ IF ~GlobalLT("Chapter","GLOBAL",4)~ THEN @5069
+-== O#HIEL IF ~GlobalGT("Chapter","GLOBAL",3)~ THEN @5070
+-== O#XANJ IF ~GlobalGT("Chapter","GLOBAL",3)~ THEN @5071
++== O#HIEL IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ THEN @5068
++== O#XANJ IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ THEN @5069
++== O#HIEL IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ THEN @5070
++== O#XANJ IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ THEN @5071
+ == O#HIEL @5072
+ == O#XANJ @5073
+ == O#HIEL @5074
+@@ -6541,8 +6541,8 @@
+ IF ~Global("O#XanFlirtCounter","GLOBAL",28)~ DO ~SetGlobal("O#XanFlirtsStarted","GLOBAL",0) RealSetGlobalTimer("O#XanFlirtTimer","GLOBAL",2222)~ + O#Xan2F58
+ IF ~Global("O#XanFlirtCounter","GLOBAL",29)~ DO ~SetGlobal("O#XanFlirtsStarted","GLOBAL",0) RealSetGlobalTimer("O#XanFlirtTimer","GLOBAL",2222)~ + O#Xan2F59
+ IF ~Global("O#XanFlirtCounter","GLOBAL",30)~ DO ~SetGlobal("O#XanFlirtsStarted","GLOBAL",0) RealSetGlobalTimer("O#XanFlirtTimer","GLOBAL",2222)~ + O#Xan2F60
+-IF ~Global("O#XanFlirtCounter","GLOBAL",31) GlobalLT("Chapter","GLOBAL",6)~ DO ~SetGlobal("O#XanFlirtsStarted","GLOBAL",2)~ + O#XanFlirtTime23
+-IF ~Global("O#XanFlirtCounter","GLOBAL",31) Global("Chapter","GLOBAL",6)~ DO ~SetGlobal("O#XanFlirtsStarted","GLOBAL",2)~ + O#XanFlirtTime6
++IF ~Global("O#XanFlirtCounter","GLOBAL",31) GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)~ DO ~SetGlobal("O#XanFlirtsStarted","GLOBAL",2)~ + O#XanFlirtTime23
++IF ~Global("O#XanFlirtCounter","GLOBAL",31) Global("Chapter","GLOBAL",%bg2_chapter_6%)~ DO ~SetGlobal("O#XanFlirtsStarted","GLOBAL",2)~ + O#XanFlirtTime6
+ END
+ 
+ IF ~~ O#Xan2F1
+@@ -7388,7 +7388,7 @@
+ // Slayer transformation
+ 
+ IF ~IsGabber(Player1)
+-Global("Chapter","GLOBAL",4)
++Global("Chapter","GLOBAL",%bg2_chapter_4%)
+ GlobalGT("AsylumPlot","GLOBAL",41) 
+ GlobalLT("AsylumPlot","GLOBAL",55)~ O#XanSlayerRomancePID
+ SAY @900 
+@@ -10460,10 +10460,10 @@
+ 
+ IF ~~ O#XanAsk
+ SAY @1568
+-+ ~Global("Chapter","GLOBAL",2)~ + @1569 + O#XanA1.1
+-+ ~Global("Chapter","GLOBAL",3) Global("WorkingForAran","GLOBAL",1)~+ @1569 + O#XanA1.2
+-+ ~Global("Chapter","GLOBAL",3) Global("WorkingForBodhi","GLOBAL",1)~+ @1569 + O#XanA1.3
+-+ ~GlobalGT("Chapter","GLOBAL",3) !Dead("C6Bodhi")~ + @1569 + O#XanA1.4
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_2%)~ + @1569 + O#XanA1.1
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_3%) Global("WorkingForAran","GLOBAL",1)~+ @1569 + O#XanA1.2
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_3%) Global("WorkingForBodhi","GLOBAL",1)~+ @1569 + O#XanA1.3
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%) !Dead("C6Bodhi")~ + @1569 + O#XanA1.4
+ + ~Dead("C6Bodhi")~ + @1569 + O#XanA1.5
+ ++ @1570 + O#XanA2
+ ++ @1571 + O#XanA3
+@@ -10772,7 +10772,7 @@
+ + ~Global("O#XanMoonbladeImprove","GLOBAL",0) OR(2) PartyHasItem("O#XanMB") PartyHasItem("O#XanMS")~ + @4573 DO ~SetGlobal("O#XanMoonbladeImprove","GLOBAL",1)~ + O#XanMI1
+ + ~Global("O#XanMoonbladeImprove","GLOBAL",1) OR(2) PartyHasItem("O#XanMB") PartyHasItem("O#XanMS")~ + @4574 + O#XanMI2
+ + ~OR(3) GlobalGT("O#XanLoveTalk","GLOBAL",10) GlobalGT("O#XanBondedTalk","GLOBAL",10) GlobalGT("O#XanFriendTalk","GLOBAL",10) !Global("O#XanFriendship","GLOBAL",3) !Global("O#XanRomanceActive","GLOBAL",3) Global("O#XanGor1","GLOBAL",0)~ + @4412 DO ~SetGlobal("O#XanGor1","GLOBAL",1)~ + O#XanGor1
+-+ ~GlobalGT("AsylumPlot","GLOBAL",41) GlobalLT("Chapter","GLOBAL",6) Global("O#XanSlayerTalk","GLOBAL",0)~ + @4342 DO ~SetGlobal("O#XanSlayerTalk","GLOBAL",1)~ + O#XanSL1
+++ ~GlobalGT("AsylumPlot","GLOBAL",41) GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) Global("O#XanSlayerTalk","GLOBAL",0)~ + @4342 DO ~SetGlobal("O#XanSlayerTalk","GLOBAL",1)~ + O#XanSL1
+ + ~Race(Player1,HALF_ELF) Gender(Player1,FEMALE) !Global("O#XanNeverMet","GLOBAL",1) Global("O#XanPastHalfelf","GLOBAL",0)~ + @3113 DO ~SetGlobal("O#XanPastHalfelf","GLOBAL",1)~ + O#XanPHE1.1
+ + ~Global("O#XanFriendship","GLOBAL",1) Global("O#XanFF1","GLOBAL",0) GlobalGT("HadImoenDream1","GLOBAL",0)~ + @1689 DO ~SetGlobal("O#XanFF1","GLOBAL",1)~ + O#XanFF1
+ + ~Global("O#XanFriendship","GLOBAL",1) Global("O#XanFF2","GLOBAL",0)~ + @1690 DO ~SetGlobal("O#XanFF2","GLOBAL",1)~ + O#XanFF2
+@@ -10784,15 +10784,15 @@
+ + ~Global("O#XanFriendship","GLOBAL",1) Global("O#XanFF8","GLOBAL",0)~ + @1696 DO ~SetGlobal("O#XanFF8","GLOBAL",1)~ + O#XanFF8
+ + ~Global("O#XanFriendship","GLOBAL",1) Global("O#XanFF9","GLOBAL",0)~ + @1697 DO ~SetGlobal("O#XanFF9","GLOBAL",1)~ + O#XanFF9
+ + ~Global("O#XanFriendship","GLOBAL",1) Global("O#XanFF10","GLOBAL",0)~ + @1698 DO ~SetGlobal("O#XanFF10","GLOBAL",1)~ + O#XanFF10
+-+ ~Global("O#XanFriendship","GLOBAL",1) GlobalLT("Chapter","GLOBAL",4) Global("O#XanFF11","GLOBAL",0)~ + @1699 DO ~SetGlobal("O#XanFF11","GLOBAL",1)~ + O#XanFF11
+++ ~Global("O#XanFriendship","GLOBAL",1) GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%) Global("O#XanFF11","GLOBAL",0)~ + @1699 DO ~SetGlobal("O#XanFF11","GLOBAL",1)~ + O#XanFF11
+ + ~Global("O#XanFriendship","GLOBAL",1) GlobalGT("AsylumPlot","GLOBAL",54) Global("O#XanFF12","GLOBAL",0)~ + @1700 DO ~SetGlobal("O#XanFF12","GLOBAL",1)~ + O#XanFF12
+ + ~Global("O#XanFriendship","GLOBAL",1) GlobalGT("AsylumPlot","GLOBAL",54) Global("O#XanFF13","GLOBAL",0)~ + @1701 DO ~SetGlobal("O#XanFF13","GLOBAL",1)~ + O#XanFF13
+-+ ~Global("O#XanFriendship","GLOBAL",1) GlobalGT("Chapter","GLOBAL",5) Global("O#XanFF14","GLOBAL",0)~ + @1702 DO ~SetGlobal("O#XanFF14","GLOBAL",1)~ + O#XanFF14
+-+ ~Global("O#XanFriendship","GLOBAL",1) GlobalGT("Chapter","GLOBAL",5) Global("O#XanFF15","GLOBAL",0)~ + @1703 DO ~SetGlobal("O#XanFF15","GLOBAL",1)~ + O#XanFF15
+++ ~Global("O#XanFriendship","GLOBAL",1) GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) Global("O#XanFF14","GLOBAL",0)~ + @1702 DO ~SetGlobal("O#XanFF14","GLOBAL",1)~ + O#XanFF14
+++ ~Global("O#XanFriendship","GLOBAL",1) GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) Global("O#XanFF15","GLOBAL",0)~ + @1703 DO ~SetGlobal("O#XanFF15","GLOBAL",1)~ + O#XanFF15
+ + ~Global("O#XanFriendship","GLOBAL",1) !Global("O#XanNeverMet","GLOBAL",1) Global("O#XanFF16","GLOBAL",0)~ + @3053 DO ~SetGlobal("O#XanFF16","GLOBAL",1)~ + O#XanFF16
+-+ ~Global("O#XanFriendship","GLOBAL",1) GlobalGT("Chapter","GLOBAL",3) Global("O#XanFF17","GLOBAL",0)~ + @4012 DO ~SetGlobal("O#XanFF17","GLOBAL",1)~ + O#XanFF17
+-+ ~Global("O#XanFriendship","GLOBAL",1) GlobalGT("Chapter","GLOBAL",3) Global("O#XanFF18","GLOBAL",0)~ + @4101 DO ~SetGlobal("O#XanFF18","GLOBAL",1)~ + O#XanFF18
+-+ ~Global("O#XanFriendship","GLOBAL",1) GlobalGT("Chapter","GLOBAL",3) Global("O#XanFF19","GLOBAL",0)~ + @4103 DO ~SetGlobal("O#XanFF19","GLOBAL",1)~ + O#XanFF19
+++ ~Global("O#XanFriendship","GLOBAL",1) GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%) Global("O#XanFF17","GLOBAL",0)~ + @4012 DO ~SetGlobal("O#XanFF17","GLOBAL",1)~ + O#XanFF17
+++ ~Global("O#XanFriendship","GLOBAL",1) GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%) Global("O#XanFF18","GLOBAL",0)~ + @4101 DO ~SetGlobal("O#XanFF18","GLOBAL",1)~ + O#XanFF18
+++ ~Global("O#XanFriendship","GLOBAL",1) GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%) Global("O#XanFF19","GLOBAL",0)~ + @4103 DO ~SetGlobal("O#XanFF19","GLOBAL",1)~ + O#XanFF19
+ + ~Global("O#XanFriendship","GLOBAL",1) Global("O#XanFF9","GLOBAL",1) Global("O#XanFF20","GLOBAL",0)~ + @4276 DO ~SetGlobal("O#XanFF20","GLOBAL",1)~ + O#XanFF20
+ + ~Global("O#XanFriendship","GLOBAL",1) GlobalGT("O#XanFriendTalk","GLOBAL",18) Global("O#XanFF21","GLOBAL",0)~ + @4409 DO ~SetGlobal("O#XanFF21","GLOBAL",1)~ + O#XanFF21
+ + ~Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanBB1","GLOBAL",0)~ + @1704 DO ~SetGlobal("O#XanBB1","GLOBAL",1)~ + O#XanBB1
+@@ -10810,8 +10810,8 @@
+ + ~Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanBB13","GLOBAL",0) Global("O#XanBondedTalk","GLOBAL",31)~ + @1716 DO ~SetGlobal("O#XanBB13","GLOBAL",1)~ + O#XanBB13
+ + ~Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanBB14","GLOBAL",0) Global("O#XanBondedTalk","GLOBAL",31)~ + @1717 DO ~SetGlobal("O#XanBB14","GLOBAL",1)~ + O#XanBB14
+ + ~Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanBB15","GLOBAL",0) Global("O#XanBondedTalk","GLOBAL",31)~ + @1718 DO ~SetGlobal("O#XanBB15","GLOBAL",1)~ + O#XanBB15
+-+ ~Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanBB16","GLOBAL",0) Global("Chapter","GLOBAL",5)~ + @3002 DO ~SetGlobal("O#XanBB16","GLOBAL",1)~ + O#XanBB16
+-+ ~Global("O#XanRomanceActive","GLOBAL",2) GlobalGT("Chapter","GLOBAL",3) Global("O#XanBB17","GLOBAL",0)~ + @4012 DO ~SetGlobal("O#XanBB17","GLOBAL",1)~ + O#XanBB17
+++ ~Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanBB16","GLOBAL",0) Global("Chapter","GLOBAL",%bg2_chapter_5%)~ + @3002 DO ~SetGlobal("O#XanBB16","GLOBAL",1)~ + O#XanBB16
+++ ~Global("O#XanRomanceActive","GLOBAL",2) GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%) Global("O#XanBB17","GLOBAL",0)~ + @4012 DO ~SetGlobal("O#XanBB17","GLOBAL",1)~ + O#XanBB17
+ + ~Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanBB18","GLOBAL",0)~ + @4101 DO ~SetGlobal("O#XanBB18","GLOBAL",1)~ + O#XanBB18
+ + ~Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanBB19","GLOBAL",0)~ + @4102 DO ~SetGlobal("O#XanBB19","GLOBAL",1)~ + O#XanBB19
+ + ~Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanBondedTalk","GLOBAL",31) Global("O#XanBB20","GLOBAL",0)~ + @4277 DO ~SetGlobal("O#XanBB20","GLOBAL",1)~ + O#XanBB20
+@@ -10829,14 +10829,14 @@
+ + ~Global("O#XanRomanceActive","GLOBAL",1) Global("O#XanHangoverTalk","GLOBAL",0) Global("O#XanLoveTalk","GLOBAL",31)~ + @1729 DO ~SetGlobal("O#XanHangoverTalk","GLOBAL",1)~ + O#XanLL11
+ + ~Global("O#XanRT15","GLOBAL",2) Global("O#XanLL12","GLOBAL",0)~ + @1730 DO ~SetGlobal("O#XanLL12","GLOBAL",1)~ + O#XanLL12
+ + ~Global("O#XanRT15","GLOBAL",2) Global("O#XanLL13","GLOBAL",0)~ + @1731 DO ~SetGlobal("O#XanLL13","GLOBAL",1)~ + O#XanLL13
+-+ ~Global("O#XanRT15","GLOBAL",2) GlobalGT("Chapter","GLOBAL",5) Global("O#XanLL14","GLOBAL",0)~ + @1732 DO ~SetGlobal("O#XanLL14","GLOBAL",1)~ + O#XanLL14
+-+ ~Global("O#XanRT15","GLOBAL",2) GlobalGT("Chapter","GLOBAL",5) Global("O#XanLL15","GLOBAL",0)~ + @1733 DO ~SetGlobal("O#XanLL15","GLOBAL",1)~ + O#XanLL15
+-+ ~Global("O#XanRT15","GLOBAL",2) GlobalGT("Chapter","GLOBAL",4) Global("O#XanLL16","GLOBAL",0)~ + @2903 DO ~SetGlobal("O#XanLL16","GLOBAL",1)~ + O#XanLL16
+++ ~Global("O#XanRT15","GLOBAL",2) GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) Global("O#XanLL14","GLOBAL",0)~ + @1732 DO ~SetGlobal("O#XanLL14","GLOBAL",1)~ + O#XanLL14
+++ ~Global("O#XanRT15","GLOBAL",2) GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) Global("O#XanLL15","GLOBAL",0)~ + @1733 DO ~SetGlobal("O#XanLL15","GLOBAL",1)~ + O#XanLL15
+++ ~Global("O#XanRT15","GLOBAL",2) GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%) Global("O#XanLL16","GLOBAL",0)~ + @2903 DO ~SetGlobal("O#XanLL16","GLOBAL",1)~ + O#XanLL16
+ + ~Global("O#XanRT15","GLOBAL",2) Global("O#XanLL17","GLOBAL",0)~ + @4013 DO ~SetGlobal("O#XanLL17","GLOBAL",1)~ + O#XanLL17
+ + ~Global("O#XanRT15","GLOBAL",2) Global("O#XanLL18","GLOBAL",0)~ + @4101 DO ~SetGlobal("O#XanLL18","GLOBAL",1)~ + O#XanLL18
+ + ~Global("O#XanRomanceActive","GLOBAL",1) Global("O#XanLL19","GLOBAL",0)~ + @4102 DO ~SetGlobal("O#XanLL19","GLOBAL",1)~ + O#XanLL19
+-+ ~Global("O#XanRT15","GLOBAL",2) GlobalGT("Chapter","GLOBAL",5) Global("O#XanLL20","GLOBAL",0)~ + @4278 DO ~SetGlobal("O#XanLL20","GLOBAL",1)~ + O#XanLL20
+-+ ~Global("O#XanRT15","GLOBAL",2) GlobalGT("Chapter","GLOBAL",5) Global("O#XanLL22","GLOBAL",0) Global("O#XanLL13","GLOBAL",1)~ + @5773 DO ~SetGlobal("O#XanLL22","GLOBAL",1)~ + O#XanLL22
+++ ~Global("O#XanRT15","GLOBAL",2) GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) Global("O#XanLL20","GLOBAL",0)~ + @4278 DO ~SetGlobal("O#XanLL20","GLOBAL",1)~ + O#XanLL20
+++ ~Global("O#XanRT15","GLOBAL",2) GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) Global("O#XanLL22","GLOBAL",0) Global("O#XanLL13","GLOBAL",1)~ + @5773 DO ~SetGlobal("O#XanLL22","GLOBAL",1)~ + O#XanLL22
+ + ~Global("O#XanRT15","GLOBAL",2) Global("O#XanLLHate","GLOBAL",0)~ + @4694 DO ~SetGlobal("O#XanLLHate","GLOBAL",1)~ + O#XanLLHate
+ + ~Global("O#XanRT15","GLOBAL",2) Global("O#XanLLCare","GLOBAL",0)~ + @4695 DO ~SetGlobal("O#XanLLCare","GLOBAL",1)~ + O#XanLLCare
+ + ~Global("O#XanRomanceActive","GLOBAL",1) GlobalGT("O#XanLoveTalk","GLOBAL",18) Global("O#XanLL21","GLOBAL",0)~ + @4411 DO ~SetGlobal("O#XanLL21","GLOBAL",1)~ + O#XanLL21
+@@ -10847,8 +10847,8 @@
+ + ~NumInPartyGT(3) GlobalGT("O#XanBondedTalk","GLOBAL",6) Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanRel2","GLOBAL",0)~ + @3163 DO ~SetGlobal("O#XanRel2","GLOBAL",1)~ + O#XanRel2
+ + ~OR(2) Global("O#XanLoveTalk","GLOBAL",31) Global("O#XanBondedTalk","GLOBAL",31)
+ OR(2) Global("O#XanRomanceActive","GLOBAL",1) Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanSecretAffair","GLOBAL",0)~ + @5127 DO ~SetGlobal("O#XanSecretAffair","GLOBAL",1)~ + O#XanSA1
+-+ ~Global("Chapter","GLOBAL",3) Global("WorkingForAran","GLOBAL",1) Global("O#XanWAran","GLOBAL",0)~ + @1734 DO ~SetGlobal("O#XanWAran","GLOBAL",1)~ + O#XanWAran
+-+ ~Global("Chapter","GLOBAL",3) Global("WorkingForBodhi","GLOBAL",1) Global("O#XanWBodhi","GLOBAL",0)~ + @1735 DO ~SetGlobal("O#XanWBodhi","GLOBAL",1)~ + O#XanWBodhi
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_3%) Global("WorkingForAran","GLOBAL",1) Global("O#XanWAran","GLOBAL",0)~ + @1734 DO ~SetGlobal("O#XanWAran","GLOBAL",1)~ + O#XanWAran
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_3%) Global("WorkingForBodhi","GLOBAL",1) Global("O#XanWBodhi","GLOBAL",0)~ + @1735 DO ~SetGlobal("O#XanWBodhi","GLOBAL",1)~ + O#XanWBodhi
+ + ~AreaCheck("AR2300") Global("O#XanSahuagin","GLOBAL",0)~ + @1736 DO ~SetGlobal("O#XanSahuagin","GLOBAL",1)~ + O#XanSahuagin
+ + ~GlobalGT("O#XanRicarQuest","GLOBAL",7) Global("EnteredAR2806","GLOBAL",0)
+ Global("O#XanQ5","GLOBAL",0)~ + @3909 DO ~SetGlobal("O#XanQ5","GLOBAL",1)~ + O#XanQ5.0
+@@ -10856,10 +10856,10 @@
+ + ~Global("O#XanQuest4","GLOBAL",4) Global("O#XanQ7","GLOBAL",0)~ + @5090 DO ~SetGlobal("O#XanQ7","GLOBAL",1)~ + O#XanQ7.0
+ + ~OR(2) Global("O#XanQuest4","GLOBAL",5) Global("O#XanQuest4","GLOBAL",8) Global("O#XanQ8","GLOBAL",0)~ + @5091 DO ~SetGlobal("O#XanQ8","GLOBAL",1)~ + O#XanQ8.0
+ + ~Race(Player1,ELF) Dead("C6Bodhi") !Global("O#XanBondedPathAlive","GLOBAL",2) Global("O#XanBD","GLOBAL",0)~ + @1737 DO ~SetGlobal("O#XanBD","GLOBAL",1)~ + O#XanBD
+-+ ~Global("Chapter","GLOBAL",7) !Global("O#XanBondedPathAlive","GLOBAL",2) Global("O#XanPart7","GLOBAL",0)~ + @1738 DO ~SetGlobal("O#XanPart7","GLOBAL",1)~ + O#XanPart7
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_7%) !Global("O#XanBondedPathAlive","GLOBAL",2) Global("O#XanPart7","GLOBAL",0)~ + @1738 DO ~SetGlobal("O#XanPart7","GLOBAL",1)~ + O#XanPart7
+ + ~HPPercentLT("O#Xan",80) Global("O#XanOftenOffended","GLOBAL",0)~ + @4244 DO ~SetGlobal("O#XanOftenOffended","GLOBAL",1)~ + O#XanOO1
+ + ~Global("O#Xan3Rom","GLOBAL",0) !NumInParty(2) !Global("O#XanFriendship","GLOBAL",3)~ + @4575 DO ~SetGlobal("O#Xan3Rom","GLOBAL",1)~ + O#Xan3R1
+-+ ~Global("O#XanVampireRead","GLOBAL",0) GlobalLT("Chapter","GLOBAL",6)~ + @5652 DO ~SetGlobal("O#XanVampireRead","GLOBAL",1)~ + O#XanVaR1
+++ ~Global("O#XanVampireRead","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)~ + @5652 DO ~SetGlobal("O#XanVampireRead","GLOBAL",1)~ + O#XanVaR1
+ + ~Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanBondedTalk","GLOBAL",31) Global("O#XanBB22","GLOBAL",0)~ + @5286 DO ~SetGlobal("O#XanBB22","GLOBAL",1)~ + O#XanBB22
+ + ~Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanBondedPathAlive","GLOBAL",0) Global("O#XanBB23","GLOBAL",0)~ + @5287 DO ~SetGlobal("O#XanBB23","GLOBAL",1)~ + O#XanBB23
+ + ~Global("O#XanRomanceActive","GLOBAL",2) Global("O#XanBondedPathAlive","GLOBAL",2) Global("O#XanBB24","GLOBAL",0)~ + @5288 DO ~SetGlobal("O#XanBB24","GLOBAL",1)~ + O#XanBB24
+@@ -10917,8 +10917,8 @@
+ 
+ IF ~~ O#XanT2.10
+ SAY @1758
+-IF ~GlobalGT("Chapter","GLOBAL",3)~ + O#XanT2.10A
+-IF ~GlobalLT("Chapter","GLOBAL",4)~ + O#XanT2.10B
++IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + O#XanT2.10A
++IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + O#XanT2.10B
+ END
+ 
+ IF ~~ O#XanT2.10A

@@ -1,0 +1,11 @@
+--- questpack/thieves/scripts/et_0307.baf	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/scripts/et_0307.baf	2016-11-21 16:24:02.070667500 -0500
+@@ -47,7 +47,7 @@
+   Global("D0AranHostile","GLOBAL",1)
+   !Global("D0SpawnMore","MYAREA",1)
+   AreaCheck("ar0307")
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+   RESPONSE #100
+     SetGlobal("D0SpawnMore","MYAREA",1)

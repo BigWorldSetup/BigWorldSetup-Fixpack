@@ -1,0 +1,24 @@
+--- sarahtob/dialogues/k#sarah.d	2013-11-10 17:41:30.424553300 -0500
++++ Fixpack/sarahtob/dialogues/k#sarah.d	2016-11-21 23:01:53.304078700 -0500
+@@ -47,8 +47,8 @@
+ @15
+ END
+ 
+-IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN REPLY @16 GOTO SarahIntro1-1-1
+-IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN REPLY @17 GOTO SarahIntro1-1-2
++IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_3%)~ THEN REPLY @16 GOTO SarahIntro1-1-1
++IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_3%)~ THEN REPLY @17 GOTO SarahIntro1-1-2
+ IF ~Global("Wainwrightjob","GLOBAL",1)~ THEN REPLY @18 GOTO SarahIntro1-1-3
+ IF ~~ THEN REPLY @19 GOTO SarahIntro1-1-3
+ 
+@@ -137,8 +137,8 @@
+ @37
+ END
+ 
+-IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN REPLY @16 GOTO SarahIntro3-1-1
+-IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN REPLY @17 GOTO SarahIntro3-1-2
++IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_3%)~ THEN REPLY @16 GOTO SarahIntro3-1-1
++IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_3%)~ THEN REPLY @17 GOTO SarahIntro3-1-2
+ IF ~Global("Wainwrightjob","GLOBAL",1)~ THEN REPLY @18 GOTO SarahIntro3-1-3
+ IF ~~ THEN REPLY @19 GOTO SarahIntro3-1-3
+ 

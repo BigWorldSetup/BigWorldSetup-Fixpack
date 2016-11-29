@@ -1,0 +1,127 @@
+Patching Isra_bg2/isra_bg2.tp2: GAME_IS ~BG2EE~ THEN BEGIN => GAME_IS ~BG2EE eet~ THEN BEGIN
+Patching Isra_bg2/crossmod/coran.d: GlobalLT("Chapter","GLOBAL",7) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching Isra_bg2/dialogue/rh#is25j.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching Isra_bg2/dialogue/rh#is25j.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching Isra_bg2/dialogue/rh#is25j.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching Isra_bg2/dialogue/rh#is25j.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching Isra_bg2/dialogue/rh#is25j.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching Isra_bg2/dialogue/rh#is25j.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching Isra_bg2/dialogue/rh#is25p.d: GlobalLT("chapter","GLOBAL",9) => GlobalLT("chapter","GLOBAL",%bg2_chapter_9%)
+Patching Isra_bg2/dialogue/rh#is25p.d: GlobalGT("chapter","GLOBAL",8) => GlobalGT("chapter","GLOBAL",%bg2_chapter_8%)
+Patching Isra_bg2/dialogue/rh#isr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isrj.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isrj.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isrj.d: Global("chapter","GLOBAL",4) => Global("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isrj.d: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching Isra_bg2/dialogue/rh#isrj.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isrj.d: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching Isra_bg2/dialogue/rh#isrj.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isrj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching Isra_bg2/dialogue/rh#isrj.d: Global("Chapter","GLOBAL",2) => Global("Chapter","GLOBAL",%bg2_chapter_2%)
+Patching Isra_bg2/dialogue/rh#isrj.d: Global("Chapter","GLOBAL",3) => Global("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching Isra_bg2/dialogue/rh#isrj.d: Global("Chapter","GLOBAL",3) => Global("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching Isra_bg2/dialogue/rh#isrj.d: Global("Chapter","GLOBAL",3) => Global("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching Isra_bg2/dialogue/rh#isrj.d: Global("Chapter","GLOBAL",3) => Global("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching Isra_bg2/dialogue/rh#isrj.d: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isrj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching Isra_bg2/dialogue/rh#isrj.d: Global("Chapter","GLOBAL",6) => Global("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching Isra_bg2/dialogue/rh#isrj.d: Global("Chapter","GLOBAL",6) => Global("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching Isra_bg2/dialogue/rh#isrj.d: Global("Chapter","GLOBAL",6) => Global("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching Isra_bg2/dialogue/rh#isrj.d: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching Isra_bg2/dialogue/rh#isrp.d: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isrp.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching Isra_bg2/dialogue/rh#isrp.d: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching Isra_bg2/dialogue/rh#isrp.d: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/dialogue/rh#isrp.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching Isra_bg2/dialogue/rh#isrp.d: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching Isra_bg2/scripts/rh#isr.baf: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/scripts/rh#isr.baf: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/scripts/rh#isr.baf: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/scripts/rh#isr.baf: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/scripts/rh#isr.baf: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/scripts/rh#isr.baf: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/scripts/rh#isr.baf: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/scripts/rh#isr.baf: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/scripts/rh#isr.baf: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/scripts/rh#isr.baf: GlobalGT("chapter","GLOBAL",4) => GlobalGT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/scripts/rh#isr.baf: Global("chapter","GLOBAL",6) => Global("chapter","GLOBAL",%bg2_chapter_6%)
+Patching Isra_bg2/scripts/rh#isr.baf: Global("chapter","GLOBAL",6) => Global("chapter","GLOBAL",%bg2_chapter_6%)
+Patching Isra_bg2/scripts/rh#isr.baf: Global("chapter","GLOBAL",5) => Global("chapter","GLOBAL",%bg2_chapter_5%)
+Patching Isra_bg2/scripts/rh#isr.baf: Global("chapter","GLOBAL",5) => Global("chapter","GLOBAL",%bg2_chapter_5%)
+Patching Isra_bg2/scripts/rh#isrd.baf: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/scripts/rh#isrd.baf: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/scripts/rh#isrd.baf: GlobalGT("chapter","GLOBAL",4) => GlobalGT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching Isra_bg2/isra_bg2.tp2: ALWAYS command added
+ALWAYS
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+END
+
+-----------
+
+Manual edits:
+
+2. Below code from Isra_bg2/dialogue/rh#is25.d:
+
+// FATE SPIRIT
+
+EXTEND_TOP FATESP 6
++ ~!Dead("rh#Isra2") !InMyArea("rh#Isra2") CheckStatGT(Player1,12,CHR) Alignment(Player1,MASK_GOOD) Global("rh#IsraSummoned","GLOBAL",0)~ + @0 /* Bring me my lover, Isra. */ 
+	DO ~CreateVisualEffect("SPPORTAL",[1999.1228])
+	Wait(2)
+	CreateCreature("rh#is25",[1999.1228],1)
+	SetGlobal("rh#IsraRomanceActive","GLOBAL",2)
+	SetGlobal("rh#IsraSummoned","GLOBAL",1)~ GOTO 8
++ ~!Dead("rh#Isra2") !InMyArea("rh#Isra2") !Alignment(Player1,MASK_EVIL) Global("rh#IsraSummoned","GLOBAL",0)~ + @1 /* Bring me Isra, the Sunite cavalier. */ 
+ 	DO ~CreateVisualEffect("SPPORTAL",[1999.1228])
+	Wait(2)
+	CreateCreature("rh#is25",[1999.1228],1)
+	SetGlobal("rh#IsraSummoned","GLOBAL",1)~ GOTO 8
+END
+
+Moved to new file: Isra_bg2/dialogue/FATESP.d
+
+3. New code added at the end of Isra_bg2/isra_bg2.tp2 main component
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+  INCLUDE ~EET/other/EET_functions.tph~
+  LAF ~EET_NPC_TRANSITION~
+    INT_VAR
+      type = 2
+	  clean_ToB = 1
+    STR_VAR
+      dv = "rh#Isra2"
+      override_SoA = "RH#ISR"
+      override_ToB = "RH#IS25"
+      dialog_ToB = "RH#IS25"
+      traFile = EVAL "Isra_bg2/translations/%LANGUAGE%/brh#is25.tra"
+      string = "@1" //Bring me Isra, the Sunite cavalier.
+      stringPosDV = "Jaheira"
+	  clean_ToB_DV = "rh#isra"
+  END
+END ELSE BEGIN
+  COMPILE ~Isra_bg2/dialogue/FATESP.d~ USING ~Isra_bg2/translations/%LANGUAGE%/brh#is25.tra~
+END
+
+
+No need to add additional "Lover" option. NPC won't be available if the game has been started in ToB without getting her in BG2
+Unfortunately BG1 version of this mod uses rh#isra instead of rh#isra2, so BG1->BG2 full continuity is not implemented
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

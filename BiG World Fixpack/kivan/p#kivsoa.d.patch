@@ -1,0 +1,29 @@
+--- kivan/d/p#kivsoa.d	2014-10-08 12:18:21.767227800 -0400
++++ Fixpack/kivan/d/p#kivsoa.d	2016-11-21 16:26:10.797057300 -0500
+@@ -1025,7 +1025,7 @@
+ IF WEIGHT #1001 ~CombatCounter(0) !See([ENEMY])InParty("P#KIVAN")
+ See("P#KIVAN")
+ !StateCheck("P#KIVAN",STATE_SLEEPING)
+-GlobalLT("Chapter","GLOBAL",3)
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_3%)
+ Global("P#KIJA1","LOCALS",0)~ THEN BJAHEIR KIJA1
+ @467 
+ DO ~SetGlobal("P#KIJA1","LOCALS",1)~
+@@ -1112,7 +1112,7 @@
+ InParty("JAHEIRA")
+ See("JAHEIRA")
+ !StateCheck("Jaheira",STATE_SLEEPING)
+-GlobalLT("Chapter","GLOBAL",5)
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_5%)
+ AreaType(OUTDOOR)
+ Global("P#KIJA6","LOCALS",0)~ THEN BP#KIV KIJA6
+ @505
+@@ -1490,7 +1490,7 @@
+ Global("P#DeherianaLives","GLOBAL",0)
+ Global("P#DeherianaDead","GLOBAL",0)
+ !StateCheck("P#KIVAN",STATE_SLEEPING)
+-GlobalLT("Chapter","GLOBAL",4)
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+ Global("P#KIMI2","LOCALS",0)~ THEN BMINSC KIMI2
+ @683
+ DO ~SetGlobal("P#KIMI2","LOCALS",1)~

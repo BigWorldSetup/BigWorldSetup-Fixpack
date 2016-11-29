@@ -1,0 +1,281 @@
+Patching ajantisbg2/setup-ajantisbg2.tp2: GAME_IS ~bg2 tob bg2ee~ AND NOT  => GAME_IS ~bg2 tob bg2ee eet~ AND NOT 
+Patching ajantisbg2/setup-ajantisbg2.tp2: GAME_IS ~tob bg2ee~ THEN BEGIN  => GAME_IS ~tob bg2ee eet~ THEN BEGIN 
+Patching ajantisbg2/setup-ajantisbg2.tp2: GAME_IS ~tob bg2ee~ THEN BEGIN  => GAME_IS ~tob bg2ee eet~ THEN BEGIN 
+Patching ajantisbg2/setup-ajantisbg2.tp2: GAME_IS BG2EE THEN BEGIN => GAME_IS ~BG2EE eet~ THEN BEGIN
+Patching ajantisbg2/setup-ajantisbg2.tp2: GAME_IS ~tob bg2ee~ THEN BEGIN => GAME_IS ~tob bg2ee eet~ THEN BEGIN
+Patching ajantisbg2/setup-ajantisbg2.tp2: GAME_IS ~tob bg2ee~ THEN BEGIN => GAME_IS ~tob bg2ee eet~ THEN BEGIN
+Patching ajantisbg2/setup-ajantisbg2.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: Global("Chapter","GLOBAL",1) => Global("Chapter","GLOBAL",%bg2_chapter_1%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: Global("Chapter","GLOBAL",2) => Global("Chapter","GLOBAL",%bg2_chapter_2%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: GlobalGT("Chapter","GLOBAL",2) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_2%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: Global("Chapter","GLOBAL",6) => Global("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: Global("Chapter","GLOBAL",6) => Global("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: Global("Chapter","GLOBAL",1) => Global("Chapter","GLOBAL",%bg2_chapter_1%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: Global("Chapter","GLOBAL",2) => Global("Chapter","GLOBAL",%bg2_chapter_2%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: GlobalGT("Chapter","GLOBAL",2) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_2%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: GlobalGT("Chapter","GLOBAL",4) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/ajantis_friendshippath.d: GlobalLT("Chapter","GLOBAL",5) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: Global("Chapter","GLOBAL",2) => Global("Chapter","GLOBAL",%bg2_chapter_2%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: Global("Chapter","GLOBAL",3) => Global("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: Global("Chapter","GLOBAL",6) => Global("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: Global("Chapter","GLOBAL",2) => Global("Chapter","GLOBAL",%bg2_chapter_2%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: Global("Chapter","GLOBAL",3) => Global("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: Global("Chapter","GLOBAL",6) => Global("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/c#ajanj_pid.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pr.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/c#ajanj_pr.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pr.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pr.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajanj_pr.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajanj_pr.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pr.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/c#ajanj_pr.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajanj_pr.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalLT("chapter","GLOBAL",4) => GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/c#ajan_pr.d: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/c#orden.d: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/romance.d: Global("Chapter","GLOBAL",1) => Global("Chapter","GLOBAL",%bg2_chapter_1%)
+Patching ajantisbg2/dialogues/romance.d: Global("Chapter","GLOBAL",2) => Global("Chapter","GLOBAL",%bg2_chapter_2%)
+Patching ajantisbg2/dialogues/romance.d: Global("Chapter","GLOBAL",3) => Global("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/dialogues/romance.d: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",4) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",5) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",6) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/dialogues/romance.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/dialogues/romance.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/ajantiseilawindspear_baf.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/ajantiseilawindspear_baf.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/ajantiseilawindspear_baf.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/scripts/ajantis_friendship.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/ajantis_friendship.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/ajantis_friendship.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/scripts/ajantis_friendship.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/ajantis_friendship.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/ajantis_friendship.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/scripts/ajantis_friendship.baf: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/ajantis_nbromance_baf.baf: Global("Chapter","GLOBAL",2) => Global("Chapter","GLOBAL",%bg2_chapter_2%)
+Patching ajantisbg2/scripts/ajantis_nbromance_baf.baf: Global("Chapter","GLOBAL",3) => Global("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/scripts/ajantis_nbromance_baf.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/ajantis_nbromance_baf.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/ajantis_nbromance_baf.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/scripts/c#ajan.baf: GlobalLT("chapter","GLOBAL",3) => GlobalLT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/scripts/c#ajan.baf: GlobalGT("CHAPTER","GLOBAL",2) => GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_2%)
+Patching ajantisbg2/scripts/c#ajan.baf: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/romance_add.baf: Global("Chapter","GLOBAL",2) => Global("Chapter","GLOBAL",%bg2_chapter_2%)
+Patching ajantisbg2/scripts/romance_add.baf: Global("Chapter","GLOBAL",3) => Global("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",2) => Global("Chapter","GLOBAL",%bg2_chapter_2%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",3) => Global("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",6) => Global("Chapter","GLOBAL",%bg2_chapter_6%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching ajantisbg2/scripts/romance_core.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching ajantisbg2/tob/dialogue/tob_ict.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching ajantisbg2/setup-ajantisbg2.tp2: ALWAYS command expanded
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+-----------------
+
+Manual edits:
+
+2. Below code from ajantisbg2/tob/dialogue/tob_ict.d:
+
+//Fate spirit: no summoning for evil PC
+//Assumes PC rescued Ajantis, and also took him along.
+
+EXTEND_TOP FATESP 6
+  IF ~!Dead("C#Ajantis")
+!InMyArea("C#Ajantis")
+Global("C#AjantisSummoned","GLOBAL",0)
+!Alignment(Player1,MASK_EVIL)~ THEN 
+   REPLY @749  
+    DO ~CreateVisualEffect("SPPORTAL",[1999.1218])
+Wait(2)
+CreateCreature("c#ajatob",[1999.1218],0)
+SetGlobal("C#AjantisSummoned","GLOBAL",1)~ GOTO 8
+IF ~!Dead("C#Ajantis")
+!InMyArea("C#Ajantis")
+Global("C#AjantisSummoned","GLOBAL",0)
+Alignment(Player1,MASK_EVIL)~ THEN 
+   REPLY @749  
+    DO ~SetGlobal("C#AjantisSummoned","GLOBAL",3)~ + no_ajantissummon_evil
+END
+
+APPEND FATESP
+IF ~~ THEN no_ajantissummon_evil
+SAY @750
+IF ~~ THEN + 6
+END
+
+END
+
+Moved to new file: ajantisbg2/tob/dialogue/FATESP.d
+
+3. New code added at the end of ajantisbg2/setup-ajantisbg2.tp2
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+  INCLUDE ~EET/other/EET_functions.tph~
+  LAF ~EET_NPC_TRANSITION~
+    INT_VAR
+      type = 2
+      clean_ToB = 1
+    STR_VAR
+      dv = "C#Ajantis"
+      override_SoA = "C#AJAN"
+      override_ToB = "C#AJAN25"
+      dialog_ToB = "C#AJAN25"
+      traFile = EVAL "AjantisBG2/tra/autotra/%LANGUAGE%/c#ajanj_pr.tra"
+      string = "@749" //Bring me Ajantis, the paladin and knight
+      stringPosDV = "Alora"
+      clean_ToB_DV = "Ajantis"
+  END
+END ELSE BEGIN
+  COMPILE ~ajantisbg2/tob/dialogue/FATESP.d~ USING ~AjantisBG2/tra/autotra/%LANGUAGE%/c#ajanj_pr.tra~
+END
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

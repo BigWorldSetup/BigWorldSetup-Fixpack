@@ -1,0 +1,37 @@
+--- sarahtob/scripts/k#sarah.baf	2009-10-17 22:36:00.000000000 -0400
++++ Fixpack/sarahtob/scripts/k#sarah.baf	2016-11-21 23:02:18.493150600 -0500
+@@ -113,7 +113,7 @@
+ !ActuallyInCombat()
+ !StateCheck(Player1,CD_STATE_NOTVALID)
+ !StateCheck(Myself,CD_STATE_NOTVALID)
+-GlobalGT("Chapter","GLOBAL",5)               // FRIENDTALK 6 HAPPENS AFTER UNDERDARK!
++GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)               // FRIENDTALK 6 HAPPENS AFTER UNDERDARK!
+ Global("K#SarahTalkFriend","GLOBAL", 11)
+ THEN
+ RESPONSE #100
+@@ -351,9 +351,9 @@
+ InParty(Myself)
+ GlobalGT("K#SarahTalkRomance","GLOBAL",18)
+ Global("K#GURIENExists","GLOBAL",0)
+-!Global("Chapter","GLOBAL",4)
+-!Global("Chapter","GLOBAL",5)
+-!Global("Chapter","GLOBAL",7)
++!Global("Chapter","GLOBAL",%bg2_chapter_4%)
++!Global("Chapter","GLOBAL",%bg2_chapter_5%)
++!Global("Chapter","GLOBAL",%bg2_chapter_7%)
+ AreaType(CITY)
+ !Exists("K#GURIEN")
+ THEN
+@@ -437,9 +437,9 @@
+ !GlobalTimerNotExpired("K#SarahQuestWait","GLOBAL")
+ InParty(Player1)
+ InParty("K#Sarah")
+-!Global("Chapter","GLOBAL",4)
+-!Global("Chapter","GLOBAL",5)
+-!Global("Chapter","GLOBAL",7)
++!Global("Chapter","GLOBAL",%bg2_chapter_4%)
++!Global("Chapter","GLOBAL",%bg2_chapter_5%)
++!Global("Chapter","GLOBAL",%bg2_chapter_7%)
+ !ActuallyInCombat()
+ Global("K#SarahQuest","GLOBAL",2)
+ !Global("K#SarahQuestWait","GLOBAL",2)

@@ -1,0 +1,10 @@
+--- BackBrynnlaw/Scripts/AR0700.baf	2013-08-04 10:56:50.000000000 -0400
++++ Fixpack/BackBrynnlaw/Scripts/AR0700.baf	2016-11-21 16:26:21.313820800 -0500
+@@ -1,6 +1,6 @@
+ // Athkatla: the Promenade, outside the Adventurer's Mart
+ IF
+-Global("Chapter","GLOBAL",6)
++Global("Chapter","GLOBAL",%bg2_chapter_6%)
+ Global("O#BrynnQuest","GLOBAL",0)
+ THEN
+ RESPONSE #100

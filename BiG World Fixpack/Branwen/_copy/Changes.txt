@@ -1,0 +1,86 @@
+Patching Branwen/Setup-Branwen.tp2: GAME_IS ~BG2EE~ BEGIN => GAME_IS ~BG2EE eet~ BEGIN
+Patching Branwen/Setup-Branwen.tp2: GAME_IS ~BG2EE~ BEGIN => GAME_IS ~BG2EE eet~ BEGIN
+Patching Branwen/Dialogue/O#Bra25J.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching Branwen/Dialogue/O#Bra25J.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching Branwen/Dialogue/O#Bra25J.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching Branwen/Dialogue/O#Bra25J.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching Branwen/Dialogue/O#Bra25J.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching Branwen/Dialogue/O#Bra25J.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching Branwen/Dialogue/O#Bra25J.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching Branwen/Dialogue/O#Bra25J.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching Branwen/Dialogue/O#Bra25J.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching Branwen/Dialogue/O#Bra25J.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching Branwen/Dialogue/O#Bra25J.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching Branwen/Dialogue/O#Bra25J.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching Branwen/Dialogue/O#Bran.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching Branwen/Dialogue/O#Bran.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching Branwen/Dialogue/O#BranJ.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching Branwen/Scripts/O#BranS.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching Branwen/Scripts/O#BranS.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching Branwen/Scripts/O#BranS.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching Branwen/Scripts/O#BranS.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching Branwen/Setup-Branwen.tp2: ALWAYS command added
+ALWAYS
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+END
+
+
+---------------------
+
+Manual edits:
+
+2. Below code from Branwen/Dialogue/O#Bra25J.d:
+
+// Branwen is summoned via Fate Spirit. This code is taken directly from the game.
+// #2 means that Branwen's line(summoning Branwen) will be placed right after the first two lines, Anomen's and Aerie's. Unfortunately, we can't account for all NPCs like Adrian and Arath, but at least it's best to have an option to summon Branwen right after Yoshimo. 
+// Lots of lines here, I know. 
+
+EXTEND_TOP FATESP 6 #2
++ ~!Dead("O#Bran") !InMyArea("O#Bran") Global("O#BranSummoned","GLOBAL",0)~ + ~Bring me Branwen, the priestess of Tempus.~
+DO ~CreateVisualEffect("SPPORTAL",[1999.1228])
+Wait(2) 
+CreateCreature("O#Bran25",[1999.1228],0) 
+SetGlobal("O#BranSummoned","GLOBAL",1)~ GOTO 8
++ ~!Dead("O#Bran") !InMyArea("O#Bran") Global("O#BranSummoned","GLOBAL",0)
+Gender(Player1,MALE) OR(4) Race(Player1,HUMAN) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,HALFORC)~ + ~Bring me my lover, Branwen.~
+DO ~CreateVisualEffect("SPPORTAL",[1999.1228])
+Wait(2)
+SetGlobal("O#BranRomanceActive","GLOBAL",2)
+CreateCreature("O#Bran25",[1999.1228],0) 
+SetGlobal("O#BranSummoned","GLOBAL",1)~ GOTO 8
+END
+
+Moved to new file: Branwen/Dialogue/FATESP.d
+
+3. New code added at the end of Branwen/Setup-Branwen.tp2 main component (added additional comments because Branwen documents each step - this mod is not only NPC but weidu NPC creation tutorial)
+
+// EET related code
+ACTION_IF GAME_IS ~eet~ BEGIN //only true if game is detected as Enhanced Edition Trilogy (mod for BG2:EE)
+  INCLUDE ~EET/other/EET_functions.tph~ //declaration of external EET functions used below
+  LAF ~EET_NPC_TRANSITION~ //function used to automatically implement EET continuity system
+    INT_VAR
+      type = 2 //informs the function that this is BG2 NPC without BG1 content
+      clean_ToB = 1 //forces function to clean old BG1 Branwen code that exists in AR4000.BCS and FATESP.DLG
+    STR_VAR
+      dv = "O#Bran" //Branwen Death Variable (script name)
+      override_SoA = "O#BRANS" //Branwen SoA Override script
+      override_ToB = "O#BRA25S" //Branwen ToB Override script
+      dialog_ToB = "O#BRAN25" //Branwen ToB dialogue file
+      string = "Bring me Branwen, the priestess of Tempus." //normally this should be reference to TRA file, but the mod is not traified
+      stringPosDV = "Cernd" //Branwen will be appended right above Cernd
+      clean_ToB_DV = "Branwen" //death variable of BG1 Branwen (see clean_ToB comment)
+  END
+END ELSE BEGIN //we use different Fate Spirit dialogue patching for any other platform than EET
+  COMPILE ~Branwen/Dialogue/FATESP.d~
+END
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

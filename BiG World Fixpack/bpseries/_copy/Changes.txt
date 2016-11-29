@@ -1,0 +1,11 @@
+Patching bpseries/setup-bpseries.tp2: GAME_IS ~bg2 tob bgt bgee bg2ee~ => GAME_IS ~bg2 tob bgt bgee bg2ee eet~
+Patching bpseries/setup-bpseries.tp2: GAME_IS ~bg2ee~ BEGIN => GAME_IS ~bg2ee eet~ BEGIN
+Patching bpseries/setup-bpseries.tp2: GAME_IS ~tob bgt bg2ee~ BEGIN => GAME_IS ~tob bgt bg2ee eet~ BEGIN
+Patching bpseries/setup-bpseries.tp2: GAME_IS ~bg2ee~ BEGIN  => GAME_IS ~bg2ee eet~ BEGIN 
+Patching bpseries/setup-bpseries.tp2: GAME_IS ~bgee bg2ee bg2 bgt tob~ BEGIN => GAME_IS ~bgee bg2ee eet bg2 bgt tob~ BEGIN
+Patching bpseries/ds/ds.tph: GAME_IS ~bg2ee~ BEGIN => GAME_IS ~bg2ee eet~ BEGIN
+Patching bpseries/lib/bp.tph: GAME_IS ~bg2ee~ BEGIN => GAME_IS ~bg2ee eet~ BEGIN
+Patching bpseries/lib/bp.tph: GAME_IS ~bg2ee~ BEGIN => GAME_IS ~bg2ee eet~ BEGIN
+Patching bpseries/lib/bp.tph: GAME_IS ~BGEE BG2EE~ BEGIN => GAME_IS ~BGEE BG2EE eet~ BEGIN
+Patching bpseries/lib/bp.tph: GAME_IS ~bgee bg2ee~ BEGIN => GAME_IS ~bgee bg2ee eet~ BEGIN
+Patching bpseries/lib/bp.tph: GAME_IS ~bgee bg2ee~ BEGIN => GAME_IS ~bgee bg2ee eet~ BEGIN

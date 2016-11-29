@@ -1,5 +1,5 @@
---- aurenaseph\dialogues\k#aurenb.d	Fri Aug 03 12:14:34 2012
-+++ D:\EE_Patchstudio\patched files\aurenaseph\dialogues\k#aurenb.d	Fri Jan 15 12:51:46 2016
+--- aurenaseph/dialogues/k#aurenb.d	2012-08-03 13:14:34.000000000 -0400
++++ Fixpack/aurenaseph/dialogues/k#aurenb.d	2016-11-20 23:15:22.723547100 -0500
 @@ -7,7 +7,7 @@
  InParty(Player1) 
  !ActuallyInCombat() 

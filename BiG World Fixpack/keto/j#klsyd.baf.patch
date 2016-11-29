@@ -1,0 +1,20 @@
+--- keto/baf/j#klsyd.baf	2004-10-24 20:27:58.000000000 -0400
++++ Fixpack/keto/baf/j#klsyd.baf	2016-11-21 10:20:08.325625100 -0500
+@@ -2,7 +2,7 @@
+ InParty(Myself)
+ InParty("Keto")
+ !Dead("Keto")
+-GlobalGT("Chapter","GLOBAL",4)
++GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+ Global("PGKetoNightYoshiSong","GLOBAL",2)
+ Global("PGKetoKelseyYoshitalk","LOCALS",0)
+ THEN
+@@ -16,7 +16,7 @@
+ InParty("Keto")
+ !Dead("Keto")
+ See("Keto")
+-GlobalGT("Chapter","GLOBAL",4)
++GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+ Global("PGKetoNightYoshiSong","GLOBAL",2)
+ Global("PGKetoKelseyYoshitalk","LOCALS",1)
+ THEN

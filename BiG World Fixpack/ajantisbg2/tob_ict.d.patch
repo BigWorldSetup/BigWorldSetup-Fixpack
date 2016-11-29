@@ -1,0 +1,174 @@
+--- ajantisbg2/tob/dialogue/tob_ict.d	2014-12-15 07:35:16.000000000 -0500
++++ Fixpack/ajantisbg2/tob/dialogue/tob_ict.d	2016-11-04 14:55:56.991722700 -0400
+@@ -1,88 +1,58 @@
+-//Fate spirit: no summoning for evil PC
+-//Assumes PC rescued Ajantis, and also took him along.
+-
+-EXTEND_TOP FATESP 6
+-  IF ~!Dead("C#Ajantis")
+-!InMyArea("C#Ajantis")
+-Global("C#AjantisSummoned","GLOBAL",0)
+-!Alignment(Player1,MASK_EVIL)~ THEN 
+-   REPLY @749  
+-    DO ~CreateVisualEffect("SPPORTAL",[1999.1218])
+-Wait(2)
+-CreateCreature("c#ajatob",[1999.1218],0)
+-SetGlobal("C#AjantisSummoned","GLOBAL",1)~ GOTO 8
+-IF ~!Dead("C#Ajantis")
+-!InMyArea("C#Ajantis")
+-Global("C#AjantisSummoned","GLOBAL",0)
+-Alignment(Player1,MASK_EVIL)~ THEN 
+-   REPLY @749  
+-    DO ~SetGlobal("C#AjantisSummoned","GLOBAL",3)~ + no_ajantissummon_evil
+-END
+-
+-APPEND FATESP
+-IF ~~ THEN no_ajantissummon_evil
+-SAY @750
+-IF ~~ THEN + 6
+-END
+-
+-END 
+-
+-
+ //Watcher's Keep
+ 
+ /* tob */
+ 
+ I_C_T GORODR1 34 C#AjantisGORODR1_34
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",7)~ THEN @751
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @751
+ END
+ 
+ I_C_T GORODR1 44 C#AjantisGORODR1_44
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",7)~ THEN @751
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @751
+ END
+ 
+ I_C_T GORODR1 11 C#AjantisGORODR1_11
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",7)~ THEN @727
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @727
+ END 
+ 
+ I_C_T GORODR1 40 C#AjantisGORODR1_40
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",7)~ THEN @728 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @728 
+ END 
+ 
+ 
+ I_C_T GORAPP1 6 C#AjantisGORAPP1_6
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",7)~ THEN @752 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @752 
+ END 
+ 
+ I_C_T GORDEMO 18 C#AjantisGORDEMO_18
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",7)~ THEN @753 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @753 
+ END 
+ 
+ I_C_T GORMAD1 8 C#AjantisGORMAD1_8
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",7)~ THEN @754 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @754 
+ END 
+ 
+ I_C_T GORSUC01 0 C#AjantisGORSUC01_0
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",7)~ THEN @755 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @755 
+ END 
+ 
+ I_C_T GORCAMB 17 C#AjantisGORCAMB_17
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",7)~ THEN @756 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @756 
+ END 
+ 
+ I_C_T GORSAL 0 C#AjantisGORSAL_0
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",7)~ THEN @757 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @757 
+ END 
+ 
+ I_C_T GORCHR 0 C#AjantisGORCHR_0
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",7)~ THEN @758 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @758 
+ END 
+ 
+ I_C_T GORCHR 9 C#AjantisGORCHR_9
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",7)~ THEN @759 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @759 
+ END 
+ 
+ I_C_T GORIMP01 7 C#AjantisGORIMP01_7
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",7)~ THEN @760 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @760 
+ END 
+ 
+ 
+@@ -90,56 +60,56 @@
+ /* soa */
+ 
+ I_C_T GORODR1 34 C#AjantisGORODR1_34
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",8)~ THEN @751
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @751
+ END
+ 
+ I_C_T GORODR1 44 C#AjantisGORODR1_44
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",8)~ THEN @751
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @751
+ END
+ 
+ I_C_T GORODR1 11 C#AjantisGORODR1_11
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",8)~ THEN @727
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @727
+ END 
+ 
+ I_C_T GORODR1 40 C#AjantisGORODR1_40
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",8)~ THEN @728 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @728 
+ END 
+ 
+ 
+ I_C_T GORAPP1 6 C#AjantisGORAPP1_6
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",8)~ THEN @752 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @752 
+ END 
+ 
+ I_C_T GORDEMO 18 C#AjantisGORDEMO_18
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",8)~ THEN @753 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @753 
+ END 
+ 
+ I_C_T GORMAD1 8 C#AjantisGORMAD1_8
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",8)~ THEN @754 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @754 
+ END 
+ 
+ I_C_T GORSUC01 0 C#AjantisGORSUC01_0
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",8)~ THEN @755 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @755 
+ END 
+ 
+ I_C_T GORCAMB 17 C#AjantisGORCAMB_17
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",8)~ THEN @756 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @756 
+ END 
+ 
+ I_C_T GORSAL 0 C#AjantisGORSAL_0
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",8)~ THEN @757 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @757 
+ END 
+ 
+ I_C_T GORCHR 0 C#AjantisGORCHR_0
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",8)~ THEN @758 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @758 
+ END 
+ 
+ I_C_T GORCHR 9 C#AjantisGORCHR_9
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",8)~ THEN @759 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @759 
+ END 
+ 
+ I_C_T GORIMP01 7 C#AjantisGORIMP01_7
+-== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",8)~ THEN @760 
++== C#Aja25J IF ~InParty("C#Ajantis") InMyArea("C#Ajantis") !StateCheck("C#Ajantis",CD_STATE_NOTVALID)  GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @760 
+ END 
+ 
+ 

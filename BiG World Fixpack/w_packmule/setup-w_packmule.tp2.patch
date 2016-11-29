@@ -1,10 +1,34 @@
---- w_packmule\setup-w_packmule.tp2	Tue Dec 03 23:55:10 2013
-+++ C:\BWP Patchstudio\patched files\w_packmule\setup-w_packmule.tp2	Thu Oct 27 15:49:56 2016
-@@ -1,6 +1,6 @@
+--- w_packmule/setup-w_packmule.tp2	2013-12-03 16:55:10.000000000 -0500
++++ Fixpack/w_packmule/setup-w_packmule.tp2	2016-11-21 23:23:59.754153600 -0500
+@@ -1,10 +1,12 @@
  BACKUP ~w_PackMule/backup~
  AUTHOR ~kwiatw.e@gmail.com~
--
+ 
 +VERSION ~v1.4a BWP Fix~
++
  //AUTO_TRA ~w_packmule/tra/%s~
  
  ALWAYS
+-  ACTION_IF GAME_IS ~bgee bg2ee~ BEGIN
++  ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+     COPY ~w_packmule/tra/utf8/%LANGUAGE%~  ~w_packmule/tra/%LANGUAGE%~
+   END ELSE BEGIN
+     COPY ~w_packmule/tra/win/%LANGUAGE%~  ~w_packmule/tra/%LANGUAGE%~
+@@ -58,7 +60,7 @@
+ BEGIN @1018
+ SUBCOMPONENT @1027
+ DESIGNATED 2
+-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ ~bgee/bg2ee~
++REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ ~bgee/bg2ee~
+ INCLUDE ~w_PackMule/lib/w_mule.tpa~
+ 
+ COPY ~w_PackMule/w_msaddl.sto~   ~override/w_msaddl.sto~
+@@ -75,7 +77,7 @@
+ BEGIN @1022
+ SUBCOMPONENT @1027
+ DESIGNATED 3
+-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ ~bgee/bg2ee~
++REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ ~bgee/bg2ee~
+ INCLUDE ~w_PackMule/lib/w_mule.tpa~
+ 
+ COPY ~w_PackMule/w_msaddl.sto~   ~override/w_msaddl.sto~

@@ -1,5 +1,5 @@
---- amber\dialogs\m#amber.d	Fri Aug 28 11:48:00 2009
-+++ D:\EE_Patchstudio\patched files\amber\dialogs\m#amber.d	Sun Jan 17 18:27:15 2016
+--- amber/dialogs/m#amber.d	2009-08-28 12:48:00.000000000 -0400
++++ Fixpack/amber/dialogs/m#amber.d	2016-11-21 23:30:47.149800300 -0500
 @@ -265,12 +265,12 @@
  IF ~~ THEN BEGIN T1J
    SAY @5025 /* @5025 = ~What? You look as if you still have something to tell me.~ */

@@ -1,0 +1,66 @@
+--- tyrisflare/dialogue/expinterjections.d	2015-01-20 08:53:07.520570400 -0500
++++ Fixpack/tyrisflare/dialogue/expinterjections.d	2016-11-21 23:26:43.557949300 -0500
+@@ -39,19 +39,19 @@
+ INTERJECT FSSPIR2 1 GI#TF.WKKeeperoftheKey1
+   == G#TYRISJ IF ~InParty("G#Tyris")
+                  !StateCheck("G#Tyris",CD_STATE_NOTVALID)
+-                 GlobalLT("Chapter","GLOBAL",8)~ THEN @6
++                 GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @6
+ END FSSPIR2 2
+ 
+ INTERJECT FSSPIR2 1 GI#TF.WKKeeperoftheKey1
+   == G#TRS25J IF ~InParty("G#Tyris")
+                  !StateCheck("G#Tyris",CD_STATE_NOTVALID)
+-                 GlobalGT("Chapter","GLOBAL",7)~ THEN @6
++                 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @6
+ END FSSPIR2 2
+ 
+ INTERJECT FSSPIR2 5 GI#TF.WKKeeperoftheKey2
+   == G#TYRISJ IF ~InParty("G#Tyris")
+                  !StateCheck("G#Tyris",CD_STATE_NOTVALID)
+-                 GlobalLT("Chapter","GLOBAL",8)~ THEN @7
++                 GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @7
+   DO ~TriggerActivation("Tran3024",TRUE)
+       TriggerActivation("Tran3025",TRUE)
+       TriggerActivation("Tran3026",TRUE)
+@@ -63,7 +63,7 @@
+ INTERJECT FSSPIR2 5 GI#TF.WKKeeperoftheKey2
+   == G#TRS25J IF ~InParty("G#Tyris")
+                  !StateCheck("G#Tyris",CD_STATE_NOTVALID)
+-                 GlobalGT("Chapter","GLOBAL",7)~ THEN @7
++                 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @7
+   DO ~TriggerActivation("Tran3024",TRUE)
+       TriggerActivation("Tran3025",TRUE)
+       TriggerActivation("Tran3026",TRUE)
+@@ -77,13 +77,13 @@
+ INTERJECT GORAPP1 10 GI#TF.WKOdrenTruth
+   == G#TYRISJ IF ~InParty("G#Tyris")
+                  !StateCheck("G#Tyris",CD_STATE_NOTVALID)
+-                 GlobalLT("Chapter","GLOBAL",8)~ THEN @8
++                 GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @8
+ END GORAPP1 11
+ 
+ INTERJECT GORAPP1 10 GI#TF.WKOdrenTruth
+   == G#TRS25J IF ~InParty("G#Tyris")
+                  !StateCheck("G#Tyris",CD_STATE_NOTVALID)
+-                 GlobalGT("Chapter","GLOBAL",7)~ THEN @8
++                 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @8
+ END GORAPP1 11
+ 
+ // Watcher's Keep: Demogorgan
+@@ -91,13 +91,13 @@
+ INTERJECT GORDEMO 1 GI#TF.WKDemogorgan
+   == G#TYRISJ IF ~InParty("G#Tyris")
+                  !StateCheck("G#Tyris",CD_STATE_NOTVALID)
+-                 GlobalLT("Chapter","GLOBAL",8)~ THEN @9
++                 GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @9
+ END GORDEMO 2
+ 
+ INTERJECT GORDEMO 1 GI#TF.WKDemogorgan
+   == G#TRS25J IF ~InParty("G#Tyris")
+                  !StateCheck("G#Tyris",CD_STATE_NOTVALID)
+-                 GlobalGT("Chapter","GLOBAL",7)~ THEN @9
++                 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @9
+ END GORDEMO 2
+ 
+ // Nyalee

@@ -1,0 +1,23 @@
+--- fadingpromises/readmefadingpromises.html	2013-08-02 17:43:08.000000000 -0400
++++ Fixpack/fadingpromises/readmefadingpromises.html	2016-11-21 11:40:08.421822000 -0500
+@@ -412,8 +412,9 @@
+ <h4>known bugs and compatibility</h4>
+ 
+ 
+-<p>This mod is designed to work with Baldur's Gate II - Shadows
+-of Amn, or with BGT-WeiDU. It requires the Throne of Bhaal expansion.</p>
++<p>This mod is designed to work with Baldur's Gate II: Shadows
++of Amn, BGT-WeiDU, Baldur's Gate II: Enhanced Edition and 
++Enhanced Edition Trilogy (EET). It requires the Throne of Bhaal expansion.</p>
+ 
+ 
+ <p>There are no known incompatibilities with any mod.</p>
+@@ -599,6 +600,8 @@
+ translation by Galath&eacute;e added, typos fixed by hook71, updated to WeiDU v231</p>
+ 
+ 
++<p>Version 8 - Compatibility with BG2:EE and EET</p>
++
+ <p class="address"><span class="address-footer-1">Fading
+ Promises &gt; version history</span> <a href="#top">BACK
+ TO TOP</a> </p>

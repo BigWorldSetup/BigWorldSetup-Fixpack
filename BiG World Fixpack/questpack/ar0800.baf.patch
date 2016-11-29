@@ -1,0 +1,9 @@
+--- questpack/reynald/ar0800.baf	2014-12-29 15:13:20.000000000 -0500
++++ Fixpack/questpack/reynald/ar0800.baf	2016-11-21 11:39:37.264169800 -0500
+@@ -1,5 +1,5 @@
+ IF
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   InMyArea(Player1)
+   Global("D0Reynald","GLOBAL",2)
+   !CombatCounter(0)

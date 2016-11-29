@@ -1,0 +1,38 @@
+--- questpack/encounters/ding0/randenc/city_new.baf	2014-12-29 15:13:20.000000000 -0500
++++ Fixpack/questpack/encounters/ding0/randenc/city_new.baf	2016-11-21 11:38:48.464291500 -0500
+@@ -1,7 +1,7 @@
+ IF
+   OnCreation()
+   RandomNumGT(7,3)
+-  GlobalLT("chapter","GLOBAL",6)
++  GlobalLT("chapter","GLOBAL",%bg2_chapter_6%)
+   OR(2)
+     !TimeGT(5)
+     !TimeLT(DUSK_END)
+@@ -39,7 +39,7 @@
+ IF
+   OnCreation()
+   RandomNumGT(7,3)
+-  GlobalLT("chapter","GLOBAL",6)
++  GlobalLT("chapter","GLOBAL",%bg2_chapter_6%)
+   OR(2)
+     !TimeGT(5)
+     !TimeLT(DUSK_END)
+@@ -86,7 +86,7 @@
+ IF
+   OnCreation()
+   RandomNumGT(7,4)
+-  GlobalLT("chapter","GLOBAL",6)
++  GlobalLT("chapter","GLOBAL",%bg2_chapter_6%)
+   !Dead("Aran")
+   OR(2)
+     Global("AttackedThieves","GLOBAL",1)
+@@ -125,7 +125,7 @@
+ IF
+   OnCreation()
+   RandomNumGT(7,4)
+-  GlobalLT("chapter","GLOBAL",6)
++  GlobalLT("chapter","GLOBAL",%bg2_chapter_6%)
+   !Dead("Aran")
+   OR(2)
+     Global("AttackedThieves","GLOBAL",1)

@@ -1,0 +1,20 @@
+--- Xan/Scripts/O#Xan25V.baf	2007-07-06 21:58:56.000000000 -0400
++++ Fixpack/Xan/Scripts/O#Xan25V.baf	2016-11-21 16:34:01.384970700 -0500
+@@ -13,7 +13,7 @@
+ InParty(Myself)
+ !Global("O#XanValygarMEShut","GLOBAL",1)
+ !AreaType(DUNGEON)
+-!Global("Chapter","GLOBAL",10)
++!Global("Chapter","GLOBAL",%bg2_chapter_10%)
+ See(Player1)
+ !StateCheck(Player1,CD_STATE_NOTVALID) 
+ !StateCheck(Myself,CD_STATE_NOTVALID)
+@@ -34,7 +34,7 @@
+ !Global("O#XanValygarMEShut","GLOBAL",1)
+ GlobalGT("O#XanDreamTalk1","GLOBAL",1)
+ !AreaType(DUNGEON)
+-!Global("Chapter","GLOBAL",10)
++!Global("Chapter","GLOBAL",%bg2_chapter_10%)
+ See(Player1)
+ !StateCheck(Player1,CD_STATE_NOTVALID) 
+ !StateCheck(Myself,CD_STATE_NOTVALID)

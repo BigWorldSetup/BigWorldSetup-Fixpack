@@ -1,0 +1,16 @@
+--- questpack/tp2/quest/incomplete/quallo.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/incomplete/quallo.tph	2016-11-21 22:33:31.157435300 -0500
+@@ -6,10 +6,10 @@
+   WRITE_BYTE 0x414 01
+   WRITE_BYTE 0x430 00
+ 
+-COMPILE ~questpack/quallo/dialog.d~
+-COMPILE ~questpack/quallo/Scripts/compile~
++COMPILE EVALUATE_BUFFER ~questpack/quallo/dialog.d~
++COMPILE EVALUATE_BUFFER ~questpack/quallo/Scripts/compile~
+ 
+-EXTEND_TOP ~ar0404.bcs~ ~questpack/quallo/scripts/adar0404.baf~
++EXTEND_TOP ~ar0404.bcs~ ~questpack/quallo/scripts/adar0404.baf~ EVALUATE_BUFFER
+ 
+ COPY ~questpack/quallo/creatures/j#im5hob.cre~ ~override/j#im5hob.cre~
+   SAY NAME1 @226

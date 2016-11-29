@@ -1,5 +1,5 @@
---- Sellswords/Setup-Sellswords.tp2	Thu Nov 17 01:00:03 2016
-+++ Fixpack/Sellswords/Setup-Sellswords.tp2	Thu Nov 17 01:00:10 2016
+--- Sellswords/Setup-Sellswords.tp2	2014-11-10 15:49:26.000000000 -0500
++++ Fixpack/Sellswords/Setup-Sellswords.tp2	2016-11-26 02:46:45.699781400 -0500
 @@ -1,12 +1,20 @@
  BACKUP ~Sellswords/Backup~
  AUTHOR ~http://forums.pocketplane.net~
@@ -37,12 +37,21 @@
      STR_VAR
        tra_path = EVAL ~%MOD_FOLDER%~
        // charset_table = O#charsets // Included for illustrative purposes.
+@@ -34,7 +42,7 @@
+ 
+ BEGIN @0
+ 
+-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @1
++REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1
+ 
+ // Areas
+ 
 @@ -46,7 +54,7 @@
  	      ~AM2203.wav~   ~override/O#2203.wav~
  	      ~AM2204.wav~   ~override/O#2204.wav~
  
 -ACTION_IF GAME_IS ~BG2EE~ BEGIN
-+ACTION_IF GAME_IS ~BG2EE EET~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
  LOAD_TRA ~Sellswords/%LANGUAGE%/Setup-Sellswords-EE.tra~
  ADD_JOURNAL @9999 @10000 @10001
  ADD_JOURNAL @10002 @10003 @10004 @10005 @10006 @10007 @10008 @10009 @10010 @10011 @10012 @10013 @10014 @10015 @10016 @10017 @10018 @10019 @10020 @10021 @10022 @10023 @10024 @10025 @10026 
@@ -55,3 +64,14 @@
  EXTEND_TOP ~AR0701.bcs~ ~Sellswords/Scripts/AR0701.baf~
  
  // Drow items
+@@ -131,7 +139,9 @@
+ COPY_EXISTING ~ar0707.are~ ~override~
+ READ_ASCII 0x94 ar0707_script
+ 
+-EXTEND_TOP ~%ar0707_script%.bcs~ ~Sellswords/Scripts/AR0707.baf~
++EXTEND_TOP ~%ar0707_script%.bcs~ ~Sellswords/Scripts/AR0707.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~ar0003.bcs~ ~Sellswords/Scripts/AR0707.baf~ EVALUATE_BUFFER // just in case
++EXTEND_TOP ~ar0707.bcs~ ~Sellswords/Scripts/AR0707.baf~ EVALUATE_BUFFER // just in case
+ 
+ // Map notes
+ 

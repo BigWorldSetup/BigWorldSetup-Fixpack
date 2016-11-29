@@ -1,11 +1,74 @@
---- bpseries\setup-bpseries.tp2	Fri Jan 10 00:34:45 2014
-+++ C:\BWP Patchstudio\patched files\bpseries\setup-bpseries.tp2	Sun Jan 10 13:02:11 2016
-@@ -1,7 +1,7 @@
+--- bpseries/setup-bpseries.tp2	2014-01-09 14:04:45.658000000 -0500
++++ Fixpack/bpseries/setup-bpseries.tp2	2016-11-22 19:06:35.344435900 -0500
+@@ -1,7 +1,9 @@
  BACKUP ~BPSeries/backup~
  AUTHOR ~www.shsforums.net/forum/192-big-picture/~
  //Comment out MODDER and change VERSION on official release
 -VERSION ~v0.3121~
++
 +VERSION ~v0.3121 BWP Fix~
++
  //MODDER setup_tra none area_variables warn missing_extern warn missing_resref warn overwriting_file none
  //Change overwriting_file none to overwriting_file warn when it's fixed in a future WeiDU
  
+@@ -39,10 +41,10 @@
+ 
+ BEGIN @5001 DESIGNATED 0
+ 
+-REQUIRE_PREDICATE (GAME_IS ~bg2 tob bgt bgee bg2ee~) @7010
++REQUIRE_PREDICATE (GAME_IS ~bg2 tob bgt bgee bg2ee eet~) @7010
+ ///TRA swapping
+ 
+-ACTION_IF GAME_IS ~bgee~ BEGIN
++ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+   PRINT @7008
+   COPY ~bpseries/language/%LANGUAGE%/utf/Setup.tra~ ~bpseries/language/%LANGUAGE%/Setup.tra~
+   LOAD_TRA ~bpseries/language/%LANGUAGE%/Setup.tra~
+@@ -66,7 +68,7 @@
+ LAF zero_byte_files END
+ 
+ 
+-ACTION_IF GAME_IS ~bg2ee~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+   PRINT ~BG2EE Detected. Just adding spells.~ 
+   ACTION_IF NOT FILE_EXISTS ~override/ds_setup.mrk~ AND NOT FILE_EXISTS ~override/dw#setup.mrk~ BEGIN 
+     LAF detectable_spells STR_VAR path table = ~cddetect.2da~ END
+@@ -121,9 +123,9 @@
+   // Script fix, crashes weidu in the innate fixer stage
+   ACTION_IF FILE_EXISTS_IN_GAME ~sarvie01.bcs~ BEGIN
+     COPY_EXISTING ~sarvie01.bcs~ ~override~
+-      DECOMPILE_BCS_TO_BAF
++      DECOMPILE_AND_PATCH BEGIN
+         REPLACE_TEXTUALLY ~Allegiance(Myself,ANYONE)~ ~Allegiance(Myself,EVILCUTOFF)~
+-      COMPILE_BAF_TO_BCS
++      END
+     BUT_ONLY
+   END
+   
+@@ -148,7 +150,7 @@
+ 
+ INCLUDE ~bpseries/lib/bp.tph~
+ 
+-ACTION_IF GAME_IS ~tob bgt bg2ee~ BEGIN
++ACTION_IF GAME_IS ~tob bgt bg2ee eet~ BEGIN
+   LAF level_one_innates_bg2 END
+ END ELSE BEGIN
+   LAF level_one_innates END
+@@ -169,7 +171,7 @@
+ ACTION_IF GAME_IS ~bgee~ BEGIN
+   PRINT @7008
+   OUTER_SPRINT scriptpath ~bpseries\source\bgee~
+-END ELSE ACTION_IF GAME_IS ~bg2ee~ BEGIN 
++END ELSE ACTION_IF GAME_IS ~bg2ee eet~ BEGIN 
+   PRINT @7011
+   OUTER_SPRINT scriptpath ~bpseries\source\bg2ee~
+ END ELSE ACTION_IF GAME_IS ~bg2 bgt tob~ BEGIN
+@@ -179,7 +181,7 @@
+   PRINT @7010
+ END
+   
+-ACTION_IF GAME_IS ~bgee bg2ee bg2 bgt tob~ BEGIN
++ACTION_IF GAME_IS ~bgee bg2ee eet bg2 bgt tob~ BEGIN
+ 
+   PRINT @7006
+   //Compiles all the BPSeries scripts      

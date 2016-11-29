@@ -1,13 +1,26 @@
---- Isra_bg2\isra_bg2.tp2	Thu Jan 21 10:53:40 2016
-+++ Isra_bg2\isra_bg2.tp2	Thu Jan 21 10:59:18 2016
-@@ -1,25 +1,25 @@
+--- Isra_bg2/isra_bg2.tp2	2013-11-29 20:52:44.048879800 -0500
++++ Fixpack/Isra_bg2/isra_bg2.tp2	2016-11-26 02:53:40.504420300 -0500
+@@ -1,23 +1,39 @@
  BACKUP ~isra_bg2/backup~
  AUTHOR ~kae@spellholdstudios.net~
 -VERSION ~v2.1~
-+VERSION ~v2.1 BWP Fix 2~
++VERSION ~v2.1 BWP Fix 3~
  README ~isra_bg2/Isra_BG2_Readme.html~
  
  AUTO_TRA ~isra_bg2/translations/%s~
++ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++END
++
  LANGUAGE ~English~
           ~English~
           ~isra_bg2/translations/english/setup.tra~
@@ -23,9 +36,94 @@
 -ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN BEGIN
 +ACTION_IF GAME_INCLUDES ~tob~ THEN BEGIN
    COPY_EXISTING ~interdia.2da~ ~override~
++    READ_2DA_ENTRY 17 0 2 scriptname
++    PATCH_IF (~%scriptname%~ STR_EQ ~IMOEN~) THEN BEGIN
      SET_2DA_ENTRY 17 1 2 ~BIMOEN2~ // fixes ToB version
++    END
      BUT_ONLY_IF_IT_CHANGES
  END ELSE BEGIN
    APPEND ~interdia.2da~ ~IMOEN       BIMOEN2~ // fixes SoA version
-     UNLESS ~BIMOEN2~
+@@ -31,7 +47,7 @@
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ // fixing area file
+-COPY_EXISTING ar1005.are override
++COPY_EXISTING ar1005.are ~override~
+   WRITE_ASCII AREA_SCRIPT ar1005 #8
+ BUT_ONLY
+ 
+@@ -43,14 +59,14 @@
+     
+ LAF HANDLE_AUDIO END
+ 
+-COMPILE ~isra_bg2/dialogue/rh#isr.d~
+-COMPILE ~isra_bg2/dialogue/rh#isrj.d~
+-COMPILE ~isra_bg2/dialogue/rh#isrp.d~
++COMPILE EVALUATE_BUFFER ~isra_bg2/dialogue/rh#isr.d~
++COMPILE EVALUATE_BUFFER ~isra_bg2/dialogue/rh#isrj.d~
++COMPILE EVALUATE_BUFFER ~isra_bg2/dialogue/rh#isrp.d~
+ COMPILE ~isra_bg2/dialogue/brh#isr.d~
+ COMPILE ~isra_bg2/dialogue/rh#quest.d~
+ 
+-COMPILE ~isra_bg2/scripts/rh#isr.baf~
+-COMPILE ~isra_bg2/scripts/rh#isrd.baf~
++COMPILE EVALUATE_BUFFER ~isra_bg2/scripts/rh#isr.baf~
++COMPILE EVALUATE_BUFFER ~isra_bg2/scripts/rh#isrd.baf~
+ COMPILE ~isra_bg2/scripts/rh#isrx.baf~
+ COMPILE ~isra_bg2/scripts/rh#alia.baf~
+ COMPILE ~isra_bg2/scripts/rh#alia2.baf~
+@@ -90,8 +106,8 @@
+ 
+ // ToB
+ COMPILE ~isra_bg2/dialogue/rh#is25.d~
+-COMPILE ~isra_bg2/dialogue/rh#is25j.d~
+-COMPILE ~isra_bg2/dialogue/rh#is25p.d~
++COMPILE EVALUATE_BUFFER ~isra_bg2/dialogue/rh#is25j.d~
++COMPILE EVALUATE_BUFFER ~isra_bg2/dialogue/rh#is25p.d~
+ COMPILE ~isra_bg2/dialogue/brh#is25.d~
+ 
+ COMPILE ~isra_bg2/scripts/rh#is25.baf~
+@@ -150,7 +166,7 @@
+ 
+ COPY ~isra_bg2/images~ ~override~
+ 
+-ACTION_IF GAME_IS ~BG2EE~ THEN BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+   COPY ~isra_bg2/bgee/images~ ~override~
  END
+ 
+@@ -580,6 +596,25 @@
+   ~rh#isra2 brh#isr brh#is25~
+ UNLESS ~rh#isra2~
+ 
++ACTION_IF GAME_IS ~eet~ BEGIN
++  INCLUDE ~EET/other/EET_functions.tph~
++  LAF ~EET_NPC_TRANSITION~
++    INT_VAR
++      type = 2
++	  clean_ToB = 1
++    STR_VAR
++      dv = "rh#Isra2"
++      override_SoA = "RH#ISR"
++      override_ToB = "RH#IS25"
++      dialog_ToB = "RH#IS25"
++      traFile = EVAL "Isra_bg2/translations/%LANGUAGE%/brh#is25.tra"
++      string = "@1" //Bring me Isra, the Sunite cavalier.
++      stringPosDV = "Jaheira"
++	  clean_ToB_DV = "rh#isra"
++  END
++END ELSE BEGIN
++  COMPILE ~Isra_bg2/dialogue/FATESP.d~ USING ~Isra_bg2/translations/%LANGUAGE%/brh#is25.tra~
++END
+ 
+ // Crossmod Content
+ 
+@@ -604,7 +639,7 @@
+ ACTION_IF FILE_EXISTS_IN_GAME ~brh#isr.dlg~ AND FILE_EXISTS_IN_GAME ~bo#coran25.dlg~
+ THEN BEGIN
+   PRINT ~Adding SoA banters between Isra and Kulyok's Coran...~
+-  COMPILE ~isra_bg2/crossmod/coran.d~
++  COMPILE EVALUATE_BUFFER ~isra_bg2/crossmod/coran.d~
+ END
+ 
+ // Isra-Kulyok's Tiax Material

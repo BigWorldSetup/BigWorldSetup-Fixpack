@@ -1,0 +1,86 @@
+--- Branwen/Setup-Branwen.tp2	2014-02-14 15:16:06.000000000 -0500
++++ Fixpack/Branwen/Setup-Branwen.tp2	2016-11-22 19:10:40.614763400 -0500
+@@ -12,9 +12,22 @@
+ 
+ AUTHOR ~Kulyok at http://forums.pocketplane.net~ // If the player gets an installation error, he'll know where to post his bug reports
+ 
+-VERSION ~v3~  // This is not necessary, but recommended. A version number will be reflected in your Weidu.log. This way you will know which version a player with a bug report has installed. V4, v1alpha, v1.23 will work too.
++VERSION ~v3 BWP Fix~  // This is not necessary, but recommended. A version number will be reflected in your Weidu.log. This way you will know which version a player with a bug report has installed. V4, v1alpha, v1.23 will work too.
+ 
+-AUTO_TRA ~Branwen/%s~ // This is translation support. It means that your mdo will eventually have directories like MyMod/French, MyMod/Italian and MyMod/Polish, and this line will tell the compiler where to look.
++AUTO_TRA ~Branwen/%s~ // This is translation support. It means that your mod will eventually have directories like MyMod/French, MyMod/Italian and MyMod/Polish, and this line will tell the compiler where to look.
++
++ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12 // EET uses continuous chapter numbering from BG1 through TOB
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0 // all other game types (BG2, BGT) restart chapter numbering in SOA
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter // store adjusted chapter numbers in %bg_chapter_#% variables for use in .baf/.d scripts (e.g., %bg_chapter_1% will evaluate to 13 for EET and to 1 otherwise)
++  END
++END
+ 
+ LANGUAGE ~English~ ~English~ ~Branwen/English/Setup-Branwen.tra~ // This is an example line for English language. If you want, you can also use Translations/English folder
+ 
+@@ -96,7 +109,7 @@
+ // Are your sounds not running? Check that all filenames are used correctly. It might also be worth it to download and use DLTCEP to convert your .wav files in .wavc(converted wav, same extension) format for the game's use.
+ // Most mods now use .ogg audio files, if the mod is fully voiced. For instructions, look at Xan's Xan/Command files. But if you only have thirty or forty files, .wavc format should suffice. Branwen's files are in .wavc format.
+ 
+-COMPILE ~Branwen/Dialogue/O#BBran.d~ // All Branwen's banters with other party members will go here.
++COMPILE EVALUATE_BUFFER ~Branwen/Dialogue/O#BBran.d~ // All Branwen's banters with other party members will go here.
+ 	~Branwen/Dialogue/O#Bran.d~  // Branwen's greeting dialogue will go here. 
+ 	~Branwen/Dialogue/O#BranJ.d~ // The rest of Branwen's dialogue: her commentary, interjections, talks with the player, lovetalks and everything else.
+ 	~Branwen/Dialogue/O#BranP.d~ // Branwen's leaving party dialogue will go here.
+@@ -129,7 +142,7 @@
+ SAY DESC ~Branwen was captured by Bodhi and infected with vampirism, forcing you to slay her. There may be some way to revive her, though you do not know what it would be.~
+ 
+ // Since we're using Bodhi's abduction for Branwen, with journal entries, and we want these journal entries to work for BG2:EE, we need to use this code:
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ ADD_JOURNAL EXISTING TITLE (#74337) @100001 @100002 // #74337 means ~The final Battle with Bodhi~ in BG2EE's dialog.tlk. In short, we give our journal entries a name, but only for BG2EE.
+ END
+ 
+@@ -196,7 +209,7 @@
+ WRITE_ASCII 0X34  ~BRANWES~  #8  // small portrait
+ WRITE_ASCII 0x3c  ~BRANWEM~  #8  // medium portrait
+ 
+-COMPILE ~Branwen/Dialogue/O#BBra25.d~  // All Branwen's ToB banters with other party members will go here. Again, we use 25, because it's a tradution for ToB.
++COMPILE EVALUATE_BUFFER ~Branwen/Dialogue/O#BBra25.d~  // All Branwen's ToB banters with other party members will go here. Again, we use 25, because it's a tradution for ToB.
+ 	~Branwen/Dialogue/O#Bran25.d~  // Branwen's ToB greeting dialogue will go here.
+ 	~Branwen/Dialogue/O#Bra25J.d~  // The rest of Branwen's ToB dialogue: her commentary, interjections, talks with the player, lovetalks and everything else.
+ 	~Branwen/Dialogue/O#Bra25P.d~  // Branwen's ToB leaving party dialogue will go here.
+@@ -205,7 +218,7 @@
+ 	~Branwen/Scripts/O#Bra25D.baf~ // Branwen's dream script for ToB.
+ 
+ // Baldur's Gate 2: Enhanced Edition adds four new NPCs for your party. Naturally, Branwen banters with these NPCs, too. Let's compile a separate banter file here in ToB section(because it involves Branwen's ToB banter file):
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ COMPILE	~Branwen/Dialogue/BranEE.d~
+ END
+ 
+@@ -284,3 +297,22 @@
+ 
+ // This is really all there is about a simple NPC mod. Since you will probably want your mod to be translated into multiple languages, you can read on the forums about translation files, or .tra files(files with strings that look like @100 = ~Hello!~). This mod is not fully traified for ease-of-use reasons - Branwen NPC is a tutorial of sorts, after all, so her files should be easy enough to read.
+ 
++// EET related code
++ACTION_IF GAME_IS ~eet~ BEGIN //only true if game is detected as Enhanced Edition Trilogy (mod for BG2:EE)
++  INCLUDE ~EET/other/EET_functions.tph~ //declaration of external EET functions used below
++  LAF ~EET_NPC_TRANSITION~ //function used to automatically implement EET continuity system
++    INT_VAR
++      type = 2 //informs the function that this is BG2 NPC without BG1 content
++      clean_ToB = 1 //forces function to clean old BG1 Branwen code that exists in AR4000.BCS and FATESP.DLG
++    STR_VAR
++      dv = "O#Bran" //Branwen Death Variable (script name)
++      override_SoA = "O#BRANS" //Branwen SoA Override script
++      override_ToB = "O#BRA25S" //Branwen ToB Override script
++      dialog_ToB = "O#BRAN25" //Branwen ToB dialogue file
++      string = "Bring me Branwen, the priestess of Tempus." //normally this should be reference to TRA file, but the mod is not traified
++      stringPosDV = "Cernd" //Branwen will be appended right above Cernd
++      clean_ToB_DV = "Branwen" //death variable of BG1 Branwen (see clean_ToB comment)
++  END
++END ELSE BEGIN //we use different Fate Spirit dialogue patching for any other platform than EET
++  COMPILE ~Branwen/Dialogue/FATESP.d~
++END

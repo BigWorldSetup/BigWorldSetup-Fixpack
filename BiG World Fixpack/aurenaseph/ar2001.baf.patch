@@ -1,5 +1,5 @@
---- aurenaseph\scripts\ar2001.baf	Mon Feb 13 18:20:00 2006
-+++ D:\EE_Patchstudio\patched files\aurenaseph\scripts\ar2001.baf	Fri Jan 15 12:51:46 2016
+--- aurenaseph/scripts/ar2001.baf	2006-02-13 18:20:00.000000000 -0500
++++ Fixpack/aurenaseph/scripts/ar2001.baf	2016-11-20 23:15:22.193793900 -0500
 @@ -2,7 +2,7 @@
          InParty("K#Auren")
          InParty("Jaheira")

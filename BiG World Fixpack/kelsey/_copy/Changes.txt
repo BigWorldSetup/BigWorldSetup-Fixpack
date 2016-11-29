@@ -1,0 +1,116 @@
+Patching kelsey.tp2: GAME_IS ~bg2ee~ BEGIN => GAME_IS ~bg2ee eet~ BEGIN
+Patching kelsey.tp2: GAME_IS ~bg2ee~ BEGIN => GAME_IS ~bg2ee eet~ BEGIN
+Patching kelsey.tp2: GAME_IS ~bgee bg2ee~ BEGIN => GAME_IS ~bgee bg2ee eet~ BEGIN
+Patching kelsey.tp2: GAME_IS ~tob bgt bg2ee~ BEGIN => GAME_IS ~tob bgt bg2ee eet~ BEGIN
+Patching kelsey.tp2: GAME_IS ~tob bgt bg2ee~ BEGIN => GAME_IS ~tob bgt bg2ee eet~ BEGIN
+Patching kelsey/baf/soa/j#klsy.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching kelsey/baf/soa/j#klsy.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching kelsey/baf/soa/j#klsy.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching kelsey/baf/soa/j#klsy.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching kelsey/baf/soa/j#klsyd.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching kelsey/d/25fwki.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching kelsey/d/25fwki.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching kelsey/d/25fwki.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching kelsey/d/25fwki.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching kelsey/d/25fwki.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching kelsey/d/25fwki.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching kelsey/d/25fwki.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching kelsey/d/25fwki.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching kelsey/d/25fwki.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching kelsey/d/25fwki.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching kelsey/d/25fwki.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching kelsey/d/bj#klsy.d: Global("Chapter","GLOBAL",2) => Global("Chapter","GLOBAL",%bg2_chapter_2%)
+Patching kelsey/d/bj#klsy.d: Global("Chapter","GLOBAL",3) => Global("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching kelsey/d/bj#klsy.d: GlobalGT("Chapter","GLOBAL",4) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching kelsey/d/bj#klsy.d: GlobalLT("Chapter","GLOBAL",5) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching kelsey/d/bj#klsy.d: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching kelsey/d/fwkelseyinterject.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching kelsey/d/fwkelseyinterject.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching kelsey.tp2: ALWAYS command expanded
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+-----------
+
+Manual edits:
+
+2. Below code from kelsey/d/kelseyg.d:
+
+////////
+//
+// Fate spirit stuff
+//
+////////
+
+REPLACE_TRIGGER_TEXT fatesp ~!Dead("J#Kelsey")
+!InMyArea("J#Kelsey")
+Global("J#KelseySummoned","GLOBAL",0)~ ~False()~
+
+EXTEND_TOP FATESP 6 #9
+  IF ~!Dead("J#Kelsey")
+!InMyArea("J#Kelsey")
+Global("J#KelseySummoned","GLOBAL",0)
+Gender(Player1,FEMALE)
+!Race(Player1,HALFORC)
+!Race(Player1,GNOME)
+!Race(Player1,DWARF)
+!Global("AnomenRomanceActive","GLOBAL",2)~ THEN
+   REPLY @6000 // ~Bring me my lover, Kelsey.~
+    DO ~SetGlobal("J#KelseyRomanceActive","GLOBAL",2)
+CreateVisualEffect("SPPORTAL",[1999.1228])
+Wait(2)
+CreateCreature("J#Klsy25",[1999.1228],0)
+SetGlobal("J#KelseySummoned","GLOBAL",1)~ GOTO 8
+END
+
+EXTEND_BOTTOM FATESP 6 #9
+  IF ~!Dead("J#Kelsey")
+!InMyArea("J#Kelsey")
+Global("J#KelseySummoned","GLOBAL",0)~ THEN
+   REPLY @6001 // ~Bring me Kelsey, the human sorceror.~
+    DO ~CreateVisualEffect("SPPORTAL",[1999.1228])
+Wait(2)
+CreateCreature("J#Klsy25",[1999.1228],0)
+SetGlobal("J#KelseySummoned","GLOBAL",1)~ GOTO 8
+END
+
+////////
+//
+// End of Fate Spirit stuff
+//
+////////
+
+Moved to new file: kelsey/d/FATESP.d
+
+3. New code added at the end of kelsey.tp2 main component
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+  INCLUDE ~EET/other/EET_functions.tph~
+  LAF ~EET_NPC_TRANSITION~
+    INT_VAR
+      type = 2
+    STR_VAR
+      dv = "J#Kelsey"
+      override_SoA = "J#KLSY"
+      override_ToB = "J#KLSY25"
+      dialog_ToB = "J#KLSY25"
+      traFile = EVAL "kelsey/tra/%LANGUAGE%/kelseyg.tra"
+      string = "@6001" //Bring me Kelsey, the human sorceror.
+      stringPosDV = "Khalid"
+  END
+END ELSE BEGIN
+  COMPILE ~kelsey/d/FATESP.d~ USING ~kelsey/tra/%LANGUAGE%/kelseyg.tra~
+END
+
+
+No need to add additional "Lover" option. NPC won't be available if the game has been started in ToB without getting him in BG2
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

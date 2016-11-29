@@ -1,0 +1,20 @@
+--- crossmodbg2/soa/banters/soa_amber-kulyokxan/amber-kulyokxan_m#amber.baf	2016-11-27 13:18:36.264743400 -0500
++++ Fixpack/crossmodbg2/soa/banters/soa_amber-kulyokxan/amber-kulyokxan_m#amber.baf	2016-11-07 03:31:14.000000000 -0500
+@@ -2,7 +2,7 @@
+ InParty("M#Amber")
+ InParty("O#Xan")
+ AreaCheck("AR0300")
+-GlobalLT("Chapter","GLOBAL",4)
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+ Global("G#XB.AmberXanBanter4","GLOBAL",0)
+ THEN
+ RESPONSE #100
+@@ -12,7 +12,7 @@
+ 
+ IF
+ RealGlobalTimerExpired("G#XB.AmberXanTimer4","GLOBAL")
+-GlobalLT("Chapter","GLOBAL",4)
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+ InParty("M#Amber")
+ InParty("O#Xan")
+ AreaCheck("AR0300")

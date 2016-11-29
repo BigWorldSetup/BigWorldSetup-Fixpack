@@ -1,0 +1,8 @@
+--- questpack/tp2/quest/oasis_combat.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/oasis_combat.tph	2016-11-21 22:32:21.238082800 -0500
+@@ -23,4 +23,4 @@
+ COPY ~questpack/oasis/combat/spells/d0bash.spl~ ~override~
+   SAY 0x8 @201
+ 
+-COMPILE ~questpack/oasis/combat/scripts~
++COMPILE EVALUATE_BUFFER ~questpack/oasis/combat/scripts~

@@ -1,0 +1,9 @@
+--- questpack/thieves/scripts/et_0301.baf	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/scripts/et_0301.baf	2016-11-21 16:23:54.760085500 -0500
+@@ -1,5 +1,5 @@
+ IF
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   GlobalGT("MaeVarWork","GLOBAL",0)
+   !Dead("lin")
+ THEN

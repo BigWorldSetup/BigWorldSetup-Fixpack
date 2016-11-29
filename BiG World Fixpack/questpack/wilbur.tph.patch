@@ -1,0 +1,37 @@
+--- questpack/tp2/quest/wilbur.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/wilbur.tph	2016-11-21 22:34:36.133580900 -0500
+@@ -39,7 +39,7 @@
+      ~questpack/wilbur/d0qpwii2.cre~ ~override~
+      ~questpack/wilbur/d0qpwisw.bam~ ~override~
+ 
+-COMPILE ~questpack/wilbur/dialog.d~ USING
++COMPILE EVALUATE_BUFFER ~questpack/wilbur/dialog.d~ USING
+         ~%tra_path%/english/wilbur.tra~
+         ~%tra_path%/%LANGUAGE%/wilbur.tra~
+ 
+@@ -47,7 +47,7 @@
+             ~%tra_path%/english/wilbur.tra~
+             ~%tra_path%/%LANGUAGE%/wilbur.tra~
+ 
+-COMPILE ~questpack/wilbur/d0qpwigi.baf~
++COMPILE EVALUATE_BUFFER ~questpack/wilbur/d0qpwigi.baf~
+         ~questpack/wilbur/d0qpwima.baf~
+         ~questpack/wilbur/d0qpwiwi.baf~
+         ~questpack/wilbur/d0qpwiw2.baf~
+@@ -56,13 +56,13 @@
+         ~questpack/wilbur/d0qpwii1.baf~
+         ~questpack/wilbur/d0qpwii2.baf~
+ 
+-EXTEND_BOTTOM ~ar0500.bcs~ ~questpack/wilbur/et_0500.baf~
+-EXTEND_BOTTOM ~ar0502.bcs~ ~questpack/wilbur/et_0502.baf~
++EXTEND_BOTTOM ~ar0500.bcs~ ~questpack/wilbur/et_0500.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~ar0502.bcs~ ~questpack/wilbur/et_0502.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~ar0530.are~ ~override~
+   WRITE_ASCII 0x94 "ar0530" #8
+ BUT_ONLY
+ 
+-EXTEND_TOP ~ar0530.bcs~ ~questpack/wilbur/ar0530.baf~
++EXTEND_TOP ~ar0530.bcs~ ~questpack/wilbur/ar0530.baf~ EVALUATE_BUFFER
+ 
+ COPY ~questpack/wilbur/d0nosnd.wav~ ~override~

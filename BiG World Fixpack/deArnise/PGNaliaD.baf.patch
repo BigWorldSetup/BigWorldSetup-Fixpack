@@ -1,0 +1,13 @@
+--- deArnise/Scripts/PGNaliaD.baf	2008-02-26 12:40:30.000000000 -0500
++++ Fixpack/deArnise/Scripts/PGNaliaD.baf	2016-11-21 16:21:06.178879600 -0500
+@@ -20,8 +20,8 @@
+ IF 
+ InParty(Myself)
+ OR(2)
+-GlobalLT("Chapter","GLOBAL",4)
+-GlobalGT("Chapter","GLOBAL",5)
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
++GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ !AreaCheck("AR1304")
+ !AreaCheck("AR1305")
+ !AreaCheck("AR1306")

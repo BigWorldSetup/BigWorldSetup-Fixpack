@@ -1,0 +1,149 @@
+--- RE/Setup-RE.tp2	2016-05-21 15:26:16.847090400 -0400
++++ Fixpack/RE/Setup-RE.tp2	2016-11-21 22:57:09.593889100 -0500
+@@ -10,6 +10,19 @@
+ 
+ AUTO_TRA ~RE/%s~
+ 
++ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++END
++
+ LANGUAGE ~English~ ~English~ ~RE/English/Setup-RE.tra~
+ LANGUAGE ~Russian (Translated by Aerie.ru)~ ~Russian~ ~RE/Russian/Setup-RE.tra~
+ LANGUAGE ~French (Translated by Les d'Oghmatiques)~ ~French~ ~RE/French/Setup-RE.tra~
+@@ -84,7 +97,7 @@
+ // Anishai, by cmorgan
+ BEGIN @4
+ 
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ ADD_JOURNAL @119 USING ~RE/%LANGUAGE%/RE_Anishai.tra~
+ END
+ 
+@@ -107,7 +120,7 @@
+ // Bjornin, by jastey
+ BEGIN @6
+ 
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ COPY ~RE/Bjornin/C#BJOREE.bmp~ ~override/C#BJORNS.bmp~
+ END ELSE BEGIN
+ COPY ~RE/Bjornin/C#BJORNS.bmp~ ~override~
+@@ -187,7 +200,7 @@
+ APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
+ UNLESS ~CD_STATE_NOTVALID~
+ 
+-COMPILE ~RE/Cambion/RE_Camb.d~
++COMPILE EVALUATE_BUFFER ~RE/Cambion/RE_Camb.d~
+ 
+ 
+ 
+@@ -360,7 +373,7 @@
+ 
+ COMPILE ~RE/HaerDalis/RE_Haer.d~
+ 
+-EXTEND_TOP ~haerdali.bcs~ ~RE/HaerDalis/RE_Haer.baf~
++EXTEND_TOP ~haerdali.bcs~ ~RE/HaerDalis/RE_Haer.baf~ EVALUATE_BUFFER
+ 
+ ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~win32~) THEN BEGIN
+     AT_NOW ~RE/Audio/HaerDalisInstall.bat~
+@@ -460,7 +473,7 @@
+ 
+ COPY ~RE/Areas/ARRE03.are~ ~override~
+ 
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ COPY ~RE/Laran/CRE/B!LaraEE.bmp~ ~override/BLaranS.bmp~
+ END ELSE BEGIN
+ COPY ~RE/Laran/CRE/B!LaranS.bmp~ ~override/BLaranS.bmp~
+@@ -492,7 +505,7 @@
+ ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN
+ BEGIN
+ 
+-COMPILE ~RE/Laran/Dialogue/B!Laran2.d~
++COMPILE EVALUATE_BUFFER ~RE/Laran/Dialogue/B!Laran2.d~
+ 
+ 	~RE/Laran/Script/B!REmsn.baf~
+ 	~RE/Laran/Script/RE_Lar3.baf~
+@@ -653,7 +666,7 @@
+ APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
+ UNLESS ~CD_STATE_NOTVALID~
+ 
+-COMPILE ~RE/Ribald/dialogue/RE_Jah.d~ 
++COMPILE EVALUATE_BUFFER ~RE/Ribald/dialogue/RE_Jah.d~ 
+ 	~RE/Ribald/dialogue/RE_Riba.d~
+ 
+ 	~RE/Ribald/scripts/RE_Riba.baf~
+@@ -672,7 +685,7 @@
+ // Ryan Trawl, by Kulyok
+ BEGIN @65
+ 
+-COMPILE ~RE/Ryan/RE_Ryan.d~
++COMPILE EVALUATE_BUFFER ~RE/Ryan/RE_Ryan.d~
+ 
+ 
+ 
+@@ -699,14 +712,14 @@
+ 	~RE/Sendai/RE_Send1.baf~
+ 	~RE/Sendai/RE_Send2.baf~
+ 
+-EXTEND_TOP ~player1d.bcs~ ~RE/Sendai/Player1d.baf~
++EXTEND_TOP ~player1d.bcs~ ~RE/Sendai/Player1d.baf~ EVALUATE_BUFFER
+ 
+ 
+ 
+ // Sheri, by cmorgan
+ BEGIN @68
+ 
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ COPY ~RE/Sheri/RE_Sh_EE.bmp~ ~override/RE_Sheri.bmp~
+ END ELSE BEGIN
+ COPY ~RE/Sheri/RE_Sheri.bmp~ ~override~
+@@ -749,7 +762,7 @@
+ // Soluafein, by jastey
+ BEGIN @70
+ 
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ ADD_JOURNAL EXISTING TITLE (#74362) @1 USING ~RE/%LANGUAGE%/RE_Sola.tra~
+ END
+ 
+@@ -805,7 +818,7 @@
+ 	~RE/Yoshimo/RE_Yosh1.baf~
+ 
+ EXTEND_TOP ~yoshd.bcs~ ~RE/Yoshimo/yoshd.baf~
+-EXTEND_TOP ~yoshimo.bcs~ ~RE/Yoshimo/yoshimo.baf~
++EXTEND_TOP ~yoshimo.bcs~ ~RE/Yoshimo/yoshimo.baf~ EVALUATE_BUFFER
+ 
+ 
+ 
+@@ -899,7 +912,7 @@
+ 
+ COPY ~RE/Audio/re_blank.wav~ ~override~
+ 
+-COMPILE ~RE/Valygar/RE_Valyg.d~
++COMPILE EVALUATE_BUFFER ~RE/Valygar/RE_Valyg.d~
+ 
+ EXTEND_TOP ~Valygar.bcs~ ~RE/Valygar/RE_Valyg.baf~
+ 
+@@ -1005,8 +1018,8 @@
+ 
+ EXTEND_TOP ~AR6200.bcs~ ~RE/Valygar/AR6200.baf~
+ 
+-EXTEND_TOP ~VALY25.bcs~ ~RE/Valygar/VALY25.baf~
+-EXTEND_TOP ~VALYGARD.bcs~ ~RE/Valygar/VALY25D.baf~
++EXTEND_TOP ~VALY25.bcs~ ~RE/Valygar/VALY25.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~VALYGARD.bcs~ ~RE/Valygar/VALY25D.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~MISC5I.itm~ ~override/RE_Valyg.itm~
+ SAY NAME1 @94

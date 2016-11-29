@@ -1,5 +1,5 @@
---- amber\scripts\m#amber.baf	Sun May 04 17:20:00 2008
-+++ D:\EE_Patchstudio\patched files\amber\scripts\m#amber.baf	Fri Jan 15 12:51:46 2016
+--- amber/scripts/m#amber.baf	2008-05-04 18:20:00.000000000 -0400
++++ Fixpack/amber/scripts/m#amber.baf	2016-11-21 20:05:34.541844300 -0500
 @@ -815,7 +815,7 @@
  	  Global("M#AmberTalk","Locals",6)
  	  Global("M#AmberTalk","Locals",8)

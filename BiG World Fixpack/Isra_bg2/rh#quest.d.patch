@@ -1,10 +1,6 @@
---- Isra_bg2\dialogue\rh#quest.d	Thu Jan 21 11:07:00 2016
-+++ Isra_bg2\dialogue\rh#quest.d	Thu Jan 21 10:59:03 2016
-@@ -262,20 +262,21 @@
- END
- END
-  
- // 4. Jysstev Estate
+--- Isra_bg2/dialogue/rh#quest.d	2013-09-24 22:07:47.774378000 -0400
++++ Fixpack/Isra_bg2/dialogue/rh#quest.d	2016-11-26 02:07:16.427455100 -0500
+@@ -266,12 +266,13 @@
  
  CHAIN IF WEIGHT #-1 ~InParty("rh#Isra2") Global("rh#QarTalks","GLOBAL",1)~ THEN SCQAR q11
  @110 /* Lady Isra, I had thought you above boorish gloating. Has your father's common blood finally run true in the end? */
@@ -19,15 +15,7 @@
  END
  	++ @116 /* Any financial information would be useful. */ EXTERN RH#ISRJ q11.1
  	++ @117 /* A sensible suggestion if ever I've heard one. */ EXTERN RH#ISRJ q11.2
- 	++ @118 /* We won't bother if all we're going to get out of it is abuse. */ EXTERN RH#ISRJ q11.3
- 
- CHAIN RH#ISRJ q11.1
- @119 /* Aye, especially concerning any money lent or borrowed. */
-@@ -387,15 +388,15 @@
- CHAIN RH#ALIM q13.2
- @147 /* I ain't interested in talking with the likes o' ye. Least not unless ye've got a flask o' the Thumb's Bitter Black Ale with ye. I miss that stuff almost as much as freedom itself. */
- == RH#ISRJ IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN @148 /* And the ale will loosen your tongue, so to speak? */
- == RH#ALIM IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN @149 /* Ye won't know unless ye try, lady. */
+@@ -391,7 +392,7 @@
  EXIT
  
  CHAIN IF ~GlobalGT("rh#AlimTalks","GLOBAL",1) !PartyHasItem("rh#ale")~ THEN RH#ALIM q13.3
@@ -36,7 +24,3 @@
  EXIT
  
  CHAIN IF ~GlobalGT("rh#AlimTalks","GLOBAL",1) PartyHasItem("rh#ale")~ THEN RH#ALIM q13.4
- @151 /* Well... ain't that a blessed sight? Pity, though, that I've got nothing more to say than I did to your Tyrran friend. Quentin Jysstev is the one what's been payin' me to run goods from Calimshan. */
- DO ~TakePartyItem("rh#ale")~
- EXIT
- 

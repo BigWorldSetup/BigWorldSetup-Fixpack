@@ -1,5 +1,5 @@
---- aurenaseph\scripts\k#auren.baf	Sat Aug 04 09:47:08 2012
-+++ D:\EE_Patchstudio\patched files\aurenaseph\scripts\k#auren.baf	Fri Jan 15 12:51:46 2016
+--- aurenaseph/scripts/k#auren.baf	2012-08-04 10:47:08.000000000 -0400
++++ Fixpack/aurenaseph/scripts/k#auren.baf	2016-11-20 23:15:22.590393800 -0500
 @@ -345,9 +345,9 @@
  InParty(Myself)
  GlobalGT("K#BanterO","GLOBAL",11)

@@ -1,11 +1,70 @@
---- alternatives\setup-alternatives.tp2	Sun Jul 12 08:06:39 2015
-+++ C:\BWP Patchstudio\patched files\alternatives\setup-alternatives.tp2	Wed Nov 11 23:16:11 2015
-@@ -4,7 +4,7 @@
+--- alternatives/setup-alternatives.tp2	2015-07-12 09:06:39.852852100 -0400
++++ Fixpack/alternatives/setup-alternatives.tp2	2016-11-22 15:24:54.147872800 -0500
+@@ -4,10 +4,21 @@
  
  README ~alternatives/readme-alternatives.html~ 
  
 -VERSION ~v11~ 
-+VERSION ~v11 BWP Fix~ 
++VERSION ~v11 BWP Fix~
  
  // Since nothing is currently blocking installation of the mod on BG2EE, add appropriate text handling for it
  ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++
+   // BG:EE tra conversion
+   // Code borrowed from Edwin Romance and adjusted: HANDLE_CHARSETS in now included in WeiDU 237
+   // For complete description check Edwin Romance and the WeiDU forum topic on HANDLE_CHARSETS
+@@ -18,7 +29,7 @@
+ 
+   LAF HANDLE_CHARSETS
+     INT_VAR
+-      infer_charset = 1
++      infer_charsets = 1
+     STR_VAR
+       tra_path = EVAL ~%MOD_FOLDER%~
+       noconvert_array = alternatives_noconvert
+@@ -362,13 +373,13 @@
+ EXTEND_TOP    ~ar0300.bcs~   ~alternatives/script/b!ar0300_fix.baf~  //fixes the area transitions for hostile Shadow Thieves 
+ EXTEND_TOP    ~ar0311.bcs~   ~alternatives/script/b!ar0311.baf~      //turns Gaelan Hostile 
+ EXTEND_TOP    ~ar0312.bcs~   ~alternatives/script/b!ar0312.baf~      //turns Arledrian hostile
+-EXTEND_TOP    ~ar0400.bcs~   ~alternatives/script/b!ar0400.baf~      //spawns Malficus in the Slums 
++EXTEND_TOP    ~ar0400.bcs~   ~alternatives/script/b!ar0400.baf~ EVALUATE_BUFFER     //spawns Malficus in the Slums 
+ EXTEND_TOP    ~ar0511.bcs~   ~alternatives/script/b!ar0511.baf~      //Five Flagons 2nd floor, spawns "Aster", the Order of the Aster contact 
+ EXTEND_TOP    ~ar0513.bcs~   ~alternatives/script/b!ar0513.baf~      //spawns Wael, the assassin in Delosar's, 1st floor 
+-EXTEND_BOTTOM ~ar0801.bcs~   ~alternatives/script/b!ar0801.baf~      //"good" route, crypt spawns 
++EXTEND_BOTTOM ~ar0801.bcs~   ~alternatives/script/b!ar0801.baf~ EVALUATE_BUFFER     //"good" route, crypt spawns 
+ EXTEND_BOTTOM ~ar0803.bcs~   ~alternatives/script/b!ar0803.baf~      //Bodhi's Lair, sided with Aster 
+-EXTEND_TOP    ~ar0900.bcs~   ~alternatives/script/b!ar0900.baf~      //spawns Leyt, the puzzle-box person in the Temple District 
+-EXTEND_BOTTOM ~ar1000.bcs~   ~alternatives/script/b!ar1000.baf~      //sets up cutscene where PC overhears Brega and Wessalen in Gov't District 
++EXTEND_TOP    ~ar0900.bcs~   ~alternatives/script/b!ar0900.baf~ EVALUATE_BUFFER     //spawns Leyt, the puzzle-box person in the Temple District 
++EXTEND_BOTTOM ~ar1000.bcs~   ~alternatives/script/b!ar1000.baf~ EVALUATE_BUFFER     //sets up cutscene where PC overhears Brega and Wessalen in Gov't District 
+ EXTEND_TOP    ~ar1002.bcs~   ~alternatives/script/b!ar1002.baf~      //spawns Harbormaster Nador and Assistant Harbormaster Ballus in the Council of Six building 
+ EXTEND_TOP    ~ar1007.bcs~   ~alternatives/script/b!ar1007.baf~      //Vulova estate spawns 
+ EXTEND_BOTTOM ~bodfgt01.bcs~ ~alternatives/script/b!bdfgt1.baf~      //extend bodfgt01.bcs - attacking Bodhi, Aster route 
+@@ -399,7 +410,7 @@
+ COMPILE ~alternatives/script/b!wael1.baf~       //Setup for Wael's assassination of Nador 
+ COMPILE ~alternatives/script/b!wael2.baf~       //Wael assassinates Nador 
+ COMPILE ~alternatives/script/b!wael3.baf~       //Party is returned to its locations following assassination 
+-COMPILE ~alternatives/script/b!zahl.baf~        //essentially, it's arnfgt06.bcs, Haz
++COMPILE EVALUATE_BUFFER ~alternatives/script/b!zahl.baf~        //essentially, it's arnfgt06.bcs, Haz
+ COMPILE ~alternatives/script/b!chap3a.baf~      //chapter 3 transition, Aster route
+ COMPILE ~alternatives/script/b!chap3m.baf~      //chapter 3 transition, Malficus route 
+ 
+@@ -426,7 +437,7 @@
+ 
+ ADD_JOURNAL @906 USING ~alternatives/%s\dialogue.tra~
+ 
+-COMPILE ~alternatives/dialogue/dialogue.d~ 
++COMPILE EVALUATE_BUFFER ~alternatives/dialogue/dialogue.d~ 
+ 
+ ACTION_IF FILE_EXISTS_IN_GAME ~stguard1.bcs~ THEN BEGIN 
+     COPY_EXISTING ~stguard1.bcs~ ~override~ 

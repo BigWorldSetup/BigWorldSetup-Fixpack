@@ -1,0 +1,46 @@
+--- Xan/Dialogue/O#Xan.d	2007-05-23 00:26:12.000000000 -0400
++++ Fixpack/Xan/Dialogue/O#Xan.d	2016-11-21 16:33:15.208210300 -0500
+@@ -26,11 +26,11 @@
+ == VICONIJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN @19
+ == O#XAN IF ~OR(5) InParty("Edwin") InParty("Imoen2") InParty("Jaheira") InParty("Minsc") InParty("Viconia")~ THEN @20
+ END
+-+ ~OR(3) !Race(Player1,ELF) !Gender(Player1,FEMALE) GlobalGT("Chapter","GLOBAL",3)~ + @21 DO ~SetGlobal("O#XanFriendship","GLOBAL",1)~ + O#XanGD_Intro
+-+ ~OR(3) !Race(Player1,ELF) !Gender(Player1,FEMALE) GlobalGT("Chapter","GLOBAL",3)~ + @22 DO ~SetGlobal("O#XanFriendship","GLOBAL",1) SetGlobal("O#XanNeverMet","GLOBAL",1)~ + O#XanGD_W
+-+ ~OR(3) !Race(Player1,ELF) !Gender(Player1,FEMALE) GlobalGT("Chapter","GLOBAL",3)~ + @23 + O#XanGD_D
+-+ ~OR(3) !Race(Player1,ELF) !Gender(Player1,FEMALE) GlobalGT("Chapter","GLOBAL",3)~ + @24 DO ~SetGlobal("O#XanFriendship","GLOBAL",1)~ + O#XanGDNo
+-IF ~Race(Player1,ELF) Gender(Player1,FEMALE) GlobalLT("Chapter","GLOBAL",4)~ + O#XanGDElvenFemale
+++ ~OR(3) !Race(Player1,ELF) !Gender(Player1,FEMALE) GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @21 DO ~SetGlobal("O#XanFriendship","GLOBAL",1)~ + O#XanGD_Intro
+++ ~OR(3) !Race(Player1,ELF) !Gender(Player1,FEMALE) GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @22 DO ~SetGlobal("O#XanFriendship","GLOBAL",1) SetGlobal("O#XanNeverMet","GLOBAL",1)~ + O#XanGD_W
+++ ~OR(3) !Race(Player1,ELF) !Gender(Player1,FEMALE) GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @23 + O#XanGD_D
+++ ~OR(3) !Race(Player1,ELF) !Gender(Player1,FEMALE) GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @24 DO ~SetGlobal("O#XanFriendship","GLOBAL",1)~ + O#XanGDNo
++IF ~Race(Player1,ELF) Gender(Player1,FEMALE) GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + O#XanGDElvenFemale
+ 
+ APPEND O#XAN
+ 
+@@ -79,7 +79,7 @@
+ = @45
+ ++ @46 + O#XanGD_F
+ ++ @47 + O#XanGD_F
+-+ ~GlobalLT("Chapter","GLOBAL",4)~ + @48 + O#XanGDC
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @48 + O#XanGDC
+ ++ @49 + O#XanGDYes
+ ++ @50 + O#XanGDNo
+ END
+@@ -164,7 +164,7 @@
+ IF ~~ O#XanGD_IreTor
+ SAY @57
+ = @80
+-+ ~GlobalLT("Chapter","GLOBAL",4)~ + @81 + O#XanGD_F001
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @81 + O#XanGD_F001
+ ++ @82 + O#XanGD_F001
+ ++ @83 + O#XanGD_F002
+ END
+@@ -222,7 +222,7 @@
+ 
+ IF ~~ O#XanGD_F3
+ SAY @99
+-+ ~GlobalLT("Chapter","GLOBAL",4)~ + @48 + O#XanGDC
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @48 + O#XanGDC
+ ++ @100 + O#XanGDYes
+ ++ @50 + O#XanGDNo
+ + ~Dead("C6Bodhi")~ + @101 + O#XanGDBodhi

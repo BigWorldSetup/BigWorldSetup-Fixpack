@@ -1,0 +1,11 @@
+--- crossmodbg2/soa/banters/soa_tsujatha-yasraena/soa_tsujatha-yasraena_banters.d	2016-11-27 13:18:38.013388200 -0500
++++ Fixpack/crossmodbg2/soa/banters/soa_tsujatha-yasraena/soa_tsujatha-yasraena_banters.d	2016-11-07 03:31:14.000000000 -0500
+@@ -4,7 +4,7 @@
+ !StateCheck("Tsujath",CD_STATE_NOTVALID)
+ !StateCheck("Yasraena",CD_STATE_NOTVALID)
+ CombatCounter(0)
+-GlobalLT("CHAPTER","GLOBAL",5)
++GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_5%)
+ Global("G#XB.TsuYasraeBanter1","GLOBAL",0)~ THEN BTSUJAT TsuYasraeBanter#1.1
+ @0 /* Why did you flee your homeland? */
+ DO ~SetGlobal("G#XB.TsuYasraeBanter1","GLOBAL",1)~

@@ -1,0 +1,37 @@
+--- Isra_bg2/dialogue/rh#is25j.d	2013-09-24 21:50:38.567209400 -0400
++++ Fixpack/Isra_bg2/dialogue/rh#is25j.d	2016-11-21 23:01:49.765498300 -0500
+@@ -2040,28 +2040,28 @@
+ // Watcher's Keep
+ 
+ I_C_T GORAPP1 10 rh#gorapp1
+-== RH#IS25J IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") GlobalGT("Chapter","GLOBAL",7)~ THEN 
++== RH#IS25J IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN 
+ @617 /* I have no objection to challenging the fiend, though sealing the prison may indeed prove the wiser course of action. */
+-== RH#ISRJ IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") GlobalLT("Chapter","GLOBAL",8)~ THEN 
++== RH#ISRJ IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN 
+ @617 /* I have no objection to challenging the fiend, though sealing the prison may indeed prove the wiser course of action. */
+ END
+ 
+ I_C_T GORCAMB 20 cambion
+-== RH#IS25J IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") GlobalGT("Chapter","GLOBAL",7)~ THEN 
++== RH#IS25J IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN 
+ @618 /* Must we play *games* with this creature, <CHARNAME>? 'Tis a demon! Whatever pleasant face it puts forward is merely that -- a face! 'Twould be better to simply slay it and be done with it! */
+ == GORCAMB @619 /* Do try to control your more prejudiced companions, <CHARNAME>. */
+ END
+ 
+ I_C_T GORCAMB 20 cambion
+-== RH#ISRJ IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") GlobalLT("Chapter","GLOBAL",8)~ THEN 
++== RH#ISRJ IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN 
+ @618 /* Must we play *games* with this creature, <CHARNAME>? 'Tis a demon! Whatever pleasant face it puts forward is merely that -- a face! 'Twould be better to simply slay it and be done with it! */
+ == GORCAMB @619 /* Do try to control your more prejudiced companions, <CHARNAME>. */
+ END
+ 
+ I_C_T GORDEMO 1 demo
+-== RH#ISRJ IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") GlobalLT("Chapter","GLOBAL",8)~ THEN 
++== RH#ISRJ IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN 
+ @620 /* Be careful, <CHARNAME>. There is... something... here, something almost too ancient to be named... */
+-== RH#ISRJ IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") GlobalLT("Chapter","GLOBAL",8)~ THEN 
++== RH#ISRJ IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN 
+ @620 /* Be careful, <CHARNAME>. There is... something... here, something almost too ancient to be named... */
+ END
+ 

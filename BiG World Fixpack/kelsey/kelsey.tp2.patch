@@ -1,0 +1,124 @@
+--- kelsey.tp2	2014-06-03 22:34:32.000000000 -0400
++++ Fixpack/kelsey.tp2	2016-11-22 12:39:30.019947300 -0500
+@@ -2,29 +2,42 @@
+ AUTHOR ~jcompton@pocketplane.net~
+ 
+ README ~kelsey/docs/readme.html~
+-VERSION ~V4~
++
++VERSION ~v4 BWP Fix~
++
+ ASK_EVERY_COMPONENT
+ 
+ ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++
+   DEFINE_ACTION_FUNCTION install_portrait
+     STR_VAR
+       portrait = ""
+   BEGIN
+-    ACTION_IF GAME_IS ~bg2ee~ BEGIN
++    ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+       COPY ~kelsey/portraits/ee/%portrait%~ override
+     END ELSE BEGIN
+       COPY ~kelsey/portraits/%portrait%~ override
+     END
+   END
+ 
+-  ACTION_IF GAME_IS ~bg2ee~ BEGIN
++  ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+     OUTER_SPRINT tra_path ~%MOD_FOLDER%/tra/bgee~
+   END ELSE BEGIN
+     OUTER_SPRINT tra_path ~%MOD_FOLDER%/tra~
+   END
+ 
+   DEFINE_ACTION_MACRO bgee_language BEGIN
+-    ACTION_IF GAME_IS ~bgee bg2ee~ BEGIN
++    ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+       LOAD_TRA ~%MOD_FOLDER%/tra/bgee/english/game.tra~
+       LOAD_TRA ~%MOD_FOLDER%/tra/bgee/%LANGUAGE%/game.tra~
+     END
+@@ -275,11 +288,11 @@
+   USING ~%tra_path%\english\Kelsey.tra~
+         ~%tra_path%\%s\Kelsey.tra~
+ 
+-COMPILE ~kelsey/d/bj#klsy.d~
++COMPILE EVALUATE_BUFFER ~kelsey/d/bj#klsy.d~
+   USING ~%tra_path%\english\Kelsey.tra~
+         ~%tra_path%\%s\Kelsey.tra~
+ 
+-COMPILE ~kelsey/d/FWKelseyInterject.d~
++COMPILE EVALUATE_BUFFER ~kelsey/d/FWKelseyInterject.d~
+   USING ~%tra_path%\english\Kelsey.tra~
+         ~%tra_path%\%s\Kelsey.tra~
+ 
+@@ -382,7 +395,7 @@
+ // interdia.2da, anomen.bcs, songlist.2da, pdialog.2da, NPCLEVEL.2DA
+ 
+ 
+-COMPILE ~kelsey/baf/soa~
++COMPILE EVALUATE_BUFFER ~kelsey/baf/soa~
+ 
+ COPY ~kelsey/bam/FWKCloak.bam~ ~override/FWKCloak.bam~
+      ~kelsey/bam/J#IScl04.bam~ ~override/J#IScl04.bam~
+@@ -495,7 +508,7 @@
+     sox_path = ~kelsey/audio~
+ END
+ 
+-ACTION_IF GAME_IS ~tob bgt bg2ee~ BEGIN
++ACTION_IF GAME_IS ~tob bgt bg2ee eet~ BEGIN
+ 
+   ///////////////////////////////////
+   //                               //
+@@ -594,7 +607,7 @@
+     USING ~%tra_path%\english\bj#kls25.tra~
+           ~%tra_path%\%s\bj#kls25.tra~
+ 
+-  COMPILE ~kelsey/d/25FWKI.d~
++  COMPILE EVALUATE_BUFFER ~kelsey/d/25FWKI.d~
+     USING ~%tra_path%\english\25FWKI.tra~
+           ~%tra_path%\%s\25FWKI.tra~
+ 
+@@ -792,6 +805,24 @@
+ 
+ END
+ 
++ACTION_IF GAME_IS ~eet~ BEGIN
++  INCLUDE ~EET/other/EET_functions.tph~
++  LAF ~EET_NPC_TRANSITION~
++    INT_VAR
++      type = 2
++    STR_VAR
++      dv = "J#Kelsey"
++      override_SoA = "J#KLSY"
++      override_ToB = "J#KLSY25"
++      dialog_ToB = "J#KLSY25"
++      traFile = EVAL "kelsey/tra/%LANGUAGE%/kelseyg.tra"
++      string = "@6001" //Bring me Kelsey, the human sorceror.
++      stringPosDV = "Khalid"
++  END
++END ELSE BEGIN
++  COMPILE ~kelsey/d/FATESP.d~ USING ~kelsey/tra/%LANGUAGE%/kelseyg.tra~
++END
++
+ 
+ 
+ BEGIN @88 DESIGNATED 1
+@@ -807,7 +838,7 @@
+ 
+   EXTEND_TOP ~j#klsy.bcs~ ~kelsey/baf/kelseysolaconflict.baf~
+ 
+-  ACTION_IF GAME_IS ~tob bgt bg2ee~ BEGIN
++  ACTION_IF GAME_IS ~tob bgt bg2ee eet~ BEGIN
+     COMPILE ~kelsey/d/25kelseysolaconflict.D~
+       USING ~%tra_path%/english\25kelseysolaconflict.TRA~
+             ~%tra_path%\%s\25kelseysolaconflict.TRA~

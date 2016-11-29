@@ -1,0 +1,26 @@
+--- questpack/tp2/quest/potion.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/potion.tph	2016-11-21 22:32:18.380949300 -0500
+@@ -51,11 +51,11 @@
+ COPY ~questpack/potion/potn38.itm~ ~override~
+   SAY IDENTIFIED_DESC @180
+ 
+-EXTEND_BOTTOM ~ar0701.bcs~ ~questpack/potion/ar0701.baf~
++EXTEND_BOTTOM ~ar0701.bcs~ ~questpack/potion/ar0701.baf~ EVALUATE_BUFFER
+ 
+-EXTEND_TOP ~ar0500.bcs~ ~questpack/potion/ar0500.baf~
++EXTEND_TOP ~ar0500.bcs~ ~questpack/potion/ar0500.baf~ EVALUATE_BUFFER
+ 
+-COMPILE ~questpack/potion/d0qppotn.baf~
++COMPILE EVALUATE_BUFFER ~questpack/potion/d0qppotn.baf~
+ 
+ COPY_EXISTING ~murcrag.sto~ ~override~
+   ADD_STORE_ITEM "potn38" AFTER "potn29" #1 #0 #0 ~IDENTIFIED~ #4
+@@ -127,7 +127,7 @@
+   END
+ BUT_ONLY
+ 
+-COMPILE ~questpack/potion/potiontra.d~ USING
++COMPILE EVALUATE_BUFFER ~questpack/potion/potiontra.d~ USING
+         ~%tra_path%/english/potion.tra~
+         ~%tra_path%/%LANGUAGE%/potion.tra~
+ 

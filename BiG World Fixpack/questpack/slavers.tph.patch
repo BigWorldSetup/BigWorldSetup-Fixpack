@@ -1,0 +1,29 @@
+--- questpack/tp2/quest/slavers.tph	2015-10-11 14:31:02.000000000 -0400
++++ Fixpack/questpack/tp2/quest/slavers.tph	2016-11-21 22:32:03.937596200 -0500
+@@ -1,9 +1,9 @@
+ ACTION_IF !ENGINE_IS ~bg2ee~ BEGIN
+-  COMPILE ~questpack/slaver/dialog.d~ USING
++  COMPILE EVALUATE_BUFFER ~questpack/slaver/dialog.d~ USING
+           ~%tra_path%/english/slaver.tra~
+           ~%tra_path%/%LANGUAGE%/slaver.tra~
+ END ELSE BEGIN
+-  COMPILE ~questpack/slaver/dialog.d~ USING
++  COMPILE EVALUATE_BUFFER ~questpack/slaver/dialog.d~ USING
+           ~%tra_path%/english/slaver.tra~
+           ~%tra_path%/ee/english/slaver.tra~
+           ~%tra_path%/%LANGUAGE%/slaver.tra~
+@@ -25,11 +25,11 @@
+   WRITE_ASCII 0x280 "D0QPSLAV" #32
+   WRITE_ASCII 0x2cc "D0QPSLAV" #8
+ 
+-EXTEND_TOP ~ar0800.bcs~ ~questpack/slaver/et_0800.baf~
++EXTEND_TOP ~ar0800.bcs~ ~questpack/slaver/et_0800.baf~ EVALUATE_BUFFER
+ 
+-COMPILE ~questpack/slaver/d0qpslav.baf~
++COMPILE EVALUATE_BUFFER ~questpack/slaver/d0qpslav.baf~
+ 
+-EXTEND_TOP ~kamir.bcs~ ~questpack/slaver/et_kamir.baf~
++EXTEND_TOP ~kamir.bcs~ ~questpack/slaver/et_kamir.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~kamir.cre~ ~override~
+   WRITE_ASCII 0x268 "WTASIGHT" #8

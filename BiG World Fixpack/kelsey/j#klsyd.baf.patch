@@ -1,0 +1,11 @@
+--- kelsey/baf/soa/j#klsyd.baf	2013-11-16 13:01:50.000000000 -0500
++++ Fixpack/kelsey/baf/soa/j#klsyd.baf	2016-11-21 10:39:31.912744100 -0500
+@@ -6,7 +6,7 @@
+   !AreaType(DUNGEON)
+   CombatCounter(0)
+   Global("J#LoveTalk","LOCALS",45)
+-  !Global("Chapter","GLOBAL",5)
++  !Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+   RESPONSE #100
+     PlaySong(123456)

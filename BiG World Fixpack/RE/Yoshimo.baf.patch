@@ -1,0 +1,11 @@
+--- RE/Yoshimo/Yoshimo.baf	2007-07-28 05:28:56.000000000 -0400
++++ Fixpack/RE/Yoshimo/Yoshimo.baf	2016-11-21 22:54:51.555075900 -0500
+@@ -2,7 +2,7 @@
+ IF
+ Global("RE_YoshimoTalk","GLOBAL",0)
+ InParty(Myself)
+-GlobalGT("Chapter","GLOBAL",1)
++GlobalGT("Chapter","GLOBAL",%bg2_chapter_1%)
+ Gender(Player1,FEMALE)
+ OR(4) 
+ Race(Player1,ELF)

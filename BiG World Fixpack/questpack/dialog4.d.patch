@@ -1,0 +1,11 @@
+--- questpack/thieves/dialog4.d	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/dialog4.d	2016-11-21 16:19:12.362355700 -0500
+@@ -35,7 +35,7 @@
+  END
+ 
+  IF WEIGHT #-1 ~NumTimesTalkedTo(4)
+-GlobalLT("chapter","GLOBAL",4)~ 4thstory
++GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ 4thstory
+   SAY @530
+ =
+ @531

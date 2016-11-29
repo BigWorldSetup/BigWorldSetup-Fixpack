@@ -1,0 +1,77 @@
+--- questpack/tp2/quest/incomplete/carceri_quest.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/incomplete/carceri_quest.tph	2016-11-21 22:34:51.136132400 -0500
+@@ -46,7 +46,7 @@
+ // MISCELLANEOUS BEHAVIOUR
+ 
+ // Summons AI
+-COMPILE ~d0quest/carceri/summons~
++COMPILE EVALUATE_BUFFER ~d0quest/carceri/summons~
+ 
+ // Demogorgon may only charm Tanar'ri
+ COPY_EXISTING ~demogor2.bcs~ ~override~
+@@ -60,8 +60,8 @@
+ BUT_ONLY_IF_IT_CHANGES
+ 
+ // Yochlols may change form
+-EXTEND_TOP ~demyoch.bcs~ ~d0quest/carceri/demyoch.baf~
+-EXTEND_TOP ~ar3012.bcs~ ~d0quest/carceri/et_3012.baf~
++EXTEND_TOP ~demyoch.bcs~ ~d0quest/carceri/demyoch.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~ar3012.bcs~ ~d0quest/carceri/et_3012.baf~ EVALUATE_BUFFER
+ COPY_EXISTING ~yochlo01.cre~ ~override~
+   WRITE_SHORT 0x28 30978 // Yochlol = SLIME_MUSTARD
+   READ_LONG 0x2c4 "effects_offset"
+@@ -97,17 +97,17 @@
+   WRITE_LONG ("%effects_offset%" + 24) 1
+   WRITE_LONG ("%effects_offset%" + 28) 9
+   WRITE_SHORT ("%effects_offset%" + 36) 100
+-COMPILE ~d0quest/carceri/d0lemure.baf~
++COMPILE EVALUATE_BUFFER ~d0quest/carceri/d0lemure.baf~
+ 
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ // QUESTS
+ 
+ // Dialog
+-COMPILE ~d0quest/carceri/dialog.d~
++COMPILE EVALUATE_BUFFER ~d0quest/carceri/dialog.d~
+         ~d0quest/carceri/dialog2.d~
+ 
+ // Succubus
+-EXTEND_TOP ~ar0400.bcs~ ~d0quest/carceri/et_0400.baf~
++EXTEND_TOP ~ar0400.bcs~ ~d0quest/carceri/et_0400.baf~ EVALUATE_BUFFER
+ COPY ~d0quest/carceri/d0sucvic.cre~ ~override~
+ COPY_EXISTING ~demsuc01.cre~ ~override/d0sucsuc.cre~
+   WRITE_SHORT 0x28 50704
+@@ -115,7 +115,7 @@
+   WRITE_ASCII 0x2cc "d0sucsuc"
+ 
+ // Power Core can take Demon or Devil hearts
+-EXTEND_TOP ~POWEROBS.BCS~ ~d0quest/carceri/et_pcore.baf~
++EXTEND_TOP ~POWEROBS.BCS~ ~d0quest/carceri/et_pcore.baf~ EVALUATE_BUFFER
+ COPY_EXISTING ~misc6m.itm~ ~override/d0misc6m.itm~
+   SAY NAME1 @207
+   SAY NAME2 @207
+@@ -137,7 +137,7 @@
+ COPY_EXISTING ~telpit1.cre~ ~override~
+               ~telpit2.cre~ ~override~
+ WRITE_ASCII 0x248 "D0TPIT02"
+-COMPILE ~d0quest/carceri/baatezu/d0tpit01.baf~
++COMPILE EVALUATE_BUFFER ~d0quest/carceri/baatezu/d0tpit01.baf~
+         ~d0quest/carceri/baatezu/d0tpit02.baf~
+ 
+ 
+@@ -147,12 +147,12 @@
+ 
+ 
+ 
+-EXTEND_TOP ~ar0414.bcs~ ~d0quest/carceri/ar0414.baf~
++EXTEND_TOP ~ar0414.bcs~ ~d0quest/carceri/ar0414.baf~ EVALUATE_BUFFER
+ 
+ COPY ~d0quest/carceri/baatezu/d0qppitb.cre~ ~override~
+ SAY NAME1 @210
+ SAY NAME2 @210
+-COMPILE ~d0quest/carceri/baatezu/d0qppitb.baf~
++COMPILE EVALUATE_BUFFER ~d0quest/carceri/baatezu/d0qppitb.baf~
+ 
+ COPY ~d0quest/carceri/tanari/d0quas01.cre~ ~override~
+-COMPILE ~d0quest/carceri/tanari/d0quas01.baf~
++COMPILE EVALUATE_BUFFER ~d0quest/carceri/tanari/d0quas01.baf~

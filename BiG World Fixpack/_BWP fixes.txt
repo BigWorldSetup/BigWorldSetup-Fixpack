@@ -1029,9 +1029,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: cmorgan's ToBEx compatible ADD_KIT fix
 :: http://forums.gibberlings3.net/index.php?showtopic=21964&view=findpost&p=183270
 
-:: Chaltier's unlimited Dark Bolts fix for Nightcloak of Shar kit (cdshar2.itm)
-:: http://gibberlings3.net/forums/index.php?showtopic=26860&p=241482
-
 :: WRITE_SHORT 0x246 instead of WRITE_BYTE 0x247 for creature kits and spellbook macros
 :: - LINK NOT FOUND -
 

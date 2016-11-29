@@ -1,0 +1,106 @@
+--- ajantisbg2/dialogues/c#ajan_pr.d	2011-01-18 21:26:52.000000000 -0500
++++ Fixpack/ajantisbg2/dialogues/c#ajan_pr.d	2016-11-04 14:55:56.977711900 -0400
+@@ -151,9 +151,9 @@
+ IF ~~ THEN BEGIN firstmeeting_3a
+ SAY @25
+ + ~!Dead("firkra02")~+ @26 DO ~SetGlobal("C#AjantisFirkraagWarten","GLOBAL",1)~ + firkraag_warten
+-+ ~!Dead("firkra02") GlobalLT("chapter","GLOBAL",4)~ + @27 + joined_1
+++ ~!Dead("firkra02") GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @27 + joined_1
+ + ~!Dead("firkra02")~ + @28 + joined_2
+-+ ~!Dead("firkra02") GlobalGT("chapter","GLOBAL",3)~ + @29 + joined_3
+++ ~!Dead("firkra02") GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ + @29 + joined_3
+ + ~!Dead("firkra02")~ + @30 SOLVED_JOURNAL @10027 
+ + waiting_atkatla
+ + ~Dead("firkra02")~ + @31 DO ~SetGlobal("C#FirkraagErledigt","GLOBAL",1)~ + firkraagdead
+@@ -162,9 +162,9 @@
+ IF ~~ THEN BEGIN firstmeeting_3b
+ SAY @32
+ + ~!Dead("firkra02")~+ @26 DO ~SetGlobal("C#AjantisFirkraagWarten","GLOBAL",1)~ + firkraag_warten
+-+ ~!Dead("firkra02") GlobalLT("chapter","GLOBAL",4)~ + @27 + joined_1
+++ ~!Dead("firkra02") GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @27 + joined_1
+ + ~!Dead("firkra02")~ + @33 + joined_2
+-+ ~!Dead("firkra02") GlobalGT("chapter","GLOBAL",3)~ + @29 + joined_3
+++ ~!Dead("firkra02") GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ + @29 + joined_3
+ + ~!Dead("firkra02")~ + @34 SOLVED_JOURNAL @10027 
+ + waiting_atkatla
+ + ~Dead("firkra02")~ + @31 DO ~SetGlobal("C#FirkraagErledigt","GLOBAL",1)~ + firkraagdead
+@@ -178,25 +178,25 @@
+ 
+ IF ~~ THEN BEGIN firstmeeting_4a
+ SAY @38
+-+ ~GlobalLT("chapter","GLOBAL",4)~ + @39 + joined_1
+++ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @39 + joined_1
+ ++ @40 + joined_2
+-+ ~GlobalGT("chapter","GLOBAL",3)~ + @41 + joined_3
+++ ~GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ + @41 + joined_3
+ ++ @42 + waiting_atkatla
+ END
+ 
+ IF ~~ THEN BEGIN firstmeeting_4b
+ SAY @43
+-+ ~GlobalLT("chapter","GLOBAL",4)~ + @39 + joined_1
+++ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @39 + joined_1
+ ++ @40 + joined_2
+-+ ~GlobalGT("chapter","GLOBAL",3)~ + @29 + joined_3
+++ ~GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ + @29 + joined_3
+ ++ @34 + waiting_atkatla
+ END
+ 
+ IF ~~ THEN BEGIN firstmeeting_5
+ SAY @44
+-+ ~GlobalLT("chapter","GLOBAL",4)~ + @39 + joined_1
+++ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @39 + joined_1
+ ++ @40 + joined_2
+-+ ~GlobalGT("chapter","GLOBAL",3)~ + @29 + joined_3
+++ ~GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ + @29 + joined_3
+ ++ @45 + waiting_atkatla
+ END
+ 
+@@ -416,17 +416,17 @@
+ IF ~~ THEN BEGIN firstmeeting_rom_02
+ SAY @94
+ + ~!Dead("firkra02")~ + @95 DO ~SetGlobal("C#AjantisFirkraagWarten","GLOBAL",1)~ + firstmeeting_rom_03
+-+ ~GlobalLT("chapter","GLOBAL",4)~ + @96 + joined_rom_01
+++ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @96 + joined_rom_01
+ ++ @97 + joined_rom_02
+-+ ~GlobalGT("chapter","GLOBAL",3)~ + @98 + joined_rom_03
+++ ~GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ + @98 + joined_rom_03
+ ++ @99 + waiting_atkatla_rom
+ END
+ 
+ IF ~~ THEN BEGIN firstmeeting_rom_03
+ SAY @100
+-+ ~GlobalLT("chapter","GLOBAL",4)~ + @96 + joined_rom_01
+++ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @96 + joined_rom_01
+ ++ @97 + joined_rom_02
+-+ ~GlobalGT("chapter","GLOBAL",3)~ + @98 + joined_rom_03
+++ ~GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ + @98 + joined_rom_03
+ ++ @99 + waiting_atkatla_rom
+ END
+ 
+@@ -748,10 +748,10 @@
+ 
+ IF ~~ THEN BEGIN meeting_again_2
+ SAY @165
+-+ ~GlobalGT("chapter","GLOBAL",3)~ + @166 + joined_3
+-+ ~GlobalLT("chapter","GLOBAL",4)~ + @167 + joined_1
+++ ~GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ + @166 + joined_3
+++ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @167 + joined_1
+ ++ @168 + joined_2
+-+ ~GlobalGT("chapter","GLOBAL",3)~ + @169 + joined_3
+++ ~GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ + @169 + joined_3
+ ++ @170 EXIT
+ END
+ 
+@@ -809,9 +809,9 @@
+ 
+ IF ~~ THEN BEGIN meeting_again_rom_05
+ SAY @181
+-+ ~GlobalLT("chapter","GLOBAL",4)~ + @27 + joined_rom_01
+++ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @27 + joined_rom_01
+ ++ @182 + joined_rom_02
+-+ ~GlobalGT("chapter","GLOBAL",3)~ + @183 + meeting_again_rom_06
+++ ~GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ + @183 + meeting_again_rom_06
+ ++ @175 + meeting_again_rom_04
+ END
+ 

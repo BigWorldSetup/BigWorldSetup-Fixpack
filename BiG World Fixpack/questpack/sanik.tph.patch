@@ -1,0 +1,23 @@
+--- questpack/tp2/quest/sanik.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/sanik.tph	2016-11-21 22:34:41.007506700 -0500
+@@ -1,4 +1,4 @@
+-COMPILE ~questpack/sanik/dialog.d~ USING
++COMPILE EVALUATE_BUFFER ~questpack/sanik/dialog.d~ USING
+         ~%tra_path%/english/sanik.tra~
+         ~%tra_path%/%LANGUAGE%/sanik.tra~
+ 
+@@ -25,11 +25,11 @@
+   WRITE_ASCII 0x248 "D0PIRMUR" #8
+ BUT_ONLY
+ 
+-COMPILE ~questpack/sanik/d0sanik.baf~
++COMPILE EVALUATE_BUFFER ~questpack/sanik/d0sanik.baf~
+         ~questpack/sanik/d0pirmur.baf~
+ 
+-EXTEND_TOP ~ar1602.bcs~ ~questpack/sanik/et_1602.baf~
+-EXTEND_TOP ~pirmur10.bcs~ ~questpack/sanik/et_pirmur.baf~
++EXTEND_TOP ~ar1602.bcs~ ~questpack/sanik/et_1602.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~pirmur10.bcs~ ~questpack/sanik/et_pirmur.baf~ EVALUATE_BUFFER
+ 
+ STRING_SET 53882 @307
+ STRING_SET 53893 @308

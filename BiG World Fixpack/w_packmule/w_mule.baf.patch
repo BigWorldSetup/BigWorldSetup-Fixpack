@@ -1,5 +1,5 @@
---- w_packmule\w_mule.baf	Wed Dec 04 00:06:12 2013
-+++ C:\BWP Patchstudio\patched files\w_packmule\w_mule.baf	Thu Oct 27 15:52:59 2016
+--- w_packmule/w_mule.baf	2013-12-03 17:06:12.000000000 -0500
++++ Fixpack/w_packmule/w_mule.baf	2016-11-26 02:07:18.770538500 -0500
 @@ -84,8 +84,8 @@
  
  IF
@@ -22,10 +22,3 @@
    Global("W_MSPEED","LOCALS",1)
  THEN
    RESPONSE #100
-@@ -288,4 +288,4 @@
-   RESPONSE #100
-     RealSetGlobalTimer("W_TRAWA","LOCALS",45)
-     SpellRES("W_MULE",Myself)
--END
-\ No newline at end of file
-+END

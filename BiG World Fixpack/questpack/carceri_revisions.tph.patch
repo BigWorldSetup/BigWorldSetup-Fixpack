@@ -1,0 +1,11 @@
+--- questpack/tp2/quest/incomplete/carceri_revisions.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/incomplete/carceri_revisions.tph	2016-11-21 22:34:43.813885900 -0500
+@@ -1,7 +1,7 @@
+ OUTER_SPRINT "datapath" "questpack/carceri/revisions"
+ 
+ COPY ~%datapath%/copy~ ~override~
+-COMPILE ~questpack/carceri/revisions/compile~
++COMPILE EVALUATE_BUFFER ~questpack/carceri/revisions/compile~
+ 
+ COPY + ~%datapath%/creatures.lst~ ~%datapath%/creatures.lst~
+ 	COUNT_2DA_ROWS 3 "rows"

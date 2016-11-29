@@ -1,0 +1,10 @@
+--- WildMage/0/baf/wm_aram00.baf	2009-05-01 15:15:33.546875000 -0400
++++ Fixpack/WildMage/0/baf/wm_aram00.baf	2016-11-28 00:01:31.665679200 -0500
+@@ -1,6 +1,6 @@
+ IF
+-	PartyHasItem("wm_sbook")
+ 	Global("wm_bg1book","GLOBAL",0)
++  PartyHasItem("wm_sbook")// below global check for better performance
+ THEN
+ 	RESPONSE #100
+ 		SetGlobal("wm_bg1book","GLOBAL",1)

@@ -1,0 +1,90 @@
+--- deArnise/Setup-deArnise.tp2	2016-02-12 16:46:08.451400000 -0500
++++ Fixpack/deArnise/Setup-deArnise.tp2	2016-11-22 19:43:08.092336700 -0500
+@@ -4,19 +4,30 @@
+ 
+ README ~deArnise/README-DeArnise.txt~
+ 
+-VERSION ~v5~
++VERSION ~v5 BWP Fix~
+ 
+ ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
+ 
+   // Character encoding conversion for BG2EE
+   ACTION_DEFINE_ARRAY deArnise_noconvert BEGIN END
++  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
+   ACTION_DEFINE_ARRAY deArnise_reload BEGIN Setup-deArnise END
+ 
+   LAF HANDLE_CHARSETS
+     INT_VAR
+-      infer_charset = 1
++      infer_charsets = 1
+     STR_VAR
+-      // Translation folders directly in the mod folder (iconv directory to keep at the same place)
++      // Translation folders and iconv folder are directly in the mod folder
+       tra_path = EVAL ~%MOD_FOLDER%~
+       noconvert_array = deArnise_noconvert
+       reload_array = deArnise_reload
+@@ -44,7 +55,7 @@
+ APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
+ UNLESS ~CD_STATE_NOTVALID~
+ 
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ ADD_JOURNAL EXISTING TITLE (#74337) @10000 @10001 
+ ADD_JOURNAL @10002 @10003 @10004 @10005 @10006 @10007
+ COPY ~deArnise/Areas/pgdarnee.mos~ ~override/pgdarn.mos~
+@@ -135,7 +146,7 @@
+ ~PGNALTAL    14117 PGNALTAL~
+ UNLESS ~PGNALTAL~
+ 
+-COMPILE ~deArnise/Dialogue/PGNalLT.d~
++COMPILE EVALUATE_BUFFER ~deArnise/Dialogue/PGNalLT.d~
+ 	~deArnise/Dialogue/PGNalP.d~
+         ~deArnise/Dialogue/PGNalQ.d~
+         
+@@ -151,24 +162,26 @@
+         ~deArnise/Scripts/PGNalC53.baf~
+         ~deArnise/Scripts/PGVamNal.baf~
+ 
+-COMPILE ~dearnise/dialogue/PGNalFL.d~
++COMPILE EVALUATE_BUFFER ~dearnise/dialogue/PGNalFL.d~
+ 
+ // adjusting Nalia's funeral 
+ COPY_EXISTING ~Nalia.bcs~ ~override~
+-DECOMPILE_BCS_TO_BAF
+-REPLACE_TEXTUALLY ~SetGlobalTimer("NaliaMessenger","GLOBAL",SEVEN_DAYS)~ ~SetGlobalTimer("NaliaMessenger","GLOBAL",THREE_DAYS)~
+-COMPILE_BAF_TO_BCS
++DECOMPILE_AND_PATCH BEGIN
++  REPLACE_TEXTUALLY ~SetGlobalTimer("NaliaMessenger","GLOBAL",SEVEN_DAYS)~
++                    ~SetGlobalTimer("NaliaMessenger","GLOBAL",THREE_DAYS)~
++END
+ // BUT_ONLY_IF_IT_CHANGES
+ 
+ // adjusting Nalia's abduction
+ COPY_EXISTING ~Nalia.bcs~ ~override~
+-DECOMPILE_BCS_TO_BAF
+-REPLACE_TEXTUALLY ~Global("NaliaJamie","GLOBAL",0)~ ~Global("NaliaJamie","GLOBAL",0) !Global("PGNaliaRomanceActive","GLOBAL",1) !Global("PGNaliaRomanceActive","GLOBAL",2)~
+-COMPILE_BAF_TO_BCS
++DECOMPILE_AND_PATCH BEGIN
++  REPLACE_TEXTUALLY ~Global("NaliaJamie","GLOBAL",0)~
++                    ~Global("NaliaJamie","GLOBAL",0) !Global("PGNaliaRomanceActive","GLOBAL",1) !Global("PGNaliaRomanceActive","GLOBAL",2)~
++END
+ // BUT_ONLY_IF_IT_CHANGES
+ 
+-EXTEND_TOP ~Nalia.bcs~ ~deArnise/Scripts/PGNalia.baf~
+-EXTEND_TOP ~NaliaD.bcs~ ~deArnise/Scripts/PGNaliaD.baf~
++EXTEND_TOP ~Nalia.bcs~ ~deArnise/Scripts/PGNalia.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~NaliaD.bcs~ ~deArnise/Scripts/PGNaliaD.baf~ EVALUATE_BUFFER
+ EXTEND_BOTTOM ~AR0300.bcs~ ~deArnise/Scripts/AR0300.baf~
+ EXTEND_BOTTOM ~AR0809.bcs~ ~deArnise/Scripts/AR0809.baf~
+ EXTEND_BOTTOM ~BODHIAMB.bcs~ ~deArnise/Scripts/BODHIAMB.baf~

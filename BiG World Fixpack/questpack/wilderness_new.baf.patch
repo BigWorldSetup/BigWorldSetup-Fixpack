@@ -1,0 +1,54 @@
+--- questpack/encounters/ding0/randenc/wilderness_new.baf	2014-12-29 15:13:20.000000000 -0500
++++ Fixpack/questpack/encounters/ding0/randenc/wilderness_new.baf	2016-11-21 11:38:39.996613100 -0500
+@@ -3,10 +3,10 @@
+ OR(2)
+   Difficulty(EASIEST)
+   Difficulty(EASY)
+-GlobalGT("chapter","GLOBAL",2)
++GlobalGT("chapter","GLOBAL",%bg2_chapter_2%)
+ OR(2)
+   RandomNum(5,1)
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ Global("D0Syth","GLOBAL",0)
+ THEN
+   RESPONSE #100
+@@ -42,10 +42,10 @@
+ IF
+   OnCreation()
+   Difficulty(NORMAL)
+-  GlobalGT("chapter","GLOBAL",2)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_2%)
+   OR(2)
+     RandomNum(5,1)
+-    GlobalGT("chapter","GLOBAL",5)
++    GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   Global("D0Syth","GLOBAL",0)
+ THEN
+   RESPONSE #100
+@@ -81,10 +81,10 @@
+ IF
+   OnCreation()
+   Difficulty(HARD)
+-  GlobalGT("chapter","GLOBAL",2)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_2%)
+   OR(2)
+     RandomNum(5,1)
+-    GlobalGT("chapter","GLOBAL",5)
++    GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   Global("D0Syth","GLOBAL",0)
+ THEN
+   RESPONSE #100
+@@ -121,10 +121,10 @@
+ IF
+   OnCreation()
+   Difficulty(HARDEST)
+-  GlobalGT("chapter","GLOBAL",2)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_2%)
+   OR(2)
+     RandomNum(5,1)
+-    GlobalGT("chapter","GLOBAL",5)
++    GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   Global("D0Syth","GLOBAL",0)
+ THEN
+   RESPONSE #100

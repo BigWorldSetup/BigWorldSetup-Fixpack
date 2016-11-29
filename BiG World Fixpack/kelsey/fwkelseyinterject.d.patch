@@ -1,0 +1,17 @@
+--- kelsey/d/fwkelseyinterject.d	2013-11-16 13:01:58.000000000 -0500
++++ Fixpack/kelsey/d/fwkelseyinterject.d	2016-11-21 10:19:48.331738600 -0500
+@@ -2381,12 +2381,12 @@
+ SAY @1739 =
+ @1740
+ IF ~ReputationGT(Player1,10)
+-GlobalLT("Chapter","GLOBAL",4)~ THEN REPLY @1741 EXTERN J#KLSYJ Renal1_1
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY @1741 EXTERN J#KLSYJ Renal1_1
+ IF ~ReputationGT(Player1,10)~ THEN REPLY @1742 EXTERN J#KLSYJ Renal1_1
+ IF ~ReputationGT(Player1,13)~ THEN REPLY @1743 EXTERN J#KLSYJ Renal1_2
+ IF ~~ THEN REPLY @1744 DO ~SetGlobal("J#KelseyRomanceActive","GLOBAL",3)~ EXTERN J#KLSYJ Renal1_3
+ IF ~ReputationLT(Player1,11)
+-GlobalLT("Chapter","GLOBAL",4)~ THEN REPLY @1741 DO ~SetGlobal("J#KelseyRomanceActive","GLOBAL",3)~ EXTERN J#KLSYJ Renal1_4
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY @1741 DO ~SetGlobal("J#KelseyRomanceActive","GLOBAL",3)~ EXTERN J#KLSYJ Renal1_4
+ IF ~ReputationLT(Player1,11)~ THEN REPLY @1742 DO ~SetGlobal("J#KelseyRomanceActive","GLOBAL",3)~ EXTERN J#KLSYJ Renal1_4
+ IF ~~ THEN REPLY @1745 EXTERN J#KLSYJ Renal1_5
+ IF ~ReputationLT(Player1,14)~ THEN REPLY @1743 DO ~SetGlobal("J#KelseyRomanceActive","GLOBAL",3)~ EXTERN J#KLSYJ Renal1_4

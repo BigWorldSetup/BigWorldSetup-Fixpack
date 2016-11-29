@@ -1,0 +1,11 @@
+--- questpack/thieves/scripts/d0renal.baf	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/scripts/d0renal.baf	2016-11-21 16:23:45.977976600 -0500
+@@ -10,7 +10,7 @@
+ END
+ 
+ IF
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   HasItem("misc4t",Myself)
+ THEN
+   RESPONSE #100

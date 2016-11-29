@@ -1,0 +1,25 @@
+--- questpack/tp2/quest/nazariel.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/nazariel.tph	2016-11-21 22:32:37.813576000 -0500
+@@ -49,7 +49,7 @@
+   SAY NAME2 @129
+   SAY AREA_FOREST @130
+ 
+-COMPILE ~questpack/lich/dialog.d~ USING
++COMPILE EVALUATE_BUFFER ~questpack/lich/dialog.d~ USING
+         ~%tra_path%/english/lich.tra~
+         ~%tra_path%/%LANGUAGE%/lich.tra~
+ 
+@@ -57,11 +57,11 @@
+             ~%tra_path%/english/lich.tra~
+             ~%tra_path%/%LANGUAGE%/lich.tra~
+ 
+-EXTEND_TOP ~ar2500.bcs~ ~questpack/lich/et_2500.baf~ USING
++EXTEND_TOP ~ar2500.bcs~ ~questpack/lich/et_2500.baf~ EVALUATE_BUFFER USING
+                         ~%tra_path%/english/lich.tra~
+                         ~%tra_path%/%LANGUAGE%/lich.tra~
+ 
+-COMPILE ~questpack/lich/d0lich01.baf~
++COMPILE EVALUATE_BUFFER ~questpack/lich/d0lich01.baf~
+         ~questpack/lich/d0lich02.baf~
+         ~questpack/lich/d0ar01.baf~
+         ~questpack/lich/d0wayin.baf~

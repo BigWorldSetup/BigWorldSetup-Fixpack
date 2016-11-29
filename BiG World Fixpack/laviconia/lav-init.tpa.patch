@@ -1,6 +1,13 @@
---- laviconia\lib\lav-init.tpa	Sun Nov 21 09:05:04 2010
-+++ C:\BWP Patchstudio\patched files\laviconia\lib\lav-init.tpa	Tue Sep 06 20:18:42 2016
-@@ -14,43 +14,43 @@
+--- laviconia/lib/lav-init.tpa	2010-11-21 09:05:04.000000000 -0500
++++ Fixpack/laviconia/lib/lav-init.tpa	2016-11-23 15:23:16.669634000 -0500
+@@ -11,46 +11,51 @@
+   OUTER_TEXT_SPRINT bgt_1 ~1~
+   EXTEND_TOP ~bgvicnia.bcs~ ~laviconia/scripts/viconia.baf~
+ END
++ACTION_IF GAME_IS ~eet~ BEGIN
++  OUTER_TEXT_SPRINT bgt_1 ~_~
++  EXTEND_TOP ~viconia_.bcs~ ~laviconia/scripts/viconia.baf~
++END
  
  APPEND ~state.ids~ ~0x80101FEF CD_STATE_NOTVALID~ UNLESS ~CD_STATE_NOTVALID~
  COPY_EXISTING ~kit.ids~ ~override~ //Kit scripting fixes
@@ -37,6 +44,10 @@
 -  REPLACE_TEXTUALLY ~.*\bBEASTFRIEND\b~            ~0x4012 BEASTFRIEND~
 -  REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x0000 BARBARIAN~
 -  REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x0000 WILDMAGE~
+-BUT_ONLY
+-APPEND ~kit.ids~ ~0x4000 TRUECLASS~ UNLESS ~\bTRUECLASS\b~
+-APPEND ~kit.ids~ ~0x0000 BARBARIAN~ UNLESS ~\bBARBARIAN\b~
+-APPEND ~kit.ids~ ~0x0000 WILDMAGE~ UNLESS ~\bWILDMAGE\b~
 +  REPLACE_TEXTUALLY ~.*[ %TAB%]TRUECLASS[ %TAB%]*~              ~0x4000 TRUECLASS~
 +  REPLACE_TEXTUALLY ~.*[ %TAB%]BERSERKER[ %TAB%]*~              ~0x4001 BERSERKER~
 +  REPLACE_TEXTUALLY ~.*[ %TAB%]WIZARDSLAYER[ %TAB%]*~           ~0x4002 WIZARDSLAYER~
@@ -70,17 +81,15 @@
 +  REPLACE_TEXTUALLY ~.*[ %TAB%]BEASTFRIEND[ %TAB%]*~            ~0x4012 BEASTFRIEND~
 +  REPLACE_TEXTUALLY ~.*[ %TAB%]BARBARIAN[ %TAB%]*~              ~0x40000000 BARBARIAN~
 +  REPLACE_TEXTUALLY ~.*[ %TAB%]WILDMAGE[ %TAB%]*~               ~0x80000000 WILDMAGE~
- BUT_ONLY
--APPEND ~kit.ids~ ~0x4000 TRUECLASS~ UNLESS ~\bTRUECLASS\b~
--APPEND ~kit.ids~ ~0x0000 BARBARIAN~ UNLESS ~\bBARBARIAN\b~
--APPEND ~kit.ids~ ~0x0000 WILDMAGE~ UNLESS ~\bWILDMAGE\b~
-+APPEND ~kit.ids~ ~0x4000 TRUECLASS~ UNLESS ~[ %TAB%]TRUECLASS[ %TAB%]*~
++BUT_ONLY_IF_IT_CHANGES
++
++APPEND ~kit.ids~ ~0x4000 TRUECLASS~     UNLESS ~[ %TAB%]TRUECLASS[ %TAB%]*~
 +APPEND ~kit.ids~ ~0x40000000 BARBARIAN~ UNLESS ~[ %TAB%]BARBARIAN[ %TAB%]*~
-+APPEND ~kit.ids~ ~0x80000000 WILDMAGE~ UNLESS ~[ %TAB%]WILDMAGE[ %TAB%]*~
++APPEND ~kit.ids~ ~0x80000000 WILDMAGE~  UNLESS ~[ %TAB%]WILDMAGE[ %TAB%]*~
  VERBOSE
  
  //Generic changes (such as assassin effects) for all CREs
-@@ -76,7 +76,11 @@
+@@ -76,7 +81,11 @@
    END ELSE BEGIN
      PATCH_IF (ladual = 1) BEGIN
        WRITE_BYTE 0x273 4 //Class (thief)
@@ -93,7 +102,7 @@
      END
    END
    SET_BG2_PROFICIENCY ~PROFICIENCYSLING~ 1
-@@ -134,7 +138,11 @@
+@@ -134,7 +143,11 @@
    PATCH_INCLUDE ~laviconia/lib/spladd4.tpp~ //Add known level 4 spells
    ADD_MEMORIZED_SPELL ~spcl412~ #0 ~innate~ (2) //Set Snare
    ADD_MEMORIZED_SPELL ~spcl423~ #0 ~innate~ (2) //Poison Weapon

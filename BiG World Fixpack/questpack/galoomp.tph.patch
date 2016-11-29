@@ -1,0 +1,22 @@
+--- questpack/tp2/quest/galoomp.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/galoomp.tph	2016-11-21 22:34:57.979550800 -0500
+@@ -8,7 +8,7 @@
+ COPY_EXISTING ~A#KRAM.CRE~ ~override/A#KRAM2.CRE~
+   WRITE_ASCII 0x2cc ~A#KRAM2~ #8 //Dialogue
+ 
+-COMPILE ~questpack/galoomp/dialog.d~ USING
++COMPILE EVALUATE_BUFFER ~questpack/galoomp/dialog.d~ USING
+         ~%tra_path%/english/galoomp.tra~
+         ~%tra_path%/%LANGUAGE%/galoomp.tra~
+ 
+@@ -16,7 +16,7 @@
+             ~%tra_path%/english/galoomp.tra~
+             ~%tra_path%/%LANGUAGE%/galoomp.tra~
+ 
+-COMPILE ~questpack/galoomp/A#KRAM.BAF~
++COMPILE EVALUATE_BUFFER ~questpack/galoomp/A#KRAM.BAF~
+ 
+-EXTEND_TOP ~AR0500.BCS~ ~questpack/galoomp/AR0500.BAF~
+-EXTEND_TOP ~AR0700.BCS~ ~questpack/galoomp/AR0700.BAF~
++EXTEND_TOP ~AR0500.BCS~ ~questpack/galoomp/AR0500.BAF~ EVALUATE_BUFFER
++EXTEND_TOP ~AR0700.BCS~ ~questpack/galoomp/AR0700.BAF~ EVALUATE_BUFFER

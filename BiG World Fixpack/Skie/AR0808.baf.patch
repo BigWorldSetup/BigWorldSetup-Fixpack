@@ -1,5 +1,5 @@
---- Skie\BAF\AR0808.baf	Mon Apr 25 18:09:48 2011
-+++ C:\BWP Patchstudio\patched files\Skie\BAF\AR0808.baf	Thu Sep 22 09:06:44 2016
+--- Skie/BAF/AR0808.baf	2011-04-25 19:09:48.000000000 -0400
++++ Fixpack/Skie/BAF/AR0808.baf	2016-11-26 02:07:18.056578000 -0500
 @@ -7,6 +7,6 @@
  RESPONSE #100
  SetGlobal("SkieBodhiServant","GLOBAL",1)
@@ -7,6 +7,4 @@
 -ActionOverride("1xSkieVa",StartDialogueNoSet(Player1))
 +ActionOverride("vamold01",StartDialogueNoSet(Player1))
  Continue()
--END
-\ No newline at end of file
-+END
+ END

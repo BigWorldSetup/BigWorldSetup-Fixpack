@@ -1,0 +1,37 @@
+--- Coran/Dialogue/O#CoranJ.d	2013-02-27 12:22:00.000000000 -0500
++++ Fixpack/Coran/Dialogue/O#CoranJ.d	2016-11-21 21:53:48.352456100 -0500
+@@ -61,7 +61,7 @@
+ SAY @24 
+ ++ @25 DO ~SetGlobal("O#CoranPCTalk","GLOBAL",5) RealSetGlobalTimer("O#CoranPCTimer","GLOBAL",3600)~ + c2.1
+ ++ @26 DO ~SetGlobal("O#CoranPCTalk","GLOBAL",5) RealSetGlobalTimer("O#CoranPCTimer","GLOBAL",3600)~ + c2.2
+-+ ~GlobalLT("Chapter","GLOBAL",4)~ + @27 DO ~SetGlobal("O#CoranPCTalk","GLOBAL",5) RealSetGlobalTimer("O#CoranPCTimer","GLOBAL",3600)~ + c2.3
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @27 DO ~SetGlobal("O#CoranPCTalk","GLOBAL",5) RealSetGlobalTimer("O#CoranPCTimer","GLOBAL",3600)~ + c2.3
+ ++ @28 DO ~SetGlobal("O#CoranPCTalk","GLOBAL",5) RealSetGlobalTimer("O#CoranPCTimer","GLOBAL",3600)~ + c2.4
+ ++ @29 DO ~SetGlobal("O#CoranPCTalk","GLOBAL",5) RealSetGlobalTimer("O#CoranPCTimer","GLOBAL",3600)~ + c2.4
+ END
+@@ -918,11 +918,11 @@
+ + ~Gender(Player1,FEMALE) RandomNum(3,3)~ + @362 + O#Coran5.3
+ + ~Gender(Player1,FEMALE) RandomNum(3,4)~ + @362 + O#Coran5.4
+ + ~Gender(Player1,FEMALE) RandomNum(3,5)~ + @362 + O#Coran5.5
+-+ ~RandomNum(5,1) GlobalGT("Chapter","GLOBAL",4)~ + @363 + O#Coran6.1
+-+ ~RandomNum(5,2) GlobalGT("Chapter","GLOBAL",4)~ + @363 + O#Coran6.2
+-+ ~RandomNum(5,3) GlobalGT("Chapter","GLOBAL",4)~ + @363 + O#Coran6.3
+-+ ~RandomNum(5,4) GlobalGT("Chapter","GLOBAL",4)~ + @363 + O#Coran6.3
+-+ ~RandomNum(5,5) GlobalGT("Chapter","GLOBAL",4)~ + @363 + O#Coran6.5
+++ ~RandomNum(5,1) GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @363 + O#Coran6.1
+++ ~RandomNum(5,2) GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @363 + O#Coran6.2
+++ ~RandomNum(5,3) GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @363 + O#Coran6.3
+++ ~RandomNum(5,4) GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @363 + O#Coran6.3
+++ ~RandomNum(5,5) GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @363 + O#Coran6.5
+ + ~Global("O#CoranShutUp","GLOBAL",0)~ + @364 DO ~SetGlobal("O#CoranShutUp","GLOBAL",1)~ + O#Coran7
+ + ~Global("O#CoranShutUp","GLOBAL",1)~ + @365 DO ~SetGlobal("O#CoranShutUp","GLOBAL",0)~ + O#Coran7
+ + ~Global("O#CoranQuestion1","GLOBAL",0)~ + @366 DO ~SetGlobal("O#CoranQuestion1","GLOBAL",1)~ + O#Coran8
+@@ -930,7 +930,7 @@
+ + ~Gender(Player1,FEMALE) OR(3) Race(Player1,HUMAN) Race(Player1,ELF) Race(Player1,HALF_ELF) Global("O#CoranQuestion3","GLOBAL",0)~ + @368 DO ~SetGlobal("O#CoranQuestion3","GLOBAL",1)~ + O#Coran10
+ + ~Global("O#CoranQuestion4","GLOBAL",0) GlobalGT("O#CoranPCTalk","GLOBAL",12)~ + @369 DO ~SetGlobal("O#CoranQuestion4","GLOBAL",1)~ + O#Coran11
+ + ~Global("O#CoranQuestion5","GLOBAL",0) GlobalGT("O#CoranPCTalk","GLOBAL",2)~ + @370 DO ~SetGlobal("O#CoranQuestion5","GLOBAL",1)~ + O#Coran12
+-+ ~GlobalLT("Chapter","GLOBAL",6) Global("O#CoranQuestion6","GLOBAL",0)~ + @371 DO ~SetGlobal("O#CoranQuestion6","GLOBAL",1)~ + O#Coran13
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) Global("O#CoranQuestion6","GLOBAL",0)~ + @371 DO ~SetGlobal("O#CoranQuestion6","GLOBAL",1)~ + O#Coran13
+ ++ @372 EXIT
+ END
+ 

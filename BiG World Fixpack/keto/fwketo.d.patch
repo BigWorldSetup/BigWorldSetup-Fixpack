@@ -1,0 +1,26 @@
+--- keto/d/fwketo.d	2004-10-30 07:37:56.000000000 -0400
++++ Fixpack/keto/d/fwketo.d	2016-11-21 10:18:01.450023000 -0500
+@@ -182,9 +182,9 @@
+ CheckStatLT(Player1,16,CHR)~ THEN REPLY @71  GOTO Slap2
+ IF ~Gender(Player1,FEMALE)~ THEN REPLY @71  GOTO Slap3
+ IF ~~ THEN REPLY @72  GOTO Intro
+-IF ~GlobalLT("chapter","GLOBAL",4)~ THEN REPLY @73 GOTO Irenicus
+-IF ~GlobalLT("chapter","GLOBAL",4)~ THEN REPLY @74  GOTO Guild
+-IF ~GlobalLT("chapter","GLOBAL",4)~ THEN REPLY @75  GOTO Cowled
++IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY @73 GOTO Irenicus
++IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY @74  GOTO Guild
++IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY @75  GOTO Cowled
+ IF ~Global("TalkedToInspector","GLOBAL",1)
+ !Global("TannerExposed","GLOBAL",1)~ THEN REPLY @76  GOTO Murders
+ IF ~~ THEN REPLY @77  GOTO Familiar
+@@ -378,8 +378,8 @@
+ =
+ @173
+ IF ~~ THEN REPLY @174  GOTO KetoJoinsA
+-IF ~GlobalLT("chapter","GLOBAL",4)~ THEN REPLY @175  GOTO KetoJoinsB
+-IF ~GlobalLT("chapter","GLOBAL",4)~ THEN REPLY @176  GOTO KetoJoinsC
++IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY @175  GOTO KetoJoinsB
++IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY @176  GOTO KetoJoinsC
+ IF ~~ THEN REPLY @177 DO ~SetGlobal("KetoJoined","LOCALS",1)
+ JoinParty()~ EXIT
+ END

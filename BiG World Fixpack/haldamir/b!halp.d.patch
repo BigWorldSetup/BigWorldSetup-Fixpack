@@ -1,0 +1,13 @@
+--- haldamir/dialogue/b!halp.d	2008-04-05 18:36:06.606000000 -0400
++++ Fixpack/haldamir/dialogue/b!halp.d	2016-11-21 11:36:03.105109300 -0500
+@@ -4,8 +4,8 @@
+ IF ~!Global("B!HalKicked","GLOBAL",1)~ THEN h0
+ SAY @0
+ ++ @1 + h1
+-+ ~!Global("Chapter","GLOBAL",4) !Global("Chapter","GLOBAL",5)~ + @2 + h2
+-+ ~OR(2) Global("Chapter","GLOBAL",4) Global("Chapter","GLOBAL",5)~ + @2 + h3
+++ ~!Global("Chapter","GLOBAL",%bg2_chapter_4%) !Global("Chapter","GLOBAL",%bg2_chapter_5%)~ + @2 + h2
+++ ~OR(2) Global("Chapter","GLOBAL",%bg2_chapter_4%) Global("Chapter","GLOBAL",%bg2_chapter_5%)~ + @2 + h3
+ ++ @3 + h4
+ ++ @4 + h7
+ ++ @5 + h5

@@ -1,0 +1,24 @@
+--- edwin/baf/edwind.baf	2015-12-20 06:30:16.000000000 -0500
++++ Fixpack/edwin/baf/edwind.baf	2016-11-21 16:19:58.683926100 -0500
+@@ -5,7 +5,7 @@
+   See(Player1)
+   !AreaType(DUNGEON)
+   CombatCounter(0)
+-  !Global("Chapter","GLOBAL",5)
++  !Global("Chapter","GLOBAL",%bg2_chapter_5%)
+   Global("EdwinLoveTalk","LOCALS",9)
+   OR(2)
+   Global("EddieCantGetDrunk","GLOBAL",0)
+@@ -73,9 +73,9 @@
+   !AreaType(DUNGEON)
+   CombatCounter(0)
+   Global("EdwinLoveTalk","LOCALS",21)
+-  !Global("Chapter","GLOBAL",4)
+-  !Global("Chapter","GLOBAL",5)
+-  !Global("Chapter","GLOBAL",7)
++  !Global("Chapter","GLOBAL",%bg2_chapter_4%)
++  !Global("Chapter","GLOBAL",%bg2_chapter_5%)
++  !Global("Chapter","GLOBAL",%bg2_chapter_7%)
+ THEN
+   RESPONSE #100
+     MoveViewObject("Edwin",INSTANT)

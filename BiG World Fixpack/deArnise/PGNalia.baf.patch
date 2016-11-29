@@ -1,0 +1,33 @@
+--- deArnise/Scripts/PGNalia.baf	2008-02-26 14:56:30.000000000 -0500
++++ Fixpack/deArnise/Scripts/PGNalia.baf	2016-11-21 16:21:48.757430100 -0500
+@@ -27,7 +27,7 @@
+ // We're talking again
+ IF
+ InParty(Myself)
+-GlobalGT("Chapter","GLOBAL",5)
++GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ Global("PGNaliaNotSpeaking","GLOBAL",1) 
+ Global("PGNaliaTalkAgain","GLOBAL",0)
+ THEN
+@@ -810,7 +810,7 @@
+ See(Player1)
+ CombatCounter(0)
+ !See([ENEMY])
+-!Global("Chapter","GLOBAL",5)
++!Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+ RESPONSE #100
+ SetGlobal("PGNaliaStartFlirtSOA","GLOBAL",1)
+@@ -851,9 +851,9 @@
+ Global("NaliaJamie","GLOBAL",0)
+ !Dead("ISAEA")
+ !Exists("ISAEA")
+-!Global("Chapter","GLOBAL",4)
+-!Global("Chapter","GLOBAL",5)
+-!Global("Chapter","GLOBAL",7)
++!Global("Chapter","GLOBAL",%bg2_chapter_4%)
++!Global("Chapter","GLOBAL",%bg2_chapter_5%)
++!Global("Chapter","GLOBAL",%bg2_chapter_7%)
+ AreaType(OUTDOOR)
+ CombatCounter(0)
+ THEN

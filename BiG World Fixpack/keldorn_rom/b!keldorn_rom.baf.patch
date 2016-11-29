@@ -1,0 +1,49 @@
+--- keldorn_rom/script/b!keldorn_rom.baf	2015-01-12 22:25:50.000000000 -0500
++++ Fixpack/keldorn_rom/script/b!keldorn_rom.baf	2016-11-21 10:38:02.267612700 -0500
+@@ -135,7 +135,7 @@
+ 
+ IF 
+     InParty(Myself) 
+-    GlobalGT("Chapter","GLOBAL",5) 
++    GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) 
+     Global("B!KeldornDrowChange","GLOBAL",1) 
+ THEN 
+     RESPONSE #100 
+@@ -150,7 +150,7 @@
+     RealGlobalTimerExpired("B!KelTime","GLOBAL") 
+     Global("B!KeldornRA","GLOBAL",1) 
+     !AreaType(DUNGEON) 
+-    !Global("Chapter","GLOBAL",5) 
++    !Global("Chapter","GLOBAL",%bg2_chapter_5%) 
+     !StateCheck(Myself,CD_STATE_NOTVALID) 
+     !StateCheck(Player1,CD_STATE_NOTVALID) 
+     CombatCounter(0) 
+@@ -194,7 +194,7 @@
+     RealGlobalTimerExpired("B!KelTime","GLOBAL") 
+     Global("B!KeldornRA","GLOBAL",1) 
+     !AreaType(DUNGEON) 
+-    !Global("Chapter","GLOBAL",5) 
++    !Global("Chapter","GLOBAL",%bg2_chapter_5%) 
+     !StateCheck(Myself,CD_STATE_NOTVALID) 
+     !StateCheck(Player1,CD_STATE_NOTVALID) 
+     CombatCounter(0) 
+--- keldorn_rom/script/with_music/b!keldorn_rom.baf	2015-01-12 22:25:50.000000000 -0500
++++ Fixpack/keldorn_rom/script/with_music/b!keldorn_rom.baf	2016-11-21 10:34:16.069315400 -0500
+@@ -103,7 +103,7 @@
+     RealGlobalTimerExpired("B!KelTime","GLOBAL") 
+     Global("B!KeldornRA","GLOBAL",1) 
+     !AreaType(DUNGEON) 
+-    !Global("Chapter","GLOBAL",5) 
++    !Global("Chapter","GLOBAL",%bg2_chapter_5%) 
+     !StateCheck(Myself,CD_STATE_NOTVALID) 
+     !StateCheck(Player1,CD_STATE_NOTVALID) 
+     CombatCounter(0) 
+@@ -147,7 +147,7 @@
+     RealGlobalTimerExpired("B!KelTime","GLOBAL") 
+     Global("B!KeldornRA","GLOBAL",1) 
+     !AreaType(DUNGEON) 
+-    !Global("Chapter","GLOBAL",5) 
++    !Global("Chapter","GLOBAL",%bg2_chapter_5%) 
+     !StateCheck(Myself,CD_STATE_NOTVALID) 
+     !StateCheck(Player1,CD_STATE_NOTVALID) 
+     CombatCounter(0) 

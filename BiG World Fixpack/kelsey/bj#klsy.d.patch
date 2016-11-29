@@ -1,0 +1,33 @@
+--- kelsey/d/bj#klsy.d	2013-11-16 13:01:58.000000000 -0500
++++ Fixpack/kelsey/d/bj#klsy.d	2016-11-21 10:25:12.438607400 -0500
+@@ -287,8 +287,8 @@
+ IF ~!StateCheck(Player1,STATE_SLEEPING)
+ Global("J#NonLoveTalk","LOCALS",4)
+ OR(2)
+-Global("Chapter","GLOBAL",2)
+-Global("Chapter","GLOBAL",3)~ THEN BEGIN 553 // from:
++Global("Chapter","GLOBAL",%bg2_chapter_2%)
++Global("Chapter","GLOBAL",%bg2_chapter_3%)~ THEN BEGIN 553 // from:
+   SAY @904 /* ~Dealing with rogues, mercenaries, sorcerers and Waukeen knows what else...Imoen must really be a special person for you to go through all this trouble.~ [FWKLSYA8] #75288 */
+   IF ~~ THEN REPLY @905 /* ~She is, indeed, although I would do the same for any of my trusted companions in need.~ #75718 */ DO ~IncrementGlobal("J#NonLoveTalk","LOCALS",1)~ GOTO 554
+   IF ~~ THEN REPLY @906 /* ~I've known Imoen a long time and we've been through so much together, I can't abandon her now.~ #75719 */ DO ~IncrementGlobal("J#NonLoveTalk","LOCALS",1)~ GOTO 554
+@@ -2082,8 +2082,8 @@
+ 
+ IF ~~ THEN BEGIN 339 // from: 338.0
+   SAY @540 /* ~I was already exhibiting my magic when Father died, which put a lot of people at arm's length, even Mother and Kelvim...and of course, you remember how she and my uncle sent me away.~ #75075 */
+-  IF ~GlobalGT("Chapter","GLOBAL",4)~ THEN GOTO 341
+-  IF ~GlobalLT("Chapter","GLOBAL",5)~ THEN GOTO 349
++  IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)~ THEN GOTO 341
++  IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_5%)~ THEN GOTO 349
+ END
+ 
+ IF ~~ THEN BEGIN 340 // from: 336.1
+@@ -4540,7 +4540,7 @@
+ InParty("Imoen2")
+ See("Imoen2")
+ !StateCheck("Imoen2",STATE_SLEEPING)
+-Global("Chapter","GLOBAL",7)~ THEN BEGIN BIMOEN2_0
++Global("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN BEGIN BIMOEN2_0
+   SAY @1390
+   IF ~~ THEN DO ~SetGlobal("J#ImoenKelsey","LOCALS",1)~ EXTERN IMOEN2J BIMOEN2_1
+ END

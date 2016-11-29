@@ -1,5 +1,5 @@
---- bpseries\lib\bp_main.tph	Mon Nov 04 02:37:20 2013
-+++ C:\BWP Patchstudio\patched files\bpseries\lib\bp_main.tph	Sun Jan 10 13:00:20 2016
+--- bpseries/lib/bp_main.tph	2013-11-03 16:07:20.000000000 -0500
++++ Fixpack/bpseries/lib/bp_main.tph	2016-11-26 02:07:14.484829500 -0500
 @@ -521,42 +521,43 @@
  DEFINE_ACTION_FUNCTION ids_kit_bp BEGIN
  

@@ -1,0 +1,17 @@
+--- questpack/tp2/quest/incomplete/ormand.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/incomplete/ormand.tph	2016-11-21 22:33:42.804861300 -0500
+@@ -69,11 +69,11 @@
+ SAY NAME1 @314
+ SAY NAME2 @314
+ 
+-COMPILE ~questpack/ormand/compile~
++COMPILE EVALUATE_BUFFER ~questpack/ormand/compile~
+ 
+-COMPILE ~questpack/ormand/randenc/d00040.baf~
++COMPILE EVALUATE_BUFFER ~questpack/ormand/randenc/d00040.baf~
+ 
+-EXTEND_TOP ~baldur.bcs~ ~questpack/ormand/et_baldur.baf~
++EXTEND_TOP ~baldur.bcs~ ~questpack/ormand/et_baldur.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~bow12.itm~ ~override~
+ SAY IDENTIFIED_DESC @315

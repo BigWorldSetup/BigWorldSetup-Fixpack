@@ -1,0 +1,11 @@
+--- bpseries/ds/ds.tph	2013-11-16 11:21:52.000000000 -0500
++++ Fixpack/bpseries/ds/ds.tph	2016-11-21 22:38:12.458149400 -0500
+@@ -152,7 +152,7 @@
+ //checks for bg2ee, and skips the overwrite
+ //it's ok, bp series uses raw number entries in the bafs
+ //--call it what you like, and just play on :)
+-ACTION_IF GAME_IS ~bg2ee~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+   PRINT ~BG2EE Detected, not installing stats.ids~
+ END ELSE BEGIN
+   PRINT ~BG2EE NOT Detected, installing stats.ids~

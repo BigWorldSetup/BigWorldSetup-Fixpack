@@ -1,0 +1,17 @@
+Patching imoenfriendship/imoenfriendship.tp2: GAME_IS ~bg2ee bgt tob~  => GAME_IS ~bg2ee eet bgt tob~ 
+Patching imoenfriendship/scripts/imoen2.baf: GlobalGT("chapter","GLOBAL",3) => GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)
+Patching imoenfriendship/imoenfriendship.tp2: ALWAYS command added
+ALWAYS
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+END
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

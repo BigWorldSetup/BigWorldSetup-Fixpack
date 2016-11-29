@@ -1,5 +1,5 @@
---- amber\scripts\m#haerda.baf	Mon Aug 21 12:06:00 2006
-+++ D:\EE_Patchstudio\patched files\amber\scripts\m#haerda.baf	Fri Jan 15 12:51:46 2016
+--- amber/scripts/m#haerda.baf	2006-08-21 13:06:00.000000000 -0400
++++ Fixpack/amber/scripts/m#haerda.baf	2016-11-21 22:54:45.105149600 -0500
 @@ -15,7 +15,7 @@
  IF
  	InParty("M#Amber")

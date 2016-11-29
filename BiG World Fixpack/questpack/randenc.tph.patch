@@ -1,0 +1,35 @@
+--- questpack/tp2/quest/randenc.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/randenc.tph	2016-11-21 22:32:08.571722400 -0500
+@@ -15,24 +15,24 @@
+   SAY NAME1 @304 // Sythillisian Soldier
+   SAY NAME2 @304 // Sythillisian Soldier
+ 
+-EXTEND_BOTTOM ~ar0041.bcs~ ~questpack/encounters/ding0/randenc/city_old.baf~
+-EXTEND_BOTTOM ~ar0045.bcs~ ~questpack/encounters/ding0/randenc/city_old.baf~
+-EXTEND_BOTTOM ~ar0046.bcs~ ~questpack/encounters/ding0/randenc/city_old.baf~
++EXTEND_BOTTOM ~ar0041.bcs~ ~questpack/encounters/ding0/randenc/city_old.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~ar0045.bcs~ ~questpack/encounters/ding0/randenc/city_old.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~ar0046.bcs~ ~questpack/encounters/ding0/randenc/city_old.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~ar0041.bcs~ ~override~
+               ~ar0045.bcs~ ~override~
+               ~ar0046.bcs~ ~override~
+-  REPLACE_BCS_BLOCK ~questpack/encounters/ding0/randenc/city_old.baf~
++  REPLACE_BCS_BLOCK EVALUATE_BUFFER ~questpack/encounters/ding0/randenc/city_old.baf~
+                     ~questpack/encounters/ding0/randenc/city_new.baf~
+ BUT_ONLY
+ 
+-EXTEND_BOTTOM ~ar0042.bcs~ ~questpack/encounters/ding0/randenc/wilderness_old.baf~
+-EXTEND_BOTTOM ~ar0043.bcs~ ~questpack/encounters/ding0/randenc/wilderness_old.baf~
+-EXTEND_BOTTOM ~ar0044.bcs~ ~questpack/encounters/ding0/randenc/wilderness_old.baf~
++EXTEND_BOTTOM ~ar0042.bcs~ ~questpack/encounters/ding0/randenc/wilderness_old.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~ar0043.bcs~ ~questpack/encounters/ding0/randenc/wilderness_old.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~ar0044.bcs~ ~questpack/encounters/ding0/randenc/wilderness_old.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~ar0042.bcs~ ~override~
+               ~ar0043.bcs~ ~override~
+               ~ar0044.bcs~ ~override~
+-  REPLACE_BCS_BLOCK ~questpack/encounters/ding0/randenc/wilderness_old.baf~
++  REPLACE_BCS_BLOCK EVALUATE_BUFFER ~questpack/encounters/ding0/randenc/wilderness_old.baf~
+                     ~questpack/encounters/ding0/randenc/wilderness_new.baf~
+ BUT_ONLY

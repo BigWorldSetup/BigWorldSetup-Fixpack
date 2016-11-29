@@ -1,0 +1,55 @@
+--- questpack/thieves/dialog1.d	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/dialog1.d	2016-11-21 16:18:42.481283500 -0500
+@@ -189,7 +189,7 @@
+   SAY @119
+      =
+       @120
+-  IF ~GlobalLT("chapter","GLOBAL",6)~ THEN DO ~SetGlobal("GoSeeEdwin","GLOBAL",2)
++  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_6%)~ THEN DO ~SetGlobal("GoSeeEdwin","GLOBAL",2)
+ GiveItemCreate("d0dart01",LastTalkedToBy(Myself),1,0,0)
+ GiveItemCreate("potn36",LastTalkedToBy(Myself),1,0,0)
+ GiveItemCreate("potn10",LastTalkedToBy(Myself),2,0,0)
+@@ -224,7 +224,7 @@
+ SetGlobal("D0Maevar","GLOBAL",3)
+ SetGlobal("D0RenalPrisoner","GLOBAL",1)
+ SetGlobalTimer("D0RenalRevenge","GLOBAL",THREE_DAYS)~ SOLVED_JOURNAL @121 EXIT
+-  IF ~!GlobalLT("chapter","GLOBAL",6)~ THEN DO ~SetGlobal("GoSeeEdwin","GLOBAL",2)
++  IF ~!GlobalLT("chapter","GLOBAL",%bg2_chapter_6%)~ THEN DO ~SetGlobal("GoSeeEdwin","GLOBAL",2)
+ EraseJournalEntry(34194)
+ EraseJournalEntry(34198)
+ EraseJournalEntry(34201)
+@@ -453,8 +453,8 @@
+ IF ~~ THEN BEGIN ED_12
+   SAY #6480 /* ~I must commend you on your good sense. You've made a significant move into the realm of good fortune.~ */
+   IF ~Global("toldEdwinImoen","LOCALS",0)
+-GlobalLT("chapter","GLOBAL",4)~ THEN REPLY #42148 /* ~I should tell you first, Edwin, that my ultimate goal is to rescue Imoen... which may be quite a dangerous task.~ */ DO ~SetGlobal("D0EdwinRescueImoen","GLOBAL",1) SetGlobal("D0Betrayal","LOCALS",2)~ GOTO 50
+-  IF ~GlobalLT("chapter","GLOBAL",4)~ THEN REPLY #58665 /* ~Just so you know, I intend to track down a powerful mage by the name of Irenicus... a dangerous task if you're not prepared for one.~ */ DO ~SetGlobal("D0Betrayal","LOCALS",2)~ GOTO 60
++GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY #42148 /* ~I should tell you first, Edwin, that my ultimate goal is to rescue Imoen... which may be quite a dangerous task.~ */ DO ~SetGlobal("D0EdwinRescueImoen","GLOBAL",1) SetGlobal("D0Betrayal","LOCALS",2)~ GOTO 50
++  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY #58665 /* ~Just so you know, I intend to track down a powerful mage by the name of Irenicus... a dangerous task if you're not prepared for one.~ */ DO ~SetGlobal("D0Betrayal","LOCALS",2)~ GOTO 60
+   IF ~~ THEN REPLY #42149 /* ~Alright, then, let's go.~ */ DO ~SetGlobal("D0Betrayal","LOCALS",3)
+ JoinParty()~ EXIT
+ END
+@@ -922,9 +922,9 @@
+       @202
+   IF ~~ THEN REPLY @203 GOTO REN_2
+   IF ~~ THEN REPLY @204 GOTO REN_6
+-  IF ~GlobalLT("chapter","GLOBAL",4)
++  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+ GlobalGT("AranJob","GLOBAL",0)~ THEN REPLY @205 GOTO REN_9
+-  IF ~GlobalLT("chapter","GLOBAL",4)
++  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+ !GlobalGT("BodhiJob","GLOBAL",0)~ THEN REPLY @206 GOTO REN_9
+   IF ~Global("D0Tell","LOCALS",0)~ THEN REPLY @207 DO ~SetGlobal("D0Tell","LOCALS",1)~ GOTO REN_3
+   IF ~OR(3)
+@@ -985,9 +985,9 @@
+   SAY @221
+   IF ~~ THEN REPLY @203 GOTO REN_2
+   IF ~~ THEN REPLY @222 GOTO REN_6
+-  IF ~GlobalLT("chapter","GLOBAL",4)
++  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+ GlobalGT("AranJob","GLOBAL",0)~ THEN REPLY @205 GOTO REN_9
+-  IF ~GlobalLT("chapter","GLOBAL",4)
++  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+ !GlobalGT("BodhiJob","GLOBAL",0)~ THEN REPLY @206 GOTO REN_9
+   IF ~Global("D0Tell","LOCALS",0)~ THEN REPLY @207 DO ~SetGlobal("D0Tell","LOCALS",1)~ GOTO REN_3
+   IF ~OR(3)

@@ -1,0 +1,20 @@
+--- rr/rr_core/compile/amncen1.d	2014-12-29 08:13:34.000000000 -0500
++++ Fixpack/rr/rr_core/compile/amncen1.d	2016-11-21 22:35:39.083040400 -0500
+@@ -1,7 +1,7 @@
+ // creator  aVENGER
+ // argument FLAMEN.DLG
+ 
+-REPLACE_STATE_TRIGGER ~AMNCEN1~ 0 ~ReputationLT(Player1,10) GlobalLT("Chapter","GLOBAL",8)~
++REPLACE_STATE_TRIGGER ~AMNCEN1~ 0 ~ReputationLT(Player1,10) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~
+ ALTER_TRANS ~AMNCEN1~ // file name
+ BEGIN 0 END // state number (can be more than one)
+ BEGIN 0 END // transition number (can be more than one)
+@@ -11,7 +11,7 @@
+ 
+ APPEND ~AMNCEN1~
+ 
+-IF ~ReputationLT(Player1,10) GlobalGT("Chapter","GLOBAL",7)~ THEN BEGIN RR#INTOB
++IF ~ReputationLT(Player1,10) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN BEGIN RR#INTOB
+   SAY #71641 // Looting will not be permitted!  Looters shall be executed!!
+   IF ~~ THEN DO ~Shout(1) Enemy()~ EXIT
+ END

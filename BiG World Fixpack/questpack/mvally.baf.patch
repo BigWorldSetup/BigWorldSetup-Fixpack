@@ -1,0 +1,11 @@
+--- questpack/thieves/scripts/shouts/mvally.baf	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/scripts/shouts/mvally.baf	2016-11-21 22:36:08.647247200 -0500
+@@ -161,7 +161,7 @@
+   Global("ArkanisComes","GLOBAL",0)
+   Global("AttackedThieves","GLOBAL",1)
+   GlobalLT("D0MaeVar","GLOBAL",5)
+-  GlobalLT("chapter","GLOBAL",6)
++  GlobalLT("chapter","GLOBAL",%bg2_chapter_6%)
+   OR(2)
+     !Specifics(Myself,242)
+     GlobalGT("D0Maevar","GLOBAL",2)

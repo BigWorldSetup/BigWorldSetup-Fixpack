@@ -1,0 +1,25 @@
+Patching iepbanters/setup-iepbanters.tp2: GAME_IS ~bg2ee bgt tob~  => GAME_IS ~bg2ee eet bgt tob~ 
+Patching iepbanters/setup-iepbanters.tp2: GAME_IS ~bg2ee bgt tob~  => GAME_IS ~bg2ee eet bgt tob~ 
+Patching iepbanters/dialogue/banters.d: GlobalGT("Chapter","GLOBAL",1) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_1%)
+Patching iepbanters/dialogue/banters.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching iepbanters/dialogue/banters.d: Global("chapter","GLOBAL",1) => Global("chapter","GLOBAL",%bg2_chapter_1%)
+Patching iepbanters/dialogue/banters.d: Global("chapter","GLOBAL",5) => Global("chapter","GLOBAL",%bg2_chapter_5%)
+Patching iepbanters/scripts/baldur.baf: GlobalGT("Chapter","GLOBAL",1) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_1%)
+Patching iepbanters/scripts/minsc_2.baf: GlobalGT("Chapter","GLOBAL",4) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching iepbanters/setup-iepbanters.tp2: ALWAYS command added
+ALWAYS
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+END
+
+----------
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

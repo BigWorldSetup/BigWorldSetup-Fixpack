@@ -1,0 +1,97 @@
+Patching tyrisflare/setup-tyrisflare.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching tyrisflare/setup-tyrisflare.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching tyrisflare/setup-tyrisflare.tp2: GAME_IS ~bg2ee~ BEGIN => GAME_IS ~bg2ee eet~ BEGIN
+Patching tyrisflare/setup-tyrisflare.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching tyrisflare/setup-tyrisflare.tp2: GAME_IS ~bg2ee~ BEGIN => GAME_IS ~bg2ee eet~ BEGIN
+Patching tyrisflare/setup-tyrisflare.tp2: GAME_IS ~tob bg2ee~ THEN BEGIN => GAME_IS ~tob bg2ee eet~ THEN BEGIN
+Patching tyrisflare/setup-tyrisflare.tp2: GAME_IS ~tob bg2ee~ THEN BEGIN => GAME_IS ~tob bg2ee eet~ THEN BEGIN
+Patching tyrisflare/setup-tyrisflare.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching tyrisflare/setup-tyrisflare.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching tyrisflare/setup-tyrisflare.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching tyrisflare/setup-tyrisflare.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching tyrisflare/setup-tyrisflare.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching tyrisflare/setup-tyrisflare.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching tyrisflare/dialogue/expinterjections.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching tyrisflare/dialogue/expinterjections.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching tyrisflare/dialogue/expinterjections.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching tyrisflare/dialogue/expinterjections.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching tyrisflare/dialogue/expinterjections.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching tyrisflare/dialogue/expinterjections.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching tyrisflare/dialogue/expinterjections.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching tyrisflare/dialogue/expinterjections.d: GlobalGT("Chapter","GLOBAL",7) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching tyrisflare/setup-tyrisflare.tp2: ALWAYS command expanded
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+-----------
+
+Manual edits:
+
+2. Below code from TyrisFlare/Dialogue/G#TRS25A.d
+
+EXTEND_BOTTOM FATESP 6 #1
+  + ~!Dead("G#Tyris")
+     !Global("G#G3.CompletedSoA","GLOBAL",1)
+     Global("G#TF.TyrisMatch","GLOBAL",1)
+     !Global("AerieRomanceActive","GLOBAL",2)
+     !Global("JaheiraRomanceActive","GLOBAL",2)
+     !Global("ViconiaRomanceActive","GLOBAL",2)
+     !Global("NeeraRomanceActive","GLOBAL",2)
+     !Global("DornRomanceActive","GLOBAL",2)
+     Global("G#TF.TyrisSummoned","GLOBAL",0)~ + @0 DO ~SetGlobal("G#TF.TyrisRomanceActive","GLOBAL",2) 
+                                                                                   SetGlobal("G#TF.TyrisSummoned","GLOBAL",1)
+                                                                                   SetGlobal("G#TF.SleptWithTyris","GLOBAL",1)~ EXTERN FATESP 8
+  + ~!Dead("G#Tyris")
+     OR(2)
+       !Global("G#G3.CompletedSoA","GLOBAL",1)
+       Global("G#TF.HasBeenSpokenTo","GLOBAL",1)
+     Global("G#TF.TyrisSummoned","GLOBAL",0)~ + @1 DO ~SetGlobal("G#TF.TyrisSummoned","GLOBAL",1)~ EXTERN FATESP 8
+  + ~Dead("G#Tyris")
+     OR(2)
+       !Global("G#G3.CompletedSoA","GLOBAL",1)
+       Global("G#TF.HasBeenSpokenTo","GLOBAL",1)
+     Global("G#TF.TyrisSummoned","GLOBAL",0)~ + @1 DO ~SetGlobal("G#TF.TyrisSummoned","GLOBAL",2)~ EXTERN FATESP 10
+END
+
+Moved to new file: tyrisflare/dialogue/FATESP.d
+
+3.  Following lines removed (see next step)
+    EXTEND_TOP ~ar4000.bcs~ ~TyrisFlare/Scripts/AreaScripts/AR4000.baf~
+    EXTEND_TOP ~ar4500.bcs~ ~TyrisFlare/Scripts/AreaScripts/AR4500.baf~
+
+4. New code added at the end of tyrisflare/setup-tyrisflare.tp2 main component
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+  INCLUDE ~EET/other/EET_functions.tph~
+  LAF ~EET_NPC_TRANSITION~
+    INT_VAR
+      type = 2
+    STR_VAR
+      dv = "G#Tyris"
+      override_SoA = "G#TYRIS"
+      override_ToB = "G#TYRS25"
+      dialog_ToB = "G#TRS25A"
+      traFile = EVAL "TyrisFlare/languages/%LANGUAGE%/g#trs25a.tra"
+      string = "@1" //Bring me Tyris, the amazon fighter/mage.
+      stringPosDV = "Viconia"
+      SummonedVar = "G#TF.TyrisSummoned"
+      SpawnPlaneVar = "G#TF.TyrisSpawnPlane"
+  END
+END ELSE BEGIN
+  COMPILE ~TyrisFlare/Dialogue/FATESP.d~ USING ~TyrisFlare/languages/%LANGUAGE%/g#trs25a.tra~
+  EXTEND_TOP ~ar4000.bcs~ ~TyrisFlare/Scripts/AreaScripts/AR4000.baf~
+  EXTEND_TOP ~ar4500.bcs~ ~TyrisFlare/Scripts/AreaScripts/AR4500.baf~
+END
+
+
+No need to add additional "lover" option - if the romance was active variables were already set
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

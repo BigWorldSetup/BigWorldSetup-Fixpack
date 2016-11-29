@@ -1,5 +1,5 @@
---- mazzy\scripts\mazz25.baf	Tue Dec 02 23:10:28 2008
-+++ C:\BWP Patchstudio\patched files\mazzy\scripts\mazz25.baf	Sat Nov 10 15:00:34 2012
+--- mazzy/scripts/mazz25.baf	2013-03-02 07:38:02.000000000 -0500
++++ Fixpack/mazzy/scripts/mazz25.baf	2016-11-26 02:07:17.217900100 -0500
 @@ -38,7 +38,7 @@
      InParty(Myself)
      See(Player1)

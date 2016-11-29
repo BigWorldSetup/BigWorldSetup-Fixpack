@@ -1,0 +1,22 @@
+--- questpack/tp2/quest/oasis_dlg.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/oasis_dlg.tph	2016-11-21 22:33:26.622538400 -0500
+@@ -1,8 +1,8 @@
+-COMPILE ~questpack/oasis/amtgen01.d~
++COMPILE EVALUATE_BUFFER ~questpack/oasis/amtgen01.d~
+ USING   ~%tra_path%/english/oasis.tra~
+         ~%tra_path%/%LANGUAGE%/oasis.tra~
+ 
+-COMPILE ~questpack/oasis/d0hosti.baf~
++COMPILE EVALUATE_BUFFER ~questpack/oasis/d0hosti.baf~
+ 
+ COPY_EXISTING ~AR6300.ARE~ ~override~
+   REPLACE_TEXTUALLY ~HOSTILE~ ~D0HOSTI~ (8)
+@@ -10,7 +10,7 @@
+ COPY ~questpack/oasis/d0amtgen.wav~ ~override~
+      ~questpack/oasis/d0oasis9.spl~ ~override~
+ 
+-EXTEND_TOP ~baldur25.bcs~ ~questpack/oasis/et_baldr25.baf~
++EXTEND_TOP ~baldur25.bcs~ ~questpack/oasis/et_baldr25.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~amtgen01.cre~ ~override~
+   SAY 0x10c #61865

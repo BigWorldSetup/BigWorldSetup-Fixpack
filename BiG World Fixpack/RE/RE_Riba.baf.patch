@@ -1,0 +1,11 @@
+--- RE/Ribald/scripts/RE_Riba.baf	2007-07-01 04:56:22.000000000 -0400
++++ Fixpack/RE/Ribald/scripts/RE_Riba.baf	2016-11-21 22:55:07.126694300 -0500
+@@ -104,7 +104,7 @@
+ 
+ IF
+ See(Player1)
+-GlobalGT("Chapter","GLOBAL",5)
++GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ RealGlobalTimerExpired("RE_RibaldTimer","GLOBAL")
+ Global("RE_RibaldRomanceActive","GLOBAL",2)
+ Global("RE_RibaldDump","GLOBAL",0)

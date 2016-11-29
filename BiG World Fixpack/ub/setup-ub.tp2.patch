@@ -1,0 +1,242 @@
+--- ub/setup-ub.tp2	2015-03-22 18:22:03.000000000 -0400
++++ Fixpack/ub/setup-ub.tp2	2016-11-21 23:09:34.702798300 -0500
+@@ -15,6 +15,17 @@
+ ASK_EVERY_COMPONENT
+ 
+ ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++
+   // CD_STATE_NOTVALID - custom state from CamDawg
+   // Angel: Moved here so it is no longer needed to include it in every component.
+ 
+@@ -170,7 +181,7 @@
+ 
+ COPY ~ub/ubnull.itm~ ~override/ubminsc.xxx~ //null file to identify this component
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+   ADD_JOURNAL @69 @84 @102 @465 @671 @687 @697 @727 @729 @751 @754 USING ~ub/tra/%LANGUAGE%/wwminscub.tra~
+@@ -208,7 +219,7 @@
+ COPY ~ub/Minsc/Cre/wwrati.cre~    ~Override/wwrati.cre~  SAY NAME1 @10 SAY NAME2 @10
+ COPY ~ub/Minsc/items~ 		  ~Override~
+ 
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN COPY ~ub/Minsc/itemsEE~ ~Override~ END /* Kulyok v25 */
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN COPY ~ub/Minsc/itemsEE~ ~Override~ END /* Kulyok v25 */
+ 
+ COPY ~ub/Minsc/Items/wwblet.spl~  ~Override/wwblet.spl~  SAY NAME1 ~Boolets~ SAY NAME2 ~Boolets~ /*No need to translate*/
+ COPY ~ub/Minsc/Items/wwboo.spl~   ~Override/wwboo.spl~
+@@ -305,7 +316,7 @@
+ 
+ COPY ~ub/ubnull.itm~ ~override/ubsuna.xxx~ //null file to identify this component
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+   ADD_JOURNAL EXISTING TITLE (#74367) @211 @213 USING ~ub/tra/%LANGUAGE%/ubdialog.tra~
+@@ -323,12 +334,12 @@
+ USING   ~ub/tra/%s/ubdialog.tra~
+ 
+ EXTEND_TOP    ~ar1101.bcs~  ~override/u!1101.bcs~   /* Removes Valygar from his cabin if not given the quest */
+-EXTEND_TOP    ~ar0041.bcs~  ~ub/suna/u!sunare.baf~  /* Removes Suna Seni from the Random Encounters */
+-EXTEND_TOP    ~ar0042.bcs~  ~ub/suna/u!sunare.baf~  /* Removes Suna Seni from the Random Encounters */
+-EXTEND_TOP    ~ar0043.bcs~  ~ub/suna/u!sunare.baf~  /* Removes Suna Seni from the Random Encounters */
+-EXTEND_TOP    ~ar0044.bcs~  ~ub/suna/u!sunare.baf~  /* Removes Suna Seni from the Random Encounters */
+-EXTEND_TOP    ~ar0045.bcs~  ~ub/suna/u!sunare.baf~  /* Removes Suna Seni from the Random Encounters */
+-EXTEND_TOP    ~ar0046.bcs~  ~ub/suna/u!sunare.baf~  /* Removes Suna Seni from the Random Encounters */
++EXTEND_TOP    ~ar0041.bcs~  ~ub/suna/u!sunare.baf~ EVALUATE_BUFFER /* Removes Suna Seni from the Random Encounters */
++EXTEND_TOP    ~ar0042.bcs~  ~ub/suna/u!sunare.baf~ EVALUATE_BUFFER /* Removes Suna Seni from the Random Encounters */
++EXTEND_TOP    ~ar0043.bcs~  ~ub/suna/u!sunare.baf~ EVALUATE_BUFFER /* Removes Suna Seni from the Random Encounters */
++EXTEND_TOP    ~ar0044.bcs~  ~ub/suna/u!sunare.baf~ EVALUATE_BUFFER /* Removes Suna Seni from the Random Encounters */
++EXTEND_TOP    ~ar0045.bcs~  ~ub/suna/u!sunare.baf~ EVALUATE_BUFFER /* Removes Suna Seni from the Random Encounters */
++EXTEND_TOP    ~ar0046.bcs~  ~ub/suna/u!sunare.baf~ EVALUATE_BUFFER /* Removes Suna Seni from the Random Encounters */
+ EXTEND_TOP    ~ar1516.bcs~  ~ub/suna/u!1516.baf~    /* Spawns Suna in Spellhold */
+ EXTEND_TOP    ~ar0300.bcs~  ~ub/suna/u!0300.baf~    /* Spawns Suna in the Docks */
+ EXTEND_TOP    ~ppjon.bcs~   ~ub/suna/u!ppjon.baf~   /* Determines whether or not to spawn Suna in the Spellhold cutscene */
+@@ -365,7 +376,7 @@
+ 
+ COPY ~ub/ubnull.itm~ ~override/ubkalah.xxx~ //null file to identify this component
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+   ADD_JOURNAL @254 @256 @258 @260 @262 @271 @344 @350 USING ~ub/tra/%LANGUAGE%/ubdialog.tra~
+@@ -442,7 +453,7 @@
+ 
+ COPY ~ub/ubnull.itm~ ~override/ubbodhi.xxx~ //null file to identify this component
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+ END
+@@ -513,7 +524,7 @@
+ 
+ COPY ~ub/ubnull.itm~ ~override/ubgorje.xxx~ //null file to identify this component
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+   ADD_JOURNAL EXISTING TITLE (#74322) @30 @88 USING ~ub/tra/%LANGUAGE%/ubdialog.tra~
+@@ -548,7 +559,7 @@
+ 
+ COPY ~ub/ubnull.itm~ ~override/ubpaina.xxx~ //null file to identify this component
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+   ADD_JOURNAL @142 @145 @146 USING ~ub/tra/%LANGUAGE%/ubdialog.tra~
+@@ -579,7 +590,7 @@
+ 
+ BEGIN @28
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+ END
+@@ -609,13 +620,13 @@
+ 
+ BEGIN @29
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+ END
+ 
+ /* Vampire Encounters */
+-EXTEND_TOP vampsttp.bcs ~ub/encount/U!vamps.baf~
++EXTEND_TOP vampsttp.bcs ~ub/encount/U!vamps.baf~ EVALUATE_BUFFER
+ 
+ EXTEND_TOP vvbodhi.bcs ~ub/encount/vvbodhi.baf~ /* Kulyok */
+ 
+@@ -809,7 +820,7 @@
+ 
+ BEGIN @48
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+ END
+@@ -944,7 +955,7 @@
+ 
+ BEGIN @30
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+ END
+@@ -1073,7 +1084,7 @@
+ 
+ COPY ~ub/ubnull.itm~ ~override/ubyoshi.xxx~ //null file to identify this component
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   COPY ~ub/yoshimo/NYOSHIEM.BMP~ ~override/NYOSHIEM.BMP~          
+   COPY ~ub/yoshimo/NYOSHIES.BMP~ ~override/NYOSHIES.BMP~
+@@ -1098,7 +1109,7 @@
+ COPY ~ub/ubnull.itm~ ~override/ubanomen.xxx~ //null file to identify this component
+ 
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   COPY ~ub/anomen/NANOMENL.BMP~ ~override/NANOMENL.BMP~  
+   COPY ~ub/anomen/NANOMEEM.BMP~ ~override/NANOMENM.BMP~
+@@ -1155,7 +1166,7 @@
+ COPY_EXISTING ~QUAYLE.CRE~   ~override/QUAYLE.CRE~     /* Quayle */
+   WRITE_ASCII   ~0x34~         ~QUAYLES~
+ 
+-ACTION_IF GAME_IS BG2EE
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   COPY ~ub/suna/SUNAL_EE.BMP~ ~override/SUNAL.BMP~          /* Suna Seni's portraits */
+   COPY ~ub/suna/SUNAS_EE.BMP~ ~override/SUNAS.BMP~
+@@ -1423,7 +1434,7 @@
+ 
+ BEGIN @54
+ 
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+ END
+ 
+@@ -1651,7 +1662,7 @@
+ 
+ COPY ~ub/ubnull.itm~ ~override/ubtobitm.xxx~ //null file to identify this component
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+ END
+@@ -1700,7 +1711,7 @@
+ 
+ REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @69
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+ END
+@@ -1776,10 +1787,10 @@
+ /* AUTHOR   ~andyr@gibberlings3.net~ */
+ 
+ BEGIN @81
+-REQUIRE_PREDICATE NOT GAME_IS ~BG2EE~ @1311
++REQUIRE_PREDICATE NOT GAME_IS ~bg2ee eet~ @1311
+ 
+ /* Kulyok: I'm sometimes using this ubsetup-ee.tra where I shouldn't, but it's harmless and better than forgetting it entirely before v25. :) But don't do that at home. */
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+ END
+@@ -1847,9 +1858,9 @@
+ /* AUTHOR   ~andyr@gibberlings3.net~ */
+ 
+ BEGIN @85
+-REQUIRE_PREDICATE NOT GAME_IS ~BG2EE~ @1311
++REQUIRE_PREDICATE NOT GAME_IS ~bg2ee eet~ @1311
+ 
+-ACTION_IF GAME_IS ~BG2EE~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+ END
+ 
+@@ -1969,7 +1980,7 @@
+ 
+ REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @69
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+ END
+@@ -2034,7 +2045,7 @@
+ 
+ COPY ~ub/ubnull.itm~ ~override/ubhaer.xxx~ //null file to identify this component
+ 
+-ACTION_IF GAME_IS ~BG2EE~
++ACTION_IF GAME_IS ~bg2ee eet~
+ BEGIN
+   LOAD_TRA ~ub/tra/%LANGUAGE%/ubsetup-ee.tra~
+   ADD_JOURNAL @1301 @1302 @1303 @1304 @1305 @1306 @1307 @1308 @1309 @1310

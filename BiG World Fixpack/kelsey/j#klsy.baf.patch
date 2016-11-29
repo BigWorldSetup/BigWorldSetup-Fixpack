@@ -1,0 +1,38 @@
+--- kelsey/baf/soa/j#klsy.baf	2013-11-16 13:01:50.000000000 -0500
++++ Fixpack/kelsey/baf/soa/j#klsy.baf	2016-11-21 10:39:23.032943300 -0500
+@@ -542,7 +542,7 @@
+   See(Player1)
+   CombatCounter(0)
+   Global("J#LoveTalk","LOCALS",25)
+-  !Global("Chapter","GLOBAL",5)
++  !Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+   RESPONSE #100
+     PlaySong(123456)
+@@ -603,7 +603,7 @@
+   !AreaType(FOREST)
+   CombatCounter(0)
+   Global("J#LoveTalk","LOCALS",41)
+-  !Global("Chapter","GLOBAL",5)
++  !Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+   RESPONSE #100
+     PlaySong(123456)
+@@ -622,7 +622,7 @@
+   !AreaType(DUNGEON)
+   CombatCounter(0)
+   Global("J#LoveTalk","LOCALS",47)
+-  !Global("Chapter","GLOBAL",5)
++  !Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+   RESPONSE #100
+     PlaySong(123456)
+@@ -666,7 +666,7 @@
+     Global("J#LoveTalk","LOCALS",39)
+     Global("J#LoveTalk","LOCALS",43)
+     Global("J#LoveTalk","LOCALS",49)
+-  !Global("Chapter","GLOBAL",5)
++  !Global("Chapter","GLOBAL",%bg2_chapter_5%)
+ THEN
+   RESPONSE #100
+     PlaySong(123456)

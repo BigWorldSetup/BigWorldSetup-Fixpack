@@ -1,24 +1,32 @@
---- divine_remix\setup-divine_remix.tp2	Tue Mar 17 19:20:30 2015
-+++ C:\BWP Patchstudio\patched files\divine_remix\setup-divine_remix.tp2	Sun Jun 28 20:58:23 2015
-@@ -1797,7 +1797,7 @@
- 
- //Alignment changes
- COPY_EXISTING ~alignmnt.2da~ ~override~
--  REPLACE_TEXTUALLY ~^\(DRUID\|FIGHTER_DRUID\|TOTEMIC_DRUID\|SHAPESHIFTER\|BEAST_FRIEND\)[ %TAB%]~ ~\1 0 1 0 1 1 1 0 1 0~
-+  REPLACE_TEXTUALLY ~^\(DRUID\|FIGHTER_DRUID\|TOTEMIC_DRUID\|SHAPESHIFTER\|BEAST_FRIEND\)[ %TAB%]+.+~ ~\1 0 1 0 1 1 1 0 1 0~
-   BUT_ONLY_IF_IT_CHANGES
- 
- PRINT @3
-
+--- divine_remix/setup-divine_remix.tp2	2015-03-17 20:20:30.951311700 -0400
++++ Fixpack/divine_remix/setup-divine_remix.tp2	2016-11-27 12:02:08.985354500 -0500
 @@ -31,7 +31,7 @@
  
  END
  
 -VERSION  ~v8~
-+VERSION  ~v8 BWP fix 2~
++VERSION  ~v8 BWP Fix~
  
  README   ~divine_remix/readme-divine_remix.html~
  
+@@ -208,7 +208,7 @@
+     PRETTY_PRINT_2DA
+     BUT_ONLY
+ 
+-  ACTION_IF GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN // temple stronghold stuff
++  ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold stuff
+ 
+     COMPILE ~divine_remix/dlg/temple.d~
+ 
+@@ -266,7 +266,7 @@
+ ///// Changes to HLAs and holy symbols for ToB         \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~bgt tob bg2ee~ THEN BEGIN // holy symbols
++ACTION_IF GAME_IS ~bgt tob bg2ee eet~ THEN BEGIN // holy symbols
+ 
+   COPY ~divine_remix/spl/CDHLYSYM.spl~ ~override~
+        ~divine_remix/spl/CDHLYSY2.spl~ ~override~
 @@ -354,8 +354,8 @@
  
      COPY_EXISTING ~%creature%.cre~ ~override~  
@@ -59,7 +67,7 @@
 -        WRITE_BYTE    0x246 "%kit%"
 -        WRITE_BYTE    0x247 0x40
 +        WRITE_SHORT   0x246 0x4000 + "%kit%"
-+//      WRITE_BYTE    0x247 0x40
++  //    WRITE_BYTE    0x247 0x40
          BUT_ONLY
  
      END
@@ -70,10 +78,92 @@
 -        WRITE_BYTE    0x246 "%kit%"
 -        WRITE_BYTE    0x247 0x40
 +        WRITE_SHORT   0x246 0x4000 + "%kit%"
-+//      WRITE_BYTE    0x247 0x40
++  //    WRITE_BYTE    0x247 0x40
          BUT_ONLY
  
      END
+@@ -446,12 +446,12 @@
+ 
+ COPY ~divine_remix/spl/cdslmsd.spl~ ~override~  // Moon Shield (innate spell)
+   // temp to get some strings into the game
+-  PATCH_IF ((GAME_IS ~bgee bg2ee~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
++  PATCH_IF ((GAME_IS ~bgee bg2ee eet~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
+     PATCH_IF FILE_EXISTS_IN_GAME ~howparty.2da~ BEGIN // iwdee
+       SAY NAME1 @10322
+       READ_LONG NAME1 bio
+     END ELSE BEGIN // bgee/bg2ee bio
+-      PATCH_IF GAME_IS ~bg2ee~ BEGIN // bg2ee
++      PATCH_IF GAME_IS ~bg2ee eet~ BEGIN // bg2ee
+         SET bio = "-1"
+       END ELSE BEGIN // bgee
+         SET bio  = 15884
+@@ -539,7 +539,7 @@
+ ///// Stronghold fixes                                 \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN // temple stronghold stuff
++ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold stuff
+ 
+   EXTEND_TOP ~ar0900.bcs~   ~divine_remix/baf/Selune_ar0900.baf~
+   EXTEND_TOP ~ar0902.bcs~   ~divine_remix/baf/Selune_ar0902.baf~
+@@ -566,12 +566,12 @@
+ 
+ COPY ~divine_remix/spl/cdshar2.spl~ ~override~  // dark bolt
+   // temp to get some strings into the game
+-  PATCH_IF ((GAME_IS ~bgee bg2ee~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
++  PATCH_IF ((GAME_IS ~bgee bg2ee eet~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
+     PATCH_IF FILE_EXISTS_IN_GAME ~howparty.2da~ BEGIN // iwdee
+       SAY NAME1 @10620
+       READ_LONG NAME1 bio
+     END ELSE BEGIN // bgee/bg2ee bio
+-      PATCH_IF GAME_IS ~bg2ee~ BEGIN // bg2ee
++      PATCH_IF GAME_IS ~bg2ee eet~ BEGIN // bg2ee
+         SET bio = "-1"
+       END ELSE BEGIN // bgee
+         SET bio  = 15884
+@@ -661,7 +661,7 @@
+ ///// Stronghold fixes                                 \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN // temple stronghold stuff
++ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold stuff
+ 
+   EXTEND_TOP ~ar0900.bcs~   ~divine_remix/baf/Shar_ar0900.baf~
+   EXTEND_TOP ~ar0904.bcs~   ~divine_remix/baf/Shar_ar0904.baf~
+@@ -682,13 +682,13 @@
+ REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
+ 
+ COPY ~divine_remix/spl/a#re0b.spl~ ~override~  // Additional Attack per round (innate)
+-  PATCH_IF ((GAME_IS ~bgee bg2ee~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
++  PATCH_IF ((GAME_IS ~bgee bg2ee eet~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
+     PATCH_IF FILE_EXISTS_IN_GAME ~howparty.2da~ BEGIN // iwdee
+       SAY NAME1 @10716
+       READ_LONG NAME1 bio
+       WRITE_LONG NAME1 `0
+     END ELSE BEGIN // bgee/bg2ee bio
+-      PATCH_IF GAME_IS ~bg2ee~ BEGIN // bg2ee
++      PATCH_IF GAME_IS ~bg2ee eet~ BEGIN // bg2ee
+         SET bio = "-1"
+       END ELSE BEGIN // bgee
+         SET bio  = 15884
+@@ -773,7 +773,7 @@
+ ///// Stronghold fixes                                 \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN // temple stronghold stuff
++ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold stuff
+ 
+   EXTEND_TOP ~ar0900.bcs~   ~divine_remix/baf/red_ar0900.baf~
+   EXTEND_TOP ~ar0901.bcs~   ~divine_remix/baf/red_ar0901.baf~
+@@ -871,7 +871,7 @@
+ ///// Stronghold fixes                                 \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN // temple stronghold stuff
++ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold stuff
+ 
+   EXTEND_TOP ~ar0900.bcs~   ~divine_remix/baf/tempus_ar0900.baf~
+   EXTEND_TOP ~ar0902.bcs~   ~divine_remix/baf/tempus_ar0904.baf~
 @@ -890,8 +890,8 @@
  
      COPY_EXISTING ~%creature%.cre~ ~override~
@@ -85,6 +175,30 @@
        BUT_ONLY
  
    END
+@@ -914,12 +914,12 @@
+      ~divine_remix/bam/cdilendb.bam~ ~override~
+      ~divine_remix/bam/cdilendc.bam~ ~override~
+ COPY ~divine_remix/spl/cdilend.spl~  ~override~
+-  PATCH_IF ((GAME_IS ~bgee bg2ee~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
++  PATCH_IF ((GAME_IS ~bgee bg2ee eet~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
+     PATCH_IF FILE_EXISTS_IN_GAME ~howparty.2da~ BEGIN // iwdee
+       SAY NAME1 @11211
+       READ_LONG NAME1 bio
+     END ELSE BEGIN // bgee/bg2ee bio
+-      PATCH_IF GAME_IS ~bg2ee~ BEGIN // bg2ee
++      PATCH_IF GAME_IS ~bg2ee eet~ BEGIN // bg2ee
+         SET bio = "-1"
+       END ELSE BEGIN // bgee
+         SET bio  = 15884
+@@ -1002,7 +1002,7 @@
+ ///// Stronghold fixes                                 \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN // temple stronghold stuff
++ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold stuff
+ 
+   EXTEND_TOP ~ar0900.bcs~   ~divine_remix/baf/ilmater_ar0900.baf~
+   EXTEND_TOP ~ar0901.bcs~   ~divine_remix/baf/ilmater_ar0901.baf~
 @@ -1022,8 +1022,8 @@
  
      COPY_EXISTING ~%creature%.cre~ ~override~
@@ -96,6 +210,81 @@
        BUT_ONLY
  
    END
+@@ -1043,13 +1043,13 @@
+ REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
+ 
+ COPY ~divine_remix/spl/a#kos0c.spl~ ~override~
+-  PATCH_IF ((GAME_IS ~bgee bg2ee~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
++  PATCH_IF ((GAME_IS ~bgee bg2ee eet~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
+     PATCH_IF FILE_EXISTS_IN_GAME ~howparty.2da~ BEGIN // iwdee
+       SAY NAME1 @11511
+       READ_LONG NAME1 bio
+       WRITE_LONG 0x08 `0
+     END ELSE BEGIN // bgee/bg2ee bio
+-      PATCH_IF GAME_IS ~bg2ee~ BEGIN // bg2ee
++      PATCH_IF GAME_IS ~bg2ee eet~ BEGIN // bg2ee
+         SET bio = "-1"
+       END ELSE BEGIN // bgee
+         SET bio  = 15884
+@@ -1135,7 +1135,7 @@
+ ///// Stronghold fixes                                 \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN // temple stronghold stuff
++ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold stuff
+ 
+   EXTEND_TOP ~ar0900.bcs~   ~divine_remix/baf/kossuth_ar0900.baf~
+   EXTEND_TOP ~ar0901.bcs~   ~divine_remix/baf/kossuth_ar0901.baf~
+@@ -1158,13 +1158,13 @@
+ REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
+ 
+ COPY ~divine_remix/spl/CDXVFEAR.spl~ ~override~  // immunity to fear (permanent innate spell)
+-  PATCH_IF ((GAME_IS ~bgee bg2ee~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
++  PATCH_IF ((GAME_IS ~bgee bg2ee eet~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
+     PATCH_IF FILE_EXISTS_IN_GAME ~howparty.2da~ BEGIN // iwdee
+       SAY NAME1 @11811
+       READ_LONG NAME1 bio
+       WRITE_LONG 0x08 `0
+     END ELSE BEGIN // bgee/bg2ee bio
+-      PATCH_IF GAME_IS ~bg2ee~ BEGIN // bg2ee
++      PATCH_IF GAME_IS ~bg2ee eet~ BEGIN // bg2ee
+         SET bio = "-1"
+       END ELSE BEGIN // bgee
+         SET bio  = 15884
+@@ -1255,7 +1255,7 @@
+ ///// Stronghold fixes                                 \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN // temple stronghold stuff
++ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold stuff
+ 
+   EXTEND_TOP ~ar0900.bcs~   ~divine_remix/baf/xvim_ar0900.baf~
+   EXTEND_TOP ~ar0901.bcs~   ~divine_remix/baf/xvim_ar0901.baf~
+@@ -1281,13 +1281,13 @@
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ COPY ~divine_remix/spl/a#og0b.spl~ ~override~  // Lore boost (innate)
+-  PATCH_IF ((GAME_IS ~bgee bg2ee~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
++  PATCH_IF ((GAME_IS ~bgee bg2ee eet~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
+     PATCH_IF FILE_EXISTS_IN_GAME ~howparty.2da~ BEGIN // iwdee
+       SAY NAME1 @12109
+       READ_LONG NAME1 bio
+       WRITE_LONG 0x08 `0
+     END ELSE BEGIN // bgee/bg2ee bio
+-      PATCH_IF GAME_IS ~bg2ee~ BEGIN // bg2ee
++      PATCH_IF GAME_IS ~bg2ee eet~ BEGIN // bg2ee
+         SET bio = "-1"
+       END ELSE BEGIN // bgee
+         SET bio  = 15884
+@@ -1370,7 +1370,7 @@
+ ///// Stronghold fixes                                 \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN // temple stronghold stuff
++ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold stuff
+ 
+   EXTEND_TOP ~ar0900.bcs~   ~divine_remix/baf/oghma_ar0900.baf~
+   EXTEND_TOP ~ar0901.bcs~   ~divine_remix/baf/oghma_ar0901.baf~
 @@ -1391,8 +1391,8 @@
  
      COPY_EXISTING ~%creature%.cre~ ~override~
@@ -107,6 +296,82 @@
        BUT_ONLY
  
    END
+@@ -1417,12 +1417,12 @@
+   BUT_ONLY_IF_IT_CHANGES
+   
+ COPY ~divine_remix/spl/cdsune2.spl~ ~override~
+-  PATCH_IF ((GAME_IS ~bgee bg2ee~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
++  PATCH_IF ((GAME_IS ~bgee bg2ee eet~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
+     PATCH_IF FILE_EXISTS_IN_GAME ~howparty.2da~ BEGIN // iwdee
+       SAY NAME1 @12411
+       READ_LONG NAME1 bio
+     END ELSE BEGIN // bgee/bg2ee bio
+-      PATCH_IF GAME_IS ~bg2ee~ BEGIN // bg2ee
++      PATCH_IF GAME_IS ~bg2ee eet~ BEGIN // bg2ee
+         SET bio = "-1"
+       END ELSE BEGIN // bgee
+         SET bio  = 15884
+@@ -1505,7 +1505,7 @@
+ ///// Stronghold fixes                                 \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN // temple stronghold stuff
++ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold stuff
+ 
+   EXTEND_TOP ~ar0900.bcs~   ~Divine_Remix/baf/sune_ar0900.baf~
+   EXTEND_TOP ~ar0902.bcs~   ~Divine_Remix/baf/sune_ar0902.baf~
+@@ -1527,13 +1527,13 @@
+ 
+ //save vs.death bonus
+ COPY ~divine_remix/spl/a#fey0a.spl~ ~override~
+-  PATCH_IF ((GAME_IS ~bgee bg2ee~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
++  PATCH_IF ((GAME_IS ~bgee bg2ee eet~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
+     PATCH_IF FILE_EXISTS_IN_GAME ~howparty.2da~ BEGIN // iwdee
+       SAY NAME1 @12710
+       READ_LONG NAME1 bio
+       WRITE_LONG NAME1 `0
+     END ELSE BEGIN // bgee/bg2ee bio
+-      PATCH_IF GAME_IS ~bg2ee~ BEGIN // bg2ee
++      PATCH_IF GAME_IS ~bg2ee eet~ BEGIN // bg2ee
+         SET bio = "-1"
+       END ELSE BEGIN // bgee
+         SET bio  = 15884
+@@ -1618,7 +1618,7 @@
+ ///// Stronghold fixes                                 \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN // temple stronghold stuff
++ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold stuff
+ 
+   EXTEND_TOP ~ar0900.bcs~   ~divine_remix/baf/Corellon_ar0900.baf~
+   EXTEND_TOP ~ar0902.bcs~   ~divine_remix/baf/Corellon_ar0902.baf~
+@@ -1640,12 +1640,12 @@
+ 
+ //Dread Blast innate
+ COPY ~divine_remix/spl/a#cyr07.spl~ ~override~
+-  PATCH_IF ((GAME_IS ~bgee bg2ee~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
++  PATCH_IF ((GAME_IS ~bgee bg2ee eet~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
+     PATCH_IF FILE_EXISTS_IN_GAME ~howparty.2da~ BEGIN // iwdee
+       SAY NAME1 @13011
+       READ_LONG NAME1 bio
+     END ELSE BEGIN // bgee/bg2ee bio
+-      PATCH_IF GAME_IS ~bg2ee~ BEGIN // bg2ee
++      PATCH_IF GAME_IS ~bg2ee eet~ BEGIN // bg2ee
+         SET bio = "-1"
+       END ELSE BEGIN // bgee
+         SET bio  = 15884
+@@ -1725,9 +1725,9 @@
+ ///// Stronghold fixes                                 \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN // temple stronghold stuff
++ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold stuff
+ 
+-  ACTION_IF GAME_IS ~tob bg2ee bgt~ THEN BEGIN //Compile dialogue alteration for Cyric in the Pocket Plane
++  ACTION_IF GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN //Compile dialogue alteration for Cyric in the Pocket Plane
+ 
+     COMPILE ~divine_remix/dlg/cyricpp.d~
+ 
 @@ -1750,8 +1750,8 @@
  
      COPY_EXISTING ~%creature%.cre~ ~override~
@@ -118,6 +383,24 @@
        BUT_ONLY
  
    END
+@@ -1797,7 +1797,7 @@
+ 
+ //Alignment changes
+ COPY_EXISTING ~alignmnt.2da~ ~override~
+-  REPLACE_TEXTUALLY ~^\(DRUID\|FIGHTER_DRUID\|TOTEMIC_DRUID\|SHAPESHIFTER\|BEAST_FRIEND\)[ %TAB%]~ ~\1 0 1 0 1 1 1 0 1 0~
++  REPLACE_TEXTUALLY ~^\(DRUID\|FIGHTER_DRUID\|TOTEMIC_DRUID\|SHAPESHIFTER\|BEAST_FRIEND\)[ %TAB%]+.+~ ~\1 0 1 0 1 1 1 0 1 0~
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ PRINT @3
+@@ -2186,7 +2186,7 @@
+ 
+ BEGIN @60000 DESIGNATED 600 // component 600
+ GROUP @10
+-REQUIRE_PREDICATE GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee bgee~ @16
++REQUIRE_PREDICATE GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee eet bgee~ @16
+ REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
+ REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~109~ @4
+ 
 @@ -2211,8 +2211,8 @@
  
      COPY_EXISTING ~%creature%.cre~ ~override~
@@ -129,7 +412,37 @@
        BUT_ONLY
  
    END
-@@ -2289,8 +2289,8 @@
+@@ -2229,7 +2229,7 @@
+ 
+ BEGIN @60500 DESIGNATED 605
+ GROUP @11
+-REQUIRE_PREDICATE GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee bgee~ @16
++REQUIRE_PREDICATE GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee eet bgee~ @16
+ REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~200~ @8
+ 
+ // this file does nothing, it just allows other mods to detect this component
+@@ -2260,11 +2260,11 @@
+ 
+ BEGIN @61000 DESIGNATED 610
+ GROUP @10
+-REQUIRE_PREDICATE GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee bgee~ @16
++REQUIRE_PREDICATE GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee eet bgee~ @16
+ REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
+ REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~106~ @2
+ 
+-ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN BEGIN // Fate Spirit line if ToB is installed
++ACTION_IF GAME_INCLUDES ~tob~ THEN BEGIN // Fate Spirit line if ToB is installed
+ 
+   STRING_SET 65023 @61001
+ 
+@@ -2283,14 +2283,14 @@
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ OUTER_SET kit = "%A#SHAR%" // tempus
+-ACTION_FOR_EACH creature IN viconi6 viconi8 viconi9 viconi11 viconi13 viconi16 viconi4 viconi BEGIN
++ACTION_FOR_EACH creature IN viconi6 viconi8 viconi9 viconi11 viconi13 viconi16 viconi4 viconi viconi61 viconi6_ BEGIN
+ 
+   ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
  
      COPY_EXISTING ~%creature%.cre~ ~override~
        WRITE_SHORT   0x244 0
@@ -140,3 +453,20 @@
        BUT_ONLY
  
    END
+@@ -2315,6 +2315,7 @@
+ 
+ BEGIN @2000 DESIGNATED 1000
+ GROUP @10 GROUP @11 GROUP @13 // GROUP @12
++REQUIRE_PREDICATE (NOT ENGINE_IS ~bgee bg2ee iwdee~) ~This component is not compatible with EE engine.~
+ 
+ /////                                                  \\\\\
+ ///// add sphere descripts to base classes             \\\\\
+@@ -3623,7 +3624,7 @@
+ ///// hla stuff                                        \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~tob bg2ee bgt~ THEN BEGIN // hlas
++ACTION_IF GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN // hlas
+ 
+   COPY_EXISTING ~spcl900.spl~ ~override/cdprwrl.spl~ // hla whirlwind
+                 ~spcl906.spl~ ~override/cdprpwr.spl~ // hla power attack

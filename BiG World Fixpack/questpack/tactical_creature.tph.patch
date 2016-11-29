@@ -1,0 +1,111 @@
+--- questpack/tp2/tactical/tactical_creature.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/tactical/tactical_creature.tph	2016-11-21 22:38:34.623646800 -0500
+@@ -61,10 +61,10 @@
+ COPY ~questpack/creatures/drow/KRIN403.SPL~ ~override~
+   SAY 0x8 @287
+   SAY 0x50 @288
+-EXTEND_TOP ~WTASIGHT.BCS~ ~questpack/AI/ET_WTA.BAF~
+-EXTEND_TOP ~WTARSGT.BCS~ ~questpack/AI/ET_WTA.BAF~
+-EXTEND_TOP ~WDASIGHT.BCS~ ~questpack/AI/ET_WTA.BAF~
+-EXTEND_TOP ~WDARSGT.BCS~ ~questpack/AI/ET_WTA.BAF~
++EXTEND_TOP ~WTASIGHT.BCS~ ~questpack/AI/ET_WTA.BAF~ EVALUATE_BUFFER
++EXTEND_TOP ~WTARSGT.BCS~ ~questpack/AI/ET_WTA.BAF~ EVALUATE_BUFFER
++EXTEND_TOP ~WDASIGHT.BCS~ ~questpack/AI/ET_WTA.BAF~ EVALUATE_BUFFER
++EXTEND_TOP ~WDARSGT.BCS~ ~questpack/AI/ET_WTA.BAF~ EVALUATE_BUFFER
+ 
+ //////////////////////////////////////////////////////////////////////
+ /////////////////////// VAMPIRES /////////////////////////////////////
+@@ -76,7 +76,7 @@
+ // - Improve AI and redistribute abilities based on naming.
+ // - Yield XP rewards upon turning to clouds.
+ 
+-COMPILE ~questpack/creatures/compile/vampires~
++COMPILE EVALUATE_BUFFER ~questpack/creatures/compile/vampires~
+ 
+ COPY_EXISTING ~C6VAMP01.CRE~ ~override~
+               ~C6VFLM01.CRE~ ~override~
+@@ -206,10 +206,10 @@
+   SAY NAME1 @306
+   SAY NAME2 @306
+ 
+-COMPILE ~questpack/creatures/compile/mindflayers~
++COMPILE EVALUATE_BUFFER ~questpack/creatures/compile/mindflayers~
+ 
+-EXTEND_BOTTOM ~ar0711.bcs~ ~questpack/creatures/flayers_return.baf~
+-EXTEND_BOTTOM ~ar2400.bcs~ ~questpack/creatures/flayers_return.baf~
++EXTEND_BOTTOM ~ar0711.bcs~ ~questpack/creatures/flayers_return.baf~ EVALUATE_BUFFER
++EXTEND_BOTTOM ~ar2400.bcs~ ~questpack/creatures/flayers_return.baf~ EVALUATE_BUFFER
+ 
+ //////////////////////////////////////////////////////////////////////
+ /////////////////////// MUMMIES //////////////////////////////////////
+@@ -222,7 +222,7 @@
+   SAY NAME1 @181
+   SAY NAME1 @181
+ 
+-COMPILE ~questpack/creatures/compile/misc/d0mummy.baf~
++COMPILE EVALUATE_BUFFER ~questpack/creatures/compile/misc/d0mummy.baf~
+ 
+ COPY_EXISTING ~FSMUMM.CRE~ ~override~
+               ~FSMUMM2.CRE~ ~override~
+@@ -271,7 +271,7 @@
+ // - Improve AI.
+ // - Allow destruction of eyestalks during battle.
+ 
+-COMPILE ~questpack/creatures/compile/beholders~ USING
++COMPILE EVALUATE_BUFFER ~questpack/creatures/compile/beholders~ USING
+         ~%tra_path%/english/d0quest.tra~
+         ~%tra_path%/%LANGUAGE%/d0quest.tra~
+ 
+@@ -325,7 +325,7 @@
+ // - Standardise use of confusion.
+ // - Improve AI.
+ 
+-COMPILE ~questpack/creatures/compile/umber~
++COMPILE EVALUATE_BUFFER ~questpack/creatures/compile/umber~
+ 
+ COPY_EXISTING ~umbhul02.cre~ ~override~
+   PATCH_IF SOURCE_SIZE > 0x260 BEGIN
+@@ -407,8 +407,8 @@
+ BUT_ONLY
+ 
+ COPY ~questpack/creatures/compile/shadows/d0qpshad.vvc~ ~override~
+-EXTEND_TOP ~SHDWKILL.BCS~ ~questpack/creatures/compile/shadows/d0qpshad.baf~
+-COMPILE ~questpack/creatures/compile/shadows/d0qpshad.baf~
++EXTEND_TOP ~SHDWKILL.BCS~ ~questpack/creatures/compile/shadows/d0qpshad.baf~ EVALUATE_BUFFER
++COMPILE EVALUATE_BUFFER ~questpack/creatures/compile/shadows/d0qpshad.baf~
+ 
+ //////////////////////////////////////////////////////////////////////
+ /////////////////////// GIANTS ///////////////////////////////////////
+@@ -416,7 +416,7 @@
+ // Changes:
+ // - Grant Berserk to Elite Fire Giants.
+ 
+-COMPILE ~questpack/creatures/compile/misc/d0fgiant.baf~
++COMPILE EVALUATE_BUFFER ~questpack/creatures/compile/misc/d0fgiant.baf~
+ 
+ COPY_EXISTING ~HGMAG01.CRE~ ~override~
+               ~HGMAG02.CRE~ ~override~
+@@ -438,10 +438,10 @@
+ // - May now use a single-target web.
+ 
+ COPY ~questpack/creatures/d0spiweb.spl~ ~override~
+-EXTEND_TOP ~WTASIGHT.BCS~ ~questpack/AI/ET_WTA2.BAF~
+-EXTEND_TOP ~WTARSGT.BCS~ ~questpack/AI/ET_WTA2.BAF~
+-EXTEND_TOP ~WDASIGHT.BCS~ ~questpack/AI/ET_WTA2.BAF~
+-EXTEND_TOP ~WDARSGT.BCS~ ~questpack/AI/ET_WTA2.BAF~
++EXTEND_TOP ~WTASIGHT.BCS~ ~questpack/AI/ET_WTA2.BAF~ EVALUATE_BUFFER
++EXTEND_TOP ~WTARSGT.BCS~ ~questpack/AI/ET_WTA2.BAF~ EVALUATE_BUFFER
++EXTEND_TOP ~WDASIGHT.BCS~ ~questpack/AI/ET_WTA2.BAF~ EVALUATE_BUFFER
++EXTEND_TOP ~WDARSGT.BCS~ ~questpack/AI/ET_WTA2.BAF~ EVALUATE_BUFFER
+ 
+ //////////////////////////////////////////////////////////////////////
+ /////////////////////// SALAMANDERS //////////////////////////////////
+@@ -514,7 +514,7 @@
+   WRITE_BYTE 0x234 20
+ BUT_ONLY
+ 
+-COMPILE ~questpack/creatures/compile/misc/jatermin.baf~
++COMPILE EVALUATE_BUFFER ~questpack/creatures/compile/misc/jatermin.baf~
+         ~questpack/creatures/compile/misc/kobkam.baf~
+ 
+ COPY_EXISTING ~senorc01.cre~ ~override~

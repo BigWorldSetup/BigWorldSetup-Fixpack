@@ -1,0 +1,10 @@
+--- questpack/thieves/scripts/c6spwn5.baf	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/scripts/c6spwn5.baf	2016-11-21 11:41:20.632778100 -0500
+@@ -1,6 +1,6 @@
+ IF
+   Entered([ANYONE])
+-  Global("Chapter","GLOBAL",6)
++  Global("Chapter","GLOBAL",%bg2_chapter_6%)
+   GlobalGT("ShadowWork","GLOBAL",0)
+   Global("C6messSpawn","GLOBAL",0)
+   !GlobalGT("D0Maevar","GLOBAL",0)

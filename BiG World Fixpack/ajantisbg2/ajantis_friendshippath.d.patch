@@ -1,0 +1,71 @@
+--- ajantisbg2/dialogues/ajantis_friendshippath.d	2009-03-02 00:03:16.000000000 -0500
++++ Fixpack/ajantisbg2/dialogues/ajantis_friendshippath.d	2016-11-04 14:55:56.976711000 -0400
+@@ -79,12 +79,12 @@
+ IF ~~ THEN talk_0_02
+ SAY @9
+ + ~OR(2)
+-Global("Chapter","GLOBAL",1)
+-Global("Chapter","GLOBAL",2)~ + @10 + talk_0_fortsetzung
++Global("Chapter","GLOBAL",%bg2_chapter_1%)
++Global("Chapter","GLOBAL",%bg2_chapter_2%)~ + @10 + talk_0_fortsetzung
+ ++ @11 + talk_0_fortsetzung
+-+ ~GlobalGT("Chapter","GLOBAL",2)~ + @12 + talk_0_fortsetzung
+-+ ~Global("Chapter","GLOBAL",6)~ + @13 + talk_0_05
+-+ ~Global("Chapter","GLOBAL",6)~ + @14 + talk_0_05
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_2%)~ + @12 + talk_0_fortsetzung
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_6%)~ + @13 + talk_0_05
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_6%)~ + @14 + talk_0_05
+ ++ @15 + talk_0_fortsetzung
+ ++ @16 + talk_no_interest
+ END
+@@ -92,12 +92,12 @@
+ IF ~~ THEN talk_0_03
+ SAY @17
+ + ~OR(2)
+-Global("Chapter","GLOBAL",1)
+-Global("Chapter","GLOBAL",2)~ + @10 + talk_0_fortsetzung
++Global("Chapter","GLOBAL",%bg2_chapter_1%)
++Global("Chapter","GLOBAL",%bg2_chapter_2%)~ + @10 + talk_0_fortsetzung
+ ++ @11 + talk_0_fortsetzung
+-+ ~GlobalGT("Chapter","GLOBAL",2)~ + @12 + talk_0_fortsetzung
+-+ ~GlobalGT("Chapter","GLOBAL",5)~ + @13 + talk_0_05
+-+ ~GlobalGT("Chapter","GLOBAL",5)~ + @14 + talk_0_05
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_2%)~ + @12 + talk_0_fortsetzung
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)~ + @13 + talk_0_05
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)~ + @14 + talk_0_05
+ ++ @15 + talk_0_fortsetzung
+ ++ @16 + talk_no_interest
+ END
+@@ -117,7 +117,7 @@
+ 
+ IF ~~ THEN talk_0_fortsetzung
+ SAY @19
+-+ ~GlobalLT("Chapter","GLOBAL",4)~ + @24 + talk_0_fortsetzung_1
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @24 + talk_0_fortsetzung_1
+ ++ @25 + talk_0_fortsetzung_1
+ ++ @22 + talk_0_fortsetzung_1
+ ++ @23 + talk_0_fortsetzung_1
+@@ -352,8 +352,8 @@
+ ++ @82 DO ~SetGlobal("C#AjantisFriendTalk","GLOBAL",9)~ + talk_heritage_01
+ ++ @83 DO ~SetGlobal("C#AjantisFriendTalk","GLOBAL",9)~ + talk_heritage_02
+ ++ @84 DO ~SetGlobal("C#AjantisFriendTalk","GLOBAL",9)~ + talk_heritage_03
+-+ ~GlobalGT("Chapter","GLOBAL",5)~ + @85 DO ~SetGlobal("C#AjantisFriendTalk","GLOBAL",9)~ + talk_heritage_04
+-+ ~GlobalLT("Chapter","GLOBAL",6)~ + @86 DO ~SetGlobal("C#AjantisFriendTalk","GLOBAL",9)~ + talk_heritage_04
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)~ + @85 DO ~SetGlobal("C#AjantisFriendTalk","GLOBAL",9)~ + talk_heritage_04
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)~ + @86 DO ~SetGlobal("C#AjantisFriendTalk","GLOBAL",9)~ + talk_heritage_04
+ ++ @87 DO ~SetGlobal("C#AjantisFriendTalk","GLOBAL",9)~ + talk_heritage_08
+ END
+ 
+@@ -796,10 +796,10 @@
+ IF ~~ THEN talk_illusion_09
+ SAY @233
+ IF ~GlobalGT("udDrowPlot","GLOBAL",99)
+-GlobalGT("Chapter","GLOBAL",4)~ THEN + talk_illusion_10
++GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)~ THEN + talk_illusion_10
+ IF ~OR(2)
+ GlobalLT("udDrowPlot","GLOBAL",100)
+-GlobalLT("Chapter","GLOBAL",5)~ + talk_illusion_11
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_5%)~ + talk_illusion_11
+ END
+ 
+ IF ~~ THEN talk_illusion_10

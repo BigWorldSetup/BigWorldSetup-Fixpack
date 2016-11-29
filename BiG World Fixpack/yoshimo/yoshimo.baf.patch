@@ -1,0 +1,11 @@
+--- yoshimo/scripts/yoshimo.baf	2013-02-07 19:08:20.000000000 -0500
++++ Fixpack/yoshimo/scripts/yoshimo.baf	2016-11-21 23:06:18.882644400 -0500
+@@ -103,7 +103,7 @@
+     !StateCheck(Player1,CD_STATE_NOTVALID)
+     RealGlobalTimerExpired("I#YoshimoFriendTalksTimer","GLOBAL")
+     Global("I#YoshimoFriendTalks","GLOBAL",8)
+-    GlobalGT("chapter","GLOBAL",2)
++    GlobalGT("chapter","GLOBAL",%bg2_chapter_2%)
+ THEN
+   RESPONSE #100
+     IncrementGlobal("I#YoshimoFriendTalks","GLOBAL",1)

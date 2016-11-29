@@ -1,0 +1,22 @@
+--- questpack/tp2/quest/incomplete/oghma.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/incomplete/oghma.tph	2016-11-21 22:33:36.647761600 -0500
+@@ -2,15 +2,15 @@
+ SAY NAME1 @227
+ SAY NAME2 @227
+ 
+-COMPILE ~questpack/oghma/d0qplibr.baf~
++COMPILE EVALUATE_BUFFER ~questpack/oghma/d0qplibr.baf~
+ 
+-COMPILE ~questpack/oghma/dialog.d~
++COMPILE EVALUATE_BUFFER ~questpack/oghma/dialog.d~
+ 
+ ACTION_IF NOT FILE_EXISTS ~override/ar0319.bcs~ THEN BEGIN
+-COMPILE ~questpack/oghma/ar0319.baf~
++COMPILE EVALUATE_BUFFER ~questpack/oghma/ar0319.baf~
+ END
+ ACTION_IF FILE_EXISTS ~override/ar0319.bcs~ THEN BEGIN
+-EXTEND_TOP ~ar0319.bcs~ ~questpack/oghma/ar0319.baf~
++EXTEND_TOP ~ar0319.bcs~ ~questpack/oghma/ar0319.baf~ EVALUATE_BUFFER
+ END
+ 
+ COPY_EXISTING ~oghmonk1.cre~ ~override~

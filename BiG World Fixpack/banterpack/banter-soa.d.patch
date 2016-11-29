@@ -1,5 +1,5 @@
---- banterpack\dialogue\banter-soa.d	Sun May 18 18:40:40 2008
-+++ C:\BWP Patchstudio\patched files\banterpack\dialogue\banter-soa.d	Sat Dec 07 22:28:49 2013
+--- banterpack/dialogue/banter-soa.d	2008-05-18 09:10:40.000000000 -0400
++++ Fixpack/banterpack/dialogue/banter-soa.d	2016-11-26 02:07:14.339954300 -0500
 @@ -1171,7 +1171,8 @@
  REPLACE BVICONI
  

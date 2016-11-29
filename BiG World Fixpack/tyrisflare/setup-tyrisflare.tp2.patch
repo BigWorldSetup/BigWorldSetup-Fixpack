@@ -1,0 +1,181 @@
+--- tyrisflare/setup-tyrisflare.tp2	2015-08-04 11:05:38.957826300 -0400
++++ Fixpack/tyrisflare/setup-tyrisflare.tp2	2016-11-21 23:26:09.742399300 -0500
+@@ -5,6 +5,17 @@
+ ASK_EVERY_COMPONENT
+ 
+ ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++
+   LAF HANDLE_CHARSETS
+     INT_VAR
+       infer_charset = 1
+@@ -19,7 +30,7 @@
+ LANGUAGE ~English~ ~English~ ~TyrisFlare/Languages/English/Setup-TyrisFlare.tra~
+ 
+ BEGIN @0
+-  ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
++  ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+     LOAD_TRA ~TyrisFlare/Languages/English/ee.tra~
+   END
+ 
+@@ -30,7 +41,7 @@
+ 
+   // BAMs
+ 
+-  ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
++  ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+     COPY ~TyrisFlare/BAMs/CG#TFAMR.bmp~ ~override/CG#TFAMR.bmp~
+   END ELSE BEGIN
+     COPY ~TyrisFlare/BAMs/CG#TFAMR.bam~ ~override/CG#TFAMR.bam~
+@@ -246,7 +257,7 @@
+ 
+   // Dialogue
+ 
+-  ACTION_IF GAME_IS ~bg2ee~ BEGIN
++  ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+     ADD_JOURNAL EXISTING @4 @11 @26 USING ~TyrisFlare/Languages/%LANGUAGE%/BodhiAbduction.tra~
+   END
+ 
+@@ -293,7 +304,7 @@
+   // Portraits
+ 
+   COPY ~TyrisFlare/Portraits/G#TYRISL.bmp~ ~override/G#TYRISL.bmp~
+-  ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
++  ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+     COPY ~TyrisFlare/Portraits/G#TYRISM_ee.bmp~ ~override/G#TYRISM.bmp~
+          ~TyrisFlare/Portraits/G#TYRISS_ee.bmp~ ~override/G#TYRISS.bmp~
+   END ELSE BEGIN
+@@ -320,7 +331,7 @@
+   EXTEND_TOP ~aerie.bcs~ ~TyrisFlare/Scripts/BioWareNPCs/AERIE.baf~
+   EXTEND_TOP ~jaheira.bcs~ ~TyrisFlare/Scripts/BioWareNPCs/JAHEIRA.baf~
+   EXTEND_TOP ~viconia.bcs~ ~TyrisFlare/Scripts/BioWareNPCs/VICONIA.baf~
+-  ACTION_IF GAME_IS ~bg2ee~ BEGIN
++  ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+     EXTEND_TOP ~neera.bcs~ ~TyrisFlare/Scripts/BioWareNPCs/NEERA.baf~
+     EXTEND_TOP ~dorn.bcs~ ~TyrisFlare/Scripts/BioWareNPCs/DORN.baf~
+   END
+@@ -399,7 +410,7 @@
+     UNLESS ~G#Tyris~
+     IF ~25FILE~
+ 
+-  ACTION_IF GAME_IS ~tob bg2ee~ THEN BEGIN
++  ACTION_IF GAME_IS ~tob bg2ee eet~ THEN BEGIN
+     COPY_EXISTING ~interdia.2da~ ~override~
+       SET_2DA_ENTRY 17 1 2 ~BIMOEN2~
+       BUT_ONLY_IF_IT_CHANGES
+@@ -410,7 +421,7 @@
+      
+   // Throne of Bhaal Only Content
+ 
+-  ACTION_IF GAME_IS ~tob bg2ee~ THEN BEGIN
++  ACTION_IF GAME_IS ~tob bg2ee eet~ THEN BEGIN
+ 
+     // Creatures
+   
+@@ -516,7 +527,7 @@
+   
+     // Dialogue
+   
+-    COMPILE ~TyrisFlare/Dialogue/G#TRS25A.d~
++    COMPILE EVALUATE_BUFFER ~TyrisFlare/Dialogue/G#TRS25A.d~
+             ~TyrisFlare/Dialogue/G#TRS25P.d~
+             ~TyrisFlare/Dialogue/G#TRS25J.d~
+             ~TyrisFlare/Dialogue/BG#TRS25.d~
+@@ -533,8 +544,6 @@
+ 
+     EXTEND_TOP ~baldur25.bcs~ ~TyrisFlare/Scripts/BALDUR25.baf~
+ 
+-    EXTEND_TOP ~ar4000.bcs~ ~TyrisFlare/Scripts/AreaScripts/AR4000.baf~
+-    EXTEND_TOP ~ar4500.bcs~ ~TyrisFlare/Scripts/AreaScripts/AR4500.baf~
+     EXTEND_TOP ~ar6200.bcs~ ~TyrisFlare/Scripts/AreaScripts/AR6200.baf~
+ 
+     COMPILE ~TyrisFlare/Scripts/WraithScripts/G#TFCUTL.baf~
+@@ -598,12 +607,33 @@
+ 
+   LAF ~HANDLE_AUDIO~ STR_VAR audio_path = "TyrisFlare/Audio/ogg" END
+ 
++ACTION_IF GAME_IS ~eet~ BEGIN
++  INCLUDE ~EET/other/EET_functions.tph~
++  LAF ~EET_NPC_TRANSITION~
++    INT_VAR
++      type = 2
++    STR_VAR
++      dv = "G#Tyris"
++      override_SoA = "G#TYRIS"
++      override_ToB = "G#TYRS25"
++      dialog_ToB = "G#TRS25A"
++      traFile = EVAL "TyrisFlare/languages/%LANGUAGE%/g#trs25a.tra"
++      string = "@1" //Bring me Tyris, the amazon fighter/mage.
++      stringPosDV = "Viconia"
++      SummonedVar = "G#TF.TyrisSummoned"
++      SpawnPlaneVar = "G#TF.TyrisSpawnPlane"
++  END
++END ELSE BEGIN
++  COMPILE ~TyrisFlare/Dialogue/FATESP.d~ USING ~TyrisFlare/languages/%LANGUAGE%/g#trs25a.tra~
++  EXTEND_TOP ~ar4000.bcs~ ~TyrisFlare/Scripts/AreaScripts/AR4000.baf~
++  EXTEND_TOP ~ar4500.bcs~ ~TyrisFlare/Scripts/AreaScripts/AR4500.baf~
++END
+ 
+ BEGIN @101000
+   DESIGNATED 101
+   REQUIRE_COMPONENT ~Setup-TyrisFlare.tp2~ ~0~ @101001
+   SUBCOMPONENT @101002
+-  ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
++  ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+     COPY ~TyrisFlare/Portraits/Alternate1/G#TYRISL.bmp~ ~override/G#TYRISL.bmp~
+          ~TyrisFlare/Portraits/Alternate1/G#TYRISM_ee.bmp~ ~override/G#TYRISM.bmp~
+          ~TyrisFlare/Portraits/Alternate1/G#TYRISS_ee.bmp~ ~override/G#TYRISS.bmp~
+@@ -616,7 +646,7 @@
+ BEGIN @102000
+   REQUIRE_COMPONENT ~Setup-TyrisFlare.tp2~ ~0~ @101001
+   SUBCOMPONENT @101002
+-  ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
++  ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+     COPY ~TyrisFlare/Portraits/Alternate2/G#TYRISL.bmp~ ~override/G#TYRISL.bmp~
+          ~TyrisFlare/Portraits/Alternate2/G#TYRISM_ee.bmp~ ~override/G#TYRISM.bmp~
+          ~TyrisFlare/Portraits/Alternate2/G#TYRISS_ee.bmp~ ~override/G#TYRISS.bmp~
+@@ -629,7 +659,7 @@
+ BEGIN @103000
+   REQUIRE_COMPONENT ~Setup-TyrisFlare.tp2~ ~0~ @101001
+   SUBCOMPONENT @101002
+-  ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
++  ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+     COPY ~TyrisFlare/Portraits/Alternate3/G#TYRISL.bmp~ ~override/G#TYRISL.bmp~
+          ~TyrisFlare/Portraits/Alternate3/G#TYRISM_ee.bmp~ ~override/G#TYRISM.bmp~
+          ~TyrisFlare/Portraits/Alternate3/G#TYRISS_ee.bmp~ ~override/G#TYRISS.bmp~
+@@ -642,7 +672,7 @@
+ BEGIN @104000
+   REQUIRE_COMPONENT ~Setup-TyrisFlare.tp2~ ~0~ @101001
+   SUBCOMPONENT @101002
+-  ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
++  ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+     COPY ~TyrisFlare/Portraits/Alternate4/G#TYRISL.bmp~ ~override/G#TYRISL.bmp~
+          ~TyrisFlare/Portraits/Alternate4/G#TYRISM_ee.bmp~ ~override/G#TYRISM.bmp~
+          ~TyrisFlare/Portraits/Alternate4/G#TYRISS_ee.bmp~ ~override/G#TYRISS.bmp~
+@@ -655,7 +685,7 @@
+ BEGIN @105000
+   REQUIRE_COMPONENT ~Setup-TyrisFlare.tp2~ ~0~ @101001
+   SUBCOMPONENT @101002
+-  ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
++  ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+     COPY ~TyrisFlare/Portraits/Alternate5/G#TYRISL.bmp~ ~override/G#TYRISL.bmp~
+          ~TyrisFlare/Portraits/Alternate5/G#TYRISM_ee.bmp~ ~override/G#TYRISM.bmp~
+          ~TyrisFlare/Portraits/Alternate5/G#TYRISS_ee.bmp~ ~override/G#TYRISS.bmp~
+@@ -668,7 +698,7 @@
+ BEGIN @106000
+   REQUIRE_COMPONENT ~Setup-TyrisFlare.tp2~ ~0~ @101001
+   SUBCOMPONENT @101002
+-  ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
++  ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+     COPY ~TyrisFlare/Portraits/Alternate6/G#TYRISL.bmp~ ~override/G#TYRISL.bmp~
+          ~TyrisFlare/Portraits/Alternate6/G#TYRISM_ee.bmp~ ~override/G#TYRISM.bmp~
+          ~TyrisFlare/Portraits/Alternate6/G#TYRISS_ee.bmp~ ~override/G#TYRISS.bmp~

@@ -1,6 +1,77 @@
---- questpack\tp2\quest\coronet.tph	Sun Sep 06 00:50:58 2015
-+++ C:\BWP Patchstudio\patched files\questpack\tp2\quest\coronet.tph	Fri Aug 26 07:42:29 2016
-@@ -125,6 +125,15 @@
+--- questpack/tp2/quest/coronet.tph	2015-09-06 01:50:58.000000000 -0400
++++ Fixpack/questpack/tp2/quest/coronet.tph	2016-11-26 02:11:40.687582800 -0500
+@@ -1,7 +1,7 @@
+ ACTION_IF !FILE_EXISTS_IN_GAME j#klsyj.dlg AND
+           !FILE_EXISTS_IN_GAME fwketo.dlg
+ BEGIN
+-  COMPILE ~questpack/coronet/dialog.d~ USING
++  COMPILE EVALUATE_BUFFER ~questpack/coronet/dialog.d~ USING
+           ~%tra_path%/english/coronet.tra~
+           ~%tra_path%/%LANGUAGE%/coronet.tra~
+ END
+@@ -12,7 +12,7 @@
+ ACTION_IF FILE_EXISTS_IN_GAME j#klsyj.dlg AND
+           FILE_EXISTS_IN_GAME fwketo.dlg
+ BEGIN
+-  COMPILE ~questpack/coronet/dialog.d~
++  COMPILE EVALUATE_BUFFER ~questpack/coronet/dialog.d~
+           ~questpack/coronet/kelseydialog.d~
+           ~questpack/coronet/ketodialog.d~ USING
+           ~%tra_path%/english/coronet.tra~
+@@ -22,7 +22,7 @@
+ ACTION_IF FILE_EXISTS_IN_GAME j#klsyj.dlg AND
+           !FILE_EXISTS_IN_GAME fwketo.dlg
+ BEGIN
+-  COMPILE ~questpack/coronet/dialog.d~
++  COMPILE EVALUATE_BUFFER ~questpack/coronet/dialog.d~
+           ~questpack/coronet/kelseydialog.d~ USING
+           ~%tra_path%/english/coronet.tra~
+           ~%tra_path%/%LANGUAGE%/coronet.tra~
+@@ -31,7 +31,7 @@
+ ACTION_IF !FILE_EXISTS_IN_GAME j#klsyj.dlg AND
+           FILE_EXISTS_IN_GAME fwketo.dlg
+ BEGIN
+-  COMPILE ~questpack/coronet/dialog.d~
++  COMPILE EVALUATE_BUFFER ~questpack/coronet/dialog.d~
+           ~questpack/coronet/ketodialog.d~ USING
+           ~%tra_path%/english/coronet.tra~
+           ~%tra_path%/%LANGUAGE%/coronet.tra~
+@@ -86,7 +86,7 @@
+   SAY NAME1 @175
+   SAY NAME2 @175
+ 
+-COMPILE ~questpack/coronet/scripts/d0beat.baf~
++COMPILE EVALUATE_BUFFER ~questpack/coronet/scripts/d0beat.baf~
+         ~questpack/coronet/scripts/d0beat2.baf~
+         ~questpack/coronet/scripts/d0boy.baf~
+         ~questpack/coronet/scripts/d0poor.baf~
+@@ -97,19 +97,19 @@
+         ~questpack/coronet/scripts/d0debt.baf~
+         ~questpack/coronet/scripts/d0thug4.baf~
+ 
+-EXTEND_TOP ~ar0400.bcs~ ~questpack/coronet/scripts/ar0400.baf~
++EXTEND_TOP ~ar0400.bcs~ ~questpack/coronet/scripts/ar0400.baf~ EVALUATE_BUFFER
+ 
+-EXTEND_TOP ~ar0406.bcs~ ~questpack/coronet/scripts/ar0406.baf~
++EXTEND_TOP ~ar0406.bcs~ ~questpack/coronet/scripts/ar0406.baf~ EVALUATE_BUFFER
+ 
+-EXTEND_TOP ar0812.bcs ~questpack/coronet/scripts/ar0812.baf~ USING
++EXTEND_TOP ar0812.bcs ~questpack/coronet/scripts/ar0812.baf~ EVALUATE_BUFFER USING
+                       ~%tra_path%/english/coronet.tra~
+                       ~%tra_path%/%LANGUAGE%/coronet.tra~
+ 
+-EXTEND_BOTTOM ~ar1602.bcs~ ~questpack/coronet/scripts/ar1602.baf~
++EXTEND_BOTTOM ~ar1602.bcs~ ~questpack/coronet/scripts/ar1602.baf~ EVALUATE_BUFFER
+ 
+-EXTEND_BOTTOM ~player1d.bcs~ ~questpack/coronet/scripts/player1d.baf~
++EXTEND_BOTTOM ~player1d.bcs~ ~questpack/coronet/scripts/player1d.baf~ EVALUATE_BUFFER
+ 
+-EXTEND_TOP ~baldur.bcs~ ~questpack/coronet/scripts/et_spawn.baf~
++EXTEND_TOP ~baldur.bcs~ ~questpack/coronet/scripts/et_spawn.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~ar0812.are~ ~override~
+   WRITE_ASCII 0x94 "ar0812" #8
+@@ -125,17 +125,26 @@
    END
  BUT_ONLY
  
@@ -16,3 +87,16 @@
  COPY_EXISTING ~mazzy.bcs~ ~override~
    DECOMPILE_AND_PATCH BEGIN
      REPLACE_TEXTUALLY ~See("surly")~ ~See("surly") !Dead("surly")~
+   END
+ BUT_ONLY
+ 
+-EXTEND_TOP ~mazzy.bcs~ ~questpack/coronet/scripts/et_mazzy.baf~
++EXTEND_TOP ~mazzy.bcs~ ~questpack/coronet/scripts/et_mazzy.baf~ EVALUATE_BUFFER
+ 
+ // Surly returns
+ COPY_EXISTING ~thumb.cre~ ~override~
+   WRITE_ASCII 0x280 "thumb" #32
+ BUT_ONLY
+ 
+-EXTEND_TOP ~ar0313.bcs~ ~questpack/coronet/scripts/ar0313.baf~
++EXTEND_TOP ~ar0313.bcs~ ~questpack/coronet/scripts/ar0313.baf~ EVALUATE_BUFFER

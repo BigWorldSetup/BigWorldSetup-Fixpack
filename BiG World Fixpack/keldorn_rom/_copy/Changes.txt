@@ -1,0 +1,41 @@
+Patching keldorn_rom/setup-keldorn_rom.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching keldorn_rom/setup-keldorn_rom.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching keldorn_rom/setup-keldorn_rom.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching keldorn_rom/setup-keldorn_rom.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching keldorn_rom/dialogue/b!interjections.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching keldorn_rom/dialogue/b!interjections.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching keldorn_rom/dialogue/b!interjections.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching keldorn_rom/dialogue/b!interjections.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching keldorn_rom/dialogue/b!interjections.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching keldorn_rom/dialogue/b!interjections.d: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching keldorn_rom/script/b!keldorn_rom.baf: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keldorn_rom/script/b!keldorn_rom.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keldorn_rom/script/b!keldorn_rom.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keldorn_rom/script/b!keldorn_rom_d.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keldorn_rom/script/b!keldorn_rom_d.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keldorn_rom/script/b!keldorn_rom_d.baf: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching keldorn_rom/script/b!keldorn_rom_d.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keldorn_rom/script/b!keldorn_rom_d.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keldorn_rom/script/b!keldorn_rom_d.baf: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching keldorn_rom/script/b!keldorn_rom_d.baf: GlobalLT("Chapter","GLOBAL",8) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Patching keldorn_rom/script/with_music/b!keldorn_rom.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keldorn_rom/script/with_music/b!keldorn_rom.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keldorn_rom/script/with_music/b!keldorn_rom_d.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keldorn_rom/script/with_music/b!keldorn_rom_d.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keldorn_rom/script/with_music/b!keldorn_rom_d.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keldorn_rom/script/with_music/b!keldorn_rom_d.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching keldorn_rom/setup-keldorn_rom.tp2: ALWAYS command expanded
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+---------
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

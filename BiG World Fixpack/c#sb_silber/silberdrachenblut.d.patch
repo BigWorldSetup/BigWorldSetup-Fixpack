@@ -1,5 +1,5 @@
---- c#sb_silber\dialoge\silberdrachenblut.d	Mon Jun 22 19:55:26 2009
-+++ C:\BWP Patchstudio\patched files\c#sb_silber\dialoge\silberdrachenblut.d	Sat Nov 28 21:45:21 2015
+--- c#sb_silber/dialoge/silberdrachenblut.d	2009-06-22 20:55:26.000000000 -0400
++++ Fixpack/c#sb_silber/dialoge/silberdrachenblut.d	2016-11-26 02:07:14.706705300 -0500
 @@ -108,7 +108,7 @@
  EraseJournalEntry(@32)
  EraseJournalEntry(@49)

@@ -1,5 +1,5 @@
---- Skie\DIALOGUES\1xSkii1.d	Sun May 01 16:28:00 2011
-+++ C:\BWP Patchstudio\patched files\Skie\DIALOGUES\1xSkii1.d	Sat Nov 28 22:07:43 2015
+--- Skie/DIALOGUES/1xSkii1.d	2011-05-01 17:28:00.000000000 -0400
++++ Fixpack/Skie/DIALOGUES/1xSkii1.d	2016-11-26 02:07:17.988607700 -0500
 @@ -8,5 +8,5 @@
  
  IF~~THEN BEGIN Skitem00x01
@@ -7,4 +7,3 @@
 -IF~~ THEN DO ~SetGlobal("SkieItemTalk1","GLOBAL",1)~ DO ~EscapeArea()~ EXIT
 +IF~~ THEN DO ~SetGlobal("SkieItemTalk1","GLOBAL",1) EscapeArea()~ EXIT
  END
-\ No newline at end of file

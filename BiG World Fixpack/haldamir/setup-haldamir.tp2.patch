@@ -1,6 +1,6 @@
---- haldamir\setup-haldamir.tp2	Sun May 31 14:04:10 2015
-+++ C:\BWP Patchstudio\patched files\haldamir\setup-haldamir.tp2	Fri Jun 26 22:34:37 2015
-@@ -3,7 +3,7 @@
+--- haldamir/setup-haldamir.tp2	2015-05-31 15:04:10.510521000 -0400
++++ Fixpack/haldamir/setup-haldamir.tp2	2016-11-23 09:18:23.313417000 -0500
+@@ -3,28 +3,51 @@
  
  //MODDER
  
@@ -8,4 +8,94 @@
 +VERSION ~v3 BWP Fix~
  
  README ~haldamir/readme-haldamir.html~
+ 
+ AUTO_TRA ~haldamir/tra/%s~
+ 
+-LANGUAGE ~English~ ~English~ ~haldamir/tra/english/setup-haldamir.tra~
+-LANGUAGE ~German~ ~german~ ~haldamir/tra/german/setup-haldamir.tra~
+-
+-BEGIN @1
++ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
+ 
+-/* In case the mod gets several component, this would have to be moved to the ALWAYS block */
++  ACTION_IF (NOT ~%LANGUAGE%~ STR_EQ ~English~) THEN BEGIN // not needed for English because the tra files are already UTF-8 encoded
++    // No exception, everything needs to be converted
++    ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
+ 
+-ACTION_DEFINE_ARRAY fl#reload BEGIN setup-haldamir END
++    // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
++    ACTION_DEFINE_ARRAY tra#reload BEGIN setup-haldamir END
+ 
++    ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN // HANDLE_CHARSETS doesn't work with iconv_path containing spaces
++      AT_NOW ~if not exist "iconv" move "BiG World Fixpack\_utils\iconv" "iconv"~
++    END
+    LAF HANDLE_CHARSETS
+     INT_VAR
+-      infer_charset = 1
++        infer_charsets = 1
+     STR_VAR
+-      tra_path = EVAL ~haldamir/tra~
+-      reload_array = fl#reload
++        tra_path = EVAL ~%MOD_FOLDER%/tra~
++        charset_table = tra#charsets
++        noconvert_array = tra#noconvert
++        reload_array = tra#reload
++        iconv_path = ~iconv~ // provided by BiG World Fixpack
+   END
++  END // not English
++END
++
++LANGUAGE ~English~ ~English~ ~haldamir/tra/english/setup-haldamir.tra~
++LANGUAGE ~German~ ~german~ ~haldamir/tra/german/setup-haldamir.tra~
++
++BEGIN @1
+ 
+ APPEND ~STATE.IDS~
+   ~0x80101FEF CD_STATE_NOTVALID~
+@@ -61,9 +84,12 @@
+ */
+ 
+ 
+-ACTION_IF FILE_EXISTS_IN_GAME ~saradush.mve~ THEN BEGIN
++ACTION_IF FILE_EXISTS_IN_GAME ~saradush.mve~ THEN BEGIN // doesn't affect EE, which uses WBM instead of MVE
+   COPY_EXISTING ~interdia.2da~ ~override~
++	READ_2DA_ENTRY 17 1 2 scriptname
++	PATCH_IF (~%scriptname%~ STR_EQ ~IMOEN~) BEGIN
+     SET_2DA_ENTRY 17 1 2 ~BIMOEN2~ // fixes ToB version
++	END
+     BUT_ONLY_IF_IT_CHANGES
+ END ELSE BEGIN
+   APPEND ~interdia.2da~ ~IMOEN       BIMOEN2~ // fixes SoA version
+@@ -84,7 +110,7 @@
+ 
+ 
+ /*BGII:EE scales down the portraits, so: */
+-ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+ COPY ~haldamir/character/b!haldal.bmp~ ~override/b!haldam.bmp~
+ COPY ~haldamir/character/b!haldal.bmp~ ~override/b!haldas.bmp~
+ END
+@@ -150,11 +176,11 @@
+ /* dialogue compilation */  
+ COMPILE ~haldamir/dialogue/b!hal.d~
+ COMPILE ~haldamir/dialogue/b!halj.d~
+-COMPILE ~haldamir/dialogue/b!halp.d~
++COMPILE EVALUATE_BUFFER ~haldamir/dialogue/b!halp.d~
+ COMPILE ~haldamir/dialogue/bb!hal.d~
+ 
+ /* script compilation */
+-COMPILE ~haldamir/script/b!hals.baf~
++COMPILE EVALUATE_BUFFER ~haldamir/script/b!hals.baf~
+ COMPILE ~haldamir/script/b!hald.baf~
+ EXTEND_TOP ~AR0700.bcs~ ~haldamir/script/b!ar0700.baf~
  

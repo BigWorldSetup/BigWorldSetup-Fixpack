@@ -1,0 +1,16 @@
+--- questpack/encounters/blue/lmindi.d	2014-12-29 15:13:20.000000000 -0500
++++ Fixpack/questpack/encounters/blue/lmindi.d	2016-11-21 11:23:48.472135500 -0500
+@@ -1,11 +1,11 @@
+ BEGIN ~lmindi~
+ 
+-IF ~!GlobalGT("chapter","GLOBAL",5)~ I_0
++IF ~!GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)~ I_0
+ SAY @0
+ IF ~~ THEN EXIT
+ END
+ 
+-IF ~GlobalGT("chapter","GLOBAL",5)
++IF ~GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+ Global("SpokeOnce","LOCALS",0)~ I_1
+ SAY @1
+ = @2

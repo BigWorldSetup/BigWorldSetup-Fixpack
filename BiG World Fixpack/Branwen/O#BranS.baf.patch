@@ -1,0 +1,38 @@
+--- Branwen/Scripts/O#BranS.baf	2013-09-04 10:47:38.000000000 -0400
++++ Fixpack/Branwen/Scripts/O#BranS.baf	2016-11-21 16:36:20.884437400 -0500
+@@ -154,7 +154,7 @@
+ !StateCheck(Myself,CD_STATE_NOTVALID)
+ CombatCounter(0)
+ !See([ENEMY])
+-Global("Chapter","GLOBAL",4)            // that's the actual condition: Chapter=4. No dungeon check, since we're in Brynnlaw
++Global("Chapter","GLOBAL",%bg2_chapter_4%)            // that's the actual condition: Chapter=4. No dungeon check, since we're in Brynnlaw
+ Global("O#BranChapter4","GLOBAL",0)
+ THEN
+ RESPONSE #100
+@@ -169,7 +169,7 @@
+ !StateCheck(Myself,CD_STATE_NOTVALID)
+ CombatCounter(0)
+ !See([ENEMY])
+-Global("Chapter","GLOBAL",5)           // No dungeon check, since we're in the Underdark. Which is a big dungeon.
++Global("Chapter","GLOBAL",%bg2_chapter_5%)           // No dungeon check, since we're in the Underdark. Which is a big dungeon.
+ Global("O#BranChapter5","GLOBAL",0)
+ THEN
+ RESPONSE #100
+@@ -185,7 +185,7 @@
+ !StateCheck(Myself,CD_STATE_NOTVALID)
+ CombatCounter(0)
+ !See([ENEMY])
+-Global("Chapter","GLOBAL",7)           // No dungeon check, since we're in Suldanessellar.
++Global("Chapter","GLOBAL",%bg2_chapter_7%)           // No dungeon check, since we're in Suldanessellar.
+ Global("O#BranChapter7","GLOBAL",0)
+ THEN
+ RESPONSE #100
+@@ -446,7 +446,7 @@
+ See(Player1)
+ CombatCounter(0)
+ !See([ENEMY])
+-!Global("Chapter","GLOBAL",5)                   // No flirting in the Underdark.
++!Global("Chapter","GLOBAL",%bg2_chapter_5%)                   // No flirting in the Underdark.
+ Global("O#BranFlirt","GLOBAL",0)
+ THEN
+ RESPONSE #100

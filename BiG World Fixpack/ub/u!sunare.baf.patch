@@ -1,0 +1,10 @@
+--- ub/suna/u!sunare.baf	2015-03-19 09:57:28.000000000 -0400
++++ Fixpack/ub/suna/u!sunare.baf	2016-11-21 23:25:34.517494000 -0500
+@@ -1,6 +1,6 @@
+ IF
+   Global("RandomEncounters","GLOBAL",0)
+-  GlobalLT("Chapter","GLOBAL",4)
++  GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+ THEN
+   RESPONSE #100
+     SetGlobal("RandomEncounters","GLOBAL",1)

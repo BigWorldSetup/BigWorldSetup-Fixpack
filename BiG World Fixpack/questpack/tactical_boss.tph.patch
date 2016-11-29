@@ -1,0 +1,12 @@
+--- questpack/tp2/tactical/tactical_boss.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/tactical/tactical_boss.tph	2016-11-21 22:35:25.670770700 -0500
+@@ -1,7 +1,7 @@
+ INCLUDE ~questpack/tp2/ds.tpa~
+ 
+-COMPILE ~questpack/boss/compile~
++COMPILE EVALUATE_BUFFER ~questpack/boss/compile~
+ 
+-EXTEND_BOTTOM ~ppbodhi4.bcs~ ~questpack/boss/ppbodhi4.baf~
++EXTEND_BOTTOM ~ppbodhi4.bcs~ ~questpack/boss/ppbodhi4.baf~ EVALUATE_BUFFER
+ 
+ LAF fix_c6scripts END

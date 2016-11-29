@@ -1,0 +1,96 @@
+Patching sarahtob/setup-sarahtob.tp2: GAME_IS ~bg2ee~ BEGIN => GAME_IS ~bg2ee eet~ BEGIN
+Patching sarahtob/dialogues/k#sarah.d: GlobalLT("Chapter","GLOBAL",3) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching sarahtob/dialogues/k#sarah.d: GlobalLT("Chapter","GLOBAL",3) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching sarahtob/dialogues/k#sarah.d: GlobalLT("Chapter","GLOBAL",3) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching sarahtob/dialogues/k#sarah.d: GlobalLT("Chapter","GLOBAL",3) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_3%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/dialogues/k#sarahj.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/scripts/k#sarah.baf: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/scripts/k#sarah.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching sarahtob/scripts/k#sarah.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/scripts/k#sarah.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching sarahtob/scripts/k#sarah.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching sarahtob/scripts/k#sarah.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching sarahtob/scripts/k#sarah.baf: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching sarahtob/setup-sarahtob.tp2: ALWAYS command expanded
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+-----------
+
+Manual edits:
+
+2. Below code from sarahtob/setup-sarahtob.tp2:
+
+COMPILE ~SarahToB/Dialogues/K#fates.d~
+
+Moved at the end of main component (see next step)
+
+3. New code added at the end of sarahtob/setup-sarahtob.tp2 main component
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+  INCLUDE ~EET/other/EET_functions.tph~
+  LAF ~EET_NPC_TRANSITION~
+    INT_VAR
+      type = 2
+    STR_VAR
+      dv = "K#SARAH"
+      override_SoA = "K#SARAH"
+      override_ToB = "K#SARA25"
+      dialog_ToB = "K#SARA25"
+      traFile = EVAL "SarahToB/translations/%LANGUAGE%/k#fates.tra"
+      string = "@1" //Bring me Sarah, the human ranger.
+      stringPosDV = "SharTeel"
+  END
+END ELSE BEGIN
+  COMPILE ~SarahToB/Dialogues/K#fates.d~
+END
+
+
+No need to add additional "Lover" option and variable sets. NPC won't be available if the game has been started in ToB without getting her in BG2
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

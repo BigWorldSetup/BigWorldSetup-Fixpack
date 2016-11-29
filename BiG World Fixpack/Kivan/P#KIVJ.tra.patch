@@ -1,5 +1,5 @@
---- Kivan\tra\english\P#KIVJ.tra	Sun May 20 10:40:28 2007
-+++ C:\BWP Patchstudio\patched files\Kivan\tra\english\P#KIVJ.tra	Fri Nov 12 16:42:56 2010
+--- kivan/tra/english/p#kivj.tra	2014-10-08 13:23:09.142030300 -0400
++++ Fixpack/kivan/tra/english/P#KIVJ.tra	2016-11-26 02:07:16.921078400 -0500
 @@ -62,7 +62,7 @@
  @61   = ~As usual. Demons, dragons, liches... they all sound formidable, until they find themselves on the wrong end of my blade.~
  @62   = ~It was a close one, <CHARNAME>, and we won it by no small amount of luck.  There is no shame in fearing a foe like this.~

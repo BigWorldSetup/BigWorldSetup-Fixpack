@@ -1,0 +1,9 @@
+--- kivan/baf/p#anom.baf	2008-05-03 08:54:34.390625000 -0400
++++ Fixpack/kivan/baf/p#anom.baf	2016-11-21 10:15:58.821271300 -0500
+@@ -1,5 +1,5 @@
+ IF
+-Global("Chapter","GLOBAL",2)
++Global("Chapter","GLOBAL",%bg2_chapter_2%)
+ Global("P#AnomenSaerk","GLOBAL",1)
+ Global("AnomenIsKnight","GLOBAL",1)
+ Alignment("ANOMEN", LAWFUL_GOOD)

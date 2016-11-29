@@ -1,0 +1,46 @@
+--- questpack/tp2/quest/phluafae.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/phluafae.tph	2016-11-21 22:32:14.045522100 -0500
+@@ -52,20 +52,20 @@
+     END
+   END
+ 
+-EXTEND_TOP ~AR1300.bcs~ ~questpack/phluafae/appendAR1300.baf~
+-EXTEND_TOP ~AR1304.bcs~ ~questpack/phluafae/appendAR1300.baf~
+-EXTEND_TOP ~AR1200.bcs~ ~questpack/phluafae/appendAR1200.baf~
+-EXTEND_TOP ~baldur.bcs~ ~questpack/phluafae/baldurappend.baf~
+-EXTEND_TOP ~VAELASA.bcs~ ~questpack/phluafae/appendvae.baf~
++EXTEND_TOP ~AR1300.bcs~ ~questpack/phluafae/appendAR1300.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~AR1304.bcs~ ~questpack/phluafae/appendAR1300.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~AR1200.bcs~ ~questpack/phluafae/appendAR1200.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~baldur.bcs~ ~questpack/phluafae/baldurappend.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~VAELASA.bcs~ ~questpack/phluafae/appendvae.baf~ EVALUATE_BUFFER
+ 
+-COMPILE ~questpack/phluafae/SUFAKEA.baf~
++COMPILE EVALUATE_BUFFER ~questpack/phluafae/SUFAKEA.baf~
+         ~questpack/phluafae/SUFAKEB.baf~
+ 
+-COMPILE ~questpack/phluafae/SUINVIS.baf~
++COMPILE EVALUATE_BUFFER ~questpack/phluafae/SUINVIS.baf~
+         ~questpack/phluafae/SUMOUND.baf~
+ 
+ ACTION_IF !FILE_EXISTS_IN_GAME j#klsyj.dlg BEGIN
+-  COMPILE ~questpack/phluafae/dialog.d~ USING
++  COMPILE EVALUATE_BUFFER ~questpack/phluafae/dialog.d~ USING
+           ~%tra_path%/english/phluafae.tra~
+           ~%tra_path%/%LANGUAGE%/phluafae.tra~
+ END
+@@ -74,7 +74,7 @@
+  * Need to be compiled together due to label references
+  */
+ ACTION_IF FILE_EXISTS_IN_GAME j#klsyj.dlg BEGIN
+-  COMPILE ~questpack/phluafae/dialog.d~
++  COMPILE EVALUATE_BUFFER ~questpack/phluafae/dialog.d~
+           ~questpack/phluafae/kelsey.d~ USING
+           ~%tra_path%/english/phluafae.tra~
+           ~%tra_path%/%LANGUAGE%/phluafae.tra~
+@@ -84,4 +84,4 @@
+             ~%tra_path%/english/phluafae.tra~
+             ~%tra_path%/%LANGUAGE%/phluafae.tra~
+ 
+-COMPILE ~questpack/phluafae/SUDRYAD.baf~
++COMPILE EVALUATE_BUFFER ~questpack/phluafae/SUDRYAD.baf~

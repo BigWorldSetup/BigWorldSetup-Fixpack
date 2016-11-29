@@ -1,0 +1,38 @@
+--- questpack/tp2/tactical/tactical_area.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/tactical/tactical_area.tph	2016-11-21 22:34:32.796564100 -0500
+@@ -45,7 +45,7 @@
+   REPLACE_TEXTUALLY "BEHELD01" "UDELDER2" (8)
+ BUT_ONLY
+ 
+-EXTEND_TOP ~ar2101.bcs~ ~questpack/areas/ar2101.baf~
++EXTEND_TOP ~ar2101.bcs~ ~questpack/areas/ar2101.baf~ EVALUATE_BUFFER
+ 
+ //////////////////////////////////////////////////////////////////////
+ /////////////////////// TWISTED RUNE /////////////////////////////////
+@@ -56,7 +56,7 @@
+ // - Added equipment to Revan and Layenne.
+ 
+ // Twisted Rune
+-EXTEND_TOP ~ar1008.bcs~ ~questpack/areas/ar1008.baf~
++EXTEND_TOP ~ar1008.bcs~ ~questpack/areas/ar1008.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~HLVAXAL.CRE~ ~override~
+   WRITE_ASCII 0x260 "BEHELD01" #8
+@@ -101,7 +101,7 @@
+ 
+ COPY ~questpack/encounters/ding0/d0batho~ ~override~
+ 
+-COMPILE ~questpack/areas/kettaatk.baf~
++COMPILE EVALUATE_BUFFER ~questpack/areas/kettaatk.baf~
+ 
+ //////////////////////////////////////////////////////////////////////
+ /////////////////////// NORTH FOREST /////////////////////////////////
+@@ -109,6 +109,6 @@
+ // Changes:
+ // - Added new random spawns.
+ 
+-EXTEND_TOP ~ar1800.bcs~ ~questpack/areas/ar1800_top.baf~
++EXTEND_TOP ~ar1800.bcs~ ~questpack/areas/ar1800_top.baf~ EVALUATE_BUFFER
+ 
+-EXTEND_BOTTOM ~ar1800.bcs~ ~questpack/areas/ar1800.baf~
++EXTEND_BOTTOM ~ar1800.bcs~ ~questpack/areas/ar1800.baf~ EVALUATE_BUFFER

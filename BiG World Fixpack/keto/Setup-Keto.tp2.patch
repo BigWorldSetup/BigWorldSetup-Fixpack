@@ -1,11 +1,81 @@
---- Setup-Keto.tp2	Sat Nov 16 11:47:52 2013
-+++ C:\BWP Patchstudio\patched files\Setup-Keto.tp2	Sat Feb 13 20:57:45 2016
-@@ -1,7 +1,7 @@
+--- setup-keto.tp2	2013-11-16 01:17:52.000000000 -0500
++++ Fixpack/setup-keto.tp2	2016-11-22 12:40:46.550655400 -0500
+@@ -1,7 +1,23 @@
  BACKUP ~keto\Backup~
  AUTHOR ~jcompton@pocketplane.net~
-+VERSION ~V4 BWP Fix~
++
++VERSION ~v4 BWP Fix~
++
  README ~keto\KetoReadme.txt~
--
+ 
++ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++END
++
  LANGUAGE ~English~
           ~english~
           ~keto/english/setup.tra~
+@@ -278,7 +294,7 @@
+ SAY NAME2 @75
+ SAY DESC @76
+ 
+-ACTION_IF GAME_IS ~bg2ee~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ COPY ~keto\bams\ee~ ~override~
+ END ELSE BEGIN
+ COPY ~keto\bams\bg2~ ~override~
+@@ -324,7 +340,7 @@
+ 
+ COPY ~keto/pgblank/pgblank.mus~ ~music/pgblank.mus~
+ 
+-ACTION_IF GAME_IS ~bg2ee~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+   COPY ~keto/portraits/ee~ ~override~
+ END ELSE BEGIN
+   COPY ~keto/portraits/bg2~ ~override~
+@@ -335,11 +351,11 @@
+ 
+ // Compile dialogues
+ 
+-COMPILE ~keto/d/fwketo.d~
++COMPILE EVALUATE_BUFFER ~keto/d/fwketo.d~
+   USING ~keto/english/Keto.tra~
+   	~keto/%s/Keto.tra~
+ 
+-COMPILE ~keto/d/bfwketo.d~
++COMPILE EVALUATE_BUFFER ~keto/d/bfwketo.d~
+   USING ~keto/english/Keto.tra~
+   	~keto/%s/Keto.tra~
+ 
+@@ -347,11 +363,11 @@
+   USING ~keto/english/Keto.tra~
+   	~keto/%s/Keto.tra~
+ 
+-COMPILE ~keto/d/fwketoi.d~
++COMPILE EVALUATE_BUFFER ~keto/d/fwketoi.d~
+   USING ~keto/english/Keto.tra~
+   	~keto/%s/Keto.tra~
+ 
+-COMPILE ~keto/d/ketoquest.d~
++COMPILE EVALUATE_BUFFER ~keto/d/ketoquest.d~
+   USING ~keto/english/Keto.tra~
+   	~keto/%s/Keto.tra~
+ 
+@@ -434,7 +450,7 @@
+   	~keto/%s/Ketokelsey.tra~
+ 
+ 
+-EXTEND_TOP ~j#klsyd.bcs~ ~keto/baf/j#klsyd.baf~
++EXTEND_TOP ~j#klsyd.bcs~ ~keto/baf/j#klsyd.baf~ EVALUATE_BUFFER
+ 
+ 
+ BEGIN @86

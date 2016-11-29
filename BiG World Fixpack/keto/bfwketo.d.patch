@@ -1,5 +1,14 @@
---- keto\d\bfwketo.d	Mon Nov 15 17:05:50 2004
-+++ C:\BWP Patchstudio\patched files\keto\d\bfwketo.d	Sat Feb 13 20:52:33 2016
+--- keto/d/bfwketo.d	2004-11-15 06:35:50.000000000 -0500
++++ Fixpack/keto/d/bfwketo.d	2016-11-21 10:19:21.450419200 -0500
+@@ -2223,7 +2223,7 @@
+ IF ~InParty("Viconia")
+ See("Viconia")
+ !StateCheck("Viconia",STATE_SLEEPING)
+-GlobalLT("Chapter","GLOBAL",5)
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_5%)
+ Global("PGVicKeto4", "LOCALS", 0)~ THEN BFWKeto UnderdarkTalk
+ @1516 
+ = @1517  DO ~SetGlobal("PGVicKeto4", "LOCALS", 1)~
 @@ -2424,9 +2424,9 @@
  
  

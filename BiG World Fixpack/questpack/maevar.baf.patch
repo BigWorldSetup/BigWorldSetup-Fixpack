@@ -1,0 +1,11 @@
+--- questpack/thieves/scripts/maevar.baf	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/scripts/maevar.baf	2016-11-21 22:36:11.932108000 -0500
+@@ -94,7 +94,7 @@
+     Global("D0MaevarHostile","GLOBAL",1)
+   Detect(NearestEnemyOf(Myself))
+   OR(2)
+-    GlobalGT("chapter","GLOBAL",5)
++    GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+     DifficultyGT(NORMAL)
+   Global("D0Protect2","LOCALS",0)
+ THEN

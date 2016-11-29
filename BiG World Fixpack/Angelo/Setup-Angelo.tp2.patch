@@ -1,46 +1,20 @@
---- Angelo\Setup-Angelo.tp2	Mon Nov 11 10:21:32 2013
-+++ D:\EE_Patchstudio\patched files\Angelo\Setup-Angelo.tp2	Wed Jan 20 19:33:08 2016
-@@ -6,7 +6,51 @@
+--- Angelo/Setup-Angelo.tp2	2013-11-11 04:21:32.000000000 -0500
++++ Fixpack/Angelo/Setup-Angelo.tp2	2016-11-22 15:25:49.020215500 -0500
+@@ -2,11 +2,56 @@
+ 
+ AUTHOR ~http://forums.gibberlings3.net~
+ 
+-VERSION ~v5~
++VERSION ~v5 BWP Fix~
  
  README ~Angelo/readme-angelo.html~
  
 -AUTO_TRA ~Angelo/%s~
-+AUTO_TRA "Angelo/%s"//%"
++AUTO_TRA "Angelo/%s"
 +
 +ALWAYS
-+
-+	ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN
-+		AT_NOW ~if not exist "iconv" mkdir iconv~
-+		AT_NOW ~if not exist "iconv\iconv.exe" copy "BiG World Fixpack\_utils\iconv" "iconv"~
-+	END
-+  
-+	ACTION_DEFINE_ASSOCIATIVE_ARRAY tra#charsets BEGIN
-+    english => cp1252
-+	british => cp1252
-+    french => cp1252
-+    spanish => cp1252
-+    russian => cp1251
-+    german => cp1252
-+	italian => cp1252
-+    polish => cp1250
-+    schinese => cp936
-+	END
-+	
-+	ACTION_DEFINE_ARRAY tra#reload BEGIN Setup-Angelo Setup-Angelo-EE END
-+	ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
-+
-+	LAF HANDLE_CHARSETS
-+		INT_VAR
-+			infer_charset = 0
-+		STR_VAR
-+			tra_path = EVAL ~Angelo~
-+			charset_table = tra#charsets
-+			noconvert_array = tra#noconvert
-+			reload_array = tra#reload
-+			iconv_path = ~iconv~
-+	END
-+  ACTION_IF (GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~EET_JOURNAL~) BEGIN
-+    OUTER_SET bg2_chapter = 14
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
 +  END ELSE BEGIN
 +    OUTER_SET bg2_chapter = 0
 +  END
@@ -49,62 +23,118 @@
 +    OUTER_SPRINT name_source ~bg2_chapter_%i%~
 +    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
 +  END
++
++  ACTION_DEFINE_ASSOCIATIVE_ARRAY tra#charsets BEGIN
++    english => cp1252
++    british => cp1252
++    french => cp1252
++    spanish => cp1252
++    russian => cp1251
++    german => cp1252
++    italian => cp1252
++    polish => cp1250
++    schinese => cp936
++  END
++
++  // No exception, everything needs to be converted
++  ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
++
++  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
++  ACTION_DEFINE_ARRAY tra#reload BEGIN Setup-Angelo END
++
++  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN // HANDLE_CHARSETS doesn't work with iconv_path containing spaces
++    AT_NOW ~if not exist "iconv" move "BiG World Fixpack\_utils\iconv" "iconv"~
++  END
++  LAF HANDLE_CHARSETS
++    INT_VAR
++      infer_charsets = 0
++    STR_VAR
++      tra_path = EVAL ~%MOD_FOLDER%~
++      charset_table = tra#charsets
++      noconvert_array = tra#noconvert
++      reload_array = tra#reload
++      iconv_path = ~iconv~ // provided by BiG World Fixpack
++  END
 +END
  
  LANGUAGE ~English~ ~English~ ~Angelo/English/Setup-Angelo.tra~
  
-@@ -25,7 +69,7 @@
+@@ -25,7 +70,7 @@
  
  COPY ~Angelo/Icons~ ~override~
  
 -ACTION_IF GAME_IS ~BG2EE~ BEGIN
-+ACTION_IF GAME_IS ~BG2EE eet~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
  LOAD_TRA ~Angelo/%LANGUAGE%/Setup-Angelo-EE.tra~
  ADD_JOURNAL EXISTING TITLE (#74337) @10012
  ADD_JOURNAL @10000 @10001 @10002 @10003 @10004 @10005 @10006 @10011
-@@ -33,7 +77,7 @@
+@@ -33,7 +78,7 @@
  
  COPY ~Angelo/Portraits/ADAngelL.bmp~ ~override~
  
 -ACTION_IF GAME_IS ~BG2EE~ BEGIN
-+ACTION_IF GAME_IS ~BG2EE eet~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
  COPY ~Angelo/Portraits/ADAngEEM.bmp~ ~override/ADAngelM.bmp~
  COPY ~Angelo/Portraits/ADAngEES.bmp~ ~override/ADAngelS.bmp~
  END ELSE BEGIN
-@@ -425,7 +469,7 @@
+@@ -425,7 +470,7 @@
  SAY NAME1 @57
  SAY NAME2 @57
  
 -COMPILE	~Angelo/Dialogue/BADAngel.d~
-+COMPILE	EVALUATE_BUFFER ~Angelo/Dialogue/BADAngel.d~
++COMPILE  EVALUATE_BUFFER ~Angelo/Dialogue/BADAngel.d~
  	~Angelo/Dialogue/ADAngel.d~
  	~Angelo/Dialogue/ADAngelJ.d~
  	~Angelo/Dialogue/ADAngelP.d~
-@@ -469,7 +513,7 @@
- ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN
- BEGIN
+@@ -466,10 +511,10 @@
+ 
+ EXTEND_TOP    ~AR0900.bcs~ ~Angelo/Scripts/AR0900.baf~
+ 
+-ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN
+-BEGIN
  
 -ACTION_IF GAME_IS ~BG2EE~ BEGIN
-+ACTION_IF GAME_IS ~BG2EE eet~ BEGIN
++ACTION_IF GAME_INCLUDES ~tob~ THEN BEGIN // ToB content
++
++  ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
  ADD_JOURNAL @10007 @10008 @10009 @10010
  END
  
-@@ -569,7 +613,7 @@
+@@ -569,7 +614,7 @@
  WRITE_ASCII 0x2cc ~ADNin02~ #8  // dialogue
  WRITE_ASCII 0x280 ~ADNin02~ #32 // death variable
  
 -COMPILE ~Angelo/Dialogue/BADAng25.d~
-+COMPILE EVALUATE_BUFFER ~Angelo/Dialogue/BADAng25.d~
++  COMPILE EVALUATE_BUFFER ~Angelo/Dialogue/BADAng25.d~
  	~Angelo/Dialogue/ADAng25.d~
  	~Angelo/Dialogue/ADAng25P.d~
  	~Angelo/Dialogue/ADAng25J.d~
-@@ -630,12 +674,30 @@
+@@ -608,7 +652,7 @@
+ COPY ~Angelo/Epilogue/ADAngzz.2da~ ~override/ADAng05.2da~
+ REPLACE ~99999~ @85
  
- END
+-END
++END // ToB content
+ 
+ APPEND ~interdia.2da~ ~ADANGEL     BADANGEL      BADANG25~
+ UNLESS ~ADANGEL~
+@@ -618,16 +662,24 @@
+ 
+ 
+ // sounds
+-ACTION_IF ("%WEIDU_ARCH%" STRING_COMPARE_CASE "x86" = 0) THEN BEGIN // if Windows
+-
+-  AT_NOW ~Angelo/Commands/ADAngelInstall.bat~
+-  AT_UNINSTALL ~Angelo/Commands/ADAngelUninstall.bat~
+-
+-END ELSE BEGIN // linux or OS X
+-
+-  AT_NOW ~sh Angelo/Commands/ADAngelInstall.sh~
+-  AT_UNINSTALL ~sh Angelo/Commands/ADAngelUninstall.sh~
++LAF HANDLE_AUDIO END
  
 +ACTION_IF GAME_IS ~eet~ BEGIN
-+  LOAD_TRA ~Angelo/%LANGUAGE%/adang25j.tra~
-+  INCLUDE ~Angelo/EET_functions.tph~
++  INCLUDE ~EET/other/EET_functions.tph~
 +  LAF ~EET_NPC_TRANSITION~
 +    INT_VAR
 +      type = 2
@@ -113,38 +143,39 @@
 +      override_SoA = "ADANGEL"
 +      override_ToB = "ADANG25"
 +      dialog_ToB = "ADANG25"
++      traFile = EVAL "Angelo/%LANGUAGE%/adang25j.tra"
 +      string = "@0" //Bring me Angelo, the human fighter/mage.
 +      stringPosDV = "Anomen"
 +  END
 +END ELSE BEGIN
 +  COMPILE ~Angelo/Dialogue/FATESP.d~ USING ~Angelo/%LANGUAGE%/adang25j.tra~
-+END
-+
+ END
+ 
  BEGIN @123
- SUBCOMPONENT @122
+@@ -635,7 +687,7 @@
  
  COPY ~Angelo/PortraitSisterV/ADAngelL.bmp~ ~override~
  
 -ACTION_IF GAME_IS ~BG2EE~ BEGIN
-+ACTION_IF GAME_IS ~BG2EE eet~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
  COPY ~Angelo/PortraitSisterV/ADAngEEM.bmp~ ~override/ADAngelM.bmp~
  COPY ~Angelo/PortraitSisterV/ADAngEES.bmp~ ~override/ADAngelS.bmp~
  END ELSE BEGIN
-@@ -648,7 +710,7 @@
+@@ -648,7 +700,7 @@
  
  COPY ~Angelo/PortraitAmaurea/ADAngelL.bmp~ ~override~
  
 -ACTION_IF GAME_IS ~BG2EE~ BEGIN
-+ACTION_IF GAME_IS ~BG2EE eet~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
  COPY ~Angelo/PortraitAmaurea/ADAngEEM.bmp~ ~override/ADAngelM.bmp~
  COPY ~Angelo/PortraitAmaurea/ADAngEES.bmp~ ~override/ADAngelS.bmp~
  END ELSE BEGIN
-@@ -661,7 +723,7 @@
+@@ -661,7 +713,7 @@
  
  COPY ~Angelo/PortraitCassinus/ADAngelL.bmp~ ~override~
  
 -ACTION_IF GAME_IS ~BG2EE~ BEGIN
-+ACTION_IF GAME_IS ~BG2EE eet~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
  COPY ~Angelo/PortraitCassinus/ADAngEEM.bmp~ ~override/ADAngelM.bmp~
  COPY ~Angelo/PortraitCassinus/ADAngEES.bmp~ ~override/ADAngelS.bmp~
  END ELSE BEGIN

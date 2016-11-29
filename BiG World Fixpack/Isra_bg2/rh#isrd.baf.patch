@@ -1,0 +1,29 @@
+--- Isra_bg2/scripts/rh#isrd.baf	2013-06-08 10:31:52.000000000 -0400
++++ Fixpack/Isra_bg2/scripts/rh#isrd.baf	2016-11-21 22:53:29.975067200 -0500
+@@ -7,7 +7,7 @@
+     !StateCheck(Player1,CD_STATE_NOTVALID)
+     CombatCounter(0)
+     !See([ENEMY])
+-    GlobalLT("chapter","GLOBAL",4)
++    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+     RealGlobalTimerExpired("rh#IsraTalksTimer","GLOBAL")
+     ReputationGT(Player1,9)
+     OR(11)
+@@ -40,7 +40,7 @@
+     !StateCheck(Player1,CD_STATE_NOTVALID)
+     CombatCounter(0)
+     !See([ENEMY])
+-    GlobalLT("chapter","GLOBAL",4)
++    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+     RealGlobalTimerExpired("rh#IsraTalksTimer","GLOBAL")
+     ReputationGT(Player1,13)
+     OR(2)
+@@ -101,7 +101,7 @@
+     !StateCheck(Player1,CD_STATE_NOTVALID)
+     CombatCounter(0)
+     !See([ENEMY])
+-    GlobalGT("chapter","GLOBAL",4)
++    GlobalGT("chapter","GLOBAL",%bg2_chapter_4%)
+     ReputationGT(Player1,9)
+     !Global("rh#IsraRomanceActive","GLOBAL",2)
+ 	Global("rh#IsraSpellhold","GLOBAL",0)

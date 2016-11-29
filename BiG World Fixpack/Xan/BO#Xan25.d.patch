@@ -1,0 +1,11 @@
+--- Xan/Dialogue/BO#Xan25.d	2007-04-16 16:00:24.000000000 -0400
++++ Fixpack/Xan/Dialogue/BO#Xan25.d	2016-11-21 16:33:04.093980800 -0500
+@@ -3150,7 +3150,7 @@
+ ++ @1292 + O#XanDTV8.5
+ ++ @1293 + O#XanDTV8.6
+ + ~!NumInParty(2)~ + @1294 + O#XanDTV8.7
+-+ ~Global("Chapter","GLOBAL",9)~ + @1295 + O#XanDTV8.7
+++ ~Global("Chapter","GLOBAL",%bg2_chapter_9%)~ + @1295 + O#XanDTV8.7
+ ++ @1296 + O#XanDTV8.8
+ END
+ 

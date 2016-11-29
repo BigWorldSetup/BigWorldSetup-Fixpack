@@ -1,0 +1,141 @@
+--- questpack/coronet/dialog.d	2014-12-29 15:13:20.000000000 -0500
++++ Fixpack/questpack/coronet/dialog.d	2016-11-21 11:24:07.293653200 -0500
+@@ -180,8 +180,8 @@
+   IF ~~ THEN REPLY @47 GOTO LE_10
+   IF ~CheckStatGT(LastTalkedToBy(Myself),15,WIS)~ THEN REPLY @48 GOTO LE_6a
+   IF ~CheckStatLT(LastTalkedToBy(Myself),16,WIS)~ THEN REPLY @49 GOTO LE_6a
+-  IF ~GlobalLT("chapter","GLOBAL",6)~ THEN REPLY @50 GOTO LE_Shadow
+-  IF ~GlobalGT("chapter","GLOBAL",5)~ THEN REPLY @50 GOTO LE_Shadow2
++  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_6%)~ THEN REPLY @50 GOTO LE_Shadow
++  IF ~GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)~ THEN REPLY @50 GOTO LE_Shadow2
+   IF ~Global("D0Poor","GLOBAL",2)~ THEN REPLY @51 GOTO LE_71
+   IF ~~ THEN REPLY @52 GOTO LE_3a
+ END
+@@ -193,8 +193,8 @@
+ 
+ IF ~~ THEN BEGIN LE_6a_LetKelseyTalkHere
+ SAY @54
+-  IF ~GlobalLT("chapter","GLOBAL",6)~ THEN REPLY @55 GOTO LE_Shadow
+-  IF ~GlobalGT("chapter","GLOBAL",5)~ THEN REPLY @55 GOTO LE_Shadow2
++  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_6%)~ THEN REPLY @55 GOTO LE_Shadow
++  IF ~GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)~ THEN REPLY @55 GOTO LE_Shadow2
+   IF ~~ THEN REPLY @56 GOTO LE_7
+   IF ~~ THEN REPLY @57 GOTO LE_10
+   IF ~Global("D0Poor","GLOBAL",2)~ THEN REPLY @51 GOTO LE_71
+@@ -207,8 +207,8 @@
+   IF ~~ THEN REPLY @45 GOTO LE_9
+   IF ~~ THEN REPLY @47 GOTO LE_10
+   IF ~~ THEN REPLY @49 GOTO LE_6a
+-  IF ~GlobalLT("chapter","GLOBAL",6)~ THEN REPLY @50 GOTO LE_Shadow
+-  IF ~GlobalGT("chapter","GLOBAL",5)~ THEN REPLY @50 GOTO LE_Shadow2
++  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_6%)~ THEN REPLY @50 GOTO LE_Shadow
++  IF ~GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)~ THEN REPLY @50 GOTO LE_Shadow2
+   IF ~Global("D0Poor","GLOBAL",2)~ THEN REPLY @51 GOTO LE_71
+   IF ~~ THEN REPLY @52 GOTO LE_3a
+ END
+--- questpack/harpers/dialog.d	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/harpers/dialog.d	2016-11-21 11:39:05.162909900 -0500
+@@ -71,8 +71,8 @@
+ CombatCounter(0)
+ InParty(Myself)
+ OR(2)
+-GlobalLT("chapter","GLOBAL",4)
+-GlobalGT("chapter","GLOBAL",5)~ BEGIN JA_SHAZ_COMPLAIN_1
++GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
++GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)~ BEGIN JA_SHAZ_COMPLAIN_1
+ SAY @1
+ IF ~~ THEN DO ~SetGlobal("D0JahShaz","GLOBAL",6)
+ SetGlobalTimer("D0NotGoingBernard","LOCALS",TWO_DAYS)~ EXIT
+@@ -84,8 +84,8 @@
+ CombatCounter(0)
+ InParty(Myself)
+ OR(2)
+-GlobalLT("chapter","GLOBAL",4)
+-GlobalGT("chapter","GLOBAL",5)~ BEGIN JA_SHAZ_COMPLAIN_2
++GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
++GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)~ BEGIN JA_SHAZ_COMPLAIN_2
+ SAY @2
+ IF ~!Global("JaheiraRomanceActive","GLOBAL",3)
+ !Global("JaheiraRomanceActive","GLOBAL",0)~ THEN DO ~SetGlobal("D0JahShaz","GLOBAL",4)
+@@ -109,8 +109,8 @@
+ CombatCounter(0)
+ InParty(Myself)
+ OR(2)
+-GlobalLT("chapter","GLOBAL",4)
+-GlobalGT("chapter","GLOBAL",5)~ BEGIN JA_SHAZ_COMPLAIN_2a
++GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
++GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)~ BEGIN JA_SHAZ_COMPLAIN_2a
+ SAY @3
+ IF ~!Global("JaheiraRomanceActive","GLOBAL",3)
+ !Global("JaheiraRomanceActive","GLOBAL",0)~ THEN DO ~SetGlobal("D0JahShaz","GLOBAL",4)
+@@ -136,8 +136,8 @@
+ !AreaCheckObject("ar0407",Player1)
+ !Dead("Bernard")
+ OR(2)
+-GlobalLT("chapter","GLOBAL",4)
+-GlobalGT("chapter","GLOBAL",5)~ THEN BEGIN JA_SHAZ_1
++GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
++GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)~ THEN BEGIN JA_SHAZ_1
+ SAY @4
+ IF ~~ THEN GOTO JS_2
+ END
+@@ -150,8 +150,8 @@
+ !AreaCheckObject("ar0407",Player1)
+ !Dead("Bernard")
+ OR(2)
+-GlobalLT("chapter","GLOBAL",4)
+-GlobalGT("chapter","GLOBAL",5)~ THEN BEGIN JA_SHAZ_2
++GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
++GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)~ THEN BEGIN JA_SHAZ_2
+ SAY @5
+ IF ~~ THEN GOTO JS_2
+ END
+@@ -164,8 +164,8 @@
+ !AreaCheckObject("ar0407",Player1)
+ !Dead("Bernard")
+ OR(2)
+-GlobalLT("chapter","GLOBAL",4)
+-GlobalGT("chapter","GLOBAL",5)~ THEN BEGIN JA_SHAZ_3
++GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
++GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)~ THEN BEGIN JA_SHAZ_3
+ SAY @6
+ = @7
+ IF ~~ THEN GOTO JS_2
+@@ -179,8 +179,8 @@
+ !AreaCheckObject("ar0407",Player1)
+ !Dead("Bernard")
+ OR(2)
+-GlobalLT("chapter","GLOBAL",4)
+-GlobalGT("chapter","GLOBAL",5)~ THEN BEGIN JA_SHAZ_4
++GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
++GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)~ THEN BEGIN JA_SHAZ_4
+ SAY @8
+ = @7
+ IF ~~ THEN GOTO JS_2
+@@ -490,7 +490,7 @@
+   IF ~~ THEN REPLY #22977 /* ~I notice you're all wearing the same necklace here.  Is there a purpose to that?~ */ GOTO 1
+   IF ~~ THEN REPLY #22981 /* ~What's so dangerous about the second floor?~ */ GOTO 2
+   IF ~~ THEN REPLY #42552 /* ~What can you tell me of the Shadow Thieves here in the city?~ */ GOTO 5
+-  IF ~GlobalLT("chapter","GLOBAL",4)~ THEN REPLY #42553 /* ~I'm searching for a friend who has been taken by the Cowled Wizards... do you know anything about this?~ */ GOTO 6
++  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY #42553 /* ~I'm searching for a friend who has been taken by the Cowled Wizards... do you know anything about this?~ */ GOTO 6
+   IF ~~ THEN REPLY #22980 /* ~No, I don't think so.~ */ GOTO 3
+ END
+ 
+@@ -570,7 +570,7 @@
+   IF ~~ THEN REPLY @69 GOTO 1
+   IF ~~ THEN REPLY #42537 /* ~Hmm.  Been with the Harpers long?~ */ GOTO 2
+   IF ~~ THEN REPLY #42530 /* ~Perhaps you could tell me something about the Shadow Thieves in the city.~ */ GOTO 12
+-  IF ~GlobalLT("chapter","GLOBAL",4)~ THEN REPLY #42531 /* ~I'm searching for a friend of mine who has been captured by the Cowled Wizards... do you know anything of them?~ */ GOTO 15
++  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY #42531 /* ~I'm searching for a friend of mine who has been captured by the Cowled Wizards... do you know anything of them?~ */ GOTO 15
+   IF ~~ THEN REPLY #23313 /* ~A bit young, aren't you? For this type of work, I mean.~ */ GOTO 4
+   IF ~~ THEN REPLY @70 GOTO 3
+ END
+@@ -853,7 +853,7 @@
+   IF ~~ THEN REPLY #23051 /* ~Could you perhaps tell me a little about the Harpers?~ */ GOTO 1
+   IF ~~ THEN REPLY #23052 /* ~Who are you and what do you do here?~ */ GOTO 3
+   IF ~~ THEN REPLY #23053 /* ~What is this place?~ */ GOTO 4
+-  IF ~GlobalLT("chapter","GLOBAL",4)
++  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+ Global("tptImoenDead","GLOBAL",0)~ THEN REPLY #42573 /* ~A friend of mine has been captured by the Cowled Wizards... do you have any information on them?~ */ GOTO 11
+   IF ~~ THEN REPLY #42574 /* ~What do you know about the Shadow Thieves?~ */ GOTO 16
+   IF ~~ THEN REPLY @90 GOTO 6

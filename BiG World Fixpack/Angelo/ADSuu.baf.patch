@@ -1,5 +1,5 @@
---- Angelo\Scripts\ADSuu.baf	Tue May 13 07:59:04 2008
-+++ D:\EE_Patchstudio\patched files\Angelo\Scripts\ADSuu.baf	Fri Jan 15 12:51:44 2016
+--- Angelo/Scripts/ADSuu.baf	2008-05-13 02:59:04.000000000 -0400
++++ Fixpack/Angelo/Scripts/ADSuu.baf	2016-11-04 14:55:56.826580800 -0400
 @@ -1,7 +1,7 @@
  // Hi
  IF

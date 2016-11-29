@@ -1,0 +1,22 @@
+Patching crossmodbg2/soa/banters/soa_adrian-arath/soa_adrian-arath_banters.d: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching crossmodbg2/soa/banters/soa_adrian-kivanofshilmista/soa_adrian-kivanofshilmista_banters.d: Global("Chapter","GLOBAL",7) => Global("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching crossmodbg2/soa/banters/soa_amber-kulyokxan/amber-kulyokxan_m#amber.baf: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching crossmodbg2/soa/banters/soa_amber-kulyokxan/amber-kulyokxan_m#amber.baf: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching crossmodbg2/soa/banters/soa_auren-kivanofshilmista/soa_auren-kivanofshilmista_banters.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching crossmodbg2/soa/banters/soa_auren-kivanofshilmista/soa_auren-kivanofshilmista_banters.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching crossmodbg2/soa/banters/soa_isra-kulyokcoran/soa_isra-kulyokcoran_banters.d: GlobalLT("Chapter","GLOBAL",7) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_7%)
+Patching crossmodbg2/soa/banters/soa_kivanofshilmista-kulyokcoran/soa_kivanofshilmista-kulyokcoran_banters.d: GlobalLT("Chapter","GLOBAL",4) => GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching crossmodbg2/soa/banters/soa_tsujatha-yasraena/soa_tsujatha-yasraena_banters.d: GlobalLT("CHAPTER","GLOBAL",5) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_5%)
+Patching crossmodbg2/setup-crossmodbg2.tp2: ALWAYS command expanded
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

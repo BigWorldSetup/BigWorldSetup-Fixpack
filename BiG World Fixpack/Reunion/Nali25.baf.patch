@@ -1,0 +1,17 @@
+--- Reunion/Scripts/Nali25.baf	2015-12-20 07:54:14.000000000 -0500
++++ Fixpack/Reunion/Scripts/Nali25.baf	2016-11-21 22:54:41.346834000 -0500
+@@ -7,11 +7,13 @@
+ !See([ENEMY])
+ OR(2)
+ AreaCheck("AR5500")
+-Global("Chapter","GLOBAL",9)
++Global("Chapter","GLOBAL",%bg2_chapter_9%)
+ Global("O#DAEQuest","GLOBAL",0)
+ THEN
+ RESPONSE #100
+ SetGlobal("O#DAEQuest","GLOBAL",2)
++HideAreaOnMap("AR1300")
++HideAreaOnMap("AR1304")
+ END
+ 
+ IF

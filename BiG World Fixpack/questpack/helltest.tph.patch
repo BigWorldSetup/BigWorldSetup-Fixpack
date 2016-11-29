@@ -1,0 +1,40 @@
+--- questpack/tp2/quest/helltest.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/helltest.tph	2016-11-21 22:35:07.044911200 -0500
+@@ -24,13 +24,13 @@
+   END
+ BUT_ONLY
+ 
+-COMPILE ~questpack/helltest/data/teardoor.baf~
++COMPILE EVALUATE_BUFFER ~questpack/helltest/data/teardoor.baf~
+         ~questpack/helltest/data/hellself.baf~
+         ~questpack/helltest/data/ar2904.baf~
+ 
+-EXTEND_BOTTOM ~ar2900.bcs~ ~questpack/helltest/data/ar2900.baf~
++EXTEND_BOTTOM ~ar2900.bcs~ ~questpack/helltest/data/ar2900.baf~ EVALUATE_BUFFER
+ 
+-EXTEND_TOP ~tearfear.bcs~ ~questpack/helltest/data/tearfear.baf~
++EXTEND_TOP ~tearfear.bcs~ ~questpack/helltest/data/tearfear.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~ar2905.bcs~ ~override~
+   DECOMPILE_AND_PATCH BEGIN
+@@ -42,15 +42,15 @@
+   END
+ BUT_ONLY
+ 
+-EXTEND_TOP ~ar2905.bcs~ ~questpack/helltest/data/ar2905.baf~
++EXTEND_TOP ~ar2905.bcs~ ~questpack/helltest/data/ar2905.baf~ EVALUATE_BUFFER
+ 
+-COMPILE ~questpack/helltest/data/draghell.baf~
++COMPILE EVALUATE_BUFFER ~questpack/helltest/data/draghell.baf~
+ 
+-ACTION_IF GAME_IS ~tob bgt bg2ee~ BEGIN
+-  EXTEND_TOP ~ar4500.bcs~ ~questpack/helltest/data/ar4500.baf~
++ACTION_IF GAME_IS ~tob bgt bg2ee eet~ BEGIN
++  EXTEND_TOP ~ar4500.bcs~ ~questpack/helltest/data/ar4500.baf~ EVALUATE_BUFFER
+ END
+ 
+-COMPILE ~questpack/helltest/fear.d~
++COMPILE EVALUATE_BUFFER ~questpack/helltest/fear.d~
+         ~questpack/helltest/pride.d~
+         ~questpack/helltest/greed.d~
+         ~questpack/helltest/selfish.d~

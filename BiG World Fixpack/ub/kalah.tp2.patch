@@ -1,0 +1,21 @@
+--- ub/kalah/kalah.tp2	2003-12-10 12:33:08.000000000 -0500
++++ Fixpack/ub/kalah/kalah.tp2	2016-11-21 23:25:52.190898100 -0500
+@@ -1,5 +1,18 @@
+ BACKUP ~Kalah/backup~
+ AUTHOR ~Andyr, cheeseisace@hotmail.com~
++ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++END
++
+ BEGIN ~Andyr's Kalah expansion component for Unfinished Business~
+ 
+ 

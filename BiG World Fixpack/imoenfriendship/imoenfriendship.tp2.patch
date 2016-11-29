@@ -1,0 +1,49 @@
+--- imoenfriendship/imoenfriendship.tp2	2014-04-20 06:03:36.100000000 -0400
++++ Fixpack/imoenfriendship/imoenfriendship.tp2	2016-11-23 15:32:34.790050000 -0500
+@@ -4,7 +4,8 @@
+ // Basics
+ BACKUP ~imoenfriendship/backup~
+ AUTHOR ~K'aeloree (kae@spellholdstudios.net)~
+-VERSION ~2.1_Isaya~
++
++VERSION ~v2.2_Isaya~
+ 
+ // Default to English readme if not found in the selected language
+ README ~imoenfriendship/translations/%LANGUAGE%/imoenfriendship.html~ ~imoenfriendship/imoenfriendship.html~
+@@ -13,8 +14,18 @@
+ // Isaya : Additional check to support special characters for BGEE
+ // Inspired by BGQE / Edwin Romance
+ ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
+ 
+-  // We want his to happen only once
++  // We want this to happen only once
+   ACTION_IF !FILE_EXISTS ~%MOD_FOLDER%/translations/%LANGUAGE%/utf8.mrk~ BEGIN
+     ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
+       // Copies UTF8-encoded tra files over the normal ones, for use with AUTO_TRA
+@@ -52,7 +62,7 @@
+          
+ // Baldur's Gate II
+ BEGIN @0
+-  REQUIRE_PREDICATE GAME_IS ~bg2ee bgt tob~ @2
++  REQUIRE_PREDICATE GAME_IS ~bg2ee eet bgt tob~ @2
+ 
+ // Adding CD_STATE_NOTVALID
+ APPEND ~STATE.IDS~
+@@ -61,6 +71,6 @@
+ 
+ // Compiling dialogue & scripts
+ COMPILE ~imoenfriendship/dialogue/imoen2j.d~
+-EXTEND_BOTTOM ~imoen2.bcs~ ~imoenfriendship/scripts/imoen2.baf~
++EXTEND_BOTTOM ~imoen2.bcs~ ~imoenfriendship/scripts/imoen2.baf~ EVALUATE_BUFFER
+ COMPILE ~imoenfriendship/dialogue/imoen25j.d~
+ EXTEND_TOP ~imoe25.bcs~ ~imoenfriendship/scripts/imoe25.baf~

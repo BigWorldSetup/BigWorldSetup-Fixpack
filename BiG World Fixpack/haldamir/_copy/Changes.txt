@@ -1,0 +1,30 @@
+Patching haldamir/setup-haldamir.tp2: GAME_IS ~bg2ee~ THEN BEGIN => GAME_IS ~bg2ee eet~ THEN BEGIN
+Patching haldamir/dialogue/b!halp.d: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching haldamir/dialogue/b!halp.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching haldamir/dialogue/b!halp.d: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching haldamir/dialogue/b!halp.d: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching haldamir/script/b!hals.baf: GlobalGT("Chapter","GLOBAL",5) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching haldamir/script/b!hals.baf: GlobalGT("Chapter","GLOBAL",2) => GlobalGT("Chapter","GLOBAL",%bg2_chapter_2%)
+Patching haldamir/script/b!hals.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching haldamir/script/b!hals.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching haldamir/script/b!hals.baf: Global("Chapter","GLOBAL",4) => Global("Chapter","GLOBAL",%bg2_chapter_4%)
+Patching haldamir/script/b!hals.baf: Global("Chapter","GLOBAL",5) => Global("Chapter","GLOBAL",%bg2_chapter_5%)
+Patching haldamir/setup-haldamir.tp2: ALWAYS command added
+ALWAYS
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+END
+
+-----------
+
+No ToB content (or at least no FATESP.DLG patching, also ToB dialogue and script file mentioned in PDIALOG.2DA doesn't exist) so no patching for EET ToB importation
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

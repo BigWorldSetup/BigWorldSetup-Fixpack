@@ -1,0 +1,8 @@
+--- questpack/tp2/quest/solamnic.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/solamnic.tph	2016-11-21 22:31:57.920852400 -0500
+@@ -1,4 +1,4 @@
+-COMPILE ~questpack/solamnic/dialog.d~ USING
++COMPILE EVALUATE_BUFFER ~questpack/solamnic/dialog.d~ USING
+         ~%tra_path%/english/solamnic.tra~
+         ~%tra_path%/%LANGUAGE%/solamnic.tra~
+ 

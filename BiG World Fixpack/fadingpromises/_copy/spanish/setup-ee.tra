@@ -1,0 +1,22 @@
+@3    = ~El Puño de Amaunator
+Esta maza fue forjada por los siervos de Amaunator, el dios sol antiguo Netherese, para combatir las fuerzas del mal no muerto.  Los encantamientos de esta reliquia permiten al portador llamar al Rayo solar, cuya energía de vida pura es la plaga de los no vivos.
+
+ESTADISTICAS:
+Habilidades especiales (una por día):
+Rayo solar
+ Daño: 3d6 (salvación contra conjuros o sino ceguera en 10 asaltos)
+ No muertos: 1d6 de puntos de daño adicionales por nivel de lanzador (salvación contra conjuros o es destruido)
+ Alcance: 6 metros
+ Area de efecto: 6 metros de radio
+
+THAC0:  Bonificador +2, +2 adicional contra criaturas malignas
+Daño:  1d8+2, +2 adicional contra criaturas malignas, doble de daño contra no muertos
+Tipo de daño:  Aplastamiento
+Peso: 2
+Factor de velocidad: 3
+Talento marcial: Maza
+Tipo:  1 mano
+Requisito: 6 Fuerza
+No lo puede usar:
+ Druida
+ Mago~

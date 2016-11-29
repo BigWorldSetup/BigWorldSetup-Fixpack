@@ -1,0 +1,18 @@
+--- questpack/thieves/scripts/d0aran.baf	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/scripts/d0aran.baf	2016-11-21 16:23:01.994499900 -0500
+@@ -1,5 +1,5 @@
+ IF
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   Global("SpawnMagCle","MYAREA",0)
+ THEN
+   RESPONSE #100
+@@ -9,7 +9,7 @@
+ END
+ 
+ IF
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   OR(2)
+     HasItem("amul21",Myself)
+     HasItem("ring07",Myself)

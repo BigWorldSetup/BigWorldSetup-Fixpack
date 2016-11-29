@@ -1,0 +1,1 @@
+Patching wsr/lib/regexp.tph: GAME_IS ~bgee bg2ee~ BEGIN => GAME_IS ~bgee bg2ee eet~ BEGIN

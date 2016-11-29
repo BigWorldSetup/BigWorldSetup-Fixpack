@@ -1,0 +1,8 @@
+--- questpack/tp2/quest/negotiate.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/negotiate.tph	2016-11-21 22:32:54.738115700 -0500
+@@ -1,4 +1,4 @@
+-COMPILE // ~questpack/negotiate/dialog.d~
++COMPILE EVALUATE_BUFFER // ~questpack/negotiate/dialog.d~
+         ~questpack/negotiate/dialog2.d~ USING
+         ~%tra_path%/english/negotiate.tra~
+         ~%tra_path%/%LANGUAGE%/negotiate.tra~

@@ -1,0 +1,11 @@
+--- Branwen/Dialogue/O#BranJ.d	2013-11-10 14:24:12.000000000 -0500
++++ Fixpack/Branwen/Dialogue/O#BranJ.d	2016-11-21 16:34:37.687143900 -0500
+@@ -2459,7 +2459,7 @@
+ 
+ // There are exceptions: Chapter 5, for example. In the Underdark, flirts are forbidden, so we're going to go with an extra option:
+ 
+-IF ~IsGabber(Player1) Global("Chapter","GLOBAL",5)~ O#BranPID1    		// It means Branwen's talking to the player in Chapter 5
++IF ~IsGabber(Player1) Global("Chapter","GLOBAL",%bg2_chapter_5%)~ O#BranPID1    		// It means Branwen's talking to the player in Chapter 5
+ SAY ~We're in the Underdark, <CHARNAME>. Danger is about.~ [o#bran00]
+ IF ~~ EXIT
+ END

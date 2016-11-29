@@ -1,0 +1,75 @@
+--- questpack/tp2/quest/harpers.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/harpers.tph	2016-11-21 22:34:53.957750400 -0500
+@@ -1,4 +1,4 @@
+-COMPILE ~questpack/harpers/dialog.d~ USING
++COMPILE EVALUATE_BUFFER ~questpack/harpers/dialog.d~ USING
+         ~%tra_path%/english/harpers.tra~
+         ~%tra_path%/%LANGUAGE%/harpers.tra~
+ 
+@@ -56,7 +56,7 @@
+ 
+ 
+ 
+-EXTEND_TOP ~ar0309.bcs~ ~questpack/harpers/ar0309.baf~
++EXTEND_TOP ~ar0309.bcs~ ~questpack/harpers/ar0309.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~aviary.bcs~ ~override~
+   DECOMPILE_AND_PATCH BEGIN
+@@ -66,22 +66,22 @@
+   END
+ BUT_ONLY
+ 
+-EXTEND_TOP ~baldur.bcs~ ~questpack/harpers/et_baldur.baf~
++EXTEND_TOP ~baldur.bcs~ ~questpack/harpers/et_baldur.baf~ EVALUATE_BUFFER
+ 
+-COMPILE ~questpack/harpers/d0jahrev.baf~
++COMPILE EVALUATE_BUFFER ~questpack/harpers/d0jahrev.baf~
+         ~questpack/harpers/d0jahre2.baf~
+ 
+-COMPILE ~questpack/harpers/harpass1.baf~
++COMPILE EVALUATE_BUFFER ~questpack/harpers/harpass1.baf~
+         ~questpack/harpers/montbody.baf~
+         ~questpack/harpers/lyros.baf~
+ 
+-EXTEND_TOP ~jaheira.bcs~ ~questpack/harpers/jaheira.baf~
++EXTEND_TOP ~jaheira.bcs~ ~questpack/harpers/jaheira.baf~ EVALUATE_BUFFER
+ 
+-EXTEND_TOP ~spectreh.bcs~ ~questpack/harpers/spectreh.baf~
++EXTEND_TOP ~spectreh.bcs~ ~questpack/harpers/spectreh.baf~ EVALUATE_BUFFER
+ 
+-EXTEND_TOP ~ar0308.bcs~ ~questpack/harpers/ar0308.baf~
++EXTEND_TOP ~ar0308.bcs~ ~questpack/harpers/ar0308.baf~ EVALUATE_BUFFER
+ 
+-EXTEND_TOP ~ar0407.bcs~ ~questpack/harpers/ar0407.baf~
++EXTEND_TOP ~ar0407.bcs~ ~questpack/harpers/ar0407.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~harpass1.cre~ ~override~
+   WRITE_BYTE 0x274 133
+@@ -163,7 +163,7 @@
+ COPY_EXISTING ~AR0407.ARE~ ~override~       /* Prebek's Home */
+   WRITE_ASCII 0x94 "AR0407" #8
+ 
+-EXTEND_TOP ~AR0407.bcs~ ~questpack/harpers/u!0407.baf~       /* Prebek's Home, Shazzellim, Container 3, Item 1 */
++EXTEND_TOP ~AR0407.bcs~ ~questpack/harpers/u!0407.baf~       /* Prebek's Home, Shazzellim, Container 3, Item 1 */ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~C6ELHAN.CRE~ ~override~   /* Remove Elhan's evil-aligned Shazzellim scimitars */
+               ~SUELHAN.CRE~ ~override~
+@@ -197,7 +197,7 @@
+   WRITE_ASCII 0x268 "WTASIGHT" #8
+ BUT_ONLY
+ 
+-COMPILE ~questpack/harpers/d0xgolem.baf~
++COMPILE EVALUATE_BUFFER ~questpack/harpers/d0xgolem.baf~
+ 
+ COPY_EXISTING ~JAMERONI.CRE~ ~override~
+   WRITE_BYTE 0x275 2 // Meronia should be female
+@@ -208,6 +208,6 @@
+   WRITE_SHORT 0x14 3000
+ BUT_ONLY
+ 
+-EXTEND_TOP ~ar0041.bcs~ ~questpack/harpers/et_random.baf~
+-EXTEND_TOP ~ar0045.bcs~ ~questpack/harpers/et_random.baf~
+-EXTEND_TOP ~ar0046.bcs~ ~questpack/harpers/et_random.baf~
++EXTEND_TOP ~ar0041.bcs~ ~questpack/harpers/et_random.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~ar0045.bcs~ ~questpack/harpers/et_random.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~ar0046.bcs~ ~questpack/harpers/et_random.baf~ EVALUATE_BUFFER

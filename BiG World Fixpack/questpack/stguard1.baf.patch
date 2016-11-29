@@ -1,0 +1,11 @@
+--- questpack/thieves/scripts/shouts/stguard1.baf	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/scripts/shouts/stguard1.baf	2016-11-21 22:35:22.520548100 -0500
+@@ -184,7 +184,7 @@
+   Global("ArkanisComes","GLOBAL",0)
+   Global("AttackedThieves","GLOBAL",1)
+   GlobalLT("D0MaeVar","GLOBAL",5)
+-  GlobalLT("chapter","GLOBAL",6)
++  GlobalLT("chapter","GLOBAL",%bg2_chapter_6%)
+   OR(2)
+     !Specifics(Myself,242)
+     GlobalGT("D0Maevar","GLOBAL",2)

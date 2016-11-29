@@ -1,5 +1,5 @@
---- sarahtob\setup-sarahtob.tp2	Fri Apr 30 23:06:25 2010
-+++ C:\BWP Patchstudio\patched files\sarahtob\setup-sarahtob.tp2	Wed Jun 09 21:24:26 2010
+--- sarahtob/setup-sarahtob.tp2	2014-09-25 08:43:48.102977900 -0400
++++ Fixpack/sarahtob/setup-sarahtob.tp2	2016-11-26 02:48:00.438371900 -0500
 @@ -1,7 +1,7 @@
  BACKUP ~SarahToB/backup~
  AUTHOR ~theacefes (theacefes@gibberlings3.net)~
@@ -9,3 +9,84 @@
  README ~SarahToB/readme-sarahtob.html~
  
  //MODDER
+@@ -11,7 +11,17 @@
+ 
+ // Code borrowed from Edwin Romance V206, using the new HANDLE_CHARSETS function
+ ALWAYS
+-  INCLUDE ~%MOD_FOLDER%/handle_charsets.tpa~
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++
+   ACTION_DEFINE_ARRAY fl#noconvert BEGIN END
+   ACTION_DEFINE_ARRAY fl#reload BEGIN setup END
+   LAF HANDLE_CHARSETS
+@@ -162,10 +172,10 @@
+ 
+ // Adds Dialogue Files
+ 
+-COMPILE ~SarahToB/Dialogues/K#Sarah.d~
++COMPILE EVALUATE_BUFFER ~SarahToB/Dialogues/K#Sarah.d~
+ COMPILE ~SarahToB/Dialogues/K#SarahB.d~
+ COMPILE ~SarahToB/Dialogues/K#VMPSRH.d~
+-COMPILE ~SarahToB/Dialogues/K#SarahJ.d~
++COMPILE EVALUATE_BUFFER ~SarahToB/Dialogues/K#SarahJ.d~
+ COMPILE ~SarahToB/Dialogues/K#Gurie.d~
+ COMPILE ~SarahToB/Dialogues/K#Anna.d~
+ 
+@@ -177,7 +187,7 @@
+ // Adds Scripts
+ COMPILE ~SarahToB/Scripts/K#VMPSRH.baf~
+ COMPILE ~SarahToB/Scripts/K#SarahD.baf~
+-COMPILE ~SarahToB/Scripts/K#Sarah.baf~
++COMPILE EVALUATE_BUFFER ~SarahToB/Scripts/K#Sarah.baf~
+ COMPILE ~SarahToB/Scripts/K#Anna.baf~
+ COMPILE ~SarahToB/Scripts/K#Gurie.baf~
+ EXTEND_BOTTOM ~AR1100.bcs~ ~SarahToB/Scripts/AR1100.baf~
+@@ -274,7 +284,7 @@
+ // Adds Dialogue
+ COMPILE ~SarahToB/Dialogues/K#Sara25.d~
+ COMPILE ~SarahToB/Dialogues/K#Sar25B.d~
+-COMPILE ~SarahToB/Dialogues/K#fates.d~
++
+ COMPILE ~SarahToB/Dialogues/K#Sar25J.d~
+ COMPILE ~SarahToB/Dialogues/K#Sar25P.d~
+ COMPILE ~SarahToB/Dialogues/K#ANNA1.d~
+@@ -331,7 +341,7 @@
+ 
+ // Adds Portraits
+ 
+-ACTION_IF GAME_IS ~bg2ee~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ COPY ~SarahToB/Portraits/ee~ ~override~
+ END ELSE BEGIN
+ COPY ~SarahToB/Portraits/bg2~ ~override~
+@@ -358,3 +368,21 @@
+ ~K#Sarah K#SarahB K#Sar25B~
+ UNLESS ~K#Sarah~
+ IF ~25FILE~
++
++ACTION_IF GAME_IS ~eet~ BEGIN
++  INCLUDE ~EET/other/EET_functions.tph~
++  LAF ~EET_NPC_TRANSITION~
++    INT_VAR
++      type = 2
++    STR_VAR
++      dv = "K#SARAH"
++      override_SoA = "K#SARAH"
++      override_ToB = "K#SARA25"
++      dialog_ToB = "K#SARA25"
++      traFile = EVAL "SarahToB/translations/%LANGUAGE%/k#fates.tra"
++      string = "@1" //Bring me Sarah, the human ranger.
++      stringPosDV = "SharTeel"
++  END
++END ELSE BEGIN
++  COMPILE ~SarahToB/Dialogues/K#fates.d~
++END

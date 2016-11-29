@@ -1,0 +1,178 @@
+--- ajantisbg2/dialogues/romance.d	2012-02-19 02:47:02.000000000 -0500
++++ Fixpack/ajantisbg2/dialogues/romance.d	2016-11-04 14:55:56.983716200 -0400
+@@ -77,12 +77,12 @@
+ IF ~Global("C#AjantisLoveTalk","GLOBAL",4)~ THEN hc_gefangenschaft
+ SAY @37 
+ IF ~OR(2)
+-Global("Chapter","GLOBAL",1)
+-Global("Chapter","GLOBAL",2)~ THEN DO ~SetGlobal("C#AjantisLoveTalk","GLOBAL",5)~ + hc_gefangenschaft_01
++Global("Chapter","GLOBAL",%bg2_chapter_1%)
++Global("Chapter","GLOBAL",%bg2_chapter_2%)~ THEN DO ~SetGlobal("C#AjantisLoveTalk","GLOBAL",5)~ + hc_gefangenschaft_01
+ IF ~OR(2)
+-Global("Chapter","GLOBAL",3)
+-Global("Chapter","GLOBAL",4)~ THEN DO ~SetGlobal("C#AjantisLoveTalk","GLOBAL",5)~ + hc_gefangenschaft_04
+-IF ~GlobalGT("Chapter","GLOBAL",5)~ THEN DO ~SetGlobal("C#AjantisLoveTalk","GLOBAL",5)~ + hc_gefangenschaft_05
++Global("Chapter","GLOBAL",%bg2_chapter_3%)
++Global("Chapter","GLOBAL",%bg2_chapter_4%)~ THEN DO ~SetGlobal("C#AjantisLoveTalk","GLOBAL",5)~ + hc_gefangenschaft_04
++IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)~ THEN DO ~SetGlobal("C#AjantisLoveTalk","GLOBAL",5)~ + hc_gefangenschaft_05
+ END
+ 
+ IF ~~ THEN hc_gefangenschaft_01
+@@ -1032,10 +1032,10 @@
+ IF ~~ THEN paladin_ehre_02
+ SAY @340
+ IF ~GlobalGT("udDrowPlot","GLOBAL",99)
+-GlobalGT("Chapter","GLOBAL",4)~ THEN + paladin_ehre_03
++GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)~ THEN + paladin_ehre_03
+ IF ~OR(2)
+ GlobalLT("udDrowPlot","GLOBAL",100)
+-GlobalLT("Chapter","GLOBAL",5)~ + paladin_ehre_05
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_5%)~ + paladin_ehre_05
+ END
+ 
+ IF ~~ THEN paladin_ehre_03
+@@ -1897,31 +1897,31 @@
+ IF ~Global("C#AjantisLoveTalk","GLOBAL",22)~ THEN thinking_1
+ SAY @512 
+ 
+-+ ~GlobalLT("Chapter","GLOBAL",6) ReputationLT(Player1,12) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @513 + thinking_1_02
+-+ ~GlobalLT("Chapter","GLOBAL",6) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)~ + @513 + thinking_1_03
+-+ ~GlobalLT("Chapter","GLOBAL",6) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @513 + thinking_1_01
+-+ ~GlobalGT("Chapter","GLOBAL",5) ReputationLT(Player1,16)
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) ReputationLT(Player1,12) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @513 + thinking_1_02
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)~ + @513 + thinking_1_03
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @513 + thinking_1_01
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) ReputationLT(Player1,16)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)~ + @513 + thinking_1_02
+-+ ~GlobalGT("Chapter","GLOBAL",5) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @513 + thinking_1_03
+-+ ~GlobalGT("Chapter","GLOBAL",5) ReputationGT(Player1,15)
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @513 + thinking_1_03
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) ReputationGT(Player1,15)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)~ + @513 + thinking_1_01
+ 
+-+ ~GlobalLT("Chapter","GLOBAL",6) ReputationLT(Player1,12) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @514 + thinking_1_02
+-+ ~GlobalLT("Chapter","GLOBAL",6) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)~ + @514 + thinking_1_03
+-+ ~GlobalLT("Chapter","GLOBAL",6) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @514 + thinking_1_01d
+-+ ~GlobalGT("Chapter","GLOBAL",5) ReputationLT(Player1,16)
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) ReputationLT(Player1,12) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @514 + thinking_1_02
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)~ + @514 + thinking_1_03
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @514 + thinking_1_01d
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) ReputationLT(Player1,16)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)~ + @514 + thinking_1_02
+-+ ~GlobalGT("Chapter","GLOBAL",5) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @514 + thinking_1_03
+-+ ~GlobalGT("Chapter","GLOBAL",5) ReputationGT(Player1,15)
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @514 + thinking_1_03
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) ReputationGT(Player1,15)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)~ + @514 + thinking_1_01d
+ 
+-+ ~GlobalLT("Chapter","GLOBAL",6) ReputationLT(Player1,12) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @515 + thinking_1_02
+-+ ~GlobalLT("Chapter","GLOBAL",6) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)~ + @515 + thinking_1_03
+-+ ~GlobalLT("Chapter","GLOBAL",6) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @515 + thinking_1_01c
+-+ ~GlobalGT("Chapter","GLOBAL",5) ReputationLT(Player1,16)
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) ReputationLT(Player1,12) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @515 + thinking_1_02
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)~ + @515 + thinking_1_03
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @515 + thinking_1_01c
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) ReputationLT(Player1,16)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)~ + @515 + thinking_1_02
+-+ ~GlobalGT("Chapter","GLOBAL",5) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @515 + thinking_1_03
+-+ ~GlobalGT("Chapter","GLOBAL",5) ReputationGT(Player1,15)
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @515 + thinking_1_03
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) ReputationGT(Player1,15)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)~ + @515 + thinking_1_01c
+ 
+ ++ @516 + thinking_1_07
+@@ -1997,22 +1997,22 @@
+ 
+ IF ~~ THEN thinking_1_07
+ SAY @535
+-IF ~GlobalLT("Chapter","GLOBAL",6) ReputationLT(Player1,12) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ THEN + thinking_1_02
+-IF ~GlobalLT("Chapter","GLOBAL",6) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)~ THEN + thinking_1_03
+-IF ~GlobalGT("Chapter","GLOBAL",5) ReputationLT(Player1,16)
++IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) ReputationLT(Player1,12) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ THEN + thinking_1_02
++IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)~ THEN + thinking_1_03
++IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) ReputationLT(Player1,16)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)~ THEN + thinking_1_02
+-IF ~GlobalGT("Chapter","GLOBAL",5) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4)~ THEN + thinking_1_03
+-+ ~GlobalLT("Chapter","GLOBAL",6) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @536 + thinking_1_01b
+-+ ~GlobalGT("Chapter","GLOBAL",5) ReputationGT(Player1,15)
++IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4)~ THEN + thinking_1_03
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @536 + thinking_1_01b
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) ReputationGT(Player1,15)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)~ + @536 + thinking_1_01b
+-+ ~GlobalLT("Chapter","GLOBAL",6) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @537 + thinking_1_01
+-+ ~GlobalGT("Chapter","GLOBAL",5) ReputationGT(Player1,15)
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @537 + thinking_1_01
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) ReputationGT(Player1,15)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)~ + @537 + thinking_1_01
+-+ ~GlobalLT("Chapter","GLOBAL",6) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @538 + thinking_1_08
+-+ ~GlobalGT("Chapter","GLOBAL",5) ReputationGT(Player1,15)
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @538 + thinking_1_08
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) ReputationGT(Player1,15)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)~ + @538 + thinking_1_08
+-+ ~GlobalLT("Chapter","GLOBAL",6) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @539 + thinking_1_09
+-+ ~GlobalGT("Chapter","GLOBAL",5) ReputationGT(Player1,15)
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) ReputationGT(Player1,11) GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ + @539 + thinking_1_09
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) ReputationGT(Player1,15)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)~ + @539 + thinking_1_09
+ ++ @540 + thinking_1_10
+ END
+@@ -2168,31 +2168,31 @@
+ 
+ IF ~Global("C#AjantisLoveTalk","GLOBAL",26)~ THEN entscheidung
+ SAY @591 
+-IF ~GlobalLT("Chapter","GLOBAL",6)
++IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+ OR(2)
+ ReputationLT(Player1,12)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)
+ Global("C#AjantisWeddingWarning","GLOBAL",1)~ THEN DO ~SetGlobal("C#AjantisIsThinking","GLOBAL",2) SetGlobal("C#AjantisLoveTalk","GLOBAL",27)~ + entscheidung_nein_01
+-IF ~GlobalGT("Chapter","GLOBAL",5)
++IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ OR(2)
+ ReputationLT(Player1,16)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4)
+ Global("C#AjantisWeddingWarning","GLOBAL",1)~ THEN DO ~SetGlobal("C#AjantisIsThinking","GLOBAL",2) SetGlobal("C#AjantisLoveTalk","GLOBAL",27)~ + entscheidung_nein_01
+ 
+-IF ~GlobalLT("Chapter","GLOBAL",6)
++IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+ OR(2)
+ ReputationLT(Player1,12)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",3)
+ Global("C#AjantisWeddingWarning","GLOBAL",0)~ THEN DO ~SetGlobal("C#AjantisIsThinking","GLOBAL",2) SetGlobal("C#AjantisLoveTalk","GLOBAL",27)~ + entscheidung_nein_01b
+-IF ~GlobalGT("Chapter","GLOBAL",5)
++IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ OR(2)
+ ReputationLT(Player1,16)
+ GlobalGT("C#AjantisWarUnzufrieden","GLOBAL",4)
+ Global("C#AjantisWeddingWarning","GLOBAL",0)~ THEN DO ~SetGlobal("C#AjantisIsThinking","GLOBAL",2) SetGlobal("C#AjantisLoveTalk","GLOBAL",27)~ + entscheidung_nein_01b
+-IF ~GlobalLT("Chapter","GLOBAL",6)
++IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+ ReputationGT(Player1,11)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",4)~ THEN DO ~SetGlobal("C#AjantisIsThinking","GLOBAL",2) SetGlobal("C#AjantisLoveTalk","GLOBAL",27)~ + entscheidung_ja_02
+-IF ~GlobalGT("Chapter","GLOBAL",5)
++IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ ReputationGT(Player1,15)
+ GlobalLT("C#AjantisWarUnzufrieden","GLOBAL",5)~ THEN DO ~SetGlobal("C#AjantisIsThinking","GLOBAL",2) SetGlobal("C#AjantisLoveTalk","GLOBAL",27)~ + entscheidung_ja_02
+ END
+@@ -3603,8 +3603,8 @@
+ + ~Global("C#AjantisNoIntimacy","GLOBAL",0)~ + @855 DO ~SetGlobal("C#AjantisWeddingDialog","GLOBAL",2)~ + nach_hochzeit_09
+ + ~Global("C#AjantisNoIntimacy","GLOBAL",1)~ + @856 DO ~SetGlobal("C#AjantisWeddingDialog","GLOBAL",2)~ + nach_hochzeit_10
+ + ~Global("C#AjantisNoIntimacy","GLOBAL",0)~ + @856 DO ~SetGlobal("C#AjantisWeddingDialog","GLOBAL",2)~ + nach_hochzeit_09
+-+ ~GlobalGT("Chapter","GLOBAL",5)~ + @857 DO ~SetGlobal("C#AjantisWeddingDialog","GLOBAL",2)~ + nach_hochzeit_11
+-+ ~GlobalLT("Chapter","GLOBAL",4)~ + @858 DO ~SetGlobal("C#AjantisWeddingDialog","GLOBAL",2)~ + nach_hochzeit_11
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)~ + @857 DO ~SetGlobal("C#AjantisWeddingDialog","GLOBAL",2)~ + nach_hochzeit_11
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @858 DO ~SetGlobal("C#AjantisWeddingDialog","GLOBAL",2)~ + nach_hochzeit_11
+ ++ @859 DO ~SetGlobal("C#AjantisWeddingDialog","GLOBAL",2)~ + nach_hochzeit_12
+ END
+ 
+@@ -3615,8 +3615,8 @@
+ + ~Global("C#AjantisNoIntimacy","GLOBAL",0)~ + @862 + nach_hochzeit_09
+ + ~Global("C#AjantisNoIntimacy","GLOBAL",1)~ + @856 + nach_hochzeit_10
+ + ~Global("C#AjantisNoIntimacy","GLOBAL",0)~ + @856 + nach_hochzeit_09
+-+ ~GlobalGT("Chapter","GLOBAL",5)~ + @857 + nach_hochzeit_11
+-+ ~GlobalLT("Chapter","GLOBAL",4)~ + @863 + nach_hochzeit_11
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)~ + @857 + nach_hochzeit_11
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @863 + nach_hochzeit_11
+ ++ @864 + nach_hochzeit_12
+ END
+ 

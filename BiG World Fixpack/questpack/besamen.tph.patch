@@ -1,0 +1,21 @@
+--- questpack/tp2/quest/besamen.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/besamen.tph	2016-11-21 22:35:12.370938900 -0500
+@@ -9,14 +9,14 @@
+   SAY NAME1 @125
+   SAY NAME2 @125
+ 
+-EXTEND_TOP ~AR0811.bcs~ ~questpack/besamen/IR0811.baf~
+-EXTEND_TOP ~AR0406.bcs~ ~questpack/besamen/IR0406.baf~
++EXTEND_TOP ~AR0811.bcs~ ~questpack/besamen/IR0811.baf~ EVALUATE_BUFFER
++EXTEND_TOP ~AR0406.bcs~ ~questpack/besamen/IR0406.baf~ EVALUATE_BUFFER
+ 
+-COMPILE ~questpack/besamen/dialog.d~ USING
++COMPILE EVALUATE_BUFFER ~questpack/besamen/dialog.d~ USING
+         ~%tra_path%/english/besamen.tra~
+         ~%tra_path%/%LANGUAGE%/besamen.tra~
+ 
+-COMPILE ~questpack/besamen/d0basier.baf~
++COMPILE EVALUATE_BUFFER ~questpack/besamen/d0basier.baf~
+ 
+ ADD_JOURNAL TITLE (@158) @153 @154 @155 @156 @157 USING
+             ~%tra_path%/english/besamen.tra~

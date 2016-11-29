@@ -1,19 +1,45 @@
---- SETUP-alora.tp2	Sun Feb 19 15:12:06 2012
-+++ C:\BWP Patchstudio\patched files\SETUP-alora.tp2	Thu Sep 26 22:30:26 2013
-@@ -8,7 +8,7 @@
- BACKUP ~alora\backup~
- AUTHOR ~"http://chosenofmystra.com"~
- 
--VERSION ~1.5~
-+VERSION ~1.5 BWP Fix~ // EE version
- 
- AUTO_TRA ~alora\%s~
+--- setup-alora.tp2	2012-02-19 15:12:06.087164000 -0500
++++ Fixpack/setup-alora.tp2	2016-11-21 16:37:23.885905900 -0500
 @@ -8,7 +8,7 @@
  BACKUP ~alora\backup~
  AUTHOR ~"http://chosenofmystra.com"~
  
 -VERSION ~1.3~
-+VERSION ~1.3 BWP Fix~ // non-EE version
++VERSION ~1.5 BWP Fix~
  
  AUTO_TRA ~alora\%s~
  
+@@ -26,7 +26,7 @@
+ 
+ BEGIN @0
+ 
+-REQUIRE_FILE ~Data/25Dialog.bif~ @1
++REQUIRE_PREDICATE GAME_IS ~tob bg2ee eet~ @1
+ 
+ // Copy Sounds
+ 
+@@ -104,4 +104,24 @@
+ 
+ // End of .2DA patching
+ 
++ACTION_IF GAME_IS ~eet~ BEGIN
++  INCLUDE ~EET/other/EET_functions.tph~
++  LAF ~EET_NPC_TRANSITION~
++    INT_VAR
++      type = 2
++      clean_ToB = 1
++    STR_VAR
++      dv = "CMAlora"
++      override_SoA = "CMALORA"
++      override_ToB = "CMALO25"
++      dialog_ToB = "CMALO25A"
++      traFile = EVAL "alora/%LANGUAGE%/alora25.tra"
++      string = "@0" //Bring me Alora, the happy go lucky thief.
++      stringPosDV = "Anomen"
++      clean_ToB_DV = "Alora"
++  END
++END ELSE BEGIN
++  COMPILE ~alora/d/FATESP.d~ USING ~alora/%LANGUAGE%/alora25.tra~
++END
++
+ AT_INTERACTIVE_EXIT ~VIEW alora/README.html~

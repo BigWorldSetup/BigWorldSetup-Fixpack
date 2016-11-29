@@ -1,0 +1,24 @@
+--- keldorn_rom/dialogue/b!interjections.d	2015-01-12 21:51:58.000000000 -0500
++++ Fixpack/keldorn_rom/dialogue/b!interjections.d	2016-11-21 10:39:04.168817300 -0500
+@@ -154,15 +154,15 @@
+ /* Succubus in Watcher's Keep */ 
+ 
+ I_C_T GORSUC01 0 BKR_WKsuccubus
+-== GORSUC01 IF ~GlobalLT("Chapter","GLOBAL",8) InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1) GlobalGT("B!KelLT","GLOBAL",70)~ THEN @29 
+-== KELDORJ IF ~GlobalLT("Chapter","GLOBAL",8) InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1) GlobalGT("B!KelLT","GLOBAL",70)~ THEN @30 
+-== GORSUC01 IF ~GlobalLT("Chapter","GLOBAL",8) InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1) GlobalGT("B!KelLT","GLOBAL",70)~ THEN @31 
++== GORSUC01 IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1) GlobalGT("B!KelLT","GLOBAL",70)~ THEN @29 
++== KELDORJ IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1) GlobalGT("B!KelLT","GLOBAL",70)~ THEN @30 
++== GORSUC01 IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1) GlobalGT("B!KelLT","GLOBAL",70)~ THEN @31 
+ END 
+ 
+ I_C_T GORSUC01 0 BKR_WKsuccubus
+-== GORSUC01 IF ~!GlobalLT("Chapter","GLOBAL",8) InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1) GlobalGT("B!KelLT","GLOBAL",70)~ THEN @29 
+-== KELDO25J IF ~!GlobalLT("Chapter","GLOBAL",8) InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1) GlobalGT("B!KelLT","GLOBAL",70)~ THEN @30 
+-== GORSUC01 IF ~!GlobalLT("Chapter","GLOBAL",8) InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1) GlobalGT("B!KelLT","GLOBAL",70)~ THEN @31 
++== GORSUC01 IF ~!GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1) GlobalGT("B!KelLT","GLOBAL",70)~ THEN @29 
++== KELDO25J IF ~!GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1) GlobalGT("B!KelLT","GLOBAL",70)~ THEN @30 
++== GORSUC01 IF ~!GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1) GlobalGT("B!KelLT","GLOBAL",70)~ THEN @31 
+ END 
+ 
+ 

@@ -1,0 +1,324 @@
+--- SETUP-D0QUESTPACK.TP2	2015-10-11 14:32:12.000000000 -0400
++++ Fixpack/SETUP-D0QUESTPACK.TP2	2016-11-22 12:40:03.418427100 -0500
+@@ -1,7 +1,8 @@
+ BACKUP ~questpack/backup~
+ AUTHOR ~SimDing0 (http://forums.pocketplane.net/index.php/board,21.0.html)~
+ 
+-VERSION ~v3.2~
++VERSION ~v3.2 BWP Fix~
++
+ README ~questpack/readme.html~
+ 
+ // SPECIFICS USED:
+@@ -70,6 +71,17 @@
+ //////////////////////////////////////////////////////////////////////
+ 
+ ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++
+   UNINSTALL setup-d0quest.tp2 0
+   UNINSTALL setup-d0quest.tp2 1
+   UNINSTALL setup-d0quest.tp2 2
+@@ -165,7 +177,7 @@
+ 
+ BEGIN @14 // General AI Improvements
+ DESIGNATED 0
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/tactical/AI_core.tph~
+ 
+@@ -175,7 +187,7 @@
+ 
+ BEGIN @36 // All Creature & Area Improvements
+ DESIGNATED 1
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ SUBCOMPONENT @34 // Creature & Area Improvements
+ 
+ INCLUDE ~questpack/tp2/tactical/tactical_boss.tph~
+@@ -184,7 +196,7 @@
+ 
+ BEGIN @35 // All Creature Improvements
+ DESIGNATED 2
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ SUBCOMPONENT @34 // Creature & Area Improvements
+ 
+ INCLUDE ~questpack/tp2/tactical/tactical_boss.tph~
+@@ -192,7 +204,7 @@
+ 
+ BEGIN @32 // Boss Improvements Only
+ DESIGNATED 3
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ SUBCOMPONENT @34 // Creature & Area Improvements
+ 
+ INCLUDE ~questpack/tp2/tactical/tactical_boss.tph~
+@@ -204,7 +216,7 @@
+ BEGIN @39 // With Additional Random Encounters
+ SUBCOMPONENT @6 // Miscellaneous Enhancements
+ DESIGNATED 4
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ UNINSTALL Setup-BonsKiss.tp2 0
+ UNINSTALL Setup-BonsSorry.tp2 0
+@@ -224,7 +236,7 @@
+ BEGIN @40 // Without Additional Random Encounters
+ SUBCOMPONENT @6 // Miscellaneous Enhancements
+ DESIGNATED 401
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ UNINSTALL Setup-BonsKiss.tp2 0
+ UNINSTALL Setup-BonsSorry.tp2 0
+@@ -245,7 +257,7 @@
+ 
+ BEGIN @1 // Additional Shadow Thieves Content
+ DESIGNATED 5
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ UNINSTALL setup-ghreyim8.tp2 0
+ 
+@@ -262,7 +274,7 @@
+ 
+ BEGIN @2 // Alternative Harper/Xzar Plot
+ DESIGNATED 6
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/quest/harpers.tph~
+ 
+@@ -272,7 +284,7 @@
+ 
+ BEGIN @3 // Extended Reynald Sequence
+ DESIGNATED 7
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/quest/paladins.tph~
+ 
+@@ -287,7 +299,7 @@
+ 
+ BEGIN @4 // Intrigue In The Copper Coronet
+ DESIGNATED 8
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/quest/coronet.tph~
+ 
+@@ -302,7 +314,7 @@
+ 
+ BEGIN @8 // Rahul Kanakia's Potion Quest
+ DESIGNATED 9
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ UNINSTALL ~setup-potionquest.tp2~ 0
+ 
+@@ -314,7 +326,7 @@
+ 
+ BEGIN @10 // Revised Hell Trials
+ DESIGNATED 10
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ UNINSTALL ~setup-hell.tp2~ 0
+ 
+@@ -326,7 +338,7 @@
+ 
+ BEGIN @11 // IO2 Dialogue & Combat Enhancement
+ DESIGNATED 11
+-REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @100
++REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @100
+ SUBCOMPONENT @13 // Improved Oasis II
+ 
+ UNINSTALL ~setup-oasis.tp2~ 0
+@@ -337,7 +349,7 @@
+ 
+ BEGIN @12 // IO2 Dialogue Enhancement Only
+ DESIGNATED 12
+-REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @100
++REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @100
+ SUBCOMPONENT @13 // Improved Oasis II
+ 
+ UNINSTALL ~setup-oasis.tp2~ 0
+@@ -351,7 +363,7 @@
+ 
+ BEGIN @17 // Saving Sanik In Brynnlaw
+ DESIGNATED 13
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/quest/sanik.tph~
+ 
+@@ -361,7 +373,7 @@
+ 
+ BEGIN @18 // Burglary Of The Bookkeeper
+ DESIGNATED 14
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ UNINSTALL Setup-AndyrIM5.tp2 0
+ 
+@@ -373,7 +385,7 @@
+ 
+ BEGIN @19 // New Fate For The Dryads' Acorns
+ DESIGNATED 15
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ UNINSTALL Setup-BonsPromise.tp2 0
+ 
+@@ -390,7 +402,7 @@
+ 
+ BEGIN @20 // The Tragedy Of Besamen
+ DESIGNATED 16
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ UNINSTALL setup-icekiss.tp2 0
+ 
+@@ -407,7 +419,7 @@
+ 
+ BEGIN @21 // Further Slaver Involvement
+ DESIGNATED 17
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/quest/slavers.tph~
+ 
+@@ -417,7 +429,7 @@
+ 
+ BEGIN @22 // Sending The Solamnic Knights Home
+ DESIGNATED 18
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/quest/solamnic.tph~
+ 
+@@ -427,7 +439,7 @@
+ 
+ BEGIN @23 // Nazariel The Lich
+ DESIGNATED 19
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/quest/nazariel.tph~
+ 
+@@ -444,7 +456,7 @@
+ 
+ BEGIN @33 // Reward Negotiation
+ DESIGNATED 20
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/quest/negotiate.tph~
+ 
+@@ -454,7 +466,7 @@
+ 
+ BEGIN @30 // Infernal Thievery
+ DESIGNATED 21
+-REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @100
++REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @100
+ 
+ INCLUDE ~questpack/tp2/quest/wilbur.tph~
+ 
+@@ -465,7 +477,7 @@
+ /*
+ BEGIN @31 // Elven Court
+ DESIGNATED 22
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/quest/ormand.tph~
+ 
+@@ -484,7 +496,7 @@
+ /*
+ BEGIN @38 // Quest Content & Fiend Revisions
+ DESIGNATED 23
+-REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @100
++REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @100
+ SUBCOMPONENT @16 // Blood War On Carceri
+ 
+ INCLUDE ~questpack/tp2/quest/carceri_quest.tph~
+@@ -492,7 +504,7 @@
+ 
+ BEGIN @37 // Quest Content Only
+ DESIGNATED 24
+-REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @100
++REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @100
+ SUBCOMPONENT @16 // Blood War On Carceri
+ 
+ INCLUDE ~questpack/tp2/quest/carceri_quest.tph~
+@@ -505,7 +517,7 @@
+ /*
+ BEGIN @15 // Enhanced Council Building
+ DESIGNATED 25
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/quest/council.tph~
+ */
+@@ -517,7 +529,7 @@
+ /*
+ BEGIN @9 // Expanded Druid Stronghold
+ DESIGNATED 26
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/quest/faldorn.tph~
+ */
+@@ -529,7 +541,7 @@
+ /*
+ BEGIN @24 // Quallo's Friendship
+ DESIGNATED 27
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/quest/quallo.tph~
+ */
+@@ -541,7 +553,7 @@
+ /*
+ BEGIN @25 // Word And Wisdom
+ DESIGNATED 28
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+ INCLUDE ~questpack/tp2/quest/oghma.tph~
+ */
+@@ -553,9 +565,9 @@
+ /*
+ BEGIN @26 // Underdark Shortcut
+ DESIGNATED 29
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+-COMPILE ~questpack/underdark/dialog.d~
++COMPILE EVALUATE_BUFFER ~questpack/underdark/dialog.d~
+ */
+ 
+ //////////////////////////////////////////////////////////////////////
+@@ -565,9 +577,9 @@
+ /*
+ BEGIN @5 // Escaping Brynnlaw
+ DESIGNATED 30
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @98
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @98
+ 
+-COMPILE ~smugglers/dialog.d~
++COMPILE EVALUATE_BUFFER ~smugglers/dialog.d~
+ 
+ LAF questpack_audio
+   STR_VAR

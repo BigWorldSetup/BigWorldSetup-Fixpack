@@ -1,0 +1,26 @@
+--- questpack/tp2/quest/incomplete/council.tph	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/tp2/quest/incomplete/council.tph	2016-11-21 22:34:14.979118900 -0500
+@@ -32,12 +32,12 @@
+ WRITE_LONG ("%effects_offset%" + 28) 1
+ WRITE_SHORT ("%effects_offset%" + 36) 100
+ 
+-COMPILE ~questpack/council/d0bylann.baf~
++COMPILE EVALUATE_BUFFER ~questpack/council/d0bylann.baf~
+         ~questpack/council/d0amnmag.baf~
+         ~questpack/council/d0amnleg.baf~
+         ~questpack/council/d0cornei.baf~
+ 
+-EXTEND_TOP ~ar1002.bcs~ ~questpack/council/et_1002.baf~
++EXTEND_TOP ~ar1002.bcs~ ~questpack/council/et_1002.baf~ EVALUATE_BUFFER
+ 
+ COPY_EXISTING ~corgeig.cre~ ~override~
+ WRITE_ASCII 0x248 "SHOUT"
+@@ -87,6 +87,6 @@
+ 
+ COPY_EXISTING ~TOLGER.CRE~ ~override~
+ WRITE_ASCII 0x260 "D0NOTHIN"
+-COMPILE ~questpack/council/tolger.baf~
++COMPILE EVALUATE_BUFFER ~questpack/council/tolger.baf~
+ 
+-COMPILE ~questpack/council/d0amnleg.baf~ */
++COMPILE EVALUATE_BUFFER ~questpack/council/d0amnleg.baf~ */

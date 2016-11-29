@@ -1,5 +1,5 @@
---- amber\scripts\m#ar0700.baf	Sun Mar 13 00:52:00 2005
-+++ C:\BWP Patchstudio\patched files\amber\scripts\m#ar0700.baf	Fri Feb 26 20:09:28 2010
+--- amber/scripts/m#ar0700.baf	2005-03-13 01:52:00.000000000 -0500
++++ Fixpack/amber/scripts/m#ar0700.baf	2016-11-26 02:07:11.365750600 -0500
 @@ -1,31 +1,31 @@
  IF
 -	Global("M#RashrynInPlace","AR0700",0)

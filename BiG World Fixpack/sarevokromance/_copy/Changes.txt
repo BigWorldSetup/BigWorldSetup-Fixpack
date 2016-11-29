@@ -1,0 +1,1 @@
+Patching sarevokromance/sarevokromance.tp2: GAME_IS ~tob bgt bg2ee~  => GAME_IS ~tob bgt bg2ee eet~ 

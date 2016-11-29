@@ -1,0 +1,14 @@
+--- keto/d/fwketoi.d	2004-11-17 08:35:34.000000000 -0500
++++ Fixpack/keto/d/fwketoi.d	2016-11-21 10:18:05.262807200 -0500
+@@ -998,9 +998,9 @@
+ END
+ 
+ I_C_T UHMAY01 18 PGKetoImnes
+-== FWKETOJ IF ~GlobalGT("Chapter","GLOBAL",5)
++== FWKETOJ IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ IsValidForPartyDialog("Keto")~ THEN @2315
+-== FWKETOJ IF ~!GlobalGT("Chapter","GLOBAL",5)
++== FWKETOJ IF ~!GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+ IsValidForPartyDialog("Keto")~ THEN @2316
+ END
+ 

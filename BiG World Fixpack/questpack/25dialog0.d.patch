@@ -1,0 +1,19 @@
+--- questpack/thieves/25dialog0.d	2014-12-29 15:13:18.000000000 -0500
++++ Fixpack/questpack/thieves/25dialog0.d	2016-11-21 11:39:44.741280900 -0500
+@@ -1,6 +1,6 @@
+ APPEND DCOWL1
+ 
+-IF WEIGHT #-1 ~GlobalGT("chapter","GLOBAL",7)
++IF WEIGHT #-1 ~GlobalGT("chapter","GLOBAL",%bg2_chapter_7%)
+ !Detect("Edwin")~ THEN BEGIN TOB_1
+ SAY @576
+ IF ~~ THEN DO ~CreateCreatureObjectDoor("d0qpback",Myself,1,0,0)
+@@ -8,7 +8,7 @@
+ Enemy()~ EXIT
+ END
+ 
+-IF WEIGHT #-1 ~GlobalGT("chapter","GLOBAL",7)
++IF WEIGHT #-1 ~GlobalGT("chapter","GLOBAL",%bg2_chapter_7%)
+ Detect("Edwin")~ THEN BEGIN TOB_2
+ SAY @577
+ IF ~IsValidForPartyDialog("Edwin")~ THEN GOTO TOB_4

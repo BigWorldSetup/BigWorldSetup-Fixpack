@@ -1,0 +1,21 @@
+Patching laviconia/setup-laviconia.tp2: GAME_IS ~bg2 tob bg2ee~ BEGIN => GAME_IS ~bg2 tob bg2ee eet~ BEGIN
+Patching laviconia/setup-laviconia.tp2: GAME_IS ~tob bg2ee~ BEGIN => GAME_IS ~tob bg2ee eet~ BEGIN
+Patching laviconia/setup-laviconia.tp2: GAME_IS ~bg2 tob bg2ee~ BEGIN => GAME_IS ~bg2 tob bg2ee eet~ BEGIN
+Patching laviconia/setup-laviconia.tp2: GAME_IS ~tob bg2ee~ BEGIN => GAME_IS ~tob bg2ee eet~ BEGIN
+Patching laviconia/setup-laviconia.tp2: GAME_IS ~tutu tutu_totsc bgt~ BEGIN => GAME_IS ~tutu tutu_totsc bgt eet~ BEGIN
+Patching laviconia/setup-laviconia.tp2: GAME_IS ~tutu tutu_totsc bgt~ BEGIN => GAME_IS ~tutu tutu_totsc bgt eet~ BEGIN
+Patching laviconia/setup-laviconia.tp2: GAME_IS ~tutu tutu_totsc bgt~ BEGIN => GAME_IS ~tutu tutu_totsc bgt eet~ BEGIN
+
+Manual patches:
+1. laviconia/lib/lav-init.tpa:
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+  OUTER_TEXT_SPRINT bgt_1 ~_~
+  EXTEND_TOP ~viconia_.bcs~ ~laviconia/scripts/viconia.baf~
+END
+
+2. laviconia/setup-laviconia.tp2:
+
+ACTION_FOR_EACH vico IN ~_viconi~ ~_viconi4~ ~_viconi6~ ~viconi~ ~viconi4~ ~viconi61~ BEGIN
+=>
+ACTION_FOR_EACH vico IN ~_viconi~ ~_viconi4~ ~_viconi6~ ~viconi~ ~viconi4~ ~viconi61~ ~viconi6_~ BEGIN

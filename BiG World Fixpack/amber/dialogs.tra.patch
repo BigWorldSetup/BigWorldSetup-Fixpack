@@ -1,5 +1,5 @@
---- amber\tra\english\dialogs.tra	Thu Sep 17 11:33:00 2009
-+++ C:\BWP Patchstudio\patched files\amber\tra\english\dialogs.tra	Fri Nov 12 16:30:45 2010
+--- amber/tra/english/dialogs.tra	2013-09-24 14:21:48.861246000 -0400
++++ Fixpack/amber/tra/english/dialogs.tra	2016-11-26 02:07:10.940379100 -0500
 @@ -589,7 +589,7 @@
  @2031 = ~I'll order around whomever I want and whenever I want! You'd better start serving us right about now, before I lose my temper!~
  @2032 = ~GET OUT OF HERE!~
@@ -18,3 +18,14 @@
  @6251 = ~ If that is what you want, that is what you are going to get. Just don't expect anyone to show you true commitment in a tight spot unless you are willing to do the same.~ [m#amb108]
  @6252 = ~Well, maybe I should not have come back at all, then. Luckily that mistake is an easy one to correct.~
  @6253 = ~However, I will not ditch <CHARNAME> just because <PRO_HESHE> has made a poor choice in dragging you along.~
+--- amber/tra/german/dialogs.tra	2009-08-31 12:56:00.000000000 -0400
++++ Fixpack/amber/tra/german/dialogs.tra	2016-11-26 02:07:11.017434300 -0500
+@@ -592,7 +592,7 @@
+ @2031 = ~Ich erteile Befehle, wann immer ich das Bedürfnis danach habe! Und jetzt bedient uns endlich, bevor ich mich vergesse!~
+ @2032 = ~RAUS HIER!~
+ @2033 = ~Seid Ihr bekloppt, Junge? Ich habe gesagt, dass das Geld dieser Kreatur hier nicht willkommen ist, und das gilt auch für das ihrer Kameraden. Und jetzt haut ab.~
+-@2034 = ~Seid Ihr bekloppt, <BOYGIRL>? Ich habe gesagt, dass das Geld dieser Kreatur hier nicht willkommen ist...~
++@2034 = ~Seid Ihr bekloppt, <GIRLBOY>? Ich habe gesagt, dass das Geld dieser Kreatur hier nicht willkommen ist...~
+ @2035 = ~Aber aus reiner Neugier... Über wie viel Geld sprechen wir hier?~
+ @2036 = ~Ich bin sicher, dass 10 Goldmünzen ausreichen sollten, findet Ihr nicht auch?~
+ @2037 = ~Wie wäre es mit 50 Goldmünzen? Würde Euch das diesen kleinen Zwischenfalls vergessen lassen, werte Dame?~

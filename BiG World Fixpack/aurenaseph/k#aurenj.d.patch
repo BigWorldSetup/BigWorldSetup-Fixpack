@@ -1,5 +1,5 @@
---- aurenaseph\dialogues\k#aurenj.d	Tue Jun 16 00:13:36 2009
-+++ D:\EE_Patchstudio\patched files\aurenaseph\dialogues\k#aurenj.d	Fri Jan 15 12:51:46 2016
+--- aurenaseph/dialogues/k#aurenj.d	2009-06-16 01:13:36.000000000 -0400
++++ Fixpack/aurenaseph/dialogues/k#aurenj.d	2016-11-20 23:15:22.780474400 -0500
 @@ -527,7 +527,7 @@
  
  CHAIN

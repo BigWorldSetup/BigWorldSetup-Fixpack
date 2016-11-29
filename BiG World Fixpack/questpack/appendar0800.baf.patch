@@ -1,0 +1,9 @@
+--- questpack/encounters/bons/appendar0800.baf	2014-12-29 15:13:20.000000000 -0500
++++ Fixpack/questpack/encounters/bons/appendar0800.baf	2016-11-21 11:38:28.813860800 -0500
+@@ -1,5 +1,5 @@
+ IF
+-  GlobalGT("chapter","GLOBAL",5)
++  GlobalGT("chapter","GLOBAL",%bg2_chapter_5%)
+   Global("SUKISSExist","AR0800",0)
+ THEN
+   RESPONSE #100

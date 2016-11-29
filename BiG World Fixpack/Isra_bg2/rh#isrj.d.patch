@@ -1,0 +1,79 @@
+--- Isra_bg2/dialogue/rh#isrj.d	2013-11-13 23:56:36.979120200 -0500
++++ Fixpack/Isra_bg2/dialogue/rh#isrj.d	2016-11-21 23:01:46.849082100 -0500
+@@ -616,8 +616,8 @@
+  SAY @192 /* Needless to say, I was not terribly sad to bid farewell to Eshpurta again. I might have preferred to spend more than a fortnight in Crimmor afterwards, but such things cannot be helped. */
+ 	++ @193 /* You'd get bored if you didn't have something important to do anyway. */ + t3a.20
+ 	++ @194 /* A bit of relaxation would be nice in general. */ + t3a.21
+-	+ ~GlobalLT("chapter","GLOBAL",4)~ + @195 /* You don't need to stay here if you don't want to, Isra. */ + t3a.22
+-	+ ~!GlobalLT("chapter","GLOBAL",4)~ + @195 /* You don't need to stay here if you don't want to, Isra. */ + t3a.23
++	+ ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @195 /* You don't need to stay here if you don't want to, Isra. */ + t3a.22
++	+ ~!GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + @195 /* You don't need to stay here if you don't want to, Isra. */ + t3a.23
+ 	++ @196 /* Not too long ago, I remember you being somewhat eager to be out in the world. */ + t3a.24
+ END
+ 
+@@ -7342,7 +7342,7 @@
+ END
+ 
+ // Committed Flirts, Chapter 4
+-IF ~Global("rh#IsraTimeForFlirt","GLOBAL",1) Global("chapter","GLOBAL",4) Global("rh#IsraRomanceActive","GLOBAL",2)~ THEN BEGIN fl4a
++IF ~Global("rh#IsraTimeForFlirt","GLOBAL",1) Global("chapter","GLOBAL",%bg2_chapter_4%) Global("rh#IsraRomanceActive","GLOBAL",2)~ THEN BEGIN fl4a
+  SAY @2255 /* (A small smile playing across her lips, Isra approaches you, each step radiating quiet, unconscious confidence.) */
+   	IF ~RandomNum(8,1)~ DO ~SetGlobal("rh#IsraTimeForFlirt","GLOBAL",0) RealSetGlobalTimer("rh#IsraFlirtTimer","GLOBAL",1800)~ + fl4.2
+   	IF ~RandomNum(8,2) Gender(Player1,MALE) !Race(Player1,DWARF) !Race(Player1,HALFLING) !Race(Player1,GNOME)~ DO ~SetGlobal("rh#IsraTimeForFlirt","GLOBAL",0) RealSetGlobalTimer("rh#IsraFlirtTimer","GLOBAL",1800)~ + fl4.3.1
+@@ -7587,14 +7587,14 @@
+ 
+ IF ~~ fl4.18.1
+  SAY @2304 /* (Her smile soon fades into a slightly exasperated frown, and she pulls out a handkerchief, dabbing it gently across your cheek. The cloth comes back red, and she spends a moment inspecting your cheek, making certain that the blood is not yours.) */
+-IF ~GlobalGT("chapter","GLOBAL",3)~ EXIT 
+-IF ~GlobalLT("chapter","GLOBAL",4)~ + fl4.18.3
++IF ~GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ EXIT 
++IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + fl4.18.3
+ END
+ 
+ IF ~~ fl4.18.2
+  SAY @2305 /* (Her smile soon fades into a slightly exasperated frown, however. She pulls out a handkerchief, and bending down, dabs it gently across your cheek. The cloth comes back red, and she spends a moment inspecting your cheek, making certain that the blood is not yours.) */
+-IF ~GlobalGT("chapter","GLOBAL",3)~ EXIT 
+-IF ~GlobalLT("chapter","GLOBAL",4)~ + fl4.18.3
++IF ~GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ EXIT 
++IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ + fl4.18.3
+ END
+ 
+ IF ~~ fl4.18.3
+@@ -8678,7 +8678,7 @@
+ 
+ APPEND RH#ISRJ
+ 
+-IF ~IsGabber(Player1) Global("Chapter","GLOBAL",5)~ THEN BEGIN UDpid
++IF ~IsGabber(Player1) Global("Chapter","GLOBAL",%bg2_chapter_5%)~ THEN BEGIN UDpid
+  SAY @2593 /* I would hesitate to speak right now, <CHARNAME>. Too many distractions may well prove deadly. */
+ 	++ @2594 /* There's something wrong with your voice, Isra. */ + stringfix
+ 	++ @2595 /* Of course. */ EXIT
+@@ -8687,17 +8687,17 @@
+ IF ~IsGabber(Player1)~ THEN BEGIN pid
+  SAY @2596 /* Yes, what is it? */ 
+ 	+ ~Global("rh#IsraQuestTwo","GLOBAL",7)~ + @2597 /* I'm ready to visit the Crytrapper estate now. */ + crytrapper
+-	+ ~Global("Chapter","GLOBAL",2)~ + @2598 /* What do you think of our quest? */ + quest1
+-	+ ~Global("Chapter","GLOBAL",3) OR(2) Global("rh#IsraRomanceActive","GLOBAL",1)  Global("rh#IsraRomanceActive","GLOBAL",2) GlobalLT("rh#IsraTalks","GLOBAL",43)~ + @2598 /* What do you think of our quest? */ + quest2
+-	+ ~Global("Chapter","GLOBAL",3) !Global("rh#IsraRomanceActive","GLOBAL",1)  !Global("rh#IsraRomanceActive","GLOBAL",2) GlobalLT("rh#IsraTalks","GLOBAL",31)~ + @2598 /* What do you think of our quest? */ + quest2
+-	+ ~Global("Chapter","GLOBAL",3) Global("rh#IsraRomanceActive","GLOBAL",2) Global("rh#IsraTalks","GLOBAL",43)~ + @2598 /* What do you think of our quest? */ + quest3
+-	+ ~Global("Chapter","GLOBAL",3) !Global("rh#IsraRomanceActive","GLOBAL",1)  !Global("rh#IsraRomanceActive","GLOBAL",2) Global("rh#IsraTalks","GLOBAL",31)~ + @2598 /* What do you think of our quest? */ + quest3
+-	+ ~Global("Chapter","GLOBAL",4)~ + @2598 /* What do you think of our quest? */ + quest4
+-	+ ~Global("Chapter","GLOBAL",5)~ + @2598 /* What do you think of our quest? */ + quest5
+-	+ ~Global("Chapter","GLOBAL",6) !Dead("C6Bodhi")~ + @2598 /* What do you think of our quest? */ + quest6
+-	+ ~Global("Chapter","GLOBAL",6) Dead("C6Bodhi") Global("rh#IsraVampire","GLOBAL",6) GlobalLT("rh#IsraPaladin","GLOBAL",6)~ + @2598 /* What do you think of our quest? */ + quest7
+-	+ ~Global("Chapter","GLOBAL",6) Dead("C6Bodhi") OR(2) !Global("rh#IsraVampire","GLOBAL",6) GlobalGT("rh#IsraPaladin","GLOBAL",5)~ + @2598 /* What do you think of our quest? */ + quest8
+-	+ ~Global("Chapter","GLOBAL",7) !AreaCheck("AR2900") !AreaCheck("AR2901") !AreaCheck("AR2902") !AreaCheck("AR2903") !AreaCheck("AR2904") !AreaCheck("AR2905") !AreaCheck("AR2906")~ + @2598 /* What do you think of our quest? */ + quest9
++	+ ~Global("Chapter","GLOBAL",%bg2_chapter_2%)~ + @2598 /* What do you think of our quest? */ + quest1
++	+ ~Global("Chapter","GLOBAL",%bg2_chapter_3%) OR(2) Global("rh#IsraRomanceActive","GLOBAL",1)  Global("rh#IsraRomanceActive","GLOBAL",2) GlobalLT("rh#IsraTalks","GLOBAL",43)~ + @2598 /* What do you think of our quest? */ + quest2
++	+ ~Global("Chapter","GLOBAL",%bg2_chapter_3%) !Global("rh#IsraRomanceActive","GLOBAL",1)  !Global("rh#IsraRomanceActive","GLOBAL",2) GlobalLT("rh#IsraTalks","GLOBAL",31)~ + @2598 /* What do you think of our quest? */ + quest2
++	+ ~Global("Chapter","GLOBAL",%bg2_chapter_3%) Global("rh#IsraRomanceActive","GLOBAL",2) Global("rh#IsraTalks","GLOBAL",43)~ + @2598 /* What do you think of our quest? */ + quest3
++	+ ~Global("Chapter","GLOBAL",%bg2_chapter_3%) !Global("rh#IsraRomanceActive","GLOBAL",1)  !Global("rh#IsraRomanceActive","GLOBAL",2) Global("rh#IsraTalks","GLOBAL",31)~ + @2598 /* What do you think of our quest? */ + quest3
++	+ ~Global("Chapter","GLOBAL",%bg2_chapter_4%)~ + @2598 /* What do you think of our quest? */ + quest4
++	+ ~Global("Chapter","GLOBAL",%bg2_chapter_5%)~ + @2598 /* What do you think of our quest? */ + quest5
++	+ ~Global("Chapter","GLOBAL",%bg2_chapter_6%) !Dead("C6Bodhi")~ + @2598 /* What do you think of our quest? */ + quest6
++	+ ~Global("Chapter","GLOBAL",%bg2_chapter_6%) Dead("C6Bodhi") Global("rh#IsraVampire","GLOBAL",6) GlobalLT("rh#IsraPaladin","GLOBAL",6)~ + @2598 /* What do you think of our quest? */ + quest7
++	+ ~Global("Chapter","GLOBAL",%bg2_chapter_6%) Dead("C6Bodhi") OR(2) !Global("rh#IsraVampire","GLOBAL",6) GlobalGT("rh#IsraPaladin","GLOBAL",5)~ + @2598 /* What do you think of our quest? */ + quest8
++	+ ~Global("Chapter","GLOBAL",%bg2_chapter_7%) !AreaCheck("AR2900") !AreaCheck("AR2901") !AreaCheck("AR2902") !AreaCheck("AR2903") !AreaCheck("AR2904") !AreaCheck("AR2905") !AreaCheck("AR2906")~ + @2598 /* What do you think of our quest? */ + quest9
+ 	++ @2599 /* Could I ask you something personal? */ + personal
+ 	++ @2600 /* Could you tell me about your religion? */ + religion
+ 	+ ~Global("rh#IsraRomanceActive","GLOBAL",2)~ + @2601 /* I'd like to talk to you for a moment, Isra. */ + romancemanagement

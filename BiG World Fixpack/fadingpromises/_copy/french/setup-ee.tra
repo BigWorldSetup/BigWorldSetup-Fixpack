@@ -1,0 +1,23 @@
+@3    = ~Le Poing d'Amaunator
+Cette masse a été forgée par les servants d'Amaunator, l'ancien dieu néthérisse du soleil, pour combattre les forces des morts-vivants maléfiques. Les enchantements de cette relique permettent à son porteur d'invoquer le Rayon du Soleil, dont l'énergie de vie pure est un fléau pour les non-vivants.
+
+PARAMETRES :
+
+Capacités spéciales (une fois par jour) :
+Rayon de Soleil
+ Dégâts : 3d6 (jet de sauvegarde contre les sorts ou aveuglement pendant 10 rounds)
+ Morts-vivants : 1d6 de dégâts supplémentaires par niveau de lanceur de sorts (jet de sauvegarde contre les sorts ou destruction)
+ Portée : 6 mètres
+ Zone d'effet : rayon de 6 mètres
+
+TAC0 : bonus de +2, +2 supplémentaires contre les créatures mauvaises
+Dégâts : 1d8 +2, +2 points de dégats supplémentaires contre les créatures mauvaises, dégâts doublés contre les morts-vivants
+Type de dégâts : contondant
+Poids : 2
+Facteur de vitesse : 3
+Type de compétence : masse
+Type : arme à une main
+Force nécessaire : 6
+Non utilisable par :
+ Druide
+ Mage~
