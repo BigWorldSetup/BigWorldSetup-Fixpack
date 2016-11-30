@@ -1,0 +1,13 @@
+--- Foundling/Dialogues/L#Fou.d	2015-05-21 00:28:52.000000000 -0400
++++ Fixpack/Foundling/Dialogues/L#Fou.d	2016-11-21 22:34:25.565983400 -0500
+@@ -296,8 +296,8 @@
+ == L#Fou @157 /* Also, shadows can't walk in daylight so I doubt any would be sent far. */
+ == L#Fou @158 /* --but let me ask again. Do you really want me to join? */
+ END
+-IF~GlobalLT("CHAPTER","GLOBAL",4)~THEN REPLY @159 /* Yes. But you should know that once we're done here, I will continue with my personal mission.  I need to rescue Imoen, who is my only... relative, let's say. */ EXTERN L#Fou JoinCon019
+-IF~GlobalLT("CHAPTER","GLOBAL",4)~THEN REPLY @160 /* Yes, but you should know that I'm trying to find Irenicus--a mage who tortured me. I want to get even. I suppose you understand it means we're not going to avoid dangerous situations. */ EXTERN L#Fou JoinCon019
++IF~GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)~THEN REPLY @159 /* Yes. But you should know that once we're done here, I will continue with my personal mission.  I need to rescue Imoen, who is my only... relative, let's say. */ EXTERN L#Fou JoinCon019
++IF~GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)~THEN REPLY @160 /* Yes, but you should know that I'm trying to find Irenicus--a mage who tortured me. I want to get even. I suppose you understand it means we're not going to avoid dangerous situations. */ EXTERN L#Fou JoinCon019
+ IF~~THEN REPLY @161 /* Yes. Let's go. */ EXTERN L#Fou JoinCon020
+ IF~~THEN REPLY @162 /* I changed my mind. Leave. */ EXTERN L#Fou JoinCon011
+ 

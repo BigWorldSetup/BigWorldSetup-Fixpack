@@ -1,0 +1,421 @@
+@0    = ~I Colori dell'Infinito - La Regina Bianca~
+@1    = ~Una volta arrivato nel luogo di cui parla il libro, ti trovi a camminare su un terreno umido. Quando ti guardi intorno vedi delle lucciole, delle rane ed altre piccole creature, che strisciano, saltellano o volano. Puoi sentire molti tipi di insetti suonare la loro musica. Ogni passo verso la Solitaria Palude ti procura la sensazione di cadere nell'acqua nera e nel fango marrone. Radici e rami putrefatti sono schiacciati dai tuoi piedi come fossero delle ossa inghiottite da questo luogo dimenticato. 
+In lontananza, subito dopo il piccolo fiume che taglia la palude in due parti, puoi vedere delle forme oscure. Sembrano esserci delle costruzioni appena oltre le acque calme. Puoi anche vedere qualcosa che si muove - qualcosa di umano. E' difficile dire se sia una vera persona, o si tratti solo della tua immaginazione.~ [WQxTS]
+@2    = ~Hamadryad~
+@3    = ~Arcere Bianco~
+@4    = ~Demone Legato~
+@5    = ~Servitore Bianco~
+@6    = ~Negromante~
+@7    = ~Vecchio Druido~
+@8    = ~Guardiana Bianca~
+@9    = ~Guardia Bianca~
+@10   = ~Incantatrice Bianca~
+@11   = ~Addestratrice di animali Bianca~
+@12   = ~La Regina Bianca~
+@13   = ~Lupo Bianco~
+@14   = ~Prigioniero~
+@15   = ~Golem Bianco~
+@16   = ~Viverna Addomesticata~
+@17   = ~Shambling Mound~
+@18   = ~Ninfa~
+@19   = ~Shaneelah~
+@20   = ~Collezionista di vini~
+@21   = ~Clava +2 'Venature di Fuoco'~
+@22   = ~Questa clava fatta di legno bruno sembra ordinaria, ma se la guardi più da vicino, puoi notare delle lunghe linee sottili rosse e arancioni che percorrono tutta l'arma. Inoltre, quando tieni in mano questa clava, senti pervaderti del calore proveniente dall'arma. Interessante é il fatto che anche se le 'venature' sembrano veramente essere fatte di vero fuoco, la clava non brucia. 
+Per di più, questa clava é molto ben fatta, in modo tale che chi combatte impugnando questa arma, sarà in grado di ottenere movimenti rapidi e mortali.
+
+STATISTICHE:
+
+Danno: 1d6 +2, +1 danno da fuoco
+Thac0: +2
+Special:
++1 attacco per round
++50% di resistenza al fuoco
+Tipo di danno: da schiacciamento
+Peso: 1,3 kg.
+Fattore velocità: 1
+Tipo di competenza: Clava
+Tipo: ad una mano
+Forza richiesta: 5
+Non utilizzabile da:
+ Maghi~
+@23   = ~Bottiglia di vino~
+@24   = ~Questo vino é stato fatto nelle rovine delle Paludi Silenziose, il dominio della Regina Bianca. Ha un profumo di mirtilli ed ha un forte colore rosso. Sembra essere stato preparato da uno degli abitanti del villaggio. Si suppone che lui o lei ora sia morto.~
+@25   = ~Rovina dell'Arcere~
+@26   = ~La Rovina dell'Arcere é una collana incantata molto potente che conferisce a chi la indossa un certo controllo su tutti i tipi proiettili, frecce e quadrelli. Non si possono controllare al punto tale da utilizzarli contro un nemico, ma il controllo è sufficiente per far cambiare leggermente la loro traiettoria.
+La Collana in se stessa sembra comunque essere molto preziosa, con una gemma viola al centro della catena.
+
+STATISTICHE:
+
++2 alla classe armature contro proiettili
+50% di resistenza ai Danni da proiettile
+Protezione dal Silenzio~
+@27   = ~'L'Uccisore di Donne'~
+@28   = ~Ci sono armi nobili ed ignobili. Questa spada in particolare fa parte del secondo gruppo. Si dice che questa spada fu utilizzata da un assassino di Luskan, chiamato The Whip, e si crede che abbia ucciso circa venti ragazze innocenti. Le rapiva e le teneva nel suo nascondiglio fino a che loro non lo supplicavano di ucciderle. Quindi utilizzava questa lama per pugnalarle al cuore. Molte persone hanno cercato di trovare la ragione di questa atrocità. Alcuni di loro pensano di saperne il motivo; alcuni anni prima della serie degli assassini The Whip perdette la sua amata Christabelle a causa di un'altra ragazza che era invidiosa del suo patrimonio. Si racconta in giro che questa ragazza invidiosa fu la prima vittima. The Whip fu poi arrestato appena prima che potesse compiere il suo ventunesimo assassinio. Fu condannato a morte e impiccato.
+
+STATISTICHE:
+
+Danno: 2d4 +3, +2 contro le femmine
+Thac0: +3, +2 contro le femmine
+Speciale:
+5% di possibilità di uccidere una femmina istantaneamente (tiro salvezza contro morte -3)
++2 di bonus alla classe armature contro le femmine
+-2 alla fortuna 
+Tipo di danno: tagliente
+Peso: 3,1 kg.
+Fattore velocità: 6
+Tipo di competenza: Spada Bastarda
+Tipo: ad una mano
+Forza richiesta: 11
+Non utilizzabile da:
+ Druido
+ Mago
+ Chierico
+ Ladro~
+@29   = ~Il Cuore del Golem~
+@30   = ~Questo scudo medio deve il suo nome al mago Rotherius, che studiò tutti i tipi di golem. Diceva di aver cercato di creare un golem che poteva sentire tutto quello che sente la gente - che poteva odiare e amare, credere e pentirsi. Passò la maggior parte della sua vita nel suo laboratorio di ricerche. Anche quando stava per morire a causa di una malattia, non rinunciò. Si dice che il suo cadavere fu trovato su un golem - la sua mano destra giaceva sulla sua guancia mentre la mano sinistra toccava il suo torace. 
+
+STATISTICHE:
+
+Bonus alla Classe Armatura: 3
+Speciale: Protezione dalla Pietrificazione
+Peso: 6
+Richiede: 12 alla Forza
+Non utilizzabile da:
+ Bardo
+ Druido
+ Mago
+ Ladro~
+@31   = ~Pietra Incantata Arcobaleno~
+@32   = ~Questa Pietra Incantata é perfettamente rotonda. I suoi colori cambiano in base a come la tieni. Sembra che molti colori ed ombre siano imprigionati in questa piccola pietra. Tra i colori puoi vedere il blu, il verde, il viola, il giallo, l'amaranto ed alcuni altri. E' un po' fredda al tocco, leggermente più fredda delle classiche pietre. Quando la tieni in mano, ti senti in qualche modo rilassato e alleviato.
+
+STATISTICHE:
+
+Protezione dalla malattia
++4 al tiro salvezza contro la morte~
+@33   = ~Guanti 'Incantatori'~
+@34   = ~Questo paio di guanti di cuoio colorati un tempo appartenevano al mago da battaglia Aliano Thortier. Era uno degli elfi proveniente da Myth Drannor che anche dopo la caduta della capitale elfica cercò di proteggerla dai demoni e dalle altre creature. Cercò di trovare aiuto, ma trovò difficile riuscire a trovare dei compagni fidati che non volessero rubare gli artefatti di Myth Drannor. Mentre cercava nuovi aiuti, tentò di controllare le magie di evocazione, ma una delle creature evocate era un potente naga in grado di dissolvere gli effetti magici, riuscendo a richiamare tutte le sue creature e uccidendo Aliano. Le leggende narrano che una volta all'anno il suo fantasma appaia nella sala abbandonata che fu una volta il nascondiglio del naga.
+
+STATISTICHE:
+
+Un incantesimo supplementare di primo livello
++2 di bonus al tiro salvezza contro incantesimi
+-1 al tempo di lancio degli incantesimi
+
+Utilizzabile da:
+ Maghi (singlolo, duale e multiclasse)
+ Bardi~
+@35   = ~Pugnale dell'Hamadryad~
+@36   = ~Questo é il pugnale dell'Hamadryad che hai combattuto nelle Paludi Silenziose. Sembra essere appuntito e mortale. Parte della lama é verde e ti ricorda il muschio. Con questo magico pugnale anche l'avventuriero più impacciato può portare un colpo fatale.
+
+STATISTICHE:
+
+Danno: 1d4 +1
+Thac0: +5
+Speciale:
++1 di bonus al Carisma
+Tipo di danno: perforante
+Peso: 1,3 kg.
+Fattore velocità:  0
+Tipo di competenza: Pugnali
+Tipo: ad una mano
+Forza richiesta: 3
+Non utilizzabile da:
+ Chierico~
+@37   = ~Freccia di Fuoco Infernale~
+@38   = ~Benché questo tipo di frecce siano chiamate "Frecce di Fuoco Infernale" non mandano a fuoco i nemici, ma sono in grado di relegarli nei piani negativi. Quando questo succede, la vittima soffrirà come se fosse stata toccata da un vampiro o da un Non Morto.
+
+STATISTICHE:
+
+Danno: 1D6 + 1
+THACO: +1 bonus
+40% di possibilità di risucchiare un livello
+Tipo di danno: proiettile (perforante)
+Peso: 0
+Dispositivo di lancio: Arco
+Non utilizzabile da:
+ Chierico
+ Druido
+ Mago~
+@39   = ~Ramo Nero~
+@40   = ~Questo é una parte di un albero situato nelle rovine delle Paludi Silenziose. Lo hai preso da un druido che vive in un nascondiglio sotto un albero. Secondo quello che si dice, questa arma potrebbe essere in grado di dissipare lo strano potere che possiede la Regina Bianca. Per fare in modo che questo succeda, lei deve essere trafitta con questo ramo. Non sembra avere altri poteri.
+
+STATISTICHE:
+
+Danno: 1D6
+Speciale:
+Può dissipare il rituale che protegge la Regina Bianca
+Tipo di danno: schiacciante
+Peso: 3
+Fattore velocità: 4
+Tipo di competenza:Clava
+Tipo: ad una mano
+Richiede: 5 alla Forza
+Non utilizzabile da:~
+@41   = ~Bastone Nero~
+@42   = ~Questo bastone é stato creato dall'albero nero delle Paludi Silenziose. Si dice che colui che lo possieda possa ottenere tutta la conoscenza che il vecchio albero ha raccolto nel corso degli anni. Il bastone ha un colore scuro ricoperto di muschio. Non sembra molto robusto, il che rende sorprendente il fatto che in realtà trattiene una potente energia interna. Questa energia ti fa rabbrividire quanto tieni in mano quest'arma - il che prova l'energia dormiente del bastone. 
+Questo bastone è anche testimone di quello che é successo nelle Paludi Silenziose. Era l'arma di colui che ha iniziato una ribellione destinata a distruggere la Regina Bianca.
+
+STATISTICHE:
+
+Danno: 1D6 +3
+THAC0: +3 di bonus
+Speciale:
++1 di bonus alla Classe Armatura
+75% di resistenza all'acido
++40 di bonus alla conoscenza
+Protezione da Intralciare
+-1 di penalità al Carisma
+Tipo di danno: schiacciante
+Peso: 2
+Fattore velocità: 1
+Tipo: a due mani
+Richiede: 5 alla Forza
+Non utilizzabile da~
+@43   = ~Testa del Negromante~
+@44   = ~Questa é la testa del Negromante - il fratello della Regina Bianca.~
+@45   = ~Fionda 'Occhio del Demone'~
+@46   = ~Questa fionda é un'arma infida creata dagli stessi demoni. E' stata costruita con la pelle di un aasimar. Ha uno strano odore ed é in grado di creare dei proiettili magici.
+Questa fionda ti é stata data dal demone delle Paludi Silenziose per avergli donato la testa del negromante che lo aveva catturato e legato con incantesimi speciali. Dopo che ti ha dato questo oggetto é sparito.
+Il solo fatto di possedere questa arma ti fa venire la pelle d'oca.
+
+STATISTICHE:
+
+Abilità di equipaggiamento: Questa potente fionda non richiede munizioni
+THACO: +3 bonus
+Danno: 1d6 +3, +1 di danno da fuoco
+10% di possibilità di rallentare il bersaglio (tiro salvezza contro incantesimi per negarne gli effetti)
+10% di possibilità di causare lo stato berserker sul bersaglio (tiro salvezza contro incantesimi per negarne gli effetti)
+L'utilizzatore é immune alla paura
+Peso: 1
+Fattore velocità: 0
+Tipo di competenza: fionda
+Tipo: ad una mano
+Richiede: 3 alla Forza
+Non utilizzabile da:
+Personaggi di allineamento buono~
+@47   = ~Abito Bianco~
+@48   = ~Questo é un abito che usava indossare il negromante, il fratello della Regina Bianca. E' di colore bianco, con alcuni ornamenti viola e oro. Non possiede grandi poteri come altri abiti, ma può concedere a colui che lo indossa diverse protezioni speciali.
+
+STATISTICHE:
+
+Protezione dalla Pugnalata alle Spalle
++5 di bonus al tiro salvezza contro la morte
+
+Peso: 3
+Utilizzabile da:
+Mago (singolo, duale, e multiclasse)
+Bardo~
+@49   = ~Corazza di Cuoio Bianca~
+@50   = ~Quata Corazza di Cuoio sembra essere alquanto ordinaria, con qualche incantamento magico. Grazie a questo sembra essere più confortevole il che la rende più utile ai bardi, che possono indossarla senza impedimenti per il lancio di incantesimi. Anche grazie alla sua elasticità, ci si può muovere un pò più velocemente delle altre persone che indossano un'armatura.
+
+STATISTICHE:
+
+Classe Armatura: 7
+L'utilizzatore può usare gli incantesimi arcani
++2 di velocità al movimento
+Peso: 15
+Richiede: 4 alla Forza
+Non utilizzabile da:
+ Mago~
+@51   = ~Alabarda 'La Felicità uccide la fortuna'~
+@52   = ~Si crede che questa alabarda sia stata di un uomo - Anthony Fletcher - che lavorò come guardia nella città di Waterdeep. Era famoso per far finire ogni litigio in meno di due minuti. Tutto ciò grazie a quest'arma, che é più veloce di qualsiasi altra alabarda. Anthony minacciava sempre le persone con quest'arma dicendo di fermare il tumulto oppure 'le teste saranno tagliate rapidamente'. Una notte tutto ciò non fu abbastanza e dovette combattere. L'uomo era un discreto guerriero e cercò di bloccare la maggio parte degli attacchi. Sembrò che l'arma fosse maledetta rendendo il suo possessore "sfortunato". Dopo una mezz'ora di combattimento, la fortuna di Anthony gli volse le spalle e perse la battaglia. Fu ucciso dal suo nemico.
+
+STATISTICHE:
+
+THACO: +2 bonus
+Danno: 1D10 + 1
+Speciale:
+L'arma è molto leggera e più veloce delle altre alabarde
+Ogni colpo riuscito abbassa la fortuna del possessore di 1 
+Oggetto maledetto
+Tipo di danno: perforante
+Peso: 2
+Fattore velocità:  2
+Tipo di competenza: Alabarda
+Tipo: a due mani
+Richiede: 8 alla Forza
+Non utilizzabile da:
+ Druido
+ Chierico
+ Mago
+ Ladro~
+@53   = ~Elegante Amuleto di Protezione~
+@54   = ~I membri della guardia reale di del Re Pyronan, governatore di Impiltur, ricevevano 'Il Protettore' come marchio onorario del loro status. Purtroppo, i membri della guardia ebbero un problema nello stabilire a chi di loro dovesse andare l'amuleto. Dopo anni di ostilità interne, l'oggetto andò perduto e le guardie furono rimpiazzate da individui meno ingordi.
+Questa è solo una versione più elegante de "Il Protettore" inventato dalla stregona che si imbatté per caso, più tardi, nell'amuleto originale.
+
+STATISTICHE:
+
+Bonus alla Classe Armatura: 1
+Bonus al Tiro Salvezza: 1
++1 al Carisma~
+@55   = ~Pugnale 'Devastazione della Magia'~
+@56   = ~Secondo alcuni libri questo pugnale é chiamato 'Devastazione della Magia' a causa della sua speciale abilità di abbassare la resistenza magica sia di colui che lo indossa che del suo nemico. Alcune fonti dicono che questa abilità fu applicata sulla lama mentre era conservata nel nascondiglio antimagia di un famoso ladro conosciuto per assassinare gli stregoni. 
+Questo pugnale possiede anche una seconda abilità di portare attacchi casuali veloci. Questo rende un ladro ancora più pericoloso.
+
+STATISTICHE:
+
+Danno: 1d4 +1
+Thac0: +1
+Speciale:
+-25% alla resistenza magica
+25% di possibilità di guadagnare un attacco addizionale per round per 15 secondi
+25% di possibilità di abbassare la resistenza magica dell'utilizzatore e del suo nemico del 10%
+Oggetto Maledetto
+Tipo di danno: perforante
+Peso: 1,3 kg.
+Fattore velocità: 1
+Tipo di competenza: Pugnali
+Tipo: ad una mano
+Forza richiesta: 3
+Non utilizzabile da:
+ Chierico~
+@57   = ~Storia della Regina Bianca~
+@58   = ~Questo libro racconta la storia della Regna Bianca - una contessa che nella sua rabbia e follia spazzò via un intero villaggio. Non era da sola - colui che avviò gli eventi era un negromante che indossava degli abiti bianchi. La leggenda racconta che l'orrore ebbe luogo poiché entrambi, il negromante e la Regina Bianca, cercavano di raggiungere il più desiderabile dei doni - l'immortalità. Alcuni dicono che sono riusciti ad ottenere quello che volevano.
+Nel libro non é presente solo la storia, ma anche la locazione del villaggio. Si trova nelle Paludi Solitarie, che si trovano ad est della città portuale di Athkatla. In alcune parti del libro si avvisano i lettori che la regione é piuttosto pericolosa e si dovrebbe considerare questo fatto prima di avviarsi verso quel luogo. Un'altra ragione è che sia la Regina Bianca e sia il Negromante potrebbero risiedere loro stessi in questo oscuro posto.
+
+Peso: 0.9 kg.~
+@59   = ~Cappuccio 'Tranquillità'~
+@60   = ~Questo cappuccino serviva da armatura alla Regina Bianca. Anche se non é efficace come le altre armature, é in grado di fornire qualche difesa. 
+'Tranquillità' fornisce a colui che lo indossa la pace della mente e dell'anima. Protegge da tutti i tipi di paura e disorientamento magico e naturale. Sembra che la Regina Bianca credeva che questo oggetto potesse darle la pace che non poteva raggiungere in altro modo.
+
+STATISTICHE:
+
+Classe Amratura: 8
+Protezione dallo stato berserker
+Protezione dalla paura
+Protezione dalla Regressione mentale
+Bonus di +2 al Thac0
+Peso: 3
+Richiede: 4 alla Forza
+Non utilizzabile da:~
+@61   = ~Protezione della Regina Bianca~
+@62   = ~Protezione della Regina Bianca - Punti Ferita Massimi~
+@63   = ~Scimitarra 'Morte in Uno'~
+@64   = ~Quest'arma potente é mortale come la stessa morte. Si dice che la 'Morte in Uno' possa mostrare alle sue vittime la vista di un piano negativo, che può distruggere coloro che non l'hanno mai visto prima.
+Sembra come fatta di un oscuro metallo misterioso. E' fredda al tocco, non sembra come la maggior parte degli oggetti che hai visto nel palazzo della Regina Bianca. Pulsa ed è irradiata di energia negativa simile a quella dei vampiri e dei lich. Inoltre, sembra si nutra dalla forza vitale di colui che la impugna.
+La 'Morte in Uno' é la lama gemella della 'Uno nella Morte'. Si vocifera che entrambe le armi furono create da un aasimar che le forgiò per un paladino per aiutarlo nella sua crociata. Anche se questa arma non sembra fatta per un paladino, il fabbro aasimar credeva che "l'oscurità doveva essere combattuta con un'oscurità ancora più profonda". 
+
+STATISTICHE:
+
+THACO: +3 bonus
+Danno: 1D8 +3
+Speciale:
+3% di possibilità di ristorare il corpo e la mente di colui che la impugna come se avesse riposato
+10% di possibilità di lanciare paura con un colpo andato a buon fine
+15% di possibilità di risucchiare un livello
+30% di possibilità di distruggere un non morto con meno di 5D6 punti ferita
+-5 di penalità ai punti ferita
+Tipo di danno: tagliente
+Peso: 3
+Fattore velocità:  1
+Tipo di competenza: Scimitarra/Wakizashi/Ninja-To
+Tipo: ad una mano
+Richiede: 10 alla Forza
+Non utilizzabile da:
+ Chierico
+ Mago~
+@65   = ~Scimitarra 'Uno nella Morte'~
+@66   = ~Questa potente arma fornisce al suo possessore delle protezioni magiche. Si dice che 'Uno nella Morte' può aiutare chi la impugna ad evitare la morte stessa.
+Sembra come fatta di un oscuro metallo misterioso. E' fredda al tocco, non sembra come la maggior parte degli oggetti che hai visto nel palazzo della Regina Bianca. Pulsa ed è irradiata di energia negativa simile a quella dei vampiri e dei lich. Inoltre, sembra si nutra dalla forza vitale di colui che la impugna.
+'Uno nella Morte' é la lama gemella della 'Morte in Uno'. Si vocifera che entrambe le armi furono create da un aasimar che le forgiò per un paladino per aiutarlo nella sua crociata. Anche se questa arma non sembra fatta per un paladino, il fabbro aasimar credeva che "l'oscurità doveva essere combattuta con un'oscurità ancora più profonda". 
+
+STATISTICHE:
+
+THACO: +3 bonus
+Danno: 1D8 +2
+Speciale:
+50% di resistenza all'acido
++1 di bonus alla Classe Armatura
++1 di bonus alla Destrezza
++1 alla velocità di movimento
+-5 di penalità ai punti ferita
+Tipo di danno: tagliente
+Peso: 3
+Fattore velocità:  1
+Tipo di competenza: Scimitarra/Wakizashi/Ninja-To
+Tipo: ad una mano
+Richiede: 10 alla Forza
+Non utilizzabile da:
+ Chierico
+ Mago~
+@67   = ~Diadema Bianco~
+@68   = ~Questo diadema era usato come corona dalla contessa Shalloweye che si autoproclamò la Regina Bianca. Sembra fosse stato incantato da suo fratello - il negromante Rodian - per renderlo degno della Regina Bianca. 
+
+STATISTICHE:
+
+Protegge dall'attacco alle spalle~
+@69   = ~WQ0001~
+@70   = ~Paludi Silenziose~
+@71   = ~Paludi Silenziose - il numero della nuova area é: %areNum%~
+
+@80   = ~Opzioni della Worldmap:
+Scegliere 1 per installare l'aggiunta sulla worldmap originale (quella di BG2)
+Scegliere 2 per installare l'aggiunta sulla worldmap per BP-BGT-Worldmap~
+
+
+////Journals and info
+
+@22331 = ~La Regina Bianca e la Regina Nera
+Mentre stavo combattendo i servitori della Regina Bianca, Viconia è stata rapita da una folle Guardiana che credeva che Viconia fosse la Regina Nera. Devo trovarla il più presto possibile. Per gli Dei, Viconia sarà furiosa...~
+
+@22332 = ~La Regina Bianca e la Regina Nera
+Mentre stavo combattendo i servitori della Regina Bianca, Viconia è stata rapita da una folle Guardiana che credeva che Viconia fosse la Regina Nera. Siamo riusciti a trovarla nelle prigioni al piano inferiore del palazzo della Regina.~
+
+@22333 = ~Il Collezionista di Vini
+Ho incontrato un collezionista di vini nel Quartiere Governativo. Mi pagherà 1,500 monete d'oro se gli trovo una varietà di vino prelibato. Ho solo dieci giorni.~
+
+@22334 = ~Il Collezionista di Vini
+Ho incontrato un collezionista di vini nel Quartiere Governativo. Mi voleva pagare 1,500 monete d'oro se gli avessi trovato una varietà di vino prelibato. Purtroppo, non ho più tempo.~
+
+@22335 = ~Il Collezionista di Vini
+Ho incontrato un collezionista di vini nel Quartiere Governativo. Mi voleva pagare 1,500 monete d'oro se fossi riuscito a trovargli una varietà di vino prelibato. Sono riuscito a trovarglielo ed ho ottenuto la mia ricompensa.~
+
+@22336 = ~La Regina Bianca
+Qualcosa di strano sta succedendo nelle paludi che ho trovato con l'aiuto di un libro che ho acquistato alla Passeggiata di Waukeen. Un uomo, la sola persona vivente che ho incontrato nelle paludi, ha detto che il villaggio è stato annientato dalla Regina Bianca e dai suoi seguaci che hanno, però, paura di un albero che cresce al centro del villaggio.~
+
+@22337 = ~La Regina Bianca
+Qualcosa di strano sta succedendo nelle paludi che ho trovato con l'aiuto di un libro che ho acquistato alla Passeggiata di Waukeen. Un uomo, la sola persona vivente che ho incontrato nelle paludi, ha detto che il villaggio è stato annientato dalla Regina Bianca e dai suoi seguaci che hanno, però, paura di un albero che cresce al centro del villaggio.
+Quando ho deciso di andare verso l'entrata del palazzo ho incontrato un servo della Regina. Era interamente vestito di bianco ed ha detto che non mi avrebbe permesso di disturbare la pace della sua signora.~
+
+@22338 = ~La Regina Bianca
+Qualcosa di strano sta succedendo nelle paludi che ho trovato con l'aiuto di un libro che ho acquistato alla Passeggiata di Waukeen. Un uomo, la sola persona vivente che ho incontrato nelle paludi, ha detto che il villaggio è stato annientato dalla Regina Bianca e dai suoi seguaci che hanno, però, paura di un albero che cresce al centro del villaggio.
+Quando ho deciso di andare verso l'entrata del palazzo ho incontrato un servo della Regina. Era interamente vestito di bianco ed ha detto che non mi avrebbe permesso di disturbare la pace della sua signora. Suppongo che non succederà in quanto sono entrato nel palazzo ed è stato dato l'allarme.~
+
+@22339 = ~La Regina Bianca
+Qualcosa di strano sta succedendo nelle paludi che ho trovato con l'aiuto di un libro che ho acquistato alla Passeggiata di Waukeen. Un uomo, la sola persona vivente che ho incontrato nelle paludi, ha detto che il villaggio è stato annientato dalla Regina Bianca e dai suoi seguaci che hanno, però, paura di un albero che cresce al centro del villaggio.
+Quando ho deciso di andare verso l'entrata del palazzo ho incontrato un servo della Regina. Era interamente vestito di bianco ed ha detto che non mi avrebbe permesso di disturbare la pace della sua signora. Suppongo che non succederà in quanto sono entrato nel palazzo ed è stato dato l'allarme.
+Più avanti nel palazzo ho incontrato un negromante, che si è rivelato essere il fratello della Regina. Ha detto che io non avrei compreso i loro motivi e che non conosco l'intera storia. Prima che potessi sapere qualcosa di più da lui, ha deciso di attaccarmi.~
+
+@22340 = ~La Regina Bianca
+Qualcosa di strano sta succedendo nelle paludi che ho trovato con l'aiuto di un libro che ho acquistato alla Passeggiata di Waukeen. Un uomo, la sola persona vivente che ho incontrato nelle paludi, ha detto che il villaggio è stato annientato dalla Regina Bianca e dai suoi seguaci che hanno, però, paura di un albero che cresce al centro del villaggio.
+Quando ho deciso di andare verso l'entrata del palazzo ho incontrato un servo della Regina. Era interamente vestito di bianco ed ha detto che non mi avrebbe permesso di disturbare la pace della sua signora. Suppongo che non succederà in quanto sono entrato nel palazzo ed è stato dato l'allarme.
+Più avanti nel palazzo ho incontrato un negromante, che si è rivelato essere il fratello della Regina. Ha detto che io non avrei compreso i loro motivi e che non conosco l'intera storia. Prima che potessi sapere qualcosa di più da lui, ha deciso di attaccarmi.
+Alla fine, sono riuscito a raggiungere la cima della torre ed ho parlato con la Regina Bianca. Lei mi ha raccontato l'intera storia e sembra che colui che mi ha chiesto di aiutarlo si sia servito di me. In passato, lui ha ucciso la figlia della Regina ed ha iniziato a ribellarsi contro di lei. La Regina ora desidera morire, ed io spero che il ramo che possiedo possa esaudire il suo desiderio. Dopo che lei sarà morta, dovrei andare a parlare con il druido.~
+
+@22341 = ~La Regina Bianca
+Qualcosa di strano sta succedendo nelle paludi che ho trovato con l'aiuto di un libro che ho acquistato alla Passeggiata di Waukeen. Un uomo, la sola persona vivente che ho incontrato nelle paludi, ha detto che il villaggio è stato annientato dalla Regina Bianca e dai suoi seguaci che hanno, però, paura di un albero che cresce al centro del villaggio.
+Sono riuscito a conoscere l'intera tragedia che si é svolta sulle paludi ed alla fine ho parlato alla Strega che é stata testimone di tutto. Lei ha detto che sono entrambi colpevoli e che ha la loro bambina. Sembra che sebbene il druido cercava di sacrificare la bambina, la Strega non l'ha uccisa.
+La Strega è scomparsa e dubito che mai si rivedrà.~
+
+@22342 = ~La Regina Bianca
+Qualcosa di strano sta succedendo nelle paludi che ho trovato con l'aiuto di un libro che ho acquistato alla Passeggiata di Waukeen. Un uomo, la sola persona vivente che ho incontrato nelle paludi, ha detto che il villaggio è stato annientato dalla Regina Bianca e dai suoi seguaci che hanno, però, paura di un albero che cresce al centro del villaggio.
+Sono riuscito a conoscere l'intera tragedia che si é svolta sulle paludi, ma non sono riuscito a uccidere il capo dei ribelli. L'ho lasciato andare e gli ho detto di non farsi più vedere.~
+
+@22343 = ~Il Palazzo della Regina Bianca: Un Demone
+Ho incontrato un demone all'interno del palazzo della Regina Bianca, che sembra essere stato imprigionato dal negromante. Mi ha offerto una ricompensa se gli porto la testa del negromante.~
+
+@22344 = ~Il Palazzo della Regina Bianca: Un Demone
+Ho incontrato un demone all'interno del palazzo della Regina Bianca, che sembra essere stato imprigionato dal negromante. Mi aveva offerto una ricompensa se gli avessi portato la testa del negromante. Gliela ho portata ed ho deciso di liberarlo ottenendo la mia ricompensa.~
+
+//info
+
+@90001 = ~Ghast e scheletri sembrano tenersi distanti da quest'albero.~
+@90002 = ~Il buco sembra essere poco profondo, e c'é uno strano fango in fondo. Ed è anche l'origine di un terribile fetore.~
+@90003 = ~C'é una sorta di aura oscura intorno alla fontana di sangue.~
+@90004 = ~Una forza sconosciuta ti impedisce dal passare attraverso la porta.~
+
+//shout
+
+@90005 = ~Bianchezza, salvami!~
+@90006 = ~Nau!~

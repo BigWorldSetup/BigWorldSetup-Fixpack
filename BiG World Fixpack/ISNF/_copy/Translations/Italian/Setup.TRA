@@ -1,0 +1,350 @@
+@0   = ~I Colori dell'Infinito: Non Lo Dimenticherò Mai~ 
+@1   = ~Amontias l'artista~
+@2   = ~Straniero~ 
+@3   = ~L'Incompleto~
+@4   = ~Orion~ 
+@5   = ~Ricordo di <CHARNAME>~
+@6   = ~Ragazza Halfling~
+@7   = ~Icaos il Guardiano di Cuori ~ 
+@8   = ~Scultura~
+@9   = ~Selene~ 
+@10  = ~Ricordo~
+@11  = ~Spirito Cieco~
+@12  = ~Ganymedes~ 
+@13  = ~Forma Sbiadita~
+@14  = ~Voce di Orion~ 
+@15  = ~Voce di Selene~
+@16  = ~La Guardiana di Cuori di Sune~
+@17  = ~Parassita del Dolore~
+@18  = ~I Diari dell'Incompleto~ 
+@19  = ~Questi grezzi e fangosi testi assemblati sono gli Appunti dell'Incompleto. Orion ti ha inviato a recuperarli nella speranza di utilizzarli nello studio dell'essere vivente.~
+@20  = ~Anello del 'Pianto Cremisi'~ 
+@21  = ~Questo anello é di un profondo e intenso color cremisi. E' caldo al tocco e leggermente soffice e appiccicoso, come se fosse fatto di resina. Tenendolo hai una sensazione sgradevole.
+
+STATISTICHE:
+
+Il possessore é sotto l'effetto della Magia Selvaggia
+15 Bonus ai Punti Ferita
++1 Bonus alla THAC0
+
+Utilizzabile da:
+ Mago
+ Bardo~ 
+@22  = ~Mazza dalla 'Mano Calda'~
+@23  = ~Questa mazza magica é estremamente calda al tocco. La testa dell'arma è modellata a forma di mano e quando l'afferri per utilizzarla, ti stringe in una presa salda fino a che non la lasci. Fornisce diverse protezioni, ma a causa della natura della magia, é in qualche modo difficile da manovrare in battaglia. Nelle peggiori delle volte, potrebbe essere vista contemporaneamente sia come un ostacolo e sia come un aiuto.
+
+STATISTICHE:
+
+THACO: +4
+Danno: 1D6 + 2
+Speciale:
++2 di bonus al Carisma
+Immunità alle malattie
++4 alla Classe Armatura bonus contro proiettili
+-3 di penalità al tiro salvezza contro la morte
+Tipo di danno: schiacciante
+Peso: 8
+Fattore velocità: 6
+Tipo di Competenza: Mazza
+Tipo: ad una mano
+Richiede: 10 alla Forza
+Non utilizzabile da:
+ Druido
+ Mago
+ Ladro~ 
+@24  = ~Spada Lunga 'il Respiro del Rakshasa'~
+@25  = ~Questa spada magica é un'arma benedetta che é stata usata da molti guerrieri e paladini per proteggere la loro gente dai mostri crudeli: i rakshasa. Molti dicono che a questa spada gli é stato dato il nome dal primo guerriero che l'ha usata, quando il primo rakshasa prese il suo profondo ed ultimo respiro e fu pugnalato a morte dalla lama.
+Sull'impugnatura della spada sembra ci siano dei segni delicati.
+
+STATISTICHE:
+
+Speciale: +5% di resistenza alla magia
+
+Danno: 1D8 +3
+THACO: +3, +2 addizionali contro i rakshasa
+Tipo di danno: tagliente
+Peso: 12
+Fattore velocità: 5
+Tipo di Competenza: Spada Lunga
+Tipo: ad una mano
+Richiede: 11 alla Forza
+Non utilizzabile da:
+ Druido
+ Chierico
+ Mago
+ Ladro~
+@26  = ~Arco lungo composito della Morbidezza~
+@27  = ~Gli archi compositi sono archi lunghi o corti fatti di listelli di più tipi di materiale. Questo conferisce loro più elasticità e pertanto una migliore gittata. Gli archi compositi sono un'evoluzione di quelli lunghi normali. Questo arco magico richiede una forza di 18 a colui che lo impugna.
+Questo arco magico non é solo un'arma, ma una splendida difesa contro le creature che cambiano la carne in pietra.
+
+STATISTICHE:
+
+Speciale: Protezione dalla pietrificazione
+
+THAC0: bonus di +2 
+Danno: bonus di +1 
+Peso: 9
+Fattore velocità: 6
+Tipo di Competenza: Arco Lungo
+Tipo: a due mani
+Richiede: 18 alla Forza
+Non utilizzabile da:
+ Druido
+ Chierico
+ Mago 
+ Ladro
+ Bardo
+ Monaco
+ Kensai
+ Cavaliere~
+@28  = ~Arpa 'Miracolosa'~
+@29  = ~Questa arpa magica non sembra essere molto solida, ma fornisce al bardo un aspetto più rispettabile e potenzia i suoi incantesimi magici.
+Si dice che questa particolare arpa era usata da un bardo di nome Fonic Aldabario, un abile Arpista, che morì in battaglia contro gli Zhentarim.
+
+STATISTICHE:
+
++2 livelli dell'incantatore (solo incantesimi arcani)
++1 al Carisma 
+
+Peso: 1
+Utilizzabile solo da:
+ Bardo
+ 
+Nota: é usato come scudo~
+@30  = ~Pietra Incantata 'Il Cuore del Santuario'~
+@31  = ~Questa pietra magica era nel Santuario dell'Incompleto, una creatura che dovevi trovare. Sembra che questo particolare oggetto desse calore alle camere. Quando lo tieni, sembra pulsare di energia.
+
+STATISTICHE:
+
++25% alla conoscenza
+Incantesimo come abilità: quando si utilizza, c'é la possibilità del 25% che l'utilizzatore possa beneficiare del riposo magico che permette di ristorare gli incantesimi e le abilità utilizzati. Rende anche l'utilizzatore perfettamente riposato.
+
+Peso: 1~
+@32  = ~Uccello in una gabbia~
+@33  = ~Questo uccello sembra osservare tutto ciò che lo circonda. Sembra intelligente, ma anche un pò confuso e caotico. Ha dei colori vividi e vivaci.
+
+Peso: 1 Kg~
+@34  = ~Profumo 'Insonnia'~
+@35  = ~Si dice che 'Insonnia' sia stato creato da due Suniti--Aliya Jabberfox e Sybilla Gariah-che volevano trovare un modo per fuggire da Waterdeep senza finire nei guai...ma i guai li trovavano sempre.
+Questa miscela di aromi ed oli consentono a chi lo usa di guadagnare il controllo sul bersaglio per un certo periodo di tempo. Di solito il tempo è abbastanza lungo da permettere all'utilizzatore di trovare un modo per fuggire dai guai.
+
+STATISTICHE:
+
+Può lanciare Charme (10 cariche)
+
+Non utilizzabile da:
+ Nessuno~
+@36  = ~Pergamena dell'Uccello Muto~
+@37  = ~Questa strana pergamena ti é stata data da uno straniero che hai incontrato un pò di tempo fa. Lui ti ha detto che a quel tempo aveva un aspetto diverso.
+
+STATISTICHE:
+
++5 di bonus alla conoscenza permanente
+
+Peso: 0,5 Kg.~
+@38  = ~Statuina di Sune~
+@39  = ~Questa è una piccola statuina di Sune che hai trovato nei Bassifondi di Athkatla. Non sembra essere magica, ma sembra essere di valore per coloro che servono Lady Firehair.
+
+Peso: 0,5 Kg.~
+@40  = ~Statuina a forma di Elefante~
+@41  = ~Sebbene questa statuina sembri un normale oggetto, contiene della magia che può fornire all'utilizzatore diverse protezioni, garantendogli una pelle dura che lo protegge da diversi tipi di armi.
+
+STATISTICHE:
+
+Può lanciare Pelle di Elefante, che rallenta il lanciatore, ma fornisce il 65% di resistenza a tutti gli attacchi fisici. L'effetto dura 30 secondi.
+
+Peso: 0,5 Kg.~
+@42  = ~Orecchini del Mezzogiorno~
+@43  = ~Questi sono degli orecchini magici luccicanti, usati solitamente da coloro che combattono con tutti i tipi di Non morti. Si dice che forniscono a colui che li indossa abilità che possono notevolmente aiutare nelle battaglie contro gli scheletri, gli zombie, i ghoul, ghast, o anche potenti creature come i vampiri ed i lich.
+Sembrano essere fatti d'oro, con piccole incisioni. Una delle incisioni somiglia al simbolo di Amaunator.
+
+STATISTICHE:
+
++4 THAC0 contro i Non morti
+Protegge dell'incantesimo Labirinto (non protegge dell'imprigionamento)
+Colui che li indossa può lanciare "Cura Veleno" (2 cariche; l'oggetto non svanisce quando le cariche sono state utilizzate)
+Penalità: -1 THAC0 di penalità quando é usata un'arma a distanza
+
+Peso: 0 Kg.~
+@44  = ~Piuma dei Cinque Secondi~
+@45  = ~Per quanto strano possa sembrare, una volta qualcuno ha deciso di incantare questa piuma nera. Quando mangiata, rende l'utilizzatore capace di muoversi tra le corde del tempo.
+La piuma é nera come la pece e riflette la luce.
+
+STATISTICHE:
+
+Quando utilizzata, il tempo si ferma per 5 secondi. L'utilizzatore è immune all'effetto.
+
+Peso: 0 Kg.~
+@46  = ~Mazza 'Il Corallo Rosa'~
+@47  = ~Il Corallo Rosa é una potente arma creata dai Suniti della Valle del Vento Gelido. Come minoranza tra i barbari e gli adoratori di Tempus e di altre divinità feroci, loro hanno deciso di "creare un simbolo di gentilezza sotto i freddissimi cieli e i picchi gelidi." Le leggende narrano che per incantare quest'arma, ci siano voluti una dozzina di giorni e di notti.
+E' fatta con il freddo acciaio dalla tonalità chiara, con alcuni caldi pezzi di corallo. Anche se qualcuno potrebbe pensare che i pezzi di corallo dovrebbero essere più fragili, questi sono le parti più robuste della mazza.   
+
+STATISTICHE:
+
++2 di bonus al Carisma
+Protezione dalla pugnalata alle spalle
+5% di risucchiare il 5% della resistenza alla magia del bersaglio per 30 secondi
+
+Danno: 1D6+4
+THAC0: +4
+Tipo di danno: contundente
+Peso: 3 Kg.
+Tipo di competenza: mazza
+Fattore velocità: 6
+Tipo: ad una mano
+Forza richiesta: 10
+Non utilizzabile da:
+ Druido
+ Mago
+ Ladro~
+@48  = ~Verga 'Il Verme Verde'~
+@49  = ~Anche se questa verga può essere utilizzata da quasi tutti, sarà più efficace nelle mani di un mago.
+Sembra essere fatta di un caldo materiale nero, verniciato di verde. E' difficile dire altro a riguardo; anche gli stessi mercanti sembrano essere un pò confusi riguardo quest'arma.
+
+STATISTICHE:
+
+L'utilizzatore é sotto l'effetto dell'incantesimo Vocalizzazione
+20% di probabilità che i colpi manderanno il bersaglio lontano dall'utilizzatore
++25% di protezione dalla Magia Selvaggia
+
+Danno: 1D6+2
+THAC0: +2
+Tipo di danno: contundente
+Peso: 1,8 Kg.
+Tipo di competenza: bastone rinforzato
+Fattore velocità: 2
+Tipo: ad una mano
+Forza richiesta: 4
+Non utilizzabile da:
+ Monaco~
+@50  = ~Martello del Sole Caduto~
+@51  = ~Questo luminoso Martello é composto da solido metallo, con una forma ben sagomata e dalla calda presa. Non è di grandissime dimensioni, ma anche così può sferrare dei buoni colpi. Si dice che quest'arma è stata creata da un piccolo gruppo di nani che acclamano Amaunator e Lathander.
+Sulla testa dell'arma, puoi vedere il marchio di un sole. Alcuni dicono che il marchio in sé non è magico, ma fa ricordare ai guerrieri il potere del sole, e le divinità che sono legate alla sfera.
+
+
+STATISTICHE:
+
+35% di possibilità di accecare il bersaglio
+10% di possibilità di ripristinare un incantesimo da chierico di livello 6 o più basso
+
+Danno: 1D4+4
+THAC0: +4, +1 THAC0 di bonus verso coloro intendono colpire il possessore
+Tipo di danno: contundente
+Peso: 5 lbs.
+Tipo di competenza: martello
+Fattore velocità: 2
+Tipo: ad una mano
+Forza richiesta: 9
+Non utilizzabile da:
+ Druido
+ Mago 
+ Ladro~
+@52  = ~Katana 'La Ragnatela del Caos'~
+@53  = ~Questa katana é stata creata grazie alla magia strana e selvaggia del lontano Est. Ad ogni colpo, c'é la possibilità che questa katana taglierà la realtà e lascerà che ogni creatura si bagni nell'imprevedibilità della magia.
+A causa della sua natura bizzarra, solo i più temerari osano usare questa lama. Alcuni di loro sono morti di una morte dolorosa.
+
+
+STATISTICHE:
+
+5% di possibilità di lanciare Caos (Campo del Caos) e fornire il 50% di resistenza alla magia all'utilizzatore
+Rigenera 1 Punto Ferita ogni 8 secondi
+
+Danno: 1D10+3
+THAC0: +3
+Tipo di danno: tagliente
+Peso: 1,8 Kg.
+Tipo di competenza: Katana
+Fattore velocità: 2
+Tipo: ad una mano
+Forza richiesta: 6
+Non utilizzabile da:
+ Druido
+ Mago 
+ Chierico~
+@54  = ~Corazza 'Ilthasthia'~
+@55  = ~Questa corazza é diversa dalle molte altre utilizzate ad Amn. E' molto leggera e, anche se di metallo, non sembra bloccare i movimenti. Ed è anche molto comoda.
+A causa delle sue caratteristiche uniche, questa armatura può essere utilizzata da chiunque, anche dai maghi e dai ladri, i quali dovranno però subire delle penalità se la vorranno utilizzare. C'è solo una differenza: grazie ai suoi glifi, i ladri diventeranno migliori nell'individuazione degli incantesimi di illusione.
+
+
+STATISTICHE:
+
+Classe Armatura: 2
+Peso: 4,5 Kg
+Forza richiesta: 12
+Speciale: 
++35% di rilevare illusione
+Protezione dal Risucchio di Livello
+Penalità:
+La velocità di lanciare incantesimi è ridotta di 2
+Le abilità di Muoversi/Nascondersi nell'Ombra sono ridotte del 25%
+Utilizzabile da:
+ Chiunque
+~
+@56  = ~Libro del Rituale~
+@57  = ~Questo libro é stato usato da Orion per bloccarti nel Reame del Rituale. Puoi usarlo per ritornare in casa sua nel Piano Materiale.
+~
+@58  = ~Seme Nero del Dolore~
+@59  = ~Quando Orion si rese conto che non c'era modo di tornare indietro, che Selene non poteva essere riportata alla vita, il suo cuore creò il Seme Nero del Dolore. Può essere utilizzato per ottenere potere, ma potrebbe influenzare il suo utilizzatore in più di un modo. Può essere un'idea migliore venderlo e dimenticare tutto quello che é successo.
+
+STATISTICHE:
+
+Quando mangiato, il Seme Nero del Dolore fornisce un'abilità speciale, per stabilire come la gente ti vede, e la tua capacità di convincerli a pensare come te.
+
+Peso: 0 Kg.~
+@60  = ~Parassita~
+@61  = ~Tempio di Sune~
+@62  = ~Ricordo Sicuro~
+@63  = ~Ricordo Trasformato~
+@64  = ~Forma Parassita~
+@100 = ~Tempio di Sune~
+@101 = ~Non Lo Dimenticherò Mai
+Ho incontrato un uomo chiamato Orion ed ho promesso di aiutarlo nel suo scopo di resuscitare sua moglie morta. Per questo motivo ho completato alcuni incarichi, ma c'é altro da fare. Nel prossimo incarico devo cercare un artista in grado di creare una scultura che somigli a Selene.~
+@102 = ~Non Lo Dimenticherò Mai
+Ho parlato con l'artista alla Passeggiata di Waukeen. Ora dovrei tornare nella proprietà di Orion.~
+@110 = ~Passaggio alle Camere Sommerse~
+@120 = ~Secondo Piano dell'Osservatorio~
+@130 = ~Non Lo Dimenticherò Mai
+Ho incontrato un uomo chiamato Orion e gli ho promesso di aiutarlo nel suo scopo di resuscitare sua moglie morta. Il mio primo incarico è di parlare con il sacerdote al Tempio di Waukeen al Quartiere Governativo.~
+@131 = ~Non Lo Dimenticherò Mai
+Ho parlato della resurrezione della moglie morta di Orion con il sacerdote al Tempio di Waukeen. Anche se ha risposto alla domanda, mi ha anche detto che potrei parlare con i Suniti. Posso trovarli alla Passeggiata di Waukeen.~
+@140 = ~Non Lo Dimenticherò Mai
+Ho parlato con il sacerdote al Tempio di Waukeen della resurrezione della moglie morta di Orion. Anche se ha risposto alla domanda, mi ha anche detto che potrei parlare con i Suniti. Posso trovarli alla Passeggiata di Waukeen.~
+@141 = ~Non Lo Dimenticherò Mai
+Ho parlato con i Suniti alla Passeggiata di Waukeen. Dovrei tornare da Orion e dirgli quello che mi hanno detto sia i Suniti che il sacerdote di Waukeen.~
+@142 = ~Questo-questo posto é meraviglioso...~
+@143 = ~Mi fa piacere che i Suniti servono ancora Lady Firehair.~
+@150 = ~Non Lo Dimenticherò Mai
+Ho incontrato un uomo di nome Orion e gli ho promesso di aiutarlo nel suo scopo di resuscitare sua moglie morta. Il mio primo incarico è di parlare con il sacerdote al Tempio di Waukeen al Quartiere Governativo.~
+@151 = ~Non Lo Dimenticherò Mai
+Ho parlato con i Suniti alla Passeggiata di Waukeen. Dovrei tornare da Orion e dirgli tutto quello che mi hanno detto sia i Suniti che il sacerdote di Waukeen.~
+@152 = ~Non Lo Dimenticherò Mai
+Il mio prossimo incarico nella ricerca di resuscitare Selene é di procurare i diari di un negromante chiamato 'L'Incompleto.' Risiede da qualche parte nelle fogne sotto il Quartiere del Tempio.~
+@153 = ~Non Lo Dimenticherò Mai
+Ho promesso ad un uomo di nome Orion che lo aiuterò a resuscitare sua moglie. Durante questa attività, ho ucciso la creatura conosciuta come 'L'Incompleto.' Dovrei tornare da Orion con il diario della bestia.~
+@154 = ~Non Lo Dimenticherò Mai
+Dopo aver ricevuto i diari dell'Incompleto, Orion mi ha detto di tornare da lui entro due giorni, in modo tale che possa studiare la documentazione con tranquillità.~
+@155 = ~Non Lo Dimenticherò Mai
+Ho incontrato un uomo chiamato Orion ed ho promesso di aiutarlo nel suo scopo di resuscitare sua moglie morta. Per questo motivo ho completato alcuni incarichi, ma c'é altro da fare. Nel prossimo incarico devo cercare un artista in grado di creare una scultura che rassomigli a Selene.~
+@156 = ~Non Lo Dimenticherò Mai
+Ho parlato all'artista alla Passeggiata di Waukeen. Adesso dovrei tornare nella proprietà di Orion.~
+@157 = ~Non Lo Dimenticherò Mai
+L'artista é stato trovato e la scultura di Selene commissionata. Dovrebbero passare circa tre giorni prima che la scultura sia completata e consegnata ad Orion. La fine del nostro lavoro é vicino.~
+@158 = ~Non Lo Dimenticherò Mai
+Dopo aver eseguito diversi incarichi a nome del mago addolorato di nome  Orion, ho viaggiato fin nelle profondità del Mondo Sotterraneo per recuperare lo spirito della sua amata persa e riportarla nel mondo dei vivi. Tuttavia, quando finalmente ho incontrato Selene faccia a faccia, non si é potuto fare nulla per riportarla indietro. In ogni caso lei era contenta e soddisfatta di aspettarlo e di riunirsi a lui. Questo sarebbe avvenuto prima di quanto lei avrebbe previsto poiché, malato di dolore, Orion mi ha chiesto che li riunissi nella morte. Una triste fine per un altrettanto tragica storia.~
+@160 = ~Non Lo Dimenticherò Mai
+Il mio prossimo incarico per cercare di resuscitare Selene é di procurare i diari di un negromante chiamato 'L'Incompleto.' Risiede da qualche parte nelle fogne sotto il Quartiere del Tempio.~
+@161 = ~Non Lo Dimenticherò Mai
+Ho promesso ad un uomo chiamato Orion che lo avrei aiutato a trovare sua moglie. Durante questa attività, ho ucciso la creatura conosciuta come 'L'Incompleto.' Dovrei tornare da Orion con il diario della bestia.~
+@170 = ~Questo...deve...finire...~
+@180 = ~Io...~
+@181 = ~Orion...~
+@182 = ~Selene...?~
+@183 = ~Mi sei mancata così tanto...~
+@184 = ~Non dire altro, amore mio, non più notti insonni.~
+@185 = ~Finalmente possiamo stare di nuovo insieme.~
+@190 = ~Sembra che questo polveroso telescopio sia inutilizzato da molto tempo~
+@191 = ~Orion ti ha già raccontato la storia di questo telescopio.~
+@200 = ~Questo scaffali sono pieni di romanzi d'amore.~
+@201 = ~Orion ti ha già parlato di questi libri.~
+@210 = ~Questa pianta é appassita ed é in uno stato morente.~
+@211 = ~Orion ti ha già raccontato la storia di questa pianta.~

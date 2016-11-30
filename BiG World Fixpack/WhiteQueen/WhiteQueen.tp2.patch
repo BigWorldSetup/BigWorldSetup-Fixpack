@@ -1,6 +1,6 @@
---- WhiteQueen\WhiteQueen.tp2	Wed Jan 28 00:52:04 2015
-+++ C:\BWP Patchstudio\patched files\WhiteQueen\WhiteQueen.tp2	Sat Jan 16 19:23:48 2016
-@@ -1,6 +1,6 @@
+--- WhiteQueen/WhiteQueen.tp2	2015-01-28 00:52:04.000000000 -0500
++++ Fixpack/WhiteQueen/WhiteQueen.tp2	2016-11-30 18:16:55.811891500 -0500
+@@ -1,22 +1,39 @@
  BACKUP ~WhiteQueen\backup~
  AUTHOR ~Lava Del'Vortel~
 -
@@ -8,7 +8,51 @@
  AUTO_TRA ~WhiteQueen/Translations/%s~
  
  ALWAYS
-@@ -60,7 +60,7 @@
+-  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+-  INCLUDE ~%MOD_FOLDER%/handle_charsets.tpa~
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET wmp_xCoordAdd_SoA = 0
++    OUTER_SET wmp_yCoordAdd_SoA = 2283
++  END ELSE BEGIN
++    OUTER_SET wmp_xCoordAdd_SoA = 70
++    OUTER_SET wmp_yCoordAdd_SoA = 0
++  END
+ 
+   // No exception, everything needs to be converted
+   ACTION_DEFINE_ARRAY WQxnoconvert BEGIN END
+ 
+-  // Only setup-Wh.tra needs to be reloaded
++  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
+   ACTION_DEFINE_ARRAY WQxreload BEGIN WhiteQueen END
+ 
+-  // There is no "language" folder so the root of all languages in %MOD_FOLDER%
+   LAF HANDLE_CHARSETS
+     INT_VAR
+-      infer_charset = 1
++      infer_charsets = 1
+     STR_VAR
+       tra_path = EVAL ~%MOD_FOLDER%/translations~
+       // charset_table = WQxcharsets // Included for illustrative purposes.
+@@ -30,6 +47,7 @@
+ LANGUAGE ~Russian~ ~Russian~ ~WhiteQueen/Translations/Russian/WhiteQueen.tra~
+ LANGUAGE ~Polish~ ~Polish~ ~WhiteQueen/Translations/Polish/WhiteQueen.tra~
+ LANGUAGE ~French~ ~French~ ~WhiteQueen/Translations/French/WhiteQueen.tra~
++LANGUAGE ~Italian~ ~Italian~ ~WhiteQueen/Translations/Italian/WhiteQueen.tra~
+ 
+ BEGIN @0 /* Colours of Infinity - The White Queen */
+ 
+@@ -60,7 +78,7 @@
  
  //////////AUDIO
  
@@ -17,19 +61,120 @@
  
  
  
-@@ -660,11 +660,11 @@
+@@ -656,54 +674,25 @@
  
- //////////////////////////////////AUDIO INSTALLATION
  
+ 
+-
+-
+-//////////////////////////////////AUDIO INSTALLATION
+-
 -COPY   ~WhiteQueen/WQxIA.bat~          ~WQxIA.bat~
 -COPY   ~WhiteQueen/WQxUA.bat~          ~WQxUA.bat~
-+// COPY   ~WhiteQueen/WQxIA.bat~          ~WQxIA.bat~
-+// COPY   ~WhiteQueen/WQxUA.bat~          ~WQxUA.bat~
-     
+-    
 -AT_INTERACTIVE_EXIT ~WQxIA.bat~
 -AT_UNINSTALL        ~WQxUA.bat~
-+// AT_INTERACTIVE_EXIT ~WQxIA.bat~
-+// AT_UNINSTALL        ~WQxUA.bat~
- 
+-
  //////////////////////////////////ADD AREA TO MAP
- MKDIR save
+-MKDIR save
+-
+-PRINT ~~
+-PRINT @80
+ 
++// Append mastarea.2da with the new areas
++APPEND ~MASTAREA.2da~ ~WQ0001 value~ UNLESS ~WQ0001~ //Silent Swamps
+ 
+-OUTER_SPRINT ~WQMap~ ~placeholder_value~
+-OUTER_WHILE (!(IS_AN_INT ~WQMap~) OR (~WQMap~ > 0x2) OR (~WQMap~ < 0x1)) BEGIN
+-  PRINT ~Choose 1 or 2 and confirm by "enter"~
+-  ACTION_READLN ~WQMap~
++// BP-BGT-Worldmap compatibility always (these files will only be used if BP-BGT-Worldmap is installed)
++ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
++  COPY ~Worldmap/map_mods_areas.tbl~      ~Worldmap~  APPEND_FILE ~WhiteQueen/Worldmap/areas.tbl~
++  COPY ~Worldmap/map_mods_links.tbl~      ~Worldmap~  APPEND_FILE ~WhiteQueen/Worldmap/links.tbl~
++  COPY ~Worldmap/map_mods_trans.tra~      ~Worldmap~  APPEND_FILE ~WhiteQueen/Worldmap/worldmap.tra~
++END ELSE BEGIN
++  MKDIR ~Worldmap~
++  COPY ~WhiteQueen/Worldmap/areas.tbl~    ~Worldmap/map_mods_areas.tbl~
++  COPY ~WhiteQueen/Worldmap/links.tbl~    ~Worldmap/map_mods_links.tbl~
++  COPY ~WhiteQueen/Worldmap/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
+ END
+-ACTION_IF ("WQMap" = 1) THEN BEGIN
+-PRINT ~Installing original worldmap addition~
+-
+-
+-
+-INCLUDE ~WhiteQueen/wmp/worldmap.tph~
+-
+-
+-//**************************************************
+-// Worldmap patching - do this last so we can patch the new areas too
+-//**************************************************
+-// Append mastarea.2da with the new areas
+-APPEND ~MASTAREA.2da~ ~WQ0001 value~ UNLESS "Silent Swamps" /* WQ0001 */ //Silent Swamps
+ 
++// Always patch regular worldmap (no conflict with BP-BGT-Worldmap)
+ //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-// Silent Swamps abandoned
+-  OUTER_SPRINT areName @69 /* WQ0001 */   // area reference, like "AR0700"
+-  OUTER_SPRINT strName @70 /* Silent Swamps */ // area name, like "Waukeen's Promenade"
+-  OUTER_SPRINT strDesc @70 /* Silent Swamps */ // area description which will show up when hovering the area on the worldmap
+-
+-  OUTER_SET mapIcon = 16              // map icon
+-  OUTER_SET xCoord  = 1230            // x coordinate
+-  OUTER_SET yCoord  = 40             // y coordinate
+-  OUTER_SET tTime   = 3              // travel time, *4, so two means eight hours
+-  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
+-
+ // set up link variables
+ 
+   // add links from these area(s) to the new area
+@@ -739,32 +728,24 @@
+     "AR1200" => "ExitW"       // Windspear Hills
+   END
+ 
+-// call the sc#addWmpAre function
+-  // returns the worldmap entry number for the new area
+-  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
+-
+-  // remove if not desired
+-  PRINT @71 /* Silent Swamps - new area number is: %areNum% */
+-END
++OUTER_SPRINT areName ~WQ0001~                 // area reference, like "AR0700"
++OUTER_SPRINT strName @70 /* Silent Swamps */  // area name, like "Waukeen's Promenade"
++OUTER_SPRINT strDesc @70 /* Silent Swamps */  // area description which will show up when hovering the area on the worldmap
+ 
+-ACTION_IF ("WQMap" = 2) THEN BEGIN
+-PRINT ~Installing BGT-BP Worldmap addition~
++OUTER_SET mapIcon = 16                        // map icon index in mapicons.bam
++OUTER_SET xCoord  = 1165 + wmp_xCoordAdd_SoA  // x coordinate
++OUTER_SET yCoord  = 40   + wmp_yCoordAdd_SoA  // y coordinate
++OUTER_SET tTime   = 3                         // travel time, *4, so two means eight hours
+ 
+-ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
+-  COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
+-   APPEND_FILE ~WhiteQueen/Worldmap/areas.tbl~
+-  COPY ~Worldmap/map_mods_links.tbl~  ~Worldmap~
+-   APPEND_FILE ~WhiteQueen/Worldmap/links.tbl~
+-  COPY - ~WhiteQueen/Worldmap/worldmap.tra~  ~tmp_worldmap.tra~
+-  COPY ~Worldmap/map_mods_trans.tra~  ~Worldmap~
+-   APPEND_FILE ~tmp_worldmap.tra~
+-END
+-ELSE BEGIN
+-  MKDIR ~Worldmap~
+-  COPY ~WhiteQueen/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
+-  COPY ~WhiteQueen/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
+-  COPY ~WhiteQueen/Worldmap/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
+-  END
++// call the sc#addWmpAre function (included with WeiDU)
++// returns the worldmap entry number for the new area
++LAUNCH_ACTION_FUNCTION sc#addWmpAre
++  INT_VAR
++    inclSv  = 1              // patch worldmap for any existing save games
++  STR_VAR
++    strName = EVAL ~%strName%~
++    strDesc = EVAL ~%strDesc%~
++  RET areNum = areNum
+ END
+ 
+ 

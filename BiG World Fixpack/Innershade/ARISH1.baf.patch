@@ -1,6 +1,24 @@
---- Innershade\SCRIPTS\ARISH1.baf	Wed Nov 13 21:39:00 2013
-+++ C:\BWP Patchstudio\patched files\Innershade\SCRIPTS\ARISH1.baf	Sun Apr 06 00:26:45 2014
-@@ -196,7 +196,7 @@
+--- Innershade/SCRIPTS/ARISH1.baf	2013-11-13 21:39:00.000000000 -0500
++++ Fixpack/Innershade/SCRIPTS/ARISH1.baf	2016-11-22 11:02:06.787169500 -0500
+@@ -37,7 +37,7 @@
+ 
+ IF
+ Global("ElhansFriend","ARISH1",0)
+-GlobalGT("CHAPTER","GLOBAL",4)
++GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+ THEN
+ RESPONSE #100
+ SetGlobal("ElhansFriend","ARISH1",1)
+@@ -46,7 +46,7 @@
+ 
+ IF
+ Global("HealerE","ARISH1",0)
+-GlobalGT("CHAPTER","GLOBAL",2)
++GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_2%)
+ THEN
+ RESPONSE #100
+ SetGlobal("HealerE","ARISH1",1)
+@@ -196,10 +196,10 @@
  
  IF
  Global("ISHxCC","GLOBAL",4)
@@ -8,4 +26,8 @@
 +Global("ISHxCCJ","GLOBAL",1)
  THEN
  RESPONSE #100
- SetGlobal("ISHxCCJ","GLOBAL",4)
+-SetGlobal("ISHxCCJ","GLOBAL",4)
++SetGlobal("ISHxCCJ","GLOBAL",2) // prevent this block from repeating - no further use of this global
+ EraseJournalEntry(@111)
+ EraseJournalEntry(@127)
+ EraseJournalEntry(@125)

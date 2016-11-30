@@ -1,0 +1,43 @@
+--- Foundling/Dialogues/L#FouJ.d	2015-05-21 00:24:48.000000000 -0400
++++ Fixpack/Foundling/Dialogues/L#FouJ.d	2016-11-26 17:34:19.871387400 -0500
+@@ -166,8 +166,8 @@
+ == L#FouJ @86 /* You think she can help us? */
+ == RIBALD @1 /* Yes. */
+ END
+-IF~~THEN REPLY @87 /* Where can we find her? */ EXTERN RIBALD FouItem001
+-IF~~THEN REPLY @88 /* How can I get in touch with her?  It's an urgent issue. */ EXTERN RIBALD FouItem002
++IF~~THEN REPLY @87 /* Where can we find her? */ EXTERN RIBALD FouItem002
++IF~~THEN REPLY @88 /* How can I get in touch with her?  It's an urgent issue. */ EXTERN RIBALD FouItem001
+ 
+ CHAIN RIBALD FouItem001
+ @89 /* I wouldn't tell you about her if I thought otherwise. */
+@@ -627,9 +627,9 @@
+ IF~InParty("JAHEIRA") !StateCheck("JAHEIRA",CD_STATE_NOTVALID)~THEN REPLY @330 /* He didn't just hurt me and Imoen.  He hurt our friends.  Jaheira lost her husband because of him. */ EXTERN JAHEIRAJ IrenicusFou001
+ IF~~THEN REPLY @331 /* He tortured me.  He kept us in cages.  I want to get even with him.  I want to see him feel what I felt: humiliation. */ EXTERN L#FouJ IrenicusFou002
+ IF~~THEN REPLY @332 /* I'm afraid he did many evil things.  If you could only see his laboratory: all those glass tubes with creatures inside, beasts, slaves... */ EXTERN L#FouJ IrenicusFou003
+-IF~GlobalLT("CHAPTER","GLOBAL",4)~THEN REPLY @333 /* He took Imoen and I am sure he's performing some experiment on her, somewhere over there. */ EXTERN L#FouJ IrenicusFou004
++IF~GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)~THEN REPLY @333 /* He took Imoen and I am sure he's performing some experiment on her, somewhere over there. */ EXTERN L#FouJ IrenicusFou004
+ IF~~THEN REPLY @334 /* He messed with me and that's the worst thing he could ever do.  I won't let him get away. */ EXTERN L#FouJ IrenicusFou005
+-IF~GlobalLT("CHAPTER","GLOBAL",4)~THEN REPLY @335 /* He offered me power.  He said that there's some potential locked inside me and I think he can unlock it, somehow. */ EXTERN L#FouJ IrenicusFou006
++IF~GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)~THEN REPLY @335 /* He offered me power.  He said that there's some potential locked inside me and I think he can unlock it, somehow. */ EXTERN L#FouJ IrenicusFou006
+ IF~~THEN REPLY @336 /* It's none of your business. */ EXTERN L#FouJ IrenicusFou007
+ 
+ CHAIN JAHEIRAJ IrenicusFou001
+@@ -689,7 +689,7 @@
+ IF~~THEN REPLY @367 /* It doesn't matter.  I just have to do it. */ EXTERN L#FouJ IrenicusFou011
+ IF~~THEN REPLY @368 /* It is dangerous and I have already been hurt by him, but I'm also a Bhaalspawn. I know I'll be the one who wins this war. */ EXTERN L#FouJ IrenicusFou012
+ IF~~THEN REPLY @369 /* As long as I have some support, everything should be fine.  And I've got you.  And some others. */ EXTERN L#FouJ IrenicusFou013
+-IF~GlobalLT("CHAPTER","GLOBAL",4)~THEN REPLY @370 /* But he's got Imoen! */ EXTERN L#FouJ IrenicusFou014
++IF~GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)~THEN REPLY @370 /* But he's got Imoen! */ EXTERN L#FouJ IrenicusFou014
+ IF~~THEN REPLY @371 /* It doesn't matter.  Stop telling me what to do and what may happen, understood? */ EXTERN L#FouJ IrenicusFou007
+ 
+ CHAIN L#FouJ IrenicusFou010
+@@ -719,7 +719,7 @@
+ END
+ IF~~THEN REPLY @380 /* Oh, stop checking me.  If we're being serious, I can tell you that I'm not going to let him blind me with some doubtfully beneficial offers. */ EXTERN L#FouJ IrenicusFou016
+ IF~~THEN REPLY @381 /* I'm not sure if he has any weak points.  Maybe it's that he would do anything to become even more powerful.  I doubt it's a weakness, though. */ EXTERN L#FouJ IrenicusFou017
+-IF~GlobalLT("CHAPTER","GLOBAL",4)~THEN REPLY @382 /* Two extreme options, right? I'm not sure if any of these will do.  I would rather get Imoen and just run away as far as possible. */ EXTERN L#FouJ IrenicusFou018
++IF~GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)~THEN REPLY @382 /* Two extreme options, right? I'm not sure if any of these will do.  I would rather get Imoen and just run away as far as possible. */ EXTERN L#FouJ IrenicusFou018
+ IF~~THEN REPLY @383 /* I just hope everything's going to be fine. */ EXTERN L#FouJ IrenicusFou019
+ IF~~THEN REPLY @384 /* We don't have more time to waste, understood? */ EXTERN L#FouJ IrenicusFou007
+ 

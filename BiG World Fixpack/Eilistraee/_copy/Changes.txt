@@ -1,0 +1,11 @@
+1. ALWAYS section expanded:
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET wmp_xCoordAdd_SoA = 0
+    OUTER_SET wmp_yCoordAdd_SoA = 2283
+  END ELSE BEGIN
+    OUTER_SET wmp_xCoordAdd_SoA = 0
+    OUTER_SET wmp_yCoordAdd_SoA = 0
+  END
+
+2. OUTER_SET xCoord  = 890 => OUTER_SET xCoord  = 890 + wmp_xCoordAdd_SoA
+3. OUTER_SET yCoord  = 635 => OUTER_SET yCoord  = 550 + wmp_yCoordAdd_SoA

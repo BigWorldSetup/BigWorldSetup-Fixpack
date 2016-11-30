@@ -1,5 +1,5 @@
---- Foundling\Dialogues\L#Fou25J.d	Wed May 20 23:24:46 2015
-+++ C:\BWP Patchstudio\patched files\Foundling\Dialogues\L#Fou25J.d	Sat Oct 29 17:41:50 2016
+--- Foundling/Dialogues/L#Fou25J.d	2015-05-21 00:24:46.000000000 -0400
++++ Fixpack/Foundling/Dialogues/L#Fou25J.d	2016-11-26 21:57:01.367798300 -0500
 @@ -407,24 +407,24 @@
  
  CHAIN L#Fou25J Love012
@@ -30,3 +30,44 @@
   
  //////////////////////////
  ///////SARADUSH///////////
+@@ -766,20 +766,26 @@
+ = @336 /* Ah, these are the Blackscratchers!  Cespenar knows these!  They are quite powerful and they can do much more than just scratch!  You can scratch yourself with almost everything, but these can do much more than that! */
+ = @337 /* If you want, Cespenar can fix those!  Hmm, we would need the gloves, of course, and... the gems.  Two of them, actually, but there's something more!  A mimic's glue would do!  Oh, a rhyme!  But since mimic's blood is quite sticky, it would be fine, too. */
+ = @338 /* That would cost 5,000--after a discount for my favorite Bhaalspawn! */
+- IF ~PartyHasItem("L#FGLV")
+-     Global("L#FouToBQuest","GLOBAL",2)
++    IF ~Global("L#FouToBQuest","GLOBAL",2)
++      PartyGoldGT(4999)
++      PartyHasItem("L#FGLV")
+      PartyHasItem("L#FGEM1")
+      PartyHasItem("L#FGEM2")
+      PartyHasItem("MISC6Y")
+-     PartyGoldGT(4999)
+-     ~ THEN REPLY @339 /* Let's do this. */ DO ~SetGlobal("ItemMaker","GLOBAL",178)
++      ~ THEN REPLY @339 /* Let's do this. */ DO ~SetGlobal("L#FouItemMaker","GLOBAL",178)
+ 				 SetGlobal("L#FouToBQuest","GLOBAL",3)
+                                  TakePartyItem("L#FGLV")
+                                  TakePartyItem("L#FGEM1")
+                                  TakePartyItem("L#FGEM2")
+-                                 TakePartyItem("MISC6Y")
++                                 TakePartyItemNum("MISC6Y",1)
++                                 DestroyItem("L#FGLV")
++                                 DestroyItem("L#FGEM1")
++                                 DestroyItem("L#FGEM2")
++                                 DestroyItem("MISC6Y")
+                                  TakePartyGold(5000)
+                                  DestroyGold(5000)~ GOTO 11
++    // 11 starts "cutsmith" cutscene, which sets ImpForgeStuff, which triggers BOTSMITH.baf, which gives L#FGLVF item and reenters Caspenar dialogue, which triggers talk 4 below
++
+  
+  IF ~~ THEN REPLY @340 /* No thank you, not now. */ GOTO Quest03x01
+ END
+@@ -793,7 +799,7 @@
+ ///TALK 4 - RECREATED////
+ /////////////////////////
+ 
+-CHAIN IF ~Global("L#FouToBQuest","GLOBAL",3) PartyHasItem("L#FGLVF")~ THEN L#Fou25J Quest04x00
++CHAIN IF ~Global("L#FouToBQuest","GLOBAL",3) PartyHasItem("L#FGLVF")~ THEN BOTSMITH Quest04x00 // we start this chain from Caspenar's dialogue
+ @342 /* Here they are. */
+ == ANOME25J IF ~InParty("ANOMEN") !StateCheck("ANOMEN",CD_STATE_NOTVALID)~ THEN @343 /* I am disappointed.  I thought you wouldn't create these... things. */
+ == AERIE25J IF ~InParty("AERIE") !StateCheck("AERIE",CD_STATE_NOTVALID)~ THEN @344 /* I hope they won't cause any bad things to happen. */

@@ -1,0 +1,80 @@
+@0    = ~Riesco a vedere il libro! Sono così felice che tu l'abbia ritrovato!~
+@1    = ~Prendilo.~
+@2    = ~E la ricompensa?~
+@3    = ~Ti ringrazio!~
+@4    = ~Naturalmente, ce l'ho qui.~
+@5    = ~Sono così felice di averlo di nuovo! Ecco, prendi. Questa è la tua ricompensa.~
+@6    = ~Ti porgo i miei saluti, amico mio, di cui il nome non ho ancora sentito. Sono Thas'zzaria, bardo di Eilistraee. E tu sei...?~
+@7    = ~Beh, mi hai chiamato "amico", quindi credo tu sappia meglio di me chi sono.~
+@8    = ~Mi chiamo <CHARNAME>.~
+@9    = ~Non importa. Devo andare ora.~
+@10   = ~Non importa.~
+@11   = ~Salve.~
+@12   = ~Sto cercando lavoro. Forse c'é qualcosa che posso fare per te?~
+@13   = ~Sei un bardo, vero? Mi piacerebbe sentire qualcosa.~
+@14   = ~Scusami ma devo andare.~
+@15   = ~Hmm, sei piuttosto sgarbato, ma bisogna dire che c'é verità nella tua risposta.~
+@16   = ~Il mio nome non importa.~
+@17   = ~Eh, il mio nome é <CHARNAME>.~
+@18   = ~Sia cosa sia, devo andarmene.~
+@19   = ~Allora ti dò il benvenuto, <CHARNAME>. Comunque ti chiamerò semplicemente "amico".~
+@20   = ~Ah, se lo dici tu. Ti chiamerò "amico" allora.~
+@21   = ~Ora, come può questa cantrice delle Vergine Oscura esserti d'aiuto, amico?~
+@22   = ~Beh, c'é qualcosa che potresti fare per me.~
+@23   = ~Un po' di tempo fa mi hanno rubato un libro che si chiama "La Luna nel Cielo". Abbiamo trovato un solo indizio di chi possa aver commesso il crimine e conduce a un villaggio che si trova nelle Colline Umar.~
+@24   = ~Quel libro me lo aveva dato mia sorella. Un serpente mostruoso l'ha uccisa qualche tempo fa. Rivorrei indietro il libro. Potresti riportarmelo?~
+@25   = ~Nessun problema.~
+@26   = ~Per ora no, adesso devo andarmene.~
+@27   = ~E la ricompensa sarebbe...?~
+@28   = ~Cercherò d'inventarmi qualcosa.~
+@29   = ~Ok, d'accordo.~
+@30   = ~Beh, credo di aver sentito qualcuno chiamarmi. Arrivederci.~
+@31   = ~Ti ringrazio. Ti aspetterò qui.~
+@32   = ~Ma ci sono molti poemi scritti qui da noi, quale vorresti sentire?~
+@33   = ~"Il Racconto della Luna Nascosta"~
+@34   = ~"La Preda della Cacciatrice"~
+@35   = ~"La Vergine Oscura"~
+@36   = ~"Gli Occhi di Eilistraee"~
+@37   = ~"La Tua Spada"~
+@38   = ~"Guarda! Nuvole sono apparse in questo limpido cielo,
+Abbracciate tra loro, ma dov'é la Luna?
+Nelle Terre dei Morti lei è andata,
+Nelle sue fredde profondità ella mostra la sua furia."~
+@39   = ~"Sta cercando il suo amore, che ha perso la fede,
+ma il suo amato mai più tornerà.
+La disperazione non può essere fermata neppure ora,
+Condannata sia la Terra che ha perso la Luna."~
+@40   = ~"Non risplenderà mai più."~
+@41   = ~"Nella notte scintillante cacciamo un cervo,
+Per provare l'esistenza, per uccidere la paura.
+Seguimi sorella, qui c'è la nostra preda!
+Per la vittoria, con un grido dovremo pagare!"~
+@42   = ~"Su una scogliera stà sola la Vergine Oscura,
+Guarda! Colei che ami di più nel tuo cuore, non è vero?
+Guardami, Danzatrice senza paura, ella ci guarirà.
+Voglio toccare la tua pelle scura."~
+@43   = ~"Danza con me, Regina dei Rinati,
+Voglio seguirti, nella più profonda delle notti.
+La tua grazia, ogni tuo passo,
+Mi trafigge il petto di desiderio."~
+@44   = ~"D'ora in poi, camminerò con te,
+Giorno e notte,
+Perché mi hai mostrato la strada,
+Verso l'eternità; non mi deluderai mai."~
+@45   = ~"Nei tuoi occhi potrei annegare, Eilistraee,
+Creerò l'arte solo per compiacerti!
+Sono il tuo artista, lavorerò con te!
+Ti servirà mai una prova? Ora, anche ora?"~
+@46   = ~"Mi hai mostrato la verità che era nascosta,
+Mi hai dato un semplice dono - una sola rosa."~
+@47   = ~"Verso il nemico! Alla vittoria!
+Tu ce la porterai!
+Verso il campo di battaglia! Alla gloria!
+Tu non ci deluderai mai."~
+@48   = ~"La tua Spada d'Argento ci mostrerà il cammino,
+Essa diventerà il giorno del giudizio.
+Non ho più paura, mia Regina,
+finché mi risparmierai, combattendo il peccato."~
+@49   = ~Quale dovrei leggere ora?~
+@50   = ~Niente grazie, ora devo andarmene.~
+@51   = ~Capisco. Ritorna nel caso volessi ascoltare una canzone o due.~

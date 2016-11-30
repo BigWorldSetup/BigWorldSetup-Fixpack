@@ -1,0 +1,16 @@
+Patching ISNF/DIALOGUES/ISNFxSU.d: GlobalGT("CHAPTER","GLOBAL",5) => GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_5%)
+Patching ISNF/DIALOGUES/ISNFxSU.d: GlobalGT("CHAPTER","GLOBAL",5) => GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_5%)
+Patching ISNF/DIALOGUES/ISNFxSU.d: GlobalGT("CHAPTER","GLOBAL",5) => GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_5%)
+Patching ISNF/ISNF.tp2: ALWAYS command expanded
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

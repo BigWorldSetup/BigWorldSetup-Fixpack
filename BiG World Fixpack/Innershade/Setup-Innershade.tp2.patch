@@ -1,7 +1,6 @@
---- Innershade\Setup-Innershade.tp2	Fri Jan 30 01:20:44 2015
-+++ C:\BWP Patchstudio\patched files\Innershade\Setup-Innershade.tp2	Mon Oct 24 15:58:37 2016
-@@ -1,7 +1,7 @@
- BACKUP ~Innershade\backup~
+--- Innershade/Setup-Innershade.tp2	2015-01-30 01:20:44.000000000 -0500
++++ Fixpack/Innershade/Setup-Innershade.tp2	2016-11-30 18:22:27.726336300 -0500
+@@ -2,22 +2,39 @@
  AUTHOR ~Lava Del'Vortel~
  README ~Innershade/+Documents+/Innershade_readme.html~
 -
@@ -9,72 +8,422 @@
  AUTO_TRA ~Innershade/TRANSLATIONS/%s~
  
  ALWAYS
-@@ -348,13 +348,13 @@
+-  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+-  INCLUDE ~%MOD_FOLDER%/handle_charsets.tpa~
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET wmp_xCoordAdd_SoA = 0
++    OUTER_SET wmp_yCoordAdd_SoA = 2283
++  END ELSE BEGIN
++    OUTER_SET wmp_xCoordAdd_SoA = 0
++    OUTER_SET wmp_yCoordAdd_SoA = 0
++  END
+ 
+   // No exception, everything needs to be converted
+   ACTION_DEFINE_ARRAY 9xnoconvert BEGIN END
+ 
+-  // Only setup-Innershade.tra needs to be reloaded
++  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
+   ACTION_DEFINE_ARRAY 9xreload BEGIN Setup END
+ 
+-  // There is no "language" folder so the root of all languages in %MOD_FOLDER%
+   LAF HANDLE_CHARSETS
+     INT_VAR
+-      infer_charset = 1
++      infer_charsets = 1
+     STR_VAR
+       tra_path = EVAL ~%MOD_FOLDER%/translations~
+       // charset_table = 9xcharsets // Included for illustrative purposes.
+@@ -48,11 +65,11 @@
+          ~Innershade/TRANSLATIONS/Russian/Setup.TRA~
+          
+ LANGUAGE ~German by Dachrisma~
+-         ~german~
++         ~German~
+          ~Innershade/TRANSLATIONS/german/Setup.TRA~
+ 
+ BEGIN @0
+-
++REQUIRE_PREDICATE GAME_IS ~bg2 tob bg2ee eet~ ~This mod requires EET or BG2:EE or BG2:SoA~
+ 
+ 
+ 
+@@ -288,7 +305,7 @@
+ 		
+ //////////////////////////////////SCRIPTS
+ 
+-COMPILE ~Innershade/SCRIPTS/9xEA.baf~
++COMPILE EVALUATE_BUFFER ~Innershade/SCRIPTS/9xEA.baf~
+         ~Innershade/SCRIPTS/9xEB.baf~
+         ~Innershade/SCRIPTS/9xEC.baf~
+         ~Innershade/SCRIPTS/9xED.baf~
+@@ -315,8 +332,8 @@
+ EXTEND_TOP   ~AR1513.bcs~ ~Innershade/SCRIPTS/AR1513.baf~
+ EXTEND_TOP   ~AR0700.bcs~ ~Innershade/SCRIPTS/AR0700.baf~
+ EXTEND_TOP   ~AR4500.bcs~ ~Innershade/SCRIPTS/AR4500.baf~
+-EXTEND_TOP   ~Baldur.bcs~ ~Innershade/SCRIPTS/PlayerEX.baf~
+-EXTEND_TOP   ~Baldur25.bcs~ ~Innershade/SCRIPTS/PlayerEX.baf~
++EXTEND_TOP   ~Baldur.bcs~ ~Innershade/SCRIPTS/PlayerEX.baf~ EVALUATE_BUFFER
++EXTEND_TOP   ~Baldur25.bcs~ ~Innershade/SCRIPTS/PlayerEX.baf~ EVALUATE_BUFFER
+ 
+ 
+ ///////////////////////////////////JOURNAL EE
+@@ -348,13 +365,15 @@
      
  /////////////////////////////////SOUNDS
  
 -COPY ~Innershade/SOUNDS~ ~override/~
--
--
- ACTION_IF ("%LANGUAGE%" STRING_COMPARE_CASE "Polski" =0) BEGIN
-+  COPY ~Innershade\InnerAudio\SOUNDSPolski~ ~Innershade\SOUNDS~
-+END
-  
+ 
+ 
+-ACTION_IF ("%LANGUAGE%" STRING_COMPARE_CASE "Polski" =0) BEGIN
+- 
 -COPY ~Innershade\InnerAudio\SOUNDSPolski~ ~override\~
--
++ACTION_IF ("%LANGUAGE%" STR_EQ "Polski") THEN BEGIN
++  COPY ~Innershade/InnerAudio/SOUNDSPolski~ ~Innershade/SOUNDS~
++END
+ 
 +LAF HANDLE_AUDIO
 +  STR_VAR
 +    audio_path = ~Innershade/SOUNDS~
  END
  
  /////////////////////////////////SPELLS
-@@ -496,11 +496,11 @@
+@@ -494,17 +513,104 @@
+ COPY_EXISTING ~ribald3.sto~ ~override/ribald3.sto~
+ ADD_STORE_ITEM ~ISHMAP~ #10 #0 #0 ~IDENTIFIED~ #5
  
- //////////////////////////////////AUDIO INSTALLATION
+-//////////////////////////////////AUDIO INSTALLATION
  
 -COPY   ~Innershade/InnershadeIA.bat~          ~InnershadeIA.bat~
 -COPY   ~Innershade/InnershadeUA.bat~          ~InnershadeUA.bat~
-+// COPY   ~Innershade/InnershadeIA.bat~          ~InnershadeIA.bat~
-+// COPY   ~Innershade/InnershadeUA.bat~          ~InnershadeUA.bat~
      
 -AT_INTERACTIVE_EXIT ~InnershadeIA.bat~
 -AT_UNINSTALL        ~InnershadeUA.bat~
-+// AT_INTERACTIVE_EXIT ~InnershadeIA.bat~
-+// AT_UNINSTALL        ~InnershadeUA.bat~
  
  
  
-@@ -642,10 +642,23 @@
  
- MKDIR save
- 
--COPY ~Innershade/WMPIcon/mapicons.bam~ ~Override/mapicons.bam~
-+//COPY ~Innershade/WMPIcon/mapicons.bam~ ~Override/mapicons.bam~
- 
- INCLUDE ~Innershade/WMPIcon/WMP2/worldmap.tph~
-+INCLUDE ~Innershade/WMPIcon/WMP2/add_map_icons.tpa~
- 
-+LAUNCH_ACTION_FUNCTION ~ADD_MAP_ICONS~
-+  INT_VAR 
-+    icon_index = 29
-+  STR_VAR 
-+    worldmap      = ~worldmap~
-+    path_to_icons = ~Innershade/WMPIcon/mapicons.bam~
-+  RET 
-+    icons_added    = icons_added
-+    new_icon_index = new_icon_index
++//////////////////////////////////ADD AREA TO MAP
++
++// Append mastarea.2da with the new area
++APPEND ~MASTAREA.2da~ ~ARISH1 value~ UNLESS ~ARISH1~ //Innershade
++
++// BP-BGT-Worldmap compatibility always (these files will only be used if BP-BGT-Worldmap is installed)
++ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
++  COPY   ~Worldmap/map_mods_areas.tbl~   ~Worldmap~   APPEND_FILE ~Innershade/Worldmap/areas.tbl~
++  COPY   ~Worldmap/map_mods_links.tbl~   ~Worldmap~   APPEND_FILE ~Innershade/Worldmap/links.tbl~
++  COPY   ~Worldmap/map_mods_trans.tra~   ~Worldmap~   APPEND_FILE ~Innershade/Worldmap/worldmap.tra~
++END ELSE BEGIN
++  MKDIR  ~Worldmap~
++  COPY   ~Innershade/Worldmap/areas.tbl~      ~Worldmap/map_mods_areas.tbl~
++  COPY   ~Innershade/Worldmap/links.tbl~      ~Worldmap/map_mods_links.tbl~
++  COPY   ~Innershade/Worldmap/worldmap.tra~   ~Worldmap/map_mods_trans.tra~
 +END
-+PRINT ~Innershade mapIcon added. New mapIcons added are: %icons_added%~
-+PRINT ~Innershade mapIcon patched. New mapIcon number is: %new_icon_index%~
++
++// Always patch regular worldmap (no conflict with BP-BGT-Worldmap)
++//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++// set up link variables
++
++// add links from these area(s) to the new area
++ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
++  "AR0020" => "Main"       // City Gates
++  "AR0300" => "Main"       // Docks
++  "AR0400" => "Main"       // Slums
++  "AR0500" => "Main"       // Bridge District
++  "AR0800" => "Main"       // Graveyard
++  "AR0900" => "Main"       // Temple District
++  "AR1000" => "Main"       // Government
++  "AR1100" => "Main"       // Umar Hills
++  "AR1300" => "Main"       // d'Arnise Keep
++  "AR1304" => "Main"       // d'Arnise Keep
++  "AR2000" => "Main"       // Trademeet
++  "AR1200" => "Main"       // Windspear Hills
++END
++
++// add links from the new area to these area(s)
++ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
++  "AR0020" => "ExitNE"      // City Gates
++  "AR0300" => "ExitN"       // Docks
++  "AR0400" => "ExitN"       // Slums
++  "AR0500" => "ExitNE"      // Bridge District
++  "AR0700" => "ExitE"       // Waukeen's Promenade
++  "AR0800" => "ExitS"       // Graveyard
++  "AR0900" => "ExitNW"      // Temple District
++  "AR1000" => "ExitN"       // Government
++  "AR1100" => "ExitSE"      // Umar Hills
++  "AR1300" => "ExitSE"      // d'Arnise Keep
++  "AR1304" => "ExitSE"      // d'Arnise Keep
++  "AR2000" => "ExitSW"      // Trademeet
++  "AR1200" => "ExitW"       // Windspear Hills
++END
++
++OUTER_SPRINT areName "ARISH1"     // area reference, like "AR0700"
++
++OUTER_SET xCoord  = 1070 + wmp_xCoordAdd_SoA // x coordinate (+ EET offset)
++OUTER_SET yCoord  = 490  + wmp_yCoordAdd_SoA // y coordinate (+ EET offset)
++OUTER_SET tTime   = 4                        // travel time, *4, so two means eight hours
++
++// add a new custom map icon if possible (only works with BAM V1 format; EE mapicons.bam is V2 format)
++ACTION_IF NOT GAME_IS ~bg2ee eet~ THEN BEGIN
++  INCLUDE ~Innershade/Worldmap/Icon/add_map_icons.tpa~
++  LAF ~ADD_MAP_ICONS~
++    INT_VAR 
++      icon_index     = 29
++    STR_VAR 
++      worldmap       = ~worldmap~
++      path_to_icons  = ~Innershade/Worldmap/Icon/mapicons.bam~
++    RET
++      icons_added    = icons_added
++      new_icon_index = new_icon_index
++  END
++  PRINT ~Custom map icon added for Innershade~
++  OUTER_SET mapIcon = new_icon_index // map icon index in mapicons.bam
++END ELSE BEGIN
++  OUTER_SET mapIcon = 10             // map icon index in mapicons.bam
++END
++
++// call the sc#addWmpAre function (included with WeiDU)
++// returns the worldmap entry number for the new area
++LAUNCH_ACTION_FUNCTION sc#addWmpAre
++  INT_VAR
++    inclSv = 1 // patch worldmap for any existing save games
++  STR_VAR
++    strName = "Innershade"
++    strDesc = "Innershade"
++  RET areNum = areNum
++END
++
++// end of main component
++
  
- //**************************************************
- // Worldmap patching - do this last so we can patch the new areas too
-@@ -659,7 +672,7 @@
-   OUTER_SPRINT strName "Innershade" // area name, like "Waukeen's Promenade"
-   OUTER_SPRINT strDesc "Innershade" // area description which will show up when hovering the area on the worldmap
+ ///////////////////////////////////////////////////
+ //////////////////////////////////Possible Content
+@@ -563,158 +669,33 @@
+ EXTEND_TOP   ~YOSHIMO.bcs~ ~Innershade/SCRIPTS/YOSHIMO.baf~
  
+ //////////////////////////////////////////////////
+-//////////////////////////////////ADD AREA TO MAP
+ //////////////////////////////////////////////////
+ 
+-BEGIN @74
+-SUBCOMPONENT @75
+-REQUIRE_COMPONENT ~Innershade/Setup-Innershade.tp2~ ~0~ @72
+-
+-
+-ACTION_IF NOT FILE_EXISTS_IN_GAME ~neera10.cre~ THEN BEGIN
+-MKDIR save
+-END
+-
+-//**************************************************
+-// Worldmap patching - do this last so we can patch the new areas too
+-//**************************************************
+-// Append mastarea.2da with the new areas
+-APPEND ~MASTAREA.2da~ ~ARISH1 value~ UNLESS ~ARISH1~ //Innershade
+-
+-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-// Innershade abandoned
+-  OUTER_SPRINT areName "ARISH1"   // area reference, like "AR0700"
+-  OUTER_SPRINT strName "Innershade" // area name, like "Waukeen's Promenade"
+-  OUTER_SPRINT strDesc "Innershade" // area description which will show up when hovering the area on the worldmap
+-
+-  OUTER_SET mapIcon = 10              // map icon
+-  OUTER_SET xCoord  = 1023            // x coordinate
+-  OUTER_SET yCoord  = 609             // y coordinate
+-  OUTER_SET tTime   = 4              // travel time, *4, so two means eight hours
+-  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
+-
+-// set up link variables
+-
+-  // add links from these area(s) to the new area
+-  ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
+-    "AR0020" => "Main"       // City Gates
+-    "AR0300" => "Main"       // Docks
+-    "AR0400" => "Main"       // Slums
+-    "AR0500" => "Main"       // Bridge District
+-    "AR0800" => "Main"       // Graveyard
+-    "AR0900" => "Main"       // Temple District
+-    "AR1000" => "Main"       // Government
+-    "AR1100" => "Main"       // Umar Hills
+-    "AR1300" => "Main"       // d'Arnise Keep
+-    "AR1304" => "Main"       // d'Arnise Keep
+-    "AR2000" => "Main"        // Trademeet
+-    "AR1200" => "Main"        // Windspear Hills
+-  END
+-
+-  // add links from the new area to these area(s)
+-  ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
+-    "AR0020" => "ExitNE"      // City Gates
+-    "AR0300" => "ExitN"       // Docks
+-    "AR0400" => "ExitN"       // Slums
+-    "AR0500" => "ExitNE"      // Bridge District
+-    "AR0700" => "ExitE"       // Waukeen's Promenade
+-    "AR0800" => "ExitS"       // Graveyard
+-    "AR0900" => "ExitNW"      // Temple District
+-    "AR1000" => "ExitN"       // Government
+-    "AR1100" => "ExitSE"      // Umar Hills
+-    "AR1300" => "ExitSE"      // d'Arnise Keep
+-    "AR1304" => "ExitSE"      // d'Arnise Keep
+-    "AR2000" => "ExitSW"      // Trademeet
+-    "AR1200" => "ExitW"       // Windspear Hills
+-  END
+-
+-// call the sc#addWmpAre function
+-  // returns the worldmap entry number for the new area
+-  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
+-
+-  // remove if not desired
+-  PRINT @78
+-
+-BEGIN @80
+-SUBCOMPONENT @75
+-REQUIRE_PREDICATE NOT FILE_EXISTS_IN_GAME ~NEERA10.cre~ ~~
+-REQUIRE_COMPONENT ~Innershade/Setup-Innershade.tp2~ ~0~ @72
+-
+-MKDIR save
+-
+-COPY ~Innershade/WMPIcon/mapicons.bam~ ~Override/mapicons.bam~
+-
+-INCLUDE ~Innershade/WMPIcon/WMP2/worldmap.tph~
+-
+-
+-//**************************************************
+-// Worldmap patching - do this last so we can patch the new areas too
+-//**************************************************
+-// Append mastarea.2da with the new areas
+-APPEND ~MASTAREA.2da~ ~ARISH1 value~ UNLESS ~ARISH1~ //Innershade
+-
+-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-// Innershade abandoned
+-  OUTER_SPRINT areName "ARISH1"   // area reference, like "AR0700"
+-  OUTER_SPRINT strName "Innershade" // area name, like "Waukeen's Promenade"
+-  OUTER_SPRINT strDesc "Innershade" // area description which will show up when hovering the area on the worldmap
+-
 -  OUTER_SET mapIcon = 29              // map icon
-+  OUTER_SET mapIcon = %new_icon_index% // map icon
-   OUTER_SET xCoord  = 1023            // x coordinate
-   OUTER_SET yCoord  = 609             // y coordinate
-   OUTER_SET tTime   = 4              // travel time, *4, so two means eight hours
+-  OUTER_SET xCoord  = 1023            // x coordinate
+-  OUTER_SET yCoord  = 609             // y coordinate
+-  OUTER_SET tTime   = 4              // travel time, *4, so two means eight hours
+-  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
+-
+-// set up link variables
+-
+-  // add links from these area(s) to the new area
+-  ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
+-    "AR0020" => "Main"       // City Gates
+-    "AR0300" => "Main"       // Docks
+-    "AR0400" => "Main"       // Slums
+-    "AR0500" => "Main"       // Bridge District
+-    "AR0800" => "Main"       // Graveyard
+-    "AR0900" => "Main"       // Temple District
+-    "AR1000" => "Main"       // Government
+-    "AR1100" => "Main"       // Umar Hills
+-    "AR1300" => "Main"       // d'Arnise Keep
+-    "AR1304" => "Main"       // d'Arnise Keep
+-    "AR2000" => "Main"        // Trademeet
+-    "AR1200" => "Main"        // Windspear Hills
+-  END
+-
+-  // add links from the new area to these area(s)
+-  ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
+-    "AR0020" => "ExitNE"      // City Gates
+-    "AR0300" => "ExitN"       // Docks
+-    "AR0400" => "ExitN"       // Slums
+-    "AR0500" => "ExitNE"      // Bridge District
+-    "AR0700" => "ExitE"       // Waukeen's Promenade
+-    "AR0800" => "ExitS"       // Graveyard
+-    "AR0900" => "ExitNW"      // Temple District
+-    "AR1000" => "ExitN"       // Government
+-    "AR1100" => "ExitSE"      // Umar Hills
+-    "AR1300" => "ExitSE"      // d'Arnise Keep
+-    "AR1304" => "ExitSE"      // d'Arnise Keep
+-    "AR2000" => "ExitSW"      // Trademeet
+-    "AR1200" => "ExitW"       // Windspear Hills
+-  END
+-
+-// call the sc#addWmpAre function
+-  // returns the worldmap entry number for the new area
+-  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
+ 
+-  // remove if not desired
+-  PRINT @78
+ 
+ 
+-BEGIN @79
+-SUBCOMPONENT @75
+-REQUIRE_COMPONENT ~Innershade/Setup-Innershade.tp2~ ~0~ @72
+-
+-MKDIR save
++BEGIN ~~ // @74 add Innershade to worldmap (don't add new map icon)
++DEPRECATED ~Deprecated:  Add Innershade to regular worldmap without new map icon~ // moved into main component
++SUBCOMPONENT ~~ // @75
++//REQUIRE_COMPONENT ~Innershade/Setup-Innershade.tp2~ ~0~ @72
++//REQUIRE_PREDICATE NOT MOD_IS_INSTALLED ~Setup-BP-BGT-Worldmap.tp2~ ~0~ ~~
++
++
++BEGIN ~~ // @80 add Innershade to worldmap (also add new map icon)
++DEPRECATED ~Deprecated:  Add Innershade to regular worldmap with new map icon~ // moved into main component
++SUBCOMPONENT ~~ // @75
++//REQUIRE_PREDICATE NOT GAME_IS ~bg2ee eet~ ~~ // ADD_MAP_ICONS only works with BAM V1 format; EE mapicons.bam is V2 format
++//REQUIRE_COMPONENT ~Innershade/Setup-Innershade.tp2~ ~0~ @72
++//REQUIRE_PREDICATE NOT MOD_IS_INSTALLED ~Setup-BP-BGT-Worldmap.tp2~ ~0~ ~~
++
++
++BEGIN ~~ // don't add Innershade to worldmap (spawn transporter NPC at Athkatla City Gates)
++DEPRECATED ~Deprecated:  Don't add Innershade to regular worldmap~ // not needed because worldmap travel is always enabled now
++SUBCOMPONENT ~~ // @75
++//REQUIRE_COMPONENT ~Innershade/Setup-Innershade.tp2~ ~0~ @72
+ 
+-COPY ~Innershade/AREANE~ ~override/~ 
++/*
++COPY ~Innershade/AREANE~ ~override~
+ 
+ COPY ~Innershade/CREATURES/9xTAKE.cre~ ~override/9xTAKE.cre~
+ SAY NAME1 @5
+@@ -722,33 +703,10 @@
+ 
+ COMPILE ~Innershade/DIALOGUES/9xTAKE.d~
+ EXTEND_TOP   ~AR0020.bcs~ ~Innershade/SCRIPTS/AR0020.baf~
++*/
+ 
+-BEGIN @81
+-SUBCOMPONENT @75
+-REQUIRE_PREDICATE NOT FILE_EXISTS_IN_GAME ~NEERA10.cre~ ~~
+-REQUIRE_COMPONENT ~Innershade/Setup-Innershade.tp2~ ~0~ @72
+-
+-ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
+-  COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
+-   APPEND_FILE ~Innershade/Worldmap/areas.tbl~
+-  COPY ~Worldmap/map_mods_links.tbl~  ~Worldmap~
+-   APPEND_FILE ~Innershade/Worldmap/links.tbl~
+-  COPY - ~Innershade/Worldmap/worldmap.tra~  ~tmp_worldmap.tra~
+-  COPY ~Worldmap/map_mods_trans.tra~  ~Worldmap~
+-   APPEND_FILE ~tmp_worldmap.tra~
+-END
+-ELSE BEGIN
+-  MKDIR ~Worldmap~
+-  COPY ~Innershade/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
+-  COPY ~Innershade/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
+-  COPY ~Innershade/Worldmap/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
+-  END
+-
+-
+-
+-
+-
+-
+-
+-
++BEGIN ~~
++DEPRECATED ~Deprecated:  BP-BGT-Worldmap compatibility is now always installed as part of main component~
++SUBCOMPONENT ~~ // @75
++//REQUIRE_COMPONENT ~Innershade/Setup-Innershade.tp2~ ~0~ @72
+ 

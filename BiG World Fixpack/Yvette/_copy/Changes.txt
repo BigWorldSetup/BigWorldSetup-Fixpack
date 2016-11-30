@@ -1,0 +1,53 @@
+Patching Yvette/Dialogues/YveJNAT.d: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Dialogues/YveJNAT.d: GlobalGT("CHAPTER","GLOBAL",5) => GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_5%)
+Patching Yvette/Dialogues/YxYveJ.d: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Dialogues/YxYveJ.d: GlobalGT("CHAPTER","GLOBAL",5) => GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_5%)
+Patching Yvette/Scripts/Player.baf: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Scripts/YxYve.baf: GlobalGT("CHAPTER","GLOBAL",5) => GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_5%)
+Patching Yvette/Scripts/YxYve.baf: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Scripts/YxYve.baf: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Scripts/YxYve.baf: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Scripts/YxYve.baf: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Scripts/YxYve.baf: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Scripts/YxYve.baf: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Scripts/YxYve.baf: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Scripts/YxYve.baf: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Scripts/YxYve.baf: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Scripts/YxYve.baf: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Scripts/YxYve.baf: Global("CHAPTER","GLOBAL",4) => Global("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Scripts/YxYve.baf: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Yvette/Setup-Yvette.tp2: ALWAYS command added
+ALWAYS
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+END
+
+-----------
+
+Manual edits:
+
+2. New code added at the end of Yvette/Setup-Yvette.tp2 main component
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+<<<<<<<< .../AR4000.baf
+IF
+  InPartyAllowDead("YxYve")
+  Global("YxYveSummoned","GLOBAL",0)
+THEN
+  RESPONSE #100
+    ActionOverride("YxYve",ChangeAIScript("YxYv25",OVERRIDE))
+    SetGlobal("YxYveSummoned","GLOBAL",2)
+END
+>>>>>>>>
+  EXTEND_BOTTOM ~AR4000.BCS~ ~.../AR4000.baf~
+END
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

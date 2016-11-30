@@ -1,0 +1,11 @@
+--- Yvette/Scripts/Player.baf	2011-10-08 22:09:58.000000000 -0400
++++ Fixpack/Yvette/SCRIPTS/Player.baf	2016-11-26 01:12:57.332074700 -0500
+@@ -21,7 +21,7 @@
+ Global("YvetteMatch","GLOBAL",1)
+ Global("YvetteChange","GLOBAL",1)
+ Global("YvetteRomanceActive","GLOBAL",1)
+-GlobalLT("CHAPTER","GLOBAL",4)
++GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+ PartyRested()
+ THEN
+ RESPONSE #100

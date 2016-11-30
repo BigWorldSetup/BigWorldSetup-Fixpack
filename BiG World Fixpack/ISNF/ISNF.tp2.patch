@@ -1,9 +1,96 @@
---- ISNF\ISNF.tp2	Wed Jan 28 02:05:58 2015
-+++ C:\BWP Patchstudio\patched files\ISNF\ISNF.tp2	Mon May 11 08:18:34 2015
-@@ -1,5 +1,6 @@
- BACKUP ~ISNF/backup~
+--- ISNF/ISNF.tp2	2015-01-28 01:05:58.000000000 -0500
++++ Fixpack/ISNF/ISNF.tp2	2016-11-30 18:16:55.810891000 -0500
+@@ -2,23 +2,31 @@
  AUTHOR ~Lava~
 +VERSION ~v4.4 BWP Fix~
  README ~ISNF/ReadMe.txt~
  
+ 
+ ALWAYS
+-  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+-  INCLUDE ~%MOD_FOLDER%/handle_charsets.tpa~
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
+ 
+   // No exception, everything needs to be converted
+   ACTION_DEFINE_ARRAY ISNFnoconvert BEGIN END
+ 
+-  // Only setup-Innershade.tra needs to be reloaded
++  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
+   ACTION_DEFINE_ARRAY ISNFreload BEGIN Setup END
+ 
+-  // There is no "language" folder so the root of all languages in %MOD_FOLDER%
+   LAF HANDLE_CHARSETS
+     INT_VAR
+-      infer_charset = 1
++      infer_charsets = 1
+     STR_VAR
+       tra_path = EVAL ~%MOD_FOLDER%/translations~
+       // charset_table = ISNFcharsets // Included for illustrative purposes.
+@@ -31,14 +39,23 @@
+          ~English~
+          ~ISNF/Translations/English/Setup.TRA~
+          
+-LANGUAGE ~Polish~
++LANGUAGE ~Polish (by aristo)~
+          ~Polish~
+          ~ISNF/Translations/Polish/Setup.TRA~
+ 
+-LANGUAGE ~French~
++LANGUAGE ~French (by Lothringen)~
+          ~French~
+          ~ISNF/Translations/French/Setup.TRA~
+ 
++LANGUAGE ~Deutsch (by Dachrisma)~
++         ~Deutsch~
++         ~ISNF/Translations/Deutsch/Setup.TRA~
++
++LANGUAGE ~Italian (by ilot)~
++         ~Italian~
++         ~ISNF/Translations/Italian/Setup.TRA~
++
++
+ ///////////////////////////////////////////
+ ///////////////////MAIN////////////////////
+ ///////////////////////////////////////////
+@@ -52,7 +69,7 @@
+ 
+ /////////AUDIO
+ 
+-COPY ~ISNF/AUDIO~ ~override/~
++LAF HANDLE_AUDIO END
+ 
+ 
+ /////////AREAS
+@@ -184,7 +201,7 @@
+ 
+ /////////DIALOGUES
+ 
+-COMPILE ~ISNF/Dialogues/ISNFxA.d~
++COMPILE EVALUATE_BUFFER ~ISNF/Dialogues/ISNFxA.d~
+         ~ISNF/Dialogues/ISNFxEn.d~
+         ~ISNF/Dialogues/ISNFxOr.d~
+         ~ISNF/Dialogues/ISNFxSe.d~
+@@ -721,14 +738,4 @@
+ ADD_JOURNAL @101 @102 @130 @131 @140 @141 @150 @151 @152 @153 @154 @155 @156 @157 @158 @160 @161 USING ~ISNF/Translations/%LANGUAGE%/setup.tra~
+ END
+ 
+-//////////////////////////////////AUDIO INSTALLATION
+-
+-
+-COPY   ~ISNF/ISNFIA.bat~          ~ISNFIA.bat~
+-COPY   ~ISNF/ISNFUA.bat~          ~ISNFUA.bat~
+-    
+-AT_INTERACTIVE_EXIT ~ISNFIA.bat~
+-AT_UNINSTALL        ~ISNFUA.bat~
+-
+-
  

@@ -1,6 +1,6 @@
---- Yvette\Setup-Yvette.tp2	Mon Jan 26 03:38:40 2015
-+++ C:\BWP Patchstudio\patched files\Yvette\Setup-Yvette.tp2	Mon May 11 09:38:34 2015
-@@ -1,7 +1,7 @@
+--- Yvette/Setup-Yvette.tp2	2015-01-26 02:38:40.000000000 -0500
++++ Fixpack/Yvette/Setup-Yvette.tp2	2016-11-30 18:30:37.629545200 -0500
+@@ -1,12 +1,44 @@
  BACKUP ~Yvette\backup~
  AUTHOR ~Lava Del'Vortel~
  
@@ -9,7 +9,44 @@
  
  README ~Yvette/translations/%LANGUAGE%/Readme.txt~ ~Yvette/Readme.txt~
  
-@@ -26,7 +26,7 @@
+ AUTO_TRA ~Yvette/translations/%s~
+ 
++ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++
++  // No exception, everything needs to be converted
++  ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
++
++  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
++  ACTION_DEFINE_ARRAY tra#reload BEGIN setup END
++
++  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN // HANDLE_CHARSETS doesn't work with iconv_path containing spaces
++    AT_NOW ~if not exist "iconv" move "BiG World Fixpack\_utils\iconv" "iconv"~
++  END
++  LAF HANDLE_CHARSETS
++  INT_VAR
++    infer_charsets = 1
++  STR_VAR
++    tra_path = EVAL ~%MOD_FOLDER%/translations~
++    noconvert_array = tra#noconvert
++    reload_array = tra#reload
++    iconv_path = ~iconv~ // provided by BiG World Fixpack
++  END
++END
++
+ LANGUAGE ~English~
+          ~english~
+          ~Yvette/translations/english/setup.tra~
+@@ -26,7 +58,7 @@
  
  ADD_KIT ~YxKit~
  ~YxKit 0 0 0 0 0 0 0 0~
@@ -18,3 +55,95 @@
  ~YxKit 0 0 0 0 9 0~
  ~YxKit 0 0 0 0 0 0~
  ~YxKit 0 0 0 0 0 0~
+@@ -160,11 +192,11 @@
+  
+ /////////////SCRIPTS
+ 
+-COMPILE ~Yvette\Scripts\YxYve.baf~
+-        ~Yvette\Scripts\ARY002.baf~
+-        ~Yvette\Scripts\ARY003.baf~
++COMPILE EVALUATE_BUFFER ~Yvette/Scripts/YxYve.baf~
++        ~Yvette/Scripts/ARY002.baf~
++        ~Yvette/Scripts/ARY003.baf~
+ 
+-EXTEND_TOP ~Baldur.bcs~ ~Yvette/Scripts/Player.baf~
++EXTEND_TOP ~Baldur.bcs~ ~Yvette/Scripts/Player.baf~ EVALUATE_BUFFER
+ EXTEND_TOP ~AR0700.bcs~ ~Yvette/Scripts/AR0700.baf~
+ EXTEND_TOP ~Jaheira.bcs~ ~Yvette/Scripts/Jaheira.baf~
+ EXTEND_TOP ~Aerie.bcs~ ~Yvette/Scripts/Aerie.baf~
+@@ -370,9 +402,6 @@
+ 
+ //////////////////MUSIC AND SOUNDS
+ 
+-
+-COPY ~Yvette\AUDIO~ ~override\~
+-
+ //Yvette BLANK SONG
+ 
+ COPY_EXISTING ~songlist.2da~ ~override~
+@@ -385,15 +414,6 @@
+ // Since the sounds and oggdec.exe are already in the default mymod/audio directory,
+ // it's that simple, and the bat files are not needed anymore
+ LAF HANDLE_AUDIO END
+-/*
+-COPY ~Yvette\YvetteAudioUninstall.bat~ ~YvetteAudioUninstall.bat~
+-COPY ~Yvette\YvetteAudioInstall.bat~ ~YvetteAudioInstall.bat~
+-AT_INTERACTIVE_EXIT ~YvetteAudioInstall.bat~
+-AT_UNINSTALL ~YvetteAudioUninstall.bat~
+-*/
+-
+-
+-
+ 
+ 
+ ///////////////////////
+@@ -498,23 +518,37 @@
+ END
+ ACTION_IF ("yvettedialogues" = 1) THEN BEGIN
+ PRINT @101 /* Installing original dialogues */
+-COMPILE ~YVette\Dialogues\YxDraw.d~
+-        ~YVette\Dialogues\YxYv25J.d~
+-        ~YVette\Dialogues\YxYveJ.d~
+-        ~YVette\Dialogues\YxAppends.d~
+-        ~YVette\Dialogues\YxYve.d~
+-        ~YVette\Dialogues\YxYveB.d~
++COMPILE EVALUATE_BUFFER ~YVette/Dialogues/YxDraw.d~
++        ~YVette/Dialogues/YxYv25J.d~
++        ~YVette/Dialogues/YxYveJ.d~
++        ~YVette/Dialogues/YxAppends.d~
++        ~YVette/Dialogues/YxYve.d~
++        ~YVette/Dialogues/YxYveB.d~
+ END
+ 
+ 
+       ACTION_IF ("yvettedialogues" = 2) THEN BEGIN
+ PRINT @102 /* Installing dialogues with reduced action text and descriptions */
+-COMPILE ~YVette\Dialogues\DrawNAT.d~
+-        ~YVette\Dialogues\Yv25JNAT.d~
+-        ~YVette\Dialogues\YveJNAT.d~
+-        ~YVette\Dialogues\AppendsNAT.d~
+-        ~YVette\Dialogues\YveNAT.d~
+-        ~YVette\Dialogues\YveBNAT.d~
++  COMPILE EVALUATE_BUFFER ~YVette/Dialogues/DrawNAT.d~
++        ~YVette/Dialogues/Yv25JNAT.d~
++        ~YVette/Dialogues/YveJNAT.d~
++        ~YVette/Dialogues/AppendsNAT.d~
++        ~YVette/Dialogues/YveNAT.d~
++        ~YVette/Dialogues/YveBNAT.d~
++END
++
++ACTION_IF GAME_IS ~eet~ BEGIN
++<<<<<<<< .../AR4000.baf
++IF
++  InPartyAllowDead("YxYve")
++  Global("YxYveSummoned","GLOBAL",0)
++THEN
++  RESPONSE #100
++    ActionOverride("YxYve",ChangeAIScript("YxYv25",OVERRIDE))
++    SetGlobal("YxYveSummoned","GLOBAL",2)
++END
++>>>>>>>>
++  EXTEND_BOTTOM ~AR4000.BCS~ ~.../AR4000.baf~
+ END
+ 
+ /////////////////////////////////////////////////////

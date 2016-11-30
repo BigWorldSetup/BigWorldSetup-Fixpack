@@ -1,0 +1,29 @@
+--- ISNF/DIALOGUES/ISNFxSU.d	2014-12-21 18:51:36.000000000 -0500
++++ Fixpack/ISNF/DIALOGUES/ISNFxSU.d	2016-11-21 22:55:26.567803300 -0500
+@@ -12,7 +12,7 @@
+ IF~~THEN REPLY @5 /* Why do you live in a temple? Are you homeless? */ GOTO Sunite003
+ IF~~THEN REPLY @6 /* Can you tell me a bit about Sune? */ GOTO Sunite004
+ IF~~THEN REPLY @7 /* I need your service. */ GOTO Sunite005
+-IF~Global("ISNFSun6","GLOBAL",1) GlobalGT("CHAPTER","GLOBAL",5)~THEN REPLY @8 /* It's been a while since I've been here. Have you got any new wares? */ GOTO New000
++IF~Global("ISNFSun6","GLOBAL",1) GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_5%)~THEN REPLY @8 /* It's been a while since I've been here. Have you got any new wares? */ GOTO New000
+ IF~Global("ISNFQuest","GLOBAL",6)~THEN REPLY @9 /* I'm looking for someone who could make a sculpture for one of my friends. I thought I should ask if you - as a Sunite - knew someone appropriate. */ GOTO SuniteS0
+ IF~PartyHasItem("ISNFXSS")~THEN REPLY @10 /* I have found this figurine. I think you should have it. */ DO ~TakePartyItem("ISNFXSS") DestroyItem("ISNFXSS")~ GOTO SuniteFig0
+ IF~~THEN REPLY @11 /* Uhm, I think I should go. Goodbye. */ GOTO Sunite002
+@@ -24,7 +24,7 @@
+ IF~Global("ISNFSune1","GLOBAL",1) Global("ISNFQuest","GLOBAL",1)~THEN REPLY @4 /* I'm working for a man - Orion. He lost his beloved. Can the Sunites use their feelings as a "bridge" and bring her back? Is there ANY way to bring her? */ DO ~SetGlobal("ISNFSune1","GLOBAL",2) SetGlobal("ISNFQuest","GLOBAL",2)~ GOTO Sunite006
+ IF~~THEN REPLY @6 /* Can you tell me a bit about Sune? */ GOTO Sunite004
+ IF~~THEN REPLY @7 /* I need your service. */ GOTO Sunite005
+-IF~Global("ISNFSun6","GLOBAL",1) GlobalGT("CHAPTER","GLOBAL",5)~THEN REPLY @8 /* It's been a while since I've been here. Have you got any new wares? */ GOTO New000
++IF~Global("ISNFSun6","GLOBAL",1) GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_5%)~THEN REPLY @8 /* It's been a while since I've been here. Have you got any new wares? */ GOTO New000
+ IF~Global("ISNFQuest","GLOBAL",6)~THEN REPLY @9 /* I'm looking for someone who could make a sculpture for one of my friends. I thought I should ask if you - as a Sunite - knew someone appropriate. */ GOTO SuniteS0
+ IF~PartyHasItem("ISNFXSS")~THEN REPLY @10 /* I have found this figurine. I think you should have it. */ DO ~TakePartyItem("ISNFXSS") DestroyItem("ISNFXSS")~ GOTO SuniteFig0
+ IF~~THEN REPLY @11 /* Uhm, I think I should go. Goodbye. */ GOTO Sunite002
+@@ -37,7 +37,7 @@
+ IF~Global("ISNFSune1","GLOBAL",1) Global("ISNFQuest","GLOBAL",1)~THEN REPLY @17 /*  I'm working for a man - Orion. He lost his beloved. Can the Sunites use their feelings as a "bridge" and bring her back? Is there ANY way to bring her? */ DO ~SetGlobal("ISNFSune1","GLOBAL",2) SetGlobal("ISNFQuest","GLOBAL",2)~ GOTO Sunite006
+ IF~~THEN REPLY @5 /* Why do you live in a temple? Are you homeless? */ GOTO Sunite003
+ IF~~THEN REPLY @7 /* I need your service. */ GOTO Sunite005
+-IF~Global("ISNFSun6","GLOBAL",1) GlobalGT("CHAPTER","GLOBAL",5)~THEN REPLY @8 /* It's been a while since I've been here. Have you got any new wares? */ GOTO New000
++IF~Global("ISNFSun6","GLOBAL",1) GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_5%)~THEN REPLY @8 /* It's been a while since I've been here. Have you got any new wares? */ GOTO New000
+ IF~Global("ISNFQuest","GLOBAL",6)~THEN REPLY @18 /*  I'm looking for someone who could make a sculpture for one of my friends. I thought I should ask if you - as a Sunite - knew someone appropriate. */ GOTO SuniteS0
+ IF~PartyHasItem("ISNFXSS")~THEN REPLY @10 /* I have found this figurine. I think you should have it. */ DO ~TakePartyItem("ISNFXSS") DestroyItem("ISNFXSS")~ GOTO SuniteFig0
+ IF~~THEN REPLY @11 /* Uhm, I think I should go. Goodbye. */ GOTO Sunite002

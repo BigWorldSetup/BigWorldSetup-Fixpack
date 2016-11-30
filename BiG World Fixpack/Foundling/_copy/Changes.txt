@@ -1,0 +1,57 @@
+Patching Foundling/fl#add_kit_ee.tpa: GAME_IS ~bgee bg2ee~ BEGIN => GAME_IS ~bgee bg2ee eet~ BEGIN
+Patching Foundling/Dialogues/L#Fou.d: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Foundling/Dialogues/L#Fou.d: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Foundling/Dialogues/L#FouJ.d: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Foundling/Dialogues/L#FouJ.d: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Foundling/Dialogues/L#FouJ.d: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Foundling/Dialogues/L#FouJ.d: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Foundling/Scripts/L#Fou.baf: GlobalLT("CHAPTER","GLOBAL",4) => GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_4%)
+Patching Foundling/Foundling.tp2: ALWAYS command expanded
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+-----------
+
+Manual edits:
+
+2. Below code from Foundling/Dialogues/L#Fou25.d:
+
+EXTEND_BOTTOM FATESP 6 #4
+IF ~ !Dead("L#Fou") !InMyArea("L#Fou") Global("L#FouSummonedToB","GLOBAL",0)~ 
+THEN REPLY @0 /* Bring me Foundling, the human Shadow Adept. */ DO ~CreateVisualEffect("SPPORTAL",[1909.1228])
+Wait(2) 
+CreateCreature("L#Fou25",[1909.1228],0) 
+SetGlobal("L#FouSummonedToB","GLOBAL",1)~ GOTO 8
+END
+
+Moved to new file: Foundling/Dialogues/FATESP.d
+
+3. New code added at the end of Foundling/Foundling.tp2
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+  INCLUDE ~EET/other/EET_functions.tph~
+  LAF ~EET_NPC_TRANSITION~
+    INT_VAR
+      type = 2
+    STR_VAR
+      dv = "L#FOU"
+      override_SoA = "L#FOU"
+      override_ToB = "L#FOU25"
+      dialog_ToB = "L#FOU25"
+      traFile = EVAL "Foundling/translations/%LANGUAGE%/L#FOU25.TRA"
+      string = "@0" //Bring me Foundling, the human Shadow Adept.
+      stringPosDV = "Garrick"
+  END
+END ELSE BEGIN
+  COMPILE ~Foundling/Dialogues/FATESP.d~ USING ~Foundling/translations/%LANGUAGE%/L#FOU25.TRA~
+END
+
+This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage

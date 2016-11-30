@@ -1,11 +1,203 @@
---- Eilistraee\Setup-Eilistraee.tp2	Sun Feb 01 01:56:16 2015
-+++ C:\BWP Patchstudio\patched files\Eilistraee\Setup-Eilistraee.tp2	Fri Dec 25 21:13:35 2015
-@@ -1,7 +1,7 @@
+--- Eilistraee/Setup-Eilistraee.tp2	2015-02-01 01:56:16.000000000 -0500
++++ Fixpack/Eilistraee/Setup-Eilistraee.tp2	2016-11-30 17:58:38.845394700 -0500
+@@ -1,26 +1,38 @@
  BACKUP ~Eilistraee\backup~
  AUTHOR ~Lava Del'Vortel~
  
 -VERSION ~3.4~
-+VERSION ~4.0 BWP Fix~
++VERSION ~3.4 BWP Fix~
  
  README ~Eilistraee/ESReadMe.%LANGUAGE%.txt~ ~Eilistraee/ESReadMe.txt~
  
+ AUTO_TRA ~Eilistraee/Translations/%s~
+ 
+ ALWAYS
+-  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+-  INCLUDE ~%MOD_FOLDER%/handle_charsets.tpa~
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET wmp_xCoordAdd_SoA = 0
++    OUTER_SET wmp_yCoordAdd_SoA = 2283
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++    OUTER_SET wmp_xCoordAdd_SoA = 0
++    OUTER_SET wmp_yCoordAdd_SoA = 0
++  END
++
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
+ 
+   // No exception, everything needs to be converted
+   ACTION_DEFINE_ARRAY EsXnoconvert BEGIN END
+ 
+-  // Only setup-Innershade.tra needs to be reloaded
++  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
+   ACTION_DEFINE_ARRAY EsXreload BEGIN Setup-Eilistraee END
+ 
+-  // There is no "language" folder so the root of all languages in %MOD_FOLDER%
+   LAF HANDLE_CHARSETS
+     INT_VAR
+-      infer_charset = 1
++    infer_charsets = 1
+     STR_VAR
+       tra_path = EVAL ~%MOD_FOLDER%/translations~
+       // charset_table = EsXcharsets // Included for illustrative purposes.
+@@ -33,6 +45,7 @@
+ LANGUAGE ~French~ ~French~ ~Eilistraee/Translations/French/Setup-Eilistraee.tra~
+ LANGUAGE ~Russian~ ~Russian~ ~Eilistraee/Translations/Russian/Setup-Eilistraee.tra~
+ LANGUAGE ~German (by Gerri)~ ~German~ ~Eilistraee/Translations/German/Setup-Eilistraee.tra~
++LANGUAGE ~Italian (by ilot)~ ~Italian~  ~Eilistraee/Translations/Italian/Setup-Eilistraee.tra~
+ 
+ BEGIN @0 /* Eilistraee's Song */
+ 
+@@ -730,45 +743,26 @@
+ END
+ 
+ 
+-//////////////////////////////////AUDIO INSTALLATION
+-
+-COPY   ~Eilistraee/ESIA.bat~          ~ESIA.bat~
+-COPY   ~Eilistraee/ESUA.bat~         ~ESUA.bat~
+-    
+-AT_INTERACTIVE_EXIT ~ESIA.bat~
+-AT_UNINSTALL        ~ESUA.bat~
+-
+-
+-
+-BEGIN @87 /* Add Eilistraee's Clearing to the Worldmap */
+-SUBCOMPONENT @88 /* Worldmap addition */
+-REQUIRE_COMPONENT ~Eilistraee/Setup-eilistraee.tp2~ ~0~ @89 /* Main component not installed */
+ 
+ //////////////////////////////////ADD AREA TO MAP
+ 
+-ACTION_IF NOT FILE_EXISTS_IN_GAME ~neera10.cre~ THEN BEGIN
+-MKDIR save
+-END
+-
+-
+-//**************************************************
+-// Worldmap patching - do this last so we can patch the new areas too
+-//**************************************************
+ // Append mastarea.2da with the new areas
+-APPEND ~MASTAREA.2da~ ~ARES01 value~ UNLESS "Eilistraee's Clearing" /* ARES01 *///ARES01
++APPEND ~MASTAREA.2da~ ~ARES01 value~ UNLESS ~ARES01~ // Eilistraee's Clearing
+ 
+-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-// Deep Gardens abandoned
+-  OUTER_SPRINT areName @90 /* ARES01 */  // area reference, like "AR0700"
+-  OUTER_SPRINT strName @91 /* Eilistraee's Clearing */// area name, like "Waukeen's Promenade"
+-  OUTER_SPRINT strDesc @91 /* Eilistraee's Clearing */// area description which will show up when hovering the area on the worldmap
+-
+-  OUTER_SET mapIcon = 9              // map icon
+-  OUTER_SET xCoord  = 890            // x coordinate
+-  OUTER_SET yCoord  = 635             // y coordinate
+-  OUTER_SET tTime   = 2              // travel time, *4, so two means eight hours
+-  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
++// BP-BGT-Worldmap compatibility always (these files will only be used if BP-BGT-Worldmap is installed)
++ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
++  COPY ~Worldmap/map_mods_areas.tbl~      ~Worldmap~  APPEND_FILE ~Eilistraee/Worldmap/areas.tbl~
++  COPY ~Worldmap/map_mods_links.tbl~      ~Worldmap~  APPEND_FILE ~Eilistraee/Worldmap/links.tbl~
++  COPY ~Worldmap/map_mods_trans.tra~      ~Worldmap~  APPEND_FILE ~Eilistraee/Worldmap/worldmap.tra~
++END ELSE BEGIN
++  MKDIR ~Worldmap~
++  COPY ~Eilistraee/Worldmap/areas.tbl~    ~Worldmap/map_mods_areas.tbl~
++  COPY ~Eilistraee/Worldmap/links.tbl~    ~Worldmap/map_mods_links.tbl~
++  COPY ~Eilistraee/Worldmap/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
++END
+ 
++// Always patch regular worldmap (no conflict with BP-BGT-Worldmap)
++//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ // set up link variables
+ 
+   // add links from these area(s) to the new area
+@@ -807,42 +801,55 @@
+     "AR2500" => "CDExit"       // Camp
+   END
+ 
+-// call the sc#addWmpAre function
+-  // returns the worldmap entry number for the new area
+-  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
++// Deep Gardens
++OUTER_SPRINT areName ~ARES01~                        // area reference, like "AR0700"
++OUTER_SPRINT strName @91 /* Eilistraee's Clearing */ // area name, like "Waukeen's Promenade"
++OUTER_SPRINT strDesc @91 /* Eilistraee's Clearing */ // area description which will show up when hovering the area on the worldmap
+ 
+-  // remove if not desired
+-  PRINT @92 /* ARES01 patched. New area number is: %areNum% */
++OUTER_SET mapIcon = 9                                // map icon index in mapicons.bam
++OUTER_SET xCoord  = 870 + wmp_xCoordAdd_SoA          // x coordinate
++OUTER_SET yCoord  = 500 + wmp_yCoordAdd_SoA          // y coordinate
++OUTER_SET tTime   = 2                                // travel time, *4, so two means eight hours
+   
+-BEGIN @93 /* Add Eilistraee's Clearing to BP-BGT-Worldmap */
+-SUBCOMPONENT @88 /* Worldmap addition */
+-REQUIRE_COMPONENT ~Eilistraee/Setup-eilistraee.tp2~ ~0~ @89 /* Main component not installed */
+-ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
+-  COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
+-   APPEND_FILE ~Eilistraee/Worldmap/areas.tbl~
+-  COPY ~Worldmap/map_mods_links.tbl~  ~Worldmap~
+-   APPEND_FILE ~Eilistraee/Worldmap/links.tbl~
+-  COPY - ~Eilistraee/Worldmap/worldmap.tra~  ~tmp_worldmap.tra~
+-  COPY ~Worldmap/map_mods_trans.tra~  ~Worldmap~
+-   APPEND_FILE ~tmp_worldmap.tra~
+-END
+-ELSE BEGIN
+-  MKDIR ~Worldmap~
+-  COPY ~Eilistraee/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
+-  COPY ~Eilistraee/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
+-  COPY ~Eilistraee/Worldmap/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
++// call the sc#addWmpAre function (included with WeiDU)
++// returns the worldmap entry number for the new area
++LAUNCH_ACTION_FUNCTION sc#addWmpAre
++  INT_VAR
++    inclSv  = 1                               // patch worldmap for any existing save games
++  STR_VAR
++    strName = EVAL ~%strName%~
++    strDesc = EVAL ~%strDesc%~
++  RET areNum = areNum
+   END
+ 
++// end of main component
+ 
+-BEGIN @94 /* Do not add Eilistraee's Clearing to the Worldmap */
+-SUBCOMPONENT @88 /* Worldmap addition */
+-REQUIRE_COMPONENT ~Eilistraee/Setup-eilistraee.tp2~ ~0~ @89 /* Main component not installed */
+-
+-COPY ~Eilistraee/NoExit~ ~override/~
+-COMPILE ~Eilistraee/DIALOGUES/ESxTake.d~
+-EXTEND_TOP   ~AR2500.bcs~ ~Eilistraee/SCRIPTS/AR2500.baf~
+ 
+-COPY ~Eilistraee/CREATURES/ESxTake.cre~ ~override/ESxTake.cre~
+-SAY NAME1 @34 /* Drow */
+-SAY NAME2 @34 /* Drow */
++//////////////////////////////////////////////////
++//////////////////////////////////////////////////
++
++
++BEGIN ~~ // @87 /* Add Eilistraee's Clearing to the Worldmap */
++DEPRECATED ~Regular worldmap addition is included in main component~
++//SUBCOMPONENT @88 /* Worldmap addition */
++//REQUIRE_COMPONENT ~Eilistraee/Setup-eilistraee.tp2~ ~0~ @89 /* Main component not installed */
++
++
++BEGIN ~~ // @93 /* Add Eilistraee's Clearing to BP-BGT-Worldmap */
++DEPRECATED ~BP-BGT-Worldmap addition is included in main component~
++//SUBCOMPONENT @88 /* Worldmap addition */
++//REQUIRE_COMPONENT ~Eilistraee/Setup-eilistraee.tp2~ ~0~ @89 /* Main component not installed */
++
++
++BEGIN ~~ // @94 /* Do not add Eilistraee's Clearing to the Worldmap */
++DEPRECATED ~Alternative transport not needed because worldmap addition is always installed~
++//SUBCOMPONENT @88 /* Worldmap addition */
++//REQUIRE_COMPONENT ~Eilistraee/Setup-eilistraee.tp2~ ~0~ @89 /* Main component not installed */
++
++// COPY ~Eilistraee/NoExit~ ~override/~
++// COMPILE ~Eilistraee/DIALOGUES/ESxTake.d~
++// EXTEND_TOP   ~AR2500.bcs~ ~Eilistraee/SCRIPTS/AR2500.baf~
+ 
++// COPY ~Eilistraee/CREATURES/ESxTake.cre~ ~override/ESxTake.cre~
++// SAY NAME1 @34 /* Drow */
++// SAY NAME2 @34 /* Drow */

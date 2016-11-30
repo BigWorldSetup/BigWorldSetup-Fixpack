@@ -1,0 +1,23 @@
+--- Eilistraee/DIALOGUES/Cromwell.d	2011-07-03 18:01:18.000000000 -0400
++++ Fixpack/Eilistraee/DIALOGUES/Cromwell.d	2016-11-30 17:54:51.803143600 -0500
+@@ -15,16 +16,16 @@
+      PartyHasItem("DWDust")
+      PartyHasItem("MISC27")
+      PartyGoldGT(7499)
+-     ~ THEN REPLY @4 /* Let's do the Dozen Moons. */DO ~SetGlobal("Dozen","GLOBAL",1)
++     ~ THEN REPLY @4 /* Let's do the Dozen Moons. */ DO ~SetGlobal("EsxCromDozen","GLOBAL",1)
+                                  SetGlobal("ForgeStuff","GLOBAL",1)
+                                  TakePartyGold(7500)
+                                  DestroyGold(7500)~ GOTO 56
+- IF ~
+-     PartyHasItem("ESxTOOT")
++
++ IF ~PartyHasItem("ESxTOOT")
+      PartyHasItem("DWDust")
+      PartyHasItem("MISC27")
+      PartyHasItem("MISC8U")
+-     PartyGoldGT(11999)~ THEN REPLY@5 /* Let's do the 13th Moon. */DO ~SetGlobal("13thMoon","GLOBAL",1)
++     PartyGoldGT(11999)~ THEN REPLY @5 /* Let's do the 13th Moon. */ DO ~SetGlobal("EsxCrom13thMoon","GLOBAL",1)
+                                  SetGlobal("ForgeStuff","GLOBAL",1)
+                                  TakePartyGold(12000)
+                                  DestroyGold(12000)~ GOTO 56

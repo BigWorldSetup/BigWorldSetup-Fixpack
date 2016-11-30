@@ -1,0 +1,351 @@
+@0   = ~Farben der Unendlichkeit: Ich Werde Niemals Vergessen~ 
+@1   = ~Amontias der Künstler~
+@2   = ~Fremder~ 
+@3   = ~Der Unvollendete~
+@4   = ~Orion~ 
+@5   = ~<CHARNAME>s Erinnerung~
+@6   = ~Halbling Mädchen~
+@7   = ~Herzwächter Icaos~ 
+@8   = ~Skulptur~
+@9   = ~Selene~ 
+@10  = ~Erinnerung~
+@11  = ~Blinder Geist~
+@12  = ~Ganymedes~ 
+@13  = ~Verblassende Gestalt~
+@14  = ~Orions Stimme~ 
+@15  = ~Selenes Stimme~
+@16  = ~Herzwächter von Sune~
+@17  = ~Parasit des Kummers~
+@18  = ~Aufzeichnungen des Unvollendeten~ 
+@19  = ~Diese spröden, schlampig zusammengefügten Texte sind die Aufzeichnungen des Unvollendeten. Orion hat dich losgeschickt um sie zu holen, in der Hoffnung die Forschungsergebnisse der Kreatur nutzen zu können.~
+@20  = ~Ring 'Purpurner Schrei'~ 
+@21  = ~Der Ring ist in einem tiefen, intensiven purpurnen Farbton gehalten. Er fühlt sich warm, etwas weich und klebrig an, als ob er aus Harz bestehen würde. Beim Festhalten des Rings fühlt man sich etwas unbehaglich.
+
+EIGENSCHAFTEN:
+
+Der Träger steht unter dem Effekt "Wilde Magie"
+Maximale Trefferpunkte: +15
+ETW0-Bonus: -1
+
+Kann nur verwendet werden von:
+- Magiern
+- Barden~ 
+@22  = ~Keule 'Warme Hand'~
+@23  = ~Diese magische Keule fühlt sich bei Berührung sehr warm an. Der obere Teil der Waffe hat die Form einer Hand und wenn man seine eigene Hand ausstreckt um sie zu ergreifen umklammert sie einen mit festem Griff bis man loslässt. Die Waffe bietet etwas Schutz, aber aufgrund der Natur dieser Verzauberung ist es etwas schwierig im Kampf damit zu manövrieren. Im schlimmsten Fall ist sie eher ein Hindernis statt einer Hilfe.
+
+EIGENSCHAFTEN:
+
+Der Träger ist immun gegen Krankheit.
+RK-Bonus: -4 (gg. Geschosswaffen)
+RW-Abzug: +3 (gg. Tod)
+Charisma: +2
+
+Schaden: 1W6 +2 (Wucht)
+ETW0-Bonus: -4
+Gewicht: 8
+Initiativefaktor: 6
+Mindeststärke: 10
+Fertigkeit: Keule
+Typ: 1-händig
+
+Kann nicht verwendet werden von:
+- Druiden
+- Magiern
+- Dieben~ 
+@24  = ~Langschwert 'Rakshasas Atem'~
+@25  = ~Bei diesem Schwert handelt es sich um eine gesegnete Waffe, die bereits von vielen Kriegern und Paladinen genutzt wurde, um ihr Volk vor grausamen Monstern zu schützen: Rakshasas. Viele behaupten, daß das Schwert seinen Namen von dem ersten Krieger erhielt, der es führte, kurz nachdem der erste Rakshasa, getroffen von der Klinge, seinen letzten Atemzug tat und starb.
+Der Griff des Schwertes scheint eine feine Beschriftung zu haben.
+
+EIGENSCHAFTEN:
+
+Magiewiderstand: +5%
+
+Schaden: 1W8 +3 (Klinge)
+ETW0-Bonus:
+ -3
+ -5 gg. Rakshasas
+Gewicht: 12
+Initiativefaktor: 5
+Mindeststärke: 11
+Fertigkeit: Langschwert
+Typ: 1-händig
+
+Kann nicht verwendet werden von:
+- Druiden
+- Klerikern
+- Magiern
+- Dieben~
+@26  = ~Kompositlangbogen des Sanftmuts~
+@27  = ~Kompositbögen sind Bögen deren Rahmen aus mehr als nur einem Material bestehen. Das gewährt eine größere Flexibilität und daher auch eine höhere Reichweite. Sie stellen eine Weiterentwicklung von normalen Langbögen dar. Dieser magische Bogen erfordert eine Mindeststärke von 18 um ihn handhaben zu können.
+Dieser Bogen ist nicht nur eine ordentliche Waffe, sondern auch ein prächtiger Schutz gegen Kreaturen, die einen zu Stein erstarren lassen können.
+
+EIGENSCHAFTEN:
+
+Der Träger ist immun gegen Versteinerung.
+
+Schaden: +1 (Geschoss)
+ETW0-Bonus: -2
+Gewicht: 9
+Initiativefaktor: 6
+Mindeststärke: 18
+Fertigkeit: Langbogen
+Typ: 2-händig
+
+Kann nicht verwendet werden von:
+- Druiden
+- Klerikern
+- Magiern
+- Dieben
+- Barden
+- Mönchen
+- Kensai
+- Rittern~
+@28  = ~Harfe 'Mirakel'~
+@29  = ~Diese magische Harfe scheint nicht besonders stabil zu sein,  aber sie lässt den Barden besser aussehen und verstärkt seine Zaubersprüche.
+Dieser speziellen Harfe wird nachgesagt, daß sie einst von einem Barden namens Fonic Aldabario benutzt wurde, einem hochrangigen Harfner, der in der Schlacht gegen Zhentarim gefallen ist.
+
+EIGENSCHAFTEN:
+
+Zauberstufe: +2 (Nur arkane Zauber)
+Charisma: +1
+
+Gewicht: 1
+
+Kann nur verwendet werden von:
+- Barden
+Hinweis: Wird als Schild genutzt.~
+@30  = ~Ionenstein 'Herz des Heiligtums'~
+@31  = ~Dieser Ionenstein wurde im Allerheiligsten des Unvollendeten geborgen. Es scheint als würde er Wärme abstrahlen. In der Hand scheint er vor Energie zu pulsieren.
+
+EIGENSCHAFTEN:
+
+Sagenkunde: +25%
+25% Chance auf magische Rast bei Benutzung
+(Zaubersprüche/Fähigkeiten wiederherstellen und Ausruhen)
+
+Gewicht: 1~
+@32  = ~Vogel im Käfig~
+@33  = ~Dieser Vogel scheint um sich herum alles genau zu beobachten. Er wirkt intelligent, aber auch etwas verwirrt und chaotisch. Er hat schöne bunte Federn.
+
+Gewicht: 2~
+@34  = ~Parfüm 'Insomnia'~
+@35  = ~Dem Parfüm 'Insomnia' wird nachgesagt, daß es von den zwei Suniten Aliya Jabberfox und Sybilla Gariah entwickelt wurde, die eine Möglichkeit finden wollten, Tiefwasser zu retten ohne dabei in Schwierigkeiten zu geraten. Gewöhnlich fanden die Schwierigkeiten sie.
+Diese Mischung aus Duftstoffen und Ölen gewährt dem Nutzer für kurze Zeit Kontrolle über ein Wesen. Normalerweise reicht die Zeitspanne aus um dem Nutzer die Möglichkeit zu geben einen Weg aus seinen Schwierigkeiten zu finden.
+
+EIGENSCHAFTEN:
+
+Bezaubern (10 Ladungen/Benutzung)~
+@36  = ~Schriftrolle des Stummen Spatzes~
+@37  = ~Diese befremdliche Schriftrolle stammt von einem seltsamen Mann, dem du vor nicht allzu langer Zeit begegnet bist. Er erwähnte, daß er zu diesem Zeitpunkt anders aussah.
+
+EIGENSCHAFTEN:
+
+Permanent Sagenkunde +5
+
+Gewicht: 1~
+@38  = ~Statuette von Sune~
+@39  = ~Diese kleine Statuette von Sune wurde in den Slums in Athkatla gefunden. Sie scheint nicht magisch zu sein, könnte aber dennoch für jene, die Lady Firehair dienen, von Wert sein.
+
+Gewicht: 1.~
+@40  = ~Elefant Statuette~
+@41  = ~Obwohl diese Statuette ein ganz gewöhnliches Objekt zu sein scheint, verfügt sie über etwas Magie. Sie bietet dem Nutzer etwas Schutz, indem sie seine Haut härtet, was vor Angriffen mit verschiedenen Waffen schützt.
+
+EIGENSCHAFTEN:
+
+Zauber "Elefantenhaut"
+(Verlangsamung und Physischer Widerstand: +65% ;Dauer: 30 Sekunden)
+
+Gewicht: 1~
+@42  = ~Ohrringe des Mittags~
+@43  = ~Dies ist ein Paar leuchtender, magischer Ohrringe, die gewöhnlich von jenen verwendet werden, die Untote bekämpfen. Sie verstärken die Fähigkeiten des Nutzers im Kampf gegen Skelette, Zombies, Ghule, Geister und sogar gegen die mächtigen Kreaturen wie Vampire und Leichname.
+Die Ohrringe scheinen aus Gold mit feinen Verzierungen zu bestehen. Eine der Verzierungen ähnelt dem Symbol von Amaunator.
+
+EIGENSCHAFTEN:
+
+Der Nutzer ist immun gegen den Zauber Irrgarten.
+ETW0-Bonus: -4 (gg. Untote)
+ETW0-Abzug: +1 (Geschosswaffen)
+
+Gift Heilen (2 Ladungen/Benutzung)
+
+Hinweis: Gegenstand verschwindet nicht nach Verbrauch der Ladungen.
+
+Gewicht: 0~
+@44  = ~Feder der Fünf Sekunden~
+@45  = ~So seltsam es scheint, hat jemand beschlossen diese schwarze Feder zu verzaubern. Nach dem Verzehr ist der Nutzer in der Lage sich zwischen verschiedenen Zeitsträngen zu bewegen.
+Die Feder ist Pechschwarz und reflektiert das Licht.
+
+EIGENSCHAFTEN:
+
+Zeitstopp, Nutzer ist immun gegen den Zauber (Dauer: 5 Sekunden)
+
+Gewicht: 0~
+@46  = ~Keule 'Korallen-Rose'~
+@47  = ~Korallen-Rose ist eine mächtige Waffe, angefertigt von den Suniten des Eiswindtals. Eine kleine Gruppe von Barbaren, Verehrern des Tempus und anderen kriegerischen Gottheiten beschloss ein "Symbol der Sanftheit unter den rauen, eisigen Himmeln und Gipfeln" zu erschaffen. Legenden berichten, daß sie dutzende von Tagen und Nächten damit verbrachten diese Waffe zu verzaubern.
+Die Waffe besteht aus kaltem Stahl mit schwachen Schattierungen. Einige Teile bestehen aus Korallen. Obwohl man annehmen sollte, daß die Korallen deutlich brüchiger sein müssten, bilden sie den stärksten Teil der Keule.   
+
+EIGENSCHAFTEN:
+
+Der Träger ist immun gegen Hinterhältigen Angriff.
+5% Chance den Magiewiderstand des Ziels um 5% zu senken (Dauer: 30 Sekunden)
+Charisma: +2
+
+Schaden: 1W6 +4 (Wucht)
+ETW0-Bonus: -4
+Gewicht: 8
+Initiativefaktor: 6
+Mindeststärke: 10
+Fertigkeit: Keule
+Typ: 1-händig
+
+Kann nicht verwendet werden von:
+- Druiden
+- Magiern
+- Dieben~
+@48  = ~Stab 'Grünwurm'~
+@49  = ~Obwohl dieser Stab von nahezu jedem verwendet werden kann, ist er in der Hand eines Magiers doch am effektivsten.
+Er scheint aus einem warmen, schwarzen Material angefertigt worden zu sein, beschriftet mit grünlicher Farbe. Es ist schwierig weiteres über den Stab herauszufinden; sogar Händler scheinen etwas irritiert auf diese Waffe zu reagieren.
+
+EIGENSCHAFTEN:
+
+Auf dem Träger liegt der Effekt von Stummer Zauber.
+20% Chance, daß das Ziel vom Nutzer weg gestossen wird
+Schutz vor Wilder Magie: +25%
+
+Schaden: 1W6 +2 (Wucht)
+ETW0-Bonus: -2
+Gewicht: 4
+Initiativefaktor: 2
+Mindeststärke: 4
+Fertigkeit: Kampfstab
+Typ: 2-händig
+
+Kann nicht verwendet werden von:
+- Mönchen~
+@50  = ~Hammer der Gefallenen Sonne~
+@51  = ~Dieser leichte Hammer wurde aus solidem Metall gefertigt, mit einem schön gestalteten, warmen Griff. Seine Größe ist nicht sonderlich beeindruckend, dennoch kann er ausgezeichnet Schaden verursachen. Es wird erzählt, daß einige Zwerge, die Amaunator und Lathander verehrten, diese Waffe geschmiedet haben.
+Auf der Oberseite der Waffe ist eine Sonne eingraviert. Es wird erzählt, daß die Gravur selbst keine magischen Eigenschaften besitzt, sondern Krieger an die Kraft der Sonne und die Götter ihrer Sphäre erinnert.
+
+EIGENSCHAFTEN:
+
+35% Chance das Ziel zu blenden
+10% Chance einen Klerikerzauber der Stufe 6 oder niedriger wiederherzustellen
+
+Schaden: 1W4 +4 (Wucht)
+ETW0-Bonus: -4, -1 gg. angreifende Feinde
+Gewicht: 5
+Initiativefaktor: 2
+Mindeststärke: 9
+Fertigkeit: Kriegshammer
+Typ: 1-händig
+
+Kann nicht verwendet werden von:
+- Druiden
+- Magiern
+- Dieben~
+@52  = ~Katana 'Chaosnetz'~
+@53  = ~Dieses Katana wurde mit Hilfe von wilder und fremder Magie aus dem fernen Osten angefertigt. Bei jedem Treffer besteht die Möglichkeit, daß dieses Katana die Realität durchtrennt und das Chaos jede Kreatur in unberechenbarer Magie versinken lässt.
+Aufgrund der skurrilen Natur dieses Gegenstands wagen es nur Draufgänger diese Klinge zu schwingen. Einige von ihnen erlitten einen qualvollen Tod.
+
+EIGENSCHAFTEN:
+
+Der Träger regeneriert alle acht Sekunden einen Trefferpunkt.
+5% Chance ein Chaosfeld zu erzeugen
+5% Chance dem Nutzer 50% Magiewiderstand zu gewähren
+
+Schaden: 1W10 +3 (Klinge)
+ETW0-Bonus: -3
+Gewicht: 4
+Initiativefaktor: 2
+Mindeststärke: 6
+Fertigkeit: Katana
+Typ: 1-händig
+
+Kann nicht verwendet werden von:
+- Druiden
+- Magiern
+- Klerikern~
+@54  = ~Plattenpanzer 'Ilthasthia'~
+@55  = ~Dieser Plattenpanzer unterscheidet sich von vielen anderen Plattenpanzern die in Amn benutzt werden. Er ist deutlich leichter, und obwohl er aus Metall besteht scheint er die Bewegung in keinster Weise einzuschränken. Zudem ist er viel bequemer.
+Aufgrund seiner einzigartigen Eigenschaften kann dieser Plattenpanzer von jedem benutzt werden, sogar von Magiern und Dieben, obwohl diese einen Abzug auf ihre Fähigkeiten erhalten, wenn sie ihn tragen. Hierbei gibt es eine Ausnahme: Dank der eingearbeiteten Glyphen wird die Diebesfähigkeit Illusionen entdecken zu können verstärkt.
+
+EIGENSCHAFTEN:
+
+Der Träger ist immun gegen Lebenskraftentzug
+Illusion entdecken: +35%
+Geschwindigkeit beim Zaubern: -2
+Schleichen/Verstecken: -25%
+
+Rüstungsklasse: 2
+Gewicht: 10
+Mindeststärke: 12
+
+Kann von jedem verwendet werden~
+@56  = ~Ritualbuch~
+@57  = ~Dieses Buch wurde von Orion dazu genutzt dich in das Reich der Schatten hinein zu bringen. Man kann es benutzen um zu seinem Haus auf der materiellen Ebene zurück zu kehren.~
+@58  = ~Schwarze Saat der Trauer~
+@59  = ~Als Orion verstanden hatte, daß es für Selene keinen Weg zurück gibt, erwuchs in seinem Herz die Schwarze Saat der Trauer. Sie könnte dazu genutzt werden Kräfte zu erlangen, aber sie beeinflusst den Nutzer auf verschiedene Weise. Möglicherweise ist besser sie zu verkaufen und alles zu vergessen was passiert ist.
+
+EIGENSCHAFTEN:
+
+Bei Verzehr gewährt die Schwarze Saat der Trauer eine besondere Fähigkeit.
+Der Preis dafür besteht darin, daß die Menschen einen mit anderen Augen sehen und die Fähigkeit Andere zu überzeugen darunter leidet.
+
+Gewicht: 0~
+@60  = ~Parasit~
+@61  = ~Tempel von Sune~
+@62  = ~Klare Erinnerung~
+@63  = ~Verzerrte Erinnerung~
+@64  = ~Parasitäre Gestalt~
+@100 = ~Tempel von Sune~
+@101 = ~Ich Werde Niemals Vergessen
+Ich habe einen Mann namens Orion getroffen und versprochen ihm bei seinem Ziel, seine tote Frau wiederzubeleben, zu helfen. Ich habe dafür einige Aufgaben abgeschlossen, aber es gibt noch mehr zu erledigen. Als nächstes muss ich einen Künstler finden, der imstande ist eine Skulptur von Selene anzufertigen.~
+@102 = ~Ich Werde Niemals Vergessen
+Ich habe mit dem Künstler auf Waukeens Promenade gesprochen. Nun sollte ich zurück zu Orions Anwesen gehen.~
+@110 = ~Durchgang zu den überschwemmten Kammern~
+@120 = ~Zweiter Stock, Observatorium~
+@130 = ~Ich Werde Niemals Vergessen
+Ich habe einen Mann namens Orion getroffen und versprochen ihm bei seinem Ziel, seine tote Frau wiederzubeleben, zu helfen. Meine erste Aufgabe besteht darin mit einem Kleriker in Waukeens Tempel im Regierungsbezirk zu sprechen.~
+@131 = ~Ich Werde Niemals Vergessen
+Ich habe mit dem Kleriker in Waukeens Tempel über die Wiederbelebung von Orions verstorbener Frau gesprochen. Obwohl er die Frage beantwortet hat, erwähnte er, daß ich zudem noch mit den Suniten sprechen sollte. Ich finde sie auf Waukeens Promenade.~
+@140 = ~Ich Werde Niemals Vergessen
+Ich habe mit dem Kleriker in Waukeens Tempel über die Wiederbelebung von Orions verstorbener Frau gesprochen. Obwohl er die Frage beantwortet hat, erwähnte er, daß ich zudem noch mit den Suniten sprechen sollte. Ich finde sie auf Waukeens Promenade.~
+@141 = ~Ich Werde Niemals Vergessen
+Ich habe mit den Suniten auf Waukeens Promenade gesprochen. Ich sollte zu Orion zurückkehren und ihm erzählen, was sowohl der Kleriker von Waukeen als auch die Suniten mir erzählt haben.~
+@142 = ~Dieser... dieser Ort ist wundervoll...~
+@143 = ~Ich bin froh, daß die Suniten noch immer Lady Firehair dienen.~
+@150 = ~Ich Werde Niemals Vergessen
+Ich habe einen Mann namens Orion getroffen und versprochen ihm bei seinem Ziel, seine tote Frau wiederzubeleben, zu helfen. Meine erste Aufgabe besteht darin mit einem Kleriker in Waukeens Tempel im Regierungsbezirk zu sprechen.~
+@151 = ~Ich Werde Niemals Vergessen
+Ich habe mit den Suniten auf Waukeens Promenade gesprochen. Ich sollte zu Orion zurückkehren und ihm erzählen, was sowohl der Kleriker von Waukeen als auch die Suniten mir erzählt haben.~
+@152 = ~Ich Werde Niemals Vergessen
+Meine nächste Aufgabe, um bei Selenes Wiederbelebung zu helfen, besteht darin die Forschungsergebnisse eines Nekromanten namens 'Der Unvollendete' zu besorgen. Er lebt irgendwo in den Kanälen unter dem Tempelbezirk.~
+@153 = ~Ich Werde Niemals Vergessen
+Ich habe einem Mann namens Orion versprochen, daß ich ihm bei der Wiederbelebung seiner Frau helfe. In diesem Bestreben habe ich die Kreatur getötet, die als 'Der Unvollendete' bekannt ist. Ich sollte mit den Aufzeichnungen der Bestie zu Orion zurückkehren.~
+@154 = ~Ich Werde Niemals Vergessen
+Bei der Übergabe der Aufzeichnungen des Unvollendeten bat mich Orion in zwei Tagen zu ihm zurückzukehren, damit er in der Zwischenzeit die Dokumente in Ruhe studieren kann.~
+@155 = ~Ich Werde Niemals Vergessen
+Ich habe einen Mann namens Orion getroffen und versprochen ihm bei seinem Ziel, seine tote Frau wiederzubeleben, zu helfen. Ich habe dafür einige Aufgaben abgeschlossen, aber es gibt noch mehr zu erledigen. Als nächstes muss ich einen Künstler finden, der imstande ist eine Skulptur von Selene anzufertigen.~
+@156 = ~Ich Werde Niemals Vergessen
+Ich habe mit dem Künstler auf Waukeens Promenade gesprochen. Nun sollte ich zurück zu Orions Anwesen gehen.~
+@157 = ~Ich Werde Niemals Vergessen
+Der Künstler wurde gefunden und die Skulptur von Selene wurde in Auftrag gegeben. Es wird etwa drei Tage dauern bis die fertige Skulptur bei Orion angeliefert wird. Das Ende unserer Mühen ist in Sicht.~
+@158 = ~Ich Werde Niemals Vergessen
+Nach der Erfüllung einiger Aufgaben im Auftrag eines Mannes namens Orion bin ich in die dunklen Tiefen der Unterwelt gereist, um den Geist seiner verlorenen Liebe zurück zu holen und ihn in die Welt der Lebenden zurück zu bringen. Allerdings konnte nichts getan werden um sie zurück zu bringen, als ich Selene schließlich gefunden habe. Außerdem war sie es zufrieden darauf zu warten, daß er sich irgendwann mit ihr vereint. Was selbst sie nicht voraussehen konnte war, daß Orion, verrückt vor Kummer, von mir verlangte, daß ich sie im Tod vereine. Ein trauriges Ende für eine tragische Geschichte.~
+@160 = ~Ich Werde Niemals Vergessen
+Meine nächste Aufgabe, um bei Selenes Wiederbelebung, zu helfen besteht darin die Forschungsergebnisse eines Nekromanten namens 'Der Unvollendete' zu besorgen. Er lebt irgendwo in den Kanälen unter dem Tempelbezirk.~
+@161 = ~Ich Werde Niemals Vergessen
+Ich habe einem Mann namens Orion versprochen, daß ich ihm bei der Wiederbelebung seiner Frau helfe. In diesem Bestreben habe ich die Kreatur getötet, die als 'Der Unvollendete' bekannt ist. Ich sollte mit den Aufzeichnungen der Bestie zu Orion zurückkehren.~
+@170 = ~Dies... muss... enden...~
+@180 = ~Ich...~
+@181 = ~Orion...~
+@182 = ~Selene...?~
+@183 = ~Ich habe dich so sehr vermisst...~
+@184 = ~Keine Worte mehr, meine Liebste, keine schlaflosen Nächte mehr.~
+@185 = ~Wir können endgültig wieder vereint sein.~
+@190 = ~Es scheint als ob dieses staubige Teleskop schon seit einer ganzen Weile nicht benutzt wurde.~
+@191 = ~Orion hat bereits von diesem Teleskop erzählt.~
+@200 = ~Diese Regale sind voller Liebesromane.~
+@201 = ~Orion hat bereits von diesen Büchern erzählt.~
+@210 = ~Diese Pflanze ist verwelkt und offensichtlich am sterben.~
+@211 = ~Orion hat bereits von dieser Pflanze erzählt.~

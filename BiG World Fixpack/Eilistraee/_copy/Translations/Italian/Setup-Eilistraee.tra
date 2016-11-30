@@ -1,0 +1,332 @@
+@0    = ~Eilistraee's Song~
+@1    = ~Danzatrice della Spada di Eilistraee~
+@2    = ~DANZATRICE DELLA SPADA DI EILISTRAEE: Le Danzatrici della Spada sono le servitrici della Vergine Oscura, Eilistraee. Di solito sono drow che hanno deciso di (o sono state costrette a) lasciare il Sottosuolo. Comunque, non solo drow possono diventare Danzatrici della Spada: ci sono anche elfi di superficie e mezzelfi tra loro. Solitamente vivono in foreste o in rovine abbandonate che diventano sia i loro ripari che i loro templi. Eilistraee è la dea buona della luna, della danza, del canto, della spada e della caccia, che concede ai suoi seguaci abilità speciali per aiutarli a sopravvivere. La Vergine Oscura è figlia di Corellon Larethian e Araushnee - più tardi conosciuta come Lolth la Regina delle Fosse delle Ragnatele Demoniache. Si crede anche che la stessa Eilistraee appaia nel Faerûn. In queste occasioni, può essere vista di notte come una drow nuda con lunghi capelli argentei che tiene in mano una spada d'argento.
+
+VANTAGGI:
+- Può evocare una Spada della Luna. L'incantamento della spada dipende dal livello della Danzatrice della Spada.
+- Può lanciare Fuoco Lunare. Questa magia concede una luce simile a quella della luna. Da' agli alleati infravisione.
+- Al livello 10, è garantita l'abilità Danza della Spada. Crea una spada che combatte come alleata di colei che usa questa abilità.
+- Al livello 14, è garantito Canto dell'incantesimo minore. Da' a colei che lo utilizza Libertà d'azione.
+- Al livello 16, è garantito Canto dell'incantesimo. Da' a colei che lo utilizza Libertà d'azione e Velocità.
+
+SVANTAGGI:
+- Solo femmine possono diventare Danzatrici della Spada.
+- Solo elfi e mezzelfi possono diventare Danzatrici della Spada.
+- Non può essere malvagia.~
+@3    = ~Spada della Luna +1~
+@4    = ~Spada della Luna +2~
+@5    = ~Spada della Luna +3~
+@6    = ~Spada della Luna +4~
+@7    = ~Spada della Luna +5~
+@8    = ~Spada della Luna +6~
+@9    = ~Spada Danzante~
+@10   = ~Fuoco Lunare~
+@11   = ~Canto dell'incantesimo inferiore~
+@12   = ~Canto dell'incantesimo~
+@13   = ~Evoca Spada della Luna~
+@14   = ~Danza della Spada~
+@15   = ~Thas'zzaria~
+@16   = ~Ostra~
+@17   = ~Demone Incatenato~
+@18   = ~Demi-Lich~
+@19   = ~Fall~
+@20   = ~Quif De'Vir~
+@21   = ~Drow addormentata~
+@22   = ~Shas'tan~
+@23   = ~Figlio di Sseth~
+@24   = ~Solaufein~
+@25   = ~Uomo Incappucciato~
+@26   = ~Vash~
+@27   = ~Yoea~
+@28   = ~Creatura di Nebbia~
+@29   = ~Zombie mortale~
+@30   = ~Joi~
+@31   = ~Bambina che piange~
+@32   = ~Sentinella Danzatrice della Spada~
+@33   = ~Eo~
+@34   = ~Drow~
+@35   = ~Coniglio~
+@36   = ~Orso~
+@37   = ~Donna~
+@38   = ~Canto della Caccia di Eilistraee~
+@39   = ~Spezzaspada~
+@40   = ~Questo è un anello magico trovato vicino a una tomba dimenticata. È fatto di una specie di metallo rosso. Quando lo tieni in mano, hai una strana sensazione, come fossi più sicuro di te stesso.
+
+STATISTICHE:
+
++50% resistenza alle armi da taglio
+Immunità alla Lentezza~
+@41   = ~Spada della Luna~
+@42   = ~Questa spada bastarda è fatta di un metallo che ti ricorda l'argento. Ha una lunga lama che brilla di una luce blu-argentea e sembra essere molto affilata. Si dice che Eilistraee stessa combatta con una spada simile. Questa spada, in particolare, era in possesso di Fall, la prima cacciatrice dei seguaci di Eilistraee che vivono nella radura nella Foresta di Tethyr.
+
+STATISTICHE:
+
+Danno: 2d4 + 4
+THAC0: +5
+Abilità speciali:
+ +50% resistenza al freddo
+ Protezione dal pugnalare alle spalle
+ Protezione dal risucchio di livello
+Tipo di danno: Taglio
+Peso: 9
+Fattore velocità: 3
+Tipo di competenza: Spada Bastarda
+Tipo: a 1 mano
+Richiede: Forza 11
+Non utilizzabile da:
+ Druido
+ Chierico
+ Mago
+ Personaggi malvagi~
+@43   = ~Simbolo di Eilistraee~
+@44   = ~Questo è il simbolo di Eilistraee, la dea dei drow buoni e di alcuni elfi di superficie. Si dice che la Vergine Oscura, come patrona della caccia e del canto, benedisca i suoi seguaci con una bellissima voce, che non può essere silenziata.
+
+STATISTICHE:
+
+Concede una magia aggiuntiva di livello 6 e una di livello 7.
++5% Resistenza alla magia quando indossato
++1 al Carisma quando indossato
+Colui che lo indossa è immune alle magie di Silenzio
+
+Utilizzabile da:
+Danzatrice della Spada di Eilistraee~
+@45   = ~Amuleto De'Vir~
+@46   = ~Questo amuleto è un artefatto magico che era indossato da Ginafae De'Vir, la Matrona Madre della Casata De'Vir di Menzoberranzan. Ha le fattezze di un ragno. Si dice che dia a chi lo indossi un supporto magico. L'amuleto è stato dato a Viconia da Quif De'Vir - parente più giovane di Viconia.
+
+STATISTICHE:
+
++1 a tutti i tiri salvezza
++2 alla classe armatura contro i ragni
++3 magie di livello 1 (magia divina)
+Immunità a tutti i tipi di veleno
+
+Utilizzabile da:
+ Viconia~
+@47   = ~Leggenda Arrugginita~
+@48   = ~Questa è una spada magica che hai trovato nella tomba vicino alla Radura di Eilistraee. Era custodita da un demi-lich. È coperta di polvere e ruggine. Sembra nascondere una magia potente al suo interno ma, d'altro canto, sembra anche piuttosto fragile.
+
+STATISTICHE:
+
+Danno: 1d8 + 4
+THAC0: +5
+Speciale:
+ +1 alla classe armatura
+ Protezione dalle magie di livello 1
+ 1 attacco aggiuntivo per round
+ 10% di resistenza alla magia
+ 6% di possibilità che la spada si rompa in caso di colpo andato a segno
+Tipo di danno: Taglio
+Peso: 3
+Fattore velocità: 4
+Tipo di competenza: Scimitarra/Wakizashi/Ninja-To
+Tipo: a 1 mano
+Richiede: Forza 10
+Non utilizzabile da:
+ Chierico
+ Mago~
+@49   = ~Lettera di Fall~
+@50   = ~Questa è la lettera che ha scritto Fall. Dovrei portarla ad Elhan.~
+@51   = ~Lettera di Elhan~
+@52   = ~Questa è la risposta di Elhan alla lettera di Fall. Dovrei portarla a Fall.~
+@53   = ~Strana lettera~
+@54   = ~Si tratta di una strana lettera trovata sul corpo di un drow ucciso da un altro drow nel Sottosuolo.
+
+"Dovrai testare i consanguinei di cui abbiamo parlato. Determina i loro sentimenti riguardo la nostra società, riguardo Ust Natha. Potrebbero diventare i nostri futuri compagni nella radura.
+
+S."
+
+A quanto pare, il drow ha fallito.~
+@55   = ~Storia di Eilistraee~
+@56   = ~Questa pergamena parla di Eilistraee, la Vergine Oscura.
+
+"Eilistraee è chiamata la Vergine Oscura e la Signora della Danza. È la dea buona dei drow che hanno deciso di fuggire dall'Oscurità di Sotto, il Sottosuolo. Non solo drow pregano la Vergine, ma anche alcuni elfi della superficie. È conosciuta per essere la patrona dei drow buoni, della musica, della danza, dei cacciatori e della luce lunare.
+
+Eilistraee è la figlia di Corellon Larethian e Araushnee, che più tardi divenne Lolth, e la sorella di Vhaeraun. Venne esiliata insieme a tutte le altre divinità drow per il suo ruolo, sebbene non intenzionale, nella guerra contro i Seldarine. Nonostante fosse risultata innocente, Eilistraee chiese comunque al padre riluttante di essere punita, poiché la dea comprese che gli elfi scuri avrebbero avuto bisogno di un esempio di bontà come punto di riferimento.
+
+Tra i suoi alleati si annoverano i Seldarine, Mystra, Selune e le divinità buone delle razze del Sottosuolo; tra i suoi nemici le divinità malvagie del Sottosuolo, in particolare il resto del pantheon drow."~
+@57   = ~Riguardo Eilistraee e gli altri Dei~
+@58   = ~Questa pergamena spiega alcuni dettagli sia riguardo Eilistraee che altre divinità.
+
+"Prima di tutto dobbiamo dire cosa sono gli *dei*. Una divinità è un essere di grande potere che controlla alcuni degli aspetti della sfera mortale, comunemente detta area d'influenza. Le vere divinità sono chiamate Estelar e differiscono dai Titani dell'Alba.
+
+...
+
+I drow venerano i Seldarine Oscuri, divinità che sono state bandite dai Seldarine dopo la fallita invasione di Arvandor da parte degli Anti-Seldarine. Al trio originale di dei se ne aggiunsero quattro col passare del tempo, ma con gli eventi successi nel Periodo dei Disordini e nella Guerra della Regina Ragno, Lolth ha assunto un ruolo predominante nell'intero pantheon drow. 
+
+...
+
+Il Periodo dei Disordini, anche conosciuto come la Comparsa, la Guerra degli Dei e la Crisi degli Avatar, è stato un periodo cataclismatico nella cronologia del Faerûn. Il Periodo dei Disordini ha avuto luogo nel 1358 DR, l'Anno delle Ombre, e fu un periodo durante il quale gli dei del Faerûn furono costretti a camminare sulla terra sottoforma di avatar mortali. Diverse divinità maggiori morirono durante il Periodo dei Disordini e un pugno di mortali ascese alla divinità.
+
+...
+
+Cyric, un meschino e sadico mercenario, uccise Bhaal con la spada Flagello degli Dei (in realtà, il dio Mask camuffato). Alla fine del Periodo dei Disordini, gli furono garantiti da Ao controllo delle aree d'influenza dei Tre Mortali, rendendolo, per breve tempo, il più potente degli dei.
+
+...
+
+La chiesa di Eilistraee situata alla Passeggiata vicino a Skullport è guidata dall'Alta Chierica Qilué Veladorn, la più giovane delle Sette Sorelle e Eletta di Mystra. Seconda in comando a lei c'è la Signora della Battaglia della Passeggiata, Rylla. Tutte le chieriche sono libere di fare cio che vogliono a meno che non siano in missione per conto di Qilué o Rylla. Anche se i cavalieri di Darksong, sacerdotesse-guerriere, sono più indipendenti, anche loro possono essere soggette a missioni. Generalmente, i suoi chierici portano i capelli lunghi e si vestono in maniera appropriata alle mansioni che stanno svolgendo. Per i rituali, indossano meno capi possibile. Comunque, quando sono a caccia, indossano abiti di cuoio, grembiuli quando cucinano e, più raramente, armature (e solo in battaglia). Quando hanno del tempo libero, preferiscono indossare lunghe vesti argentee e un poco diafane. Il loro simbolo sacro è una piccola spada; la maggior parte dei chierici possiede un simbolo sacro d'argento, in genere indossato sottoforma di spilla o appeso al collo con una catena d'argento o di mithral. Pregano per i loro incantesimi durante la notte, dopo il sorgere della luna, in genere in forma cantata. I loro rituali ruotano intorno ad una caccia seguita da un banchetto, danze e il Circolo del Canto. Quest'ultimo si tiene di preferenza in una radura boschiva in una notte di luna piena, nel corso della quale i fedeli siedono e danzano a turno in circolo, ognuno cantando una canzone diversa."~
+@59   = ~Statuetta di Elefante~
+@60   = ~Questa è la statuetta magica di un elefante dorato chiamato il Magnifico Gioiello. Concede un aiuto magico a chi lo utilizza.
+
+STATISTICHE:
+
+Concede un bonus di +50 punti ferita per due minuti
+
+Utilizzabile da:
+Tutti~
+@61   = ~Libro~
+@62   = ~Questo è il libro rubato al bardo della Radura di Eilistraee.~
+@63   = ~Anello~
+@64   = ~Questo anello lo hai trovato nello stomaco di una bestia chiamata Figlio di Sseth, un serpente gigantesco che viveva nella Foresta di Tethyr.~
+@65   = ~Bottiglia~
+@66   = ~C'è una piccola etichetta sulla bottiglia che dice "Bevimi".~
+@67   = ~Cotta di Maglia di Eilistraee~
+@68   = ~Questa cotta di maglia apparteneva a Fall, servitrice di Eilistraee che aveva deciso di aiutare Suldanesselar contro l'assalto delle creature malvagie evocate dall'enorme potere dell'elfo traditore Jon Irenicus. L'armatura è incantata magicamente per fornire un grande potere senza ostacolare né le abilità di lanciare magie arcane da parte di un mago né le capacità di un ladro.
+
+STATISTICHE:
+
+Classe Armatura: 1
++1 al Carisma
+Consente l'utilizzo delle furtività e delle magie arcane
+Peso: 7
+Richiede: Forza 8 
+Non utilizzabile da:
+ Druido
+ Mago
+ Ladro
+ Personaggi malvagi~
+@69   = ~Orsacchiotto~
+@70   = ~Questo è un vecchio orsacchiotto che ti ha dato una bambina che piangeva, alla Passeggiata di Waukeen.~
+@71   = ~Carota~
+@72   = ~Questa è una carota selvatica. È abbastanza fresca. Si dice che le carote siano il cibo preferito dai conigli. È sorprendente che tu l'abbia trovato nella Radura di Eilistraee, dove ci sono molti conigli.~
+@73   = ~Portafortuna~
+@74   = ~Questa è la zampa di un coniglio. Si dice che se portata al braccio o alla cintura porti fortuna.
+
+STATISTICHE:
+
++1% resistenza alla magia
++5 tiri salvezza contro la  morte
++2 alla Fortuna~
+@75   = ~Pipa~
+@76   = ~Questa è la pipa che hai preso da un coniglio. Non importa quanto sembri strano, è la verità.~
+@77   = ~Dente d'Argento~
+@78   = ~Questo è il dente d'argento di un demi-lich che hai ucciso alla Radura di  Eilistraee. La creatura non-morta viveva in una tomba e l'hai distrutta non tanto tempo fa. Il dente in sé ha un po' di magia, ma sembra che non ci sia un modo chiaro o semplice per usarla.~
+@79   = ~Stivali della Danza Lunare~
+@80   = ~Questi sono stivali magici che hai trovato indosso ad un drow assassinato. Sono fatti di pelle e sembrano essere di buona qualità. Quando l'indossi, percepisci come se i tuoi passi fossero più precisi e leggermente più veloci.
+
+STATISTICHE:
+
++1 bonus alla Destrezza
++1 alla velocità di movimento (non è influenzato da Libertà d'azione)~
+@81   = ~Dodici Lune~
+@82   = ~Questo pugnale rituale è un oggetto magico forgiato con un dente d'argento di un demi-lich, della polvere di adamantite e un gemma pietra di luna. Si racconta che un'arma del genere fosse usata dalle chieriche più potenti di Eilistraee.
+
+Dodici Lune è un pugnale che può influire sul destino della creatura che ne viene colpita. Si dice che tagli il possibile destino come se fosse un oggetto materiale. Il pugnale può lanciare uno dei dodici effetti, che garantirà a colui che lo impugna una battaglia vittoriosa.
+
+STATISTICHE:
+
+Danno: 1d4 + 3
+THAC0: +6
++20% resistenza alla magia
+Protezione dalle magie di livello 1
+Dodici lune (un solo effetto può essere applicato ad ogni colpo, l'effetto può essere annullato con un tiro salvezza):
+ 2% di possibilità che guarisca colui che lo impugna (30 PF)
+ 2% di possibilità che infligga paura al nemico
+ 2% di possibilità che infligga 10 danni da fuoco al nemico
+ 2% di possibilità che infligga 10 danni da acido al nemico
+ 2% di possibilità che infligga 10 danni da elettricità al nemico
+ 2% di possibilità che risucchi 3 livelli dal nemico
+ 2% di possibilità che rallenti il nemico
+ 2% di possibilità che silenzi il nemico
+ 2% di possibilità che stordisca il nemico
+ 2% di possibilità che unsummon (se il nemico è una creatura evocata)
+ 2% di possibilità che accechi il nemico
+ 2% di possibilità che intrappoli il nemico
+Peso: 1
+Fattore velocità: 1
+Tipo di competenza: Pugnale
+Tipo: a 1 mano
+Richiede: Forza 3
+Utilizzabile da:
+ Tutti~
+@83   = ~Tredicesima Luna~
+@84   = ~Questo pugnale rituale è un oggetto magico forgiato con un dente d'argento di un demi-lich, insieme ad altri componenti. Si racconta che un'arma del genere fosse usata dalle chieriche più potenti di Eilistraee.
+
+Tredicesima Luna è un pugnale che può influire sul destino della creatura che ne viene colpita. Si dice che tagli il possibile destino come se fosse un oggetto materiale. Il pugnale può lanciare uno dei tredici effetti, che garantirà a colui che lo impugna una battaglia vittoriosa.
+
+In realtà, quest'arma è un pugnale Dodici Lune modificato. Cromwell ha fatto uso del progetto del suo mentore aggiungendogli un componente, una Lama d'Argento, parte della famosa Spada d'Argento.
+
+STATISTICHE:
+
+Danno: 1d4 + 4
+THAC0: +6
++20% resistenza alla magia
+Protezione dalle magie di livello 1
+Tredici lune (un solo effetto può essere applicato ad ogni colpo, l'effetto può essere annullato con un tiro salvezza):
+ 2% di possibilità che guarisca colui che lo impugna (30 PF)
+ 2% di possibilità che infligga paura al nemico
+ 2% di possibilità che infligga 10 danni da fuoco al nemico
+ 2% di possibilità che infligga 10 danni da acido al nemico
+ 2% di possibilità che infligga 10 danni da elettricità al nemico
+ 2% di possibilità che risucchi 3 livelli dal nemico
+ 2% di possibilità che rallenti il nemico
+ 2% di possibilità che silenzi il nemico
+ 2% di possibilità che stordisca il nemico
+ 2% di possibilità che unsummon (se il nemico è una creatura evocata)
+ 2% di possibilità che accechi il nemico
+ 2% di possibilità che intrappoli il nemico
+ 15% di possibilità di uccidere il nemico
+Peso: 1
+Fattore velocità: 1
+Tipo di Competenza: Pugnale
+Tipo: a 1 mano
+Richiede: Forza 3
+Utilizzabile da:
+ Tutti~
+@85   = ~Muschio Verde scuro~
+@86   = ~Si dice che questo muschio possa guarire anche le ferite più gravi, sia inflitte dalla magia che da armi fisiche. Ha un sapore amaro e puzza, ma le sue proprietà magiche potrebbero rivelarsi utili.
+
+STATISTICHE:
+
+Guarisce 40 PF~
+
+
+@89   = ~Componente principale non installato~
+@91   = ~Radura di Eilistraee~
+
+
+///BAF
+
+@500    = ~Eilistraee: Addestramento
+Ho portato la lettera che Elhan ha scritto. Ora dovrei andare a parlare con Yoea e gli altri. Posso incontrarli al campo nella Radura di Eilistraee.~
+@501    = ~Eilistraee: Addestramento
+Ora conosco l'abilità che i seguaci di Eilistraee avevano promesso di insegnarmi. Shas'tan mi ha detto di far visita a Fall.~
+@502    = ~Eilistraee: Il bardo e il libro
+Un bardo della Radura di Eilistraee mi ha chiesto di cercare il ladro che gli ha rubato un libro e di riportagli indietro quest'ultimo, naturalmente.~
+@503    = ~Eilistraee: Il bardo e il libro
+Ho riportato il libro al bardo della Radura di Eilistraee e ho ricevuto la mia ricompensa.~
+@504    = ~Eilistraee: Danzatrice della Spada
+Ho deciso di aiutare l'anziana drow Ostra. Mi ha chiesto di trovare un serpente, il Figlio di Sseth, nella Foresta di Tethyr e riportargli indietro l'anello della sacerdotessa che il mostro ha ucciso.~
+@505    = ~Eilistraee: Danzatrice della Spada
+Ho riportato l'anello ad Ostra.~
+@506    = ~Eilistraee: Dov'è la pipa?
+Eo, il drow della Radura di Eilistraee, ha perso la sua pipa. Mi ha chiesto di restituirgliela nel caso la trovassi.~
+@507    = ~Eilistraee: Dov'è la pipa?
+Ho ridato ad Eo la sua pipa. La cosa divertente è che l'aveva rubata un coniglio.~
+@508    = ~Eilistraee: Giocattolo per una bambina
+Ho incontrato una ragazzina di nome Joi che vive con i drow nella Radura di Eilistraee. Non ha nemmeno un giocattolo, forse dovrei trovargliene uno. Può darsi che riesca a trovarne uno da qualche parte in città? Magari alla Passeggiata di Waukeen o nel Quartiere del Ponte.~
+@509    = ~Eilistraee: Giocattolo per una bambina
+Ho dato un giocattolo a Joi, spero che la aiuti a liberarsi della noia.~
+@510   = ~Eilistraee: La minaccia che giace al disotto
+Ho accettato l'incarico di eliminare una pericolosa creatura che dimora nella tomba della Radura. Mi è stato detto che è molto pericolosa se non, addirittura, mortale.~
+@511   = ~Eilistraee: La minaccia che giace al disotto
+Ho accettato l'incarico di eliminare una pericolosa creatura che dimora nella tomba della Radura. Mi era stato detto che fosse molto pericolosa se non, addirittura, mortale, ciononostante l'ho uccisa. Era un demi-lich.~
+
+@600    = ~Eilistraee: Addestramento
+Fall ha promesso di addestrarmi, ma prima devo portare una lettera ad Elhan e in seguito tornare con una sua risposta.~
+@601    = ~Eilistraee: Addestramento
+Ho consegnato a Fall la lettera che Elhan ha scritto, ora dovrei parlare con Yoea e gli altri. Posso incontrarli al campo nella Radura di Eilistraee.~
+@602    = ~Eilistraee: Addestramento
+Ora conosco l'abilità che i seguaci di Eilistraee avevano promesso di insegnarmi. Shas'tan mi ha detto di far visita a Fall.~
+@603    = ~Eilistraee: Addestramento
+Ho terminato il mio addestramento alla Radura di Eilistraee.~
+

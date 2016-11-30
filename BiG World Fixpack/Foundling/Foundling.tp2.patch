@@ -1,11 +1,82 @@
---- Foundling\Foundling.tp2	Fri May 22 00:16:48 2015
-+++ C:\BWP Patchstudio\patched files\Foundling\Foundling.tp2	Sat Oct 29 15:54:28 2016
-@@ -1,7 +1,7 @@
- BACKUP ~Foundling\backup~
- AUTHOR ~Lava Del'Vortel~
- README ~Foundling\readme.txt~
--
-+VERSION ~v.BETA1 BWP Fix~
+--- Foundling/Foundling.tp2	2015-05-22 01:16:48.000000000 -0400
++++ Fixpack/Foundling/Foundling.tp2	2016-11-30 18:16:55.809890100 -0500
+@@ -4,21 +4,29 @@
+ 
  AUTO_TRA ~Foundling/TRANSLATIONS/%s~
  
++VERSION ~v.BETA1 BWP Fix~
  
+ ALWAYS
+-  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+-  //INCLUDE ~%MOD_FOLDER%/handle_charsets.tpa~ 
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
+ 
+   // No exception, everything needs to be converted
+   ACTION_DEFINE_ARRAY FouXnoconvert BEGIN END
+ 
+-  // Only setup-Innershade.tra needs to be reloaded
++  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
+   ACTION_DEFINE_ARRAY FouXreload BEGIN Foundling END
+ 
+-  // There is no "language" folder so the root of all languages in %MOD_FOLDER%
+   LAF HANDLE_CHARSETS
+     INT_VAR
+-      infer_charset = 1
++      infer_charsets = 1
+     STR_VAR
+       tra_path = EVAL ~%MOD_FOLDER%/translations~
+       // charset_table = FouXcharsets // Included for illustrative purposes.
+@@ -1306,7 +1314,7 @@
+ //////////SCRIPTS//////////
+ ///////////////////////////
+ 
+-COMPILE ~Foundling/Scripts/L#Fou.baf~
++COMPILE EVALUATE_BUFFER ~Foundling/Scripts/L#Fou.baf~
+ COMPILE ~Foundling/Scripts/L#adv1.baf~
+ COMPILE ~Foundling/Scripts/L#Fou1.baf~
+ COMPILE ~Foundling/Scripts/L#Fou2.baf~
+@@ -1336,8 +1344,8 @@
+ /////////DIALOGUES/////////
+ ///////////////////////////
+ 
+-COMPILE ~Foundling/Dialogues/L#Fou.d~
+-COMPILE ~Foundling/Dialogues/L#FouJ.d~
++COMPILE EVALUATE_BUFFER ~Foundling/Dialogues/L#Fou.d~
++COMPILE EVALUATE_BUFFER ~Foundling/Dialogues/L#FouJ.d~
+ COMPILE ~Foundling/Dialogues/L#Guar.d~
+ COMPILE ~Foundling/Dialogues/L#FouB.d~
+ COMPILE ~Foundling/Dialogues/L#ADV.d~
+@@ -2203,6 +2211,24 @@
+ 
+ END
+ 
++///////////////////////////////////TOB TRANSITION
+ 
+ 
+ 
++ACTION_IF GAME_IS ~eet~ BEGIN
++  INCLUDE ~EET/other/EET_functions.tph~
++  LAF ~EET_NPC_TRANSITION~
++    INT_VAR
++      type = 2
++    STR_VAR
++      dv = "L#FOU"
++      override_SoA = "L#FOU"
++      override_ToB = "L#FOU25"
++      dialog_ToB = "L#FOU25"
++      traFile = EVAL "Foundling/translations/%LANGUAGE%/L#FOU25.TRA"
++      string = "@0" //Bring me Foundling, the human Shadow Adept.
++      stringPosDV = "Garrick"
++  END
++END ELSE BEGIN
++  COMPILE ~Foundling/Dialogues/FATESP.d~ USING ~Foundling/translations/%LANGUAGE%/L#FOU25.TRA~
++END
