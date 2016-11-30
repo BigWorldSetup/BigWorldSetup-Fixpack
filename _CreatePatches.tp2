@@ -125,7 +125,7 @@ ALWAYS
 						  ~@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@~
 					ACTION_READLN answer
 					ACTION_IF NOT (~%answer%~ STR_EQ ~y~) THEN BEGIN // STR_EQ matches 'y' or 'Y'
-						PRINT ~Skipping "%mod_folder%" because it is in %ALREADY_PROCESSED_LIST%...~
+						PRINT ~Skipping "%mod_folder%" because it is listed in %ALREADY_PROCESSED_LIST%...~
 						OUTER_SET skip = 1
 					END
 				END ELSE ACTION_FOR_EACH reserved IN ~_diffgawk~ ~backup~ ~_PATCHES~ ~%PREPATCH%~ ~data~ ~lang~ ~Manuals~ ~movies~ ~mpsave~ ~music~ ~override~ ~save~ ~scripts~ BEGIN
@@ -177,18 +177,19 @@ ALWAYS
 						REPLACE_TEXTUALLY ~^\+\+\+ .*%mod_folder%\/~  ~+++ Fixpack/%mod_folder%/~ // standardize +++ path in patch
 						
 						COUNT_2DA_ROWS 4 rows // look for lines with 4 columns - diff output matching "Only in path: filename"
+						PATCH_PRINT ~Checking for added or removed files (scanning %rows% lines in patch file)...~
 						FOR (i=0; i < rows; i=i+1) BEGIN
 							READ_2DA_ENTRY i 0 4 only
 							READ_2DA_ENTRY i 1 4 in
 							READ_2DA_ENTRY i 2 4 path
 							READ_2DA_ENTRY i 3 4 filename // will only get first part of file names containing spaces
 							INNER_ACTION BEGIN
-								ACTION_IF (~%only%~ STR_EQ ~Only~ AND ~%in%~ STR_EQ ~in~ AND ~%path%~ STRING_CONTAINS_REGEXP ~backup:$~) THEN // ignore backup folder
+								ACTION_IF (~%only%~ STR_EQ ~Only~ AND ~%in%~ STR_EQ ~in~) THEN
 								BEGIN
 									//PRINT "%only% %in% %path% %filename%"
-									ACTION_IF ( (0 == (~%filename%~ STRING_CONTAINS_REGEXP ~^fl#utf8~)) OR (0 == (~%filename%~ STRING_CONTAINS_REGEXP ~\.(rej|bak)\b~)) ) THEN
+									ACTION_IF ( (0 == (~%filename%~ STRING_CONTAINS_REGEXP ~^fl#utf8~)) OR (0 == (~%filename%~ STRING_CONTAINS_REGEXP ~\.(rej|bak)~)) ) THEN
 									BEGIN // ignore UTF8 converted tra files and failed patches and backup files
-										//PRINT ~Skipping file~
+										//PRINT ~Skipping file %filename%~
 									END ELSE BEGIN
 										OUTER_PATCH_SAVE relpath ~%path%~ BEGIN // get relative path for _copy / _delete
 											REPLACE_TEXTUALLY ~%mod_folder%~ ~~    // strip mod folder (always)
@@ -200,6 +201,7 @@ ALWAYS
 											// example 4:  mod_folder: -> : -> empty string
 										END
 										ACTION_IF (DIRECTORY_EXISTS ~%mod_folder%%relpath%/%filename%~) THEN BEGIN // an entire folder needs to be copied
+											PRINT "Copying folder ~%mod_folder%%relpath%/%filename%~ to ~%output_dir%/_copy%relpath%/%filename%~..."
 											LAF ~recursive_deep_copy~ INT_VAR second_pass = 0 STR_VAR current_dir = EVAL ~%mod_folder%%relpath%/%filename%~ target_dir = EVAL ~%output_dir%/_copy%relpath%/%filename%~ END
 											LAF ~recursive_deep_copy~ INT_VAR second_pass = 1 STR_VAR current_dir = EVAL ~%mod_folder%%relpath%/%filename%~ target_dir = EVAL ~%output_dir%/_copy%relpath%/%filename%~ END
 										END ELSE ACTION_IF (NOT FILE_EXISTS ~%PREPATCH%/%mod_folder%%relpath%/%filename%~) THEN BEGIN
@@ -211,7 +213,7 @@ ALWAYS
 													//PRINT "MKDIR ~%output_dir%/_copy%relpath%~"
 													MKDIR ~%output_dir%/_copy%relpath%~
 												END
-												//PRINT ~+ Copying "%mod_folder%%relpath%/%filename%" to "%output_dir%/_copy%relpath%"~
+												PRINT ~+ Copying "%mod_folder%%relpath%/%filename%" to "%output_dir%/_copy%relpath%"~
 												COPY_LARGE + ~%mod_folder%%relpath%/%filename%~ ~%output_dir%/_copy%relpath%~
 											END
 										END ELSE BEGIN // file/folder does exist in %PREPATCH% mod folder
@@ -230,7 +232,7 @@ ALWAYS
 							END
 						END
 					
-					PRINT ~Writing patches for any files inside the mod directory that are different...~
+					PRINT ~Writing separate patches for any files inside the mod directory that have changed...~
 					// splitting combined patch file into individual patch files
 					AT_NOW ~%GAWK_CMD% "/^(-|\+| |@)/ { if ( match($0, /^--- (.+\/)?([^\t]+)/, m) ) { f = \"%PREPATCH%/_PATCHES/%mod_folder%/\" m[2] \".patch\" ; print f } ; print $0 > f }" %tmp_patch%~ EXACT
 					// ^--- (.+\/)? captures leading path, if any, and ([^\t]+) captures the filename, without slashes or path, as match group 2
