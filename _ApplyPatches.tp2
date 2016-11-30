@@ -48,7 +48,7 @@
 BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v2.0~
+VERSION ~v2.1~
 
 ALWAYS
 	// special folders and marker file
@@ -288,7 +288,6 @@ ALWAYS
 					END
 				END
 				VERBOSE // done with all pre-patch validation checks
-				OUTER_SET skip = 1
 				ACTION_IF (skip == 0) THEN BEGIN // do the patching for this Fixpack subfolder
 					LAF ~process_fixpack_subfolder~ STR_VAR target_folder = EVAL ~%target_mod_folder%~ source_folder = EVAL ~%fixpack_subfolder%~ END
 					LAF ~process_nested_subfolders~ INT_VAR if_present = 1 STR_VAR dir_with_subdirs = EVAL ~%fixpack_subfolder%/%DEPENDS_DIR%~ original_target_folder = EVAL ~%target_mod_folder%~ END
