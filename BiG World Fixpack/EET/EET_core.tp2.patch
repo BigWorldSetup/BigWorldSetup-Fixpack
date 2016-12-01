@@ -1,0 +1,33 @@
+--- EET/lib/EET_core.tp2	Wed Nov 30 23:59:03 2016
++++ Fixpack/EET/lib/EET_core.tp2	Wed Nov 30 23:59:10 2016
+@@ -1,3 +1,3 @@
+ BACKUP ~EET/backup/core~
+ AUTHOR ~K4thos (swit)~
+-VERSION ~1.0 RC7~
++VERSION ~1.0 RC7 BWP Fix~
+@@ -1168,7 +1168,7 @@
+ PRINT ~Please be patient during the conversion process. This may take some time...~
+ 
+ COPY + ~.../blank.txt~ ~EET/temp/Filelist.txt~
+-ACTION_FOR_EACH var IN are bcs cre dlg eff ini itm pro spl sto vef vvc wed "" BEGIN
++ACTION_FOR_EACH var IN are bcs cre eff ini itm pro spl sto vef vvc wed "" BEGIN
+ 	ACTION_BASH_FOR ~%patch_dir%/%var%~ ~^.+$~ BEGIN
+ 		COPY + ~%BASH_FOR_FILESPEC%~ ~%BASH_FOR_DIRECTORY%~
+ 			SET checked = 0
+@@ -1176,6 +1176,16 @@
+ 			LPM EET_PCU_core
+ 	END
+ END
++
++// split dlg from above in hopes of avoiding out of memory error 
++COPY + ~.../blank.txt~ ~EET/temp/Filelist2.txt~
++ACTION_BASH_FOR ~%patch_dir%/dlg~ ~^.+$~ BEGIN
++	COPY + ~%BASH_FOR_FILESPEC%~ ~%BASH_FOR_DIRECTORY%~
++		SET checked = 0
++		READ_ASCII 0x0 "filetype" ELSE ~Ignoring 0 byte file~
++		LPM EET_PCU_core
++END
++
+ 
+ PRINT ~Conversion complete. Statistics:
+ ARE %are_check%
