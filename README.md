@@ -1,6 +1,6 @@
 # BiG World Fixpack
 
-This is the repository for Baldur's Gate 2 BiG World Project's Fixpack - a set of tools and patches that fix/update/support all the mods in the BWP.
+This is the repository for the BiG World Project's Fixpack - a set of tools and patches that fix/update/support mods for all Infinity Engine games (focusing on Baldur's Gate series, but including PST and IWD also).
 
 For an incomplete (but still fairly huge) list of all patches included in the package, please have a look at the included [_BWP fixes.txt](BiG World Fixpack/_BWP fixes.txt)
 
@@ -17,3 +17,5 @@ The Fixpack is different from other WeiDU patches because it does not modify con
 # Enhanced Edition Trilogy Compatibility Patches Are Included
 
 See http://gibberlings3.net/forums/index.php?showtopic=27741&page=33#entry248962 for details.
+
+These patches also make the respective mods compatible with BG1EE and BG2EE without EET.
