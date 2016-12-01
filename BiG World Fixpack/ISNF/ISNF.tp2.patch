@@ -2,9 +2,11 @@
 +++ Fixpack/ISNF/ISNF.tp2	2016-11-30 18:16:55.810891000 -0500
 @@ -2,23 +2,31 @@
  AUTHOR ~Lava~
-+VERSION ~v4.4 BWP Fix~
  README ~ISNF/ReadMe.txt~
  
++VERSION ~v4.4 BWP Fix~
+ 
+ AUTO_TRA ~ISNF/Translations/%s~
  
  ALWAYS
 -  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE

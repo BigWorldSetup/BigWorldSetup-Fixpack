@@ -1,10 +1,12 @@
 --- WhiteQueen/WhiteQueen.tp2	2015-01-28 00:52:04.000000000 -0500
 +++ Fixpack/WhiteQueen/WhiteQueen.tp2	2016-11-30 18:16:55.811891500 -0500
 @@ -1,22 +1,39 @@
- BACKUP ~WhiteQueen\backup~
+-BACKUP ~WhiteQueen\backup~
++BACKUP ~WhiteQueen/backup~
  AUTHOR ~Lava Del'Vortel~
--
-+VERSION ~v4.1 BWP Fix~
+ 
++VERSION ~4.1 BWP Fix~
++
  AUTO_TRA ~WhiteQueen/Translations/%s~
  
  ALWAYS
