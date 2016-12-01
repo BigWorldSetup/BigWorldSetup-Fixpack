@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/combatblocks/imprisonment.ssl	2016-11-20 18:27:15.430493300 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/imprisonment.ssl	2016-11-20 18:27:39.774071900 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/imprisonment.ssl	2016-12-01 15:11:46.521896600 -0500
 @@ -34,7 +34,7 @@
  	OR(2)
  		!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")

@@ -1,5 +1,5 @@
 --- stratagems/priest/ssl/bg1/combatblocks/summon_insects.ssl	2016-11-20 18:27:15.485532100 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/summon_insects.ssl	2016-11-20 18:27:39.823106000 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/summon_insects.ssl	2016-12-01 15:11:46.548915500 -0500
 @@ -9,7 +9,7 @@
  	IgnoreBlock(SpellsAreBG1)
  	TargetBlock(PCSpellcasters)
@@ -10,7 +10,7 @@
  	Global("shapeshift","LOCALS",0)
  THEN DO
 --- stratagems/priest/ssl/bg2/combatblocks/summon_insects.ssl	2016-11-20 18:27:15.519556300 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/summon_insects.ssl	2016-11-20 18:27:39.863134400 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/summon_insects.ssl	2016-12-01 15:11:46.578936800 -0500
 @@ -9,7 +9,7 @@
  	IgnoreBlock(SpellsAreBG1)
  	TargetBlock(PCSpellcasters)

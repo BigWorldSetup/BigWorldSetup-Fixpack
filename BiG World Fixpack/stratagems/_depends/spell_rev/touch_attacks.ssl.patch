@@ -1,5 +1,5 @@
 --- stratagems/priest/ssl/bg1/combatblocks/touch_attacks.ssl	2016-11-20 18:27:15.487533600 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/touch_attacks.ssl	2016-11-20 18:27:39.823106000 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/touch_attacks.ssl	2016-12-01 15:11:46.550917300 -0500
 @@ -4,24 +4,24 @@
  ///////////////////////////////////////////////////////////////////
  
@@ -40,7 +40,7 @@
  	Combine()
  	Action(SpellMyself,CLERIC_SLAY_LIVING|100|50)
 --- stratagems/priest/ssl/bg2/combatblocks/touch_attacks.ssl	2016-11-20 18:27:15.522558600 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/touch_attacks.ssl	2016-11-20 18:27:39.865135800 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/touch_attacks.ssl	2016-12-01 15:11:46.580937800 -0500
 @@ -4,11 +4,11 @@
  ///////////////////////////////////////////////////////////////////
  

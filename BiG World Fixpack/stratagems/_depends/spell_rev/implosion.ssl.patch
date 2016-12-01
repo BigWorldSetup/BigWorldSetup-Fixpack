@@ -1,5 +1,5 @@
 --- stratagems/priest/ssl/bg2/combatblocks/implosion.ssl	2016-11-20 18:27:15.506547200 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/implosion.ssl	2016-11-20 18:27:39.852126800 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/implosion.ssl	2016-09-16 14:40:57.607898100 -0400
 @@ -9,8 +9,7 @@
  	ConditionalTargetBlock(PCsPreferringWeak;CheckStatGT(scstarget,40,RESISTMAGIC))
  	TargetBlock(PCsPreferringWeak)

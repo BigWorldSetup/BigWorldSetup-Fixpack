@@ -1,5 +1,5 @@
 --- stratagems/priest/ssl/bg2/combatblocks/holy_word.ssl	2016-11-20 18:27:15.505546300 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/holy_word.ssl	2016-11-20 18:27:39.850125400 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/holy_word.ssl	2016-12-01 15:11:46.560924000 -0500
 @@ -8,7 +8,7 @@
          RequireBlock(HasL7)
  	TargetBlock(EnemiesInOrderShort)

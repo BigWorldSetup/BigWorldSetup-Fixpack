@@ -1,5 +1,5 @@
 --- stratagems/mage/spellchoices/demivrgvs/conjurer.2da	2013-11-09 19:41:32.000000000 -0500
-+++ Fixpack/stratagems/mage/spellchoices/demivrgvs/conjurer.2da	2016-11-30 20:12:10.156089400 -0500
++++ Fixpack/stratagems/mage/spellchoices/demivrgvs/conjurer.2da	2016-12-01 15:11:46.490874400 -0500
 @@ -5,9 +5,9 @@
  4 MONSTER_SUMMONING_2   MONSTER_SUMMONING_2        SPIDER_SPAWN                 SPIDER_SPAWN            CONFUSION                                       
  5 MONSTER_SUMMONING_3   MONSTER_SUMMONING_3        MONSTER_SUMMONING_3          CHAOS                   CHAOS              CONJURE_LESSER_AIR_ELEMENTAL CONJURE_LESSER_EARTH_ELEMENTAL CONJURE_LESSER_FIRE_ELEMENTAL

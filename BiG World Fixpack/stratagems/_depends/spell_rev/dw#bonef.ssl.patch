@@ -1,5 +1,5 @@
 --- stratagems/fiend/ssl/dw#bonef.ssl	2016-11-20 18:27:15.382458900 -0500
-+++ Fixpack/stratagems/fiend/ssl/dw#bonef.ssl	2016-11-20 18:27:39.707024100 -0500
++++ Fixpack/stratagems/fiend/ssl/dw#bonef.ssl	2016-09-16 22:55:54.922641300 -0400
 @@ -62,7 +62,7 @@
  IF TRIGGER
  	TargetBlock(PCsInOrder)

@@ -1,5 +1,5 @@
 --- stratagems/genie/ssl/efreet01.ssl	2016-11-20 18:27:15.393466500 -0500
-+++ Fixpack/stratagems/genie/ssl/efreet01.ssl	2016-11-20 18:27:39.730041900 -0500
++++ Fixpack/stratagems/genie/ssl/efreet01.ssl	2016-12-01 15:11:46.482869100 -0500
 @@ -121,8 +121,7 @@
  
  IF TRIGGER

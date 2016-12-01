@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/prepblocks/instantprep.ssl	2016-11-20 18:27:15.446504700 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/instantprep.ssl	2016-11-20 18:27:39.788081000 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/instantprep.ssl	2016-12-01 15:11:46.531903200 -0500
 @@ -136,6 +136,16 @@
  IF TRIGGER
  	IgnoreBlock(IsOptionThree)
@@ -18,7 +18,7 @@
  	IgnoreBlock(HasNoPrep)
  THEN DO
 --- stratagems/priest/ssl/bg1/prepblocks/instantprep.ssl	2016-11-20 18:27:15.489535400 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/prepblocks/instantprep.ssl	2016-11-20 18:27:39.825107000 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/prepblocks/instantprep.ssl	2016-09-16 16:08:12.903649700 -0400
 @@ -20,6 +20,7 @@
  END
  
@@ -60,7 +60,7 @@
     RequireBlock(HasL6)
  	optiontwosub1
 --- stratagems/priest/ssl/bg2/prepblocks/instantprep.ssl	2016-11-20 18:27:15.527562300 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/prepblocks/instantprep.ssl	2016-11-20 18:27:39.869138600 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/prepblocks/instantprep.ssl	2016-09-17 22:48:40.317536900 -0400
 @@ -1,5 +1,6 @@
  
  IF TRIGGER

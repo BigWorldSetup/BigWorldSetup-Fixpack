@@ -1,5 +1,5 @@
 --- stratagems/genie/ssl/dao01.ssl	2016-11-20 18:27:15.390464900 -0500
-+++ Fixpack/stratagems/genie/ssl/dao01.ssl	2016-11-20 18:27:39.728052000 -0500
++++ Fixpack/stratagems/genie/ssl/dao01.ssl	2016-12-01 15:11:46.480867300 -0500
 @@ -68,7 +68,7 @@
  	ConditionalTargetBlock(PCsInOrder;CheckStatGT(scstarget,4,SAVEVSSPELL)&!CheckStatGT(scstarget,50,RESISTMAGIC))
  	TargetBlock(PCsInOrder)

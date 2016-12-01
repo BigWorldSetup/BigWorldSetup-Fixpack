@@ -1,5 +1,5 @@
 --- stratagems/priest/spellchoices/demivrgvs/cleric_evil.2da	2016-11-20 18:27:15.459513700 -0500
-+++ Fixpack/stratagems/priest/spellchoices/demivrgvs/cleric_evil.2da	2016-11-20 18:27:39.806094200 -0500
++++ Fixpack/stratagems/priest/spellchoices/demivrgvs/cleric_evil.2da	2016-12-01 15:11:46.532903700 -0500
 @@ -4,7 +4,7 @@
  3 UNHOLY_BLIGHT                  UNHOLY_BLIGHT      UNHOLY_BLIGHT      ANIMATE_DEAD       ANIMATE_DEAD     CAUSE_SERIOUS_WOUNDS
  4 POISON                         MENTAL_DOMINATION  POISON CLOAK_OF_FEAR

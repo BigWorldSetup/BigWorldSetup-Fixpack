@@ -1,5 +1,5 @@
 --- stratagems/priest/ssl/bg1/combatblocks/silence.ssl	2016-11-20 18:27:15.484531600 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/silence.ssl	2016-11-20 18:27:39.822105900 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/silence.ssl	2016-12-01 15:11:46.547915000 -0500
 @@ -2,7 +2,7 @@
  	RequireBlock(HasL2)
  	RequireBlock(Demivrgvs)
@@ -10,7 +10,7 @@
  	!StateCheck(scstarget,STATE_SILENCED)
  
 --- stratagems/priest/ssl/bg2/combatblocks/silence.ssl	2016-11-20 18:27:15.518555300 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/silence.ssl	2016-11-20 18:27:39.862133900 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/silence.ssl	2016-12-01 15:11:46.573933000 -0500
 @@ -2,7 +2,7 @@
  	RequireBlock(HasL2)
  	RequireBlock(Demivrgvs)

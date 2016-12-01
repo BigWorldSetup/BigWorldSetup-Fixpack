@@ -1,5 +1,5 @@
 --- stratagems/beholder/ssl/behold01.ssl	2016-11-20 18:27:15.324435000 -0500
-+++ Fixpack/stratagems/beholder/ssl/behold01.ssl	2016-11-20 18:27:39.663994200 -0500
++++ Fixpack/stratagems/beholder/ssl/behold01.ssl	2016-09-16 23:30:04.429866400 -0400
 @@ -133,7 +133,7 @@
  	RequireBlock(IsHiveMother)
  	!Global("maze","LOCALS",3)

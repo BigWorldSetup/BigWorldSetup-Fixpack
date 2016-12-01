@@ -1,5 +1,5 @@
 --- stratagems/priest/ssl/bg1/generalblocks/renew.ssl	2016-11-20 18:27:15.488534900 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/generalblocks/renew.ssl	2016-11-20 18:27:39.824106900 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/generalblocks/renew.ssl	2016-09-17 21:39:59.098816600 -0400
 @@ -207,6 +207,28 @@
  	Action(Spell,CLERIC_REMOVE_PARALYSIS)
  END
@@ -30,7 +30,7 @@
  
  ///////////////////////////////////////////////////////////////////////////////////////
 --- stratagems/priest/ssl/bg2/generalblocks/renew.ssl	2016-11-20 18:27:15.523559500 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/generalblocks/renew.ssl	2016-11-20 18:27:39.867137200 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/generalblocks/renew.ssl	2016-09-17 21:22:23.642448000 -0400
 @@ -104,6 +104,7 @@
  //////////////////////////////////////////////////////////////////////
  

@@ -1,10 +1,12 @@
 --- stratagems/mage/spellchoices/demivrgvs/enchanter.2da	2012-08-26 18:00:17.000000000 -0400
-+++ Fixpack/stratagems/mage/spellchoices/demivrgvs/enchanter.2da	2016-11-30 20:12:10.157091500 -0500
-@@ -3,7 +3,7 @@
++++ Fixpack/stratagems/mage/spellchoices/demivrgvs/enchanter.2da	2016-12-01 15:11:46.492875400 -0500
+@@ -2,8 +2,8 @@
+ 1 SLEEP                 CHARM_PERSON                                                                                                          
  2 POWER_WORD_SLEEP      POWER_WORD_SLEEP        POWER_WORD_SLEEP        RAY_OF_ENFEEBLEMENT     RAY_OF_ENFEEBLEMENT     MELF_ACID_ARROW         GLITTERDUST       GLITTERDUST
  3 HOLD_PERSON           DIRE_CHARM              DIRE_CHARM              DIRE_CHARM              DIRE_CHARM              FLAME_ARROW             FLAME_ARROW       
- 4 CONFUSION             EMOTION_HOPELESSNESS                 MONSTER_SUMMONING_2                                                                               
+-4 CONFUSION             EMOTION_HOPELESSNESS                 MONSTER_SUMMONING_2                                                                               
 -5 CHAOS                 CHAOS                   DOMINATION              DOMINATION              HOLD_MONSTER            HOLD_MONSTER            MONSTER_SUMMONING_3 MONSTER_SUMMONING_3
++4 CONFUSION             EMOTION_HOPELESSNESS    MONSTER_SUMMONING_2                                                                               
 +5 MONSTER_SUMMONING_3   MONSTER_SUMMONING_3     DOMINATION              DOMINATION              HOLD_MONSTER            HOLD_MONSTER            MONSTER_SUMMONING_3 MONSTER_SUMMONING_3
  6 DEATH_SPELL           POWER_WORD_SILENCE      POWER_WORD_SILENCE      FLESH_TO_STONE          FLESH_TO_STONE                                            
  7 PRISMATIC_SPRAY       SPHERE_OF_CHAOS         POWER_WORD_STUN         POWER_WORD_STUN                                                               

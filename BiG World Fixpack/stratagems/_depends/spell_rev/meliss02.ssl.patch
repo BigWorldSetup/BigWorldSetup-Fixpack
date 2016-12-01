@@ -1,5 +1,5 @@
 --- stratagems/melissan/ssl/meliss02.ssl	2016-11-20 18:27:15.451508000 -0500
-+++ Fixpack/stratagems/melissan/ssl/meliss02.ssl	2016-11-20 18:27:39.792084600 -0500
++++ Fixpack/stratagems/melissan/ssl/meliss02.ssl	2016-09-16 13:39:43.208491500 -0400
 @@ -543,11 +543,10 @@
  
  IF TRIGGER

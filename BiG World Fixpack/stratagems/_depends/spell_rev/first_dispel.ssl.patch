@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/combatblocks/first_dispel.ssl	2016-11-20 18:27:15.419484900 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/first_dispel.ssl	2016-11-20 18:27:39.760061500 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/first_dispel.ssl	2016-12-01 15:11:46.518893800 -0500
 @@ -28,7 +28,7 @@
  		!CheckStatGT(Playerscsvar,0,WIZARD_GREATER_MALISON)
  		!Allegiance(Playerscsvar,ENEMY)

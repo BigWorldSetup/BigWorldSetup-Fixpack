@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/combatblocks/silence-sleep.ssl	2016-11-20 18:27:15.439499500 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/silence-sleep.ssl	2016-11-20 18:27:39.784078600 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/silence-sleep.ssl	2016-12-01 15:11:46.526900300 -0500
 @@ -8,7 +8,7 @@
  	RequireBlock(HasL6)
          ConditionalTargetBlock(PCSpellcasters;!CheckStatGT(scstarget,50,RESISTMAGIC))

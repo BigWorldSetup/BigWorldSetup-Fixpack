@@ -1,0 +1,27 @@
+--- stratagems/mage/override/bg2/level.2da	2013-10-27 13:41:08.000000000 -0400
++++ Fixpack/stratagems/mage/override/bg2/level.2da	2016-12-01 15:03:11.718029500 -0500
+@@ -56,13 +56,14 @@
+ FIRRAK01	15
+ PPIRENI2	30
+ PPWANEV2	18
+-YAGA02          27
+-NEVAZIAH        18
+-GORLIC01        33
+-GROMG08         24
+-IOGREMAG        7
+-DRUSH           7
+-OGRMAG01        7
+-HELLSLAY        30
+-FIRLCH01        33
+-SENLICH         34
++YAGA02		27
++NEVAZIAH	18
++GORLIC01	33
++GROMG08		24
++IOGREMAG	7
++DRUSH		7
++OGRMAG01	7
++HELLSLAY	30
++FIRLCH01	33
++SENLICH		34
++LICH01		25

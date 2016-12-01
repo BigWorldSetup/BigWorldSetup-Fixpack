@@ -1,5 +1,5 @@
 --- stratagems/fiend/ssl/demogor2.ssl	2016-11-20 18:27:15.379456900 -0500
-+++ Fixpack/stratagems/fiend/ssl/demogor2.ssl	2016-11-20 18:27:39.703020900 -0500
++++ Fixpack/stratagems/fiend/ssl/demogor2.ssl	2016-09-16 22:53:54.275740700 -0400
 @@ -302,8 +302,7 @@
  	ConditionalTargetBlock(PCsPreferringWeak;CheckStatGT(scstarget,40,RESISTMAGIC))
  	TargetBlock(PCsPreferringWeak)

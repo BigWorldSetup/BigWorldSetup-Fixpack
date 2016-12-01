@@ -1,5 +1,5 @@
 --- stratagems/priest/ssl/bg2/combatblocks/lowpowered_attacks.ssl	2016-11-20 18:27:15.511551000 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/lowpowered_attacks.ssl	2016-11-20 18:27:39.858131100 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/lowpowered_attacks.ssl	2016-12-01 15:11:46.566928700 -0500
 @@ -4,7 +4,7 @@
  
  IF TRIGGER

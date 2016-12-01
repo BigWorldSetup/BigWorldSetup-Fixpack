@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/prepblocks/fm_chaincont_core.ssl	2016-11-20 18:27:15.442501800 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/fm_chaincont_core.ssl	2016-11-20 18:27:39.787080100 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/fm_chaincont_core.ssl	2016-12-01 15:11:46.529901800 -0500
 @@ -31,7 +31,7 @@
  			DisplayString(Myself,26328)
  			ReallyForceSpell(Myself,protectionspell)

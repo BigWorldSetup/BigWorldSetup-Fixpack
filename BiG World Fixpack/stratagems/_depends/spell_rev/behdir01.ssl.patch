@@ -1,5 +1,5 @@
 --- stratagems/beholder/ssl/behdir01.ssl	2016-11-20 18:27:15.323434500 -0500
-+++ Fixpack/stratagems/beholder/ssl/behdir01.ssl	2016-11-20 18:27:39.662993700 -0500
++++ Fixpack/stratagems/beholder/ssl/behdir01.ssl	2016-12-01 15:11:46.470877000 -0500
 @@ -141,7 +141,7 @@
  IF TRIGGER
  	  Global("BeholderBehavior","LOCALS",0)

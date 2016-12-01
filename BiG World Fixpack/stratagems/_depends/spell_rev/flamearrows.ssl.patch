@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg1/combatblocks/flamearrows.ssl	2016-11-20 18:27:15.404474500 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/flamearrows.ssl	2016-11-20 18:27:39.741047800 -0500
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/flamearrows.ssl	2016-12-01 15:11:46.507886200 -0500
 @@ -4,7 +4,7 @@
          IgnoreBlock(IsEvoker)
  	ConditionalTargetBlock(PCsPreferringWeak;HPPercentLT(scstarget,40))

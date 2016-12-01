@@ -1,5 +1,5 @@
 --- stratagems/abazigal/ssl/dw#abred.ssl	2016-11-20 18:27:15.318431900 -0500
-+++ Fixpack/stratagems/abazigal/ssl/dw#abred.ssl	2016-11-20 18:27:39.657990400 -0500
++++ Fixpack/stratagems/abazigal/ssl/dw#abred.ssl	2016-12-01 15:11:46.468876400 -0500
 @@ -191,7 +191,7 @@
  
  IF TRIGGER

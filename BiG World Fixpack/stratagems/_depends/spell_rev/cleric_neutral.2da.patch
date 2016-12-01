@@ -1,5 +1,5 @@
 --- stratagems/priest/spellchoices/demivrgvs/cleric_neutral.2da	2016-11-20 18:27:15.462516000 -0500
-+++ Fixpack/stratagems/priest/spellchoices/demivrgvs/cleric_neutral.2da	2016-11-20 18:27:39.808095600 -0500
++++ Fixpack/stratagems/priest/spellchoices/demivrgvs/cleric_neutral.2da	2016-12-01 15:11:46.535906500 -0500
 @@ -4,7 +4,7 @@
  3 ANIMATE_DEAD                   ANIMATE_DEAD       RIGID_THINKING     RIGID_THINKING     CAUSE_SERIOUS_WOUNDS CAUSE_SERIOUS_WOUNDS
  4 CLOAK_OF_FEAR                  MENTAL_DOMINATION  MENTAL_DOMINATION                              

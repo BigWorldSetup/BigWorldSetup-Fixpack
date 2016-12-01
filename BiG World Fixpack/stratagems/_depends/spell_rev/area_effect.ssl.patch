@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg1/combatblocks/area_effect.ssl	2016-11-20 18:27:15.397470100 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/area_effect.ssl	2016-11-20 18:27:39.734043500 -0500
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/area_effect.ssl	2016-12-01 15:11:46.498880000 -0500
 @@ -9,7 +9,7 @@
  	IgnoreBlock(SpellsAreBG1)
  	RequireBlock(HasL5)

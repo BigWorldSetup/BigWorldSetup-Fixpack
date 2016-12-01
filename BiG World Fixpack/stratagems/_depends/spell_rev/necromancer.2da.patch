@@ -1,5 +1,5 @@
 --- stratagems/mage/spellchoices/demivrgvs/necromancer.2da	2012-08-26 18:00:33.000000000 -0400
-+++ Fixpack/stratagems/mage/spellchoices/demivrgvs/necromancer.2da	2016-11-30 20:12:10.160092200 -0500
++++ Fixpack/stratagems/mage/spellchoices/demivrgvs/necromancer.2da	2016-12-01 15:11:46.495877700 -0500
 @@ -2,12 +2,12 @@
  1 MAGIC_MISSILE                 LARLOCH_MINOR_DRAIN             LARLOCH_MINOR_DRAIN             SPOOK                           SPOOK                   BLINDNESS       BLINDNESS
  2 HORROR                        HORROR                          HORROR                          MELF_ACID_ARROW                 MELF_ACID_ARROW         GHOUL_TOUCH     GHOUL_TOUCH                         

@@ -1,5 +1,5 @@
 --- stratagems/ascension/ssl/abazdg02.ssl	2016-11-20 18:27:15.318431900 -0500
-+++ Fixpack/stratagems/ascension/ssl/abazdg02.ssl	2016-11-20 18:27:39.658990500 -0500
++++ Fixpack/stratagems/ascension/ssl/abazdg02.ssl	2016-09-16 23:13:52.417270500 -0400
 @@ -229,8 +229,7 @@
  	OR(2)
  		!Gender(scstarget,SUMMONED)

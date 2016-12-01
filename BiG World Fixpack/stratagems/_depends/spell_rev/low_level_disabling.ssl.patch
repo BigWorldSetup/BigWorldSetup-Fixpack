@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/combatblocks/low_level_disabling.ssl	2016-11-20 18:27:15.435496700 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/low_level_disabling.ssl	2016-11-20 18:27:39.780075300 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/low_level_disabling.ssl	2016-12-01 15:11:46.523897600 -0500
 @@ -8,8 +8,8 @@
  	IgnoreBlock(Indiscriminate)
  	TargetBlock(PCsPreferringStrong)

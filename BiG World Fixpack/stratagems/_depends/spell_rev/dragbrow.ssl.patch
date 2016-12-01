@@ -1,5 +1,5 @@
 --- stratagems/dragon/ssl/dragbrow.ssl	2016-11-20 18:27:15.360443700 -0500
-+++ Fixpack/stratagems/dragon/ssl/dragbrow.ssl	2016-11-20 18:27:39.690011900 -0500
++++ Fixpack/stratagems/dragon/ssl/dragbrow.ssl	2016-09-17 00:34:30.776008800 -0400
 @@ -243,12 +243,13 @@
  
  IF TRIGGER

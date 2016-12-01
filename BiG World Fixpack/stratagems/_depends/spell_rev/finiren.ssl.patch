@@ -1,5 +1,5 @@
 --- stratagems/ascension/ssl/finiren.ssl	2016-11-20 18:27:15.321434300 -0500
-+++ Fixpack/stratagems/ascension/ssl/finiren.ssl	2016-11-20 18:27:39.661992800 -0500
++++ Fixpack/stratagems/ascension/ssl/finiren.ssl	2016-12-01 15:11:46.469872000 -0500
 @@ -79,7 +79,7 @@
  	RESPONSE #100
  			SetGlobal("ChainContingencyFired","LOCALS",1)

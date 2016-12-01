@@ -1,5 +1,5 @@
 --- stratagems/priest/ssl/bg2/meleeblocks/touchattack.ssl	2016-11-20 18:27:15.526561400 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/meleeblocks/touchattack.ssl	2016-11-20 18:27:39.869138600 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/meleeblocks/touchattack.ssl	2016-12-01 15:11:46.583940100 -0500
 @@ -1,13 +1,14 @@
  DEFAULT TRIGGER(OR(2) HasItem("harm",Myself) HasItem("dw#harmn",Myself))
  

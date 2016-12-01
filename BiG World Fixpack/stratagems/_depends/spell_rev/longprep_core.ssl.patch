@@ -1,6 +1,24 @@
+--- stratagems/mage/ssl/bg1/prepblocks/longprep_core.ssl	2012-09-18 23:07:08.000000000 -0400
++++ Fixpack/stratagems/mage/ssl/bg1/prepblocks/longprep_core.ssl	2016-12-01 19:42:11.807988700 -0500
+@@ -50,3 +50,15 @@
+ 		Continue()
+ END
+ 
++IF
++	Global("longprep","LOCALS",0)
++	scsvar
++	RequireBlock(HasL2)
++	RequireBlock(IsConjurer)
++	IgnoreBlock(HasNoPrep)
++	!HasItem("dw#nopre",Myself)
++THEN
++	RESPONSE #100
++		ReallyForceSpellRES("spwi226",Myself)
++		Continue()
++END
 --- stratagems/mage/ssl/bg2/prepblocks/longprep_core.ssl	2016-11-20 18:27:15.447505200 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/longprep_core.ssl	2016-11-20 18:27:39.789081500 -0500
-@@ -138,3 +138,14 @@
++++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/longprep_core.ssl	2016-12-01 19:43:38.642955300 -0500
+@@ -138,3 +138,69 @@
  		Continue()
  END
  
@@ -15,8 +33,63 @@
 +		ReallyForceSpellRES("spwi802",Myself)
 +		Continue()
 +END
++
++IF
++	Global("longprep","LOCALS",0)
++	scsvar
++	RequireBlock(HasL7)
++	RequireBlock(IsConjurer)
++	IgnoreBlock(HasL8)
++	IgnoreBlock(HasL9) 
++	IgnoreBlock(HasNoPrep)
++	!HasItem("dw#nopre",Myself)
++THEN
++	RESPONSE #100
++		ReallyForceSpellRES("spwi724",Myself)
++		Continue()
++END
++
++IF
++	Global("longprep","LOCALS",0)
++	scsvar
++	RequireBlock(HasL8)
++	RequireBlock(IsConjurer)
++	IgnoreBlock(HasL9) 
++	IgnoreBlock(HasNoPrep)
++	!HasItem("dw#nopre",Myself)
++THEN
++	RESPONSE #100
++		ReallyForceSpellRES("spwi819",Myself)
++		Continue()
++END
++
++IF
++	Global("longprep","LOCALS",0)
++	scsvar
++	RequireBlock(HasL9)
++	RequireBlock(IsConjurer)
++	IgnoreBlock(HasNoPrep)
++	!HasItem("dw#nopre",Myself)
++THEN
++	RESPONSE #100
++		ReallyForceSpellRES("spwi906",Myself)
++		Continue()
++END
++
++IF
++	Global("longprep","LOCALS",0)
++	scsvar
++	RequireBlock(HasL6)
++	RequireBlock(IsNecromancer)
++	IgnoreBlock(HasNoPrep)
++	!HasItem("dw#nopre",Myself)
++THEN
++	RESPONSE #100
++		ReallyForceSpellRES("spwi623",Myself)
++		Continue()
++END
 --- stratagems/priest/ssl/bg1/prepblocks/longprep_core.ssl	2016-11-20 18:27:15.490535900 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/prepblocks/longprep_core.ssl	2016-11-20 18:27:39.826107900 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/prepblocks/longprep_core.ssl	2016-12-01 15:11:46.551917400 -0500
 @@ -38,6 +38,7 @@
     HaveSpell(CLERIC_CHAOTIC_COMMANDS)
     RequireBlock(HasL5)
@@ -26,7 +99,7 @@
       RESPONSE #100
                ApplySpellRES("%CLERIC_CHAOTIC_COMMANDS%",Myself)
 --- stratagems/priest/ssl/bg2/prepblocks/longprep_core.ssl	2016-11-20 18:27:15.528562400 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/prepblocks/longprep_core.ssl	2016-11-20 18:27:39.870139200 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/prepblocks/longprep_core.ssl	2016-12-01 15:11:46.584941000 -0500
 @@ -43,6 +43,7 @@
  IF TRIGGER
     Global("longprep","LOCALS",0)

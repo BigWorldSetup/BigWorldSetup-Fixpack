@@ -1,5 +1,5 @@
 --- stratagems/fiend/ssl/erinyes.ssl	2016-11-20 18:27:15.385460800 -0500
-+++ Fixpack/stratagems/fiend/ssl/erinyes.ssl	2016-11-20 18:27:39.719032600 -0500
++++ Fixpack/stratagems/fiend/ssl/erinyes.ssl	2016-09-16 23:00:33.874596500 -0400
 @@ -100,7 +100,7 @@
  
  IF TRIGGER

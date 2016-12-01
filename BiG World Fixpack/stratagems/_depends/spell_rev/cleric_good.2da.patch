@@ -1,5 +1,5 @@
 --- stratagems/priest/spellchoices/demivrgvs/cleric_good.2da	2016-11-20 18:27:15.461515100 -0500
-+++ Fixpack/stratagems/priest/spellchoices/demivrgvs/cleric_good.2da	2016-11-20 18:27:39.807094700 -0500
++++ Fixpack/stratagems/priest/spellchoices/demivrgvs/cleric_good.2da	2016-12-01 15:11:46.534905600 -0500
 @@ -4,7 +4,7 @@
  3 HOLY_SMITE                     HOLY_SMITE         HOLY_SMITE         HOLY_SMITE         RIGID_THINKING   RIGID_THINKING
  4 ANIMAL_SUMMONING_1             MENTAL_DOMINATION  MENTAL_DOMINATION  CLOAK_OF_FEAR                   

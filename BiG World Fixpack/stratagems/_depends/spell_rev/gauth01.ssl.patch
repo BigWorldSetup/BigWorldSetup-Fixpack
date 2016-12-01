@@ -1,5 +1,5 @@
 --- stratagems/beholder/ssl/gauth01.ssl	2016-11-20 18:27:15.331422900 -0500
-+++ Fixpack/stratagems/beholder/ssl/gauth01.ssl	2016-11-20 18:27:39.667028200 -0500
++++ Fixpack/stratagems/beholder/ssl/gauth01.ssl	2016-09-16 23:36:27.989804800 -0400
 @@ -109,7 +109,6 @@
  	Global("BeholderBehavior","LOCALS",0)
  	TargetBlock(PCsPreferringWeak)

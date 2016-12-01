@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/combatblocks/barrage.ssl	2016-11-20 18:27:15.416483400 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/barrage.ssl	2016-11-20 18:27:39.753056800 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/barrage.ssl	2016-09-16 21:10:02.880325300 -0400
 @@ -10,8 +10,7 @@
  	CheckStatGT(Myself,0,WIZARD_IMPROVED_ALACRITY)
  	TargetBlock(PCsPreferringWeak)

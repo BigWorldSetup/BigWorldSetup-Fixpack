@@ -1,5 +1,5 @@
 --- stratagems/beholder/ssl/beholder_antimagic.ssl	2016-11-20 18:27:15.327419600 -0500
-+++ Fixpack/stratagems/beholder/ssl/beholder_antimagic.ssl	2016-11-20 18:27:39.664995200 -0500
++++ Fixpack/stratagems/beholder/ssl/beholder_antimagic.ssl	2016-12-01 15:11:46.471878300 -0500
 @@ -109,7 +109,7 @@
  	OR(4)
  		CheckStatGT(scstarget,0,CLERIC_PHYSICAL_MIRROR)

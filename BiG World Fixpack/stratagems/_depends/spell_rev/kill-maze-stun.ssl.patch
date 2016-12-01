@@ -1,6 +1,13 @@
 --- stratagems/mage/ssl/bg2/combatblocks/kill-maze-stun.ssl	2016-11-20 18:27:15.432494300 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/kill-maze-stun.ssl	2016-11-20 18:27:39.775072400 -0500
-@@ -15,8 +15,7 @@
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/kill-maze-stun.ssl	2016-12-01 15:18:48.117997900 -0500
+@@ -9,14 +9,13 @@
+ 	RequireBlock(HasL9)
+ 	IgnoreBlock(IsEvoker)
+ 	OR(2)
+-		HPPercentLT(scstarget,75)
++		!CheckStatLT(scstarget,8,SAVEVSSPELL)
+ 		!CheckStatGT(scstarget,12,Level)
+ 	OR(3)
  		HPPercentLT(scstarget,50)
  		Class(scstarget,MAGE)
  		Class(scstarget,MAGE_THIEF)

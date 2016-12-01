@@ -1,5 +1,5 @@
 --- stratagems/dragon/ssl/dragblue.ssl	2016-11-20 18:27:15.353438500 -0500
-+++ Fixpack/stratagems/dragon/ssl/dragblue.ssl	2016-11-20 18:27:39.689011400 -0500
++++ Fixpack/stratagems/dragon/ssl/dragblue.ssl	2016-09-17 00:38:09.426514900 -0400
 @@ -184,7 +184,7 @@
  		StateCheck(scstarget,STATE_IMPROVEDINVISIBILITY)
  		StateCheck(scstarget,STATE_BLESS)

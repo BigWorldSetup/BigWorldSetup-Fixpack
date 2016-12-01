@@ -1,5 +1,5 @@
 --- stratagems/fiend/ssl/dw#pitfi.ssl	2016-11-20 18:27:15.384460300 -0500
-+++ Fixpack/stratagems/fiend/ssl/dw#pitfi.ssl	2016-11-20 18:27:39.718032100 -0500
++++ Fixpack/stratagems/fiend/ssl/dw#pitfi.ssl	2016-09-16 22:59:27.816818200 -0400
 @@ -76,7 +76,7 @@
  	IgnoreBlock(IsSummoned)
  	TargetBlock(PCsInOrder)

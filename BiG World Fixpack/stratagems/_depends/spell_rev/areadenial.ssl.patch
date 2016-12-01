@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg1/combatblocks/areadenial.ssl	2016-11-20 18:27:15.398470600 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/areadenial.ssl	2016-11-20 18:27:39.735044000 -0500
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/areadenial.ssl	2016-12-01 15:11:46.501882400 -0500
 @@ -6,7 +6,6 @@
  	!GlobalTimerNotExpired("areadenial","LOCALS")
  	RequireBlock(IsUndead)
@@ -25,7 +25,7 @@
  	!NumCreatureGT([ENEMY.HUMANOID],1)
  	Target(NearestEnemyOf(Myself))
 --- stratagems/mage/ssl/bg2/combatblocks/areadenial.ssl	2016-11-20 18:27:15.413481100 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/areadenial.ssl	2016-11-20 18:27:39.749053500 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/areadenial.ssl	2016-12-01 15:11:46.516892800 -0500
 @@ -21,7 +21,6 @@
  	RequireBlock(IsRakshasa)
  	TargetBlock(EnemiesInOrder)

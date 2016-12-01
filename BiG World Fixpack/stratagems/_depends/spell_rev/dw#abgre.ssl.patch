@@ -1,5 +1,5 @@
 --- stratagems/abazigal/ssl/dw#abgre.ssl	2016-11-20 18:27:15.317430200 -0500
-+++ Fixpack/stratagems/abazigal/ssl/dw#abgre.ssl	2016-11-20 18:27:39.657990400 -0500
++++ Fixpack/stratagems/abazigal/ssl/dw#abgre.ssl	2016-09-16 23:07:41.085031500 -0400
 @@ -170,7 +170,7 @@
  
  IF TRIGGER

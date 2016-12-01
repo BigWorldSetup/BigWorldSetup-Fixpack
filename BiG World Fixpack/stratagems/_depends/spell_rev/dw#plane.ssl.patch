@@ -1,5 +1,5 @@
 --- stratagems/celestial/ssl/dw#plane.ssl	2016-11-20 18:27:15.336426200 -0500
-+++ Fixpack/stratagems/celestial/ssl/dw#plane.ssl	2016-11-20 18:27:39.671016200 -0500
++++ Fixpack/stratagems/celestial/ssl/dw#plane.ssl	2016-09-17 00:13:38.808400300 -0400
 @@ -73,7 +73,7 @@
  IF TRIGGER
  	TargetBlock(PCSpellcasters)

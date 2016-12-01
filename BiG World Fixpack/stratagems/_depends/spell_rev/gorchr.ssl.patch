@@ -1,5 +1,5 @@
 --- stratagems/fiend/ssl/gorchr.ssl	2016-11-20 18:27:15.386461700 -0500
-+++ Fixpack/stratagems/fiend/ssl/gorchr.ssl	2016-11-20 18:27:39.720033200 -0500
++++ Fixpack/stratagems/fiend/ssl/gorchr.ssl	2016-09-16 23:01:15.850997400 -0400
 @@ -86,8 +86,7 @@
  IF TRIGGER
  	Global("shape","LOCALS",1)

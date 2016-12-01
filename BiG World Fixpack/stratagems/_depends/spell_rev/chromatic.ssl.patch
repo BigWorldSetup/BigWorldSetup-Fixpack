@@ -1,5 +1,5 @@
 --- stratagems/priest/ssl/bg1/combatblocks/chromatic.ssl	2016-11-20 18:27:15.474524500 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chromatic.ssl	2016-11-20 18:27:39.814100200 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chromatic.ssl	2016-12-01 15:11:46.541910300 -0500
 @@ -3,7 +3,7 @@
  	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC)&HPPercentLT(scstarget,40))
  	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
@@ -10,7 +10,7 @@
  	Combine()
  	Action(SpellRES,"spdr101"|100|50)
 --- stratagems/priest/ssl/bg2/combatblocks/chromatic.ssl	2016-11-20 18:27:15.495539200 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chromatic.ssl	2016-11-20 18:27:39.831112100 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chromatic.ssl	2016-12-01 15:11:46.554919400 -0500
 @@ -3,7 +3,7 @@
  	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC)&HPPercentLT(scstarget,40))
  	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))

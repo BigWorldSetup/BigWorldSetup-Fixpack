@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/combatblocks/hla.ssl	2016-11-20 18:27:15.425489600 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/hla.ssl	2016-11-20 18:27:39.773071000 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/hla.ssl	2016-12-01 15:11:46.519894700 -0500
 @@ -47,7 +47,7 @@
            RequireBlock(IsEnchanter)
            RequireBlock(HasL9)

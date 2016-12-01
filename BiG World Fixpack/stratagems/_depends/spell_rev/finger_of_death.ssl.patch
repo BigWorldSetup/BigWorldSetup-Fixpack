@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/combatblocks/finger_of_death.ssl	2016-11-20 18:27:15.418484400 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/finger_of_death.ssl	2016-11-20 18:27:39.754057700 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/finger_of_death.ssl	2016-09-16 21:11:41.019938600 -0400
 @@ -11,8 +11,7 @@
  	IgnoreBlock(IsConjurerStreamline)
  	ConditionalTargetBlock(PCsPreferringStrong;!CheckStatGT(scstarget,50,RESISTMAGIC))
@@ -47,7 +47,7 @@
  THEN DO
  	Action(Spell,WIZARD_FLESH_TO_STONE|150|50)
 --- stratagems/priest/ssl/bg2/combatblocks/finger_of_death.ssl	2016-11-20 18:27:15.500543000 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/finger_of_death.ssl	2016-11-20 18:27:39.837115900 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/finger_of_death.ssl	2016-09-17 21:44:15.020454500 -0400
 @@ -5,10 +5,9 @@
  ///////////////////////////////////////////////////////////////////////////
  

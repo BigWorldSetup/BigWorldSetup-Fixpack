@@ -1,5 +1,5 @@
 --- stratagems/priest/ssl/bg2/combatblocks/natures_beauty.ssl	2016-11-20 18:27:15.517554800 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/natures_beauty.ssl	2016-11-20 18:27:39.861133400 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/natures_beauty.ssl	2016-12-01 15:11:46.569930200 -0500
 @@ -3,7 +3,7 @@
  	RequireBlock(HasL7)
  	TargetBlock(PCsInOrder)

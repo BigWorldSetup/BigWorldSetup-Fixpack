@@ -1,5 +1,5 @@
 --- stratagems/priest/ssl/bg1/combatblocks/bolt_from_sky.ssl	2016-11-20 18:27:15.464517400 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/bolt_from_sky.ssl	2016-11-20 18:27:39.811097900 -0500
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/bolt_from_sky.ssl	2016-12-01 15:11:46.537907900 -0500
 @@ -13,24 +13,11 @@
  //////////////////////////////////////////////////////////////
  ///	Call Lightning
@@ -36,7 +36,7 @@
  THEN DO
  	Combine()
 --- stratagems/priest/ssl/bg2/combatblocks/bolt_from_sky.ssl	2016-11-20 18:27:15.492536900 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/bolt_from_sky.ssl	2016-11-20 18:27:39.827109700 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/bolt_from_sky.ssl	2016-09-16 14:05:11.796610300 -0400
 @@ -30,7 +30,7 @@
  	IgnoreBlock(IsCleric)
  	RequireBlock(HasL3)

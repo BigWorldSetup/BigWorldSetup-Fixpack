@@ -1,5 +1,5 @@
 --- stratagems/celestial/ssl/dw#dvpla.ssl	2016-11-20 18:27:15.335425300 -0500
-+++ Fixpack/stratagems/celestial/ssl/dw#dvpla.ssl	2016-11-20 18:27:39.670010000 -0500
++++ Fixpack/stratagems/celestial/ssl/dw#dvpla.ssl	2016-09-17 00:11:31.218102600 -0400
 @@ -46,7 +46,7 @@
  IF TRIGGER
  	TargetBlock(EnemiesInOrderShort)

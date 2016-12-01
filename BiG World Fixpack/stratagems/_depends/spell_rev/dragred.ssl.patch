@@ -1,5 +1,5 @@
 --- stratagems/dragon/ssl/dragred.ssl	2016-11-20 18:27:15.362444700 -0500
-+++ Fixpack/stratagems/dragon/ssl/dragred.ssl	2016-11-20 18:27:39.692013300 -0500
++++ Fixpack/stratagems/dragon/ssl/dragred.ssl	2016-09-17 00:29:22.083352600 -0400
 @@ -146,7 +146,7 @@
  
  IF TRIGGER

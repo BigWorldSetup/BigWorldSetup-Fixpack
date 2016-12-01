@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg1/combatblocks/arrows.ssl	2016-11-20 18:27:15.400472000 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/arrows.ssl	2016-11-20 18:27:39.737045400 -0500
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/arrows.ssl	2016-12-01 15:11:46.502882500 -0500
 @@ -24,7 +24,7 @@
  	Allegiance(Myself,ENEMY)
  	ConditionalTargetBlock(PCSpellcasters;!CheckStatGT(scstarget,50,RESISTMAGIC))
@@ -37,7 +37,7 @@
  	Action(Spell,WIZARD_FLAME_ARROW)
  	Action(Spell,WIZARD_MELF_ACID_ARROW)
 --- stratagems/mage/ssl/bg2/combatblocks/arrows.ssl	2016-11-20 18:27:15.414482000 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/arrows.ssl	2016-11-20 18:27:39.750054400 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/arrows.ssl	2016-09-16 21:01:21.550506900 -0400
 @@ -6,7 +6,7 @@
  	TargetBlock(PCSpellcasters)
  	IgnoreBlock(Indiscriminate)

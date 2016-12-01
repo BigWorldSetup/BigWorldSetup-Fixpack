@@ -1,5 +1,5 @@
 --- stratagems/priest/ssl/bg2/meleeblocks/standard_priest_core.ssl	2016-11-20 18:27:15.524560000 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/meleeblocks/standard_priest_core.ssl	2016-11-20 18:27:39.868137700 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/meleeblocks/standard_priest_core.ssl	2016-12-01 15:11:46.581938700 -0500
 @@ -29,7 +29,7 @@
          OR(5)
             HasItem("sorb",Myself)

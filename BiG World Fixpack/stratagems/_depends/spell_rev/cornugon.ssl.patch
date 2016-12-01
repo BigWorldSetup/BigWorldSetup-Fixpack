@@ -1,5 +1,5 @@
 --- stratagems/fiend/ssl/cornugon.ssl	2016-11-20 18:27:15.372451800 -0500
-+++ Fixpack/stratagems/fiend/ssl/cornugon.ssl	2016-11-20 18:27:39.697018300 -0500
++++ Fixpack/stratagems/fiend/ssl/cornugon.ssl	2016-09-16 22:46:35.153624400 -0400
 @@ -49,7 +49,7 @@
  IF TRIGGER
  	TargetBlock(PCsInOrder)

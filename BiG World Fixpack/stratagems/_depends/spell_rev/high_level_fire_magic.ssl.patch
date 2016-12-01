@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/combatblocks/high_level_fire_magic.ssl	2016-11-20 18:27:15.421486700 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/high_level_fire_magic.ssl	2016-11-20 18:27:39.763063500 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/high_level_fire_magic.ssl	2016-09-16 21:15:09.074838600 -0400
 @@ -4,12 +4,11 @@
  
  IF TRIGGER

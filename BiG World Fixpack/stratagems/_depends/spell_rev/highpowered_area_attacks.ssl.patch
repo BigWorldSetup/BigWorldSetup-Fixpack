@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/combatblocks/highpowered_area_attacks.ssl	2016-11-20 18:27:15.423488200 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/highpowered_area_attacks.ssl	2016-11-20 18:27:39.769067700 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/highpowered_area_attacks.ssl	2016-09-16 21:17:53.215226900 -0400
 @@ -11,9 +11,8 @@
  	IgnoreBlock(IsConjurerStreamline)
  	TargetBlock(PCsInOrder)

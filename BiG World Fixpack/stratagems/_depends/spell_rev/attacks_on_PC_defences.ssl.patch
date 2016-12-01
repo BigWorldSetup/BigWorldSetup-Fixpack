@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg1/combatblocks/attacks_on_PC_defences.ssl	2016-11-20 18:27:15.402473500 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/attacks_on_PC_defences.ssl	2016-11-20 18:27:39.739046800 -0500
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/attacks_on_PC_defences.ssl	2016-12-01 15:11:46.505884400 -0500
 @@ -22,7 +22,7 @@
  	IgnoreBlock(SpellsAreBG1)
  	RequireBlock(HasL5)

@@ -1,5 +1,5 @@
 --- stratagems/priest/priest_shared.tph	2016-11-20 18:27:15.458513200 -0500
-+++ Fixpack/stratagems/priest/priest_shared.tph	2016-11-20 18:27:39.801090800 -0500
++++ Fixpack/stratagems/priest/priest_shared.tph	2016-09-17 22:15:27.545556800 -0400
 @@ -409,8 +409,10 @@
          SET temp=$av(~%i%~)
        END

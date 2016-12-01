@@ -1,5 +1,5 @@
 --- stratagems/ascension/ssl/finbalor.ssl	2016-11-20 18:27:15.320432100 -0500
-+++ Fixpack/stratagems/ascension/ssl/finbalor.ssl	2016-11-20 18:27:39.659991000 -0500
++++ Fixpack/stratagems/ascension/ssl/finbalor.ssl	2016-09-16 23:15:55.461308200 -0400
 @@ -133,13 +133,14 @@
  
  IF TRIGGER

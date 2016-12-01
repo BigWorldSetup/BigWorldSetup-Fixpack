@@ -1,5 +1,5 @@
---- stratagems/lib/always.tph	2016-11-20 18:27:15.395468300 -0500
-+++ Fixpack/stratagems/lib/always.tph	2016-11-20 18:27:39.732041700 -0500
+--- stratagems/lib/always.tph	2016-11-21 19:00:36.654020700 -0500
++++ Fixpack/stratagems/lib/always.tph	2016-12-01 15:01:59.419080700 -0500
 @@ -303,7 +303,7 @@
  // detect whether Truesight cures blindness
  ///////////////////////////////////////////////////

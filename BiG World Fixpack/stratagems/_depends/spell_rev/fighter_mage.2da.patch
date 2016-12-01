@@ -1,5 +1,5 @@
 --- stratagems/mage/spellchoices/demivrgvs/fighter_mage.2da	2012-08-26 18:01:11.000000000 -0400
-+++ Fixpack/stratagems/mage/spellchoices/demivrgvs/fighter_mage.2da	2016-11-30 20:12:10.159091300 -0500
++++ Fixpack/stratagems/mage/spellchoices/demivrgvs/fighter_mage.2da	2016-12-01 15:11:46.493876300 -0500
 @@ -3,7 +3,7 @@
  2 MELF_ACID_ARROW       MELF_ACID_ARROW         MELF_ACID_ARROW             POWER_WORD_SLEEP        POWER_WORD_SLEEP        HORROR          GLITTERDUST     GLITTERDUST
  3 HOLD_PERSON           DIRE_CHARM              MONSTER_SUMMONING_1                                                                         

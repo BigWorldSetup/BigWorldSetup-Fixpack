@@ -1,5 +1,5 @@
 --- stratagems/priest/ssl/bg2/combatblocks/insects.ssl	2016-11-20 18:27:15.509549200 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/insects.ssl	2016-11-20 18:27:39.856129200 -0500
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/insects.ssl	2016-12-01 15:11:46.564926900 -0500
 @@ -7,7 +7,7 @@
  	TargetBlock(PCSpellcasters)
  	TargetBlock(PCsInOrderShort)

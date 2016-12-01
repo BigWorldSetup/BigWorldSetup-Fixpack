@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/combatblocks/power_word_blind.ssl	2016-11-20 18:27:15.438499000 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/power_word_blind.ssl	2016-11-20 18:27:39.783078000 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/power_word_blind.ssl	2016-12-01 15:11:46.524898900 -0500
 @@ -13,7 +13,7 @@
  	TargetBlock(PCsPreferringStrong)
  	TargetBlock(Celestials)

@@ -1,5 +1,5 @@
 --- stratagems/genie/ssl/djinni01.ssl	2016-11-20 18:27:15.392466400 -0500
-+++ Fixpack/stratagems/genie/ssl/djinni01.ssl	2016-11-20 18:27:39.729052900 -0500
++++ Fixpack/stratagems/genie/ssl/djinni01.ssl	2016-12-01 15:11:46.481867800 -0500
 @@ -180,8 +180,7 @@
  	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC)&HPPercentLT(scstarget,40))
  	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))

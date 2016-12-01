@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/combatblocks/highpowered_sequencers.ssl	2016-11-20 18:27:15.424489100 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/highpowered_sequencers.ssl	2016-11-20 18:27:39.771069900 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/highpowered_sequencers.ssl	2016-09-16 21:24:23.259536200 -0400
 @@ -9,8 +9,7 @@
  
  IF TRIGGER

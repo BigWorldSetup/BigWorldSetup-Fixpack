@@ -1,5 +1,5 @@
 --- stratagems/priest/spellchoices/demivrgvs/druid.2da	2016-11-20 18:27:15.463516500 -0500
-+++ Fixpack/stratagems/priest/spellchoices/demivrgvs/druid.2da	2016-11-20 18:27:39.809096500 -0500
++++ Fixpack/stratagems/priest/spellchoices/demivrgvs/druid.2da	2016-12-01 15:11:46.536907400 -0500
 @@ -1,10 +1,10 @@
  VANILLA_DRUID
 -1 REMOVE_FEAR        DOOM                 DOOM                  SUNSCORCH       SUNSCORCH

@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg1/combatblocks/attack_antimagic.ssl	2016-11-20 18:27:15.401472500 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/attack_antimagic.ssl	2016-11-20 18:27:39.738045900 -0500
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/attack_antimagic.ssl	2016-12-01 15:11:46.503883400 -0500
 @@ -7,10 +7,11 @@
  	IgnoreBlock(SpellsAreBG1)
  	RequireBlock(HasL3)

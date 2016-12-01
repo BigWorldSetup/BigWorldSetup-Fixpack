@@ -1,5 +1,5 @@
 --- stratagems/dragon/ssl/dragblac.ssl	2016-11-20 18:27:15.340429100 -0500
-+++ Fixpack/stratagems/dragon/ssl/dragblac.ssl	2016-11-20 18:27:39.688010900 -0500
++++ Fixpack/stratagems/dragon/ssl/dragblac.ssl	2016-09-17 00:20:53.467261400 -0400
 @@ -132,7 +132,7 @@
  
  IF TRIGGER

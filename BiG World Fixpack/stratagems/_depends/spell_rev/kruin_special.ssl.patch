@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg2/combatblocks/kruin_special.ssl	2016-11-20 18:27:15.433495700 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/kruin_special.ssl	2016-11-20 18:27:39.777073400 -0500
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/kruin_special.ssl	2016-12-01 15:11:46.522897500 -0500
 @@ -6,7 +6,7 @@
  	TargetBlock(EnemiesInOrder)
  	!Gender(scstarget,SUMMONED)

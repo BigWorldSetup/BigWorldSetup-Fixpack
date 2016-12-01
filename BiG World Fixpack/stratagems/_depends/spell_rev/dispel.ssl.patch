@@ -1,5 +1,5 @@
 --- stratagems/fiend/ssl/dispel.ssl	2016-11-20 18:27:15.381458400 -0500
-+++ Fixpack/stratagems/fiend/ssl/dispel.ssl	2016-11-20 18:27:39.706023600 -0500
++++ Fixpack/stratagems/fiend/ssl/dispel.ssl	2016-12-01 15:11:46.475865200 -0500
 @@ -23,7 +23,7 @@
  		!CheckStatGT(Playerscsvar,0,CLERIC_INSECT_PLAGUE)
  		!Allegiance(Playerscsvar,ENEMY)

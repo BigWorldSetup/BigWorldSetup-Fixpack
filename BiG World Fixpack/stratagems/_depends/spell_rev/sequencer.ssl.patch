@@ -1,5 +1,5 @@
 --- stratagems/mage/ssl/bg1/combatblocks/sequencer.ssl	2016-11-20 18:27:15.409478200 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/sequencer.ssl	2016-11-20 18:27:39.746053200 -0500
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/sequencer.ssl	2016-12-01 15:11:46.512890000 -0500
 @@ -31,7 +31,7 @@
  	RequireBlock(HasL4)
  	IgnoreBlock(SpellsAreBG1)
