@@ -1,5 +1,11 @@
 --- tyrisflare/setup-tyrisflare.tp2	2015-08-04 11:05:38.957826300 -0400
 +++ Fixpack/tyrisflare/setup-tyrisflare.tp2	2016-11-21 23:26:09.742399300 -0500
+@@ -1,4 +1,4 @@
+ BACKUP ~TyrisFlare/Backup~
+ AUTHOR ~grim@gibberlings3.net~
+ NO_IF_EVAL_BUG
+-VERSION ~v7~
++VERSION ~v7 BWP Fix~
 @@ -5,6 +5,17 @@
  ASK_EVERY_COMPONENT
  

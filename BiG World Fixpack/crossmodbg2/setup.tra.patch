@@ -1,0 +1,5 @@
+--- crossmodbg2/tra/english/setup.tra	2016-11-27 13:18:35.115510300 -0500
++++ Fixpack/crossmodbg2/tra/english/setup.tra	2016-11-26 11:40:32.147399800 -0500
+@@ -1,1 +1,1 @@
+-@0    = ~v15~
++@0    = ~v15 BWP Fix~

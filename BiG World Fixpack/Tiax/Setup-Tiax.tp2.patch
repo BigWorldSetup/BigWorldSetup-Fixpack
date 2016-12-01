@@ -1,5 +1,10 @@
 --- Tiax/Setup-Tiax.tp2	2014-11-10 14:18:04.000000000 -0500
 +++ Fixpack/Tiax/Setup-Tiax.tp2	2016-11-21 16:35:31.512329100 -0500
+@@ -1,3 +1,3 @@
+ BACKUP ~Tiax/Backup~
+ AUTHOR ~http://forums.pocketplane.net~
+-VERSION ~v4~
++VERSION ~v4 BWP Fix~
 @@ -5,6 +5,17 @@
  README ~Tiax/%LANGUAGE%/Readme-Tiax.txt~ ~Tiax/Readme-Tiax.txt~ 
  

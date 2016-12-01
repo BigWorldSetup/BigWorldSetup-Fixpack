@@ -1,10 +1,8 @@
 --- Setup-TGC1E.tp2	Sat Nov 08 22:18:32 2008
 +++ C:\BWP Patchstudio\patched files\Setup-TGC1E.tp2	Tue Oct 15 00:02:15 2013
-@@ -1,6 +1,6 @@
+@@ -1,4 +1,4 @@
  BACKUP ~TGC1E/Backup~
  AUTHOR ~Baronius, blackwyrmlair.net~
--
-+VERSION ~v1.8.T1 BWP Fix~
- DEFINE_ACTION_MACRO ~TGC1E_INIT~ BEGIN
-  PRINT @90002
-  UNINSTALL ~Setup-TGC.tp2~ ~0~
+-VERSION ~v1.9~
++VERSION ~v1.9 BWP Fix~
+ README ~TGC1E/Readme/readme-%LANGUAGE%.html~ ~TGC1E/Readme/readme.html~
