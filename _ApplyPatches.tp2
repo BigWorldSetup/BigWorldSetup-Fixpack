@@ -48,7 +48,7 @@
 BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v2.1~
+VERSION ~v2.2~
 
 ALWAYS
 	// special folders and marker file
@@ -136,164 +136,163 @@ ALWAYS
 
 	DEFINE_ACTION_FUNCTION ~process_mod_folders~
 	BEGIN
-		GET_DIRECTORY_ARRAY ~fixpack_folder_array~ ~%FIXPACK%~ ~^.*$~ // get list of subfolders in the Fixpack folder
+		GET_DIRECTORY_ARRAY ~fixpack_folder_array~ ~%FIXPACK%~ ~^.*[^\.]$~ // get list of subfolders in the Fixpack folder (exclude /. and /..)
 		ACTION_PHP_EACH ~fixpack_folder_array~ AS index => folder BEGIN
-			ACTION_IF (~%folder%~ STRING_MATCHES_REGEXP ~^.*/\.\.?$~ != 0) THEN BEGIN // exclude /. and /..
-				LAF FILE_OF_FILESPEC // trim leading ./
-					STR_VAR
-						filespec = EVAL ~%folder%~
-					RET
-						fixpack_folder_name = file
-				END
-				OUTER_TEXT_SPRINT ~target_mod_folder~ ~%fixpack_folder_name%~
-				OUTER_TEXT_SPRINT ~fixpack_subfolder~ ~%FIXPACK%/%fixpack_folder_name%~
+			//PRINT ~Checking Fixpack subfolder: %folder%~
+			LAF FILE_OF_FILESPEC // trim leading ./
+				STR_VAR
+					filespec = EVAL ~%folder%~
+				RET
+					fixpack_folder_name = file
+			END
+			OUTER_TEXT_SPRINT ~target_mod_folder~ ~%fixpack_folder_name%~
+			OUTER_TEXT_SPRINT ~fixpack_subfolder~ ~%FIXPACK%/%fixpack_folder_name%~
 
-				SILENT // suppress "copying 1 file..." and BWP_Fixpack.installed log messages
-				OUTER_SET skip = 0
-				ACTION_IF (~%fixpack_folder_name%~ STRING_CONTAINS_REGEXP ~^_~ == 0) THEN BEGIN
-					//PRINT ~Skipping "%folder%" because it has a "_" prefix...~
-					OUTER_SET skip = 1
-				END ELSE ACTION_IF (~%folder%~ STRING_CONTAINS_REGEXP ~ ~ == 0) THEN BEGIN
-					//PRINT ~Skipping "%folder%" because it contains a space in the path...~
-					OUTER_SET skip = 1
-				END ELSE ACTION_IF (FILE_CONTAINS_EVALUATED (~%INSTALL_MARKER%~ ~Processed '%fixpack_folder_name%'~)) THEN BEGIN
-					PRINT ~Skipping "%fixpack_folder_name%" because it was already patched (according to "%INSTALL_MARKER%")...~
-					OUTER_SET skip = 1
-				END ELSE ACTION_IF (NOT DIRECTORY_EXISTS ~%target_mod_folder%~) THEN BEGIN
-					OUTER_SET skip = 1 // skip patches for which there is no matching target folder ...
-					// ... but also check if Fixpack subfolder specifies an alternate target folder
-					ACTION_IF (FILE_EXISTS ~%fixpack_subfolder%/_alternate_folder_names~) THEN BEGIN
-						COPY - ~%fixpack_subfolder%/_alternate_folder_names~ ~%FIXPACK%/tmpfile~ // fake copy
-							COUNT_2DA_ROWS 1 num_folder_names // 1 column
-							PATCH_IF (num_folder_names > 0) THEN BEGIN
-								FOR (i = 0; i < num_folder_names; ++i) BEGIN
-									READ_2DA_ENTRY i 0 1 alt_folder
-									PATCH_IF (DIRECTORY_EXISTS ~%alt_folder%~) THEN BEGIN
-										PATCH_PRINT ~Fixpack subfolder "%fixpack_subfolder%" specifies "%alt_folder%" as target folder for patching...~
-										TEXT_SPRINT ~target_mod_folder~ ~%alt_folder%~
-										SET skip = 0 // we found an alternate target folder, so we do not need to skip
-										SET i = num_folder_names // can only have one target, so end loop after match
-									END
+			SILENT // suppress "copying 1 file..." and BWP_Fixpack.installed log messages
+			OUTER_SET skip = 0
+			ACTION_IF (~%fixpack_folder_name%~ STRING_CONTAINS_REGEXP ~^_~ == 0) THEN BEGIN
+				//PRINT ~Skipping "%folder%" because it has a "_" prefix...~
+				OUTER_SET skip = 1
+			END ELSE ACTION_IF (~%folder%~ STRING_CONTAINS_REGEXP ~ ~ == 0) THEN BEGIN
+				//PRINT ~Skipping "%folder%" because it contains a space in the path...~
+				OUTER_SET skip = 1
+			END ELSE ACTION_IF (FILE_CONTAINS_EVALUATED (~%INSTALL_MARKER%~ ~Processed '%fixpack_folder_name%'~)) THEN BEGIN
+				PRINT ~Skipping "%fixpack_folder_name%" because it was already patched (according to "%INSTALL_MARKER%")...~
+				OUTER_SET skip = 1
+			END ELSE ACTION_IF (NOT DIRECTORY_EXISTS ~%target_mod_folder%~) THEN BEGIN
+				OUTER_SET skip = 1 // skip patches for which there is no matching target folder ...
+				// ... but also check if Fixpack subfolder specifies an alternate target folder
+				ACTION_IF (FILE_EXISTS ~%fixpack_subfolder%/_alternate_folder_names~) THEN BEGIN
+					COPY - ~%fixpack_subfolder%/_alternate_folder_names~ ~%FIXPACK%/tmpfile~ // fake copy
+						COUNT_2DA_ROWS 1 num_folder_names // 1 column
+						PATCH_IF (num_folder_names > 0) THEN BEGIN
+							FOR (i = 0; i < num_folder_names; ++i) BEGIN
+								READ_2DA_ENTRY i 0 1 alt_folder
+								PATCH_IF (DIRECTORY_EXISTS ~%alt_folder%~) THEN BEGIN
+									PATCH_PRINT ~Fixpack subfolder "%fixpack_subfolder%" specifies "%alt_folder%" as target folder for patching...~
+									TEXT_SPRINT ~target_mod_folder~ ~%alt_folder%~
+									SET skip = 0 // we found an alternate target folder, so we do not need to skip
+									SET i = num_folder_names // can only have one target, so end loop after match
 								END
 							END
-						BUT_ONLY
+						END
+					BUT_ONLY
+				END
+			END
+			// check for invalid target folder names
+			ACTION_IF (skip == 0) THEN BEGIN
+				ACTION_FOR_EACH reserved IN ~data~ ~lang~ ~Manuals~ ~movies~ ~mpsave~ ~music~ ~override~ ~save~ ~scripts~ ~%MOD_FOLDER%~ ~%FIXPACK%~ BEGIN
+					ACTION_IF (~%reserved%~ STR_EQ ~%target_mod_folder%~) THEN BEGIN
+						OUTER_SET skip = 1
 					END
 				END
-				// check for invalid target folder names
-				ACTION_IF (skip == 0) THEN BEGIN
-					ACTION_FOR_EACH reserved IN ~data~ ~lang~ ~Manuals~ ~movies~ ~mpsave~ ~music~ ~override~ ~save~ ~scripts~ ~%MOD_FOLDER%~ ~%FIXPACK%~ BEGIN
-						ACTION_IF (~%reserved%~ STR_EQ ~%target_mod_folder%~) THEN BEGIN
-							OUTER_SET skip = 1
-						END
-					END
-					// compare VERSION in WeiDU tp2 patches vs. VERSION in the local tp2 file
-					ACTION_BASH_FOR ~%fixpack_subfolder%~ ~^.*\.tp2\.patch$~ BEGIN
-						//PRINT ~%BASH_FOR_FILESPEC%~
-						OUTER_SPRINT tgtfile ~~ // reset variables for each patch file we check
-						OUTER_SPRINT oldvers ~~
-						OUTER_SPRINT nowvers ~~
-						ACTION_IF (skip == 0) THEN BEGIN // this is a loop - stop checking patches for this mod if we already found a reason to skip and the user made a decision 
-							COPY - ~%BASH_FOR_FILESPEC%~ ~%FIXPACK%/tmpfile~ // fake copy
-								REPLACE_EVALUATE ~--- \(.*\.tp2\)[%TAB%]~ BEGIN
-									TEXT_SPRINT oldvers ~~ // start of a new patch, so clear version variable to avoid spillover from a previous patch in the same file
-									TEXT_SPRINT tgtfile ~%MATCH1%~ // save the target file (with full path) while looking for a following VERSION line
-								END ~~ // ~~ required but no effect
-								REPLACE_EVALUATE ~~~~~[ -]\([ %TAB%]*VERSION[ %TAB%]*[~"%@]?[^%WNL%%LNL%]*[0-9]*[%"~]?\)[ %TAB%]*\(\/[\/*][^%WNL%%LNL%]*\)?~~~~~ BEGIN
-									TEXT_SPRINT oldvers ~%MATCH1%~ // found a pre-patch VERSION line (a patch line prefixed with ' ' or '-' is original, '+' is changed)
-								END ~~ // ~~ required but no effect
-								SET startpos = INDEX(CASE_SENSITIVE EXACT_MATCH ~VERSION~ ~%oldvers%~)
-								SET endpos = RINDEX(CASE_SENSITIVE EVALUATE_REGEXP ~~~~~[~"%%"~]~~~~~ ~%oldvers%~)
-								PATCH_IF (startpos >= 0 AND endpos > 0) BEGIN
-									LPF SUBSTRING INT_VAR start = startpos length = endpos + 1 STR_VAR string = EVAL ~%oldvers%~ RET oldvers = substring END
-								END	
-								PATCH_IF (~%tgtfile%~ STRING_COMPARE ~~) THEN BEGIN // if we found a target file...
-									PATCH_IF (NOT FILE_EXISTS ~%tgtfile%~) THEN BEGIN // warn if that target file doesn't exist ...
-										PATCH_PRINT ~WARNING: file "%tgtfile%" does not exist (this is the file targeted for patching in "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%").  This might mean you did not extract all of the files of the mod, or it might mean that the patches for this mod were made for a different version of the mod than the version that you are using (you would see this message if the version you are using moved or renamed the tp2 file).~
-										PATCH_PRINT ~Do you want to try to apply other patches for this mod anyway?  If a target file is different from the original file that was used to create a patch, the patch might fail completely (making no changes) or it might fail partially (making some changes) or it might succeed with "fuzz" (if all of the lines to change are still in the file, but some other lines were added in between).  If partial patching occurs, the mod might fail to install or manifest other problems later.  If in doubt, please visit one of the modding forums and ask for help.~
+				// compare VERSION in WeiDU tp2 patches vs. VERSION in the local tp2 file
+				ACTION_BASH_FOR ~%fixpack_subfolder%~ ~^.*\.tp2\.patch$~ BEGIN
+					//PRINT ~%BASH_FOR_FILESPEC%~
+					OUTER_SPRINT tgtfile ~~ // reset variables for each patch file we check
+					OUTER_SPRINT oldvers ~~
+					OUTER_SPRINT nowvers ~~
+					ACTION_IF (skip == 0) THEN BEGIN // this is a loop - stop checking patches for this mod if we already found a reason to skip and the user made a decision 
+						COPY - ~%BASH_FOR_FILESPEC%~ ~%FIXPACK%/tmpfile~ // fake copy
+							REPLACE_EVALUATE ~--- \(.*\.tp2\)[%TAB%]~ BEGIN
+								TEXT_SPRINT oldvers ~~ // start of a new patch, so clear version variable to avoid spillover from a previous patch in the same file
+								TEXT_SPRINT tgtfile ~%MATCH1%~ // save the target file (with full path) while looking for a following VERSION line
+							END ~~ // ~~ required but no effect
+							REPLACE_EVALUATE ~~~~~[ -]\([ %TAB%]*VERSION[ %TAB%]*[~"%@]?[^%WNL%%LNL%]*[0-9]*[%"~]?\)[ %TAB%]*\(\/[\/*][^%WNL%%LNL%]*\)?~~~~~ BEGIN
+								TEXT_SPRINT oldvers ~%MATCH1%~ // found a pre-patch VERSION line (a patch line prefixed with ' ' or '-' is original, '+' is changed)
+							END ~~ // ~~ required but no effect
+							SET startpos = INDEX(CASE_SENSITIVE EXACT_MATCH ~VERSION~ ~%oldvers%~)
+							SET endpos = RINDEX(CASE_SENSITIVE EVALUATE_REGEXP ~~~~~[~"%%"~]~~~~~ ~%oldvers%~)
+							PATCH_IF (startpos >= 0 AND endpos > 0) BEGIN
+								LPF SUBSTRING INT_VAR start = startpos length = endpos + 1 STR_VAR string = EVAL ~%oldvers%~ RET oldvers = substring END
+							END	
+							PATCH_IF (~%tgtfile%~ STRING_COMPARE ~~) THEN BEGIN // if we found a target file...
+								PATCH_IF (NOT FILE_EXISTS ~%tgtfile%~) THEN BEGIN // warn if that target file doesn't exist ...
+									PATCH_PRINT ~WARNING: file "%tgtfile%" does not exist (this is the file targeted for patching in "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%").  This might mean you did not extract all of the files of the mod, or it might mean that the patches for this mod were made for a different version of the mod than the version that you are using (you would see this message if the version you are using moved or renamed the tp2 file).~
+									PATCH_PRINT ~Do you want to try to apply other patches for this mod anyway?  If a target file is different from the original file that was used to create a patch, the patch might fail completely (making no changes) or it might fail partially (making some changes) or it might succeed with "fuzz" (if all of the lines to change are still in the file, but some other lines were added in between).  If partial patching occurs, the mod might fail to install or manifest other problems later.  If in doubt, please visit one of the modding forums and ask for help.~
+									PATCH_PRINT ~[Enter Y if you want to try patching anyway, anything else to skip patching this mod.]~
+									PATCH_READLN answer
+									PATCH_IF (~%answer%~ STR_EQ ~Y~) THEN BEGIN // if user input does match y or Y
+										SET skip = 2 // don't skip -- this will be changed to zero after the loop
+									END ELSE BEGIN
+										SET skip = 1 // user did NOT choose to try patching anyway - we will skip this mod
+										PATCH_WARN ~Skipping patches in "BiG World Fixpack/%fixpack_folder_name%" (target file not found)...~
+									END
+								END ELSE BEGIN // if the target file exists, read the VERSION from the target file
+									INNER_ACTION BEGIN
+										COPY - ~%tgtfile%~ ~%FIXPACK%/tmpfile2~ // fake copy
+											INNER_PATCH ~%LNL%%WNL%~ BEGIN // order matters here
+												READ_BYTE 0x0 lnl // get Linux new line byte representation
+												READ_BYTE 0x1 wnl // get Windows new line byte representation
+											END
+											SET filesize = SIZE_OF_FILE ~%tgtfile%~
+											FOR (i = 0; i < filesize; ++i) BEGIN
+												SET eol = 0
+												FOR (j = i; !eol && j < filesize; ++j) BEGIN // search for next newline
+													READ_BYTE j byte
+													PATCH_IF (byte == lnl OR byte == wnl) BEGIN SET eol = 1 END // found end of line - break out of j loop
+												END
+												SET len = (j - i - 1) // j is after newline; i is at the start of the line -- if the first line is 3 chars long, j is 3 (4th byte), i is 0
+												READ_ASCII i line ( len )
+												PATCH_IF (~%line%~ STRING_CONTAINS_REGEXP ~~~~~^[ %TAB%]*VERSION[^%WNL%%LNL%]*~~~~~ == 0) BEGIN
+													SET startpos = INDEX(CASE_SENSITIVE EXACT_MATCH ~VERSION~ ~%line%~)
+													SET endpos = RINDEX(CASE_SENSITIVE EVALUATE_REGEXP ~~~~~[~"%%"~]~~~~~ ~%line%~)
+													PATCH_IF (startpos >= 0 AND endpos > 0) BEGIN
+														LPF SUBSTRING INT_VAR start = startpos length = endpos + 1 STR_VAR string = EVAL ~%line%~ RET line = substring END
+													END
+													TEXT_SPRINT nowvers ~%line%~
+												END
+												WHILE (eol AND j < filesize) BEGIN // check for more than one newline at end of line
+													READ_BYTE j byte
+													PATCH_IF (byte == lnl OR byte == wnl) BEGIN SET j = j + 1 END // skip another newline
+													ELSE BEGIN SET eol = 0 END // else done
+												END
+												SET i = j - 1 // continue to next line, skipping newline(s)
+											END
+										BUT_ONLY
+									END
+									PATCH_IF (NOT ~%oldvers%~ STRING_EQUAL ~~ AND NOT ~%nowvers%~ STRING_EQUAL ~%oldvers%~) THEN BEGIN // if we found a pre-patch VERSION and the target file does not have that version
+										PATCH_IF (NOT ~%nowvers%~ STRING_EQUAL ~~) THEN BEGIN // we also found a VERSION in the target file
+											PATCH_PRINT ~WARNING: File "%tgtfile%" contains '%nowvers%' instead of expected '%oldvers%'!  This is the file targeted for patching in "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%".  This might mean that the patches for this mod were made for a different version of the mod than the one that you are using, or this might mean that the mod was already patched and then removed from the list in the "%INSTALL_MARKER%" file without restoring the original pre-patched files.~
+										END ELSE BEGIN // we only have a pre-patch VERSION
+											PATCH_PRINT ~WARNING: File "%tgtfile%" does not contain a VERSION line (expected '%oldvers%')!  This is the file targeted for patching in "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%".  This might mean that the patches for this mod were made for a different version of the mod than the one that you are using, or this might mean that the mod was already patched and then removed from the list in the "%INSTALL_MARKER%" file without restoring the original pre-patched files.~
+										END
+										PATCH_PRINT ~Do you want to try to apply the patch anyway?  If the target file is different from the original file that was used to create the patch, then the patch might fail completely (making no changes) or it might fail partially (making some changes) or it might succeed with 'fuzz' (if all of the lines to change are still in the file, but some other lines were added in between).  If partial patching occurs, the mod might fail to install or manifest other problems later.  If in doubt, please visit one of the modding forums and ask for help.~
 										PATCH_PRINT ~[Enter Y if you want to try patching anyway, anything else to skip patching this mod.]~
 										PATCH_READLN answer
 										PATCH_IF (~%answer%~ STR_EQ ~Y~) THEN BEGIN // if user input does match y or Y
-											SET skip = 2 // don't skip -- this will be changed to zero after the loop
+											SET skip = 2 // don't skip -- will be changed to zero after the loop
 										END ELSE BEGIN
 											SET skip = 1 // user did NOT choose to try patching anyway - we will skip this mod
-											PATCH_WARN ~Skipping patches in "BiG World Fixpack/%fixpack_folder_name%" (target file not found)...~
+											PATCH_WARN ~Skipping patches in "BiG World Fixpack/%fixpack_folder_name%" (version mismatch)...~
 										END
-									END ELSE BEGIN // if the target file exists, read the VERSION from the target file
-										INNER_ACTION BEGIN
-											COPY - ~%tgtfile%~ ~%FIXPACK%/tmpfile2~ // fake copy
-												INNER_PATCH ~%LNL%%WNL%~ BEGIN // order matters here
-													READ_BYTE 0x0 lnl // get Linux new line byte representation
-													READ_BYTE 0x1 wnl // get Windows new line byte representation
-												END
-												SET filesize = SIZE_OF_FILE ~%tgtfile%~
-												FOR (i = 0; i < filesize; ++i) BEGIN
-													SET eol = 0
-													FOR (j = i; !eol && j < filesize; ++j) BEGIN // search for next newline
-														READ_BYTE j byte
-														PATCH_IF (byte == lnl OR byte == wnl) BEGIN SET eol = 1 END // found end of line - break out of j loop
-													END
-													SET len = (j - i - 1) // j is after newline; i is at the start of the line -- if the first line is 3 chars long, j is 3 (4th byte), i is 0
-													READ_ASCII i line ( len )
-													PATCH_IF (~%line%~ STRING_CONTAINS_REGEXP ~~~~~^[ %TAB%]*VERSION[^%WNL%%LNL%]*~~~~~ == 0) BEGIN
-														SET startpos = INDEX(CASE_SENSITIVE EXACT_MATCH ~VERSION~ ~%line%~)
-														SET endpos = RINDEX(CASE_SENSITIVE EVALUATE_REGEXP ~~~~~[~"%%"~]~~~~~ ~%line%~)
-														PATCH_IF (startpos >= 0 AND endpos > 0) BEGIN
-															LPF SUBSTRING INT_VAR start = startpos length = endpos + 1 STR_VAR string = EVAL ~%line%~ RET line = substring END
-														END
-														TEXT_SPRINT nowvers ~%line%~
-													END
-													WHILE (eol AND j < filesize) BEGIN // check for more than one newline at end of line
-														READ_BYTE j byte
-														PATCH_IF (byte == lnl OR byte == wnl) BEGIN SET j = j + 1 END // skip another newline
-														ELSE BEGIN SET eol = 0 END // else done
-													END
-													SET i = j - 1 // continue to next line, skipping newline(s)
-												END
-											BUT_ONLY
+									END ELSE PATCH_IF (~%oldvers%~ STRING_EQUAL ~~) THEN BEGIN // we found a VERSION in the target file, but no pre-patch VERSION in the patch file
+										PATCH_PRINT ~WARNING: Patch file "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%" does not contain a VERSION line, but the target "%tgtfile%" does:  %nowvers%~
+										PATCH_PRINT ~Do you want to try to apply the patch anyway?  If the target file is different from the original file that was used to create the patch, then the patch might fail completely (making no changes) or it might fail partially (making some changes) or it might succeed with 'fuzz' (if all of the lines to change are still in the file, but some other lines were added in between).  If partial patching occurs, the mod might fail to install or manifest other problems later.  If in doubt, please visit one of the modding forums and ask for help.~
+										PATCH_PRINT ~[Enter Y if you want to try patching anyway, anything else to skip patching this mod.]~
+										PATCH_READLN answer
+										PATCH_IF (~%answer%~ STR_EQ ~Y~) THEN BEGIN // if user input does match y or Y
+											SET skip = 2 // don't skip -- will be changed to zero after the loop
+										END ELSE BEGIN
+											SET skip = 1 // user did NOT choose to try patching anyway - we will skip this mod
+											PATCH_WARN ~Skipping patches in "BiG World Fixpack/%fixpack_folder_name%" (version mismatch)...~
 										END
-										PATCH_IF (NOT ~%oldvers%~ STRING_EQUAL ~~ AND NOT ~%nowvers%~ STRING_EQUAL ~%oldvers%~) THEN BEGIN // if we found a pre-patch VERSION and the target file does not have that version
-											PATCH_IF (NOT ~%nowvers%~ STRING_EQUAL ~~) THEN BEGIN // we also found a VERSION in the target file
-												PATCH_PRINT ~WARNING: File "%tgtfile%" contains '%nowvers%' instead of expected '%oldvers%'!  This is the file targeted for patching in "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%".  This might mean that the patches for this mod were made for a different version of the mod than the one that you are using, or this might mean that the mod was already patched and then removed from the list in the "%INSTALL_MARKER%" file without restoring the original pre-patched files.~
-											END ELSE BEGIN // we only have a pre-patch VERSION
-												PATCH_PRINT ~WARNING: File "%tgtfile%" does not contain a VERSION line (expected '%oldvers%')!  This is the file targeted for patching in "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%".  This might mean that the patches for this mod were made for a different version of the mod than the one that you are using, or this might mean that the mod was already patched and then removed from the list in the "%INSTALL_MARKER%" file without restoring the original pre-patched files.~
-											END
-											PATCH_PRINT ~Do you want to try to apply the patch anyway?  If the target file is different from the original file that was used to create the patch, then the patch might fail completely (making no changes) or it might fail partially (making some changes) or it might succeed with 'fuzz' (if all of the lines to change are still in the file, but some other lines were added in between).  If partial patching occurs, the mod might fail to install or manifest other problems later.  If in doubt, please visit one of the modding forums and ask for help.~
-											PATCH_PRINT ~[Enter Y if you want to try patching anyway, anything else to skip patching this mod.]~
-											PATCH_READLN answer
-											PATCH_IF (~%answer%~ STR_EQ ~Y~) THEN BEGIN // if user input does match y or Y
-												SET skip = 2 // don't skip -- will be changed to zero after the loop
-											END ELSE BEGIN
-												SET skip = 1 // user did NOT choose to try patching anyway - we will skip this mod
-												PATCH_WARN ~Skipping patches in "BiG World Fixpack/%fixpack_folder_name%" (version mismatch)...~
-											END
-										END ELSE PATCH_IF (~%oldvers%~ STRING_EQUAL ~~) THEN BEGIN // we found a VERSION in the target file, but no pre-patch VERSION in the patch file
-											PATCH_PRINT ~WARNING: Patch file "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%" does not contain a VERSION line, but the target "%tgtfile%" does:  %nowvers%~
-											PATCH_PRINT ~Do you want to try to apply the patch anyway?  If the target file is different from the original file that was used to create the patch, then the patch might fail completely (making no changes) or it might fail partially (making some changes) or it might succeed with 'fuzz' (if all of the lines to change are still in the file, but some other lines were added in between).  If partial patching occurs, the mod might fail to install or manifest other problems later.  If in doubt, please visit one of the modding forums and ask for help.~
-											PATCH_PRINT ~[Enter Y if you want to try patching anyway, anything else to skip patching this mod.]~
-											PATCH_READLN answer
-											PATCH_IF (~%answer%~ STR_EQ ~Y~) THEN BEGIN // if user input does match y or Y
-												SET skip = 2 // don't skip -- will be changed to zero after the loop
-											END ELSE BEGIN
-												SET skip = 1 // user did NOT choose to try patching anyway - we will skip this mod
-												PATCH_WARN ~Skipping patches in "BiG World Fixpack/%fixpack_folder_name%" (version mismatch)...~
-											END
-										END // else the VERSIONs are the same -- OK to continue
-									END // end of skip prompts
-								END // end of found matches for both
-							BUT_ONLY // end of fake COPY (to read a tp2 patch file)
-						END // end of continue checking only if skip is still zero
-					END // end of checking tp2 patch files
-					ACTION_IF (skip == 2) THEN BEGIN // user was prompted and decided to patch anyway
-						OUTER_SET skip = 0
-					END
+									END // else the VERSIONs are the same -- OK to continue
+								END // end of skip prompts
+							END // end of found matches for both
+						BUT_ONLY // end of fake COPY (to read a tp2 patch file)
+					END // end of continue checking only if skip is still zero
+				END // end of checking tp2 patch files
+				ACTION_IF (skip == 2) THEN BEGIN // user was prompted and decided to patch anyway
+					OUTER_SET skip = 0
 				END
-				VERBOSE // done with all pre-patch validation checks
-				ACTION_IF (skip == 0) THEN BEGIN // do the patching for this Fixpack subfolder
-					LAF ~process_fixpack_subfolder~ STR_VAR target_folder = EVAL ~%target_mod_folder%~ source_folder = EVAL ~%fixpack_subfolder%~ END
-					LAF ~process_nested_subfolders~ INT_VAR if_present = 1 STR_VAR dir_with_subdirs = EVAL ~%fixpack_subfolder%/%DEPENDS_DIR%~ original_target_folder = EVAL ~%target_mod_folder%~ END
-					LAF ~process_nested_subfolders~ INT_VAR if_present = 0 STR_VAR dir_with_subdirs = EVAL ~%fixpack_subfolder%/%DEPENDS_NOT_DIR%~ original_target_folder = EVAL ~%target_mod_folder%~ END
-					APPEND_OUTER + ~%INSTALL_MARKER%~ ~Processed '%fixpack_folder_name%'~ UNLESS EVAL ~Processed '%fixpack_folder_name%'~ // record original fixpack subfolder name, not target folder
-				END
+			END
+			VERBOSE // done with all pre-patch validation checks
+			ACTION_IF (skip == 0) THEN BEGIN // do the patching for this Fixpack subfolder
+				LAF ~process_fixpack_subfolder~ STR_VAR target_folder = EVAL ~%target_mod_folder%~ source_folder = EVAL ~%fixpack_subfolder%~ END
+				LAF ~process_nested_subfolders~ INT_VAR if_present = 1 STR_VAR dir_with_subdirs = EVAL ~%fixpack_subfolder%/%DEPENDS_DIR%~ original_target_folder = EVAL ~%target_mod_folder%~ END
+				LAF ~process_nested_subfolders~ INT_VAR if_present = 0 STR_VAR dir_with_subdirs = EVAL ~%fixpack_subfolder%/%DEPENDS_NOT_DIR%~ original_target_folder = EVAL ~%target_mod_folder%~ END
+				APPEND_OUTER + ~%INSTALL_MARKER%~ ~Processed '%fixpack_folder_name%'~ UNLESS EVAL ~Processed '%fixpack_folder_name%'~ // record original fixpack subfolder name, not target folder
 			END
 		END
 	END
