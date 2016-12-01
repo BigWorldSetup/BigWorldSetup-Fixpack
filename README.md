@@ -2,9 +2,7 @@
 
 This is the repository for the BiG World Project's Fixpack - a set of tools and patches that fix/update/support mods for all Infinity Engine games (focusing on Baldur's Gate series, but including PST and IWD also).
 
-For an incomplete (hand-maintained) list of patches included, look at the [_BWP fixes.txt](BiG World Fixpack/_BWP fixes.txt) file.  For a complete record, view the [commit history](https://github.com/BiGWorldProject/BiG-World-Fixpack/commits/master).
-
-The support page for this package is [here](http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/).  This is a community project; you are welcome to fork this repository and contribute to it.
+This is a community project; you are welcome to fork this repository and contribute to it.  For an incomplete (hand-maintained) list of patches included, look at the [_BWP fixes.txt](BiG World Fixpack/_BWP fixes.txt) file.  For a complete record, view the [commit history](https://github.com/BiGWorldProject/BiG-World-Fixpack/commits/master). The support page for this package is [here](http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/).
 
 Click [here](https://github.com/BiGWorldProject/BiG-World-Fixpack/archive/master.zip) to download the latest version.
 
