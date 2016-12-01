@@ -2,3 +2,4 @@
 22.9. Redundant Spell Changes of SCS are skipped if SR is present 
 23.9. Added EET compatibility code; mages should now use Mind Blank in prebuff
 25.9. Fixed EET compatibility; added Ascension fix for @314, GAME_IS eet should now be detected for BG1 components
+29.11. Added a more refined spell selection for mages; "make individual spell immunity versions" component blocked 
