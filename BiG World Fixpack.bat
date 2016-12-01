@@ -1,3 +1,34 @@
+IF NOT EXIST "_ApplyPatches.bat" echo "This script is legacy code and has been replaced by the newer _ApplyPatches script.  Please copy that script (_ApplyPatches.tp2 and _ApplyPatches.bat) into your game folder and run it instead (after unpacking all of the mods you plan to install, so it can determine if additional compatibility patches are needed)."
+
+IF NOT EXIST "_ApplyPatches.tp2" echo "This script is legacy code and has been replaced by the newer _ApplyPatches script.  Please copy that script (_ApplyPatches.tp2 and _ApplyPatches.bat) into your game folder and run it instead (after unpacking all of the mods you plan to install, so it can determine if additional compatibility patches are needed)."
+
+Call "_ApplyPatches.bat"
+
+goto :EOF
+
+::
+::
+::
+::
+::
+::
+::
+::
+::
+::
+:: ALL CODE BELOW IS DISABLED BECAUSE THE ABOVE LINE JUMPS TO THE END OF THE FILE AND SKIPS THE CODE BELOW
+::
+::
+::
+::
+::
+::
+::
+::
+::
+::
+::
+
 :: BiG World Fixpack Installer
 :: Process a directory tree and call different commands when some
 :: of the following files/directories exist in the mod directory:
