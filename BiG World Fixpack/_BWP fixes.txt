@@ -475,10 +475,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: bg1re - Romantic Encounters for BG1 v1.3
+:: bg1re - Romantic Encounters for BG1 v1.4
 
-:: Roxanne's duplicate DO fix
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
+:: no known issues
 
 
 ----------------------------------------------------------------------------------------
