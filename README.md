@@ -6,7 +6,8 @@ For an incomplete (but still fairly huge) list of all patches included in the pa
 
 The support page for this package is [here](http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/).  Jump to the end of the thread for the latest - the first post is very old.
 
-You are free to fork this repo and play with it :) But improvements and more patches are always welcome!
+You are free to fork this repo and play with it :) But improvements and more patches are always welcome!  Click [here](https://github.com/BiGWorldProject/BiG-World-Fixpack/archive/master.zip) for the latest version.
+
 
 # Usage
 
@@ -14,8 +15,8 @@ The BiG World Fixpack has a new WeiDU-based cross-platform install script (Windo
  
 The Fixpack is different from other WeiDU patches because it does not modify content in the game directly:  instead, it modifies specific files in each unpacked mod folder in your game directory, which will affect what those mods do to the game when you run their individual installers later.  For example, the Fixpack patches WeiDU .baf script and .D dialogue and .tra translation files before they are compiled into the game.  This type of patching has no effect on any mods that have already been installed, so only run the "setup-modname.exe" (or weidu installer equivalent for OSX/Linux/other) for a mod after running the Fixpack script (so:  unpack a mod, run the Fixpack script, then at some later time run the mod's own installer).
 
+If you use the Windows-only [BiG World Setup](https://forums.beamdog.com/discussion/44476/tool-big-world-setup-bws-mod-manager-for-baldurs-gate-enhanced-edition-trilogy-for-windows/p1) automated mod installation program, this BiG World Fixpack will be downloaded and installed for you automatically at the appropriate time.
+
 # Enhanced Edition Trilogy Compatibility Patches Are Included
 
-See http://gibberlings3.net/forums/index.php?showtopic=27741&page=33#entry248962 for details.
-
-These patches also make the respective mods compatible with BG1EE and BG2EE without EET.
+See http://gibberlings3.net/forums/index.php?showtopic=27741&page=33#entry248962 for details.  These patches make all of the EET-compatible mods also compatible with Enhanced Edition games without EET.
