@@ -1,6 +1,6 @@
 --- laviconia/setup-laviconia.tp2	2015-02-01 00:35:04.000000000 -0500
-+++ Fixpack/laviconia/setup-laviconia.tp2	2016-11-26 02:49:17.714894900 -0500
-@@ -1,6 +1,6 @@
++++ Fixpack/laviconia/setup-laviconia.tp2	2016-12-01 18:23:43.343332600 -0500
+@@ -1,27 +1,22 @@
  BACKUP ~laviconia/backup~
  AUTHOR ~www.shsforums.net/topic/44027-laviconia-tweak/~
 -VERSION ~v4~
@@ -8,7 +8,11 @@
  README ~laviconia/laviconia-readme.txt~
  
  AUTO_TRA ~laviconia/translations/%s~
-@@ -12,16 +12,14 @@
+ 
+ ALWAYS
+-  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+-  INCLUDE ~%MOD_FOLDER%/handle_charsets.tpa~
+-
    // No exception, everything needs to be converted
    ACTION_DEFINE_ARRAY VaVinoconvert BEGIN END
  
@@ -20,14 +24,15 @@
 -  // There is no "language" folder so the root of all languages in %MOD_FOLDER%
    LAF HANDLE_CHARSETS
      INT_VAR
-       infer_charset = 1
+-      infer_charset = 1
++      infer_charsets = 1
      STR_VAR
        tra_path = EVAL ~%MOD_FOLDER%/translations~
 -      // charset_table = VaVicharsets // Included for illustrative purposes.
        noconvert_array = VaVinoconvert
        reload_array = VaVireload
    END
-@@ -60,7 +58,7 @@
+@@ -60,7 +55,7 @@
  OUTER_SET ladual = 1
  INCLUDE ~laviconia/lib/lav-init.tpa~
  
@@ -36,7 +41,7 @@
    COPY_EXISTING ~%tutu_var%viconi.cre~ ~override~
      LAUNCH_PATCH_MACRO ~LaViconiaPatch~
      WRITE_BYTE 0x54 13 //Save vs death (was 10)
-@@ -128,7 +126,7 @@
+@@ -128,7 +123,7 @@
    BUT_ONLY
  END
  
@@ -45,7 +50,7 @@
    EXTEND_BOTTOM ~ar1000.bcs~ ~laviconia/scripts/ar1000.baf~
    EXTEND_TOP ~viconia.bcs~ ~laviconia/scripts/viconia.baf~
  
-@@ -246,7 +244,7 @@
+@@ -246,7 +241,7 @@
    BUT_ONLY
  END
  
@@ -54,7 +59,7 @@
    EXTEND_TOP ~vico25.bcs~ ~laviconia\scripts\viconia.baf~
  
    COPY_EXISTING ~viconi16.cre~ ~override~
-@@ -311,7 +309,7 @@
+@@ -311,7 +306,7 @@
  OUTER_SET ladual = 0
  INCLUDE ~laviconia/lib/lav-init.tpa~
  
@@ -63,7 +68,7 @@
    COPY_EXISTING ~%tutu_var%viconi.cre~ ~override~
      LAUNCH_PATCH_MACRO ~LaViconiaPatch~
      WRITE_SHORT 0x24 7 //Current HP (was 12)
-@@ -386,7 +384,7 @@
+@@ -386,7 +381,7 @@
    BUT_ONLY
  END
  
@@ -72,7 +77,7 @@
    EXTEND_BOTTOM ~ar1000.bcs~ ~laviconia/scripts/ar1000.baf~
    EXTEND_TOP ~viconia.bcs~ ~laviconia/scripts/viconia.baf~
  
-@@ -562,7 +560,7 @@
+@@ -562,7 +557,7 @@
    BUT_ONLY
  END
  
@@ -81,7 +86,7 @@
    EXTEND_TOP ~vico25.bcs~ ~laviconia\scripts\viconia.baf~
  
    COPY_EXISTING ~viconi16.cre~ ~override~
-@@ -626,7 +624,7 @@
+@@ -626,7 +621,7 @@
  
  COPY ~laviconia/portrait~ ~override~
  
