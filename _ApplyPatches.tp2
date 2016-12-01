@@ -48,7 +48,7 @@
 BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v2.2~
+VERSION ~v2.3~
 
 ALWAYS
 	// special folders and marker file
@@ -251,12 +251,20 @@ ALWAYS
 											END
 										BUT_ONLY
 									END
-									PATCH_IF (NOT ~%oldvers%~ STRING_EQUAL ~~ AND NOT ~%nowvers%~ STRING_EQUAL ~%oldvers%~) THEN BEGIN // if we found a pre-patch VERSION and the target file does not have that version
-										PATCH_IF (NOT ~%nowvers%~ STRING_EQUAL ~~) THEN BEGIN // we also found a VERSION in the target file
-											PATCH_PRINT ~WARNING: File "%tgtfile%" contains '%nowvers%' instead of expected '%oldvers%'!  This is the file targeted for patching in "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%".  This might mean that the patches for this mod were made for a different version of the mod than the one that you are using, or this might mean that the mod was already patched and then removed from the list in the "%INSTALL_MARKER%" file without restoring the original pre-patched files.~
-										END ELSE BEGIN // we only have a pre-patch VERSION
-											PATCH_PRINT ~WARNING: File "%tgtfile%" does not contain a VERSION line (expected '%oldvers%')!  This is the file targeted for patching in "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%".  This might mean that the patches for this mod were made for a different version of the mod than the one that you are using, or this might mean that the mod was already patched and then removed from the list in the "%INSTALL_MARKER%" file without restoring the original pre-patched files.~
-										END
+									PATCH_IF (~%oldvers%~ STRING_EQUAL ~%nowvers%~) THEN BEGIN // expected version matches version in target file (also could be missing from both target and patch)
+										// allow the patch to proceed
+										SET warnprompt = 0
+									END ELSE PATCH_IF (~%oldvers%~ STRING_EQUAL ~~) THEN BEGIN // our patch does not expect a VERSION, but the target file has a VERSION
+										PATCH_PRINT ~WARNING: File "%tgtfile%" contains '%nowvers%' (expected no VERSION line)!  This is the file targeted for patching in "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%".  This might mean that the patches for this mod were made for a different version of the mod than the one that you are using, or this might mean that the mod was already patched and then removed from the list in the "%INSTALL_MARKER%" file without restoring the original pre-patched files.~
+										SET warnprompt = 1
+									END ELSE PATCH_IF (~%nowvers%~ STRING_EQUAL ~~) THEN BEGIN // our patch expects a VERSION, but the target file does not have a VERSION
+										PATCH_PRINT ~WARNING: File "%tgtfile%" does not contain a VERSION line (expected '%oldvers%')!  This is the file targeted for patching in "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%".  This might mean that the patches for this mod were made for a different version of the mod than the one that you are using.~
+										SET warnprompt = 1
+									END ELSE BEGIN // version mismatch
+										PATCH_PRINT ~WARNING: File "%tgtfile%" contains '%nowvers%' instead of expected '%oldvers%'!  This is the file targeted for patching in "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%".  This might mean that the patches for this mod were made for a different version of the mod than the one that you are using, or this might mean that the mod was already patched and then removed from the list in the "%INSTALL_MARKER%" file without restoring the original pre-patched files.~
+										SET warnprompt = 1
+									END
+									PATCH_IF (warnprompt) THEN BEGIN
 										PATCH_PRINT ~Do you want to try to apply the patch anyway?  If the target file is different from the original file that was used to create the patch, then the patch might fail completely (making no changes) or it might fail partially (making some changes) or it might succeed with 'fuzz' (if all of the lines to change are still in the file, but some other lines were added in between).  If partial patching occurs, the mod might fail to install or manifest other problems later.  If in doubt, please visit one of the modding forums and ask for help.~
 										PATCH_PRINT ~[Enter Y if you want to try patching anyway, anything else to skip patching this mod.]~
 										PATCH_READLN answer
@@ -266,18 +274,7 @@ ALWAYS
 											SET skip = 1 // user did NOT choose to try patching anyway - we will skip this mod
 											PATCH_WARN ~Skipping patches in "BiG World Fixpack/%fixpack_folder_name%" (version mismatch)...~
 										END
-									END ELSE PATCH_IF (~%oldvers%~ STRING_EQUAL ~~) THEN BEGIN // we found a VERSION in the target file, but no pre-patch VERSION in the patch file
-										PATCH_PRINT ~WARNING: Patch file "%BASH_FOR_FILE%" in "Big World Fixpack/%fixpack_folder_name%" does not contain a VERSION line, but the target "%tgtfile%" does:  %nowvers%~
-										PATCH_PRINT ~Do you want to try to apply the patch anyway?  If the target file is different from the original file that was used to create the patch, then the patch might fail completely (making no changes) or it might fail partially (making some changes) or it might succeed with 'fuzz' (if all of the lines to change are still in the file, but some other lines were added in between).  If partial patching occurs, the mod might fail to install or manifest other problems later.  If in doubt, please visit one of the modding forums and ask for help.~
-										PATCH_PRINT ~[Enter Y if you want to try patching anyway, anything else to skip patching this mod.]~
-										PATCH_READLN answer
-										PATCH_IF (~%answer%~ STR_EQ ~Y~) THEN BEGIN // if user input does match y or Y
-											SET skip = 2 // don't skip -- will be changed to zero after the loop
-										END ELSE BEGIN
-											SET skip = 1 // user did NOT choose to try patching anyway - we will skip this mod
-											PATCH_WARN ~Skipping patches in "BiG World Fixpack/%fixpack_folder_name%" (version mismatch)...~
-										END
-									END // else the VERSIONs are the same -- OK to continue
+									END
 								END // end of skip prompts
 							END // end of found matches for both
 						BUT_ONLY // end of fake COPY (to read a tp2 patch file)
