@@ -1,11 +1,13 @@
---- spell_rev\setup-spell_rev.tp2	Wed Jan 04 02:44:18 2012
-+++ C:\BWP Patchstudio\patched files\spell_rev\setup-spell_rev.tp2	Sat Jul 27 09:00:36 2013
-@@ -4,7 +4,7 @@
- 
- //MODDER
- 
--VERSION ~v3.1~
-+VERSION ~v3.1 (Hotfix 03)~
- 
+--- spell_rev/setup-spell_rev.tp2	Thu Dec 01 02:44:18 2016
++++ Fixpack/spell_rev/setup-spell_rev.tp2	Thu Dec 01 03:00:36 2016
+@@ -1,9 +1,9 @@
+ BACKUP ~spell_rev\backup~ // location to store files for uninstall purposes
+ AUTHOR ~marco.montagnoli83@hotmail.it~ // display email address if install fails
  README ~spell_rev\readme-spell_rev.html~
+ //MODDER
+ ASK_EVERY_COMPONENT
  
+-VERSION ~v4 Beta 13~
++VERSION ~v4 Beta 13 + Kreso hotfix~
+ 
+ ALWAYS
