@@ -1,5 +1,14 @@
 --- ub/setup-ub.tp2	2015-03-22 18:22:03.000000000 -0400
-+++ Fixpack/ub/setup-ub.tp2	2016-11-21 23:09:34.702798300 -0500
++++ Fixpack/ub/setup-ub.tp2	2016-12-01 07:09:34.702798300 -0500
+@@ -9,7 +9,7 @@
+ // AUTHOR ~Icelus, Andyr, Cliffette, and Barren~
+ AUTHOR ~http://forums.pocketplane.net~
+ 
+ README ~ub/readme_ub.html~
+-VERSION ~v26beta2~
++VERSION ~v26beta2 BWP Fix~
+ 
+ ASK_EVERY_COMPONENT
 @@ -15,6 +15,17 @@
  ASK_EVERY_COMPONENT
  

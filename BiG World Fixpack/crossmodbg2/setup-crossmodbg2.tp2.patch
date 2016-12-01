@@ -1,7 +1,7 @@
 --- crossmodbg2/setup-crossmodbg2.tp2	2016-11-27 13:18:35.115510300 -0500
-+++ Fixpack/crossmodbg2/setup-crossmodbg2.tp2	2016-11-26 11:40:32.147399800 -0500
++++ Fixpack/crossmodbg2/setup-crossmodbg2.tp2	2016-11-30 11:40:32.147399800 -0500
 @@ -7,1 +7,1 @@
--VERSION @0 /* <--- current version number from setup.tra here */ 
+-VERSION @0 /* <--- current version number from setup.tra here */
 +VERSION @0 /* <--- current version number from setup.tra here (BWP Fix) */
 @@ -10,18 +10,36 @@
  
