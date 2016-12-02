@@ -1,0 +1,45 @@
+--- swordap/setup-swordap.tp2	2016-12-01 21:06:27.023833600 -0500
++++ Fixpack/swordap/setup-swordap.tp2	2016-12-01 21:39:17.766528700 -0500
+@@ -1,12 +1,31 @@
+ BACKUP ~swordap/backup~        
+ AUTHOR ~Badgert and Kania Blade~ 
+ 
+-VERSION ~v2~
++VERSION ~v2 BWP Fix~
+ 
+ README ~swordap/readme-swordap.txt~
+ 
+ AUTO_TRA ~swordap/%s~
+ 
++ALWAYS
++  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN // HANDLE_CHARSETS doesn't work with iconv_path containing spaces
++    AT_NOW ~if not exist "iconv" move "BiG World Fixpack\_utils\iconv" "iconv"~
++  END
++  // No exception, everything needs to be converted
++  ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
++  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
++  ACTION_DEFINE_ARRAY tra#reload BEGIN swordap END
++  LAF HANDLE_CHARSETS
++    INT_VAR
++      infer_charsets = 1
++    STR_VAR
++      tra_path = EVAL ~%MOD_FOLDER%~
++      noconvert_array = tra#noconvert
++      reload_array = tra#reload
++      iconv_path = ~iconv~ // provided by BiG World Fixpack
++  END
++END
++
+ LANGUAGE ~English (translation by Kania Blade)~ ~english~
+          ~swordap/english/swordap.tra~
+ 
+@@ -16,6 +35,9 @@
+ LANGUAGE ~Deutsch (Uebersetzung von Jarl)~ ~german~
+          ~swordap/german/swordap.tra~
+ 
++LANGUAGE ~Polish (translation by Cahir)~ ~polish~ // provided by BiG World Fixpack
++         ~swordap/polish/swordap.tra~
++
+ BEGIN @12
+ 
+ COPY ~swordap/news06.ITM~             ~override/news06.ITM~         

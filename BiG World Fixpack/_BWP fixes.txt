@@ -1823,6 +1823,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: lucy -  Lucy the Wyvern v4
+
+:: Added Polish translation by Cahir
+:: http://athkatla.cob-bg.pl/viewtopic.php?t=6046
+
+:: HANDLE_CHARSETS for EE compatibility
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: LuxleySoA -  The Luxley Family v1.2
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
@@ -2569,6 +2581,17 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's Lower Tombs AR0808.BAF Vampire wrong scriptname fix
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589069
 
+----------------------------------------------------------------------------------------
+
+
+:: slandor - The Minotaur and Lilacor v1.6
+
+:: Added Polish translation by Cahir
+:: http://athkatla.cob-bg.pl/viewtopic.php?t=6046
+
+:: HANDLE_CHARSETS for EE compatibility
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
@@ -2719,6 +2742,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=585557
 
 :: agb1's setup_ee.tra item description overrides for EE
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
+:: swordap - Haer'Dalis' Swords v2
+
+:: Added Polish translation by Cahir
+:: http://athkatla.cob-bg.pl/viewtopic.php?t=6042
+
+:: HANDLE_CHARSETS for EE compatibility
 :: - LINK NOT FOUND -
 
 

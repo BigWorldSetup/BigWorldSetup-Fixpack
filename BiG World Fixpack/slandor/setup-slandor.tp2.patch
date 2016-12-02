@@ -1,0 +1,38 @@
+--- setup-slandor.tp2	2010-03-13 19:18:04.000000000 -0500
++++ Fixpack/setup-slandor.tp2	2016-12-01 21:39:46.462752300 -0500
+@@ -2,13 +2,34 @@
+ AUTHOR ~Yovaneth @ DragonflightDesign@hotmail.com~
+ MODDER setup_tra NONE
+ 
++VERSION ~1.6 BWP Fix~
++
++ALWAYS
++  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN // HANDLE_CHARSETS doesn't work with iconv_path containing spaces
++    AT_NOW ~if not exist "iconv" move "BiG World Fixpack\_utils\iconv" "iconv"~
++  END
++  // No exception, everything needs to be converted
++  ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
++  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
++  ACTION_DEFINE_ARRAY tra#reload BEGIN ~%LANGUAGE%~ END
++  LAF HANDLE_CHARSETS
++    INT_VAR
++      infer_charsets = 1
++    STR_VAR
++      tra_path = EVAL ~%MOD_FOLDER%~
++      noconvert_array = tra#noconvert
++      reload_array = tra#reload
++      iconv_path = ~iconv~ // provided by BiG World Fixpack
++  END
++END
++
+ LANGUAGE 	~Deutsch (bei Gerri)~ ~deutsch~ ~slandor/german/german.tra~
+ LANGUAGE 	~English (by Yovaneth)~ ~English~ ~slandor/english/english.tra~
+ LANGUAGE 	~Français (par Le Marquis de la d'Oghmatiques)~ ~french~ ~slandor/french/french.tra~
+ LANGUAGE 	~Italian (da Ilot)~ ~italian~ ~slandor/italian/italian.tra~
+ LANGUAGE 	~Russian (www.aerie.ru [prowler, hawkmoon, accolon])~ ~russian~ ~slandor/russian/russian.tra~
+ LANGUAGE 	~Spanish (por Lisandro)~ ~spanish~ ~slandor/spanish/spanish.tra~
+-
++LANGUAGE 	~Polish (by Cahir)~ ~polish~ ~slandor/polish/polish.tra~ // provided by BiG World Fixpack
+ 
+ //Quest title
+ BEGIN @24

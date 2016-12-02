@@ -1,0 +1,46 @@
+--- lucy/setup-lucy.tp2	2011-02-23 20:19:57.355000400 -0500
++++ Fixpack/lucy/setup-lucy.tp2	2016-12-01 21:40:10.769460800 -0500
+@@ -3,12 +3,31 @@
+ 
+ //MODDER
+ 
+-VERSION ~v4~
++VERSION ~v4 BWP Fix~
+ 
+ README ~lucy/readme-lucy.txt~
+ 
+ AUTO_TRA ~lucy\%s~
+ 
++ALWAYS
++  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN // HANDLE_CHARSETS doesn't work with iconv_path containing spaces
++    AT_NOW ~if not exist "iconv" move "BiG World Fixpack\_utils\iconv" "iconv"~
++  END
++  // No exception, everything needs to be converted
++  ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
++  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
++  ACTION_DEFINE_ARRAY tra#reload BEGIN setup END
++  LAF HANDLE_CHARSETS
++    INT_VAR
++      infer_charsets = 1
++    STR_VAR
++      tra_path = EVAL ~%MOD_FOLDER%~
++      noconvert_array = tra#noconvert
++      reload_array = tra#reload
++      iconv_path = ~iconv~ // provided by BiG World Fixpack
++  END
++END
++
+ LANGUAGE ~English~
+          ~english~
+          ~lucy\english\setup.tra~
+@@ -33,6 +52,10 @@
+          ~french~
+          ~lucy\french\setup.tra~
+ 
++LANGUAGE ~Polish (by Cahir)~ // provided by BiG World Fixpack
++         ~polish~
++         ~lucy/polish/setup.tra~
++
+ BEGIN @0
+ 
+ APPEND ~STATE.IDS~
