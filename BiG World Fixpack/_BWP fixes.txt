@@ -2505,15 +2505,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: scs - Sword Coast Stratagems v28
-
-:: stratagemsV28 fix V1.5
-:: http://gibberlings3.net/forums/index.php?showtopic=26792&p=228647
-
-
-----------------------------------------------------------------------------------------
-
-
 :: SDMODS - Shed's Modpack v1.03
 
 :: Lollorian's assorted CRE fixes
