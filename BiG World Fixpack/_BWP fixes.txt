@@ -2755,6 +2755,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: HANDLE_CHARSETS for EE compatibility
 :: - LINK NOT FOUND -
 
+:: Added EE translation files without usability text for items
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 

@@ -1,0 +1,21 @@
+--- swordap/english/swordap.tra	2016-12-01 21:06:27.047833800 -0500
++++ Fixpack/swordap/english/swordap.tra	2016-12-03 01:08:05.873641100 -0500
+@@ -8,7 +8,7 @@
+ @7 = ~Sure. I will not economize on my friend's weapons.~
+ @8 = ~Chaos Blade~
+ @9 = ~Chaos Blade
+-Chaos is a +4 short-sword usable only by tieflings. Everythime it strikes an opponent, he or she loses 2 points of dexterity (for 30 seconds). Haer'Dalis prefers using Chaos with its partner -- Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
++Chaos is a +4 short-sword usable only by tieflings. Every time it strikes an opponent, he or she loses 2 points of dexterity (for 30 seconds). Haer'Dalis prefers using Chaos with its partner -- Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
+ 
+ STATISTICS:
+ 
+--- swordap/russian/swordap.tra	2016-12-01 21:06:27.068848900 -0500
++++ Fixpack/swordap/russian/swordap.tra	2016-12-03 01:19:19.054293000 -0500
+@@ -38,6 +38,6 @@
+ “ип:  1-ручное
+ »спользуетс€:
+   “ифлингами~
+-@12 = ~УЂгзи†•ђл• ™Ђ®≠™® Х†•а§†Ђ®б† (бѓ•ж®†Ђм≠Ѓ §Ђп К†≠®®)~
++@12 = ~”лучшение Haer'Dalis мечи (—пециально дл€ Kania)~
+ @13 = ~’мм, € пожалуй соглашусь рискнуть клинком ’аос.~
+ @14 = ~’мм, € пожалуй соглашусь рискнуть клинком Ёнтропи€.~

@@ -1,5 +1,5 @@
 --- swordap/setup-swordap.tp2	2016-12-01 21:06:27.023833600 -0500
-+++ Fixpack/swordap/setup-swordap.tp2	2016-12-01 21:39:17.766528700 -0500
++++ Fixpack/swordap/setup-swordap.tp2	2016-12-03 01:21:22.752955300 -0500
 @@ -1,12 +1,31 @@
  BACKUP ~swordap/backup~        
  AUTHOR ~Badgert and Kania Blade~ 
@@ -33,7 +33,7 @@
  LANGUAGE ~English (translation by Kania Blade)~ ~english~
           ~swordap/english/swordap.tra~
  
-@@ -16,6 +35,9 @@
+@@ -16,8 +35,15 @@
  LANGUAGE ~Deutsch (Uebersetzung von Jarl)~ ~german~
           ~swordap/german/swordap.tra~
  
@@ -42,4 +42,10 @@
 +
  BEGIN @12
  
++ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
++  LOAD_TRA ~swordap/%LANGUAGE%/swordap_ee.tra~ // provided by BiG World Fixpack
++END
++
  COPY ~swordap/news06.ITM~             ~override/news06.ITM~         
+   SAY NAME1 @8
+   SAY NAME2 @8  

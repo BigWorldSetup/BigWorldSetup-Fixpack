@@ -1,0 +1,39 @@
+@0 = ~Könnt Ihr Schwerter verbessern? Wir haben hier zwei prächtige Klingen - Chaos und Entropie. Habt Ihr sowas schonmal gesehen?~
+@1 = ~Könnt Ihr Schwerter verbessern? Wir haben hier ein prächtige Klinge - Chaos. Schonmal sowas gesehen?~
+@2 = ~Könnt Ihr Schwerter verbessern? Wir haben hier ein prächtige Klinge - Entropie. Schonmal sowas gesehen?~
+@3 = ~Ho-ho! Erst kürzlich haben wir einen Gefangenen gefoltert, der sich mit solchen Waffen auskennt. Mit seinen Informationen könnten wir versuchen die Klingen aufzuwerten, wenn Ihr dies wünscht. Das wird Euch 20.000 Goldmünzen kosten - was sagt Ihr?~
+@4 = ~Geht in Ordnung. Ich will nicht an den Waffen meiner Begleiter sparen.~
+@5 = ~Das kann ich mir zur Zeit nicht leisten. Vielleicht ein anderes Mal.~
+@6 = ~Ho-ho! Erst kürzlich haben wir einen Gefangenen gefoltert, der sich mit solchen Waffen auskennt. Mit seinen Informationen könnten wir versuchen die Klinge aufzuwerten, wenn Ihr dies wünscht. Das wird Euch 10.000 Goldmünzen kosten - was sagt Ihr?~
+@7 = ~Geht in Ordnung. Ich will nicht an den Waffen meiner Begleiter sparen.~
+@8 = ~Chaosklinge~
+@9 = ~Chaosklinge
+Die Chaosklinge ist ein Kurzschwert +4, das nur von Haer'Dalis verwendet werden kann. Jedes Mal, wenn die Klinge trifft, verliert der Gegner für 30 Sekunden zwei Geschicklichkeitspunkte. Haer'Dalis setzt die Chaosklinge gerne zusammen mit ihrer Schwesternwaffe Entropie ein und wird mit beiden Waffen gemeinsam zu einem äußerst gefährlichen Gegner.
+
+EIGENSCHAFTEN:
+
+Bei jedem Treffer erleidet das Ziel für 5 Runden einen Geschicklichkeits-Malus von -2.
+
+Schaden: 1W6 +4 (Stich)
+ETW0-Bonus: -3
+Gewicht: 2
+Initiativefaktor: 0
+Fertigkeit: Kurzschwert
+Typ: 1-händig~ 
+@10 = ~Entropie~
+@11 = ~Entropie
+Das Kurzschwert +4 stammt aus der Abyss und ist aus Grünstahl gefertigt. Es ist eine der Lieblingswaffen von Haer'Dalis. Das Kurzschwert verursacht bei einem Gegner, der bei seinem Rettungswurf gegen Gift scheitert, drei zusätzliche Schadenspunkte. Es kann nur von Tieflingen verwendet werden.
+
+EIGENSCHAFTEN:
+
+Schaden: 1W6 +4 (Stich)
+Schadensbonus: +3 (Gift)
+ (Rettungswurf gg. Tod)
+ETW0-Bonus: -3
+Gewicht: 2
+Initiativefaktor: 0
+Fertigkeit: Kurzschwert
+Typ: 1-händig~
+@12 = ~Verbesserte Haer'Dalis' Schwerter (Special für Kania)~
+@13 = ~Hmm, verbessert erstmal nur die Chaosklinge.~
+@14 = ~Hmm, verbessert erstmal nur Entropie.~

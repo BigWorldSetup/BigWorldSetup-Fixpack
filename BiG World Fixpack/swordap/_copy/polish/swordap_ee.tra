@@ -1,0 +1,48 @@
+@0 = ~Czy potrafisz udoskonaliæ miecz? Mamy tu dwa doskona³e ostrza zwane Chaosem i Entropi¹. Widzia³eœ kiedyœ coœ podobnego?~  
+@1 = ~Czy potrafisz udoskonaliæ miecz? Mamy tu doskona³e ostrze zwane Chaosem. Widzia³eœ kiedyœ coœ podobnego?~ 
+@2 = ~Czy potrafisz udoskonaliæ miecz? Mamy tu dosknoa³e ostrze zwane Entropi¹. Widzia³eœ kiedyœ coœ podobnego?~  
+@3 = ~Ha! Ca³kiem niedawno znêcaliœmy siê nad jednym niewolnikiem, który zdawa³ siê wiedzieæ niemal wszystko o tego typu ostrzach. Za jedyne dwadzieœcia tysiêcy sztuk z³ota mogê wypróbowaæ dzia³anie formu³y, któr¹ z niego wydusiliœmy. Co ty na to?~  
+@4 = ~Pewnie, nie mam zamiaru oszczêdzaæ na broni mojego przyjaciela.~ 
+@5 = ~Nic z tego, obecnie mnie na to nie staæ. Mo¿e innym razem.~ 
+@6 = ~Ha! Ca³kiem niedawno znêcaliœmy siê nad jednym niewolnikiem, który zdawa³ siê wiedzieæ niemal wszystko o tego typu ostrzach. Za jedyne dziesiêæ tysiêcy sztuk z³ota mogê wypróbowaæ dzia³anie formu³y, któr¹ z niego wydusiliœmy. Co ty na to?~ 
+@7 = ~Pewnie, nie mam zamiaru oszczêdzaæ na broni mojego przyjaciela.~
+@8 = ~Ostrze chaosu~
+@9 = ~Ostrze chaosu
+Ostrze chaosu to miecz krótki +4, którego mog¹ u¿ywaæ tylko diabelstwa. Za ka¿dym razem, kiedy ta broñ trafia w cel, atakowany traci na trzydzieœci sekund 2 punkty Zrêcznoœci. Haer'Dalis lubi korzystaæ z Ostrza chaosu w parze z inn¹ broni¹, Entropi¹. Kiedy w³ada oboma tymi mieczami jednoczeœnie, staje siê bardzo groŸnym przeciwnikiem w walce wrêcz.
+
+PARAMETRY:
+
+Specjalne:
+– Zrêcznoœæ przeciwnika: -2, po trafieniu, kumulatywne, efekt dzia³a przez trzydzieœci sekund
+
+Obra¿enia: 1k6 +4
+TraK0: +3 
+Typ obra¿eñ: k³ute
+ OpóŸnienie: 0
+Rodzaj bieg³oœci: miecz krótki
+Typ broni:  1-rêczna
+
+Wymagania:
+– Si³a: 4
+
+Waga: 2~ 
+@10 = ~Entropia~
+@11 = ~Entropia
+To ostrze +4 z zielonej stali pochodz¹cej z Otch³ani jest jedn¹ z ulubionych broni Haer'Dalisa. Ten miecz krótki zadaje trzy punkty dodatkowych obra¿eñ od trucizny, jeœli atakowany nie wykona rzutu obronnego. Tylko diabelstwa mog¹ u¿ywaæ tej broni. 
+
+PARAMETRY:
+
+Obra¿enia: 1k6 +4, +3 obra¿enia od trucizny (rzut obronny przeciw truciznom neguje)
+TraK0: +3 
+Typ obra¿eñ: k³ute
+OpóŸnienie: 0
+Rodzaj bieg³oœci: miecz krótki
+Typ broni:  1-rêczna
+
+Wymagania:
+– Si³a: 4
+
+Waga: 2~
+@12 = ~Ulepszone miecze Haer'Dalisa (specjalnie dla Kanii)~
+@13 = ~Hmm, ulepszmy na razie tylko Ostrze chaosu.~ 
+@14 = ~Hmm, ulepszmy na razie tylko Entropiê.~ 
