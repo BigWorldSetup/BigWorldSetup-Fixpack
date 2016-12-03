@@ -1,5 +1,12 @@
 --- keldorn_rom/setup-keldorn_rom.tp2	2015-01-14 14:59:14.000000000 -0500
 +++ Fixpack/keldorn_rom/setup-keldorn_rom.tp2	2016-11-21 10:34:06.144638100 -0500
+@@ -3,5 +3,5 @@
+ AUTHOR ~berelinde@gmail.com jastey@web.de~ 
+ 
+-VERSION ~beta_jastey150114~
++VERSION ~beta_jastey150114 BWP Fix~
+ 
+ README ~keldorn_rom/docs/readme-keldorn_rom.txt~ 
 @@ -9,6 +9,17 @@
  AUTO_TRA ~keldorn_rom/tra/autotra/%s~
  
