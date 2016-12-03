@@ -38,7 +38,7 @@
    WRITE_ASCII 0x94 ~AR0707~
  EXTEND_BOTTOM ~Ar0707.bcs~ ~SC#Hub\Scripts\SC#AR0707.baf~
 +ACTION_IF (MOD_IS_INSTALLED ~Setup-Sellswords.tp2~ 0) BEGIN
-+EXTEND_TOP ~Ar0707.bcs~ ~Sellswords\Scripts\AR0707.baf~
++  EXTEND_TOP ~Ar0707.bcs~ ~Sellswords\Scripts\AR0707.baf~ EVALUATE_BUFFER
 +END
  
  ////////////////////////////
