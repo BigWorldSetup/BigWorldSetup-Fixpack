@@ -1,9 +1,0 @@
---- AnimalCompanions\Setup-AnimalCompanions.tp2	Sun May 12 11:54:13 2013
-+++ C:\BWP Patchstudio\patched files\AnimalCompanions\Setup-AnimalCompanions.tp2	Thu Sep 26 22:57:10 2013
-@@ -1,5 +1,6 @@
- BACKUP ~AnimalCompanions/backup~ // So WeiDU Can Uninstall.
- AUTHOR ~Ulb, Mod Forum: http://www.shsforums.net/topic/56242-animal-companions~// Contact Address Displayed If Installation Fails.
-+VERSION ~v0.5 BWP Fix~
- README ~AnimalCompanions/AnimalCompanions.pdf~ // Shows Readme File.
- 
- LANGUAGE ~English~ ~english~ ~AnimalCompanions/translations/english/UBRPET.tra~

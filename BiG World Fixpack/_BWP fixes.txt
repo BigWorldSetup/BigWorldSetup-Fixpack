@@ -240,10 +240,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: AnimalCompanions - Ulb's Animal Companions v0.5
+:: AnimalCompanions - Ulb's Animal Companions v1.4
 
-:: Added quotes to ApplySpellRES() objects in some scripts
-:: - LINK NOT FOUND -
+:: No known issues
 
 
 ----------------------------------------------------------------------------------------
