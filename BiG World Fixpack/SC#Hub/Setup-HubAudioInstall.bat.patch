@@ -1,0 +1,9 @@
+--- SC#Hub/Setup-HubAudioInstall.bat	2004-07-28 18:17:04.000000000 -0400
++++ Fixpack/SC#Hub/Setup-HubAudioInstall.bat	2016-12-04 12:36:49.690728700 -0500
+@@ -4,5 +4,5 @@
+ del SC#Hub*.ogg
+ del oggdec.exe
+ cd ..
+-explorer SC#Hub\README-Hubelpot.htm
++
+ 
