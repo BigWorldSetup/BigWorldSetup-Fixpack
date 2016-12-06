@@ -1542,6 +1542,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Roxanne's looping dialogue fix
 :: http://www.shsforums.net/topic/58514-a-review-of-isra-21-was-posted-on-beamdog-forums/?p=585838
 
+:: added !GlobalLT("ENDOFBG1","GLOBAL",2) to Isra's non-UD pid in rh#isrj.d for EET compatibility
+:: https://github.com/BiGWorldProject/BiG-World-Fixpack/issues/11
+
 
 ----------------------------------------------------------------------------------------
 
