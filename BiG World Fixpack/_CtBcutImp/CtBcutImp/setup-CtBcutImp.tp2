@@ -1,0 +1,34 @@
+BACKUP ~CtBcutImp/backup~
+AUTHOR ~Jarno Mikkola~
+
+BEGIN ~Check the Bodies cutscene improvement~
+//REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~data\CTB-RULE.BIF~ ~Check the Bodies required!~
+
+//equipment improvement
+COPY ~CtBcutImp/ij#ctbpl.itm~ ~override/ij#ctbpl.itm~			//Plate mail armor
+COPY ~CtBcutImp/ij#ctble.itm~ ~override/ij#ctble.itm~			//Fine leather armor
+
+COPY_EXISTING ~cb3513bw.cre~ ~override~							//Branwen
+	REPLACE_CRE_ITEM ~helm01~ #0 #0 #0 IDENTIFIED HELMET
+	REPLACE_CRE_ITEM ~ij#ctbpl~ #0 #0 #0 IDENTIFIED ARMOR
+	REPLACE_CRE_ITEM ~hamm05~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP
+
+COPY_EXISTING ~cb3513jh.cre~ ~override~							//Jaheira
+	REPLACE_CRE_ITEM ~helm01~ #0 #0 #0 IDENTIFIED HELMET
+	REPLACE_CRE_ITEM ~ij#ctbpl~ #0 #0 #0 IDENTIFIED ARMOR
+	REPLACE_CRE_ITEM ~staf08~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP TWOHANDED
+
+
+COPY_EXISTING ~cb3513mn.cre~ ~override~							//Minsc
+	REPLACE_CRE_ITEM ~helm01~ #0 #0 #0 IDENTIFIED HELMET
+	REPLACE_CRE_ITEM ~ij#ctbpl~ #0 #0 #0 IDENTIFIED ARMOR
+	REPLACE_CRE_ITEM ~sw2h06~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP TWOHANDED
+
+
+COPY_EXISTING ~cb3513vc.cre~ ~override~							//Viconia
+	REPLACE_CRE_ITEM ~helm01~ #0 #0 #0 IDENTIFIED HELMET
+	REPLACE_CRE_ITEM ~ij#ctbpl~ #0 #0 #0 IDENTIFIED ARMOR
+	REPLACE_CRE_ITEM ~blun11~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP 
+
+COPY_EXISTING ~cb3513im.cre~ ~override~							//Imoen
+	REPLACE_CRE_ITEM ~ij#ctble~ #0 #0 #0 IDENTIFIED ARMOR

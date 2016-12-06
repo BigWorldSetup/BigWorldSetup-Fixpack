@@ -1,0 +1,59 @@
+
+BACKUP ~Innate_Fix/backup~
+
+AUTHOR ~Nobody~ NO_IF_EVAL_BUG
+
+
+BEGIN ~Innates Set to Level One~
+
+
+
+COPY_EXISTING_REGEXP GLOB ~.*\.spl~ ~override~
+  READ_SHORT 0x1c spell_type
+  PATCH_IF (%spell_type% = 4) BEGIN
+    READ_LONG 0x34 spell_level
+    PATCH_IF (%spell_level% =0) BEGIN
+      WRITE_LONG 0x34 ~1~
+    END
+    PATCH_IF (%spell_level% > 1) BEGIN
+      WRITE_LONG 0x34 ~1~
+    END
+  END
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING_REGEXP GLOB ~.*\.bcs$~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_EVALUATE CASE_INSENSITIVE ~SpellCastInnate(\(.*\),\([^0].*\))~
+    BEGIN
+      TEXT_SPRINT z "WASTEFUL"
+      TEXT_SPRINT bs "0"
+      TEXT_SPRINT whynow "%MATCH2%"
+      PATCH_IF ("%whynow%" STRING_EQUAL_CASE "0" != 1) BEGIN
+        y = IDS_OF_SYMBOL(~spell~ ~%MATCH2%~)
+        PATCH_IF (%y% > 3999) BEGIN
+          y -= 4000
+          PATCH_IF (y < 10) BEGIN
+            TEXT_SPRINT z "SPCL00%y%"
+          END ELSE PATCH_IF (y > 9) AND (y <100) BEGIN
+            TEXT_SPRINT z "SPCL0%y%"
+          END ELSE BEGIN
+            TEXT_SPRINT z "SPCL%y%"
+          END
+        END ELSE PATCH_IF (%y% > 2999 AND y < 4000) BEGIN
+          y -= 3000
+          PATCH_IF (y < 10) BEGIN
+            TEXT_SPRINT z "SPIN00%y%"
+          END ELSE PATCH_IF (y > 9) AND (y <100) BEGIN
+            TEXT_SPRINT z "SPIN0%y%"
+          END ELSE BEGIN
+            TEXT_SPRINT z "SPIN%y%"
+          END
+        END
+      END ELSE BEGIN
+        PATCH_PRINT "%SOURCE_FILE%:  Modder chose I:Spell = 0, and it slipped through the cracks somehow."
+        TEXT_SPRINT z "BUGGED"
+      END
+    END
+    ~SpellCastInnateRES("%z%",%MATCH1%)~
+  END
+BUT_ONLY_IF_IT_CHANGES
