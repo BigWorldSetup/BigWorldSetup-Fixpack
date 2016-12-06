@@ -1,5 +1,5 @@
 --- Isra_bg2/dialogue/rh#isrj.d	2013-11-13 23:56:36.979120200 -0500
-+++ Fixpack/Isra_bg2/dialogue/rh#isrj.d	2016-11-21 23:01:46.849082100 -0500
++++ Fixpack/Isra_bg2/dialogue/rh#isrj.d	2016-12-06 10:29:39.170243400 -0500
 @@ -616,8 +616,8 @@
   SAY @192 /* Needless to say, I was not terribly sad to bid farewell to Eshpurta again. I might have preferred to spend more than a fortnight in Crimmor afterwards, but such things cannot be helped. */
  	++ @193 /* You'd get bored if you didn't have something important to do anyway. */ + t3a.20
@@ -39,7 +39,7 @@
  END
  
  IF ~~ fl4.18.3
-@@ -8678,7 +8678,7 @@
+@@ -8678,26 +8678,26 @@
  
  APPEND RH#ISRJ
  
@@ -48,8 +48,10 @@
   SAY @2593 /* I would hesitate to speak right now, <CHARNAME>. Too many distractions may well prove deadly. */
  	++ @2594 /* There's something wrong with your voice, Isra. */ + stringfix
  	++ @2595 /* Of course. */ EXIT
-@@ -8687,17 +8687,17 @@
- IF ~IsGabber(Player1)~ THEN BEGIN pid
+ END
+ 
+-IF ~IsGabber(Player1)~ THEN BEGIN pid
++IF ~IsGabber(Player1) !GlobalLT("ENDOFBG1","GLOBAL",2)~ THEN BEGIN pid // Only in BG2 condition added by BiG World Fixpack 
   SAY @2596 /* Yes, what is it? */ 
  	+ ~Global("rh#IsraQuestTwo","GLOBAL",7)~ + @2597 /* I'm ready to visit the Crytrapper estate now. */ + crytrapper
 -	+ ~Global("Chapter","GLOBAL",2)~ + @2598 /* What do you think of our quest? */ + quest1
