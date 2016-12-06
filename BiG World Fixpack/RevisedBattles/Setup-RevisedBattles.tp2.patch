@@ -1,5 +1,5 @@
---- Temp\setup-RevisedBattles.tp2	2016-11-18 20:33:15.399706000 -0500
-+++ setup-RevisedBattles.tp2	2016-11-18 20:34:24.947856100 -0500
+--- setup-RevisedBattles.tp2	2016-11-18 20:33:15.399706000 -0500
++++ Fixpack/setup-RevisedBattles.tp2	2016-11-18 20:34:24.947856100 -0500
 @@ -5,6 +5,24 @@
  BACKUP ~RevisedBattles/backup~
  AUTHOR ~erebusant@verizon.net~

@@ -1,5 +1,5 @@
---- Temp\setup-CtB.tp2	2011-02-04 19:00:14.826545100 -0500
-+++ setup-CtB.tp2	2016-11-18 20:40:38.605352000 -0500
+--- setup-CtB.tp2	2011-02-04 19:00:14.826545100 -0500
++++ Fixpack/setup-CtB.tp2	2016-11-18 20:40:38.605352000 -0500
 @@ -2,7 +2,7 @@
  
  AUTHOR ~Charles Bisson, King Diamond (revision)~  NO_IF_EVAL_BUG

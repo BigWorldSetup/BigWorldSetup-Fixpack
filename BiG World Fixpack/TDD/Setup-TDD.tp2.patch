@@ -1,5 +1,5 @@
---- Temp\setup-TDD.tp2	2010-12-20 19:21:54.997953100 -0500
-+++ setup-TDD.tp2	2016-11-18 20:59:52.257862500 -0500
+--- setup-TDD.tp2	2010-12-20 19:21:54.997953100 -0500
++++ Fixpack/setup-TDD.tp2	2016-11-18 20:59:52.257862500 -0500
 @@ -2,7 +2,7 @@
  
  AUTHOR ~Max and Minto, Horred The Plague (WeiDU), King Diamond (WeiDU revision), Hoppy (Further updates)~ NO_IF_EVAL_BUG
