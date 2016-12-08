@@ -33,7 +33,7 @@
 +  END
 +  LAF HANDLE_CHARSETS
 +    INT_VAR
-+      infer_charsets = 0
++      infer_charsets = 1
 +    STR_VAR
 +      tra_path = EVAL ~%MOD_FOLDER%~
 +      iconv_path = ~iconv~ // provided by BiG World Fixpack
