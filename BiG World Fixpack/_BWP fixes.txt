@@ -2115,9 +2115,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: W_Packmule 1.4a
+:: W_Packmule - Pack Mule v1.4a
 
 :: Nightfarer changed several Protagonist into Player1
+:: - LINK NOT FOUND -
 
 
 ----------------------------------------------------------------------------------------
@@ -2235,6 +2236,18 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: The Imp's KIT.IDS borkage fixing (all values mapped to their identifiers)
 :: http://www.shsforums.net/topic/56991-v331s-always-block-in-the-refinements-can-flip-the-kitids-badly/
+
+
+----------------------------------------------------------------------------------------
+
+
+:: reunion - Reunion v1
+
+:: K4thos' EET compatibility patches
+:: - LINK NOT FOUND -
+
+:: added HANDLE_CHARSETS text conversion for non-English installations
+:: http://gibberlings3.net/forums/index.php?showtopic=28161&page=49#entry249321
 
 
 ----------------------------------------------------------------------------------------
