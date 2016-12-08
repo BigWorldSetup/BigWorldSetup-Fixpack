@@ -1,0 +1,292 @@
+// BiG World Fixpack Create Patches WeiDU Script
+//
+// To use this script:
+//   1. Put this tp2 file where your "final" (after-patch) files are located (e.g., your game folder)
+//   2. In your after-patch folder / game directory, create a new folder called _ORIGINALS/
+//   3. Unpack into that folder the original files of any mods for which you want to generate patches
+//   4. On Windows, copy Fixpack's '_utils\_diffgawk' subfolder (contains diff.exe, gawk.exe, libiconv2.dll, libintl3.dll) into that folder
+//   5. Either make a copy of WeiDU.exe named Setup-CreatePatches.exe and run it, or run the _CreatePatches.bat script
+//
+// You can re-run this script as many times as you want.  It will not leave a record in the WeiDU.log.
+//
+// For each folder name found in _ORIGINALS/, if there is a matching folder name in your game directory, this script will generate
+// patches in _ORIGINALS/_PATCHES/[mod_folder] that reflect any changes necessary to convert _ORIGINALS/[mod_folder] to match your
+// game_directory/[mod_folder]: i.e., the version in your game directory is the desired result of patching the one in _ORIGINALS/
+//
+// The script will also look for a setup-[mod_folder].tp2 or [mod_folder].tp2 file in your game folder, and if found, will look for a tp2 file
+// with the same name in _ORIGINALS/.  If there is a match, the script will create a patch for the tp2 file in _ORIGINALS/_PATCHES/[mod_folder].
+//
+//     If a tp2 is found in your game directory but you forgot to provide the original tp2 in _ORIGINALS/, this script will stop with an error
+//
+// The script WILL also compare tp2 files that are in both the game folder and in _ORIGINALS/ and whose mod_folder is different from the tp2
+//     (e.g., Setup-RoT.tp2 vs. RoTerror folder).  But it will not warn you if you forget to provide either the original or modified tp2, and
+//     the resulting patches will be placed directly in _ORIGINALS/_PATCHES (instead of _ORIGINALS/PATCHES/[mod_folder] like all other patches).
+//
+// The script will ignore mod folders that have spaces in the name, and will ask you about mods that have been processed by the script on previous runs.
+
+BACKUP ~_ORIGINALS/backup~ // not the same folder as the one containing Fixpack patches
+AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
+
+VERSION ~v0.7~
+
+ALWAYS
+	OUTER_SPRINT PREPATCH ~_ORIGINALS~
+	OUTER_SPRINT ALREADY_PROCESSED_LIST ~%PREPATCH%/_AlreadyProcessed.txt~
+
+	PRINT ~...................................... %WNL%~ ^ // %WNL% = Windows New Line, ^ = concatenate with next
+		  ~.Do you want to patch whitespace too?. %WNL%~ ^
+		  ~.Enter Y if yes, anything else for no. %WNL%~ ^
+		  ~......................................~
+	ACTION_READLN answer
+	ACTION_IF (~%answer%~ STR_EQ ~y~) THEN BEGIN // STR_EQ matches 'y' or 'Y'
+		OUTER_SPRINT whitespace_option ~~ // DON'T ignore whitespace
+	END ELSE BEGIN // answered no => ignore all changes that are only whitespace
+		OUTER_SPRINT whitespace_option ~--ignore-all-space --ignore-blank-lines~
+	END
+
+	// platform specific syntax and utilities
+	ACTION_IF (~%WEIDU_OS%~ STR_EQ ~win32~) THEN BEGIN
+		OUTER_TEXT_SPRINT DIFF_CMD ~%PREPATCH%\_diffgawk\diff.exe -u --strip-trailing-cr --ignore-file-name-case %whitespace_option%~
+		OUTER_TEXT_SPRINT GAWK_CMD ~%PREPATCH%\_diffgawk\gawk.exe~
+		ACTION_IF (NOT FILE_EXISTS ~%PREPATCH%\_diffgawk\diff.exe~ OR NOT FILE_EXISTS ~%PREPATCH%\_diffgawk\gawk.exe~) THEN BEGIN
+			FAIL ~Copy the '_diffgawk' subfolder from Fixpack's _utils subfolder to %PREPATCH%/ before running this script~
+		END
+	END ELSE BEGIN // Linux/OSX
+		OUTER_TEXT_SPRINT DIFF_CMD ~diff -u --strip-trailing-cr --ignore-file-name-case %whitespace_option%~
+		OUTER_TEXT_SPRINT GAWK_CMD ~gawk~
+	END
+	
+	DEFINE_ACTION_FUNCTION ~recursive_deep_copy~ // will skip empty directories
+		INT_VAR
+			second_pass = 0
+		STR_VAR
+			current_dir = ~~
+			target_dir = ~~
+	BEGIN
+		//PRINT ~... RDC %second_pass% %current_dir% >>> %target_dir% ...~
+		
+		OUTER_TEXT_SPRINT file_arr ~%current_dir%_files~
+		OUTER_TEXT_SPRINT folder_arr ~%current_dir%_folders~
+		
+		ACTION_IF (NOT DIRECTORY_EXISTS ~%target_dir%~) THEN BEGIN
+			//PRINT "+ MKDIR ~%target_dir%~"
+			MKDIR ~%target_dir%~
+		END
+		
+		GET_FILE_ARRAY EVAL ~%file_arr%~ ~%current_dir%~ ~^.+$~
+		GET_DIRECTORY_ARRAY EVAL ~%folder_arr%~ ~%current_dir%~ ~^.+$~
+		
+		ACTION_IF (second_pass == 1) THEN BEGIN
+			ACTION_PHP_EACH ~%file_arr%~ AS ind => file_full_path BEGIN
+				//PRINT "+ COPY_LARGE ~%file_full_path%~ ~%target_dir%~"
+				COPY_LARGE ~%file_full_path%~ ~%target_dir%~
+			END
+		END
+
+		ACTION_PHP_EACH ~%folder_arr%~ AS ind => subdir_full_path BEGIN
+			ACTION_IF (~%subdir_full_path%~ STRING_MATCHES_REGEXP ~^.*/\.\.?$~ != 0) BEGIN // exclude /. and /..
+				LAF FILE_OF_FILESPEC // trim leading path
+					STR_VAR
+						filespec = EVAL ~%subdir_full_path%~
+					RET
+						folder_name = file
+				END
+				
+				ACTION_IF (NOT DIRECTORY_EXISTS ~%target_dir%/%folder_name%~) THEN BEGIN
+					//PRINT "++ MKDIR ~%target_dir%/%folder_name%~"
+					MKDIR ~%target_dir%/%folder_name%~
+				END
+				
+				LAF ~recursive_deep_copy~ INT_VAR second_pass = second_pass STR_VAR current_dir = EVAL ~%subdir_full_path%~ target_dir = EVAL ~%target_dir%/%folder_name%~ END
+			END
+		END
+	END
+	
+	DEFINE_ACTION_FUNCTION ~process_mod_folders~
+	BEGIN
+		GET_DIRECTORY_ARRAY ~folder_array~ ~%PREPATCH%~ ~^.*$~
+		ACTION_PHP_EACH ~folder_array~ AS index => folder BEGIN
+			ACTION_IF (~%folder%~ STRING_MATCHES_REGEXP ~^.*/\.\.?$~ != 0) THEN BEGIN // exclude /. and /..
+				LAF FILE_OF_FILESPEC // trim leading ./
+					STR_VAR
+						filespec = EVAL ~%folder%~
+					RET
+						mod_folder = file
+				END
+
+				OUTER_SET skip = 0
+				ACTION_IF (~%folder%~ STRING_CONTAINS_REGEXP ~ ~ == 0) THEN BEGIN // skip directories with spaces
+					//PRINT ~Skipping "%folder%" because it contains spaces...~
+					OUTER_SET skip = 1
+				END ELSE ACTION_IF (FILE_CONTAINS_EVALUATED (~%ALREADY_PROCESSED_LIST%~ ~Processed '%mod_folder%'~)) THEN BEGIN
+					PRINT ~@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ %WNL%~ ^ // %WNL% = Windows New Line, ^ = concatenate with next
+					      ~Do you want to re-generate patches for "%mod_folder%"? %WNL%~ ^
+						  ~Enter Y if yes, anything else to skip. %WNL%~ ^
+						  ~@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@~
+					ACTION_READLN answer
+					ACTION_IF NOT (~%answer%~ STR_EQ ~y~) THEN BEGIN // STR_EQ matches 'y' or 'Y'
+						PRINT ~Skipping "%mod_folder%" because it is listed in %ALREADY_PROCESSED_LIST%...~
+						OUTER_SET skip = 1
+					END
+				END ELSE ACTION_FOR_EACH reserved IN ~_diffgawk~ ~backup~ ~_PATCHES~ ~%PREPATCH%~ ~data~ ~lang~ ~Manuals~ ~movies~ ~mpsave~ ~music~ ~override~ ~save~ ~scripts~ BEGIN
+					ACTION_IF (~%reserved%~ STR_EQ ~%mod_folder%~) THEN BEGIN // skip reserved folder names
+						//PRINT ~Skipping "%mod_folder%" because the name is reserved...~
+						OUTER_SET skip = 1
+					END
+				END
+				
+				ACTION_IF (NOT skip AND DIRECTORY_EXISTS ~%mod_folder%~) THEN BEGIN
+					OUTER_SPRINT ~output_dir~ ~%PREPATCH%/_PATCHES/%mod_folder%~
+					OUTER_SPRINT ~tmp_patch~ ~%output_dir%/combined.patch~
+					
+					ACTION_IF (DIRECTORY_EXISTS ~%output_dir%~) THEN BEGIN
+						PRINT ~Clearing old patch files from %output_dir%...~
+						DELETE + ~%output_dir%~
+					END
+					PRINT ~Processing %mod_folder%...~
+
+					//PRINT "MKDIR ~%output_dir%~"
+					MKDIR ~%output_dir%~
+					
+					// special case - create patch for setup tp2 if it is in game folder instead of in mod folder
+					ACTION_FOR_EACH tp2_file IN ~%mod_folder%.tp2~ ~setup-%mod_folder%.tp2~ BEGIN
+						ACTION_IF (FILE_EXISTS ~%tp2_file%~) THEN BEGIN // if it is in the game folder...
+							ACTION_IF (FILE_EXISTS ~%PREPATCH%/%tp2_file%~) THEN BEGIN // and also in the %PREPATCH% folder...
+								//PRINT "AT_NOW ~%DIFF_CMD% %PREPATCH%/%tp2_file% %tp2_file% > %PREPATCH%/_PATCHES/%tp2_file%.patch~"
+								AT_NOW ~%DIFF_CMD% %PREPATCH%/%tp2_file% %tp2_file% > %PREPATCH%/_PATCHES/%tp2_file%.patch~ EXACT // compare old version (in %PREPATCH%) to version in game folder
+								
+								ACTION_IF (SIZE_OF_FILE ~%PREPATCH%/_PATCHES/%tp2_file%.patch~) THEN BEGIN // if no difference, patch file will be zero bytes
+									COPY + ~%PREPATCH%/_PATCHES/%tp2_file%.patch~ ~%output_dir%~ // there were differences, move patch to _PATCHES/mod_folder/
+										REPLACE_TEXTUALLY   ~^--- %PREPATCH%\/~    ~--- ~         // standardize --- path in patch
+										REPLACE_TEXTUALLY   ~^\+\+\+ ~             ~+++ Fixpack/~ // standardize +++ path in patch
+								END
+								DELETE + ~%PREPATCH%/_PATCHES/%tp2_file%.patch~ // delete original patch (either zero bytes and skipped or an edited copy was made)
+							END ELSE BEGIN
+								FAIL ~%tp2_file% found in game folder but not in %PREPATCH% folder~
+							END
+						END
+					END
+
+					// generate remaining patches recursively (-r) and save to temporary file (one file containing all patches)
+					//PRINT "AT_NOW ~%DIFF_CMD% -r %PREPATCH%/%mod_folder% %mod_folder% > %tmp_patch%~"
+					AT_NOW ~%DIFF_CMD% -r %PREPATCH%/%mod_folder% %mod_folder% > %tmp_patch%~ EXACT // compare old version (in %PREPATCH%) to version in game folder
+
+					MOVE + ~%tmp_patch%~ ~%tmp_patch%.bak~ // need to rename so we can overwrite
+					COPY + ~%tmp_patch%.bak~ ~%tmp_patch%~ // read and modify combined patch file
+						REPLACE_TEXTUALLY    ~^--- .*%mod_folder%\/~  ~--- %mod_folder%/~         // standardize --- path in patch
+						REPLACE_TEXTUALLY ~^\+\+\+ .*%mod_folder%\/~  ~+++ Fixpack/%mod_folder%/~ // standardize +++ path in patch
+						
+						TEXT_SPRINT uniquevar ~_#_#read_%mod_folder%~
+						READ_2DA_ENTRIES_NOW ~%uniquevar%~ 4 // look for lines with 4 columns - diff output matching "Only in path: filename" (no spaces in filename)
+						SET rows = EVAL ~%%uniquevar%%~
+						PATCH_PRINT ~Checking for added or removed files (scanning %rows% lines in patch file)...~
+						FOR (i=0; i < rows; i=i+1) BEGIN
+							READ_2DA_ENTRY_FORMER EVAL ~%uniquevar%~ i 0 only
+							READ_2DA_ENTRY_FORMER ~%uniquevar%~ i 1 in
+							READ_2DA_ENTRY_FORMER ~%uniquevar%~ i 2 path
+							READ_2DA_ENTRY_FORMER ~%uniquevar%~ i 4 filename // will only get first part of file names containing spaces
+							INNER_ACTION BEGIN
+								ACTION_IF (~%only%~ STR_EQ ~Only~ AND ~%in%~ STR_EQ ~in~) THEN
+								BEGIN
+									//PRINT "%only% %in% %path% %filename%"
+									ACTION_IF ( (0 == (~%filename%~ STRING_CONTAINS_REGEXP ~^fl#utf8~)) OR (0 == (~%filename%~ STRING_CONTAINS_REGEXP ~\.(rej|bak)~)) ) THEN
+									BEGIN // ignore UTF8 converted tra files and failed patches and backup files
+										//PRINT ~Skipping file %filename%~
+									END ELSE BEGIN
+										OUTER_PATCH_SAVE relpath ~%path%~ BEGIN // get relative path for _copy / _delete
+											REPLACE_TEXTUALLY ~%mod_folder%~ ~~    // strip mod folder (always)
+											REPLACE_TEXTUALLY ~%PREPATCH%[\\/]~ ~~ // strip %PREPATCH% and and trailing slash (only when _delete)
+											REPLACE_TEXTUALLY ~:~ ~~               // strip ':' (always) and trailing slash (only when _delete)
+											// example 1:  %PREPATCH%/mod_folder/a/b/c: -> %PREPATCH%/a/b/c: -> a/b/c: -> a/b/c
+											// example 2:  %PREPATCH%/mod_folder: -> %PREPATCH%/: -> : -> empty string
+											// example 3:  mod_folder/a/b/c: -> /a/b/c: -> /a/b/c
+											// example 4:  mod_folder: -> : -> empty string
+										END
+										ACTION_IF (DIRECTORY_EXISTS ~%mod_folder%%relpath%/%filename%~) THEN BEGIN // an entire folder needs to be copied
+											PRINT "Copying folder ~%mod_folder%%relpath%/%filename%~ to ~%output_dir%/_copy%relpath%/%filename%~..."
+											LAF ~recursive_deep_copy~ INT_VAR second_pass = 0 STR_VAR current_dir = EVAL ~%mod_folder%%relpath%/%filename%~ target_dir = EVAL ~%output_dir%/_copy%relpath%/%filename%~ END
+											LAF ~recursive_deep_copy~ INT_VAR second_pass = 1 STR_VAR current_dir = EVAL ~%mod_folder%%relpath%/%filename%~ target_dir = EVAL ~%output_dir%/_copy%relpath%/%filename%~ END
+										END ELSE ACTION_IF (NOT FILE_EXISTS ~%PREPATCH%/%mod_folder%%relpath%/%filename%~) THEN BEGIN
+											// if version in %PREPATCH% folder doesn't have file -> _copy (relpath will be blank or have leading slash)
+											ACTION_IF (NOT FILE_EXISTS ~%mod_folder%%relpath%/%filename%~) THEN BEGIN // will be true for file names containing spaces
+												PRINT ~WARNING:  Unable to copy a file whose path starts with "%mod_folder%%relpath%/%filename%" because the path contains spaces.  It should be copied to "%output_dir%/_copy%relpath%"...~
+											END ELSE BEGIN // single file copy
+												ACTION_IF (NOT DIRECTORY_EXISTS ~%output_dir%/_copy%relpath%~) THEN BEGIN // create output folder if needed
+													//PRINT "MKDIR ~%output_dir%/_copy%relpath%~"
+													MKDIR ~%output_dir%/_copy%relpath%~
+												END
+												PRINT ~+ Copying "%mod_folder%%relpath%/%filename%" to "%output_dir%/_copy%relpath%"~
+												COPY_LARGE + ~%mod_folder%%relpath%/%filename%~ ~%output_dir%/_copy%relpath%~
+											END
+										END ELSE BEGIN // file/folder does exist in %PREPATCH% mod folder
+											// if version in game folder doesn't have file -> _delete (relpath will be blank or no leading slash)
+											OUTER_PATCH_SAVE delpath ~%relpath%/~ BEGIN // add trailing slash
+												REPLACE_TEXTUALLY ~^\/~ ~~ // if was empty string, return to empty string (remove slash just added)
+											END
+											ACTION_IF (NOT FILE_EXISTS ~%output_dir%/_delete~) THEN BEGIN
+												COPY ~.../_ORIGINALS-inlined/empty_file~ ~%output_dir%/_delete~ // create _delete file from inlined empty file
+											END
+											PRINT ~Appending "%delpath%%filename%" to "%output_dir%/_delete"~
+											APPEND_OUTER + ~%output_dir%/_delete~ ~%delpath%%filename%~
+										END
+									END
+								END
+							END
+						END
+					
+					PRINT ~Writing separate patches for any files inside the mod directory that have changed...~
+					// splitting combined patch file into individual patch files
+					AT_NOW ~%GAWK_CMD% "/^(-|\+| |@)/ { if ( match($0, /^--- (.+\/)?([^\t]+)/, m) ) { f = \"%PREPATCH%/_PATCHES/%mod_folder%/\" m[2] \".patch\" ; print f } ; print $0 > f }" %tmp_patch%~ EXACT
+					// ^--- (.+\/)? captures leading path, if any, and ([^\t]+) captures the filename, without slashes or path, as match group 2
+					// example 1:  --- Angelo/Dialogue/ADAng25J.d	2008-05-13 02:59:02.000000000 -0400
+					// example 2:  --- Setup-Angelo.tp2	2008-05-13 02:59:02.000000000 -0400
+					DELETE + ~%tmp_patch%~ // delete combined patch file after splitting
+					DELETE + ~%tmp_patch%.bak~ // delete combined patch file after splitting
+					
+					APPEND_OUTER + ~%ALREADY_PROCESSED_LIST%~ ~Processed '%mod_folder%'~ UNLESS ~Processed '%mod_folder%'~
+				END // processing mod folder
+			END
+		END
+	END
+END // ALWAYS
+
+BEGIN ~Create Patches~ INSTALL_BY_DEFAULT NO_LOG_RECORD
+
+ACTION_IF (NOT DIRECTORY_EXISTS ~%PREPATCH%~) THEN BEGIN
+	MKDIR ~%PREPATCH%~
+	FAIL ~%PREPATCH% folder created.  Unpack pre-patch mod folders and setup-tp2 files into that folder before running this script!~
+END
+
+ACTION_IF (NOT DIRECTORY_EXISTS ~%PREPATCH%/_PATCHES~) THEN BEGIN
+	MKDIR ~%PREPATCH%/_PATCHES~ // output folder for patches
+END
+
+<<<<<<<< .../_ORIGINALS-inlined/empty_file
+>>>>>>>>
+
+ACTION_IF (NOT FILE_EXISTS ~%ALREADY_PROCESSED_LIST%~) THEN BEGIN
+	COPY ~.../_ORIGINALS-inlined/empty_file~ ~%ALREADY_PROCESSED_LIST%~
+END
+
+LAUNCH_ACTION_FUNCTION ~process_mod_folders~ END // for each "original" mod folder in %PREPATCH%/, if there is an identically named mod folder in ./,
+                                                 //   generate patches in %PREPATCH%/_PATCHES/mod_folder/
+                                                 // be careful, don't create a %PREPATCH%/override/ or %PREPATCH%/data/
+
+// special special case - create patches for tp2 files that are in the prepatch folder and in the game folder whose name does not match any mod folder
+ACTION_BASH_FOR ~%PREPATCH%~ ~^.*\.tp2$~ BEGIN // for each tp2 file in the prepatch folder ...
+	ACTION_IF (FILE_EXISTS ~%BASH_FOR_FILE%~) THEN BEGIN // if it is also in the game folder...
+		OUTER_PATCH_SAVE nosetup_tp2name ~%BASH_FOR_RES%~ BEGIN REPLACE_TEXTUALLY ~^[sS][eE][tT][uU][pP][-]~ ~~ END // strip "setup-" from tp2 name
+		ACTION_IF (NOT DIRECTORY_EXISTS ~%nosetup_tp2name%~) THEN BEGIN // and its name does not match a mod folder (so we didn't process it earlier)...
+			//PRINT "AT_NOW ~%DIFF_CMD% %PREPATCH%/%BASH_FOR_FILE% %BASH_FOR_FILE% > %PREPATCH%/%BASH_FOR_FILE%.patch~"
+			AT_NOW ~%DIFF_CMD% %PREPATCH%/%BASH_FOR_FILE% %BASH_FOR_FILE% > %PREPATCH%/%BASH_FOR_FILE%.patch~ EXACT // compare old version (in %PREPATCH%) to version in game folder
+			
+			ACTION_IF (SIZE_OF_FILE ~%PREPATCH%/%BASH_FOR_FILE%.patch~) THEN BEGIN // if no difference, patch file will be zero bytes
+				PRINT ~## Found a modified tp2 that doesn't have the same name as any folder!  Creating %BASH_FOR_FILE%.patch in %PREPATCH%/_PATCHES...~
+				COPY + ~%PREPATCH%/%BASH_FOR_FILE%.patch~ ~%PREPATCH%/_PATCHES~ // we don't know exactly which mod folder it is ... move to _PATCHES/ 
+					REPLACE_TEXTUALLY   ~^--- %PREPATCH%\/~    ~--- ~         // standardize --- path in patch
+					REPLACE_TEXTUALLY   ~^\+\+\+ ~             ~+++ Fixpack/~ // standardize +++ path in patch
+			END
+			DELETE + ~%PREPATCH%/%BASH_FOR_FILE%.patch~ // delete original patch (either zero bytes and skipped or an edited copy was made)
+		END
+	END
+END

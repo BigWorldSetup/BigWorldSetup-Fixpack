@@ -1,0 +1,564 @@
+--- TomeAndBlood/data/components/setup_metamagic.tpa	2016-02-19 18:25:10.810666000 -0500
++++ Fixpack/TomeAndBlood/data/components/setup_metamagic.tpa	2016-12-07 18:52:48.675279600 -0500
+@@ -4,41 +4,57 @@
+ 
+ // This component uses code by Subtledoctor and is used with permission of the original author. 
+ 
++
++INCLUDE ~TomeAndBlood/lib/hla_actions.tpa~
++
++
+ //Removing these spells from the levelup table
++//
+ ACTION_IF (FILE_EXISTS_IN_GAME ~HIDESPL.2DA~) THEN BEGIN 
+-	APPEND ~HIDESPL.2da~ ~SPWI420	1	0~ //Minor Sequencer
+-	APPEND ~HIDESPL.2da~ ~SPWI710	1	0~ //Spell Sequencer
+-	APPEND ~HIDESPL.2da~ ~SPWI809	1	0~ //Spell Trigger
+-	APPEND ~HIDESPL.2da~ ~SPWI318	1	0~ //Parry Magic (MSD)
+-	APPEND ~HIDESPL.2da~ ~SPWI321	1	0~ //Spell Thrust
+-	APPEND ~HIDESPL.2da~ ~SPWI617	1	0~ //Contingency
++//	APPEND ~HIDESPL.2da~ ~SPWI420	1	0~ //Minor Sequencer
++//	APPEND ~HIDESPL.2da~ ~SPWI710	1	0~ //Spell Sequencer
++//	APPEND ~HIDESPL.2da~ ~SPWI809	1	0~ //Spell Trigger
++//	APPEND ~HIDESPL.2da~ ~SPWI318	1	0~ //Parry Magic (MSD)
++//	APPEND ~HIDESPL.2da~ ~SPWI321	1	0~ //Spell Thrust
++//	APPEND ~HIDESPL.2da~ ~SPWI617	1	0~ //Contingency
++	APPEND ~HIDESPL.2da~ ~SPWI908	1	0~ //Chain Contingency
+ END 
+ 
+-//Metamagic
++//Sequencers
++//
++COPY ~TomeAndBlood/data/metamagic/d5_sp420.bam~ ~override~
+ COPY ~TomeAndBlood/data/metamagic/d5_seq1.spl~ ~override~
+ 	SAY NAME1 @6041
+ 	SAY UNIDENTIFIED_DESC @6042
+-COPY ~TomeAndBlood/data/metamagic/d5_seq2.spl~ ~override~
+-	SAY NAME1 @6043
+-	SAY UNIDENTIFIED_DESC @6044
+-COPY ~TomeAndBlood/data/metamagic/d5_seq3.spl~ ~override~
+-	SAY NAME1 @6045
+-	SAY UNIDENTIFIED_DESC @6046
+ COPY ~TomeAndBlood/data/metamagic/spwi420.spl~ ~override~
+ 	SAY NAME1 @6041
+ 	SAY UNIDENTIFIED_DESC @6042
+ COPY ~TomeAndBlood/data/metamagic/spwi420d.spl~ ~override~
++	SAY NAME1 @6041
+ COPY ~TomeAndBlood/data/metamagic/spwi420p.spl~ ~override~
++	SAY NAME1 @6041
++COPY ~TomeAndBlood/data/metamagic/d5_sp710.bam~ ~override~
++COPY ~TomeAndBlood/data/metamagic/d5_seq2.spl~ ~override~
++	SAY NAME1 @6043
++	SAY UNIDENTIFIED_DESC @6044
+ COPY ~TomeAndBlood/data/metamagic/spwi710.spl~ ~override~
+ 	SAY NAME1 @6043
+ 	SAY UNIDENTIFIED_DESC @6044
+ COPY ~TomeAndBlood/data/metamagic/spwi710d.spl~ ~override~
++	SAY NAME1 @6043
+ COPY ~TomeAndBlood/data/metamagic/spwi710p.spl~ ~override~
++	SAY NAME1 @6043
++COPY ~TomeAndBlood/data/metamagic/d5_sp809.bam~ ~override~
++COPY ~TomeAndBlood/data/metamagic/d5_seq3.spl~ ~override~
++	SAY NAME1 @6045
++	SAY UNIDENTIFIED_DESC @6046
+ COPY ~TomeAndBlood/data/metamagic/spwi809.spl~ ~override~
+ 	SAY NAME1 @6045
+ 	SAY UNIDENTIFIED_DESC @6046
+ COPY ~TomeAndBlood/data/metamagic/spwi809d.spl~ ~override~
++	SAY NAME1 @6045
+ COPY ~TomeAndBlood/data/metamagic/spwi809p.spl~ ~override~
++	SAY NAME1 @6045
+ ACTION_IF FILE_EXISTS_IN_GAME ~scrl6p.itm~ THEN BEGIN
+ 	COPY ~TomeAndBlood/data/metamagic/mseqscrl.itm~ ~override/scrl6p.itm~
+ END
+@@ -48,449 +64,61 @@
+ ACTION_IF FILE_EXISTS_IN_GAME ~scrl9d.itm~ THEN BEGIN
+ 	COPY ~TomeAndBlood/data/metamagic/trigscrl.itm~ ~override/scrl9d.itm~
+ END
+-COPY ~TomeAndBlood/data/metamagic/d5_conti.spl~ ~override~
++
++
++//Contingencies
++//
++COPY ~TomeAndBlood/data/metamagic/d5_conti.spl~ ~override/spwi617.spl~
++	SAY NAME1 @6351
++	SAY UNIDENTIFIED_DESC @6352
++COPY ~TomeAndBlood/data/metamagic/d5wi617.spl~ ~override~
+ 	SAY NAME1 @6351
+ 	SAY UNIDENTIFIED_DESC @6352
+ 
++ACTION_IF FILE_EXISTS_IN_GAME ~scrl7u.itm~ THEN BEGIN
++	COPY_EXISTING ~scrl7u.itm~ ~override~
++		LPF ALTER_EFFECT INT_VAR match_opcode = 147 STR_VAR resource = ~d5wi617~ END
++END
+ 
+-//Spell battles
+ 
+-COPY ~TomeAndBlood/data/metamagic/spwi318.spl~ ~override~
+-	SAY NAME1 @6051
+-	SAY UNIDENTIFIED_DESC @6052
+-COPY ~TomeAndBlood/data/metamagic/spwi321.spl~ ~override~
+-	SAY NAME1 @6053
+-	SAY UNIDENTIFIED_DESC @6054
+-COPY ~TomeAndBlood/data/metamagic/spwi318.spl~ ~override/d5_mys32.spl~
+-	SAY NAME1 @6051
+-	SAY UNIDENTIFIED_DESC @6052
+-COPY ~TomeAndBlood/data/metamagic/spwi321.spl~ ~override/d5_mys22.spl~
+-	SAY NAME1 @6053
+-	SAY UNIDENTIFIED_DESC @6054
+-COPY ~TomeAndBlood/data/metamagic/spwi318.spl~ ~override/d5_radfl.spl.spl~
+-	SAY NAME1 @6051
+-	SAY UNIDENTIFIED_DESC @6052
+-COPY ~TomeAndBlood/data/metamagic/spwi321.spl~ ~override/d5_rathr.spl~
+-	SAY NAME1 @6053
+-	SAY UNIDENTIFIED_DESC @6054
+-COPY ~TomeAndBlood/data/metamagic/sppr612.spl~ ~override~
+-	SAY NAME1 @6055
+-	SAY UNIDENTIFIED_DESC @6056
+-ACTION_IF ENGINE_IS ~tob bg2ee~ THEN BEGIN
+-	COPY ~TomeAndBlood/data/metamagic/spwi419.spl~ ~override~
+-		SAY NAME1 @6057
+-		SAY UNIDENTIFIED_DESC @6058
+-END
+-ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+-	COPY ~TomeAndBlood/data/metamagic/spwi419ee.spl~ ~override/spwi419.spl~
+-		SAY NAME1 @6057
+-		SAY UNIDENTIFIED_DESC @6058
+-END
+-ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+-	COPY ~TomeAndBlood/data/metamagic/spwi419iw.spl~ ~override/spwi419.spl~
+-		SAY NAME1 @6057
+-		SAY UNIDENTIFIED_DESC @6058
+-END
+-ACTION_IF ENGINE_IS ~tob bg2ee~ THEN BEGIN
+-	COPY ~TomeAndBlood/data/metamagic/spwi704.spl~ ~override~
+-		SAY NAME1 @6059
+-		SAY UNIDENTIFIED_DESC @6060
+-END
+-ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+-	COPY ~TomeAndBlood/data/metamagic/spwi704ee.spl~ ~override/spwi704.spl~
+-		SAY NAME1 @6059
+-		SAY UNIDENTIFIED_DESC @6060
+-END
+-ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+-	COPY ~TomeAndBlood/data/metamagic/spwi704iw.spl~ ~override/spwi704.spl~
+-		SAY NAME1 @6059
+-		SAY UNIDENTIFIED_DESC @6060
+-END
+-ACTION_IF NOT FILE_EXISTS_IN_GAME ~dvsrv4here.mrk~ THEN BEGIN
+-	ACTION_IF ENGINE_IS ~tob bg2ee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi805.spl~ ~override~
+-			SAY NAME1 @6061
+-			SAY UNIDENTIFIED_DESC @6062
+-	END
+-	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi805ee.spl~ ~override/spwi805.spl~
+-			SAY NAME1 @6061
+-			SAY UNIDENTIFIED_DESC @6062
+-	END
+-	ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi805iw.spl~ ~override/spwi805.spl~
+-			SAY NAME1 @6061
+-			SAY UNIDENTIFIED_DESC @6062
+-	END
+-END
+-ACTION_IF FILE_EXISTS_IN_GAME ~scrl6o.itm~ THEN BEGIN
+-	COPY_EXISTING ~scrl6o.itm~ ~override~
+-		WRITE_BYTE 0x2d ("0x00")  		  
+-		WRITE_BYTE 0x2f ("0x00") 
+-		BUT_ONLY
+-END
+-ACTION_IF FILE_EXISTS_IN_GAME ~scrl7l.itm~ THEN BEGIN
+-	COPY_EXISTING ~scrl7l.itm~ ~override~
+-		WRITE_BYTE 0x2d ("0x00")  		  
+-		WRITE_BYTE 0x2f ("0x00") 
+-		BUT_ONLY
+-END
+-ACTION_IF FILE_EXISTS_IN_GAME ~scrl8g.itm~ THEN BEGIN
+-	COPY_EXISTING ~scrl8g.itm~ ~override~
+-		WRITE_BYTE 0x2d ("0x00")  		  
+-		WRITE_BYTE 0x2f ("0x00") 
+-		BUT_ONLY
+-END
+-ACTION_IF FILE_EXISTS_IN_GAME ~scrl8h.itm~ THEN BEGIN
+-	COPY_EXISTING ~scrl8h.itm~ ~override~
+-		WRITE_BYTE 0x2d ("0x00")  		  
+-		WRITE_BYTE 0x2f ("0x00") 
+-		BUT_ONLY
+-END
++//Add Chain Contingency as HLA
++//
++COPY ~TomeAndBlood/data/metamagic/d5_ccont.spl~ ~override/spwi908.spl~
++	SAY NAME1 @6353
++	SAY UNIDENTIFIED_DESC @6354
++
+ ACTION_IF FILE_EXISTS_IN_GAME ~scrl9a.itm~ THEN BEGIN
+-	COPY_EXISTING ~scrl9a.itm~ ~override~
+-		WRITE_BYTE 0x2d ("0x00")  		  
+-		WRITE_BYTE 0x2f ("0x00") 
+-		BUT_ONLY
+-END
+-ACTION_IF FILE_EXISTS_IN_GAME ~scrl9m.itm~ THEN BEGIN
+-	COPY_EXISTING ~scrl9m.itm~ ~override~
+-		WRITE_BYTE 0x2d ("0x00")  		  
+-		WRITE_BYTE 0x2f ("0x00") 
+-		BUT_ONLY
++	COPY_EXISTING ~scrl9a.itm~ ~override/scrl9q.itm~ 	// replace CC scrolls with Pierce Shield
+ END
+-ACTION_IF NOT FILE_EXISTS_IN_GAME ~dvsrv4here.mrk~ THEN BEGIN
+-	ACTION_IF ENGINE_IS ~tob bg2ee iwdee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi522.spl~ ~override~
+-			SAY NAME1 @6063
+-			SAY UNIDENTIFIED_DESC @6064
+-	END
+-	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi522ee.spl~ ~override/spwi522.spl~
+-			SAY NAME1 @6063
+-			SAY UNIDENTIFIED_DESC @6064
+-	END
+-	ACTION_IF ENGINE_IS ~tob bg2ee iwdee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi618.spl~ ~override~
+-			SAY NAME1 @6065
+-			SAY UNIDENTIFIED_DESC @6066
+-	END
+-	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi618ee.spl~ ~override/spwi618.spl~
+-			SAY NAME1 @6065
+-			SAY UNIDENTIFIED_DESC @6066
+-	END
+-	ACTION_IF ENGINE_IS ~tob bg2ee iwdee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi701.spl~ ~override~
+-			SAY NAME1 @6067
+-			SAY UNIDENTIFIED_DESC @6068
+-	END
+-	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi701ee.spl~ ~override/spwi701.spl~
+-			SAY NAME1 @6067
+-			SAY UNIDENTIFIED_DESC @6068
+-	END
+-	COPY ~TomeAndBlood/data/metamagic/spwi902.spl~ ~override~
+-		SAY NAME1 @6069
+-		SAY UNIDENTIFIED_DESC @6070
+-	ACTION_IF ENGINE_IS ~tob bg2ee iwdee~ THEN BEGIN
+-		STRING_SET 10875 @6071
+-	END
+-	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+-		STRING_SET 26593 @6071
+-	END
+-END 
+-ACTION_IF FILE_EXISTS_IN_GAME ~scrl7d.itm~ THEN BEGIN
+-	COPY_EXISTING ~scrl7d.itm~ ~override~
+-		WRITE_BYTE 0x2d ("0x00")  		  
+-		WRITE_BYTE 0x2f ("0x00") 
+-		BUT_ONLY
+-END
+-ACTION_IF FILE_EXISTS_IN_GAME ~scrl7v.itm~ THEN BEGIN
+-	COPY_EXISTING ~scrl7v.itm~ ~override~
+-		WRITE_BYTE 0x2d ("0x00")  		  
+-		WRITE_BYTE 0x2f ("0x00") 
+-		BUT_ONLY
++
++LAF action_add_hla STR_VAR kit_name = ~MAGE~ ability = ~GA_SPWI908~ num_allowed = ~1~ END
++LAF action_add_hla STR_VAR kit_name = ~SORCERER~ ability = ~GA_SPWI908~ num_allowed = ~1~ END
++
++COPY_EXISTING ~kitlist.2da~ ~override~
++  COUNT_2DA_COLS num_cols
++  READ_2DA_ENTRIES_NOW ~r2en_kitlist~ num_cols
++	FOR (row = 3; row < r2en_kitlist; row += 1) BEGIN
++	  READ_2DA_ENTRY_FORMER ~r2en_kitlist~ row 1 kitlist_name
++	  READ_2DA_ENTRY_FORMER ~r2en_kitlist~ row 8 class_num
++	  PATCH_IF (class_num == 1) BEGIN // wizard
++		INNER_ACTION BEGIN
++		  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_SPWI908~ num_allowed = ~1~ END
+ END
+-ACTION_IF FILE_EXISTS_IN_GAME ~scrl8d.itm~ THEN BEGIN
+-	COPY_EXISTING ~scrl8d.itm~ ~override~
+-		WRITE_BYTE 0x2d ("0x00")  		  
+-		WRITE_BYTE 0x2f ("0x00") 
+-		BUT_ONLY
+ END
+-ACTION_IF FILE_EXISTS_IN_GAME ~scrl9l.itm~ THEN BEGIN
+-	COPY_EXISTING ~scrl9l.itm~ ~override~
+-		WRITE_BYTE 0x2d ("0x00")  		  
+-		WRITE_BYTE 0x2f ("0x00") 
+-		BUT_ONLY
++	  PATCH_IF (class_num == 19) BEGIN // sorcerer
++		INNER_ACTION BEGIN
++		  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_SPWI908~ num_allowed = ~1~ END
+ END
+-ACTION_IF FILE_EXISTS_IN_GAME ~scrl6p.itm~ THEN BEGIN
+-	COPY_EXISTING ~scrl6p.itm~ ~override/scrl6g.itm~
+ END
+-ACTION_IF FILE_EXISTS_IN_GAME ~scrl6o.itm~ THEN BEGIN
+-	COPY_EXISTING ~scrl6o.itm~ ~override/scrl6j.itm~
++	  PATCH_IF (class_num == 13) BEGIN // M/T
++		INNER_ACTION BEGIN
++		  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_SPWI908~ num_allowed = ~1~ END
+ END
+-
+-// check for SR 
+-//ACTION_IF NOT MOD_IS_INSTALLED "setup-spell_rev.tp2" "60" THEN BEGIN
+-ACTION_IF NOT FILE_EXISTS_IN_GAME ~dvsrv4here.mrk~ THEN BEGIN
+-
+-	ACTION_IF ENGINE_IS ~tob bg2ee iwdee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi522.spl~ ~override~
+-			SAY NAME1 @6063
+-			SAY UNIDENTIFIED_DESC @6064
+-	END
+-	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi522ee.spl~ ~override~
+-			SAY NAME1 @6063
+-			SAY UNIDENTIFIED_DESC @6064
+-	END
+-	ACTION_IF ENGINE_IS ~tob bg2ee iwdee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi618.spl~ ~override~
+-			SAY NAME1 @6065
+-			SAY UNIDENTIFIED_DESC @6066
+-	END
+-	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi618ee.spl~ ~override~
+-			SAY NAME1 @6065
+-			SAY UNIDENTIFIED_DESC @6066
+-	END
+-	ACTION_IF ENGINE_IS ~tob bg2ee iwdee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi701.spl~ ~override~
+-			SAY NAME1 @6067
+-			SAY UNIDENTIFIED_DESC @6068
+-	END
+-	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+-		COPY ~TomeAndBlood/data/metamagic/spwi701ee.spl~ ~override~
+-			SAY NAME1 @6067
+-			SAY UNIDENTIFIED_DESC @6068
+-	END
+-	COPY ~TomeAndBlood/data/metamagic/spwi902.spl~ ~override~
+-		SAY NAME1 @6069
+-		SAY UNIDENTIFIED_DESC @6070
+-	ACTION_IF ENGINE_IS ~tob bg2ee iwdee~ THEN BEGIN
+-		STRING_SET 10875 @6071
+-	END
+-	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+-		STRING_SET 26593 @6071
+-	END
+-
+-END 
+-
+-//adding abilities to mage CLABs 
+-COPY_EXISTING 	  ~CLABMA02.2da~ ~override~ //abjurer
+-				  ~CLABMA03.2da~ ~override~ //necromancer
+-				  ~CLABMA04.2da~ ~override~ //transmuter
+-				  ~CLABMA05.2da~ ~override~ //diviner
+-				  ~CLABMA06.2da~ ~override~ //conjurer
+-				  ~CLABMA07.2da~ ~override~ //invoker
+-				  ~CLABMA08.2da~ ~override~ //illusionist
+-				  ~CLABMA09.2da~ ~override~ //enchanter	
+-		INSERT_2DA_ROW 3 0 ~CNTNGNCY ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        GA_D5_CONTI ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        **** ~ 
+-		INSERT_2DA_ROW 3 0 ~SPLBTTLS     ****        ****        GA_SPWI318  ****        GA_SPWI321  ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        **** ~ 
+-
+-COPY_EXISTING ~CLABMA01.2da~ ~override~ //mage/sorcerer
+-		INSERT_2DA_ROW 3 0 ~CNTNGNCY ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        AP_QDCONTA ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        **** ~ 
+-		INSERT_2DA_ROW 3 0 ~SPLBTTLS     ****        ****        GA_SPWI318  ****        GA_SPWI321  ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        **** ~ 
+-
+-COPY_EXISTING ~CLABSO01.2da~ ~override~ //dragon disciple	
+-		INSERT_2DA_ROW 3 0 ~SPLBTTLS     ****        ****        GA_SPWI318  ****        GA_SPWI321  ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        **** ~ 		
+-
+-COPY ~TomeAndBlood/data/metamagic/qdconta.spl~ ~override~ //mage check: Contingency
+-COPY ~TomeAndBlood/data/metamagic/qdconta.eff~ ~override~ //mage check: Contingency
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~qdtnb06.qd~ THEN BEGIN //arcane crafting
+-//updating descriptions
+-//9563
+-	ACTION_GET_STRREF 9563 mage
+-	OUTER_PATCH_SAVE mage ~%mage%~ BEGIN
+-	  REPLACE_TEXTUALLY ~May use the Scribe Scrolls ability.~ ~May use the Scribe Scrolls ability.
+-– 3rd level: May use the Parry Magic ability.~ 
+-	  REPLACE_TEXTUALLY ~May use the Brew Potions ability.~ ~May use the Brew Potions ability.
+-– 5th level: May use the Spell Thrust ability.~ 
+-	  REPLACE_TEXTUALLY ~May use the Craft Wands ability.~ ~May use the Craft Wands ability.
+-– 11th level: May use the Contingency ability.~
+-	END
+-	STRING_SET_EVALUATE 9563 ~%mage%~
+-	//17245
+-	ACTION_GET_STRREF 17245 mage
+-	OUTER_PATCH_SAVE mage ~%mage%~ BEGIN
+-	  REPLACE_TEXTUALLY ~May use the Scribe Scrolls ability.~ ~May use the Scribe Scrolls ability.
+-– 3rd level: May use the Parry Magic ability.~ 
+-	  REPLACE_TEXTUALLY ~May use the Brew Potions ability.~ ~May use the Brew Potions ability.
+-– 5th level: May use the Spell Thrust ability.~ 
+-	  REPLACE_TEXTUALLY ~May use the Craft Wands ability.~ ~May use the Craft Wands ability.
+-– 11th level: May use the Contingency ability.~
+-	END
+-	STRING_SET_EVALUATE 17245 ~%mage%~
+-//bgee	
+-	ACTION_IF GAME_IS ~bgee~ THEN BEGIN 
+-		//24233
+-		ACTION_GET_STRREF 24233 sorcerer
+-		OUTER_PATCH_SAVE sorcerer ~%sorcerer%~ BEGIN
+-		  REPLACE_TEXTUALLY ~May cast arcane spells.~ ~May cast arcane spells.
+-– 3rd level: May use the Parry Magic ability.~ 
+-	  REPLACE_TEXTUALLY ~May use the Brew Potions ability.~ ~May use the Brew Potions ability.
+-– 5th level: May use the Spell Thrust ability.~ 
+-		END
+-		STRING_SET_EVALUATE 24233 ~%sorcerer%~
+-	END
+-//bg2ee
+-	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN 
+-		//45866
+-		ACTION_GET_STRREF 45866 sorcerer
+-		OUTER_PATCH_SAVE sorcerer ~%sorcerer%~ BEGIN
+-			REPLACE_TEXTUALLY ~May cast arcane spells.~ ~May cast arcane spells.
+-– 3rd level: May use the Parry Magic ability.~ 
+-	  REPLACE_TEXTUALLY ~May use the Brew Potions ability.~ ~May use the Brew Potions ability.
+-– 5th level: May use the Spell Thrust ability.~ 
+-		END
+-		STRING_SET_EVALUATE 45866 ~%sorcerer%~
+-	END 
+-//iwdee
+-	ACTION_IF GAME_IS ~iwdee~ THEN BEGIN 
+-		//37189
+-		ACTION_GET_STRREF 37189 mage
+-		OUTER_PATCH_SAVE mage ~%mage%~ BEGIN
+-		  REPLACE_TEXTUALLY ~May use the Scribe Scrolls ability.~ ~May use the Scribe Scrolls ability.
+-– 3rd level: May use the Parry Magic ability.~ 
+-	  REPLACE_TEXTUALLY ~May use the Brew Potions ability.~ ~May use the Brew Potions ability.
+-– 5th level: May use the Spell Thrust ability.~ 
+-	  REPLACE_TEXTUALLY ~May use the Craft Wands ability.~ ~May use the Craft Wands ability.
+-– 11th level: May use the Contingency ability.~
+-		END
+-		STRING_SET_EVALUATE 37189 ~%mage%~
+-		//34605
+-		ACTION_GET_STRREF 34605 sorcerer
+-		OUTER_PATCH_SAVE sorcerer ~%sorcerer%~ BEGIN
+-		  REPLACE_TEXTUALLY ~May cast arcane spells.~ ~May cast arcane spells.
+-– 3rd level: May use the Parry Magic ability.~ 
+-	  REPLACE_TEXTUALLY ~May use the Brew Potions ability.~ ~May use the Brew Potions ability.
+-– 5th level: May use the Spell Thrust ability.~ 
+-		END
+-		STRING_SET_EVALUATE 34605 ~%sorcerer%~
+-		//37249
+-		ACTION_GET_STRREF 37249 sorcerer
+-		OUTER_PATCH_SAVE sorcerer ~%sorcerer%~ BEGIN
+-		  REPLACE_TEXTUALLY ~May cast arcane spells.~ ~May cast arcane spells.
+-– 3rd level: May use the Parry Magic ability.~ 
+-	  REPLACE_TEXTUALLY ~May use the Brew Potions ability.~ ~May use the Brew Potions ability.
+-– 5th level: May use the Spell Thrust ability.~ 
+-		END
+-		STRING_SET_EVALUATE 37249 ~%sorcerer%~
+-	END 	
+-END 
+-ELSE BEGIN 
+-//updating descriptions
+-//9563
+-	ACTION_GET_STRREF 9563 mage
+-	OUTER_PATCH_SAVE mage ~%mage%~ BEGIN
+-	  REPLACE_TEXTUALLY ~May cast arcane spells.~ ~May cast arcane spells.
+-– 3rd level: May use the Parry Magic ability. 
+-– 5th level: May use the Spell Thrust ability.
+-– 11th level: May use the Contingency ability.~
+-
+-	END
+-	STRING_SET_EVALUATE 9563 ~%mage%~
+-	//17245
+-	ACTION_GET_STRREF 17245 mage
+-	OUTER_PATCH_SAVE mage ~%mage%~ BEGIN
+-	  REPLACE_TEXTUALLY ~May cast arcane spells.~ ~May cast arcane spells.
+-– 3rd level: May use the Parry Magic ability. 
+-– 5th level: May use the Spell Thrust ability.
+-– 11th level: May use the Contingency ability.~
+-	END
+-	STRING_SET_EVALUATE 17245 ~%mage%~
+-//bgee	
+-	ACTION_IF GAME_IS ~bgee~ THEN BEGIN 
+-		//24233
+-		ACTION_GET_STRREF 24233 sorcerer
+-		OUTER_PATCH_SAVE sorcerer ~%sorcerer%~ BEGIN
+-		  REPLACE_TEXTUALLY ~May cast arcane spells.~ ~May cast arcane spells.
+-– 3rd level: May use the Parry Magic ability. 
+-– 5th level: May use the Spell Thrust ability.~
+-		END
+-		STRING_SET_EVALUATE 24233 ~%sorcerer%~
+-	END
+-//bg2ee
+-	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN 
+-		//45866
+-		ACTION_GET_STRREF 45866 sorcerer
+-		OUTER_PATCH_SAVE sorcerer ~%sorcerer%~ BEGIN
+-			REPLACE_TEXTUALLY ~May cast arcane spells.~ ~May cast arcane spells.
+-– 3rd level: May use the Parry Magic ability. 
+-– 5th level: May use the Spell Thrust ability.~
+-		END
+-		STRING_SET_EVALUATE 45866 ~%sorcerer%~
+-	END 
+-//iwdee
+-	ACTION_IF GAME_IS ~iwdee~ THEN BEGIN 
+-		//37189
+-		ACTION_GET_STRREF 37189 mage
+-		OUTER_PATCH_SAVE mage ~%mage%~ BEGIN
+-		  REPLACE_TEXTUALLY ~May cast arcane spells.~ ~May cast arcane spells.
+-– 3rd level: May use the Parry Magic ability. 
+-– 5th level: May use the Spell Thrust ability.
+-– 11th level: May use the Contingency ability.~
+-		END
+-		STRING_SET_EVALUATE 37189 ~%mage%~
+-		//34605
+-		ACTION_GET_STRREF 34605 sorcerer
+-		OUTER_PATCH_SAVE sorcerer ~%sorcerer%~ BEGIN
+-		  REPLACE_TEXTUALLY ~May cast arcane spells.~ ~May cast arcane spells.
+-– 3rd level: May use the Parry Magic ability. 
+-– 5th level: May use the Spell Thrust ability.~
+-		END
+-		STRING_SET_EVALUATE 34605 ~%sorcerer%~
+-		//37249
+-		ACTION_GET_STRREF 37249 sorcerer
+-		OUTER_PATCH_SAVE sorcerer ~%sorcerer%~ BEGIN
+-		  REPLACE_TEXTUALLY ~May cast arcane spells.~ ~May cast arcane spells.
+-– 3rd level: May use the Parry Magic ability. 
+-– 5th level: May use the Spell Thrust ability.~
+-		END
+-		STRING_SET_EVALUATE 37249 ~%sorcerer%~
+-	END 		
+-END 
+-
+-//Code below by subtledoctor and used with permission. 
+-ADD_SPELL ~TomeAndBlood/data/metamagic/spwi318.spl~ 4 1 WIZARD_MINOR_SPELL_DEFLECTION
+-	SAY NAME1 @6051
+-	SAY UNIDENTIFIED_DESC @6052
+- LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_MINOR_SPELL_DEFLECTION~ RET spell_res END
+- COPY_EXISTING ~%spell_res%.spl~ ~override~
+- 	LPF ALTER_EFFECT INT_VAR match_opcode = 172 STR_VAR resource = EVAL ~%spell_res%~ END
+- 	LPF ALTER_EFFECT INT_VAR match_opcode = 171 STR_VAR resource = EVAL ~%spell_res%~ END
+- BUT_ONLY
+- COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
+-	PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
+-		READ_BYTE 0x273 class
+-		PATCH_IF (class == 1 || class == 13 || class == 14 || class == 7 || class == 10 || class == 17) BEGIN // wizards
+-			ADD_KNOWN_SPELL ~%spell_res%~ #0 ~innate~
+-			ADD_MEMORIZED_SPELL ~%spell_res%~ #0 ~innate~
+ 		END
++	  PATCH_IF (class_num == 14) BEGIN // C/M
++		INNER_ACTION BEGIN
++		  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_SPWI908~ num_allowed = ~1~ END
+ 	END
+- BUT_ONLY
+- COPY ~TomeAndBlood/data/metamagic/spwi318.spl~ ~override~
+-	SAY NAME1 @6051
+-	SAY UNIDENTIFIED_DESC @6052
+- ADD_SPELL ~TomeAndBlood/data/metamagic/spwi321.spl~ 4 1 WIZARD_SPELL_THRUST 
+-	SAY NAME1 @6053
+-	SAY UNIDENTIFIED_DESC @6054
+- LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_SPELL_THRUST~ RET spell_res END
+- COPY_EXISTING ~%spell_res%.spl~ ~override~
+- 	LPF ALTER_EFFECT INT_VAR match_opcode = 172 STR_VAR resource = EVAL ~%spell_res%~ END
+- 	LPF ALTER_EFFECT INT_VAR match_opcode = 171 STR_VAR resource = EVAL ~%spell_res%~ END
+- BUT_ONLY
+- COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
+-	PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
+-		READ_BYTE 0x273 class
+-		PATCH_IF (class == 1 || class == 13 || class == 14 || class == 7 || class == 10 || class == 17) BEGIN // wizards
+-			ADD_KNOWN_SPELL ~%spell_res%~ #0 ~innate~
+-			ADD_MEMORIZED_SPELL ~%spell_res%~ #0 ~innate~
+ 		END
+ 	END
+  BUT_ONLY
+- COPY ~TomeAndBlood/data/metamagic/spwi321.spl~ ~override~
+-	SAY NAME1 @6053
+-	SAY UNIDENTIFIED_DESC @6054 
