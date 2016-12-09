@@ -1,0 +1,14 @@
+--- valerie/scripts/t2val.baf	2013-01-17 11:38:58.665460800 -0500
++++ Fixpack/valerie/scripts/t2val.baf	2016-12-08 21:50:02.609916600 -0500
+@@ -345,9 +345,11 @@
+ 
+ // Stringfixer
+ IF
++    Global("T2Val_stringfix","LOCALS",0)
+     HotKey(K)
+ THEN
+     RESPONSE #100
++        SetGlobal("T2Val_stringfix","LOCALS",1)
+         SetName(~Valerie~)
+         SetPlayerSound(Myself,~Wow. We're really making a difference, aren't we?~,HAPPY)
+         SetPlayerSound(Myself,~I don't know if that was really necessary...~,UNHAPPY_ANNOYED)

@@ -1,5 +1,5 @@
---- valerie\valerie.tp2	Thu Jan 17 11:25:44 2013
-+++ C:\BWP Patchstudio\patched files\valerie\valerie.tp2	Fri Jan 01 20:38:09 2016
+--- valerie/valerie.tp2	2013-01-17 11:25:44.344028200 -0500
++++ Fixpack/valerie/valerie.tp2	2016-12-08 21:54:01.120177400 -0500
 @@ -2,7 +2,7 @@
  // Basics
  BACKUP ~valerie/backup~
@@ -9,15 +9,48 @@
  README ~valerie/valerie_readme.html~
  
  // Crossplatform var stuff blatantly stolen from cmorgan/gavin/bg1npc!
-@@ -163,7 +163,10 @@
-   END
- END
+@@ -227,3 +225,44 @@
  
--
-+// Roxanne's block to enable BGT transition
-+ACTION_IF GAME_IS ~bgt~ THEN BEGIN
-+  EXTEND_TOP ~aram00.bcs~ ~valerie/scripts/append_aram00.baf~
+ APPEND ~interdia.2da~ ~T2VAL BT2VAL~
+   UNLESS ~T2Val~
++
++
++// Disable Valerie at SoD transition as she has no content there yet
++ACTION_IF FILE_EXISTS_IN_GAME ~bd0103.are~ THEN BEGIN
++<<<<<<<< .../valerie-inlined/remove_at_sod_transition.baf
++IF
++	OR(2)
++		InMyArea("T2Val")
++		InPartyAllowDead("T2Val")
++	GlobalLT("BD_PLOT","GLOBAL",51)
++THEN
++	RESPONSE #100
++		ActionOverride("T2Val",LeaveParty())
++		SmallWait(1)
++		ActionOverride("T2Val",DestroySelf())
++		Continue()
 +END
- 
- // Copying images and creatures
- ACTION_IF (FILE_EXISTS_IN_GAME ~FW0100.are~) OR (FILE_EXISTS_IN_GAME ~ar7200.are~) THEN BEGIN
++>>>>>>>>
++
++  EXTEND_TOP ~BD0103.BCS~ ~.../valerie-inlined/remove_at_sod_transition.baf~
++  
++END ELSE ACTION_IF GAME_IS ~bgt~ THEN BEGIN // Disable Valerie at BGT transition as she has no content for BG2
++<<<<<<<< .../valerie-inlined/remove_at_bgt_transition.baf
++IF
++	InParty("t2val")
++	Global("Valgo","aram00",0)
++THEN
++	RESPONSE #100
++		ActionOverride("t2val",LeaveParty())
++		ActionOverride("t2val",ChangeAIScript("",DEFAULT))
++		ActionOverride("t2val",ClearAllActions())
++		ActionOverride("t2val",DestroySelf())
++		SetGlobal("Valgo","aram00",1)
++		Continue()
++END
++>>>>>>>>
++
++  EXTEND_TOP ~aram00.bcs~ ~.../valerie-inlined/remove_at_bgt_transition.baf~
++END
++
++
