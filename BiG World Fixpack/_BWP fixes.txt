@@ -1474,6 +1474,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: imoenromance - Imoen Romance v3.9 (the new ImoenRomance)
+
+:: Nightfarer's fix to not overwrite ar1203 script
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: infinityanimations - Infinity Animations v5
 
 :: Gwendolyne's Water Elemental bug fix
