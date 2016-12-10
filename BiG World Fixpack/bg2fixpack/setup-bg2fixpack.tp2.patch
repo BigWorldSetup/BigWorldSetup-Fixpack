@@ -2288,7 +2288,7 @@
 -      END
 -    END
 -  END
-+  LPF AREA_ALTER_CONTAINER STR_VAR cont_name = "Container 1" cont_script = "ctfb" END
++  LPF ALTER_AREA_CONTAINER STR_VAR cont_name = "Container 1" cont_script = "ctfb" END
    BUT_ONLY
  
  // shift guarded compund entrance in temple district
@@ -2299,7 +2299,7 @@
 +// container traps won't trigger due to ground scripts; see also ct028.bcs
 +COPY_EXISTING ar5204.are override
 +  PATCH_IF (SOURCE_SIZE > 0x11b) THEN BEGIN // protects against invalid files
-+    LPF AREA_ALTER_CONTAINER STR_VAR cont_name = "Bed" cont_script = "ctfb" END
++    LPF ALTER_AREA_CONTAINER STR_VAR cont_name = "Bed" cont_script = "ctfb" END
 +  END
 +  BUT_ONLY
 +
