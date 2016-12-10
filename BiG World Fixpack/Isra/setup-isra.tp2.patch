@@ -1,0 +1,10 @@
+--- Isra/setup-isra.tp2	2013-10-07 00:05:41.259235600 -0400
++++ Fixpack/Isra/setup-isra.tp2	2016-12-06 10:19:50.789377200 -0500
+@@ -3,6 +3,7 @@
+ BACKUP ~isra/backup~
+ AUTHOR ~Rhaella~
+ README ~Isra/isra_readme.html~
++VERSION ~2.0 BWP Fix~
+ 
+ 
+ // Crossplatform var stuff blatantly stolen from cmorgan/gavin/bg1npc!

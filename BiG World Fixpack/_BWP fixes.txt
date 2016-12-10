@@ -1543,6 +1543,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: Isra - Isra for BG1 v2.0
+
+:: agb1's rh#isra2 -> rh#isra script name correction in BRH#ISRA Kivan banter dialogue
+:: - LINK NOT FOUND -
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Isra_BG2 - Isra for BG2 v2.1
 
 :: PRO_BOYGIRL -> PRO_GIRLBOY correction

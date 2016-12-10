@@ -1,0 +1,13 @@
+--- Isra/dialogue/brh#isra.d	2013-02-12 04:10:04.000000000 -0500
++++ Fixpack/Isra/dialogue/brh#isra.d	2016-12-10 00:27:09.606421800 -0500
+@@ -714,8 +714,8 @@
+ == %KIVAN_BANTER% ~It is the road that I have chosen, and I will not be turned from it.~
+ EXIT
+ 
+-CHAIN IF ~InParty("rh#Isra2")
+-See("rh#Isra2")
++CHAIN IF ~InParty("rh#Isra")
++See("rh#Isra")
+ !StateCheck("p#Kivan",CD_STATE_NOTVALID)
+ !StateCheck("rh#Isra",CD_STATE_NOTVALID)
+ CombatCounter(0)
