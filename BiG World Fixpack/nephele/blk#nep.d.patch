@@ -1,0 +1,11 @@
+--- nephele/dialogue/blk#nep.d	2013-02-07 16:53:02.000000000 -0500
++++ Fixpack/nephele/dialogue/blk#nep.d	2016-11-04 16:07:27.545328800 -0400
+@@ -530,7 +530,7 @@
+ !StateCheck("Viconia",CD_STATE_NOTVALID)
+ !StateCheck("Nephele",CD_STATE_NOTVALID)
+ CombatCounter(0)
+-GlobalGT("chapter","GLOBAL",5)
++GlobalGT("chapter","GLOBAL",%bg_chapter_5%)
+ Global("LK#NepheleViconia","LOCALS",1)~ THEN BLK#NEP LK#NepheleViconia_2
+ @206
+ DO ~ActionOverride("Viconia",SetGlobal("LK#NepheleViconia","LOCALS",2)) ActionOverride("Nephele",SetGlobal("LK#NepheleViconia","LOCALS",2))~
