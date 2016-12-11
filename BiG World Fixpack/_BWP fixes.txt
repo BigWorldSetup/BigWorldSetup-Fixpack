@@ -837,6 +837,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Spurious reference to non-existent oggdec removed
 :: - LINK NOT FOUND -
 
+:: Nightfarer's fixed cre file Protection From Spell effects (non-functional due to spaces at end of SPL names)
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
