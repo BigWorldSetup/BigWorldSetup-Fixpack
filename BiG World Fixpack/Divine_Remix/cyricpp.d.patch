@@ -1,0 +1,10 @@
+--- divine_remix/dlg/cyricpp.d	2014-10-30 04:55:28.000000000 -0400
++++ Fixpack/divine_remix/dlg/cyricpp.d	2016-11-26 02:07:14.799362600 -0500
+@@ -1,6 +1,6 @@
+ APPEND CHALCY01
+ 
+-IF WEIGHT #-1 ~Kit(Player1,"A#CYRIC")
++IF WEIGHT #-1 ~Kit(Player1,A#CYRIC)
+ Global("BeginChallenge4","GLOBAL",3)~ THEN BEGIN a1
+   SAY @13026
+     = @13027

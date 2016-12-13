@@ -1,0 +1,11 @@
+--- divine_remix/lib/cdxvim.tph	2014-11-01 18:31:10.000000000 -0400
++++ Fixpack/divine_remix/lib/cdxvim.tph	2016-11-21 16:18:27.071866300 -0500
+@@ -27,7 +27,7 @@
+ 
+ COPY ~Divine_Remix/spl/CDXVFEAR.spl~ ~override~  // immunity to fear (permanent innate spell)
+ 
+-ACTION_IF GAME_IS ~tob bg2ee bgt~ THEN BEGIN
++ACTION_IF GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN
+ 
+   ACTION_IF !FILE_EXISTS_IN_GAME ~beheld01.cre~ THEN BEGIN
+     

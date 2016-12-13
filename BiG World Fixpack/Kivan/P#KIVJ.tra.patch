@@ -1,0 +1,11 @@
+--- kivan/tra/english/p#kivj.tra	2014-10-08 13:23:09.142030300 -0400
++++ Fixpack/kivan/tra/english/P#KIVJ.tra	2016-11-26 02:07:16.921078400 -0500
+@@ -62,7 +62,7 @@
+ @61   = ~As usual. Demons, dragons, liches... they all sound formidable, until they find themselves on the wrong end of my blade.~
+ @62   = ~It was a close one, <CHARNAME>, and we won it by no small amount of luck.  There is no shame in fearing a foe like this.~
+ @63   = ~I think no one knows more than a tenth about their fathers... and then comes the day when we have no luxury of asking them questions.~
+-@64   = ~Why, it is a wonder that the monsters of Faerun do not run away trembling the moment they hear my <PRO_LORDLADY>'s steps.~
++@64   = ~Why, it is a wonder that the monsters of Faerun do not run away trembling the moment they hear my <PRO_LADYLORD>'s steps.~
+ @65   = ~I do not understand completely what is going on, but it looks to me that the actors are to be punished for choosing the wrong playwright. Are you going to hang back, <CHARNAME>, or are we to step through this portal and walk the Planes?~
+ @66   = ~I promised to deliver Haer'Dalis to safety, and instead, the whole Sigil Company got arrested. Talk about good intentions!~
+ @67   = ~I hate it when innocent folk get dragged away through some... portal from under my nose. We are going in!~

@@ -1,0 +1,11 @@
+--- kivan/baf/p#kivd.baf	2006-02-16 23:06:37.343750000 -0500
++++ Fixpack/kivan/baf/p#kivd.baf	2016-11-21 16:26:10.795043200 -0500
+@@ -33,7 +33,7 @@
+ InParty(Myself) 
+ CombatCounter(0) !See([ENEMY])
+ GlobalGT("AsylumPlot","GLOBAL",40)
+-GlobalLT("Chapter","GLOBAL",6)
++GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)
+ Global("P#KivanSoul","GLOBAL",0)
+ THEN
+ RESPONSE #100

@@ -1,0 +1,22 @@
+--- kivan/d/p#kinew.d	2008-05-03 08:06:21.234375000 -0400
++++ Fixpack/kivan/d/p#kinew.d	2016-11-21 10:23:52.681946600 -0500
+@@ -1360,7 +1360,7 @@
+ ~Global("P#MercyTalk", "GLOBAL",1)~ THEN BEGIN KivMercy
+ SAY @478
+ ++ @479 DO ~SetGlobal("P#MercyTalk", "GLOBAL",2)~ + KIPCST6.1
+-+~GlobalGT("Chapter","GLOBAL",4)~+ @480 DO ~SetGlobal("P#MercyTalk", "GLOBAL",2)~ + KIPCST6.2
+++~GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)~+ @480 DO ~SetGlobal("P#MercyTalk", "GLOBAL",2)~ + KIPCST6.2
+ ++ @481 DO ~SetGlobal("P#MercyTalk", "GLOBAL",2)~ + KIPCST6.3
+ ++ @482 DO ~SetGlobal("P#MercyTalk", "GLOBAL",2)~ + KIPCST6.4
+ END
+@@ -2659,8 +2659,8 @@
+ ~Global("P#KivanPlanar","GLOBAL",1)~ THEN BEGIN KivPlanar
+ SAY @958
+ ++ @959 DO ~SetGlobal("P#KivanPlanar","GLOBAL",2)~ EXIT
+-+ ~GlobalLT("Chapter","GLOBAL",6) ~ + @960 DO ~SetGlobal("P#KivanPlanar","GLOBAL",2)~ + KIPCST13.2
+-+ ~GlobalGT("Chapter","GLOBAL",5) ~ + @961 DO ~SetGlobal("P#KivanPlanar","GLOBAL",2)~ + KIPCST13.2
+++ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%) ~ + @960 DO ~SetGlobal("P#KivanPlanar","GLOBAL",2)~ + KIPCST13.2
+++ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) ~ + @961 DO ~SetGlobal("P#KivanPlanar","GLOBAL",2)~ + KIPCST13.2
+ ++ @962 DO ~SetGlobal("P#KivanPlanar","GLOBAL",2)~ + KIPCST13.3
+ ++ @963 DO ~SetGlobal("P#KivanPlanar","GLOBAL",2)~ + KIPCST13.4
+ + ~!Dead("c6coran")~+ @964 DO ~SetGlobal("P#KivanPlanar","GLOBAL",2)~ + KIPCST13.5A

@@ -1,0 +1,244 @@
+--- kivan/setup-kivan.tp2	2014-10-08 13:20:37.139830500 -0400
++++ Fixpack/kivan/setup-kivan.tp2	2016-11-26 02:51:27.995458100 -0500
+@@ -1,45 +1,34 @@
+ BACKUP ~Kivan/backup~
+ AUTHOR ~domi_sotto@gibberlings3.net~
+ 
++VERSION ~v15 BWP Fix~
++
++README ~Kivan/readme-kivan-new.html~
++
+ ALWAYS
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    OUTER_SET bg2_chapter = 12
++  END ELSE BEGIN
++    OUTER_SET bg2_chapter = 0
++  END
++  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
++    OUTER_SET bg2_chapter = bg2_chapter + 1
++    OUTER_SPRINT name_source ~bg2_chapter_%i%~
++    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
++  END
++
+ 
+   ACTION_IF NOT VARIABLE_IS_SET cd_always THEN BEGIN
+ 
+     OUTER_SET cd_always = 1 // just do this once per install
+     
+-    INCLUDE ~%MOD_FOLDER%/lib/handle_charsets.tpa~
+-    ACTION_DEFINE_ARRAY cdnoconvert BEGIN ~setup-ee.tra~ END // since this file is only used for EE games, it's already converted to utf8
+-    ACTION_DEFINE_ARRAY cdreload BEGIN 
+-      ~bp#deh.tra~
+-      ~bp#deh25.tra~
+-      ~bp#kiv.tra~
+-      ~bp#kiv25.tra~
+-      ~p#deft25.tra~
+-      ~p#ki25j.tra~
+-      ~p#kift25.tra~
+-      ~p#kiitm.tra~
+-      ~p#kilt.tra~
+-      ~p#kilt25.tra~
+-      ~p#kimaq.tra~
+-      ~p#kimw.tra~
+-      ~p#kinew.tra~
+-      ~p#kipid.tra~
+-      ~p#kiribf.tra~
+-      ~p#kiring.tra~
+-      ~p#kiv01.tra~
+-      ~p#kivan.tra~
+-      ~p#kivj.tra~
+-      ~p#kivsoa.tra~
+-      ~p#pid25.tra~
+-      ~p#pide25.tra~
+-      ~setup.tra~
+-    END
++    ACTION_DEFINE_ARRAY cdnoconvert BEGIN setup-ee END // since this file is only used for EE games, it's already converted to utf8
++    ACTION_DEFINE_ARRAY cdreload BEGIN setup END
+     LAF HANDLE_CHARSETS
+       INT_VAR
+         infer_charset = 1
+       STR_VAR
+         tra_path = EVAL ~%MOD_FOLDER%/tra~
+-        // charset_table = cdcharsets // Included for illustrative purposes.
+         noconvert_array = cdnoconvert
+         reload_array = cdreload
+     END
+@@ -48,10 +37,6 @@
+ 
+ END
+ 
+-VERSION ~v15~
+-
+-README ~Kivan/readme-kivan-new.html~
+-
+ AUTO_TRA ~Kivan/tra/%s~
+ 
+ LANGUAGE
+@@ -68,7 +53,7 @@
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+ 
+ BEGIN @0 DESIGNATED 100
+-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @187
++REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @187
+ 
+ /////                                                  \\\\\
+ ///// ee-specific stuff                                \\\\\
+@@ -77,7 +62,7 @@
+ // cahrsets already converted in ALWAYS block
+ 
+ // load alternative tra file for EE games
+-ACTION_IF GAME_IS BG2EE THEN BEGIN
++ACTION_IF GAME_IS ~BG2EE eet~ THEN BEGIN
+ 
+   LOAD_TRA ~Kivan/tra/%LANGUAGE%/setup-ee.tra~
+ 
+@@ -139,18 +124,18 @@
+ 
+ COMPILE ~Kivan/d/P#KIVAN.d~
+ COMPILE ~Kivan/d/BP#KIV.d~
+-COMPILE ~Kivan/d/P#KIVSOA.d~
+-COMPILE ~Kivan/d/P#KINEW.d~
++COMPILE EVALUATE_BUFFER ~Kivan/d/P#KIVSOA.d~
++COMPILE EVALUATE_BUFFER ~Kivan/d/P#KINEW.d~
+ COMPILE ~Kivan/d/P#KILT.d~
+ COMPILE ~Kivan/d/BP#DEH.d~
+ COMPILE ~Kivan/d/P#KIRING.D~
+ COMPILE ~Kivan/d/P#KIMAQ.D~
+-COMPILE ~Kivan/d/P#KIITM.D~
+-COMPILE ~Kivan/d/P#KIVJ.d~
+-COMPILE ~Kivan/d/P#KIPID.D~
++COMPILE EVALUATE_BUFFER ~Kivan/d/P#KIITM.D~
++COMPILE EVALUATE_BUFFER ~Kivan/d/P#KIVJ.d~
++COMPILE EVALUATE_BUFFER ~Kivan/d/P#KIPID.D~
+ COMPILE ~Kivan/d/P#KIRING.D~ // Lover's Ring
+ 
+-ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN
++ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN
+ 
+   COMPILE ~Kivan/d/BP#KIV25.d~
+   COMPILE ~Kivan/d/BP#DEH25.d~
+@@ -170,29 +155,29 @@
+ 
+ //The following compiles baf files
+ COMPILE ~Kivan/baf/P#KIVAN.baf~
+-COMPILE ~Kivan/baf/P#KIV01.baf~ USING ~Kivan/tra/english/setup.tra~
+-COMPILE ~Kivan/baf/P#KIVD.baf~
++COMPILE EVALUATE_BUFFER ~Kivan/baf/P#KIV01.baf~ USING ~Kivan/tra/english/setup.tra~
++COMPILE EVALUATE_BUFFER ~Kivan/baf/P#KIVD.baf~
+ COMPILE ~Kivan/baf/P#KISQ.baf~
+ COMPILE ~Kivan/baf/P#DEHER.baf~
+ COMPILE ~Kivan/baf/P#DEH01.baf~
+ 
+-EXTEND_TOP    ~ANOMEN.bcs~  ~Kivan/baf/P#ANOM.baf~
++EXTEND_TOP    ~ANOMEN.bcs~  ~Kivan/baf/P#ANOM.baf~ EVALUATE_BUFFER
+ EXTEND_TOP    ~P#KIV01.bcs~ ~Kivan/baf/P#KILOVE.baf~
+ EXTEND_BOTTOM ~AR0300.bcs~  ~Kivan/baf/P#AR0300.baf~
+-EXTEND_BOTTOM ~AR0700.bcs~  ~Kivan/baf/P#AR0700.baf~
++EXTEND_BOTTOM ~AR0700.bcs~  ~Kivan/baf/P#AR0700.baf~ EVALUATE_BUFFER
+ EXTEND_BOTTOM ~AR0703.bcs~  ~Kivan/baf/P#AR0703.baf~
+ EXTEND_BOTTOM ~AR2300.BCS~  ~Kivan/baf/P#AR2300.BAF~
+ EXTEND_BOTTOM ~AR2801.bcs~  ~Kivan/baf/P#AR2801.baf~
+ EXTEND_BOTTOM ~EDWIND.bcs~  ~Kivan/baf/P#EDWID.baf~
+-EXTEND_BOTTOM ~P#KIV01.bcs~ ~Kivan/baf/P#KIRIBF.baf~ //Lover's Ring
++EXTEND_BOTTOM ~P#KIV01.bcs~ ~Kivan/baf/P#KIRIBF.baf~ EVALUATE_BUFFER //Lover's Ring
+ 
+-ACTION_IF NOT ((GAME_IS bg2ee) OR (FILE_EXISTS_IN_GAME ~cdbehbla.pro~)) THEN BEGIN // only if not bg2ee or non-fixpacked game
++ACTION_IF NOT ((GAME_IS ~bg2ee eet~) OR (FILE_EXISTS_IN_GAME ~cdbehbla.pro~)) THEN BEGIN // only if not bg2ee or non-fixpacked game
+ 
+   EXTEND_TOP    ~AR1303.bcs~  ~Kivan/baf/P#AR1303.baf~ // Fixing Glacias
+ 
+ END
+ 
+-ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN
++ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN
+   
+   COMPILE ~Kivan/baf/P#KIMW.baf~
+   COMPILE ~Kivan/baf/P#KI25.baf~
+@@ -214,7 +199,7 @@
+ ///// portraits                                        \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~bg2ee~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ 
+   COPY ~Kivan/bmp/ee/DEHERL.bmp~  ~override~
+        ~Kivan/bmp/ee/DEHERM.bmp~  ~override~
+@@ -305,7 +290,7 @@
+ COPY_EXISTING ~sahkng02.cre~ ~override~
+   ADD_CRE_ITEM ~P#IHTIA~ #0 #0 #0 ~IDENTIFIED~ ~INV6~
+ 
+-ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN
++ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN
+ 
+   COPY ~Kivan/bam/IWREAT.BAM~ ~override~
+        ~Kivan/bam/CWREAT.BAM~ ~override~
+@@ -506,7 +491,7 @@
+   SAY NAME1 @161
+   SAY NAME2 @161
+ 
+-ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN
++ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN
+ 
+   COPY ~Kivan/cre/P#DEH01.cre~ ~override~
+     SAY NAME1 @47
+@@ -518,7 +503,7 @@
+ ///// 2da junk                                         \\\\\
+ /////                                                  \\\\\
+ 
+-ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN // tob
++ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // tob
+ 
+   // assign joined dialogue, banter
+   APPEND ~pdialog.2da~  ~P#KIVAN P#KIVP P#KIVJ P#KIVD P#KI25P P#KI25J P#KI25D P#KI25~ UNLESS ~P#KIVAN~
+@@ -559,6 +544,42 @@
+ 
+ LAF HANDLE_AUDIO END
+ 
++/////                                                  \\\\\
++///// FATESP                                           \\\\\
++/////                                                  \\\\\
++
++ACTION_IF GAME_IS ~eet~ BEGIN
++  INCLUDE ~EET/other/EET_functions.tph~
++  LAF ~EET_NPC_TRANSITION~
++    INT_VAR
++      type = 2
++      clean_ToB = 1
++    STR_VAR
++      dv = "P#KIVAN"
++      override_SoA = "P#KIVAN"
++      override_ToB = "P#KI25"
++      dialog_ToB = "P#KI25P" //unfortunately ToB starting dialogue doesn't exist
++      traFile = EVAL "Kivan/tra/%LANGUAGE%/p#ki25j.tra"
++      string = "@164" //Bring me Kivan, the elven archer.
++      stringPosDV = "Korgan"
++      clean_ToB_DV = "Kivan"
++  END
++  LAF ~EET_NPC_TRANSITION~
++    INT_VAR
++      type = 2
++    STR_VAR
++      dv = "P#DEHER"
++      override_SoA = "P#DEH01"
++      override_ToB = "P#DE25"
++      dialog_ToB = "P#DE25P" //unfortunately ToB starting dialogue doesn't exist
++      traFile = EVAL "Kivan/tra/%LANGUAGE%/p#ki25j.tra"
++      string = "@165" //Bring me Deheriana, the elven mage.
++      stringPosDV = "Dorn"
++  END
++END ELSE BEGIN
++  COMPILE ~Kivan/d/FATESP.d~ USING ~Kivan/tra/%LANGUAGE%/p#ki25j.tra~
++END
++
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+ /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+ /////                                                  \\\\\
+@@ -749,7 +770,7 @@
+ BEGIN @170 DESIGNATED 300
+ REQUIRE_COMPONENT ~kivan/setup-kivan.tp2~ ~100~ @186
+ 
+-ACTION_IF GAME_IS ~bg2ee~ BEGIN
++ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ 
+   COPY ~Kivan/bmp/ee/P#KI2L.bmp~ ~override/P#KI1L.bmp~
+   COPY ~Kivan/bmp/ee/P#KI2M.bmp~ ~override/P#KI1M.bmp~

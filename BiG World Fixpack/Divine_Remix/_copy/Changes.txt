@@ -1,0 +1,58 @@
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgt tob bg2ee~ THEN BEGIN  => GAME_IS ~bgt tob bg2ee eet~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgee bg2ee~ => GAME_IS ~bgee bg2ee eet~
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bg2ee~ BEGIN  => GAME_IS ~bg2ee eet~ BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgee bg2ee~ => GAME_IS ~bgee bg2ee eet~
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bg2ee~ BEGIN  => GAME_IS ~bg2ee eet~ BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgee bg2ee~ => GAME_IS ~bgee bg2ee eet~
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bg2ee~ BEGIN  => GAME_IS ~bg2ee eet~ BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgee bg2ee~ => GAME_IS ~bgee bg2ee eet~
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bg2ee~ BEGIN  => GAME_IS ~bg2ee eet~ BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgee bg2ee~ => GAME_IS ~bgee bg2ee eet~
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bg2ee~ BEGIN  => GAME_IS ~bg2ee eet~ BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgee bg2ee~ => GAME_IS ~bgee bg2ee eet~
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bg2ee~ BEGIN  => GAME_IS ~bg2ee eet~ BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgee bg2ee~ => GAME_IS ~bgee bg2ee eet~
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bg2ee~ BEGIN  => GAME_IS ~bg2ee eet~ BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgee bg2ee~ => GAME_IS ~bgee bg2ee eet~
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bg2ee~ BEGIN  => GAME_IS ~bg2ee eet~ BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgee bg2ee~ => GAME_IS ~bgee bg2ee eet~
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bg2ee~ BEGIN  => GAME_IS ~bg2ee eet~ BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgee bg2ee~ => GAME_IS ~bgee bg2ee eet~
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bg2ee~ BEGIN  => GAME_IS ~bg2ee eet~ BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~soa bg2 tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee bgee~  => GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee eet bgee~ 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee bgee~  => GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee eet bgee~ 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee bgee~  => GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee eet bgee~ 
+Patching divine_remix/setup-divine_remix.tp2: GAME_IS ~tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/lib/a#feyw.tph: GAME_IS ~tob bg2ee bgt~ THEN BEGIN => GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN
+Patching divine_remix/lib/a#koss.tph: GAME_IS ~tob bg2ee bgt~ THEN BEGIN => GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN
+Patching divine_remix/lib/a#shar.tph: GAME_IS ~tob bg2ee bgt~ THEN BEGIN => GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN
+Patching divine_remix/lib/a#temp.tph: GAME_IS ~tob bg2ee bgt~ THEN BEGIN => GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN
+Patching divine_remix/lib/cdxvim.tph: GAME_IS ~tob bg2ee bgt~ THEN BEGIN => GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN
+Patching divine_remix/lib/fl#add_kit_ee.tpa: GAME_IS ~bgee bg2ee~ => GAME_IS ~bgee bg2ee eet~
+Patching divine_remix/lib/macros.tph: GAME_IS ~tob bg2ee bgt~ THEN BEGIN  => GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN 
+Patching divine_remix/lib/macros.tph: GAME_IS ~tob bg2ee bgt~ => GAME_IS ~tob bg2ee eet bgt~
+
+-----------
+
+Manual patches:
+
+1. divine_remix/setup-divine_remix.tp2 (added missing cre files from BGT=viconi61 and EET=vicon6_)
+ACTION_FOR_EACH creature IN viconi6 viconi8 viconi9 viconi11 viconi13 viconi16 viconi4 viconi BEGIN
+=>
+ACTION_FOR_EACH creature IN viconi6 viconi8 viconi9 viconi11 viconi13 viconi16 viconi4 viconi viconi61 viconi6_ BEGIN
+
+2. Disabled Sphere System component on EE games - it's currently completely broken in clean installation of BG2:EE
+REQUIRE_PREDICATE (NOT ENGINE_IS ~bgee bg2ee iwdee~) ~This component is not compatible with EE engine.~
