@@ -48,7 +48,7 @@
 BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v2.3~
+VERSION ~v2.4~
 
 ALWAYS
 	// special folders and marker file
@@ -92,7 +92,7 @@ ALWAYS
 	STR_VAR
 		msg_file_path = ~~
 	BEGIN
-		ACTION_IF %INTERACTIVE% THEN BEGIN
+		ACTION_IF INTERACTIVE THEN BEGIN
 			PRINT ~~
 			AT_NOW ~%DISPLAY_FILE_CMD% %msg_file_path%~
 			PRINT ~~
@@ -106,31 +106,29 @@ ALWAYS
 	DEFINE_ACTION_FUNCTION ~checks~
 	BEGIN
 		ACTION_IF (NOT DIRECTORY_EXISTS ~%MESSAGES%~) THEN BEGIN
-			PRINT ~~
-			PRINT ~Can't locate the directory "%MESSAGES%".~
-			PRINT ~Make sure the Fixpack resides in the current directory~
-			PRINT ~~
-			PRINT ~Das Verzeichnis "%MESSAGES%" konnnte nicht gefunden werden.~
-			PRINT ~Es ist fÅr die Installation zwingend erforderlich~
-			PRINT ~und muss im aktuellen Verzeichnis vorhanden sein.~
-			PRINT ~~
-			PRINT ~Ne trouve pas le repertoire "%MESSAGES%".~
-			PRINT ~Assurez-vous qu'il se trouve dans le repertoire actuel.~
-			PRINT ~~
-			PRINT ~No se puede localizar el directorio "%MESSAGES%".~
-			PRINT ~Es necesario para la instalacion y debe estar en el~
-			PRINT ~directorio actual.~
-			PRINT ~~
-			FAIL ~Missing Fixpack Sub-Folder~
+			PRINT "%WNL%%WNL%" ^
+                  "Can't locate the directory '%MESSAGES%'.%WNL%" ^
+			      "Make sure the Fixpack folder resides in the current directory.%WNL%" ^
+			      "The latest WeiDU (from www.weidu.org/~thebigg) is also required.%WNL%" ^
+			      "%WNL%%WNL%" ^
+			      "Das Verzeichnis '%MESSAGES%' konnnte nicht gefunden werden.%WNL%" ^
+			      "Es ist fÅr die Installation zwingend erforderlich%WNL%" ^
+			      "und muss im aktuellen Verzeichnis vorhanden sein.%WNL%" ^
+			      "%WNL%%WNL%" ^
+			      "Ne trouve pas le repertoire '%MESSAGES%'.%WNL%" ^
+			      "Assurez-vous qu'il se trouve dans le repertoire actuel.%WNL%" ^
+			      "%WNL%%WNL%" ^
+			      "No se puede localizar el directorio '%MESSAGES%'.%WNL%" ^
+			      "Es necesario para la instalacion y debe estar en el directorio actual.%WNL%%WNL%"
+			PRINT ~Press any key to continue...~
+			ACTION_READLN ~pause~
+			FAIL ~Missing Required 'BiG World Fixpack' Folder~
 		END
 
 		ACTION_IF (NOT FILE_EXISTS ~%INSTALL_MARKER%~) THEN BEGIN // create empty installation marker file
 <<<<<<<< .../BiG_World_Fixpack-inlined/%INSTALL_MARKER%
 >>>>>>>>
 			COPY ~.../BiG_World_Fixpack-inlined/%INSTALL_MARKER%~ ~%INSTALL_MARKER%~
-//		END ELSE BEGIN
-//			LAF ~show_message~ STR_VAR msg_file_path = EVAL ~%os_quote%%MESSAGES%%os_slash%previous_install.txt%os_quote%~ END
-//			FAIL ~Previous Installation Marker File Found~
 		END
 	END
 
@@ -454,10 +452,11 @@ ALWAYS
 	END
 END // ALWAYS
 
-BEGIN ~Apply Patches To Unpacked Mod Folders In Game Directory~ INSTALL_BY_DEFAULT NO_LOG_RECORD
+BEGIN ~Apply Patches To Unpacked Mod Folders In Current Directory~ INSTALL_BY_DEFAULT NO_LOG_RECORD
 
 LAUNCH_ACTION_FUNCTION ~checks~ END
 LAUNCH_ACTION_FUNCTION ~show_message~ STR_VAR msg_file_path = EVAL ~%os_quote%%MESSAGES%%os_slash%header.txt%os_quote%~ END
 LAUNCH_ACTION_FUNCTION ~show_message~ STR_VAR msg_file_path = EVAL ~%os_quote%%MESSAGES%%os_slash%start.txt%os_quote%~ END
 LAUNCH_ACTION_FUNCTION ~process_mod_folders~ END
 LAUNCH_ACTION_FUNCTION ~show_message~ STR_VAR msg_file_path = EVAL ~%os_quote%%MESSAGES%%os_slash%end.txt%os_quote%~ END
+

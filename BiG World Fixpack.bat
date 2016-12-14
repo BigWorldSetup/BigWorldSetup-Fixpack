@@ -1,6 +1,8 @@
 IF NOT EXIST "_ApplyPatches.bat" echo "This script is legacy code and has been replaced by the newer _ApplyPatches script.  Please copy that script (_ApplyPatches.tp2 and _ApplyPatches.bat) into your game folder and run it instead (after unpacking all of the mods you plan to install, so it can determine if additional compatibility patches are needed)."
+IF NOT EXIST "_ApplyPatches.bat" pause
 
 IF NOT EXIST "_ApplyPatches.tp2" echo "This script is legacy code and has been replaced by the newer _ApplyPatches script.  Please copy that script (_ApplyPatches.tp2 and _ApplyPatches.bat) into your game folder and run it instead (after unpacking all of the mods you plan to install, so it can determine if additional compatibility patches are needed)."
+IF NOT EXIST "_ApplyPatches.tp2" pause
 
 Call "_ApplyPatches.bat"
 
