@@ -1,5 +1,5 @@
 --- kivan/d/p#kivsoa.d	2014-10-08 12:18:21.767227800 -0400
-+++ Fixpack/kivan/d/p#kivsoa.d	2016-11-21 16:26:10.797057300 -0500
++++ Fixpack/kivan/d/p#kivsoa.d	2016-12-16 01:26:34.766003900 -0500
 @@ -1025,7 +1025,7 @@
  IF WEIGHT #1001 ~CombatCounter(0) !See([ENEMY])InParty("P#KIVAN")
  See("P#KIVAN")
@@ -18,6 +18,15 @@
  AreaType(OUTDOOR)
  Global("P#KIJA6","LOCALS",0)~ THEN BP#KIV KIJA6
  @505
+@@ -1169,7 +1169,7 @@
+ AreaCheck("AR2207")// Deirex's Tower in Ust Natha
+ AreaCheck("AR2208")// Jarlaxle's House wherever
+ AreaCheck("AR2209")// Jae'llat's House
+-AreaCheck("AR2210 ")//Deirex's Cave
++AreaCheck("AR2210")// Deirex's Cave
+ Global("P#KIJA9","LOCALS",0)~ THEN BJAHEIR KIJA9
+ @521
+ DO ~SetGlobal("P#KIJA9","LOCALS",1)~
 @@ -1490,7 +1490,7 @@
  Global("P#DeherianaLives","GLOBAL",0)
  Global("P#DeherianaDead","GLOBAL",0)
