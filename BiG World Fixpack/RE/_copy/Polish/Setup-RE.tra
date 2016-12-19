@@ -1,0 +1,397 @@
+@0    = ~Aerie, Anomen, Jaheira and Viconia React to Romantic Encounters (brak polskiej wersji)~
+@1    = ~Storms and Lightning, by berelinde (Pani Pogody Ada, tresc dla doroslych, brak polskiej wersji)~
+@2    = ~Aimi's Magic, by berelinde (tresc dla doroslych, brak polskiej wersji)~
+@3    = ~Aimi~
+@4    = ~Zreczne rece Anishai, by cmorgan~
+@5    = ~Wieczor z Aranem, by Kulyok~
+@6    = ~Bjornin's Desire, by jastey (tresc dla doroslych, brak polskiej wersji)~
+@7    = ~Sir Bjornin~
+@8    = ~Czar Bodhi, by Kulyok (tresc dla doroslych)~
+@9    = ~Trademeet with Guildmistress Busya, by magrat (brak polskiej wersji)~
+@10   = ~Hazard z Cambionem, by Kulyok~
+@11   = ~Wyglada na to, ze nie masz zainstalowanego ToB~
+@12   = ~Chanelle's Gifts, by cmorgan (tresc dla doroslych, brak polskiej wersji)~
+@13   = ~I am at your service.~ [RE_cha5]
+@14   = ~Somebody help me!~ [RE_cha4]
+@15   = ~I am no one of importance...~ [RE_cha2]
+@16   = ~Excuse me, I have only my simple business...~ [RE_cha3]
+@17   = ~Noc z Coranem, by magrat~
+@18   = ~Test Cyrica, by Kulyok~
+@19   = ~Schadzka z kapitanem Piratow, by Kulyok (Desharik, tresc dla doroslych)~
+@20   = ~Samotna Driada, by Kulyok (tresc dla doroslych)~
+@21   = ~Lagodniejsza strona Edwina, by Kulyok~
+@22   = ~Eldoth' Exploits, by Kulyok (brak polskiej wersji)~
+@23   = ~Rozszerzenie Elhana, by Kulyok~
+@24   = ~Obnazony miecz Firkraaga~
+@25   = ~Kontrakt Gaelana, by Evaine Dian~
+@26   = ~Kontrakt Gaelana~
+@27   = ~Oto kontrakt, który Gaelan Bayle dał <CHARNAME>. Koślawe, ledwo czytelne pismo i kilka kleksów wskazują na to, że dokument pisany był w wielkim pośpiechu, mimo to, nie licząc podpisu Gaelana, pisownia jest zaskakująco poprawna.
+
+  "Athkatla, <DAYANDMONTH>
+  
+Niżej podpisany zobowiązuje się zagwarantować <CHARNAME> darmową pomoc w misji ratunkowej jej znajomej Imoen, jeśli <CHARNAME> zgodzi się go bzyknąć.
+
+  - Gayling Bail
+  - <CHARNAME>"~
+@28   = ~Oto kontrakt, który Gaelan Bayle dał <CHARNAME>. Koślawe, ledwo czytelne pismo i kilka kleksów wskazują na to, że dokument pisany był w wielkim pośpiechu, mimo to, nie licząc podpisu Gaelana, pisownia jest zaskakująco poprawna.
+
+  "Athkatla, <DAYANDMONTH>
+  
+Niżej podpisany zobowiązuje się zagwarantować <CHARNAME> darmową pomoc w misji ratunkowej jej znajomej Imoen, jeśli <CHARNAME> zgodzi się go bzyknąć.
+  
+  - Gayling Bail
+  - <CHARNAME>"~
+@29   = ~Spacer z Garrenem Wichrowa Wlocznia, by Kulyok~
+@30   = ~Wejscie Haer'Dalisa, by Kulyok~
+@31   = ~Serce Hendaka, by jastey~
+@32   = ~Ilona, corka sprzedawcy, by Kulyok~
+@33   = ~Ilona~
+@34   = ~Bync~
+@35   = ~Mit~
+@36   = ~Fascynacje Jarlaxle'a, by Catseye~
+@37   = ~Noc z Lais w Imnesvale, by Kulyok~
+@38   = ~Lais~
+@39   = ~Laran's Promise, by berelinde (tresc dla doroslych, brak polskiej wersji)~
+@40   = ~Laran~
+@41   = ~Hello, <PRO_SIRMAAM>. If you do not mind my saying it, you look a stranger to these parts.~ [RE_Lar00]
+@42   = ~Torm! Guide my blade!~ [RE_Lar01]
+@43   = ~[RE_Lar02]~ [RE_Lar02]
+@44   = ~Hello!~ [RE_Lar03]
+@45   = ~Refugee~
+@46   = ~Letter~
+@47   = ~Dearest Lady <CHARNAME>,
+  
+  I write in haste, but I wanted you to know that I think of you often. Should I survive, I will seek you out, but my survival appears less likely with every passing hour. Nevertheless, my faith is in Torm, and my place is here, defending Saradush. Go with the blessing of all the good gods. 
+  
+  With love, Laran.~
+@48   = ~The Love Song of Logan, Lord Coprith, by Ajnos (brak polskiej wersji)~
+@49   = ~Mekrath and Nymphology, by Kulyok (brak polskiej wersji ksiazki)~
+@50   = ~Specjalny towar Miry, by berelinde~
+@51   = ~Wiosenny tonik Miry~
+@52   = ~Wiosenny tonik Miry
+
+Otrzymałeś ten tonik od Miry, sprzedawczyni na Promenadzie Waukeen.~
+@53   = ~Wiosenny tonik Miry
+
+Mira, sprzedawczyni na Promenadzie Waukeen, przygotowuje tę miksturę by wspomóc tych, którzy pragną oddawać się romantycznym rozrywkom bez obaw o potomstwo, czy zmęczenie.~
+@54   = ~Księga Wierszów Ceilli~
+@55   = ~The Vow
+
+Bid Helm his watchfulness cease,
+Bid Selune walk the skies by day,
+Bid Lathander the dawn forsake,
+Bid Torm his justice leave,
+Bid Mystra lay her shuttle by,
+Bid Sune no beauty make!
+When these false to their own natures' prove,
+Then shall I cease thee alone to love.
+
+
+The Soldier and the Maid
+
+And who are you, my pretty fair maid,
+With hair as bright as honey?
+And who are you, my pretty fair maid,
+So lithe and swift and bonny?
+She answered me, quite modestly:
+"I'm clepped 'my bonny Annie,'"
+Said my own dear love, my bonny fair dove,
+That blasted Kythorn morning.
+
+"And will you come to my mother's house,
+When the moon shines brightly near me?
+And will you come to my mother's house,
+When Selune lights the way so clearly?
+I'll open the door, and I'll let you in,
+And never the one will hear us!"
+Said my own dear love, my bonny fair dove,
+That blasted Kythorn morning.
+
+So I went to her house, in the middle of the night,
+When the moon shone brightly near me.
+I went to her house, in the middle of the night,
+When Selune lit the way so clearly.
+She opened the door, and she let me in,
+And never the one did hear us,
+Swore my own dear love, my bonny fair dove,
+That blasted Kythorn evening.
+
+She took my horse by the bridle and the bit,
+And she led him to the stable.
+She took my horse by the bridle and the bit,
+And 'twas lonely in the stable.
+She said "There's plenty of oats
+For a soldier's horse, to eat them if he's able,"
+Said my own dear love, my bonny fair dove,
+That blasted Kythorn evening.
+
+Then she took me with her lily-white hand,
+And she led me to a table.
+She took me with her lily-white hand,
+And put wine upon the table.
+She said "There's plenty of wine
+For a soldier lad, so drink it if you're able,"
+Said my own dear love, my bonny fair dove,
+That blasted Kythorn evening.
+
+Then she got up, and she made a bed,
+And she made it rightly easy.
+Then she got up, and she made a bed,
+And she said she wouldn't leave me.
+So I took her by the lily-white hand,
+And said "Lassie, are you able?"
+To my own dear love, my bonny fair dove,
+That blasted Kythorn evening.
+
+I got up, and I laid her down,
+So gentle and so easy.
+I got up, and I laid her down,
+And never did she leave me.
+In the hush of night, she laid me down,
+And she showed me she was able,
+Yes, my own dear love, my bonny fair dove,
+That blasted Kythorn evening.
+
+And there we lay, 'til the break of day,
+And never the one did hear us.
+And there we lay, 'til the break of day,
+When Lathander's orb did rouse us.
+And she clung to me, in the morning light,
+She said, "Laddie, never leave me."
+Begged my own dear love, my bonny fair dove,
+That blasted Kythorn morning.
+
+Then I arose, and put on my clothes,
+When the drums were fairly near us.
+Then I arose, and put on my clothes,
+With the war drums nigh upon us.
+I pulled on my boots, with my orders in my fist,
+Saying "Lassie, I must leave you!"
+To my own dear love, my bonny fair dove,
+That blasted Kythorn morning.
+
+"And when will you return again,
+My bonny soldier laddie?
+And when will you return again,
+And when will we get married?"
+"When broken shells make feast-day bells,
+I'll wed my bonny Annie!"
+Said I to my own dear love, my bonny fair dove,
+That blasted Kythorn morning.
+
+
+To Market
+
+As I went to the marketplace, 
+What do you think I've seen,
+But a fine young piper laddie,
+Leaping over the green,
+Singing "Hey, laughter! Ho, laughter!
+'Tis folly not to play!"
+
+"I have naught to offer you,"
+This young man said to me,
+"But you'll gain love and freedom,
+If you come away with me!"
+And he sang "Hey, laughter! Ho, laughter!
+'Tis folly not to play!"
+
+He played a reel, and he played a jig,
+He played "The Lights of Day,"
+And I tossed my hair, and the room stood still,
+To the tapping of my toe.
+And he sang "Hey, laughter! Ho, laughter!
+'Tis folly not to play!"
+
+As he blew up his chanter,
+And he began to play,
+I chose love and freedom,
+I'll wander all of my days,
+Singing "Hey, laughter! Ho, laughter!
+'Tis folly not to play!"~
+@56   = ~The Vow
+
+Bid Helm his watchfulness cease,
+Bid Selune walk the skies by day,
+Bid Lathander the dawn forsake,
+Bid Torm his justice leave,
+Bid Mystra lay her shuttle by,
+Bid Sune no beauty make!
+When these false to their own natures' prove,
+Then shall I cease thee alone to love.
+
+
+The Trooper and the Maid
+
+And who are you, my pretty fair maid,
+With hair as bright as honey?
+And who are you, my pretty fair maid,
+So lithe and swift and bonny?
+She answered me, quite modestly:
+"I'm clepped 'my bonny Annie,'"
+Said my own dear love, my bonny fair dove,
+That blasted Kythorn morning.
+
+"And will you come to my mother's house,
+When the moon shines brightly near me?
+And will you come to my mother's house,
+When Selune lights the way so clearly?
+I'll open the door, and I'll let you in,
+And never the one will hear us!"
+Said my own dear love, my bonny fair dove,
+That blasted Kythorn morning.
+
+So I went to her house, in the middle of the night,
+When the moon shone brightly near me.
+I went to her house, in the middle of the night,
+When Selune lit the way so clearly.
+She opened the door, and she let me in,
+And never the one did hear us,
+Swore my own dear love, my bonny fair dove,
+That blasted Kythorn evening.
+
+She took my horse by the bridle and the bit,
+And she led him to the stable.
+She took my horse by the bridle and the bit,
+And 'twas lonely in the stable.
+She said "There's plenty of oats
+For a soldier's horse, to eat them if he's able,"
+Said my own dear love, my bonny fair dove,
+That blasted Kythorn evening.
+
+Then she took me with her lily-white hand,
+And she led me to a table.
+She took me with her lily-white hand,
+And put wine upon the table.
+She said "There's plenty of wine
+For a soldier lad, so drink it if you're able,"
+Said my own dear love, my bonny fair dove,
+That blasted Kythorn evening.
+
+Then she got up, and she made a bed,
+And she made it rightly easy.
+Then she got up, and she made a bed,
+And she said she wouldn't leave me.
+So I took her by the lily-white hand,
+And said "Lassie, are you able?"
+To my own dear love, my bonny fair dove,
+That blasted Kythorn evening.
+
+I got up, and I laid her down,
+So gentle and so easy.
+I got up, and I laid her down,
+And never did she leave me.
+In the hush of night, she laid me down,
+And she showed me she was able,
+Yes, my own dear love, my bonny fair dove,
+That blasted Kythorn evening.
+
+And there we lay, 'til the break of day,
+And never the one did hear us.
+And there we lay, 'til the break of day,
+When Lathander's orb did rouse us.
+And she clung to me, in the morning light,
+She said, "Laddie, never leave me."
+Begged my own dear love, my bonny fair dove,
+That blasted Kythorn morning.
+
+Then I arose, and put on my clothes,
+When the drums were fairly near us.
+Then I arose, and put on my clothes,
+With the war drums nigh upon us.
+I pulled on my boots, with my orders in my fist,
+Saying "Lassie, I must leave you!"
+To my own dear love, my bonny fair dove,
+That blasted Kythorn morning.
+
+"And when will you return again,
+My bonny soldier laddie?
+And when will you return again,
+And when will we get married?"
+"When broken shells make feast-day bells,
+I'll wed my bonny Annie!"
+Said I to my own dear love, my bonny fair dove,
+That blasted Kythorn morning.
+
+
+To Market
+
+As I went to the marketplace, 
+What do you think I've seen,
+But a fine young piper laddie,
+Leaping over the green,
+Singing "Hey, laughter! Ho, laughter!
+'Tis folly not to play!"
+
+"I have naught to offer you,"
+This young man said to me,
+"But you'll gain love and freedom,
+If you come away with me!"
+And he sang "Hey, laughter! Ho, laughter!
+'Tis folly not to play!"
+
+He played a reel, and he played a jig,
+He played "The Lights of Day,"
+And I tossed my hair, and the room stood still,
+To the tapping of my toe.
+And he sang "Hey, laughter! Ho, laughter!
+'Tis folly not to play!"
+
+As he blew up his chanter,
+And he began to play,
+I chose love and freedom,
+I'll wander all of my days,
+Singing "Hey, laughter! Ho, laughter!
+'Tis folly not to play!"~
+@57   = ~Powrot Noobera, by cmorgan~
+@58   = ~Cyganka Rebecca, by Kulyok~
+@59   = ~Rebecca~
+@60   = ~Renal Bloodscalp: A Dangerous Affair, by cmorgan (tresc dla doroslych, brak polskiej wersji)~
+@61   = ~Renal~
+@62   = ~Old Ribald's Speciality, by Evaine Dian (brak polskiej wersji)~
+@63   = ~Ribald's necklace~
+@64   = ~This is the necklace Ribald gave to <CHARNAME> as a present. According to Ribald, it once belonged to an old man who associated many happy memories with it, convinced it brought him luck. The surface of the pendant is polished from the frequent touch of a hand over many decades. Apart from its sentimental value, it is as good as worthless.~
+@65   = ~Sir Ryan Trawl, by Kulyok~
+@66   = ~Pirat Saemon, by Kulyok (tresc dla doroslych)~
+@67   = ~Marzenia o Sendai, by Kulyok~
+@68   = ~Sheri the Bardess, by cmorgan (tresc dla doroslych, brak polskiej wersji)~
+@69   = ~Sheri D'Avignon~
+@70   = ~Solaufein w komnatach pozadania, by jastey~
+@71   = ~Phaere's Reward, by berelinde (Talak, niewolnik dla przyjemnosci, tresc dla doroslych, brak polskiej wersji)~
+@72   = ~Talak~
+@73   = ~Badania zaklec z Teosem, by Kulyok~
+@74   = ~A fling with Yoshimo, by Kulyok (brak polskiej wersji)~
+@75   = ~Obawy Isabelle, by gertjanvh (tresc dla doroslych)~
+@76   = ~Isabelle~
+@77   = ~Anne's Rescue, by gertjanvh (tresc dla doroslych, brak polskiej wersji)~
+@78   = ~Anne~
+@79   = ~Jonathan~
+@80   = ~Carlos~
+@81   = ~Jonathan, if you want your beloved sister back, you can! But it will cost you, naturally. I think one thousand gold pieces is very reasonable, wouldn't you agree?
+
+You are right, of course, it hardly matters whether you agree or not. You will either pay up, or your sister will suffer a most unfortunate accident. But rest assured, should you decide not to pay, your sister won't suffer. Much.
+
+Well, I assume I made myself clear? Let's get down to business then, shall we? If you follow the included map, you will find a house. You will deliver the gold there. If you do, your sister is released unharmed and in mostly good health.~
+@82   = ~Krolowa, by Domi~
+@83   = ~Romans Valygara, by Kulyok~
+@84   = ~Naszyjnik Rodowy Corthalów~
+@85   = ~Ten prosty naszyjnik, pomimo znikomej wartości materialnej, jest pamiątką rodową Corthalów.~
+@86   = ~Proba z Chandra, by Western Paladin~
+@87   = ~Chandra~
+@88   = ~Goldander Blackenrock: After a Party, by magrat (brak polskiej wersji)~
+@89   = ~Pogawedka z Viekangiem, by magrat~
+@90   = ~Bravery or Folly? by Aeryn (Sarevok, tresc dla doroslych, brak polskiej wersji)~
+@91   = ~Blame the Moon, by Aeryn (Cernd, brak polskiej wersji)~
+@92   = ~Wyznanie Cernicka, by Cal Jones~
+@93   = ~Valygar Romance ToB, by Kulyok (brak polskiej wersji)~
+@94   = ~Valygar's Key~
+@95   = ~According to Valygar, this key will open the door of his old mansion in Athkatla. It was his gift to <CHARNAME>, a vow that his house will always be open to her, and a promise of things to come.~
+@96   = ~Valygar Corthala and <CHARNAME>'s whirlwind courtship and sudden marriage soon became the most daring and romantic tale in Amn. Noblewomen whispered about riders on the beach, a sea voyage at sunset, a quick but lavish ceremony on the Amnish border, and, of course, the grand new Corthala mansion. Some of the details were true, some weren't, but upon the Corthalas' arrival to Atkhatla everyone agreed that it was the most stately and beautiful couple they've ever seen.
+
+New adventures of the Corthalas in Neverwinter have proven to be even more exciting, and added a great amount to the already substantial family fortune. A place on the Council of Six was negotiated very soon upon <CHARNAME>'s return, and granted to her almost immediately. Valygar, in turn, became the Chief Inspector, and his term in office marked a new page in Amn's history, earning him respect and many admirers, while his mysterious wife earned even more power both through open conflict and diplomacy.
+
+<CHARNAME> and Valygar travelled far and wide. They renewed their vows years later, in Baldur's Gate, uncovered ancient secrets near the Spine of the World, and, if Volo's tales were true, even confronted the Lady of Pain in Sigil. Not all their friends accepted their sudden marriage readily, but most of them would remain close by <CHARNAME>'s side, always ready to meet and plunge headfirst into another reckless adventure, Valygar first of them all. Their mansion in the Government District would become one of the most beautiful homes in Athkatla, filled with light, love and laughter. And their roads, entwined, would go on and on.~
+@97   = ~Minsc. Bierze. Kapiel, by Thimblerig~
+@98   = ~Nizidramanii'yt's Vanity, by Thimblerig (brak polskiej wersji)~
+@99   = ~Date Night, by SisterVigilante (brak polskiej wersji)~
+@888 = ~I have an offer for all those who wish to hear it.~

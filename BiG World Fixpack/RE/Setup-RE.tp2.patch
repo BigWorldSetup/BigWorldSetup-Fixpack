@@ -1,9 +1,15 @@
 --- RE/Setup-RE.tp2	2016-05-21 15:26:16.847090400 -0400
-+++ Fixpack/RE/Setup-RE.tp2	2016-11-21 22:57:09.593889100 -0500
-@@ -5,1 +5,1 @@
++++ Fixpack/RE/Setup-RE.tp2	2016-12-19 13:08:40.800427800 -0500
+@@ -2,7 +2,7 @@
+ 
+ AUTHOR ~http://forums.gibberlings3.net~ // for your bug reports
+ 
 -VERSION ~v11~ 
-+VERSION ~v11 BWP Fix~
-@@ -10,6 +10,19 @@
++VERSION ~v11 BWP Fix~ 
+ 
+ // ALWAYS AT_INTERACTIVE_EXIT ~VIEW RE/Readme-RE.txt~ END
+ 
+@@ -10,9 +10,42 @@
  
  AUTO_TRA ~RE/%s~
  
@@ -18,30 +24,60 @@
 +    OUTER_SPRINT name_source ~bg2_chapter_%i%~
 +    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
 +  END
++
++  // No exception, everything needs to be converted
++  ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
++
++  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
++  ACTION_DEFINE_ARRAY tra#reload BEGIN Setup-RE END
++
++  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN // HANDLE_CHARSETS doesn't work with iconv_path containing spaces
++    AT_NOW ~if not exist "iconv" move "BiG World Fixpack\_utils\iconv" "iconv"~
++  END
++  LAF HANDLE_CHARSETS
++    INT_VAR
++      infer_charsets = 1
++    STR_VAR
++      tra_path = EVAL ~%MOD_FOLDER%~
++      noconvert_array = tra#noconvert
++      reload_array = tra#reload
++      iconv_path = ~iconv~ // provided by BiG World Fixpack
++  END
 +END
 +
  LANGUAGE ~English~ ~English~ ~RE/English/Setup-RE.tra~
  LANGUAGE ~Russian (Translated by Aerie.ru)~ ~Russian~ ~RE/Russian/Setup-RE.tra~
  LANGUAGE ~French (Translated by Les d'Oghmatiques)~ ~French~ ~RE/French/Setup-RE.tra~
-@@ -84,7 +97,7 @@
++LANGUAGE ~Polski+Angielski (Translated by athkatla.cob-bg.pl)~ ~Polish~ ~RE/Polish/Setup-RE.tra~
+ 
+ // Reactions
+ 
+@@ -84,8 +117,8 @@
  // Anishai, by cmorgan
  BEGIN @4
  
 -ACTION_IF GAME_IS ~BG2EE~ BEGIN
+-ADD_JOURNAL @119 USING ~RE/%LANGUAGE%/RE_Anishai.tra~
 +ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
- ADD_JOURNAL @119 USING ~RE/%LANGUAGE%/RE_Anishai.tra~
++	ADD_JOURNAL @119 USING ~RE/%LANGUAGE%/RE_Anishai.tra~
  END
  
-@@ -107,7 +120,7 @@
+ COMPILE ~RE/Anishai/RE_Anishai.d~
+@@ -107,10 +140,10 @@
  // Bjornin, by jastey
  BEGIN @6
  
 -ACTION_IF GAME_IS ~BG2EE~ BEGIN
+-COPY ~RE/Bjornin/C#BJOREE.bmp~ ~override/C#BJORNS.bmp~
 +ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
- COPY ~RE/Bjornin/C#BJOREE.bmp~ ~override/C#BJORNS.bmp~
++	COPY ~RE/Bjornin/C#BJOREE.bmp~ ~override/C#BJORNS.bmp~
  END ELSE BEGIN
- COPY ~RE/Bjornin/C#BJORNS.bmp~ ~override~
-@@ -187,7 +200,7 @@
+-COPY ~RE/Bjornin/C#BJORNS.bmp~ ~override~
++	COPY ~RE/Bjornin/C#BJORNS.bmp~ ~override~
+ END
+ 
+ COPY ~RE/Areas/ARRE07.are~ ~override~
+@@ -187,7 +220,7 @@
  APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
  UNLESS ~CD_STATE_NOTVALID~
  
@@ -50,7 +86,7 @@
  
  
  
-@@ -360,7 +373,7 @@
+@@ -360,7 +393,7 @@
  
  COMPILE ~RE/HaerDalis/RE_Haer.d~
  
@@ -59,16 +95,21 @@
  
  ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~win32~) THEN BEGIN
      AT_NOW ~RE/Audio/HaerDalisInstall.bat~
-@@ -460,7 +473,7 @@
+@@ -460,10 +493,10 @@
  
  COPY ~RE/Areas/ARRE03.are~ ~override~
  
 -ACTION_IF GAME_IS ~BG2EE~ BEGIN
+-COPY ~RE/Laran/CRE/B!LaraEE.bmp~ ~override/BLaranS.bmp~
 +ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
- COPY ~RE/Laran/CRE/B!LaraEE.bmp~ ~override/BLaranS.bmp~
++	COPY ~RE/Laran/CRE/B!LaraEE.bmp~ ~override/BLaranS.bmp~
  END ELSE BEGIN
- COPY ~RE/Laran/CRE/B!LaranS.bmp~ ~override/BLaranS.bmp~
-@@ -492,7 +505,7 @@
+-COPY ~RE/Laran/CRE/B!LaranS.bmp~ ~override/BLaranS.bmp~
++	COPY ~RE/Laran/CRE/B!LaranS.bmp~ ~override/BLaranS.bmp~
+ END
+ 
+ COPY ~RE/Laran/CRE/B!LARAN.cre~ ~override~
+@@ -492,7 +525,7 @@
  ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN
  BEGIN
  
@@ -77,7 +118,7 @@
  
  	~RE/Laran/Script/B!REmsn.baf~
  	~RE/Laran/Script/RE_Lar3.baf~
-@@ -653,7 +666,7 @@
+@@ -653,7 +686,7 @@
  APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
  UNLESS ~CD_STATE_NOTVALID~
  
@@ -86,7 +127,7 @@
  	~RE/Ribald/dialogue/RE_Riba.d~
  
  	~RE/Ribald/scripts/RE_Riba.baf~
-@@ -672,7 +685,7 @@
+@@ -672,7 +705,7 @@
  // Ryan Trawl, by Kulyok
  BEGIN @65
  
@@ -95,7 +136,7 @@
  
  
  
-@@ -699,14 +712,14 @@
+@@ -699,17 +732,17 @@
  	~RE/Sendai/RE_Send1.baf~
  	~RE/Sendai/RE_Send2.baf~
  
@@ -108,20 +149,27 @@
  BEGIN @68
  
 -ACTION_IF GAME_IS ~BG2EE~ BEGIN
+-COPY ~RE/Sheri/RE_Sh_EE.bmp~ ~override/RE_Sheri.bmp~
 +ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
- COPY ~RE/Sheri/RE_Sh_EE.bmp~ ~override/RE_Sheri.bmp~
++	COPY ~RE/Sheri/RE_Sh_EE.bmp~ ~override/RE_Sheri.bmp~
  END ELSE BEGIN
- COPY ~RE/Sheri/RE_Sheri.bmp~ ~override~
-@@ -749,7 +762,7 @@
+-COPY ~RE/Sheri/RE_Sheri.bmp~ ~override~
++	COPY ~RE/Sheri/RE_Sheri.bmp~ ~override~
+ END
+ 
+ COPY ~RE/Areas/ARRE05.are~ ~override~
+@@ -749,8 +782,8 @@
  // Soluafein, by jastey
  BEGIN @70
  
 -ACTION_IF GAME_IS ~BG2EE~ BEGIN
+-ADD_JOURNAL EXISTING TITLE (#74362) @1 USING ~RE/%LANGUAGE%/RE_Sola.tra~
 +ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
- ADD_JOURNAL EXISTING TITLE (#74362) @1 USING ~RE/%LANGUAGE%/RE_Sola.tra~
++	ADD_JOURNAL EXISTING TITLE (#74362) @1 USING ~RE/%LANGUAGE%/RE_Sola.tra~
  END
  
-@@ -805,7 +818,7 @@
+ COMPILE ~RE/Sola/RE_Sola.d~
+@@ -805,7 +838,7 @@
  	~RE/Yoshimo/RE_Yosh1.baf~
  
  EXTEND_TOP ~yoshd.bcs~ ~RE/Yoshimo/yoshd.baf~
@@ -130,7 +178,7 @@
  
  
  
-@@ -899,7 +912,7 @@
+@@ -899,7 +932,7 @@
  
  COPY ~RE/Audio/re_blank.wav~ ~override~
  
@@ -139,7 +187,7 @@
  
  EXTEND_TOP ~Valygar.bcs~ ~RE/Valygar/RE_Valyg.baf~
  
-@@ -1005,8 +1018,8 @@
+@@ -1005,8 +1038,8 @@
  
  EXTEND_TOP ~AR6200.bcs~ ~RE/Valygar/AR6200.baf~
  
