@@ -1,15 +1,25 @@
---- setup-AzenMOD.tp2	2016-11-18 20:11:24.407804500 -0500
-+++ Fixpack/setup-AzenMOD.tp2	2016-11-18 20:13:10.669321300 -0500
+--- setup-AzenMOD.tp2	2009-01-01 10:52:38.977500000 -0500
++++ Fixpack/setup-AzenMOD.tp2	2016-12-18 22:50:39.993261200 -0500
 @@ -3,7 +3,7 @@
  
  AUTHOR	~erebusant@verizon.net~
  
--VERSION	~v5 BWP Trim + Fix~
-+VERSION	~v5 BWP Fix~
+-VERSION	~v5~
++VERSION	~v5 BWP Trim + Fix~
  
  AUTO_TRA ~AzenMOD/Language/%s/D~
  
-@@ -36,6 +36,7 @@
+@@ -29,13 +29,14 @@
+ 
+ BEGIN @0
+ 
+-COPY + ~Setup-AzenMod.exe~  ~WeiDU.exe~
+-COPY + ~chitin.key~        ~AzenMod/chitin.az~
+-COPY_LARGE + ~dialog.tlk~  ~AzenMod/dialog.az~
++// COPY + ~Setup-AzenMod.exe~  ~WeiDU.exe~
++// COPY + ~chitin.key~        ~AzenMod/chitin.az~
++// COPY_LARGE + ~dialog.tlk~  ~AzenMod/dialog.az~
+ //MKDIR ~AzenMod/over.bak~
  //COPY_LARGE + ~override~ ~AzenMod/over.bak~
  
  COPY	~azenMOD/are~		~override~
@@ -54,7 +64,7 @@
 +  READ_LONG  0x64 "abil_off" ELSE 0
 +  READ_SHORT 0x68 "abil_num" ELSE 0
 +  PATCH_IF (abil_off > 0x71) BEGIN
-+   FOR (index = 0; index < abil_num; index = index + 1) BEGIN
++    FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 +      WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * "%index%")) ~ISW1VAR~ #8
 +    END
 +  END
