@@ -1,5 +1,5 @@
---- stratagems/lib/always.tph	2015-01-17 15:04:43.859196000 -0500
-+++ Fixpack/stratagems/lib/always.tph	2016-11-20 18:06:50.552288800 -0500
+--- stratagems/lib/always.tph	Sat Jan 17 15:04:43 2015
++++ Fixpack/stratagems/lib/always.tph	Tue Dec 20 16:47:08 2016
 @@ -9,12 +9,15 @@
    OUTER_SET initialise=1
  
@@ -18,7 +18,18 @@
    END
  
  
-@@ -153,7 +156,7 @@
+@@ -126,6 +129,10 @@
+ 	SPRINT $script_name_pdialog(~deder~) ~~
+ 	SPRINT $script_name_pdialog(~mordaine~) ~~
+ 	SPRINT $script_name_pdialog(~osprey~) ~~
++	// SoD Joinable NPCs whose DVs do not match their PDIALOG.2DA entries
++	SPRINT $script_name_pdialog(~glint~) ~~
++	SPRINT $script_name_pdialog(~mkhiin~) ~~
++	SPRINT $script_name_pdialog(~voghiln~) ~~
+   BUT_ONLY_IF_IT_CHANGES
+ 
+ ///////////////////////////////////////////////////////////////
+@@ -153,7 +160,7 @@
  // String localisation
  ///////////////////////////////////////////////////
  
@@ -27,3 +38,12 @@
     OUTER_SPRINT trigger_string 25101
     OUTER_SPRINT minor_sequencer_string 26469
     OUTER_SPRINT sequencer_string 24618
+@@ -300,7 +307,7 @@
+ // detect whether Truesight cures blindness
+ ///////////////////////////////////////////////////
+ 
+-    ACTION_IF FILE_EXISTS_IN_GAME ~dw#truesight_blindness.mrk~ BEGIN
++    ACTION_IF FILE_EXISTS_IN_GAME ~dw#truesight_blindness.mrk~ OR FILE_EXISTS_IN_GAME ~dvimhere.mrk~ BEGIN
+            OUTER_SPRINT ~sslvariables~ ~%sslvariables%~^~&TruesightCuresBlindness=True~
+     END
+     

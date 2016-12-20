@@ -2750,6 +2750,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Bartek's Polish translation for v29, updated for v30 by Etamin
 :: http://gibberlings3.net/forums/index.php?showtopic=25059&p=248377
 
+:: AstroBryGuy's fix for SoD joinable NPCs whose DVs do not match their PDIALOG.2DA entries
+:: https://forums.beamdog.com/discussion/comment/835909#Comment_835909
+
 
 ----------------------------------------------------------------------------------------
 
