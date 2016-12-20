@@ -2965,15 +2965,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: TomeAndBlood - Tome and Blood v0.6
-
-:: subtledoctor's Oct 25 2016 hotfix
-:: https://forums.beamdog.com/discussion/31274/Comment_821893
-
-
-----------------------------------------------------------------------------------------
-
-
 :: TotDG - Tales of the Deep Gardens v10.0
 
 :: Lollorian's small little item fix
