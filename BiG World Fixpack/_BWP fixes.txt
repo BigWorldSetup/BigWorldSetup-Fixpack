@@ -1533,6 +1533,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: micbaldur's looping dialogue fix
 :: http://www.shsforums.net/topic/56298-isnf-bug-reports/?p=567111
 
+:: agb1's additional looping fix for Selene's initial dialogue
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
