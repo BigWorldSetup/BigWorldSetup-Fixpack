@@ -7,8 +7,8 @@ readme.md text export-ignore
 *.patch diff -text eol=lf
 *.htm text eol=crlf
 *.html text eol=crlf
-*.gitignore text eol=crlf export-ignore
-*.gitattributes text eol=crlf export-ignore
+.gitignore text eol=crlf export-ignore
+.gitattributes text eol=crlf export-ignore
 *.gif binary
 *.ico binary
 *.jpg binary
