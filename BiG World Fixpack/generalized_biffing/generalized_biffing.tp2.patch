@@ -14,7 +14,7 @@
  OUTER_TEXT_SPRINT ~ext~ ~\(wav\|tis\|bam\)~
  ACTION_IF selection THEN BEGIN
 -	OUTER_TEXT_SPRINT ext ~\(bmp\|mve\|wav\|wac\|plt\|bam\|wed\|chu\|tis\|mos\|itm\|spl\|bcs\|ids\|cre\|are\|dlg\|2da\|gam\|sto\|wmp\|chr\|eff\|vvc\|vef\|pro\)~
-+	OUTER_TEXT_SPRINT ext ~\(bmp\|mve\|wav\|wfx\|plt\|bam\|wed\|chu\|tis\|mos\|itm\|spl\|bcs\|ids\|cre\|are\|dlg\|2da\|gam\|sto\|wmp\|eff\|chr\|vvc\|vef\|pro\|wbm\|fnt\|gui\|sql\|pvrz\|glsl\|ini\)~
++	OUTER_TEXT_SPRINT ext ~\(bmp\|mve\|wav\|wfx\|plt\|bam\|wed\|chu\|tis\|mos\|itm\|spl\|bcs\|ids\|cre\|are\|dlg\|2da\|gam\|sto\|wmp\|eff\|chr\|vvc\|vef\|pro\|wbm\|fnt\|gui\|sql\|pvrz\|glsl\|ini\|lua\|menu\|ttf\|png\|toh\|tot\)~
  END
  
  OUTER_TEXT_SPRINT ~myRegExp~ ~^%8char%\.%ext%$~
