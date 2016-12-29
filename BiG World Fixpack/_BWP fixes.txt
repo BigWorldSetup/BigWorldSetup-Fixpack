@@ -2756,6 +2756,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: AstroBryGuy's fix for SoD joinable NPCs whose DVs do not match their PDIALOG.2DA entries
 :: https://forums.beamdog.com/discussion/comment/835909#Comment_835909
 
+:: agb1's fix for macro_read_in_spells_per_level in caster_shared.tph when mxspl???.2da has an all-zeroes column
+:: https://forums.beamdog.com/discussion/comment/837974#Comment_837974
+
 
 ----------------------------------------------------------------------------------------
 
