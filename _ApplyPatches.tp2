@@ -48,7 +48,7 @@
 BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v2.4~
+VERSION ~v2.5~
 
 ALWAYS
 	// special folders and marker file
@@ -357,7 +357,21 @@ ALWAYS
 						INNER_ACTION BEGIN
 							PRINT "- DELETE ~%target_folder%/%file_to_delete%~"
 							ACTION_IF (DIRECTORY_EXISTS ~%target_folder%/%file_to_delete%~ OR FILE_EXISTS ~%target_folder%/%file_to_delete%~) THEN BEGIN
-								DELETE ~%target_folder%/%file_to_delete%~
+								ACTION_TRY
+									DELETE ~%target_folder%/%file_to_delete%~
+								WITH
+									~Unix.Unix_error(20, "stat", ".*")~
+									BEGIN
+										PRINT "Encountered an error (file/folder not found) while attempting to delete '%target_folder%/%file_to_delete%'.  This might occur if the file name or path contains special characters.  Trying system-specific command instead of WeiDU's built-in delete command..."
+										ACTION_IF (~%WEIDU_OS%~ STR_EQ ~win32~) THEN BEGIN // windows delete (works for files and folders)
+											AT_NOW ~DEL /F /Q "%target_folder%/%file_to_delete%"~
+										END ELSE BEGIN // Unix or OSX delete (works for files and folders)
+											AT_NOW ~rm -vrf '%target_folder%/%file_to_delete%'~
+										END
+									END
+									DEFAULT
+										WARN "Encountered an unexpected error while attempting to delete '%target_folder%/%file_to_delete%'. Please report this error to the BiG World Fixpack maintainers. Skipping this file (feel free to delete it manually, if you can, after this patching script is done)..."
+								END
 							END ELSE BEGIN
 								PRINT ~No file or folder at deletion path. Skipping deletion.~
 							END
@@ -428,7 +442,21 @@ ALWAYS
 		ACTION_IF (second_pass == 1) THEN BEGIN
 			ACTION_PHP_EACH ~%file_arr%~ AS ind => file_full_path BEGIN
 				//PRINT "+ COPY_LARGE ~%file_full_path%~ ~%target_dir%~"
-				COPY_LARGE ~%file_full_path%~ ~%target_dir%~
+				ACTION_TRY
+					COPY_LARGE + ~%file_full_path%~ ~%target_dir%~
+				WITH
+					~Unix.Unix_error(20, "stat", ".*")~
+					BEGIN
+						PRINT "Encountered an error (file/folder not found) while attempting to copy '%file_full_path%' to '%target_dir%'.  This might occur if the file name or path contains special characters.  Trying system-specific command instead of WeiDU's built-in copy command..."
+						ACTION_IF (~%WEIDU_OS%~ STR_EQ ~win32~) THEN BEGIN // windows copy
+							AT_NOW ~COPY /Y /B "%file_full_path%" "%target_dir%"~
+						END ELSE BEGIN // Unix or OSX copy
+							AT_NOW ~cp -vf '%file_full_path%' '%target_dir%'~
+						END
+					END
+					DEFAULT
+						WARN "Encountered an unexpected error while attempting to copy '%file_full_path%' to '%target_dir%'. Please report this error to the BiG World Fixpack maintainers. Skipping this file (feel free to copy it manually, if you can, after this patching script is done)..."
+				END
 			END
 		END
 
