@@ -1,0 +1,11 @@
+--- cdtweaks/setup-cdtweaks.tp2	2017-01-05 16:21:30.954562000 -0500
++++ Fixpack/cdtweaks/setup-cdtweaks.tp2	2017-01-05 16:25:56.514637600 -0500
+@@ -2766,7 +2766,7 @@
+ 
+     COPY_EXISTING ~%file%.bcs~ ~override~
+       DECOMPILE_AND_PATCH BEGIN
+-        REPLACE_TEXTUALLY ~[ %TAB%]Explore()~ ~ ~
++        REPLACE_TEXTUALLY ~[ %TAB%]Explore()~ ~ Continue()~
+       END
+       BUT_ONLY
+ 
