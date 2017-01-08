@@ -1,5 +1,14 @@
---- cdtweaks/setup-cdtweaks.tp2	2017-01-05 16:21:30.954562000 -0500
-+++ Fixpack/cdtweaks/setup-cdtweaks.tp2	2017-01-05 16:25:56.514637600 -0500
+--- cdtweaks/setup-cdtweaks.tp2	2016-07-27 22:02:50.000000000 -0400
++++ Fixpack/cdtweaks/setup-cdtweaks.tp2	2017-01-08 17:06:52.467700600 -0500
+@@ -27,7 +27,7 @@
+ 
+ END
+ 
+-VERSION ~Beta 5~
++VERSION ~Beta 5 BWP Fix~
+ 
+ README ~cdtweaks/readme-cdtweaks.html~
+ 
 @@ -2766,7 +2766,7 @@
  
      COPY_EXISTING ~%file%.bcs~ ~override~
