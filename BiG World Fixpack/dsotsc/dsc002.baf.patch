@@ -1,5 +1,5 @@
---- dsotsc\baf\dsc002.baf	Sat Aug 30 02:42:35 2008
-+++ C:\BWP Patchstudio\patched files\dsotsc\baf\dsc002.baf	Sun Feb 23 15:53:01 2014
+--- dsotsc/baf/dsc002.baf	2008-08-29 17:12:35.000000000 -0400
++++ Fixpack/dsotsc/baf/dsc002.baf	2017-01-09 14:25:13.296015300 -0500
 @@ -1,5 +1,5 @@
  IF
 -	OnCreation()
@@ -16,3 +16,12 @@
  	Global("BansheeMap2","GLOBAL",0)
  THEN
  	RESPONSE #100
+@@ -89,7 +89,7 @@
+ 
+ IF
+ 	Global("LichResurect","GLOBAL",0)
+-	Global("LichDoorDead","GLOBAL",0)
++	Global("LichDoor","GLOBAL",0)
+ THEN
+ 	RESPONSE #100
+ 		TriggerActivation("TranC003",FALSE)

@@ -1120,6 +1120,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Lollorian's methodical OnCreation() removal from blocks that have a LOCALS/GLOBAL associated with them
 :: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=566555
 
+:: fixed typos in dsgilian.d (reported privately by prozh) and dsc002.baf (fixed by K4thos in EET release)
+:: https://github.com/K4thos/DSotSC/commit/3202caf44bb0005afe7c090ae81377c29eaeac68
+
 
 ----------------------------------------------------------------------------------------
 
