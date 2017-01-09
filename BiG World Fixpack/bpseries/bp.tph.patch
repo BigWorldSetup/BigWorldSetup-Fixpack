@@ -1,5 +1,5 @@
---- bpseries/lib/bp.tph	2014-01-09 10:58:00.968800000 -0500
-+++ Fixpack/bpseries/lib/bp.tph	2016-11-21 22:37:43.276751900 -0500
+--- bpseries/lib/bp.tph	2017-01-09 13:57:18.537069300 -0500
++++ Fixpack/bpseries/lib/bp.tph	2017-01-09 14:00:34.964260400 -0500
 @@ -1095,7 +1095,7 @@
  APPEND ~trigger.ids~ ~0x40DB InWatchersKeep()~ UNLESS ~InWatchersKeep()~
  
@@ -9,7 +9,19 @@
    APPEND ~trigger.ids~ ~0x40E0 NextTriggerObject(O:Object*)~ UNLESS ~NextTriggerObject(O:Object\*)~
  END
  
-@@ -1127,7 +1127,7 @@
+@@ -1120,6 +1120,11 @@
+ END
+ 
+ ACTION_IF NOT FILE_EXISTS_IN_GAME ~gb-smage.bcs~ BEGIN
++  ACTION_IF GAME_IS ~eet~ BEGIN
++    COPY ~bpseries/source/gb-smage.baf~ ~bpseries/source~
++      REPLACE_TEXTUALLY ~HaveSpell(KAISHAS_CHANGE)~ ~HaveSpellRES("OHWI925")~
++      REPLACE_TEXTUALLY ~Spell(LastSeenBy(Myself),KAISHAS_CHANGE)~ ~SpellRES("OHWI925",LastSeenBy(Myself))~
++  END
+   COMPILE ~bpseries/source/gb-smage.baf~
+ END
+ 
+@@ -1127,7 +1132,7 @@
    COMPILE ~bpseries/source/gb-summ.baf~
  END
  
@@ -18,7 +30,7 @@
    EXTEND_BOTTOM ~AR0602.bcs~ ~bpseries/source/bp-reset.baf~
    COPY ~bpseries/spl/bpreset~ ~override~
  END
-@@ -1156,7 +1156,7 @@
+@@ -1156,7 +1161,7 @@
                            ~%scriptpath%\BPFT-RNG.baf~
                            ~%scriptpath%\BP-MONK.baf~
  
@@ -27,7 +39,7 @@
    COMPILE EVALUATE_BUFFER ~%scriptpath%\BPBlkGrd.baf~ 
  END
  
-@@ -1257,7 +1257,7 @@
+@@ -1257,7 +1262,7 @@
  	
  	
  	
@@ -36,7 +48,7 @@
    COPY_EXISTING ~BPBlkGrd.bcs~ ~scripts\BPBlkGrd.bs~
      REPLACE~969999~ @3038
      REPLACE~969998~ @3039
-@@ -1345,7 +1345,7 @@
+@@ -1345,7 +1350,7 @@
  APPEND ~scrpdesc.2DA~
  ~BP-BMAGE    999932      999931~
  

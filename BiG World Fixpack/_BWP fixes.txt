@@ -750,6 +750,12 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Wisp's improved KIT.IDS patching code
 :: http://www.shsforums.net/topic/58487-fixing-the-kitids-megamod-style/?p=584888
 
+:: K4thos' EET compatibility patches
+:: http://gibberlings3.net/forums/index.php?showtopic=27741&page=36#entry250369
+
+:: agb1's UTF-8 encoding fix (added bg2ee and eet to GAME_IS check for EE tra files)
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
