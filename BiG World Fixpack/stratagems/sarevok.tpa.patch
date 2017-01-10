@@ -5,10 +5,9 @@
       LAF extend_area_script STR_VAR area=~%Undercity%~ top=undercityadd location=resource END
  
 -//end-of-game script - not needed for BGT
-+//end-of-game script - not needed for BGT and EET
++//end-of-game script - not needed for BGT (this *is* needed for EET)
  
--     ACTION_IF !(GAME_IS bgt) BEGIN
-+     ACTION_IF !(GAME_IS ~bgt eet~) BEGIN
+      ACTION_IF !(GAME_IS bgt) BEGIN
             LAF extend_area_script STR_VAR area=~%Undercity_TempleofBhaal%~ top=dw#end location=resource END
       END
  

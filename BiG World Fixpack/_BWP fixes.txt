@@ -2795,6 +2795,9 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: agb1's fix for macro_read_in_spells_per_level in caster_shared.tph when mxspl???.2da has an all-zeroes column
 :: https://forums.beamdog.com/discussion/comment/837974#Comment_837974
 
+:: K4thos' EET fix for unkillable Sarevok with component 7250 (improved chapter 7 end battle - sarevok.tpa)
+:: - LINK NOT FOUND -
+
 
 ----------------------------------------------------------------------------------------
 
