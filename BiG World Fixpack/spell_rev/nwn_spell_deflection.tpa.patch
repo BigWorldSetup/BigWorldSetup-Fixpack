@@ -1,0 +1,84 @@
+--- spell_rev/components/nwn_spell_deflection.tpa	Sat Dec 03 20:42:53 2016
++++ Fixpack/spell_rev/components/nwn_spell_deflection.tpa	Sat Jan 21 13:35:03 2017
+@@ -108,58 +108,6 @@
+   OUTER_SET $spell("balth12")=1
+ END
+ 
+-ACTION_IF FILE_EXISTS_IN_GAME ~bdneoawe.spl~ BEGIN
+-  OUTER_SET $spell("bdneoawe")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~bw05sp00.spl~ BEGIN
+-  OUTER_SET $spell("bw05sp00")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~bw05sp00.spl~ BEGIN
+-  OUTER_SET $spell("bw05sp00")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~bw05sp01.spl~ BEGIN
+-  OUTER_SET $spell("bw05sp01")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~bw05sp04.spl~ BEGIN
+-  OUTER_SET $spell("bw05sp04")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~bw05sp05.spl~ BEGIN
+-  OUTER_SET $spell("bw05sp05")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~cvchao.spl~ BEGIN
+-  OUTER_SET $spell("cvchao")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~cvcharm.spl~ BEGIN
+-  OUTER_SET $spell("cvcharm")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~cvdeath.spl~ BEGIN
+-  OUTER_SET $spell("cvdeath")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~cvjen02.spl~ BEGIN
+-  OUTER_SET $spell("cvjen02")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~cvpest.spl~ BEGIN
+-  OUTER_SET $spell("cvpest")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~cvsuns.spl~ BEGIN
+-  OUTER_SET $spell("cvsuns")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~cvwail.spl~ BEGIN
+-  OUTER_SET $spell("cvwail")=1
+-END
+-
+ ACTION_IF FILE_EXISTS_IN_GAME ~drake03.spl~ BEGIN
+   OUTER_SET $spell("drake03")=1
+ END
+@@ -174,22 +122,6 @@
+ 
+ ACTION_IF FILE_EXISTS_IN_GAME ~melspl07.spl~ BEGIN
+   OUTER_SET $spell("melspl07")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~myst10.spl~ BEGIN
+-  OUTER_SET $spell("myst10")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~nabpara.spl~ BEGIN
+-  OUTER_SET $spell("nabpara")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~ohbdemi2.spl~ BEGIN
+-  OUTER_SET $spell("ohbdemi2")=1
+-END
+-
+-ACTION_IF FILE_EXISTS_IN_GAME ~ntspwi81.spl~ BEGIN
+-  OUTER_SET $spell("ntspwi81")=1
+ END
+ 
+ ACTION_IF FILE_EXISTS_IN_GAME ~ohbicew.spl~ BEGIN

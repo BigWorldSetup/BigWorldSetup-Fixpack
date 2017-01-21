@@ -1,0 +1,11 @@
+--- spell_rev/setup-spell_rev.tp2	Mon Dec 26 17:35:49 2016
++++ Fixpack/spell_rev/setup-spell_rev.tp2.new	Sat Jan 21 13:38:51 2017
+@@ -4,7 +4,7 @@
+ //MODDER
+ ASK_EVERY_COMPONENT
+ 
+-VERSION ~v4 Beta 14~
++VERSION ~v4 Beta 14 BWP Fix~
+ 
+ ALWAYS
+   OUTER_PATCH ~~ BEGIN

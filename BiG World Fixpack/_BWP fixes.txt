@@ -2755,6 +2755,15 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
+:: spell_rev - Spell Revisions v4 Beta 14
+
+:: kreso's hotfix for NWN-style spell deflection
+:: http://gibberlings3.net/forums/index.php?showtopic=26517&page=74#entry250717
+
+
+----------------------------------------------------------------------------------------
+
+
 :: Star - Silver Star NPC v1.93
 
 :: Traifed the .d-files, too
