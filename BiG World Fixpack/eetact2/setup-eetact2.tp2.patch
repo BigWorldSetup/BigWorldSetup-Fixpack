@@ -1,5 +1,14 @@
---- setup-eetact2.tp2	Fri Mar 25 22:10:01 2016
-+++ setup-eetact2x.tp2	Fri Mar 25 22:11:41 2016
+--- eetact2/setup-eetact2.tp2	Mon Jan 23 10:56:16 2017
++++ Fixpack/eetact2/setup-eetact2.tp2	Mon Jan 23 10:57:37 2017
+@@ -16,7 +16,7 @@
+ Adaptation for BG2EE by Musigny on https://forums.beamdog.com"
+ 
+ // !!! This is an alpha version !!!
+-VERSION ~v0.73 alpha 2016022103~
++VERSION ~v0.73 alpha 2016022103 BWP Fix~
+ README ~eetact2/readme.txt~
+ //MODDER
+ 
 @@ -95,7 +95,7 @@
  ///////////////////////////////////////////////////////////////////////
  ///////////////////////////////////////////////////////////////////////
