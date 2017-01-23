@@ -1,16 +1,14 @@
---- Reunion/Setup-Reunion.tp2	2015-12-22 06:36:53.037521000 -0500
-+++ Fixpack/Reunion/Setup-Reunion.tp2	2016-12-08 12:10:42.585867600 -0500
-@@ -1,22 +1,54 @@
+--- Reunion/Setup-Reunion.tp2	Mon Jan 23 11:25:47 2017
++++ Fixpack/Reunion/Setup-Reunion.tp2	Mon Jan 23 11:27:20 2017
+@@ -1,10 +1,21 @@
  BACKUP ~Reunion/Backup~
  AUTHOR ~http://forums.pocketplane.net~
 -VERSION ~v1~
-+VERSION ~v1 BWP Fix~
++VERSION ~v2 BWP Fix~
  
- README ~Reunion/Readme-Reunion.txt~ 
+ README ~Reunion/Readme-Reunion-%LANGUAGE%.txt~ ~Reunion/Readme-Reunion.txt~
  
- AUTO_TRA ~Reunion/%s~
- 
-+ALWAYS
+ ALWAYS
 +  ACTION_IF GAME_IS ~eet~ BEGIN
 +    OUTER_SET bg2_chapter = 12
 +  END ELSE BEGIN
@@ -22,27 +20,19 @@
 +    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
 +  END
 +
-+  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
-+  ACTION_DEFINE_ARRAY tra#reload BEGIN Setup-Reunion END
-+
-+  // No exception, everything needs to be converted
-+  ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
-+
-+  ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE ~win32~ BEGIN // HANDLE_CHARSETS doesn't work with iconv_path containing spaces
-+    AT_NOW ~if not exist "iconv" move "BiG World Fixpack\_utils\iconv" "iconv"~
-+  END
-+  LAF HANDLE_CHARSETS
-+    INT_VAR
+   // Borrowed from Edwin Romance: convert strings to UTF-8 for BG2EE
+ 
+   // Setup-Reunion.tra contains in game texts as well as installation texts
+@@ -14,7 +25,7 @@
+ 
+   LAF HANDLE_CHARSETS
+     INT_VAR
+-      infer_charset = 1
 +      infer_charsets = 1
-+    STR_VAR
-+      tra_path = EVAL ~%MOD_FOLDER%~
-+      iconv_path = ~iconv~ // provided by BiG World Fixpack
-+      reload_array = tra#reload
-+      noconvert_array = tra#noconvert
-+  END
-+END
-+
- LANGUAGE ~English~ ~English~ ~Reunion/English/Setup-Reunion.tra~
+     STR_VAR
+       tra_path = EVAL ~%MOD_FOLDER%~ // Language directories and iconv directory directly in the mod folder
+       // charset_table = O#charsets // Use HANDLE_CHARSETS built-in rule for charset choice
+@@ -30,13 +41,13 @@
  
  BEGIN @0
  
@@ -58,7 +48,29 @@
  ADD_JOURNAL @10000 @10001 @10002 @10003 @10004 @10005 @10006 @10007 @10008 @10009 @10010 @10011 @10012 @10013 @10014 @10015 @10016 @10017 @10018 @10019
  END
  
-@@ -50,7 +82,7 @@
+@@ -49,16 +60,16 @@
+ COMPILE ~Reunion/Dialogue/Reunion.d~
+ 
+ 	~Reunion/Scripts/O#DAEMON.baf~ 
+-        ~Reunion/Scripts/O#DAEALI.baf~ 
++	~Reunion/Scripts/O#DAEALI.baf~ 
+ 	~Reunion/Scripts/O#DAEFIG.baf~ 
+ 	~Reunion/Scripts/O#DAEGUY.baf~ 
+ 	~Reunion/Scripts/O#DAEMAJ.baf~ 
+ 	~Reunion/Scripts/O#DAEDEL.baf~ 
+ 
+-        ~Reunion/Scripts/O#DAE0.baf~ // Outside
+-        ~Reunion/Scripts/O#DAE1.baf~ // First level
+-        ~Reunion/Scripts/O#DAE2.baf~ // Second level
+-        ~Reunion/Scripts/O#DAE3.baf~ // Basement
++	~Reunion/Scripts/O#DAE0.baf~ // Outside
++	~Reunion/Scripts/O#DAE1.baf~ // First level
++	~Reunion/Scripts/O#DAE2.baf~ // Second level
++	~Reunion/Scripts/O#DAE3.baf~ // Basement
+ 
+ 	~Reunion/Scripts/O#DECut1.baf~ // Going to the castle
+ 	~Reunion/Scripts/O#DECut2.baf~ // Going home
+@@ -70,7 +81,7 @@
  	~Reunion/Scripts/O#DAET2.baf~   // teleport back to Amkethran
  
  EXTEND_TOP ~Player1d.bcs~ ~Reunion/Scripts/Player1d.baf~
@@ -67,7 +79,7 @@
  
  // Characters
  
-@@ -316,3 +348,75 @@
+@@ -336,3 +347,76 @@
  APPEND ~itemdial.2da~
  ~O#DAEGEM    14117 O#DAEGEM~
  UNLESS ~O#DAEGEM~
@@ -143,3 +155,4 @@
 +      END
 +    END ~~
 +END
++
