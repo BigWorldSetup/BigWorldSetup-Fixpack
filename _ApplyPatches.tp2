@@ -44,11 +44,18 @@
 //
 // The script can be run multiple times; it will record in the BWP_Fixpack.installed
 // file the mod folders that it has patched, and will skip those folders when re-run
+//
+// Contribution from AstroBryGuy:  Added CRLF->LF translation script for OSX and Linux.
+// The patch utility on Linux/OSX expects lines to end only with line feed (LF). Windows uses
+// carriage-return line-feed (CRLF). patch tries to be smart and automatically converts the
+// .patch files to LF, stripping out the CR. However, a mod's files will still use CRLF, so
+// patch will fail. This adds a call to a shell script that pre-processes the file to be patched,
+// changing CRLF to LF.
 
 BACKUP ~BWP_Fixpack/backup~ // not the same folder as the one containing Fixpack patches
 AUTHOR ~agb1 on shsforums.net, gibberlings3.net or forums.beamdog.com~
 
-VERSION ~v2.5~
+VERSION ~v2.6~
 
 ALWAYS
 	// special folders and marker file
@@ -414,6 +421,9 @@ ALWAYS
 		// apply patches
 		GET_FILE_ARRAY EVAL ~patchfiles_array_%source_folder%~ ~%source_folder%~ ~%PATCH_FILES%~
 		ACTION_PHP_EACH ~patchfiles_array_%source_folder%~ AS ind => file BEGIN
+			ACTION_IF !(~%WEIDU_OS%~ STR_EQ ~win32~) THEN BEGIN
+				AT_NOW ~./BiG_World_Fixpack/_utils/trans_crlf.sh %file%~
+			END
 			PRINT "! %PATCH_CMD% < %os_quote%%file%%os_quote% | %TEE_CMD%"
 			AT_NOW ~%PATCH_CMD% < %os_quote%%file%%os_quote% | %TEE_CMD%~
 		END
