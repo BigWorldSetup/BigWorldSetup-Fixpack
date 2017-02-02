@@ -1,5 +1,5 @@
---- BWP_Fixpack_Originals\setup-SoS.tp2	2008-09-22 18:42:47.951446500 -0400
-+++ setup-SoS.tp2	2016-11-19 01:37:47.481690600 -0500
+--- setup-SoS.tp2	2008-09-22 18:42:47.951446500 -0400
++++ Fixpack/setup-SoS.tp2	2016-11-19 01:37:47.481690600 -0500
 @@ -2,7 +2,7 @@
  
  AUTHOR ~Charles Bisson, Horred The Plague (WeiDU), King Diamond (WeiDU revision)~  NO_IF_EVAL_BUG

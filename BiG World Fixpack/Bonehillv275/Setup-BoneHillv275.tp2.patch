@@ -1,5 +1,5 @@
---- BWP_Fixpack_Originals\Setup-Bonehillv275.tp2	2013-07-13 13:48:48.000000000 -0400
-+++ Setup-Bonehillv275.tp2	2016-11-19 03:52:33.169808000 -0500
+--- Setup-Bonehillv275.tp2	2013-07-13 13:48:48.000000000 -0400
++++ Fixpack/Setup-Bonehillv275.tp2	2016-11-19 03:52:33.169808000 -0500
 @@ -2,7 +2,7 @@
  BACKUP ~Bonehillv275/backup~ 
  AUTHOR ~SirBillyBob@gmail.com and erebusant@verizon.net~

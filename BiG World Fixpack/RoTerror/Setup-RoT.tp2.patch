@@ -1,5 +1,5 @@
---- BWP_Fixpack_Originals\Setup-RoT.tp2	2016-11-19 03:12:42.247331500 -0500
-+++ Setup-RoT.tp2	2016-11-18 20:39:10.636217700 -0500
+--- Setup-RoT.tp2	2016-11-19 03:12:42.247331500 -0500
++++ Fixpack/Setup-RoT.tp2	2016-11-18 20:39:10.636217700 -0500
 @@ -2,6 +2,8 @@
  
  AUTHOR ~Gilgamesh, King Diamond (WeiDU conversion)~ NO_IF_EVAL_BUG
