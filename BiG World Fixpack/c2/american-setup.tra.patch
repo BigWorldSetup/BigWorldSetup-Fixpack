@@ -1,0 +1,12 @@
+--- c2/american/setup.tra	2013-07-30 15:01:21.142000000 +0200
++++ Fixpack/c2/american/setup.tra	2017-02-02 13:26:18.000000000 +0100
+@@ -1,6 +1,9 @@
+ @1 = ~Shadows Of Amn Item Upgrades~
+ @2 = ~Throne Of Bhaal Item Upgrades~
+ @3 = ~I couldn't find [Data\25Dialog.bif], which leads me to believe that you don't actually have the Throne of Bhaal expansion installed. Sorry!~
++@4 = ~Original Version (new upgrades in a list)~
++@5 = ~Revised Version (new upgrades presented in the same style as existing upgrades)~
++@6 = ~This is not available yet in your language~
+ 
+ @100 = ~Ring of Preservation +1~
+ @101 = ~Ring of Preservation +1: 'Ring of the Troll Prince'

@@ -1,0 +1,39 @@
+--- c2/lib/tob.tpa	2013-07-31 13:55:14.073000000 +0200
++++ Fixpack/c2/lib/tob.tpa	2017-02-01 23:40:48.000000000 +0100
+@@ -1,25 +1,31 @@
+ // shared soa-tob code
++INCLUDE ~c2/lib/functions.tpa~
+ INCLUDE ~c2/lib/items_common.tpa~
+ 
+ COPY ~c2/itm/c2leat01.itm~ ~override~
++  LPF ITEM_DESC_TO_EE STR_VAR desc = ~@143~ title = ~@142~ regexp = EVAL ~%regUse%~ RET updated_desc END
+   SAY NAME2     @142
+-  SAY DESC      @143
++  SAY DESC      ~%updated_desc%~
+ 
+ COPY ~c2/itm/c2quiv01.itm~ ~override~
++  LPF ITEM_DESC_TO_EE STR_VAR desc = ~@109~ title = ~@108~ regexp = EVAL ~%regUse%~ RET updated_desc END
+   SAY NAME2     @108
+-  SAY DESC      @109
++  SAY DESC      ~%updated_desc%~
+ 
+ COPY ~c2/itm/c2quiv02.itm~ ~override~
++  LPF ITEM_DESC_TO_EE STR_VAR desc = ~@111~ title = ~@110~ regexp = EVAL ~%regUse%~ RET updated_desc END
+   SAY NAME2     @110
+-  SAY DESC      @111
++  SAY DESC      ~%updated_desc%~
+ 
+ COPY ~c2/itm/c2quiv03.itm~ ~override~
++  LPF ITEM_DESC_TO_EE STR_VAR desc = ~@113~ title = ~@112~ regexp = EVAL ~%regUse%~ RET updated_desc END
+   SAY NAME2     @112
+-  SAY DESC      @113
++  SAY DESC      ~%updated_desc%~
+ 
+ COPY ~c2/itm/c2sw2h02.itm~ ~override~
++  LPF ITEM_DESC_TO_EE STR_VAR desc = ~@171~ title = ~@170~ regexp = EVAL ~%regUse%~ RET updated_desc END
+   SAY NAME2     @170
+-  SAY DESC      @171
++  SAY DESC      ~%updated_desc%~
+ 
+ COPY ~c2/bam/c2leat01.bam~ ~override~
+      ~c2/bam/c2quiv01.bam~ ~override~
