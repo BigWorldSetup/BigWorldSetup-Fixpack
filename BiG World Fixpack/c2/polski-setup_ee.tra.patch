@@ -1,0 +1,804 @@
+--- c2/polski/setup_ee.tra	2013-07-30 15:20:44.511000000 +0200
++++ Fixpack/c2/polski/setup_ee.tra	2017-02-03 18:05:45.787887600 +0100
+@@ -1,522 +1,522 @@
+ 
+-@107 = ~Po³¹czony trzema p³aszczyznami ¿ywio³ów, ten potê¿ny kostur zosta³ wykuty dla ciebie. To jest potê¿na broñ sama w sobie, ale tak¿e posiada moc ¿ycia i œmierci zwi¹zan¹ z istotami ¿ywio³ów. Ten szczególny kij jest zimny w dotyku i jest pokryty wypalonymi znakami oraz ma³ymi wy¿³obieniami. Wieœæ niesie, ¿e sekret tej specyficznej konstrukcji zosta³ pierwotnie odkryty przez Rakshasa, która to stworzy³a go do stworzenia Cepa bojowego wieków.
++@107 = ~PoÅ‚Ä…czony trzema pÅ‚aszczyznami Å¼ywioÅ‚Ã³w, ten potÄ™Å¼ny kostur zostaÅ‚ wykuty dla ciebie. To jest potÄ™Å¼na broÅ„ sama w sobie, ale takÅ¼e posiada moc Å¼ycia i Å›mierci zwiÄ…zanÄ… z istotami Å¼ywioÅ‚Ã³w. Ten szczegÃ³lny kij jest zimny w dotyku i jest pokryty wypalonymi znakami oraz maÅ‚ymi wyÅ¼Å‚obieniami. WieÅ›Ä‡ niesie, Å¼e sekret tej specyficznej konstrukcji zostaÅ‚ pierwotnie odkryty przez Rakshasa, ktÃ³ra to stworzyÅ‚a go do stworzenia Cepa bojowego wiekÃ³w.
+ 
+ PARAMETRY:
+ 
+ 
+-Obra¿enia: 1K6 +5
++ObraÅ¼enia: 1K6 +5
+ Trak0: +5
+-Typ obra¿eñ: obuchowe
++Typ obraÅ¼eÅ„: obuchowe
+ Specjalne:
+- Zabija jednym trafieniem ¯ywio³aki ognia, ziemi i powietrza
+- Raz dziennie pozwala rzucaæ Przywo³anie ¯ywio³aka ziemi, powietrza i ognia (na okres 5 tur, zawsze przyjaznego)
+- Dwa razy dziennie pozwala rzucaæ Ognist¹ tarczê (na okres 13 rund)
+- Dwa razy dziennie pozwala rzucaæ Usypiaj¹c¹ chmurê (zasiêg 12m, ofiara musi wykonaæ rzut obronny przeciw truciŸnie w przeciwnym wypadku zaœnie na okres 3 rund).
+-Waga: 3
+-OpóŸnienie: 0
+-Rodzaj bieg³oœci: kij
+-Typ broni: 2-rêczna
+-Wymagana si³a: 5
++ Zabija jednym trafieniem Å»ywioÅ‚aki ognia, ziemi i powietrza
++ Raz dziennie pozwala rzucaÄ‡ PrzywoÅ‚anie Å»ywioÅ‚aka ziemi, powietrza i ognia (na okres 5 tur, zawsze przyjaznego)
++ Dwa razy dziennie pozwala rzucaÄ‡ OgnistÄ… tarczÄ™ (na okres 13 rund)
++ Dwa razy dziennie pozwala rzucaÄ‡ UsypiajÄ…cÄ… chmurÄ™ (zasiÄ™g 12m, ofiara musi wykonaÄ‡ rzut obronny przeciw truciÅºnie w przeciwnym wypadku zaÅ›nie na okres 3 rund).
++Waga: 3
++OpÃ³Åºnienie: 0
++Rodzaj biegÅ‚oÅ›ci: kij
++Typ broni: 2-rÄ™czna
++Wymagana siÅ‚a: 5
+ ~
+-@123 = ~Maczuga +5: Niewierna ¿ona
+-Stworzona na twoje zamówienie poprzez po³¹czenie maczug: Czarnej krwi i Zgniatacza, Niewierna ¿ona pulsuje destrukcyjn¹ moc¹. Pokryta jest substancj¹ podobn¹ do kwasu, która pali cia³o przy zetkniêciu. Niewierna ¿ona zadaje potê¿ne rany tak¿e mia¿dz¹c krêgos³up. 
++@123 = ~Maczuga +5: Niewierna Å¼ona
++Stworzona na twoje zamÃ³wienie poprzez poÅ‚Ä…czenie maczug: Czarnej krwi i Zgniatacza, Niewierna Å¼ona pulsuje destrukcyjnÄ… mocÄ…. Pokryta jest substancjÄ… podobnÄ… do kwasu, ktÃ³ra pali ciaÅ‚o przy zetkniÄ™ciu. Niewierna Å¼ona zadaje potÄ™Å¼ne rany takÅ¼e miaÅ¼dzÄ…c krÄ™gosÅ‚up. 
+ 
+-Obra¿enia: 1K6 +5, +5 pkt. obra¿eñ od kwasu, drzazgi dodaj¹ 3 pkt. obra¿eñ co rundê przez 4 rundy
++ObraÅ¼enia: 1K6 +5, +5 pkt. obraÅ¼eÅ„ od kwasu, drzazgi dodajÄ… 3 pkt. obraÅ¼eÅ„ co rundÄ™ przez 4 rundy
+ Trak0: +5
+-Typ obra¿eñ: obuchowe
++Typ obraÅ¼eÅ„: obuchowe
+ Specjalne:
+- +25% do odpornoœci na kwas
++ +25% do odpornoÅ›ci na kwas
+ Waga: 3
+-OpóŸnienie: 1 
+-Rodzaj bieg³oœci: maczuga
+-Typ broni: 1-rêczna
+-Wymagana si³a: 5
++OpÃ³Åºnienie: 1 
++Rodzaj biegÅ‚oÅ›ci: maczuga
++Typ broni: 1-rÄ™czna
++Wymagana siÅ‚a: 5
+ ~
+-@125 = ~Wekiera +5: Roz³upywacz czaszek
+-Ta wekiera jest na sta³e splamiona krwi¹, znak wielu lat poœwiêconych na roz³upywanie g³ów. Broñ ta mog³a w przesz³oœci przynosiæ zag³adê humanoidom, ale jej w³aœciciele zostali prawdopodobnie celowo usuniêci ze Ÿróde³ historycznych. Ostatnio za twoim poœrednictwem zosta³a przemieniona w jeszcze bardziej budz¹c¹ grozê broñ. 
++@125 = ~Wekiera +5: RozÅ‚upywacz czaszek
++Ta wekiera jest na staÅ‚e splamiona krwiÄ…, znak wielu lat poÅ›wiÄ™conych na rozÅ‚upywanie gÅ‚Ã³w. BroÅ„ ta mogÅ‚a w przeszÅ‚oÅ›ci przynosiÄ‡ zagÅ‚adÄ™ humanoidom, ale jej wÅ‚aÅ›ciciele zostali prawdopodobnie celowo usuniÄ™ci ze ÅºrÃ³deÅ‚ historycznych. Ostatnio za twoim poÅ›rednictwem zostaÅ‚a przemieniona w jeszcze bardziej budzÄ…cÄ… grozÄ™ broÅ„. 
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K6 + 6, +6 pkt. obra¿eñ dla humanoidów
++ObraÅ¼enia: 1K6 + 6, +6 pkt. obraÅ¼eÅ„ dla humanoidÃ³w
+ TraK0: +5
+-Typ obra¿eñ: obuchowe
++Typ obraÅ¼eÅ„: obuchowe
+ Specjalne:
+- Przy ka¿dym trafieniu zmniejsza iloœæ maksymalnych punktów ¿ycia ofiary o 2 na okres 10 rund
++ Przy kaÅ¼dym trafieniu zmniejsza iloÅ›Ä‡ maksymalnych punktÃ³w Å¼ycia ofiary o 2 na okres 10 rund
+ Waga: 6
+-OpóŸnienie: 2
+-Rodzaj bieg³oœci: wekiera
+-Typ broni: 1-rêczna
+-Wymagana si³a: 10
++OpÃ³Åºnienie: 2
++Rodzaj biegÅ‚oÅ›ci: wekiera
++Typ broni: 1-rÄ™czna
++Wymagana siÅ‚a: 10
+ ~
+-@127 = ~Stworzony w twoim imieniu u¿ywaj¹c mrocznych i strasznych rytua³ów, Teleomortis jest d³ugim ³ukiem o niezrównanej potêdze. Kiedy ciêciwa jest naci¹gana formuje siê duchowa strza³a, zdaj¹ca siê migotaæ i krêciæ w œwietle. £uk nie wymaga ¿adnej dodatkowej amunicji (chocia¿ mo¿e on u¿ywaæ równie¿ innych strza³). Duchowe strza³y powstaj¹ z niewiadomych przyczyn, pozostaj¹c tajemnic¹ tego ³uku. 
++@127 = ~Stworzony w twoim imieniu uÅ¼ywajÄ…c mrocznych i strasznych rytuaÅ‚Ã³w, Teleomortis jest dÅ‚ugim Å‚ukiem o niezrÃ³wnanej potÄ™dze. Kiedy ciÄ™ciwa jest naciÄ…gana formuje siÄ™ duchowa strzaÅ‚a, zdajÄ…ca siÄ™ migotaÄ‡ i krÄ™ciÄ‡ w Å›wietle. Åuk nie wymaga Å¼adnej dodatkowej amunicji (chociaÅ¼ moÅ¼e on uÅ¼ywaÄ‡ rÃ³wnieÅ¼ innych strzaÅ‚). Duchowe strzaÅ‚y powstajÄ… z niewiadomych przyczyn, pozostajÄ…c tajemnicÄ… tego Å‚uku. 
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K6 +4
++ObraÅ¼enia: 1K6 +4
+ TraK0: +4
+ Specjalne:
+- Nie potrzebuje amunicji, tworzy bowiem swe w³asne duchowe strza³y +4. Istnieje 5% szansa, ¿e cel trafiony tak¹ strza³¹ zostanie wprawiony w zamêt na okres 5 rund. 
++ Nie potrzebuje amunicji, tworzy bowiem swe wÅ‚asne duchowe strzaÅ‚y +4. Istnieje 5% szansa, Å¼e cel trafiony takÄ… strzaÅ‚Ä… zostanie wprawiony w zamÄ™t na okres 5 rund. 
+ Waga: 7
+-OpóŸnienie: 1
+-Rodzaj bieg³oœci: d³ugi ³uk
+-Typ broni: 2-rêczna
+-Wymagana si³a: 18
++OpÃ³Åºnienie: 1
++Rodzaj biegÅ‚oÅ›ci: dÅ‚ugi Å‚uk
++Typ broni: 2-rÄ™czna
++Wymagana siÅ‚a: 18
+ ~
+-@129 = ~Ta kolczuga, od dawien dawna w³asnoœæ rodu Corthala, chroni nosz¹cego j¹ przed wszystkimi rodzajami ataków. Widaæ jednak¿e, ¿e musia³a byæ niedawno modernizowana. Zbroja jest magiczna i zapewnia premiê +5 do klasy pancerza Valygara. Daje te¿ premiê do odpornoœci na kwas, ogieñ i obra¿enia magiczne. Dopóki Valygar ma na sobie tê zbrojê, jest te¿ odporny na zauroczenia. W koñcu nosz¹cego zbrojê nie mo¿na wykryæ. Niewiele osób mo¿e j¹ na siebie za³o¿yæ, gdy¿ dopasowano j¹ specjalnie do sylwetki Valygara.
++@129 = ~Ta kolczuga, od dawien dawna wÅ‚asnoÅ›Ä‡ rodu Corthala, chroni noszÄ…cego jÄ… przed wszystkimi rodzajami atakÃ³w. WidaÄ‡ jednakÅ¼e, Å¼e musiaÅ‚a byÄ‡ niedawno modernizowana. Zbroja jest magiczna i zapewnia premiÄ™ +5 do klasy pancerza Valygara. Daje teÅ¼ premiÄ™ do odpornoÅ›ci na kwas, ogieÅ„ i obraÅ¼enia magiczne. DopÃ³ki Valygar ma na sobie tÄ™ zbrojÄ™, jest teÅ¼ odporny na zauroczenia. W koÅ„cu noszÄ…cego zbrojÄ™ nie moÅ¼na wykryÄ‡. Niewiele osÃ³b moÅ¼e jÄ… na siebie zaÅ‚oÅ¼yÄ‡, gdyÅ¼ dopasowano jÄ… specjalnie do sylwetki Valygara.
+ 
+ PARAMETRY:
+ 
+ Klasa Pancerza: 0
+ Specjalne:
+- Odpornoœæ na Zauroczenie
+- Niewykrywalnoœæ
+- +50% do odpornoœci na ogieñ, kwas i obra¿enia magiczne
++ OdpornoÅ›Ä‡ na Zauroczenie
++ NiewykrywalnoÅ›Ä‡
++ +50% do odpornoÅ›ci na ogieÅ„, kwas i obraÅ¼enia magiczne
+ Waga: 9
+ ~
+-@131 = ~Ta potê¿na szata oferuje ochronê ochronê przed wszystkimi fizycznymi atakami, zarazem podwy¿szaj¹c magiczn¹ odpornoœæ i rzuty obronne. Zgodnie z natur¹ zaczarowania szaty, mo¿e byæ noszona tylko przez dobre charaktery. Tê szczególn¹ szatê umagiczni³<PRO_HESHE> <CHARNAME>.
++@131 = ~Ta potÄ™Å¼na szata oferuje ochronÄ™ ochronÄ™ przed wszystkimi fizycznymi atakami, zarazem podwyÅ¼szajÄ…c magicznÄ… odpornoÅ›Ä‡ i rzuty obronne. Zgodnie z naturÄ… zaczarowania szaty, moÅ¼e byÄ‡ noszona tylko przez dobre charaktery. TÄ™ szczegÃ³lnÄ… szatÄ™ umagiczniÅ‚<PRO_HESHE> <CHARNAME>.
+ 
+ PARAMETRY:
+ 
+ Klasa Pancerza: 3
+ Specjalne:
+- Pozwala zapamiêtaæ po 1 dodatkowym zaklêciu z poziomów 1, 2, 3 i 4. 
+- +10% do odpornoœci na magiê
+- +2 do rzutów obronnych
++ Pozwala zapamiÄ™taÄ‡ po 1 dodatkowym zaklÄ™ciu z poziomÃ³w 1, 2, 3 i 4. 
++ +10% do odpornoÅ›ci na magiÄ™
++ +2 do rzutÃ³w obronnych
+ Waga: 6 
+ ~
+-@133 = ~Ta potê¿na szata oferuje ochronê ochronê przed wszystkimi fizycznymi atakami, zarazem podwy¿szaj¹c magiczn¹ odpornoœæ i rzuty obronne. Zgodnie z natur¹ zaczarowania szaty, mo¿e byæ noszona tylko przez neutralne charaktery. Tê szczególn¹ szatê umagiczni³<PRO_HESHE> <CHARNAME>.
++@133 = ~Ta potÄ™Å¼na szata oferuje ochronÄ™ ochronÄ™ przed wszystkimi fizycznymi atakami, zarazem podwyÅ¼szajÄ…c magicznÄ… odpornoÅ›Ä‡ i rzuty obronne. Zgodnie z naturÄ… zaczarowania szaty, moÅ¼e byÄ‡ noszona tylko przez neutralne charaktery. TÄ™ szczegÃ³lnÄ… szatÄ™ umagiczniÅ‚<PRO_HESHE> <CHARNAME>.
+ 
+ PARAMETRY:
+ 
+ Klasa Pancerza: 3
+ Specjalne:
+- Pozwala zapamiêtaæ po 1 dodatkowym zaklêciu z poziomów 1, 2, 3 i 4. 
+- +10% do odpornoœci na magiê
+- +2 do rzutów obronnych
++ Pozwala zapamiÄ™taÄ‡ po 1 dodatkowym zaklÄ™ciu z poziomÃ³w 1, 2, 3 i 4. 
++ +10% do odpornoÅ›ci na magiÄ™
++ +2 do rzutÃ³w obronnych
+ Waga: 6 
+ ~
+-@135 = ~Ta potê¿na szata oferuje ochronê ochronê przed wszystkimi fizycznymi atakami, zarazem podwy¿szaj¹c magiczn¹ odpornoœæ i rzuty obronne. Zgodnie z natur¹ zaczarowania szaty, mo¿e byæ noszona tylko przez z³e charaktery. Tê szczególn¹ szatê umagiczni³<PRO_HESHE> <CHARNAME>.
++@135 = ~Ta potÄ™Å¼na szata oferuje ochronÄ™ ochronÄ™ przed wszystkimi fizycznymi atakami, zarazem podwyÅ¼szajÄ…c magicznÄ… odpornoÅ›Ä‡ i rzuty obronne. Zgodnie z naturÄ… zaczarowania szaty, moÅ¼e byÄ‡ noszona tylko przez zÅ‚e charaktery. TÄ™ szczegÃ³lnÄ… szatÄ™ umagiczniÅ‚<PRO_HESHE> <CHARNAME>.
+ 
+ PARAMETRY:
+ 
+ Klasa Pancerza: 3
+ Specjalne:
+- Pozwala zapamiêtaæ po 1 dodatkowym zaklêciu z poziomów 1, 2, 3 i 4. 
+- +10% do odpornoœci na magiê
+- +2 do rzutów obronnych
++ Pozwala zapamiÄ™taÄ‡ po 1 dodatkowym zaklÄ™ciu z poziomÃ³w 1, 2, 3 i 4. 
++ +10% do odpornoÅ›ci na magiÄ™
++ +2 do rzutÃ³w obronnych
+ Waga: 6 
+ ~
+-@137 = ~Wykuty na twoje ¿yczenie, He³m Cytadeli chroni nosz¹c¹ go osobê przed fizycznymi, magicznymi i umys³owymi atakami. £¹czy on w sobie defensywn¹ moc He³mu ochrony i He³mu ochrony przed urokami. W dodatku wygl¹da wyzywaj¹co. 
++@137 = ~Wykuty na twoje Å¼yczenie, HeÅ‚m Cytadeli chroni noszÄ…cÄ… go osobÄ™ przed fizycznymi, magicznymi i umysÅ‚owymi atakami. ÅÄ…czy on w sobie defensywnÄ… moc HeÅ‚mu ochrony i HeÅ‚mu ochrony przed urokami. W dodatku wyglÄ…da wyzywajÄ…co. 
+ 
+ PARAMETRY:
+ 
+ Klasa Pancerza: bez zmian
+ Specjalne:
+- Nosz¹ca go osoba jest odporna na zauroczenia
+- +1 do rzutów obronnych
+- +20% do odpornoœci na elektrycznoœæ
+- +20% do odpornoœci na zimno
+- +20% do odpornoœci na ogieñ
++ NoszÄ…ca go osoba jest odporna na zauroczenia
++ +1 do rzutÃ³w obronnych
++ +20% do odpornoÅ›ci na elektrycznoÅ›Ä‡
++ +20% do odpornoÅ›ci na zimno
++ +20% do odpornoÅ›ci na ogieÅ„
+  Chroni przed trafieniami krytycznymi
+ Waga: 3
+ ~
+-@139 = ~Wykuta jak tego ¿yczy³<PRO_HESHE> sobie <CHARNAME>, Wie¿a ¿elaznej woli ochroni nosz¹c¹ osobê przed mentalnymi atakami. Dostarcza ca³ej standardowej ochrony podobnie jak He³m ochrony przed urokami, a tak¿e sprawia, ¿e nosz¹ca go osoba jest odporna na ataki psioniczne. Nale¿y zauwa¿yæ, ¿e nie chroni on przed wysysaj¹cymi inteligencjê atakami illithidów.
++@139 = ~Wykuta jak tego Å¼yczyÅ‚<PRO_HESHE> sobie <CHARNAME>, WieÅ¼a Å¼elaznej woli ochroni noszÄ…cÄ… osobÄ™ przed mentalnymi atakami. Dostarcza caÅ‚ej standardowej ochrony podobnie jak HeÅ‚m ochrony przed urokami, a takÅ¼e sprawia, Å¼e noszÄ…ca go osoba jest odporna na ataki psioniczne. NaleÅ¼y zauwaÅ¼yÄ‡, Å¼e nie chroni on przed wysysajÄ…cymi inteligencjÄ™ atakami illithidÃ³w.
+ 
+ PARAMETRY:
+ 
+ Specjalne:
+- Nosz¹ca go osoba jest odporna na zauroczenia i psionikê
++ NoszÄ…ca go osoba jest odporna na zauroczenia i psionikÄ™
+ Waga: 3
+ ~
+-@141 = ~Ta ciê¿ka i gruba niedŸwiedzia skóra jest wszystkim co zosta³o ze s³ynnego Aegera. Kilkaset lat temu Aeger, olbrzymi niedŸwiedŸ, terroryzowa³ setki wiosek wzd³u¿ ca³ego Wybrze¿a Mieczy. NiedŸwiedŸ by³ niewra¿liwy na ogieñ, zimno i kwas. Wreszcie zebrali siê m³odzi mê¿czyŸni i kobiety z kilku wiosek, tworz¹c grupê licz¹c¹ prawie dwieœcie osób. Aeger zosta³ otoczony i zg³adzony. Prze¿y³ mniej ni¿ tuzin ludzi, którzy podzielili miêdzy siebie skórê Aegera. Zbroja zosta³a wykonana z jednego z tych kawa³ków.
+-<CHARNAME> ulepszy³<PRO_HESHE> j¹ jeszcze bardziej dodatkowymi umagicznieniami. Obecnie zapewnia jeszcze wiêksz¹ ochronê na obra¿enia fizyczne i ataki bazuj¹ce na ¿ywio³ach.
++@141 = ~Ta ciÄ™Å¼ka i gruba niedÅºwiedzia skÃ³ra jest wszystkim co zostaÅ‚o ze sÅ‚ynnego Aegera. Kilkaset lat temu Aeger, olbrzymi niedÅºwiedÅº, terroryzowaÅ‚ setki wiosek wzdÅ‚uÅ¼ caÅ‚ego WybrzeÅ¼a Mieczy. NiedÅºwiedÅº byÅ‚ niewraÅ¼liwy na ogieÅ„, zimno i kwas. Wreszcie zebrali siÄ™ mÅ‚odzi mÄ™Å¼czyÅºni i kobiety z kilku wiosek, tworzÄ…c grupÄ™ liczÄ…cÄ… prawie dwieÅ›cie osÃ³b. Aeger zostaÅ‚ otoczony i zgÅ‚adzony. PrzeÅ¼yÅ‚ mniej niÅ¼ tuzin ludzi, ktÃ³rzy podzielili miÄ™dzy siebie skÃ³rÄ™ Aegera. Zbroja zostaÅ‚a wykonana z jednego z tych kawaÅ‚kÃ³w.
++<CHARNAME> ulepszyÅ‚<PRO_HESHE> jÄ… jeszcze bardziej dodatkowymi umagicznieniami. Obecnie zapewnia jeszcze wiÄ™kszÄ… ochronÄ™ na obraÅ¼enia fizyczne i ataki bazujÄ…ce na Å¼ywioÅ‚ach.
+ 
+ PARAMETRY:
+ 
+ Klasa Pancerza: 1
+ Specjalne:
+- +25% do odpornoœci na ogieñ, zimno i kwas
+- Odpornoœæ na Zamêt
++ +25% do odpornoÅ›ci na ogieÅ„, zimno i kwas
++ OdpornoÅ›Ä‡ na ZamÄ™t
+ Waga: 35
+-Wymagana si³a: 6
++Wymagana siÅ‚a: 6
+ ~
+-@143 = ~Ta zbroja jest wykonana z ludzkiej skóry i oblana krwi¹ szlachetnego smoka. Wydziela ostry odór œmierci. Ta nikczemna zbroja mo¿e byæ u¿ywana tylko przez naprawdê z³¹ osobê.
++@143 = ~Ta zbroja jest wykonana z ludzkiej skÃ³ry i oblana krwiÄ… szlachetnego smoka. Wydziela ostry odÃ³r Å›mierci. Ta nikczemna zbroja moÅ¼e byÄ‡ uÅ¼ywana tylko przez naprawdÄ™ zÅ‚Ä… osobÄ™.
+ 
+ PARAMETRY:
+ 
+ Klasa Pancerza: 0 
+ Specjalne:
+- +4 do rzutów obronnych
+- +20% do odpornoœci na magiê
+- +1 do zrêcznoœci i kondycji
+- Odpornoœæ na trucizny
++ +4 do rzutÃ³w obronnych
++ +20% do odpornoÅ›ci na magiÄ™
++ +1 do zrÄ™cznoÅ›ci i kondycji
++ OdpornoÅ›Ä‡ na trucizny
+  Ochrona przed dobrem
+ Waga: 5
+-Wymagana si³a: 3
++Wymagana siÅ‚a: 3
+ ~
+-@145 = ~Ta zbroja zosta³a zaprojektowana specjalnie dla Keldorna. Zbroja zosta³a póŸniej umagiczniona, gdy za¿yczy³ sobie tego <CHARNAME>, aby zapewnia³a Keldornowi lepsz¹ ochronê. Bêd¹c na wyposa¿eniu zapewnia w³aœcicielowi premiê +2 do wszystkich rzutów obronnych oraz pozwala na Swobodê dzia³ania (np. przechodzenie przez pajêczyny) oraz odpornoœæ na strach. Poza byciem niesamowicie siln¹, zbroja prawie nic nie wa¿y. 
++@145 = ~Ta zbroja zostaÅ‚a zaprojektowana specjalnie dla Keldorna. Zbroja zostaÅ‚a pÃ³Åºniej umagiczniona, gdy zaÅ¼yczyÅ‚ sobie tego <CHARNAME>, aby zapewniaÅ‚a Keldornowi lepszÄ… ochronÄ™. BÄ™dÄ…c na wyposaÅ¼eniu zapewnia wÅ‚aÅ›cicielowi premiÄ™ +2 do wszystkich rzutÃ³w obronnych oraz pozwala na SwobodÄ™ dziaÅ‚ania (np. przechodzenie przez pajÄ™czyny) oraz odpornoÅ›Ä‡ na strach. Poza byciem niesamowicie silnÄ…, zbroja prawie nic nie waÅ¼y. 
+ 
+ PARAMETRY:
+ 
+ Klasa Pancerza: -2
+ Specjalne:
+- +2 do rzutów obronnych
+- Swoboda dzia³ania
+- Odpornoœæ na strach
++ +2 do rzutÃ³w obronnych
++ Swoboda dziaÅ‚ania
++ OdpornoÅ›Ä‡ na strach
+ Waga: 10
+ ~
+-@147 = ~Ta zbroja p³ytowa to istne cacko. Powleczona chitynow¹ ³usk¹ ankhega zapewnia lepsz¹ ochronê ni¿ pancerz wykonany z metalu i nie jest podatna na rdzê. Jednak¿e, jak powie ci to ka¿dy doœwiadczony poszukiwacz przygód, jej najwiêksz¹ zalet¹ jest niewielka waga. Potwory przychodz¹ i odchodz¹, wyczerpanie natomiast jest sta³ym zagro¿eniem. 
+-Ta szczególna zbroja zosta³a przekuta na twoj¹ proœbê. Zapewnia ona teraz dodatkow¹ ochronê i pozwala nosz¹cemu j¹ na naœladowanie ataków pluj¹cego kwasem ankhega.
++@147 = ~Ta zbroja pÅ‚ytowa to istne cacko. Powleczona chitynowÄ… Å‚uskÄ… ankhega zapewnia lepszÄ… ochronÄ™ niÅ¼ pancerz wykonany z metalu i nie jest podatna na rdzÄ™. JednakÅ¼e, jak powie ci to kaÅ¼dy doÅ›wiadczony poszukiwacz przygÃ³d, jej najwiÄ™kszÄ… zaletÄ… jest niewielka waga. Potwory przychodzÄ… i odchodzÄ…, wyczerpanie natomiast jest staÅ‚ym zagroÅ¼eniem. 
++Ta szczegÃ³lna zbroja zostaÅ‚a przekuta na twojÄ… proÅ›bÄ™. Zapewnia ona teraz dodatkowÄ… ochronÄ™ i pozwala noszÄ…cemu jÄ… na naÅ›ladowanie atakÃ³w plujÄ…cego kwasem ankhega.
+ 
+ PARAMETRY:
+ 
+ Klasa Pancerza: -1
+ Specjalne:
+- +50% do odpornoœci na kwas
+- Trzy razy dziennie pozwala rzucaæ Kwasow¹ strza³ê Melfa
++ +50% do odpornoÅ›ci na kwas
++ Trzy razy dziennie pozwala rzucaÄ‡ KwasowÄ… strzaÅ‚Ä™ Melfa
+ Waga: 25
+-Wymagana si³a: 8
++Wymagana siÅ‚a: 8
+ ~
+-@149 = ~Audn z Pola, rycerz i czempion czarodzieja Kekkima, nosi³ tê tarczê przez wiêkszoœæ swojego ¿ycia. Chroni ona nosiciela przed wiêkszoœci¹ form kontroli umys³u, co jest zalet¹ dla czarodzieja, który potrzebowa³ przyjaznych mu wojowników, aby stali wiernie po jego stronie. Zarówno Kekkim, jak i Audn dawno ju¿ gryz¹ ziemiê, pozostawiwszy tarczê temu, kto wydostanie j¹ z wie¿y czarodzieja.
+-Niedawno tarcza ta zosta³a dodatkowo umagiczniona przez ciebie. Zapewnia teraz dodatkow¹ fizyczn¹ ochronê i sprawia, ¿e nosz¹cy j¹ jest odporny na psionikê (ale nie przed wysysaj¹cymi inteligencjê atakami illithidów). 
++@149 = ~Audn z Pola, rycerz i czempion czarodzieja Kekkima, nosiÅ‚ tÄ™ tarczÄ™ przez wiÄ™kszoÅ›Ä‡ swojego Å¼ycia. Chroni ona nosiciela przed wiÄ™kszoÅ›ciÄ… form kontroli umysÅ‚u, co jest zaletÄ… dla czarodzieja, ktÃ³ry potrzebowaÅ‚ przyjaznych mu wojownikÃ³w, aby stali wiernie po jego stronie. ZarÃ³wno Kekkim, jak i Audn dawno juÅ¼ gryzÄ… ziemiÄ™, pozostawiwszy tarczÄ™ temu, kto wydostanie jÄ… z wieÅ¼y czarodzieja.
++Niedawno tarcza ta zostaÅ‚a dodatkowo umagiczniona przez ciebie. Zapewnia teraz dodatkowÄ… fizycznÄ… ochronÄ™ i sprawia, Å¼e noszÄ…cy jÄ… jest odporny na psionikÄ™ (ale nie przed wysysajÄ…cymi inteligencjÄ™ atakami illithidÃ³w). 
+ 
+ PARAMETRY: 
+ 
+ Klasa Pancerza: +4
+ Specjalne:
+- Odpornoœæ na uroki, psionikê, zamêt, dominacjê oraz unieruchomienie osoby
++ OdpornoÅ›Ä‡ na uroki, psionikÄ™, zamÄ™t, dominacjÄ™ oraz unieruchomienie osoby
+ Waga: 2
+-Wymagana si³a: 4
++Wymagana siÅ‚a: 4
+ ~
+-@151 = ~W³ócznia to jeden z najwczeœniejszych rodzajów broni, którymi zacz¹³ pos³ugiwaæ siê cz³owiek. Pierwsze egzemplarze tej broni by³y wykonane z drewna i zaostrzone na koñcu. Kiedy cz³owiek nauczy³ siê wytapiaæ metale, groty w³óczni by³y wytwarzane z ¿elaza i stali. Ta w³ócznia dr¿y od potê¿nej magii wykorzystanej do jej stworzenia.
+-W przeciwieñstwie do prawie wszystkich w³óczni, które znasz, t¹ mo¿na rzucaæ. Zosta³a wykuta dla ciebie przy u¿yciu kamienia ³otrzyków. Kiedy jest rzucana, w³ócznia natychmiast wraca do r¹k w³aœciciela. (W³ócznia mo¿e byæ wykorzystywana jako broñ rêczna: wybierz wtedy drug¹ zdolnoœæ broni, aby tak zrobiæ.) 
++@151 = ~WÅ‚Ã³cznia to jeden z najwczeÅ›niejszych rodzajÃ³w broni, ktÃ³rymi zaczÄ…Å‚ posÅ‚ugiwaÄ‡ siÄ™ czÅ‚owiek. Pierwsze egzemplarze tej broni byÅ‚y wykonane z drewna i zaostrzone na koÅ„cu. Kiedy czÅ‚owiek nauczyÅ‚ siÄ™ wytapiaÄ‡ metale, groty wÅ‚Ã³czni byÅ‚y wytwarzane z Å¼elaza i stali. Ta wÅ‚Ã³cznia drÅ¼y od potÄ™Å¼nej magii wykorzystanej do jej stworzenia.
++W przeciwieÅ„stwie do prawie wszystkich wÅ‚Ã³czni, ktÃ³re znasz, tÄ… moÅ¼na rzucaÄ‡. ZostaÅ‚a wykuta dla ciebie przy uÅ¼yciu kamienia Å‚otrzykÃ³w. Kiedy jest rzucana, wÅ‚Ã³cznia natychmiast wraca do rÄ…k wÅ‚aÅ›ciciela. (WÅ‚Ã³cznia moÅ¼e byÄ‡ wykorzystywana jako broÅ„ rÄ™czna: wybierz wtedy drugÄ… zdolnoÅ›Ä‡ broni, aby tak zrobiÄ‡.) 
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K6 +3
++ObraÅ¼enia: 1K6 +3
+ TraK0: +3
+-Typ obra¿eñ (walka wrêcz): k³ute
+-Typ obra¿eñ (rzucona): pocisk (k³ute)
++Typ obraÅ¼eÅ„ (walka wrÄ™cz): kÅ‚ute
++Typ obraÅ¼eÅ„ (rzucona): pocisk (kÅ‚ute)
+ Specjalne:
+- 1 dodatkowy atak na rundê (taka sama czêstotliwoœæ strza³u jak d³ugiego ³uku)
++ 1 dodatkowy atak na rundÄ™ (taka sama czÄ™stotliwoÅ›Ä‡ strzaÅ‚u jak dÅ‚ugiego Å‚uku)
+ Waga: 3
+-OpóŸnienie: 3
+-Rodzaj bieg³oœci: w³ócznia
+-Typ broni: 2-rêczna
+-Wymagana si³a: 5
++OpÃ³Åºnienie: 3
++Rodzaj biegÅ‚oÅ›ci: wÅ‚Ã³cznia
++Typ broni: 2-rÄ™czna
++Wymagana siÅ‚a: 5
+ ~
+-@153 = ~Ta zgrabna w³ócznia kszta³tem przypomina róg jednoro¿ca. W³adaj¹cy ta broni¹ jest niewra¿liwy na czary Unieruchomienie i Zauroczenie, tak samo jak jednoro¿ec. Nie wiadomo czy ten róg jest prawdziwym rogiem jednoro¿ca.
+-Oryginalna W³ócznia jednoro¿ca zosta³a przekuta tak, by mo¿na jej u¿ywaæ jako broni dystansowej. Kiedy jest rzucana, w³ócznia natychmiast wraca do r¹k w³aœciciela. (W³ócznia mo¿e byæ wykorzystywana jako broñ rêczna: wybierz wtedy drug¹ zdolnoœæ broni, aby tak zrobiæ.) 
++@153 = ~Ta zgrabna wÅ‚Ã³cznia ksztaÅ‚tem przypomina rÃ³g jednoroÅ¼ca. WÅ‚adajÄ…cy ta broniÄ… jest niewraÅ¼liwy na czary Unieruchomienie i Zauroczenie, tak samo jak jednoroÅ¼ec. Nie wiadomo czy ten rÃ³g jest prawdziwym rogiem jednoroÅ¼ca.
++Oryginalna WÅ‚Ã³cznia jednoroÅ¼ca zostaÅ‚a przekuta tak, by moÅ¼na jej uÅ¼ywaÄ‡ jako broni dystansowej. Kiedy jest rzucana, wÅ‚Ã³cznia natychmiast wraca do rÄ…k wÅ‚aÅ›ciciela. (WÅ‚Ã³cznia moÅ¼e byÄ‡ wykorzystywana jako broÅ„ rÄ™czna: wybierz wtedy drugÄ… zdolnoÅ›Ä‡ broni, aby tak zrobiÄ‡.) 
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K6 +3, +2 pkt. obra¿eñ od ognia
++ObraÅ¼enia: 1K6 +3, +2 pkt. obraÅ¼eÅ„ od ognia
+ Trak0: +3
+-Typ obra¿eñ (walka wrêcz): k³ute
+-Typ obra¿eñ (rzucona): pocisk (k³ute)
++Typ obraÅ¼eÅ„ (walka wrÄ™cz): kÅ‚ute
++Typ obraÅ¼eÅ„ (rzucona): pocisk (kÅ‚ute)
+ Specjalne:
+- Odpornoœæ na unieruchomienie osoby i zauroczenie
+- +3 do rzutów obronnych przeciw œmierci
++ OdpornoÅ›Ä‡ na unieruchomienie osoby i zauroczenie
++ +3 do rzutÃ³w obronnych przeciw Å›mierci
+ Waga: 3
+-OpóŸnienie: 3
+-Rodzaj bieg³oœci: w³ócznia
+-Typ broni: 2-rêczna
+-Wymagana si³a: 5
++OpÃ³Åºnienie: 3
++Rodzaj biegÅ‚oÅ›ci: wÅ‚Ã³cznia
++Typ broni: 2-rÄ™czna
++Wymagana siÅ‚a: 5
+ ~
+-@155 = ~Rzucana W³ócznia +4, Przebijacz
+-Przebijacz posiada namacaln¹ aurê magiczn¹ wskazuj¹c¹ na z³oœliw¹ naturê tej broni i dlatego by³a ona w przesz³oœci ulubion¹ broni¹ wielu potê¿nych wodzów orków. Trafiona ofiara zostaje, jak mo¿na siê domyœlaæ, prawie przebita, gdy magiczna zdolnoœæ broni dokonuje dzie³a zniszczenia.
+-Po tym jak <CHARNAME> uzyska³<PRO_HESHE> Przebijacza w mieœcie Sahuaginów, przeku³<PRO_HESHE> j¹ póŸniej na broñ dystansow¹. Kiedy jest rzucana, w³ócznia natychmiast wraca do r¹k w³aœciciela. (W³ócznia mo¿e byæ wykorzystywana jako broñ rêczna: wybierz wtedy drug¹ zdolnoœæ broni, aby tak zrobiæ.
++@155 = ~Rzucana WÅ‚Ã³cznia +4, Przebijacz
++Przebijacz posiada namacalnÄ… aurÄ™ magicznÄ… wskazujÄ…cÄ… na zÅ‚oÅ›liwÄ… naturÄ™ tej broni i dlatego byÅ‚a ona w przeszÅ‚oÅ›ci ulubionÄ… broniÄ… wielu potÄ™Å¼nych wodzÃ³w orkÃ³w. Trafiona ofiara zostaje, jak moÅ¼na siÄ™ domyÅ›laÄ‡, prawie przebita, gdy magiczna zdolnoÅ›Ä‡ broni dokonuje dzieÅ‚a zniszczenia.
++Po tym jak <CHARNAME> uzyskaÅ‚<PRO_HESHE> Przebijacza w mieÅ›cie SahuaginÃ³w, przekuÅ‚<PRO_HESHE> jÄ… pÃ³Åºniej na broÅ„ dystansowÄ…. Kiedy jest rzucana, wÅ‚Ã³cznia natychmiast wraca do rÄ…k wÅ‚aÅ›ciciela. (WÅ‚Ã³cznia moÅ¼e byÄ‡ wykorzystywana jako broÅ„ rÄ™czna: wybierz wtedy drugÄ… zdolnoÅ›Ä‡ broni, aby tak zrobiÄ‡.
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K6 +4, +10 pkt. obra¿eñ k³utych
++ObraÅ¼enia: 1K6 +4, +10 pkt. obraÅ¼eÅ„ kÅ‚utych
+ TraK0: +4
+-Typ obra¿eñ (walka wrêcz): k³ute
+-Typ obra¿eñ (rzucona): pocisk (k³ute)
++Typ obraÅ¼eÅ„ (walka wrÄ™cz): kÅ‚ute
++Typ obraÅ¼eÅ„ (rzucona): pocisk (kÅ‚ute)
+ Specjalne:
+- 1 dodatkowy atak na rundê (taka sama czêstotliwoœæ strza³u jak d³ugiego ³uku)
++ 1 dodatkowy atak na rundÄ™ (taka sama czÄ™stotliwoÅ›Ä‡ strzaÅ‚u jak dÅ‚ugiego Å‚uku)
+ Waga: 3
+-OpóŸnienie: 2
+-Rodzaj bieg³oœci: w³ócznia
+-Typ broni: 2-rêczna
+-Wymagana si³a: 5
++OpÃ³Åºnienie: 2
++Rodzaj biegÅ‚oÅ›ci: wÅ‚Ã³cznia
++Typ broni: 2-rÄ™czna
++Wymagana siÅ‚a: 5
+ ~
+-@157 = ~Kostur Lasów
+-Cz³owiek, który go posiada³, znany jako "Dziki m¹¿ z lasu", by³ w okolicach Targowa postaci¹ legendarn¹ do chwili, kiedy umar³ i powróci³ do ziemi. Ci, którzy go widzieli pamiêtaj¹ jego ciemn¹, podobn¹ do kory skórê, która znika³a, gdy odk³ada³ swój kostur. Osobnik ten nêka³ nieodpowiedzialnych drwali i przechodniów, a starcy opowiadaj¹, jak kiedyœ wybrali siê na niego najemnicy z tuzinem psów myœliwskich. Zwierzêta by³y gotowe rozerwaæ biednego druida na strzêpy, ale on szybko zwróci³ je przeciwko ich w³asnym panom. Ruszywszy do przodu w nadziei przerwania tego wp³ywu, zbrojni ujrzeli ostatni¹ moc kostura, gdy roœlinnoœæ zadr¿a³a od magicznego wezwania "Dzikiego mê¿a". Uformowa³a siê zielona, gnij¹ca mieszanina ¿ycia i œmierci, która opad³a na przera¿onych ¿o³nierzy, zabijaj¹c ich wszystkich.
+-Niedawno <CHARNAME> zleci³<PRO_HESHE> ulepszenie kostura, dziêki czemu mo¿na skorzystaæ z nowych zdolnoœci. 
++@157 = ~Kostur LasÃ³w
++CzÅ‚owiek, ktÃ³ry go posiadaÅ‚, znany jako "Dziki mÄ…Å¼ z lasu", byÅ‚ w okolicach Targowa postaciÄ… legendarnÄ… do chwili, kiedy umarÅ‚ i powrÃ³ciÅ‚ do ziemi. Ci, ktÃ³rzy go widzieli pamiÄ™tajÄ… jego ciemnÄ…, podobnÄ… do kory skÃ³rÄ™, ktÃ³ra znikaÅ‚a, gdy odkÅ‚adaÅ‚ swÃ³j kostur. Osobnik ten nÄ™kaÅ‚ nieodpowiedzialnych drwali i przechodniÃ³w, a starcy opowiadajÄ…, jak kiedyÅ› wybrali siÄ™ na niego najemnicy z tuzinem psÃ³w myÅ›liwskich. ZwierzÄ™ta byÅ‚y gotowe rozerwaÄ‡ biednego druida na strzÄ™py, ale on szybko zwrÃ³ciÅ‚ je przeciwko ich wÅ‚asnym panom. Ruszywszy do przodu w nadziei przerwania tego wpÅ‚ywu, zbrojni ujrzeli ostatniÄ… moc kostura, gdy roÅ›linnoÅ›Ä‡ zadrÅ¼aÅ‚a od magicznego wezwania "Dzikiego mÄ™Å¼a". UformowaÅ‚a siÄ™ zielona, gnijÄ…ca mieszanina Å¼ycia i Å›mierci, ktÃ³ra opadÅ‚a na przeraÅ¼onych Å¼oÅ‚nierzy, zabijajÄ…c ich wszystkich.
++Niedawno <CHARNAME> zleciÅ‚<PRO_HESHE> ulepszenie kostura, dziÄ™ki czemu moÅ¼na skorzystaÄ‡ z nowych zdolnoÅ›ci. 
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K6 +5
++ObraÅ¼enia: 1K6 +5
+ TraK0: +5
+-Typ obra¿eñ: obuchowe
++Typ obraÅ¼eÅ„: obuchowe
+ Specjalne:
+  +3 do Klasy Pancerza
+- Korowa skóra (KP 3) (gdy u¿ywany)
+- Szeœæ razy dziennie pozwala rzucaæ Przyzwanie pokracznego kopca na okres 100 sekund
+- Szeœæ razy dziennie pozwala rzucaæ Wzmocnione zauroczenie zwierz¹t na okres 5 tur (bez mo¿liwoœci wykonania rzutu obronnego) 
+- 5% szansa, ¿e cel (i jego sojusznicy) zostan¹ dotkniêci plag¹ Pe³zaj¹cej zag³ady przy trafieniu
++ Korowa skÃ³ra (KP 3) (gdy uÅ¼ywany)
++ SzeÅ›Ä‡ razy dziennie pozwala rzucaÄ‡ Przyzwanie pokracznego kopca na okres 100 sekund
++ SzeÅ›Ä‡ razy dziennie pozwala rzucaÄ‡ Wzmocnione zauroczenie zwierzÄ…t na okres 5 tur (bez moÅ¼liwoÅ›ci wykonania rzutu obronnego) 
++ 5% szansa, Å¼e cel (i jego sojusznicy) zostanÄ… dotkniÄ™ci plagÄ… PeÅ‚zajÄ…cej zagÅ‚ady przy trafieniu
+ Waga: 2
+-OpóŸnienie: 0
+-Rodzaj bieg³oœci: kij
+-Typ broni: 2-rêczna
+-Wymagana si³a: 5
++OpÃ³Åºnienie: 0
++Rodzaj biegÅ‚oÅ›ci: kij
++Typ broni: 2-rÄ™czna
++Wymagana siÅ‚a: 5
+ ~
+-@159 = ~S³oneczne ostrze: Dzienna Gwiazda +4
+-Niezale¿nie od tego czy miecz zosta³ stworzony specjalnie by s³u¿yæ Tormowi, czy te¿ zaczêto wykorzystywaæ go w tym celu póŸniej, to Paladyni Lojalnej Furii dobrze u¿ywali go w swej walce z nieumar³ymi. Dziêki magii, b¹dŸ b³ogos³awieñstwu obdarzony jest Promieniem s³oñca, energi¹ czystej si³y ¿yciowej tak potê¿n¹, ¿e niszczy zarówno ¿ywych jak i nieumar³ych.
+-<CHARNAME> odzyska³<PRO_HESHE> ten miecz z r¹k lisza niedaleko bram miasta Athkatli i zleci³<PRO_HESHE> jego przekucie tworz¹c jeszcze bardziej potê¿n¹ broñ w rêkach sprawiedliwoœci. 
++@159 = ~SÅ‚oneczne ostrze: Dzienna Gwiazda +4
++NiezaleÅ¼nie od tego czy miecz zostaÅ‚ stworzony specjalnie by sÅ‚uÅ¼yÄ‡ Tormowi, czy teÅ¼ zaczÄ™to wykorzystywaÄ‡ go w tym celu pÃ³Åºniej, to Paladyni Lojalnej Furii dobrze uÅ¼ywali go w swej walce z nieumarÅ‚ymi. DziÄ™ki magii, bÄ…dÅº bÅ‚ogosÅ‚awieÅ„stwu obdarzony jest Promieniem sÅ‚oÅ„ca, energiÄ… czystej siÅ‚y Å¼yciowej tak potÄ™Å¼nÄ…, Å¼e niszczy zarÃ³wno Å¼ywych jak i nieumarÅ‚ych.
++<CHARNAME> odzyskaÅ‚<PRO_HESHE> ten miecz z rÄ…k lisza niedaleko bram miasta Athkatli i zleciÅ‚<PRO_HESHE> jego przekucie tworzÄ…c jeszcze bardziej potÄ™Å¼nÄ… broÅ„ w rÄ™kach sprawiedliwoÅ›ci. 
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K8 +4, +8 przeciwko z³ym istotom, zadaje podwójne obra¿enia nieumar³ym 
+-TraK0: +4, +8 przeciwko z³ym istotom
+-Typ obra¿eñ: sieczne
++ObraÅ¼enia: 1K8 +4, +8 przeciwko zÅ‚ym istotom, zadaje podwÃ³jne obraÅ¼enia nieumarÅ‚ym 
++TraK0: +4, +8 przeciwko zÅ‚ym istotom
++Typ obraÅ¼eÅ„: sieczne
+ Specjalne:
+- Sta³a Ochrona przed z³em
+- Dwa razy dziennie pozwala rzucaæ Promieñ s³oñca, zadaj¹cy 3K6 pkt. obra¿eñ (rzut obronny przeciwko czarom lub oœlepienie na 10 rund), nieumarli otrzymuj¹ dodatkowe 10K6 pkt. obra¿eñ (ka¿dy musi wykonaæ rzut obronny przeciwko czarom lub zostaje zniszczony). Zasiêg i obszar dzia³ania to 6 metrów.
++ StaÅ‚a Ochrona przed zÅ‚em
++ Dwa razy dziennie pozwala rzucaÄ‡ PromieÅ„ sÅ‚oÅ„ca, zadajÄ…cy 3K6 pkt. obraÅ¼eÅ„ (rzut obronny przeciwko czarom lub oÅ›lepienie na 10 rund), nieumarli otrzymujÄ… dodatkowe 10K6 pkt. obraÅ¼eÅ„ (kaÅ¼dy musi wykonaÄ‡ rzut obronny przeciwko czarom lub zostaje zniszczony). ZasiÄ™g i obszar dziaÅ‚ania to 6 metrÃ³w.
+ Waga: 2
+-OpóŸnienie: 3
+-Rodzaj bieg³oœci: d³ugi miecz
+-Typ broni: 1-rêczna
+-Wymagana si³a: 6
++OpÃ³Åºnienie: 3
++Rodzaj biegÅ‚oÅ›ci: dÅ‚ugi miecz
++Typ broni: 1-rÄ™czna
++Wymagana siÅ‚a: 6
+ ~
+ @161 = ~Katana +5: Furia Niebios
+-W przeciwieñstwie do konwencjonalnych broni, katana jest ju¿ z za³o¿enia niemal doskona³ym mieczem do walki. Trzeba ogromnych poœwiêceñ, aby jeszcze j¹ ulepszyæ, np. umieraj¹cy samuraj mo¿e ub³agaæ Wu Jena aby jego waleczny duch zosta³ przelany na katanê. Osoba w³adaj¹ca zaczarowan¹ katan¹, tak¹ jak ta, musi szanowaæ obyczaje Kara-Tur oraz samuraja, który niegdyœ dzier¿y³ to ostrze w boju. Nieprzestrzeganie tego nakazu mo¿e spowodowaæ gwa³town¹ odmianê losu na gorsze.
+-Umagicznienie katany nie jest prost¹ spraw¹. Tak przynajmniej myœla³<PRO_HESHE> <CHARNAME>, zanim sam<PRO_HESHE> tego po raz pierwszy nie uczyni³<PRO_HESHE>. W rzeczywistoœci najtrudniejsz¹ czêœci¹ przekuwania ju¿ boskiej mocy katany znanej jako Furia Niebios by³o zebranie potrzebnych do tego rzeczy. Furia Niebios dobrze j<PRO_HIMHER> s³u¿y³a, odk¹d <CHARNAME> zabra³<PRO_HESHE> j¹ z r¹k kensaia Koshi w Dzielnicy Œwi¹tynnej w Athkatli.
++W przeciwieÅ„stwie do konwencjonalnych broni, katana jest juÅ¼ z zaÅ‚oÅ¼enia niemal doskonaÅ‚ym mieczem do walki. Trzeba ogromnych poÅ›wiÄ™ceÅ„, aby jeszcze jÄ… ulepszyÄ‡, np. umierajÄ…cy samuraj moÅ¼e ubÅ‚agaÄ‡ Wu Jena aby jego waleczny duch zostaÅ‚ przelany na katanÄ™. Osoba wÅ‚adajÄ…ca zaczarowanÄ… katanÄ…, takÄ… jak ta, musi szanowaÄ‡ obyczaje Kara-Tur oraz samuraja, ktÃ³ry niegdyÅ› dzierÅ¼yÅ‚ to ostrze w boju. Nieprzestrzeganie tego nakazu moÅ¼e spowodowaÄ‡ gwaÅ‚townÄ… odmianÄ™ losu na gorsze.
++Umagicznienie katany nie jest prostÄ… sprawÄ…. Tak przynajmniej myÅ›laÅ‚<PRO_HESHE> <CHARNAME>, zanim sam<PRO_HESHE> tego po raz pierwszy nie uczyniÅ‚<PRO_HESHE>. W rzeczywistoÅ›ci najtrudniejszÄ… czÄ™Å›ciÄ… przekuwania juÅ¼ boskiej mocy katany znanej jako Furia Niebios byÅ‚o zebranie potrzebnych do tego rzeczy. Furia Niebios dobrze j<PRO_HIMHER> sÅ‚uÅ¼yÅ‚a, odkÄ…d <CHARNAME> zabraÅ‚<PRO_HESHE> jÄ… z rÄ…k kensaia Koshi w Dzielnicy ÅšwiÄ…tynnej w Athkatli.
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K10 +5 
++ObraÅ¼enia: 1K10 +5 
+ TraK0: +5
+-Typ obra¿eñ: sieczne
++Typ obraÅ¼eÅ„: sieczne
+ Specjalne:
+- Raz dziennie pozwala rzucaæ B³yskawicê
+- Raz dziennie pozwala rzucaæ Ociemnia³oœæ
+- ofiara musi wykonaæ rzut obronny przeciwko czarom albo zostanie og³uszona
+- Przy ka¿dym trafieniu istnieje 5% szansa na Pora¿aj¹cy cios (dodatkowe 20 pkt. obra¿eñ od elektrycznoœci)
+-Waga: 3
+-OpóŸnienie: 1
+-Rodzaj bieg³oœci: katana
+-Typ broni: 1-rêczna
+-Wymagana si³a: 6
++ Raz dziennie pozwala rzucaÄ‡ BÅ‚yskawicÄ™
++ Raz dziennie pozwala rzucaÄ‡ OciemniaÅ‚oÅ›Ä‡
++ ofiara musi wykonaÄ‡ rzut obronny przeciwko czarom albo zostanie ogÅ‚uszona
++ Przy kaÅ¼dym trafieniu istnieje 5% szansa na PoraÅ¼ajÄ…cy cios (dodatkowe 20 pkt. obraÅ¼eÅ„ od elektrycznoÅ›ci)
++Waga: 3
++OpÃ³Åºnienie: 1
++Rodzaj biegÅ‚oÅ›ci: katana
++Typ broni: 1-rÄ™czna
++Wymagana siÅ‚a: 6
+ ~
+ @163 = ~Miecz Arvoreen +5
+-Orê¿ ten jest kolejnym darem Arvoreen dla Mazzy, dlatego mog¹ go u¿ywaæ wy³¹cznie nizio³ki. Dziêki magii, któr¹ w nim zawarto, miecz ten potrafi zwolniæ ruchy ka¿dego przeciwnika, którego dosiêgnie.
+-Z twoj¹ pomoc¹ i b³ogos³awieñstwem Arvoreen, miecz ten sta³ siê jeszcze silniejszy. 
++OrÄ™Å¼ ten jest kolejnym darem Arvoreen dla Mazzy, dlatego mogÄ… go uÅ¼ywaÄ‡ wyÅ‚Ä…cznie nizioÅ‚ki. DziÄ™ki magii, ktÃ³rÄ… w nim zawarto, miecz ten potrafi zwolniÄ‡ ruchy kaÅ¼dego przeciwnika, ktÃ³rego dosiÄ™gnie.
++Z twojÄ… pomocÄ… i bÅ‚ogosÅ‚awieÅ„stwem Arvoreen, miecz ten staÅ‚ siÄ™ jeszcze silniejszy. 
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K6 +5
++ObraÅ¼enia: 1K6 +5
+ TraK0: +5
+-Typ obra¿eñ: k³ute
++Typ obraÅ¼eÅ„: kÅ‚ute
+ Specjalne:
+- Ofiara musi wykonaæ rzut obronny przeciwko ró¿d¿kom, albo jej ruchy zostan¹ spowolnione o po³owê (na okres 45 sekund).
+- Odpornoœæ na efekty spowolnienia i og³uszenia.
+- Dodaje +1 do si³y i dodatkow¹ premiê 75% dla tej cechy.
++ Ofiara musi wykonaÄ‡ rzut obronny przeciwko rÃ³Å¼dÅ¼kom, albo jej ruchy zostanÄ… spowolnione o poÅ‚owÄ™ (na okres 45 sekund).
++ OdpornoÅ›Ä‡ na efekty spowolnienia i ogÅ‚uszenia.
++ Dodaje +1 do siÅ‚y i dodatkowÄ… premiÄ™ 75% dla tej cechy.
+ Waga: 3
+-OpóŸnienie: 1
+-Rodzaj bieg³oœci: krótki miecz
+-Typ broni: 1-rêczna
++OpÃ³Åºnienie: 1
++Rodzaj biegÅ‚oÅ›ci: krÃ³tki miecz
++Typ broni: 1-rÄ™czna
+ ~
+-@165 = ~Uœwiêcony Odkupiciel +5
+-Keldorn odznaczy³ siê w swojej wczesnej karierze paladyna i otrzyma³ ten miecz w darze od Torma. Jest niezwykle precyzyjny, ale chroni go równie¿ w bitwie specjaln¹ Ognist¹ tarcz¹ i ka¿dy kto go spróbuje uderzyæ, doœwiadczy gniewu Torma w postaci magicznych obra¿eñ. Nikt oprócz Keldorna nie mo¿e u¿ywaæ tego miecza.
+-Z twoj¹ pomoc¹ i b³ogos³awieñstwem Torma miecz ten sta³ siê jeszcze bardziej potê¿ny.
++@165 = ~UÅ›wiÄ™cony Odkupiciel +5
++Keldorn odznaczyÅ‚ siÄ™ w swojej wczesnej karierze paladyna i otrzymaÅ‚ ten miecz w darze od Torma. Jest niezwykle precyzyjny, ale chroni go rÃ³wnieÅ¼ w bitwie specjalnÄ… OgnistÄ… tarczÄ… i kaÅ¼dy kto go sprÃ³buje uderzyÄ‡, doÅ›wiadczy gniewu Torma w postaci magicznych obraÅ¼eÅ„. Nikt oprÃ³cz Keldorna nie moÅ¼e uÅ¼ywaÄ‡ tego miecza.
++Z twojÄ… pomocÄ… i bÅ‚ogosÅ‚awieÅ„stwem Torma miecz ten staÅ‚ siÄ™ jeszcze bardziej potÄ™Å¼ny.
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K12 +5
++ObraÅ¼enia: 1K12 +5
+ TraK0: +5
+-Typ obra¿eñ: sieczne
++Typ obraÅ¼eÅ„: sieczne
+ Specjalne:
+- 5 pkt. magicznych obra¿eñ dla ka¿dego, kto zrani dzier¿¹cego ten miecz
++ 5 pkt. magicznych obraÅ¼eÅ„ dla kaÅ¼dego, kto zrani dzierÅ¼Ä…cego ten miecz
+  Przy trafieniu rozproszenie magii i uciszenie celu na dwie rundy
+ Waga: 8
+-OpóŸnienie: 8
+-Rodzaj bieg³oœci: miecz oburêczny
+-Typ broni: 2-rêczna
+-~
+-@167 = ~Tarcza Rodziny Delrynów +4
+-To jest rodzinna tarcza Anomena, podarowana mu przez jego ojca. Oprócz magicznej ochrony tarcza promieniuje aur¹, któr¹ zapewnia osobie, która jej u¿ywa, odpornoœæ na ogieñ i zimno. W celu ochrony przed atakami z dystansu, Anomen mo¿e u¿yæ tej tarczy, ¿eby wznieœæ pole energetyczne. Taka ochrona przed pociskami mo¿e byæ u¿yta 3 razy na dzieñ.
+-Doœæ niedawno <CHARNAME> wzmocni³<PRO_HESHE> tarczê ochronn¹ magi¹ p³yn¹c¹ z £aski ocalenia, uzyskanej podczas spotkania z awatarem Amaunatora, co spowodowa³o, ¿e sta³a siê ona jeszcze potê¿niejsza.
++OpÃ³Åºnienie: 8
++Rodzaj biegÅ‚oÅ›ci: miecz oburÄ™czny
++Typ broni: 2-rÄ™czna
++~
++@167 = ~Tarcza Rodziny DelrynÃ³w +4
++To jest rodzinna tarcza Anomena, podarowana mu przez jego ojca. OprÃ³cz magicznej ochrony tarcza promieniuje aurÄ…, ktÃ³rÄ… zapewnia osobie, ktÃ³ra jej uÅ¼ywa, odpornoÅ›Ä‡ na ogieÅ„ i zimno. W celu ochrony przed atakami z dystansu, Anomen moÅ¼e uÅ¼yÄ‡ tej tarczy, Å¼eby wznieÅ›Ä‡ pole energetyczne. Taka ochrona przed pociskami moÅ¼e byÄ‡ uÅ¼yta 3 razy na dzieÅ„.
++DoÅ›Ä‡ niedawno <CHARNAME> wzmocniÅ‚<PRO_HESHE> tarczÄ™ ochronnÄ… magiÄ… pÅ‚ynÄ…cÄ… z Åaski ocalenia, uzyskanej podczas spotkania z awatarem Amaunatora, co spowodowaÅ‚o, Å¼e staÅ‚a siÄ™ ona jeszcze potÄ™Å¼niejsza.
+ 
+ PARAMETRY:
+ 
+ Klasa Pancerza: +5
+ Specjalne:
+- +30% do odpornoœci na ogieñ
+- +30% do odpornoœci na zimno
+- Trzy razy dziennie mo¿e rzuciæ czar Ochrona przed pociskami.
++ +30% do odpornoÅ›ci na ogieÅ„
++ +30% do odpornoÅ›ci na zimno
++ Trzy razy dziennie moÅ¼e rzuciÄ‡ czar Ochrona przed pociskami.
+ ~
+-@169 = ~Lawrence Lilarcor by³ znany, nie z odwagi, ale z g³upoty. Jak mówi opowieœæ, che³pliwy Lilarcor opuœci³ swoj¹ wioskê za namow¹ swych przyjació³, aby pokazaæ, ¿e tylko "wielki bohater" mo¿e zmierzyæ siê z przebieg³ym Treantem. Wêdrowa³ zim¹ przez wiele dni, a¿ w koñcu, w gor¹czce, znalaz³ swój cel i rozpoczê³y siê epickie zapasy. Niestety (a raczej na szczêœcie), "Treant" by³ niczym wiêcej jak tylko zwyk³ym, starym dêbem. To mog³oby zakoñczyæ tê historiê, ale Lilarcor, który wyruszaj¹c nie wiedzia³, czym jest Treant, nie zdo³a³ domyœliæ siê prawdy. W koñcu wyrwa³ d¹b z korzeniami i dumnie maszeruj¹c w kierunku domu og³osi³ siê bohaterem. Tak narodzi³a siê epickich rozmiarów komedia, a z czasem nazwisko Lilarcor sta³o siê synonimem g³upca w wielu opowieœciach.
+-Nie wiadomo, czy ta magiczna broñ to sam Lilarcor, byæ mo¿e uwiêziony przez z³ego maga lub inne zrz¹dzenie losu, ale pewne jest to, ¿e dzia³a na poziomie jego zdolnoœci. Jeœli to on, to nigdy nie narzeka³ na swoje uwiêzienie. Mo¿e nie zdaje sobie sprawy, albo nie dba o to, ¿e nie jest ju¿ cz³owiekiem.
+-Jako broñ, Lilarcor ma swoje zastosowania, ale wielu wojowników zrezygnowa³o z niego. Komentarze takie jak "Auæ, to musia³o boleæ", "O tak! Rany, ale dobry jestem" i "Uwa¿aj bo moje uk¹szenie mo¿e... mo¿e... mo¿e zraniæ albo coœ" s¹ udrêk¹ dla umys³u wojownika.
+-Teraz, gdy <CHARNAME> go ulepszy³<PRO_HESHE> (a raczej go uciszy³<PRO_HESHE>), ten kto dzier¿y ten miecz w d³oni nie mo¿e utraciæ swej inteligencji z jakiegokolwiek powodu. Broñ ta chroni przed wysysaniem inteligencji przez illithidów, lecz tak¿e dobroczynnymi skutkami wypicia mikstury geniuszu. 
++@169 = ~Lawrence Lilarcor byÅ‚ znany, nie z odwagi, ale z gÅ‚upoty. Jak mÃ³wi opowieÅ›Ä‡, cheÅ‚pliwy Lilarcor opuÅ›ciÅ‚ swojÄ… wioskÄ™ za namowÄ… swych przyjaciÃ³Å‚, aby pokazaÄ‡, Å¼e tylko "wielki bohater" moÅ¼e zmierzyÄ‡ siÄ™ z przebiegÅ‚ym Treantem. WÄ™drowaÅ‚ zimÄ… przez wiele dni, aÅ¼ w koÅ„cu, w gorÄ…czce, znalazÅ‚ swÃ³j cel i rozpoczÄ™Å‚y siÄ™ epickie zapasy. Niestety (a raczej na szczÄ™Å›cie), "Treant" byÅ‚ niczym wiÄ™cej jak tylko zwykÅ‚ym, starym dÄ™bem. To mogÅ‚oby zakoÅ„czyÄ‡ tÄ™ historiÄ™, ale Lilarcor, ktÃ³ry wyruszajÄ…c nie wiedziaÅ‚, czym jest Treant, nie zdoÅ‚aÅ‚ domyÅ›liÄ‡ siÄ™ prawdy. W koÅ„cu wyrwaÅ‚ dÄ…b z korzeniami i dumnie maszerujÄ…c w kierunku domu ogÅ‚osiÅ‚ siÄ™ bohaterem. Tak narodziÅ‚a siÄ™ epickich rozmiarÃ³w komedia, a z czasem nazwisko Lilarcor staÅ‚o siÄ™ synonimem gÅ‚upca w wielu opowieÅ›ciach.
++Nie wiadomo, czy ta magiczna broÅ„ to sam Lilarcor, byÄ‡ moÅ¼e uwiÄ™ziony przez zÅ‚ego maga lub inne zrzÄ…dzenie losu, ale pewne jest to, Å¼e dziaÅ‚a na poziomie jego zdolnoÅ›ci. JeÅ›li to on, to nigdy nie narzekaÅ‚ na swoje uwiÄ™zienie. MoÅ¼e nie zdaje sobie sprawy, albo nie dba o to, Å¼e nie jest juÅ¼ czÅ‚owiekiem.
++Jako broÅ„, Lilarcor ma swoje zastosowania, ale wielu wojownikÃ³w zrezygnowaÅ‚o z niego. Komentarze takie jak "AuÄ‡, to musiaÅ‚o boleÄ‡", "O tak! Rany, ale dobry jestem" i "UwaÅ¼aj bo moje ukÄ…szenie moÅ¼e... moÅ¼e... moÅ¼e zraniÄ‡ albo coÅ›" sÄ… udrÄ™kÄ… dla umysÅ‚u wojownika.
++Teraz, gdy <CHARNAME> go ulepszyÅ‚<PRO_HESHE> (a raczej go uciszyÅ‚<PRO_HESHE>), ten kto dzierÅ¼y ten miecz w dÅ‚oni nie moÅ¼e utraciÄ‡ swej inteligencji z jakiegokolwiek powodu. BroÅ„ ta chroni przed wysysaniem inteligencji przez illithidÃ³w, lecz takÅ¼e dobroczynnymi skutkami wypicia mikstury geniuszu. 
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K12 +5
++ObraÅ¼enia: 1K12 +5
+ TraK0: +5
+-Typ obra¿eñ: sieczne
++Typ obraÅ¼eÅ„: sieczne
+ Specjalne:
+- Odpornoœæ na zauroczenie, zamêt i zmianê inteligencji
++ OdpornoÅ›Ä‡ na zauroczenie, zamÄ™t i zmianÄ™ inteligencji
+ Waga: 10
+-OpóŸnienie: 6
+-Rodzaj bieg³oœci: miecz oburêczny
+-Typ broni: 2-rêczna
+-Wymagana si³a: 14
++OpÃ³Åºnienie: 6
++Rodzaj biegÅ‚oÅ›ci: miecz oburÄ™czny
++Typ broni: 2-rÄ™czna
++Wymagana siÅ‚a: 14
+ ~
+-@171 = ~Przeklêty Mœciciel: Rozpruwacz Dusz +6
+-Potê¿ne ostrze Rozpruwacza Dusz zosta³o przekute pod twoim mrocznym przewodnictwem. Œwiêta esencja Karsomira zosta³a wch³oniêta by pomóc stworzyæ tê odra¿aj¹c¹ potwornoœæ. Rozpruwacz Dusz jest narzêdziem niewyobra¿alnej potêgi i niewyobra¿alnego z³a. 
++@171 = ~PrzeklÄ™ty MÅ›ciciel: Rozpruwacz Dusz +6
++PotÄ™Å¼ne ostrze Rozpruwacza Dusz zostaÅ‚o przekute pod twoim mrocznym przewodnictwem. ÅšwiÄ™ta esencja Karsomira zostaÅ‚a wchÅ‚oniÄ™ta by pomÃ³c stworzyÄ‡ tÄ™ odraÅ¼ajÄ…cÄ… potwornoÅ›Ä‡. Rozpruwacz Dusz jest narzÄ™dziem niewyobraÅ¼alnej potÄ™gi i niewyobraÅ¼alnego zÅ‚a. 
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K12 +6, +1K6 pkt. obra¿eñ od magii
++ObraÅ¼enia: 1K12 +6, +1K6 pkt. obraÅ¼eÅ„ od magii
+ TraK0: +6
+-Typ obra¿eñ: sieczne
++Typ obraÅ¼eÅ„: sieczne
+ Specjalne:
+- Rozprasza magiê za ka¿dym trafieniem przeciwnika
+- +50% do odpornoœci na magiê 
+- Ka¿de trafienie powoduje, ¿e cel otrzymuje kumulatywny modyfikator -2 do TraK0, efekt dzia³a przez 20 rund
++ Rozprasza magiÄ™ za kaÅ¼dym trafieniem przeciwnika
++ +50% do odpornoÅ›ci na magiÄ™ 
++ KaÅ¼de trafienie powoduje, Å¼e cel otrzymuje kumulatywny modyfikator -2 do TraK0, efekt dziaÅ‚a przez 20 rund
+ Waga: 10
+-OpóŸnienie: 4
+-Rodzaj bieg³oœci: miecz oburêczny
+-Typ broni: 2-rêczna
+-Wymagana si³a: 14
++OpÃ³Åºnienie: 4
++Rodzaj biegÅ‚oÅ›ci: miecz oburÄ™czny
++Typ broni: 2-rÄ™czna
++Wymagana siÅ‚a: 14
+ ~
+ @173 = ~Maczuga +4: Punkt podparcia
+-Wykuta na twoj¹ proœbê, stanowi po³¹czenie Koœcianej maczugi i Zgniatacza. Duchy zmar³ych wojowników prowadz¹ rêkê tego, kto j¹ dzier¿y zwiêkszaj¹c celnoœæ, a ka¿de trafienie zsy³a ból w koœciach. W dodatku maczuga zadaje dodatkowe obra¿enia, dla nie-neutralnych istot. 
++Wykuta na twojÄ… proÅ›bÄ™, stanowi poÅ‚Ä…czenie KoÅ›cianej maczugi i Zgniatacza. Duchy zmarÅ‚ych wojownikÃ³w prowadzÄ… rÄ™kÄ™ tego, kto jÄ… dzierÅ¼y zwiÄ™kszajÄ…c celnoÅ›Ä‡, a kaÅ¼de trafienie zsyÅ‚a bÃ³l w koÅ›ciach. W dodatku maczuga zadaje dodatkowe obraÅ¼enia, dla nie-neutralnych istot. 
+ 
+-Obra¿enia: 1K6 + 4, +4 jeœli cel jest dobry lub z³y, a przy tym praworz¹dny lub chaotyczny
++ObraÅ¼enia: 1K6 + 4, +4 jeÅ›li cel jest dobry lub zÅ‚y, a przy tym praworzÄ…dny lub chaotyczny
+ TraK0: +4
+-Typ obra¿eñ: obuchowe
++Typ obraÅ¼eÅ„: obuchowe
+ Specjalne:
+- W³adaj¹cy ni¹ otrzymuje status wielkiego mistrza w maczugach
+- Koœciane ostrza zadaj¹ dodatkowe 2 pkt. obra¿eñ co rundê przez 4 rundy
++ WÅ‚adajÄ…cy niÄ… otrzymuje status wielkiego mistrza w maczugach
++ KoÅ›ciane ostrza zadajÄ… dodatkowe 2 pkt. obraÅ¼eÅ„ co rundÄ™ przez 4 rundy
+ Waga: 3
+-OpóŸnienie: 1 
+-Rodzaj bieg³oœci: maczuga
+-Typ broni: 1-rêczna
+-Wymagana si³a: 5
++OpÃ³Åºnienie: 1 
++Rodzaj biegÅ‚oÅ›ci: maczuga
++Typ broni: 1-rÄ™czna
++Wymagana siÅ‚a: 5
+ ~
+-@175 = ~<CHARNAME> zaaran¿owa³<PRO_HESHE> stworzenie tego sztyletu z zatrutego z Kolca Chochlika oraz z zabójczej Koœcianej Klingi. W rezultacie otrzyma³<PRO_HESHE> on<PRO_HESHE> broñ wart¹ ka¿dego zabójcy. Wzbogacony jad z Kolca Chochlika teraz mo¿e oœlepiaæ przeciwnika, a mroczna wiedza p³yn¹ca z Koœcianej Klingi pozwala wytrenowanemu z³odziejowi wyprowadzaæ ciosy w plecy z iœcie zabójcz¹ skutecznoœci¹.
++@175 = ~<CHARNAME> zaaranÅ¼owaÅ‚<PRO_HESHE> stworzenie tego sztyletu z zatrutego z Kolca Chochlika oraz z zabÃ³jczej KoÅ›cianej Klingi. W rezultacie otrzymaÅ‚<PRO_HESHE> on<PRO_HESHE> broÅ„ wartÄ… kaÅ¼dego zabÃ³jcy. Wzbogacony jad z Kolca Chochlika teraz moÅ¼e oÅ›lepiaÄ‡ przeciwnika, a mroczna wiedza pÅ‚ynÄ…ca z KoÅ›cianej Klingi pozwala wytrenowanemu zÅ‚odziejowi wyprowadzaÄ‡ ciosy w plecy z iÅ›cie zabÃ³jczÄ… skutecznoÅ›ciÄ….
+ 
+-Obra¿enia: 2K3 + 4
++ObraÅ¼enia: 2K3 + 4
+ TraK0: +4
+-Typ obra¿eñ: sieczne
++Typ obraÅ¼eÅ„: sieczne
+ Specjalne:
+- Dodaje +1 do mno¿nika ciosu w plecy
+- Cel musi wykonaæ rzut obronny przeciwko truciŸnie z modyfikatorem -2 albo zostanie oœlepiony lub uœpiony na 2 rundy
++ Dodaje +1 do mnoÅ¼nika ciosu w plecy
++ Cel musi wykonaÄ‡ rzut obronny przeciwko truciÅºnie z modyfikatorem -2 albo zostanie oÅ›lepiony lub uÅ›piony na 2 rundy
+ Waga: 3
+-OpóŸnienie: 0 
+-Rodzaj bieg³oœci: sztylet
+-Typ broni: 1-rêczna
+-Wymagana si³a: 3
++OpÃ³Åºnienie: 0 
++Rodzaj biegÅ‚oÅ›ci: sztylet
++Typ broni: 1-rÄ™czna
++Wymagana siÅ‚a: 3
+ ~
+-@177 = ~Œwiêty Puklerz Amaunatora +2
+-<CHARNAME> maj¹c œwiêty symbol Amaunatora, dawno umar³ego Boga S³oñca, wku³<PRO_HESHE> go do swego puklerza. Jest on teraz potencjaln¹ barier¹ przeciwko tym, którzy podkradaj¹ siê w nocy i wysysaj¹ ¿ycie z ¿ywych. 
++@177 = ~ÅšwiÄ™ty Puklerz Amaunatora +2
++<CHARNAME> majÄ…c Å›wiÄ™ty symbol Amaunatora, dawno umarÅ‚ego Boga SÅ‚oÅ„ca, wkuÅ‚<PRO_HESHE> go do swego puklerza. Jest on teraz potencjalnÄ… barierÄ… przeciwko tym, ktÃ³rzy podkradajÄ… siÄ™ w nocy i wysysajÄ… Å¼ycie z Å¼ywych. 
+ 
+ PARAMETRY:
+   
+ Klasa Pancerza: +3
+ Specjalne:
+- Raz dziennie pozwala rzucaæ Fa³szywy Œwit
+- Odpornoœæ na wyssanie poziomów
++ Raz dziennie pozwala rzucaÄ‡ FaÅ‚szywy Åšwit
++ OdpornoÅ›Ä‡ na wyssanie poziomÃ³w
+ Waga: 2 
+-Wymagana si³a: 4
++Wymagana siÅ‚a: 4
+ ~
+-@179 = ~Rêkawice mistrza z³odziei: Dwunastopalcy
+-<CHARNAME> uformowa³<PRO_HESHE> te rêkawice z rozlicznych przydaj¹cych rozmaitych premii z³odziejom i rozsianych po ca³ym œwiecie przedmiotów. Kiedy za³o¿y je z³odziej, na ka¿dej rêkawicy pojawia siê dodatkowy magiczny palec wspieraj¹cy tego kochanka fortuny w jego unikalnych zdolnoœciach. W dodatku s¹ bardzo gustowne, aczkolwiek ich deseñ wygl¹da niemal na ... gnomi. 
++@179 = ~RÄ™kawice mistrza zÅ‚odziei: Dwunastopalcy
++<CHARNAME> uformowaÅ‚<PRO_HESHE> te rÄ™kawice z rozlicznych przydajÄ…cych rozmaitych premii zÅ‚odziejom i rozsianych po caÅ‚ym Å›wiecie przedmiotÃ³w. Kiedy zaÅ‚oÅ¼y je zÅ‚odziej, na kaÅ¼dej rÄ™kawicy pojawia siÄ™ dodatkowy magiczny palec wspierajÄ…cy tego kochanka fortuny w jego unikalnych zdolnoÅ›ciach. W dodatku sÄ… bardzo gustowne, aczkolwiek ich deseÅ„ wyglÄ…da niemal na ... gnomi. 
+ 
+ PARAMETRY:
+ 
+ Klasa Pancerza: 3
+ Specjalne:
+- +1 do rzutów obronnych
+- +25% do Wykrywania pu³apek
+- +25% do Otwierania zamków
+- +20% do Kradzie¿y kieszonkowej
++ +1 do rzutÃ³w obronnych
++ +25% do Wykrywania puÅ‚apek
++ +25% do Otwierania zamkÃ³w
++ +20% do KradzieÅ¼y kieszonkowej
+ Waga: 2
+ ~
+-@183 = ~Klinga tej zaprojektowanej przez ciebie broni zdaje siê lœniæ, ods³aniaj¹c ostr¹ niczym brzytwa, p³ynn¹ krawêdŸ, przypominaj¹c¹ nieco szpon drapie¿nego ptaka. Szpon wody zawiera przepotê¿n¹ moc zabójczych p³ynów, a ka¿de jego trafienie wysysa z ofiery ¿ycie, przekazuj¹c je w³adaj¹cemu; samo ostrze zaœ jest zatrute po kres œwiata. Podobnie, jak jeden z substratów, tak¿e i Szpon chroni przed urokami, a ponadto, z uwagi na panowanie nad ¿ywio³em wody, chroni przed skutkami Plugawego uwi¹du Abi-Dalzima. Najbardziej niezwyk³e jest jednak to, ¿e p³ynna natura ostrza pozwala mu na wyd³u¿anie siê i rozbryzgiwanie w czasie walki, zwiêkszaj¹c zasiêg uderzenia do wartoœci przewy¿szajacej typowe dla wiêkszoœci mieczy oburêcznych. Skutkiem tego posiadacz mo¿e wykonywaæ niemo¿liwe w inny sposób ataki z tylnych szeregów, b¹dŸ spróbowaæ pokusiæ siê o unik po trafieniu, licz¹c na zatrucie celu ju¿ przy pierwszym trafieniu.
++@183 = ~Klinga tej zaprojektowanej przez ciebie broni zdaje siÄ™ lÅ›niÄ‡, odsÅ‚aniajÄ…c ostrÄ… niczym brzytwa, pÅ‚ynnÄ… krawÄ™dÅº, przypominajÄ…cÄ… nieco szpon drapieÅ¼nego ptaka. Szpon wody zawiera przepotÄ™Å¼nÄ… moc zabÃ³jczych pÅ‚ynÃ³w, a kaÅ¼de jego trafienie wysysa z ofiery Å¼ycie, przekazujÄ…c je wÅ‚adajÄ…cemu; samo ostrze zaÅ› jest zatrute po kres Å›wiata. Podobnie, jak jeden z substratÃ³w, takÅ¼e i Szpon chroni przed urokami, a ponadto, z uwagi na panowanie nad Å¼ywioÅ‚em wody, chroni przed skutkami Plugawego uwiÄ…du Abi-Dalzima. Najbardziej niezwykÅ‚e jest jednak to, Å¼e pÅ‚ynna natura ostrza pozwala mu na wydÅ‚uÅ¼anie siÄ™ i rozbryzgiwanie w czasie walki, zwiÄ™kszajÄ…c zasiÄ™g uderzenia do wartoÅ›ci przewyÅ¼szajacej typowe dla wiÄ™kszoÅ›ci mieczy oburÄ™cznych. Skutkiem tego posiadacz moÅ¼e wykonywaÄ‡ niemoÅ¼liwe w inny sposÃ³b ataki z tylnych szeregÃ³w, bÄ…dÅº sprÃ³bowaÄ‡ pokusiÄ‡ siÄ™ o unik po trafieniu, liczÄ…c na zatrucie celu juÅ¼ przy pierwszym trafieniu.
+ 
+ PARAMETRY:
+ 
+-Obra¿enia:  1K8 +4, +2 pkt. obra¿eñ od trucizny na sekundê (kumuluje siê)
++ObraÅ¼enia:  1K8 +4, +2 pkt. obraÅ¼eÅ„ od trucizny na sekundÄ™ (kumuluje siÄ™)
+ TraK0: +4
+-Typ obra¿eñ: sieczne
++Typ obraÅ¼eÅ„: sieczne
+ Specjalne:
+- Odpornoœæ na Zauroczenie, Dominacjê i Plugawy uwi¹d Abi-Dalzima
+- Ka¿de trafienie zwiêksza maksymaln¹ iloœæ punktów ¿ycia w³aœciciela o 2 na 3 tury
+- Zwiêkszony zasiêg uderzenia
+-Waga: 3
+-OpóŸnienie: 1
+-Rodzaj bieg³oœci: sejmitar/wakizashi/ninja-to 
+-Typ broni: 1-rêczna
+-Wymagana si³a: 8
++ OdpornoÅ›Ä‡ na Zauroczenie, DominacjÄ™ i Plugawy uwiÄ…d Abi-Dalzima
++ KaÅ¼de trafienie zwiÄ™ksza maksymalnÄ… iloÅ›Ä‡ punktÃ³w Å¼ycia wÅ‚aÅ›ciciela o 2 na 3 tury
++ ZwiÄ™kszony zasiÄ™g uderzenia
++Waga: 3
++OpÃ³Åºnienie: 1
++Rodzaj biegÅ‚oÅ›ci: sejmitar/wakizashi/ninja-to 
++Typ broni: 1-rÄ™czna
++Wymagana siÅ‚a: 8
+ ~
+ @185 = ~Toporek +4: Lazurowe Ostrze
+-Gulen Skalny Ogieñ, Zabójca Nieumar³ych, stworzy³ ten potê¿ny toporek by wzmocniæ swe imiê. Pob³ogos³awiony przez ró¿nych bogów, topór ten zadaje niesamowite obra¿enia istotom niem¹drze buntuj¹cym siê przeciwko swojemu statusowi zmar³ych i mo¿e zniszczyæ je pojedynczym ciosem. NajwyraŸniej Gulen ju¿ nie u¿ywa Lazurowego ostrza, a plotka mówi, ¿e lata temu zgin¹³ w walce z potê¿nym wampirem, po czym sam sta³ siê takim. To mog³o spowodowaæ zmianê jego stanowiska wobec nieumar³ych, a przynajmniej zmianê przydomku.
+-Dziêki tobie, ostrze uzyska³o jeszcze wiêksze mo¿liwoœci.
++Gulen Skalny OgieÅ„, ZabÃ³jca NieumarÅ‚ych, stworzyÅ‚ ten potÄ™Å¼ny toporek by wzmocniÄ‡ swe imiÄ™. PobÅ‚ogosÅ‚awiony przez rÃ³Å¼nych bogÃ³w, topÃ³r ten zadaje niesamowite obraÅ¼enia istotom niemÄ…drze buntujÄ…cym siÄ™ przeciwko swojemu statusowi zmarÅ‚ych i moÅ¼e zniszczyÄ‡ je pojedynczym ciosem. NajwyraÅºniej Gulen juÅ¼ nie uÅ¼ywa Lazurowego ostrza, a plotka mÃ³wi, Å¼e lata temu zginÄ…Å‚ w walce z potÄ™Å¼nym wampirem, po czym sam staÅ‚ siÄ™ takim. To mogÅ‚o spowodowaÄ‡ zmianÄ™ jego stanowiska wobec nieumarÅ‚ych, a przynajmniej zmianÄ™ przydomku.
++DziÄ™ki tobie, ostrze uzyskaÅ‚o jeszcze wiÄ™ksze moÅ¼liwoÅ›ci.
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K6 +4
++ObraÅ¼enia: 1K6 +4
+ TraK0: +4
+-Typ obra¿eñ (walka wrêcz): sieczne
+-Typ obra¿eñ (rzucany): pocisk (k³ute)
++Typ obraÅ¼eÅ„ (walka wrÄ™cz): sieczne
++Typ obraÅ¼eÅ„ (rzucany): pocisk (kÅ‚ute)
+ Specjalne:
+- Dodatkowe 4 pkt. obra¿eñ dla nieumar³ych
+- Trafiony nieumar³y musi wykonaæ rzut obronny przeciw œmierci z modyfikatorem -4 albo zostanie zniszczony
+- Odpornoœæ na wyssanie poziomów
+- Po rzucie wraca do w³aœciciela
++ Dodatkowe 4 pkt. obraÅ¼eÅ„ dla nieumarÅ‚ych
++ Trafiony nieumarÅ‚y musi wykonaÄ‡ rzut obronny przeciw Å›mierci z modyfikatorem -4 albo zostanie zniszczony
++ OdpornoÅ›Ä‡ na wyssanie poziomÃ³w
++ Po rzucie wraca do wÅ‚aÅ›ciciela
+ Waga: 2
+-OpóŸnienie: 0
+-Rodzaj bieg³oœci: topór
+-Typ broni:  1-rêczna
+-Wymagana si³a: 4
++OpÃ³Åºnienie: 0
++Rodzaj biegÅ‚oÅ›ci: topÃ³r
++Typ broni:  1-rÄ™czna
++Wymagana siÅ‚a: 4
+ ~
+ @194 = ~Ulepszona Entropia
+-To zielone ostrze zosta³o ulepszone, jak zaproponowa³<PRO_HESHE> <CHARNAME>. To ostrze z zielonej stali pochodz¹cej z Otch³ani jest jedn¹ z ulubionych broni Haer'dalisa. Tylko diabelstwa mog¹ u¿ywaæ tej broni.
++To zielone ostrze zostaÅ‚o ulepszone, jak zaproponowaÅ‚<PRO_HESHE> <CHARNAME>. To ostrze z zielonej stali pochodzÄ…cej z OtchÅ‚ani jest jednÄ… z ulubionych broni Haer'dalisa. Tylko diabelstwa mogÄ… uÅ¼ywaÄ‡ tej broni.
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K6 +3, +1 pkt. obra¿eñ od trucizny co sekundê przez okres 1 rundy 
++ObraÅ¼enia: 1K6 +3, +1 pkt. obraÅ¼eÅ„ od trucizny co sekundÄ™ przez okres 1 rundy 
+ TraK0: +3
+-Typ obra¿eñ: k³ute
++Typ obraÅ¼eÅ„: kÅ‚ute
+ Specjalne:
+- Przy ka¿dym trafieniu istnieje 5% szansa na rzucenie na przeciwnika Wielkiego os³abienia
++ Przy kaÅ¼dym trafieniu istnieje 5% szansa na rzucenie na przeciwnika Wielkiego osÅ‚abienia
+ Waga: 2
+-OpóŸnienie: 0
+-Rodzaj bieg³oœci: krótki miecz
+-Typ broni: 1-rêczna
++OpÃ³Åºnienie: 0
++Rodzaj biegÅ‚oÅ›ci: krÃ³tki miecz
++Typ broni: 1-rÄ™czna
+ ~
+ @196 = ~Upiorne Ostrze Chaosu
+-Ostrze Chaosu to krótki miecz, którego u¿ywaæ mog¹ tylko diabelstwa. Za ka¿dym razem, kiedy ta broñ trafia w cel, atakowany traci na 30 sekund 2 punkty zrêcznoœci. Haer'dalis lubi korzystaæ z Ostrza Chaosu w parze z inn¹ broni¹, Entropi¹. Kiedy Haer'dalis w³ada tymi mieczami jednoczeœnie, staje siê bardzo groŸnym przeciwnikiem w walce.
++Ostrze Chaosu to krÃ³tki miecz, ktÃ³rego uÅ¼ywaÄ‡ mogÄ… tylko diabelstwa. Za kaÅ¼dym razem, kiedy ta broÅ„ trafia w cel, atakowany traci na 30 sekund 2 punkty zrÄ™cznoÅ›ci. Haer'dalis lubi korzystaÄ‡ z Ostrza Chaosu w parze z innÄ… broniÄ…, EntropiÄ…. Kiedy Haer'dalis wÅ‚ada tymi mieczami jednoczeÅ›nie, staje siÄ™ bardzo groÅºnym przeciwnikiem w walce.
+ 
+ PARAMETRY:
+ 
+-Obra¿enia: 1K6 +3 
++ObraÅ¼enia: 1K6 +3 
+ TraK0: +3
+-Typ obra¿eñ: k³ute
++Typ obraÅ¼eÅ„: kÅ‚ute
+ Specjalne:
+- Przy ka¿dym trafieniu istnieje 5% szansa na rzucenie na przeciwnika Zamêtu na okres 8 rund, jeœli nie powiedzie mu siê rzut obronny przeciw czarom z modyfikatorem -4.
+- Po ka¿dym trafieniu atakowany traci 2 punkty zrêcznoœci (na okres 30 sekund).
++ Przy kaÅ¼dym trafieniu istnieje 5% szansa na rzucenie na przeciwnika ZamÄ™tu na okres 8 rund, jeÅ›li nie powiedzie mu siÄ™ rzut obronny przeciw czarom z modyfikatorem -4.
++ Po kaÅ¼dym trafieniu atakowany traci 2 punkty zrÄ™cznoÅ›ci (na okres 30 sekund).
+ Waga: 2
+-OpóŸnienie: 0
+-Rodzaj bieg³oœci: krótki miecz
+-Typ broni: 1-rêczna
++OpÃ³Åºnienie: 0
++Rodzaj biegÅ‚oÅ›ci: krÃ³tki miecz
++Typ broni: 1-rÄ™czna
+ ~
+-@198 = ~Wykuta na twoj¹ proœbê z ³usek czerwonego smoka i Sylvañskiej kolczugi, Karminowa kolczuga elfów zapewnia nosz¹cej j¹ osobie niezwyk³¹ kombinacjê obrony i swobody ruchu. £otrzykowie i czarodzieje zachowuj¹ swe zdolnoœci, kiedy nosz¹ tê zbrojê.
++@198 = ~Wykuta na twojÄ… proÅ›bÄ™ z Å‚usek czerwonego smoka i SylvaÅ„skiej kolczugi, Karminowa kolczuga elfÃ³w zapewnia noszÄ…cej jÄ… osobie niezwykÅ‚Ä… kombinacjÄ™ obrony i swobody ruchu. Åotrzykowie i czarodzieje zachowujÄ… swe zdolnoÅ›ci, kiedy noszÄ… tÄ™ zbrojÄ™.
+ 
+ PARAMETRY:
+ 
+ Klasa Pancerza: 0
+ Specjalne:
+- +25% do odpornoœci na ogieñ
+- -10% do Krycia siê w cieniu
+- -5% do Otwierania zamków
+- -5% do Wykrywania pu³apek
+- -20% do Kradze¿y kieszonkowej
++ +25% do odpornoÅ›ci na ogieÅ„
++ -10% do Krycia siÄ™ w cieniu
++ -5% do Otwierania zamkÃ³w
++ -5% do Wykrywania puÅ‚apek
++ -20% do KradzeÅ¼y kieszonkowej
+ Waga: 15
+-Wymagana si³a: 5
++Wymagana siÅ‚a: 5
+ ~
+\ No newline at end of file
