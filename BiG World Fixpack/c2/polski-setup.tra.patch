@@ -1,0 +1,13 @@
+--- c2/polski/setup.tra	2010-05-29 20:32:25.092000000 +0200
++++ Fixpack/c2/polski/setup.tra	2017-02-05 13:34:41.858365200 +0100
+@@ -1,6 +1,8 @@
+-@1 = ~Ulepszenia przedmiotów dla Cienii Amn~
+-@2 = ~Ulepszenia przedmiotów dla Tronu Bhaala~
++@1 = ~Ulepszenia przedmiotow dla Cieni Amn~
++@2 = ~Ulepszenia przedmiotow dla Tronu Bhaala~
+ @3 = ~Nie mozna odnalezc [Data\25Dialog.bif], co wskazuje na to, ze nie masz aktualnie zainstalowanego Tronu Bhaala. Wybacz!~
++@4 = ~Wersja oryginalna (nowe ulepszenia wymienione w liscie)~
++@5 = ~Wersja poprawiona (nowe ulepszenia przedstawione w takiej samej formie jak istniejace)~
+ 
+ @100 = ~Pierœcieñ zachowywania +1~
+ @101 = ~Pierœcieñ zachowywania +1: 'Pierœcieñ Ksiêcia Trolli'
