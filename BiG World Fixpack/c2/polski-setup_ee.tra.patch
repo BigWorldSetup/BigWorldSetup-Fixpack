@@ -1,18 +1,38 @@
 --- c2/polski/setup_ee.tra	2013-07-30 15:20:44.511000000 +0200
-+++ Fixpack/c2/polski/setup_ee.tra	2017-02-03 18:05:45.787887600 +0100
-@@ -1,522 +1,522 @@
++++ Fixpack/c2/polski/setup_ee.tra	2017-02-05 13:20:21.404624700 +0100
+@@ -1,522 +1,1265 @@
++/*
++Translator note:
  
 -@107 = ~Po��czony trzema p�aszczyznami �ywio��w, ten pot�ny kostur zosta� wykuty dla ciebie. To jest pot�na bro� sama w sobie, ale tak�e posiada moc �ycia i �mierci zwi�zan� z istotami �ywio��w. Ten szczeg�lny kij jest zimny w dotyku i jest pokryty wypalonymi znakami oraz ma�ymi wy��obieniami. Wie�� niesie, �e sekret tej specyficznej konstrukcji zosta� pierwotnie odkryty przez Rakshasa, kt�ra to stworzy�a go do stworzenia Cepa bojowego wiek�w.
-+@107 = ~Połączony trzema płaszczyznami żywiołów, ten potężny kostur został wykuty dla ciebie. To jest potężna broń sama w sobie, ale także posiada moc życia i śmierci związaną z istotami żywiołów. Ten szczególny kij jest zimny w dotyku i jest pokryty wypalonymi znakami oraz małymi wyżłobieniami. Wieść niesie, że sekret tej specyficznej konstrukcji został pierwotnie odkryty przez Rakshasa, która to stworzyła go do stworzenia Cepa bojowego wieków.
++Since BGIIEE uses slightly different formatting and conventions than vBG2, this file allows you to override strings for *only* BGIIEE.
++When Item Upgrade is installed on vBG2, only strings from setup.tra are used. On BGIIEE, strings defined here will override the strings
++from setup.tra. This does not need to be a complete copy of setup.tra, ONLY for the strings that are different between vBG2 and BGIIEE.
++This file is also formatted in utf-8 since it's only used on BGIIEE games. setup.tra will be converted on the fly for BGIIEE.
++*/
++
++@100 = ~Pierścień zachowywania +1~
++@101 = ~Pierścień zachowywania +1: „Pierścień księcia trolli”
++Pierścień ten został magicznie wykuty specjalnie dla ciebie. Zawiera w sobie połączone moce pierścienia ochronnego króla Casttera i pieścienia regeneracji Huhhusa. W dodatku pierścień jest bardzo gustowny.
  
  PARAMETRY:
  
++Specjalne:
++– Klasa Pancerza: +1
++– Rzuty obronne: +1
++– Regeneracja punktów życia: 1/rundę
++
++Waga: 0~
++
++@102 = ~Pierścień zachowywania +2~
++@103 = ~Pierścień zachowywania +2: „Pierścień strażnika trolli”
++Pierścień ten został magicznie wykuty specjalnie dla ciebie. Zawiera w sobie połączone moce pierścienia ochronnego „Pierścienia Strażnika” i pieścienia regeneracji Huhhusa. W dodatku pierścień jest bardzo gustowny.
++
++PARAMETRY:
  
 -Obra�enia: 1K6 +5
-+Obrażenia: 1K6 +5
- Trak0: +5
+-Trak0: +5
 -Typ obra�e�: obuchowe
-+Typ obrażeń: obuchowe
  Specjalne:
 - Zabija jednym trafieniem �ywio�aki ognia, ziemi i powietrza
 - Raz dziennie pozwala rzuca� Przywo�anie �ywio�aka ziemi, powietrza i ognia (na okres 5 tur, zawsze przyjaznego)
@@ -23,382 +43,671 @@
 -Rodzaj bieg�o�ci: kij
 -Typ broni: 2-r�czna
 -Wymagana si�a: 5
-+ Zabija jednym trafieniem Żywiołaki ognia, ziemi i powietrza
-+ Raz dziennie pozwala rzucać Przywołanie Żywiołaka ziemi, powietrza i ognia (na okres 5 tur, zawsze przyjaznego)
-+ Dwa razy dziennie pozwala rzucać Ognistą tarczę (na okres 13 rund)
-+ Dwa razy dziennie pozwala rzucać Usypiającą chmurę (zasięg 12m, ofiara musi wykonać rzut obronny przeciw truciźnie w przeciwnym wypadku zaśnie na okres 3 rund).
-+Waga: 3
-+Opóźnienie: 0
-+Rodzaj biegłości: kij
-+Typ broni: 2-ręczna
-+Wymagana siła: 5
- ~
+-~
 -@123 = ~Maczuga +5: Niewierna �ona
 -Stworzona na twoje zam�wienie poprzez po��czenie maczug: Czarnej krwi i Zgniatacza, Niewierna �ona pulsuje destrukcyjn� moc�. Pokryta jest substancj� podobn� do kwasu, kt�ra pali cia�o przy zetkni�ciu. Niewierna �ona zadaje pot�ne rany tak�e mia�dz�c kr�gos�up. 
-+@123 = ~Maczuga +5: Niewierna żona
-+Stworzona na twoje zamówienie poprzez połączenie maczug: Czarnej krwi i Zgniatacza, Niewierna żona pulsuje destrukcyjną mocą. Pokryta jest substancją podobną do kwasu, która pali ciało przy zetknięciu. Niewierna żona zadaje potężne rany także miażdząc kręgosłup. 
++– Klasa Pancerza: +2
++– Rzuty obronne: +2
++– Regeneracja punktów życia: 1/rundę
++
++Waga: 0~
++
++@104 = ~Pierścień kontroli nad żywiołami~
++@105 = ~Pierścień ten łączy w sobie potęgę żywiołów ziemi, powietrza i ognia i zezwala użytkownikowi dominować nad istotami pochodzącymi z tych sfer. Pierścień został stworzony dla ciebie i jego sława będzie niewątpliwie rosnąć z twoją. 
++
++PARAMETRY:
++
++Specjalne:
++– Klasa Pancerza: +1
++– Rzuty obronne: +1
++– Odporność na ogień: +50%
++- Odporność na elektryczność: +50%
++
++Właściwości ładunków:
++– Zauroczenie żywiołaka, trzy razy dziennie (bez rzutu obronnego)
++Zasięg: dotyk 
++Czas działania: 1 tura
++Obszar działania: dotknięty żywiołak
++
++– Sprowadzenie żywiołaka ziemi, powietrza i ognia, raz dziennie (przyzwany żywiołak jest przyjazny)
++Zasięg: pole widzenia
++Czas działania: 5 tur 
++
++– Ulepszona niewidzialność, raz dziennie 
++Zasięg: dotyk 
++Czas działania: 1 tura 
++Obszar działania: dotknięta istota
++
++Waga: 0~
++
++@106 = ~Kostur władzy nad żywiołami +5~
++@107 = ~Połączony trzema płaszczyznami żywiołów, ten potężny kostur został wykuty dla ciebie. To jest potężna broń sama w sobie, ale także posiada moc życia i śmierci związaną z istotami żywiołów. Ten szczególny kij jest zimny w dotyku i jest pokryty wypalonymi znakami oraz małymi wyżłobieniami. Wieść niesie, że sekret tej specyficznej konstrukcji został pierwotnie odkryty przez rasę rakshasa, która to stworzyła go do stworzenia Cepa bojowego wieków.
++
++PARAMETRY:
++
++Specjalne:
++– Zniszczenie żywiołaka ziemi, powietrza lub ognia, po trafieniu (bez rzutu obronnego)
++
++Właściwości ładunków:
++– Sprowadzenie żywiołaka ziemi, powietrza i ognia, raz dziennie (przyzwany żywiołak jest przyjazny)
++Zasięg: pole widzenia
++Czas działania: 5 tur
  
 -Obra�enia: 1K6 +5, +5 pkt. obra�e� od kwasu, drzazgi dodaj� 3 pkt. obra�e� co rund� przez 4 rundy
-+Obrażenia: 1K6 +5, +5 pkt. obrażeń od kwasu, drzazgi dodają 3 pkt. obrażeń co rundę przez 4 rundy
++– Ognista tarcza (czerwona), dwa razy dziennie
++Odporność na ogień: +50% 
++Specjalne: Każdy, kto trafi użytkownika będąc w promieniu 1,5 metra od niego, otrzyma 1k8 +2 obrażeń od ognia 
++Czas działania: 13 rund 
++Obszar działania: użytkownik
++
++– Usypiająca chmura, dwa razy dziennie (rzut obronny przeciw truciznom neguje)
++Specjalne: Ofiara zasypia na trzy rundy
++Zasięg: 13 metrów
++
++Obrażenia: 1k6 +5
  Trak0: +5
 -Typ obra�e�: obuchowe
 +Typ obrażeń: obuchowe
++Opóźnienie: 0
++Rodzaj biegłości: kij
++Typ broni: 2-ręczna
++
++Wymagania:
++– Siła: 5
++
++Waga: 3~
++
++@108 = ~Kołczan obfitości +3~
++@109 = ~Pieniądze i surowce zainwestowane w Kołczan obfitości sprawiły, że przedmiot ten zyskał zadziwiające magiczne właściwości. 
++ 
++PARAMETRY:
++ 
  Specjalne:
 - +25% do odporno�ci na kwas
-+ +25% do odporności na kwas
- Waga: 3
+-Waga: 3
 -Op�nienie: 1 
 -Rodzaj bieg�o�ci: maczuga
 -Typ broni: 1-r�czna
 -Wymagana si�a: 5
+-~
+-@125 = ~Wekiera +5: Roz�upywacz czaszek
+-Ta wekiera jest na sta�e splamiona krwi�, znak wielu lat po�wi�conych na roz�upywanie g��w. Bro� ta mog�a w przesz�o�ci przynosi� zag�ad� humanoidom, ale jej w�a�ciciele zostali prawdopodobnie celowo usuni�ci ze �r�de� historycznych. Ostatnio za twoim po�rednictwem zosta�a przemieniona w jeszcze bardziej budz�c� groz� bro�. 
++– Nieograniczona liczba strzał +3
+ 
++Waga: 0~
++
++@110 = ~Futerał obfitości +3~
++@111 = ~Pieniądze i surowce zainwestowane w Futerał obfitości sprawiły, że przedmiot ten zyskał zadziwiające magiczne właściwości. 
++ 
+ PARAMETRY:
++ 
++Specjalne:
++– Nieograniczona liczba bełtów +3
+ 
+-Obra�enia: 1K6 + 6, +6 pkt. obra�e� dla humanoid�w
+-TraK0: +5
+-Typ obra�e�: obuchowe
++Waga: 0~
++
++@112 = ~Torba obfitości +3~
++@113 = ~Pieniądze i surowce zainwestowane w Torbę obfitości sprawiły, że przedmiot ten zyskał zadziwiające magiczne właściwości. Aczolwiek jakoś nie są one zadowalające. Czy kiedykolwiek zainwestowałeś pieniądze i surowce w magiczny objekt tylko po to, by przekonać się, że jest on bezużyteczny? To znaczy, z wyjątkiem Wyrównywacza i Fali. Myślę, że nie. 
++
++PARAMETRY:
++ 
+ Specjalne:
+- Przy ka�dym trafieniu zmniejsza ilo�� maksymalnych punkt�w �ycia ofiary o 2 na okres 10 rund
+-Waga: 6
+-Op�nienie: 2
+-Rodzaj bieg�o�ci: wekiera
+-Typ broni: 1-r�czna
+-Wymagana si�a: 10
+-~
+-@127 = ~Stworzony w twoim imieniu u�ywaj�c mrocznych i strasznych rytua��w, Teleomortis jest d�ugim �ukiem o niezr�wnanej pot�dze. Kiedy ci�ciwa jest naci�gana formuje si� duchowa strza�a, zdaj�ca si� migota� i kr�ci� w �wietle. �uk nie wymaga �adnej dodatkowej amunicji (chocia� mo�e on u�ywa� r�wnie� innych strza�). Duchowe strza�y powstaj� z niewiadomych przyczyn, pozostaj�c tajemnic� tego �uku. 
++– Nieograniczona liczba pocisków do procy +3
++
++Waga: 0~
++
++@114 = ~Buty przyspieszonego ukrycia~
++@115 = ~Doskonałe dla zwiadowców, którzy pragną zostać niewykryci, Buty przyspieszonego ukrycia łączą w sobie moce Butów szybkości i Butów ukrycia. Zostały zrobione na twoje zamówienie. 
+ 
+ PARAMETRY:
+ 
+-Obra�enia: 1K6 +4
+-TraK0: +4
+ Specjalne:
+- Nie potrzebuje amunicji, tworzy bowiem swe w�asne duchowe strza�y +4. Istnieje 5% szansa, �e cel trafiony tak� strza�� zostanie wprawiony w zam�t na okres 5 rund. 
+-Waga: 7
+-Op�nienie: 1
+-Rodzaj bieg�o�ci: d�ugi �uk
+-Typ broni: 2-r�czna
+-Wymagana si�a: 18
+-~
+-@129 = ~Ta kolczuga, od dawien dawna w�asno�� rodu Corthala, chroni nosz�cego j� przed wszystkimi rodzajami atak�w. Wida� jednak�e, �e musia�a by� niedawno modernizowana. Zbroja jest magiczna i zapewnia premi� +5 do klasy pancerza Valygara. Daje te� premi� do odporno�ci na kwas, ogie� i obra�enia magiczne. Dop�ki Valygar ma na sobie t� zbroj�, jest te� odporny na zauroczenia. W ko�cu nosz�cego zbroj� nie mo�na wykry�. Niewiele os�b mo�e j� na siebie za�o�y�, gdy� dopasowano j� specjalnie do sylwetki Valygara.
++– Dwukrotnie zwiększają prędkość poruszania się
++– Ciche chodzenie: +20%
++– Krycie się w cieniu: +15%
++
++Waga: 4~
++
++@116 = ~Buty zamieci~
++@117 = ~Doskonałe dla poszukiwacza przygód podróżującego po jaskini lodowych trollów lub innym chłodnym obszarze, Buty zamieci łączą w sobie moce Butów szybkości i Butów Północy, które zostały połączone specjalnie dla ciebie. 
+ 
+ PARAMETRY:
+ 
+-Klasa Pancerza: 0
+-Specjalne:
+- Odporno�� na Zauroczenie
+- Niewykrywalno��
+- +50% do odporno�ci na ogie�, kwas i obra�enia magiczne
+-Waga: 9
+-~
+-@131 = ~Ta pot�na szata oferuje ochron� ochron� przed wszystkimi fizycznymi atakami, zarazem podwy�szaj�c magiczn� odporno�� i rzuty obronne. Zgodnie z natur� zaczarowania szaty, mo�e by� noszona tylko przez dobre charaktery. T� szczeg�ln� szat� umagiczni�<PRO_HESHE> <CHARNAME>.
++Specjalne:
++– Dwukrotnie zwiększają prędkość poruszania się
++– Odporność na zimno: +50%
++
++Waga: 4~
++
++@118 = ~Buty szerszenia~
++@119 = ~Buty szerszenia są nieprześcignione w przyspieszaniu ruchów ich nosiciela. Poprzez kombinację Butów uników i Butów szybkości, te buty doskonale chronią przed pociskami.
++
++PARAMETRY:
++
++Specjalne:
++– Dwukrotnie zwiększają prędkość poruszania się
++– Klasa Pancerza: +5 przeciw pociskom
++
++Waga: 4~
++
++@120 = ~Pięty Pana Burz~
++@121 = ~Doskonałe podczas odprężającego dnia spędzonego na najeżdżaniu świątyni Talosa lub walki przeciwko Żywiołakom powietrza, buty te łączą w sobie moce Butów uziemienia i Butów szybkości. Zostały one uszyte na twoje zamówienie.
+ 
+ PARAMETRY:
+ 
+-Klasa Pancerza: 3
+ Specjalne:
+- Pozwala zapami�ta� po 1 dodatkowym zakl�ciu z poziom�w 1, 2, 3 i 4. 
+- +10% do odporno�ci na magi�
+- +2 do rzut�w obronnych
+-Waga: 6 
+-~
+-@133 = ~Ta pot�na szata oferuje ochron� ochron� przed wszystkimi fizycznymi atakami, zarazem podwy�szaj�c magiczn� odporno�� i rzuty obronne. Zgodnie z natur� zaczarowania szaty, mo�e by� noszona tylko przez neutralne charaktery. T� szczeg�ln� szat� umagiczni�<PRO_HESHE> <CHARNAME>.
++– Dwukrotnie zwiększają prędkość poruszania się
++– Odporność na elektryczność: +50%
++
++Waga: 4~
++
++@122 = ~Niewierna żona +5~
++@123 = ~Maczuga +5: Niewierna żona
++Stworzona na twoje zamówienie poprzez połączenie maczug: Czarnej krwi i Zgniatacza, Niewierna żona pulsuje destrukcyjną mocą. Pokryta jest substancją podobną do kwasu, która pali ciało przy zetknięciu. Niewierna żona zadaje potężne rany także miażdząc kręgosłup. 
+ 
+ PARAMETRY:
+ 
+-Klasa Pancerza: 3
+ Specjalne:
+- Pozwala zapami�ta� po 1 dodatkowym zakl�ciu z poziom�w 1, 2, 3 i 4. 
+- +10% do odporno�ci na magi�
+- +2 do rzut�w obronnych
+-Waga: 6 
+-~
+-@135 = ~Ta pot�na szata oferuje ochron� ochron� przed wszystkimi fizycznymi atakami, zarazem podwy�szaj�c magiczn� odporno�� i rzuty obronne. Zgodnie z natur� zaczarowania szaty, mo�e by� noszona tylko przez z�e charaktery. T� szczeg�ln� szat� umagiczni�<PRO_HESHE> <CHARNAME>.
++– Odporność na kwas: +25%
++
++Obrażenia: 1k6 +5, +5 obrażeń od kwasu, drzazgi zadają 3 obrażenia co rundę przez cztery rundy
++Trak0: +5
++Typ obrażeń: obuchowe
 +Opóźnienie: 1 
 +Rodzaj biegłości: maczuga
 +Typ broni: 1-ręczna
-+Wymagana siła: 5
- ~
--@125 = ~Wekiera +5: Roz�upywacz czaszek
--Ta wekiera jest na sta�e splamiona krwi�, znak wielu lat po�wi�conych na roz�upywanie g��w. Bro� ta mog�a w przesz�o�ci przynosi� zag�ad� humanoidom, ale jej w�a�ciciele zostali prawdopodobnie celowo usuni�ci ze �r�de� historycznych. Ostatnio za twoim po�rednictwem zosta�a przemieniona w jeszcze bardziej budz�c� groz� bro�. 
++
++Wymagania:
++– Siła: 5
++
++Waga: 3~
++
++@124 = ~Rozłupywacz czaszek +5~
 +@125 = ~Wekiera +5: Rozłupywacz czaszek
 +Ta wekiera jest na stałe splamiona krwią, znak wielu lat poświęconych na rozłupywanie głów. Broń ta mogła w przeszłości przynosić zagładę humanoidom, ale jej właściciele zostali prawdopodobnie celowo usunięci ze źródeł historycznych. Ostatnio za twoim pośrednictwem została przemieniona w jeszcze bardziej budzącą grozę broń. 
  
  PARAMETRY:
  
--Obra�enia: 1K6 + 6, +6 pkt. obra�e� dla humanoid�w
-+Obrażenia: 1K6 + 6, +6 pkt. obrażeń dla humanoidów
- TraK0: +5
--Typ obra�e�: obuchowe
++Specjalne:
++– Obniża maksymalną ilość punktów życia ofiary o 2 na okres dziesięciu rund, po trafieniu
++
++Obrażenia: 1k6 +6, +6 obrażeń przeciw humanoidom
++TraK0: +5
 +Typ obrażeń: obuchowe
- Specjalne:
-- Przy ka�dym trafieniu zmniejsza ilo�� maksymalnych punkt�w �ycia ofiary o 2 na okres 10 rund
-+ Przy każdym trafieniu zmniejsza ilość maksymalnych punktów życia ofiary o 2 na okres 10 rund
- Waga: 6
--Op�nienie: 2
--Rodzaj bieg�o�ci: wekiera
--Typ broni: 1-r�czna
--Wymagana si�a: 10
 +Opóźnienie: 2
 +Rodzaj biegłości: wekiera
 +Typ broni: 1-ręczna
-+Wymagana siła: 10
- ~
--@127 = ~Stworzony w twoim imieniu u�ywaj�c mrocznych i strasznych rytua��w, Teleomortis jest d�ugim �ukiem o niezr�wnanej pot�dze. Kiedy ci�ciwa jest naci�gana formuje si� duchowa strza�a, zdaj�ca si� migota� i kr�ci� w �wietle. �uk nie wymaga �adnej dodatkowej amunicji (chocia� mo�e on u�ywa� r�wnie� innych strza�). Duchowe strza�y powstaj� z niewiadomych przyczyn, pozostaj�c tajemnic� tego �uku. 
++Wymagania:
++– Siła: 10
++
++Waga: 6~
++
++@126 = ~Teleomortis +4~
 +@127 = ~Stworzony w twoim imieniu używając mrocznych i strasznych rytuałów, Teleomortis jest długim łukiem o niezrównanej potędze. Kiedy cięciwa jest naciągana formuje się duchowa strzała, zdająca się migotać i kręcić w świetle. Łuk nie wymaga żadnej dodatkowej amunicji (chociaż może on używać również innych strzał). Duchowe strzały powstają z niewiadomych przyczyn, pozostając tajemnicą tego łuku. 
- 
- PARAMETRY:
- 
--Obra�enia: 1K6 +4
-+Obrażenia: 1K6 +4
- TraK0: +4
- Specjalne:
-- Nie potrzebuje amunicji, tworzy bowiem swe w�asne duchowe strza�y +4. Istnieje 5% szansa, �e cel trafiony tak� strza�� zostanie wprawiony w zam�t na okres 5 rund. 
-+ Nie potrzebuje amunicji, tworzy bowiem swe własne duchowe strzały +4. Istnieje 5% szansa, że cel trafiony taką strzałą zostanie wprawiony w zamęt na okres 5 rund. 
- Waga: 7
--Op�nienie: 1
--Rodzaj bieg�o�ci: d�ugi �uk
--Typ broni: 2-r�czna
--Wymagana si�a: 18
++
++PARAMETRY:
++
++Specjalne:
++– Tworzy własne upiorne strzały +4, w związku z czym nie potrzebuje amunicji 
++– 5% szans, że cel znajdzie się pod wpływem Zamętu przez pięć rund, po trafieniu
++
++Obrażenia: 1k6 +4
++TraK0: +4
 +Opóźnienie: 1
 +Rodzaj biegłości: długi łuk
 +Typ broni: 2-ręczna
-+Wymagana siła: 18
- ~
--@129 = ~Ta kolczuga, od dawien dawna w�asno�� rodu Corthala, chroni nosz�cego j� przed wszystkimi rodzajami atak�w. Wida� jednak�e, �e musia�a by� niedawno modernizowana. Zbroja jest magiczna i zapewnia premi� +5 do klasy pancerza Valygara. Daje te� premi� do odporno�ci na kwas, ogie� i obra�enia magiczne. Dop�ki Valygar ma na sobie t� zbroj�, jest te� odporny na zauroczenia. W ko�cu nosz�cego zbroj� nie mo�na wykry�. Niewiele os�b mo�e j� na siebie za�o�y�, gdy� dopasowano j� specjalnie do sylwetki Valygara.
-+@129 = ~Ta kolczuga, od dawien dawna własność rodu Corthala, chroni noszącego ją przed wszystkimi rodzajami ataków. Widać jednakże, że musiała być niedawno modernizowana. Zbroja jest magiczna i zapewnia premię +5 do klasy pancerza Valygara. Daje też premię do odporności na kwas, ogień i obrażenia magiczne. Dopóki Valygar ma na sobie tę zbroję, jest też odporny na zauroczenia. W końcu noszącego zbroję nie można wykryć. Niewiele osób może ją na siebie założyć, gdyż dopasowano ją specjalnie do sylwetki Valygara.
- 
- PARAMETRY:
- 
- Klasa Pancerza: 0
- Specjalne:
-- Odporno�� na Zauroczenie
-- Niewykrywalno��
-- +50% do odporno�ci na ogie�, kwas i obra�enia magiczne
-+ Odporność na Zauroczenie
-+ Niewykrywalność
-+ +50% do odporności na ogień, kwas i obrażenia magiczne
- Waga: 9
- ~
--@131 = ~Ta pot�na szata oferuje ochron� ochron� przed wszystkimi fizycznymi atakami, zarazem podwy�szaj�c magiczn� odporno�� i rzuty obronne. Zgodnie z natur� zaczarowania szaty, mo�e by� noszona tylko przez dobre charaktery. T� szczeg�ln� szat� umagiczni�<PRO_HESHE> <CHARNAME>.
++
++Wymagania: 
++– Siła: 18
++
++Waga: 7~
++
++@128 = ~Rodowa zbroja Corthalów~
++@129 = ~Ta kolczuga, od dawien dawna własność rodu Corthala, chroni noszącego ją przed wszystkimi rodzajami ataków. Widać jednakże, że musiała być niedawno modernizowana. Zbroja jest magiczna i zapewnia premię +5 do Klasy Pancerza Valygara. Daje też premię do odporności na kwas, ogień i obrażenia magiczne. Dopóki Valygar ma na sobie tę zbroję, jest też odporny na zauroczenia. W końcu noszącego zbroję nie można wykryć. Niewiele osób może ją na siebie założyć, gdyż dopasowano ją specjalnie do sylwetki Valygara.
++
++PARAMETRY:
++
++Specjalne:
++– Odporność na ogień: +50%
++– Odporność na kwas: +50%
++- Odporność na magiczne obrażenia: +50%
++- Niewrażliwość na Zauroczenie
++- Niewykrywalność
++
++Klasa Pancerza: 0 (-2 przeciw broniom siecznym, 2 przeciw broniom obuchowym)
++
++Waga: 9~
++
++@130 = ~Wzmocniona szata dobrego arcymaga~
 +@131 = ~Ta potężna szata oferuje ochronę ochronę przed wszystkimi fizycznymi atakami, zarazem podwyższając magiczną odporność i rzuty obronne. Zgodnie z naturą zaczarowania szaty, może być noszona tylko przez dobre charaktery. Tę szczególną szatę umagicznił<PRO_HESHE> <CHARNAME>.
- 
- PARAMETRY:
- 
++
++PARAMETRY:
++
++Specjalne:
++– Rzuty obronne: +2
++– Odporność na magię: +10%
++– Pozwala zapamiętać po 1 dodatkowym zaklęciu maga z poziomów 1-4
++
  Klasa Pancerza: 3
- Specjalne:
-- Pozwala zapami�ta� po 1 dodatkowym zakl�ciu z poziom�w 1, 2, 3 i 4. 
-- +10% do odporno�ci na magi�
-- +2 do rzut�w obronnych
-+ Pozwala zapamiętać po 1 dodatkowym zaklęciu z poziomów 1, 2, 3 i 4. 
-+ +10% do odporności na magię
-+ +2 do rzutów obronnych
- Waga: 6 
- ~
--@133 = ~Ta pot�na szata oferuje ochron� ochron� przed wszystkimi fizycznymi atakami, zarazem podwy�szaj�c magiczn� odporno�� i rzuty obronne. Zgodnie z natur� zaczarowania szaty, mo�e by� noszona tylko przez neutralne charaktery. T� szczeg�ln� szat� umagiczni�<PRO_HESHE> <CHARNAME>.
++
++Waga: 6~
++
++@132 = ~Wzmocniona szata neutralnego arcymaga~
 +@133 = ~Ta potężna szata oferuje ochronę ochronę przed wszystkimi fizycznymi atakami, zarazem podwyższając magiczną odporność i rzuty obronne. Zgodnie z naturą zaczarowania szaty, może być noszona tylko przez neutralne charaktery. Tę szczególną szatę umagicznił<PRO_HESHE> <CHARNAME>.
- 
- PARAMETRY:
- 
- Klasa Pancerza: 3
++
++PARAMETRY:
++
  Specjalne:
 - Pozwala zapami�ta� po 1 dodatkowym zakl�ciu z poziom�w 1, 2, 3 i 4. 
 - +10% do odporno�ci na magi�
 - +2 do rzut�w obronnych
-+ Pozwala zapamiętać po 1 dodatkowym zaklęciu z poziomów 1, 2, 3 i 4. 
-+ +10% do odporności na magię
-+ +2 do rzutów obronnych
- Waga: 6 
- ~
--@135 = ~Ta pot�na szata oferuje ochron� ochron� przed wszystkimi fizycznymi atakami, zarazem podwy�szaj�c magiczn� odporno�� i rzuty obronne. Zgodnie z natur� zaczarowania szaty, mo�e by� noszona tylko przez z�e charaktery. T� szczeg�ln� szat� umagiczni�<PRO_HESHE> <CHARNAME>.
+-Waga: 6 
+-~
+-@137 = ~Wykuty na twoje �yczenie, He�m Cytadeli chroni nosz�c� go osob� przed fizycznymi, magicznymi i umys�owymi atakami. ��czy on w sobie defensywn� moc He�mu ochrony i He�mu ochrony przed urokami. W dodatku wygl�da wyzywaj�co. 
++– Rzuty obronne: +2
++– Odporność na magię: +10%
++– Pozwala zapamiętać po 1 dodatkowym zaklęciu maga z poziomów 1-4
++
++Klasa Pancerza: 3
++
++Waga: 6~
++
++@134 = ~Wzmocniona szata złego arcymaga~
 +@135 = ~Ta potężna szata oferuje ochronę ochronę przed wszystkimi fizycznymi atakami, zarazem podwyższając magiczną odporność i rzuty obronne. Zgodnie z naturą zaczarowania szaty, może być noszona tylko przez złe charaktery. Tę szczególną szatę umagicznił<PRO_HESHE> <CHARNAME>.
  
  PARAMETRY:
  
- Klasa Pancerza: 3
- Specjalne:
-- Pozwala zapami�ta� po 1 dodatkowym zakl�ciu z poziom�w 1, 2, 3 i 4. 
-- +10% do odporno�ci na magi�
-- +2 do rzut�w obronnych
-+ Pozwala zapamiętać po 1 dodatkowym zaklęciu z poziomów 1, 2, 3 i 4. 
-+ +10% do odporności na magię
-+ +2 do rzutów obronnych
- Waga: 6 
- ~
--@137 = ~Wykuty na twoje �yczenie, He�m Cytadeli chroni nosz�c� go osob� przed fizycznymi, magicznymi i umys�owymi atakami. ��czy on w sobie defensywn� moc He�mu ochrony i He�mu ochrony przed urokami. W dodatku wygl�da wyzywaj�co. 
-+@137 = ~Wykuty na twoje życzenie, Hełm Cytadeli chroni noszącą go osobę przed fizycznymi, magicznymi i umysłowymi atakami. Łączy on w sobie defensywną moc Hełmu ochrony i Hełmu ochrony przed urokami. W dodatku wygląda wyzywająco. 
- 
- PARAMETRY:
- 
- Klasa Pancerza: bez zmian
+-Klasa Pancerza: bez zmian
  Specjalne:
 - Nosz�ca go osoba jest odporna na zauroczenia
 - +1 do rzut�w obronnych
 - +20% do odporno�ci na elektryczno��
 - +20% do odporno�ci na zimno
 - +20% do odporno�ci na ogie�
-+ Nosząca go osoba jest odporna na zauroczenia
-+ +1 do rzutów obronnych
-+ +20% do odporności na elektryczność
-+ +20% do odporności na zimno
-+ +20% do odporności na ogień
-  Chroni przed trafieniami krytycznymi
- Waga: 3
- ~
+- Chroni przed trafieniami krytycznymi
+-Waga: 3
+-~
 -@139 = ~Wykuta jak tego �yczy�<PRO_HESHE> sobie <CHARNAME>, Wie�a �elaznej woli ochroni nosz�c� osob� przed mentalnymi atakami. Dostarcza ca�ej standardowej ochrony podobnie jak He�m ochrony przed urokami, a tak�e sprawia, �e nosz�ca go osoba jest odporna na ataki psioniczne. Nale�y zauwa�y�, �e nie chroni on przed wysysaj�cymi inteligencj� atakami illithid�w.
++– Rzuty obronne: +2
++– Odporność na magię: +10%
++– Pozwala zapamiętać po 1 dodatkowym zaklęciu maga z poziomów 1-4
++
++Klasa Pancerza: 3
++
++Waga: 6~
++
++@136 = ~Hełm cytadeli~
++@137 = ~Wykuty na twoje życzenie, Hełm cytadeli chroni noszącą go osobę przed fizycznymi, magicznymi i umysłowymi atakami. Łączy on w sobie defensywną moc Hełmu ochrony i Hełmu ochrony przed urokami. W dodatku wygląda wyzywająco. 
++
++PARAMETRY:
++
++Specjalne: 
++– Rzuty obronne: +1
++– Odporność na elektryczność: +20%
++– Odporność na zimno: +20%
++– Odporność na ogień: +20%
++– Niewrażliwość na Zauroczenie
++– Chroni przed trafieniami krytycznymi
++
++Waga: 3~
++
++@138 = ~Wieża żelaznej woli~
 +@139 = ~Wykuta jak tego życzył<PRO_HESHE> sobie <CHARNAME>, Wieża żelaznej woli ochroni noszącą osobę przed mentalnymi atakami. Dostarcza całej standardowej ochrony podobnie jak Hełm ochrony przed urokami, a także sprawia, że nosząca go osoba jest odporna na ataki psioniczne. Należy zauważyć, że nie chroni on przed wysysającymi inteligencję atakami illithidów.
  
  PARAMETRY:
  
  Specjalne:
 - Nosz�ca go osoba jest odporna na zauroczenia i psionik�
-+ Nosząca go osoba jest odporna na zauroczenia i psionikę
- Waga: 3
- ~
+-Waga: 3
+-~
 -@141 = ~Ta ci�ka i gruba nied�wiedzia sk�ra jest wszystkim co zosta�o ze s�ynnego Aegera. Kilkaset lat temu Aeger, olbrzymi nied�wied�, terroryzowa� setki wiosek wzd�u� ca�ego Wybrze�a Mieczy. Nied�wied� by� niewra�liwy na ogie�, zimno i kwas. Wreszcie zebrali si� m�odzi m�czy�ni i kobiety z kilku wiosek, tworz�c grup� licz�c� prawie dwie�cie os�b. Aeger zosta� otoczony i zg�adzony. Prze�y� mniej ni� tuzin ludzi, kt�rzy podzielili mi�dzy siebie sk�r� Aegera. Zbroja zosta�a wykonana z jednego z tych kawa�k�w.
 -<CHARNAME> ulepszy�<PRO_HESHE> j� jeszcze bardziej dodatkowymi umagicznieniami. Obecnie zapewnia jeszcze wi�ksz� ochron� na obra�enia fizyczne i ataki bazuj�ce na �ywio�ach.
++- Niewrażliwość na Zauroczenie i psionikę
++– Chroni przed trafieniami krytycznymi
++
++Waga: 3~
++
++@140 = ~Skóra Aegera +5~
 +@141 = ~Ta ciężka i gruba niedźwiedzia skóra jest wszystkim co zostało ze słynnego Aegera. Kilkaset lat temu Aeger, olbrzymi niedźwiedź, terroryzował setki wiosek wzdłuż całego Wybrzeża Mieczy. Niedźwiedź był niewrażliwy na ogień, zimno i kwas. Wreszcie zebrali się młodzi mężczyźni i kobiety z kilku wiosek, tworząc grupę liczącą prawie dwieście osób. Aeger został otoczony i zgładzony. Przeżył mniej niż tuzin ludzi, którzy podzielili między siebie skórę Aegera. Zbroja została wykonana z jednego z tych kawałków.
-+<CHARNAME> ulepszył<PRO_HESHE> ją jeszcze bardziej dodatkowymi umagicznieniami. Obecnie zapewnia jeszcze większą ochronę na obrażenia fizyczne i ataki bazujące na żywiołach.
++
++<CHARNAME> wzmocnił<PRO_HESHE> ją jeszcze bardziej dodatkowymi umagicznieniami. Obecnie zapewnia jeszcze większą ochronę na obrażenia fizyczne i ataki bazujące na żywiołach.
  
  PARAMETRY:
  
- Klasa Pancerza: 1
+-Klasa Pancerza: 1
  Specjalne:
 - +25% do odporno�ci na ogie�, zimno i kwas
 - Odporno�� na Zam�t
-+ +25% do odporności na ogień, zimno i kwas
-+ Odporność na Zamęt
- Waga: 35
+-Waga: 35
 -Wymagana si�a: 6
-+Wymagana siła: 6
- ~
+-~
 -@143 = ~Ta zbroja jest wykonana z ludzkiej sk�ry i oblana krwi� szlachetnego smoka. Wydziela ostry od�r �mierci. Ta nikczemna zbroja mo�e by� u�ywana tylko przez naprawd� z�� osob�.
-+@143 = ~Ta zbroja jest wykonana z ludzkiej skóry i oblana krwią szlachetnego smoka. Wydziela ostry odór śmierci. Ta nikczemna zbroja może być używana tylko przez naprawdę złą osobę.
++- Odporność na ogień: +25%
++- Odporność na zimno: +25%
++- Odporność na kwas: +25%
++- Niewrażliwość na Zamęt
++
++Klasa Pancerza: 1 (3 przeciw broniom kłutym i pociskom)
++
++Wymagania: 
++- Siła: 6
++
++Waga: 35~
++
++@142 = ~Ulepszona ludzka skóra~
++@143 = ~Zbroja ta została wykonana z ludzkiej skóry i oblana krwią szlachetnego smoka. Dodatkowo zaklęto w niej duszę niewinnej dziewczyny i wpleciono w nią potężną ochronną magię. Ten złowrogi pancerz wydziela ostry odór śmierci i może być używany tylko przez naprawdę złą osobę. To zaprawdę szczyt nikczemnej ochrony.
  
  PARAMETRY:
  
- Klasa Pancerza: 0 
+-Klasa Pancerza: 0 
  Specjalne:
 - +4 do rzut�w obronnych
 - +20% do odporno�ci na magi�
 - +1 do zr�czno�ci i kondycji
 - Odporno�� na trucizny
-+ +4 do rzutów obronnych
-+ +20% do odporności na magię
-+ +1 do zręczności i kondycji
-+ Odporność na trucizny
-  Ochrona przed dobrem
- Waga: 5
+- Ochrona przed dobrem
+-Waga: 5
 -Wymagana si�a: 3
-+Wymagana siła: 3
- ~
+-~
 -@145 = ~Ta zbroja zosta�a zaprojektowana specjalnie dla Keldorna. Zbroja zosta�a p�niej umagiczniona, gdy za�yczy� sobie tego <CHARNAME>, aby zapewnia�a Keldornowi lepsz� ochron�. B�d�c na wyposa�eniu zapewnia w�a�cicielowi premi� +2 do wszystkich rzut�w obronnych oraz pozwala na Swobod� dzia�ania (np. przechodzenie przez paj�czyny) oraz odporno�� na strach. Poza byciem niesamowicie siln�, zbroja prawie nic nie wa�y. 
++- Zręczność: +1
++- Kondycja: +1
++- Rzuty obronne: +4
++- Odporność na magię: +20%
++- Niewrażliwość na trucizny
++- Ochrona przed dobrem
++
++Klasa Pancerza: 0 (2 przeciw broniom kłutym i pociskom)
++
++Wymagania: 
++- Siła: 3
++
++Waga: 5~
++
++@144 = ~Ulepszona pełna zbroja płytowa Firecama~
 +@145 = ~Ta zbroja została zaprojektowana specjalnie dla Keldorna. Zbroja została później umagiczniona, gdy zażyczył sobie tego <CHARNAME>, aby zapewniała Keldornowi lepszą ochronę. Będąc na wyposażeniu zapewnia właścicielowi premię +2 do wszystkich rzutów obronnych oraz pozwala na Swobodę działania (np. przechodzenie przez pajęczyny) oraz odporność na strach. Poza byciem niesamowicie silną, zbroja prawie nic nie waży. 
  
  PARAMETRY:
  
- Klasa Pancerza: -2
+-Klasa Pancerza: -2
  Specjalne:
 - +2 do rzut�w obronnych
 - Swoboda dzia�ania
 - Odporno�� na strach
-+ +2 do rzutów obronnych
-+ Swoboda działania
-+ Odporność na strach
- Waga: 10
- ~
+-Waga: 10
+-~
 -@147 = ~Ta zbroja p�ytowa to istne cacko. Powleczona chitynow� �usk� ankhega zapewnia lepsz� ochron� ni� pancerz wykonany z metalu i nie jest podatna na rdz�. Jednak�e, jak powie ci to ka�dy do�wiadczony poszukiwacz przyg�d, jej najwi�ksz� zalet� jest niewielka waga. Potwory przychodz� i odchodz�, wyczerpanie natomiast jest sta�ym zagro�eniem. 
 -Ta szczeg�lna zbroja zosta�a przekuta na twoj� pro�b�. Zapewnia ona teraz dodatkow� ochron� i pozwala nosz�cemu j� na na�ladowanie atak�w pluj�cego kwasem ankhega.
-+@147 = ~Ta zbroja płytowa to istne cacko. Powleczona chitynową łuską ankhega zapewnia lepszą ochronę niż pancerz wykonany z metalu i nie jest podatna na rdzę. Jednakże, jak powie ci to każdy doświadczony poszukiwacz przygód, jej największą zaletą jest niewielka waga. Potwory przychodzą i odchodzą, wyczerpanie natomiast jest stałym zagrożeniem. 
++- Rzuty obronne: +2
++- Swoboda działania
++- Niewrażliwość na strach
++
++Klasa Pancerza: -2 (-6 przeciw broniom siecznym, -5 przeciw broniom kłutym i pociskom)
++
++Waga: 10~
++
++@146 = ~Ulepszona zbroja płytowa z ankhega~
++@147 = ~Ta zbroja płytowa to istne cacko. Powleczona chitynową łuską ankhega zapewnia lepszą ochronę niż pancerz wykonany z metalu i nie jest podatna na rdzę. Jednakże, jak powie ci to każdy doświadczony poszukiwacz przygód, jej największą zaletą jest niewielka waga. Potwory przychodzą i odchodzą, wyczerpanie natomiast jest stałym zagrożeniem.
++
 +Ta szczególna zbroja została przekuta na twoją prośbę. Zapewnia ona teraz dodatkową ochronę i pozwala noszącemu ją na naśladowanie ataków plującego kwasem ankhega.
  
  PARAMETRY:
  
- Klasa Pancerza: -1
+-Klasa Pancerza: -1
  Specjalne:
 - +50% do odporno�ci na kwas
 - Trzy razy dziennie pozwala rzuca� Kwasow� strza�� Melfa
-+ +50% do odporności na kwas
-+ Trzy razy dziennie pozwala rzucać Kwasową strzałę Melfa
- Waga: 25
+-Waga: 25
 -Wymagana si�a: 8
-+Wymagana siła: 8
- ~
+-~
 -@149 = ~Audn z Pola, rycerz i czempion czarodzieja Kekkima, nosi� t� tarcz� przez wi�kszo�� swojego �ycia. Chroni ona nosiciela przed wi�kszo�ci� form kontroli umys�u, co jest zalet� dla czarodzieja, kt�ry potrzebowa� przyjaznych mu wojownik�w, aby stali wiernie po jego stronie. Zar�wno Kekkim, jak i Audn dawno ju� gryz� ziemi�, pozostawiwszy tarcz� temu, kto wydostanie j� z wie�y czarodzieja.
 -Niedawno tarcza ta zosta�a dodatkowo umagiczniona przez ciebie. Zapewnia teraz dodatkow� fizyczn� ochron� i sprawia, �e nosz�cy j� jest odporny na psionik� (ale nie przed wysysaj�cymi inteligencj� atakami illithid�w). 
++- Odporność na kwas: +50%
++
++Właściwości ładunków:
++– Kwasowa strzała Melfa, trzy razy dziennie (bez rzutu obronnego)
++Zasięg: 20 metrów
++Czas działania: 7 rund
++
++Klasa Pancerza: -1 (-4 przeciw broniom siecznym, -2 przeciw broniom kłutym i pociskom)
++
++Wymagania:
++- Siła: 8
++
++Waga: 25~
++
++@148 = ~Tarcza harmonii +3~
 +@149 = ~Audn z Pola, rycerz i czempion czarodzieja Kekkima, nosił tę tarczę przez większość swojego życia. Chroni ona nosiciela przed większością form kontroli umysłu, co jest zaletą dla czarodzieja, który potrzebował przyjaznych mu wojowników, aby stali wiernie po jego stronie. Zarówno Kekkim, jak i Audn dawno już gryzą ziemię, pozostawiwszy tarczę temu, kto wydostanie ją z wieży czarodzieja.
++
 +Niedawno tarcza ta została dodatkowo umagiczniona przez ciebie. Zapewnia teraz dodatkową fizyczną ochronę i sprawia, że noszący ją jest odporny na psionikę (ale nie przed wysysającymi inteligencję atakami illithidów). 
  
  PARAMETRY: 
  
- Klasa Pancerza: +4
+-Klasa Pancerza: +4
  Specjalne:
 - Odporno�� na uroki, psionik�, zam�t, dominacj� oraz unieruchomienie osoby
-+ Odporność na uroki, psionikę, zamęt, dominację oraz unieruchomienie osoby
- Waga: 2
+-Waga: 2
 -Wymagana si�a: 4
-+Wymagana siła: 4
- ~
+-~
 -@151 = ~W��cznia to jeden z najwcze�niejszych rodzaj�w broni, kt�rymi zacz�� pos�ugiwa� si� cz�owiek. Pierwsze egzemplarze tej broni by�y wykonane z drewna i zaostrzone na ko�cu. Kiedy cz�owiek nauczy� si� wytapia� metale, groty w��czni by�y wytwarzane z �elaza i stali. Ta w��cznia dr�y od pot�nej magii wykorzystanej do jej stworzenia.
 -W przeciwie�stwie do prawie wszystkich w��czni, kt�re znasz, t� mo�na rzuca�. Zosta�a wykuta dla ciebie przy u�yciu kamienia �otrzyk�w. Kiedy jest rzucana, w��cznia natychmiast wraca do r�k w�a�ciciela. (W��cznia mo�e by� wykorzystywana jako bro� r�czna: wybierz wtedy drug� zdolno�� broni, aby tak zrobi�.) 
++- Niewrażliwość na Zauroczenie, Zamęt, Dominację, Unieruchomienie osoby i psionikę
++
++Klasa Pancerza: +4
++
++Wymagania:
++- Siła: 4
++
++Waga: 2~
++
++@150 = ~Rzucana włócznia +3~
 +@151 = ~Włócznia to jeden z najwcześniejszych rodzajów broni, którymi zaczął posługiwać się człowiek. Pierwsze egzemplarze tej broni były wykonane z drewna i zaostrzone na końcu. Kiedy człowiek nauczył się wytapiać metale, groty włóczni były wytwarzane z żelaza i stali. Ta włócznia drży od potężnej magii wykorzystanej do jej stworzenia.
-+W przeciwieństwie do prawie wszystkich włóczni, które znasz, tą można rzucać. Została wykuta dla ciebie przy użyciu kamienia łotrzyków. Kiedy jest rzucana, włócznia natychmiast wraca do rąk właściciela. (Włócznia może być wykorzystywana jako broń ręczna: wybierz wtedy drugą zdolność broni, aby tak zrobić.) 
++
++W przeciwieństwie do niemal wszystkich włóczni, które znasz, tą można rzucać. Została wykuta dla ciebie przy użyciu kamienia łotrzyków. Kiedy jest rzucana, włócznia natychmiast wraca do rąk właściciela. (Włócznia może być wykorzystywana jako broń ręczna: wybierz wtedy drugą zdolność broni, aby tak zrobić.) 
  
  PARAMETRY:
  
 -Obra�enia: 1K6 +3
-+Obrażenia: 1K6 +3
- TraK0: +3
+-TraK0: +3
 -Typ obra�e� (walka wr�cz): k�ute
 -Typ obra�e� (rzucona): pocisk (k�ute)
-+Typ obrażeń (walka wręcz): kłute
-+Typ obrażeń (rzucona): pocisk (kłute)
  Specjalne:
 - 1 dodatkowy atak na rund� (taka sama cz�stotliwo�� strza�u jak d�ugiego �uku)
-+ 1 dodatkowy atak na rundę (taka sama częstotliwość strzału jak długiego łuku)
- Waga: 3
+-Waga: 3
 -Op�nienie: 3
 -Rodzaj bieg�o�ci: w��cznia
 -Typ broni: 2-r�czna
 -Wymagana si�a: 5
+-~
+-@153 = ~Ta zgrabna w��cznia kszta�tem przypomina r�g jednoro�ca. W�adaj�cy ta broni� jest niewra�liwy na czary Unieruchomienie i Zauroczenie, tak samo jak jednoro�ec. Nie wiadomo czy ten r�g jest prawdziwym rogiem jednoro�ca.
+-Oryginalna W��cznia jednoro�ca zosta�a przekuta tak, by mo�na jej u�ywa� jako broni dystansowej. Kiedy jest rzucana, w��cznia natychmiast wraca do r�k w�a�ciciela. (W��cznia mo�e by� wykorzystywana jako bro� r�czna: wybierz wtedy drug� zdolno�� broni, aby tak zrobi�.) 
++- 1 dodatkowy atak na rundę (można nią rzucać z częstotliwością strzału z długiego łuku)
++
++Obrażenia: 1k6 +3
++TraK0: +3
++Typ obrażeń (walka wręcz): kłute
++Typ obrażeń (rzucona): pocisk
 +Opóźnienie: 3
 +Rodzaj biegłości: włócznia
 +Typ broni: 2-ręczna
-+Wymagana siła: 5
- ~
--@153 = ~Ta zgrabna w��cznia kszta�tem przypomina r�g jednoro�ca. W�adaj�cy ta broni� jest niewra�liwy na czary Unieruchomienie i Zauroczenie, tak samo jak jednoro�ec. Nie wiadomo czy ten r�g jest prawdziwym rogiem jednoro�ca.
--Oryginalna W��cznia jednoro�ca zosta�a przekuta tak, by mo�na jej u�ywa� jako broni dystansowej. Kiedy jest rzucana, w��cznia natychmiast wraca do r�k w�a�ciciela. (W��cznia mo�e by� wykorzystywana jako bro� r�czna: wybierz wtedy drug� zdolno�� broni, aby tak zrobi�.) 
++
++Wymagania:
++- Siła: 5
++
++Waga: 3~
++
++@152 = ~Rzucana włócznia jednorożca +3~
 +@153 = ~Ta zgrabna włócznia kształtem przypomina róg jednorożca. Władający ta bronią jest niewrażliwy na czary Unieruchomienie i Zauroczenie, tak samo jak jednorożec. Nie wiadomo czy ten róg jest prawdziwym rogiem jednorożca.
 +Oryginalna Włócznia jednorożca została przekuta tak, by można jej używać jako broni dystansowej. Kiedy jest rzucana, włócznia natychmiast wraca do rąk właściciela. (Włócznia może być wykorzystywana jako broń ręczna: wybierz wtedy drugą zdolność broni, aby tak zrobić.) 
  
  PARAMETRY:
  
 -Obra�enia: 1K6 +3, +2 pkt. obra�e� od ognia
-+Obrażenia: 1K6 +3, +2 pkt. obrażeń od ognia
- Trak0: +3
+-Trak0: +3
 -Typ obra�e� (walka wr�cz): k�ute
 -Typ obra�e� (rzucona): pocisk (k�ute)
-+Typ obrażeń (walka wręcz): kłute
-+Typ obrażeń (rzucona): pocisk (kłute)
  Specjalne:
 - Odporno�� na unieruchomienie osoby i zauroczenie
 - +3 do rzut�w obronnych przeciw �mierci
-+ Odporność na unieruchomienie osoby i zauroczenie
-+ +3 do rzutów obronnych przeciw śmierci
- Waga: 3
+-Waga: 3
 -Op�nienie: 3
 -Rodzaj bieg�o�ci: w��cznia
 -Typ broni: 2-r�czna
 -Wymagana si�a: 5
-+Opóźnienie: 3
-+Rodzaj biegłości: włócznia
-+Typ broni: 2-ręczna
-+Wymagana siła: 5
- ~
+-~
 -@155 = ~Rzucana W��cznia +4, Przebijacz
 -Przebijacz posiada namacaln� aur� magiczn� wskazuj�c� na z�o�liw� natur� tej broni i dlatego by�a ona w przesz�o�ci ulubion� broni� wielu pot�nych wodz�w ork�w. Trafiona ofiara zostaje, jak mo�na si� domy�la�, prawie przebita, gdy magiczna zdolno�� broni dokonuje dzie�a zniszczenia.
 -Po tym jak <CHARNAME> uzyska�<PRO_HESHE> Przebijacza w mie�cie Sahuagin�w, przeku�<PRO_HESHE> j� p�niej na bro� dystansow�. Kiedy jest rzucana, w��cznia natychmiast wraca do r�k w�a�ciciela. (W��cznia mo�e by� wykorzystywana jako bro� r�czna: wybierz wtedy drug� zdolno�� broni, aby tak zrobi�.
-+@155 = ~Rzucana Włócznia +4, Przebijacz
++- Rzuty obronne: +3 przeciw śmierci
++- Niewrażliwość na Unieruchomienie osoby i Zauroczenie
++
++Obrażenia: 1k6 +3, +2 obrażenia od ognia
++Trak0: +3
++Typ obrażeń (walka wręcz): kłute
++Typ obrażeń (rzucona): pocisk
++Opóźnienie: 3
++Rodzaj biegłości: włócznia
++Typ broni: 2-ręczna
++
++Wymagania: 
++- Siła: 5
++
++Waga: 3~
++
++@154 = ~Rzucana włócznia +4, Przebijacz~
++@155 = ~Rzucana włócznia +4, Przebijacz
 +Przebijacz posiada namacalną aurę magiczną wskazującą na złośliwą naturę tej broni i dlatego była ona w przeszłości ulubioną bronią wielu potężnych wodzów orków. Trafiona ofiara zostaje, jak można się domyślać, prawie przebita, gdy magiczna zdolność broni dokonuje dzieła zniszczenia.
++
 +Po tym jak <CHARNAME> uzyskał<PRO_HESHE> Przebijacza w mieście Sahuaginów, przekuł<PRO_HESHE> ją później na broń dystansową. Kiedy jest rzucana, włócznia natychmiast wraca do rąk właściciela. (Włócznia może być wykorzystywana jako broń ręczna: wybierz wtedy drugą zdolność broni, aby tak zrobić.
  
  PARAMETRY:
  
 -Obra�enia: 1K6 +4, +10 pkt. obra�e� k�utych
-+Obrażenia: 1K6 +4, +10 pkt. obrażeń kłutych
- TraK0: +4
+-TraK0: +4
 -Typ obra�e� (walka wr�cz): k�ute
 -Typ obra�e� (rzucona): pocisk (k�ute)
-+Typ obrażeń (walka wręcz): kłute
-+Typ obrażeń (rzucona): pocisk (kłute)
  Specjalne:
 - 1 dodatkowy atak na rund� (taka sama cz�stotliwo�� strza�u jak d�ugiego �uku)
-+ 1 dodatkowy atak na rundę (taka sama częstotliwość strzału jak długiego łuku)
- Waga: 3
+-Waga: 3
 -Op�nienie: 2
 -Rodzaj bieg�o�ci: w��cznia
 -Typ broni: 2-r�czna
 -Wymagana si�a: 5
-+Opóźnienie: 2
-+Rodzaj biegłości: włócznia
-+Typ broni: 2-ręczna
-+Wymagana siła: 5
- ~
+-~
 -@157 = ~Kostur Las�w
 -Cz�owiek, kt�ry go posiada�, znany jako "Dziki m�� z lasu", by� w okolicach Targowa postaci� legendarn� do chwili, kiedy umar� i powr�ci� do ziemi. Ci, kt�rzy go widzieli pami�taj� jego ciemn�, podobn� do kory sk�r�, kt�ra znika�a, gdy odk�ada� sw�j kostur. Osobnik ten n�ka� nieodpowiedzialnych drwali i przechodni�w, a starcy opowiadaj�, jak kiedy� wybrali si� na niego najemnicy z tuzinem ps�w my�liwskich. Zwierz�ta by�y gotowe rozerwa� biednego druida na strz�py, ale on szybko zwr�ci� je przeciwko ich w�asnym panom. Ruszywszy do przodu w nadziei przerwania tego wp�ywu, zbrojni ujrzeli ostatni� moc kostura, gdy ro�linno�� zadr�a�a od magicznego wezwania "Dzikiego m�a". Uformowa�a si� zielona, gnij�ca mieszanina �ycia i �mierci, kt�ra opad�a na przera�onych �o�nierzy, zabijaj�c ich wszystkich.
 -Niedawno <CHARNAME> zleci�<PRO_HESHE> ulepszenie kostura, dzi�ki czemu mo�na skorzysta� z nowych zdolno�ci. 
-+@157 = ~Kostur Lasów
-+Człowiek, który go posiadał, znany jako "Dziki mąż z lasu", był w okolicach Targowa postacią legendarną do chwili, kiedy umarł i powrócił do ziemi. Ci, którzy go widzieli pamiętają jego ciemną, podobną do kory skórę, która znikała, gdy odkładał swój kostur. Osobnik ten nękał nieodpowiedzialnych drwali i przechodniów, a starcy opowiadają, jak kiedyś wybrali się na niego najemnicy z tuzinem psów myśliwskich. Zwierzęta były gotowe rozerwać biednego druida na strzępy, ale on szybko zwrócił je przeciwko ich własnym panom. Ruszywszy do przodu w nadziei przerwania tego wpływu, zbrojni ujrzeli ostatnią moc kostura, gdy roślinność zadrżała od magicznego wezwania "Dzikiego męża". Uformowała się zielona, gnijąca mieszanina życia i śmierci, która opadła na przerażonych żołnierzy, zabijając ich wszystkich.
++- 1 dodatkowy atak na rundę (można nią rzucać z częstotliwością strzału z długiego łuku)
++
++Obrażenia: 1k6 +4, +10 obrażeń kłutych
++TraK0: +4
++Typ obrażeń (walka wręcz): kłute
++Typ obrażeń (rzucona): pocisk
++Opóźnienie: 2
++Rodzaj biegłości: włócznia
++Typ broni: 2-ręczna
++
++Wymagania:
++- Siła: 5
++
++Waga: 3~
++
++@156 = ~Kostur lasów +5~
++@157 = ~Kostur lasów
++Człowiek, który go posiadał, znany jako „Dziki mąż z lasu”, był w okolicach Targowa postacią legendarną do chwili, kiedy umarł i powrócił do ziemi. Ci, którzy go widzieli pamiętają jego ciemną, podobną do kory skórę, która znikała, gdy odkładał swój kostur. Osobnik ten nękał nieodpowiedzialnych drwali i przechodniów, a starcy opowiadają, jak kiedyś wybrali się na niego najemnicy z tuzinem psów myśliwskich. Zwierzęta były gotowe rozerwać biednego druida na strzępy, ale on szybko zwrócił je przeciwko ich własnym panom. Ruszywszy do przodu w nadziei przerwania tego wpływu, zbrojni ujrzeli ostatnią moc kostura, gdy roślinność zadrżała od magicznego wezwania „Dzikiego męża”. Uformowała się zielona, gnijąca mieszanina życia i śmierci, która opadła na przerażonych żołnierzy, zabijając ich wszystkich.
++
 +Niedawno <CHARNAME> zlecił<PRO_HESHE> ulepszenie kostura, dzięki czemu można skorzystać z nowych zdolności. 
  
  PARAMETRY:
  
 -Obra�enia: 1K6 +5
-+Obrażenia: 1K6 +5
- TraK0: +5
+-TraK0: +5
 -Typ obra�e�: obuchowe
-+Typ obrażeń: obuchowe
  Specjalne:
-  +3 do Klasy Pancerza
+- +3 do Klasy Pancerza
 - Korowa sk�ra (KP 3) (gdy u�ywany)
 - Sze�� razy dziennie pozwala rzuca� Przyzwanie pokracznego kopca na okres 100 sekund
 - Sze�� razy dziennie pozwala rzuca� Wzmocnione zauroczenie zwierz�t na okres 5 tur (bez mo�liwo�ci wykonania rzutu obronnego) 
 - 5% szansa, �e cel (i jego sojusznicy) zostan� dotkni�ci plag� Pe�zaj�cej zag�ady przy trafieniu
-+ Korowa skóra (KP 3) (gdy używany)
-+ Sześć razy dziennie pozwala rzucać Przyzwanie pokracznego kopca na okres 100 sekund
-+ Sześć razy dziennie pozwala rzucać Wzmocnione zauroczenie zwierząt na okres 5 tur (bez możliwości wykonania rzutu obronnego) 
-+ 5% szansa, że cel (i jego sojusznicy) zostaną dotknięci plagą Pełzającej zagłady przy trafieniu
- Waga: 2
+-Waga: 2
 -Op�nienie: 0
 -Rodzaj bieg�o�ci: kij
 -Typ broni: 2-r�czna
 -Wymagana si�a: 5
-+Opóźnienie: 0
-+Rodzaj biegłości: kij
-+Typ broni: 2-ręczna
-+Wymagana siła: 5
- ~
+-~
 -@159 = ~S�oneczne ostrze: Dzienna Gwiazda +4
 -Niezale�nie od tego czy miecz zosta� stworzony specjalnie by s�u�y� Tormowi, czy te� zacz�to wykorzystywa� go w tym celu p�niej, to Paladyni Lojalnej Furii dobrze u�ywali go w swej walce z nieumar�ymi. Dzi�ki magii, b�d� b�ogos�awie�stwu obdarzony jest Promieniem s�o�ca, energi� czystej si�y �yciowej tak pot�n�, �e niszczy zar�wno �ywych jak i nieumar�ych.
 -<CHARNAME> odzyska�<PRO_HESHE> ten miecz z r�k lisza niedaleko bram miasta Athkatli i zleci�<PRO_HESHE> jego przekucie tworz�c jeszcze bardziej pot�n� bro� w r�kach sprawiedliwo�ci. 
-+@159 = ~Słoneczne ostrze: Dzienna Gwiazda +4
++- Korowa skóra: Klasa Pancerza: 3 
++- Klasa Pancerza: +3
++- 5% szans, że cel, oraz jego sojusznicy, znajdą się pod wpływem czaru Pełzająca zagłada, po trafieniu
++
++Właściwości ładunków:
++- Wezwanie Pokracznego kopca o 8 Kostkach, sześć razy dziennie
++Zasięg: 13 metrów
++Czas działania: 100 sekund
++
++– Wzmocnione zauroczenie zwierząt, sześć razy dziennie (bez rzutu obronnego) 
++Zasięg: 13 metrów
++Czas działania: 5 tur
++
++Obrażenia: 1k6 +5
++TraK0: +5
++Typ obrażeń: obuchowe
++Opóźnienie: 0
++Rodzaj biegłości: kij
++Typ broni: 2-ręczna
++
++Wymagania:
++- Siła: 5
++
++Waga: 2~
++
++@158 = ~Dzienna gwiazda +4~
++@159 = ~Słoneczne ostrze: Dzienna gwiazda +4
 +Niezależnie od tego czy miecz został stworzony specjalnie by służyć Tormowi, czy też zaczęto wykorzystywać go w tym celu później, to Paladyni Lojalnej Furii dobrze używali go w swej walce z nieumarłymi. Dzięki magii, bądź błogosławieństwu obdarzony jest Promieniem słońca, energią czystej siły życiowej tak potężną, że niszczy zarówno żywych jak i nieumarłych.
 +<CHARNAME> odzyskał<PRO_HESHE> ten miecz z rąk lisza niedaleko bram miasta Athkatli i zlecił<PRO_HESHE> jego przekucie tworząc jeszcze bardziej potężną broń w rękach sprawiedliwości. 
  
@@ -407,37 +716,58 @@
 -Obra�enia: 1K8 +4, +8 przeciwko z�ym istotom, zadaje podw�jne obra�enia nieumar�ym 
 -TraK0: +4, +8 przeciwko z�ym istotom
 -Typ obra�e�: sieczne
-+Obrażenia: 1K8 +4, +8 przeciwko złym istotom, zadaje podwójne obrażenia nieumarłym 
-+TraK0: +4, +8 przeciwko złym istotom
-+Typ obrażeń: sieczne
- Specjalne:
+-Specjalne:
 - Sta�a Ochrona przed z�em
 - Dwa razy dziennie pozwala rzuca� Promie� s�o�ca, zadaj�cy 3K6 pkt. obra�e� (rzut obronny przeciwko czarom lub o�lepienie na 10 rund), nieumarli otrzymuj� dodatkowe 10K6 pkt. obra�e� (ka�dy musi wykona� rzut obronny przeciwko czarom lub zostaje zniszczony). Zasi�g i obszar dzia�ania to 6 metr�w.
-+ Stała Ochrona przed złem
-+ Dwa razy dziennie pozwala rzucać Promień słońca, zadający 3K6 pkt. obrażeń (rzut obronny przeciwko czarom lub oślepienie na 10 rund), nieumarli otrzymują dodatkowe 10K6 pkt. obrażeń (każdy musi wykonać rzut obronny przeciwko czarom lub zostaje zniszczony). Zasięg i obszar działania to 6 metrów.
- Waga: 2
+-Waga: 2
 -Op�nienie: 3
 -Rodzaj bieg�o�ci: d�ugi miecz
 -Typ broni: 1-r�czna
 -Wymagana si�a: 6
-+Opóźnienie: 3
-+Rodzaj biegłości: długi miecz
-+Typ broni: 1-ręczna
-+Wymagana siła: 6
- ~
- @161 = ~Katana +5: Furia Niebios
+-~
+-@161 = ~Katana +5: Furia Niebios
 -W przeciwie�stwie do konwencjonalnych broni, katana jest ju� z za�o�enia niemal doskona�ym mieczem do walki. Trzeba ogromnych po�wi�ce�, aby jeszcze j� ulepszy�, np. umieraj�cy samuraj mo�e ub�aga� Wu Jena aby jego waleczny duch zosta� przelany na katan�. Osoba w�adaj�ca zaczarowan� katan�, tak� jak ta, musi szanowa� obyczaje Kara-Tur oraz samuraja, kt�ry niegdy� dzier�y� to ostrze w boju. Nieprzestrzeganie tego nakazu mo�e spowodowa� gwa�town� odmian� losu na gorsze.
 -Umagicznienie katany nie jest prost� spraw�. Tak przynajmniej my�la�<PRO_HESHE> <CHARNAME>, zanim sam<PRO_HESHE> tego po raz pierwszy nie uczyni�<PRO_HESHE>. W rzeczywisto�ci najtrudniejsz� cz�ci� przekuwania ju� boskiej mocy katany znanej jako Furia Niebios by�o zebranie potrzebnych do tego rzeczy. Furia Niebios dobrze j<PRO_HIMHER> s�u�y�a, odk�d <CHARNAME> zabra�<PRO_HESHE> j� z r�k kensaia Koshi w Dzielnicy �wi�tynnej w Athkatli.
-+W przeciwieństwie do konwencjonalnych broni, katana jest już z założenia niemal doskonałym mieczem do walki. Trzeba ogromnych poświęceń, aby jeszcze ją ulepszyć, np. umierający samuraj może ubłagać Wu Jena aby jego waleczny duch został przelany na katanę. Osoba władająca zaczarowaną kataną, taką jak ta, musi szanować obyczaje Kara-Tur oraz samuraja, który niegdyś dzierżył to ostrze w boju. Nieprzestrzeganie tego nakazu może spowodować gwałtowną odmianę losu na gorsze.
-+Umagicznienie katany nie jest prostą sprawą. Tak przynajmniej myślał<PRO_HESHE> <CHARNAME>, zanim sam<PRO_HESHE> tego po raz pierwszy nie uczynił<PRO_HESHE>. W rzeczywistości najtrudniejszą częścią przekuwania już boskiej mocy katany znanej jako Furia Niebios było zebranie potrzebnych do tego rzeczy. Furia Niebios dobrze j<PRO_HIMHER> służyła, odkąd <CHARNAME> zabrał<PRO_HESHE> ją z rąk kensaia Koshi w Dzielnicy Świątynnej w Athkatli.
++Specjalne:
++- Ochrona przed złem
++
++Właściwości ładunków:
++- Promień słońca, dwa razy dziennie
++Obrażenia: 3k6 (rzut obronny przeciw czarom lub oślepienie na dziesięć rund), +10k6 przeciw nieumarłym
++Nieumarli: zniszczenie (rzut obronny przeciw czarom neguje)
++Zasięg: 6 metrów
++Obszar działania: w promieniu 6 metrów
++
++Obrażenia: 1k8 +4, +8 przeciw złym istotom, podwójne obrażenia przeciw nieumarłym 
++TraK0: +4, +8 przeciw złym istotom
++Typ obrażeń: sieczne
++Opóźnienie: 3
++Rodzaj biegłości: miecz długi
++Typ broni: 1-ręczna
++
++Wymagania:
++- Siła: 6
++
++Waga: 2~
++
++@160 = ~Furia niebios +5~
++@161 = ~Katana +5: Furia niebios
++Umagicznienie katany nie jest proste, a przynajmniej nie tak, jak <CHARNAME> sądził<PRO_HESHE>, nim zlecił<PRO_HESHE> innym to zadanie. Okazało się, że najtrudniejszą rzeczą w całym procesie przekuwania posiadającej niemal boskie moce katany, zwanej Furią niebios, było zebranie niezliczonej ilości niezbędnych do tego składników. Odkąd <CHARNAME> zabrał<PRO_HESHE> ją z martwych rąk Koshiego w Dzielnicy Świątynnej, w Athkatli, Furia niebios nie raz sprawdziła się w boju. Nim to jednak nastąpiło, jej historia przedstawiała się następująco:
++
++Wiele lat temu, prowincję zarządzaną przez daimyo Hoshiego Katahiroi nawiedziły gwałtowne burze i pożary, wywołane przez błyskawice. Doradcy daimyo, będąc szanowanymi czarodziejami, wkrótce wywróżyli, iż katastrofa nie była dziełem Natury, lecz potężnego smoka o nieznanym pochodzeniu. Niektórzy z owych mędrców spekulowali, że istota ta była wynaturzeniem, inni zaś wierzyli, iż narodziła się z Pierwotnego Chaosu, jeszcze przed narodzinami Kara-Tur. Wszyscy zgodzili się, by nazywać ją Furią niebios.
++
++Daimyo Hoshi nie chciał jednak klasyfikować plagi nękającej jego prowincję, chciał ją zniszczyć. Zlecił więc osławionemu Chigaccie (mieszkającemu na odludziu rzemieślnikowi i mistrzowi sztuk mistycznych) stworzenie broni mogącej strzaskać duszę i łuskowate cielsko smoka. Wysiłki Chigatty zaowocowały powstaniem najwspanialszej z katan, nazwanej Furią niebios od imienia bestii, którą miała zniszczyć. Broń nasycono mocą obdarzającą jej właściciela zdolnością latania.
++
++Dzierżąc ową broń, Hoshi rozpoczął, w kłębach burzowych chmur, poszukiwania nękającej jego prowincję bestii. Przez wiele dni krzyki i ryki walczących rozdzierały przestworza, noce zaś rozświetlane były przez jęzory ognia. Wreszcie nadeszła długo oczekiwana chwila, gdy Hoshi zniszczył ciało smoka, więżąc we wnętrzu miecza duszę stworzenia. Dwie Furie niebios połączyły się w jedność, przywracając porządek nad panującym chaosem. By zwieńczyć to zwycięstwo, Hoshi i Chigatta wykonali pochwę ze smoczej skóry, zaś w rękojeści katany umieścili magiczną perłę.
++
++Smok dokonał jednak swej zemsty. Hoshi zginął w bitwie, a zgubiła go osłabiona wola. Duch uwięziony w Furii niebios przejął bowiem kontrolę nad Hoshim, zmuszając go do zabicia Chigatty, a następnie samego siebie. Po tym zdarzeniu katana zniknęła (opłakująca Hoshiego rodzina pozbyła się najpewniej zdradzieckiej broni), zmieniając od tego czasu wielokrotnie właściciela.
++Furia niebios to katana o wyjątkowej konstrukcji. Jej giętka lecz niezniszczalna klinga jest ostra niczym brzytwa, rękojeść zaś wyłożona została przyjemną w dotyku skórą, w którą wprawiono niezwykłej urody perłę. Na ostrzu wyryto magiczne znaki symbolizujące Furię niebios, błyszczące fioletem i trzaskające elektrycznością, gdy broń jest wyciągnięta. Miecz schowany jest w pochwie ze smoczej skóry, której ciemnoszare łuski rozbłyskują nieustannie srebrnymi, błękitnymi i fioletowymi wstęgami.
  
  PARAMETRY:
  
 -Obra�enia: 1K10 +5 
-+Obrażenia: 1K10 +5 
- TraK0: +5
+-TraK0: +5
 -Typ obra�e�: sieczne
-+Typ obrażeń: sieczne
  Specjalne:
 - Raz dziennie pozwala rzuca� B�yskawic�
 - Raz dziennie pozwala rzuca� Ociemnia�o��
@@ -448,63 +778,86 @@
 -Rodzaj bieg�o�ci: katana
 -Typ broni: 1-r�czna
 -Wymagana si�a: 6
-+ Raz dziennie pozwala rzucać Błyskawicę
-+ Raz dziennie pozwala rzucać Ociemniałość
-+ ofiara musi wykonać rzut obronny przeciwko czarom albo zostanie ogłuszona
-+ Przy każdym trafieniu istnieje 5% szansa na Porażający cios (dodatkowe 20 pkt. obrażeń od elektryczności)
-+Waga: 3
+-~
++- Huk gromu: Ogłuszenie na jedną rundę, po trafieniu (rzut obronny przeciw czarom neguje) 
++– Porażające uderzenie: 5% szans na dodatkowe 20 obrażeń od elektryczności, po trafieniu
++
++Właściwości ładunków:
++– Uderzenie błyskawicy, raz dziennie 
++Obrażenia: 10k6 obrażeń od elektryczności (połowa po rzucie obronnym przeciw czarom) 
++Zasięg: 16 metrów 
++Obszar działania: 1 istota
++
++– Ociemniałość, raz dziennie (rzut obronny przeciw czarom neguje) 
++Zasięg: 13 metrów 
++Czas działania: 2 rundy 
++Obszar działania: 1 istota
++
++Obrażenia: 1k10 +5 
++TraK0: +5
++Typ obrażeń: sieczne
 +Opóźnienie: 1
 +Rodzaj biegłości: katana
 +Typ broni: 1-ręczna
-+Wymagana siła: 6
- ~
++
++Wymagania:
++– Siła: 6
++
++Waga: 3~
++
++@162 = ~Miecz Arvoreen +5~
  @163 = ~Miecz Arvoreen +5
 -Or� ten jest kolejnym darem Arvoreen dla Mazzy, dlatego mog� go u�ywa� wy��cznie nizio�ki. Dzi�ki magii, kt�r� w nim zawarto, miecz ten potrafi zwolni� ruchy ka�dego przeciwnika, kt�rego dosi�gnie.
 -Z twoj� pomoc� i b�ogos�awie�stwem Arvoreen, miecz ten sta� si� jeszcze silniejszy. 
 +Oręż ten jest kolejnym darem Arvoreen dla Mazzy, dlatego mogą go używać wyłącznie niziołki. Dzięki magii, którą w nim zawarto, miecz ten potrafi zwolnić ruchy każdego przeciwnika, którego dosięgnie.
++
 +Z twoją pomocą i błogosławieństwem Arvoreen, miecz ten stał się jeszcze silniejszy. 
  
  PARAMETRY:
  
 -Obra�enia: 1K6 +5
-+Obrażenia: 1K6 +5
- TraK0: +5
+-TraK0: +5
 -Typ obra�e�: k�ute
-+Typ obrażeń: kłute
  Specjalne:
 - Ofiara musi wykona� rzut obronny przeciwko r�d�kom, albo jej ruchy zostan� spowolnione o po�ow� (na okres 45 sekund).
 - Odporno�� na efekty spowolnienia i og�uszenia.
 - Dodaje +1 do si�y i dodatkow� premi� 75% dla tej cechy.
-+ Ofiara musi wykonać rzut obronny przeciwko różdżkom, albo jej ruchy zostaną spowolnione o połowę (na okres 45 sekund).
-+ Odporność na efekty spowolnienia i ogłuszenia.
-+ Dodaje +1 do siły i dodatkową premię 75% dla tej cechy.
- Waga: 3
+-Waga: 3
 -Op�nienie: 1
 -Rodzaj bieg�o�ci: kr�tki miecz
 -Typ broni: 1-r�czna
-+Opóźnienie: 1
-+Rodzaj biegłości: krótki miecz
-+Typ broni: 1-ręczna
- ~
+-~
 -@165 = ~U�wi�cony Odkupiciel +5
 -Keldorn odznaczy� si� w swojej wczesnej karierze paladyna i otrzyma� ten miecz w darze od Torma. Jest niezwykle precyzyjny, ale chroni go r�wnie� w bitwie specjaln� Ognist� tarcz� i ka�dy kto go spr�buje uderzy�, do�wiadczy gniewu Torma w postaci magicznych obra�e�. Nikt opr�cz Keldorna nie mo�e u�ywa� tego miecza.
 -Z twoj� pomoc� i b�ogos�awie�stwem Torma miecz ten sta� si� jeszcze bardziej pot�ny.
-+@165 = ~Uświęcony Odkupiciel +5
++– Siła: +1 (plus dodatkowa premia 75% za wyjątkową Siłę)
++– Swoboda działania
++– Cel musi wykonać rzut obronny przeciw różdżkom, albo jego ruchy zostaną spowolnione o 2 na okres 45 sekund
++
++Obrażenia: 1k6 +5
++TraK0: +5
++Typ obrażeń: kłute
++Opóźnienie: 1
++Rodzaj biegłości: miecz krótki
++Typ broni: 1-ręczna
++
++Waga: 3~
++
++@164 = ~Uświęcony odkupiciel +5~
++@165 = ~Uświęcony odkupiciel +5
 +Keldorn odznaczył się w swojej wczesnej karierze paladyna i otrzymał ten miecz w darze od Torma. Jest niezwykle precyzyjny, ale chroni go również w bitwie specjalną Ognistą tarczą i każdy kto go spróbuje uderzyć, doświadczy gniewu Torma w postaci magicznych obrażeń. Nikt oprócz Keldorna nie może używać tego miecza.
++
 +Z twoją pomocą i błogosławieństwem Torma miecz ten stał się jeszcze bardziej potężny.
  
  PARAMETRY:
  
 -Obra�enia: 1K12 +5
-+Obrażenia: 1K12 +5
- TraK0: +5
+-TraK0: +5
 -Typ obra�e�: sieczne
-+Typ obrażeń: sieczne
  Specjalne:
 - 5 pkt. magicznych obra�e� dla ka�dego, kto zrani dzier��cego ten miecz
-+ 5 pkt. magicznych obrażeń dla każdego, kto zrani dzierżącego ten miecz
-  Przy trafieniu rozproszenie magii i uciszenie celu na dwie rundy
- Waga: 8
+- Przy trafieniu rozproszenie magii i uciszenie celu na dwie rundy
+-Waga: 8
 -Op�nienie: 8
 -Rodzaj bieg�o�ci: miecz obur�czny
 -Typ broni: 2-r�czna
@@ -512,176 +865,255 @@
 -@167 = ~Tarcza Rodziny Delryn�w +4
 -To jest rodzinna tarcza Anomena, podarowana mu przez jego ojca. Opr�cz magicznej ochrony tarcza promieniuje aur�, kt�r� zapewnia osobie, kt�ra jej u�ywa, odporno�� na ogie� i zimno. W celu ochrony przed atakami z dystansu, Anomen mo�e u�y� tej tarczy, �eby wznie�� pole energetyczne. Taka ochrona przed pociskami mo�e by� u�yta 3 razy na dzie�.
 -Do�� niedawno <CHARNAME> wzmocni�<PRO_HESHE> tarcz� ochronn� magi� p�yn�c� z �aski ocalenia, uzyskanej podczas spotkania z awatarem Amaunatora, co spowodowa�o, �e sta�a si� ona jeszcze pot�niejsza.
++– 5 magicznych obrażeń dla każdego, kto zrani dzierżącego ten miecz
++- Rozproszenie magii, po trafieniu
++- Cel zostaje uciszony na dwie rundy, po trafieniu
++
++Obrażenia: 1k12 +5
++TraK0: +5
++Typ obrażeń: sieczne
 +Opóźnienie: 8
 +Rodzaj biegłości: miecz oburęczny
 +Typ broni: 2-ręczna
-+~
++
++Waga: 8~
++
++@166 = ~Tarcza rodziny Delrynów +4~
 +@167 = ~Tarcza Rodziny Delrynów +4
-+To jest rodzinna tarcza Anomena, podarowana mu przez jego ojca. Oprócz magicznej ochrony tarcza promieniuje aurą, którą zapewnia osobie, która jej używa, odporność na ogień i zimno. W celu ochrony przed atakami z dystansu, Anomen może użyć tej tarczy, żeby wznieść pole energetyczne. Taka ochrona przed pociskami może być użyta 3 razy na dzień.
++To jest rodzinna tarcza Anomena, podarowana mu przez jego ojca. Oprócz magicznej ochrony tarcza promieniuje aurą, którą zapewnia osobie, która jej używa, odporność na ogień i zimno. W celu ochrony przed atakami z dystansu, Anomen może użyć tej tarczy, żeby wznieść pole energetyczne. Taka ochrona przed pociskami może być użyta trzy razy na dzień.
++
 +Dość niedawno <CHARNAME> wzmocnił<PRO_HESHE> tarczę ochronną magią płynącą z Łaski ocalenia, uzyskanej podczas spotkania z awatarem Amaunatora, co spowodowało, że stała się ona jeszcze potężniejsza.
  
  PARAMETRY:
  
- Klasa Pancerza: +5
+-Klasa Pancerza: +5
  Specjalne:
 - +30% do odporno�ci na ogie�
 - +30% do odporno�ci na zimno
 - Trzy razy dziennie mo�e rzuci� czar Ochrona przed pociskami.
-+ +30% do odporności na ogień
-+ +30% do odporności na zimno
-+ Trzy razy dziennie może rzucić czar Ochrona przed pociskami.
- ~
+-~
 -@169 = ~Lawrence Lilarcor by� znany, nie z odwagi, ale z g�upoty. Jak m�wi opowie��, che�pliwy Lilarcor opu�ci� swoj� wiosk� za namow� swych przyjaci�, aby pokaza�, �e tylko "wielki bohater" mo�e zmierzy� si� z przebieg�ym Treantem. W�drowa� zim� przez wiele dni, a� w ko�cu, w gor�czce, znalaz� sw�j cel i rozpocz�y si� epickie zapasy. Niestety (a raczej na szcz�cie), "Treant" by� niczym wi�cej jak tylko zwyk�ym, starym d�bem. To mog�oby zako�czy� t� histori�, ale Lilarcor, kt�ry wyruszaj�c nie wiedzia�, czym jest Treant, nie zdo�a� domy�li� si� prawdy. W ko�cu wyrwa� d�b z korzeniami i dumnie maszeruj�c w kierunku domu og�osi� si� bohaterem. Tak narodzi�a si� epickich rozmiar�w komedia, a z czasem nazwisko Lilarcor sta�o si� synonimem g�upca w wielu opowie�ciach.
 -Nie wiadomo, czy ta magiczna bro� to sam Lilarcor, by� mo�e uwi�ziony przez z�ego maga lub inne zrz�dzenie losu, ale pewne jest to, �e dzia�a na poziomie jego zdolno�ci. Je�li to on, to nigdy nie narzeka� na swoje uwi�zienie. Mo�e nie zdaje sobie sprawy, albo nie dba o to, �e nie jest ju� cz�owiekiem.
 -Jako bro�, Lilarcor ma swoje zastosowania, ale wielu wojownik�w zrezygnowa�o z niego. Komentarze takie jak "Au�, to musia�o bole�", "O tak! Rany, ale dobry jestem" i "Uwa�aj bo moje uk�szenie mo�e... mo�e... mo�e zrani� albo co�" s� udr�k� dla umys�u wojownika.
 -Teraz, gdy <CHARNAME> go ulepszy�<PRO_HESHE> (a raczej go uciszy�<PRO_HESHE>), ten kto dzier�y ten miecz w d�oni nie mo�e utraci� swej inteligencji z jakiegokolwiek powodu. Bro� ta chroni przed wysysaniem inteligencji przez illithid�w, lecz tak�e dobroczynnymi skutkami wypicia mikstury geniuszu. 
-+@169 = ~Lawrence Lilarcor był znany, nie z odwagi, ale z głupoty. Jak mówi opowieść, chełpliwy Lilarcor opuścił swoją wioskę za namową swych przyjaciół, aby pokazać, że tylko "wielki bohater" może zmierzyć się z przebiegłym Treantem. Wędrował zimą przez wiele dni, aż w końcu, w gorączce, znalazł swój cel i rozpoczęły się epickie zapasy. Niestety (a raczej na szczęście), "Treant" był niczym więcej jak tylko zwykłym, starym dębem. To mogłoby zakończyć tę historię, ale Lilarcor, który wyruszając nie wiedział, czym jest Treant, nie zdołał domyślić się prawdy. W końcu wyrwał dąb z korzeniami i dumnie maszerując w kierunku domu ogłosił się bohaterem. Tak narodziła się epickich rozmiarów komedia, a z czasem nazwisko Lilarcor stało się synonimem głupca w wielu opowieściach.
-+Nie wiadomo, czy ta magiczna broń to sam Lilarcor, być może uwięziony przez złego maga lub inne zrządzenie losu, ale pewne jest to, że działa na poziomie jego zdolności. Jeśli to on, to nigdy nie narzekał na swoje uwięzienie. Może nie zdaje sobie sprawy, albo nie dba o to, że nie jest już człowiekiem.
-+Jako broń, Lilarcor ma swoje zastosowania, ale wielu wojowników zrezygnowało z niego. Komentarze takie jak "Auć, to musiało boleć", "O tak! Rany, ale dobry jestem" i "Uważaj bo moje ukąszenie może... może... może zranić albo coś" są udręką dla umysłu wojownika.
-+Teraz, gdy <CHARNAME> go ulepszył<PRO_HESHE> (a raczej go uciszył<PRO_HESHE>), ten kto dzierży ten miecz w dłoni nie może utracić swej inteligencji z jakiegokolwiek powodu. Broń ta chroni przed wysysaniem inteligencji przez illithidów, lecz także dobroczynnymi skutkami wypicia mikstury geniuszu. 
++- Klasa Pancerza: +5
++– Odporność na ogień: +30%
++– Odporność na zimno: +30%
++
++Właściwości ładunków: 
++– Ochrona przed pociskami, trzy razy dziennie 
++Czas działania: 1 godzina 
++Obszar działania: użytkownik
++
++Waga: 7~
++
++@168 = ~Lilarcor +5~
++@169 = ~Lilarcor nie jest już tak rozkoszny (lub nieznośny, w zależności od punktu widzenia), jakim był, nim <CHARNAME> go ulepszył<PRO_HESHE>. Po umieszczeniu w nim obręczy kontrolnej łupieżców umysłu, Lilarcor stracił najwyraźniej możliwość świadomej konwersacji z pobliskimi istotami, ograniczając się do sporadycznych dowcipnych komentarzy. Jednakże, osobliwa inteligencja Lilarcora (bądź też jej brak) może być teraz dla użytkownika błogosławieństwem (lub klątwą), ten bowiem kto go dzierży jest całkowicie niewrażliwy na jakiekolwiek próby zmiany inteligencji. Chroni go to przez zgubnym wpływem zdolności wyssania intelektu używanej przez ilithidy, lecz również uniemożliwia mu korzystanie z pożądanego efektu działania mikstury geniuszu.
  
  PARAMETRY:
  
 -Obra�enia: 1K12 +5
-+Obrażenia: 1K12 +5
- TraK0: +5
+-TraK0: +5
 -Typ obra�e�: sieczne
-+Typ obrażeń: sieczne
  Specjalne:
 - Odporno�� na zauroczenie, zam�t i zmian� inteligencji
-+ Odporność na zauroczenie, zamęt i zmianę inteligencji
- Waga: 10
+-Waga: 10
 -Op�nienie: 6
 -Rodzaj bieg�o�ci: miecz obur�czny
 -Typ broni: 2-r�czna
 -Wymagana si�a: 14
+-~
+-@171 = ~Przekl�ty M�ciciel: Rozpruwacz Dusz +6
+-Pot�ne ostrze Rozpruwacza Dusz zosta�o przekute pod twoim mrocznym przewodnictwem. �wi�ta esencja Karsomira zosta�a wch�oni�ta by pom�c stworzy� t� odra�aj�c� potworno��. Rozpruwacz Dusz jest narz�dziem niewyobra�alnej pot�gi i niewyobra�alnego z�a. 
++– Niewrażliwość na Zauroczenie, Zamęt i zmiany Inteligencji
++
++Obrażenia: 1k12 +5
++TraK0: +5
++Typ obrażeń: sieczne
 +Opóźnienie: 6
 +Rodzaj biegłości: miecz oburęczny
 +Typ broni: 2-ręczna
-+Wymagana siła: 14
- ~
--@171 = ~Przekl�ty M�ciciel: Rozpruwacz Dusz +6
--Pot�ne ostrze Rozpruwacza Dusz zosta�o przekute pod twoim mrocznym przewodnictwem. �wi�ta esencja Karsomira zosta�a wch�oni�ta by pom�c stworzy� t� odra�aj�c� potworno��. Rozpruwacz Dusz jest narz�dziem niewyobra�alnej pot�gi i niewyobra�alnego z�a. 
-+@171 = ~Przeklęty Mściciel: Rozpruwacz Dusz +6
-+Potężne ostrze Rozpruwacza Dusz zostało przekute pod twoim mrocznym przewodnictwem. Święta esencja Karsomira została wchłonięta by pomóc stworzyć tę odrażającą potworność. Rozpruwacz Dusz jest narzędziem niewyobrażalnej potęgi i niewyobrażalnego zła. 
++
++Wymagania:
++– Siła: 14
++
++Waga: 10~
++
++@170 = ~Rozpruwacz dusz +6~
++@171 = ~Przeklęty mściciel: Rozpruwacz dusz +6
++Potężne ostrze Rozpruwacza dusz zostało przekute pod twoim mrocznym przewodnictwem. Święta esencja Karsomira została wchłonięta by pomóc stworzyć tę odrażającą potworność. Rozpruwacz dusz jest narzędziem niewyobrażalnej potęgi i niewyobrażalnego zła. Ci, którzy go dzierżą, rzadko kiedy odkładają go za życia.
  
  PARAMETRY:
  
 -Obra�enia: 1K12 +6, +1K6 pkt. obra�e� od magii
-+Obrażenia: 1K12 +6, +1K6 pkt. obrażeń od magii
- TraK0: +6
+-TraK0: +6
 -Typ obra�e�: sieczne
-+Typ obrażeń: sieczne
  Specjalne:
 - Rozprasza magi� za ka�dym trafieniem przeciwnika
 - +50% do odporno�ci na magi� 
 - Ka�de trafienie powoduje, �e cel otrzymuje kumulatywny modyfikator -2 do TraK0, efekt dzia�a przez 20 rund
-+ Rozprasza magię za każdym trafieniem przeciwnika
-+ +50% do odporności na magię 
-+ Każde trafienie powoduje, że cel otrzymuje kumulatywny modyfikator -2 do TraK0, efekt działa przez 20 rund
- Waga: 10
+-Waga: 10
 -Op�nienie: 4
 -Rodzaj bieg�o�ci: miecz obur�czny
 -Typ broni: 2-r�czna
 -Wymagana si�a: 14
+-~
++– Odporność na magię: +50%
++– Rozproszenie magii, po trafieniu
++– TraK0 przeciwnika: -2, po trafieniu, kumulatywne, efekt działa przez dwie tury
++
++Obrażenia: 1k12 +6, +1k6 magicznych obrażeń
++TraK0: +6
++Typ obrażeń: sieczne
 +Opóźnienie: 4
 +Rodzaj biegłości: miecz oburęczny
 +Typ broni: 2-ręczna
-+Wymagana siła: 14
- ~
++
++Wymagania: 
++– Siła: 14
++
++Waga: 10~
++
++@172 = ~Punkt podparcia +4~
  @173 = ~Maczuga +4: Punkt podparcia
 -Wykuta na twoj� pro�b�, stanowi po��czenie Ko�cianej maczugi i Zgniatacza. Duchy zmar�ych wojownik�w prowadz� r�k� tego, kto j� dzier�y zwi�kszaj�c celno��, a ka�de trafienie zsy�a b�l w ko�ciach. W dodatku maczuga zadaje dodatkowe obra�enia, dla nie-neutralnych istot. 
 +Wykuta na twoją prośbę, stanowi połączenie Kościanej maczugi i Zgniatacza. Duchy zmarłych wojowników prowadzą rękę tego, kto ją dzierży zwiększając celność, a każde trafienie zsyła ból w kościach. W dodatku maczuga zadaje dodatkowe obrażenia, dla nie-neutralnych istot. 
++
++PARAMETRY:
  
 -Obra�enia: 1K6 + 4, +4 je�li cel jest dobry lub z�y, a przy tym praworz�dny lub chaotyczny
-+Obrażenia: 1K6 + 4, +4 jeśli cel jest dobry lub zły, a przy tym praworządny lub chaotyczny
- TraK0: +4
+-TraK0: +4
 -Typ obra�e�: obuchowe
-+Typ obrażeń: obuchowe
  Specjalne:
 - W�adaj�cy ni� otrzymuje status wielkiego mistrza w maczugach
 - Ko�ciane ostrza zadaj� dodatkowe 2 pkt. obra�e� co rund� przez 4 rundy
-+ Władający nią otrzymuje status wielkiego mistrza w maczugach
-+ Kościane ostrza zadają dodatkowe 2 pkt. obrażeń co rundę przez 4 rundy
- Waga: 3
+-Waga: 3
 -Op�nienie: 1 
 -Rodzaj bieg�o�ci: maczuga
 -Typ broni: 1-r�czna
 -Wymagana si�a: 5
+-~
+-@175 = ~<CHARNAME> zaaran�owa�<PRO_HESHE> stworzenie tego sztyletu z zatrutego z Kolca Chochlika oraz z zab�jczej Ko�cianej Klingi. W rezultacie otrzyma�<PRO_HESHE> on<PRO_HESHE> bro� wart� ka�dego zab�jcy. Wzbogacony jad z Kolca Chochlika teraz mo�e o�lepia� przeciwnika, a mroczna wiedza p�yn�ca z Ko�cianej Klingi pozwala wytrenowanemu z�odziejowi wyprowadza� ciosy w plecy z i�cie zab�jcz� skuteczno�ci�.
++- Osoba dzierżąca tę broń otrzymuje status wielkiego mistrza w posługiwaniu się maczugami
+ 
+-Obra�enia: 2K3 + 4
++Obrażenia: 1k6 +4, +4 przeciw istotom dobrym, złym, praworządnym lub chaotycznym (kumulatywne), kościane ostrza zadają 2 obrażenia co rundę przez cztery rundy
+ TraK0: +4
+-Typ obra�e�: sieczne
++Typ obrażeń: obuchowe
 +Opóźnienie: 1 
 +Rodzaj biegłości: maczuga
 +Typ broni: 1-ręczna
-+Wymagana siła: 5
- ~
--@175 = ~<CHARNAME> zaaran�owa�<PRO_HESHE> stworzenie tego sztyletu z zatrutego z Kolca Chochlika oraz z zab�jczej Ko�cianej Klingi. W rezultacie otrzyma�<PRO_HESHE> on<PRO_HESHE> bro� wart� ka�dego zab�jcy. Wzbogacony jad z Kolca Chochlika teraz mo�e o�lepia� przeciwnika, a mroczna wiedza p�yn�ca z Ko�cianej Klingi pozwala wytrenowanemu z�odziejowi wyprowadza� ciosy w plecy z i�cie zab�jcz� skuteczno�ci�.
-+@175 = ~<CHARNAME> zaaranżował<PRO_HESHE> stworzenie tego sztyletu z zatrutego z Kolca Chochlika oraz z zabójczej Kościanej Klingi. W rezultacie otrzymał<PRO_HESHE> on<PRO_HESHE> broń wartą każdego zabójcy. Wzbogacony jad z Kolca Chochlika teraz może oślepiać przeciwnika, a mroczna wiedza płynąca z Kościanej Klingi pozwala wytrenowanemu złodziejowi wyprowadzać ciosy w plecy z iście zabójczą skutecznością.
- 
--Obra�enia: 2K3 + 4
-+Obrażenia: 2K3 + 4
- TraK0: +4
--Typ obra�e�: sieczne
-+Typ obrażeń: sieczne
++
++Wymagania:
++– Siła: 5
++
++Waga: 3~
++
++@174 = ~Quietus +4~
++@175 = ~<CHARNAME> zaaranżował<PRO_HESHE> stworzenie tego sztyletu z zatrutego z Kolca chochlika oraz z zabójczej Kościanej klingi. W rezultacie otrzymał<PRO_HESHE> on<PRO_HESHE> broń wartą każdego zabójcy. Wzbogacony jad z Kolca chochlika teraz może oślepiać przeciwnika, a mroczna wiedza płynąca z Kościanej klingi pozwala wytrenowanemu złodziejowi wyprowadzać ciosy w plecy z iście zabójczą skutecznością.
++
  Specjalne:
 - Dodaje +1 do mno�nika ciosu w plecy
 - Cel musi wykona� rzut obronny przeciwko truci�nie z modyfikatorem -2 albo zostanie o�lepiony lub u�piony na 2 rundy
-+ Dodaje +1 do mnożnika ciosu w plecy
-+ Cel musi wykonać rzut obronny przeciwko truciźnie z modyfikatorem -2 albo zostanie oślepiony lub uśpiony na 2 rundy
- Waga: 3
+-Waga: 3
 -Op�nienie: 0 
 -Rodzaj bieg�o�ci: sztylet
 -Typ broni: 1-r�czna
 -Wymagana si�a: 3
+-~
+-@177 = ~�wi�ty Puklerz Amaunatora +2
+-<CHARNAME> maj�c �wi�ty symbol Amaunatora, dawno umar�ego Boga S�o�ca, wku�<PRO_HESHE> go do swego puklerza. Jest on teraz potencjaln� barier� przeciwko tym, kt�rzy podkradaj� si� w nocy i wysysaj� �ycie z �ywych. 
++– Cios w plecy: mnożnik zwiększony o 1
++– Cel zasypia lub zostaje oślepiony na dwie rundy, po trafieniu (rzut obronny przeciw truciznom z modyfikatorem -2 neguje oba efekty, oślepione istoty otrzymują modyfikator -10 do TraK0)
++
++Obrażenia: 2k3 +4
++TraK0: +4
++Typ obrażeń: sieczne
 +Opóźnienie: 0 
 +Rodzaj biegłości: sztylet
 +Typ broni: 1-ręczna
-+Wymagana siła: 3
- ~
--@177 = ~�wi�ty Puklerz Amaunatora +2
--<CHARNAME> maj�c �wi�ty symbol Amaunatora, dawno umar�ego Boga S�o�ca, wku�<PRO_HESHE> go do swego puklerza. Jest on teraz potencjaln� barier� przeciwko tym, kt�rzy podkradaj� si� w nocy i wysysaj� �ycie z �ywych. 
-+@177 = ~Święty Puklerz Amaunatora +2
++
++Wymagania:
++– Siła: 3
++
++Waga: 3~
++
++@176 = ~Święty puklerz Amaunatora +2~
++@177 = ~Święty puklerz Amaunatora +2
 +<CHARNAME> mając święty symbol Amaunatora, dawno umarłego Boga Słońca, wkuł<PRO_HESHE> go do swego puklerza. Jest on teraz potencjalną barierą przeciwko tym, którzy podkradają się w nocy i wysysają życie z żywych. 
  
  PARAMETRY:
    
- Klasa Pancerza: +3
+-Klasa Pancerza: +3
  Specjalne:
 - Raz dziennie pozwala rzuca� Fa�szywy �wit
 - Odporno�� na wyssanie poziom�w
-+ Raz dziennie pozwala rzucać Fałszywy Świt
-+ Odporność na wyssanie poziomów
- Waga: 2 
+-Waga: 2 
 -Wymagana si�a: 4
-+Wymagana siła: 4
- ~
+-~
 -@179 = ~R�kawice mistrza z�odziei: Dwunastopalcy
 -<CHARNAME> uformowa�<PRO_HESHE> te r�kawice z rozlicznych przydaj�cych rozmaitych premii z�odziejom i rozsianych po ca�ym �wiecie przedmiot�w. Kiedy za�o�y je z�odziej, na ka�dej r�kawicy pojawia si� dodatkowy magiczny palec wspieraj�cy tego kochanka fortuny w jego unikalnych zdolno�ciach. W dodatku s� bardzo gustowne, aczkolwiek ich dese� wygl�da niemal na ... gnomi. 
++– Klasa Pancerza: +3
++– Niewrażliwość na wyssanie poziomów
++ 
++Właściwości ładunków:
++– Fałszywy świt, dwa razy dziennie (bez rzutu obronnego)
++Czas działania: 5 rund
++Obszar działania: w promieniu 10 metrów
++ 
++Wymagania:
++– Siła: 4
++
++Waga: 2~
++
++@178 = ~Rękawice mistrza złodziei~
 +@179 = ~Rękawice mistrza złodziei: Dwunastopalcy
-+<CHARNAME> uformował<PRO_HESHE> te rękawice z rozlicznych przydających rozmaitych premii złodziejom i rozsianych po całym świecie przedmiotów. Kiedy założy je złodziej, na każdej rękawicy pojawia się dodatkowy magiczny palec wspierający tego kochanka fortuny w jego unikalnych zdolnościach. W dodatku są bardzo gustowne, aczkolwiek ich deseń wygląda niemal na ... gnomi. 
++<CHARNAME> uformował<PRO_HESHE> te rękawice z rozlicznych przydających rozmaitych premii złodziejom i rozsianych po całym świecie przedmiotów. Kiedy założy je złodziej, na każdej rękawicy pojawia się dodatkowy magiczny palec wspierający tego kochanka fortuny w jego unikalnych zdolnościach. W dodatku są bardzo gustowne, aczkolwiek ich deseń wygląda niemal na... gnomi. 
  
  PARAMETRY:
  
++Specjalne:
++– Rzuty obronne: +1
++– Wykrywanie pułapek: +25%
++– Otwieranie zamków: +25%
++– Kradzież kieszonkowa: +20%
++
  Klasa Pancerza: 3
++
++Waga: 2~
++
++@180 = ~Amulet Ilmatera~
++@181 = ~Amulet Ilmatera
++Ten amulet łączy w sobie defensywne właściwości Amuletu ochrony, Amuletu ochrony przed trucizną i Naszyjnika stabilności kształtu, a także Amuletu blokowania czarów, aby zapewnić temu kto go nosi jak najlepszą ochronę. W dodatku amulet zawiera w sobie pomniejsze błogosławieństwo wiecznie cierpiącego Ilmatera. Amulet wyprodukował<PRO_HESHE> <CHARNAME>. 
++
++PARAMETRY:
++
  Specjalne:
 - +1 do rzut�w obronnych
 - +25% do Wykrywania pu�apek
 - +25% do Otwierania zamk�w
 - +20% do Kradzie�y kieszonkowej
-+ +1 do rzutów obronnych
-+ +25% do Wykrywania pułapek
-+ +25% do Otwierania zamków
-+ +20% do Kradzieży kieszonkowej
- Waga: 2
- ~
+-Waga: 2
+-~
 -@183 = ~Klinga tej zaprojektowanej przez ciebie broni zdaje si� l�ni�, ods�aniaj�c ostr� niczym brzytwa, p�ynn� kraw�d�, przypominaj�c� nieco szpon drapie�nego ptaka. Szpon wody zawiera przepot�n� moc zab�jczych p�yn�w, a ka�de jego trafienie wysysa z ofiery �ycie, przekazuj�c je w�adaj�cemu; samo ostrze za� jest zatrute po kres �wiata. Podobnie, jak jeden z substrat�w, tak�e i Szpon chroni przed urokami, a ponadto, z uwagi na panowanie nad �ywio�em wody, chroni przed skutkami Plugawego uwi�du Abi-Dalzima. Najbardziej niezwyk�e jest jednak to, �e p�ynna natura ostrza pozwala mu na wyd�u�anie si� i rozbryzgiwanie w czasie walki, zwi�kszaj�c zasi�g uderzenia do warto�ci przewy�szajacej typowe dla wi�kszo�ci mieczy obur�cznych. Skutkiem tego posiadacz mo�e wykonywa� niemo�liwe w inny spos�b ataki z tylnych szereg�w, b�d� spr�bowa� pokusi� si� o unik po trafieniu, licz�c na zatrucie celu ju� przy pierwszym trafieniu.
++– Klasa Pancerza: +1
++– Rzuty obronne: +3
++– Niewrażliwość na trucizny
++
++Właściwości ładunków:
++– Uzdrowienie, raz dziennie
++
++Waga: 1~
++
++@182 = ~Szpon wody +4~
 +@183 = ~Klinga tej zaprojektowanej przez ciebie broni zdaje się lśnić, odsłaniając ostrą niczym brzytwa, płynną krawędź, przypominającą nieco szpon drapieżnego ptaka. Szpon wody zawiera przepotężną moc zabójczych płynów, a każde jego trafienie wysysa z ofiery życie, przekazując je władającemu; samo ostrze zaś jest zatrute po kres świata. Podobnie, jak jeden z substratów, także i Szpon chroni przed urokami, a ponadto, z uwagi na panowanie nad żywiołem wody, chroni przed skutkami Plugawego uwiądu Abi-Dalzima. Najbardziej niezwykłe jest jednak to, że płynna natura ostrza pozwala mu na wydłużanie się i rozbryzgiwanie w czasie walki, zwiększając zasięg uderzenia do wartości przewyższajacej typowe dla większości mieczy oburęcznych. Skutkiem tego posiadacz może wykonywać niemożliwe w inny sposób ataki z tylnych szeregów, bądź spróbować pokusić się o unik po trafieniu, licząc na zatrucie celu już przy pierwszym trafieniu.
  
  PARAMETRY:
  
 -Obra�enia:  1K8 +4, +2 pkt. obra�e� od trucizny na sekund� (kumuluje si�)
-+Obrażenia:  1K8 +4, +2 pkt. obrażeń od trucizny na sekundę (kumuluje się)
- TraK0: +4
+-TraK0: +4
 -Typ obra�e�: sieczne
-+Typ obrażeń: sieczne
  Specjalne:
 - Odporno�� na Zauroczenie, Dominacj� i Plugawy uwi�d Abi-Dalzima
 - Ka�de trafienie zwi�ksza maksymaln� ilo�� punkt�w �ycia w�a�ciciela o 2 na 3 tury
@@ -691,114 +1123,529 @@
 -Rodzaj bieg�o�ci: sejmitar/wakizashi/ninja-to 
 -Typ broni: 1-r�czna
 -Wymagana si�a: 8
-+ Odporność na Zauroczenie, Dominację i Plugawy uwiąd Abi-Dalzima
-+ Każde trafienie zwiększa maksymalną ilość punktów życia właściciela o 2 na 3 tury
-+ Zwiększony zasięg uderzenia
-+Waga: 3
+-~
+-@185 = ~Toporek +4: Lazurowe Ostrze
+-Gulen Skalny Ogie�, Zab�jca Nieumar�ych, stworzy� ten pot�ny toporek by wzmocni� swe imi�. Pob�ogos�awiony przez r�nych bog�w, top�r ten zadaje niesamowite obra�enia istotom niem�drze buntuj�cym si� przeciwko swojemu statusowi zmar�ych i mo�e zniszczy� je pojedynczym ciosem. Najwyra�niej Gulen ju� nie u�ywa Lazurowego ostrza, a plotka m�wi, �e lata temu zgin�� w walce z pot�nym wampirem, po czym sam sta� si� takim. To mog�o spowodowa� zmian� jego stanowiska wobec nieumar�ych, a przynajmniej zmian� przydomku.
+-Dzi�ki tobie, ostrze uzyska�o jeszcze wi�ksze mo�liwo�ci.
++– Niewrażliwość na Zauroczenie, Dominację i Plugawy uwiąd Abi-Dalzima
++– Zwiększa maksymalną ilość punktów życia właściciela o 2 na okres trzech tur, po trafieniu
++– Zwiększony zasięg uderzenia
++
++Obrażenia: 1k8 +4, +2 obrażenia od trucizny na sekundę (kumulatywne)
++TraK0: +4
++Typ obrażeń: sieczne
 +Opóźnienie: 1
 +Rodzaj biegłości: sejmitar/wakizashi/ninja-to 
 +Typ broni: 1-ręczna
-+Wymagana siła: 8
- ~
- @185 = ~Toporek +4: Lazurowe Ostrze
--Gulen Skalny Ogie�, Zab�jca Nieumar�ych, stworzy� ten pot�ny toporek by wzmocni� swe imi�. Pob�ogos�awiony przez r�nych bog�w, top�r ten zadaje niesamowite obra�enia istotom niem�drze buntuj�cym si� przeciwko swojemu statusowi zmar�ych i mo�e zniszczy� je pojedynczym ciosem. Najwyra�niej Gulen ju� nie u�ywa Lazurowego ostrza, a plotka m�wi, �e lata temu zgin�� w walce z pot�nym wampirem, po czym sam sta� si� takim. To mog�o spowodowa� zmian� jego stanowiska wobec nieumar�ych, a przynajmniej zmian� przydomku.
--Dzi�ki tobie, ostrze uzyska�o jeszcze wi�ksze mo�liwo�ci.
-+Gulen Skalny Ogień, Zabójca Nieumarłych, stworzył ten potężny toporek by wzmocnić swe imię. Pobłogosławiony przez różnych bogów, topór ten zadaje niesamowite obrażenia istotom niemądrze buntującym się przeciwko swojemu statusowi zmarłych i może zniszczyć je pojedynczym ciosem. Najwyraźniej Gulen już nie używa Lazurowego ostrza, a plotka mówi, że lata temu zginął w walce z potężnym wampirem, po czym sam stał się takim. To mogło spowodować zmianę jego stanowiska wobec nieumarłych, a przynajmniej zmianę przydomku.
-+Dzięki tobie, ostrze uzyskało jeszcze większe możliwości.
++
++Wymagania:
++– Siła: 8
++
++Waga: 3~
++
++@184 = ~Lazurowe ostrze +4~
++@185 = ~Lazurowe ostrze +4
++<CHARNAME> ulepszył<PRO_HESHE> tę potężną zgubę nieumarłych, zwaną Lazurowym ostrzem, każąc pokryć je czystym ilitem. Wykuty pierwotnie przez Gulena Skaly Ogień topór wciąż potrafi wracać do ręki właściciela, gdy zostanie rzucony, i nadal niszczy nieumarłych z gorliwością godną świętego. Teraz jednak, chroni również przed wysysającymi poziomy atakami co potężniejszych umarlaków. Z dekoracyjnego punktu widzenia warto zauważyć, iż dodatek ilitu zmienił nieco barwę ostrza, oddalając ją lekko od tej, którą sugeruje nazwa broni. 
  
  PARAMETRY:
  
 -Obra�enia: 1K6 +4
-+Obrażenia: 1K6 +4
++Specjalne:
++– Po rzucie wraca do właściciela
++– Nieumarli ulegają zniszczeniu, po trafieniu (rzut obronny przeciw śmierci z modyfikatorem -4 neguje)
++– Niewrażliwość na wyssanie poziomów
++
++Obrażenia: 1k6 +4, +4 obrażenia przeciw nieumarłym
  TraK0: +4
 -Typ obra�e� (walka wr�cz): sieczne
 -Typ obra�e� (rzucany): pocisk (k�ute)
 +Typ obrażeń (walka wręcz): sieczne
-+Typ obrażeń (rzucany): pocisk (kłute)
++Typ obrażeń (rzucony): pocisk
++Opóźnienie: 0
++Rodzaj biegłości: topór
++Typ broni:  1-ręczna
++
++Wymagania:
++– Siła: 4
++
++Waga: 2~
++
++@186 = ~Pierścień czarownika~
++@187 = ~Pierścień czarownika: „Ściskająca potęga”
++Pierścień jest niewątpliwie szczytem mnemonicznej lukubracji. Złożnony przez <CHARNAME> z Pierścienia czarów, Pierścienia ostrości, Amuletu metaczarów oraz Pierścienia ochrony, co uwieńczone zostało stworzeniem wspaniałego pierścienia pozwalającemu noszącej go osobie zapamiętać dodatkowe zaklecie dla wszystkich poziomów czarów - od pierwszego do siódmego. W dodatku założony na palcu zapewnia dodatkową ochronę przed fizycznymi i magicznymi atakami.
++
++PARAMETRY:
++
  Specjalne:
 - Dodatkowe 4 pkt. obra�e� dla nieumar�ych
 - Trafiony nieumar�y musi wykona� rzut obronny przeciw �mierci z modyfikatorem -4 albo zostanie zniszczony
 - Odporno�� na wyssanie poziom�w
 - Po rzucie wraca do w�a�ciciela
-+ Dodatkowe 4 pkt. obrażeń dla nieumarłych
-+ Trafiony nieumarły musi wykonać rzut obronny przeciw śmierci z modyfikatorem -4 albo zostanie zniszczony
-+ Odporność na wyssanie poziomów
-+ Po rzucie wraca do właściciela
- Waga: 2
+-Waga: 2
 -Op�nienie: 0
 -Rodzaj bieg�o�ci: top�r
 -Typ broni:  1-r�czna
 -Wymagana si�a: 4
-+Opóźnienie: 0
-+Rodzaj biegłości: topór
-+Typ broni:  1-ręczna
-+Wymagana siła: 4
- ~
- @194 = ~Ulepszona Entropia
+-~
+-@194 = ~Ulepszona Entropia
 -To zielone ostrze zosta�o ulepszone, jak zaproponowa�<PRO_HESHE> <CHARNAME>. To ostrze z zielonej stali pochodz�cej z Otch�ani jest jedn� z ulubionych broni Haer'dalisa. Tylko diabelstwa mog� u�ywa� tej broni.
-+To zielone ostrze zostało ulepszone, jak zaproponował<PRO_HESHE> <CHARNAME>. To ostrze z zielonej stali pochodzącej z Otchłani jest jedną z ulubionych broni Haer'dalisa. Tylko diabelstwa mogą używać tej broni.
++– Klasa Pancerza: +1
++– Rzuty obronne: +1
++– Pozwala zapamiętać po 1 dodatkowym zaklęciu z poziomów 1-7
++
++Waga: 0~
++
++@188 = ~Pas chwały~
++@189 = ~Stworzony przez ciebie, w celu ochrony noszącej go osoby przed obrażeniami siecznymi, kłutymi i obuchowymi, pas ten jest całkiem użyteczny w starciach wręcz. Jego potężna magia paruje wszelkie typy ciosów, a wąski kształt nie krępuje ruchów. W dodatku pas ten jest wykonany zgodnie z obowiązującą modą. 
  
  PARAMETRY:
  
 -Obra�enia: 1K6 +3, +1 pkt. obra�e� od trucizny co sekund� przez okres 1 rundy 
-+Obrażenia: 1K6 +3, +1 pkt. obrażeń od trucizny co sekundę przez okres 1 rundy 
- TraK0: +3
+-TraK0: +3
 -Typ obra�e�: k�ute
-+Typ obrażeń: kłute
  Specjalne:
 - Przy ka�dym trafieniu istnieje 5% szansa na rzucenie na przeciwnika Wielkiego os�abienia
-+ Przy każdym trafieniu istnieje 5% szansa na rzucenie na przeciwnika Wielkiego osłabienia
- Waga: 2
+-Waga: 2
 -Op�nienie: 0
 -Rodzaj bieg�o�ci: kr�tki miecz
 -Typ broni: 1-r�czna
-+Opóźnienie: 0
-+Rodzaj biegłości: krótki miecz
-+Typ broni: 1-ręczna
- ~
- @196 = ~Upiorne Ostrze Chaosu
+-~
+-@196 = ~Upiorne Ostrze Chaosu
 -Ostrze Chaosu to kr�tki miecz, kt�rego u�ywa� mog� tylko diabelstwa. Za ka�dym razem, kiedy ta bro� trafia w cel, atakowany traci na 30 sekund 2 punkty zr�czno�ci. Haer'dalis lubi korzysta� z Ostrza Chaosu w parze z inn� broni�, Entropi�. Kiedy Haer'dalis w�ada tymi mieczami jednocze�nie, staje si� bardzo gro�nym przeciwnikiem w walce.
-+Ostrze Chaosu to krótki miecz, którego używać mogą tylko diabelstwa. Za każdym razem, kiedy ta broń trafia w cel, atakowany traci na 30 sekund 2 punkty zręczności. Haer'dalis lubi korzystać z Ostrza Chaosu w parze z inną bronią, Entropią. Kiedy Haer'dalis włada tymi mieczami jednocześnie, staje się bardzo groźnym przeciwnikiem w walce.
++– Klasa Pancerza: +3
++
++Waga: 2~
++
++@190 = ~Ulepszona figurka Kitthixa~
++@191 = ~Ulepszona figurka Kitthixa
++Przekuta dla ciebie, by przyzywać potężniejszego pająka, figurka Kitthixa nie stanowi już opóźniającej ostateczne starcie taktyki, jak niegdyś. Minęły dni, kiedy Kitthix był instruowany do rzucenia się w wir walki, aby choć na moment odwrócić uwagę przeciwnika. Teraz sieci i trucizna Kitthixa zostały ulepszone, a sam pająk jest mniej podatny na ciosy przeciwników.
  
  PARAMETRY:
  
 -Obra�enia: 1K6 +3 
-+Obrażenia: 1K6 +3 
++Specjalne:
++– Przyzwanie ulepszonego Kitthix'a, raz dziennie
++Zasięg: 6 metrów
++Czas działania: 40 tur
++Pająk potrafi w trakcie walki pojawiać się i znikać. Posiada także umiejętność Zaplątanie w Pajęczynę, dzięki której może wystrzelić strumień sieci w stronę jednego celu, więżąc go na dwie rundy (rzut obronny przeciw czarom z modyfikatorem -2 neguje). Atak Kitthixa zadaje 2k4 +2 obrażenia kłute, liczba ataków wynosi 4 na rundę i są one trujące (rzut obronny przeciw truciznom z modyfikatorem -3 neguje) oraz powodują paraliż przez dwie rundy (rzut obronny przeciw czarom z modyfikatorem -2 neguje). 
++
++Waga: 0~
++
++@192 = ~Ulepszony Kitthix~
++
++@193 = ~Nieuchronna entropia~
++@194 = ~Nieuchronna entropia
++To zielone ostrze zostało ulepszone według wskazówek, jakie zaproponował<PRO_HESHE> <CHARNAME>. Miecz ten zadaje obrażenia od trucizny, a trafione nim istoty zdają się z każdym celnym ciosem tracić zdolność do opierania się szkodliwej magii.
++
++PARAMETRY:
++
++Specjalne:
++– 5% szans na to, że cel znajdzie się pod wpływem Większego osłabienia, po trafieniu (bez rzutu obronnego)
++
++Obrażenia: 1k6 +3, +1 obrażenie od trucizny co sekundę przez jedną rundę (bez rzutu obronnego)
  TraK0: +3
 -Typ obra�e�: k�ute
 +Typ obrażeń: kłute
++Opóźnienie: 0
++Rodzaj biegłości: miecz krótki
++Typ broni: 1-ręczna
++
++Waga: 2~
++
++@195 = ~Upiorne ostrze chaosu~
++@196 = ~Upiorne ostrze chaosu
++Ostrze chaosu to miecz krótki, którego używać mogą tylko diabelstwa. Za każdym razem, kiedy ta broń trafia w cel, atakowany traci na 30 sekund 2 punkty Zręczności. Ulepszone według wskazówek, jakie zaproponował<PRO_HESHE> <CHARNAME>, ostrze to jest w stanie wywołać zamęt w głowie trafionej nim istoty.
++
++PARAMETRY:
++
  Specjalne:
 - Przy ka�dym trafieniu istnieje 5% szansa na rzucenie na przeciwnika Zam�tu na okres 8 rund, je�li nie powiedzie mu si� rzut obronny przeciw czarom z modyfikatorem -4.
 - Po ka�dym trafieniu atakowany traci 2 punkty zr�czno�ci (na okres 30 sekund).
-+ Przy każdym trafieniu istnieje 5% szansa na rzucenie na przeciwnika Zamętu na okres 8 rund, jeśli nie powiedzie mu się rzut obronny przeciw czarom z modyfikatorem -4.
-+ Po każdym trafieniu atakowany traci 2 punkty zręczności (na okres 30 sekund).
- Waga: 2
+-Waga: 2
 -Op�nienie: 0
 -Rodzaj bieg�o�ci: kr�tki miecz
 -Typ broni: 1-r�czna
-+Opóźnienie: 0
-+Rodzaj biegłości: krótki miecz
-+Typ broni: 1-ręczna
- ~
+-~
 -@198 = ~Wykuta na twoj� pro�b� z �usek czerwonego smoka i Sylva�skiej kolczugi, Karminowa kolczuga elf�w zapewnia nosz�cej j� osobie niezwyk�� kombinacj� obrony i swobody ruchu. �otrzykowie i czarodzieje zachowuj� swe zdolno�ci, kiedy nosz� t� zbroj�.
++– 5% szans na to, że cel znajdzie się pod wpływem Zamętu na okres ośmiu rund, po trafieniu (rzut obronny przeciw czarom z modyfikatorem -4 neguje)
++– Cel traci 2 punkty Zręczności na okres pięciu rund, po trafieniu (bez rzutu obronnego)
++
++Obrażenia: 1k6 +3 
++TraK0: +3
++Typ obrażeń: kłute
++Opóźnienie: 0
++Rodzaj biegłości: miecz krótki
++Typ broni: 1-ręczna
++
++Waga: 2~
++
++@197 = ~Karminowa kolczuga elfów~
 +@198 = ~Wykuta na twoją prośbę z łusek czerwonego smoka i Sylvańskiej kolczugi, Karminowa kolczuga elfów zapewnia noszącej ją osobie niezwykłą kombinację obrony i swobody ruchu. Łotrzykowie i czarodzieje zachowują swe zdolności, kiedy noszą tę zbroję.
  
  PARAMETRY:
  
- Klasa Pancerza: 0
- Specjalne:
+-Klasa Pancerza: 0
+-Specjalne:
 - +25% do odporno�ci na ogie�
 - -10% do Krycia si� w cieniu
 - -5% do Otwierania zamk�w
 - -5% do Wykrywania pu�apek
 - -20% do Kradze�y kieszonkowej
-+ +25% do odporności na ogień
-+ -10% do Krycia się w cieniu
-+ -5% do Otwierania zamków
-+ -5% do Wykrywania pułapek
-+ -20% do Kradzeży kieszonkowej
- Waga: 15
+-Waga: 15
 -Wymagana si�a: 5
-+Wymagana siła: 5
- ~
+-~
+\ No newline at end of file
++Specjalne:
++– Odporność na ogień: +25%
++- Kradzież kieszonkowa: -20%
++- Krycie się w cieniu: -10%
++- Otwieranie zamków: -5%
++- Wykrywanie pułapek: - 5%
++
++Klasa Pancerza: 0 (-2 przeciw broniom siecznym, +2 przeciw broniom obuchowym)
++
++Wymagania:
++- Siła: 5
++
++Waga: 15~
++
++
++
++
++
++
++
++
++
++
++
++
++
++@12340 = ~Zatem zajmijmy się tym.~
++@12341 = ~Świetnie. Zaraz się do tego zabiorę...~
++@12342 = ~Czy możesz zrobić coś z tym Pierścieniem ochrony?~
++@12343 = ~Czy możesz wykuć coś z tego potężnego Pierścienia ochrony?~
++@12344 = ~Czy możesz zrobić cokolwiek z tego Pierścienia kontroli nad żywiołem?~
++@12345 = ~Czy możesz umagicznić Kostur władzy nad żywiołami?~
++@12346 = ~Czy możesz stworzyć coś z tych Butów ukrycia?~
++@12347 = ~Czy możesz odnowić moje Buty Północy?~
++@12348 = ~Jest jakaś szansa na ulepszenie moich Butów uziemienia?~
++@12349 = ~Czy możesz stworzyć coś z tych Butów uników?~
++@123410 = ~Czy jesteś w stanie ulepszyć Czarną krew?~
++@123411 = ~Czy możesz uczynić tę Kościaną maczugę potężniejszą?~ 
++@123412 = ~Chciałbym uczynić mój Rozłupywacz czaszek potężniejszym. Możesz mi w tym pomóc?~ ~Chciałabym uczynić mój Rozłupywacz czaszek potężniejszym. Możesz mi w tym pomóc?~
++@123413 = ~Co możesz zrobić, by ulepszyć Poszukiwacza serc?~
++@123414 = ~Czy możesz przekuć rodową zbroję mego przyjaciela Valygara?~
++@123415 = ~Czy możesz ulepszyć tę szatę arcymaga?~
++@123416 = ~Chciałbym, by mój Hełm ochrony lepiej mnie chronił. Możesz coś z nim zrobić?~ ~Chciałabym, by mój Hełm ochrony lepiej mnie chronił. Możesz coś z nim zrobić?~
++@123417 = ~Czy możesz uczynić mój Hełm ochrony przed urokami bardziej wszechstronnym?~
++@123418 = ~Jesteś w stanie uzyskać coś z tej Skóry Aegera?~
++@123419 = ~Czy możesz przekuć rodową zbroję Sir Keldorna Firecama?~
++@123420 = ~Czy możesz wzmocnić tę Zbroję płytową z ankhega?~
++@123421 = ~Tarcza harmonii - czy możesz ulepszyć jej właściwości?~
++@123422 = ~Szukam rzucanej włóczni. Mógłbyś wykonać jakąś?~
++@123423 = ~Co możesz zrobić z tą Włócznią jednorożca?~
++@123424 = ~Jest jakaś szansa, aby Przebijacz zadawał większe obrażenia?~
++@123425 = ~Czy możesz umagicznić ten Kostur lasów?~
++@123426 = ~Dzienna gwiazda? Ona musi być potężniejsza.~
++@123427 = ~Czy możesz ulepszyć Furię niebios?~
++@123428 = ~Czy możesz ulepszyć Miecz Arvoreen?~
++@123429 = ~Czy możemy zwiększyć stopień pobłogosławienia Uświęconego odkupiciela Keldorna?~
++@123430 = ~Chciałbym ulepszyć Rodową tarczę Delrynów.~ ~Chciałabym ulepszyć Rodową tarczę Delrynów.~
++@123431 = ~Czy możesz zrobić coś, by uciszyć Lilarcora?~
++@123432 = ~Naprawdę kocham zabójcze sztylety. Czy mógłbyś ulepszyć któryś z moich?~
++@123433 = ~Co można zrobić z tym puklerzem?~
++@123434 = ~Jest jakaś szansa na ulepszenie Rękawic kieszonkowca?~
++
++@123435 = ~Nie teraz.~
++@123436 = ~Tak, zróbmy to!~
++
++@123437 = ~Czy możesz cokolwiek zrobić z tym amuletem?~
++@123438 = ~Chciałbym ulepszyć ten sejmitar.~ ~Chciałabym ulepszyć ten sejmitar.~
++@123439 = ~Czy możesz sprawić, by Lazurowe Ostrze było potężniejsze?~
++
++@123440 = ~Mogę połączyć Pierścień ochrony +1 i Pierścień regeneracji. Muszę też zanurzyć diament według tego przepisu, a poza tym będzie to kosztowało dziesięć tysięcy sztuk złota. Zainteresowany?~ ~Mogę połączyć Pierścień ochrony +1 i Pierścień regeneracji. Muszę też zanurzyć diament według tego przepisu, a poza tym będzie to kosztowało dziesięć tysięcy sztuk złota. Zainteresowana?~
++@123441 = ~Mogę połączyć Pierścień ochrony +2 i Pierścień regeneracji. Muszę też zanurzyć diament według tego przepisu, a poza tym będzie to kosztowało dwadzieścia tysięcy sztuk złota. Zainteresowany?~ ~Mogę połączyć Pierścień ochrony +2 i Pierścień regeneracji. Muszę też zanurzyć diament według tego przepisu, a poza tym będzie to kosztowało dwadzieścia tysięcy sztuk złota. Zainteresowana?~
++@123442 = ~Mogę połączyć pierścienie kontroli nad powietrzem, ziemią i ogniem w Pierścień kontroli nad żywiołami. Potrzebuję zwojów ochronnych ochrony przed petryfikacją, ogniem oraz elektrycznością jako reagenty. To będzie także kosztować dwadzieścia tysięcy sztuk złota.~
++@123443 = ~Mogę połączyć kostury powietrza, ziemi oraz ognia w Kostur władzy nad żywiołami. To będzie też kosztowało cię dwadzieścia tysięcy sztuk złota, ale jestem pewien, że się opłaci.~
++@123444 = ~Jakżeby inaczej, mogę złączyć razem Buty szybkości i ukrycia. Potrzebuję kamienia łotrzyków jako reagenta i dziesięć tysięcy sztuk złota jako zapłatę za pracę.~
++@123445 = ~Jakżeby inaczej, mogę złączyć razem Buty szybkości i Północy. Potrzebuję kamienia łotrzyków jako reagenta i dziesięć tysięcy sztuk złota jako zapłatę za pracę.~
++@123446 = ~Jakżeby inaczej, mogę złączyć razem Buty szybkości i uziemienia. Potrzebuję kamienia łotrzyków jako reagenta i dziesięć tysięcy sztuk złota jako zapłatę za pracę.~
++@123447 = ~Jakżeby inaczej, mogę złączyć razem Buty szybkości i uników. W nowych butach będziesz szybki jak błyskawica! Potrzebuję kamienia łotrzyków jako reagenta i dwudziestu tysięcy sztuk złota jako zapłatę za pracę.~
++@123448 = ~Mogę połączyć Czarną krew i Zgniatacza w potężną maczugę. To będzie kosztowało piętnaście tysięcy sztuk złota. Co ty na to?~
++@123449 = ~Mogę połączyć Kościaną maczugę i Zgniatacza w potężną maczugę... perfekcyjną dla służby równowagi. To będzie kosztować piętnaście tysięcy sztuk złota.~
++@123450 = ~Razem ze zwojem palca śmierci, przeklętą miksturą uzdrawiania i piętnastoma tysiącami sztuk złota mogę przekuć Rozłupywacza czaszek dla ciebie. Zainteresowany?~ ~Razem ze zwojem palca śmierci, przeklętą miksturą uzdrawiania i piętnastoma tysiącami sztuk złota mogę przekuć Rozłupywacza czaszek dla ciebie. Zainteresowana?~
++@123451 = ~Poszukiwacz serc może być połączony z cięciwą Gesena lub z cięciwą Gonda. Wraz z czterema Łzami Laeral i miksturą mocy mogę stworzyć dla ciebie długi łuk nie wymagający żadnych strzał.~
++  @123452 = ~Pewnie, użyj cięciwy Gesena.~
++  @123453 = ~Pewnie, użyj cięciwy Gonda.~
++@123454 = ~Ach, znać ród magów. Używając zwoju ochrony przed magią jako katalizatora mogę skuć razem Rodową zbroję Corthalów i Łuskę cienistego smoka. To jednak będzie kosztować dziesięć tysięcy sztuk złota.~
++// @123455 = ~Tak, mogę dokonać kilku ulepszeń Szaty arcymaga. Wraz z Płaszczem ochrony +1 i zwojami eteralnego pancerza i warunkowania jako reagentów mogę zrobić szatę godną Elminstera. To będzie kosztować dwadzieścia tysięcy sztuk złota.~
++@12349955 = ~Tak, mogę dokonać kilku ulepszeń Szaty arcymaga. Wraz z Płaszczem ochrony +1 i zwojami eteralnego pancerza i warunkowania jako reagentów mogę zrobić szatę godną Elminstera. To będzie kosztować dwadzieścia tysięcy sztuk złota.~
++  @123456 = ~Pewnie, ulepsz tę Szatę dobrego arcymaga.~
++  @123457 = ~Pewnie, ulepsz tę Szatę neutralnego arcymaga.~
++  @123458 = ~Pewnie, ulepsz tę Szatę złego arcymaga.~
++@123459 = ~Jak najbardziej. Mogę połączyć defensywne moce Hełmu ochrony i Hełmu ochrony przed urokami. Potrzebuję 4 perły jako reagenty i dziesięć tysięcy sztuk złota za pracę.~
++@123460 = ~Hmm. Jeśli uda ci się zdobyć dwie butelki Solnej mikstury i dostarczyć je mi, mogę wtedy użyć ich do umagicznienia Hełmu ochrony przed urokami przeciw psionice. Muszę też otrzymać dziesięć tysięcy sztuk złota za pracę.~
++@123461 = ~Wraz ze zwojem ochrony przed żywiołami użytym jako katalizator, mógłbym sprawić, że ta stara niedźwiedzia skóra byłaby mocniejsza, ale i bardziej cuchnąca niż jest obecnie. Muszę też otrzymać piętnaście tysięcy sztuk złota za pracę.~
++@123462 = ~Razem z wybranymi elementami Zbroi jelenia mogę przekuć Pełną zbroję płytową Firecama. Ale za jakość trzeba słono płacić: muszę otrzymać dwadzieścia tysięcy sztuk złota za pracę.~
++@123463 = ~Z dwoma różnymi zwojami ochrony przed kwasem, mogę przekuć Zbroję płytową z ankhega. To będzie kosztować cię kolejne pięć tysięcy sztuk złota.~
++@123464 = ~Ach, Tarcza harmonii. Jest piękna, muszę przyznać. Jeśli będziesz mieć dwie butelki Solnej mikstury, Obrożę niewolnika i beljuryl będę mógł przekuć je ze sobą. Potrzebuję również dziesięć tysięcy sztuk złota, będzie za to zapewniała silniejszą i pełniejszą ochronę.~
++@123465 = ~Jasne, z kamieniem łotrzyków i dziesięcioma tysiącami sztuk złota mogę przekuć twoją Włócznię +3 w rzucaną.~
++@123466 = ~Jasne, z kamieniem łotrzyków i dziesięcioma tysiącami sztuk złota mogę przekuć twoją Włócznię jednorożca w rzucaną.~
++@123467 = ~Ach, to Przebijacz. Jeśli jest coś, co sahuaginowie mogą dobrze zrobić, to jest to harpun. Wraz z kamieniem łotrzyków i piętnastoma tysiącami sztuk złota mogę zrobić z tego rzucaną włócznię.~
++@123468 = ~Szlag. Te leśne kostury nigdy nie były moją specjalnością, ale wraz z pierścieniami ochrony i druida mogę ulepszyć ten Kostur lasów. Potrzebuję jednak dwadzieścia tysięcy sztuk złota za tę robotę.~
++@123469 = ~Wraz z czterema zwojami ochrony przed nieumarłymi, dwoma fiolkami święconej wody elfów i dwoma szafirami gwiaździstymi mogę obrócić Dzienną gwiazdę w najstraszliwszy koszmar dla podziemnego świata. Muszę otrzymać piętnaście tysięcy sztuk złota za pracę.~
++@123470 = ~Furia niebios? Nie jestem z Kara-Tur, a umagicznienie katany nie jest łatwym zadaniem, ale za pomocą Serca demona i Różdżki błyskawic mogę to zrobić. Jednak nie za darmo, powiedzmy, że wezmę dwadzieścia tysięcy sztuk złota.~
++@123471 = ~Jasne, mogę przekuć Miecz Arvoreen. Ale nie bez błogosławieństwa samej bogini: mogę podjąć się tego zadania tylko dla drużyny o najczystszych sercach i najwyższej reputacji. Wezmę piętnaście tysięcy sztuk złota.~
++@123472 = ~Ach, Uświęcony odkupiciel. Święte ostrze, jest narzędziem o mocy ustalonej przez miejscowe standardy. Z sercem demona i pięcioma zwojami rozproszenia magii mogę powiększyć moc tego miecza. Ale potrzebuję do tego błogosławieństwa Torma, dlatego też mogę podjąć się tego zadania tylko dla grupy o najwyższej cnocie i reputacji. Poza tym chcę piętnaście tysięcy sztuk złota.~
++@123473 = ~Tak. Mogę połączyć płyty z tarczy Anomena z Łaską ocalenia. Chcę jednak za to piętnaście tysięcy sztuk złota.~
++@123474 = ~Ach, nudziarz zwany „Myślącym mieczem”. Nie pomnę już, ilu poszukiwaczy przygód przybyło do mnie z prośbą, abym sprawił, by zamknął się on na zawsze... Jeśli będziesz miał Obrożę niewolnika mogę nie tylko mogę go uciszyć, ale również za jednym zamachem sprawić, by był bardziej użyteczny. Jednakże muszę dostać dwadzieścia tysięcy sztuk złota.~ ~Ach, nudziarz zwany „Myślącym mieczem”. Nie pomnę już, ilu poszukiwaczy przygód przybyło do mnie z prośbą, abym sprawił, by zamknął się on na zawsze... Jeśli będziesz miała Obrożę niewolnika mogę nie tylko mogę go uciszyć, ale również za jednym zamachem sprawić, by był bardziej użyteczny. Jednakże muszę dostać dwadzieścia tysięcy sztuk złota.~
++@123475 = ~Tak, to całkiem niezły nóż, który tu masz. Mogę skuć razem Kościaną klingę i Kolec chochlika używając czterech Mikstur złodziejskiego mistrzostwa i zrobić prawdziwe ostrze specjalnie dla złodzieja. Wezmę za to piętnaście tysięcy sztuk złota.~
++
++@123476 = ~Tak. Mogę wkuć Święty symbol Amaunatora w twój puklerz, przez co zapewniałby jeszcze lepszą ochronę. Lecz potrzebowałbym także pięciu kamieni słonecznych i dziesięciu tysięcy sztuk złota za pracę. Zainteresowany?~ ~Tak. Mogę wkuć Święty Symbol Amaunatora w twój puklerz, przez co zapewniałby jeszcze lepszą ochronę. Lecz potrzebowałbym także pięciu kamieni słonecznych i dziesięciu tysięcy sztuk złota za pracę. Zainteresowana?~
++
++@123477 = ~Ach. Jeśli będziesz miał Rękawice kieszonkowca, Bransolety ochrony, pierścienie: wyczucia zagrożenia i wytrychów oraz dwa ochrony, mogę wtedy połączyć je wszystkie dla ciebie. Pięć tysięcy sztuk złota pokryłoby wszystkie wydatki.~
++
++@123478 = ~Z dwóch Amuletów ochrony, Amuletu ochrony przed trucizną i Naszyjnika stabilności kształtu, a także Amuletu blokowania czarów mogę wykuć dla ciebie Amulet Ilmatera. Będziesz w stanie zapłacić dziesięć tysięcy sztuk złota za to?~
++
++@123479 = ~Jakżeby inaczej, z Ostrza wody, Adjathy Wysysacza i Szponu Rashada możemy zrobić zakrzywione ostrze, które spowodowałoby, że sam Pan Burz zzieleniałby z zazdrości. Takie wodne ostrze będzie kosztowało cię piętnaście tysięcy sztuk złota.~
++
++@123480 = ~Ach. Mogę dołączyć grudkę czystego ilitu do Lazurowego ostrza, dając mu lepsze ofensywne i defensywne moce przeciwko złu nieumarłych. Za dwadzieścia tysięcy sztuk złota zrobię to dla ciebie.~
++
++@123481 = ~Jasne, mogę połączyć Pierścień czarów, Pierścień ostrości, Amulet metaczarów oraz Pierścień ochrony w potencjalną pomoc dla czarodzieja. Za dwadzieścia tysięcy sztuk złota mógłbym to zrobić. Zainteresowany?~ ~Jasne, mogę połączyć Pierścień czarów, Pierścień ostrości, Amulet metaczarów oraz Pierścień ochrony w potencjalną pomoc dla czarodzieja. Za dwadzieścia tysięcy sztuk złota mógłbym to zrobić. Zainteresowana?~
++
++@123482 = ~Możesz ulepszyć ten pas?~
++
++@123483 = ~Tak, jeśli masz pasy: tłumienia, przebić i złoty, mogę je połączyć tworząc przedmiot zapewniający naprawdę dobrą ochronę. Potrzebuję także trzy krwawniki jako reagenty i dziesięć tysięcy sztuk złota jako zapłatę.~
++
++@123484 = ~Chciałbym, by mój Pierścień czarów zyskał jeszcze więcej mocy.~ ~Chciałabym, by mój Pierścień czarów zyskał jeszcze więcej mocy.~
++
++@123495 = ~Czy możesz ulepszyć tę Figurkę czarnego pająka?~
++@123496 = ~Lepiej by było, gdybyś zapytał o to maga drowów niż krasnoluda, ale mogę to zrobić.~ ~Lepiej by było, gdybyś zapytała o to maga drowów niż krasnoluda, ale mogę to zrobić.~
++@1234996 = ~Będę potrzebował kilku specjalnych reagentów: zwojów pajęczego pomiotu i pajęczyny, pięciu zatrutych rzucanych sztyletów, no i oczywiście pięć tysięcy sztuk złota.~
++
++@123497 = ~Czy Chaos i Entropia mogą zostać ulepszone?~
++@123498 = ~Ach, nigdym jeszcze nie próbował ulepszać planarnych broni. To bardzo niebezpieczna praca. Hmmm, zobaczmy. Jeśli nie będziesz miał nic przeciwko poświęceniu mieczy Ilbratha i Arbane'a, mogę przekuć miecze krótkie Haer'Dalisa, aby zadawały więcej obrażeń i uzyskają podobne do zaklęć moce. To będzie kosztowało cię dwadzieścia pięć tysięcy sztuk złota, dodatkowo kamień łotrzyków i zwoje chaosu oraz wielkiego osłabienia. Jesteś zainteresowany?~ ~Ach, nigdym jeszcze nie próbował ulepszać planarnych broni. To bardzo niebezpieczna praca. Hmmm, zobaczmy. Jeśli nie będziesz miał nic przeciwko poświęceniu mieczy Ilbratha i Arbane'a, mogę przekuć miecze krótkie Haer'Dalisa, aby zadawały więcej obrażeń i uzyskają podobne do zaklęć moce. To będzie kosztowało cię dwadzieścia pięć tysięcy sztuk złota, dodatkowo kamień łotrzyków i zwoje chaosu oraz wielkiego osłabienia. Jesteś zainteresowana?~
++
++@123499 = ~Czy możesz przekuć dla mnie elfią zbroję?~
++@1234100 = ~Tak, mogę skuć Sylvańską kolczugę wraz z Łuską czerwonego smoka. Z trzema andradytami i trzema agatami ognistymi, i co najważniejsze za dwadzieścia pięć tysięcy sztuk złota, mogę stworzyć potężną zbroję. Zainteresowany?~ ~Tak, mogę skuć Sylvańską kolczugę wraz z Łuską czerwonego smoka. Z trzema andradytami i trzema agatami ognistymi, i co najważniejsze za dwadzieścia pięć tysięcy sztuk złota, mogę stworzyć potężną zbroję. Zainteresowana?~
++
++
++
++
++
++
++
++
++
++
++/* From kelseynpc@5678attbi.com Sat Jan 11 17:19:18 2003
++Date: Sun, 05 Jan 2003 02:49:10 -0600
++From: Your pal Kelsey <kelseynpc@5678attbi.com>
++To: weimer@5678cs.berkeley.edu
++Subject: Item Upgrade: Audio-tagged TRA
++
++Can you work this into the next IU release so that people can be 
++subjected to... er, that is, enjoy my Cespenar audio without having to 
++go through a reinstall with a separate TRA? Taken from the latest 
++version, I just added the tags, changed nothing.
++*/
++
++@56780 = ~Zabieraj się do pracy, Cespenarze.~
++@56781 = ~Czy nie masz wpierw żadnych pytań? Czy mam już zacząć szukać?~
++
++@56782 = ~Czy możesz zrobić coś z tym Pierścieniem ochrony?~
++@56783 = ~Czy możesz wykuć coś z tego potężnego Pierścienia ochrony?~
++@56784 = ~Czy możesz zrobić coś z tym Pierścieniem kontroli nad żywiołem?~
++@56785 = ~Czy możesz umagicznić ten Kostur władzy nad żywiołem?~
++@56786 = ~Czy możesz stworzyć coś z tych Butów ukrycia?~
++@56787 = ~Czy możesz przekształcić te Buty Północy?~
++@56788 = ~Jest jakaś szansa na ulepszenie tych Butów uziemienia?~
++@56789 = ~Czy możesz stworzyć coś z tych Butów uników?~
++@567810 = ~Czy jesteś w stanie ulepszyć Czarną krew?~
++@567811 = ~Czy możesz uczynić tę Kościaną maczugę potężniejszą?~ 
++@567812 = ~Chciałbym uczynić mój Rozłupywacz czaszek potężniejszym. Czy możesz mi pomóc?~ ~Chciałabym uczynić mój Rozłupywacz czaszek potężniejszym. Czy możesz mi pomóc?~
++@567813 = ~Co możesz zrobić, by ulepszyć Poszukiwacza serc?~
++@567814 = ~Czy możesz przekuć rodową zbroję mojego przyjaciela Valygara?~
++@567815 = ~Czy możesz ulepszyć tę szatę arcymaga?~
++@567816 = ~Chciałbym, by mój Hełm ochrony lepiej mnie chronił. Możesz coś z nim zrobić?~ ~Chciałabym, by mój Hełm ochrony lepiej mnie chronił. Możesz coś z nim zrobić?~
++@567817 = ~Czy możesz uczynić mój Hełm ochrony przed urokami bardziej wszechstronnym?~
++@567818 = ~Jesteś w stanie uzyskać coś z tej Skóry Aegera?~
++@567819 = ~Czy możesz przekuć rodową zbroję Sir Keldorna Firecama?~
++@567820 = ~Czy możesz wzmocnić tę Zbroję płytową z ankhega?~
++@567821 = ~Tarcza harmonii - czy możesz ulepszyć jej właściwości?~
++@567822 = ~Szukam rzucanej włóczni. Mógłbyś wykonać jakąś?~
++@567823 = ~Co możesz zrobić z tą Włócznią jednorożca?~
++@567824 = ~Jest jakaś szansa, aby Przebijacz zadawał większe obrażenia?~
++@567825 = ~Czy możesz umagicznić ten Kostur lasów?~
++@567826 = ~Dzienna Gwiazda? Ona musi być potężniejsza.~
++@567827 = ~Czy możesz ulepszyć Furię niebios?~
++@567828 = ~Czy możesz ulepszyć Miecz Arvoreen?~
++@567829 = ~Czy możemy zwiększyć stopień pobłogosławienia Uświęconego odkupiciela Keldorna?~
++@567830 = ~Chciałbym ulepszyć Rodową tarczę Delrynów.~ ~Chciałabym ulepszyć Rodową tarczę Delrynów.~
++@567831 = ~Czy możesz zrobić coś, by uciszyć Lilarcora?~
++@567832 = ~Naprawdę kocham zabójcze sztylety. Czy mógłbyś ulepszyć któryś z moich?~
++@567833 = ~Co można zrobić z tym puklerzem?~
++@567834 = ~Jest jakaś szansa na ulepszenie Rękawic kieszonkowca?~
++@567837 = ~Czy możesz cokolwiek zrobić z tym amuletem?~
++@567838 = ~Chciałbym ulepszyć ten sejmitar.~ ~Chciałabym ulepszyć ten sejmitar.~
++@567839 = ~Czy możesz sprawić, by Lazurowe ostrze było potężniejsze?~
++@567891 = ~Chciałbym zwiększyć umagicznienie mojego Pierścienia czarów.~
++
++@567835 = ~Nie teraz.~
++@567836 = ~Tak, zróbmy to!~
++
++
++
++// ....
++
++@567876 = ~Co możesz zrobić z tą amunicją?~
++@567877 = ~Czy masz jakiś szalony przepis na tę Ludzką skórę?~
++@567878 = ~Czy możesz przekuć tego Rozpruwacza dusz?~
++
++// ....
++
++@567840 = ~Dlaczego masz tak wiele pierścieni? Zbyt dużo zaobrączkowanych na boku? Wstydź się, Cespenar ZNA TWE IMIĘ!!!~ [FWCESP00]
++@5678940 = ~Jakkolwiek, możemy wziąć Pierścień regeneracji i Pierścień ochrony +1 i zrobić z nich jeden. Oszczędzisz dzięki temu trochę miejsca. Potrzebują tylko zatopić w nie dziesięć tysięcy sztuk złota i diament! Podoba ci się?~
++
++@567841 = ~Och, chłopcze, nosisz wiele świecuszków na palcach. Cespenar lubi takie coś, słyszał, że to jest w modzie.~ [FWCESP01]
++@5678941 = ~Jakkolwiek, możemy wziąć Pierścień regeneracji i Pierścień ochrony +2 i zrobić z nich jeden. Oszczędzisz dzięki temu trochę miejsca. Potrzebują tylko zatopić w nie dwadzieścia tysięcy sztuk złota i diament! Podoba ci się?~
++
++@567842 = ~Ty nie potrzebujesz pudełka na biżuterię, ty potrzebujesz cały kufer! A może chcesz mieć jeden wielki pierścień na jednym palcu zamiast kilku, co?!?~ [FWCESP02]
++@5678942 = ~Co ty na to, że Cespenar weźmie pierścienie kontroli nad powietrzem, ziemią i ogniem aby zrobić jeden duży Pierścień kontroli nad żywiołami? Łatwiej jest zachować jeden pierścień niż trzy. Przepis mówi, że potrzebne są zwoje ochrony przed petryfikacją, ogniem i elektrycznością, no i dwadzieścia tysięcy sztuk złota. Cespenar nie ustala cen, takie już są zasady.~
++
++@567843 = ~Czy kiedykolwiek zauważyłeś, że żywiołaki nigdy się nie kontrolują? Przysięgam, czasami chciałbym mieć jeden z tych kijów, które im na to pozwalają... hej! Ty masz wszystkie trzy?~ [FWCESP03] ~Czy kiedykolwiek zauważyłaś, że żywiołaki nigdy się nie kontrolują? Przysięgam, czasami chciałbym mieć jeden z tych kijów, które im na to pozwalają... hej! Ty masz wszystkie trzy?~ [FWCESP03]
++@5678943 = ~Kostury ziemi, ognia i powietrza nie są dla ciebie niczym szczególnym, ale Cespenar może zrobić z nich jeden wielki Kostur władzy nad żywiołami, a wtedy wszystkie żywiołaki będą chciały ci kupić śniadanie, albo same cię zjedzą!!!! Kosztuje także dwadzieścia tysięcy sztuk złota, ale Cespenar musi opłacić rachunki. Tak?~
++
++@567844 = ~AAAAAAAAAAA! Podszedłeś Cespenara! Na pomoc! He he he, Cespenar tylko żartował!~ [FWCESP04] ~AAAAAAAAAAA! Podeszłaś Cespenara! Na pomoc! He he he, Cespenar tylko żartował!~ [FWCESP04]
++@5678944 = ~Dobra, Cespenar weźmie Buty ukrycia i szybkości i sprawi ci z nich Buty przyspieszonego ukrycia. Prawda, że nie są to odpowiednie słowa na określenie tego przedmiotu, ale Bhaal nigdy nie pozwalał Cespenarowi czytać zbyt dużo książek. *wzdycha* Jakkolwiek, mam nadzieję, że oszczędzałeś kamienie łotrzyków, bo to będzie kosztować dziesięć tysięcy plus jeden z tych kamyczków.~
++
++@567845 = ~Hmmm. Buty zamieci? Chcesz w nich przechowywać jajka czy coś innego? A może wolisz grać w Icewind Dale?~ [FWCESP05]
++@5678945 = ~Jeśli nie planujesz wyhodować sobie więcej nóg, Cespenar weźmie Buty Północy oraz Buty szybkości i zrobi ci Buty zamieci. Daje to samo, co te buty, ale w jednym. C'est la vie. Dasz mi może dziesięć tysięcy sztuk złota i kamień łotrzyków?~
++
++@567846 = ~Fuuuuj! Magiczne czy nie, kalosze zazwyczaj śmierdzą spoconymi stopami. Wiesz, że najlepszym sposobem ominięcia błyskawicy jest, być gdzie indziej, kiedy piorun uderzy? Dokładnie tak.~ [FWCESP06]
++@5678946 = ~Cespenar zna kapłana Talosa, który może zrobić Pięty Pana Burz z Butów szybkości i uziemienia. Nie bądź głupcem, na śmiertelniku też będą dobrze wyglądać. On potrzebuje dziesięciu tysięcy sztuk złota i kamienia łotrzyków za zapłatę.~
++
++@567847 = ~Cespenar wie, co dać swemu panu na urodziny: chodaki! Jesteś pewien, że nie chcesz być kimś innym? Na przykład szewcem czy kowalem? Nie ma nic złego w zmianie zajęcia, pókiś młody!~ [FWCESP07] ~Cespenar wie, co dać swej pani na urodziny: chodaki! Jesteś pewna, że nie chcesz być kimś innym? Na przykład krawcową czy gospodynią domową? Nie ma nic złego w zmianie zajęcia, pókiś młoda!~ [FWCESP07]
++@5678947 = ~Masz dobry gust jeśli chodzi o buty. Bardzo dobry przepis na Buty szerszenia: weź Buty szybkości i uników, co sprawi, że bardzo trudno będzie cię trafić z dystansu. Lepsze to niż dać się pchnąć w oko za pomocą strzały, bełtu lub kamienia czy strzałki... łapiesz o co chodzi. Przepis kosztuje dwadzieścia tysięcy sztuk złota i kamień łotrzyków, które nie rosną na drzewach. Tak?~
++
++@567848 = ~Ooooooccchhhh... ty masz naprawdę przerażające maczugi! Hi hi hi! Musisz mieć przyjaciela druida czy coś. Zawsze lepiej mieć dla nich jakiegoś drąga. Myślisz, że drzewa, z których robi się pałki, mogą być szalone?~ [FWCESP08]
++@5678948 = ~Masz może kwasem przepełnioną Czarną Krew lub Zgniatacza, którego KTOŚ zapomniał wypolerować. Mam przepis na Niewierną żonę, byś mógł wypłacać niegrzecznym chłopcom plaskacze, które PAAAALĄ! Niska, niska cena, piętnaście tysięcy sztuk złota. Chyba, że chcesz by Cespenar przerobił je na papier ścierny.~
++
++@567849 = ~Uch! Dlaczego wszystkie maczugi muszą być takie kłujące? Cespenar myśli, że ma coś, co może na to poradzić...~ [FWCESP09]
++@5678949 = ~A może po prostu chcesz mieć lepszą maczugę? Mogę wziąć Kościaną maczugę i Zgniatacza i stworzyć Punkt podparcia. Krzywdzi ludzi, którzy nie lubią „równowagi” Cespenar stara się nie wtrącać do polityki, dlatego weźmie tylko piętnaście tysięcy sztuk złota, zrobi maczugę i zapomni o tym, dobrze?~
++
++@567850 = ~Cespenar nigdy nie rozumiał, dlaczego kapłanom pozwala się na zrobienie z twojej głowy krwawej miazgi, a nie mogą użyć noża do masła. Dziiiiiiiiwne.~ [FWCESP10]
++@5678950 = ~Ooochhh, masz Rozłupywacza czaszek i zwój palca śmierci. Teraz wszystkim czego potrzebujemy jest... ach, przeklęta mikstura lecznicza. Aha, jeśli chcesz tę błyszczącą nową wekierę, musisz mieć jeszcze piętnaście tysięcy sztuk złota. Chcesz ją?~
++
++// newby
++
++@567851 = ~Yyyyhh... yyyyhh... aaaaaaa! Oooch, ależ ten łuk ciężko naciągnąć! Cespenar zaproponowałby strzelić nad głową swojego pana, pamięta jednak, co się stało, kiedy spudłował i zamiast jabłka trafił w nos Bhaala. Cespenar nie był w stanie siedzieć przez następny dziesięciodzień!~ [FWCESP11] ~Yyyyhh... yyyyhh... aaaaaaa! Oooch, ależ ten łuk ciężko naciągnąć! Cespenar zaproponowałby strzelić nad głową swojej pani, pamięta jednak, co się stało, kiedy spudłował i zamiast jabłka trafił w nos Bhaala. Cespenar nie był w stanie siedzieć przez następny dziesięciodzień!~ [FWCESP11]
++@5678951 = ~Masz niezły łuk, ale może stać się jeszcze lepszy, dzięki przepisowi na Teleomortis. Strzały pojawiają się w twej dłoni, zadziwiając twych przyjaciół i wrogów. Potrzeba wiele ważnych materiałów: Cięciwę Gesena lub Gonda, cztery Łzy Laeral i Miksturę mocy do wyparzenia.~
++
++@567854 = ~Oooch! Bardzo szykowne wdzianko. Ostrożnie, panie, Cespenar dziś go jeszcze nie odkurzał... jeśli zdarzy ci się kichnąć, twarz może ci przymarznąć. Hi hi hi! Wiesz, niektórzy ludzie mówią, że Valygar jest wrednym suk... zamknąć buzię ma Cespenar? Cespenar po prostu mówił o Valygarze!~ [FWCESP12]
++@5678954 = ~Mogę wiele zrobić z tymi dwoma dobrymi wdziankami, mogę na przykład zrobić jedno naprawdę dobre! Wiele różnych ochron od złych rzeczy jak ogień i kwas! Spinek do mankietów nie trzeba, daj tylko Cespenarowi dziesięć tysięcy sztuk złota i zwój ochrony przed magią. No i nie zapomnij o Łusce cienistego smoka...~
++
++@567855 = ~Cespenar miał raz dymiącą kamizelkę... to był prezent od bardzo dobrego przyjaciela, zgubił się w pralni. Może ty masz coś z tym wspólnego? To wygląda bardzo znajomo...~ [FWCESP13]
++@5678955 = ~Och, to tylko Szata arcymaga. Dobry przepis mam na to. Cespenar potrzebuje Płaszcza ochrony +1, zwojów eteralnego pancerza i warunkowania oraz dwudziestu tysięcy sztuk złota. Można rzucać więcej zaklęć, być jak PRAWDZIWY ARCYMAG!~
++
++@567859 = ~Nigdy nie miałeś dzbanka, by doń sikać? Nie wiedziałeś, co wtedy zrobić? Cespenar sugeruje użyć wtedy hełmu. Kogoś innego.~ [FWCESP14] ~Nigdy nie miałaś dzbanka, by doń sikać? Nie wiedziałaś, co wtedy zrobić? Cespenar sugeruje użyć wtedy hełmu. Kogoś innego.~ [FWCESP14]
++@5678959 = ~Jeśli masz jakieś zbędne dzbanki, może Cespenar połączy je dla ciebie! Dobry przepis łączący Hełm ochrony i Hełm ochrony przed urokami. Potrzebuję czterech pereł i dziesięciu tysięcy sztuk złota. Brzmi nieźle, no nie?~
++
++@567860 = ~Oooch! Cespenar może użyć tego hełmu jako miski, jeśli już więcej go nie potrzebujesz.~ [FWCESP15]
++@5678960 = ~Co byś powiedział na przepis o Wieży żelaznej woli? Użyć Hełmu ochrony przed urokami, dwóch Solnych mikstur (nie mów Cespenarowi, jak je zdobyłeś) i dziesięciu tysięcy sztuk złota. To utwardza głowę, hi hi hi...~
++
++@567861 = ~Może chcesz powiesić to na ścianę? Wielu ludzi nie chce kominków w piekle, ale może sprawimy sobie jakiś i położymy to przed nim.~ [FWCESP16]
++@5678961 = ~A może chcesz, by bardziej błyszczała. Weź Skórę Aegera, zwój ochrony przed żywiołami i piętnaście tysięcy sztuk złota, co sprawi, że będzie ona o wiele silniejsza niż jest. Cespenarowi nigdy nie pozwolono być NAPRAWDĘ kreatywnym.~
++
++@567862 = ~Jak zdobyłeś tę pomarańczową dobroczynną zbroję? Była zbyt długo na słońcu? Hi hi hi...~ [FWCESP17]
++@5678962 = ~Może Cespenar mógłby ją uczynić lepszą przez połączenie Pełnej zbroi płytowej Firecama ze Zbroją jelenia i dołożenie do tego dwudziestu tysięcy sztuk złota. Mogłoby być mniej, ale Cespenar nie ma zamiaru rujnować swej reputacji, zajmując się działalnością dobroczynną.~
++
++@567863 = ~Wciąż nosisz zbroję z tego wielkiego robaka na sobie? Poznajesz przez to więcej ludzi, czy co?~ [FWCESP18]
++@5678963 = ~Dasz Cespenarowi oba rodzaje zwoju ochrony przed kwasem i pięć tysięcy sztuk złota, a Cespenar uczyni Zbroję płytową z ankhega mocniejszą. Będzie nawet strzelać kwasowymi strzałami w ludzi!~
++
++@567864 = ~Ach, to najbardziej zachwycająca tarcza, jaką Cespenar kiedykolwiek widział! Może użyje jej jako tacy, kiedy drużyna się rozpadnie?~ [FWCESP19]
++@5678964 = ~Trudno jest zrobić dobrą rzecz lepszą, ale jeśli będziesz mieć dwie Solne mikstury, Obręcz kontrolną z siedziby ośmiornicołbych i beljuryl oraz dziesięć tysięcy sztuk złota, Cespenar może sprawić by Tarcza harmonii chroniła także przed psioniką.~
++
++@567865 = ~To przypomina Cespenarowi baaaaaardzo długi ząb. Cespenar jest dobrym sługą, on nawet może czyścić ci zęby! Hi hi hi!~ [FWCESP20]
++@5678965 = ~Jak sprawić by przytwierdzić Włócznię +3 do dłoni? Boisz się, że nigdy nie wróci? Prosty przepis: dziesięć tysięcy sztuk złota i kamień łotrzyków, a włócznia zawsze wróci, kiedy rzucisz nią daaaaaleko.~
++
++@567866 = ~Co to jest? Wielki lizak na patyku? Dlaczego Cespenar nigdy takiego nie dostanie?~ [FWCESP21]
++@5678966 = ~Och, to jest Włócznia jednorożca. Dlaczego nie zaczniesz rzucać tą włócznią? Daj tylko Cespenarowi kamień łotrzyków i dziesięć tysięcy sztuk złota, a będziesz jak dziki rzucający włócznią bandyta!~
++
++@567867 = ~Lubisz łowić ryby? Może pójdziesz łowić z wielką przynętą na tym. Wtedy musiałbyś ją mocno przywiązać, ale to nie Cespenara problem.~ [FWCESP22] ~Lubisz łowić ryby? Może pójdziesz łowić z wielką przynętą na tym. Wtedy musiałabyś ją mocno przywiązać, ale to nie Cespenara problem.~ [FWCESP22]
++@5678967 = ~Sprawię, by Przebijacz krzywdził równie dobrze z bardzo, bardzo daleka. Potrzebujesz piętnastu tysięcy sztuk złota i kamienia łotrzyków. Nie mówię o tym dla rozrywki, naprawdę zużywam te rzeczy. Ostrożnie, kiedy włócznia powróci... jeśli spudłujesz będzie BOLAŁO! Au!!~
++
++@567868 = ~Miły, duży kij. Czy szczeka więcej niż gryzie? Hi hi hi...~ [FWCESP23]
++@5678968 = ~Cespenar może użyć wspaniałego nowego przepisu na nowy Kostur lasów. Dajesz Cespenarowi Pierścień ochrony +1, Pierścień druida i dwadzieścia tysięcy sztuk złota, a dostajesz nowy o wiele lepszy kijaszek!~
++
++@567869 = ~Ooooch! Masz najbardziej świecący ze wszystkich świecących długich mieczy! Założę się, że zabiłeś wampira lub dwóch tą dziecinką! En garde, krwiopijco! Cespenar cię zmiażdży!~ [FWCESP24]
++@5678969 = ~Może chciałbyś ulepszyć Dzienną gwiazdę? Dasz mi dobry towar, taki jak cztery zwoje ochrony przed nieumarłymi, dwie fiolki Święconej wody elfów, dwa szafiry gwiaździste oraz piętnaście tysięcy sztuk złota, ale Cespenar nieomal wprowadził pana w błąd! Otrzymasz więcej Promieni słońca oraz ochronę przed złem. Mam zaczynać?~ ~Może chciałabyś ulepszyć Dzienną gwiazdę? Dasz mi dobry towar, taki jak cztery zwoje ochrony przed nieumarłymi, dwie fiolki Święconej wody elfów, dwa szafiry gwiaździste oraz piętnaście tysięcy sztuk złota, ale Cespenar nieomal wprowadził panią w błąd! Otrzymasz więcej Promieni słońca oraz ochronę przed złem. Mam zaczynać?~
++
++@567870 = ~Och, honorowy <CHARNAME>-san! Możesz uwierzyć, że Furia niebios nie wygląda już tak wspaniale?~ [FWCESP25]
++@5678970 = ~Cespenar ma miły, szybki przepis aby naprawić to! No, może nie tak szybki. Masz Różdżkę błyskawic? Co sądzisz o pozbyciu się Serca demona? Cuuuchnąca rzecz, wiem, ale są przydatne do najdziwniejszych rzeczy. Aha, i dwadzieścia tysięcy sztuk złota, które będą potrzebne.~
++
++@567871 = ~Masz najmniejsze paladyńskie dobrodziejstwo pod słońcem? Cespenar ma książkę z historyjkami na strychu, w której jest coś o tym napisane.~ [FWCESP26]
++@5678971 = ~Można zrobić o wiele lepszy miecz Arvoreen. Specjalna wyprzedaż dla nie tak dużego ludu, musisz tylko dobrze myśleć i dać Cespenarowi piętnaście tysięcy sztuk złota! Nie znajdziesz lepszego sposobu po tej stronie Otchłani!~
++
++@567872 = ~Cespenar jest pod wielkim, wielkim wrażeniem, że z panem są bardzo porządni ludzie! Może chcesz użyć jakiejś oznaczonej broni, by pomóc panu?~ [FWCESP27] ~Cespenar jest pod wielkim, wielkim wrażeniem, że z panią są bardzo porządni ludzie! Może chcesz użyć jakiejś oznaczonej broni, by pomóc pani?~ [FWCESP27]
++@5678972 = ~Cespenar zna kapłana Torma, który może pobłogosławić Uświęconego odkupiciela i dać mu możliwość rozpraszania magii i uciszania innych ludzi. Potrzebuje dodatkowo Serca demona, pięciu zwojów Rozproszenia magii i piętnastu tysięcy sztuk złota, oraz złotego serca. Mogłoby być mniej, ale Cespenar musi zapłacić za licencję użytkowania przepisu.~
++
++@567873 = ~Och, chłopie! Więcej tac! Cespenarowi już zaczynały się one wyczerpywać, a chciał on zrobić bankiet!~ [FWCESP28]
++@5678973 = ~Chwila... znam przepis na wielką tacę, czy tam tarczę, czy takie tam rzeczy. Weź Rodową tarczę Delrynów i Łaskę ocalenia, użyj też piętnaście tysięcy sztuk złota, a otrzymasz nową, lepiej chroniącą Tarczę Delrynów! Ale chyba lepiej będzie jak zachowamy je na ten bankiet.~
++
++@567874 = ~Co? Nie lubisz gadających mieczy? A co jeśli zostaniesz pogrzebany żywcem w ciemnej głębokiej dziurze i będziesz mógł rozmawiać tylko z mieczem? Wtedy będziesz dziękował za taki miecz!~ [FWCESP29]
++@5678974 = ~Ale, hmmmm, Cespenar widzi Obręcz kontrolną, czym może uczynić Lilarcora silniejszym, a i utrzyma z dala tych obrzydliwych łupieżców umysłów, którzy wsysają się w twój mózg! A Larry już nie będzie mógł z tobą rozmawiać. To będzie smutne i to będzie kosztowało także dwadzieścia tysięcy sztuk złota.~
++
++@567875 = ~Myślałeś kiedyś o miłości, a nie o wojnie? Z pewnością masz tu dużo noży...~ [FWCESP30] ~Myślałaś kiedyś o miłości, a nie o wojnie? Z pewnością masz tu dużo noży...~ [FWCESP30]
++@5678975 = ~Achhhh, Cespenar ma świetny pomysł! Zrobić dobry sztylet dla skradających się ludzi. Weź Kościaną klingę i Kolec chochlika i zrób sztylet, który potrafi bardzo dobrze zadawać cios w plecy! Potrzebuję jednak czterech Mikstur złodziejskiego mistrzostwa i zapłaty piętnastu tysięcy sztuk złota, ale wtedy wrogowie nie będą nawet wiedzieć, co ich trafiło!~
++
++// ....
++
++@567879 = ~Oooch, ktoś mówił ci o Pojemniku obfitości? Jest jak zły szeląg... chyba Cespenar musi znów wrzucić to do rzeki, ale tym razem z dopiętym cięższym balastem!~ [FWCESP31]
++@5678979 = ~A może spróbujemy czegoś innego tym razem i użyjemy nowego przepisu. Jeśli masz czterdzieści sztuk danej amunicji +3 i czterdzieści tysięcy sztuk złota, możemy ulepszyć posiadany przez ciebie pojemnik do +3. Pomyśl o tych wszystkich pieniądzach, które oszczędzisz na amunicji! Chyba, że nie używasz broni dystansowej.~
++
++@567880 = ~Tak, ulepsz kołczan.~
++@567881 = ~Tak, ulepsz futerał.~
++@567882 = ~Tak, ulepsz torbę.~
++
++@567883 = ~Wygląda to jak duzi ludzie noszeni jako ubranie. Witajcie duzi ludzie! Pomachajcie Cespenarowi, jesteście bowiem teraz noszeni przez mojego pana!~ [FWCESP32] ~Wygląda to jak duzi ludzie noszeni jako ubranie. Witajcie duzi ludzie! Pomachajcie Cespenarowi, jesteście bowiem teraz noszeni przez moją panią!~ [FWCESP32]
++@5678983 = ~Cespenar nie jest co prawda preparatorem, ale może połączyć Ludzką skórę z Kamieniem z duszą Malii i zwojem ochrony przed magią oraz dwudziestoma tysiącami sztuk złota dla połysku. Co sprawi, że będziesz silniejszy i zdrowszy, czego nie można będzie powiedzieć o tych dużych ludziach, których będziesz nosił.~ ~Cespenar nie jest co prawda preparatorem, ale może połączyć Ludzką skórę z Kamieniem z duszą Malii i zwojem ochrony przed magią oraz dwudziestoma tysiącami sztuk złota dla połysku. Co sprawi, że będziesz silniejsza i zdrowsza, czego nie można będzie powiedzieć o tych dużych ludziach, których będziesz nosiła.~
++
++@567884 = ~Gdzie to znalazłeś? Bhaal szukał tego wszędzie, ale nigdy nie znalazł! Chciał on powiesić to nad drzwiami jako dekorację... Cespenar przekonał go wtedy do róż, ale było z tym troooochę zachodu...~ [FWCESP33]
++@5678984 = ~Bardzo, bardzo dobry przepis na Rozpruwacza dusz. Weź Serce potępieńca i przepotężny święty miecz Karsomirem zwany oraz dwadzieścia tysięcy sztuk złota, co uczyni Rozpruwacza dusz niezwykle zabójczym! Kiedy ktoś będzie pytał, nie mów, że to był pomysł Cespenara!~
++
++@567885 = ~Ooch, świecący symbol starego Boga Słońca! Amaunator i Bhaal nigdy się zbytnio nie lubili. Stary spór, w który wplątane były demony, światło słoneczne i błogosławiona koza. Bardzo smutna historia. Po śmierci kozy, Ammy nigdy już nie przyszedł na herbatkę.~ [FWCESP34]
++@5678985 = ~To bez znaczenia, za to mogę umieścić ten święty symbol na twoim puklerzu. Dodaj jeden kamień słoneczny za każdy palec i dziesięć tysięcy sztuk złota, za straszenie nieumarłych. Chcesz?~
++
++@567886 = ~Złodziejskie zacięcie, jak widzę. Chcesz opróżnić kieszenie Cespenara? Czekaj! Cespenar nie ma kieszeni. Ha! Nie bądź zły. Jestem pewien, że później spotkasz wielu bandziorów, których będziesz mógł okraść.~ [FWCESP35]
++@5678986 = ~W międzyczasie, mam przepis na złodziejskie akcesoria. Całkiem modny zestaw: Rękawice kieszonkowca i Bransolety ochrony, pierścienie wyczucia zagrożenia i wytrychów oraz dwa pierścienie ochrony. Za pięć tysięcy sztuk złota mogę zrobić jedno wielkie świecuszko.~
++
++@567887 = ~Ach, świecącą biżuterię tam masz. Aczkolwiek bardzo zły dobór kolorów. Być może Cespenar będzie mógł później coś na to pomóc. Niektóre naprawdę pasowałyby do koloru twoich oczu? Nie?~ [FWCESP36]
++@5678987 = ~W każdym razie, Cespenar może ugnieść razem dwa amulety ochrony, po amulecie ochrony przed trucizną i blokowania czarów oraz Naszyjnik stabilności kształtu. To całkiem sporo łańcuszków z klejnotami! Wymaga też pobłogosławienia dobrego przyjaciela Ilmatera (z jakiegoś powodu, Ilmater ma miękkie serce dla biednego Cespenara)! Może z dziesięć tysięcy sztuk złota za usługę będzie najwłaściwsze, co?~
++
++@567888 = ~Plusk-Plask! Ostrze wody mogłoby dostarczać więcej rozrywki niż tylko poprzez rozbryzgiwanie tu i tam. Cespenar ma przepis, który doskonale sprawdzi się w tym przypadku~ [FWCESP37]
++@5678988 = ~Z Ostrzem wody, Szponem Rashada i Adjathą Wysysaczem można zrobić naprawdę wodny miecz. Może nie tak duży, ale naprawdę wciąż bardzo miły. Mam nadzieję, że lubisz trucizny! Masz piętnaście tysięcy sztuk złota za robotę?~
++
++@567889 = ~Oooch, świecący topór, który zabija złe rzeczy. Próbujesz zabić Cespenara? Ale zaczekaj, to działa tylko na nieumarłych, nie na demony. Ale w pierwszej chwili bardzo się przestraszyłem. Cespenar widzi swoje życie przesuwające się przed oczyma: za dużo kłaniania się, za mało wycierania. Trzeba to poprawić.~ [FWCESP38]
++@5678989 = ~W każdym razie, różowy to nie jest naprawdę twój kolor. Można by dodać grudkę ilitu do Lazurowego ostrza, sprawiając, że będzie bardziej purpurowe. Doda to także jakieś dodatkowe moce niszczące nieumarłych oraz ochronę przed nimi. Aha, dwadzieścia tysięcy sztuk złota. Chciałbyś?~ ~W każdym razie, różowy to nie jest naprawdę twój kolor. Można by dodać grudkę ilitu do Lazurowego ostrza, sprawiając, że będzie bardziej purpurowe. Doda to także jakieś dodatkowe moce niszczące nieumarłych oraz ochronę przed nimi. Aha, dwadzieścia tysięcy sztuk złota. Chciałabyś?~
++
++@567890 = ~Właśnie obserwowałem pierścień na twoim palcu! Za dużo pierścieni na twoich palcach? To wielki problem, Cespenar wie. Tak dużo świecuszków, a tak mało pazurków.~ [FWCESP39]
++@5678990 = ~Ale powiem ci coś. Cespenar może złączyć razem twoje pierścienie czarów i ostrości razem z dawno zapomnianym Amuletem metaczarów i standardowym Pierścieniem ochrony, by uformować Pierścień czarownika. Bardzo miły dla magów. Chcesz taki za dwadzieścia tysięcy sztuk złota?~
++
++@567892 = ~Możesz ulepszyć ten pas?~
++
++@567893 = ~Ooch, pasy są całkiem modne w tym sezonie. Zastanawiam się dlaczego wszystkie one mają odcień beżowy? To musi być przez to okropne światło sfery kieszeniowej. Zawsze sprawia, że Cespenar wygląda na zmęczonego.~ [FWCESP40]
++// @5678993 = ~W każdym razie, jeśli masz trzy pasy ochrony, mam przepis na połączenie ich w naprawdę fajny pas. Jeśli schowasz się za niego, wrogowie nie będą mogli cię zranić. Taka jest umowa. Chcesz więc za dziesięć tysięcy sztuk złota?~
++@5678993 = ~W każdym razie, jeśli masz trzy pasy ochrony, mam przepis na połączenie ich w naprawdę fajny pas. Jeśli schowasz się za niego, wrogowie nie będą mogli cię zranić. Taka jest umowa, ale potrzebuję trzy krwawniki tego samego typu. Chcesz więc za dziesięć tysięcy sztuk złota?~
++
++@567895 = ~Możesz ulepszyć tę Figurkę czarnego pająka?~
++@567896 = ~Ooch, oj, ty skradaczysko! Chcesz, by Cespenar zrobił tę figurkę zaprzyjaźnionego z tobą pająka bardziej zadziwiającą? Dodać jakieś nowe pajęczyny, może? Chcesz terroryzować jakiegoś szczególnego goblina?~ [FWCESP41]
++@5678996 = ~Cespenar wyczuwa łaskotanie myśli. Aczkolwiek potrzebuje specjalnych materiałów, aby ulepszyć tego ściennego pełzacza. Musisz mieć zwoje pajęczego pomiotu i pajęczyny, plus pięć zatrutych rzucanych sztyletów. A także pięć tysięcy sztuk złota. Chcesz?~
++
++@567897 = ~Czy Chaos i Entropia mogą być ulepszone?~
++@5678898 = ~Miecze krótkie? Weź pewniejszego gościa do ich obsługi, jeśli łapiesz Cespenarową aluzję. Ale potrzebujesz bardziej uderzającej potęgi, co? Dobra, oto co Cespenar może zrobić. Zdobądź zwoje chaosu i wielkiego osłabienia, zmieszaj z Ilbrathą i Arbane'm, a nawet te krótkie miecze będą bardziej wartościowe niż te dotychczas zwane broniami Otchłani! Och, Cespenar także potrzebuje dwudziestu pięciu tysięcy sztuk złota. I kamienia łotrzyków, chyba, że chcesz zbierać cząstki Cespenara po całej sferze kieszonkowej. Aha, to nie była sugestia.~ [FWCESP42]
++
++@567899 = ~Możesz wykuć dla mnie jakąś elfią zbroję?~
++@56789100 = ~Oooch! Tak! Lubisz rzeczy gorące i pikantne? Cespenar może złączyć elfią zbroję razem z Łuską czerwonego smoka. A także dodać muchomory, andradytowe przyprawy i pieprz z agatu ognistego (oba po trzy): bardzo jasne, bardzo gorące, bardzo tuczące. Cespenar jest całkiem niezłym kowalem... ale czekaj, to jest przepis kulinarny. Niestety, specjalna patelnia i olej z orzeszków będzie kosztował cię dwadzieścia pięć tysięcy sztuk złota. Chcesz tego?~ [FWCESP43]
 \ No newline at end of file

@@ -1,0 +1,66 @@
+--- c2/readme-itemupgrades.polski.txt	2011-12-29 11:12:48.738000000 +0100
++++ Fixpack/c2/readme-itemupgrades.polski.txt	2017-02-04 23:36:20.000000000 +0100
+@@ -653,4 +653,61 @@
+ 	* repairs ( http://forums.pocketplane.net/index.php/topic,27176.msg327010.html#msg327010 )
+ 	  ( http://forums.pocketplane.net/index.php/topic,27541.msg326886.html#msg326886 )
+ 	* French translation repairs from Sanctifer of the d'Oghmatiques 
+-	* WeiDU update to v231
+\ No newline at end of file
++	* WeiDU update to v231
++Version 40: (updated by CamDawg)
++          * Items were run through the immunity effect batch fixes from the BG2 Fixpack since
++            most provided incomplete protections: Amulet of Ilmater, Tower of Iron Will, Citadel
++            Helmet, Improved Firecam Plate, Sword of Arvoreen, Shield of Harmony, Throwing Unicorn
++            Spear, Corthala Family Armor, Lilarcor, and Water's Talon
++          * Delryn Family Shield now casts PFNM directly so that it'll keep up with compatibility,
++            i.e. new projectiles from 1PP and elsewhere
++          * Azuredge copied over the same bug as the original Azuredge in that its 'Undead Destroyed'
++            message would never be seen due to effect misordering
++          * Closed exploit where Daystar, Azuredge and Skullcrusher's specific bonuses would apply 
++            to the other equipped weapon if dual-wielded. This also addresses a bug where these 
++            items would hurt the wielder when equipped if the BG2 Fixpack was installed
++          * Daystar's damage was incorrect vs. evil undead
++          * Blizzard Boots were using the Resist Fire/Cold portrait icon instead of Protection from
++            Cold
++          * Redundant AC bonus from Gloves of the Master Thief removed
++          * Quietus could cause blindness AND sleep on 1% of hits
++          * Elves and half-elves will now have their regular sleep/charm immunity from the 
++            upgraded items if BG2 Fixpack is installed
++          * Improved Kitthix's web and poison attacks had an incorrect duration
++          * Ring of Elemental Control now casts Improved Invisibility directly instead of simulating
++            it (compatibility); the charm effect is now limited to elementals
++          * The Ring of Wizardry and the Sorcerian Ring can no longer be worn concurrently (Wes had
++            coded this, but left a loophole open)
++          * Shield of Harmony had the wrong AC vs. missile attacks
++          * All of the upgraded spears had the wrong range, wrong attack animation mix, and were
++            doing pure piercing damage when thrown instead of the proper missile/piercing
++          * The charm animal ability of the Staff of the Woodlands was causing spurious save messages
++          * Power levels on the upgraded Celestial Fury are now correct
++          * Improved Human Flesh had a spurious move silently bonus
++          * The dispel-on-hit abilities of the Hallowed Redeemer and Unholy Reaver weren't fully
++            dispelling all effects
++          * The branches for the Shield of Harmony update (in the compatibility version of both
++            components) were reversed, preventing upgrades when you had all components and 
++            allowing them with only the shield
++          * All upgrades now account for the 'alternate' versions of items created by the P&P
++            Protection Items and Two-Handed Katana components of BG2 Tweaks
++          * All items now have relevant tooltip entries for their abilities
++          * The new magical armor and protection items can no longer be worn together
++          * The item icon for Teleomortis had a pink shadow when moved
++          * The Bag of Plenty icon was not transparent when in inventory
++          * The existing Quiver of Plenty now uses the restored icon found by Unfinished Business; 
++            the upgraded version now uses a variant of the restored icon
++          * Quiver of Plenty, Case of Plenty, and Bag of Plenty upgrades were allowing use
++            without non-proficiency penalties
++          * Quiver of Plenty and Case of Plenty now use the correct ground icons
++          * The Enchanced Robes of the Archmagi now provide magic resistance portrait icons
++          * The SoA and ToB components are now wholly independent
++          * Other minor fixes, such as a few items with incorrect weights or usability flags
++          * Minor description fixes, such as multiple THACO > THAC0 typos
++          * Future-proofed descriptions for BG2EE
++            Added by BWP Fixpack: (updated by Argent77)
++            * Character sets will now be converted as appropriate for EE games
++            * Added code to auto-format item descriptions to meet conventions for EE games if no 
++              separate EE-specific tra files were provided
++            * Added French translation - thanks to Sanctifer, of the d'Oghmatiques
++            * Polish EE-specific adjustments - thanks to Cahir

@@ -1,6 +1,6 @@
 --- setup-itemupgrade.tp2	2013-07-31 14:56:18.872000000 +0200
-+++ Fixpack/setup-itemupgrade.tp2	2017-02-02 14:06:32.000000000 +0100
-@@ -1,8 +1,38 @@
++++ Fixpack/setup-itemupgrade.tp2	2017-02-05 13:37:46.614932700 +0100
+@@ -1,8 +1,48 @@
  BACKUP ~c2/backup~
  AUTHOR ~weimer@cs.berkeley.edu~
 -VERSION ~v40~
@@ -35,13 +35,37 @@
 +      reload_array    = tra#reload
 +      iconv_path      = ~iconv~ // provided by BiG World Fixpack
 +  END
++
++  // load up ee-specific tra files on BG2EE
++  ACTION_IF (GAME_IS ~bg2ee eet~) THEN BEGIN
++    ACTION_IF (FILE_EXISTS ~c2/american/setup_ee.tra~) BEGIN
++      LOAD_TRA ~c2/american/setup_ee.tra~
++    END
++    ACTION_IF (NOT ~%LANGUAGE%~ STRING_EQUAL_CASE ~american~ AND FILE_EXISTS ~c2/%LANGUAGE%/setup_ee.tra~) BEGIN
++      LOAD_TRA ~c2/%LANGUAGE%/setup_ee.tra~
++    END
++  END
 +END
 +
 +README ~c2/readme-itemupgrades.%LANGUAGE%.txt~ ~c2/readme-itemupgrades.txt~
  
  LANGUAGE ~American English~ ~american~ ~c2/american/setup.tra~
  
-@@ -31,7 +61,7 @@
+@@ -10,11 +50,11 @@
+   ~c2/american/setup.tra~
+   ~c2/french/setup.tra~
+ 
+-LANGUAGE ~Deutsche (Übersetzung durch Maus & Frischauf & Lainer)~ ~german~
++LANGUAGE ~Deutsche (Uebersetzung durch Maus & Frischauf & Lainer)~ ~german~
+   ~c2/american/setup.tra~
+   ~c2/german/setup.tra~
+ 
+-LANGUAGE ~Español (hecha por Clan DLAN, Ancalagon del Negro por Clan REO & ...)~ ~spanish~
++LANGUAGE ~Espanol (hecha por Clan DLAN, Ancalagon del Negro por Clan REO & ...)~ ~spanish~
+   ~c2/american/setup.tra~
+   ~c2/spanish/setup.tra~
+ 
+@@ -31,7 +71,7 @@
    ~c2/korean/setup.tra~
  
  
@@ -50,7 +74,7 @@
    DESIGNATED 0
    SUBCOMPONENT @1
    
-@@ -48,7 +78,7 @@
+@@ -48,7 +88,7 @@
      APPEND_FILE ~c2/dlg/crom.d~
    COMPILE_D_TO_DLG
    
@@ -59,7 +83,18 @@
    DESIGNATED 10
    SUBCOMPONENT @1
    
-@@ -103,8 +133,8 @@
+@@ -56,7 +96,9 @@
+ INCLUDE ~c2/lib/soa.tpa~
+ 
+ LOAD_TRA ~c2/american/lolwot.tra~
+-LOAD_TRA ~c2/%LANGUAGE%/lolwot.tra~
++ACTION_IF (NOT ~%LANGUAGE%~ STRING_EQUAL_CASE ~american~ AND FILE_EXISTS ~c2/%LANGUAGE%/lolwot.tra~) BEGIN
++  LOAD_TRA ~c2/%LANGUAGE%/lolwot.tra~
++END
+ 
+ // compile these serially, not all at once
+ COMPILE ~c2/crom/c2amul01.d~
+@@ -103,8 +145,8 @@
  COMPILE ~c2/crom/c2sw2h01.d~ 
  COMPILE ~c2/crom/c2valy01.d~ 
    
@@ -70,7 +105,7 @@
    DESIGNATED 1
    SUBCOMPONENT @2
    
-@@ -121,8 +151,8 @@
+@@ -121,8 +163,8 @@
      APPEND_FILE ~c2/dlg/cespy.d~
    COMPILE_D_TO_DLG
  
@@ -81,3 +116,14 @@
    DESIGNATED 11
    SUBCOMPONENT @2
    
+@@ -130,7 +172,9 @@
+ INCLUDE ~c2/lib/tob.tpa~
+ 
+ LOAD_TRA ~c2/american/lolwot.tra~
+-LOAD_TRA ~c2/%LANGUAGE%/lolwot.tra~
++ACTION_IF (NOT ~%LANGUAGE%~ STRING_EQUAL_CASE ~american~ AND FILE_EXISTS ~c2/%LANGUAGE%/lolwot.tra~) BEGIN
++  LOAD_TRA ~c2/%LANGUAGE%/lolwot.tra~
++END
+ 
+ // compile these serially, not all at once
+ COMPILE ~c2/cespy/c2amul01.d~	

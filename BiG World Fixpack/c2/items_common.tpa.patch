@@ -1,6 +1,10 @@
 --- c2/lib/items_common.tpa	2013-07-31 14:32:15.902000000 +0200
-+++ Fixpack/c2/lib/items_common.tpa	2017-02-02 15:16:24.000000000 +0100
-@@ -1,3 +1,14 @@
++++ Fixpack/c2/lib/items_common.tpa	2017-02-05 12:51:26.062985300 +0100
+@@ -1,7 +1,12 @@
+-// load up ee-specific tra files on BG2EE
+-ACTION_IF ((FILE_EXISTS_IN_GAME OH6000.are) AND 
+-           (FILE_EXISTS ~c2/%LANGUAGE%/lolwot.tra~)) THEN BEGIN
+-  LOAD_TRA ~c2/%LANGUAGE%/setup_ee.tra~
 +// needed for updated item descriptions in EE games
 +ACTION_MATCH ~%LANGUAGE%~ WITH
 +  ~french~  BEGIN OUTER_TEXT_SPRINT regUse ~%regexpUsable_FR%~ END
@@ -10,12 +14,10 @@
 +  ~russian~ BEGIN OUTER_TEXT_SPRINT regUse ~%regexpUsable_RU%~ END
 +  ~korean~  BEGIN OUTER_TEXT_SPRINT regUse ~%regexpUsable_KO%~ END
 +  DEFAULT         OUTER_TEXT_SPRINT regUse ~%regexpUsable_EN%~
-+END
-+
- // load up ee-specific tra files on BG2EE
- ACTION_IF ((FILE_EXISTS_IN_GAME OH6000.are) AND 
-            (FILE_EXISTS ~c2/%LANGUAGE%/lolwot.tra~)) THEN BEGIN
-@@ -74,8 +85,9 @@
+ END
+ 
+ // in case Fixpack is installed, change shadow temple to not consume Symbol of Amaunator as a key
+@@ -74,8 +79,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2amul01.itm THEN BEGIN
    
    COPY ~c2/itm/c2amul01.itm~ ~override~
@@ -26,7 +28,7 @@
  
    COPY ~c2/bam/c2amul01.bam~ ~override~
  
-@@ -88,8 +100,22 @@
+@@ -88,8 +94,22 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2anom01.itm THEN BEGIN
    
    COPY ~c2/itm/c2anom01.itm~ ~override~
@@ -50,7 +52,7 @@
  
    COPY ~c2/bam/c2anom01.bam~ ~override~
  
-@@ -100,8 +126,9 @@
+@@ -100,8 +120,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2ax1h01.itm THEN BEGIN
    
    COPY ~c2/itm/c2ax1h01.itm~ ~override~
@@ -61,7 +63,7 @@
  
    COPY ~c2/bam/c2ax1h01.bam~ ~override~
         ~c2/eff/c2ax1h1a.eff~ ~override~
-@@ -114,8 +141,9 @@
+@@ -114,8 +135,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2belt01.itm THEN BEGIN
    
    COPY ~c2/itm/c2belt01.itm~ ~override~
@@ -72,7 +74,7 @@
  
    COPY ~c2/bam/c2belt01.bam~ ~override~
  
-@@ -124,8 +152,9 @@
+@@ -124,8 +146,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2blun01.itm THEN BEGIN
    
    COPY ~c2/itm/c2blun01.itm~ ~override~
@@ -83,7 +85,7 @@
  
    COPY ~c2/bam/c2blun01.bam~ ~override~
  
-@@ -134,8 +163,9 @@
+@@ -134,8 +157,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2blun02.itm THEN BEGIN
    
    COPY ~c2/itm/c2blun02.itm~ ~override~
@@ -94,7 +96,7 @@
  
    COPY ~c2/bam/c2blun02.bam~ ~override~
         ~c2/eff/c2blun02.eff~ ~override~
-@@ -145,8 +175,9 @@
+@@ -145,8 +169,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2blun03.itm THEN BEGIN
    
    COPY ~c2/itm/c2blun03.itm~ ~override~
@@ -105,7 +107,7 @@
  
    COPY ~c2/bam/c2blun03.bam~ ~override~
         ~c2/eff/c2blun03.eff~ ~override~
-@@ -156,8 +187,9 @@
+@@ -156,8 +181,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2boot01.itm THEN BEGIN
    
    COPY ~c2/itm/c2boot01.itm~ ~override~
@@ -116,7 +118,7 @@
  
    COPY ~c2/bam/c2boot01.bam~ ~override~
  
-@@ -166,8 +198,9 @@
+@@ -166,8 +192,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2boot02.itm THEN BEGIN
    
    COPY ~c2/itm/c2boot02.itm~ ~override~
@@ -127,7 +129,7 @@
  
    COPY ~c2/bam/c2boot02.bam~ ~override~
  
-@@ -176,8 +209,9 @@
+@@ -176,8 +203,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2boot03.itm THEN BEGIN
    
    COPY ~c2/itm/c2boot03.itm~ ~override~
@@ -138,7 +140,7 @@
  
    COPY ~c2/bam/c2boot03.bam~ ~override~
  
-@@ -186,8 +220,9 @@
+@@ -186,8 +214,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2boot04.itm THEN BEGIN
    
    COPY ~c2/itm/c2boot04.itm~ ~override~
@@ -149,7 +151,7 @@
  
    COPY ~c2/bam/c2boot04.bam~ ~override~
  
-@@ -196,8 +231,9 @@
+@@ -196,8 +225,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2bow01.itm THEN BEGIN
  
    COPY ~c2/itm/c2bow01.itm~ ~override~
@@ -160,7 +162,7 @@
  
    COPY ~c2/bam/c2bow01.bam~ ~override~
  
-@@ -206,8 +242,9 @@
+@@ -206,8 +236,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2brac01.itm THEN BEGIN
    
    COPY ~c2/itm/c2brac01.itm~ ~override~
@@ -171,7 +173,7 @@
  
    COPY ~c2/bam/c2brac01.bam~ ~override~
  
-@@ -216,8 +253,9 @@
+@@ -216,8 +247,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2chan01.itm THEN BEGIN
    
    COPY ~c2/itm/c2chan01.itm~ ~override~
@@ -182,7 +184,7 @@
  
    COPY ~c2/bam/c2chan01.bam~ ~override~
  
-@@ -228,8 +266,9 @@
+@@ -228,8 +260,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2dagg01.itm THEN BEGIN
    
    COPY ~c2/itm/c2dagg01.itm~ ~override~
@@ -193,7 +195,7 @@
  
    COPY ~c2/bam/c2dagg01.bam~ ~override~
  
-@@ -238,8 +277,21 @@
+@@ -238,8 +271,21 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2hd1.itm THEN BEGIN
    
    COPY ~c2/itm/c2hd1.itm~ ~override~
@@ -216,7 +218,7 @@
  
    COPY ~c2/bam/c2hd1.bam~ ~override~
  
-@@ -248,16 +300,30 @@
+@@ -248,16 +294,30 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2hd2.itm THEN BEGIN
    
    COPY ~c2/itm/c2hd2.itm~ ~override~
@@ -249,7 +251,7 @@
  
    COPY ~c2/bam/c2helm01.bam~ ~override~
  
-@@ -266,8 +332,9 @@
+@@ -266,8 +326,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2helm02.itm THEN BEGIN
    
    COPY ~c2/itm/c2helm02.itm~ ~override~
@@ -260,7 +262,7 @@
  
    COPY ~c2/bam/c2helm02.bam~ ~override~
  
-@@ -276,8 +343,9 @@
+@@ -276,8 +337,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2hide01.itm THEN BEGIN
    
    COPY ~c2/itm/c2hide01.itm~ ~override~
@@ -271,7 +273,7 @@
  
    COPY ~c2/bam/c2hide01.bam~ ~override~
    
-@@ -288,8 +356,9 @@
+@@ -288,8 +350,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2keld01.itm THEN BEGIN
  
    COPY ~c2/itm/c2keld01.itm~ ~override~
@@ -282,7 +284,7 @@
      PATCH_IF MOD_IS_INSTALLED ~BG2FIXPACK/SETUP-BG2FIXPACK.TP2~ ~114~  BEGIN // add immunity to stun for free acrion if OBC fixpack stuff installed
        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 101 target = 1 parameter2 =   210 timing = 2 END // immunity to pw: stun
        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 101 target = 1 parameter2 =    45 timing = 2 END // immunity to stun
-@@ -297,6 +366,19 @@
+@@ -297,6 +360,19 @@
        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 267 target = 1 parameter1 =  1280 timing = 2 END // prevent 'stunned' string
        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 267 target = 1 parameter1 = 14043 timing = 2 END // prevent 'stun' string
      END
@@ -302,7 +304,7 @@
  
    COPY ~c2/bam/c2keld01.bam~ ~override~
    
-@@ -307,8 +389,22 @@
+@@ -307,8 +383,22 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2keld02.itm THEN BEGIN
    
    COPY ~c2/itm/c2keld02.itm~ ~override~
@@ -326,7 +328,7 @@
  
    COPY ~c2/bam/c2keld02.bam~ ~override~
  
-@@ -317,8 +413,9 @@
+@@ -317,8 +407,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2kit.itm THEN BEGIN
  
    COPY ~c2/itm/c2kit.itm~ ~override~
@@ -337,7 +339,7 @@
    
    COPY ~c2/itm/c2kit.cre~ ~override~
      SAY NAME1     @192
-@@ -333,8 +430,9 @@
+@@ -333,8 +424,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2mazz01.itm THEN BEGIN
  
    COPY ~c2/itm/c2mazz01.itm~ ~override~
@@ -348,7 +350,7 @@
      PATCH_IF MOD_IS_INSTALLED ~BG2FIXPACK/SETUP-BG2FIXPACK.TP2~ ~114~  BEGIN // add immunity to stun for free acrion if OBC fixpack stuff installed
        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 101 target = 1 parameter2 =   210 timing = 2 END // immunity to pw: stun
        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 101 target = 1 parameter2 =    45 timing = 2 END // immunity to stun
-@@ -350,8 +448,9 @@
+@@ -350,8 +442,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2plat01.itm THEN BEGIN
  
    COPY ~c2/itm/c2plat01.itm~ ~override~
@@ -359,7 +361,7 @@
  
    APPEND ~tooltip.2da~ ~c2plat01 12033 -1 -1~ // tooltip stuff
    
-@@ -362,8 +461,9 @@
+@@ -362,8 +455,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2ring01.itm THEN BEGIN
  
    COPY ~c2/itm/c2ring01.itm~ ~override~
@@ -370,7 +372,7 @@
  
    COPY ~c2/bam/c2ring01.bam~ ~override~
    
-@@ -374,8 +474,9 @@
+@@ -374,8 +468,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2ring02.itm THEN BEGIN
  
    COPY ~c2/itm/c2ring02.itm~ ~override~
@@ -381,7 +383,7 @@
  
    COPY ~c2/bam/c2ring02.bam~ ~override~
    
-@@ -386,8 +487,9 @@
+@@ -386,8 +481,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2ring03.itm THEN BEGIN
    
    COPY ~c2/itm/c2ring03.itm~ ~override~
@@ -392,7 +394,7 @@
  
    COPY ~c2/bam/c2ring03.bam~ ~override~
         ~c2/eff/c2ring03.eff~ ~override~
-@@ -406,8 +508,9 @@
+@@ -406,8 +502,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2ring04.itm THEN BEGIN
    
    COPY ~c2/itm/c2ring04.itm~ ~override~
@@ -403,7 +405,7 @@
  
    COPY ~c2/bam/c2ring04.bam~ ~override~
    
-@@ -420,32 +523,36 @@
+@@ -420,32 +517,36 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2robe01.itm THEN BEGIN
    
    COPY ~c2/itm/c2robe01.itm~ ~override~
@@ -444,7 +446,7 @@
  
    COPY ~c2/bam/c2shld01.bam~ ~override~
  
-@@ -454,8 +561,9 @@
+@@ -454,8 +555,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2shld02.itm THEN BEGIN
    
    COPY ~c2/itm/c2shld02.itm~ ~override~
@@ -455,7 +457,7 @@
  
    COPY ~c2/bam/c2shld02.bam~ ~override~
  
-@@ -466,8 +574,9 @@
+@@ -466,8 +568,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2sper01.itm THEN BEGIN
    
    COPY ~c2/itm/c2sper01.itm~ ~override~
@@ -466,7 +468,7 @@
  
    COPY ~c2/bam/c2sper01.bam~ ~override~
  
-@@ -478,8 +587,9 @@
+@@ -478,8 +581,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2sper02.itm THEN BEGIN
  
    COPY ~c2/itm/c2sper02.itm~ ~override~
@@ -477,7 +479,7 @@
  
    COPY ~c2/bam/c2sper02.bam~ ~override~
  
-@@ -490,8 +600,9 @@
+@@ -490,8 +594,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2sper03.itm THEN BEGIN
  
    COPY ~c2/itm/c2sper03.itm~ ~override~
@@ -488,7 +490,7 @@
  
    COPY ~c2/bam/c2sper03.bam~ ~override~
  
-@@ -502,8 +613,9 @@
+@@ -502,8 +607,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2staf01.itm THEN BEGIN
    
    COPY ~c2/itm/c2staf01.itm~ ~override~
@@ -499,7 +501,7 @@
  
    COPY ~c2/bam/c2staf01.bam~ ~override~
         ~c2/cre/elairpr3.cre~ ~override~
-@@ -521,8 +633,9 @@
+@@ -521,8 +627,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2staf02.itm THEN BEGIN
    
    COPY ~c2/itm/c2staf02.itm~ ~override~
@@ -510,7 +512,7 @@
  
    COPY ~c2/bam/c2staf02.bam~ ~override~
  
-@@ -533,8 +646,9 @@
+@@ -533,8 +640,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2sw1h01.itm THEN BEGIN
    
    COPY ~c2/itm/c2sw1h01.itm~ ~override~
@@ -521,7 +523,7 @@
  
    COPY ~c2/bam/c2sw1h01.bam~ ~override~
         ~c2/eff/c2sw1h1a.eff~ ~override~ // +4 thac0 vs. evil
-@@ -550,8 +664,9 @@
+@@ -550,8 +658,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2sw1h02.itm THEN BEGIN
    
    COPY ~c2/itm/c2sw1h02.itm~ ~override~
@@ -532,7 +534,7 @@
  
    COPY ~c2/bam/c2sw1h02.bam~ ~override~
  
-@@ -562,8 +677,9 @@
+@@ -562,8 +671,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2sw1h03.itm THEN BEGIN
    
    COPY ~c2/itm/c2sw1h03.itm~ ~override~
@@ -543,7 +545,7 @@
  
    COPY ~c2/bam/c2sw1h03.bam~ ~override~
  
-@@ -572,8 +688,9 @@
+@@ -572,8 +682,9 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2sw2h01.itm THEN BEGIN
    
    COPY ~c2/itm/c2sw2h01.itm~ ~override~
@@ -554,7 +556,7 @@
  
    COPY ~c2/bam/c2sw2h01.bam~ ~override~
  
-@@ -582,8 +699,22 @@
+@@ -582,8 +693,22 @@
  ACTION_IF NOT FILE_EXISTS_IN_GAME c2valy01.itm THEN BEGIN
    
    COPY ~c2/itm/c2valy01.itm~ ~override~
