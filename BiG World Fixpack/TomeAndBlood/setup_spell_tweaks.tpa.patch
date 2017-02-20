@@ -1,0 +1,1006 @@
+--- TomeAndBlood/comp/setup_spell_tweaks.tpa	2016-12-18 04:16:00.778893900 +0100
++++ Fixpack/TomeAndBlood/comp/setup_spell_tweaks.tpa	2017-02-20 00:13:00.000000000 +0100
+@@ -15,10 +15,10 @@
+ 
+ 	INCLUDE ~TomeAndBlood/data/core/scroll_list_base.tpa~ 
+ 
+-	ACTION_PHP_EACH arcanespell AS ind => res BEGIN 
++	ACTION_PHP_EACH arcanespell AS ind => school BEGIN 
+ 		ACTION_IF (FILE_EXISTS_IN_GAME ~%ind%.spl~) BEGIN 
+ 			COPY_EXISTING ~%ind%.spl~ ~override~ 	
+-				PATCH_IF (res = 0) BEGIN //no school
++				PATCH_IF (school = 0) BEGIN //no school
+ 					WRITE_BYTE 0x25 0 //change to unaffiliated 
+ 					WRITE_LONG 0x1e ("0x00000000") //blocked: none
+ 					READ_LONG 0x50 "valid"
+@@ -44,7 +44,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 1) BEGIN //abjuration
++				PATCH_IF (school = 1) BEGIN //abjuration
+ 					WRITE_SHORT 0x22 12 //update casting graphic
+ 					WRITE_BYTE 0x25 1 //change to abjuration 
+ 					READ_LONG 0x50 "valid"
+@@ -69,7 +69,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 2) BEGIN //alteration
++				PATCH_IF (school = 2) BEGIN //alteration
+ 					WRITE_SHORT 0x22 10 //update casting graphic
+ 					WRITE_BYTE 0x25 8 //change to alteration 
+ 					READ_LONG 0x50 "valid"
+@@ -94,7 +94,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 3) BEGIN //conjuration
++				PATCH_IF (school = 3) BEGIN //conjuration
+ 					WRITE_SHORT 0x22 14 //update casting graphic
+ 					WRITE_BYTE 0x25 2 //change to conjuration 
+ 					READ_LONG 0x50 "valid"
+@@ -118,7 +118,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 4) BEGIN //divination
++				PATCH_IF (school = 4) BEGIN //divination
+ 					WRITE_SHORT 0x22 16 //update casting graphic
+ 					WRITE_BYTE 0x25 3 //change to divination 
+ 					READ_LONG 0x50 "valid"
+@@ -143,7 +143,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 5) BEGIN //enchantment
++				PATCH_IF (school = 5) BEGIN //enchantment
+ 					WRITE_SHORT 0x22 11 //update casting graphic
+ 					WRITE_BYTE 0x25 4 //change to enchantment 
+ 					READ_LONG 0x50 "valid"
+@@ -168,7 +168,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 6) BEGIN //evocation
++				PATCH_IF (school = 6) BEGIN //evocation
+ 					WRITE_SHORT 0x22 15 //update casting graphic
+ 					WRITE_BYTE 0x25 6 //change to evocation 
+ 					READ_LONG 0x50 "valid"
+@@ -193,7 +193,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 7) BEGIN //illusion
++				PATCH_IF (school = 7) BEGIN //illusion
+ 					WRITE_SHORT 0x22 13 //update casting graphic
+ 					WRITE_BYTE 0x25 5 //change to illusion 
+ 					READ_LONG 0x50 "valid"
+@@ -218,7 +218,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 8) BEGIN //necromancy
++				PATCH_IF (school = 8) BEGIN //necromancy
+ 					WRITE_SHORT 0x22 9 //update casting graphic
+ 					WRITE_BYTE 0x25 7 //change to necromancy 
+ 					READ_LONG 0x50 "valid"
+@@ -250,10 +250,10 @@
+ 
+ //updating schools in scrolls_______________________________________________________
+ //
+-	ACTION_PHP_EACH arcanescroll AS ind => res BEGIN 
++	ACTION_PHP_EACH arcanescroll AS ind => school BEGIN 
+ 		ACTION_IF (FILE_EXISTS_IN_GAME ~%ind%.itm~) BEGIN 
+ 			COPY_EXISTING ~%ind%.itm~ ~override~ 			
+-				PATCH_IF (res = 0) BEGIN //no school
++				PATCH_IF (school = 0) BEGIN //no school
+ 					WRITE_BYTE 0x2d ("0x00") //blocked: none
+ 					WRITE_BYTE 0x2f ("0x00") //blocked: none
+ 					READ_LONG 0x54 "valid"
+@@ -279,7 +279,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 1) BEGIN //abjuration
++				PATCH_IF (school = 1) BEGIN //abjuration
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -302,7 +302,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 2) BEGIN //alteration
++				PATCH_IF (school = 2) BEGIN //alteration
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -325,7 +325,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 3) BEGIN //conjuration
++				PATCH_IF (school = 3) BEGIN //conjuration
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -348,7 +348,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 4) BEGIN //divination
++				PATCH_IF (school = 4) BEGIN //divination
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -371,7 +371,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 5) BEGIN //enchantment
++				PATCH_IF (school = 5) BEGIN //enchantment
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -394,7 +394,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 6) BEGIN //evocation
++				PATCH_IF (school = 6) BEGIN //evocation
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -417,7 +417,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 7) BEGIN //illusion
++				PATCH_IF (school = 7) BEGIN //illusion
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -440,7 +440,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 8) BEGIN //necromancy
++				PATCH_IF (school = 8) BEGIN //necromancy
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -546,6 +546,7 @@
+ 		END
+ 	END
+ 
++/*
+ //Limited Wish: move to level 8
+ 	ACTION_IF FILE_EXISTS_IN_GAME ~spwi722.spl~ THEN BEGIN
+ 		COPY_EXISTING ~spwi722.spl~ ~override~
+@@ -597,6 +598,7 @@
+ 			END
+ 		BUT_ONLY
+ 	END
++*/
+ 
+ //Symbol: Fear: move to level 7
+ 	ACTION_IF FILE_EXISTS_IN_GAME ~spwi811.spl~ THEN BEGIN
+@@ -614,7 +616,6 @@
+ 		ACTION_IF FILE_EXISTS_IN_GAME ~hidespl.2da~ BEGIN
+ 			APPEND ~hidespl.2da~ ~spwi811	1		0~
+ 		END
+-		ACTION_IF FILE_EXISTS_IN_GAME ~scrl9f.itm~ THEN BEGIN
+ 		LAF RES_NUM_OF_SPELL_NAME
+ 			STR_VAR spell_name = ~WIZARD_SYMBOL_FEAR_TNB~
+ 			RET spell_res
+@@ -786,8 +787,12 @@
+ //...apply spell removal to simulacra
+ //
+ COPY ~TomeAndBlood/data/spell_tweaks/simulacr.spl~ ~override~
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 337 target = 1 parameter1 = ~-1~ parameter2 = 237	END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 4 duration = 1 STR_VAR resource = ~D5CLONM~ END 	//	remove level 3-4 spells
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 4 duration = 1 STR_VAR resource = ~D5CLONH~ END 	//	remove level 5+ spells
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 144 target = 1 parameter2 = 9 timing = 1 END 	//	no item use
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 144 target = 1 parameter2 = 11 timing = 1 END 	//	no item use
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 144 target = 1 parameter2 = 12 timing = 1 END 	//	no item use
+ //  LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 1 parameter2 = 261 timing = 0 duration = 90 STR_VAR resource = ~~ END
+ 
+ //...custom simulacrum summon
+@@ -801,7 +806,9 @@
+   SAY UNIDENTIFIED_DESC @6272
+   WRITE_LONG 0x34 6
+   LPF DELETE_EFFECT INT_VAR match_target = 1 END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 1 parameter2 = 224 timing = 9 END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 9 STR_VAR resource = ~D5WI804~ END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 4 duration = 2 STR_VAR resource = ~spwi607~ END
+   WRITE_ASCII 0x3a ~spwi703c~ #8
+   LPF ALTER_SPELL_HEADER INT_VAR speed = 5 STR_VAR icon = ~spwi703b~ END
+ ACTION_IF FILE_EXISTS_IN_GAME ~scrl7k.itm~ THEN BEGIN
+@@ -818,10 +825,11 @@
+   SAY UNIDENTIFIED_DESC @6274
+   WRITE_LONG 0x34 7
+   LPF DELETE_EFFECT INT_VAR match_target = 1 END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 1 parameter2 = 224 timing = 9 END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = (0 - 1) timing = 9 STR_VAR resource = ~D5CLONM~ END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 9 STR_VAR resource = ~D5WI804~ END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 1 STR_VAR resource = ~SPWI206~ END
+-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 4 duration = 72 STR_VAR resource = ~SPWI703~ END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 4 duration = 2 STR_VAR resource = ~SPWI703~ END
+   WRITE_ASCII 0x3a ~spwi607c~ #8
+   LPF ALTER_SPELL_HEADER INT_VAR speed = 2 STR_VAR icon = ~spwi607b~ END
+ 
+@@ -832,109 +840,117 @@
+   WRITE_ASCII 0x3a ~spwi607a~ #8
+   LPF ALTER_ITEM_HEADER STR_VAR icon = ~spwi607a~ END
+ END 
++//...9th level: project image
++//
++COPY_EXISTING ~spwi804.spl~ ~override/d5wi9il.spl~
++  SAY NAME1 @6277
++  SAY UNIDENTIFIED_DESC @6278
++  WRITE_LONG 0x34 9
++  WRITE_ASCII 0x3a ~d5projic~ #8
++  LPF ALTER_SPELL_HEADER INT_VAR speed = 5 STR_VAR icon = ~d5projib~ END
++  LPF DELETE_EFFECT INT_VAR match_target = 1 END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = (0 - 1) timing = 9 STR_VAR resource = ~D5CLONM~ END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = (0 - 1) timing = 9 STR_VAR resource = ~D5CLONH~ END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 9 STR_VAR resource = ~D5WI804~ END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 1 STR_VAR resource = ~SPWI405~ END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 4 duration = 2 STR_VAR resource = ~d5wi9il~ END
++COPY ~TomeAndBlood/data/spell_tweaks/d5projic.bam~ ~override~
++COPY ~TomeAndBlood/data/spell_tweaks/d5projib.bam~ ~override~
+ //...8th level: simulacrum
+ //
+ COPY_EXISTING ~spwi804.spl~ ~override~
+   SAY NAME1 @6275
+   SAY UNIDENTIFIED_DESC @6276
+   LPF DELETE_EFFECT INT_VAR match_target = 1 END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 1 parameter2 = 224 timing = 9 END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = (0 - 1) timing = 9 STR_VAR resource = ~D5CLONM~ END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = (0 - 1) timing = 9 STR_VAR resource = ~D5CLONH~ END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 9 STR_VAR resource = ~D5WI804~ END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 1 STR_VAR resource = ~SPWI405~ END
+-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 4 duration = 72 STR_VAR resource = ~SPWI804~ END
+-  LPF ALTER_SPELL_HEADER INT_VAR speed = 7 END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 4 duration = 2 STR_VAR resource = ~SPWI804~ END
++  LPF ALTER_SPELL_HEADER INT_VAR speed = 5 END
+ ACTION_IF FILE_EXISTS_IN_GAME ~scrl8z.itm~ THEN BEGIN
+   COPY_EXISTING ~scrl8z.itm~ ~override~
+   SAY NAME2 @6275
+   SAY IDENTIFIED_DESC @6276
+ END 
+-//...9th level: project image
+-//
+-COPY ~TomeAndBlood/data/spell_tweaks/spwi607.spl~ ~override/d5wi9il.spl~
+-  SAY NAME1 @6277
+-  SAY UNIDENTIFIED_DESC @6278
+-  WRITE_LONG 0x34 9
+-  WRITE_ASCII 0x3a ~d5projic~ #8
+-  LPF ALTER_SPELL_HEADER INT_VAR speed = 7 STR_VAR icon = ~d5projib~ END
+-COPY ~TomeAndBlood/data/spell_tweaks/d5projic.bam~ ~override~
+-COPY ~TomeAndBlood/data/spell_tweaks/d5projib.bam~ ~override~
+ 
+ END
+ //__________________________________________________________________________________
+ 
+ 	
+ //updating opposition schools: non iwdee opposed schools
+-	ACTION_PHP_EACH arcanespell AS ind => res BEGIN 
++  ACTION_IF NOT FILE_EXISTS_IN_GAME ~qdtnb_specialists.qd~ BEGIN	
++	ACTION_PHP_EACH arcanespell AS ind => school BEGIN 
+ 		ACTION_IF ((NOT GAME_IS ~iwdee~) AND FILE_EXISTS_IN_GAME ~%ind%.spl~) BEGIN 
+ 			COPY_EXISTING ~%ind%.spl~ ~override~ 	
+-				PATCH_IF (res = 0) BEGIN //no school
++				PATCH_IF (school = 0) BEGIN //no school
+ 					WRITE_BYTE 0x25 0 //change to unaffiliated 
+ 					WRITE_LONG 0x1e ("0x00000000") //blocked to: none
+ 				END
+-				PATCH_IF (res = 1) BEGIN //abjuration
++				PATCH_IF (school = 1) BEGIN //abjuration
+ 					WRITE_LONG 0x1e ("0x00002000") //blocked to: alt  
+ 				END
+-				PATCH_IF (res = 2) BEGIN //alteration
++				PATCH_IF (school = 2) BEGIN //alteration
+ 					WRITE_LONG 0x1e ("0x00000040") //blocked to: abj
+ 				END
+-				PATCH_IF (res = 3) BEGIN //conjuration
++				PATCH_IF (school = 3) BEGIN //conjuration
+ 					WRITE_LONG 0x1e ("0x00000100") //blocked to: div
+ 				END
+-				PATCH_IF (res = 4) BEGIN //divination
++				PATCH_IF (school = 4) BEGIN //divination
+ 					WRITE_LONG 0x1e ("0x00000080") //blocked to: conj
+ 				END
+-				PATCH_IF (res = 5) BEGIN //enchantment
++				PATCH_IF (school = 5) BEGIN //enchantment
+ 					WRITE_LONG 0x1e ("0x00000800") //blocked to: inv
+ 				END
+-				PATCH_IF (res = 6) BEGIN //evocation
++				PATCH_IF (school = 6) BEGIN //evocation
+ 					WRITE_LONG 0x1e ("0x00000200") //blocked to: enc
+ 				END
+-				PATCH_IF (res = 7) BEGIN //illusion
++				PATCH_IF (school = 7) BEGIN //illusion
+ 					WRITE_LONG 0x1e ("0x00001000") //blocked to: nec
+ 				END
+-				PATCH_IF (res = 8) BEGIN //necromancy
++				PATCH_IF (school = 8) BEGIN //necromancy
+ 					WRITE_LONG 0x1e ("0x00000400") //blocked to: ill
+ 				END
+ 			BUT_ONLY  
+ 		END
+ 	END
+-	ACTION_PHP_EACH arcanescroll AS ind => res BEGIN 
++	ACTION_PHP_EACH arcanescroll AS ind => school BEGIN 
+ 		ACTION_IF ((NOT GAME_IS ~iwdee~) AND FILE_EXISTS_IN_GAME ~%ind%.itm~) BEGIN 
+ 			COPY_EXISTING ~%ind%.itm~ ~override~ 			
+-				PATCH_IF (res = 0) BEGIN //no school
++				PATCH_IF (school = 0) BEGIN //no school
+ 					WRITE_BYTE 0x2d ("0x00") //blocked to: none
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 1) BEGIN //abjuration
++				PATCH_IF (school = 1) BEGIN //abjuration
+ 					WRITE_BYTE 0x2d ("0x20") //blocked to: alt 
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 2) BEGIN //alteration
++				PATCH_IF (school = 2) BEGIN //alteration
+ 					WRITE_BYTE 0x2d ("0x00") //blocked to: none  
+ 					WRITE_BYTE 0x2f ("0x40") //blocked to: abj
+ 				END
+-				PATCH_IF (res = 3) BEGIN //conjuration
++				PATCH_IF (school = 3) BEGIN //conjuration
+ 					WRITE_BYTE 0x2d ("0x01") //blocked to: div
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 4) BEGIN //divination
++				PATCH_IF (school = 4) BEGIN //divination
+ 					WRITE_BYTE 0x2d ("0x00") //blocked to: none  
+ 					WRITE_BYTE 0x2f ("0x80") //blocked to: conj
+ 				END
+-				PATCH_IF (res = 5) BEGIN //enchantment
++				PATCH_IF (school = 5) BEGIN //enchantment
+ 					WRITE_BYTE 0x2d ("0x08") //blocked to: inv		  
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none  
+ 				END
+-				PATCH_IF (res = 6) BEGIN //evocation
++				PATCH_IF (school = 6) BEGIN //evocation
+ 					WRITE_BYTE 0x2d ("0x02") //blocked to: enc
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 7) BEGIN //illusion
++				PATCH_IF (school = 7) BEGIN //illusion
+ 					WRITE_BYTE 0x2d ("0x10") //blocked to: nec 		  
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 8) BEGIN //necromancy
++				PATCH_IF (school = 8) BEGIN //necromancy
+ 					WRITE_BYTE 0x2d ("0x04") //blocked to: ill 	  
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none 		  
+ 				END
+@@ -943,82 +959,83 @@
+ 	END
+ 
+ 	//iwdee opposed schools
+-	ACTION_PHP_EACH arcanespell AS ind => res BEGIN 
++	ACTION_PHP_EACH arcanespell AS ind => school BEGIN 
+ 		ACTION_IF ((GAME_IS ~iwdee~) AND FILE_EXISTS_IN_GAME ~%ind%.spl~) BEGIN 
+ 			COPY_EXISTING ~%ind%.spl~ ~override~ 	
+-				PATCH_IF (res = 0) BEGIN //no school
++				PATCH_IF (school = 0) BEGIN //no school
+ 					WRITE_BYTE 0x25 0 //change to unaffiliated 
+ 					WRITE_LONG 0x1e ("0x00000000") //blocked to: none
+ 				END
+-				PATCH_IF (res = 1) BEGIN //abjuration
++				PATCH_IF (school = 1) BEGIN //abjuration
+ 					WRITE_LONG 0x1e ("0x00002400") //blocked to: alt, ill  
+ 				END
+-				PATCH_IF (res = 2) BEGIN //alteration
++				PATCH_IF (school = 2) BEGIN //alteration
+ 					WRITE_LONG 0x1e ("0x00000040") //blocked to: abj
+ 				END
+-				PATCH_IF (res = 3) BEGIN //conjuration
++				PATCH_IF (school = 3) BEGIN //conjuration
+ 					WRITE_LONG 0x1e ("0x00000900") //blocked to: div, inv
+ 				END
+-				PATCH_IF (res = 4) BEGIN //divination
++				PATCH_IF (school = 4) BEGIN //divination
+ 					WRITE_LONG 0x1e ("0x00000800") //blocked to: inv
+ 				END
+-				PATCH_IF (res = 5) BEGIN //enchantment
++				PATCH_IF (school = 5) BEGIN //enchantment
+ 					WRITE_LONG 0x1e ("0x00001000") //blocked to: nec
+ 				END
+-				PATCH_IF (res = 6) BEGIN //evocation
++				PATCH_IF (school = 6) BEGIN //evocation
+ 					WRITE_LONG 0x1e ("0x00000280") //blocked to: enc, conj
+ 				END
+-				PATCH_IF (res = 7) BEGIN //illusion
++				PATCH_IF (school = 7) BEGIN //illusion
+ 					WRITE_LONG 0x1e ("0x00001040") //blocked to: nec, abj
+ 				END
+-				PATCH_IF (res = 8) BEGIN //necromancy
++				PATCH_IF (school = 8) BEGIN //necromancy
+ 					WRITE_LONG 0x1e ("0x00002400") //blocked to: ill, alt
+ 				END
+ 			BUT_ONLY 
+ 		END
+ 	END
+-	ACTION_PHP_EACH arcanescroll AS ind => res BEGIN 
++	ACTION_PHP_EACH arcanescroll AS ind => school BEGIN 
+ 		ACTION_IF ((GAME_IS ~iwdee~) AND FILE_EXISTS_IN_GAME ~%ind%.itm~) BEGIN 
+ 			COPY_EXISTING ~%ind%.itm~ ~override~ 			
+-				PATCH_IF (res = 0) BEGIN //no school
++				PATCH_IF (school = 0) BEGIN //no school
+ 					WRITE_BYTE 0x2d ("0x00") //blocked to: none
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 1) BEGIN //abjuration
++				PATCH_IF (school = 1) BEGIN //abjuration
+ 					WRITE_BYTE 0x2d ("0x24") //blocked to: alt, ill 
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 2) BEGIN //alteration
++				PATCH_IF (school = 2) BEGIN //alteration
+ 					WRITE_BYTE 0x2d ("0x00") //blocked to: none  
+ 					WRITE_BYTE 0x2f ("0x40") //blocked to: abj
+ 				END
+-				PATCH_IF (res = 3) BEGIN //conjuration
++				PATCH_IF (school = 3) BEGIN //conjuration
+ 					WRITE_BYTE 0x2d ("0x09") //blocked to: div, inv
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 4) BEGIN //divination
++				PATCH_IF (school = 4) BEGIN //divination
+ 					WRITE_BYTE 0x2d ("0x08") //blocked to: inv  
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 5) BEGIN //enchantment
++				PATCH_IF (school = 5) BEGIN //enchantment
+ 					WRITE_BYTE 0x2d ("0x10") //blocked to: nec		  
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none  
+ 				END
+-				PATCH_IF (res = 6) BEGIN //evocation
++				PATCH_IF (school = 6) BEGIN //evocation
+ 					WRITE_BYTE 0x2d ("0x02") //blocked to: enc
+ 					WRITE_BYTE 0x2f ("0x80") //blocked to: conj
+ 				END
+-				PATCH_IF (res = 7) BEGIN //illusion
++				PATCH_IF (school = 7) BEGIN //illusion
+ 					WRITE_BYTE 0x2d ("0x10") //blocked to: nec 		  
+ 					WRITE_BYTE 0x2f ("0x40") //blocked to: abj
+ 				END
+-				PATCH_IF (res = 8) BEGIN //necromancy
++				PATCH_IF (school = 8) BEGIN //necromancy
+ 					WRITE_BYTE 0x2d ("0x24") //blocked to: alt, ill 	  
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none 		  
+ 				END
+ 			BUT_ONLY 
+ 		END
+ 	END 
++  END
+ END 
+ 
+ 
+@@ -1028,10 +1045,10 @@
+ 
+ 	INCLUDE ~TomeAndBlood/data/core/scroll_list_sr.tpa~ 
+ 
+-	ACTION_PHP_EACH arcanespell AS ind => res BEGIN 
++	ACTION_PHP_EACH arcanespell AS ind => school BEGIN 
+ 		ACTION_IF (FILE_EXISTS_IN_GAME ~%ind%.spl~) BEGIN 
+ 			COPY_EXISTING ~%ind%.spl~ ~override~ 	
+-				PATCH_IF (res = 0) BEGIN //no school
++				PATCH_IF (school = 0) BEGIN //no school
+ 					WRITE_BYTE 0x25 0 //change to unaffiliated 
+ 					WRITE_LONG 0x1e ("0x00000000") //blocked: none
+ 					READ_LONG 0x50 "valid"
+@@ -1050,7 +1067,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 1) BEGIN //abjuration
++				PATCH_IF (school = 1) BEGIN //abjuration
+ 					WRITE_SHORT 0x22 12 //update casting graphic
+ 					WRITE_BYTE 0x25 1 //change to abjuration 
+ 					READ_LONG 0x50 "valid"
+@@ -1068,7 +1085,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 2) BEGIN //alteration
++				PATCH_IF (school = 2) BEGIN //alteration
+ 					WRITE_SHORT 0x22 10 //update casting graphic
+ 					WRITE_BYTE 0x25 8 //change to alteration 
+ 					READ_LONG 0x50 "valid"
+@@ -1086,7 +1103,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 3) BEGIN //conjuration
++				PATCH_IF (school = 3) BEGIN //conjuration
+ 					WRITE_SHORT 0x22 14 //update casting graphic
+ 					WRITE_BYTE 0x25 2 //change to conjuration 
+ 					READ_LONG 0x50 "valid"
+@@ -1104,7 +1121,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 4) BEGIN //divination
++				PATCH_IF (school = 4) BEGIN //divination
+ 					WRITE_SHORT 0x22 16 //update casting graphic
+ 					WRITE_BYTE 0x25 3 //change to divination 
+ 					READ_LONG 0x50 "valid"
+@@ -1122,7 +1139,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 5) BEGIN //enchantment
++				PATCH_IF (school = 5) BEGIN //enchantment
+ 					WRITE_SHORT 0x22 11 //update casting graphic
+ 					WRITE_BYTE 0x25 4 //change to enchantment 
+ 					READ_LONG 0x50 "valid"
+@@ -1140,7 +1157,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 6) BEGIN //evocation
++				PATCH_IF (school = 6) BEGIN //evocation
+ 					WRITE_SHORT 0x22 15 //update casting graphic
+ 					WRITE_BYTE 0x25 6 //change to evocation 
+ 					READ_LONG 0x50 "valid"
+@@ -1158,7 +1175,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 7) BEGIN //illusion
++				PATCH_IF (school = 7) BEGIN //illusion
+ 					WRITE_SHORT 0x22 13 //update casting graphic
+ 					WRITE_BYTE 0x25 5 //change to illusion 
+ 					READ_LONG 0x50 "valid"
+@@ -1176,7 +1193,7 @@
+ 						SAY_EVALUATED 0x50 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 8) BEGIN //necromancy
++				PATCH_IF (school = 8) BEGIN //necromancy
+ 					WRITE_SHORT 0x22 9 //update casting graphic
+ 					WRITE_BYTE 0x25 7 //change to necromancy 
+ 					READ_LONG 0x50 "valid"
+@@ -1201,10 +1218,10 @@
+ 
+ //updating schools in scrolls_______________________________________________________
+ //
+-	ACTION_PHP_EACH arcanescroll AS ind => res BEGIN 
++	ACTION_PHP_EACH arcanescroll AS ind => school BEGIN 
+ 		ACTION_IF (FILE_EXISTS_IN_GAME ~%ind%.itm~) BEGIN 
+ 			COPY_EXISTING ~%ind%.itm~ ~override~ 			
+-				PATCH_IF (res = 0) BEGIN //no school
++				PATCH_IF (school = 0) BEGIN //no school
+ 					WRITE_BYTE 0x2d ("0x00") //blocked: none 		  
+ 					WRITE_BYTE 0x2f ("0x00") //blocked: none
+ 					READ_LONG 0x54 "valid"
+@@ -1223,7 +1240,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 1) BEGIN //abjuration
++				PATCH_IF (school = 1) BEGIN //abjuration
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -1239,7 +1256,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 2) BEGIN //alteration
++				PATCH_IF (school = 2) BEGIN //alteration
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -1255,7 +1272,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 3) BEGIN //conjuration
++				PATCH_IF (school = 3) BEGIN //conjuration
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -1271,7 +1288,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 4) BEGIN //divination
++				PATCH_IF (school = 4) BEGIN //divination
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -1287,7 +1304,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 5) BEGIN //enchantment
++				PATCH_IF (school = 5) BEGIN //enchantment
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -1303,7 +1320,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 6) BEGIN //evocation
++				PATCH_IF (school = 6) BEGIN //evocation
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -1319,7 +1336,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 7) BEGIN //illusion
++				PATCH_IF (school = 7) BEGIN //illusion
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -1335,7 +1352,7 @@
+ 						SAY_EVALUATED 0x54 ~%new_desc%~
+ 					END
+ 				END
+-				PATCH_IF (res = 8) BEGIN //necromancy
++				PATCH_IF (school = 8) BEGIN //necromancy
+ 					READ_LONG 0x54 "valid"
+ 					PATCH_IF (%valid% >= 0) BEGIN // verify name is valid
+ 						READ_STRREF 0x54 "desc"
+@@ -1846,8 +1863,12 @@
+ //...apply spell removal to simulacra
+ //
+ COPY ~TomeAndBlood/data/spell_tweaks/simulacr.spl~ ~override~
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 337 target = 1 parameter1 = ~-1~ parameter2 = 237	END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 4 duration = 1 STR_VAR resource = ~D5CLONM~ END 	//	remove level 3-4 spells
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 4 duration = 1 STR_VAR resource = ~D5CLONH~ END 	//	remove level 5+ spells
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 144 target = 1 parameter2 = 9 timing = 1 END 	//	no item use
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 144 target = 1 parameter2 = 11 timing = 1 END 	//	no item use
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 144 target = 1 parameter2 = 12 timing = 1 END 	//	no item use
+ //  LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 1 parameter2 = 261 timing = 0 duration = 90 STR_VAR resource = ~~ END
+ 
+ //...custom simulacrum summon
+@@ -1861,7 +1882,9 @@
+   SAY UNIDENTIFIED_DESC @6272
+   WRITE_LONG 0x34 6
+   LPF DELETE_EFFECT INT_VAR match_target = 1 END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 1 parameter2 = 224 timing = 9 END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 9 STR_VAR resource = ~D5WI804~ END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 4 duration = 2 STR_VAR resource = ~spwi607~ END
+   WRITE_ASCII 0x3a ~spwi703c~ #8
+   LPF ALTER_SPELL_HEADER INT_VAR speed = 5 STR_VAR icon = ~spwi703b~ END
+ 
+@@ -1878,10 +1901,11 @@
+   SAY UNIDENTIFIED_DESC @6274
+   WRITE_LONG 0x34 7
+   LPF DELETE_EFFECT INT_VAR match_target = 1 END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 1 parameter2 = 224 timing = 9 END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = (0 - 1) timing = 9 STR_VAR resource = ~D5CLONM~ END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 9 STR_VAR resource = ~D5WI804~ END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 1 STR_VAR resource = ~SPWI206~ END
+-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 4 duration = 72 STR_VAR resource = ~SPWI703~ END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 4 duration = 2 STR_VAR resource = ~SPWI703~ END
+   WRITE_ASCII 0x3a ~spwi607c~ #8
+   LPF ALTER_SPELL_HEADER INT_VAR speed = 2 STR_VAR icon = ~spwi607b~ END
+ 
+@@ -1892,110 +1916,118 @@
+   WRITE_ASCII 0x3a ~spwi607a~ #8
+   LPF ALTER_ITEM_HEADER STR_VAR icon = ~spwi607a~ END
+ END 
++//...9th level: project image
++//
++COPY_EXISTING ~spwi804.spl~ ~override/d5wi9il.spl~
++  SAY NAME1 @6277
++  SAY UNIDENTIFIED_DESC @6278
++  WRITE_LONG 0x34 9
++  WRITE_ASCII 0x3a ~d5projic~ #8
++  LPF ALTER_SPELL_HEADER INT_VAR speed = 5 STR_VAR icon = ~d5projib~ END
++  LPF DELETE_EFFECT INT_VAR match_target = 1 END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = (0 - 1) timing = 9 STR_VAR resource = ~D5CLONM~ END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = (0 - 1) timing = 9 STR_VAR resource = ~D5CLONH~ END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 9 STR_VAR resource = ~D5WI804~ END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 1 STR_VAR resource = ~SPWI405~ END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 4 duration = 2 STR_VAR resource = ~d5wi9il~ END
++COPY ~TomeAndBlood/data/spell_tweaks/d5projic.bam~ ~override~
++COPY ~TomeAndBlood/data/spell_tweaks/d5projib.bam~ ~override~
+ //...8th level: simulacrum
+ //
+ COPY_EXISTING ~spwi804.spl~ ~override~
+   SAY NAME1 @6275
+   SAY UNIDENTIFIED_DESC @6276
+   LPF DELETE_EFFECT INT_VAR match_target = 1 END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 1 parameter2 = 224 timing = 9 END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = (0 - 1) timing = 9 STR_VAR resource = ~D5CLONM~ END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = (0 - 1) timing = 9 STR_VAR resource = ~D5CLONH~ END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 9 STR_VAR resource = ~D5WI804~ END
+   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 1 STR_VAR resource = ~SPWI405~ END
+-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 4 duration = 72 STR_VAR resource = ~SPWI804~ END
+-  LPF ALTER_SPELL_HEADER INT_VAR speed = 7 END
++  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 4 duration = 2 STR_VAR resource = ~SPWI804~ END
++  LPF ALTER_SPELL_HEADER INT_VAR speed = 5 END
+ 
+ ACTION_IF FILE_EXISTS_IN_GAME ~scrl8z.itm~ THEN BEGIN
+   COPY_EXISTING ~scrl8z.itm~ ~override~
+   SAY NAME2 @6275
+   SAY IDENTIFIED_DESC @6276
+ END 
+-//...9th level: project image
+-//
+-COPY ~TomeAndBlood/data/spell_tweaks/spwi607.spl~ ~override/d5wi9il.spl~
+-  SAY NAME1 @6277
+-  SAY UNIDENTIFIED_DESC @6278
+-  WRITE_LONG 0x34 9
+-  WRITE_ASCII 0x3a ~d5projic~ #8
+-  LPF ALTER_SPELL_HEADER INT_VAR speed = 7 STR_VAR icon = ~d5projib~ END
+-COPY ~TomeAndBlood/data/spell_tweaks/d5projic.bam~ ~override~
+-COPY ~TomeAndBlood/data/spell_tweaks/d5projib.bam~ ~override~
+ 
+ END
+ //__________________________________________________________________________________
+ 
+ 	
+ //updating opposition schools: non iwdee opposed schools
+-	ACTION_PHP_EACH arcanespell AS ind => res BEGIN 
++  ACTION_IF NOT FILE_EXISTS_IN_GAME ~qdtnb_specialists.qd~ BEGIN	
++	ACTION_PHP_EACH arcanespell AS ind => school BEGIN 
+ 		ACTION_IF ((NOT GAME_IS ~iwdee~) AND FILE_EXISTS_IN_GAME ~%ind%.spl~) BEGIN 
+ 			COPY_EXISTING ~%ind%.spl~ ~override~ 	
+-				PATCH_IF (res = 0) BEGIN //no school
++				PATCH_IF (school = 0) BEGIN //no school
+ 					WRITE_BYTE 0x25 0 //change to unaffiliated 
+ 					WRITE_LONG 0x1e ("0x00000000") //blocked to: none
+ 				END
+-				PATCH_IF (res = 1) BEGIN //abjuration
++				PATCH_IF (school = 1) BEGIN //abjuration
+ 					WRITE_LONG 0x1e ("0x00002000") //blocked to: alt  
+ 				END
+-				PATCH_IF (res = 2) BEGIN //alteration
++				PATCH_IF (school = 2) BEGIN //alteration
+ 					WRITE_LONG 0x1e ("0x00000040") //blocked to: abj
+ 				END
+-				PATCH_IF (res = 3) BEGIN //conjuration
++				PATCH_IF (school = 3) BEGIN //conjuration
+ 					WRITE_LONG 0x1e ("0x00000100") //blocked to: div
+ 				END
+-				PATCH_IF (res = 4) BEGIN //divination
++				PATCH_IF (school = 4) BEGIN //divination
+ 					WRITE_LONG 0x1e ("0x00000080") //blocked to: conj
+ 				END
+-				PATCH_IF (res = 5) BEGIN //enchantment
++				PATCH_IF (school = 5) BEGIN //enchantment
+ 					WRITE_LONG 0x1e ("0x00000800") //blocked to: inv
+ 				END
+-				PATCH_IF (res = 6) BEGIN //evocation
++				PATCH_IF (school = 6) BEGIN //evocation
+ 					WRITE_LONG 0x1e ("0x00000200") //blocked to: enc
+ 				END
+-				PATCH_IF (res = 7) BEGIN //illusion
++				PATCH_IF (school = 7) BEGIN //illusion
+ 					WRITE_LONG 0x1e ("0x00001000") //blocked to: nec
+ 				END
+-				PATCH_IF (res = 8) BEGIN //necromancy
++				PATCH_IF (school = 8) BEGIN //necromancy
+ 					WRITE_LONG 0x1e ("0x00000400") //blocked to: ill
+ 				END
+ 			BUT_ONLY  
+ 		END
+ 	END
+-	ACTION_PHP_EACH arcanescroll AS ind => res BEGIN 
++	ACTION_PHP_EACH arcanescroll AS ind => school BEGIN 
+ 		ACTION_IF ((NOT GAME_IS ~iwdee~) AND FILE_EXISTS_IN_GAME ~%ind%.itm~) BEGIN 
+ 			COPY_EXISTING ~%ind%.itm~ ~override~ 			
+-				PATCH_IF (res = 0) BEGIN //no school
++				PATCH_IF (school = 0) BEGIN //no school
+ 					WRITE_BYTE 0x2d ("0x00") //blocked to: none
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 1) BEGIN //abjuration
++				PATCH_IF (school = 1) BEGIN //abjuration
+ 					WRITE_BYTE 0x2d ("0x20") //blocked to: alt 
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 2) BEGIN //alteration
++				PATCH_IF (school = 2) BEGIN //alteration
+ 					WRITE_BYTE 0x2d ("0x00") //blocked to: none  
+ 					WRITE_BYTE 0x2f ("0x40") //blocked to: abj
+ 				END
+-				PATCH_IF (res = 3) BEGIN //conjuration
++				PATCH_IF (school = 3) BEGIN //conjuration
+ 					WRITE_BYTE 0x2d ("0x01") //blocked to: div
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 4) BEGIN //divination
++				PATCH_IF (school = 4) BEGIN //divination
+ 					WRITE_BYTE 0x2d ("0x00") //blocked to: none  
+ 					WRITE_BYTE 0x2f ("0x80") //blocked to: conj
+ 				END
+-				PATCH_IF (res = 5) BEGIN //enchantment
++				PATCH_IF (school = 5) BEGIN //enchantment
+ 					WRITE_BYTE 0x2d ("0x08") //blocked to: inv		  
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none  
+ 				END
+-				PATCH_IF (res = 6) BEGIN //evocation
++				PATCH_IF (school = 6) BEGIN //evocation
+ 					WRITE_BYTE 0x2d ("0x02") //blocked to: enc
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 7) BEGIN //illusion
++				PATCH_IF (school = 7) BEGIN //illusion
+ 					WRITE_BYTE 0x2d ("0x10") //blocked to: nec 		  
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 8) BEGIN //necromancy
++				PATCH_IF (school = 8) BEGIN //necromancy
+ 					WRITE_BYTE 0x2d ("0x04") //blocked to: ill 	  
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none 		  
+ 				END
+@@ -2004,88 +2036,101 @@
+ 	END
+ 
+ //iwdee opposed schools
+-	ACTION_PHP_EACH arcanespell AS ind => res BEGIN 
++	ACTION_PHP_EACH arcanespell AS ind => school BEGIN 
+ 		ACTION_IF ((GAME_IS ~iwdee~) AND FILE_EXISTS_IN_GAME ~%ind%.spl~) BEGIN 
+ 			COPY_EXISTING ~%ind%.spl~ ~override~ 	
+-				PATCH_IF (res = 0) BEGIN //no school
++				PATCH_IF (school = 0) BEGIN //no school
+ 					WRITE_BYTE 0x25 0 //change to unaffiliated 
+ 					WRITE_LONG 0x1e ("0x00000000") //blocked to: none
+ 				END
+-				PATCH_IF (res = 1) BEGIN //abjuration
++				PATCH_IF (school = 1) BEGIN //abjuration
+ 					WRITE_LONG 0x1e ("0x00002400") //blocked to: alt, ill  
+ 				END
+-				PATCH_IF (res = 2) BEGIN //alteration
++				PATCH_IF (school = 2) BEGIN //alteration
+ 					WRITE_LONG 0x1e ("0x00000040") //blocked to: abj
+ 				END
+-				PATCH_IF (res = 3) BEGIN //conjuration
++				PATCH_IF (school = 3) BEGIN //conjuration
+ 					WRITE_LONG 0x1e ("0x00000900") //blocked to: div, inv
+ 				END
+-				PATCH_IF (res = 4) BEGIN //divination
++				PATCH_IF (school = 4) BEGIN //divination
+ 					WRITE_LONG 0x1e ("0x00000800") //blocked to: inv
+ 				END
+-				PATCH_IF (res = 5) BEGIN //enchantment
++				PATCH_IF (school = 5) BEGIN //enchantment
+ 					WRITE_LONG 0x1e ("0x00001000") //blocked to: nec
+ 				END
+-				PATCH_IF (res = 6) BEGIN //evocation
++				PATCH_IF (school = 6) BEGIN //evocation
+ 					WRITE_LONG 0x1e ("0x00000280") //blocked to: enc, conj
+ 				END
+-				PATCH_IF (res = 7) BEGIN //illusion
++				PATCH_IF (school = 7) BEGIN //illusion
+ 					WRITE_LONG 0x1e ("0x00001040") //blocked to: nec, abj
+ 				END
+-				PATCH_IF (res = 8) BEGIN //necromancy
++				PATCH_IF (school = 8) BEGIN //necromancy
+ 					WRITE_LONG 0x1e ("0x00002400") //blocked to: ill, alt
+ 				END
+ 			BUT_ONLY 
+ 		END
+ 	END
+-	ACTION_PHP_EACH arcanescroll AS ind => res BEGIN 
++	ACTION_PHP_EACH arcanescroll AS ind => school BEGIN 
+ 		ACTION_IF ((GAME_IS ~iwdee~) AND FILE_EXISTS_IN_GAME ~%ind%.itm~) BEGIN 
+ 			COPY_EXISTING ~%ind%.itm~ ~override~ 			
+-				PATCH_IF (res = 0) BEGIN //no school
++				PATCH_IF (school = 0) BEGIN //no school
+ 					WRITE_BYTE 0x2d ("0x00") //blocked to: none
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 1) BEGIN //abjuration
++				PATCH_IF (school = 1) BEGIN //abjuration
+ 					WRITE_BYTE 0x2d ("0x24") //blocked to: alt, ill 
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 2) BEGIN //alteration
++				PATCH_IF (school = 2) BEGIN //alteration
+ 					WRITE_BYTE 0x2d ("0x00") //blocked to: none  
+ 					WRITE_BYTE 0x2f ("0x40") //blocked to: abj
+ 				END
+-				PATCH_IF (res = 3) BEGIN //conjuration
++				PATCH_IF (school = 3) BEGIN //conjuration
+ 					WRITE_BYTE 0x2d ("0x09") //blocked to: div, inv
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 4) BEGIN //divination
++				PATCH_IF (school = 4) BEGIN //divination
+ 					WRITE_BYTE 0x2d ("0x08") //blocked to: inv  
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none
+ 				END
+-				PATCH_IF (res = 5) BEGIN //enchantment
++				PATCH_IF (school = 5) BEGIN //enchantment
+ 					WRITE_BYTE 0x2d ("0x10") //blocked to: nec		  
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none  
+ 				END
+-				PATCH_IF (res = 6) BEGIN //evocation
++				PATCH_IF (school = 6) BEGIN //evocation
+ 					WRITE_BYTE 0x2d ("0x02") //blocked to: enc
+ 					WRITE_BYTE 0x2f ("0x80") //blocked to: conj
+ 				END
+-				PATCH_IF (res = 7) BEGIN //illusion
++				PATCH_IF (school = 7) BEGIN //illusion
+ 					WRITE_BYTE 0x2d ("0x10") //blocked to: nec 		  
+ 					WRITE_BYTE 0x2f ("0x40") //blocked to: abj
+ 				END
+-				PATCH_IF (res = 8) BEGIN //necromancy
++				PATCH_IF (school = 8) BEGIN //necromancy
+ 					WRITE_BYTE 0x2d ("0x24") //blocked to: alt, ill 	  
+ 					WRITE_BYTE 0x2f ("0x00") //blocked to: none 		  
+ 				END
+ 			BUT_ONLY 
+ 		END
+ 	END
++  END
+ END 
+-END 
++
+ 
+ //COMPATIBILITY WITH SPECIALISTS REVISIONS 
+ 
+ ACTION_IF FILE_EXISTS_IN_GAME ~qdtnb_specialists.qd~ THEN BEGIN 
++	ACTION_FOR_EACH necspl IN ~TNB_NECRO_CC_I~ ~TNB_NECRO_CC_II~ ~TNB_NECRO_CC_III~ ~TNB_NECRO_CC_IV~ ~TNB_NECRO_CC_V~ ~TNB_NECRO_CC_VI~ ~TNB_NECRO_CC_VII~ ~TNB_NECRO_CC_VIII~ ~TNB_NECRO_CC_IX~ BEGIN 
++	  COPY_EXISTING - ~spell.ids~ ~tomandblood/backup~
++   		COUNT_REGEXP_INSTANCES ~%necspl%~ spell_exists
++	  ACTION_IF (spell_exists) BEGIN
++		LAF RES_NUM_OF_SPELL_NAME
++			STR_VAR spell_name = EVAL ~%necspl%~
++			RET spell_res
++		END
++		COPY_EXISTING ~%spell_res%.spl~ ~override~
++		  WRITE_BYTE 0x25 7
++	  END
++	END
+ 	ACTION_IF FILE_EXISTS_IN_GAME ~dvsrv4here.mrk~ THEN BEGIN //SR
+ 		ACTION_FOR_EACH bonusspl IN ~QDMG+ABJ~ ~QDMG+ALT~ ~QDMG+CON~ ~QDMG+EVO~ ~QDMG+ENC~ ~QDMG+ILL~ ~QDMG+NEC~ ~QDMG+DIV~ BEGIN 
+ 			COPY_EXISTING ~%bonusspl%.spl~ ~override~ 
+@@ -2094,6 +2139,10 @@
+ 				END 
+ 		END 
+ 		ACTION_FOR_EACH newspl IN ~WIZARD_SYMBOL_FEAR_TNB~ ~WIZARD_SHAPECHANGE_TNB~ ~WIZARD_BLACK_BLADE_OF_DISASTER_TNB~ ~WIZARD_ARMOR_TNB~ ~WIZARD_BLUR_TNB~ ~WIZARD_REFLECTED_IMAGE_TNB~ ~WIZARD_MIRROR_IMAGE_TNB~ ~WIZARD_ENERGY_DRAIN_TNB~   BEGIN 
++		  COPY_EXISTING - ~spell.ids~ ~faiths_and_powers/backup~
++    		COUNT_REGEXP_INSTANCES ~%newspl%~ spell_exists
++		  ACTION_IF (spell_exists) BEGIN
++			PRINT ~%newspl%~
+ 			LAF RES_NUM_OF_SPELL_NAME
+ 				STR_VAR spell_name = EVAL ~%newspl%~
+ 				RET spell_res
+@@ -2139,6 +2188,7 @@
+ 				COPY_EXISTING ~QDMG+NEC.SPL~ ~override~ 
+ 				LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=1 timing=9 STR_VAR resource= EVAL ~%spell_res%~ END 
+ 			END	
++		  END
+ 		END 
+ 		ACTION_FOR_EACH mvdspl IN ~SPWI303~ ~SPWI412~ ~SPWI601~ ~SPWI616~ ~SPWI716~ ~SPWI209~  BEGIN 
+ 			COPY_EXISTING ~%mvdspl%.spl~ ~override~ 
+@@ -2194,6 +2244,9 @@
+  
+ 		END
+ 		ACTION_FOR_EACH newspl IN ~WIZARD_LIMITED_WISH_TNB~ ~WIZARD_SYMBOL_FEAR_TNB~ ~WIZARD_SHAPECHANGE_TNB~ ~WIZARD_BLACK_BLADE_OF_DISASTER_TNB~ BEGIN 
++		  COPY_EXISTING - ~spell.ids~ ~faiths_and_powers/backup~
++    		COUNT_REGEXP_INSTANCES ~%newspl%~ spell_exists
++		  ACTION_IF (spell_exists) BEGIN
+ 			PRINT ~%newspl%~
+ 			LAF RES_NUM_OF_SPELL_NAME
+ 				STR_VAR spell_name = EVAL ~%newspl%~
+@@ -2240,8 +2293,9 @@
+ 				COPY_EXISTING ~QDMG+NEC.SPL~ ~override~ 
+ 				LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=1 timing=9 STR_VAR resource= EVAL ~%spell_res%~ END 
+ 			END	
++		  END
+ 		END
+-		ACTION_FOR_EACH mvdspl IN ~SPWI303~ ~SPWI412~ ~SPWI601~ ~SPWI616~ ~SPWI716~ ~SPWI209~  ~SPWI101~ BEGIN 
++		ACTION_FOR_EACH mvdspl IN ~SPWI303~ ~SPWI412~ ~SPWI601~ ~SPWI616~ ~SPWI716~ ~SPWI209~  ~SPWI101~ ~d5wi9il~ BEGIN 
+ 			COPY_EXISTING ~%mvdspl%.spl~ ~override~ 
+ 				READ_BYTE  0x25 school
+ 			ACTION_IF (school = 1) BEGIN //abjuration

@@ -1,0 +1,10 @@
+--- TomeAndBlood/SetUp-TomeAndBlood.tp2	2016-12-18 06:15:49.133720400 +0100
++++ Fixpack/TomeAndBlood/SetUp-TomeAndBlood.tp2	2017-02-20 23:32:59.789687000 +0100
+@@ -1,6 +1,6 @@
+ BACKUP ~TomeAndBlood/backup~
+ AUTHOR ~aquadrizzt@gmail.com~
+-VERSION ~0.7~ 
++VERSION ~0.7 BWP Fix~ 
+ 
+ /* Language Settings */
+ AUTO_TRA ~TomeAndBlood/lang/%s~
