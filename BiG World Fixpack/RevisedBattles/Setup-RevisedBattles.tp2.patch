@@ -8,6 +8,16 @@
 +
 +// EET / BGT chapter numbering compatibility 
 +ALWAYS
++ ACTION_DEFINE_ARRAY va#reload BEGIN setup END
++
++ LAF HANDLE_CHARSETS // recursively converts all tra files found in tra_path
++ INT_VAR
++ infer_charsets = 1
++ STR_VAR
++ tra_path = EVAL ~%MOD_FOLDER%/Language~
++ iconv_path = ~iconv~ // provided by BiG World Fixpack
++ reload_array = va#reload
++ END
 +  OUTER_SPRINT ~BGT_VAR~ ~GlobalLT("endofbg1","GLOBAL",2)~ // Only true in BG1/BGEE/SoD part of BGT/EET
 +
 +  ACTION_IF GAME_IS ~eet~ BEGIN
