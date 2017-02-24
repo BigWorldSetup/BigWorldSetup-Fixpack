@@ -1,14 +1,16 @@
 --- Tiax/Setup-Tiax.tp2	2014-11-10 14:18:04.000000000 -0500
 +++ Fixpack/Tiax/Setup-Tiax.tp2	2016-11-21 16:35:31.512329100 -0500
-@@ -1,3 +1,3 @@
+@@ -1,13 +1,22 @@
  BACKUP ~Tiax/Backup~
  AUTHOR ~http://forums.pocketplane.net~
 -VERSION ~v4~
 +VERSION ~v4 BWP Fix~
-@@ -5,6 +5,17 @@
+ 
  README ~Tiax/%LANGUAGE%/Readme-Tiax.txt~ ~Tiax/Readme-Tiax.txt~ 
  
  ALWAYS
+-  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+-  INCLUDE ~%MOD_FOLDER%/handle_charsets.tpa~
 +  ACTION_IF GAME_IS ~eet~ BEGIN
 +    OUTER_SET bg2_chapter = 12
 +  END ELSE BEGIN
@@ -19,11 +21,12 @@
 +    OUTER_SPRINT name_source ~bg2_chapter_%i%~
 +    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
 +  END
-+
-   // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
-   INCLUDE ~%MOD_FOLDER%/handle_charsets.tpa~
  
-@@ -34,7 +45,7 @@
++  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+   // No exception, everything needs to be converted
+   ACTION_DEFINE_ARRAY O#noconvert BEGIN END
+ 
+@@ -34,7 +43,7 @@
  
  BEGIN @0
  
@@ -32,7 +35,7 @@
  LOAD_TRA ~Tiax/%LANGUAGE%/Setup-Tiax-EE.tra~
  ADD_JOURNAL @24 USING ~Tiax/%LANGUAGE%/O#Tiax.tra~ 
  END
-@@ -89,7 +100,7 @@
+@@ -89,7 +98,7 @@
  SAY SPELL_DISRUPTED @43
  SAY BIO @44
  
@@ -41,7 +44,7 @@
  	~Tiax/Dialogue/O#Tiax.d~
  	~Tiax/Dialogue/O#TiaxJ.d~
  	~Tiax/Dialogue/O#TiaxP.d~
-@@ -149,14 +160,14 @@
+@@ -149,14 +158,14 @@
  SAY SPELL_DISRUPTED @43
  SAY BIO @44
  
@@ -58,7 +61,7 @@
  COMPILE	~Tiax/Dialogue/TiaxEE.d~
  END
  
-@@ -180,3 +191,23 @@
+@@ -180,3 +189,23 @@
  UNLESS ~O#Tiax~
  
  LAF HANDLE_AUDIO END
