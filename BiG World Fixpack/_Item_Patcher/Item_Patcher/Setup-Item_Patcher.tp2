@@ -1,7 +1,7 @@
 BACKUP ~Item_Patcher/backup~
 AUTHOR ~Nightfarer - piol.luca@gmail.com~
 //README ~Item_Patcher/readme.html~
-VERSION ~ALPHA 2~
+VERSION ~ALPHA 3~
 
 ASK_EVERY_COMPONENT
 
@@ -209,6 +209,32 @@ BEGIN ~Gives some TS items the Droppable Flag~ DESIGNATED 115
 REQUIRE_COMPONENT ~setup-item_patcher.tp2~ 0 ~You must install the marker component first.~
 
 ACTION_FOR_EACH item IN ~helmsun~ BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~%item%.itm~ BEGIN
+    COPY_EXISTING ~%item%.itm~ ~override~ //
+        READ_BYTE 0x18 "flags"
+        WRITE_BYTE "0x18" ("%flags%" BOR "0b00000100") // droppable flag
+    BUT_ONLY_IF_IT_CHANGES
+  END
+END
+
+///Avi Maya Items
+BEGIN ~Gives some Avi Maya items the Droppable Flag~ DESIGNATED 116
+REQUIRE_COMPONENT ~setup-item_patcher.tp2~ 0 ~You must install the marker component first.~
+
+ACTION_FOR_EACH item IN ~avii1~ BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~%item%.itm~ BEGIN
+    COPY_EXISTING ~%item%.itm~ ~override~ //
+        READ_BYTE 0x18 "flags"
+        WRITE_BYTE "0x18" ("%flags%" BOR "0b00000100") // droppable flag
+    BUT_ONLY_IF_IT_CHANGES
+  END
+END
+
+///Aeon Items
+BEGIN ~Gives some Aeon items the Droppable Flag~ DESIGNATED 117
+REQUIRE_COMPONENT ~setup-item_patcher.tp2~ 0 ~You must install the marker component first.~
+
+ACTION_FOR_EACH item IN ~ae003~ ~aeopum~ ~rea001~ ~rea002~ BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~%item%.itm~ BEGIN
     COPY_EXISTING ~%item%.itm~ ~override~ //
         READ_BYTE 0x18 "flags"
