@@ -474,14 +474,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: bg1re - Romantic Encounters for BG1 v1.4
-
-:: no known issues
-
-
-----------------------------------------------------------------------------------------
-
-
 :: bg2_tweaks - BG2 Tweaks v16
 
 :: Argent77's BG:EE compatibility patch
