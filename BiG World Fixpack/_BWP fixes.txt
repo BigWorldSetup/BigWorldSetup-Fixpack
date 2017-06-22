@@ -764,21 +764,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: cdtweaks - Tweaks Anthology Beta 5
-
-:: K4thos' fix for "Do Not Reveal City Maps" tweak interfering with other script blocks
-:: http://gibberlings3.net/forums/index.php?showtopic=28329#entry250257
-
-:: K4thos' fix for ToB-style NPCs tweak causing SoD-cutscene Imoen (BDIMOEN.CRE) to die
-:: - LINK NOT FOUND -
-
-:: removed EET from allowed game types for Improved Fate Spirit tweak
-:: http://gibberlings3.net/forums/index.php?showtopic=27884&page=9#entry250365
-
-
-----------------------------------------------------------------------------------------
-
-
 :: ChaosKnight - Askaria Quest and Chaos Knight Kit v1.3
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
