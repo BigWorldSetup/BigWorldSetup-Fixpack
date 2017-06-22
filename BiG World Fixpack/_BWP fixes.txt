@@ -1121,18 +1121,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Eilistraee - Eilistraee's Song v4.0
-
-:: micbaldur's AdamentineDust -> DWDust fix
-:: - LINK NOT FOUND -
-
-:: Alex's ESXMSW.SPL fix
-:: http://www.shsforums.net/topic/46613-eilistraees-song/?p=584037
-
-
-----------------------------------------------------------------------------------------
-
-
 :: emad - Every Mod and Dog v6
 
 :: Lollorian's assorted ITM fixes
