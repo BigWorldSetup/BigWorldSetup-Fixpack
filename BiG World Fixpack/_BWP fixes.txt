@@ -2405,13 +2405,10 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: rr - Rogue Rebalancing v4.90b1
+:: rr - Rogue Rebalancing v4.91
 
 :: K4thos' EET compatibility patches
 :: https://github.com/BiGWorldProject/BiG-World-Fixpack/blob/master/BiG%20World%20Fixpack/rr/_copy/Changes.txt
-
-:: Cahir and Etamin's updated Polish translation
-:: http://www.shsforums.net/topic/59063-polish-translation-for-490/
 
 
 ----------------------------------------------------------------------------------------
