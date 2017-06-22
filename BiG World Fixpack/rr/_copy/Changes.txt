@@ -29,8 +29,4 @@ COMPILE ~RR/RR_CORE/COMPILE/AMNCEN1.D~
 COMPILE EVALUATE_BUFFER ~RR/RR_CORE/COMPILE/AMNCEN1.D~
 
 2. rr/setup-rr.tp2
- ~HaveSpell(2402)~  #12082 DO ~TakePartyGold(250) DestroyGold(250) RemoveSpell(2402) GiveItemCreate("scrl1v_",Myself,1,1,1)~ EXIT //Dimension Door
-=>
-+ ~HaveSpell(2402)~ + #12082 DO ~TakePartyGold(250) DestroyGold(250) RemoveSpell(2402) GiveItemCreate("scrl1v_",Myself,1,1,1)~ EXIT //Dimension Door
-
 This file doesn't document EVALUATE_BUFFER additions. The command is added if script or dialogue needs evaluation due to chapters variables usage
