@@ -1493,27 +1493,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Innershade - Colours of Infinity: Innershade v7.0
-
-:: Lollorian's journal entry eraser loop fix
-:: http://www.shsforums.net/topic/45425-innershade-bug-reports/?p=561404
-
-:: Lollorian's Innershade-Eilistraee Clearing worldmap overlap fix
-:: http://www.shsforums.net/topic/45425-innershade-bug-reports/?p=561404
-
-:: Red Carnelian's Worldmap appending code missing newline at top
-:: http://www.shsforums.net/topic/58265-problem-with-big-world-setup/?p=579703
-
-:: Used HANDLE_AUDIO for audio handling
-:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=585403
-
-:: Nightfarer fixed the overwriting of mapicons.bam by patching
-:: - LINK NOT FOUND -
-
-
-----------------------------------------------------------------------------------------
-
-
 :: ISNF - Colours of Infinity: I Shall Never Forget v4.1
 
 :: micbaldur's looping dialogue fix
