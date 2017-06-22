@@ -65,15 +65,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: atweaks - aTweaks v4.50b1
-
-:: Added Polish translation by Kinski, Bartek and Cahir
-:: http://www.shsforums.net/topic/59018-atweaks-v450-polish-translation/?p=591288
-
-
-----------------------------------------------------------------------------------------
-
-
 :: AbyStore - The Unusual Oddities Shop v3.0
 
 :: Lollorian's GLOBAL fixes
@@ -186,15 +177,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 
 :: Lollorian's class script trigger fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=561215
-
-
-----------------------------------------------------------------------------------------
-
-
-:: alternatives - Alternatives v11
-
-:: micbaldur's fix for Leyt "bonking"
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=582212
 
 
 ----------------------------------------------------------------------------------------
