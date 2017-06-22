@@ -1493,18 +1493,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: ISNF - Colours of Infinity: I Shall Never Forget v4.1
-
-:: micbaldur's looping dialogue fix
-:: http://www.shsforums.net/topic/56298-isnf-bug-reports/?p=567111
-
-:: agb1's additional looping fix for Selene's initial dialogue
-:: - LINK NOT FOUND -
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Isra - Isra for BG1 v2.0
 
 :: agb1's rh#isra2 -> rh#isra script name correction in BRH#ISRA Kivan banter dialogue
