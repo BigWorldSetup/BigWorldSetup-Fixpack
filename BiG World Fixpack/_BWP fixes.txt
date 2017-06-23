@@ -3268,18 +3268,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: WhiteQueen - Colours of Infinity: The White Queen v3.4
-
-:: Ibanix's Spellbinder gloves made usable by Necromancers
-:: http://www.shsforums.net/topic/57098-white-queen-bugs/?p=566256
-
-:: Used HANDLE_AUDIO for audio handling
-:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=585403
-
-
-----------------------------------------------------------------------------------------
-
-
 :: Wikaede - Wikaede One-Day NPC v3.4
 
 :: Upgraded to the "Wikaede Revisited v4.1" version
