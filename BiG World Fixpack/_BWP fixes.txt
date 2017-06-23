@@ -2936,18 +2936,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: TotDG - Tales of the Deep Gardens v10.0
-
-:: Lollorian's small little item fix
-:: http://www.shsforums.net/topic/54832-coi-bugtypo-thread/?p=547617
-
-:: Used HANDLE_AUDIO for audio handling
-:: http://www.shsforums.net/topic/56752-the-official-bwp-fixpack-thread/?p=585403
-
-
-----------------------------------------------------------------------------------------
-
-
 :: touched - Touch-the Moon NPC v1.1
 
 :: cmorgan's ToBEx compatible ADD_KIT fix
