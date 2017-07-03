@@ -3,9 +3,9 @@
 
 If you want to know more about the used fixes visit the quoted sites.
 
-Wenn Ihr mehr über die verwendeten Fixes wissen wollt, besucht die angezeigten Webseiten.
+Wenn Ihr mehr Ã¼ber die verwendeten Fixes wissen wollt, besucht die angezeigten Webseiten.
 
-Pour en apprendre plus sur les corrections employées, consulter les adresses des sites mentionnés.
+Pour en apprendre plus sur les corrections employÃ©es, consulter les adresses des sites mentionnÃ©s.
 
 
 ----------------------------------------------------------------------------------------
@@ -751,16 +751,6 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 :: Patches ORC05.CRE's BG1 Long Swords proficiency to 0
 :: - LINK NOT FOUND -
 
-
-----------------------------------------------------------------------------------------
-
-
-:: c#sb_silber - Adalon's Blood v13
-
-:: Roxanne's duplicate DO fix
-:: http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=583126
-
-
 ----------------------------------------------------------------------------------------
 
 
@@ -963,7 +953,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Devin - Les Exilés de Lunargent v1.0
+:: Devin - Les ExilÃ©s de Lunargent v1.0
 
 :: Lollorian's assorted ITM fixes
 :: http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=543984
@@ -2432,7 +2422,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses des
 ----------------------------------------------------------------------------------------
 
 
-:: Run - Runiczny Pieœniarz Klingi (Runic Bladesinger) v2.0
+:: Run - Runiczny PieÂœniarz Klingi (Runic Bladesinger) v2.0
 
 :: Typo bashing
 :: - LINK NOT FOUND -
