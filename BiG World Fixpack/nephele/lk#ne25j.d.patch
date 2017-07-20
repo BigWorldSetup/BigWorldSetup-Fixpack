@@ -1,0 +1,12 @@
+--- nephele/dialogue/lk#ne25j.d	2013-02-07 16:53:02.000000000 -0500
++++ Fixpack/nephele/dialogue/lk#ne25j.d	2016-11-04 16:09:12.443519800 -0400
+@@ -471,29 +471,29 @@
+
+ 
+ // Advice on Godhood
+ INTERJECT_COPY_TRANS FINSOL01 27 LK#Nephele_FinSol
+-  == LK#NE25J @151
++  == LK#NE25J IF ~InParty("Nephele") !StateCheck("Nephele",CD_STATE_NOTVALID)~ THEN @151
+   = @152
+ END
+ 
