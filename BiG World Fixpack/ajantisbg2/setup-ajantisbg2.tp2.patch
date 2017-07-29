@@ -4,8 +4,8 @@
  
  //MODDER
  
--VERSION ~13~
-+VERSION ~v13 BWP Fix~
+-VERSION ~14~
++VERSION ~v14 BWP Fix~
  
  README ~AjantisBG2/documentation/readme.%LANGUAGE%.txt~ ~AjantisBG2/documentation/readme.english.txt~
  
@@ -24,7 +24,7 @@
 +    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
 +  END
  
-+  //CamDawgs CD_STATE_NOTVALID zum Checken der Dialogf‰higkeit eines Char
++  //CamDawgs CD_STATE_NOTVALID zum Checken der Dialogf√§higkeit eines Char
 +  //Thank you very much, CamDawg!
 +  APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~ // adds custom IsValidForPartyDialogue state
 +              UNLESS ~CD_STATE_NOTVALID~
@@ -97,7 +97,7 @@
 -
 -
 -
--//CamDawgs CD_STATE_NOTVALID zum Checken der Dialogf‰higkeit eines Char
+-//CamDawgs CD_STATE_NOTVALID zum Checken der Dialogf√§higkeit eines Char
 -//Thank you very much, CamDawg!
 -APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
 - ~0x80101FEF CD_STATE_NOTVALID~
