@@ -3,8 +3,8 @@
 @@ -1,18 +1,35 @@
  BACKUP ~pcvamp/Backup~
  AUTHOR ~Nicolas Peters - admin@baldursgate-refugium.de (http://www.baldursgate-refugium.de/)~
--VERSION "v1.1"
-+VERSION "v1.1 BWP Fix 3"
+-VERSION "v1.2"
++VERSION "v1.2 BWP Fix 3"
  README "pcvamp/Readme.html"
 -AUTO_TRA ~pcvamp/TRA/%s~
 +AUTO_TRA ~pcvamp/TRA/%LANGUAGE%/%s~
@@ -30,9 +30,9 @@
  LANGUAGE ~English~ ~english~ ~pcvamp/TRA/english/setup.tra~
  
  BEGIN @1 // Mal des Vampirismus
--REQUIRE_FILE ~Data/25Dialog.bif~ @31 // Für eine Installation muss Thron des Bhaal installiert sein!
--REQUIRE_FILE ~Data/25Scripts.bif~ @31 // Für eine Installation muss Thron des Bhaal installiert sein!
-+REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ @31 // Für eine Installation muss Thron des Bhaal installiert sein!
+-REQUIRE_FILE ~Data/25Dialog.bif~ @31 // FÃ¼r eine Installation muss Thron des Bhaal installiert sein!
+-REQUIRE_FILE ~Data/25Scripts.bif~ @31 // FÃ¼r eine Installation muss Thron des Bhaal installiert sein!
++REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ @31 // FÃ¼r eine Installation muss Thron des Bhaal installiert sein!
  
  // BMPs
  COPY ~pcvamp/BMP/amalethS.bmp~ ~override/amalethS.bmp~
@@ -45,11 +45,11 @@
  COPY ~pcvamp/BCS/pcvampc6.bcs~ ~override/pcvampc6.bcs~
  COPY ~pcvamp/BCS/pcvampc7.bcs~ ~override/pcvampc7.bcs~
  COPY ~pcvamp/BCS/pcvampc8.bcs~ ~override/pcvampc8.bcs~
- EXTEND_BOTTOM ~AR0700.bcs~ ~pcvamp/BCS/AR0700.bcs~ // Gebietscript Waukeens Promenade ergänzen
- EXTEND_BOTTOM ~AR0702.bcs~ ~pcvamp/BCS/AR0702.bcs~ // Gebietscript Abenteuers Allerlei ergänzen
+ EXTEND_BOTTOM ~AR0700.bcs~ ~pcvamp/BCS/AR0700.bcs~ // Gebietscript Waukeens Promenade ergÃ¤nzen
+ EXTEND_BOTTOM ~AR0702.bcs~ ~pcvamp/BCS/AR0702.bcs~ // Gebietscript Abenteuers Allerlei ergÃ¤nzen
  
 +/* BWP Fixpack incorporates this patch into Valen's original priest.bcs file
- // Kleriker-Script Bugfix ausführen, wenn Valen-Mod installiert ist
+ // Kleriker-Script Bugfix ausfÃ¼hren, wenn Valen-Mod installiert ist
  ACTION_IF FILE_EXISTS_IN_GAME ~valen.cre~ THEN BEGIN
  	PRINT @20 // Valen-Mod gefunden, installiere Kleriker-Script Bugfix...
  	COPY_EXISTING_REGEXP ~.*\(PRIE\|CLER\|HEAL\|PRST\|SHAM\).*\.BCS~ ~override~
