@@ -1,8 +1,0 @@
---- Foundling/translations/english/BALDUR.TRA	2015-05-22 01:36:16.000000000 -0400
-+++ Fixpack/Foundling/translations/english/BALDUR.TRA	2016-11-26 17:27:19.387765400 -0500
-@@ -22,4 +22,4 @@
- We found the ritual sword 'Leira's Lie'. Now we need to take the sword to the ruins of Amaunator's temple, to the place the Shadow Dragon died. Foundling will be able to dispel the curse when we arrive.~
- @11   = ~Foundling and the Black Curse
- The whole ritual was predicted by the shadow dragon. He returned and possessed Foundling, but we managed to stop him.~
--@12   = ~Foundling died and his flesh turned to ashes. You have failed to dispell the curse.~
-+@12   = ~Foundling died and his flesh turned to ashes. You have failed to dispel the curse.~
