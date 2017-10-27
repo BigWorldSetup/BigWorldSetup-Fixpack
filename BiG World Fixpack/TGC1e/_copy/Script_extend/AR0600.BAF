@@ -1,0 +1,18 @@
+IF
+    Global("BW05_JusamSummoned","GLOBAL",0)
+THEN
+    RESPONSE #100
+          SetGlobal("BW05_JusamSummoned","GLOBAL",1)
+	    CreateCreature("BW05JUSM",[760.2010],3)
+	    CreateCreature("BW05FD01",[730.2000],6)
+END
+
+IF 
+    NumDeadGT("BW05BAAT",4)
+    Global("BW05_TGC1","GLOBAL",1)
+	CombatCounter(0)
+THEN
+    RESPONSE #100
+          SetGlobal("BW05_TGC1","GLOBAL",2)
+          SetGlobal("BW05_BanditAttack","GLOBAL",0)
+END
