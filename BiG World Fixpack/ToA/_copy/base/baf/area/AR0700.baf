@@ -1,0 +1,18 @@
+IF
+  Global("NomoranSpawn","GLOBAL",0)
+  Global("ZElminsterTalk","GLOBAL",0)
+  GlobalGT("CHAPTER","GLOBAL",17)
+THEN
+  RESPONSE #100
+    CreateCreature("z_nomora",[3301.3381],12)
+    SetGlobal("NomoranSpawn","GLOBAL",1)
+END
+
+IF
+  Global("ZElminsterTalk","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ZElminsterTalk","GLOBAL",3)
+    CreateCreature("z_elmi",[3301.3381],12)
+    CreateCreature("z_zah",[3351.3321],12)
+END
