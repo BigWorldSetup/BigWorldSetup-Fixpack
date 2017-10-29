@@ -1,6 +1,11 @@
 #!/bin/bash
 patchfile=$1
 
+# Replace \ with / in paths listed in the patch:
+awk '/^--- (.*)/ { gsub("\\\\", "/") } { print }' "$patchfile" > "$patchfile.tmp"
+mv -f "$patchfile.tmp" "$patchfile"
+
+# Inside each file specified by such a path, translate CRLF->LF:
 files=($(awk '/^--- / {print $2}' $patchfile))
 for filename in ${files[*]};
 do
