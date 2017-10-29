@@ -1,0 +1,3803 @@
+BACKUP ~ToA/Backup~
+AUTHOR ~whiteagnus@baldursgatemods.de~
+//Original Author: Naurandir
+VERSION ~v2.4_20160104~
+
+README ~ToA/readme.%LANGUAGE%.txt~
+
+AUTO_TRA "ToA/Language/%s/D"//%"
+
+ALWAYS
+	INCLUDE ~ToA/lib/a7_tools.tpa~
+	INCLUDE ~ToA/lib/EET_functions.tph~
+	
+	ACTION_DEFINE_ARRAY charsetsReloadArray BEGIN setup journal END
+	ACTION_DEFINE_ARRAY charsetsNoConvertArray BEGIN END
+		LAF ~HANDLE_CHARSETS~
+			INT_VAR
+			infer_charsets = 1
+			STR_VAR
+			tra_path = "ToA/language"
+			iconv_path = "ToA/tools/win32/iconv"
+			charset_table = charsetsTable
+			reload_array = charsetsReloadArray
+			noconvert_array = charsetsNoConvertArray
+	END
+	LOAD_TRA ~ToA/language/%LANGUAGE%/setup.tra~
+	
+	ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+		OUTER_SPRINT ~res~ ~ee~
+	END ELSE ACTION_IF GAME_IS ~bgt tob~ BEGIN
+		OUTER_SPRINT ~res~ ~normal~
+	END
+END
+
+LANGUAGE ~Deutsch (German)~
+         ~German~
+         ~ToA/language/german/setup.tra~
+         ~ToA/language/german/journal.tra~
+
+LANGUAGE ~English by Headbanger~
+         ~English~
+         ~ToA/language/english/setup.tra~
+         ~ToA/language/english/journal.tra~
+
+LANGUAGE ~Italian by ilot~
+         ~italian~
+         ~ToA/language/italian/setup.tra~
+         ~ToA/language/italian/journal.tra~
+
+LANGUAGE ~Polski (Polish) by Aristo~
+         ~polish~
+         ~ToA/language/polish/setup.tra~
+         ~ToA/language/polish/journal.tra~
+		 
+BEGIN @1 DESIGNATED 01
+REQUIRE_PREDICATE GAME_IS ~bgt eet tob bg2ee~ @393
+
+ACTION_DEFINE_ARRAY arrayName BEGIN ~ToA/base/baf/ZPALA3.baf~ ~ToA/base/baf/area/AR0700.baf~ ~ToA/base/baf/area/AR5500.baf~ END
+LAF ~EET_JOURNAL~
+	INT_VAR
+	journal_game = 0 //0 - BG2 (+12); 1 - SoD (+7) (default = 0)
+	journal_patch_mode = 0 //0 - replace with values; 1 - replace with variables (default = 0)
+	STR_VAR
+	journal_array = EVAL ~arrayName~ //array with files to patch (supports: d, dlg, baf, bcs, and any text file; if path points to override COPY_EXISTING is used)
+END
+
+EXTEND_BOTTOM ~AR0700.bcs~ ~ToA/base/baf/area/AR0700.baf~
+EXTEND_BOTTOM ~AR5500.bcs~ ~ToA/base/baf/area/AR5500.baf~
+
+COPY ~ToA/base/2da/ZSCENE1.2DA~ ~override~
+REPLACE 74518 @384
+COPY ~ToA/base/2da/ZSCENE2.2DA~ ~override~
+REPLACE 74633 @385
+COPY ~ToA/base/are/Z2BCAV.ARE~ ~override~
+COPY ~ToA/base/are/Z2BERG.ARE~ ~override~
+COPY ~ToA/base/are/Z2BZEL.ARE~ ~override~
+COPY ~ToA/base/are/Z2CAVL.ARE~ ~override~
+COPY ~ToA/base/are/Z2GZEL.ARE~ ~override~
+COPY ~ToA/base/are/Z2LCAVE.are~ ~override~
+COPY ~ToA/base/are/Z2SCHL.ARE~ ~override~
+COPY ~ToA/base/are/Z2VCAV.ARE~ ~override~
+COPY ~ToA/base/are/ZAHAU1.ARE~ ~override~
+COPY ~ToA/base/are/ZAHAU2.ARE~ ~override~
+COPY ~ToA/base/are/ZANEGH.are~ ~override~
+SAY 0x7530 @390
+SAY 0x75f4 @386
+SAY 0x76b8 @391
+COPY ~ToA/base/are/ZBERGE.ARE~ ~override~
+COPY ~ToA/base/are/ZBHAU1.ARE~ ~override~
+COPY ~ToA/base/are/ZBHAU2.ARE~ ~override~
+COPY ~ToA/base/are/ZBHAUS.ARE~ ~override~
+COPY ~ToA/base/are/ZBZEG2.ARE~ ~override~
+COPY ~ToA/base/are/ZBZEL1.ARE~ ~override~
+COPY ~ToA/base/are/ZBZEL2.ARE~ ~override~
+COPY ~ToA/base/are/ZBZEL3.ARE~ ~override~
+COPY ~ToA/base/are/ZBZEL4.ARE~ ~override~
+COPY ~ToA/base/are/ZBZEL5.ARE~ ~override~
+COPY ~ToA/base/are/ZBZEL6.ARE~ ~override~
+COPY ~ToA/base/are/ZBZEL7.ARE~ ~override~
+COPY ~ToA/base/are/ZBZEL8.ARE~ ~override~
+COPY ~ToA/base/are/ZBZELG.ARE~ ~override~
+COPY ~ToA/base/are/ZCAVE1.ARE~ ~override~
+COPY ~ToA/base/are/ZCAVE2.ARE~ ~override~
+COPY ~ToA/base/are/ZCAVE3.ARE~ ~override~
+COPY ~ToA/base/are/ZCAVE4.ARE~ ~override~
+COPY ~ToA/base/are/ZCAVE5.ARE~ ~override~
+COPY ~ToA/base/are/ZCLIFF.are~ ~override~
+COPY ~ToA/base/are/ZDREA2.are~ ~override~
+COPY ~ToA/base/are/ZDREAM.ARE~ ~override~
+COPY ~ToA/base/are/ZGAST.ARE~ ~override~
+COPY ~ToA/base/are/ZGEFE.ARE~ ~override~
+COPY ~ToA/base/are/ZHAU1.ARE~ ~override~
+COPY ~ToA/base/are/ZHAU2.ARE~ ~override~
+COPY ~ToA/base/are/ZHAU3.ARE~ ~override~
+COPY ~ToA/base/are/ZHBERG.ARE~ ~override~
+COPY ~ToA/base/are/ZHEL1.ARE~ ~override~
+COPY ~ToA/base/are/ZHHAUS.are~ ~override~
+COPY ~ToA/base/are/ZLADE1.ARE~ ~override~
+COPY ~ToA/base/are/ZPALA.ARE~ ~override~
+COPY ~ToA/base/are/ZPALA1.ARE~ ~override~
+COPY ~ToA/base/are/ZPALA2.ARE~ ~override~
+COPY ~ToA/base/are/ZPALA3.ARE~ ~override~
+COPY ~ToA/base/are/ZSCHMI.ARE~ ~override~
+COPY ~ToA/base/are/ZTEMP.ARE~ ~override~
+COPY ~ToA/base/are/ZZELT1.ARE~ ~override~
+COPY ~ToA/base/are/ZZELT2.ARE~ ~override~
+COPY ~ToA/base/are/ZZELT3.ARE~ ~override~
+COPY ~ToA/base/are/ZZELT4.ARE~ ~override~
+COPY ~ToA/base/are/ZZELTG.ARE~ ~override~
+COPY ~ToA/base/are/ZZHAU.ARE~ ~override~
+COPY ~ToA/base/are/ZZHAU1.ARE~ ~override~
+COPY ~ToA/base/are/ZZHAU2.ARE~ ~override~
+COPY ~ToA/base/eff~ ~override~
+COMPILE ~ToA/base/baf~
+COMPILE ~ToA/base/d~
+
+COPY ~ToA/base/itm/Z_2PLATB.ITM~ ~override~
+  SAY NAME1 @2
+  SAY NAME2 @2
+  SAY UNIDENTIFIED_DESC @3
+  SAY DESC @3
+ 
+COPY ~ToA/base/itm/Z_AAMU.ITM~ ~override~
+  SAY NAME1 @4
+  SAY NAME2 @5
+  SAY UNIDENTIFIED_DESC @6
+  SAY DESC @7
+
+COPY ~ToA/base/itm/Z_ANATH.ITM~ ~override~
+  SAY NAME1 @8
+  SAY NAME2 @9
+  SAY UNIDENTIFIED_DESC @10
+  SAY DESC @11
+
+COPY ~ToA/base/itm/Z_ANATH1.ITM~ ~override~
+  SAY NAME1 @12
+  SAY NAME2 @12
+  SAY UNIDENTIFIED_DESC @13
+  SAY DESC @13
+  
+COPY ~ToA/base/itm/Z_ANATH2.ITM~ ~override~
+  SAY NAME1 @14
+  SAY NAME2 @14
+  SAY UNIDENTIFIED_DESC @15
+  SAY DESC @15
+  
+COPY ~ToA/base/itm/Z_ANATH3.ITM~ ~override~
+	SAY NAME1 @16
+	SAY NAME2 @16
+	SAY UNIDENTIFIED_DESC @17
+	SAY DESC @17
+	
+COPY ~ToA/base/itm/Z_ANATH4.ITM~ ~override~
+	SAY NAME1 @18
+	SAY NAME2 @18
+	SAY UNIDENTIFIED_DESC @19
+	SAY DESC @19
+	
+COPY ~ToA/base/itm/Z_ANATHZ.ITM~ ~override~
+	SAY NAME1 @8
+	SAY NAME2 @9
+	SAY UNIDENTIFIED_DESC @10
+ SAY DESC @20
+
+COPY ~ToA/base/itm/Z_BAMU.ITM~ ~override~
+	SAY NAME1 @4
+	SAY NAME2 @21
+	SAY UNIDENTIFIED_DESC @6
+	SAY DESC @22
+
+COPY ~ToA/base/itm/Z_BBLADE.ITM~ ~override~
+	SAY NAME1 @23
+	SAY NAME2 @24
+	SAY UNIDENTIFIED_DESC @25
+	SAY DESC @26
+ 
+COPY ~ToA/base/itm/Z_BELWB.ITM~ ~override~
+	SAY NAME1 @27
+	SAY NAME2 @28
+	SAY UNIDENTIFIED_DESC @29
+	SAY DESC @30
+
+COPY ~ToA/base/itm/Z_BER1.ITM~ ~override~
+	SAY NAME1 @31
+	SAY NAME2 @31
+	SAY UNIDENTIFIED_DESC @32
+	SAY DESC @32
+
+COPY ~ToA/base/itm/Z_BER2.ITM~ ~override~
+	SAY NAME1 @33
+	SAY NAME2 @33
+	SAY UNIDENTIFIED_DESC @34
+	SAY DESC @34
+
+COPY ~ToA/base/itm/Z_BER3.ITM~ ~override~
+	SAY NAME1 @35
+	SAY NAME2 @35
+	SAY UNIDENTIFIED_DESC @36
+	SAY DESC @36
+
+COPY ~ToA/base/itm/Z_BOOK1.ITM~ ~override~
+	SAY NAME1 @37
+	SAY NAME2 @37
+	SAY UNIDENTIFIED_DESC @38
+	SAY DESC @38
+	
+COPY ~ToA/base/itm/Z_DKSW.ITM~ ~override~
+	SAY NAME1 @39
+	SAY NAME2 @40
+	SAY UNIDENTIFIED_DESC @41
+	SAY DESC @42
+ 
+COPY ~ToA/base/itm/Z_EAMU.ITM~ ~override~
+	SAY NAME1 @4
+	SAY NAME2 @43
+	SAY UNIDENTIFIED_DESC @6
+	SAY DESC @44
+
+COPY ~ToA/base/itm/Z_EKRAUT.itm~ ~override~
+	SAY NAME1 @45
+	SAY NAME2 @45
+	SAY UNIDENTIFIED_DESC @46
+	SAY DESC @46
+	
+COPY ~ToA/base/itm/Z_ELBOW.itm~ ~override~
+	SAY NAME1 @47
+	SAY NAME2 @48
+	SAY UNIDENTIFIED_DESC @49
+	SAY DESC @50
+
+COPY ~ToA/base/itm/Z_EPFEIF.itm~ ~override~
+	SAY NAME1 @51
+	SAY NAME2 @52
+	SAY UNIDENTIFIED_DESC @53
+	SAY DESC @54
+	
+COPY ~ToA/base/itm/Z_FREE.itm~ ~override~
+	SAY NAME1 @55
+	SAY NAME2 @55
+	SAY UNIDENTIFIED_DESC @56
+	SAY DESC @56
+	
+COPY ~ToA/base/itm/Z_FREE1.itm~ ~override~
+	SAY NAME1 @57
+	SAY NAME2 @57
+	SAY UNIDENTIFIED_DESC @58
+	SAY DESC @58
+	
+COPY ~ToA/base/itm/Z_FREE2.itm~ ~override~
+	SAY NAME1 @57
+	SAY NAME2 @57
+	SAY UNIDENTIFIED_DESC @58
+	SAY DESC @58
+
+COPY ~ToA/base/itm/Z_FREE3.itm~ ~override~
+	SAY NAME1 @57
+	SAY NAME2 @57
+	SAY UNIDENTIFIED_DESC @58
+	SAY DESC @58
+	
+COPY ~ToA/base/itm/Z_FREE4.itm~ ~override~
+	SAY NAME1 @57
+	SAY NAME2 @57
+	SAY UNIDENTIFIED_DESC @58
+	SAY DESC @58
+	
+COPY ~ToA/base/itm/Z_GHAM.itm~ ~override~
+	SAY NAME1 @59
+	SAY NAME2 @60
+	SAY UNIDENTIFIED_DESC @61
+	SAY DESC @62
+
+COPY ~ToA/base/itm/Z_GHP1.itm~ ~override~
+	SAY NAME1 @63
+	SAY NAME2 @63
+	SAY UNIDENTIFIED_DESC @64
+	SAY DESC @64
+	
+COPY ~ToA/base/itm/Z_GHP2.itm~ ~override~
+	SAY NAME1 @65
+	SAY NAME2 @65
+	SAY UNIDENTIFIED_DESC @66
+	SAY DESC @66
+	
+COPY ~ToA/base/itm/Z_GOLA.itm~ ~override~
+	SAY NAME1 @67
+	SAY NAME2 @68
+	SAY UNIDENTIFIED_DESC @6
+	SAY DESC @69
+
+COPY ~ToA/base/itm/Z_HACK.itm~ ~override~
+	SAY NAME1 @70
+	SAY NAME2 @71
+	SAY UNIDENTIFIED_DESC @10
+	SAY DESC @72
+	
+COPY ~ToA/base/itm/Z_HORN.itm~ ~override~
+	SAY NAME1 @73
+	SAY NAME2 @74
+	SAY UNIDENTIFIED_DESC @75
+	SAY DESC @76
+
+COPY ~ToA/base/itm/Z_KEY1.itm~ ~override~
+	SAY NAME1 @77
+	SAY NAME2 @77
+	SAY UNIDENTIFIED_DESC @78
+	SAY DESC @78
+		
+COPY ~ToA/base/itm/Z_MARS.itm~ ~override~
+	SAY NAME1 @23
+	SAY NAME2 @79
+	SAY UNIDENTIFIED_DESC @25
+	SAY DESC @80
+	
+COPY ~ToA/base/itm/Z_PKEY.itm~ ~override~
+	SAY NAME1 @81
+	SAY NAME2 @81
+	SAY UNIDENTIFIED_DESC @82
+	SAY DESC @82
+	
+COPY ~ToA/base/itm/Z_PLATM.itm~ ~override~
+	SAY NAME1 @2
+	SAY NAME2 @2
+	SAY UNIDENTIFIED_DESC @3
+	SAY DESC @3
+	
+COPY ~ToA/base/itm/Z_RAMU.itm~ ~override~
+	SAY NAME1 @4
+	SAY NAME2 @83
+	SAY UNIDENTIFIED_DESC @6
+	SAY DESC @84
+	
+COPY ~ToA/base/itm/Z_RWEIN.itm~ ~override~
+	SAY NAME1 @85
+	SAY NAME2 @85
+	SAY UNIDENTIFIED_DESC @86
+	SAY DESC @86
+	
+COPY ~ToA/base/itm/Z_SCL1.itm~ ~override~
+	SAY NAME1 @87
+	SAY NAME2 @88
+	SAY UNIDENTIFIED_DESC @89
+	SAY DESC @89
+
+COPY ~ToA/base/itm/Z_SCRLD.itm~ ~override~
+	SAY NAME1 @90
+	SAY NAME2 @91
+	SAY UNIDENTIFIED_DESC @92
+	SAY DESC @93
+
+COPY ~ToA/base/itm/Z_SOPAM.itm~ ~override~
+	SAY NAME1 @4
+	SAY NAME2 @94
+	SAY UNIDENTIFIED_DESC @95
+	SAY DESC @96
+
+COPY ~ToA/base/itm/Z_SPE1.itm~ ~override~
+	SAY NAME1 @97
+	SAY NAME2 @98
+	SAY UNIDENTIFIED_DESC @99
+	SAY DESC @100
+	
+COPY ~ToA/base/itm/Z_SPEKU.itm~ ~override~
+	SAY NAME1 @101
+	SAY NAME2 @102
+	SAY UNIDENTIFIED_DESC @103
+	SAY DESC @104
+
+COPY ~ToA/base/itm/Z_SPOT.itm~ ~override~
+	SAY NAME1 @73
+	SAY NAME2 @105
+	SAY UNIDENTIFIED_DESC @75
+	SAY DESC @106
+
+COPY ~ToA/base/itm/Z_SSW2H.itm~ ~override~
+	SAY NAME1 @70
+	SAY NAME2 @107
+	SAY UNIDENTIFIED_DESC @10
+	SAY DESC @108
+
+COPY ~ToA/base/itm/Z_SWTHF.itm~ ~override~
+	SAY NAME1 @39
+	SAY NAME2 @109
+	SAY UNIDENTIFIED_DESC @41
+	SAY DESC @110
+		
+COPY ~ToA/base/itm/Z_TAFEL1.itm~ ~override~
+	SAY NAME1 @111
+	SAY NAME2 @111
+	SAY UNIDENTIFIED_DESC @112
+	SAY DESC @112
+		
+COPY ~ToA/base/itm/Z_TAFEL2.itm~ ~override~
+	SAY NAME1 @111
+	SAY NAME2 @111
+	SAY UNIDENTIFIED_DESC @112
+	SAY DESC @112
+
+COPY ~ToA/base/cre/Z_2ARUB.CRE~ ~override~
+  SAY NAME1 @113
+  SAY NAME2 @113
+
+COPY ~ToA/base/cre/Z_2BALOR.CRE~ ~override~
+  SAY NAME1 @114
+  SAY NAME2 @114
+  
+COPY ~ToA/base/cre/Z_2BARBA.CRE~ ~override~
+  SAY NAME1 @115
+  SAY NAME2 @115
+  
+COPY ~ToA/base/cre/Z_2BDRA.CRE~ ~override~
+  SAY NAME1 @116
+  SAY NAME2 @116
+  
+COPY ~ToA/base/cre/Z_2BELA.CRE~ ~override~
+  SAY NAME1 @117
+  SAY NAME2 @117
+  
+COPY ~ToA/base/cre/Z_2BIBLI.CRE~ ~override~
+  SAY NAME1 @118
+  SAY NAME2 @118
+  
+COPY ~ToA/base/cre/Z_2BOTE.CRE~ ~override~
+  SAY NAME1 @119
+  SAY NAME2 @119
+  
+COPY ~ToA/base/cre/Z_2DEVAB.CRE~ ~override~
+  SAY NAME1 @120
+  SAY NAME2 @120
+  
+COPY ~ToA/base/cre/Z_2DROF.CRE~ ~override~
+  SAY NAME1 @121
+  SAY NAME2 @121
+  
+COPY ~ToA/base/cre/Z_2DROK.CRE~ ~override~
+  SAY NAME1 @122
+  SAY NAME2 @122
+  
+COPY ~ToA/base/cre/Z_2DYRI.CRE~ ~override~
+  SAY NAME1 @123
+  SAY NAME2 @123
+  
+COPY ~ToA/base/cre/Z_2ELSA2.CRE~ ~override~
+  SAY NAME1 @124
+  SAY NAME2 @124
+  
+COPY ~ToA/base/cre/Z_2ELSAS.CRE~ ~override~
+  SAY NAME1 @124
+  SAY NAME2 @124
+  
+COPY ~ToA/base/cre/Z_2ERIT.CRE~ ~override~
+  SAY NAME1 @125
+  SAY NAME2 @125
+  
+COPY ~ToA/base/cre/Z_2GE1.CRE~ ~override~
+  SAY NAME1 @126
+  SAY NAME2 @126
+  
+COPY ~ToA/base/cre/Z_2GE2.CRE~ ~override~
+  SAY NAME1 @127
+  SAY NAME2 @127
+  
+COPY ~ToA/base/cre/Z_2GE3.CRE~ ~override~
+  SAY NAME1 @128
+  SAY NAME2 @128
+  
+COPY ~ToA/base/cre/Z_2GE4.CRE~ ~override~
+  SAY NAME1 @129
+  SAY NAME2 @129
+  
+COPY ~ToA/base/cre/Z_2GHAN.CRE~ ~override~
+  SAY NAME1 @130
+  SAY NAME2 @130
+  
+COPY ~ToA/base/cre/Z_2HER1.CRE~ ~override~
+  SAY NAME1 @131
+  SAY NAME2 @131
+  
+COPY ~ToA/base/cre/Z_2HER2.CRE~ ~override~
+  SAY NAME1 @132
+  SAY NAME2 @132
+  
+COPY ~ToA/base/cre/Z_2HER3.CRE~ ~override~
+  SAY NAME1 @133
+  SAY NAME2 @133
+  
+COPY ~ToA/base/cre/Z_2HER4.CRE~ ~override~
+  SAY NAME1 @134
+  SAY NAME2 @134
+  
+COPY ~ToA/base/cre/Z_2HER5.CRE~ ~override~
+  SAY NAME1 @135
+  SAY NAME2 @135
+  
+COPY ~ToA/base/cre/Z_2HER6.CRE~ ~override~
+  SAY NAME1 @136
+  SAY NAME2 @136
+  
+COPY ~ToA/base/cre/Z_2HIBI2.CRE~ ~override~
+  SAY NAME1 @137
+  SAY NAME2 @137
+  
+COPY ~ToA/base/cre/Z_2HIBIT.CRE~ ~override~
+  SAY NAME1 @137
+  SAY NAME2 @137
+  
+COPY ~ToA/base/cre/Z_2HOB.CRE~ ~override~
+  SAY NAME1 @138
+  SAY NAME2 @138
+  
+COPY ~ToA/base/cre/Z_2LE1.CRE~ ~override~
+  SAY NAME1 @139
+  SAY NAME2 @139
+  
+COPY ~ToA/base/cre/Z_2LE2.CRE~ ~override~
+  SAY NAME1 @140
+  SAY NAME2 @140
+  
+COPY ~ToA/base/cre/Z_2LE3.CRE~ ~override~
+  SAY NAME1 @141
+  SAY NAME2 @141
+  
+COPY ~ToA/base/cre/Z_2LE4.CRE~ ~override~
+  SAY NAME1 @142
+  SAY NAME2 @142
+  
+COPY ~ToA/base/cre/Z_2LE5.CRE~ ~override~
+  SAY NAME1 @143
+  SAY NAME2 @143
+  
+COPY ~ToA/base/cre/Z_2LEIB.CRE~ ~override~
+  SAY NAME1 @144
+  SAY NAME2 @144
+  
+COPY ~ToA/base/cre/Z_2MAG1.CRE~ ~override~
+  SAY NAME1 @145
+  SAY NAME2 @145
+  
+COPY ~ToA/base/cre/Z_2MAND.CRE~ ~override~
+  SAY NAME1 @146
+  SAY NAME2 @146
+  
+COPY ~ToA/base/cre/Z_2MYST.CRE~ ~override~
+  SAY NAME1 @147
+  SAY NAME2 @147
+  
+COPY ~ToA/base/cre/Z_2NAUR2.CRE~ ~override~
+  SAY NAME1 @148
+  SAY NAME2 @148
+  
+COPY ~ToA/base/cre/Z_2NEK.CRE~ ~override~
+  SAY NAME1 @149
+  SAY NAME2 @149
+  
+COPY ~ToA/base/cre/Z_2NEKER.CRE~ ~override~
+  SAY NAME1 @149
+  SAY NAME2 @149
+  
+COPY ~ToA/base/cre/Z_2PBHAL.CRE~ ~override~
+  SAY NAME1 @150
+  SAY NAME2 @150
+  
+COPY ~ToA/base/cre/Z_2SBB.CRE~ ~override~
+  SAY NAME1 @138
+  SAY NAME2 @138
+  
+COPY ~ToA/base/cre/Z_2SBG.CRE~ ~override~
+  SAY NAME1 @151
+  SAY NAME2 @151
+  
+COPY ~ToA/base/cre/Z_2SCB.CRE~ ~override~
+  SAY NAME1 @152
+  SAY NAME2 @152
+  
+COPY ~ToA/base/cre/Z_2SCG.CRE~ ~override~
+  SAY NAME1 @153
+  SAY NAME2 @153
+  
+COPY ~ToA/base/cre/Z_2SERIN.CRE~ ~override~
+  SAY NAME1 @154
+  SAY NAME2 @154
+  
+COPY ~ToA/base/cre/Z_2SLE1.CRE~ ~override~
+  SAY NAME1 @155
+  SAY NAME2 @155
+  
+COPY ~ToA/base/cre/Z_2SLE2.CRE~ ~override~
+  SAY NAME1 @156
+  SAY NAME2 @156
+  
+COPY ~ToA/base/cre/Z_2SLE3.CRE~ ~override~
+  SAY NAME1 @157
+  SAY NAME2 @157
+  
+COPY ~ToA/base/cre/Z_2SLE4.CRE~ ~override~
+  SAY NAME1 @158
+  SAY NAME2 @158
+  
+COPY ~ToA/base/cre/Z_2SLE5.CRE~ ~override~
+  SAY NAME1 @159
+  SAY NAME2 @159
+  
+COPY ~ToA/base/cre/Z_2SLE6.CRE~ ~override~
+  SAY NAME1 @160
+  SAY NAME2 @160
+  
+COPY ~ToA/base/cre/Z_2SMB.CRE~ ~override~
+  SAY NAME1 @161
+  SAY NAME2 @161
+  
+COPY ~ToA/base/cre/Z_2SMG.CRE~ ~override~
+  SAY NAME1 @145
+  SAY NAME2 @145
+  
+COPY ~ToA/base/cre/Z_2SOL0.CRE~ ~override~
+  SAY NAME1 @162
+  SAY NAME2 @162
+  
+COPY ~ToA/base/cre/Z_2SOL1.CRE~ ~override~
+  SAY NAME1 @162
+  SAY NAME2 @162
+  
+COPY ~ToA/base/cre/Z_2SPB.CRE~ ~override~
+  SAY NAME1 @163
+  SAY NAME2 @163
+  
+COPY ~ToA/base/cre/Z_2SPE.CRE~ ~override~
+  SAY NAME1 @164
+  SAY NAME2 @164
+  
+COPY ~ToA/base/cre/Z_2SPE2.CRE~ ~override~
+  SAY NAME1 @165
+  SAY NAME2 @165
+  
+COPY ~ToA/base/cre/Z_2SPG.CRE~ ~override~
+  SAY NAME1 @166
+  SAY NAME2 @166
+    
+COPY ~ToA/base/cre/Z_2SSB.CRE~ ~override~
+  SAY NAME1 @144
+  SAY NAME2 @144
+    
+COPY ~ToA/base/cre/Z_2SSG.CRE~ ~override~
+  SAY NAME1 @162
+  SAY NAME2 @162
+    
+COPY ~ToA/base/cre/Z_2STB.CRE~ ~override~
+  SAY NAME1 @167
+  SAY NAME2 @167
+    
+COPY ~ToA/base/cre/Z_2STRA.CRE~ ~override~
+  SAY NAME1 @168
+  SAY NAME2 @168
+    
+COPY ~ToA/base/cre/Z_2TARA.CRE~ ~override~
+  SAY NAME1 @169
+  SAY NAME2 @169
+    
+COPY ~ToA/base/cre/Z_2TSAD.CRE~ ~override~
+  SAY NAME1 @170
+  SAY NAME2 @170
+    
+COPY ~ToA/base/cre/Z_2VAMPF.CRE~ ~override~
+  SAY NAME1 @171
+  SAY NAME2 @171
+    
+COPY ~ToA/base/cre/Z_2VAMPM.CRE~ ~override~
+  SAY NAME1 @172
+  SAY NAME2 @172
+    
+COPY ~ToA/base/cre/Z_2YANF.CRE~ ~override~
+  SAY NAME1 @144
+  SAY NAME2 @144
+    
+COPY ~ToA/base/cre/Z_2YANF2.CRE~ ~override~
+  SAY NAME1 @144
+  SAY NAME2 @144
+    
+COPY ~ToA/base/cre/Z_2YANM.CRE~ ~override~
+  SAY NAME1 @161
+  SAY NAME2 @161
+    
+COPY ~ToA/base/cre/Z_ADON.CRE~ ~override~
+  SAY NAME1 @173
+  SAY NAME2 @173
+    
+COPY ~ToA/base/cre/Z_ALAST.CRE~ ~override~
+  SAY NAME1 @174
+  SAY NAME2 @174
+    
+COPY ~ToA/base/cre/Z_ARYA.CRE~ ~override~
+  SAY NAME1 @175
+  SAY NAME2 @175
+    
+COPY ~ToA/base/cre/Z_BDRAG.CRE~ ~override~
+  SAY NAME1 @116
+  SAY NAME2 @116
+    
+COPY ~ToA/base/cre/Z_BERED.CRE~ ~override~
+  SAY NAME1 @176
+  SAY NAME2 @176
+    
+COPY ~ToA/base/cre/Z_BERFOT.CRE~ ~override~
+  SAY NAME1 @177
+  SAY NAME2 @177
+    
+COPY ~ToA/base/cre/Z_BERGF.CRE~ ~override~
+  SAY NAME1 @178
+  SAY NAME2 @178
+    
+COPY ~ToA/base/cre/Z_BERGF2.CRE~ ~override~
+  SAY NAME1 @178
+  SAY NAME2 @178
+    
+COPY ~ToA/base/cre/Z_BERSER.CRE~ ~override~
+  SAY NAME1 @179
+  SAY NAME2 @179
+    
+COPY ~ToA/base/cre/Z_BHAAL.CRE~ ~override~
+  SAY NAME1 @180
+  SAY NAME2 @180
+    
+COPY ~ToA/base/cre/Z_BIANCA.CRE~ ~override~
+  SAY NAME1 @181
+  SAY NAME2 @181
+    
+COPY ~ToA/base/cre/Z_BLACK.CRE~ ~override~
+  SAY NAME1 @182
+  SAY NAME2 @182
+    
+COPY ~ToA/base/cre/Z_BURGM.CRE~ ~override~
+  SAY NAME1 @183
+  SAY NAME2 @183
+    
+COPY ~ToA/base/cre/Z_CLERI1.CRE~ ~override~
+  SAY NAME1 @184
+  SAY NAME2 @184
+    
+COPY ~ToA/base/cre/Z_CYRIC.CRE~ ~override~
+  SAY NAME1 @185
+  SAY NAME2 @185
+    
+COPY ~ToA/base/cre/Z_DAEMO.CRE~ ~override~
+  SAY NAME1 @186
+  SAY NAME2 @186
+    
+COPY ~ToA/base/cre/Z_DALMAR.CRE~ ~override~
+  SAY NAME1 @187
+  SAY NAME2 @187
+    
+COPY ~ToA/base/cre/Z_DANAN.CRE~ ~override~
+  SAY NAME1 @188
+  SAY NAME2 @188
+    
+COPY ~ToA/base/cre/Z_DARAK.CRE~ ~override~
+  SAY NAME1 @189
+  SAY NAME2 @189
+    
+COPY ~ToA/base/cre/Z_DAVIAN.CRE~ ~override~
+  SAY NAME1 @190
+  SAY NAME2 @190
+    
+COPY ~ToA/base/cre/Z_DERIA.CRE~ ~override~
+  SAY NAME1 @191
+  SAY NAME2 @191
+    
+COPY ~ToA/base/cre/Z_DERIA2.CRE~ ~override~
+  SAY NAME1 @191
+  SAY NAME2 @191
+    
+COPY ~ToA/base/cre/Z_DOMP.CRE~ ~override~
+  SAY NAME1 @192
+  SAY NAME2 @192
+    
+COPY ~ToA/base/cre/Z_DONO.CRE~ ~override~
+  SAY NAME1 @193
+  SAY NAME2 @193
+    
+COPY ~ToA/base/cre/Z_DORE.CRE~ ~override~
+  SAY NAME1 @194
+  SAY NAME2 @194
+    
+COPY ~ToA/base/cre/Z_DROW1.CRE~ ~override~
+  SAY NAME1 @121
+  SAY NAME2 @121
+    
+COPY ~ToA/base/cre/Z_DROW10.CRE~ ~override~
+  SAY NAME1 @121
+  SAY NAME2 @121
+    
+COPY ~ToA/base/cre/Z_DROW11.CRE~ ~override~
+  SAY NAME1 @122
+  SAY NAME2 @122
+    
+COPY ~ToA/base/cre/Z_DROW2.CRE~ ~override~
+  SAY NAME1 @122
+  SAY NAME2 @122
+    
+COPY ~ToA/base/cre/Z_DROW3.CRE~ ~override~
+  SAY NAME1 @121
+  SAY NAME2 @121
+    
+COPY ~ToA/base/cre/Z_DROW4.CRE~ ~override~
+  SAY NAME1 @121
+  SAY NAME2 @121
+      
+COPY ~ToA/base/cre/Z_DROW5.CRE~ ~override~
+  SAY NAME1 @121
+  SAY NAME2 @121
+      
+COPY ~ToA/base/cre/Z_DROW6.CRE~ ~override~
+  SAY NAME1 @121
+  SAY NAME2 @121
+      
+COPY ~ToA/base/cre/Z_DROWF.CRE~ ~override~
+  SAY NAME1 @121
+  SAY NAME2 @121
+      
+COPY ~ToA/base/cre/Z_DROWK.CRE~ ~override~
+  SAY NAME1 @122
+  SAY NAME2 @122
+      
+COPY ~ToA/base/cre/Z_DUEGA1.CRE~ ~override~
+  SAY NAME1 @195
+  SAY NAME2 @195
+      
+COPY ~ToA/base/cre/Z_DUEGA2.CRE~ ~override~
+  SAY NAME1 @196
+  SAY NAME2 @196
+      
+COPY ~ToA/base/cre/Z_DUEGA3.CRE~ ~override~
+  SAY NAME1 @196
+  SAY NAME2 @196
+      
+COPY ~ToA/base/cre/Z_ELF1.CRE~ ~override~
+  SAY NAME1 @197
+  SAY NAME2 @197
+      
+COPY ~ToA/base/cre/Z_ELF2.CRE~ ~override~
+  SAY NAME1 @197
+  SAY NAME2 @197
+      
+COPY ~ToA/base/cre/Z_ELF3.CRE~ ~override~
+  SAY NAME1 @197
+  SAY NAME2 @197
+      
+COPY ~ToA/base/cre/Z_ELMI.CRE~ ~override~
+  SAY NAME1 @198
+  SAY NAME2 @198
+      
+COPY ~ToA/base/cre/Z_EMIR.CRE~ ~override~
+  SAY NAME1 @199
+  SAY NAME2 @199
+      
+COPY ~ToA/base/cre/Z_FEAR.CRE~ ~override~
+  SAY NAME1 @200
+  SAY NAME2 @200
+      
+COPY ~ToA/base/cre/Z_FMAGE.CRE~ ~override~
+  SAY NAME1 @201
+  SAY NAME2 @201
+      
+COPY ~ToA/base/cre/Z_GALA2.CRE~ ~override~
+  SAY NAME1 @202
+  SAY NAME2 @202
+      
+COPY ~ToA/base/cre/Z_GALA3.CRE~ ~override~
+  SAY NAME1 @202
+  SAY NAME2 @202
+      
+COPY ~ToA/base/cre/Z_GALF2.CRE~ ~override~
+  SAY NAME1 @203
+  SAY NAME2 @203
+      
+COPY ~ToA/base/cre/Z_GALF3.CRE~ ~override~
+  SAY NAME1 @203
+  SAY NAME2 @203
+      
+COPY ~ToA/base/cre/Z_GALORA.CRE~ ~override~
+  SAY NAME1 @202
+  SAY NAME2 @202
+      
+COPY ~ToA/base/cre/Z_GALORF.CRE~ ~override~
+  SAY NAME1 @203
+  SAY NAME2 @203
+      
+COPY ~ToA/base/cre/Z_GENER1.CRE~ ~override~
+  SAY NAME1 @204
+  SAY NAME2 @204
+      
+COPY ~ToA/base/cre/Z_GNOLLF.CRE~ ~override~
+  SAY NAME1 @205
+  SAY NAME2 @205
+      
+COPY ~ToA/base/cre/Z_GOLIAT.CRE~ ~override~
+  SAY NAME1 @206
+  SAY NAME2 @206
+      
+COPY ~ToA/base/cre/Z_GUARD1.CRE~ ~override~
+  SAY NAME1 @207
+  SAY NAME2 @207
+      
+COPY ~ToA/base/cre/Z_GUARD2.CRE~ ~override~
+  SAY NAME1 @208
+  SAY NAME2 @208
+      
+COPY ~ToA/base/cre/Z_HEAD1.CRE~ ~override~
+  SAY NAME1 @209
+  SAY NAME2 @209
+      
+COPY ~ToA/base/cre/Z_HEAD2.CRE~ ~override~
+  SAY NAME1 @210
+  SAY NAME2 @210
+      
+COPY ~ToA/base/cre/Z_HMAGE.CRE~ ~override~
+  SAY NAME1 @211
+  SAY NAME2 @211
+      
+COPY ~ToA/base/cre/Z_HOBGOB.CRE~ ~override~
+  SAY NAME1 @138
+  SAY NAME2 @138
+      
+COPY ~ToA/base/cre/Z_IBAR.CRE~ ~override~
+  SAY NAME1 @212
+  SAY NAME2 @212
+      
+COPY ~ToA/base/cre/Z_IGOR.CRE~ ~override~
+  SAY NAME1 @213
+  SAY NAME2 @213
+      
+COPY ~ToA/base/cre/Z_JAHORI.CRE~ ~override~
+  SAY NAME1 @214
+  SAY NAME2 @214
+      
+COPY ~ToA/base/cre/Z_JUNG1.CRE~ ~override~
+  SAY NAME1 @215
+  SAY NAME2 @215
+      
+COPY ~ToA/base/cre/Z_JUNG2.CRE~ ~override~
+  SAY NAME1 @215
+  SAY NAME2 @215
+      
+COPY ~ToA/base/cre/Z_JUNG3.CRE~ ~override~
+  SAY NAME1 @215
+  SAY NAME2 @215
+      
+COPY ~ToA/base/cre/Z_KALAK.CRE~ ~override~
+  SAY NAME1 @216
+  SAY NAME2 @216
+      
+COPY ~ToA/base/cre/Z_KCHICK.CRE~ ~override~
+  SAY NAME1 @217
+  SAY NAME2 @217
+      
+COPY ~ToA/base/cre/Z_KELEM.CRE~ ~override~
+  SAY NAME1 @218
+  SAY NAME2 @218
+      
+COPY ~ToA/base/cre/Z_LIND.CRE~ ~override~
+  SAY NAME1 @219
+  SAY NAME2 @219
+      
+COPY ~ToA/base/cre/Z_LORET.CRE~ ~override~
+  SAY NAME1 @220
+  SAY NAME2 @220
+      
+COPY ~ToA/base/cre/Z_MAEL.CRE~ ~override~
+  SAY NAME1 @221
+  SAY NAME2 @221
+      
+COPY ~ToA/base/cre/Z_MAGE1.CRE~ ~override~
+  SAY NAME1 @222
+  SAY NAME2 @222
+      
+COPY ~ToA/base/cre/Z_MAGE2.CRE~ ~override~
+  SAY NAME1 @222
+  SAY NAME2 @222
+      
+COPY ~ToA/base/cre/Z_MAGE3.CRE~ ~override~
+  SAY NAME1 @222
+  SAY NAME2 @222
+      
+COPY ~ToA/base/cre/Z_MAGTER.CRE~ ~override~
+  SAY NAME1 @223
+  SAY NAME2 @223
+      
+COPY ~ToA/base/cre/Z_MAHAN.CRE~ ~override~
+  SAY NAME1 @224
+  SAY NAME2 @224
+      
+COPY ~ToA/base/cre/Z_MALAK.CRE~ ~override~
+  SAY NAME1 @225
+  SAY NAME2 @225
+      
+COPY ~ToA/base/cre/Z_MARL2.CRE~ ~override~
+  SAY NAME1 @226
+  SAY NAME2 @226
+      
+COPY ~ToA/base/cre/Z_MARL3.CRE~ ~override~
+  SAY NAME1 @226
+  SAY NAME2 @226
+      
+COPY ~ToA/base/cre/Z_MARLIK.CRE~ ~override~
+  SAY NAME1 @226
+  SAY NAME2 @226
+      
+COPY ~ToA/base/cre/Z_MARY.CRE~ ~override~
+  SAY NAME1 @227
+  SAY NAME2 @227
+      
+COPY ~ToA/base/cre/Z_MBARD1.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MBARD2.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MBARD3.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MBARD4.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MBARD5.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MBARD6.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MCLER1.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MCLER2.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MCLER3.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MCLER4.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MCLER5.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MCLER6.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MEFIZ.CRE~ ~override~
+  SAY NAME1 @229
+  SAY NAME2 @229
+      
+COPY ~ToA/base/cre/Z_MFIGT1.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MFIGT2.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MFIGT3.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MFIGT4.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MFIGT5.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MFIGT6.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MMAGE1.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MMAGE2.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MMAGE3.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MMAGE4.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MMAGE5.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MMAGE6.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MPLY1.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MPLY2.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MPLY3.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MPLY4.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MPLY5.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MPLY6.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MTHIF1.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MTHIF2.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MTHIF3.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MTHIF4.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MTHIF5.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MTHIF6.CRE~ ~override~
+  SAY NAME1 @228
+  SAY NAME2 @228
+      
+COPY ~ToA/base/cre/Z_MYST2.CRE~ ~override~
+  SAY NAME1 @230
+  SAY NAME2 @230
+      
+COPY ~ToA/base/cre/Z_MYSTRA.CRE~ ~override~
+  SAY NAME1 @231
+  SAY NAME2 @231
+      
+COPY ~ToA/base/cre/Z_NAUR.CRE~ ~override~
+  SAY NAME1 @148
+  SAY NAME2 @148
+      
+COPY ~ToA/base/cre/Z_NICKI.CRE~ ~override~
+  SAY NAME1 @232
+  SAY NAME2 @232
+      
+COPY ~ToA/base/cre/Z_NIP.CRE~ ~override~
+  SAY NAME1 @233
+  SAY NAME2 @233
+      
+COPY ~ToA/base/cre/Z_NOMO2.CRE~ ~override~
+  SAY NAME1 @234
+  SAY NAME2 @234
+      
+COPY ~ToA/base/cre/Z_NOMO3.CRE~ ~override~
+  SAY NAME1 @234
+  SAY NAME2 @234
+      
+COPY ~ToA/base/cre/Z_NOMO4.CRE~ ~override~
+  SAY NAME1 @234
+  SAY NAME2 @234
+      
+COPY ~ToA/base/cre/Z_NOMO5.CRE~ ~override~
+  SAY NAME1 @234
+  SAY NAME2 @234
+      
+COPY ~ToA/base/cre/Z_NOMORA.CRE~ ~override~
+  SAY NAME1 @234
+  SAY NAME2 @234
+      
+COPY ~ToA/base/cre/Z_NUMA.CRE~ ~override~
+  SAY NAME1 @235
+  SAY NAME2 @235
+      
+COPY ~ToA/base/cre/Z_OROG.CRE~ ~override~
+  SAY NAME1 @236
+  SAY NAME2 @236
+      
+COPY ~ToA/base/cre/Z_PAT.CRE~ ~override~
+  SAY NAME1 @237
+  SAY NAME2 @237
+      
+COPY ~ToA/base/cre/Z_PICAR.CRE~ ~override~
+  SAY NAME1 @238
+  SAY NAME2 @238
+      
+COPY ~ToA/base/cre/Z_PIRI.CRE~ ~override~
+  SAY NAME1 @239
+  SAY NAME2 @239
+      
+COPY ~ToA/base/cre/Z_PORTW1.CRE~ ~override~
+  SAY NAME1 @240
+  SAY NAME2 @240
+      
+COPY ~ToA/base/cre/Z_RASAM.CRE~ ~override~
+  SAY NAME1 @241
+  SAY NAME2 @241
+      
+COPY ~ToA/base/cre/Z_SARAH.CRE~ ~override~
+  SAY NAME1 @242
+  SAY NAME2 @242
+      
+COPY ~ToA/base/cre/Z_SLAT.CRE~ ~override~
+  SAY NAME1 @243
+  SAY NAME2 @243
+      
+COPY ~ToA/base/cre/Z_SMAGE.CRE~ ~override~
+  SAY NAME1 @244
+  SAY NAME2 @244
+      
+COPY ~ToA/base/cre/Z_SOLDA1.CRE~ ~override~
+  SAY NAME1 @245
+  SAY NAME2 @245
+      
+COPY ~ToA/base/cre/Z_SOLDA2.CRE~ ~override~
+  SAY NAME1 @245
+  SAY NAME2 @245
+      
+COPY ~ToA/base/cre/Z_SOLDA3.CRE~ ~override~
+  SAY NAME1 @245
+  SAY NAME2 @245
+      
+COPY ~ToA/base/cre/Z_SOLDAT.CRE~ ~override~
+  SAY NAME1 @245
+  SAY NAME2 @245
+      
+COPY ~ToA/base/cre/Z_SOLDNF.CRE~ ~override~
+  SAY NAME1 @246
+  SAY NAME2 @246
+      
+COPY ~ToA/base/cre/Z_SOLDNM.CRE~ ~override~
+  SAY NAME1 @246
+  SAY NAME2 @246
+      
+COPY ~ToA/base/cre/Z_SOUL1.CRE~ ~override~
+  SAY NAME1 @247
+  SAY NAME2 @247
+      
+COPY ~ToA/base/cre/Z_SOUL2.CRE~ ~override~
+  SAY NAME1 @247
+  SAY NAME2 @247
+      
+COPY ~ToA/base/cre/Z_SOUL3.CRE~ ~override~
+  SAY NAME1 @247
+  SAY NAME2 @247
+      
+COPY ~ToA/base/cre/Z_TANDOS.CRE~ ~override~
+  SAY NAME1 @248
+  SAY NAME2 @248
+      
+COPY ~ToA/base/cre/Z_TEST.CRE~ ~override~
+  SAY NAME1 @234
+  SAY NAME2 @234
+      
+COPY ~ToA/base/cre/Z_TOLON.CRE~ ~override~
+  SAY NAME1 @249
+  SAY NAME2 @249
+      
+COPY ~ToA/base/cre/Z_TORTA.CRE~ ~override~
+  SAY NAME1 @250
+  SAY NAME2 @250
+      
+COPY ~ToA/base/cre/Z_TULUK.CRE~ ~override~
+  SAY NAME1 @251
+  SAY NAME2 @251
+      
+COPY ~ToA/base/cre/Z_VPIRI.CRE~ ~override~
+  SAY NAME1 @252
+  SAY NAME2 @252
+      
+COPY ~ToA/base/cre/Z_WHEL1.CRE~ ~override~
+  SAY NAME1 @253
+  SAY NAME2 @253
+      
+COPY ~ToA/base/cre/Z_WHEL2.CRE~ ~override~
+  SAY NAME1 @253
+  SAY NAME2 @253
+      
+COPY ~ToA/base/cre/Z_WHEL3.CRE~ ~override~
+  SAY NAME1 @253
+  SAY NAME2 @253
+      
+COPY ~ToA/base/cre/Z_WHEL4.CRE~ ~override~
+  SAY NAME1 @253
+  SAY NAME2 @253
+      
+COPY ~ToA/base/cre/Z_WHITE.CRE~ ~override~
+  SAY NAME1 @247
+  SAY NAME2 @247
+      
+COPY ~ToA/base/cre/Z_WINIF.CRE~ ~override~
+  SAY NAME1 @254
+  SAY NAME2 @254
+      
+COPY ~ToA/base/cre/Z_WINNI.CRE~ ~override~
+  SAY NAME1 @255
+  SAY NAME2 @255
+      
+COPY ~ToA/base/cre/Z_WMAGE.CRE~ ~override~
+  SAY NAME1 @256
+  SAY NAME2 @256
+      
+COPY ~ToA/base/cre/Z_YANTIE.CRE~ ~override~
+  SAY NAME1 @163
+  SAY NAME2 @163
+      
+COPY ~ToA/base/cre/Z_YANTIF.CRE~ ~override~
+  SAY NAME1 @144
+  SAY NAME2 @144
+      
+COPY ~ToA/base/cre/Z_YANTIM.CRE~ ~override~
+  SAY NAME1 @161
+  SAY NAME2 @161
+      
+COPY ~ToA/base/cre/Z_ZAH.CRE~ ~override~
+  SAY NAME1 @257
+  SAY NAME2 @257
+      
+COPY ~ToA/base/cre/Z_ZAHIKI.CRE~ ~override~
+  SAY NAME1 @258
+  SAY NAME2 @258
+      
+COPY ~ToA/base/cre/Z_ZANAI.CRE~ ~override~
+  SAY NAME1 @259
+  SAY NAME2 @259
+
+COPY ~ToA/base/spl/Z_SW901.SPL~ ~override~
+  SAY NAME1 @88
+  SAY UNIDENTIFIED_DESC @89
+
+COPY ~ToA/base/sto/Z_2BIBLI.STO~ ~override~
+  SAY 0x0c @260
+  
+COPY ~ToA/base/sto/Z_BIBLI.STO~ ~override~
+  SAY 0x0c @260
+  
+COPY ~ToA/base/sto/Z_DAVIAN.STO~ ~override~
+  SAY 0x0c @190
+
+COPY ~ToA/base/sto/Z_EMIR.STO~ ~override~
+  SAY 0x0c @260
+  
+COPY ~ToA/base/sto/Z_MEFIZ.STO~ ~override~
+  SAY 0x0c @260
+
+MKDIR ~ToA/bif~
+  
+LAF HANDLE_TILECONV
+  INT_VAR
+  STR_VAR
+    input_path    = ~ToA/base/tbc~
+	output_path	  = ~ToA/bif~
+END
+
+LAF HANDLE_AUDIO
+  INT_VAR
+  STR_VAR
+    audio_path = ~ToA/base/ogg~
+    oggdec_path = ~ToA/tools/win32~
+    sox_path = ~ToA/tools/macosx~
+	output_path	  = ~ToA/bif~
+END
+
+COPY ~ToA/base/bam~ ~ToA/bif~
+COPY ~ToA/base/bmp~ ~ToA/bif~
+COPY ~ToA/base/mos/%res%~ ~ToA/bif~
+COPY ~ToA/base/wed~ ~ToA/bif~
+
+MAKE_BIFF ~ToA~ BEGIN ~ToA/bif~ ~^.*$~ END
+
+ACTION_FOR_EACH var IN bmp bam mos tis wav wed BEGIN
+	ACTION_BASH_FOR ~ToA/bif~ ~^.+\.%var%$~ BEGIN
+		DELETE +  ~%BASH_FOR_FILESPEC%~
+	END
+END
+
+LAF REMOVE_DIRECTORY STR_VAR dir_name = ~ToA/bif~ END
+
+ADD_JOURNAL @999990 @999991 @999992 @999993 @999994 @999995 @999996 @999997 @999998 @999999
+
+BEGIN @10000 
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~ToA/setup-toa.TP2~ 1  @10001
+DESIGNATED 02 GROUP @10002
+
+ACTION_FOR_EACH filename IN ZMYST01 ZMYST02 ZMYST03 ZMYST04 ZMYST05 ZMYST07 ZMYST08 ZMYST09 ZMYST10 ZMYST11 ZMYST12 ZNOMOR01 ZNOMOR02 ZNOMOR03 ZNOMOR04 ZNOMOR05 ZNOMOR06 ZNOMOR07 ZNOMOR08 ZNOMOR09 ZNOMOR10 ZNOMOR11 ZNOMOR12 ZNOMOR13 ZNOMOR14 ZNOMOR15 ZNOMOR16 ZNOMOR17 ZNOMOR18 ZNOMOR19 ZNOMOR20 ZNOMOR21 ZNOMOR22 ZNOMOR23 ZNOMOR24 ZNOMOR25 ZNOMOR26 ZNOMOR27 ZNOMOR28 ZNOMOR29 ZNOMOR30 ZNOMOR31 ZNOMOR32 ZNOMOR33 ZNOMOR34 ZNOMOR35 ZNOMOR36 ZNOMOR37 ZNOMOR38 ZNOMOR39 ZNOMOR40 ZNOMOR41 ZNOMOR42 ZNOMOR43 ZNOMOR44 ZNOMOR45 ZNOMOR46 ZNOMOR47 ZNOMOR48 ZNOMOR49 ZNOMOR50 ZNOMOR51 ZNOMOR52 ZNOMOR53 ZNOMOR54 ZNOMOR55 ZNOMOR56 ZNOMOR57 ZNOMOR58 ZNOMOR59 BEGIN
+COPY ~ToA/base/blank.wav~ ~override/%filename%.wav~
+END
+
+BEGIN @10003
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~ToA/setup-toa.TP2~ 1  @10001
+DESIGNATED 03 GROUP @10002
+SUBCOMPONENT @10004
+COPY_EXISTING ~AR0700.bcs~ ~override~
+REPLACE_BCS_BLOCK ~ToA/base/baf/area/AR0700.baf~ ~ToA/base/blank.bcs~
+
+BEGIN @10005
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~ToA/setup-toa.TP2~ 1  @10001
+DESIGNATED 04 GROUP @10002
+SUBCOMPONENT @10004
+COPY_EXISTING ~AR5500.bcs~ ~override~
+REPLACE_BCS_BLOCK ~ToA/base/baf/area/AR5500.baf~ ~ToA/base/blank.bcs~
+
+BEGIN @392
+REQUIRE_PREDICATE !GAME_IS ~bg2ee eet~ @394
+DESIGNATED 05 GROUP @10002
+
+OUTER_PATCH_SAVE orig_bytes_1 ~~ BEGIN
+    INSERT_BYTES 0x000 0x9
+    WRITE_LONG   0x000 0xdc82c766
+    WRITE_LONG   0x004 0x80000005
+    WRITE_BYTE   0x008 0x00
+END
+
+OUTER_PATCH_SAVE patch_bytes_1 ~~ BEGIN
+    INSERT_BYTES 0x000 0x9
+    WRITE_LONG   0x000 0xdc82c766
+    WRITE_LONG   0x004 0xe0000005
+    WRITE_BYTE   0x008 0x00
+END
+
+COPY bgmain.exe bgmain.exe
+    READ_ASCII 0x002739d2 target_bytes_1 ELSE 0 (0x9)
+    PATCH_IF (~%target_bytes_1%~ STRING_EQUAL ~%orig_bytes_1%~)
+    THEN BEGIN
+        WRITE_ASCIIE 0x002739d2 ~%patch_bytes_1%~ (0x9)
+        INNER_ACTION BEGIN
+            COPY ~ToA/base/toolscrl.bam~ ~override~
+        END
+    END ELSE
+    PATCH_IF (~%target_bytes_1%~ STRING_EQUAL ~%patch_bytes_1%~)
+    THEN BEGIN
+        PATCH_PRINT ~Patch already applied. Skipping ...~
+    END ELSE INNER_ACTION BEGIN FAIL ~Target bytes don't match. Aborting ...~ END
+BUT_ONLY
+
+
+
+
+BEGIN @10006
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~ToA/setup-toa.TP2~ 1  @10001
+DESIGNATED 10 GROUP @10007
+
+OUTER_SPRINT "flags" "UNDROPPABLE"
+
+COPY_EXISTING ~Z_ZANAI.CRE~ ~override~
+WRITE_LONG 0x1c 0 
+SPRINT "item_to_change" "PLAT02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~CHAN04~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_ZAHIKI.CRE~ ~override~
+WRITE_LONG 0x1c 0 
+SPRINT "item_to_change" "PLAT05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_ZAH.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN13"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_YANTIM.CRE~ ~override~
+WRITE_LONG 0x14 50
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "RING06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING16"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_YANTIF.CRE~ ~override~
+WRITE_LONG 0x14 100
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AMUL13"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H20~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_YANTIE.CRE~ ~override~
+WRITE_LONG 0x14 150
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SW1H20~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_WMAGE.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SLNG10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SLNG01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_WINNI.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "STAF08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_WINIF.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_WHITE.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT23"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~PLAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_WHEL4.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "Z_MARS"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_WHEL3.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "Z_MARS"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_WHEL2.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "Z_MARS"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_WHEL1.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "Z_MARS"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_TULUK.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H73"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_TOLON.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "HALB03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~PLAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~HALB01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_TANDOS.cre~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SLNG10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SLNG01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~CLCK13~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_SOUL3.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~CLCK13~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_SOUL2.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~CLCK13~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_SOUL1.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~CLCK13~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_SOLDNM.CRE~ ~override~
+WRITE_LONG 0x14 200
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "BRAC03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK13"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE05~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_SOLDNF.CRE~ ~override~
+WRITE_LONG 0x14 250
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SHLD17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H44"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "LEAT05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE05~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_SMAGE.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SLNG10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SLNG01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_PORTW1.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H24"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_PIRI.CRE~ ~override~
+WRITE_LONG 0x1c 0
+
+COPY_EXISTING ~Z_PICAR.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "MISC50"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+
+COPY_EXISTING ~Z_OROG.CRE~ ~override~
+WRITE_LONG 0x14 100
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CHAN05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AMUL13"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_NUMA.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "RING09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AMUL19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BELT06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOOT03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SHLD16~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE05~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_NOMORA.CRE~ ~override~
+							~Z_NOMO2.CRE~ ~override~
+							~Z_NOMO3.CRE~ ~override~
+							~Z_NOMO4.CRE~ ~override~
+							~Z_NOMO5.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~CLCK01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_NIP.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "LEAT11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BLUN15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~LEAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~BLUN06~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_NICKI.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+
+COPY_EXISTING ~Z_NAUR.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H24"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_MYSTRA.CRE~ ~override~
+							~Z_MYST2.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HGWRA02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "STAF20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_MTHIF1.CRE~ ~override~
+							~Z_MTHIF2.CRE~ ~override~
+							~Z_MTHIF3.CRE~ ~override~
+							~Z_MTHIF4.CRE~ ~override~
+							~Z_MTHIF5.CRE~ ~override~
+							~Z_MTHIF6.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "LEAT07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H29"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW26"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~LEAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SW1H07~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~BOW05~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+ADD_CRE_ITEM ~AROW01~ #0 #0 #0 ~IDENTIFIED~ ~INV12~
+
+
+COPY_EXISTING ~Z_MPLY1.CRE~ ~override~
+							~Z_MPLY2.CRE~ ~override~
+							~Z_MPLY3.CRE~ ~override~
+							~Z_MPLY4.CRE~ ~override~
+							~Z_MPLY5.CRE~ ~override~
+							~Z_MPLY6.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT23"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H42"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD29"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H07~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE05~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_MMAGE1.CRE~ ~override~
+							~Z_MMAGE2.CRE~ ~override~
+							~Z_MMAGE3.CRE~ ~override~
+							~Z_MMAGE4.CRE~ ~override~
+							~Z_MMAGE5.CRE~ ~override~
+							~Z_MMAGE6.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SLNG10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK01"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SLNG01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE05~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE05~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_MFIGT1.CRE~ ~override~
+							~Z_MFIGT2.CRE~ ~override~
+							~Z_MFIGT3.CRE~ ~override~
+							~Z_MFIGT4.CRE~ ~override~
+							~Z_MFIGT5.CRE~ ~override~
+							~Z_MFIGT6.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT23"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H42"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD29"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+
+
+COPY_EXISTING ~Z_MCLER1.CRE~ ~override~
+							~Z_MCLER2.CRE~ ~override~
+							~Z_MCLER3.CRE~ ~override~
+							~Z_MCLER4.CRE~ ~override~
+							~Z_MCLER5.CRE~ ~override~
+							~Z_MCLER6.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "STAF19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE05~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE05~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_MBARD1.CRE~ ~override~
+							~Z_MBARD2.CRE~ ~override~
+							~Z_MBARD3.CRE~ ~override~
+							~Z_MBARD4.CRE~ ~override~
+							~Z_MBARD5.CRE~ ~override~
+							~Z_MBARD6.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN13"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H07~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_MARLIK.CRE~ ~override~
+							~Z_MARL2.CRE~ ~override~
+							~Z_MARL3.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H40"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOOT07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AMUL21"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "HELM04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD08~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_MALAK.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HALB03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~HALB01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_MAHAN.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HAMM03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~HAMM01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_MAGTER.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~CHAN01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_LORET.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HELM05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD22"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~HELM01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~PLAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SHLD13~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV12~
+
+COPY_EXISTING ~Z_LIND.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_KELEM.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SHLD29"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SWH1H42"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT23"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_KALAK.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HALB03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~HALB01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_JAHORI.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "AROW02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW18"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW2H02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW2H01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~BOW01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~AROW01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_IGOR.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "POTN41"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+
+COPY_EXISTING ~Z_IBAR.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "STAF07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_HOBGOB.CRE~ ~override~
+WRITE_LONG 0x14 50
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW18"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT01"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "HELM09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~BOW05~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SW1H07~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV12~
+
+COPY_EXISTING ~Z_HMAGE.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK01"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_HEAD1.CRE~ ~override~
+							~Z_HEAD2.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SPER05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK01"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SPER01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_GUARD2.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN13"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H22"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H20~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~BOW01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_GUARD1.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "VISPLAT1"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+
+COPY_EXISTING ~Z_GOLIAT.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW2H20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+
+COPY_EXISTING ~Z_GNOLLF.CRE~ ~override~
+WRITE_LONG 0x14 100
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "HALB03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~HALB01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_GENER1.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SPER05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H20~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE05~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_GALORF.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HELM07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD21"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING30"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BELT04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOOT04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BLUN14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~PLAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~BLUN02~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_GALORA.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HELM03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CHAN09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD27"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING29"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AMUL15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BELT04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOOTDRIZ"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H32"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK27"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~CHAN01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_GALF2.CRE~ ~override~
+							~Z_GALF3.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HELM07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD21"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING30"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AMUL09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BELT04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOOT04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BLUN14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~PLAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~BLUN02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_GALA2.CRE~ ~override~
+							~Z_GALA3.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HELM03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CHAN09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD27"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING29"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AMUL15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BELT04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOOTDRIZ"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H32"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK27"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~CHAN01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_FMAGE.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK01"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_EMIR.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_ELMI.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE04~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE04~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_ELF2.CRE~ ~override~
+							~Z_ELF3.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "STAF07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SLNG04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_ELF1.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H22"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SW1H20~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_DUEGA3.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "BOLT06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "HAMM08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "XBOW05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~HAMM01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~XBOW04~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~BOLT01~ #20 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_DUEGA2.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "RING06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SCRL8B"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SCRL1F"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_DUEGA1.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "HAMM03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~PLAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~HAMM01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SHLD01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_DROWK.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~PLAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_DROWF.CRE~ ~override~
+							~Z_DROW2.CRE~ ~override~
+							~Z_DROW3.CRE~ ~override~
+							~Z_DROW4.CRE~ ~override~
+							~Z_DROW5.CRE~ ~override~
+							~Z_DROW6.CRE~ ~override~
+							~Z_DROW1.CRE~ ~override~
+							~Z_DROW10.CRE~ ~override~
+							~Z_DORE.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AMUL13"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_DROW11.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_DONO.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H24"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN55"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD29"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SW1H07~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SHLD03~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_DOMP.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW26"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOOT04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~CHAN01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~BOW05~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_DERIA.CRE~ ~override~
+							~Z_DERIA2.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H22"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CHAN12"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~CHAN01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SW1H20~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_DAVIAN.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "BLUN07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CHAN02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~CHAN01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~BLUN06~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_DARAK.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN44"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_DANAN.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H22"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CHAN12"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H20~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_DALMAR.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "STAF24"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_CYRIC.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H68"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW26"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H20~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_BIANCA.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_BHAAL.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT23"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW2H16"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD29"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~PLAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SW2H01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SHLD03~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_BERSER.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BLUN21"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~BLUN04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_BERED.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HELMNOAN"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RINGDEMN"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_BDRAG.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "Z_MARS"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+
+COPY_EXISTING ~Z_ARYA.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SPER02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SPER01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_ALAST.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SCRLAI"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SCRL8X"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SCRL7I"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_ADON.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "STAF19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~CHAN01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_2YANM.CRE~ ~override~
+WRITE_LONG 0x14 500
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING16"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2YANF2.CRE~ ~override~
+WRITE_LONG 0x14 250
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H33A"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_2YANF.CRE~ ~override~
+WRITE_LONG 0x14 250
+WRITE_LONG 0x1c 0
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H73"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CHAN05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AMUL13"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H20~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2VAMPM.CRE~ ~override~
+							~Z_2VAMPF.CRE~ ~override~
+							~Z_2MAND.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "VAMPREG"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "VAMP"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+
+COPY_EXISTING ~Z_2TSAD.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "LEAT08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AMUL12"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H74"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD28"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK30"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOOT02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING35"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~LEAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SW1H07~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SHLD01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_2TARA.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOOT06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AMUL13"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2STB.CRE~ ~override~
+WRITE_LONG 0x14 250
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "LEAT12"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H75"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SW1H43~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_2SSG.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+ADD_CRE_ITEM ~SHLD05~ #0 #0 #0 ~IDENTIFIED~ ~INV12~
+
+
+COPY_EXISTING ~Z_2SSB.CRE~ ~override~
+WRITE_LONG 0x14 250
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "HELM08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2SPG.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT23"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW2H20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SW2H01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_2SPE2.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H76"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H20~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_2SPE.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "LEAT11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW18"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~LEAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~BOW05~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2SPB.CRE~ ~override~
+WRITE_LONG 0x14 250
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT23"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW2H20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "HELM13"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SW2H01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_2SOL1.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HELMNOAN"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H33A"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2SOL0.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW18"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~BOW05~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2SMG.CRE~ ~override~
+WRITE_LONG 0x14 250
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "STAF18"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2SMB.CRE~ ~override~
+WRITE_LONG 0x14 250
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "STAF18"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE03~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_2SLE6.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "LEAT19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H74"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~LEAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SW1H07~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_2SLE5.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HELM04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT23"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H72"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2SLE4.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HELM04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT23"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW2H20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW2H01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2SLE3.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "STAF18"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2SLE2.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BLUN31"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~CHAN01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD08~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~BLUN01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_2SLE1.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW18"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H73"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~PLAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV13~
+ADD_CRE_ITEM ~BOW05~ #0 #0 #0 ~IDENTIFIED~ ~INV12~
+
+COPY_EXISTING ~Z_2SERIN.CRE~ ~override~
+							~Z_2PBHAL.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "STAF08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING41"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2SCG.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "STAF19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_2SCB.CRE~ ~override~
+WRITE_LONG 0x14 250
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CHAN07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SLNG03"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BULL06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "HELM11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SLNG01~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+ADD_CRE_ITEM ~BULL01~ #20 #0 #0 ~IDENTIFIED~ ~INV12~
+
+COPY_EXISTING ~Z_2SBG.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW25"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~POTN08~ #2 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2SBB.CRE~ ~override~
+WRITE_LONG 0x14 200
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW18"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "HELM08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~BOW05~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SW1H07~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV12~
+
+COPY_EXISTING ~Z_2NEKER.CRE~ ~override~
+							~Z_2NEK.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW2H20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW18"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW2H01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_2NAUR2.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN41"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H24"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2MYST.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HGWRA02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "STAF20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_2LEIB.CRE~ ~override~
+WRITE_LONG 0x14 200
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW1H72"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "HELM08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H20~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2LE5.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BLUN32"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD28"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~BLUN02~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2LE4.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H73"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD29"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2LE3.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW2H20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW2H01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_2LE2.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW25"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~CHAN01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~BOW03~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_2LE1.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_2HOB.CRE~ ~override~
+WRITE_LONG 0x14 200
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H73"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW26"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "HELM09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~BOW05~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~SW1H07~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV12~
+
+COPY_EXISTING ~Z_2HIBI2.CRE~ ~override~
+							~Z_2HIBIT.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW18"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~BOW05~ #0 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_2HER6.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "STAF08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING41"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_2HER5.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "AMUL12"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H74"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD28"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK30"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOOT02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING35"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H07~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2HER4.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW2H20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW25"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING29"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING27"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW2H01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~BOW03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_2HER3.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "DAGG24"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING41"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~DAGG01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+
+COPY_EXISTING ~Z_2HER2.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "BLUN32"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOOT04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK01"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~BLUN02~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD05~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2HER1.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "AMUL12"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AX1H17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD29"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK30"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~AX1H01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2GHAN.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "SW2H20"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING29"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING27"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW2H01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2GE4.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN21"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2GE3.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT23"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2GE2.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HELM10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW2H11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW2H01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2GE1.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HELM09"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "PLAT10"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H52"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2ERIT.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CLCK17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "DAGG24"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING41"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~DAGG01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2ELSA2.CRE~ ~override~
+							~Z_2ELSAS.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN55"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW05"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~CHAN01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2DYRI.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "STAF08"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING41"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~STAF01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2DROK.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "BRAC02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING12"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~RNDTRE02~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2DROF.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SW1H06"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2DEVAB.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "IMMUNE2"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "DEVA"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+
+COPY_EXISTING ~Z_2BOTE.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "LEAT11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOW17"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AROW15"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~LEAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~BOW03~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+ADD_CRE_ITEM ~AROW01~ #20 #0 #0 ~IDENTIFIED~ ~INV13~
+
+COPY_EXISTING ~Z_2BIBLI.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "CHAN07"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "POTN41"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~CHAN01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2BELA.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HELM11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BLUN32"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOOT04"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~BLUN02~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD05~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2BARBA.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "HELM11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BLUN32"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "SHLD19"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK01"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BRAC14"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING21"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING11"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~BLUN02~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~SHLD05~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+COPY_EXISTING ~Z_2BALOR.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "RINGDEMN"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "IMMUNE3"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "HELMNOAN"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+
+COPY_EXISTING ~Z_2ARUB.CRE~ ~override~
+WRITE_LONG 0x1c 0
+SPRINT "item_to_change" "PLAT23"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "AMUL12"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "CLCK30"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "BOOT01"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+SPRINT "item_to_change" "RING02"
+LAUNCH_PATCH_MACRO ~ADD_CRE_ITEM_FLAGS~
+ADD_CRE_ITEM ~PLAT01~ #0 #0 #0 ~IDENTIFIED~ ~INV15~
+ADD_CRE_ITEM ~RNDTRE01~ #0 #0 #0 ~IDENTIFIED~ ~INV14~
+
+BEGIN @10008
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~ToA/setup-toa.TP2~ 1  @10002
+DESIGNATED 20 GROUP @10007
+
+COPY_EXISTING ~ZANEGH.are~ ~override~
+SPRINT "item_to_delete" "SW1H72"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "AX1H11"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SCRL1X"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SCRL9R"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "HAMM08"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "POTN41"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "POTN14"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "LEAT11"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "AROW11"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "AROW08"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "RING16"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "RING12"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SHLD29"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "POTN02"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SPER02"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "WAND06"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SCRL6F"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SCRL6G"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SCRL6J"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SCRL6N"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SCRL6S"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "AMUL07"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SHLD17"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "POTN02"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "POTN21"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "POTN52"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+
+COPY_EXISTING ~ZBERGE.are~ ~override~
+SPRINT "item_to_delete" "Z_HACK"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+
+COPY_EXISTING ~ZCAVE1.are~ ~override~
+SPRINT "item_to_delete" "BULL03"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+
+COPY_EXISTING ~ZCAVE3.are~ ~override~
+SPRINT "item_to_delete" "RING31"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+
+COPY_EXISTING ~ZGAST.are~ ~override~
+SPRINT "item_to_delete" "BLUN05"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SW1H08"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "BLUN05"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SCRL77"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SCRL62"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+
+COPY_EXISTING ~ZHHAUS.are~ ~override~
+SPRINT "item_to_delete" "AROW04"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "BOLT03"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+
+COPY_EXISTING ~ZSCHMI.are~ ~override~
+SPRINT "item_to_delete" "POTN17"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "POTN09"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "PLAT06"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "CHAN07"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "STAF02"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "SW1H24"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "RING15"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+
+COPY_EXISTING ~ZZELT1.are~ ~override~
+SPRINT "item_to_delete" "POTN06"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+SPRINT "item_to_delete" "POTN11"
+LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
+
+BEGIN @10009
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~ToA/setup-toa.TP2~ 1  @10001
+DESIGNATED 30 GROUP @10007
+
+COPY_EXISTING ~ZBERGE.bcs~ ~override~
+DECOMPILE_BCS_TO_BAF
+REPLACE_TEXTUALLY ~AddexperienceParty(29750)~ ~AddexperienceParty(5225)~
+COMPILE_BAF_TO_BCS
+
+COPY_EXISTING ~Z_ZAHIKI.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddexperienceParty(34580)~ ~AddexperienceParty(4580)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_WINNI.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddXPObject(Player1,8300)
+AddXPObject(Player2,8300)
+AddXPObject(Player3,8300)
+AddXPObject(Player4,8300)
+AddXPObject(Player5,8300)
+AddXPObject(Player6,8300)~ ~AddXPObject(Player1,1300)
+AddXPObject(Player2,1300)
+AddXPObject(Player3,1300)
+AddXPObject(Player4,1300)
+AddXPObject(Player5,1300)
+AddXPObject(Player6,1300)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_TANDOS.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddXPObject(Player1,15000)
+AddXPObject(Player2,15000)
+AddXPObject(Player3,15000)
+AddXPObject(Player4,15000)
+AddXPObject(Player5,15000)
+AddXPObject(Player6,15000)~ ~AddXPObject(Player1,1500)
+AddXPObject(Player2,1500)
+AddXPObject(Player3,1500)
+AddXPObject(Player4,1500)
+AddXPObject(Player5,1500)
+AddXPObject(Player6,1500)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_PIRI.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddexperienceParty(32450)~ ~AddexperienceParty(3450)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_PICAR.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddexperienceParty(32450)~ ~AddexperienceParty(4450)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_PAT.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddexperienceParty(29750)~ ~AddexperienceParty(5750)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_NOMO2.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddXPObject(Player1,25924)
+AddXPObject(Player2,25924)
+AddXPObject(Player3,25924)
+AddXPObject(Player4,25924)
+AddXPObject(Player5,25924)
+AddXPObject(Player6,25924)~ ~AddXPObject(Player1,5924)
+AddXPObject(Player2,5924)
+AddXPObject(Player3,5924)
+AddXPObject(Player4,5924)
+AddXPObject(Player5,5924)
+AddXPObject(Player6,5924)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_NAUR.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddXPObject(Player1,6000)
+AddXPObject(Player2,6000)
+AddXPObject(Player3,6000)
+AddXPObject(Player4,6000)
+AddXPObject(Player5,6000)
+AddXPObject(Player6,6000)~ ~AddXPObject(Player1,4000)
+AddXPObject(Player2,4000)
+AddXPObject(Player3,4000)
+AddXPObject(Player4,4000)
+AddXPObject(Player5,4000)
+AddXPObject(Player6,4000)~
+REPLACE_TEXTUALLY ~AddXPObject(Player1,10000)
+AddXPObject(Player2,10000)
+AddXPObject(Player3,10000)
+AddXPObject(Player4,10000)
+AddXPObject(Player5,10000)
+AddXPObject(Player6,10000)~ ~AddXPObject(Player1,5000)
+AddXPObject(Player2,5000)
+AddXPObject(Player3,5000)
+AddXPObject(Player4,5000)
+AddXPObject(Player5,5000)
+AddXPObject(Player6,5000)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_MAHAN.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddexperienceParty(2935)~ ~AddexperienceParty(935)~
+REPLACE_TEXTUALLY ~AddexperienceParty(3935)~ ~AddexperienceParty(935)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_JAHORI.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddexperienceParty(34730)~ ~AddexperienceParty(4730)~
+REPLACE_TEXTUALLY ~AddexperienceParty(64730)~ ~AddexperienceParty(4730)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_HEAD2.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddexperienceParty(8250)~ ~AddexperienceParty(2250)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_HEAD1.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddexperienceParty(50000)~ ~AddexperienceParty(5000)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_GALORF.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddexperienceParty(15930)~ ~AddexperienceParty(5930)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_EMIR.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddexperienceParty(12350)~ ~AddexperienceParty(2350)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_ELMI.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddXPObject(Player1,152000)
+AddXPObject(Player2,152000)
+AddXPObject(Player3,152000)
+AddXPObject(Player4,152000)
+AddXPObject(Player5,152000)
+AddXPObject(Player6,152000)~ ~AddXPObject(Player1,15200)
+AddXPObject(Player2,15200)
+AddXPObject(Player3,15200)
+AddXPObject(Player4,15200)
+AddXPObject(Player5,15200)
+AddXPObject(Player6,15200)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_BURGM.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddexperienceParty(12320)~ ~AddexperienceParty(2320)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_BERFOT.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddexperienceParty(35270)~ ~AddexperienceParty(5270)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_ARYA.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddexperienceParty(24390)~ ~AddexperienceParty(4390)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_2HIBI2.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddXPObject(Player1,82000)
+AddXPObject(Player2,82000)
+AddXPObject(Player3,82000)
+AddXPObject(Player4,82000)
+AddXPObject(Player5,82000)
+AddXPObject(Player6,82000)~ ~AddXPObject(Player1,8200)
+AddXPObject(Player2,8200)
+AddXPObject(Player3,8200)
+AddXPObject(Player4,8200)
+AddXPObject(Player5,8200)
+AddXPObject(Player6,8200)~
+COMPILE_D_TO_DLG
+
+COPY_EXISTING ~Z_LORET.dlg~ ~override~
+DECOMPILE_DLG_TO_D
+REPLACE_TEXTUALLY ~AddXPObject(Player1,58924)
+AddXPObject(Player2,58924)
+AddXPObject(Player3,58924)
+AddXPObject(Player4,58924)
+AddXPObject(Player5,58924)
+AddXPObject(Player6,58924)~ ~AddXPObject(Player1,5892)
+AddXPObject(Player2,5892)
+AddXPObject(Player3,5892)
+AddXPObject(Player4,5892)
+AddXPObject(Player5,5892)
+AddXPObject(Player6,5892)~
+REPLACE_TEXTUALLY ~GivePartyGold("58100")~ ~GivePartyGold("5810")~
+COMPILE_D_TO_DLG
+
+
+BEGIN @10010
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~ToA/setup-toa.TP2~ 1  @10001
+DESIGNATED 40 GROUP @10007
+
+COPY_EXISTING ~Z_2BIBLI.sto~ ~override~
+							~Z_BIBLI.sto~ ~override~
+SPRINT ~item_to_delete~ ~SW2H20~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~XBOW05~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~XBOW02~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SW2H11~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SW1H76~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SW1H75~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SW1H74~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SW1H73~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SW1H49~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SW1H47~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SW1H44~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SW1H42~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SW1H09~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SW1H06~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~STAF08~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SPER06~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SPER05~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SHLD30~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SHLD29~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SHLD28~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SCRL9V~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SCRL9U~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SCRL9R~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SCRL9H~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SCRL9G~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SCRL9E~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SCRL9A~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~RING29~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~RING28~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~RING27~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~POTN55~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~POTN52~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~POTN42~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~POTN09~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~POTN06~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~POTN03~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~POTN04~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~PLAT14~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~PLAT04~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~PLAT02~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~LEAT12~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~LEAT11~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~LEAT07~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~LEAT05~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~HAMM12~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~HAMM03~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~HALB12~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~HALB03~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~DAGG24~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~DAGG03~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~CLCK13~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~CHAN08~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~CHAN07~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~CHAN05~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~CHAN02~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BULL03~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BULL02~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BOW26~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BOW25~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BOW24~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BOW18~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BOW17~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BOW16~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BOLT06~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BLUN34~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BLUN33~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BLUN32~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BLUN31~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BLUN24~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BLUN15~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~BLUN13~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~AX1H17~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~AX1H05~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~AROW11~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+
+COPY_EXISTING ~Z_EMIR.sto~ ~override~
+SPRINT ~item_to_delete~ ~SCRL99~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~SCRL98~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~POTN44~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+SPRINT ~item_to_delete~ ~POTN09~
+LAUNCH_PATCH_MACRO ~DELETE_STORE_ITEM~
+
+BEGIN @10011 
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~ToA/setup-toa.TP2~ 1  @10001
+DESIGNATED 50 GROUP @10007
+COPY_EXISTING ~Z_SWTHF.itm~ ~override~
+SAY DESC @10012
+WRITE_BYTE 0x8c ~2~
+WRITE_BYTE 0xc4 ~2~
+
+COPY_EXISTING ~Z_SSW2H.itm~ ~override~
+SAY DESC @10013
+WRITE_BYTE 0x8c ~2~
+
+COPY_EXISTING ~Z_SPE1.itm~ ~override~
+SAY DESC @10014
+WRITE_BYTE 0x8c ~2~
+
+COPY_EXISTING ~Z_MARS.itm~ ~override~
+SAY DESC @10015
+WRITE_BYTE 0x8c ~2~
+
+COPY_EXISTING ~Z_ELBOW.itm~ ~override~
+SAY DESC @10016
+WRITE_BYTE 0x8c ~2~
+
+COPY_EXISTING ~Z_BBLADE.itm~ ~override~
+SAY DESC @10017
+WRITE_BYTE 0x8c ~3~
+
+COPY_EXISTING ~Z_ANATHZ.itm~ ~override~
+SAY DESC @10018
+WRITE_BYTE 0x8c ~3~
+
+COPY_EXISTING ~Z_ANATH.itm~ ~override~
+SAY DESC @10019
+WRITE_BYTE 0x8c ~2~
