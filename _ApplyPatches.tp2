@@ -342,6 +342,9 @@ ALWAYS
 			ACTION_IF (FILE_EXISTS ~%source_folder%/%TARGET_FILE%~) THEN BEGIN
 				SILENT // suppress "copying 1 file..." log message
 				COPY - ~%source_folder%/%TARGET_FILE%~ ~%FIXPACK%/tmpfile~ // fake copy
+					PATCH_IF !(~%WEIDU_OS%~ STR_EQ ~win32~) BEGIN  // fix the path on Mac & Linux
+						REPLACE_TEXTUALLY EXACT_MATCH ~\~ ~/~
+					END
 					READ_2DA_ENTRY 0 0 1 copy_target_folder // top-level mod directory name
 				BUT_ONLY
 				VERBOSE
@@ -356,6 +359,9 @@ ALWAYS
 		ACTION_IF (FILE_EXISTS ~%source_folder%/%DEL_FILE%~) THEN BEGIN
 			SILENT // suppress "copying 1 file..." log message
 			COPY - ~%source_folder%/%DEL_FILE%~ ~%FIXPACK%/tmpfile~ // fake copy
+				PATCH_IF !(~%WEIDU_OS%~ STR_EQ ~win32~) BEGIN  // fix paths on Mac & Linux
+					REPLACE_TEXTUALLY EXACT_MATCH ~\~ ~/~
+				END
 				COUNT_2DA_ROWS 1 num_files // 1 column
 				PATCH_IF (num_files > 0) THEN BEGIN
 					PATCH_PRINT ~deleting files ...~
@@ -392,6 +398,9 @@ ALWAYS
 		ACTION_IF (FILE_EXISTS ~%source_folder%/%REN_FILE%~) THEN BEGIN
 			SILENT // suppress "copying 1 file..." log message
 			COPY - ~%source_folder%/%REN_FILE%~ ~%FIXPACK%/tmpfile~ // fake copy
+				PATCH_IF !(~%WEIDU_OS%~ STR_EQ ~win32~) BEGIN  // fix paths on Mac & Linux
+					REPLACE_TEXTUALLY EXACT_MATCH ~\~ ~/~
+				END
 				COUNT_2DA_ROWS 2 num_files // 2 columns
 				PATCH_IF (num_files > 0) THEN BEGIN
 					PATCH_PRINT ~renaming files ...~
