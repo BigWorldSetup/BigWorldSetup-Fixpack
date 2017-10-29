@@ -7,7 +7,6 @@ THEN
   RESPONSE #100
     CreateCreature("z_nomora",[2139.1356],12)
     SetGlobal("NomoranSpawn","GLOBAL",1)
-	SetGlobal("ZStartAddAct","GLOBAL",1) 
 END
 
 IF
