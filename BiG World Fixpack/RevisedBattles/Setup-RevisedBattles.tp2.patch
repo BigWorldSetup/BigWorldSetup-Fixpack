@@ -1,6 +1,6 @@
 --- setup-RevisedBattles.tp2	2016-11-18 20:33:15.399706000 -0500
 +++ Fixpack/setup-RevisedBattles.tp2	2016-11-18 20:34:24.947856100 -0500
-@@ -5,6 +5,24 @@
+@@ -5,6 +5,34 @@
  BACKUP ~RevisedBattles/backup~
  AUTHOR ~erebusant@verizon.net~
  
@@ -35,7 +35,7 @@
  // Modified to Patch vs. Overwrite by erebusant based entirely upon the original ideas and concepts
  // of moonfruit & tyrus
  
-@@ -80,10 +98,10 @@
+@@ -80,10 +108,10 @@
  BEGIN @7001
  AT_INTERACTIVE_EXIT ~VIEW RevisedBattles\README-RevisedBattles.html~
  
@@ -49,7 +49,7 @@
  
  //MKDIR ~RevisedBattles/over.bak~
  //COPY_LARGE + ~override~ ~RevisedBattles/over.bak~
-@@ -501,7 +519,7 @@
+@@ -501,7 +529,7 @@
  EXTEND_BOTTOM ~sevpat04.bcs~ ~RevisedBattles/mencar/baf/sevpat04.baf~
  EXTEND_BOTTOM ~sevpat05.bcs~ ~RevisedBattles/mencar/baf/sevpat05.baf~
  
@@ -58,7 +58,7 @@
  
  COPY_EXISTING ~sevpat01.CRE~	~override~
    PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // protects against invalid files
-@@ -1108,7 +1126,7 @@
+@@ -1108,7 +1136,7 @@
  REQUIRE_COMPONENT ~Setup-RevisedBattles.TP2~ ~0~ ~Requires Improved Battles - "erebusant's Patching Version" v6~
  REQUIRE_COMPONENT ~Setup-NEJ2V691.TP2~ ~0~ ~Never Ending Journey Second Edition v6.91~
  
@@ -67,7 +67,7 @@
    READ_2DA_ENTRIES_NOW ~_#_#_#weidu~ 1
    SET good_install = 0
    SET row = 0
-@@ -1134,7 +1152,7 @@
+@@ -1134,7 +1162,7 @@
    END
  ACTION_IF (good_install = 0) BEGIN
    FAIL ~NeJ2 needs to be installed directly after BGT and/or BGTMusic.~
@@ -76,7 +76,7 @@
  
  COMPILE ~RevisedBattles/firkraag/dlg/NEJv691 Compat~
  
-@@ -1936,7 +1954,7 @@
+@@ -1936,7 +1964,7 @@
    END
  BUT_ONLY_IF_IT_CHANGES
  
@@ -85,7 +85,7 @@
  COPY_EXISTING ~gall.CRE~	~override~
    PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // protects against invalid files
      ADD_CRE_ITEM			~BOW17~	#0 #0 #0	~NONE~	~WEAPON1~	EQUIP
-@@ -2690,7 +2708,7 @@
+@@ -2690,7 +2718,7 @@
          ~RevisedBattles/knights/dlg~
  USING   ~RevisedBattles/Language/%s/b#knight.tra~
  
