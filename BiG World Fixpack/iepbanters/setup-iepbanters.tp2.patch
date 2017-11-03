@@ -29,7 +29,7 @@
    ACTION_IF !FILE_EXISTS ~%MOD_FOLDER%/translations/%LANGUAGE%/utf8.mrk~ BEGIN
      ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
        // Copies UTF8-encoded tra files over the normal ones, for use with AUTO_TRA
-@@ -93,7 +102,7 @@
+@@ -93,7 +103,7 @@
  // Ensures banters won't run in BG1 section in Baldur's Gate Trilogy
  ACTION_IF FILE_EXISTS ~DATA/BG1ARE.BIF~ THEN BEGIN
      OUTER_SPRINT "percentage_sign" "%"
@@ -38,7 +38,7 @@
  END ELSE BEGIN
      OUTER_SPRINT "percentage_sign" "%"
      OUTER_SPRINT ~BGT_VAR~ ~~
-@@ -123,7 +132,7 @@
+@@ -123,7 +133,7 @@
    EVALUATE_BUFFER
    
  ACTION_IF FILE_EXISTS_IN_GAME     ~FWJASSY.DLG~ THEN BEGIN
@@ -47,7 +47,7 @@
      EVALUATE_BUFFER
  END
  
-@@ -142,7 +151,7 @@
+@@ -142,7 +152,7 @@
  // Extended Minsc/Aerie Interaction ToB
  // --------------------------------------
  BEGIN @2
@@ -56,7 +56,7 @@
  
  // Add custom If Valid For Party Dialogue state
  APPEND ~state.ids~
-@@ -161,7 +170,7 @@
+@@ -161,7 +171,7 @@
  // Imoen "Retrospection" dialogue for BGII: ToB
  // --------------------------------------
  BEGIN @3
@@ -65,7 +65,7 @@
  
  APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
    ~0x80101FEF CD_STATE_NOTVALID~
-@@ -196,10 +205,10 @@
+@@ -196,10 +206,10 @@
  ACTION_IF MOD_IS_INSTALLED ~SETUP-NPCFLIRT.TP2~ 12 // Anomen Flirt Pack for SOA
  THEN BEGIN
    COPY_EXISTING ~anomenj.dlg~ ~override~
@@ -78,7 +78,7 @@
    BUT_ONLY_IF_IT_CHANGES
  END
  
-@@ -230,7 +239,7 @@
+@@ -230,7 +240,7 @@
  
  // DADROW21 interjection
  COPY_EXISTING ~DADROW21.DLG~ ~override~
@@ -87,7 +87,7 @@
      REPLACE_TEXTUALLY ~!Global("AerieRomanceActive","GLOBAL",1)~
                        ~~
      REPLACE_TEXTUALLY ~!Global("AerieRomanceActive","GLOBAL",2)~
-@@ -243,7 +252,7 @@
+@@ -243,7 +253,7 @@
                        ~~
      REPLACE_TEXTUALLY ~!Global("JaheiraRomanceActive","GLOBAL",2)~
                        ~~
@@ -96,7 +96,7 @@
  BUT_ONLY_IF_IT_CHANGES
  
  COMPILE ~iepbanters/dialogue/restored_interjections.d~
-@@ -267,10 +276,10 @@
+@@ -267,10 +277,10 @@
      UNINSTALL Keto.tp2 2
      // Appending gtimes.ids to include the timer
      APPEND ~gtimes.ids~ ~600 I#BANTER_TIMER~
@@ -109,7 +109,7 @@
      END
  
  // 15 minutes
-@@ -284,10 +293,10 @@
+@@ -284,10 +294,10 @@
      UNINSTALL Keto.tp2 2
      // Appending gtimes.ids to include the timer
      APPEND ~gtimes.ids~ ~900 I#BANTER_TIMER~
@@ -122,7 +122,7 @@
      END
  
  // 20 minutes
-@@ -301,10 +310,10 @@
+@@ -301,10 +311,10 @@
      UNINSTALL Keto.tp2 2
      // Appending gtimes.ids 
      APPEND ~gtimes.ids~ ~1200 I#BANTER_TIMER~
@@ -135,7 +135,7 @@
      END
  
  // 30 minutes
-@@ -318,10 +327,10 @@
+@@ -318,10 +328,10 @@
      UNINSTALL Keto.tp2 2
      // Appending gtimes.ids to include the timer
      APPEND ~gtimes.ids~ ~1800 I#BANTER_TIMER~
@@ -148,7 +148,7 @@
      END
  
  // 45 minutes
-@@ -335,10 +344,10 @@
+@@ -335,10 +345,10 @@
      UNINSTALL Keto.tp2 2
      // Appending gtimes.ids to include the timer
      APPEND ~gtimes.ids~ ~2700 I#BANTER_TIMER~
@@ -161,7 +161,7 @@
      END
  
  // 60 minutes
-@@ -352,8 +361,8 @@
+@@ -352,8 +362,8 @@
      UNINSTALL Keto.tp2 2
      // Appending gtimes.ids to include the timer
      APPEND ~gtimes.ids~ ~3600 I#BANTER_TIMER~
