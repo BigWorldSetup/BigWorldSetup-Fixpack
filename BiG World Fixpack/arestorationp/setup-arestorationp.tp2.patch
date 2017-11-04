@@ -3,12 +3,12 @@
 @@ -1,6 +1,6 @@
  BACKUP ~arestorationp/backup~
  AUTHOR ~Almateria (sylwiabukato@gmail.com)~
--VERSION ~v8.2.7~
-+VERSION ~v8.2.7 BWP Fix 2~
+-VERSION ~v8.2.8~
++VERSION ~v8.2.8 BWP Fix~
  README "arestorationp/language/%LANGUAGE%/readme.html" "arestorationp/language/english/readme.html"
  AUTO_TRA ~arestorationp/language/%s~
  //%
-@@ -2612,6 +2612,27 @@
+@@ -2622,6 +2622,27 @@
      strDesc = EVAL "%GrovName%"
      worldmap = "worldmap"
  RET areNum = areNum END
