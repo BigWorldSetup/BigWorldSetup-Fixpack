@@ -1,10 +1,24 @@
 --- SETUP-TheUndying.tp2	Tue Feb 10 01:52:51 2015
 +++ C:\BWP Patchstudio\patched files\SETUP-TheUndying.tp2	Tue Feb 16 22:17:54 2016
-@@ -1,6 +1,6 @@
+@@ -1,8 +1,20 @@
  BACKUP ~TheUndying/backup~
  AUTHOR ~"http://www.teambg.net"~
 -
-+VERSION ~v2.53 BWP Fix~
++VERSION ~v2.53 BWP Fix 2~
  AUTO_TRA ~TheUndying/tra/%s/d~
  
++// Make sure strings are correctly encoded for both EE and non-EE games
++ALWAYS
++  ACTION_DEFINE_ARRAY tra_reload BEGIN setup setup_EE END
++  LAF HANDLE_CHARSETS
++    INT_VAR
++      infer_charset = 1
++    STR_VAR
++      tra_path      = EVAL ~%MOD_FOLDER%/tra~
++      reload_array  = tra_reload
++  END
++END
++
  LANGUAGE ~english~
+          ~english~
+          ~TheUndying/tra/english/SETUP.tra~
