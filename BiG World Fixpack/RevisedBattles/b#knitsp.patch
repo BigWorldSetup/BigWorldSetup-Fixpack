@@ -4,7 +4,6 @@
  
  IF
    CheckStatGT(Player1,14,LEVEL)
-+  !%BGT_VAR% // block spawning in BG1 part of BGT and EET
    AreaType(OUTDOOR)
    AreaType(CITY)
    CombatCounter(0)
