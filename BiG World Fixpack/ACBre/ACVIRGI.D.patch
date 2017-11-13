@@ -1,9 +1,0 @@
---- ACBre\Virgi\ACVIRGI.D	Thu Feb 12 04:37:26 2015
-+++ C:\BWP Patchstudio\patched files\ACBre\Virgi\ACVIRGI.D	Thu Feb 11 23:46:52 2016
-@@ -64,5 +64,5 @@
- 
- IF ~~ THEN BEGIN 31
- SAY @4017
--IF ~~ THEN DO ~ActionOverride(LastTalkedToBy(),CreateItem("ACPOTN48",0,0,0)DestroySelf()~ EXIT
-+IF ~~ THEN DO ~GiveItemCreate("ACPOTN48",LastTalkedToBy,0,0,0)DestroySelf()~ EXIT
- END
