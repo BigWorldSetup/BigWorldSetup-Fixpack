@@ -1,9 +1,0 @@
---- TS\baf\dakkon2.baf	Thu Dec 30 15:30:41 2004
-+++ C:\BWP Patchstudio\patched files\TS\baf\dakkon2.baf	Sun Nov 11 17:15:02 2007
-@@ -1,5 +1,5 @@
- IF
--	CheckStatGT(Myself,14,LEVEL)
-+	XPGT(Myself,1249999)
- 	HasItem("wa2dak2",Myself)
- THEN
- 	RESPONSE #100

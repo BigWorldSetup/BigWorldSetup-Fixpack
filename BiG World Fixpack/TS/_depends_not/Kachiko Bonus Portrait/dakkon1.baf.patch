@@ -1,9 +1,0 @@
---- TS\baf\dakkon1.baf	Thu Dec 30 15:30:08 2004
-+++ C:\BWP Patchstudio\patched files\TS\baf\dakkon1.baf	Sun Nov 11 17:14:46 2007
-@@ -1,5 +1,5 @@
- IF
--	CheckStatGT(Myself,9,LEVEL)
-+	XPGT(Myself,249999)
- 	HasItem("wa2dak",Myself) // Dak'kon's Zerth Blade
- THEN
- 	RESPONSE #100

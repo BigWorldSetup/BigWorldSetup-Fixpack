@@ -1,9 +1,0 @@
---- TS\baf\dakkon3.baf	Thu Dec 30 15:31:53 2004
-+++ C:\BWP Patchstudio\patched files\TS\baf\dakkon3.baf	Sun Nov 11 17:15:18 2007
-@@ -1,5 +1,5 @@
- IF
--	CheckStatGT(Myself,19,LEVEL)
-+	XPGT(Myself,1999999)
- 	HasItem("wa2dak3",Myself)
- THEN
- 	RESPONSE #100
