@@ -1,0 +1,210 @@
+BACKUP ~saradas_magic\backup~
+AUTHOR ~SARADAS saradas85@gmail.com~
+BEGIN ~saradas_magic~
+
+LOAD_TRA ~saradas_magic\english\english.tra~
+LOAD_TRA ~saradas_magic\english\!saradas.tra~
+LOAD_TRA ~saradas_magic\english\!sarago.tra~
+LOAD_TRA ~saradas_magic\english\!sarangr.tra~
+
+COPY ~saradas_magic\!Scombus.spl~ ~override~
+  SAY NAME1 @2                  //nome magia
+  SAY UNIDENTIFIED_DESC @4      //descrizione magia
+
+COPY ~saradas_magic\!Scombus.itm~ ~override~
+  SAY NAME1 @1                  //nome non identificato
+  SAY NAME2 @2                  //nome identificato
+  SAY UNIDENTIFIED_DESC @3      //desc. non ident.
+  SAY DESC @4                   //desc. ident.
+
+COPY ~saradas_magic\!Sdrains.itm~ ~override~
+  SAY NAME1 @1                  //nome non identificato
+  SAY NAME2 @5                  //nome identificato
+  SAY UNIDENTIFIED_DESC @3      //desc. non ident.
+  SAY DESC @6                   //desc. ident.
+
+COPY ~saradas_magic\!Sdrains.spl~ ~override~
+  SAY NAME1 @5                  //nome magia
+  SAY UNIDENTIFIED_DESC @6      //descrizione magia
+
+COPY ~saradas_magic\!Sdrainr.spl~ ~override~ SAY 0x12e @7
+
+
+COPY ~saradas_magic\!Sforce.itm~ ~override~
+  SAY NAME1 @1                  //nome non identificato
+  SAY NAME2 @8                  //nome identificato
+  SAY UNIDENTIFIED_DESC @3      //desc. non ident.
+  SAY DESC @9                   //desc. ident.
+
+COPY ~saradas_magic\!Sforce.spl~ ~override~
+  SAY NAME1 @8                  //nome magia
+  SAY UNIDENTIFIED_DESC @9      //descrizione magia
+
+
+COPY ~saradas_magic\!Sgravit.itm~ ~override~
+  SAY NAME1 @1                  //nome non identificato
+  SAY NAME2 @10                  //nome identificato
+  SAY UNIDENTIFIED_DESC @3      //desc. non ident.
+  SAY DESC @11                   //desc. ident.
+
+COPY ~saradas_magic\!Sgravit.spl~ ~override~
+  SAY NAME1 @10                  //nome magia
+  SAY UNIDENTIFIED_DESC @11      //descrizione magia
+
+COPY ~saradas_magic\!Spcinv.spl~ ~override~
+  SAY NAME1 @12                  //nome magia
+  SAY UNIDENTIFIED_DESC @13      //descrizione magia
+
+
+COPY ~saradas_magic\!Stelepo.itm~ ~override~
+  SAY NAME1 @1                  //nome non identificato
+  SAY NAME2 @14                  //nome identificato
+  SAY UNIDENTIFIED_DESC @3      //desc. non ident.
+  SAY DESC @15                   //desc. ident.
+
+COPY ~saradas_magic\!Stelepo.spl~ ~override~
+  SAY NAME1 @14                  //nome magia
+  SAY UNIDENTIFIED_DESC @15      //descrizione magia
+
+
+COPY ~saradas_magic\!Stenscr.itm~ ~override~
+  SAY NAME1 @1                  //nome non identificato
+  SAY NAME2 @16                  //nome identificato
+  SAY UNIDENTIFIED_DESC @3      //desc. non ident.
+  SAY DESC @17                   //desc. ident.
+
+COPY ~saradas_magic\!StensSW.itm~ ~override~
+  SAY NAME2 @18                  //nome identificato
+
+COPY ~saradas_magic\!Stens.spl~ ~override~
+  SAY NAME1 @16                  //nome magia
+  SAY UNIDENTIFIED_DESC @17      //descrizione magia
+
+
+COPY ~saradas_magic\!Szomscr.itm~ ~override~
+  SAY NAME1 @1                  //nome non identificato
+  SAY NAME2 @19                  //nome identificato
+  SAY UNIDENTIFIED_DESC @3      //desc. non ident.
+  SAY DESC @20                   //desc. ident.
+
+COPY ~saradas_magic\!Szom.spl~ ~override~
+  SAY NAME1 @19                  //nome magia
+  SAY UNIDENTIFIED_DESC @20      //descrizione magia
+
+
+COPY ~saradas_magic\!Saradas.cre~ ~override~
+  SAY NAME1 @23            //nome non identificato
+  SAY NAME2 @23           //nome identificato
+
+COPY ~saradas_magic\!saradas.sto~ ~override~
+  SAY NAME2 @23           //nome identificato
+
+
+COPY ~saradas_magic\!SPCABJ.spl~ ~override~
+  SAY NAME1 @24                  //nome magia
+  SAY UNIDENTIFIED_DESC @25      //descrizione magia
+
+COPY ~saradas_magic\!SPCABJ2.spl~ ~override~
+
+
+COPY ~saradas_magic\!SPCALT.spl~ ~override~ SAY 0x51e @40
+  SAY NAME1 @26                  //nome magia
+  SAY UNIDENTIFIED_DESC @27      //descrizione magia
+
+COPY ~saradas_magic\!SPCCON.spl~ ~override~
+  SAY NAME1 @28                  //nome magia
+  SAY UNIDENTIFIED_DESC @29      //descrizione magia
+
+COPY ~saradas_magic\!SPCCON2.spl~ ~override~
+
+COPY ~saradas_magic\!SPCCON.CRE~ ~override~
+  SAY NAME1 @30
+  SAY NAME2 @30
+
+COPY ~saradas_magic\!Sbalorc.ITM~ ~override~
+
+
+COPY ~saradas_magic\!SPCCON.EFF~ ~override~
+
+
+COPY ~saradas_magic\!SPCDIV.spl~ ~override~ SAY 0x4ee @41
+  SAY NAME1 @31                  //nome magia
+  SAY UNIDENTIFIED_DESC @32      //descrizione magia
+
+COPY ~saradas_magic\!SPCENC.spl~ ~override~
+  SAY NAME1 @33                  //nome magia
+  SAY UNIDENTIFIED_DESC @34      //descrizione magia
+
+COPY ~saradas_magic\!SPCGEN.spl~ ~override~
+  SAY NAME1 @42
+  SAY UNIDENTIFIED_DESC @43      //descrizione magia
+
+COPY ~saradas_magic\!SPCGEN2.spl~ ~override~ SAY 0x3ce @47
+
+COPY ~saradas_magic\!SPCILL.spl~ ~override~
+  SAY NAME1 @35                  //nome magia
+  SAY UNIDENTIFIED_DESC @36      //descrizione magia
+
+COPY ~saradas_magic\!SPCILL.EFF~ ~override~
+
+
+COPY ~saradas_magic\!SPCNEC.spl~ ~override~
+  SAY NAME1 @37                  //nome magia
+  SAY UNIDENTIFIED_DESC @38      //descrizione magia
+
+COPY ~saradas_magic\!SPCNEC2.spl~ ~override~
+
+COPY ~saradas_magic\!SPCNEC3.spl~ ~override~
+
+COPY ~saradas_magic\!SPCNEC.ITM~ ~override~
+  SAY NAME1 @39                  //nome non identificato
+  SAY NAME2 @39                  //nome identificato
+
+COPY ~saradas_magic\!SPCWIL.spl~ ~override~ SAY 0x21e @46
+  SAY NAME1 @44
+  SAY UNIDENTIFIED_DESC @45      //descrizione magia
+
+COPY ~saradas_magic\!SPCDRA.spl~ ~override~
+  SAY NAME1 @48
+  SAY UNIDENTIFIED_DESC @50      //descrizione magia
+
+COPY ~saradas_magic\!SPCDRA.ITM~ ~override~
+  SAY NAME1 @49                  //nome non identificato
+  SAY NAME2 @49                  //nome identificato
+
+
+
+COMPILE ~saradas_magic\!sarad1.baf~
+COMPILE ~saradas_magic\!sarad2.baf~
+COMPILE ~saradas_magic\!sarad3.baf~
+COMPILE ~saradas_magic\!SPCCON.baf~
+EXTEND_BOTTOM ~ar2304.bcs~ ~saradas_magic\AR2304.baf~
+COMPILE ~saradas_magic\!saradas.d~ USING ~saradas_magic\english\!saradas.tra~
+
+COMPILE ~saradas_magic\!sarago.d~ USING ~saradas_magic\english\!sarago.tra~
+
+COMPILE ~saradas_magic\!sarangr.d~ USING ~saradas_magic\english\!sarangr.tra~
+
+COPY ~saradas_magic\!Sdrain1.eff~    ~override~
+COPY ~saradas_magic\!Sdrain2.eff~    ~override~
+COPY ~saradas_magic\!Sdrain3.eff~    ~override~
+COPY ~saradas_magic\!Sdrain4.eff~    ~override~
+COPY ~saradas_magic\!Sdrain5.eff~    ~override~
+COPY ~saradas_magic\!Sdrain6.eff~    ~override~ SAY 0x1c @21
+COPY ~saradas_magic\!Sforce.eff~  ~override~
+COPY ~saradas_magic\!Swrngtr.eff~  ~override~ SAY 0x1c @22
+COPY ~saradas_magic\!Szom1.eff~   ~override~
+COPY ~saradas_magic\!Szom2.eff~   ~override~
+COPY ~saradas_magic\!Szom3.eff~   ~override~
+COPY ~saradas_magic\!Szom4.eff~   ~override~
+COPY ~saradas_magic\!Szom5.eff~   ~override~
+COPY ~saradas_magic\!Szom6.eff~   ~override~
+COPY ~saradas_magic\!Szom7.eff~   ~override~
+COPY ~saradas_magic\!Szom8.eff~   ~override~
+COPY ~saradas_magic\!Szom9.eff~   ~override~
+COPY ~saradas_magic\!Szom10.eff~  ~override~
+COPY ~saradas_magic\!Szom11.eff~  ~override~
+COPY ~saradas_magic\!Szom12.eff~  ~override~
+COPY ~saradas_magic\!Szom13.eff~  ~override~
+COPY ~saradas_magic\!Szom14.eff~  ~override~
+COPY ~saradas_magic\!Szom15.eff~  ~override~
