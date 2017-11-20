@@ -1,5 +1,9 @@
 ======================================================================================================
 
+WARRING !!! This list is OUTDATED !!! Please see commit history to see full changelog !!!
+
+======================================================================================================
+
 
 If you want to know more about the used fixes visit the quoted sites.
 
@@ -2637,7 +2641,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses de
 
 :: SpellPackB6 - Lost Crossroads Spell Pack Beta 6
 
-:: IDS entries for CLERIC_GREATER_SHIELD_OF_LATHANDER and CLERIC_MIST_OF_ELDATH 
+:: IDS entries for CLERIC_GREATER_SHIELD_OF_LATHANDER and CLERIC_MIST_OF_ELDATH
 :: - LINK NOT FOUND -
 
 :: Lollorian's corrected REGEXP for Hypnotic Pattern component
@@ -2690,7 +2694,7 @@ Pour en apprendre plus sur les corrections employées, consulter les adresses de
 :: Incorporated K4thos' EET compatibility patches for SCS v30 ... these patches will always be applied, as they do not interfere with installation on other game types
 :: http://gibberlings3.net/forums/index.php?showtopic=28293
 
-:: Incorporated Kreso's Revised SCS in patch form ... these patches are additive to K4thos' EET compatibility and will only be applied when spell_rev folder (Demivrvgs's Spell Revisions) exists in game directory 
+:: Incorporated Kreso's Revised SCS in patch form ... these patches are additive to K4thos' EET compatibility and will only be applied when spell_rev folder (Demivrvgs's Spell Revisions) exists in game directory
 :: http://gibberlings3.net/forums/index.php?showtopic=28249&page=1
 
 :: subtledoctor's SCS hotfixes are fully covered as well
