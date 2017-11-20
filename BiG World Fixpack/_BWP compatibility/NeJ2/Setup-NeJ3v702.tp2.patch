@@ -1,5 +1,5 @@
 --- Setup-NeJ3v702.tp2	Fri Apr 29 14:02:51 2016
-+++ C:\BWP Patchstudio\patched files\Setup-NeJ3v702.tp2	Tue Sep 13 18:52:43 2016
++++ C:\BWP Patchstudio\patched files\Setup-NeJ3v702.tp2	Thu Feb 23 09:39:56 2017
 @@ -2,6 +2,112 @@
  
  AUTHOR ~Vlad & Larrienne~
@@ -310,7 +310,42 @@
  END
   ELSE BEGIN
    COMPILE ~NeJ3/fixes/AR9799.baf~
-@@ -10286,16 +10486,23 @@
+@@ -7984,8 +8184,9 @@
+ APPEND ~SPELL.IDS~
+ ~2797 WIZARD_MALAVONS_RAGE~
+ 
+-APPEND ~PROJECTL.IDS~
+-~273 PMALAVOR~
++//APPEND ~PROJECTL.IDS~
++//~273 PMALAVOR~
++ADD_PROJECTILE ~NeJ3/spl/malavonr/PMalavoR.PRO~
+ 
+ COPY ~NeJ3/are_copy~ ~override~
+ COPY ~NeJ3/bam~ ~override~
+@@ -9530,7 +9731,7 @@
+ Not Usable By:
+  Cleric~
+ 
+-COPY ~NeJ3/spl/malavonr/PMalavoR.PRO~ ~override/PMalavoR.PRO~
++//COPY ~NeJ3/spl/malavonr/PMalavoR.PRO~ ~override/PMalavoR.PRO~
+ 
+ COPY ~NeJ3/spl/malavonr/SPWI797.SPL~		~override/SPWI797.SPL~
+   SAY NAME1 ~Malavon's Rage~
+@@ -9545,6 +9746,13 @@
+ Saving Throw: None
+ Malavon's Rage was created by the dark elf sorcerer Malavon. It creates a wave of pure energy out from the caster's body, harming friend and foe alike on its way. The energy wave front throw everything away from the catser and do 20-80 points of crushing damage to everything caught in its path. This spell is especially useful when a mage is surrounded by enemies.~
+ 
++COPY_EXISTING ~override\SPWI797.SPL~ ~override\SPWI797.SPL~
++LAUNCH_PATCH_FUNCTION ALTER_ITEM_HEADER
++  INT_VAR
++  header = 1
++  projectile = "%PMalavoR%"
++  END
++  
+ COPY ~NeJ3/spl/malavonr/MalavonR.itm~        ~override/MalavonR.itm~
+   SAY NAME2 ~Malavon's Rage~
+   SAY DESC ~Malavon's Rage was created by the dark elf sorcerer Malavon. It creates a wave of pure energy out from the caster's body, harming friend and foe alike on its way. The energy wave front throw everything away from the catser and do 20-80 points of crushing damage to everything caught in its path. This spell is especially useful when a mage is surrounded by enemies.~
+@@ -10286,16 +10494,23 @@
    		SAY CRITICAL_MISS ~I spit on your manhood.~ [SHART36]
    		SAY BIO ~When asked about her past, Shar-Teel has very little to say.  From the little she speaks of it can be gleaned that she is an orphan. She also seems to harbor an intense dislike for Flaming Fist mercenaries, as well as an obvious disrespect for men in general. She seems to have something to prove, and likely her childhood was not of storybook quality.~ 
  
