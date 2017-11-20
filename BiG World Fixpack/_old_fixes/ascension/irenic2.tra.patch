@@ -1,0 +1,11 @@
+--- ascension\american\irenic2.tra	Mon Aug 19 23:34:06 2002
++++ C:\BWP Patchstudio\patched files\ascension\american\irenic2.tra	Wed Nov 11 13:41:53 2015
+@@ -19,7 +19,7 @@
+ @452 = ~Do not overestimate your usefulness to me, 'dear' sister...nor the extent of my non-existent affection.  Or do you truly think I had forgotten your whispered urgings which had led me down the path of my exile?~
+ @453 = ~Enough, sister.  We do as Melissan bids, with her servants at our side.  Take delight, if you will, at the revenge we shall now taste.  Let us see, <CHARNAME>, if I can rip that soul out of you once more.  I would so delight in stealing your proud destiny a second time.~
+ @454 = ~You over-step your bounds, as always.  I did not call you here to rejoice in your venom, Bodhi.  Do you not notice where we are?  Whom we face?~
+-@455 = ~You think to betray me, Bodhi?  Foolish girl.  Melissan is the one who holds power here, and you hope to find succor at the feet of this fool <PRO_BOYGIRL>?  Stand by me or die with <PRO_HIMHER>!~
++@455 = ~You think to betray me, Bodhi?  Foolish girl.  Melissan is the one who holds power here, and you hope to find succor at the feet of this fool <PRO_GIRLBOY>?  Stand by me or die with <PRO_HIMHER>!~
+ @456 = ~So my ungrateful sister, you finally stand by my side.  I shall deal with your treachery afterwards.  As for you,  <CHARNAME>, Mellisan has granted me the power to rip the divinity from your body.  The first thing I shall feel in an eon shall be pleasure as I watch your corpse turn to dust.~
+ @457 = ~I see.  So you leave me, sister, just as *she* left me.~
+ @458 = ~It is no matter.  Melissan has given me power enough, and her own servants shall teach you the error of your ways.  I shall strip the divinity from <CHARNAME>'s soul and you, *dear* sister, shall be nothing but dust beside <PRO_HIMHER>.~
