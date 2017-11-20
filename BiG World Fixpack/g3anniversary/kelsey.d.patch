@@ -1,8 +1,0 @@
---- g3anniversary/dlg/kelsey.d	2007-02-17 13:45:30.000000000 -0500
-+++ Fixpack/g3anniversary/dlg/kelsey.d	2016-11-27 22:57:10.557448400 -0500
-@@ -8,5 +8,4 @@
- CHAIN ~G3BEV~ LadyBevKelseyExchange @11117 = @11232
- == ~J#KLSYJ~ @11233
- == ~G3BEV~ @11112
--END
-   COPY_TRANS G3BEV KelseyNotAtFault
