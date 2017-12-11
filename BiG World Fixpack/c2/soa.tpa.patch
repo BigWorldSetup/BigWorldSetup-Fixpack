@@ -1,8 +1,0 @@
---- c2/lib/soa.tpa	2013-07-30 12:15:18.397000000 +0200
-+++ Fixpack/c2/lib/soa.tpa	2017-02-01 21:44:00.000000000 +0100
-@@ -1,4 +1,5 @@
- // shared soa-tob code
-+INCLUDE ~c2/lib/functions.tpa~
- INCLUDE ~c2/lib/items_common.tpa~
- 
- EXTEND_BOTTOM ~AR0334.bcs~ ~c2/crom/AR0334.baf~
