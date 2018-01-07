@@ -1,5 +1,12 @@
---- 1pp\install\202_spelltweaks.tph	Sun Aug 05 10:45:35 2012
-+++ C:\BWP Patchstudio\patched files\1pp\install\202_spelltweaks.tph	Fri Dec 11 21:07:08 2015
+--- 1pp\install\202_spelltweaks.tph	2012-08-05 00:15:35.437500000 -0500
++++ C:\Users\Bartimaeus\Desktop\202_spelltweaks.tph	2017-07-26 06:15:04.178099400 -0500
+@@ -1,5 +1,5 @@
+ // varied 'Armour' visual effects 
+-// IWD style Cause Wounds spells
++// IWD style Cause Wounds spells - check for SR before installing
+ //
+ 
+ 
 @@ -14,8 +14,19 @@
      ACTION_IF (FILE_EXISTS_IN_GAME ~SPWI317.SPL~) THEN BEGIN
        COPY_EXISTING ~SPWI317.SPL~ ~override~
@@ -22,7 +29,7 @@
    END
    BUT_ONLY_IF_IT_CHANGES
    END
-@@ -23,8 +34,19 @@
+@@ -23,11 +34,175 @@
   ACTION_IF (FILE_EXISTS_IN_GAME ~SPWI414.SPL~) THEN BEGIN
        COPY_EXISTING ~SPWI414.SPL~ ~override~
    PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
@@ -41,6 +48,172 @@
 +        END
 +      END
 +    END
++  END
++  BUT_ONLY_IF_IT_CHANGES
++  END
++
++ACTION_IF (FILE_EXISTS_IN_GAME ~dvsrv3.mrk~) THEN BEGIN
++  PRINT ~Skipping PnP/IWD-style 'cause wound" spells due to Spell Revisions V3/V4 being installed...~
++  
++  ACTION_FOR_EACH item IN ~1WDCCDAM.BAM~ ~1WDCCDAM.VVC~ ~1WDCLDAM.BAM~ ~1WDCLDAM.VVC~ ~1WDCMDAM.BAM~ ~1WDCMDAM.VVC~ ~1WDCSDAM.BAM~ ~1WDCSDAM.VVC~ BEGIN
++  COPY		~1pp/item/spells_and_scrolls/tweak/%item%~ ~override~
++  END
++
++COPY_EXISTING ~SPPR119D.spl~ ~override~
++  PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
++SET opcode = 215			// Set opcode
++SET target = 2			// target type
++SET timing = 0			// timing type
++SET power = 1			// power
++SET resist_dispel = 1	// dispel/resitance
++SET duration = 2		// duration
++SET probability1 = 100	// probability 1
++SET probability2 = 0	// probability 2
++SPRINT "resource" "1WDCLDAM" 		// resource
++SET dicenumber = 0		// dice number 
++SET dicesize = 0		// dice size
++SET savingthrow = 0   // saving throw
++SET savebonus = 0		// saving throw bonus 
++SET parameter1 = 0 // param1
++SET parameter2 = 1 // param2
++SET header = 1
++LAUNCH_PATCH_MACRO ADD_SPELL_EFFECT
++  END
++  BUT_ONLY_IF_IT_CHANGES
++
++COPY_EXISTING ~SPPR219D.spl~ ~override~
++  PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
++SET opcode = 215			// Set opcode
++SET target = 2			// target type
++SET timing = 0			// timing type
++SET power = 1			// power
++SET resist_dispel = 1	// dispel/resitance
++SET duration = 2		// duration
++SET probability1 = 100	// probability 1
++SET probability2 = 0	// probability 2
++SPRINT "resource" "1WDCMDAM" 		// resource
++SET dicenumber = 0		// dice number 
++SET dicesize = 0		// dice size
++SET savingthrow = 0   // saving throw
++SET savebonus = 0		// saving throw bonus 
++SET parameter1 = 0 // param1
++SET parameter2 = 1 // param2
++SET header = 1
++LAUNCH_PATCH_MACRO ADD_SPELL_EFFECT
++  END
++  BUT_ONLY_IF_IT_CHANGES
++
++COPY_EXISTING ~SPPR321D.spl~ ~override~
++  PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
++SET opcode = 215			// Set opcode
++SET target = 2			// target type
++SET timing = 0			// timing type
++SET power = 1			// power
++SET resist_dispel = 1	// dispel/resitance
++SET duration = 2		// duration
++SET probability1 = 100	// probability 1
++SET probability2 = 0	// probability 2
++SPRINT "resource" "1WDCSDAM" 		// resource
++SET dicenumber = 0		// dice number 
++SET dicesize = 0		// dice size
++SET savingthrow = 0   // saving throw
++SET savebonus = 0		// saving throw bonus 
++SET parameter1 = 0 // param1
++SET parameter2 = 1 // param2
++SET header = 1
++LAUNCH_PATCH_MACRO ADD_SPELL_EFFECT
    END
    BUT_ONLY_IF_IT_CHANGES
++
++COPY_EXISTING ~SPPR414D.spl~ ~override~
++  PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
++SET opcode = 215			// Set opcode
++SET target = 2			// target type
++SET timing = 0			// timing type
++SET power = 1			// power
++SET resist_dispel = 1	// dispel/resitance
++SET duration = 2		// duration
++SET probability1 = 100	// probability 1
++SET probability2 = 0	// probability 2
++SPRINT "resource" "1WDCCDAM" 		// resource
++SET dicenumber = 0		// dice number 
++SET dicesize = 0		// dice size
++SET savingthrow = 0   // saving throw
++SET savebonus = 0		// saving throw bonus 
++SET parameter1 = 0 // param1
++SET parameter2 = 1 // param2
++SET header = 1
++LAUNCH_PATCH_MACRO ADD_SPELL_EFFECT
    END
++  BUT_ONLY_IF_IT_CHANGES
++
++ACTION_IF (FILE_EXISTS_IN_GAME ~SPPR510D.bam~) BEGIN
++  COPY_EXISTING ~SPPR510D.spl~ ~override~
++    PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
++SET opcode = 215			// Set opcode
++SET target = 2			// target type
++SET timing = 0			// timing type
++SET power = 1			// power
++SET resist_dispel = 1	// dispel/resitance
++SET duration = 2		// duration
++SET probability1 = 100	// probability 1
++SET probability2 = 0	// probability 2
++SPRINT "resource" "1WDCCDAM" 		// resource
++SET dicenumber = 0		// dice number 
++SET dicesize = 0		// dice size
++SET savingthrow = 0   // saving throw
++SET savebonus = 0		// saving throw bonus 
++SET parameter1 = 0 // param1
++SET parameter2 = 1 // param2
++SET header = 1
++LAUNCH_PATCH_MACRO ADD_SPELL_EFFECT
++    END
++  BUT_ONLY_IF_IT_CHANGES
++END  
++
++PRINT ~Do you want existing 'cause wound' spells to use IWD-style icons? (healing icon in red) 
++
++1. Yes please.
++2. No, keep BG2 icons for existing spells.
++
++PLEASE ENTER  1 OR 2  ~
++ACTION_READLN how
++OUTER_WHILE NOT(IS_AN_INT %how%) || (%how% > 2) || (%how% < 1) BEGIN
++ PRINT ~Do you want existing 'cause wound' spells to use IWD-style icons? (healing icon in red) 
++
++1. Yes please.
++2. No, keep BG2 icons for existing spells.
++
++PLEASE ENTER  1 OR 2  ~
++ ACTION_READLN how
++END
++
++ACTION_IF (%how% = 1) THEN BEGIN
++PRINT ~Copying...~
++COPY		~1pp/item/spells_and_scrolls/tweak/1WDCLWA.bam~ ~override/SPPR119A.bam~
++COPY		~1pp/item/spells_and_scrolls/tweak/1WDCLWB.bam~ ~override/SPPR119B.bam~
++COPY		~1pp/item/spells_and_scrolls/tweak/1WDCLWC.bam~ ~override/SPPR119C.bam~
++
++COPY		~1pp/item/spells_and_scrolls/tweak/1WDCMWA.bam~ ~override/SPPR219A.bam~
++COPY		~1pp/item/spells_and_scrolls/tweak/1WDCMWB.bam~ ~override/SPPR219B.bam~
++COPY		~1pp/item/spells_and_scrolls/tweak/1WDCMWC.bam~ ~override/SPPR219C.bam~
++
++ACTION_FOR_EACH item IN ~SPPR414A.bam~ ~SPPR414B.bam~ ~SPPR414C.bam~ ~SPPR510A.bam~ ~SPPR510B.bam~ ~SPPR510C.bam~ BEGIN
++  COPY		~1pp/item/spells_and_scrolls/tweak/%item%~ ~override~
++  END
++END
++  
++END ELSE BEGIN
+ 
+ PRINT ~Installing PnP/IWD-style 'cause wounds' spells...~
+ 
+@@ -179,4 +354,6 @@
+ Area of Effect: Creature touched 
+ Saving Throw: 1/2 
+ 
+-This spell is the reverse of cure medium wounds.  Instead of healing the creature touched, it causes damage.  On a successful touch from the priest, the spell inflicts 13 damage upon the target.  A successful saving throw against spells halves the damage.~
+\ No newline at end of file
++This spell is the reverse of cure medium wounds.  Instead of healing the creature touched, it causes damage.  On a successful touch from the priest, the spell inflicts 13 damage upon the target.  A successful saving throw against spells halves the damage.~
++
++END // SR check
+\ No newline at end of file

@@ -1,0 +1,86 @@
+--- 1pp\install\200_1ppv2_cut.tph	2011-05-01 19:02:59.250000000 -0500
++++ C:\Users\Bartimaeus\Desktop\1pp\install\200_1ppv2_cut.tph	2017-07-22 13:53:30.358151000 -0500
+@@ -29,7 +29,7 @@
+   BUT_ONLY_IF_IT_CHANGES
+   END
+ 
+-    ACTION_IF (FILE_EXISTS_IN_GAME ~compon05.itm~) THEN BEGIN
++/*    ACTION_IF (FILE_EXISTS_IN_GAME ~compon05.itm~) THEN BEGIN //Roranach's Horn getting weird IWD graphic
+ COPY_EXISTING ~compon05.itm~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+     WRITE_ASCII 0x22 ~H0~
+@@ -50,10 +50,10 @@
+     END
+   END
+   BUT_ONLY_IF_IT_CHANGES
+-END
++END*/
+   
+   
+-   ACTION_FOR_EACH ~item~ IN ~dagg21~ ~dagg22~  BEGIN
++   /*ACTION_FOR_EACH ~item~ IN ~dagg21~ ~dagg22~  BEGIN //Dagger of the Star getting Shadow Thief Dagger icon
+     ACTION_IF (FILE_EXISTS_IN_GAME ~%item%.itm~) THEN BEGIN
+       COPY_EXISTING ~%item%.itm~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+@@ -72,7 +72,7 @@
+   END
+   BUT_ONLY_IF_IT_CHANGES
+ END
+-END
++END*/
+   
+   
+     ACTION_IF (FILE_EXISTS_IN_GAME ~demosum4.itm~) THEN BEGIN
+@@ -1421,7 +1421,7 @@
+   BUT_ONLY_IF_IT_CHANGES
+ END
+   
+-      ACTION_IF (FILE_EXISTS_IN_GAME ~sw1h31.itm~) THEN BEGIN
++/*      ACTION_IF (FILE_EXISTS_IN_GAME ~sw1h31.itm~) THEN BEGIN //Daystar's icon being set to Albruin's for no apparent reason
+ COPY_EXISTING ~sw1h31.itm~ ~override~
+   WRITE_LONG  0x3E 0
+   WRITE_ASCII 0x3A ~ISW1H34~
+@@ -1438,7 +1438,7 @@
+   BUT_ONLY_IF_IT_CHANGES
+ END
+   
+-      ACTION_IF (FILE_EXISTS_IN_GAME ~sw1h34.itm~) THEN BEGIN
++      ACTION_IF (FILE_EXISTS_IN_GAME ~sw1h34.itm~) THEN BEGIN //Albruin's icon being set to Daystar's for no apparent reason
+ COPY_EXISTING ~sw1h34.itm~ ~override~
+   WRITE_LONG  0x3E 0
+   WRITE_ASCII 0x3A ~ISW1H31~
+@@ -1453,7 +1453,7 @@
+     SET "abil_num" = ("%abil_num%" - 1)
+   END
+   BUT_ONLY_IF_IT_CHANGES
+-END
++END*/
+   
+       ACTION_IF (FILE_EXISTS_IN_GAME ~sw1h41.itm~) THEN BEGIN
+ COPY_EXISTING ~sw1h41.itm~ ~override~
+@@ -1666,14 +1666,14 @@
+ COPY ~1pp/item/v2_copy/cshld19.bam~  ~override~
+ COPY ~1pp/item/v2_copy/cshld20.bam~  ~override~
+ COPY ~1pp/item/v2_copy/iax1h01.bam~  ~override~
+-COPY ~1pp/item/v2_copy/iax1h14.bam~  ~override~
++//COPY ~1pp/item/v2_copy/iax1h14.bam~  ~override~ //Axe of the Unyielding getting weird IWD icon
+ COPY ~1pp/item/v2_copy/iblun01.bam~  ~override~
+ COPY ~1pp/item/v2_copy/iblun04.bam~  ~override~
+ COPY ~1pp/item/v2_copy/iblun05.bam~  ~override~
+ COPY ~1pp/item/v2_copy/iblun06.bam~  ~override~
+ COPY ~1pp/item/v2_copy/iblun26.bam~  ~override~
+ COPY ~1pp/item/v2_copy/ibolts01.bam~ ~override~
+-COPY ~1pp/item/v2_copy/ibow26.bam~ ~override~
++COPY ~1pp/item/v2_copy/ibow26.bam~ ~override~ //Short Bow +3 getting weird IWD icon
+ COPY ~1pp/item/v2_copy/ichan04.bam~  ~override~
+ COPY ~1pp/item/v2_copy/ichan05.bam~  ~override~
+ COPY ~1pp/item/v2_copy/ichan07.bam~  ~override~
+@@ -1701,7 +1701,7 @@
+ COPY ~1pp/item/v2_copy/ihelm03.bam~  ~override~
+ COPY ~1pp/item/v2_copy/ihelm04.bam~  ~override~
+ COPY ~1pp/item/v2_copy/ihelm05.bam~  ~override~
+-COPY ~1pp/item/v2_copy/ihelm06.bam~  ~override~
++//COPY ~1pp/item/v2_copy/ihelm06.bam~  ~override~ //Roranach's Horn getting weird IWD graphic
+ COPY ~1pp/item/v2_copy/ihelm07.bam~  ~override~
+ COPY ~1pp/item/v2_copy/ihelm14.bam~  ~override~
+ COPY ~1pp/item/v2_copy/ihelm31.bam~  ~override~
