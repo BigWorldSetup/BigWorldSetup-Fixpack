@@ -4,8 +4,8 @@
  
  BACKUP ~atweaks/backup~
  AUTHOR "Wisp, shsforums.net"                                                       // Author and e-mail address
--VERSION ~v4.51~                                                                    // Mod version
-+VERSION ~v4.51 BWP Fix~                                                                    // Mod version
+-VERSION ~v4.52~                                                                    // Mod version
++VERSION ~v4.52 BWP Fix~                                                                    // Mod version
  
  ALWAYS                                                                             // Always do this block
    INCLUDE ~aTweaks/LIB/RR#AGLEF.TPH~                                               // Include my custom "Add Global Effect" function
