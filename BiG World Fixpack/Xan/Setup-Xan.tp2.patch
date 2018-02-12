@@ -7,7 +7,7 @@
 -VERSION ~v15~ 
 +VERSION ~v15 BWP Fix~
  
- README ~Xan/%LANGUAGE%/Readme-Xan.txt~ ~Xan/Readme-Xan.txt~ 
+-README ~Xan/%LANGUAGE%/Readme-Xan.txt~ ~Xan/Readme-Xan.txt~ 
  
  ALWAYS
 -  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
