@@ -1,4 +1,4 @@
---- C:\Users\Bartimaeus\Desktop\401_projectiles (2).tph	2012-08-11 20:04:25.906250000 -0500
+--- 1pp\install\401_projectiles.tph	2012-08-11 20:04:25.906250000 -0500
 +++ C:\Users\Bartimaeus\Desktop\401_projectiles.tph	2018-01-11 11:01:58.669132600 -0600
 @@ -15,7 +15,17 @@
  ACTION_IF (FILE_EXISTS_IN_GAME ~AROW01.ITM~) THEN BEGIN
