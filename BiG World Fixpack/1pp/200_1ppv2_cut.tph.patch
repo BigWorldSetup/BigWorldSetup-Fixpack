@@ -1,5 +1,5 @@
 --- 1pp\install\200_1ppv2_cut.tph	2011-05-01 19:02:59.250000000 -0500
-+++ C:\Users\Bartimaeus\Desktop\1pp\install\200_1ppv2_cut.tph	2017-07-22 13:53:30.358151000 -0500
++++ E:\Backups\Games\Baldur's Gate II\Tools\Directory Override\1pp\install\200_1ppv2_cut.tph	2018-02-08 13:03:42.138617600 -0600
 @@ -29,7 +29,7 @@
    BUT_ONLY_IF_IT_CHANGES
    END
@@ -31,7 +31,33 @@
    
    
      ACTION_IF (FILE_EXISTS_IN_GAME ~demosum4.itm~) THEN BEGIN
-@@ -1421,7 +1421,7 @@
+@@ -97,7 +97,7 @@
+     ACTION_IF (FILE_EXISTS_IN_GAME ~halb07.itm~) THEN BEGIN
+   COPY_EXISTING ~halb07.itm~ ~override~
+   WRITE_LONG  0x3E 0
+-  WRITE_ASCII 0x3A ~ihalb03~
++  WRITE_ASCII 0x3A ~ihalb07~
+   READ_LONG  0x6a "gfx_off"
+   READ_SHORT 0x70 "gfx_num"
+   WHILE ("%gfx_num%" > 0) BEGIN
+@@ -242,14 +242,14 @@
+     ACTION_IF (FILE_EXISTS_IN_GAME ~%item%.itm~) THEN BEGIN
+       COPY_EXISTING ~%item%.itm~ ~override~
+   WRITE_LONG  0x3E 0
+-  WRITE_ASCII 0x3A ~ISW1HRN~
++  WRITE_ASCII 0x3A ~ISW1H06~
+   READ_LONG  0x64 "abil_off"
+   READ_SHORT 0x68 "abil_num"
+   WHILE ("%abil_num%" > 0) BEGIN
+     READ_BYTE ("%abil_off%" + (0x38 * ("%abil_num%" - 1))) "type"
+     PATCH_IF ("%type%" = 1) BEGIN
+       WRITE_LONG  ("%abil_off%" + 0x08 + (0x38 * ("%abil_num%" - 1))) 0
+-      WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW1HRN~
++      WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW1H06~
+     END
+     SET "abil_num" = ("%abil_num%" - 1)
+   END
+@@ -1421,51 +1421,51 @@
    BUT_ONLY_IF_IT_CHANGES
  END
    
@@ -39,8 +65,19 @@
 +/*      ACTION_IF (FILE_EXISTS_IN_GAME ~sw1h31.itm~) THEN BEGIN //Daystar's icon being set to Albruin's for no apparent reason
  COPY_EXISTING ~sw1h31.itm~ ~override~
    WRITE_LONG  0x3E 0
-   WRITE_ASCII 0x3A ~ISW1H34~
-@@ -1438,7 +1438,7 @@
+-  WRITE_ASCII 0x3A ~ISW1H34~
++  WRITE_ASCII 0x3A ~ISW1H31~
+   READ_LONG  0x64 "abil_off"
+   READ_SHORT 0x68 "abil_num"
+   WHILE ("%abil_num%" > 0) BEGIN
+     READ_BYTE ("%abil_off%" + (0x38 * ("%abil_num%" - 1))) "type"
+     PATCH_IF ("%type%" = 1) BEGIN
+       WRITE_LONG  ("%abil_off%" + 0x08 + (0x38 * ("%abil_num%" - 1))) 0
+-      WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW1H34~
++      WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW1H31~
+     END
+     SET "abil_num" = ("%abil_num%" - 1)
+   END
    BUT_ONLY_IF_IT_CHANGES
  END
    
@@ -48,8 +85,17 @@
 +      ACTION_IF (FILE_EXISTS_IN_GAME ~sw1h34.itm~) THEN BEGIN //Albruin's icon being set to Daystar's for no apparent reason
  COPY_EXISTING ~sw1h34.itm~ ~override~
    WRITE_LONG  0x3E 0
-   WRITE_ASCII 0x3A ~ISW1H31~
-@@ -1453,7 +1453,7 @@
+-  WRITE_ASCII 0x3A ~ISW1H31~
++  WRITE_ASCII 0x3A ~ISW1H34~
+   READ_LONG  0x64 "abil_off"
+   READ_SHORT 0x68 "abil_num"
+   WHILE ("%abil_num%" > 0) BEGIN
+     READ_BYTE ("%abil_off%" + (0x38 * ("%abil_num%" - 1))) "type"
+     PATCH_IF ("%type%" = 1) BEGIN
+       WRITE_LONG  ("%abil_off%" + 0x08 + (0x38 * ("%abil_num%" - 1))) 0
+-      WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW1H31~
++      WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW1H34~
+     END
      SET "abil_num" = ("%abil_num%" - 1)
    END
    BUT_ONLY_IF_IT_CHANGES
@@ -58,6 +104,77 @@
    
        ACTION_IF (FILE_EXISTS_IN_GAME ~sw1h41.itm~) THEN BEGIN
  COPY_EXISTING ~sw1h41.itm~ ~override~
+   WRITE_LONG  0x3E 0
+-  WRITE_ASCII 0x3A ~ISW1H06~
++  WRITE_ASCII 0x3A ~ISW1H41~
+   READ_LONG  0x64 "abil_off"
+   READ_SHORT 0x68 "abil_num"
+   WHILE ("%abil_num%" > 0) BEGIN
+     READ_BYTE ("%abil_off%" + (0x38 * ("%abil_num%" - 1))) "type"
+     PATCH_IF ("%type%" = 1) BEGIN
+       WRITE_LONG  ("%abil_off%" + 0x08 + (0x38 * ("%abil_num%" - 1))) 0
+-      WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW1H06~
++      WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW1H41~
+     END
+     SET "abil_num" = ("%abil_num%" - 1)
+   END
+@@ -1603,19 +1603,19 @@
+   BUT_ONLY_IF_IT_CHANGES
+ END
+   
+-  ACTION_FOR_EACH ~item~ IN ~sw2h10~ ~sw2h19~    BEGIN
++  ACTION_FOR_EACH ~item~ IN ~sw2h10~ ~sw2h19~    BEGIN //Why was this being set to ISW2H20? ...
+     ACTION_IF (FILE_EXISTS_IN_GAME ~%item%.itm~) THEN BEGIN
+       COPY_EXISTING ~%item%.itm~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+     WRITE_LONG  0x3E 0
+-    WRITE_ASCII 0x3A ~ISW2H20~
++    WRITE_ASCII 0x3A ~ISW2H10~
+     READ_LONG  0x64 "abil_off"
+     READ_SHORT 0x68 "abil_num"
+     WHILE ("%abil_num%" > 0) BEGIN
+       READ_BYTE ("%abil_off%" + (0x38 * ("%abil_num%" - 1))) "type"
+       PATCH_IF ("%type%" = 1) BEGIN
+         WRITE_LONG  ("%abil_off%" + 0x08 + (0x38 * ("%abil_num%" - 1))) 0
+-        WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW2H20~
++        WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW2H10~
+       END
+       SET "abil_num" = ("%abil_num%" - 1)
+     END
+@@ -1627,14 +1627,14 @@
+    ACTION_IF (FILE_EXISTS_IN_GAME ~sw2h11.itm~) THEN BEGIN
+ COPY_EXISTING ~sw2h11.itm~ ~override~
+   WRITE_LONG  0x3E 0
+-  WRITE_ASCII 0x3A ~ISW2H03~
++  WRITE_ASCII 0x3A ~ISW2H11~
+   READ_LONG  0x64 "abil_off"
+   READ_SHORT 0x68 "abil_num"
+   WHILE ("%abil_num%" > 0) BEGIN
+     READ_BYTE ("%abil_off%" + (0x38 * ("%abil_num%" - 1))) "type"
+     PATCH_IF ("%type%" = 1) BEGIN
+       WRITE_LONG  ("%abil_off%" + 0x08 + (0x38 * ("%abil_num%" - 1))) 0
+-      WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW2H03~
++      WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW2H11~
+     END
+     SET "abil_num" = ("%abil_num%" - 1)
+   END
+@@ -1645,14 +1645,14 @@
+ COPY_EXISTING ~sw2h20.itm~ ~override~
+   PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+     WRITE_LONG  0x3E 0
+-    WRITE_ASCII 0x3A ~ISW2H06~
++    WRITE_ASCII 0x3A ~ISW2H20~
+     READ_LONG  0x64 "abil_off"
+     READ_SHORT 0x68 "abil_num"
+     WHILE ("%abil_num%" > 0) BEGIN
+       READ_BYTE ("%abil_off%" + (0x38 * ("%abil_num%" - 1))) "type"
+       PATCH_IF ("%type%" = 1) BEGIN
+         WRITE_LONG  ("%abil_off%" + 0x08 + (0x38 * ("%abil_num%" - 1))) 0
+-        WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW2H06~
++        WRITE_ASCII ("%abil_off%" + 0x04 + (0x38 * ("%abil_num%" - 1))) ~ISW2H20~
+       END
+       SET "abil_num" = ("%abil_num%" - 1)
+     END
 @@ -1666,14 +1666,14 @@
  COPY ~1pp/item/v2_copy/cshld19.bam~  ~override~
  COPY ~1pp/item/v2_copy/cshld20.bam~  ~override~
@@ -71,16 +188,59 @@
  COPY ~1pp/item/v2_copy/iblun26.bam~  ~override~
  COPY ~1pp/item/v2_copy/ibolts01.bam~ ~override~
 -COPY ~1pp/item/v2_copy/ibow26.bam~ ~override~
-+COPY ~1pp/item/v2_copy/ibow26.bam~ ~override~ //Short Bow +3 getting weird IWD icon
++//COPY ~1pp/item/v2_copy/ibow26.bam~ ~ibow26b.bam~ //Short Bow +3 getting weird IWD icon
  COPY ~1pp/item/v2_copy/ichan04.bam~  ~override~
  COPY ~1pp/item/v2_copy/ichan05.bam~  ~override~
  COPY ~1pp/item/v2_copy/ichan07.bam~  ~override~
-@@ -1701,7 +1701,7 @@
+@@ -1690,18 +1690,18 @@
+ COPY ~1pp/item/v2_copy/iclck15.bam~  ~override~
+ COPY ~1pp/item/v2_copy/iclck16.bam~  ~override~
+ COPY ~1pp/item/v2_copy/iclck17.bam~  ~override~
+-COPY ~1pp/item/v2_copy/idagg11.bam~  ~override~
++//COPY ~1pp/item/v2_copy/idagg11.bam~  ~override~ //Overwriting Boomerang Dagger's icon with Dagger of Venom's for no reason
+ COPY ~1pp/item/v2_copy/ihalb03.bam~  ~override~
+ COPY ~1pp/item/v2_copy/ihalb10.bam~  ~override~
+ COPY ~1pp/item/v2_copy/ihalb12.bam~  ~override~
+-COPY ~1pp/item/v2_copy/ihamm10.bam~  ~override~
++COPY ~1pp/item/v2_copy/ihamm10.bam~  ~override/ihamm11.bam~ //Save vanilla's Runehammer icon
+ COPY ~1pp/item/v2_copy/ihelm00.bam~  ~override~
+ COPY ~1pp/item/v2_copy/ihelm01.bam~  ~override~
+ COPY ~1pp/item/v2_copy/ihelm02.bam~  ~override~
  COPY ~1pp/item/v2_copy/ihelm03.bam~  ~override~
  COPY ~1pp/item/v2_copy/ihelm04.bam~  ~override~
  COPY ~1pp/item/v2_copy/ihelm05.bam~  ~override~
 -COPY ~1pp/item/v2_copy/ihelm06.bam~  ~override~
-+//COPY ~1pp/item/v2_copy/ihelm06.bam~  ~override~ //Roranach's Horn getting weird IWD graphic
++//COPY ~1pp/item/v2_copy/ihelm06.bam~  ~override~ //Roranach's Horn getting weird IWD icon
  COPY ~1pp/item/v2_copy/ihelm07.bam~  ~override~
  COPY ~1pp/item/v2_copy/ihelm14.bam~  ~override~
  COPY ~1pp/item/v2_copy/ihelm31.bam~  ~override~
+@@ -1709,7 +1709,7 @@
+ COPY ~1pp/item/v2_copy/ileat01.bam~  ~override~
+ COPY ~1pp/item/v2_copy/ileat04.bam~  ~override~
+ COPY ~1pp/item/v2_copy/iplat01.bam~  ~override~
+-COPY ~1pp/item/v2_copy/iplat09.bam~  ~override~
++COPY ~1pp/item/v2_copy/iplat09.bam~  ~override/1plat02.bam~
+ COPY ~1pp/item/v2_copy/iplot01f.bam~ ~override~
+ COPY ~1pp/item/v2_copy/iqbull02.bam~ ~override~
+ COPY ~1pp/item/v2_copy/iquiv01.bam~  ~override~
+@@ -1723,7 +1723,7 @@
+ COPY ~1pp/item/v2_copy/ishldvr.bam~  ~override~
+ COPY ~1pp/item/v2_copy/ishldzs.bam~  ~override~
+ COPY ~1pp/item/v2_copy/isw1h02.bam~  ~override~
+-COPY ~1pp/item/v2_copy/isw1h06.bam~  ~override~
++//COPY ~1pp/item/v2_copy/isw1h06.bam~  ~override~ //Unnecessary overwrite - duplicate of isw1h72
+ COPY ~1pp/item/v2_copy/isw1h16.bam~  ~override~
+ COPY ~1pp/item/v2_copy/isw1h42.bam~  ~override~
+ COPY ~1pp/item/v2_copy/isw1h51.bam~  ~override~
+@@ -1749,9 +1749,9 @@
+ COPY ~1pp/item/v2_copy/isw1h77.bam~  ~override~
+ COPY ~1pp/item/v2_copy/isw1hbs.bam~  ~override~
+ COPY ~1pp/item/v2_copy/isw1hrc.bam~  ~override~
+-COPY ~1pp/item/v2_copy/isw1hrn.bam~  ~override~
++COPY ~1pp/item/v2_copy/isw1hrn.bam~  ~override/isw1h06.bam~ //Original place
+ COPY ~1pp/item/v2_copy/isw1hwk.bam~  ~override~
+-COPY ~1pp/item/v2_copy/isw2h07.bam~  ~override~
++COPY ~1pp/item/v2_copy/isw2h07.bam~  ~override/isw2h16.bam~ //Prevent Harbinger from losing its golden icon (which is what it's colored for anyway)
+ COPY ~1pp/item/v2_copy/isw2h17.bam~  ~override~
+ COPY ~1pp/item/v2_copy/isw2h20.bam~  ~override~
+ COPY ~1pp/item/v2_copy/iwand01.bam~  ~override~
