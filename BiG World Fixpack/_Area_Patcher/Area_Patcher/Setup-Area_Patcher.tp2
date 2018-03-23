@@ -239,64 +239,15 @@ BUT_ONLY_IF_IT_CHANGES
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BEGIN ~Restore Shadows over Soubar - AR0700 Travel Trigger~ DESIGNATED 4000 GROUP ~Shadows over Soubar~
-REQUIRE_COMPONENT ~setup-area_patcher.tp2~ 0 ~You must install the core component first.~
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~setup-sos.tp2~ 0) ~This component is needed only if you have installed Shadows over Soubar.~
-
-//(REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~AR4230.ARE~)
-
-COPY_EXISTING ~AR0700.are~ ~override~
-
-  LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
-    INT_VAR
-    fj_type         = 2    //travel
-    fj_box_left     = 3446
-    fj_box_top      = 3304
-    fj_box_right    = 3600
-    fj_box_bottom   = 3496
-    fj_cursor_idx   = 28   //down stairs
-    fj_vertex_0     = 3446 + (3371 << 16)
-    fj_vertex_1     = 3447 + (3460 << 16)
-    fj_vertex_2     = 3512 + (3496 << 16)
-    fj_vertex_3     = 3600 + (3419 << 16)
-    fj_vertex_4     = 3541 + (3389 << 16)
-    fj_vertex_5     = 3539 + (3304 << 16)
-    fj_loc_x      = 3513
-    fj_loc_y      = 3417
-    fj_flags        = 2
-    STR_VAR
-    fj_structure_type   = region
-    fj_name             = CBDownToCatacombs
-    fj_destination_area = AR4201
-    fj_destination_name = Exit4500
-  END
-
-BUT_ONLY_IF_IT_CHANGES
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////                                                    ////////////
-////////////            Shadows over Soubar - AR4360 Near Areas ////////////
-////////////                                                    ////////////
+////////////            Shadows over Soubar                     ////////////
+////////////  No longer required v1.17                         ////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-BEGIN ~Restore Shadows over Soubar - AR4360 Near Areas~ DESIGNATED 4001 GROUP ~Shadows over Soubar~
-REQUIRE_COMPONENT ~setup-area_patcher.tp2~ 0 ~You must install the core component first.~
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~setup-sos.tp2~ 0) ~This component is needed only if you have installed Shadows over Soubar.~
-
-//(REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~AR4230.ARE~)
-
-COPY_EXISTING ~AR4360.are~ ~override~
-
-    WRITE_ASCII 0x0018 ~%NBaldursGate_RinniesHouse_L2%~ #8
-    WRITE_ASCII 0x0024 ~%NBaldursGate_RinniesHouse_L2%~ #8
-    WRITE_ASCII 0x0030 ~%NBaldursGate_RinniesHouse_L2%~ #8
-    WRITE_ASCII 0x003c ~%NBaldursGate_RinniesHouse_L2%~ #8
-
-BUT_ONLY_IF_IT_CHANGES
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
