@@ -1,6 +1,0 @@
-IF
-	Global("Thestrangeman","GLOBAL",999)
-THEN
-	RESPONSE #100
-	SetGlobal("Thestrangeman","GLOBAL",2)
-END
