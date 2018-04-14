@@ -1,4 +1,4 @@
-readme.md text export-ignore
+readme.md text
 *.ps1 text eol=crlf
 *.au3 text eol=crlf
 *.ini diff -text eol=crlf
