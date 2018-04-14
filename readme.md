@@ -1,4 +1,4 @@
-# BiG World Fixpack
+# Big World Fixpack
 
 This is the repository for the Big World Project's Fixpack - a set of tools and patches that fix/update/support mods for all Infinity Engine games (focusing on Baldur's Gate series, but including PST and IWD also).
 
