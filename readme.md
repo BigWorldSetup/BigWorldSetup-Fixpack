@@ -6,11 +6,11 @@ This is a community project; you are welcome to fork this repository and contrib
 
 Click [here](https://github.com/BigWorldProject/Big-World-Fixpack/archive/master.zip) to download the latest version.
 
-# Enhanced Edition Trilogy (EET) Patches Are Included
+## Enhanced Edition Trilogy (EET) Patches Are Included
 
-See http://gibberlings3.net/forums/index.php?showtopic=27741&page=33#entry248962 for details.  These patches make all of the EET-compatible mods also compatible with Enhanced Edition games without EET.
+See <http://gibberlings3.net/forums/index.php?showtopic=27741&page=33#entry248962> for details.  These patches make all of the EET-compatible mods also compatible with Enhanced Edition games without EET.
 
-# Usage when installing mods manually
+## Usage when installing mods manually
 
 The fixpack is primarily intended for use by automated install tools like the BWS. Use caution when integrating it in manual installs and make sure you understand the below:
 
@@ -26,6 +26,6 @@ Indeed, you should not manually apply any hotfixes or patches to any mods until 
 
 If you want to edit mod files manually when using BWS, after Fixpack patching, one option is to use the 'OverwriteFiles' advanced feature of BWS to supply your own replacement copies of certain files, which BWS will automatically copy into the game folder for you; alternatively, you can configure BWS to pause (via right-click during the mod/component selection phase) before installing the particular mods you want to modify manually, and then at any time after the Fixpack patching is done you can make whatever additional changes you want.
 
-# Usage with BiG World Project (not the same as Big World Setup!)
+## Usage with BiG World Project (not the same as Big World Setup!)
 
 If you use the Windows-only [BiG World Project](https://kerzenburg.baldurs-gate.eu/downloads.php?cat=10) command-line automated installation scripts, you may wish to download the Fixpack from their page rather.  The BWP author Leonardo Watson does not contribute directly to this repository and he prefers to release snapshot versions of Fixpack corresponding to the current version of the BWP.
