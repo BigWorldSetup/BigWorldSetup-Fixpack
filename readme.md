@@ -9,27 +9,9 @@ Click [here](https://github.com/BigWorldProject/Big-World-Fixpack/archive/master
 ## Enhanced Edition Trilogy (EET) Patches Are Included
 
 See <http://gibberlings3.net/forums/index.php?showtopic=27741&page=33#entry248962> for details.  These patches make all of the EET-compatible mods also compatible with Enhanced Edition games without EET.
-CAUTION when using Fixpack for manual EET installations - Do NOT use any patches on EET mods other than for these mods in the version listed:
-    Auren Aseph NPC v9
-    Back to Brynnlaw v5
-    BP-BGT Worldmap v10.2.1
-    Branwen for BG2 v3
-    Crossmod Banter Pack for Baldur's Gate II v15
-    Divine Remix v18beta
-    Edwin Romance v2.0.7
-    Haldamir NPC v3
-    Kelsey NPC v4
-    Keto NPC v4
-    Kivan and Deheriana Companions for BG2 v15
-    La'Viconia Tweak v5.0
-    NPC Kitpack v4
-    Quest Pack v3.2
-    Reunion v1
-    Sarah NPC v4
-    Sword Coast Stratagems v30 (Big World Fixpack also adds Kreso's patch for Spell Revision if needed)
-    Tyris Flare v7
-    Wild Mage Additions v1.7
-    Wizard Slayer Rebalancing v1.12 (patch adds compatibility for all EE games)
+
+CAUTION when using Fixpack for manual EET installations - Do NOT use any patches on EET mods other than for the mods in the EET compatibility list in the version listed in the last section of the list
+https://rawgit.com/K4thos/EET-Compatibility-List/master/EET-Compatibility-List.html
 Patching any other mod for inclusion in EET will cause issues because those mods have already been updated and Fixpack addresses issues that are related to classic game versions of the mods only. 
 
 ## Usage when installing mods manually
