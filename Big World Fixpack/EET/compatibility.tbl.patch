@@ -1,7 +1,0 @@
---- EET/tbl/compatibility.tbl	2017-08-14 09:57:28.000000000 +0200
-+++ Fixpack/EET/tbl/compatibility.tbl	2018-06-20 23:48:19.324122000 +0200
-@@ -40,3 +40,4 @@
- NEERABANTERS 0       //Neera Banters
- BG1UB 1              //BG1 Unfinished Business
- K9ROUGHWORLD 0       //Rough World
-+DLCMERGER 1          //DLC Merger
