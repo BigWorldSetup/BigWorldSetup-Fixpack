@@ -1,0 +1,201 @@
+--- stratagems/kobold/resource/dw#kobsp.baf	2018-08-21 11:17:54.173197400 +0200
++++ Fixpack/stratagems/kobold/resource/dw#kobsp.baf	2018-08-21 11:36:59.353035000 +0200
+@@ -1,99 +1,99 @@
+-IF
+-	RandomNum(3,1)
+-	Global("Chapter","GLOBAL",%tutu_chapter_2%)
+-	Global("spawnedkobolds","LOCALS",0)
+-THEN
+-	RESPONSE #100
+-		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
+-		SetGlobal("spawnedkobolds","LOCALS",1)
+-END
+-
+-IF
+-	RandomNum(3,1)
+-	Global("Chapter","GLOBAL",%tutu_chapter_3%)
+-	Global("spawnedkobolds","LOCALS",0)
+-THEN
+-	RESPONSE #100
+-		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
+-		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
+-		SetGlobal("spawnedkobolds","LOCALS",1)
+-END
+-
+-IF
+-	RandomNum(3,1)
+-	GlobalGT("Chapter","GLOBAL",%tutu_chapter_3%)
+-	Global("spawnedkobolds","LOCALS",0)
+-THEN
+-	RESPONSE #100
+-		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
+-		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
+-		SetGlobal("spawnedkobolds","LOCALS",1)
+-END
+-
+-IF
+-	RandomNum(3,2)
+-	Global("Chapter","GLOBAL",%tutu_chapter_2%)
+-	Global("spawnedkobolds","LOCALS",0)
+-THEN
+-	RESPONSE #100
+-		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
+-		SetGlobal("spawnedkobolds","LOCALS",1)
+-END
+-
+-IF
+-	RandomNum(3,2)
+-	Global("Chapter","GLOBAL",%tutu_chapter_3%)
+-	Global("spawnedkobolds","LOCALS",0)
+-THEN
+-	RESPONSE #100
+-		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
+-		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
+-		SetGlobal("spawnedkobolds","LOCALS",1)
+-END
+-
+-IF
+-	RandomNum(3,2)
+-	GlobalGT("Chapter","GLOBAL",%tutu_chapter_3%)
+-	Global("spawnedkobolds","LOCALS",0)
+-THEN
+-	RESPONSE #100
+-		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
+-		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
+-		CreateCreature("%tutu_var%KOBCOMM",[-1.-1],0) // Kobold Commando
+-		SetGlobal("spawnedkobolds","LOCALS",1)
+-END
+-
+-IF
+-	RandomNum(3,3)
+-	Global("Chapter","GLOBAL",%tutu_chapter_2%)
+-	Global("spawnedkobolds","LOCALS",0)
+-THEN
+-	RESPONSE #100
+-		CreateCreature("%tutu_var%KOBCOMM",[-1.-1],0) // Kobold Commando
+-		SetGlobal("spawnedkobolds","LOCALS",1)
+-END
+-
+-IF
+-	RandomNum(3,3)
+-	Global("Chapter","GLOBAL",%tutu_chapter_3%)
+-	Global("spawnedkobolds","LOCALS",0)
+-THEN
+-	RESPONSE #100
+-		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
+-		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
+-		SetGlobal("spawnedkobolds","LOCALS",1)
+-END
+-
+-IF
+-	RandomNum(3,3)
+-	GlobalGT("Chapter","GLOBAL",%tutu_chapter_4%)
+-	Global("spawnedkobolds","LOCALS",0)
+-THEN
+-	RESPONSE #100
+-		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
+-		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
+-		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
+-		SetGlobal("spawnedkobolds","LOCALS",1)
+-END
+-
+-
++IF
++	RandomNum(3,1)
++	Global("Chapter","GLOBAL",%tutu_chapter_2%)
++	Global("spawnedkobolds","LOCALS",0)
++THEN
++	RESPONSE #100
++		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
++		SetGlobal("spawnedkobolds","LOCALS",1)
++END
++
++IF
++	RandomNum(3,1)
++	Global("Chapter","GLOBAL",%tutu_chapter_3%)
++	Global("spawnedkobolds","LOCALS",0)
++THEN
++	RESPONSE #100
++		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
++		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
++		SetGlobal("spawnedkobolds","LOCALS",1)
++END
++
++IF
++	RandomNum(3,1)
++	GlobalGT("Chapter","GLOBAL",%tutu_chapter_3%)
++	Global("spawnedkobolds","LOCALS",0)
++THEN
++	RESPONSE #100
++		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
++		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
++		SetGlobal("spawnedkobolds","LOCALS",1)
++END
++
++IF
++	RandomNum(3,2)
++	Global("Chapter","GLOBAL",%tutu_chapter_2%)
++	Global("spawnedkobolds","LOCALS",0)
++THEN
++	RESPONSE #100
++		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
++		SetGlobal("spawnedkobolds","LOCALS",1)
++END
++
++IF
++	RandomNum(3,2)
++	Global("Chapter","GLOBAL",%tutu_chapter_3%)
++	Global("spawnedkobolds","LOCALS",0)
++THEN
++	RESPONSE #100
++		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
++		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
++		SetGlobal("spawnedkobolds","LOCALS",1)
++END
++
++IF
++	RandomNum(3,2)
++	GlobalGT("Chapter","GLOBAL",%tutu_chapter_3%)
++	Global("spawnedkobolds","LOCALS",0)
++THEN
++	RESPONSE #100
++		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
++		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
++		CreateCreature("%tutu_var%KOBCOMM",[-1.-1],0) // Kobold Commando
++		SetGlobal("spawnedkobolds","LOCALS",1)
++END
++
++IF
++	RandomNum(3,3)
++	Global("Chapter","GLOBAL",%tutu_chapter_2%)
++	Global("spawnedkobolds","LOCALS",0)
++THEN
++	RESPONSE #100
++		CreateCreature("%tutu_var%KOBCOMM",[-1.-1],0) // Kobold Commando
++		SetGlobal("spawnedkobolds","LOCALS",1)
++END
++
++IF
++	RandomNum(3,3)
++	Global("Chapter","GLOBAL",%tutu_chapter_3%)
++	Global("spawnedkobolds","LOCALS",0)
++THEN
++	RESPONSE #100
++		CreateCreature("%tutu_var%KOBOLD",[-1.-1],0) // Kobold
++		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
++		SetGlobal("spawnedkobolds","LOCALS",1)
++END
++
++IF
++	RandomNum(3,3)
++	GlobalGT("Chapter","GLOBAL",%tutu_chapter_4%)
++	Global("spawnedkobolds","LOCALS",0)
++THEN
++	RESPONSE #100
++		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
++		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
++		CreateCreature("DW#KOBGD",[-1.-1],0) // Kobold Guard
++		SetGlobal("spawnedkobolds","LOCALS",1)
++END
++
++

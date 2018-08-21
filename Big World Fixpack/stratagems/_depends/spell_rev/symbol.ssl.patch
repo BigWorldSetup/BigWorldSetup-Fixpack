@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg2/combatblocks/symbol.ssl	2016-11-20 18:27:15.520557200 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/symbol.ssl	2016-09-16 14:59:38.314473300 -0400
+--- stratagems/priest/ssl/bg2/combatblocks/symbol.ssl	2018-08-21 11:17:54.238195700 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/symbol.ssl	2018-08-21 11:36:59.424033200 +0200
 @@ -9,7 +9,7 @@
          RequireBlock(HasL7)
  	TargetBlock(EnemiesInOrder)

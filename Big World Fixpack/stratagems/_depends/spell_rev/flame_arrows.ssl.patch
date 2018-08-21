@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg2/combatblocks/flame_arrows.ssl	2016-11-20 18:27:15.420485800 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/flame_arrows.ssl	2016-09-16 21:13:26.780987700 -0400
+--- stratagems/mage/ssl/bg2/combatblocks/flame_arrows.ssl	2018-08-21 11:17:54.196197000 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/flame_arrows.ssl	2018-08-21 11:36:59.378034600 +0200
 @@ -21,7 +21,7 @@
  	ConditionalTargetBlock(PCsPreferringWeak;HPPercentLT(scstarget,40))
  	TargetBlock(PCsPreferringWeak)

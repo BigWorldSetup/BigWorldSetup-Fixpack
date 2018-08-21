@@ -1,5 +1,5 @@
---- stratagems/celestial/ssl/dw#deva.ssl	2016-11-20 18:27:15.333424300 -0500
-+++ Fixpack/stratagems/celestial/ssl/dw#deva.ssl	2016-09-17 00:07:27.304151500 -0400
+--- stratagems/celestial/ssl/dw#deva.ssl	2018-08-21 11:17:54.146198300 +0200
++++ Fixpack/stratagems/celestial/ssl/dw#deva.ssl	2018-08-21 11:36:59.320036100 +0200
 @@ -71,7 +71,7 @@
  	TriggerBlock(MR|Confused|SIEnchantment|Enemy|Helpless)
  THEN DO

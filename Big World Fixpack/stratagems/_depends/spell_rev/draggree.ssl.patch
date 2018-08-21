@@ -1,5 +1,5 @@
---- stratagems/dragon/ssl/draggree.ssl	2016-11-20 18:27:15.361444200 -0500
-+++ Fixpack/stratagems/dragon/ssl/draggree.ssl	2016-09-17 00:33:00.497845200 -0400
+--- stratagems/dragon/ssl/draggree.ssl	2018-08-21 11:17:54.151198100 +0200
++++ Fixpack/stratagems/dragon/ssl/draggree.ssl	2018-08-21 11:36:59.327036000 +0200
 @@ -162,12 +162,13 @@
  
  IF TRIGGER

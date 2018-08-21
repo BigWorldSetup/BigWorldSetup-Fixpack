@@ -1,11 +1,63 @@
---- stratagems/priest/ssl/bg2/combatblocks/creeping_doom.ssl	2016-11-20 18:27:15.496540600 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/creeping_doom.ssl	2016-12-01 15:11:46.556920800 -0500
-@@ -9,7 +9,7 @@
- 	TargetBlock(PCSpellcasters)
- 	TargetBlock(PCsInOrderShort)
- 	TargetBlock(Celestials)
+--- stratagems/priest/ssl/bg2/combatblocks/creeping_doom.ssl	2018-08-21 11:17:54.226195500 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/creeping_doom.ssl	2018-08-21 11:36:59.412033400 +0200
+@@ -1,30 +1,30 @@
+-
+-///////////////////////////////////////////////////////////////
+-///	Creeping Doom
+-///////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-   	  RequireBlock(HasL7)
+-   	  IgnoreBlock(IsCleric)
+-	TargetBlock(PCSpellcasters)
+-	TargetBlock(PCsInOrderShort)
+-	TargetBlock(Celestials)
 -	TriggerBlock(MR100Touch|SIConjuration|Enemy|Helpless)
+-THEN DO
+-	Action(Spell,CLERIC_CREEPING_DOOM|200|50)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(HasL7)
+-   	  IgnoreBlock(IsCleric)
+-        StateCheck(Myself,STATE_BLIND)
+-        OR(6)
+-            Range(Player1,15)
+-            Range(Player2,15)
+-            Range(Player3,15)
+-            Range(Player4,15)
+-            Range(Player5,15)
+-            Range(Player6,15)
+-THEN DO
+-        Action(SpellMyself,CLERIC_CREEPING_DOOM)
+-END
++
++///////////////////////////////////////////////////////////////
++///	Creeping Doom
++///////////////////////////////////////////////////////////////
++
++IF TRIGGER
++   	  RequireBlock(HasL7)
++   	  IgnoreBlock(IsCleric)
++	TargetBlock(PCSpellcasters)
++	TargetBlock(PCsInOrderShort)
++	TargetBlock(Celestials)
 +	TriggerBlock(MR100Touch|Enemy|Helpless)
- THEN DO
- 	Action(Spell,CLERIC_CREEPING_DOOM|200|50)
- END
++THEN DO
++	Action(Spell,CLERIC_CREEPING_DOOM|200|50)
++END
++
++IF TRIGGER
++	RequireBlock(HasL7)
++   	  IgnoreBlock(IsCleric)
++        StateCheck(Myself,STATE_BLIND)
++        OR(6)
++            Range(Player1,15)
++            Range(Player2,15)
++            Range(Player3,15)
++            Range(Player4,15)
++            Range(Player5,15)
++            Range(Player6,15)
++THEN DO
++        Action(SpellMyself,CLERIC_CREEPING_DOOM)
++END

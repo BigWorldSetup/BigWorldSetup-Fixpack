@@ -1,20 +1,73 @@
---- stratagems/mage/ssl/bg2/combatblocks/power_word_blind.ssl	2016-11-20 18:27:15.438499000 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/power_word_blind.ssl	2016-12-01 15:11:46.524898900 -0500
-@@ -13,7 +13,7 @@
- 	TargetBlock(PCsPreferringStrong)
- 	TargetBlock(Celestials)
- 	!Gender(scstarget,SUMMONED)
+--- stratagems/mage/ssl/bg2/combatblocks/power_word_blind.ssl	2018-08-21 11:17:54.203198700 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/power_word_blind.ssl	2018-08-21 11:36:59.386034000 +0200
+@@ -1,35 +1,35 @@
+-
+-
+-
+-////////////////////////////////////////
+-////	Power Word: Blind
+-///////////////////////////////////////
+-
+-IF TRIGGER
+-	IgnoreBlock(Indiscriminate)
+-        IgnoreBlock(IsEvoker)
+-        IgnoreBlock(IsNecromancerStreamline)
+-        RequireBlock(HasL8)
+-	TargetBlock(PCsPreferringStrong)
+-	TargetBlock(Celestials)
+-	!Gender(scstarget,SUMMONED)
 -	TriggerBlock(MR|Enemy|SIConjuration|SpellTurn)
-+	TriggerBlock(MR|Enemy|SIEnchantment|SpellTurn|SpellTurnNew)
-         !GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
- THEN DO
- 	Combine()
-@@ -27,7 +27,7 @@
-         RequireBlock(HasL8)
- 	TargetBlock(EnemiesInOrderShort)
- 	!Gender(scstarget,SUMMONED)
+-        !GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
+-THEN DO
+-	Combine()
+-	Action(Spell,WIZARD_POWER_WORD_BLIND|200|100)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(Indiscriminate)
+-        IgnoreBlock(IsEvoker)
+-        IgnoreBlock(IsNecromancerStreamline)
+-        RequireBlock(HasL8)
+-	TargetBlock(EnemiesInOrderShort)
+-	!Gender(scstarget,SUMMONED)
 -	TriggerBlock(MR|SIConjuration|SpellTurn)
+-	!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
+-THEN DO
+-	Combine()
+-	Action(Spell,WIZARD_POWER_WORD_BLIND|200|100)
+-END
++
++
++
++////////////////////////////////////////
++////	Power Word: Blind
++///////////////////////////////////////
++
++IF TRIGGER
++	IgnoreBlock(Indiscriminate)
++        IgnoreBlock(IsEvoker)
++        IgnoreBlock(IsNecromancerStreamline)
++        RequireBlock(HasL8)
++	TargetBlock(PCsPreferringStrong)
++	TargetBlock(Celestials)
++	!Gender(scstarget,SUMMONED)
++	TriggerBlock(MR|Enemy|SIEnchantment|SpellTurn|SpellTurnNew)
++        !GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
++THEN DO
++	Combine()
++	Action(Spell,WIZARD_POWER_WORD_BLIND|200|100)
++END
++
++IF TRIGGER
++	RequireBlock(Indiscriminate)
++        IgnoreBlock(IsEvoker)
++        IgnoreBlock(IsNecromancerStreamline)
++        RequireBlock(HasL8)
++	TargetBlock(EnemiesInOrderShort)
++	!Gender(scstarget,SUMMONED)
 +	TriggerBlock(MR|SIEnchantment|SpellTurn|SpellTurnNew)
- 	!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
- THEN DO
- 	Combine()
++	!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
++THEN DO
++	Combine()
++	Action(Spell,WIZARD_POWER_WORD_BLIND|200|100)
++END

@@ -1,47 +1,171 @@
---- stratagems/mage/ssl/bg2/combatblocks/silence-sleep.ssl	2016-11-20 18:27:15.439499500 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/silence-sleep.ssl	2016-12-01 15:11:46.526900300 -0500
-@@ -8,7 +8,7 @@
- 	RequireBlock(HasL6)
-         ConditionalTargetBlock(PCSpellcasters;!CheckStatGT(scstarget,50,RESISTMAGIC))
- 	TargetBlock(PCSpellcasters)
+--- stratagems/mage/ssl/bg2/combatblocks/silence-sleep.ssl	2018-08-21 11:17:54.204196500 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/silence-sleep.ssl	2018-08-21 11:36:59.387034000 +0200
+@@ -1,84 +1,84 @@
+-///////////////////////////////////////////////////////////////////////////
+-///// Power Word: Silence
+-///////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	IgnoreBlock(Indiscriminate)
+-	IgnoreBlock(IsEvoker)
+-	RequireBlock(HasL6)
+-        ConditionalTargetBlock(PCSpellcasters;!CheckStatGT(scstarget,50,RESISTMAGIC))
+-	TargetBlock(PCSpellcasters)
 -	TriggerBlock(MR100|SpellTurn|SIConjuration|Silence) // alas, can't detect the Vocalise spell
+-	TriggerBlock(Enemy|Helpless)
+-	!StateCheck(scstarget,STATE_SILENCED)
+-
+-THEN DO
+-	Action(Spell,WIZARD_POWER_WORD_SILENCE|150|50)
+-END
+-
+-
+-
+-
+-
+-//////////////////////////////////////////////////////////////////////////
+-//// Power Word: Sleep (!)
+-///////////////////////////////////////////////////////////////////////////
+-
+-
+-IF TRIGGER
+-	IgnoreBlock(Indiscriminate)
+-        IgnoreBlock(IsEvoker)
+-        IgnoreBlock(Demivrgvs)
+-        IgnoreBlock(IsNecromancerStreamline)
+-        RequireBlock(HasL2)
+-	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
+-	TargetBlock(EnemiesInOrderShort)
+-	HPLT(scstarget,21)
+-	TriggerBlock(MR100|SpellTurn|Sleep|SIConjuration|MinorGlobe|Enemy|Helpless)
+-THEN DO
+-	Action(Spell,WIZARD_POWER_WORD_SLEEP|150|50)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(Indiscriminate)
+-        IgnoreBlock(IsEvoker)
+-        IgnoreBlock(Demivrgvs)
+-        IgnoreBlock(IsNecromancerStreamline)
+-        RequireBlock(HasL2)
+-	TargetBlock(EnemiesInOrderShort)
+-	HPLT(scstarget,21)
+-	TriggerBlock(MR100|SpellTurn|Sleep|SIConjuration|MinorGlobe|Helpless)
+-THEN DO
+-	Action(Spell,WIZARD_POWER_WORD_SLEEP|150|50)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(Indiscriminate)
+-        RequireBlock(Demivrgvs)
+-        IgnoreBlock(IsEvoker)
+-        IgnoreBlock(IsConjurerStreamline)
+-        IgnoreBlock(IsNecromancerStreamline)
+-        RequireBlock(HasL2)
+-	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
+-	TargetBlock(EnemiesInOrderShort)
+-	HPLT(scstarget,21)
+-	TriggerBlock(MR100|SpellTurn|Sleep|SIConjuration|MinorGlobe|Enemy|Helpless)
+-THEN DO
+-	Action(Spell,WIZARD_POWER_WORD_SLEEP|150|50)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(Indiscriminate)
+-        RequireBlock(Demivrgvs)
+-        IgnoreBlock(IsEvoker)
+-        IgnoreBlock(IsConjurerStreamline)
+-        IgnoreBlock(IsNecromancerStreamline)
+-        RequireBlock(HasL2)
+-	TargetBlock(EnemiesInOrderShort)
+-	HPLT(scstarget,21)
+-	TriggerBlock(MR100|SpellTurn|Sleep|SIConjuration|MinorGlobe|Helpless)
+-THEN DO
+-	Action(Spell,WIZARD_POWER_WORD_SLEEP|150|50)
+-END
+-
+-
++///////////////////////////////////////////////////////////////////////////
++///// Power Word: Silence
++///////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	IgnoreBlock(Indiscriminate)
++	IgnoreBlock(IsEvoker)
++	RequireBlock(HasL6)
++        ConditionalTargetBlock(PCSpellcasters;!CheckStatGT(scstarget,50,RESISTMAGIC))
++	TargetBlock(PCSpellcasters)
 +	TriggerBlock(MR100|SpellTurnNew|SIEnchantment|Silence) // alas, can't detect the Vocalise spell
- 	TriggerBlock(Enemy|Helpless)
- 	!StateCheck(scstarget,STATE_SILENCED)
- 
-@@ -34,7 +34,7 @@
- 	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
- 	TargetBlock(EnemiesInOrderShort)
- 	HPLT(scstarget,21)
--	TriggerBlock(MR100|SpellTurn|Sleep|SIConjuration|MinorGlobe|Enemy|Helpless)
++	TriggerBlock(Enemy|Helpless)
++	!StateCheck(scstarget,STATE_SILENCED)
++
++THEN DO
++	Action(Spell,WIZARD_POWER_WORD_SILENCE|150|50)
++END
++
++
++
++
++
++//////////////////////////////////////////////////////////////////////////
++//// Power Word: Sleep (!)
++///////////////////////////////////////////////////////////////////////////
++
++
++IF TRIGGER
++	IgnoreBlock(Indiscriminate)
++        IgnoreBlock(IsEvoker)
++        IgnoreBlock(Demivrgvs)
++        IgnoreBlock(IsNecromancerStreamline)
++        RequireBlock(HasL2)
++	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
++	TargetBlock(EnemiesInOrderShort)
++	HPLT(scstarget,21)
 +	TriggerBlock(MR100|SpellTurnNew|Sleep|SIEnchantment|MinorGlobe|Enemy|Helpless)
- THEN DO
- 	Action(Spell,WIZARD_POWER_WORD_SLEEP|150|50)
- END
-@@ -47,7 +47,7 @@
-         RequireBlock(HasL2)
- 	TargetBlock(EnemiesInOrderShort)
- 	HPLT(scstarget,21)
--	TriggerBlock(MR100|SpellTurn|Sleep|SIConjuration|MinorGlobe|Helpless)
++THEN DO
++	Action(Spell,WIZARD_POWER_WORD_SLEEP|150|50)
++END
++
++IF TRIGGER
++	RequireBlock(Indiscriminate)
++        IgnoreBlock(IsEvoker)
++        IgnoreBlock(Demivrgvs)
++        IgnoreBlock(IsNecromancerStreamline)
++        RequireBlock(HasL2)
++	TargetBlock(EnemiesInOrderShort)
++	HPLT(scstarget,21)
 +	TriggerBlock(MR100|SpellTurnNew|Sleep|SIEnchantment|MinorGlobe|Helpless)
- THEN DO
- 	Action(Spell,WIZARD_POWER_WORD_SLEEP|150|50)
- END
-@@ -62,7 +62,7 @@
- 	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
- 	TargetBlock(EnemiesInOrderShort)
- 	HPLT(scstarget,21)
--	TriggerBlock(MR100|SpellTurn|Sleep|SIConjuration|MinorGlobe|Enemy|Helpless)
++THEN DO
++	Action(Spell,WIZARD_POWER_WORD_SLEEP|150|50)
++END
++
++IF TRIGGER
++	IgnoreBlock(Indiscriminate)
++        RequireBlock(Demivrgvs)
++        IgnoreBlock(IsEvoker)
++        IgnoreBlock(IsConjurerStreamline)
++        IgnoreBlock(IsNecromancerStreamline)
++        RequireBlock(HasL2)
++	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
++	TargetBlock(EnemiesInOrderShort)
++	HPLT(scstarget,21)
 +	TriggerBlock(MR100|SpellTurnNew|Sleep|SIEnchantment|MinorGlobe|Enemy|Helpless)
- THEN DO
- 	Action(Spell,WIZARD_POWER_WORD_SLEEP|150|50)
- END
-@@ -76,7 +76,7 @@
-         RequireBlock(HasL2)
- 	TargetBlock(EnemiesInOrderShort)
- 	HPLT(scstarget,21)
--	TriggerBlock(MR100|SpellTurn|Sleep|SIConjuration|MinorGlobe|Helpless)
++THEN DO
++	Action(Spell,WIZARD_POWER_WORD_SLEEP|150|50)
++END
++
++IF TRIGGER
++	RequireBlock(Indiscriminate)
++        RequireBlock(Demivrgvs)
++        IgnoreBlock(IsEvoker)
++        IgnoreBlock(IsConjurerStreamline)
++        IgnoreBlock(IsNecromancerStreamline)
++        RequireBlock(HasL2)
++	TargetBlock(EnemiesInOrderShort)
++	HPLT(scstarget,21)
 +	TriggerBlock(MR100|SpellTurnNew|Sleep|SIEnchantment|MinorGlobe|Helpless)
- THEN DO
- 	Action(Spell,WIZARD_POWER_WORD_SLEEP|150|50)
- END
++THEN DO
++	Action(Spell,WIZARD_POWER_WORD_SLEEP|150|50)
++END
++
++

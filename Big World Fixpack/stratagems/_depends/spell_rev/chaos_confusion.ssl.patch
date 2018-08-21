@@ -1,28 +1,141 @@
---- stratagems/priest/ssl/bg1/combatblocks/chaos_confusion.ssl	2016-11-20 18:27:15.473523600 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chaos_confusion.ssl	2016-12-01 15:11:46.540909800 -0500
-@@ -6,9 +6,8 @@
-         RequireBlock(IsAvenger)
- 	RequireBlock(HasL5)
- 	TargetBlock(PCsInReverseOrder)
+--- stratagems/priest/ssl/bg1/combatblocks/chaos_confusion.ssl	2018-08-21 11:17:54.215196300 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chaos_confusion.ssl	2018-08-21 11:36:59.399033900 +0200
+@@ -1,24 +1,23 @@
+-//////////////////////////////////////////////////////////////////////////
+-///	Chaos is completely devastating: if you've got it, chuck it
+-//////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-        RequireBlock(IsAvenger)
+-	RequireBlock(HasL5)
+-	TargetBlock(PCsInReverseOrder)
 -	TargetBlock(EnemiesInOrderShort)
 -	TriggerBlock(Confused|ConfuseProof|MR|Enemy|NotUndead)
 -	CheckStatGT(scstarget,0,SAVEVSSPELL)
-+	TargetBlock(EnemiesInOrder)
-+	TriggerBlock(MR100|ResistCold|Enemy)
- THEN DO
- 	Action(SpellAreaRES,"spdr501"|200|100)
- END
---- stratagems/priest/ssl/bg2/combatblocks/chaos_confusion.ssl	2016-11-20 18:27:15.494538300 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chaos_confusion.ssl	2016-12-01 15:11:46.553919300 -0500
-@@ -6,9 +6,8 @@
-         RequireBlock(IsAvenger)
- 	RequireBlock(HasL5)
- 	TargetBlock(PCsInReverseOrder)
+-THEN DO
+-	Action(SpellAreaRES,"spdr501"|200|100)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(IsNymph)
+-	TargetBlock(PCsInReverseOrder)
 -	TargetBlock(EnemiesInOrderShort)
 -	TriggerBlock(Confused|ConfuseProof|MR|Enemy|NotUndead)
 -	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Action(SpellArea,CLERIC_CONFUSION|200|100)
++//////////////////////////////////////////////////////////////////////////
++///	Chaos is completely devastating: if you've got it, chuck it
++//////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++        RequireBlock(IsAvenger)
++	RequireBlock(HasL5)
++	TargetBlock(PCsInReverseOrder)
 +	TargetBlock(EnemiesInOrder)
 +	TriggerBlock(MR100|ResistCold|Enemy)
- THEN DO
- 	Action(SpellAreaRES,"spdr501"|200|100)
++THEN DO
++	Action(SpellAreaRES,"spdr501"|200|100)
++END
++
++IF TRIGGER
++	RequireBlock(IsNymph)
++	TargetBlock(PCsInReverseOrder)
++	TargetBlock(EnemiesInOrderShort)
++	TriggerBlock(Confused|ConfuseProof|MR|Enemy|NotUndead)
++	CheckStatGT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Action(SpellArea,CLERIC_CONFUSION|200|100)
  END
+--- stratagems/priest/ssl/bg2/combatblocks/chaos_confusion.ssl	2018-08-21 11:17:54.225195900 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chaos_confusion.ssl	2018-08-21 11:36:59.411033200 +0200
+@@ -1,45 +1,44 @@
+-//////////////////////////////////////////////////////////////////////////
+-///	Chaos is completely devastating: if you've got it, chuck it
+-//////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-        RequireBlock(IsAvenger)
+-	RequireBlock(HasL5)
+-	TargetBlock(PCsInReverseOrder)
+-	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(Confused|ConfuseProof|MR|Enemy|NotUndead)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Action(SpellAreaRES,"spdr501"|200|100)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(IsNymph)
+-	TargetBlock(PCsInReverseOrder)
+-	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(Confused|ConfuseProof|MR|Enemy|NotUndead)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Action(SpellArea,CLERIC_CONFUSION|200|100)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(HasL7)
+-	IgnoreBlock(Demivrgvs)
+-	TargetBlock(PCsInReverseOrder)
+-	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(Confused|ConfuseProof|MR|Enemy|NotUndead)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Action(SpellArea,CLERIC_CONFUSION|200|100)
+-END
+-IF TRIGGER
+-	RequireBlock(HasL7)
+-	RequireBlock(Demivrgvs)
+-	TargetBlock(PCsInReverseOrder)
+-	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(MR)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Action(SpellArea,CLERIC_CONFUSION|200|100)  // Sphere of Chaos
+-END
++//////////////////////////////////////////////////////////////////////////
++///	Chaos is completely devastating: if you've got it, chuck it
++//////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++        RequireBlock(IsAvenger)
++	RequireBlock(HasL5)
++	TargetBlock(PCsInReverseOrder)
++	TargetBlock(EnemiesInOrder)
++	TriggerBlock(MR100|ResistCold|Enemy)
++THEN DO
++	Action(SpellAreaRES,"spdr501"|200|100)
++END
++
++IF TRIGGER
++	RequireBlock(IsNymph)
++	TargetBlock(PCsInReverseOrder)
++	TargetBlock(EnemiesInOrderShort)
++	TriggerBlock(Confused|ConfuseProof|MR|Enemy|NotUndead)
++	CheckStatGT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Action(SpellArea,CLERIC_CONFUSION|200|100)
++END
++
++IF TRIGGER
++	RequireBlock(HasL7)
++	IgnoreBlock(Demivrgvs)
++	TargetBlock(PCsInReverseOrder)
++	TargetBlock(EnemiesInOrderShort)
++	TriggerBlock(Confused|ConfuseProof|MR|Enemy|NotUndead)
++	CheckStatGT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Action(SpellArea,CLERIC_CONFUSION|200|100)
++END
++IF TRIGGER
++	RequireBlock(HasL7)
++	RequireBlock(Demivrgvs)
++	TargetBlock(PCsInReverseOrder)
++	TargetBlock(EnemiesInOrderShort)
++	TriggerBlock(MR)
++	CheckStatGT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Action(SpellArea,CLERIC_CONFUSION|200|100)  // Sphere of Chaos
++END

@@ -1,5 +1,5 @@
---- stratagems/ssl/library.slb	2016-11-20 18:27:15.540571400 -0500
-+++ Fixpack/stratagems/ssl/library.slb	2016-09-17 00:40:01.707937000 -0400
+--- stratagems/ssl/library.slb	2018-08-21 11:17:54.247194900 +0200
++++ Fixpack/stratagems/ssl/library.slb	2018-08-21 11:36:59.436032500 +0200
 @@ -51,8 +51,10 @@
  TRIGGER=SpellTurn
  		!CheckStatGT(scstarget,0,WIZARD_SPELL_DEFLECTION)

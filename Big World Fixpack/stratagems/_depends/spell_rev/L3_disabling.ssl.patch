@@ -1,38 +1,118 @@
---- stratagems/mage/ssl/bg1/combatblocks/L3_disabling.ssl	2016-11-20 18:27:15.396468800 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/L3_disabling.ssl	2016-12-01 15:11:46.496878200 -0500
-@@ -7,7 +7,7 @@
- 	IgnoreBlock(Indiscriminate)
- 	RequireBlock(HasL3)
- 	TargetBlock(PCsPreferringStrong)
+--- stratagems/mage/ssl/bg1/combatblocks/l3_disabling.ssl	2018-08-21 11:17:54.187197800 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/l3_disabling.ssl	2018-08-21 11:36:59.369034500 +0200
+@@ -1,58 +1,58 @@
+-//////////////////////////////////////////////////////////////////////////
+-////	Charm
+-//////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	IgnoreBlock(IsInvoker)
+-	IgnoreBlock(Indiscriminate)
+-	RequireBlock(HasL3)
+-	TargetBlock(PCsPreferringStrong)
 -	TriggerBlock(MR|Charm|SpellTurn|Enemy|Helpless|MinorGlobe)
-+	TriggerBlock(MR|Charm|SpellTurnNew|Enemy|Helpless|MinorGlobe)
- 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
- THEN DO
- 	Combine()
-@@ -19,7 +19,7 @@
- 	RequireBlock(Indiscriminate)
- 	RequireBlock(HasL3)
- 	TargetBlock(EnemiesInOrderShort)
+-	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Combine()
+-	Action(Spell,WIZARD_DIRE_CHARM|150|50)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsInvoker)
+-	RequireBlock(Indiscriminate)
+-	RequireBlock(HasL3)
+-	TargetBlock(EnemiesInOrderShort)
 -	TriggerBlock(MR|Charm|SpellTurn|Helpless|MinorGlobe)
-+	TriggerBlock(MR|Charm|SpellTurnNew|Helpless|MinorGlobe)
- 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
- THEN DO
- 	Combine()
-@@ -37,7 +37,7 @@
- 	IgnoreBlock(Indiscriminate)
- 	RequireBlock(HasL3)
- 	TargetBlock(PCsPreferringStrong)
+-	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Combine()
+-	Action(Spell,WIZARD_DIRE_CHARM|150|50)
+-END
+-
+-
+-
+-//////////////////////////////////////////////////////////////////////////
+-///	Hold Person
+-//////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	IgnoreBlock(IsInvoker)
+-	IgnoreBlock(Indiscriminate)
+-	RequireBlock(HasL3)
+-	TargetBlock(PCsPreferringStrong)
 -	TriggerBlock(MR100|SpellTurn|Hold|Enemy|Helpless)
-+	TriggerBlock(MR100|SpellTurnNew|Hold|Enemy|Helpless)
- 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
- 	Target(NearestEnemyOf(Myself))
- THEN DO
-@@ -50,7 +50,7 @@
- 	RequireBlock(Indiscriminate)
- 	RequireBlock(HasL3)
- 	TargetBlock(EnemiesInOrderShort)
+-	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+-	Target(NearestEnemyOf(Myself))
+-THEN DO
+-	Combine()
+-	Action(Spell,WIZARD_HOLD_PERSON|150|50)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsInvoker)
+-	RequireBlock(Indiscriminate)
+-	RequireBlock(HasL3)
+-	TargetBlock(EnemiesInOrderShort)
 -	TriggerBlock(MR|Charm|SpellTurn|Helpless|MinorGlobe)
+-	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Combine()
+-	Action(Spell,WIZARD_DIRE_CHARM|150|50)
++//////////////////////////////////////////////////////////////////////////
++////	Charm
++//////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	IgnoreBlock(IsInvoker)
++	IgnoreBlock(Indiscriminate)
++	RequireBlock(HasL3)
++	TargetBlock(PCsPreferringStrong)
++	TriggerBlock(MR|Charm|SpellTurnNew|Enemy|Helpless|MinorGlobe)
++	!CheckStatLT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Combine()
++	Action(Spell,WIZARD_DIRE_CHARM|150|50)
++END
++
++IF TRIGGER
++	IgnoreBlock(IsInvoker)
++	RequireBlock(Indiscriminate)
++	RequireBlock(HasL3)
++	TargetBlock(EnemiesInOrderShort)
 +	TriggerBlock(MR|Charm|SpellTurnNew|Helpless|MinorGlobe)
- 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
- THEN DO
- 	Combine()
++	!CheckStatLT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Combine()
++	Action(Spell,WIZARD_DIRE_CHARM|150|50)
++END
++
++
++
++//////////////////////////////////////////////////////////////////////////
++///	Hold Person
++//////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	IgnoreBlock(IsInvoker)
++	IgnoreBlock(Indiscriminate)
++	RequireBlock(HasL3)
++	TargetBlock(PCsPreferringStrong)
++	TriggerBlock(MR100|SpellTurnNew|Hold|Enemy|Helpless)
++	!CheckStatLT(scstarget,0,SAVEVSSPELL)
++	Target(NearestEnemyOf(Myself))
++THEN DO
++	Combine()
++	Action(Spell,WIZARD_HOLD_PERSON|150|50)
++END
++
++IF TRIGGER
++	IgnoreBlock(IsInvoker)
++	RequireBlock(Indiscriminate)
++	RequireBlock(HasL3)
++	TargetBlock(EnemiesInOrderShort)
++	TriggerBlock(MR|Charm|SpellTurnNew|Helpless|MinorGlobe)
++	!CheckStatLT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Combine()
++	Action(Spell,WIZARD_DIRE_CHARM|150|50)
+ END

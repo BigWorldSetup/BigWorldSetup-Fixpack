@@ -1,11 +1,79 @@
---- stratagems/mage/ssl/bg1/combatblocks/highend.ssl	2016-11-20 18:27:15.407476800 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/highend.ssl	2016-12-01 15:11:46.509887600 -0500
-@@ -28,7 +28,7 @@
- 	IgnoreBlock(IsEnchanter)
- 	IgnoreBlock(SpellsAreBG1)
- 	TargetBlock(EnemiesInOrder)
+--- stratagems/mage/ssl/bg1/combatblocks/highend.ssl	2018-08-21 11:17:54.186197300 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/highend.ssl	2018-08-21 11:36:59.368034600 +0200
+@@ -1,38 +1,38 @@
+-////////////////////////////////////////////////////////////////////////
+-//// If undead, use Cloudkill; summon a Stalker
+-////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	RequireBlock(IsUndead)
+-	RequireBlock(HasL5)
+-	Allegiance(Myself,ENEMY)
+-	TargetBlock(EnemiesInOrderShort)
+-THEN DO
+-	Combine()
+-	Action(SpellArea,WIZARD_CLOUDKILL|900|100)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(HasL6)
+-	IgnoreBlock(IsInvoker)
+-	Allegiance(Myself,ENEMY)
+-	TargetBlock(EnemiesInOrderShort)
+-THEN DO
+-	Combine()
+-	Action(SpellArea,WIZARD_INVISIBLE_STALKER|800|200)
+-END
+-
+-
+-IF TRIGGER
+-	RequireBlock(HasL6)
+-	IgnoreBlock(IsEnchanter)
+-	IgnoreBlock(SpellsAreBG1)
+-	TargetBlock(EnemiesInOrder)
 -	TriggerBlock(Enemy|MR|ResistElectric|SIEvocation)
+-	OR(2)
+-		!StateCheck(scstarget,STATE_MIRRORIMAGE)
+-		GlobalTimerNotExpired("ignoremirror","LOCALS")
+-THEN DO
+-	Combine()
+-	Action(Spell,WIZARD_CHAIN_LIGHTNING|150|50)
+-END
++////////////////////////////////////////////////////////////////////////
++//// If undead, use Cloudkill; summon a Stalker
++////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	RequireBlock(IsUndead)
++	RequireBlock(HasL5)
++	Allegiance(Myself,ENEMY)
++	TargetBlock(EnemiesInOrderShort)
++THEN DO
++	Combine()
++	Action(SpellArea,WIZARD_CLOUDKILL|900|100)
++END
++
++IF TRIGGER
++	RequireBlock(HasL6)
++	IgnoreBlock(IsInvoker)
++	Allegiance(Myself,ENEMY)
++	TargetBlock(EnemiesInOrderShort)
++THEN DO
++	Combine()
++	Action(SpellArea,WIZARD_INVISIBLE_STALKER|800|200)
++END
++
++
++IF TRIGGER
++	RequireBlock(HasL6)
++	IgnoreBlock(IsEnchanter)
++	IgnoreBlock(SpellsAreBG1)
++	TargetBlock(EnemiesInOrder)
 +	TriggerBlock(Enemy|MR|ResistElectric)
- 	OR(2)
- 		!StateCheck(scstarget,STATE_MIRRORIMAGE)
- 		GlobalTimerNotExpired("ignoremirror","LOCALS")
++	OR(2)
++		!StateCheck(scstarget,STATE_MIRRORIMAGE)
++		GlobalTimerNotExpired("ignoremirror","LOCALS")
++THEN DO
++	Combine()
++	Action(Spell,WIZARD_CHAIN_LIGHTNING|150|50)
++END

@@ -1,5 +1,14 @@
---- stratagems/demilich/ssl/trap_the_soul.ssl	2016-11-20 18:27:15.339428200 -0500
-+++ Fixpack/stratagems/demilich/ssl/trap_the_soul.ssl	2016-12-01 15:11:46.475865200 -0500
+--- stratagems/demilich/ssl/trap_the_soul.ssl	2018-08-21 11:17:54.148197800 +0200
++++ Fixpack/stratagems/demilich/ssl/trap_the_soul.ssl	2018-08-21 11:36:59.324036300 +0200
+@@ -52,7 +52,7 @@
+ 	TargetBlock(Celestials)
+ 	!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
+ 	!GlobalTimerNotExpired("timestop","LOCALS")
+-	TriggerBlock(SpellTurn|Enemy|Helpless)
++	TriggerBlock(SpellTurnNew|Enemy|Helpless)
+ 	OR(2)
+ 		GlobalTimerNotExpired("seeabjuration","LOCALS")
+ 		!CheckStat(scstarget,1,WIZARD_SPELL_IMMUNITY)
 @@ -72,7 +72,7 @@
  	TargetBlock(Celestials)
  	!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
@@ -9,26 +18,95 @@
  	OR(2)
  		GlobalTimerNotExpired("seeabjuration","LOCALS")
  		!CheckStat(scstarget,1,WIZARD_SPELL_IMMUNITY)
---- stratagems/mage/ssl/bg2/combatblocks/trap_the_soul.ssl	2016-11-20 18:27:15.440500400 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/trap_the_soul.ssl	2016-12-01 15:11:46.527900400 -0500
-@@ -8,7 +8,7 @@
- 	OR(2)
- 		!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
- 		!GlobalTimerNotExpired("timestopmaze","LOCALS")
--	TriggerBlock(SpellTurn|Enemy|Helpless|Imprisonment)
-+	TriggerBlock(SpellTurnNew|Enemy|Helpless|Imprisonment)
- 	OR(2)
- 		GlobalTimerNotExpired("seeabjuration","LOCALS")
- 		!CheckStat(scstarget,1,WIZARD_SPELL_IMMUNITY)
-@@ -31,10 +31,7 @@
- 	OR(2)
- 		!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
- 		!GlobalTimerNotExpired("timestopmaze","LOCALS")
+--- stratagems/mage/ssl/bg2/combatblocks/trap_the_soul.ssl	2018-08-21 11:17:54.205196300 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/trap_the_soul.ssl	2018-08-21 11:36:59.387034000 +0200
+@@ -1,46 +1,43 @@
+-//////////////////////////////////////////////////////////////////////////
+-////  Trap the Soul
+-/////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	TargetBlock(PCsInOrder)
+-	TargetBlock(Celestials)
+-	OR(2)
+-		!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
+-		!GlobalTimerNotExpired("timestopmaze","LOCALS")
 -	TriggerBlock(SpellTurn|Enemy|Helpless|Imprisonment)
 -	OR(2)
 -		GlobalTimerNotExpired("seeabjuration","LOCALS")
 -		!CheckStat(scstarget,1,WIZARD_SPELL_IMMUNITY)
+-	OR(2)
+-		GlobalTimerNotExpired("seeabjuration","LOCALS")
+-		CheckStatGT(scstarget,0,SAVEVSDEATH)
+-	OR(2)
+-		!InPartySlot(scstarget,0) // isn't Player 1
+-		Global("DMWWImprisonPlayer","GLOBAL",1)
+-THEN DO
+-	Combine()
+-	Action(ForceSpell,DEMILICH_TRAP_SOUL|500|500)
+-	SetGlobalTimer("timestopmaze","LOCALS",24)
+-	Wait(2) // this is to stop them using spells immediately on imprisoned creatures (Imprisonment takes all round to cast)
+-END
+-
+-IF TRIGGER
+-	TargetBlock(PCsInOrder)
+-	TargetBlock(Celestials)
+-	OR(2)
+-		!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
+-		!GlobalTimerNotExpired("timestopmaze","LOCALS")
+-	TriggerBlock(SpellTurn|Enemy|Helpless|Imprisonment)
+-	OR(2)
+-		GlobalTimerNotExpired("seeabjuration","LOCALS")
+-		!CheckStat(scstarget,1,WIZARD_SPELL_IMMUNITY)
+-	OR(2)
+-		!InPartySlot(scstarget,0) // isn't Player 1
+-		Global("DMWWImprisonPlayer","GLOBAL",1)
+-THEN DO
+-	Combine()
+-	Action(ForceSpell,DEMILICH_TRAP_SOUL|500|500)
+-	SetGlobalTimer("timestopmaze","LOCALS",24)
+-	Wait(2) // this is to stop them using spells immediately on imprisoned creatures (Imprisonment takes all round to cast)
+-END
++//////////////////////////////////////////////////////////////////////////
++////  Trap the Soul
++/////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	TargetBlock(PCsInOrder)
++	TargetBlock(Celestials)
++	OR(2)
++		!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
++		!GlobalTimerNotExpired("timestopmaze","LOCALS")
 +	TriggerBlock(SpellTurnNew|Enemy|Helpless|Imprisonment)
- 	OR(2)
- 		!InPartySlot(scstarget,0) // isn't Player 1
- 		Global("DMWWImprisonPlayer","GLOBAL",1)
++	OR(2)
++		GlobalTimerNotExpired("seeabjuration","LOCALS")
++		!CheckStat(scstarget,1,WIZARD_SPELL_IMMUNITY)
++	OR(2)
++		GlobalTimerNotExpired("seeabjuration","LOCALS")
++		CheckStatGT(scstarget,0,SAVEVSDEATH)
++	OR(2)
++		!InPartySlot(scstarget,0) // isn't Player 1
++		Global("DMWWImprisonPlayer","GLOBAL",1)
++THEN DO
++	Combine()
++	Action(ForceSpell,DEMILICH_TRAP_SOUL|500|500)
++	SetGlobalTimer("timestopmaze","LOCALS",24)
++	Wait(2) // this is to stop them using spells immediately on imprisoned creatures (Imprisonment takes all round to cast)
++END
++
++IF TRIGGER
++	TargetBlock(PCsInOrder)
++	TargetBlock(Celestials)
++	OR(2)
++		!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
++		!GlobalTimerNotExpired("timestopmaze","LOCALS")
++	TriggerBlock(SpellTurnNew|Enemy|Helpless|Imprisonment)
++	OR(2)
++		!InPartySlot(scstarget,0) // isn't Player 1
++		Global("DMWWImprisonPlayer","GLOBAL",1)
++THEN DO
++	Combine()
++	Action(ForceSpell,DEMILICH_TRAP_SOUL|500|500)
++	SetGlobalTimer("timestopmaze","LOCALS",24)
++	Wait(2) // this is to stop them using spells immediately on imprisoned creatures (Imprisonment takes all round to cast)
++END

@@ -1,11 +1,42 @@
---- stratagems/mage/ssl/bg1/combatblocks/wand_of_frost.ssl	2016-11-20 18:27:15.411479600 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/wand_of_frost.ssl	2016-12-01 15:11:46.514891000 -0500
-@@ -6,7 +6,7 @@
-         RequireBlock(EasyOptionAvailable)
-         TriggerBlock(CorePlus)
- 	TargetBlock(PCsPreferringWeak)
+--- stratagems/mage/ssl/bg1/combatblocks/wand_of_frost.ssl	2018-08-21 11:17:54.190197300 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/wand_of_frost.ssl	2018-08-21 11:36:59.372035200 +0200
+@@ -1,20 +1,20 @@
+-///////////////////////////////////////////////////////////////////
+-////	This is the moment to whip out that Wand of Frost...
+-///////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-        RequireBlock(EasyOptionAvailable)
+-        TriggerBlock(CorePlus)
+-	TargetBlock(PCsPreferringWeak)
 -	TriggerBlock(Disabled|MR|ResistCold|Enemy|MirrorImage)
+-THEN DO
+-	Action(Wand,"%tutu_var%wand06"|70|30)
+-END
+-
+-IF TRIGGER
+-        IgnoreBlock(EasyOptionAvailable)
+-	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(Disabled|MR|ResistCold|Enemy|MirrorImage)
+-THEN DO
+-	Action(Wand,"%tutu_var%wand06"|70|30)
++///////////////////////////////////////////////////////////////////
++////	This is the moment to whip out that Wand of Frost...
++///////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++        RequireBlock(EasyOptionAvailable)
++        TriggerBlock(CorePlus)
++	TargetBlock(PCsPreferringWeak)
 +	TriggerBlock(Disabled|MR|ResistCold|Enemy)
- THEN DO
- 	Action(Wand,"%tutu_var%wand06"|70|30)
++THEN DO
++	Action(Wand,"%tutu_var%wand06"|70|30)
++END
++
++IF TRIGGER
++        IgnoreBlock(EasyOptionAvailable)
++	TargetBlock(PCsPreferringWeak)
++	TriggerBlock(Disabled|MR|ResistCold|Enemy|MirrorImage)
++THEN DO
++	Action(Wand,"%tutu_var%wand06"|70|30)
  END

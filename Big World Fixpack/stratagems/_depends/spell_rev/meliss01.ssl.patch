@@ -1,5 +1,5 @@
---- stratagems/melissan/ssl/meliss01.ssl	2016-11-20 18:27:15.450507500 -0500
-+++ Fixpack/stratagems/melissan/ssl/meliss01.ssl	2016-09-16 13:32:15.959910400 -0400
+--- stratagems/melissan/ssl/meliss01.ssl	2018-08-21 11:17:54.208196000 +0200
++++ Fixpack/stratagems/melissan/ssl/meliss01.ssl	2018-08-21 11:36:59.391033900 +0200
 @@ -560,7 +560,7 @@
  	Combine()
  	SetGlobalTimer("DMWW_antimagic","LOCALS",18)

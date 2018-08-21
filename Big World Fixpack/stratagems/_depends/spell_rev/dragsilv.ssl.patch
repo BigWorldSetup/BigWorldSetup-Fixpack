@@ -1,5 +1,5 @@
---- stratagems/dragon/ssl/dragsilv.ssl	2016-11-20 18:27:15.369450300 -0500
-+++ Fixpack/stratagems/dragon/ssl/dragsilv.ssl	2016-09-17 00:26:11.686462500 -0400
+--- stratagems/dragon/ssl/dragsilv.ssl	2018-08-21 11:17:54.153198400 +0200
++++ Fixpack/stratagems/dragon/ssl/dragsilv.ssl	2018-08-21 11:36:59.329035900 +0200
 @@ -285,7 +285,7 @@
  
  IF TRIGGER

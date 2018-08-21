@@ -1,5 +1,5 @@
---- stratagems/priest/defensive_spells_druid.tph	2016-11-20 18:27:15.457512300 -0500
-+++ Fixpack/stratagems/priest/defensive_spells_druid.tph	2016-09-16 16:23:53.550451700 -0400
+--- stratagems/priest/defensive_spells_druid.tph	2018-08-21 11:17:54.210196300 +0200
++++ Fixpack/stratagems/priest/defensive_spells_druid.tph	2018-08-21 11:36:59.394033600 +0200
 @@ -16,53 +16,53 @@
  
  //////////////////////////////////// level 1 //////////////////////////////////////////

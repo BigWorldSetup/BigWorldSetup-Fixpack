@@ -1,14 +1,26 @@
---- stratagems/priest/ssl/bg1/combatblocks/bolt_from_sky.ssl	2016-11-20 18:27:15.464517400 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/bolt_from_sky.ssl	2016-12-01 15:11:46.537907900 -0500
-@@ -13,24 +13,11 @@
- //////////////////////////////////////////////////////////////
- ///	Call Lightning
- ///////////////////////////////////////////////////////////////
+--- stratagems/priest/ssl/bg1/combatblocks/bolt_from_sky.ssl	2018-08-21 11:17:54.214195800 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/bolt_from_sky.ssl	2018-08-21 11:36:59.398033600 +0200
+@@ -1,65 +1,52 @@
 -
- IF TRIGGER
- 	IgnoreBlock(IsCleric)
- 	RequireBlock(HasL3)
- 	TargetBlock(PCsPreferringWeak)
+-IF TRIGGER
+-	IgnoreBlock(IsCleric)
+-	RequireBlock(HasL4)
+-	RequireBlock(Galactygon_Static)
+-	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(Disabled|MR|ResistElectric|MinorGlobe|Enemy|SIAlteration)
+-THEN DO
+-	Combine()
+-	Action(SpellRES,"sppr426"|70|30)
+-END
+-
+-//////////////////////////////////////////////////////////////
+-///	Call Lightning
+-///////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	IgnoreBlock(IsCleric)
+-	RequireBlock(HasL3)
+-	TargetBlock(PCsPreferringWeak)
 -	TriggerBlock(Disabled|MR|ResistElectric|MinorGlobe|Enemy|SIAlteration)
 -	AreaType(OUTDOOR)
 -	IgnoreBlock(Demivrgvs)
@@ -22,21 +34,92 @@
 -	RequireBlock(HasL3)
 -	TargetBlock(PCsPreferringWeak)
 -	TriggerBlock(Disabled|MR|ResistElectric|MinorGlobe|Enemy|SIAlteration)
-+	TriggerBlock(Disabled|MR|ResistElectric|MinorGlobe|Enemy)
- 	RequireBlock(Demivrgvs)
- THEN DO
- 	Combine()
-@@ -44,7 +31,7 @@
- IF TRIGGER
-         IgnoreBlock(IsNymph)
- 	TargetBlock(PCsPreferringWeak)
+-	RequireBlock(Demivrgvs)
+-THEN DO
+-	Combine()
+-	Action(Spell,CLERIC_CALL_LIGHTNING|70|30)
+-END
+-
+-////////////////////////////////////////////////////////////
+-////	Flame Strike (and the Wand of the Heavens)
+-//////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-        IgnoreBlock(IsNymph)
+-	TargetBlock(PCsPreferringWeak)
 -	TriggerBlock(Disabled|MR|ResistFire|Enemy|SIEvocation)
+-	IgnoreBlock(Galactygon_FlameStrike)
+-THEN DO
+-	Combine()
+-	Action(Wand,"%tutu_var%wand11"|70|30)
+-	Action(Spell,CLERIC_FLAME_STRIKE|80|20)
+-END
+-
+-IF TRIGGER
+-        IgnoreBlock(IsNymph)
+-	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(Disabled|MR|ResistFire|Enemy|SIEvocation)
+-	RequireBlock(Galactygon_FlameStrike)
+-	!Range(scstarget,10)
+-THEN DO
+-	Combine()
+-	Action(Wand,"%tutu_var%wand11"|70|30)
+-	Action(Spell,CLERIC_FLAME_STRIKE|80|20)
+-END
++
++IF TRIGGER
++	IgnoreBlock(IsCleric)
++	RequireBlock(HasL4)
++	RequireBlock(Galactygon_Static)
++	TargetBlock(PCsPreferringWeak)
++	TriggerBlock(Disabled|MR|ResistElectric|MinorGlobe|Enemy|SIAlteration)
++THEN DO
++	Combine()
++	Action(SpellRES,"sppr426"|70|30)
++END
++
++//////////////////////////////////////////////////////////////
++///	Call Lightning
++///////////////////////////////////////////////////////////////
++IF TRIGGER
++	IgnoreBlock(IsCleric)
++	RequireBlock(HasL3)
++	TargetBlock(PCsPreferringWeak)
++	TriggerBlock(Disabled|MR|ResistElectric|MinorGlobe|Enemy)
++	RequireBlock(Demivrgvs)
++THEN DO
++	Combine()
++	Action(Spell,CLERIC_CALL_LIGHTNING|70|30)
++END
++
++////////////////////////////////////////////////////////////
++////	Flame Strike (and the Wand of the Heavens)
++//////////////////////////////////////////////////////////////
++
++IF TRIGGER
++        IgnoreBlock(IsNymph)
++	TargetBlock(PCsPreferringWeak)
 +	TriggerBlock(Disabled|MR|ResistFire|Enemy)
- 	IgnoreBlock(Galactygon_FlameStrike)
- THEN DO
- 	Combine()
---- stratagems/priest/ssl/bg2/combatblocks/bolt_from_sky.ssl	2016-11-20 18:27:15.492536900 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/bolt_from_sky.ssl	2016-09-16 14:05:11.796610300 -0400
++	IgnoreBlock(Galactygon_FlameStrike)
++THEN DO
++	Combine()
++	Action(Wand,"%tutu_var%wand11"|70|30)
++	Action(Spell,CLERIC_FLAME_STRIKE|80|20)
++END
++
++IF TRIGGER
++        IgnoreBlock(IsNymph)
++	TargetBlock(PCsPreferringWeak)
++	TriggerBlock(Disabled|MR|ResistFire|Enemy|SIEvocation)
++	RequireBlock(Galactygon_FlameStrike)
++	!Range(scstarget,10)
++THEN DO
++	Combine()
++	Action(Wand,"%tutu_var%wand11"|70|30)
++	Action(Spell,CLERIC_FLAME_STRIKE|80|20)
++END
+--- stratagems/priest/ssl/bg2/combatblocks/bolt_from_sky.ssl	2018-08-21 11:17:54.223195700 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/bolt_from_sky.ssl	2018-08-21 11:36:59.409033300 +0200
 @@ -30,7 +30,7 @@
  	IgnoreBlock(IsCleric)
  	RequireBlock(HasL3)

@@ -1,5 +1,5 @@
---- stratagems/firegiant/ssl/elemimix.ssl	2016-11-20 18:27:15.388462700 -0500
-+++ Fixpack/stratagems/firegiant/ssl/elemimix.ssl	2016-09-16 11:36:44.736139600 -0400
+--- stratagems/firegiant/ssl/elemimix.ssl	2018-08-21 11:17:54.164197300 +0200
++++ Fixpack/stratagems/firegiant/ssl/elemimix.ssl	2018-08-21 11:36:59.341035500 +0200
 @@ -162,8 +162,7 @@
  IF TRIGGER
  	!StateCheck(Myself,STATE_DISABLED)

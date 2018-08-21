@@ -1,5 +1,5 @@
---- stratagems/fiend/ssl/dw#demiv.ssl	2016-11-20 18:27:15.383459800 -0500
-+++ Fixpack/stratagems/fiend/ssl/dw#demiv.ssl	2016-09-16 22:58:43.377276400 -0400
+--- stratagems/fiend/ssl/dw#demiv.ssl	2018-08-21 11:17:54.160197400 +0200
++++ Fixpack/stratagems/fiend/ssl/dw#demiv.ssl	2018-08-21 11:36:59.337035700 +0200
 @@ -18,7 +18,7 @@
  IF TRIGGER
  	TargetBlock(EnemiesInOrder)

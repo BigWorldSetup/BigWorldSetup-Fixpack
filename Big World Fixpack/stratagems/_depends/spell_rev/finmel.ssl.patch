@@ -1,5 +1,5 @@
---- stratagems/melissan/ssl/finmel.ssl	2016-11-20 18:27:15.448506100 -0500
-+++ Fixpack/stratagems/melissan/ssl/finmel.ssl	2016-09-16 13:29:17.810720800 -0400
+--- stratagems/melissan/ssl/finmel.ssl	2018-08-21 11:17:54.207195800 +0200
++++ Fixpack/stratagems/melissan/ssl/finmel.ssl	2018-08-21 11:36:59.390033900 +0200
 @@ -377,9 +377,8 @@
  	Target("finbalth")
  	Target("finbodh")

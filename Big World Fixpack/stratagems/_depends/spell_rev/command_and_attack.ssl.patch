@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg1/combatblocks/command_and_attack.ssl	2016-11-20 18:27:15.476526000 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/command_and_attack.ssl	2016-09-16 15:04:33.091333600 -0400
+--- stratagems/priest/ssl/bg1/combatblocks/command_and_attack.ssl	2018-08-21 11:17:54.216196100 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/command_and_attack.ssl	2018-08-21 11:36:59.401033600 +0200
 @@ -7,7 +7,7 @@
  	IgnoreBlock(IsDruid)
  	TargetBlock(PCsInOrderShort)

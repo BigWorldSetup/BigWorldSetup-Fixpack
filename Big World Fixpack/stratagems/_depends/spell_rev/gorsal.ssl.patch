@@ -1,5 +1,5 @@
---- stratagems/dragon/ssl/gorsal.ssl	2016-11-20 18:27:15.370450800 -0500
-+++ Fixpack/stratagems/dragon/ssl/gorsal.ssl	2016-09-17 00:23:43.833005800 -0400
+--- stratagems/dragon/ssl/gorsal.ssl	2018-08-21 11:17:54.153198400 +0200
++++ Fixpack/stratagems/dragon/ssl/gorsal.ssl	2018-08-21 11:36:59.330035800 +0200
 @@ -196,7 +196,7 @@
  
  IF TRIGGER

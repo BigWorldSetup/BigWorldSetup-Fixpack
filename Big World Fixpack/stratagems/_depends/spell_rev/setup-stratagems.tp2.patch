@@ -1,5 +1,5 @@
---- stratagems/setup-stratagems.tp2	2016-11-21 19:01:07.594903100 -0500
-+++ Fixpack/stratagems/setup-stratagems.tp2	2016-12-01 15:06:48.248033100 -0500
+--- stratagems/setup-stratagems.tp2	2018-08-21 11:17:54.243195000 +0200
++++ Fixpack/stratagems/setup-stratagems.tp2	2018-08-21 11:36:59.431033200 +0200
 @@ -1,6 +1,6 @@
  BACKUP ~stratagems_external/backup/stratagems~
  AUTHOR ~For help troubleshooting installation problems, go to the Sword Coast Stratagems forum at forums.gibberlings3.net.~
@@ -8,7 +8,15 @@
  README ~stratagems/readme-stratagems.html~
  AUTO_EVAL_STRINGS
  
-@@ -180,6 +180,7 @@
+@@ -167,6 +167,7 @@
+ 
+ BEGIN @12 DESIGNATED 2010 GROUP @2
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
++REQUIRE_PREDICATE !FILE_EXISTS ~override/dvimhere.mrk~ @3352 // added by kreso
+ 
+ LAF make_label STR_VAR label=dw#breach END
+ 
+@@ -180,6 +181,7 @@
  
  BEGIN @13 DESIGNATED 2020 GROUP @2
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
@@ -16,7 +24,7 @@
  
  LAF make_label STR_VAR label=dw#antimagicII END
  
-@@ -230,6 +231,7 @@
+@@ -230,6 +232,7 @@
  ///////////////////////////////////////////////////////////////////////////////
  
  BEGIN @18 DESIGNATED 2050 GROUP @2
@@ -24,7 +32,15 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE !FILE_EXISTS ~tobex.dll~ @16045
  REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-@@ -411,6 +413,7 @@
+@@ -397,6 +400,7 @@
+ 
+ BEGIN @3387 DESIGNATED 2160 GROUP @2
+ REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
++REQUIRE_PREDICATE !FILE_EXISTS ~override/dvimhere.mrk~ @3352 // added by kreso
+ REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
+ 
+ 
+@@ -411,6 +415,7 @@
  
  BEGIN @3392 DESIGNATED 2170 GROUP @2
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8

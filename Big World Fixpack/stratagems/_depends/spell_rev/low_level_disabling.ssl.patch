@@ -1,132 +1,500 @@
---- stratagems/mage/ssl/bg2/combatblocks/low_level_disabling.ssl	2016-11-20 18:27:15.435496700 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/low_level_disabling.ssl	2016-12-01 15:11:46.523897600 -0500
-@@ -8,8 +8,8 @@
- 	IgnoreBlock(Indiscriminate)
- 	TargetBlock(PCsPreferringStrong)
- 	RequireBlock(HasL3)
+--- stratagems/mage/ssl/bg2/combatblocks/low_level_disabling.ssl	2018-08-21 11:17:54.202196800 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/low_level_disabling.ssl	2018-08-21 11:36:59.384034200 +0200
+@@ -1,250 +1,247 @@
+-///////////////////////////////////////////////////////////////////////////
+-////	ATTACK PHASE 5: Low-powered disabling and charming magic
+-////
+-////	Slow
+-///////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	IgnoreBlock(Indiscriminate)
+-	TargetBlock(PCsPreferringStrong)
+-	RequireBlock(HasL3)
 -	TriggerBlock(MR100|Slow|SIAlteration|Enemy|MinorGlobe|Helpless)
 -	!CheckStatLT(scstarget,0,SAVEVSSPELL)
-+	TriggerBlock(MR100|Slow|Enemy|MinorGlobe|Helpless)
-+	!CheckStatLT(scstarget,0,SAVEVSPOLY)
- 	!StateCheck(scstarget,STATE_SLOWED)
- THEN DO
- 	Combine()
-@@ -20,8 +20,8 @@
- 	RequireBlock(Indiscriminate)
- 	TargetBlock(EnemiesInOrderShort)
- 	RequireBlock(HasL3)
+-	!StateCheck(scstarget,STATE_SLOWED)
+-THEN DO
+-	Combine()
+-	Action(SpellArea,WIZARD_SLOW|150|50)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(Indiscriminate)
+-	TargetBlock(EnemiesInOrderShort)
+-	RequireBlock(HasL3)
 -	TriggerBlock(MR100|Slow|SIAlteration|MinorGlobe|Helpless)
 -	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+-	!StateCheck(scstarget,STATE_SLOWED)
+-THEN DO
+-	Combine()
+-	Action(SpellArea,WIZARD_SLOW|150|50)
+-END
+-
+-
+-//////////////////////////////////////////////////////////////////////////
+-////	Charm
+-//////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	IgnoreBlock(Indiscriminate)
+-	TargetBlock(PCsPreferringStrong)
+-	IgnoreBlock(IsEvoker)
+-	TriggerBlock(MR|Charm|SIEnchantment|SpellTurn|Enemy|Helpless)
+-	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Combine()
+-	Action(Sequencer,9,WIZARD_DIRE_CHARM,WIZARD_DIRE_CHARM,WIZARD_DIRE_CHARM)
+-	Action(MinorSequencer,5,WIZARD_CHARM_PERSON,WIZARD_CHARM_PERSON)
+-	Action(Spell,WIZARD_DOMINATION|100|100)
+-	Action(Spell,WIZARD_DIRE_CHARM|100|100)
+-	Action(Spell,WIZARD_CHARM_PERSON|100|100)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(Indiscriminate)
+-	TargetBlock(EnemiesInOrder)
+-	IgnoreBlock(IsEvoker)
+-	TriggerBlock(MR|Charm|SIEnchantment|SpellTurn|Helpless)
+-	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Combine()
+-	Action(Sequencer,9,WIZARD_DIRE_CHARM,WIZARD_DIRE_CHARM,WIZARD_DIRE_CHARM)
+-	Action(MinorSequencer,5,WIZARD_CHARM_PERSON,WIZARD_CHARM_PERSON)
+-	Action(Spell,WIZARD_DOMINATION|100|100)
+-	Action(Spell,WIZARD_DIRE_CHARM|100|100)
+-	Action(Spell,WIZARD_CHARM_PERSON|100|100)
+-END
+-
+-///////////////////////////////////////////////////////////////////////////
+-////	Confusion
+-///////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	TargetBlock(EnemiesInOrder)
+-	RequireBlock(HasL4)
+-	IgnoreBlock(IsEvoker)
+-	TriggerBlock(MR100|Confused|ConfuseProof|SIEnchantment|Helpless)
+-	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+-	slowspell
+-THEN DO
+-	Combine()
+-	Action(SpellArea,WIZARD_CONFUSION|150|50)
+-END
+-
+-//////////////////////////////////////////////////////////////////////////
+-///	Hold Person
+-//////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	IgnoreBlock(Indiscriminate)
+-	TargetBlock(PCsPreferringStrong)
+-	RequireBlock(HasL2)
+-	IgnoreBlock(IsEvoker)
+-	IgnoreBlock(IsNecromancerStreamline)
+-	TriggerBlock(MR100|SpellTurn|Hold|SIEnchantment|Enemy|Helpless)
+-	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+-	Target(NearestEnemyOf(Myself))
+-THEN DO
+-	Combine()
+-	Action(Spell,WIZARD_HOLD_MONSTER|100|200)
+-	Action(Wand,"wand04")
+-	Action(Spell,WIZARD_HOLD_PERSON|100|200)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(Indiscriminate)
+-	TargetBlock(EnemiesInOrder)
+-	RequireBlock(HasL2)
+-	IgnoreBlock(IsEvoker)
+-	IgnoreBlock(IsNecromancerStreamline)
+-	TriggerBlock(MR100|SpellTurn|Hold|SIEnchantment|Helpless)
+-	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+-	Target(NearestEnemyOf(Myself))
+-THEN DO
+-	Combine()
+-	Action(Spell,WIZARD_HOLD_MONSTER|100|200)
+-	Action(Wand,"wand04")
+-	Action(Spell,WIZARD_HOLD_PERSON|100|200)
+-END
+-
+-//////////////////////////////////////////////////////////////////////////
+-///	Emotion
+-//////////////////////////////////////////////////////////////////////	
+-
+-IF TRIGGER
+-	TargetBlock(EnemiesInOrder)
+-	RequireBlock(HasL4)
+-	IgnoreBlock(IsEvoker)
+-	TriggerBlock(MR100|SIEnchantment|Helpless)
+-	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+-	slowspell
+-THEN DO
+-	Combine()
+-	Action(SpellArea,WIZARD_EMOTION_HOPELESSNESS|150|150)
+-END
+-
+-//////////////////////////////////////////////////////////////////////////
+-//// Sleep spell (Demivrgvs only)
+-///////////////////////////////////////////////////////////////////////////
+-
+-
+-
+-IF TRIGGER
+-	IgnoreBlock(IsInvoker)
+-        IgnoreBlock(IsNecromancerStreamline)
+-	RequireBlock(Demivrgvs)
+-	TargetBlock(PCsInReverseOrder)
+-	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(MR|Sleep|Enemy|MinorGlobe)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-	!StateCheck(scstarget,STATE_SLEEPING)
+-THEN DO
+-	Combine()
+-	Action(SpellArea,WIZARD_SLEEP|100|200)
+-END
+-
+-
+-
+-
+-////////////////////////////////////////////////////////////////////////////
+-///     Blindness
+-////////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	IgnoreBlock(Indiscriminate)
+-	IgnoreBlock(IsEvokerStreamline)
+-	IgnoreBlock(IsNecromancer)
+-	IgnoreBlock(Demivrgvs)
+-	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Combine()
+-	Action(Spell,WIZARD_BLINDNESS|100|200)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(IsNecromancerStreamline)
+-	RequireBlock(Demivrgvs)
+-	TargetBlock(PCsPreferringWeak)
+-	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Combine()
+-	Action(Spell,WIZARD_BLINDNESS|100|200)
+-END
+-
+-////////////////////////////////////////////////////////////////////////////
+-///     Enfeeblement
+-////////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	IgnoreBlock(Indiscriminate)
+-	IgnoreBlock(IsEvoker)
+-	IgnoreBlock(IsConjurerStreamline)
+-	RequireBlock(HasL2)
+-	TargetBlock(PCFighters)
+-	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
+-	CheckStatGT(scstarget,9,STR)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Combine()
+-	Action(MinorSequencer,6,WIZARD_RAY_OF_ENFEEBLEMENT,WIZARD_RAY_OF_ENFEEBLEMENT|150|50) // Ray of Enfeeblement x2
+-	Action(Spell,WIZARD_RAY_OF_ENFEEBLEMENT|100|200)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(Indiscriminate)
+-	IgnoreBlock(IsEvoker)
+-	IgnoreBlock(IsConjurerStreamline)
+-	RequireBlock(HasL2)
+-	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(Helpless|MR|MinorGlobe)
+-	CheckStatGT(scstarget,9,STR)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Combine()
+-	Action(MinorSequencer,6,WIZARD_RAY_OF_ENFEEBLEMENT,WIZARD_RAY_OF_ENFEEBLEMENT|150|50) // Ray of Enfeeblement x2
+-	Action(Spell,WIZARD_RAY_OF_ENFEEBLEMENT|100|200)
+-END
+-
+-//////////////////////////////////////////////////////////////////////////
+-///	Horror
+-//////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-          IgnoreBlock(IsEnchanterStreamline)
+-	TargetBlock(PCsInOrder)
+-	TriggerBlock(MR100|SINecromancy|Helpless|Enemy|MinorGlobe|Panic|L2safe)
+-	CheckStatGT(scstarget,7,SAVEVSSPELL)
+-THEN DO
+-	Combine()
+-	Action(SpellArea,WIZARD_HORROR|100|100)
+-	Action(Spell,WIZARD_SPOOK|100|200)
+-END
+-
+-//////////////////////////////////////////////////////////////////////////
+-///PW Sleep
+-//////////////////////////////////////////////////////////////////////////
+-
+-
+-IF TRIGGER
+-        RequireBlock(Demivrgvs)
+-        IgnoreBlock(IsEvoker)
+-        IgnoreBlock(IsConjurerStreamline)
+-        IgnoreBlock(IsNecromancerStreamline)
+-        RequireBlock(HasL2)
+-	TargetBlock(EnemiesInOrderShort)
+-	TriggerBlock(MR100|SpellTurn|Sleep|SIConjuration|MinorGlobe|Helpless|Enemy)
+-THEN DO
+-        Combine()
+-	Action(Spell,WIZARD_POWER_WORD_SLEEP|100|200)
+-END
++///////////////////////////////////////////////////////////////////////////
++////	ATTACK PHASE 5: Low-powered disabling and charming magic
++////
++////	Slow
++///////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	IgnoreBlock(Indiscriminate)
++	TargetBlock(PCsPreferringStrong)
++	RequireBlock(HasL3)
++	TriggerBlock(MR100|Slow|Enemy|MinorGlobe|Helpless)
++	!CheckStatLT(scstarget,0,SAVEVSPOLY)
++	!StateCheck(scstarget,STATE_SLOWED)
++THEN DO
++	Combine()
++	Action(SpellArea,WIZARD_SLOW|150|50)
++END
++
++IF TRIGGER
++	RequireBlock(Indiscriminate)
++	TargetBlock(EnemiesInOrderShort)
++	RequireBlock(HasL3)
 +	TriggerBlock(MR100|Slow|MinorGlobe|Helpless)
 +	!CheckStatLT(scstarget,0,SAVEVSPOLY)
- 	!StateCheck(scstarget,STATE_SLOWED)
- THEN DO
- 	Combine()
-@@ -37,7 +37,7 @@
- 	IgnoreBlock(Indiscriminate)
- 	TargetBlock(PCsPreferringStrong)
- 	IgnoreBlock(IsEvoker)
--	TriggerBlock(MR|Charm|SIEnchantment|SpellTurn|Enemy|Helpless)
++	!StateCheck(scstarget,STATE_SLOWED)
++THEN DO
++	Combine()
++	Action(SpellArea,WIZARD_SLOW|150|50)
++END
++
++
++//////////////////////////////////////////////////////////////////////////
++////	Charm
++//////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	IgnoreBlock(Indiscriminate)
++	TargetBlock(PCsPreferringStrong)
++	IgnoreBlock(IsEvoker)
 +	TriggerBlock(MR|Charm|SpellTurnNew|Enemy|Helpless)
- 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
- THEN DO
- 	Combine()
-@@ -52,7 +52,7 @@
- 	RequireBlock(Indiscriminate)
- 	TargetBlock(EnemiesInOrder)
- 	IgnoreBlock(IsEvoker)
--	TriggerBlock(MR|Charm|SIEnchantment|SpellTurn|Helpless)
++	!CheckStatLT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Combine()
++	Action(Sequencer,9,WIZARD_DIRE_CHARM,WIZARD_DIRE_CHARM,WIZARD_DIRE_CHARM)
++	Action(MinorSequencer,5,WIZARD_CHARM_PERSON,WIZARD_CHARM_PERSON)
++	Action(Spell,WIZARD_DOMINATION|100|100)
++	Action(Spell,WIZARD_DIRE_CHARM|100|100)
++	Action(Spell,WIZARD_CHARM_PERSON|100|100)
++END
++
++IF TRIGGER
++	RequireBlock(Indiscriminate)
++	TargetBlock(EnemiesInOrder)
++	IgnoreBlock(IsEvoker)
 +	TriggerBlock(MR|Charm|SpellTurnNew|Helpless)
- 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
- THEN DO
- 	Combine()
-@@ -71,7 +71,7 @@
- 	TargetBlock(EnemiesInOrder)
- 	RequireBlock(HasL4)
- 	IgnoreBlock(IsEvoker)
--	TriggerBlock(MR100|Confused|ConfuseProof|SIEnchantment|Helpless)
++	!CheckStatLT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Combine()
++	Action(Sequencer,9,WIZARD_DIRE_CHARM,WIZARD_DIRE_CHARM,WIZARD_DIRE_CHARM)
++	Action(MinorSequencer,5,WIZARD_CHARM_PERSON,WIZARD_CHARM_PERSON)
++	Action(Spell,WIZARD_DOMINATION|100|100)
++	Action(Spell,WIZARD_DIRE_CHARM|100|100)
++	Action(Spell,WIZARD_CHARM_PERSON|100|100)
++END
++
++///////////////////////////////////////////////////////////////////////////
++////	Confusion
++///////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	TargetBlock(EnemiesInOrder)
++	RequireBlock(HasL4)
++	IgnoreBlock(IsEvoker)
 +	TriggerBlock(MR100|Confused|ConfuseProof|Helpless)
- 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
- 	slowspell
- THEN DO
-@@ -89,7 +89,7 @@
- 	RequireBlock(HasL2)
- 	IgnoreBlock(IsEvoker)
- 	IgnoreBlock(IsNecromancerStreamline)
--	TriggerBlock(MR100|SpellTurn|Hold|SIEnchantment|Enemy|Helpless)
++	!CheckStatLT(scstarget,0,SAVEVSSPELL)
++	slowspell
++THEN DO
++	Combine()
++	Action(SpellArea,WIZARD_CONFUSION|150|50)
++END
++
++//////////////////////////////////////////////////////////////////////////
++///	Hold Person
++//////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	IgnoreBlock(Indiscriminate)
++	TargetBlock(PCsPreferringStrong)
++	RequireBlock(HasL2)
++	IgnoreBlock(IsEvoker)
++	IgnoreBlock(IsNecromancerStreamline)
 +	TriggerBlock(MR100|SpellTurnNew|Hold|Enemy|Helpless)
- 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
- 	Target(NearestEnemyOf(Myself))
- THEN DO
-@@ -105,7 +105,7 @@
- 	RequireBlock(HasL2)
- 	IgnoreBlock(IsEvoker)
- 	IgnoreBlock(IsNecromancerStreamline)
--	TriggerBlock(MR100|SpellTurn|Hold|SIEnchantment|Helpless)
++	!CheckStatLT(scstarget,0,SAVEVSSPELL)
++	Target(NearestEnemyOf(Myself))
++THEN DO
++	Combine()
++	Action(Spell,WIZARD_HOLD_MONSTER|100|200)
++	Action(Wand,"wand04")
++	Action(Spell,WIZARD_HOLD_PERSON|100|200)
++END
++
++IF TRIGGER
++	RequireBlock(Indiscriminate)
++	TargetBlock(EnemiesInOrder)
++	RequireBlock(HasL2)
++	IgnoreBlock(IsEvoker)
++	IgnoreBlock(IsNecromancerStreamline)
 +	TriggerBlock(MR100|SpellTurnNew|Hold|Helpless)
- 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
- 	Target(NearestEnemyOf(Myself))
- THEN DO
-@@ -123,7 +123,7 @@
- 	TargetBlock(EnemiesInOrder)
- 	RequireBlock(HasL4)
- 	IgnoreBlock(IsEvoker)
--	TriggerBlock(MR100|SIEnchantment|Helpless)
++	!CheckStatLT(scstarget,0,SAVEVSSPELL)
++	Target(NearestEnemyOf(Myself))
++THEN DO
++	Combine()
++	Action(Spell,WIZARD_HOLD_MONSTER|100|200)
++	Action(Wand,"wand04")
++	Action(Spell,WIZARD_HOLD_PERSON|100|200)
++END
++
++//////////////////////////////////////////////////////////////////////////
++///	Emotion
++//////////////////////////////////////////////////////////////////////	
++
++IF TRIGGER
++	TargetBlock(EnemiesInOrder)
++	RequireBlock(HasL4)
++	IgnoreBlock(IsEvoker)
 +	TriggerBlock(MR100|Helpless)
- 	!CheckStatLT(scstarget,0,SAVEVSSPELL)
- 	slowspell
- THEN DO
-@@ -163,9 +163,8 @@
- 	IgnoreBlock(IsEvokerStreamline)
- 	IgnoreBlock(IsNecromancer)
- 	IgnoreBlock(Demivrgvs)
--	TargetBlock(PCsPreferringWeak)
++	!CheckStatLT(scstarget,0,SAVEVSSPELL)
++	slowspell
++THEN DO
++	Combine()
++	Action(SpellArea,WIZARD_EMOTION_HOPELESSNESS|150|150)
++END
++
++//////////////////////////////////////////////////////////////////////////
++//// Sleep spell (Demivrgvs only)
++///////////////////////////////////////////////////////////////////////////
++
++
++
++IF TRIGGER
++	IgnoreBlock(IsInvoker)
++        IgnoreBlock(IsNecromancerStreamline)
++	RequireBlock(Demivrgvs)
++	TargetBlock(PCsInReverseOrder)
++	TargetBlock(EnemiesInOrderShort)
++	TriggerBlock(MR|Sleep|Enemy|MinorGlobe)
++	CheckStatGT(scstarget,0,SAVEVSSPELL)
++	!StateCheck(scstarget,STATE_SLEEPING)
++THEN DO
++	Combine()
++	Action(SpellArea,WIZARD_SLEEP|100|200)
++END
++
++
++
++
++////////////////////////////////////////////////////////////////////////////
++///     Blindness
++////////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	IgnoreBlock(Indiscriminate)
++	IgnoreBlock(IsEvokerStreamline)
++	IgnoreBlock(IsNecromancer)
++	IgnoreBlock(Demivrgvs)
 +	TargetBlock(PCsPreferringStrong)
- 	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
--	CheckStatGT(scstarget,0,SAVEVSSPELL)
- THEN DO
- 	Combine()
- 	Action(Spell,WIZARD_BLINDNESS|100|200)
-@@ -174,7 +173,7 @@
- IF TRIGGER
- 	RequireBlock(IsNecromancerStreamline)
- 	RequireBlock(Demivrgvs)
--	TargetBlock(PCsPreferringWeak)
++	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
++THEN DO
++	Combine()
++	Action(Spell,WIZARD_BLINDNESS|100|200)
++END
++
++IF TRIGGER
++	RequireBlock(IsNecromancerStreamline)
++	RequireBlock(Demivrgvs)
 +	TargetBlock(PCsPreferringStrong)
- 	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
- 	CheckStatGT(scstarget,0,SAVEVSSPELL)
- THEN DO
-@@ -193,7 +192,6 @@
- 	RequireBlock(HasL2)
- 	TargetBlock(PCFighters)
- 	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
--	CheckStatGT(scstarget,9,STR)
- 	CheckStatGT(scstarget,0,SAVEVSSPELL)
- THEN DO
- 	Combine()
-@@ -208,7 +206,6 @@
- 	RequireBlock(HasL2)
- 	TargetBlock(EnemiesInOrderShort)
- 	TriggerBlock(Helpless|MR|MinorGlobe)
--	CheckStatGT(scstarget,9,STR)
- 	CheckStatGT(scstarget,0,SAVEVSSPELL)
- THEN DO
- 	Combine()
-@@ -223,7 +220,7 @@
- IF TRIGGER
-           IgnoreBlock(IsEnchanterStreamline)
- 	TargetBlock(PCsInOrder)
--	TriggerBlock(MR100|SINecromancy|Helpless|Enemy|MinorGlobe|Panic|L2safe)
++	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
++	CheckStatGT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Combine()
++	Action(Spell,WIZARD_BLINDNESS|100|200)
++END
++
++////////////////////////////////////////////////////////////////////////////
++///     Enfeeblement
++////////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	IgnoreBlock(Indiscriminate)
++	IgnoreBlock(IsEvoker)
++	IgnoreBlock(IsConjurerStreamline)
++	RequireBlock(HasL2)
++	TargetBlock(PCFighters)
++	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
++	CheckStatGT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Combine()
++	Action(MinorSequencer,6,WIZARD_RAY_OF_ENFEEBLEMENT,WIZARD_RAY_OF_ENFEEBLEMENT|150|50) // Ray of Enfeeblement x2
++	Action(Spell,WIZARD_RAY_OF_ENFEEBLEMENT|100|200)
++END
++
++IF TRIGGER
++	RequireBlock(Indiscriminate)
++	IgnoreBlock(IsEvoker)
++	IgnoreBlock(IsConjurerStreamline)
++	RequireBlock(HasL2)
++	TargetBlock(EnemiesInOrderShort)
++	TriggerBlock(Helpless|MR|MinorGlobe)
++	CheckStatGT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Combine()
++	Action(MinorSequencer,6,WIZARD_RAY_OF_ENFEEBLEMENT,WIZARD_RAY_OF_ENFEEBLEMENT|150|50) // Ray of Enfeeblement x2
++	Action(Spell,WIZARD_RAY_OF_ENFEEBLEMENT|100|200)
++END
++
++//////////////////////////////////////////////////////////////////////////
++///	Horror
++//////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++          IgnoreBlock(IsEnchanterStreamline)
++	TargetBlock(PCsInOrder)
 +	TriggerBlock(MR100|Helpless|Enemy|MinorGlobe|Panic)
- 	CheckStatGT(scstarget,7,SAVEVSSPELL)
- THEN DO
- 	Combine()
-@@ -243,7 +240,7 @@
-         IgnoreBlock(IsNecromancerStreamline)
-         RequireBlock(HasL2)
- 	TargetBlock(EnemiesInOrderShort)
--	TriggerBlock(MR100|SpellTurn|Sleep|SIConjuration|MinorGlobe|Helpless|Enemy)
++	CheckStatGT(scstarget,7,SAVEVSSPELL)
++THEN DO
++	Combine()
++	Action(SpellArea,WIZARD_HORROR|100|100)
++	Action(Spell,WIZARD_SPOOK|100|200)
++END
++
++//////////////////////////////////////////////////////////////////////////
++///PW Sleep
++//////////////////////////////////////////////////////////////////////////
++
++
++IF TRIGGER
++        RequireBlock(Demivrgvs)
++        IgnoreBlock(IsEvoker)
++        IgnoreBlock(IsConjurerStreamline)
++        IgnoreBlock(IsNecromancerStreamline)
++        RequireBlock(HasL2)
++	TargetBlock(EnemiesInOrderShort)
 +	TriggerBlock(MR100|SpellTurnNew|Sleep|MinorGlobe|Helpless|Enemy)
- THEN DO
-         Combine()
- 	Action(Spell,WIZARD_POWER_WORD_SLEEP|100|200)
++THEN DO
++        Combine()
++	Action(Spell,WIZARD_POWER_WORD_SLEEP|100|200)
++END

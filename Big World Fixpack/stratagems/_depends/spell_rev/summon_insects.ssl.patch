@@ -1,22 +1,74 @@
---- stratagems/priest/ssl/bg1/combatblocks/summon_insects.ssl	2016-11-20 18:27:15.485532100 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/summon_insects.ssl	2016-12-01 15:11:46.548915500 -0500
-@@ -9,7 +9,7 @@
- 	IgnoreBlock(SpellsAreBG1)
- 	TargetBlock(PCSpellcasters)
- 	TargetBlock(PCsInOrderShort)
+--- stratagems/priest/ssl/bg1/combatblocks/summon_insects.ssl	2018-08-21 11:17:54.221196200 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/summon_insects.ssl	2018-08-21 11:36:59.406033400 +0200
+@@ -1,17 +1,17 @@
+-
+-///////////////////////////////////////////////////////////////
+-///	Insect Plague etc
+-///////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-        IgnoreBlock(IsCleric)
+-	RequireBlock(HasL3)
+-	IgnoreBlock(SpellsAreBG1)
+-	TargetBlock(PCSpellcasters)
+-	TargetBlock(PCsInOrderShort)
 -	TriggerBlock(MR100Touch|SIConjuration|Enemy|Helpless)
+-	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
+-	Global("shapeshift","LOCALS",0)
+-THEN DO
+-	Action(Spell,CLERIC_SUMMON_INSECTS|200|100)
+-END
++
++///////////////////////////////////////////////////////////////
++///	Insect Plague etc
++///////////////////////////////////////////////////////////////
++
++IF TRIGGER
++        IgnoreBlock(IsCleric)
++	RequireBlock(HasL3)
++	IgnoreBlock(SpellsAreBG1)
++	TargetBlock(PCSpellcasters)
++	TargetBlock(PCsInOrderShort)
 +	TriggerBlock(Enemy|Helpless)
- 	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
- 	Global("shapeshift","LOCALS",0)
- THEN DO
---- stratagems/priest/ssl/bg2/combatblocks/summon_insects.ssl	2016-11-20 18:27:15.519556300 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/summon_insects.ssl	2016-12-01 15:11:46.578936800 -0500
-@@ -9,7 +9,7 @@
- 	IgnoreBlock(SpellsAreBG1)
- 	TargetBlock(PCSpellcasters)
- 	TargetBlock(PCsInOrderShort)
++	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
++	Global("shapeshift","LOCALS",0)
++THEN DO
++	Action(Spell,CLERIC_SUMMON_INSECTS|200|100)
++END
+--- stratagems/priest/ssl/bg2/combatblocks/summon_insects.ssl	2018-08-21 11:17:54.238195700 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/summon_insects.ssl	2018-08-21 11:36:59.424033200 +0200
+@@ -1,17 +1,17 @@
+-
+-///////////////////////////////////////////////////////////////
+-///	Insect Plague etc
+-///////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-        IgnoreBlock(IsCleric)
+-	RequireBlock(HasL3)
+-	IgnoreBlock(SpellsAreBG1)
+-	TargetBlock(PCSpellcasters)
+-	TargetBlock(PCsInOrderShort)
 -	TriggerBlock(MR100|SIConjuration|Enemy|Helpless)
+-	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
+-	Global("shapeshift","LOCALS",0)
+-THEN DO
+-	Action(Spell,CLERIC_SUMMON_INSECTS|200|100)
+-END
++
++///////////////////////////////////////////////////////////////
++///	Insect Plague etc
++///////////////////////////////////////////////////////////////
++
++IF TRIGGER
++        IgnoreBlock(IsCleric)
++	RequireBlock(HasL3)
++	IgnoreBlock(SpellsAreBG1)
++	TargetBlock(PCSpellcasters)
++	TargetBlock(PCsInOrderShort)
 +	TriggerBlock(Enemy|Helpless)
- 	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
- 	Global("shapeshift","LOCALS",0)
- THEN DO
++	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
++	Global("shapeshift","LOCALS",0)
++THEN DO
++	Action(Spell,CLERIC_SUMMON_INSECTS|200|100)
++END

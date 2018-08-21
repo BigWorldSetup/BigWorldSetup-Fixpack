@@ -1,11 +1,29 @@
---- stratagems/mage/spellchoices/demivrgvs/fighter_mage.2da	2012-08-26 18:01:11.000000000 -0400
-+++ Fixpack/stratagems/mage/spellchoices/demivrgvs/fighter_mage.2da	2016-12-01 15:11:46.493876300 -0500
-@@ -3,7 +3,7 @@
- 2 MELF_ACID_ARROW       MELF_ACID_ARROW         MELF_ACID_ARROW             POWER_WORD_SLEEP        POWER_WORD_SLEEP        HORROR          GLITTERDUST     GLITTERDUST
- 3 HOLD_PERSON           DIRE_CHARM              MONSTER_SUMMONING_1                                                                         
- 4 MONSTER_SUMMONING_2   SPIDER_SPAWN            EMOTION_HOPELESSNESS        EMOTION_HOPELESSNESS        CONFUSION               CONFUSION                   
+--- stratagems/mage/spellchoices/demivrgvs/fighter_mage.2da	2018-08-21 11:17:54.179197300 +0200
++++ Fixpack/stratagems/mage/spellchoices/demivrgvs/fighter_mage.2da	2018-08-21 11:36:59.361034800 +0200
+@@ -1,13 +1,13 @@
+-VANILLA_FIGHTER-MAGE
+-1 MAGIC_MISSILE         MAGIC_MISSILE           CHROMATIC_ORB               CHARM_PERSON            SLEEP                   SLEEP                       
+-2 MELF_ACID_ARROW       MELF_ACID_ARROW         MELF_ACID_ARROW             POWER_WORD_SLEEP        POWER_WORD_SLEEP        HORROR          GLITTERDUST     GLITTERDUST
+-3 HOLD_PERSON           DIRE_CHARM              MONSTER_SUMMONING_1                                                                         
+-4 MONSTER_SUMMONING_2   SPIDER_SPAWN            EMOTION_HOPELESSNESS        EMOTION_HOPELESSNESS        CONFUSION               CONFUSION                   
 -5 CHAOS                 CHAOS                   DOMINATION                  SUN_FIRE                                                             
+-6 DEATH_SPELL           CHAIN_LIGHTNING         POWER_WORD_SILENCE          POWER_WORD_SILENCE                                                  
+-7 POWER_WORD_STUN       POWER_WORD_STUN         POWER_WORD_STUN             MORDENKAINENS_SWORD      SPHERE_OF_CHAOS         PRISMATIC_SPRAY             
+-8 POWER_WORD_BLIND      POWER_WORD_BLIND        ABI_DALZIMS_HORRID_WILTING  MAZE                                                                
+-9 POWER_WORD_KILL       POWER_WORD_KILL         IMPRISONMENT                                                                                
+-H POWER_WORD_KILL       POWER_WORD_KILL         POWER_WORD_KILL             SUMMON_PLANATAR_EVIL    DRAGONS_BREATH          COMET
+-IO     SUMMON_PLANATAR_EVIL	IMPROVED_ALUCRITY	COMET      	 	DRAGONS_BREATH
+-IR     SUMMON_PLANATAR_EVIL	IMPROVED_ALUCRITY	COMET      	 	DRAGONS_BREATH
++VANILLA_FIGHTER-MAGE
++1 MAGIC_MISSILE         MAGIC_MISSILE           CHROMATIC_ORB               CHARM_PERSON            SLEEP                   SLEEP                       
++2 MELF_ACID_ARROW       MELF_ACID_ARROW         MELF_ACID_ARROW             POWER_WORD_SLEEP        POWER_WORD_SLEEP        HORROR          GLITTERDUST     GLITTERDUST
++3 HOLD_PERSON           DIRE_CHARM              MONSTER_SUMMONING_1                                                                         
++4 MONSTER_SUMMONING_2   SPIDER_SPAWN            EMOTION_HOPELESSNESS        EMOTION_HOPELESSNESS        CONFUSION               CONFUSION                   
 +5 CHAOS                 SUN_FIRE                DOMINATION                  SUN_FIRE                                                             
- 6 DEATH_SPELL           CHAIN_LIGHTNING         POWER_WORD_SILENCE          POWER_WORD_SILENCE                                                  
- 7 POWER_WORD_STUN       POWER_WORD_STUN         POWER_WORD_STUN             MORDENKAINENS_SWORD      SPHERE_OF_CHAOS         PRISMATIC_SPRAY             
- 8 POWER_WORD_BLIND      POWER_WORD_BLIND        ABI_DALZIMS_HORRID_WILTING  MAZE                                                                
++6 DEATH_SPELL           CHAIN_LIGHTNING         POWER_WORD_SILENCE          POWER_WORD_SILENCE                                                  
++7 POWER_WORD_STUN       POWER_WORD_STUN         POWER_WORD_STUN             MORDENKAINENS_SWORD      SPHERE_OF_CHAOS         PRISMATIC_SPRAY             
++8 POWER_WORD_BLIND      POWER_WORD_BLIND        ABI_DALZIMS_HORRID_WILTING  MAZE                                                                
++9 POWER_WORD_KILL       POWER_WORD_KILL         IMPRISONMENT                                                                                
++H POWER_WORD_KILL       POWER_WORD_KILL         POWER_WORD_KILL             SUMMON_PLANATAR_EVIL    DRAGONS_BREATH          COMET
++IO     SUMMON_PLANATAR_EVIL	IMPROVED_ALUCRITY	COMET      	 	DRAGONS_BREATH
++IR     SUMMON_PLANATAR_EVIL	IMPROVED_ALUCRITY	COMET      	 	DRAGONS_BREATH

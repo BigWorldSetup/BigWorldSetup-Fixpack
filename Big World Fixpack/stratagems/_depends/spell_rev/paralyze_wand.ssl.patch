@@ -1,10 +1,26 @@
---- stratagems/mage/ssl/bg1/combatblocks/paralyze_wand.ssl	2016-11-20 18:27:15.408477700 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/paralyze_wand.ssl	2016-12-01 15:11:46.511889100 -0500
-@@ -6,7 +6,6 @@
- IF TRIGGER
- 	TargetBlock(PCsPreferringStrong)
- 	TriggerBlock(Disabled|Paralyse|Enemy|MR)
+--- stratagems/mage/ssl/bg1/combatblocks/paralyze_wand.ssl	2018-08-21 11:17:54.188197100 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/paralyze_wand.ssl	2018-08-21 11:36:59.370034600 +0200
+@@ -1,12 +1,11 @@
+-////////////////////////////////////////////////////////////////////////////
+-////	The four-point saving throw penalty on the Wand of Paralysation means
+-////	that frankly you should use it as early and as often as possible
+-//////////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	TargetBlock(PCsPreferringStrong)
+-	TriggerBlock(Disabled|Paralyse|Enemy|MR)
 -	CheckStatGT(scstarget,0,SAVEVSSPELL)
- THEN DO
- 	Action(Wand,"%tutu_var%wand04"|700|300)
- END
+-THEN DO
+-	Action(Wand,"%tutu_var%wand04"|700|300)
+-END
++////////////////////////////////////////////////////////////////////////////
++////	The four-point saving throw penalty on the Wand of Paralysation means
++////	that frankly you should use it as early and as often as possible
++//////////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	TargetBlock(PCsPreferringStrong)
++	TriggerBlock(Disabled|Paralyse|Enemy|MR)
++THEN DO
++	Action(Wand,"%tutu_var%wand04"|700|300)
++END

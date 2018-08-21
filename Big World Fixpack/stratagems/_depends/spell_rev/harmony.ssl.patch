@@ -1,8 +1,24 @@
---- stratagems/priest/ssl/bg2/combatblocks/harmony.ssl	2016-11-20 18:27:15.502544400 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/harmony.ssl	2016-12-01 15:11:46.559923500 -0500
-@@ -1,4 +1,5 @@
- IF TRIGGER
+--- stratagems/priest/ssl/bg2/combatblocks/harmony.ssl	2018-08-21 11:17:54.229195300 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/harmony.ssl	2018-08-21 11:36:59.416033200 +0200
+@@ -1,10 +1,11 @@
+-IF TRIGGER
+-	TargetBlock(VillainsInOrder)
+-	GlobalTimerExpired("redefend","LOCALS")
+-	NumCreatureGT([ENEMY],3)
+-	!CheckStatGT(scstarget,0,CLERIC_DEFENSIVE_HARMONY)
+-	Range(scstarget,10)
+-THEN DO
+-	Action(SpellMyself,CLERIC_DEFENSIVE_HARMONY|100|100)
+-END
+-
++IF TRIGGER
 +    IgnoreBlock(IsDruid)
- 	TargetBlock(VillainsInOrder)
- 	GlobalTimerExpired("redefend","LOCALS")
- 	NumCreatureGT([ENEMY],3)
++	TargetBlock(VillainsInOrder)
++	GlobalTimerExpired("redefend","LOCALS")
++	NumCreatureGT([ENEMY],3)
++	!CheckStatGT(scstarget,0,CLERIC_DEFENSIVE_HARMONY)
++	Range(scstarget,10)
++THEN DO
++	Action(SpellMyself,CLERIC_DEFENSIVE_HARMONY|100|100)
++END
++

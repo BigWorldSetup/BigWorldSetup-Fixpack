@@ -1,36 +1,70 @@
---- stratagems/mage/ssl/bg1/combatblocks/high_end_enchantment.ssl	2016-11-20 18:27:15.405475400 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/high_end_enchantment.ssl	2016-12-01 15:11:46.508886700 -0500
-@@ -3,12 +3,10 @@
- //////////////////////////////////////////////////////////////////////////
- 
- IF TRIGGER
+--- stratagems/mage/ssl/bg1/combatblocks/high_end_enchantment.ssl	2018-08-21 11:17:54.184196900 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/high_end_enchantment.ssl	2018-08-21 11:36:59.367035000 +0200
+@@ -1,35 +1,32 @@
+-//////////////////////////////////////////////////////////////////////////
+-///	Chaos is completely devastating: if you've got it, chuck it
+-//////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
 -	IgnoreBlock(IsInvoker)
- 	RequireBlock(HasL5)
- 	TargetBlock(PCsInReverseOrder)
- 	TargetBlock(EnemiesInOrderShort)
+-	RequireBlock(HasL5)
+-	TargetBlock(PCsInReverseOrder)
+-	TargetBlock(EnemiesInOrderShort)
 -	TriggerBlock(Confused|ConfuseProof|MR|Enemy)
 -	CheckStatGT(scstarget,0,SAVEVSSPELL)
-+	TriggerBlock(MR|Enemy)
- THEN DO
- 	Action(SpellArea,WIZARD_CHAOS|200|100)
- END
-@@ -18,17 +16,16 @@
- 	RequireBlock(HasL5)
- 	ConditionalTargetBlock(PCsPreferringStrong;CheckStatGT(scstarget,50,RESISTMAGIC))
- 	TargetBlock(PCsPreferringStrong)
--	TriggerBlock(Charm|MR100|Enemy|SpellTurn)
-+	TriggerBlock(Charm|MR100|Enemy|SpellTurnNew)
- 	CheckStatGT(scstarget,0,SAVEVSSPELL)
- THEN DO
- 	Action(Spell,WIZARD_DOMINATION|200|100)
- END
- 
- IF TRIGGER
+-THEN DO
+-	Action(SpellArea,WIZARD_CHAOS|200|100)
+-END
+-
+-IF TRIGGER
 -	IgnoreBlock(IsInvoker)
- 	TargetBlock(PCsInReverseOrder)
- 	TargetBlock(EnemiesInOrderShort)
+-	RequireBlock(HasL5)
+-	ConditionalTargetBlock(PCsPreferringStrong;CheckStatGT(scstarget,50,RESISTMAGIC))
+-	TargetBlock(PCsPreferringStrong)
+-	TriggerBlock(Charm|MR100|Enemy|SpellTurn)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Action(Spell,WIZARD_DOMINATION|200|100)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsInvoker)
+-	TargetBlock(PCsInReverseOrder)
+-	TargetBlock(EnemiesInOrderShort)
 -	TriggerBlock(Confused|ConfuseProof|MR|Enemy)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Action(Scroll,"%tutu_var%scrl5p"|200|100)
+-END
++//////////////////////////////////////////////////////////////////////////
++///	Chaos is completely devastating: if you've got it, chuck it
++//////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	RequireBlock(HasL5)
++	TargetBlock(PCsInReverseOrder)
++	TargetBlock(EnemiesInOrderShort)
 +	TriggerBlock(MR|Enemy)
- 	CheckStatGT(scstarget,0,SAVEVSSPELL)
- THEN DO
- 	Action(Scroll,"%tutu_var%scrl5p"|200|100)
++THEN DO
++	Action(SpellArea,WIZARD_CHAOS|200|100)
++END
++
++IF TRIGGER
++	IgnoreBlock(IsInvoker)
++	RequireBlock(HasL5)
++	ConditionalTargetBlock(PCsPreferringStrong;CheckStatGT(scstarget,50,RESISTMAGIC))
++	TargetBlock(PCsPreferringStrong)
++	TriggerBlock(Charm|MR100|Enemy|SpellTurnNew)
++	CheckStatGT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Action(Spell,WIZARD_DOMINATION|200|100)
++END
++
++IF TRIGGER
++	TargetBlock(PCsInReverseOrder)
++	TargetBlock(EnemiesInOrderShort)
++	TriggerBlock(MR|Enemy)
++	CheckStatGT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Action(Scroll,"%tutu_var%scrl5p"|200|100)
++END

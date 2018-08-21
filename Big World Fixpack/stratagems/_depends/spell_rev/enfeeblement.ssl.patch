@@ -1,16 +1,43 @@
---- stratagems/mage/ssl/bg1/combatblocks/enfeeblement.ssl	2016-11-20 18:27:15.403474000 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/enfeeblement.ssl	2016-12-01 15:11:46.506885300 -0500
-@@ -1,5 +1,4 @@
- IF TRIGGER
+--- stratagems/mage/ssl/bg1/combatblocks/enfeeblement.ssl	2018-08-21 11:17:54.183197500 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/enfeeblement.ssl	2018-08-21 11:36:59.366034600 +0200
+@@ -1,21 +1,19 @@
+-IF TRIGGER
 -	IgnoreBlock(IsInvoker)
- 	RequireBlock(HasL2)
- 	TargetBlock(PCFighters)
- 	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
-@@ -11,7 +10,6 @@
- END
- 
- IF TRIGGER
+-	RequireBlock(HasL2)
+-	TargetBlock(PCFighters)
+-	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
+-	CheckStatGT(scstarget,9,STR)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Combine()
+-	Action(Spell,WIZARD_RAY_OF_ENFEEBLEMENT|150|50)
+-END
+-
+-IF TRIGGER
 -	IgnoreBlock(IsNecromancer)
- 	TargetBlock(PCFighters)
- 	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
- 	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-	TargetBlock(PCFighters)
+-	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
+-	CheckStatGT(scstarget,0,SAVEVSSPELL)
+-THEN DO
+-	Combine()
+-	Action(Spell,WIZARD_BLINDNESS|150|50)
+-END
++IF TRIGGER
++	RequireBlock(HasL2)
++	TargetBlock(PCFighters)
++	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
++	CheckStatGT(scstarget,9,STR)
++	CheckStatGT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Combine()
++	Action(Spell,WIZARD_RAY_OF_ENFEEBLEMENT|150|50)
++END
++
++IF TRIGGER
++	TargetBlock(PCFighters)
++	TriggerBlock(Enemy|Helpless|MR|MinorGlobe)
++	CheckStatGT(scstarget,0,SAVEVSSPELL)
++THEN DO
++	Combine()
++	Action(Spell,WIZARD_BLINDNESS|150|50)
++END

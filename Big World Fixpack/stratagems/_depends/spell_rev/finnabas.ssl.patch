@@ -1,5 +1,5 @@
---- stratagems/ascension/ssl/finnabas.ssl	2016-11-20 18:27:15.322433500 -0500
-+++ Fixpack/stratagems/ascension/ssl/finnabas.ssl	2016-09-16 23:21:34.252686000 -0400
+--- stratagems/ascension/ssl/finnabas.ssl	2018-08-21 11:17:54.141198000 +0200
++++ Fixpack/stratagems/ascension/ssl/finnabas.ssl	2018-08-21 11:36:59.314036200 +0200
 @@ -133,7 +133,7 @@
  IF TRIGGER
  	ConditionalTargetBlock(PCsInOrder;HPPercentLT(scstarget,30))

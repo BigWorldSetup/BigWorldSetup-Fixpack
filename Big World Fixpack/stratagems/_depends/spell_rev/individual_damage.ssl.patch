@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg2/combatblocks/individual_damage.ssl	2016-11-20 18:27:15.507548200 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/individual_damage.ssl	2016-09-16 14:52:37.773419700 -0400
+--- stratagems/priest/ssl/bg2/combatblocks/individual_damage.ssl	2018-08-21 11:17:54.232195700 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/individual_damage.ssl	2018-08-21 11:36:59.418033100 +0200
 @@ -5,9 +5,7 @@
  
  IF TRIGGER

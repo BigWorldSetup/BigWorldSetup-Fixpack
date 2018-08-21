@@ -1,9 +1,307 @@
---- stratagems/mage/ssl/bg2/prepblocks/instantprep.ssl	2016-11-20 18:27:15.446504700 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/instantprep.ssl	2016-12-01 15:11:46.531903200 -0500
-@@ -136,6 +136,16 @@
- IF TRIGGER
- 	IgnoreBlock(IsOptionThree)
- 	optiontwosub1
+--- stratagems/mage/ssl/bg2/prepblocks/instantprep.ssl	2018-08-21 11:17:54.206196200 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/instantprep.ssl	2018-08-21 11:36:59.389033900 +0200
+@@ -1,163 +1,173 @@
+-///////////////////////////////////////////////////////////////////
+-//////	Battle preps: here we pre-cast spells that would have
+-//////	been cast in advance of the fight
+-///////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_SHIELD)  // shield
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	RequireBlock(HasL2)
+-	IgnoreBlock(IsNecromancer)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_MIRROR_IMAGE)  // mirror image
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	RequireBlock(HasL3)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_HASTE)  // haste
+-	Action(SpellPrecast,WIZARD_GHOST_ARMOR)  // ghost armor
+-	Action(SpellPrecast,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // pro/NM
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	RequireBlock(HasL4)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_FIRE_SHIELD_RED)   // fire shield (red)
+-	Action(SpellPrecast,WIZARD_FIRE_SHIELD_BLUE)   // fire shield (blue)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	RequireBlock(HasL4)
+-	IgnoreBlock(IsNecromancer)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_IMPROVED_INVISIBILITY)    // II
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	IgnoreBlock(IsLich|IsRakshasa)
+-	optiontwosub1
+-	RequireBlock(HasL4)
+-	!HaveSpell(WIZARD_GLOBE_OF_INVULNERABILITY)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+-END
+-
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	IgnoreBlock(Demivrgvs)
+-	optiontwosub1
+-	RequireBlock(HasL5)
+-	IgnoreBlock(IsNecromancer)
+-	!HaveSpell(WIZARD_IMPROVED_INVISIBILITY)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_SHADOW_DOOR)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	IgnoreBlock(IsLich|IsRakshasa)
+-	optiontwosub1
+-	RequireBlock(HasL6)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_GLOBE_OF_INVULNERABILITY)
+-END
+-
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	RequireBlock(HasL3)
+-	!HaveSpell(WIZARD_SPELL_TURNING)
+-	!HaveSpell(WIZARD_SPELL_DEFLECTION)
+-	!HaveSpell(WIZARD_MINOR_SPELL_TURNING)
+-	!HaveSpell(WIZARD_SPELL_TRAP)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_MINOR_SPELL_DEFLECTION)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	RequireBlock(HasL5)
+-	!HaveSpell(WIZARD_SPELL_TURNING)
+-	!HaveSpell(WIZARD_SPELL_DEFLECTION)
+-	!HaveSpell(WIZARD_SPELL_TRAP)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_MINOR_SPELL_TURNING)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	RequireBlock(HasL6)
+-	!HaveSpell(WIZARD_SPELL_TURNING)
+-	!HaveSpell(WIZARD_SPELL_TRAP)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_SPELL_DEFLECTION)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	RequireBlock(HasL7)
+-	!HaveSpell(WIZARD_SPELL_TRAP)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_SPELL_TURNING)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	RequireBlock(HasL9)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_SPELL_TRAP)
+-END
+-
+-IF TRIGGER
+-          IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	RequireBlock(HasL9)
+-	IgnoreBlock(HasNoPrep)
+-	RequireBlock(Refinements)
+-THEN DO
+-	Action(SpellPrecastRES,"tg#aegi",aegi)
+-END
+-
+-IF TRIGGER
+-        IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	RequireBlock(HasL9)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,WIZARD_ENERGY_BLADES)
+-END
+-
++///////////////////////////////////////////////////////////////////
++//////	Battle preps: here we pre-cast spells that would have
++//////	been cast in advance of the fight
++///////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_SHIELD)  // shield
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	RequireBlock(HasL2)
++	IgnoreBlock(IsNecromancer)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_MIRROR_IMAGE)  // mirror image
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	RequireBlock(HasL3)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_HASTE)  // haste
++	Action(SpellPrecast,WIZARD_GHOST_ARMOR)  // ghost armor
++	Action(SpellPrecast,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // pro/NM
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	RequireBlock(HasL4)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_FIRE_SHIELD_RED)   // fire shield (red)
++	Action(SpellPrecast,WIZARD_FIRE_SHIELD_BLUE)   // fire shield (blue)
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	RequireBlock(HasL4)
++	IgnoreBlock(IsNecromancer)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_IMPROVED_INVISIBILITY)    // II
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	IgnoreBlock(IsLich|IsRakshasa)
++	optiontwosub1
++	RequireBlock(HasL4)
++	!HaveSpell(WIZARD_GLOBE_OF_INVULNERABILITY)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
++END
++
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	IgnoreBlock(Demivrgvs)
++	optiontwosub1
++	RequireBlock(HasL5)
++	IgnoreBlock(IsNecromancer)
++	!HaveSpell(WIZARD_IMPROVED_INVISIBILITY)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_SHADOW_DOOR)
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	IgnoreBlock(IsLich|IsRakshasa)
++	optiontwosub1
++	RequireBlock(HasL6)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_GLOBE_OF_INVULNERABILITY)
++END
++
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	RequireBlock(HasL3)
++	!HaveSpell(WIZARD_SPELL_TURNING)
++	!HaveSpell(WIZARD_SPELL_DEFLECTION)
++	!HaveSpell(WIZARD_MINOR_SPELL_TURNING)
++	!HaveSpell(WIZARD_SPELL_TRAP)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_MINOR_SPELL_DEFLECTION)
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	RequireBlock(HasL5)
++	!HaveSpell(WIZARD_SPELL_TURNING)
++	!HaveSpell(WIZARD_SPELL_DEFLECTION)
++	!HaveSpell(WIZARD_SPELL_TRAP)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_MINOR_SPELL_TURNING)
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	RequireBlock(HasL6)
++	!HaveSpell(WIZARD_SPELL_TURNING)
++	!HaveSpell(WIZARD_SPELL_TRAP)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_SPELL_DEFLECTION)
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	RequireBlock(HasL7)
++	!HaveSpell(WIZARD_SPELL_TRAP)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_SPELL_TURNING)
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
 +	RequireBlock(HasL7)
 +	!HaveSpell(WIZARD_PROTECTION_FROM_THE_ELEMENTS)
 +	IgnoreBlock(HasNoPrep)
@@ -14,64 +312,560 @@
 +IF TRIGGER
 +	IgnoreBlock(IsOptionThree)
 +	optiontwosub1
- 	RequireBlock(HasL9)
- 	IgnoreBlock(HasNoPrep)
- THEN DO
---- stratagems/priest/ssl/bg1/prepblocks/instantprep.ssl	2016-11-20 18:27:15.489535400 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/prepblocks/instantprep.ssl	2016-09-16 16:08:12.903649700 -0400
-@@ -20,6 +20,7 @@
- END
- 
- IF TRIGGER
-+    IgnoreBlock(IsDruid)
- 	IgnoreBlock(IsOptionThree)
- 	optiontwosub1
- THEN DO
-@@ -36,6 +37,7 @@
- END
- 
- IF TRIGGER
-+   IgnoreBlock(IsCleric)
-    IgnoreBlock(IsOptionThree)
-    RequireBlock(HasL2)
- 	optiontwosub1
-@@ -54,6 +56,7 @@
- END
- 
- IF TRIGGER
-+   IgnoreBlock(IsDruid)
-    IgnoreBlock(IsOptionThree)
-    RequireBlock(HasL4)
- 	optiontwosub1
-@@ -63,7 +66,6 @@
- 
- IF TRIGGER
-    IgnoreBlock(IsOptionThree)
++	RequireBlock(HasL9)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_SPELL_TRAP)
++END
++
++IF TRIGGER
++          IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	RequireBlock(HasL9)
++	IgnoreBlock(HasNoPrep)
++	RequireBlock(Refinements)
++THEN DO
++	Action(SpellPrecastRES,"tg#aegi",aegi)
++END
++
++IF TRIGGER
++        IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	RequireBlock(HasL9)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,WIZARD_ENERGY_BLADES)
++END
++
+--- stratagems/priest/ssl/bg1/prepblocks/instantprep.ssl	2018-08-21 11:17:54.223195700 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/prepblocks/instantprep.ssl	2018-08-21 11:36:59.408033300 +0200
+@@ -1,136 +1,143 @@
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	IgnoreBlock(IsCleric)
+-	optiontwosub1
+-THEN DO
+-	Action(SpellPrecast,CLERIC_FLAME_BLADE)
+-END
+-
+-IF
+-	IgnoreBlock(IsOptionThree)
+-	RequireBlock(IsDruid)
+-	See(NearestEnemyOf(Myself))
+-	CheckStatGT(Myself,2,Level)
+-	RequireBlock(Galactygon_Shillelagh)
+-	optiontwosub1
+-THEN
+-    RESPONSE #100
+-	ReallyForceSpell(Myself,CLERIC_SHILLELAGH)
+-	Continue()
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-THEN DO
+-	Action(SpellPrecast,CLERIC_REMOVE_FEAR)
+-	Action(SpellPrecast,CLERIC_BLESS)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-        IgnoreBlock(SpellsAreBG1)
+-	optiontwosub1
+-THEN DO
+-	Action(SpellPrecast,CLERIC_ARMOR_OF_FAITH)
+-END
+-
+-IF TRIGGER
+-   IgnoreBlock(IsOptionThree)
+-   RequireBlock(HasL2)
+-	optiontwosub1
+-THEN DO
+-     Action(SpellPrecast,CLERIC_BARKSKIN)
+-END
+-
+-IF TRIGGER
+-   IgnoreBlock(IsOptionThree)
+-   RequireBlock(HasL2)
 -   IgnoreBlock(IsDruid)
-    RequireBlock(HasL4)
- 	optiontwosub1
- THEN DO
-@@ -99,6 +101,7 @@
- END
- 
- IF TRIGGER
-+   IgnoreBlock(IsDruid)
-    IgnoreBlock(IsOptionThree)
-    RequireBlock(HasL6)
- 	optiontwosub1
---- stratagems/priest/ssl/bg2/prepblocks/instantprep.ssl	2016-11-20 18:27:15.527562300 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/prepblocks/instantprep.ssl	2016-09-17 22:48:40.317536900 -0400
-@@ -1,5 +1,6 @@
- 
- IF TRIGGER
+-	optiontwosub1
+-THEN DO
+-     Action(SpellPrecast,CLERIC_CHANT)
+-     Action(SpellPrecast,CLERIC_DRAW_UPON_HOLY_MIGHT)
+-END
+-
+-IF TRIGGER
+-   IgnoreBlock(IsOptionThree)
+-   RequireBlock(HasL4)
+-	optiontwosub1
+-THEN DO
+-     Action(SpellPrecast,CLERIC_DEFENSIVE_HARMONY)
+-END
+-
+-IF TRIGGER
+-   IgnoreBlock(IsOptionThree)
+-   IgnoreBlock(IsDruid)
+-   RequireBlock(HasL4)
+-	optiontwosub1
+-THEN DO
+-     Action(SpellPrecast,CLERIC_FREE_ACTION)
+-END
+-
+-IF TRIGGER
+-   IgnoreBlock(IsOptionThree)
+-   RequireBlock(HasL4)
+-   IgnoreBlock(IsDruid)
+-   IgnoreBlock(SpellsAreBG1)
+-	optiontwosub1
+-THEN DO
+-     Action(SpellPrecast,CLERIC_HOLY_POWER)
+-END
+-
+-IF TRIGGER
+-   IgnoreBlock(IsOptionThree)
+-   RequireBlock(HasL4)
+-   RequireBlock(IsAvenger)
+-	optiontwosub1
+-THEN DO
+-     Action(SpellPrecastRES,"spdr401")
+-END
+-
+-IF TRIGGER
+-   IgnoreBlock(IsOptionThree)
+-   RequireBlock(HasL5)
+-   IgnoreBlock(IsDruid)
+-   IgnoreBlock(SpellsAreBG1)
+-THEN DO
+-     Action(SpellPrecast,CLERIC_RIGHTEOUS_MAGIC)
+-END
+-
+-IF TRIGGER
+-   IgnoreBlock(IsOptionThree)
+-   RequireBlock(HasL6)
+-	optiontwosub1
+-THEN DO
+-     Action(SpellPrecast,CLERIC_PHYSICAL_MIRROR)
+-END
+-
+-IF TRIGGER
+-   IgnoreBlock(IsOptionThree)
+-   RequireBlock(HasL6)
+-   IgnoreBlock(IsDruid)
+-	optiontwosub1
+-THEN DO
+-     Action(SpellPrecast,NPC_BLADE_BARRIER)
+-END
+-
+-//// Druids (only) get autocast animal summoning
+-
+-IF TRIGGER
+-   IgnoreBlock(IsOptionThree)
+-   RequireBlock(HasL4)
+-   RequireBlock(IsDruid)
+-	optiontwosub1
+-THEN DO
+-     Action(SpellPrecast,CLERIC_ANIMAL_SUMMONING_1)
+-END
+-
+-IF TRIGGER
+-   IgnoreBlock(IsOptionThree)
+-   RequireBlock(HasL5)
+-   RequireBlock(IsDruid)
+-	optiontwosub1
+-THEN DO
+-     Action(SpellPrecast,CLERIC_ANIMAL_SUMMONING_2)
+-END
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	IgnoreBlock(IsCleric)
++	optiontwosub1
++THEN DO
++	Action(SpellPrecast,CLERIC_FLAME_BLADE)
++END
++
++IF
++	IgnoreBlock(IsOptionThree)
++	RequireBlock(IsDruid)
++	See(NearestEnemyOf(Myself))
++	CheckStatGT(Myself,2,Level)
++	RequireBlock(Galactygon_Shillelagh)
++	optiontwosub1
++THEN
++    RESPONSE #100
++	ReallyForceSpell(Myself,CLERIC_SHILLELAGH)
++	Continue()
++END
++
++IF TRIGGER
 +    IgnoreBlock(IsDruid)
- 	RequireBlock(HasL7)
- 	IgnoreBlock(IsOptionThree)
- 	optiontwosub1
-@@ -22,6 +23,19 @@
- 		Action(SpellPrecast,CLERIC_REGENERATE)
- END
- 
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++THEN DO
++	Action(SpellPrecast,CLERIC_REMOVE_FEAR)
++	Action(SpellPrecast,CLERIC_BLESS)
++END
++
++IF TRIGGER
++    IgnoreBlock(IsDruid)
++	IgnoreBlock(IsOptionThree)
++        IgnoreBlock(SpellsAreBG1)
++	optiontwosub1
++THEN DO
++	Action(SpellPrecast,CLERIC_ARMOR_OF_FAITH)
++END
++
++IF TRIGGER
++   IgnoreBlock(IsCleric)
++   IgnoreBlock(IsOptionThree)
++   RequireBlock(HasL2)
++	optiontwosub1
++THEN DO
++     Action(SpellPrecast,CLERIC_BARKSKIN)
++END
++
++IF TRIGGER
++   IgnoreBlock(IsCleric)
++   IgnoreBlock(IsOptionThree)
++   RequireBlock(HasL2)
++   IgnoreBlock(IsDruid)
++	optiontwosub1
++THEN DO
++     Action(SpellPrecast,CLERIC_CHANT)
++     Action(SpellPrecast,CLERIC_DRAW_UPON_HOLY_MIGHT)
++END
++
++IF TRIGGER
++   IgnoreBlock(IsDruid)
++   IgnoreBlock(IsOptionThree)
++   RequireBlock(HasL4)
++	optiontwosub1
++THEN DO
++     Action(SpellPrecast,CLERIC_DEFENSIVE_HARMONY)
++END
++
++IF TRIGGER
++   IgnoreBlock(IsDruid)
++   IgnoreBlock(IsOptionThree)
++   RequireBlock(HasL4)
++	optiontwosub1
++THEN DO
++     Action(SpellPrecast,CLERIC_FREE_ACTION)
++END
++
++IF TRIGGER
++   IgnoreBlock(IsOptionThree)
++   RequireBlock(HasL4)
++   IgnoreBlock(IsDruid)
++   IgnoreBlock(SpellsAreBG1)
++	optiontwosub1
++THEN DO
++     Action(SpellPrecast,CLERIC_HOLY_POWER)
++END
++
++IF TRIGGER
++   IgnoreBlock(IsOptionThree)
++   RequireBlock(HasL4)
++   RequireBlock(IsAvenger)
++	optiontwosub1
++THEN DO
++     Action(SpellPrecastRES,"spdr401")
++END
++
++IF TRIGGER
++   IgnoreBlock(IsOptionThree)
++   RequireBlock(HasL5)
++   IgnoreBlock(IsDruid)
++   IgnoreBlock(SpellsAreBG1)
++THEN DO
++     Action(SpellPrecast,CLERIC_RIGHTEOUS_MAGIC)
++END
++
++IF TRIGGER
++   IgnoreBlock(IsDruid)
++   IgnoreBlock(IsOptionThree)
++   RequireBlock(HasL6)
++	optiontwosub1
++THEN DO
++     Action(SpellPrecast,CLERIC_PHYSICAL_MIRROR)
++END
++
++IF TRIGGER
++   IgnoreBlock(IsDruid)
++   IgnoreBlock(IsOptionThree)
++   RequireBlock(HasL6)
++   IgnoreBlock(IsDruid)
++	optiontwosub1
++THEN DO
++     Action(SpellPrecast,NPC_BLADE_BARRIER)
++END
++
++//// Druids (only) get autocast animal summoning
++
++IF TRIGGER
++   IgnoreBlock(IsOptionThree)
++   RequireBlock(HasL4)
++   RequireBlock(IsDruid)
++	optiontwosub1
++THEN DO
++     Action(SpellPrecast,CLERIC_ANIMAL_SUMMONING_1)
++END
++
++IF TRIGGER
++   IgnoreBlock(IsOptionThree)
++   RequireBlock(HasL5)
++   RequireBlock(IsDruid)
++	optiontwosub1
++THEN DO
++     Action(SpellPrecast,CLERIC_ANIMAL_SUMMONING_2)
++END
+--- stratagems/priest/ssl/bg2/prepblocks/instantprep.ssl	2018-08-21 11:17:54.241195200 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/prepblocks/instantprep.ssl	2018-08-21 11:36:59.428032800 +0200
+@@ -1,218 +1,253 @@
+-
+-IF TRIGGER
+-	RequireBlock(HasL7)
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-	!HasItem("dw#prbig",Myself)
+-	!HaveSpellRES("tg#divn")
+-THEN DO
+-		Action(SpellPrecast,CLERIC_SHIELD_OF_THE_ARCHONS)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(HasL7)
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-	!HasItem("dw#prbig",Myself)
+-THEN DO
+-		Action(SpellPrecast,CLERIC_REGENERATE)
+-END
+-
+-IF  TRIGGER
+-	RequireBlock(HasL7)
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-		Action(SpellPrecast,CLERIC_GLOBE_OF_BLADES)
+-		Action(SpellPrecast,CLERIC_AURA_OF_FLAMING_DEATH)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(HasL5)
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,CLERIC_MAGIC_RESISTANCE)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-	IgnoreBlock(IsCleric)
+-THEN DO
+-	Action(SpellPrecast,CLERIC_SHILLELAGH)
+-END
+-
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-	IgnoreBlock(IsCleric)
+-THEN DO
+-	Action(SpellPrecast,CLERIC_FLAME_BLADE)
+-END
+-
+-IF
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-	RequireBlock(IsDruid)
+-	See(NearestEnemyOf(Myself))
+-	CheckStatGT(Myself,2,Level)
+-	RequireBlock(Galactygon_Shillelagh)
+-THEN
+-    RESPONSE #100
+-	ReallyForceSpell(Myself,CLERIC_SHILLELAGH)
+-	Continue()
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-THEN DO
+-	Action(SpellPrecast,CLERIC_REMOVE_FEAR)
+-	Action(SpellPrecast,CLERIC_BLESS)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-        IgnoreBlock(SpellsAreBG1)
+-THEN DO
+-	Action(SpellPrecast,CLERIC_ARMOR_OF_FAITH)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-   RequireBlock(HasL2)
+-THEN DO
+-     Action(SpellPrecast,CLERIC_BARKSKIN)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-   RequireBlock(HasL2)
+-   IgnoreBlock(IsDruid)
+-THEN DO
+-     Action(SpellPrecast,CLERIC_CHANT)
+-     Action(SpellPrecast,CLERIC_DRAW_UPON_HOLY_MIGHT)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-   RequireBlock(HasL4)
+-THEN DO
+-     Action(SpellPrecast,CLERIC_DEFENSIVE_HARMONY)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-   IgnoreBlock(IsDruid)
+-   RequireBlock(HasL4)
+-THEN DO
+-     Action(SpellPrecast,CLERIC_FREE_ACTION)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-   RequireBlock(HasL4)
+-   IgnoreBlock(IsDruid)
+-   IgnoreBlock(SpellsAreBG1)
+-THEN DO
+-     Action(SpellPrecast,CLERIC_HOLY_POWER)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-   RequireBlock(HasL4)
+-   RequireBlock(IsAvenger)
+-THEN DO
+-     Action(SpellPrecastRES,"spdr401")
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-   RequireBlock(HasL5)
+-   IgnoreBlock(IsDruid)
+-   IgnoreBlock(SpellsAreBG1)
+-THEN DO
+-     Action(SpellPrecast,CLERIC_RIGHTEOUS_MAGIC)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-   RequireBlock(HasL6)
+-THEN DO
+-     Action(SpellPrecast,CLERIC_PHYSICAL_MIRROR)
+-END
+-
+-IF TRIGGER
+-	IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	!HasItem("dw#nopre",Myself)
+-	IgnoreBlock(HasNoPrep)
+-   RequireBlock(HasL6)
+-   !HaveSpell(CLERIC_GLOBE_OF_BLADES)
+-   IgnoreBlock(IsDruid)
+-THEN DO
+-     Action(SpellPrecast,NPC_BLADE_BARRIER)
+-END
+-
+-IF TRIGGER
+-          IgnoreBlock(IsOptionThree)
+-	optiontwosub1
+-	RequireBlock(HasL7)
+-	IgnoreBlock(HasNoPrep)
+-	RequireBlock(Refinements)
+-THEN DO
+-	Action(SpellPrecastRES,"tg#divn",divn)
+-END
+-
+-IF TRIGGER
+-          RequireBlock(IsTalosar)
+-          optiontwosub1
+-          IgnoreBlock(HasNoPrep)
+-THEN DO
+-       Action(SpellPrecast,TALOS_STORMSHIELD)
+-END
++
++IF TRIGGER
++    IgnoreBlock(IsDruid)
++	RequireBlock(HasL7)
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++	!HasItem("dw#prbig",Myself)
++	!HaveSpellRES("tg#divn")
++THEN DO
++		Action(SpellPrecast,CLERIC_SHIELD_OF_THE_ARCHONS)
++END
++
++IF TRIGGER
++    IgnoreBlock(IsDruid)
++	RequireBlock(HasL7)
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++	!HasItem("dw#prbig",Myself)
++THEN DO
++		Action(SpellPrecast,CLERIC_REGENERATE)
++END
++
 +IF TRIGGER
 +    IgnoreBlock(IsCleric)
 +	RequireBlock(HasL6)
@@ -85,59 +879,217 @@
 +END
 +
 +
- IF  TRIGGER
- 	RequireBlock(HasL7)
- 	IgnoreBlock(IsOptionThree)
-@@ -80,6 +94,7 @@
- END
- 
- IF TRIGGER
-+    IgnoreBlock(IsDruid)
- 	IgnoreBlock(IsOptionThree)
- 	optiontwosub1
- 	!HasItem("dw#nopre",Myself)
-@@ -100,6 +115,7 @@
- END
- 
- IF TRIGGER
++IF TRIGGER
 +    IgnoreBlock(IsCleric)
- 	IgnoreBlock(IsOptionThree)
- 	optiontwosub1
- 	!HasItem("dw#nopre",Myself)
-@@ -122,6 +138,7 @@
- END
- 
- IF TRIGGER
++	RequireBlock(HasL6)
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++	!HasItem("dw#prbig",Myself)
++THEN DO
++		Action(SpellPrecast,CLERIC_REGENERATE)
++END
++
++
++IF  TRIGGER
++	RequireBlock(HasL7)
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++		Action(SpellPrecast,CLERIC_GLOBE_OF_BLADES)
++		Action(SpellPrecast,CLERIC_AURA_OF_FLAMING_DEATH)
++END
++
++IF TRIGGER
++	RequireBlock(HasL5)
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,CLERIC_MAGIC_RESISTANCE)
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++	IgnoreBlock(IsCleric)
++THEN DO
++	Action(SpellPrecast,CLERIC_SHILLELAGH)
++END
++
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++	IgnoreBlock(IsCleric)
++THEN DO
++	Action(SpellPrecast,CLERIC_FLAME_BLADE)
++END
++
++IF
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++	RequireBlock(IsDruid)
++	See(NearestEnemyOf(Myself))
++	CheckStatGT(Myself,2,Level)
++	RequireBlock(Galactygon_Shillelagh)
++THEN
++    RESPONSE #100
++	ReallyForceSpell(Myself,CLERIC_SHILLELAGH)
++	Continue()
++END
++
++IF TRIGGER
 +    IgnoreBlock(IsDruid)
- 	IgnoreBlock(IsOptionThree)
- 	optiontwosub1
- 	!HasItem("dw#nopre",Myself)
-@@ -136,7 +153,6 @@
- 	optiontwosub1
- 	!HasItem("dw#nopre",Myself)
- 	IgnoreBlock(HasNoPrep)
--   IgnoreBlock(IsDruid)
-    RequireBlock(HasL4)
- THEN DO
-      Action(SpellPrecast,CLERIC_FREE_ACTION)
-@@ -178,6 +194,7 @@
- END
- 
- IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++THEN DO
++	Action(SpellPrecast,CLERIC_REMOVE_FEAR)
++	Action(SpellPrecast,CLERIC_BLESS)
++END
++
++IF TRIGGER
 +    IgnoreBlock(IsDruid)
- 	IgnoreBlock(IsOptionThree)
- 	optiontwosub1
- 	!HasItem("dw#nopre",Myself)
-@@ -193,10 +210,10 @@
- 	!HasItem("dw#nopre",Myself)
- 	IgnoreBlock(HasNoPrep)
-    RequireBlock(HasL6)
--   !HaveSpell(CLERIC_GLOBE_OF_BLADES)
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++        IgnoreBlock(SpellsAreBG1)
++THEN DO
++	Action(SpellPrecast,CLERIC_ARMOR_OF_FAITH)
++END
++
++IF TRIGGER
++    IgnoreBlock(IsCleric)
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++   RequireBlock(HasL2)
++THEN DO
++     Action(SpellPrecast,CLERIC_BARKSKIN)
++END
++
++IF TRIGGER
++    IgnoreBlock(IsCleric)
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++   RequireBlock(HasL2)
++   IgnoreBlock(IsDruid)
++THEN DO
++     Action(SpellPrecast,CLERIC_CHANT)
++     Action(SpellPrecast,CLERIC_DRAW_UPON_HOLY_MIGHT)
++END
++
++IF TRIGGER
++    IgnoreBlock(IsDruid)
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++   RequireBlock(HasL4)
++THEN DO
++     Action(SpellPrecast,CLERIC_DEFENSIVE_HARMONY)
++END
++
++IF TRIGGER
++    IgnoreBlock(IsDruid)
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++   RequireBlock(HasL4)
++THEN DO
++     Action(SpellPrecast,CLERIC_FREE_ACTION)
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++   RequireBlock(HasL4)
++   IgnoreBlock(IsDruid)
++   IgnoreBlock(SpellsAreBG1)
++THEN DO
++     Action(SpellPrecast,CLERIC_HOLY_POWER)
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++   RequireBlock(HasL4)
++   RequireBlock(IsAvenger)
++THEN DO
++     Action(SpellPrecastRES,"spdr401")
++END
++
++IF TRIGGER
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++   RequireBlock(HasL5)
++   IgnoreBlock(IsDruid)
++   IgnoreBlock(SpellsAreBG1)
++THEN DO
++     Action(SpellPrecast,CLERIC_RIGHTEOUS_MAGIC)
++END
++
++IF TRIGGER
++    IgnoreBlock(IsDruid)
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++   RequireBlock(HasL6)
++THEN DO
++     Action(SpellPrecast,CLERIC_PHYSICAL_MIRROR)
++END
++
++IF TRIGGER
++    IgnoreBlock(IsDruid)
++	IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	!HasItem("dw#nopre",Myself)
++	IgnoreBlock(HasNoPrep)
++   RequireBlock(HasL6)
 +   HaveSpell(CLERIC_BLADE_BARRIER)
-    IgnoreBlock(IsDruid)
- THEN DO
--     Action(SpellPrecast,NPC_BLADE_BARRIER)
++   IgnoreBlock(IsDruid)
++THEN DO
 +     Action(SpellPrecast,CLERIC_BLADE_BARRIER)
- END
- 
- IF TRIGGER
++END
++
++IF TRIGGER
++          IgnoreBlock(IsOptionThree)
++	optiontwosub1
++	RequireBlock(HasL7)
++	IgnoreBlock(HasNoPrep)
++	RequireBlock(Refinements)
++THEN DO
++	Action(SpellPrecastRES,"tg#divn",divn)
++END
++
++IF TRIGGER
++          RequireBlock(IsTalosar)
++          optiontwosub1
++          IgnoreBlock(HasNoPrep)
++THEN DO
++       Action(SpellPrecast,TALOS_STORMSHIELD)
++END

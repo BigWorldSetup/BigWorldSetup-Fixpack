@@ -1,11 +1,33 @@
---- stratagems/priest/ssl/bg2/combatblocks/insects.ssl	2016-11-20 18:27:15.509549200 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/insects.ssl	2016-12-01 15:11:46.564926900 -0500
-@@ -7,7 +7,7 @@
- 	TargetBlock(PCSpellcasters)
- 	TargetBlock(PCsInOrderShort)
- 	TargetBlock(Celestials)
+--- stratagems/priest/ssl/bg2/combatblocks/insects.ssl	2018-08-21 11:17:54.233195600 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/insects.ssl	2018-08-21 11:36:59.420033300 +0200
+@@ -1,15 +1,15 @@
+-
+-///////////////////////////////////////////////////////////////
+-///	Insect Plague etc
+-///////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	TargetBlock(PCSpellcasters)
+-	TargetBlock(PCsInOrderShort)
+-	TargetBlock(Celestials)
 -	TriggerBlock(MR100|SIConjuration|Enemy|Helpless)
+-	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
+-THEN DO
+-	Action(Spell,CLERIC_INSECT_PLAGUE|200|100)
+-	Action(Spell,CLERIC_SUMMON_INSECTS|200|100)
+-END
++
++///////////////////////////////////////////////////////////////
++///	Insect Plague etc
++///////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	TargetBlock(PCSpellcasters)
++	TargetBlock(PCsInOrderShort)
++	TargetBlock(Celestials)
 +	TriggerBlock(MR100|Enemy|Helpless)
- 	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
- THEN DO
- 	Action(Spell,CLERIC_INSECT_PLAGUE|200|100)
++	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
++THEN DO
++	Action(Spell,CLERIC_INSECT_PLAGUE|200|100)
++	Action(Spell,CLERIC_SUMMON_INSECTS|200|100)
++END

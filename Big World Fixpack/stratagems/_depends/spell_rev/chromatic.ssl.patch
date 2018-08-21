@@ -1,22 +1,44 @@
---- stratagems/priest/ssl/bg1/combatblocks/chromatic.ssl	2016-11-20 18:27:15.474524500 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chromatic.ssl	2016-12-01 15:11:46.541910300 -0500
-@@ -3,7 +3,7 @@
- 	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC)&HPPercentLT(scstarget,40))
- 	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
- 	TargetBlock(EnemiesInOrderShort)
+--- stratagems/priest/ssl/bg1/combatblocks/chromatic.ssl	2018-08-21 11:17:54.215196300 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chromatic.ssl	2018-08-21 11:36:59.400034000 +0200
+@@ -1,10 +1,10 @@
+-IF TRIGGER
+-	RequireBlock(IsAvenger)
+-	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC)&HPPercentLT(scstarget,40))
+-	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
+-	TargetBlock(EnemiesInOrderShort)
 -	TriggerBlock(MR100|MinorGlobe|SpellTurn|Enemy|MagicMissile)
+-THEN DO
+-	Combine()
+-	Action(SpellRES,"spdr101"|100|50)
++IF TRIGGER
++	RequireBlock(IsAvenger)
++	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC)&HPPercentLT(scstarget,40))
++	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
++	TargetBlock(EnemiesInOrderShort)
 +	TriggerBlock(MR100|MinorGlobe|SpellTurnNew|Enemy)
- THEN DO
- 	Combine()
- 	Action(SpellRES,"spdr101"|100|50)
---- stratagems/priest/ssl/bg2/combatblocks/chromatic.ssl	2016-11-20 18:27:15.495539200 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chromatic.ssl	2016-12-01 15:11:46.554919400 -0500
-@@ -3,7 +3,7 @@
- 	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC)&HPPercentLT(scstarget,40))
- 	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
- 	TargetBlock(EnemiesInOrderShort)
++THEN DO
++	Combine()
++	Action(SpellRES,"spdr101"|100|50)
+ END
+--- stratagems/priest/ssl/bg2/combatblocks/chromatic.ssl	2018-08-21 11:17:54.226195500 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chromatic.ssl	2018-08-21 11:36:59.411033200 +0200
+@@ -1,10 +1,10 @@
+-IF TRIGGER
+-	RequireBlock(IsAvenger)
+-	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC)&HPPercentLT(scstarget,40))
+-	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
+-	TargetBlock(EnemiesInOrderShort)
 -	TriggerBlock(MR100|MinorGlobe|SpellTurn|Enemy|MagicMissile)
+-THEN DO
+-	Combine()
+-	Action(SpellRES,"spdr101"|100|50)
++IF TRIGGER
++	RequireBlock(IsAvenger)
++	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC)&HPPercentLT(scstarget,40))
++	ConditionalTargetBlock(PCsPreferringWeak;!CheckStatGT(scstarget,50,RESISTMAGIC))
++	TargetBlock(EnemiesInOrderShort)
 +	TriggerBlock(MR100|MinorGlobe|SpellTurnNew|Enemy)
- THEN DO
- 	Combine()
- 	Action(SpellRES,"spdr101"|100|50)
++THEN DO
++	Combine()
++	Action(SpellRES,"spdr101"|100|50)
+ END

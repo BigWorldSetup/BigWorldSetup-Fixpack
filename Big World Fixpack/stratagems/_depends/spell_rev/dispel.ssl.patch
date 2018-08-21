@@ -1,20 +1,157 @@
---- stratagems/fiend/ssl/dispel.ssl	2016-11-20 18:27:15.381458400 -0500
-+++ Fixpack/stratagems/fiend/ssl/dispel.ssl	2016-12-01 15:11:46.475865200 -0500
-@@ -23,7 +23,7 @@
- 		!CheckStatGT(Playerscsvar,0,CLERIC_INSECT_PLAGUE)
- 		!Allegiance(Playerscsvar,ENEMY)
- 	END LOOP
+--- stratagems/fiend/ssl/dispel.ssl	2018-08-21 11:17:54.159197300 +0200
++++ Fixpack/stratagems/fiend/ssl/dispel.ssl	2018-08-21 11:36:59.336035600 +0200
+@@ -1,77 +1,77 @@
+-IF TRIGGER
+-	Allegiance(Myself,ENEMY)
+-	!GlobalTimerNotExpired("DMWW_first_dispel","LOCALS")
+-	RequireBlock(FirstDispel)
+-	TargetBlock(PCsInOrder)
+-	OR(14)
+-		CheckStatGT(scstarget,0,STONESKINS)
+-		CheckStatGT(scstarget,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+-		CheckStatGT(scstarget,99,MAGICDAMAGERESISTANCE)
+-		StateCheck(scstarget,STATE_IMPROVEDINVISIBILITY)
+-		StateCheck(scstarget,STATE_BLESS)
+-		StateCheck(scstarget,STATE_CHANT)
+-		StateCheck(scstarget,STATE_HASTED)
+-		StateCheck(scstarget,STATE_MIRRORIMAGE)
+-		CheckStatGT(scstarget,0,CLERIC_DEFENSIVE_HARMONY)
+-		CheckStatGT(scstarget,0,PROTECTION_FROM_EVIL)
+-		CheckStatGT(scstarget,0,CLERIC_PHYSICAL_MIRROR)
+-		CheckStatGT(scstarget,0,CLERIC_CHAOTIC_COMMANDS)
+-		CheckStatGT(scstarget,0,WIZARD_PROTECTION_FROM_PETRIFICATION)
+-		CheckStatGT(scstarget,0,SCRIPTINGSTATE2)
+-	BEGIN LOOP(scsvar||1;2;3;4;5;6)
+-		!StateCheck(Playerscsvar,STATE_DISABLED)
+-		!CheckStatGT(Playerscsvar,0,CLERIC_INSECT_PLAGUE)
+-		!Allegiance(Playerscsvar,ENEMY)
+-	END LOOP
 -	TriggerBlock(SIAbjuration|Enemy)
-+	TriggerBlock(Enemy)
- THEN DO
- 	Combine()
- 	SetGlobalTimer("DMWW_dispel","LOCALS",18)
-@@ -55,7 +55,7 @@
- 		!CheckStatGT(Playerscsvar,0,CLERIC_INSECT_PLAGUE)
- 		!Allegiance(Playerscsvar,ENEMY)
- 	END LOOP
+-THEN DO
+-	Combine()
+-	SetGlobalTimer("DMWW_dispel","LOCALS",18)
+-	SetGlobalTimer("DMWW_first_dispel","LOCALS",18)
+-	Action(SpellNoDec,WIZARD_DISPEL_MAGIC)
+-END
+-
+-IF TRIGGER
+-	Allegiance(Myself,ENEMY)
+-	!GlobalTimerNotExpired("DMWW_dispel","LOCALS")
+-	TargetBlock(PCsInOrder)
+-	OR(14)
+-		CheckStatGT(scstarget,0,STONESKINS)
+-		CheckStatGT(scstarget,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+-		CheckStatGT(scstarget,99,MAGICDAMAGERESISTANCE)
+-		StateCheck(scstarget,STATE_IMPROVEDINVISIBILITY)
+-		StateCheck(scstarget,STATE_BLESS)
+-		StateCheck(scstarget,STATE_CHANT)
+-		StateCheck(scstarget,STATE_HASTED)
+-		StateCheck(scstarget,STATE_MIRRORIMAGE)
+-		CheckStatGT(scstarget,0,CLERIC_DEFENSIVE_HARMONY)
+-		CheckStatGT(scstarget,0,PROTECTION_FROM_EVIL)
+-		CheckStatGT(scstarget,0,CLERIC_PHYSICAL_MIRROR)
+-		CheckStatGT(scstarget,0,CLERIC_CHAOTIC_COMMANDS)
+-		CheckStatGT(scstarget,0,WIZARD_PROTECTION_FROM_PETRIFICATION)
+-		CheckStatGT(scstarget,0,SCRIPTINGSTATE2)
+-	BEGIN LOOP(scsvar||1;2;3;4;5;6)
+-		!StateCheck(Playerscsvar,STATE_DISABLED)
+-		!CheckStatGT(Playerscsvar,0,CLERIC_INSECT_PLAGUE)
+-		!Allegiance(Playerscsvar,ENEMY)
+-	END LOOP
 -	TriggerBlock(SIAbjuration|Enemy)
+-THEN DO
+-	Combine()
+-	SetGlobalTimer("DMWW_dispel","LOCALS",18)
+-	Action(SpellNoDec,WIZARD_DISPEL_MAGIC|100|100)
+-END
+-
+-IF TRIGGER
+-	!GlobalTimerNotExpired("DMWW_dispel","LOCALS")
+-	GlobalTimerNotExpired("DMWWUndeadParanoia","GLOBAL")
+-	Target(NearestEnemyOfType([PC]))
+-	BEGIN LOOP(scsvar||1;2;3;4;5;6)
+-		!StateCheck(Playerscsvar,STATE_DISABLED)
+-		!Allegiance(Playerscsvar,ENEMY)
+-	END LOOP
+-THEN DO
+-	SetGlobalTimer("DMWW_dispel","LOCALS",18)
+-	Action(SpellNoDec,WIZARD_DISPEL_MAGIC)
+-END
+-	
++IF TRIGGER
++	Allegiance(Myself,ENEMY)
++	!GlobalTimerNotExpired("DMWW_first_dispel","LOCALS")
++	RequireBlock(FirstDispel)
++	TargetBlock(PCsInOrder)
++	OR(14)
++		CheckStatGT(scstarget,0,STONESKINS)
++		CheckStatGT(scstarget,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
++		CheckStatGT(scstarget,99,MAGICDAMAGERESISTANCE)
++		StateCheck(scstarget,STATE_IMPROVEDINVISIBILITY)
++		StateCheck(scstarget,STATE_BLESS)
++		StateCheck(scstarget,STATE_CHANT)
++		StateCheck(scstarget,STATE_HASTED)
++		StateCheck(scstarget,STATE_MIRRORIMAGE)
++		CheckStatGT(scstarget,0,CLERIC_DEFENSIVE_HARMONY)
++		CheckStatGT(scstarget,0,PROTECTION_FROM_EVIL)
++		CheckStatGT(scstarget,0,CLERIC_PHYSICAL_MIRROR)
++		CheckStatGT(scstarget,0,CLERIC_CHAOTIC_COMMANDS)
++		CheckStatGT(scstarget,0,WIZARD_PROTECTION_FROM_PETRIFICATION)
++		CheckStatGT(scstarget,0,SCRIPTINGSTATE2)
++	BEGIN LOOP(scsvar||1;2;3;4;5;6)
++		!StateCheck(Playerscsvar,STATE_DISABLED)
++		!CheckStatGT(Playerscsvar,0,CLERIC_INSECT_PLAGUE)
++		!Allegiance(Playerscsvar,ENEMY)
++	END LOOP
 +	TriggerBlock(Enemy)
- THEN DO
- 	Combine()
- 	SetGlobalTimer("DMWW_dispel","LOCALS",18)
++THEN DO
++	Combine()
++	SetGlobalTimer("DMWW_dispel","LOCALS",18)
++	SetGlobalTimer("DMWW_first_dispel","LOCALS",18)
++	Action(SpellNoDec,WIZARD_DISPEL_MAGIC)
++END
++
++IF TRIGGER
++	Allegiance(Myself,ENEMY)
++	!GlobalTimerNotExpired("DMWW_dispel","LOCALS")
++	TargetBlock(PCsInOrder)
++	OR(14)
++		CheckStatGT(scstarget,0,STONESKINS)
++		CheckStatGT(scstarget,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
++		CheckStatGT(scstarget,99,MAGICDAMAGERESISTANCE)
++		StateCheck(scstarget,STATE_IMPROVEDINVISIBILITY)
++		StateCheck(scstarget,STATE_BLESS)
++		StateCheck(scstarget,STATE_CHANT)
++		StateCheck(scstarget,STATE_HASTED)
++		StateCheck(scstarget,STATE_MIRRORIMAGE)
++		CheckStatGT(scstarget,0,CLERIC_DEFENSIVE_HARMONY)
++		CheckStatGT(scstarget,0,PROTECTION_FROM_EVIL)
++		CheckStatGT(scstarget,0,CLERIC_PHYSICAL_MIRROR)
++		CheckStatGT(scstarget,0,CLERIC_CHAOTIC_COMMANDS)
++		CheckStatGT(scstarget,0,WIZARD_PROTECTION_FROM_PETRIFICATION)
++		CheckStatGT(scstarget,0,SCRIPTINGSTATE2)
++	BEGIN LOOP(scsvar||1;2;3;4;5;6)
++		!StateCheck(Playerscsvar,STATE_DISABLED)
++		!CheckStatGT(Playerscsvar,0,CLERIC_INSECT_PLAGUE)
++		!Allegiance(Playerscsvar,ENEMY)
++	END LOOP
++	TriggerBlock(Enemy)
++THEN DO
++	Combine()
++	SetGlobalTimer("DMWW_dispel","LOCALS",18)
++	Action(SpellNoDec,WIZARD_DISPEL_MAGIC|100|100)
++END
++
++IF TRIGGER
++	!GlobalTimerNotExpired("DMWW_dispel","LOCALS")
++	GlobalTimerNotExpired("DMWWUndeadParanoia","GLOBAL")
++	Target(NearestEnemyOfType([PC]))
++	BEGIN LOOP(scsvar||1;2;3;4;5;6)
++		!StateCheck(Playerscsvar,STATE_DISABLED)
++		!Allegiance(Playerscsvar,ENEMY)
++	END LOOP
++THEN DO
++	SetGlobalTimer("DMWW_dispel","LOCALS",18)
++	Action(SpellNoDec,WIZARD_DISPEL_MAGIC)
++END
++	

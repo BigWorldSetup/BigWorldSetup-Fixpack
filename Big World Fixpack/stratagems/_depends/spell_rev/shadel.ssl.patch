@@ -1,5 +1,5 @@
---- stratagems/tactical_bg2/ssl/shadel.ssl	2016-11-20 18:27:15.544574200 -0500
-+++ Fixpack/stratagems/tactical_bg2/ssl/shadel.ssl	2016-09-16 11:30:00.318008200 -0400
+--- stratagems/tactical_bg2/ssl/shadel.ssl	2018-08-21 11:17:54.250195100 +0200
++++ Fixpack/stratagems/tactical_bg2/ssl/shadel.ssl	2018-08-21 11:36:59.440032400 +0200
 @@ -208,7 +208,7 @@
  	TargetBlock(PCsPreferringStrong)
  	TargetBlock(Celestials)

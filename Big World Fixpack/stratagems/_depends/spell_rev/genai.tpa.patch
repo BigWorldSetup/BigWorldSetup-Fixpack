@@ -1,0 +1,1183 @@
+--- stratagems/genai/genai.tpa	2018-08-21 11:17:54.168197300 +0200
++++ Fixpack/stratagems/genai/genai.tpa	2018-08-21 11:36:59.346036400 +0200
+@@ -1,590 +1,590 @@
+-DEFINE_ACTION_FUNCTION genai BEGIN
+-
+-     LAF include STR_VAR file=~genai_shared.tph deployment.tph~ END
+-   LAM read_in_genai_item_data
+-   LAM read_in_clab_spelldata
+-   LAM read_in_proficiency_progression
+-   LAM read_in_proficiencies
+-   LAM read_in_hla_preferences
+-   LAM read_in_hla_prerequisites
+-     LAF genai_polymorph END
+-     LAF pc_summons END
+-     LAF edit_creatures_before END
+-     LAF kits_levels END
+-     LAF apply_genai_changes END
+-     LAF edit_creatures_after END
+-     ACTION_IF is_bg1 BEGIN
+-        LAF check_ini STR_VAR ini=no_deployment_change RET value END
+-        ACTION_IF value=0 BEGIN
+-           LAF deployment END
+-        END
+-     END
+-
+-
+-END
+-
+-////////////////////////////////////////////////////////////////////////////////////
+-///    Deal with PC-summoned creatures
+-////////////////////////////////////////////////////////////////////////////////////
+-
+-DEFINE_ACTION_FUNCTION pc_summons BEGIN
+-
+-   LAF ssl_to_bcs STR_VAR script=~dw#summe dw#sumrn dw#sumtw~ location=ssl variable="MyWeaponDamageType=MultipleDamageType&MyWeaponStrength=Unknown" END
+-
+-   ACTION_IF FILE_EXISTS_IN_GAME ~gminionm.bcs~ BEGIN //GMinion installed
+-       LAF compile_rename STR_VAR file="summon_gminion=>dw#sumei summon_gminion_ranged=>dw#surni summon_gminion=>dw#sutwi" location=baf END
+-   END ELSE BEGIN
+-       LAF compile_rename STR_VAR file="summon_vanilla=>dw#sumei summon_vanilla_ranged=>dw#surni summon_vanilla_twoattack=>dw#sutwi" location=baf END
+-   END
+-
+-   LAF edit_creature STR_VAR creature=~ogrelesu worgsu dogwisu gnollsu wolfdisu ogresu
+-                                       ogregrsu spidgisu spidphsu spidswsu
+-                                       ghastsu skelwasu elairsu1 elearsu1 elfirsu1 carriosu
+-                                       elairsuw elairsu2 elairsu3 elfirsu2 elfirsu3 elfirsu4
+-                                       stalke nishrusu sword01 haksu~
+-                             editstring=~strip_script=>dw#sumei insert_script_high=>dw#sumei~
+-                             allow_missing=1
+-   END
+-   LAF edit_creature STR_VAR creature=~ettercsu wyvernsu~
+-                             editstring=~strip_script=>dw#sutwi insert_script_high=>dw#sutwi~
+-                             allow_missing=1
+-   END
+-
+-   LAF edit_creature STR_VAR creature=~koboldsu hobgobsu~
+-                             editstring=~strip_script=>dw#surni insert_script_high=>dw#surni~
+-                             allow_missing=1
+-   END
+-
+-   ACTION_IF FILE_EXISTS_IN_GAME ~_asloisu.cre~ BEGIN // check for d0tweak - NB this is "_" even in BGT
+-       ACTION_FOR_EACH crebase IN asloi dogwa dogwi earbl earbr earca earpo flind gnoll grebe greha
+-                                  grill ibber obgob obold ogre olfdi olfdr tterc wolf worg xvart zombi
+-                                  ske1 ske2 ske3 ske4 ske5
+-       BEGIN
+-              LAF swap_text STR_VAR files= ~_%crebase%su.cre~ swaps=~gminionm=>dw#sumei gminionr=>dw#surni~ allow_missing=1 END
+-       END
+-   END
+-
+-END
+-
+-////////////////////////////////////////////////////////////////////////////////////
+-///    Edits to be made before running the automated code. As much as possible, put
+-///    edits here.
+-////////////////////////////////////////////////////////////////////////////////////
+-
+-DEFINE_ACTION_FUNCTION edit_creatures_before BEGIN
+-
+-    ACTION_IF is_bg1 BEGIN
+-    
+-       // Genthor's weapons need tweaking
+-
+-       MAKE_PATCH
+-        remove_items => ~%tutu_var%dagg05 %tutu_var%dart01 %tutu_var%dagg01~
+-        replace_items => ~%tutu_var%ax1h04(WEAPON1,x5) %tutu_var%ax1h04(WEAPON2,x5) %tutu_var%ax1h01(WEAPON3)~
+-       END
+-       LAF edit_creature STR_VAR creature=gentho tv=1 edits=patch_data END
+-
+-      //  Monsters shouldn't be able to move between areas in Ramazith's tower; Rezdan shouldn't run like a baby in the Cloakwood battle
+-
+-        MAKE_PATCH
+-           match=>"trigger_type=2"
+-           impassable_by_NPC=>1
+-        END
+-        LAF edit_area STR_VAR   area=~%NBaldursGate_RamazithsTower_L1%
+-                                      %NBaldursGate_RamazithsTower_L2%
+-                                      %NBaldursGate_RamazithsTower_L3%
+-                                      %NBaldursGate_RamazithsTower_L4%
+-                                      %NBaldursGate_RamazithsTower_L5%
+-                                      %NBaldursGate_RamazithsTower_L6%
+-                                      %CloakwoodMines%~
+-                              editstring=~patch_trigger=>patch_data~
+-        END
+-        
+-      // Caturak et al shouldn't prioritise Gorpel Hind
+-      
+-      LAF edit_creature STR_VAR creature=~catura gretek nader~ tv=1 editstring=~strip_script=>%tutu_scripta%ttkally~ END
+-
+-      // filter the attack block out of doppelganger and Greywolf
+-
+-      LAF compile_rename STR_VAR files=~dopspell=>%tutu_scriptd%opspell greywolf=>%tutu_scriptg%reywolf~ location=baf END
+-      
+-      // give a few BG1 characters dual-wielding
+-      // Gardush, Molkar, Haseo, Gretek, Greywolf
+-      
+-      LAF edit_creature STR_VAR creature=~gardus molkar greywo haseo~ tv=1 editstring=~replace_items=>%tutu_var%sw1h04(SHIELD)~ END
+-
+-      LAF edit_creature STR_VAR creature=gretek tv=1 editstring=~replace_items=>%tutu_var%ax1h01(SHIELD)~ END
+-
+-      // kobolds need a combat script in addition to their help script
+-      
+-      LAF edit_creature STR_VAR creature=~%tutu_var%kobold3 %tutu_var%kobold7 %tutu_scriptk%obold_a %tutu_scriptk%obold_b %tutu_scriptk%obold_c %tutu_scriptk%obold_d %tutu_scriptk%obold_e~
+-                                editstring=~strip_script=>wtasight insert_script_low=>%tutu_scriptw%tasight~
+-      END
+-      
+-      // class correction for merchant league guards
+-      
+-      LAF edit_creature STR_VAR creature=~leaggu1 leaggu2 leaggu7~ tv=1 editstring=~class=>FIGHTER enforce_saves=>null enforce_thac0=>null~ END
+-
+-      // Dryad of the Cloudpeaks doesn't need wtrunsgt
+-      
+-      LAF edit_creature STR_VAR creature= ~%tutu_var%dryad~ editstring= ~strip_script=>%tutu_scriptw%trunsgt~ END
+-
+-        // these creatures need hand weapons
+-        
+-        LAF edit_creature STR_VAR creature="alvanh" tv=1 editstring="add_items=>blun04" END
+-        LAF edit_creature STR_VAR creature="d2fue dopfue kestor niklos prat tellan" tv=1 editstring="add_items=>sw1h07" END
+-
+-        // these EE creatures need hand weapons
+-        
+-        LAF edit_creature STR_VAR creature="negob01 neguar01 nemagreb" editstring="add_items=>sw1h07" allow_missing=1 END
+-
+-        // these ranged-only innate weapons need melee versions
+-
+-        MAKE_PATCH
+-           match=>"ability_type=2"
+-           ability_type=>1
+-        END
+-
+-        LAF clone_item STR_VAR item="%tutu_var%jelloc1=>dw#jeloc" editstring="patch_ability=>patch_data" END
+-        LAF edit_creature STR_VAR creature="jelloc jellyco" tv=1 allow_missing=1 editstring="add_items=>dw#jeloc(weapon)" END
+-
+-        LAF clone_item STR_VAR item="%tutu_var%oozegr1=>dw#oozeg" editstring="patch_ability=>patch_data" END
+-        LAF edit_creature STR_VAR creature="jellgr" tv=1 allow_missing=1 editstring="add_items=>dw#oozeg(weapon)" END
+-
+-        LAF clone_item STR_VAR item="%tutu_var%jellmu1=>dw#jelmu" editstring="patch_ability=>patch_data" END
+-        LAF edit_creature STR_VAR creature="jellmu jellmul jellymu" tv=1 allow_missing=1 editstring="add_items=>dw#jelmu(weapon)" END
+-
+-        LAF clone_item STR_VAR item="%tutu_var%jellmu2=>dw#jelm2" editstring="patch_ability=>patch_data" END
+-        LAF edit_creature STR_VAR creature="jellspa" tv=1 allow_missing=1 editstring="add_items=>dw#jelm2(weapon)" END
+-
+-        LAF clone_item STR_VAR item="schlum1=>dw#schlu" editstring="patch_ability=>patch_data" END
+-        LAF edit_creature STR_VAR creature="schlum" tv=1 allow_missing=1 editstring="add_items=>dw#schlu(weapon)" END
+-
+-        // Hobgoblin elites should count as fighters and should get a reasonable DEX
+-
+-        LAF edit_creature STR_VAR creature="%tutu_scripth%obelite" editstring="class=>FIGHTER dexterity=>15" END
+-
+-    END // end of BG1 part
+-
+-    ACTION_IF is_bg2 BEGIN
+-      	// these creatures need hand weapons
+-
+-        LAF edit_creature STR_VAR creature=~icgob01 icgob02 rethie01 crothf02 fshorde2 fshorde6 orc02~
+-                                  editstring=~add_items=>sw1h07~
+-        END
+-        LAF edit_creature STR_VAR creature=~bodfgt02 gororc02 hlarch suelfw13 suelfw14 suelfw15 ysgrunt ysguar02 ysguar05 yssold02~
+-                                  editstring=~add_items=>sw1h04~
+-        END
+-        LAF edit_creature STR_VAR creature=ar18dwaf editstring=~add_items=>ax1h01~ END
+-        LAF edit_creature STR_VAR creature=reeldar editstring=~add_items=>sw1h01~ END
+-        LAF edit_creature STR_VAR creature=alufie02 editstring=~add_items=>sw1h52~ END
+-
+-        LAF edit_creature STR_VAR creature="amtarc01 sargrd02 sargrd12 sargrd13 sargrd14 sargrd15 sargrd16 senani03 sewarc01 sewarc02 sewyag02 telsuc1 tobban02 yarmy02 zilarc01" editstring="add_items=>sw1h05" END
+-        LAF edit_creature STR_VAR creature="arnwar04 gromg03 gromg11 mookft02" editstring="add_items=>sw1h07" END
+-        LAF edit_creature STR_VAR creature=drofod03 editstring="add_items=>dwsw1h02" END
+-        LAF edit_creature STR_VAR creature=flyfgt04  editstring="add_items=>sw1h04" END
+-        LAF edit_creature STR_VAR creature=kuoarc20  editstring="add_items=>kuosper" END
+-        LAF edit_creature STR_VAR creature=sendro03 editstring="add_items=>dwsw1h01" END
+-        LAF edit_creature STR_VAR creature=tarnor editstring="add_items=>ax1h02" END
+-        LAF edit_creature STR_VAR creature=uddrow15 editstring="add_items=>dwblun01" END
+-        LAF edit_creature STR_VAR creature="udsvir03 udsvir05 udsvir06" editstring="add_items=>hamm02" END
+-        LAF edit_creature STR_VAR creature="ohhspid1" editstring="add_items=>spidsw1" allow_missing=1 END
+-        LAF edit_creature STR_VAR creature="d0qpsy02 d0qpsy04" editstring="add_items=>sw1h07" allow_missing=1 END
+-
+-        ACTION_IF !enhanced_edition BEGIN
+-              LAF edit_creature STR_VAR creature=duearc01 editstring="add_items=>ax1h01" END
+-        END
+-
+-        // these ranged-only innate weapons need melee versions
+-
+-        MAKE_PATCH
+-           match=>"ability_type=2"
+-           ability_type=>1
+-        END
+-
+-        LAF clone_item STR_VAR item="waterele=>dw#wtrel" editstring="patch_ability=>patch_data" END
+-        LAF edit_creature STR_VAR creature="elwatg01 ohbwat01" allow_missing=1 editstring="add_items=>dw#wtrel(weapon)" END
+-
+-        LAF clone_item STR_VAR item="jellgr1=>dw#jelgr" editstring="patch_ability=>patch_data" END
+-        LAF edit_creature STR_VAR creature="jelgra01 jelgre01" editstring="add_items=>dw#jelgr(weapon)" END
+-
+-        LAF clone_item STR_VAR item="jellmu1=>dw#jelmu" editstring="patch_ability=>patch_data" END
+-        LAF edit_creature STR_VAR creature="jellmu jellmusu jelmus01" editstring="add_items=>dw#jelmu(weapon)" END
+-
+-        LAF clone_item STR_VAR item="jelloc1=>dw#jeloc" editstring="patch_ability=>patch_data" END
+-        LAF edit_creature STR_VAR creature="jelloc jeloch01" editstring="add_items=>dw#jeloc(weapon)" END
+-
+-        LAF clone_item STR_VAR item="pudden01=>dw#puddn" editstring="patch_ability=>patch_data" END
+-        LAF edit_creature STR_VAR creature="pudden01 pudden02" editstring="add_items=>dw#puddn(weapon)" END
+-
+-	// these guys need equipment
+-
+-        LAF edit_creature STR_VAR creature=rethug01 editstring=~add_items=>"sw1h01 shld01 chan01"~ END
+-        LAF edit_creature STR_VAR creature=rethug04 editstring=~add_items=>"sw1h01 leat01"~ END
+-        LAF edit_creature STR_VAR creature=refigh01 editstring=~add_items=>chan04~ END
+-        LAF edit_creature STR_VAR creature=rethie01 editstring=~add_items=>leat01~ END
+-
+-
+-        // this githyanki has a somewhat-bugged set of weapon allocations
+-        
+-        MAKE_PATCH
+-           remove_items=>dart01
+-           remove_items'=>sw2h01
+-           add_items=>"dart01(x10)"
+-           add_items'=>"sw2h01"
+-        END
+-        LAF edit_creature STR_VAR creature=gith04 edits=patch_data END
+-
+-	// Thieves need swords to backstab with
+-
+-        LAF edit_creature STR_VAR creature=~arnfgt04 arnwar02 mookft01~ editstring=~swap_items=>"hamm01=>sw1h07"~ END
+-        LAF edit_creature STR_VAR creature=shth06 editstring=~swap_items=>"staf01=>sw1h07"~ END
+-        LAF edit_creature STR_VAR creature=~bmugg1 elehob01 genthf01 pirpir05 rethie02 rethie03 rethug04 vvshad5 vvshad6~
+-                                  editstring=~swap_items=>"sw1h01=>sw1h04"~
+-        END
+-        LAF edit_creature STR_VAR creature=~cambion1 telcam1~ editstring=~swap_items=>"sw1h02=>sw1h05"~ END
+-
+-	// goblins can't use composite bows, they're too weak
+-
+-        LAF edit_creature STR_VAR creature=~icgob01 icgob02~ editstring=~swap_items=>"bow01=>bow05"~ END
+-
+-	// because the goblins shift to shortbows, place a couple of longbows in AR0602
+-
+-        LAF swap_text STR_VAR files=ar0602.are swaps=~bow05=>bow03~ END
+-
+-	// class corrections
+-
+-        LAF edit_creature STR_VAR creature=~fshorde2 icgob01 icgob02 hobarc01 hobcap01~ editstring=~class=>HOBGOBLIN~ END
+-        LAF edit_creature STR_VAR creature=~kobarc01 _oboldsu swsfoll4 swsfoll5 kobcap01 swshaman kobsha01~ editstring=~class=>kobold~ allow_missing=1 END
+-        LAF edit_creature STR_VAR creature=~chang01 chang02 elehob01 rock garock~ editstring=~class=>FIGHTER~ END
+-        LAF edit_creature STR_VAR creature=~palkni02 palkni04~ editstring=~class=>OGRE~ END
+-        LAF edit_creature STR_VAR creature=~palkni01~ editstring=~class=>OGRE_MAGE~ END
+-        LAF edit_creature STR_VAR creature=~palkni03~ editstring=~class=>GNOLL~ END
+-        LAF edit_creature STR_VAR creature=~palkni05~ editstring=~class=>WYVERN~ END
+-        LAF edit_creature STR_VAR creature=gorsta07 editstring=~class=>THIEF~ END
+-
+-        // stat corrections
+-        
+-        LAF edit_creature STR_VAR creature=pwarden editstring=~thac0=>3 attacks=>2~ END
+-
+-        // redundant scripts
+-
+-        LAF edit_creature STR_VAR creature=~army01 fshorde4 gororc01 orc01 orc05 rorcl01 sensmsp2~ editstring=~strip_script=>orcwar~ END
+-        LAF edit_creature STR_VAR creature=~icgob03 icgob04~ editstring=~strip_script=>koboldf~ END
+-        LAF edit_creature STR_VAR creature=hobwar01 editstring=~strip_script=>hgwarr01~ END
+-        LAF edit_creature STR_VAR creature=~fshorde6 gororc02 orc02 rorca01 orc06~ editstring=~strip_script=>oarch02~ END
+-
+-        // invisibility for hostile thieves
+-
+-        LAF edit_creature STR_VAR creature=~ARKANISG ARNWAR02 ARNWAR03 ARNWAR04 ARTEMIS C6KACH2 CAMBION1 CHALCY02 CHANG01 CHANG02 CHGOOD08 DECKASS1 FLYFGT01
+-                                            FLYFGT02 FSHORDE2 GENTHF01 GORDECK5 GORDECK6 GORDECK7 GORDECK8 GORDECK9 GORDECKA GORKUO05 HGSKL02 HLASSA HLKETTA
+-                                            ILLCAMB ILLCAMB2 KOBARC01 KUOWHI01 MOOKFT01 MOOKFT02 PLASS04 PPMUR PPTHF01 PPTHF02 REBAND01 REBAND02 RETHIE02
+-                                            RETHIE03 SENDRO05 SPMUGG SPMUGG2 SPMUGG3 STDEATH TANADV06 TANTHF01 TELCAM1 TERMER04 VAKG03 YAGA05~
+-                                  editstring=~add_effect_inline=>"opcode=>20"~
+-        END
+-        
+-        // Some areas need to be impassable by fleeing creatures to avoid trouble
+-
+-        MAKE_PATCH
+-           match=>"trigger_type=2"
+-           impassable_by_NPC=>1
+-        END
+-        
+-        LAF edit_area STR_VAR area=~ar0406 ar1000 ar1204 ar0801 ar0803 ar0808 ar0809 ar5006~ editstring=~patch_trigger=>patch_data~ END
+-
+-	// Kuo-toa spears are suitable for backstab
+-
+-        LAF edit_item STR_VAR item=kuosper editstring=~unusable_thief=>0~ END
+-        
+-        // compile the help part of the gpmerc scripts and the vanilla version of gpshout
+-        // remove the combat part of sengua04, leaving only the help part
+-
+-        ACTION_IF !FILE_EXISTS ~override/dw#help.mrk~ BEGIN
+-           LAF install STR_VAR files=~gpshout.baf dw#gphlp.baf sengua04.baf~ location=baf END
+-        END
+-
+-        // Ekeissag needs his own script
+-        
+-        LAF ssl_to_bcs STR_VAR script=sengua03 location=ssl END
+-
+-        //  hlketta and haegan lose their combat part
+-
+-	ACTION_IF !FILE_EXISTS_IN_GAME ~hlstal.bcs~ BEGIN // Tactics Guarded Compound not installed
+-	    LAF install STR_VAR files=hlketta.baf location=baf END
+-	END
+-	LAF install STR_VAR files=haegan.baf location=baf END
+-	
+-	// separate out the help parts of gorcamb4/gorcamb5
+-
+-	LAF edit_creature STR_VAR creature=gorcamb4 editstring=~insert_script=>"dw#mlcam above gorcamb4"~ END
+-	LAF edit_creature STR_VAR creature=gorcamb5 editstring=~insert_script=>"dw#mlcam above gorcamb5"~ END
+-        LAF install STR_VAR files=dw#mlcam.baf location=baf END
+-
+-        // the pirate rogues are trying to fight with two weapons, which isn't advisable at their level. Get rid
+-        // of the daggers. Also give them legal armour
+-        LAF edit_creature STR_VAR creature=ppthf01 editstring=~swap_items=>"chan01=>leat04" remove_items=>dagg01~ END
+-
+-        // likewise, Sendai's assassin incarnation can't really be effective with two weapons (I can't dual class her or multiclass her and keep the kit).
+-        // likewise Eler Had
+-
+-        LAF edit_creature STR_VAR creature=~sendai4 tobpar01~
+-                                editstring=~remove_items=>dagg24~ END
+-
+-
+-        // likewise these other creatures
+-
+-        LAF edit_creature STR_VAR creature=~chalcy02 deckass1 gorcamb4 gordeck5 gordeck6 gordeck7 gordeck8 gordeck9 gordecka sargrd05 sargrd09 sarkis01 sarkis04 sendai4 teltief2 yaga05~
+-                                editstring=~remove_items=>dagg15~ END
+-
+-        // we make hlfight into a kensai, so lose the armor; likewise sengua03
+-        
+-        LAF edit_creature STR_VAR creature=hlfight editstring="remove_items=>chan01" END
+-        LAF edit_creature STR_VAR creature=sengua03 editstring="remove_items=>dwchan01" END
+-
+-        // sengua01 is already a kensai, so the armor is illegal
+-
+-        LAF edit_creature STR_VAR creature=sengua01 editstring="remove_items=>chan12" END
+-
+-        // sengua05 needs a melee weapon
+-        
+-        LAF edit_creature STR_VAR creature=sengua05 editstring="add_items=>dwsw1h01" END
+-
+-        // Kiser Jhaeri's fighters are fairly clearly hastily respeced as fighters. We do it more systematically
+-        
+-        MAKE_PATCH
+-           kit=>NONE
+-           str=>18
+-           str_ex=>50
+-           dex=>16
+-           swap_items=>~leat02=>chan02~
+-        END
+-
+-        LAF edit_creature STR_VAR creature=~sarkis02 sarkis03~ edits=patch_data END
+-        
+-        // Ist'tar Jael'lat looks as if he's supposed to have two swords, but the slots are wrong
+-        
+-        MAKE_PATCH
+-           remove_items=>~dwsw1h02~
+-           add_items=>dwsw1h02
+-           add_items'=>~dwsw1h02(SHIELD)~
+-        END
+-        LAF edit_creature STR_VAR creature=jael03 edits=patch_data END
+-        
+-        // Revan (in Twisted Rune) has no equipment
+-        ACTION_IF !(FILE_EXISTS_IN_GAME ~udelder2.cre~) THEN BEGIN // check for this component of quest pack being installed
+-                OUTER_SPRINT editstring ~add_items=>"helm01 xbow07 sw2h11 plat04 bolt03(x20)"~
+-        END ELSE BEGIN  // we'll fix the Revanek bug in QP to avoid reports
+-                OUTER_SPRINT editstring ~script_default=>wtarsgt~
+-        END
+-        LAF edit_creature STR_VAR creature=hlrevan editstring END
+-        
+-        // these multi-class creatures are erroneously flagged as having an original class
+-        
+-        LAF edit_creature STR_VAR creature="kuopri01 kuowhi01 elekuo02 gorkuo03 gorkuo05 udkuo02 udprince" editstring="original_class=>none" END
+-
+-        // Paladins and blackguards need baseline innate-deva-summoning spells in case Smarter Celestials isn't installed
+-        
+-        ACTION_DEFINE_ASSOCIATIVE_ARRAY priest_spell_replace_map BEGIN
+-           dw#devae=>"%CLERIC_SUMMON_FALLEN_DEVA%"
+-           dw#devag=>"%CLERIC_SUMMON_DEVA%"
+-        END
+-        
+-        ACTION_PHP_EACH priest_spell_replace_map AS new=>old BEGIN
+-           ACTION_IF !FILE_EXISTS_IN_GAME ~%new%.spl~ BEGIN
+-              LAF clone_spell STR_VAR spell= ~%old%=>%new%~ END
+-           END
+-        END
+-
+-        // This non-combat NPC has a confused kit, which leads to a harmless warning message; best suppress it anyway
+-        
+-        LAF edit_creature STR_VAR creature=sevdru01 editstring="kit=>none" END
+-
+-     END // end of BG2 part
+-
+-END
+-
+-////////////////////////////////////////////////////////////////////////////////////
+-///    Modify kits/levels for consistency and (in the case of kits) interest
+-////////////////////////////////////////////////////////////////////////////////////
+-
+-DEFINE_ACTION_FUNCTION kits_levels BEGIN
+-
+-     ACTION_FOR_EACH game IN bg1 bg2 BEGIN
+-
+-        ACTION_IF  ~%is_%game%%~=1 BEGIN
+-
+-           // kits
+-           LAF action_check_ini STR_VAR ini=genai_does_not_adjust_kits RET value=value END
+-           ACTION_IF value=0 BEGIN
+-            ACTION_BASH_FOR ~%scsroot%/%component_loc%/kit_override/%game%~ ~.*\.2da~ BEGIN
+-              ACTION_IF IDS_OF_SYMBOL (kit "%BASH_FOR_RES%")>=0 BEGIN
+-                LAF edit_creature STR_VAR file=~kit_override/%game%/%BASH_FOR_RES%.2da~
+-                                         editstring=~kit=>%BASH_FOR_RES%~
+-                END
+-                ACTION_IF "%BASH_FOR_RES%" STRING_EQUAL_CASE "blackguard" BEGIN
+-                   LAF edit_creature STR_VAR file=~kit_override/%game%/%BASH_FOR_RES%.2da~
+-                                         editstring=~class=>paladin~
+-                   END
+-                END
+-              END
+-            END
+-           END
+-           
+-           // levels
+-
+-           LAF action_check_ini STR_VAR ini=genai_does_not_adjust_levels RET value=value END
+-           ACTION_IF value=0 BEGIN
+-             LAF read_in_assoc_array STR_VAR location=level_override file=~%game%.2da~ RET list=list END
+-             OUTER_WHILE ~%list%~ STRING_COMPARE ~~ BEGIN
+-              LAF return_first_pair STR_VAR list RET creature=key level=value list=list END
+-              LAF edit_creature STR_VAR creature editstring=~level=>%level% enforce_saves=>null enforce_thac0=>null~ END
+-             END
+-           END
+-
+-        END
+-        
+-        
+-
+-     END
+-
+-
+-
+-
+-END
+-
+-
+-////////////////////////////////////////////////////////////////////////////////////
+-///    Apply core changes to CRE files
+-////////////////////////////////////////////////////////////////////////////////////
+-
+-DEFINE_ACTION_FUNCTION apply_genai_changes BEGIN
+-
+-   LAF check_ini STR_VAR ini=~genai_does_not_adjust_profs~ RET value END
+-   ACTION_IF value BEGIN
+-      OUTER_SPRINT genai_set "scripts kit hla conditional"
+-   END ELSE BEGIN
+-      OUTER_SPRINT genai_set "all conditional"
+-   END
+-   OUTER_SET counter=0
+-   OUTER_SET counter2=0
+-   ACTION_IF VARIABLE_IS_SET file_count_CRE BEGIN
+-      OUTER_SPRINT ~count_total~ ~/ %file_count_CRE%~
+-   END ELSE BEGIN
+-      OUTER_SPRINT ~count_total~ ~~
+-   END
+-  COPY_EXISTING_REGEXP GLOB ~.*\.cre~ ~override~
+-      PATCH_SILENT
+-      LPF FJ_CRE_VALIDITY END
+-      PATCH_IF GAME_IS ~bg2ee eet~ BEGIN
+-         LPF FJ_CRE_EFF_V2 END //work around the fact that as of v235 of WEIDU, FJ_CRE_VALIDITY doesn't work on BGIIEE
+-      END
+-      SPRINT filename ~%SOURCE_RES%~
+-      LPF CRE_is_PC STR_VAR filename RET is_pc=value END
+-      LPF gets_skipped_for_genai STR_VAR filename RET is_skipped=value END
+-      LPF CRE_is_dead RET is_dead=value END
+-      PATCH_IF (!is_dead && !is_pc && !is_skipped) BEGIN
+-         PATCH_PRINT "Applying kit/proficiency/script features to %filename%"
+-         PATCH_TRY
+-               LPF genai STR_VAR filename file_ext=CRE arguments="all conditional fix_thac0" END
+-         WITH DEFAULT
+-               PATCH_WARN "Failed to apply general-AI patch to %filename% (error message %ERROR_MESSAGE%)"
+-               LPF warning STR_VAR warning="Failed to apply general-AI patch to %filename% (error message %ERROR_MESSAGE%)"  END
+-         END
+-      END
+-      SET counter+=1
+-      PATCH_IF counter=100 BEGIN
+-         SET counter=0
+-         SET counter2=counter2+100
+-         PATCH_PRINT ~Patched %counter2% %count_total% files~
+-      END
+-   BUT_ONLY
+-
+-
+-
+-
+-END
+-
+-
+-DEFINE_PATCH_FUNCTION gets_skipped_for_genai
+-      STR_VAR filename=""
+-      RET value
+-BEGIN
+-      SET value=0
+-      PATCH_FOR_EACH skip IN fsspir1 glad1 kalwrk01 mdk2kurt mdk2doc mdk2max qcirc03 rabbitsu bparty1 bparty2 bparty3 bparty4 bparty5 bparty6 BEGIN
+-         PATCH_IF ~%filename%~ STRING_EQUAL_CASE ~%skip%~ BEGIN
+-            SET value=1
+-         END
+-      END
+-END
+-
+-
+-
+-////////////////////////////////////////////////////////////////////////////////////
+-///    Edits to be made after running the automated code. As much as possible, put
+-///    edits in edits_before instead.
+-////////////////////////////////////////////////////////////////////////////////////
+-
+-DEFINE_ACTION_FUNCTION edit_creatures_after BEGIN
+-
+-     ACTION_IF is_bg2 BEGIN
+-
+-      // script extensions
+-
+-
+-      ACTION_FOR_EACH script IN dw3ms2ge dw3mm5ge dw3rp4ar dw3rs3ge dw3rs4ar dw3ms4ke BEGIN
+-         LAF build_genai_script STR_VAR script END
+-      END
+-
+-      LAF clone_extend STR_VAR location=baf
+-                               arguments=~dw3ms2ge=>smartcre
+-                                          dw3mm5ge=>chalpc01
+-                                          dw3rp4ar=>sendai3
+-                                          dw3rs3ge=>sengua05
+-                                          dw3rs4ar=>huntress
+-                                          dw3ms4ke=>xeiwin~
+-      END
+-
+-
+-      // creatures who should get proficiency/hla modifiers
+-      
+-      LAF edit_creature STR_VAR creature=~chalpc01 sendai3 sengua05 gorwom02 gorwom06~ editstring=~genai=>"prof kit hla"~ END
+-
+-    END
+-    ACTION_IF is_bg1 BEGIN
+-         LAF edit_creature STR_VAR creature=kobcomm tv=1 editstring="set_proficiencies=>~SHORTBOW=>2~" END
+-    END
+-
+-
+-
+-
+-
+-END
+-
+-
+-
+-
+-////////////////////////////////////////////////////////////////////////////////////
+-///    this removes the combat scripts from the polymorph templates, and maps those templates that are used in
+-///   game to new creatures (thanks to avenger_RR for pointing out the need for this)
+-////////////////////////////////////////////////////////////////////////////////////
+-
+-DEFINE_ACTION_FUNCTION genai_polymorph
+-
+-
+-BEGIN
+-      // clone the used ones
+-      LAF clone_creature STR_VAR creature=~BEARBR=>PLYBEAR1 BEARBL=>PLYBEAR2 JELLMU=>PLYJELL1~ editstring=~strip_script=>all~ allow_missing=1 END
+-      // edit the unused ones
+-      LAF edit_creature STR_VAR creature=~ WOLFCHAR PLYSPID PLYWYVRN PLYSALA WEREWODR WEREGRDR
+-                                           DRUFIR01 DRUEAR01 PLYFLIND PLYOGRE PLYWOLF SHMIND SHIRON
+-                                           SHTROLL SHWOLF SHFIRE SHEARTH POLYRAT PLYTROLL POLYOCHR~
+-                                editstring=~strip_script=>all~
+-                                allow_missing=1
+-      END
+-      // edit spells to use new creatures
+-      MAKE_PATCH
+-         match=>"opcode=135"
+-         resource=>"resource in [bearbr->plybear1 bearbl->plybear2 jellmu->plyjell1 default->no_change]"
+-      END
+-      LAF edit_spell STR_VAR spell=~SPCL611 SPCL613 SPWI496 SPWI497 SPWI498~ editstring=~patch_effect=>patch_data~ allow_missing=1 END
+-
+-END
++DEFINE_ACTION_FUNCTION genai BEGIN
++
++     LAF include STR_VAR file=~genai_shared.tph deployment.tph~ END
++   LAM read_in_genai_item_data
++   LAM read_in_clab_spelldata
++   LAM read_in_proficiency_progression
++   LAM read_in_proficiencies
++   LAM read_in_hla_preferences
++   LAM read_in_hla_prerequisites
++     LAF genai_polymorph END
++     LAF pc_summons END
++     LAF edit_creatures_before END
++     LAF kits_levels END
++     LAF apply_genai_changes END
++     LAF edit_creatures_after END
++     ACTION_IF is_bg1 BEGIN
++        LAF check_ini STR_VAR ini=no_deployment_change RET value END
++        ACTION_IF value=0 BEGIN
++           LAF deployment END
++        END
++     END
++
++
++END
++
++////////////////////////////////////////////////////////////////////////////////////
++///    Deal with PC-summoned creatures
++////////////////////////////////////////////////////////////////////////////////////
++
++DEFINE_ACTION_FUNCTION pc_summons BEGIN
++
++   LAF ssl_to_bcs STR_VAR script=~dw#summe dw#sumrn dw#sumtw~ location=ssl variable="MyWeaponDamageType=MultipleDamageType&MyWeaponStrength=Unknown" END
++
++   ACTION_IF FILE_EXISTS_IN_GAME ~gminionm.bcs~ BEGIN //GMinion installed
++       LAF compile_rename STR_VAR file="summon_gminion=>dw#sumei summon_gminion_ranged=>dw#surni summon_gminion=>dw#sutwi" location=baf END
++   END ELSE BEGIN
++       LAF compile_rename STR_VAR file="summon_vanilla=>dw#sumei summon_vanilla_ranged=>dw#surni summon_vanilla_twoattack=>dw#sutwi" location=baf END
++   END
++
++   LAF edit_creature STR_VAR creature=~ogrelesu worgsu dogwisu gnollsu wolfdisu ogresu
++                                       ogregrsu spidgisu spidphsu spidswsu
++                                       ghastsu skelwasu elairsu1 elearsu1 elfirsu1 carriosu
++                                       elairsuw elairsu2 elairsu3 elfirsu2 elfirsu3 elfirsu4
++                                       stalke nishrusu sword01 haksu~
++                             editstring=~strip_script=>dw#sumei insert_script_high=>dw#sumei~
++                             allow_missing=1
++   END
++   LAF edit_creature STR_VAR creature=~ettercsu wyvernsu~
++                             editstring=~strip_script=>dw#sutwi insert_script_high=>dw#sutwi~
++                             allow_missing=1
++   END
++
++   LAF edit_creature STR_VAR creature=~koboldsu hobgobsu~
++                             editstring=~strip_script=>dw#surni insert_script_high=>dw#surni~
++                             allow_missing=1
++   END
++
++   ACTION_IF FILE_EXISTS_IN_GAME ~_asloisu.cre~ BEGIN // check for d0tweak - NB this is "_" even in BGT
++       ACTION_FOR_EACH crebase IN asloi dogwa dogwi earbl earbr earca earpo flind gnoll grebe greha
++                                  grill ibber obgob obold ogre olfdi olfdr tterc wolf worg xvart zombi
++                                  ske1 ske2 ske3 ske4 ske5
++       BEGIN
++              LAF swap_text STR_VAR files= ~_%crebase%su.cre~ swaps=~gminionm=>dw#sumei gminionr=>dw#surni~ allow_missing=1 END
++       END
++   END
++
++END
++
++////////////////////////////////////////////////////////////////////////////////////
++///    Edits to be made before running the automated code. As much as possible, put
++///    edits here.
++////////////////////////////////////////////////////////////////////////////////////
++
++DEFINE_ACTION_FUNCTION edit_creatures_before BEGIN
++
++    ACTION_IF is_bg1 BEGIN
++    
++       // Genthor's weapons need tweaking
++
++       MAKE_PATCH
++        remove_items => ~%tutu_var%dagg05 %tutu_var%dart01 %tutu_var%dagg01~
++        replace_items => ~%tutu_var%ax1h04(WEAPON1,x5) %tutu_var%ax1h04(WEAPON2,x5) %tutu_var%ax1h01(WEAPON3)~
++       END
++       LAF edit_creature STR_VAR creature=gentho tv=1 edits=patch_data END
++
++      //  Monsters shouldn't be able to move between areas in Ramazith's tower; Rezdan shouldn't run like a baby in the Cloakwood battle
++
++        MAKE_PATCH
++           match=>"trigger_type=2"
++           impassable_by_NPC=>1
++        END
++        LAF edit_area STR_VAR   area=~%NBaldursGate_RamazithsTower_L1%
++                                      %NBaldursGate_RamazithsTower_L2%
++                                      %NBaldursGate_RamazithsTower_L3%
++                                      %NBaldursGate_RamazithsTower_L4%
++                                      %NBaldursGate_RamazithsTower_L5%
++                                      %NBaldursGate_RamazithsTower_L6%
++                                      %CloakwoodMines%~
++                              editstring=~patch_trigger=>patch_data~
++        END
++        
++      // Caturak et al shouldn't prioritise Gorpel Hind
++      
++      LAF edit_creature STR_VAR creature=~catura gretek nader~ tv=1 editstring=~strip_script=>%tutu_scripta%ttkally~ END
++
++      // filter the attack block out of doppelganger and Greywolf
++
++      LAF compile_rename STR_VAR files=~dopspell=>%tutu_scriptd%opspell greywolf=>%tutu_scriptg%reywolf~ location=baf END
++      
++      // give a few BG1 characters dual-wielding
++      // Gardush, Molkar, Haseo, Gretek, Greywolf
++      
++      LAF edit_creature STR_VAR creature=~gardus molkar greywo haseo~ tv=1 editstring=~replace_items=>%tutu_var%sw1h04(SHIELD)~ END
++
++      LAF edit_creature STR_VAR creature=gretek tv=1 editstring=~replace_items=>%tutu_var%ax1h01(SHIELD)~ END
++
++      // kobolds need a combat script in addition to their help script
++      
++      LAF edit_creature STR_VAR creature=~%tutu_var%kobold3 %tutu_var%kobold7 %tutu_scriptk%obold_a %tutu_scriptk%obold_b %tutu_scriptk%obold_c %tutu_scriptk%obold_d %tutu_scriptk%obold_e~
++                                editstring=~strip_script=>wtasight insert_script_low=>%tutu_scriptw%tasight~
++      END
++      
++      // class correction for merchant league guards
++      
++      LAF edit_creature STR_VAR creature=~leaggu1 leaggu2 leaggu7~ tv=1 editstring=~class=>FIGHTER enforce_saves=>null enforce_thac0=>null~ END
++
++      // Dryad of the Cloudpeaks doesn't need wtrunsgt
++      
++      LAF edit_creature STR_VAR creature= ~%tutu_var%dryad~ editstring= ~strip_script=>%tutu_scriptw%trunsgt~ END
++
++        // these creatures need hand weapons
++        
++        LAF edit_creature STR_VAR creature="alvanh" tv=1 editstring="add_items=>blun04" END
++        LAF edit_creature STR_VAR creature="d2fue dopfue kestor niklos prat tellan" tv=1 editstring="add_items=>sw1h07" END
++
++        // these EE creatures need hand weapons
++        
++        LAF edit_creature STR_VAR creature="negob01 neguar01 nemagreb" editstring="add_items=>sw1h07" allow_missing=1 END
++
++        // these ranged-only innate weapons need melee versions
++
++        MAKE_PATCH
++           match=>"ability_type=2"
++           ability_type=>1
++        END
++
++        LAF clone_item STR_VAR item="%tutu_var%jelloc1=>dw#jeloc" editstring="patch_ability=>patch_data" END
++        LAF edit_creature STR_VAR creature="jelloc jellyco" tv=1 allow_missing=1 editstring="add_items=>dw#jeloc(weapon)" END
++
++        LAF clone_item STR_VAR item="%tutu_var%oozegr1=>dw#oozeg" editstring="patch_ability=>patch_data" END
++        LAF edit_creature STR_VAR creature="jellgr" tv=1 allow_missing=1 editstring="add_items=>dw#oozeg(weapon)" END
++
++        LAF clone_item STR_VAR item="%tutu_var%jellmu1=>dw#jelmu" editstring="patch_ability=>patch_data" END
++        LAF edit_creature STR_VAR creature="jellmu jellmul jellymu" tv=1 allow_missing=1 editstring="add_items=>dw#jelmu(weapon)" END
++
++        LAF clone_item STR_VAR item="%tutu_var%jellmu2=>dw#jelm2" editstring="patch_ability=>patch_data" END
++        LAF edit_creature STR_VAR creature="jellspa" tv=1 allow_missing=1 editstring="add_items=>dw#jelm2(weapon)" END
++
++        LAF clone_item STR_VAR item="schlum1=>dw#schlu" editstring="patch_ability=>patch_data" END
++        LAF edit_creature STR_VAR creature="schlum" tv=1 allow_missing=1 editstring="add_items=>dw#schlu(weapon)" END
++
++        // Hobgoblin elites should count as fighters and should get a reasonable DEX
++
++        LAF edit_creature STR_VAR creature="%tutu_scripth%obelite" editstring="class=>FIGHTER dexterity=>15" END
++
++    END // end of BG1 part
++
++    ACTION_IF is_bg2 BEGIN
++      	// these creatures need hand weapons
++
++        LAF edit_creature STR_VAR creature=~icgob01 icgob02 rethie01 crothf02 fshorde2 fshorde6 orc02~
++                                  editstring=~add_items=>sw1h07~
++        END
++        LAF edit_creature STR_VAR creature=~bodfgt02 gororc02 hlarch suelfw13 suelfw14 suelfw15 ysgrunt ysguar02 ysguar05 yssold02~
++                                  editstring=~add_items=>sw1h04~
++        END
++        LAF edit_creature STR_VAR creature=ar18dwaf editstring=~add_items=>ax1h01~ END
++        LAF edit_creature STR_VAR creature=reeldar editstring=~add_items=>sw1h01~ END
++        LAF edit_creature STR_VAR creature=alufie02 editstring=~add_items=>sw1h52~ END
++
++        LAF edit_creature STR_VAR creature="amtarc01 sargrd02 sargrd12 sargrd13 sargrd14 sargrd15 sargrd16 senani03 sewarc01 sewarc02 sewyag02 telsuc1 tobban02 yarmy02 zilarc01" editstring="add_items=>sw1h05" END
++        LAF edit_creature STR_VAR creature="arnwar04 gromg03 gromg11 mookft02" editstring="add_items=>sw1h07" END
++        LAF edit_creature STR_VAR creature=drofod03 editstring="add_items=>dwsw1h02" END
++        LAF edit_creature STR_VAR creature=flyfgt04  editstring="add_items=>sw1h04" END
++        LAF edit_creature STR_VAR creature=kuoarc20  editstring="add_items=>kuosper" END
++        LAF edit_creature STR_VAR creature=sendro03 editstring="add_items=>dwsw1h01" END
++        LAF edit_creature STR_VAR creature=tarnor editstring="add_items=>ax1h02" END
++        LAF edit_creature STR_VAR creature=uddrow15 editstring="add_items=>dwblun01" END
++        LAF edit_creature STR_VAR creature="udsvir03 udsvir05 udsvir06" editstring="add_items=>hamm02" END
++        LAF edit_creature STR_VAR creature="ohhspid1" editstring="add_items=>spidsw1" allow_missing=1 END
++        LAF edit_creature STR_VAR creature="d0qpsy02 d0qpsy04" editstring="add_items=>sw1h07" allow_missing=1 END
++
++        ACTION_IF !enhanced_edition BEGIN
++              LAF edit_creature STR_VAR creature=duearc01 editstring="add_items=>ax1h01" END
++        END
++
++        // these ranged-only innate weapons need melee versions
++
++        MAKE_PATCH
++           match=>"ability_type=2"
++           ability_type=>1
++        END
++
++        LAF clone_item STR_VAR item="waterele=>dw#wtrel" editstring="patch_ability=>patch_data" END
++        LAF edit_creature STR_VAR creature="elwatg01 ohbwat01" allow_missing=1 editstring="add_items=>dw#wtrel(weapon)" END
++
++        LAF clone_item STR_VAR item="jellgr1=>dw#jelgr" editstring="patch_ability=>patch_data" END
++        LAF edit_creature STR_VAR creature="jelgra01 jelgre01" editstring="add_items=>dw#jelgr(weapon)" END
++
++        LAF clone_item STR_VAR item="jellmu1=>dw#jelmu" editstring="patch_ability=>patch_data" END
++        LAF edit_creature STR_VAR creature="jellmu jellmusu jelmus01" editstring="add_items=>dw#jelmu(weapon)" END
++
++        LAF clone_item STR_VAR item="jelloc1=>dw#jeloc" editstring="patch_ability=>patch_data" END
++        LAF edit_creature STR_VAR creature="jelloc jeloch01" editstring="add_items=>dw#jeloc(weapon)" END
++
++        LAF clone_item STR_VAR item="pudden01=>dw#puddn" editstring="patch_ability=>patch_data" END
++        LAF edit_creature STR_VAR creature="pudden01 pudden02" editstring="add_items=>dw#puddn(weapon)" END
++
++	// these guys need equipment
++
++        LAF edit_creature STR_VAR creature=rethug01 editstring=~add_items=>"sw1h01 shld01 chan01"~ END
++        LAF edit_creature STR_VAR creature=rethug04 editstring=~add_items=>"sw1h01 leat01"~ END
++        LAF edit_creature STR_VAR creature=refigh01 editstring=~add_items=>chan04~ END
++        LAF edit_creature STR_VAR creature=rethie01 editstring=~add_items=>leat01~ END
++
++
++        // this githyanki has a somewhat-bugged set of weapon allocations
++        
++        MAKE_PATCH
++           remove_items=>dart01
++           remove_items'=>sw2h01
++           add_items=>"dart01(x10)"
++           add_items'=>"sw2h01"
++        END
++        LAF edit_creature STR_VAR creature=gith04 edits=patch_data END
++
++	// Thieves need swords to backstab with
++
++        LAF edit_creature STR_VAR creature=~arnfgt04 arnwar02 mookft01~ editstring=~swap_items=>"hamm01=>sw1h07"~ END
++        LAF edit_creature STR_VAR creature=shth06 editstring=~swap_items=>"staf01=>sw1h07"~ END
++        LAF edit_creature STR_VAR creature=~bmugg1 elehob01 genthf01 pirpir05 rethie02 rethie03 rethug04 vvshad5 vvshad6~
++                                  editstring=~swap_items=>"sw1h01=>sw1h04"~
++        END
++        LAF edit_creature STR_VAR creature=~cambion1 telcam1~ editstring=~swap_items=>"sw1h02=>sw1h05"~ END
++
++	// goblins can't use composite bows, they're too weak
++
++        LAF edit_creature STR_VAR creature=~icgob01 icgob02~ editstring=~swap_items=>"bow01=>bow05"~ END
++
++	// because the goblins shift to shortbows, place a couple of longbows in AR0602
++
++        LAF swap_text STR_VAR files=ar0602.are swaps=~bow05=>bow03~ END
++
++	// class corrections
++
++        LAF edit_creature STR_VAR creature=~fshorde2 icgob01 icgob02 hobarc01 hobcap01~ editstring=~class=>HOBGOBLIN~ END
++        LAF edit_creature STR_VAR creature=~kobarc01 _oboldsu swsfoll4 swsfoll5 kobcap01 swshaman kobsha01~ editstring=~class=>kobold~ allow_missing=1 END
++        LAF edit_creature STR_VAR creature=~chang01 chang02 elehob01 rock garock~ editstring=~class=>FIGHTER~ END
++        LAF edit_creature STR_VAR creature=~palkni02 palkni04~ editstring=~class=>OGRE~ END
++        LAF edit_creature STR_VAR creature=~palkni01~ editstring=~class=>OGRE_MAGE~ END
++        LAF edit_creature STR_VAR creature=~palkni03~ editstring=~class=>GNOLL~ END
++        LAF edit_creature STR_VAR creature=~palkni05~ editstring=~class=>WYVERN~ END
++        LAF edit_creature STR_VAR creature=gorsta07 editstring=~class=>THIEF~ END
++
++        // stat corrections
++        
++        LAF edit_creature STR_VAR creature=pwarden editstring=~thac0=>3 attacks=>2~ END
++
++        // redundant scripts
++
++        LAF edit_creature STR_VAR creature=~army01 fshorde4 gororc01 orc01 orc05 rorcl01 sensmsp2~ editstring=~strip_script=>orcwar~ END
++        LAF edit_creature STR_VAR creature=~icgob03 icgob04~ editstring=~strip_script=>koboldf~ END
++        LAF edit_creature STR_VAR creature=hobwar01 editstring=~strip_script=>hgwarr01~ END
++        LAF edit_creature STR_VAR creature=~fshorde6 gororc02 orc02 rorca01 orc06~ editstring=~strip_script=>oarch02~ END
++
++        // invisibility for hostile thieves
++
++        LAF edit_creature STR_VAR creature=~ARKANISG ARNWAR02 ARNWAR03 ARNWAR04 ARTEMIS C6KACH2 CAMBION1 CHALCY02 CHANG01 CHANG02 CHGOOD08 DECKASS1 FLYFGT01
++                                            FLYFGT02 FSHORDE2 GENTHF01 GORDECK5 GORDECK6 GORDECK7 GORDECK8 GORDECK9 GORDECKA GORKUO05 HGSKL02 HLASSA HLKETTA
++                                            ILLCAMB ILLCAMB2 KOBARC01 KUOWHI01 MOOKFT01 MOOKFT02 PLASS04 PPMUR PPTHF01 PPTHF02 REBAND01 REBAND02 RETHIE02
++                                            RETHIE03 SENDRO05 SPMUGG SPMUGG2 SPMUGG3 STDEATH TANADV06 TANTHF01 TELCAM1 TERMER04 VAKG03 YAGA05~
++                                  editstring=~add_effect_inline=>"opcode=>20"~
++        END
++        
++        // Some areas need to be impassable by fleeing creatures to avoid trouble
++
++        MAKE_PATCH
++           match=>"trigger_type=2"
++           impassable_by_NPC=>1
++        END
++        
++        LAF edit_area STR_VAR area=~ar0406 ar1000 ar1204 ar0801 ar0803 ar0808 ar0809 ar5006~ editstring=~patch_trigger=>patch_data~ END
++
++	// Kuo-toa spears are suitable for backstab
++
++        LAF edit_item STR_VAR item=kuosper editstring=~unusable_thief=>0~ END
++        
++        // compile the help part of the gpmerc scripts and the vanilla version of gpshout
++        // remove the combat part of sengua04, leaving only the help part
++
++        ACTION_IF !FILE_EXISTS ~override/dw#help.mrk~ BEGIN
++           LAF install STR_VAR files=~gpshout.baf dw#gphlp.baf sengua04.baf~ location=baf END
++        END
++
++        // Ekeissag needs his own script
++        
++        LAF ssl_to_bcs STR_VAR script=sengua03 location=ssl END
++
++        //  hlketta and haegan lose their combat part
++
++	ACTION_IF !FILE_EXISTS_IN_GAME ~hlstal.bcs~ BEGIN // Tactics Guarded Compound not installed
++	    LAF install STR_VAR files=hlketta.baf location=baf END
++	END
++	LAF install STR_VAR files=haegan.baf location=baf END
++	
++	// separate out the help parts of gorcamb4/gorcamb5
++
++	LAF edit_creature STR_VAR creature=gorcamb4 editstring=~insert_script=>"dw#mlcam above gorcamb4"~ END
++	LAF edit_creature STR_VAR creature=gorcamb5 editstring=~insert_script=>"dw#mlcam above gorcamb5"~ END
++        LAF install STR_VAR files=dw#mlcam.baf location=baf END
++
++        // the pirate rogues are trying to fight with two weapons, which isn't advisable at their level. Get rid
++        // of the daggers. Also give them legal armour
++        LAF edit_creature STR_VAR creature=ppthf01 editstring=~swap_items=>"chan01=>leat04" remove_items=>dagg01~ END
++
++        // likewise, Sendai's assassin incarnation can't really be effective with two weapons (I can't dual class her or multiclass her and keep the kit).
++        // likewise Eler Had
++
++        LAF edit_creature STR_VAR creature=~sendai4 tobpar01~
++                                editstring=~remove_items=>dagg24~ END
++
++
++        // likewise these other creatures
++
++        LAF edit_creature STR_VAR creature=~chalcy02 deckass1 gorcamb4 gordeck5 gordeck6 gordeck7 gordeck8 gordeck9 gordecka sargrd05 sargrd09 sarkis01 sarkis04 sendai4 teltief2 yaga05~
++                                editstring=~remove_items=>dagg15~ END
++
++        // we make hlfight into a kensai, so lose the armor; likewise sengua03
++        
++        LAF edit_creature STR_VAR creature=hlfight editstring="remove_items=>chan01" END
++        LAF edit_creature STR_VAR creature=sengua03 editstring="remove_items=>dwchan01" END
++
++        // sengua01 is already a kensai, so the armor is illegal
++
++        LAF edit_creature STR_VAR creature=sengua01 editstring="remove_items=>chan12" END
++
++        // sengua05 needs a melee weapon
++        
++        LAF edit_creature STR_VAR creature=sengua05 editstring="add_items=>dwsw1h01" END
++
++        // Kiser Jhaeri's fighters are fairly clearly hastily respeced as fighters. We do it more systematically
++        
++        MAKE_PATCH
++           kit=>NONE
++           str=>18
++           str_ex=>50
++           dex=>16
++           swap_items=>~leat02=>chan02~
++        END
++
++        LAF edit_creature STR_VAR creature=~sarkis02 sarkis03~ edits=patch_data END
++        
++        // Ist'tar Jael'lat looks as if he's supposed to have two swords, but the slots are wrong
++        
++        MAKE_PATCH
++           remove_items=>~dwsw1h02~
++           add_items=>dwsw1h02
++           add_items'=>~dwsw1h02(SHIELD)~
++        END
++        LAF edit_creature STR_VAR creature=jael03 edits=patch_data END
++        
++        // Revan (in Twisted Rune) has no equipment
++        ACTION_IF !(FILE_EXISTS_IN_GAME ~udelder2.cre~) THEN BEGIN // check for this component of quest pack being installed
++                OUTER_SPRINT editstring ~add_items=>"helm01 xbow07 sw2h11 plat04 bolt03(x20)"~
++        END ELSE BEGIN  // we'll fix the Revanek bug in QP to avoid reports
++                OUTER_SPRINT editstring ~script_default=>wtarsgt~
++        END
++        LAF edit_creature STR_VAR creature=hlrevan editstring END
++        
++        // these multi-class creatures are erroneously flagged as having an original class
++        
++        LAF edit_creature STR_VAR creature="kuopri01 kuowhi01 elekuo02 gorkuo03 gorkuo05 udkuo02 udprince" editstring="original_class=>none" END
++
++        // Paladins and blackguards need baseline innate-deva-summoning spells in case Smarter Celestials isn't installed
++        
++        ACTION_DEFINE_ASSOCIATIVE_ARRAY priest_spell_replace_map BEGIN
++           dw#devae=>"%CLERIC_SUMMON_FALLEN_DEVA%"
++           dw#devag=>"%CLERIC_SUMMON_DEVA%"
++        END
++        
++        ACTION_PHP_EACH priest_spell_replace_map AS new=>old BEGIN
++           ACTION_IF !FILE_EXISTS_IN_GAME ~%new%.spl~ BEGIN
++              LAF clone_spell STR_VAR spell= ~%old%=>%new%~ END
++           END
++        END
++
++        // This non-combat NPC has a confused kit, which leads to a harmless warning message; best suppress it anyway
++        
++        LAF edit_creature STR_VAR creature=sevdru01 editstring="kit=>none" END
++
++     END // end of BG2 part
++
++END
++
++////////////////////////////////////////////////////////////////////////////////////
++///    Modify kits/levels for consistency and (in the case of kits) interest
++////////////////////////////////////////////////////////////////////////////////////
++
++DEFINE_ACTION_FUNCTION kits_levels BEGIN
++
++     ACTION_FOR_EACH game IN bg1 bg2 BEGIN
++
++        ACTION_IF  ~%is_%game%%~=1 BEGIN
++
++           // kits
++           LAF action_check_ini STR_VAR ini=genai_does_not_adjust_kits RET value=value END
++           ACTION_IF value=0 BEGIN
++            ACTION_BASH_FOR ~%scsroot%/%component_loc%/kit_override/%game%~ ~.*\.2da~ BEGIN
++              ACTION_IF IDS_OF_SYMBOL (kit "%BASH_FOR_RES%")>=0 BEGIN
++                LAF edit_creature STR_VAR file=~kit_override/%game%/%BASH_FOR_RES%.2da~
++                                         editstring=~kit=>%BASH_FOR_RES%~
++                END
++                ACTION_IF "%BASH_FOR_RES%" STRING_EQUAL_CASE "blackguard" BEGIN
++                   LAF edit_creature STR_VAR file=~kit_override/%game%/%BASH_FOR_RES%.2da~
++                                         editstring=~class=>paladin~
++                   END
++                END
++              END
++            END
++           END
++           
++           // levels
++
++           LAF action_check_ini STR_VAR ini=genai_does_not_adjust_levels RET value=value END
++           ACTION_IF value=0 BEGIN
++             LAF read_in_assoc_array STR_VAR location=level_override file=~%game%.2da~ RET list=list END
++             OUTER_WHILE ~%list%~ STRING_COMPARE ~~ BEGIN
++              LAF return_first_pair STR_VAR list RET creature=key level=value list=list END
++              LAF edit_creature STR_VAR creature editstring=~level=>%level% enforce_saves=>null enforce_thac0=>null~ END
++             END
++           END
++
++        END
++        
++        
++
++     END
++
++
++
++
++END
++
++
++////////////////////////////////////////////////////////////////////////////////////
++///    Apply core changes to CRE files
++////////////////////////////////////////////////////////////////////////////////////
++
++DEFINE_ACTION_FUNCTION apply_genai_changes BEGIN
++
++   LAF check_ini STR_VAR ini=~genai_does_not_adjust_profs~ RET value END
++   ACTION_IF value BEGIN
++      OUTER_SPRINT genai_set "scripts kit hla conditional"
++   END ELSE BEGIN
++      OUTER_SPRINT genai_set "all conditional"
++   END
++   OUTER_SET counter=0
++   OUTER_SET counter2=0
++   ACTION_IF VARIABLE_IS_SET file_count_CRE BEGIN
++      OUTER_SPRINT ~count_total~ ~/ %file_count_CRE%~
++   END ELSE BEGIN
++      OUTER_SPRINT ~count_total~ ~~
++   END
++  COPY_EXISTING_REGEXP GLOB ~.*\.cre~ ~override~
++      PATCH_SILENT
++      LPF FJ_CRE_VALIDITY END
++      PATCH_IF GAME_IS ~bg2ee eet~ BEGIN
++         LPF FJ_CRE_EFF_V2 END //work around the fact that as of v235 of WEIDU, FJ_CRE_VALIDITY doesn't work on BGIIEE
++      END
++      SPRINT filename ~%SOURCE_RES%~
++      LPF CRE_is_PC STR_VAR filename RET is_pc=value END
++      LPF gets_skipped_for_genai STR_VAR filename RET is_skipped=value END
++      LPF CRE_is_dead RET is_dead=value END
++      PATCH_IF (!is_dead && !is_pc && !is_skipped) BEGIN
++         PATCH_PRINT "Applying kit/proficiency/script features to %filename%"
++         PATCH_TRY
++               LPF genai STR_VAR filename file_ext=CRE arguments="all conditional fix_thac0" END
++         WITH DEFAULT
++               PATCH_WARN "Failed to apply general-AI patch to %filename% (error message %ERROR_MESSAGE%)"
++               LPF warning STR_VAR warning="Failed to apply general-AI patch to %filename% (error message %ERROR_MESSAGE%)"  END
++         END
++      END
++      SET counter+=1
++      PATCH_IF counter=100 BEGIN
++         SET counter=0
++         SET counter2=counter2+100
++         PATCH_PRINT ~Patched %counter2% %count_total% files~
++      END
++   BUT_ONLY
++
++
++
++
++END
++
++
++DEFINE_PATCH_FUNCTION gets_skipped_for_genai
++      STR_VAR filename=""
++      RET value
++BEGIN
++      SET value=0
++      PATCH_FOR_EACH skip IN fsspir1 glad1 kalwrk01 mdk2kurt mdk2doc mdk2max qcirc03 rabbitsu bparty1 bparty2 bparty3 bparty4 bparty5 bparty6 BEGIN
++         PATCH_IF ~%filename%~ STRING_EQUAL_CASE ~%skip%~ BEGIN
++            SET value=1
++         END
++      END
++END
++
++
++
++////////////////////////////////////////////////////////////////////////////////////
++///    Edits to be made after running the automated code. As much as possible, put
++///    edits in edits_before instead.
++////////////////////////////////////////////////////////////////////////////////////
++
++DEFINE_ACTION_FUNCTION edit_creatures_after BEGIN
++
++     ACTION_IF is_bg2 BEGIN
++
++      // script extensions
++
++
++      ACTION_FOR_EACH script IN dw3ms2ge dw3mm5ge dw3rp4ar dw3rs3ge dw3rs4ar dw3ms4ke BEGIN
++         LAF build_genai_script STR_VAR script END
++      END
++
++      LAF clone_extend STR_VAR location=baf
++                               arguments=~dw3ms2ge=>smartcre
++                                          dw3mm5ge=>chalpc01
++                                          dw3rp4ar=>sendai3
++                                          dw3rs3ge=>sengua05
++                                          dw3rs4ar=>huntress
++                                          dw3ms4ke=>xeiwin~
++      END
++
++
++      // creatures who should get proficiency/hla modifiers
++      
++      LAF edit_creature STR_VAR creature=~chalpc01 sendai3 sengua05 gorwom02 gorwom06~ editstring=~genai=>"prof kit hla"~ END
++
++    END
++    ACTION_IF is_bg1 BEGIN
++         LAF edit_creature STR_VAR creature=kobcomm tv=1 editstring="set_proficiencies=>~SHORTBOW=>2~" END
++    END
++
++
++
++
++
++END
++
++
++
++
++////////////////////////////////////////////////////////////////////////////////////
++///    this removes the combat scripts from the polymorph templates, and maps those templates that are used in
++///   game to new creatures (thanks to avenger_RR for pointing out the need for this)
++////////////////////////////////////////////////////////////////////////////////////
++
++DEFINE_ACTION_FUNCTION genai_polymorph
++
++
++BEGIN
++      // clone the used ones
++      LAF clone_creature STR_VAR creature=~BEARBR=>PLYBEAR1 BEARBL=>PLYBEAR2 JELLMU=>PLYJELL1~ editstring=~strip_script=>all~ allow_missing=1 END
++      // edit the unused ones
++      LAF edit_creature STR_VAR creature=~ WOLFCHAR PLYSPID PLYWYVRN PLYSALA WEREWODR WEREGRDR
++                                           DRUFIR01 DRUEAR01 PLYFLIND PLYOGRE PLYWOLF SHMIND SHIRON
++                                           SHTROLL SHWOLF SHFIRE SHEARTH POLYRAT PLYTROLL POLYOCHR~
++                                editstring=~strip_script=>all~
++                                allow_missing=1
++      END
++      // edit spells to use new creatures
++      MAKE_PATCH
++         match=>"opcode=135"
++         resource=>"resource in [bearbr->plybear1 bearbl->plybear2 jellmu->plyjell1 default->no_change]"
++      END
++      LAF edit_spell STR_VAR spell=~SPCL611 SPCL613 SPWI496 SPWI497 SPWI498~ editstring=~patch_effect=>patch_data~ allow_missing=1 END
++
++END

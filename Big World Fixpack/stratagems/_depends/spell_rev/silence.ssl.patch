@@ -1,22 +1,50 @@
---- stratagems/priest/ssl/bg1/combatblocks/silence.ssl	2016-11-20 18:27:15.484531600 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/silence.ssl	2016-12-01 15:11:46.547915000 -0500
-@@ -2,7 +2,7 @@
- 	RequireBlock(HasL2)
- 	RequireBlock(Demivrgvs)
- 	TargetBlock(PCSpellcasters)
+--- stratagems/priest/ssl/bg1/combatblocks/silence.ssl	2018-08-21 11:17:54.221196200 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/silence.ssl	2018-08-21 11:36:59.405033500 +0200
+@@ -1,11 +1,11 @@
+-IF TRIGGER
+-	RequireBlock(HasL2)
+-	RequireBlock(Demivrgvs)
+-	TargetBlock(PCSpellcasters)
 -	TriggerBlock(MR100|SpellTurn|SIConjuration|Silence) // alas, can't detect the Vocalise spell
+-	TriggerBlock(Enemy|Helpless)
+-	!StateCheck(scstarget,STATE_SILENCED)
+-
+-THEN DO
+-	Action(Spell,CLERIC_SILENCE_15_FOOT|150|50)
+-END
++IF TRIGGER
++	RequireBlock(HasL2)
++	RequireBlock(Demivrgvs)
++	TargetBlock(PCSpellcasters)
 +	TriggerBlock(MR100|Silence) // alas, can't detect the Vocalise spell
- 	TriggerBlock(Enemy|Helpless)
- 	!StateCheck(scstarget,STATE_SILENCED)
- 
---- stratagems/priest/ssl/bg2/combatblocks/silence.ssl	2016-11-20 18:27:15.518555300 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/silence.ssl	2016-12-01 15:11:46.573933000 -0500
-@@ -2,7 +2,7 @@
- 	RequireBlock(HasL2)
- 	RequireBlock(Demivrgvs)
- 	TargetBlock(PCSpellcasters)
++	TriggerBlock(Enemy|Helpless)
++	!StateCheck(scstarget,STATE_SILENCED)
++
++THEN DO
++	Action(Spell,CLERIC_SILENCE_15_FOOT|150|50)
++END
+--- stratagems/priest/ssl/bg2/combatblocks/silence.ssl	2018-08-21 11:17:54.237196200 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/silence.ssl	2018-08-21 11:36:59.423032900 +0200
+@@ -1,11 +1,11 @@
+-IF TRIGGER
+-	RequireBlock(HasL2)
+-	RequireBlock(Demivrgvs)
+-	TargetBlock(PCSpellcasters)
 -	TriggerBlock(MR100|SpellTurn|SIConjuration|Silence) // alas, can't detect the Vocalise spell
+-	TriggerBlock(Enemy|Helpless)
+-	!StateCheck(scstarget,STATE_SILENCED)
+-
+-THEN DO
+-	Action(Spell,CLERIC_SILENCE_15_FOOT|150|50)
+-END
++IF TRIGGER
++	RequireBlock(HasL2)
++	RequireBlock(Demivrgvs)
++	TargetBlock(PCSpellcasters)
 +	TriggerBlock(MR100|Silence|MinorGlobe) // alas, can't detect the Vocalise spell
- 	TriggerBlock(Enemy|Helpless)
- 	!StateCheck(scstarget,STATE_SILENCED)
- 
++	TriggerBlock(Enemy|Helpless)
++	!StateCheck(scstarget,STATE_SILENCED)
++
++THEN DO
++	Action(Spell,CLERIC_SILENCE_15_FOOT|150|50)
++END

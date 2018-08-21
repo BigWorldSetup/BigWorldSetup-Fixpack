@@ -1,5 +1,5 @@
---- stratagems/fiend/ssl/dempitsu.ssl	2016-11-20 18:27:15.380457900 -0500
-+++ Fixpack/stratagems/fiend/ssl/dempitsu.ssl	2016-09-16 22:55:03.770715600 -0400
+--- stratagems/fiend/ssl/dempitsu.ssl	2018-08-21 11:17:54.159197300 +0200
++++ Fixpack/stratagems/fiend/ssl/dempitsu.ssl	2018-08-21 11:36:59.335035700 +0200
 @@ -62,7 +62,7 @@
  IF TRIGGER
  	Target([ANYONE])

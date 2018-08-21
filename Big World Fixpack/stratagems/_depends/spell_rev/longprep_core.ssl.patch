@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg1/prepblocks/longprep_core.ssl	2012-09-18 23:07:08.000000000 -0400
-+++ Fixpack/stratagems/mage/ssl/bg1/prepblocks/longprep_core.ssl	2016-12-01 19:42:11.807988700 -0500
+--- stratagems/mage/ssl/bg1/prepblocks/longprep_core.ssl	2018-08-21 11:17:54.191196900 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/prepblocks/longprep_core.ssl	2018-08-21 11:36:59.373034700 +0200
 @@ -50,3 +50,15 @@
  		Continue()
  END
@@ -16,8 +16,8 @@
 +		ReallyForceSpellRES("spwi226",Myself)
 +		Continue()
 +END
---- stratagems/mage/ssl/bg2/prepblocks/longprep_core.ssl	2016-11-20 18:27:15.447505200 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/longprep_core.ssl	2016-12-01 19:43:38.642955300 -0500
+--- stratagems/mage/ssl/bg2/prepblocks/longprep_core.ssl	2018-08-21 11:17:54.207195800 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/longprep_core.ssl	2018-08-21 11:36:59.390033900 +0200
 @@ -138,3 +138,69 @@
  		Continue()
  END
@@ -88,9 +88,17 @@
 +		ReallyForceSpellRES("spwi623",Myself)
 +		Continue()
 +END
---- stratagems/priest/ssl/bg1/prepblocks/longprep_core.ssl	2016-11-20 18:27:15.490535900 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/prepblocks/longprep_core.ssl	2016-12-01 15:11:46.551917400 -0500
-@@ -38,6 +38,7 @@
+--- stratagems/priest/ssl/bg1/prepblocks/longprep_core.ssl	2018-08-21 11:17:54.224196000 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/prepblocks/longprep_core.ssl	2018-08-21 11:36:59.408033300 +0200
+@@ -26,6 +26,7 @@
+    HaveSpell(CLERIC_DEATH_WARD)
+    RequireBlock(HasL4)
+    IgnoreBlock(SpellsAreBG1)
++   IgnoreBlock(IsDruid)
+ THEN
+      RESPONSE #100
+               ApplySpellRES("%CLERIC_DEATH_WARD%",Myself)
+@@ -38,6 +39,7 @@
     HaveSpell(CLERIC_CHAOTIC_COMMANDS)
     RequireBlock(HasL5)
     IgnoreBlock(SpellsAreBG1)
@@ -98,13 +106,105 @@
  THEN 
       RESPONSE #100
                ApplySpellRES("%CLERIC_CHAOTIC_COMMANDS%",Myself)
---- stratagems/priest/ssl/bg2/prepblocks/longprep_core.ssl	2016-11-20 18:27:15.528562400 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/prepblocks/longprep_core.ssl	2016-12-01 15:11:46.584941000 -0500
-@@ -43,6 +43,7 @@
- IF TRIGGER
-    Global("longprep","LOCALS",0)
-    RequireBlock(HasL5)
+--- stratagems/priest/ssl/bg2/prepblocks/longprep_core.ssl	2018-08-21 11:17:54.242195400 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/prepblocks/longprep_core.ssl	2018-08-21 11:36:59.429033200 +0200
+@@ -1,49 +1,50 @@
+-///////////////////////////////////////////////////////////////////////
+-/// Long-duration spells
+-///////////////////////////////////////////////////////////////////
+-
+-
+-//////////////////////////////////////////////////////////////
+-/// Ironskin - level 9+
+-//////////////////////////////////////////////////////////////
+-
+-IF
+-  Global("longprep","LOCALS",0)
+-  RequireBlock(HasL5)
+-  RequireBlock(IsDruid)
+-THEN
+-    RESPONSE #100
+-             ReallyForceSpellRes("%CLERIC_IRONSKIN_PREBUFF%",Myself)
+-             Continue()
+-END
+-
+-///////////////////////////////////////////////////////////////////////
+-///	Protection from Fire
+-///////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-   Global("longprep","LOCALS",0)
+-   RequireBlock(HasL3)
+-THEN DO
+-     Action(SpellPrecast,CLERIC_PROTECTION_FROM_FIRE)
+-END
+-
+-//////////////////////////////////////////////////////////////
+-/// Death Ward and Chaotic Commands
+-//////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-   Global("longprep","LOCALS",0)
+-   RequireBlock(HasL4)
+-THEN DO
+-     Action(SpellPrecast,CLERIC_DEATH_WARD)
+-END
+-
+-
+-IF TRIGGER
+-   Global("longprep","LOCALS",0)
+-   RequireBlock(HasL5)
+-THEN DO
+-     Action(SpellPrecast,CLERIC_CHAOTIC_COMMANDS)
+-END
+-
++///////////////////////////////////////////////////////////////////////
++/// Long-duration spells
++///////////////////////////////////////////////////////////////////
++
++
++//////////////////////////////////////////////////////////////
++/// Ironskin - level 9+
++//////////////////////////////////////////////////////////////
++
++IF
++  Global("longprep","LOCALS",0)
++  RequireBlock(HasL5)
++  RequireBlock(IsDruid)
++THEN
++    RESPONSE #100
++             ReallyForceSpellRes("%CLERIC_IRONSKIN_PREBUFF%",Myself)
++             Continue()
++END
++
++///////////////////////////////////////////////////////////////////////
++///	Protection from Fire
++///////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++   Global("longprep","LOCALS",0)
++   RequireBlock(HasL3)
++THEN DO
++     Action(SpellPrecast,CLERIC_PROTECTION_FROM_FIRE)
++END
++
++//////////////////////////////////////////////////////////////
++/// Death Ward and Chaotic Commands
++//////////////////////////////////////////////////////////////
++
++IF TRIGGER
++   Global("longprep","LOCALS",0)
++   RequireBlock(HasL4)
++THEN DO
++     Action(SpellPrecast,CLERIC_DEATH_WARD)
++END
++
++
++IF TRIGGER
++   Global("longprep","LOCALS",0)
++   RequireBlock(HasL5)
 +   IgnoreBlock(IsDruid)
- THEN DO
-      Action(SpellPrecast,CLERIC_CHAOTIC_COMMANDS)
- END
++THEN DO
++     Action(SpellPrecast,CLERIC_CHAOTIC_COMMANDS)
++END
++

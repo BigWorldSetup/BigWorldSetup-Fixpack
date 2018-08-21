@@ -1,0 +1,52 @@
+--- stratagems/item/dispelling_arrows.tpa	2018-08-21 11:17:54.172197500 +0200
++++ Fixpack/stratagems/item/dispelling_arrows.tpa	2018-08-21 11:36:59.351035100 +0200
+@@ -1,24 +1,25 @@
+-DEFINE_ACTION_FUNCTION dispelling_arrows
+-  STR_VAR version="none"
+-BEGIN
+-   OUTER_SPRINT sells_arrows ""
+-   COPY_EXISTING_REGEXP ".*\.\sto" "%workspace%"
+-        PATCH_IF FILE_CONTAINS_EVALUATED ("%SOURCE_FILE%" "AROW07") BEGIN
+-           PUSH sells_arrows "%SOURCE_RES%"
+-        END
+-   BUT_ONLY
+-   ACTION_MATCH "%version%" WITH
+-   none BEGIN
+-   LAF edit_store STR_VAR store="%sells_arrows%" editstring=~remove_items=>%tutu_var%arow07~ END
+-   END
+-   DEFAULT
+-   MAKE_PATCH
+-               match=>"item_resource=%tutu_var%AROW07"
+-               item_charges_1LT=>5
+-               item_num_in_stockLT=>1
+-   END
+-   LAF edit_store STR_VAR store="%sells_arrows%" editstring=~patch_item=>patch_data~ END
+-   END
+-
+-END
+-
++DEFINE_ACTION_FUNCTION dispelling_arrows
++  STR_VAR version="none"
++BEGIN
++   OUTER_SPRINT sells_arrows ""
++   //COPY_EXISTING_REGEXP ".*\sto" "%workspace%"
++   COPY_EXISTING_REGEXP ".*\.\sto" "%workspace%"
++        PATCH_IF FILE_CONTAINS_EVALUATED ("%SOURCE_FILE%" "AROW07") BEGIN
++           PUSH sells_arrows "%SOURCE_RES%"
++        END
++   BUT_ONLY
++   ACTION_MATCH "%version%" WITH
++   none BEGIN
++   LAF edit_store STR_VAR store="%sells_arrows%" editstring=~remove_items=>%tutu_var%arow07~ END
++   END
++   DEFAULT
++   MAKE_PATCH
++               match=>"item_resource=%tutu_var%AROW07"
++               item_charges_1LT=>5
++               item_num_in_stockLT=>1
++   END
++   LAF edit_store STR_VAR store="%sells_arrows%" editstring=~patch_item=>patch_data~ END
++   END
++
++END
++

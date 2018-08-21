@@ -1,22 +1,113 @@
---- stratagems/priest/ssl/bg1/combatblocks/insect_plague.ssl	2016-11-20 18:27:15.479527900 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/insect_plague.ssl	2016-12-01 15:11:46.543912200 -0500
-@@ -10,7 +10,7 @@
- 	IgnoreBlock(Galactygon_Swarm)
- 	TargetBlock(PCSpellcasters)
- 	TargetBlock(PCsInOrderShort)
+--- stratagems/priest/ssl/bg1/combatblocks/insect_plague.ssl	2018-08-21 11:17:54.218196100 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/insect_plague.ssl	2018-08-21 11:36:59.403033500 +0200
+@@ -1,18 +1,18 @@
+-
+-///////////////////////////////////////////////////////////////
+-///	Insect Plague 
+-///////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	IgnoreBlock(IsCleric)
+-	RequireBlock(HasL5)
+-	IgnoreBlock(SpellsAreBG1)
+-	IgnoreBlock(Galactygon_Swarm)
+-	TargetBlock(PCSpellcasters)
+-	TargetBlock(PCsInOrderShort)
 -	TriggerBlock(MR100Touch|SIConjuration|Enemy|Helpless)
+-	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
+-	Global("shapeshift","LOCALS",0)
+-THEN DO
+-	Action(Spell,CLERIC_INSECT_PLAGUE|200|100)
+-END
++
++///////////////////////////////////////////////////////////////
++///	Insect Plague 
++///////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	IgnoreBlock(IsCleric)
++	RequireBlock(HasL5)
++	IgnoreBlock(SpellsAreBG1)
++	IgnoreBlock(Galactygon_Swarm)
++	TargetBlock(PCSpellcasters)
++	TargetBlock(PCsInOrderShort)
 +	TriggerBlock(Enemy|Helpless)
- 	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
- 	Global("shapeshift","LOCALS",0)
- THEN DO
---- stratagems/priest/ssl/bg2/combatblocks/insect_plague.ssl	2016-11-20 18:27:15.508548700 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/insect_plague.ssl	2016-12-01 15:11:46.562925400 -0500
-@@ -10,7 +10,7 @@
- 	IgnoreBlock(Galactygon_Swarm)
- 	TargetBlock(PCSpellcasters)
- 	TargetBlock(PCsInOrderShort)
++	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
++	Global("shapeshift","LOCALS",0)
++THEN DO
++	Action(Spell,CLERIC_INSECT_PLAGUE|200|100)
++END
+--- stratagems/priest/ssl/bg2/combatblocks/insect_plague.ssl	2018-08-21 11:17:54.233195600 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/insect_plague.ssl	2018-08-21 11:36:59.419033600 +0200
+@@ -1,36 +1,36 @@
+-
+-///////////////////////////////////////////////////////////////
+-///	Insect Plague 
+-///////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	IgnoreBlock(IsCleric)
+-	RequireBlock(HasL5)
+-	IgnoreBlock(SpellsAreBG1)
+-	IgnoreBlock(Galactygon_Swarm)
+-	TargetBlock(PCSpellcasters)
+-	TargetBlock(PCsInOrderShort)
 -	TriggerBlock(MR100|SIConjuration|Enemy|Helpless)
+-	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
+-	Global("shapeshift","LOCALS",0)
+-THEN DO
+-	Action(Spell,CLERIC_INSECT_PLAGUE|200|100)
+-END
+-
+-
+-IF TRIGGER
+-	IgnoreBlock(IsCleric)
+-	RequireBlock(HasL5)
+-	IgnoreBlock(SpellsAreBG1)
+-	IgnoreBlock(Galactygon_Swarm)
+-	StateCheck(Myself,STATE_BLIND)
+-	OR(6)
+-	     Range(Player1,15)
+-	     Range(Player2,15)
+-	     Range(Player3,15)
+-	     Range(Player4,15)
+-	     Range(Player5,15)
+-	     Range(Player6,15)
+-THEN DO
+-     Action(SpellMyself,CLERIC_INSECT_PLAGUE)
++
++///////////////////////////////////////////////////////////////
++///	Insect Plague 
++///////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	IgnoreBlock(IsCleric)
++	RequireBlock(HasL5)
++	IgnoreBlock(SpellsAreBG1)
++	IgnoreBlock(Galactygon_Swarm)
++	TargetBlock(PCSpellcasters)
++	TargetBlock(PCsInOrderShort)
 +	TriggerBlock(Enemy|Helpless)
- 	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
- 	Global("shapeshift","LOCALS",0)
- THEN DO
++	!CheckStatGT(scstarget,0,CLERIC_INSECT_PLAGUE)
++	Global("shapeshift","LOCALS",0)
++THEN DO
++	Action(Spell,CLERIC_INSECT_PLAGUE|200|100)
++END
++
++
++IF TRIGGER
++	IgnoreBlock(IsCleric)
++	RequireBlock(HasL5)
++	IgnoreBlock(SpellsAreBG1)
++	IgnoreBlock(Galactygon_Swarm)
++	StateCheck(Myself,STATE_BLIND)
++	OR(6)
++	     Range(Player1,15)
++	     Range(Player2,15)
++	     Range(Player3,15)
++	     Range(Player4,15)
++	     Range(Player5,15)
++	     Range(Player6,15)
++THEN DO
++     Action(SpellMyself,CLERIC_INSECT_PLAGUE)
+ END

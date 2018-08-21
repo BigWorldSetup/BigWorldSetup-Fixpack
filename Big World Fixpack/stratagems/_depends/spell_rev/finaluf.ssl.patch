@@ -1,5 +1,5 @@
---- stratagems/ascension/ssl/finaluf.ssl	2016-11-20 18:27:15.319431200 -0500
-+++ Fixpack/stratagems/ascension/ssl/finaluf.ssl	2016-09-16 23:14:43.524193600 -0400
+--- stratagems/ascension/ssl/finaluf.ssl	2018-08-21 11:17:54.138198600 +0200
++++ Fixpack/stratagems/ascension/ssl/finaluf.ssl	2018-08-21 11:36:59.311036400 +0200
 @@ -110,11 +110,10 @@
  
  IF TRIGGER

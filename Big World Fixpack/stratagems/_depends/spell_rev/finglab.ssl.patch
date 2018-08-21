@@ -1,5 +1,5 @@
---- stratagems/ascension/ssl/finglab.ssl	2016-11-20 18:27:15.321434300 -0500
-+++ Fixpack/stratagems/ascension/ssl/finglab.ssl	2016-09-16 23:16:35.101575500 -0400
+--- stratagems/ascension/ssl/finglab.ssl	2018-08-21 11:17:54.140198100 +0200
++++ Fixpack/stratagems/ascension/ssl/finglab.ssl	2018-08-21 11:36:59.312036800 +0200
 @@ -82,7 +82,7 @@
  
  IF TRIGGER

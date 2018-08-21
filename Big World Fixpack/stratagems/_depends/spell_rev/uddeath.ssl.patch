@@ -1,5 +1,5 @@
---- stratagems/fiend/ssl/uddeath.ssl	2016-11-20 18:27:15.387462600 -0500
-+++ Fixpack/stratagems/fiend/ssl/uddeath.ssl	2016-09-16 22:44:06.323111700 -0400
+--- stratagems/fiend/ssl/uddeath.ssl	2018-08-21 11:17:54.163197300 +0200
++++ Fixpack/stratagems/fiend/ssl/uddeath.ssl	2018-08-21 11:36:59.341035500 +0200
 @@ -23,7 +23,7 @@
  IF TRIGGER
  	TargetBlock(EnemiesInOrder)

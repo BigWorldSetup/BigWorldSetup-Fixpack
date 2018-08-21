@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg2/combatblocks/kill-maze-stun.ssl	2016-11-20 18:27:15.432494300 -0500
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/kill-maze-stun.ssl	2016-12-01 15:18:48.117997900 -0500
+--- stratagems/mage/ssl/bg2/combatblocks/kill-maze-stun.ssl	2018-08-21 11:17:54.200196200 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/kill-maze-stun.ssl	2018-08-21 11:36:59.382034100 +0200
 @@ -9,14 +9,13 @@
  	RequireBlock(HasL9)
  	IgnoreBlock(IsEvoker)

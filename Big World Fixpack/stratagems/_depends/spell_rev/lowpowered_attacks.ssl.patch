@@ -1,56 +1,155 @@
---- stratagems/priest/ssl/bg2/combatblocks/lowpowered_attacks.ssl	2016-11-20 18:27:15.511551000 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/lowpowered_attacks.ssl	2016-12-01 15:11:46.566928700 -0500
-@@ -4,7 +4,7 @@
- 
- IF TRIGGER
- 	TargetBlock(PCsPreferringStrong)
+--- stratagems/priest/ssl/bg2/combatblocks/lowpowered_attacks.ssl	2018-08-21 11:17:54.234195700 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/lowpowered_attacks.ssl	2018-08-21 11:36:59.420033300 +0200
+@@ -1,76 +1,76 @@
+-/////////////////////////////////////////////////////////////////////////////
+-///	Doom
+-////////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	TargetBlock(PCsPreferringStrong)
 -	TriggerBlock(MR100|SpellTurn|MinorGlobe|Hold|SIAlteration|Enemy|Helpless)
-+	TriggerBlock(MR100|SpellTurnNew|MinorGlobe|Enemy|Helpless)
- 	Target(NearestEnemyOf(Myself))
- THEN DO
- 	Action(Spell,CLERIC_DOOM|100|100)
-@@ -16,7 +16,7 @@
- 
- IF TRIGGER
- 	TargetBlock(PCSpellcasters)
+-	Target(NearestEnemyOf(Myself))
+-THEN DO
+-	Action(Spell,CLERIC_DOOM|100|100)
+-END
+-
+-/////////////////////////////////////////////////////////////////////////////////
+-///	Miscast magic
+-/////////////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	TargetBlock(PCSpellcasters)
 -	TriggerBlock(MR|MinorGlobe|SIEnchantment|Enemy|Helpless|SpellTurn)
-+	TriggerBlock(MR|MinorGlobe|SIEnchantment|Enemy|Helpless|SpellTurnNew)
- THEN DO
- 	Action(Spell,CLERIC_MISCAST_MAGIC|150|50)
- END
-@@ -28,7 +28,7 @@
- 
- IF TRIGGER
- 	TargetBlock(PCsPreferringStrong)
+-THEN DO
+-	Action(Spell,CLERIC_MISCAST_MAGIC|150|50)
+-END
+-
+-
+-//////////////////////////////////////////////////////////////////////////
+-////	Charm
+-//////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	TargetBlock(PCsPreferringStrong)
 -	TriggerBlock(MR|Charm|MinorGlobe|SIEnchantment|SpellTurn|Enemy|Helpless)
-+	TriggerBlock(MR|Charm|MinorGlobe|SIEnchantment|SpellTurnNew|Enemy|Helpless)
- THEN DO
- 	Combine()
- 	Action(Spell,CLERIC_MENTAL_DOMINATION|150|50)
-@@ -41,7 +41,7 @@
- 
- IF TRIGGER
- 	TargetBlock(PCsPreferringStrong)
+-THEN DO
+-	Combine()
+-	Action(Spell,CLERIC_MENTAL_DOMINATION|150|50)
+-	Action(Spell,CLERIC_CHARM_PERSON|150|150)
+-END
+-
+-//////////////////////////////////////////////////////////////////////////
+-///	Hold Person
+-//////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	TargetBlock(PCsPreferringStrong)
 -	TriggerBlock(MR100|SpellTurn|MinorGlobe|Hold|SIEnchantment|Enemy|Helpless)
-+	TriggerBlock(MR100|SpellTurnNew|MinorGlobe|Hold|SIEnchantment|Enemy|Helpless)
- 	Target(NearestEnemyOf(Myself))
- THEN DO
- 	Combine()
-@@ -56,7 +56,7 @@
- IF TRIGGER
-         RequireBlock(Demivrgvs)  
- 	TargetBlock(PCsPreferringStrong)
+-	Target(NearestEnemyOf(Myself))
+-THEN DO
+-	Combine()
+-	Action(Wand,"wand04"|150|100)
+-	Action(Spell,CLERIC_HOLD_PERSON|150|50)
+-END
+-
+-//////////////////////////////////////////////////////////////////////////
+-///     Sunscorch
+-//////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-        RequireBlock(Demivrgvs)  
+-	TargetBlock(PCsPreferringStrong)
 -	TriggerBlock(MR100|SpellTurn|MinorGlobe|ResistFire|SIEvocation|Enemy|Helpless)
-+	TriggerBlock(SpellTurnNew|MinorGlobe|ResistFire|Enemy|Helpless)
- 	Target(NearestEnemyOf(Myself))
- THEN DO
- 	Action(Spell,CLERIC_SUNSCORCH|100|100)
-@@ -69,7 +69,7 @@
- 
- IF TRIGGER
- 	TargetBlock(PCsPreferringStrong)
+-	Target(NearestEnemyOf(Myself))
+-THEN DO
+-	Action(Spell,CLERIC_SUNSCORCH|100|100)
+-END
+-
+-
+-/////////////////////////////////////////////////////////////////////////////
+-///	Doom
+-////////////////////////////////////////////////////////////////////////////
+-
+-IF TRIGGER
+-	TargetBlock(PCsPreferringStrong)
 -	TriggerBlock(MR100|SpellTurn|MinorGlobe|Hold|SIAlteration|Enemy|Helpless)
+-	Target(NearestEnemyOf(Myself))
+-THEN DO
+-	Action(Spell,CLERIC_DOOM)
+-END
++/////////////////////////////////////////////////////////////////////////////
++///	Doom
++////////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	TargetBlock(PCsPreferringStrong)
 +	TriggerBlock(MR100|SpellTurnNew|MinorGlobe|Enemy|Helpless)
- 	Target(NearestEnemyOf(Myself))
- THEN DO
- 	Action(Spell,CLERIC_DOOM)
++	Target(NearestEnemyOf(Myself))
++THEN DO
++	Action(Spell,CLERIC_DOOM|100|100)
++END
++
++/////////////////////////////////////////////////////////////////////////////////
++///	Miscast magic
++/////////////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	TargetBlock(PCSpellcasters)
++	TriggerBlock(MR|MinorGlobe|SIEnchantment|Enemy|Helpless|SpellTurnNew)
++THEN DO
++	Action(Spell,CLERIC_MISCAST_MAGIC|150|50)
++END
++
++
++//////////////////////////////////////////////////////////////////////////
++////	Charm
++//////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	TargetBlock(PCsPreferringStrong)
++	TriggerBlock(MR|Charm|MinorGlobe|SIEnchantment|SpellTurnNew|Enemy|Helpless)
++THEN DO
++	Combine()
++	Action(Spell,CLERIC_MENTAL_DOMINATION|150|50)
++	Action(Spell,CLERIC_CHARM_PERSON|150|150)
++END
++
++//////////////////////////////////////////////////////////////////////////
++///	Hold Person
++//////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	TargetBlock(PCsPreferringStrong)
++	TriggerBlock(MR100|SpellTurnNew|MinorGlobe|Hold|SIEnchantment|Enemy|Helpless)
++	Target(NearestEnemyOf(Myself))
++THEN DO
++	Combine()
++	Action(Wand,"wand04"|150|100)
++	Action(Spell,CLERIC_HOLD_PERSON|150|50)
++END
++
++//////////////////////////////////////////////////////////////////////////
++///     Sunscorch
++//////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++        RequireBlock(Demivrgvs)  
++	TargetBlock(PCsPreferringStrong)
++	TriggerBlock(SpellTurnNew|MinorGlobe|ResistFire|Enemy|Helpless)
++	Target(NearestEnemyOf(Myself))
++THEN DO
++	Action(Spell,CLERIC_SUNSCORCH|100|100)
++END
++
++
++/////////////////////////////////////////////////////////////////////////////
++///	Doom
++////////////////////////////////////////////////////////////////////////////
++
++IF TRIGGER
++	TargetBlock(PCsPreferringStrong)
++	TriggerBlock(MR100|SpellTurnNew|MinorGlobe|Enemy|Helpless)
++	Target(NearestEnemyOf(Myself))
++THEN DO
++	Action(Spell,CLERIC_DOOM)
++END

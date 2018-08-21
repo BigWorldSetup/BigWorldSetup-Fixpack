@@ -1,12 +1,20 @@
---- stratagems/caster_shared/clericmage/ssl/hssequencer.ssl	2016-11-20 18:27:15.332423400 -0500
-+++ Fixpack/stratagems/caster_shared/clericmage/ssl/hssequencer.ssl	2016-12-01 15:11:46.474863400 -0500
-@@ -1,8 +1,7 @@
- IF TRIGGER
- 	ConditionalTargetBlock(PCsPreferringStrong;!CheckStatGT(scstarget,50,RESISTMAGIC))
- 	TargetBlock(EnemiesInOrderShort)
+--- stratagems/caster_shared/clericmage/ssl/hssequencer.ssl	2018-08-21 11:17:54.145197800 +0200
++++ Fixpack/stratagems/caster_shared/clericmage/ssl/hssequencer.ssl	2018-08-21 11:36:59.319036200 +0200
+@@ -1,9 +1,8 @@
+-IF TRIGGER
+-	ConditionalTargetBlock(PCsPreferringStrong;!CheckStatGT(scstarget,50,RESISTMAGIC))
+-	TargetBlock(EnemiesInOrderShort)
 -	Alignment(scstarget,MASK_GOOD)
 -	TriggerBlock(MR100|SINecromancy|ResistMagicDamage|Enemy)
+-THEN DO
+-	Action(Sequencer,21,CLERIC_UNHOLY_BLIGHT,CLERIC_UNHOLY_BLIGHT,CLERIC_UNHOLY_BLIGHT)
+-END
+-
++IF TRIGGER
++	ConditionalTargetBlock(PCsPreferringStrong;!CheckStatGT(scstarget,50,RESISTMAGIC))
++	TargetBlock(EnemiesInOrderShort)
 +	TriggerBlock(MR100|ResistMagicDamage|Enemy)
- THEN DO
- 	Action(Sequencer,21,CLERIC_UNHOLY_BLIGHT,CLERIC_UNHOLY_BLIGHT,CLERIC_UNHOLY_BLIGHT)
- END
++THEN DO
++	Action(Sequencer,21,CLERIC_UNHOLY_BLIGHT,CLERIC_UNHOLY_BLIGHT,CLERIC_UNHOLY_BLIGHT)
++END
++

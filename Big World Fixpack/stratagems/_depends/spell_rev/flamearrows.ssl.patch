@@ -1,20 +1,45 @@
---- stratagems/mage/ssl/bg1/combatblocks/flamearrows.ssl	2016-11-20 18:27:15.404474500 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/flamearrows.ssl	2016-12-01 15:11:46.507886200 -0500
-@@ -4,7 +4,7 @@
-         IgnoreBlock(IsEvoker)
- 	ConditionalTargetBlock(PCsPreferringWeak;HPPercentLT(scstarget,40))
- 	TargetBlock(PCsPreferringWeak)
+--- stratagems/mage/ssl/bg1/combatblocks/flamearrows.ssl	2018-08-21 11:17:54.184196900 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/flamearrows.ssl	2018-08-21 11:36:59.367035000 +0200
+@@ -1,21 +1,21 @@
+-
+-IF TRIGGER
+-        RequireBlock(HasL3)
+-        IgnoreBlock(IsEvoker)
+-	ConditionalTargetBlock(PCsPreferringWeak;HPPercentLT(scstarget,40))
+-	TargetBlock(PCsPreferringWeak)
 -	TriggerBlock(MR|ResistFire|Enemy|ArrowSafe|SpellTurn|Stoneskin|MinorGlobe|MirrorImage|Helpless|SIConjuration)
-+	TriggerBlock(MR|ResistFire|Enemy|ArrowSafe|SpellTurnNew|MinorGlobe|MirrorImage|Helpless)
- THEN DO
- 	Action(Spell,WIZARD_FLAME_ARROW|150|50)
- END
-@@ -15,7 +15,7 @@
-         RequireBlock(Demivrgvs)
- 	ConditionalTargetBlock(PCsPreferringWeak;HPPercentLT(scstarget,40))
- 	TargetBlock(PCsPreferringWeak)
+-THEN DO
+-	Action(Spell,WIZARD_FLAME_ARROW|150|50)
+-END
+-
+-IF TRIGGER
+-        RequireBlock(HasL3)
+-        IgnoreBlock(IsEnchanter)
+-        RequireBlock(Demivrgvs)
+-	ConditionalTargetBlock(PCsPreferringWeak;HPPercentLT(scstarget,40))
+-	TargetBlock(PCsPreferringWeak)
 -	TriggerBlock(MR|ResistElectric|Enemy|SpellTurn|MinorGlobe|MirrorImage|Helpless|SIEvocation)
+-THEN DO
+-	Action(Spell,WIZARD_LIGHTNING_BOLT|150|50)
+-END
++
++IF TRIGGER
++        RequireBlock(HasL3)
++        IgnoreBlock(IsEvoker)
++	ConditionalTargetBlock(PCsPreferringWeak;HPPercentLT(scstarget,40))
++	TargetBlock(PCsPreferringWeak)
++	TriggerBlock(MR|ResistFire|Enemy|ArrowSafe|SpellTurnNew|MinorGlobe|MirrorImage|Helpless)
++THEN DO
++	Action(Spell,WIZARD_FLAME_ARROW|150|50)
++END
++
++IF TRIGGER
++        RequireBlock(HasL3)
++        IgnoreBlock(IsEnchanter)
++        RequireBlock(Demivrgvs)
++	ConditionalTargetBlock(PCsPreferringWeak;HPPercentLT(scstarget,40))
++	TargetBlock(PCsPreferringWeak)
 +	TriggerBlock(MR|ResistElectric|Enemy|SpellTurnNew|MinorGlobe|MirrorImage|Helpless)
- THEN DO
- 	Action(Spell,WIZARD_LIGHTNING_BOLT|150|50)
- END
++THEN DO
++	Action(Spell,WIZARD_LIGHTNING_BOLT|150|50)
++END

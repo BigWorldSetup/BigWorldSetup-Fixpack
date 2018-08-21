@@ -1,5 +1,5 @@
---- stratagems/fiend/ssl/demalu01.ssl	2016-11-20 18:27:15.373452700 -0500
-+++ Fixpack/stratagems/fiend/ssl/demalu01.ssl	2016-09-16 22:47:22.082308500 -0400
+--- stratagems/fiend/ssl/demalu01.ssl	2018-08-21 11:17:54.155197900 +0200
++++ Fixpack/stratagems/fiend/ssl/demalu01.ssl	2018-08-21 11:36:59.331035700 +0200
 @@ -78,11 +78,10 @@
  
  IF TRIGGER

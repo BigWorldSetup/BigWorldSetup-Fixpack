@@ -1,0 +1,29 @@
+--- stratagems/sfo/general/lib_macro.tpa	2018-08-21 11:17:54.245194900 +0200
++++ Fixpack/stratagems/sfo/general/lib_macro.tpa	2018-08-21 11:36:59.434033400 +0200
+@@ -54,7 +54,7 @@
+  ACTION_IF !VARIABLE_IS_SET ~macro_read_in_dialog_data~ BEGIN
+    OUTER_SPRINT ~macro_read_in_dialog_data~ ~~
+    COPY_EXISTING ~pdialog.2da~ ~override~
+-         READ_2DA_ENTRIES_NOW pdialog_contents (GAME_INCLUDES ~tob~) ? 8 : 4 // ToB has more columns
++         READ_2DA_ENTRIES_NOW pdialog_contents 4
+          FOR (i=0;i<pdialog_contents;i=i+1) BEGIN
+             READ_2DA_ENTRY_FORMER pdialog_contents i 0 npc
+             READ_2DA_ENTRY_FORMER pdialog_contents i 1 post
+@@ -676,7 +676,7 @@
+ 	END ELSE BEGIN
+        OUTER_SET 2da_first_row = 0
+ 	END
+-    COPY_EXISTING profsmax.2da "%workspace%"
++     COPY_EXISTING profsmax.2da "%workspace%"
+           READ_2DA_ENTRIES_NOW MACRO_prof_max_data 3
+           FOR (i=2da_first_row;i<MACRO_prof_max_data;i+=1) BEGIN
+             READ_2DA_ENTRY_FORMER MACRO_prof_max_data i 0 MACRO_class
+@@ -685,7 +685,7 @@
+             SET "PROFICIENCY_FIRST_LEVEL_MAX_%MACRO_class%"=MACRO_first_level
+             SET "PROFICIENCY_OTHER_LEVEL_MAX_%MACRO_class%"=MACRO_other_level
+           END
+-    BUT_ONLY
++     BUT_ONLY
+    END
+ END
+ 

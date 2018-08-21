@@ -1,22 +1,80 @@
---- stratagems/priest/ssl/bg1/combatblocks/chain_lightning.ssl	2016-11-20 18:27:15.465518400 -0500
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chain_lightning.ssl	2016-12-01 15:11:46.539909300 -0500
-@@ -3,7 +3,7 @@
- 	RequireBlock(IsAvenger)
- 	IgnoreBlock(SpellsAreBG1)
- 	TargetBlock(EnemiesInOrder)
+--- stratagems/priest/ssl/bg1/combatblocks/chain_lightning.ssl	2018-08-21 11:17:54.214195800 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chain_lightning.ssl	2018-08-21 11:36:59.399033900 +0200
+@@ -1,10 +1,10 @@
+-IF TRIGGER
+-	RequireBlock(HasL6)
+-	RequireBlock(IsAvenger)
+-	IgnoreBlock(SpellsAreBG1)
+-	TargetBlock(EnemiesInOrder)
 -	TriggerBlock(Enemy|MR|ResistElectric|SIEvocation)
+-THEN DO
+-	Combine()
+-	Action(SpellRES,"spdr601"|150|50)
+-END
++IF TRIGGER
++	RequireBlock(HasL6)
++	RequireBlock(IsAvenger)
++	IgnoreBlock(SpellsAreBG1)
++	TargetBlock(EnemiesInOrder)
 +	TriggerBlock(Enemy|MR|ResistElectric)
- THEN DO
- 	Combine()
- 	Action(SpellRES,"spdr601"|150|50)
---- stratagems/priest/ssl/bg2/combatblocks/chain_lightning.ssl	2016-11-20 18:27:15.493537800 -0500
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chain_lightning.ssl	2016-12-01 15:11:46.552918800 -0500
-@@ -3,7 +3,7 @@
- 	RequireBlock(IsAvenger)
- 	IgnoreBlock(SpellsAreBG1)
- 	TargetBlock(EnemiesInOrder)
++THEN DO
++	Combine()
++	Action(SpellRES,"spdr601"|150|50)
++END
+--- stratagems/priest/ssl/bg2/combatblocks/chain_lightning.ssl	2018-08-21 11:17:54.224196000 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chain_lightning.ssl	2018-08-21 11:36:59.410033300 +0200
+@@ -1,27 +1,27 @@
+-IF TRIGGER
+-	RequireBlock(HasL6)
+-	RequireBlock(IsAvenger)
+-	IgnoreBlock(SpellsAreBG1)
+-	TargetBlock(EnemiesInOrder)
 -	TriggerBlock(Enemy|MR|ResistElectric|SIEvocation)
+-THEN DO
+-	Combine()
+-	Action(SpellRES,"spdr601"|150|50)
+-END
+-
+-IF TRIGGER
+-	RequireBlock(HasL6)
+-	RequireBlock(IsAvenger)
+-	IgnoreBlock(SpellsAreBG1)
+-        StateCheck(Myself,STATE_BLIND)
+-        OR(6)
+-            Range(Player1,15)
+-            Range(Player2,15)
+-            Range(Player3,15)
+-            Range(Player4,15)
+-            Range(Player5,15)
+-            Range(Player6,15)
+-THEN DO
+-        Action(SpellRESMyself,"spdr601")
+-END
+-
++IF TRIGGER
++	RequireBlock(HasL6)
++	RequireBlock(IsAvenger)
++	IgnoreBlock(SpellsAreBG1)
++	TargetBlock(EnemiesInOrder)
 +	TriggerBlock(Enemy|MR|ResistElectric|SpellTurnNew)
- THEN DO
- 	Combine()
- 	Action(SpellRES,"spdr601"|150|50)
++THEN DO
++	Combine()
++	Action(SpellRES,"spdr601"|150|50)
++END
++
++IF TRIGGER
++	RequireBlock(HasL6)
++	RequireBlock(IsAvenger)
++	IgnoreBlock(SpellsAreBG1)
++        StateCheck(Myself,STATE_BLIND)
++        OR(6)
++            Range(Player1,15)
++            Range(Player2,15)
++            Range(Player3,15)
++            Range(Player4,15)
++            Range(Player5,15)
++            Range(Player6,15)
++THEN DO
++        Action(SpellRESMyself,"spdr601")
++END
++

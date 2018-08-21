@@ -1,11 +1,29 @@
---- stratagems/mage/ssl/bg1/combatblocks/slow.ssl	2016-11-20 18:27:15.410479100 -0500
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/slow.ssl	2016-12-01 15:11:46.513890500 -0500
-@@ -3,7 +3,7 @@
- 	RequireBlock(HasL3)
- 	TargetBlock(PCsPreferringStrong)
- 	TriggerBlock(MR100|Slow|Enemy|MinorGlobe|Helpless)
+--- stratagems/mage/ssl/bg1/combatblocks/slow.ssl	2018-08-21 11:17:54.189196800 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/slow.ssl	2018-08-21 11:36:59.371035200 +0200
+@@ -1,13 +1,13 @@
+-
+-IF TRIGGER
+-	RequireBlock(HasL3)
+-	TargetBlock(PCsPreferringStrong)
+-	TriggerBlock(MR100|Slow|Enemy|MinorGlobe|Helpless)
 -	!CheckStatLT(scstarget,0,SAVEVSSPELL)
+-	!StateCheck(scstarget,STATE_SLOWED)
+-THEN DO
+-	Combine()
+-	Action(SpellArea,WIZARD_SLOW|150|50)
+-	Action(Scroll,"%tutu_var%scrl1l"|150|50)
+-END
+-
++
++IF TRIGGER
++	RequireBlock(HasL3)
++	TargetBlock(PCsPreferringStrong)
++	TriggerBlock(MR100|Slow|Enemy|MinorGlobe|Helpless)
 +	!CheckStatLT(scstarget,0,SAVEVSPOLY)
- 	!StateCheck(scstarget,STATE_SLOWED)
- THEN DO
- 	Combine()
++	!StateCheck(scstarget,STATE_SLOWED)
++THEN DO
++	Combine()
++	Action(SpellArea,WIZARD_SLOW|150|50)
++	Action(Scroll,"%tutu_var%scrl1l"|150|50)
++END
++
