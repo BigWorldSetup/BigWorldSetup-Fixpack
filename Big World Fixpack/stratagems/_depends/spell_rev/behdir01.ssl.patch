@@ -1,5 +1,5 @@
---- stratagems/beholder/ssl/behdir01.ssl	2018-08-21 11:17:54.142197900 +0200
-+++ Fixpack/stratagems/beholder/ssl/behdir01.ssl	2018-08-21 11:36:59.315036200 +0200
+--- stratagems/beholder/ssl/behdir01.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/beholder/ssl/behdir01.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,365 +1,365 @@
 -///////////////////////////////////////////////////////////////////////////
 -////    Data points:

@@ -1,5 +1,5 @@
---- stratagems/werewolf/werewolf.tpa	2018-08-21 11:17:54.251194900 +0200
-+++ Fixpack/stratagems/werewolf/werewolf.tpa	2018-08-21 11:36:59.443032700 +0200
+--- stratagems/werewolf/werewolf.tpa	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/werewolf/werewolf.tpa	2018-08-27 18:00:49.000000000 +0200
 @@ -1,139 +1,139 @@
 -INCLUDE ~%scsroot%/lib/ai_wrap.tph~
 -

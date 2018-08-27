@@ -1,5 +1,5 @@
---- stratagems/sarevok/sarevok.tpa	2018-08-21 11:17:54.243195000 +0200
-+++ Fixpack/stratagems/sarevok/sarevok.tpa	2018-08-21 11:36:59.429033200 +0200
+--- stratagems/sarevok/sarevok.tpa	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/sarevok/sarevok.tpa	2018-08-27 18:00:49.000000000 +0200
 @@ -1,192 +1,192 @@
 -INCLUDE ~%scsroot%/lib/ai_wrap.tph~
 -DEFINE_ACTION_FUNCTION sarevok BEGIN

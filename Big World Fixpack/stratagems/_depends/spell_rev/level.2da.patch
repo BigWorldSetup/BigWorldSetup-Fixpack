@@ -1,5 +1,5 @@
---- stratagems/mage/override/bg2/level.2da	2018-08-21 11:17:54.176196900 +0200
-+++ Fixpack/stratagems/mage/override/bg2/level.2da	2018-08-21 11:36:59.358034900 +0200
+--- stratagems/mage/override/bg2/level.2da	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/mage/override/bg2/level.2da	2018-08-27 18:00:49.000000000 +0200
 @@ -56,13 +56,14 @@
  FIRRAK01	15
  PPIRENI2	30

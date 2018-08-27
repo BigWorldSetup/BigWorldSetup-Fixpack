@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg1/combatblocks/areadenial.ssl	2018-08-21 11:17:54.181197100 +0200
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/areadenial.ssl	2018-08-21 11:36:59.363034700 +0200
+--- stratagems/mage/ssl/bg1/combatblocks/areadenial.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/areadenial.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,50 +1,47 @@
 -//////////////////////////////////////////////////////////////////////////
 -///	Area-denial phase
@@ -98,8 +98,8 @@
 +	Action(SpellMyself,WIZARD_TELEPORT_FIELD|150|50)
 +END
 +
---- stratagems/mage/ssl/bg2/combatblocks/areadenial.ssl	2018-08-21 11:17:54.191196900 +0200
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/areadenial.ssl	2018-08-21 11:36:59.374034400 +0200
+--- stratagems/mage/ssl/bg2/combatblocks/areadenial.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/areadenial.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,119 +1,116 @@
 -//////////////////////////////////////////////////////////////////////////
 -///	Area-denial phase: Liches and Rakshasas use webs, stinking clouds

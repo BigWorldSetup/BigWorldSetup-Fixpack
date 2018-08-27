@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg1/combatblocks/slow.ssl	2018-08-21 11:17:54.189196800 +0200
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/slow.ssl	2018-08-21 11:36:59.371035200 +0200
+--- stratagems/mage/ssl/bg1/combatblocks/slow.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/slow.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,13 +1,13 @@
 -
 -IF TRIGGER

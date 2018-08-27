@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg1/combatblocks/attack_antimagic.ssl	2018-08-21 11:17:54.182197400 +0200
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/attack_antimagic.ssl	2018-08-21 11:36:59.365034700 +0200
+--- stratagems/mage/ssl/bg1/combatblocks/attack_antimagic.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/attack_antimagic.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,49 +1,50 @@
 -
 -////////////////////////////////////////////////////////////////////////////

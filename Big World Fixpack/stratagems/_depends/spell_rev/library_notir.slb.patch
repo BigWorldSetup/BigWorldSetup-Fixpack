@@ -1,0 +1,14 @@
+--- stratagems/ssl/library_notir.slb	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/ssl/library_notir.slb	2018-08-27 18:00:49.000000000 +0200
+@@ -1,9 +1,9 @@
+ TRIGGER=DirectDamageSafe
+     !HasItemEquiped("clck26",scstarget)
+ TRIGGER=ResistElectric
+-	!HasItemEquiped("clck24",scstarget)
++	!HasItemEquiped("clck24")
+ TRIGGER=ResistElectric65
+-	!HasItemEquiped("clck24",scstarget)
++	!HasItemEquiped("clck24")
+ TRIGGER=Slay
+ 	!HasItemEquiped("clck26",scstarget)
+ TRIGGER=Disintegrate

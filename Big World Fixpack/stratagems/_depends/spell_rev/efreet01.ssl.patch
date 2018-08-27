@@ -1,5 +1,5 @@
---- stratagems/genie/ssl/efreet01.ssl	2018-08-21 11:17:54.170197600 +0200
-+++ Fixpack/stratagems/genie/ssl/efreet01.ssl	2018-08-21 11:36:59.349035200 +0200
+--- stratagems/genie/ssl/efreet01.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/genie/ssl/efreet01.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,199 +1,195 @@
 -
 -INCLUDE FILE(%scsroot%\genie\ssl\genie_definitions.ssl)

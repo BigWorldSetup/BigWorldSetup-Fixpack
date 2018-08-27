@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg1/prepblocks/longprep_core.ssl	2018-08-21 11:17:54.191196900 +0200
-+++ Fixpack/stratagems/mage/ssl/bg1/prepblocks/longprep_core.ssl	2018-08-21 11:36:59.373034700 +0200
+--- stratagems/mage/ssl/bg1/prepblocks/longprep_core.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/prepblocks/longprep_core.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -50,3 +50,15 @@
  		Continue()
  END
@@ -16,8 +16,8 @@
 +		ReallyForceSpellRES("spwi226",Myself)
 +		Continue()
 +END
---- stratagems/mage/ssl/bg2/prepblocks/longprep_core.ssl	2018-08-21 11:17:54.207195800 +0200
-+++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/longprep_core.ssl	2018-08-21 11:36:59.390033900 +0200
+--- stratagems/mage/ssl/bg2/prepblocks/longprep_core.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/longprep_core.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -138,3 +138,69 @@
  		Continue()
  END
@@ -88,8 +88,8 @@
 +		ReallyForceSpellRES("spwi623",Myself)
 +		Continue()
 +END
---- stratagems/priest/ssl/bg1/prepblocks/longprep_core.ssl	2018-08-21 11:17:54.224196000 +0200
-+++ Fixpack/stratagems/priest/ssl/bg1/prepblocks/longprep_core.ssl	2018-08-21 11:36:59.408033300 +0200
+--- stratagems/priest/ssl/bg1/prepblocks/longprep_core.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/prepblocks/longprep_core.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -26,6 +26,7 @@
     HaveSpell(CLERIC_DEATH_WARD)
     RequireBlock(HasL4)
@@ -106,8 +106,8 @@
  THEN 
       RESPONSE #100
                ApplySpellRES("%CLERIC_CHAOTIC_COMMANDS%",Myself)
---- stratagems/priest/ssl/bg2/prepblocks/longprep_core.ssl	2018-08-21 11:17:54.242195400 +0200
-+++ Fixpack/stratagems/priest/ssl/bg2/prepblocks/longprep_core.ssl	2018-08-21 11:36:59.429033200 +0200
+--- stratagems/priest/ssl/bg2/prepblocks/longprep_core.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/prepblocks/longprep_core.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,49 +1,50 @@
 -///////////////////////////////////////////////////////////////////////
 -/// Long-duration spells

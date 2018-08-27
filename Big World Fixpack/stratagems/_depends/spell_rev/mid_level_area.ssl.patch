@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg2/combatblocks/mid_level_area.ssl	2018-08-21 11:17:54.203198700 +0200
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/mid_level_area.ssl	2018-08-21 11:36:59.385034100 +0200
+--- stratagems/mage/ssl/bg2/combatblocks/mid_level_area.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/mid_level_area.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -5,10 +5,8 @@
  IF TRIGGER
  	IgnoreBlock(Indiscriminate)

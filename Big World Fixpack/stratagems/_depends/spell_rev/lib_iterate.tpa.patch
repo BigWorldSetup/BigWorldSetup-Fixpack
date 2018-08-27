@@ -1,5 +1,5 @@
---- stratagems/sfo/general/lib_iterate.tpa	2018-08-21 11:17:54.245194900 +0200
-+++ Fixpack/stratagems/sfo/general/lib_iterate.tpa	2018-08-21 11:36:59.432032800 +0200
+--- stratagems/sfo/general/lib_iterate.tpa	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/sfo/general/lib_iterate.tpa	2018-08-27 18:00:49.000000000 +0200
 @@ -1,690 +1,690 @@
 -///// this set of routines processes a list of resources to collect all resources
 -///// needed to enable them.

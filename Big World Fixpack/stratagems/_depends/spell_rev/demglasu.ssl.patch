@@ -1,5 +1,5 @@
---- stratagems/fiend/ssl/demglasu.ssl	2018-08-21 11:17:54.157198000 +0200
-+++ Fixpack/stratagems/fiend/ssl/demglasu.ssl	2018-08-21 11:36:59.333035700 +0200
+--- stratagems/fiend/ssl/demglasu.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/fiend/ssl/demglasu.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -51,7 +51,7 @@
  	Target([0.0.0.CLERIC_ALL])
  	Target([0.0.0.BARD])

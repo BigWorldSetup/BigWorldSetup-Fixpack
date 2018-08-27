@@ -1,5 +1,5 @@
---- stratagems/tra/polish/polish.tra	2018-08-21 11:17:54.250195100 +0200
-+++ Fixpack/stratagems/tra/polish/polish.tra	2018-08-21 11:36:59.442032300 +0200
+--- stratagems/tra/polish/polish.tra	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/tra/polish/polish.tra	2018-08-27 18:00:49.000000000 +0200
 @@ -1,1784 +1,1785 @@
 -@-1004 = ~Szczegolowe informacje o bledach mozna znalezc w pliku~ 
 -@-1005 = ~.~

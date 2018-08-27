@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg1/combatblocks/insect_plague.ssl	2018-08-21 11:17:54.218196100 +0200
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/insect_plague.ssl	2018-08-21 11:36:59.403033500 +0200
+--- stratagems/priest/ssl/bg1/combatblocks/insect_plague.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/insect_plague.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,18 +1,18 @@
 -
 -///////////////////////////////////////////////////////////////
@@ -37,8 +37,8 @@
 +THEN DO
 +	Action(Spell,CLERIC_INSECT_PLAGUE|200|100)
 +END
---- stratagems/priest/ssl/bg2/combatblocks/insect_plague.ssl	2018-08-21 11:17:54.233195600 +0200
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/insect_plague.ssl	2018-08-21 11:36:59.419033600 +0200
+--- stratagems/priest/ssl/bg2/combatblocks/insect_plague.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/insect_plague.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,36 +1,36 @@
 -
 -///////////////////////////////////////////////////////////////

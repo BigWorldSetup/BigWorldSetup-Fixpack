@@ -1,5 +1,5 @@
---- stratagems/genai/genai.tpa	2018-08-21 11:17:54.168197300 +0200
-+++ Fixpack/stratagems/genai/genai.tpa	2018-08-21 11:36:59.346036400 +0200
+--- stratagems/genai/genai.tpa	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/genai/genai.tpa	2018-08-27 18:00:49.000000000 +0200
 @@ -1,590 +1,590 @@
 -DEFINE_ACTION_FUNCTION genai BEGIN
 -

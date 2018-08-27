@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg1/combatblocks/bolt_from_sky.ssl	2018-08-21 11:17:54.214195800 +0200
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/bolt_from_sky.ssl	2018-08-21 11:36:59.398033600 +0200
+--- stratagems/priest/ssl/bg1/combatblocks/bolt_from_sky.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/bolt_from_sky.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,65 +1,52 @@
 -
 -IF TRIGGER
@@ -118,8 +118,8 @@
 +	Action(Wand,"%tutu_var%wand11"|70|30)
 +	Action(Spell,CLERIC_FLAME_STRIKE|80|20)
 +END
---- stratagems/priest/ssl/bg2/combatblocks/bolt_from_sky.ssl	2018-08-21 11:17:54.223195700 +0200
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/bolt_from_sky.ssl	2018-08-21 11:36:59.409033300 +0200
+--- stratagems/priest/ssl/bg2/combatblocks/bolt_from_sky.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/bolt_from_sky.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -30,7 +30,7 @@
  	IgnoreBlock(IsCleric)
  	RequireBlock(HasL3)

@@ -1,5 +1,5 @@
---- stratagems/gameplay/bonus_merchant/bonus.baf	2018-08-21 11:17:54.166197200 +0200
-+++ Fixpack/stratagems/gameplay/bonus_merchant/bonus.baf	2018-08-21 11:36:59.343035400 +0200
+--- stratagems/gameplay/bonus_merchant/bonus.baf	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/gameplay/bonus_merchant/bonus.baf	2018-08-27 18:00:49.000000000 +0200
 @@ -1,120 +1,120 @@
 -IF
 -  !Global("DMWWLoggedFQuest","GLOBAL",1)

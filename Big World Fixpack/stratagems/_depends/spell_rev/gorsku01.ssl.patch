@@ -1,5 +1,5 @@
---- stratagems/firegiant/ssl/gorsku01.ssl	2018-08-21 11:17:54.165197100 +0200
-+++ Fixpack/stratagems/firegiant/ssl/gorsku01.ssl	2018-08-21 11:36:59.342035500 +0200
+--- stratagems/firegiant/ssl/gorsku01.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/firegiant/ssl/gorsku01.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -78,8 +78,7 @@
  
  IF TRIGGER

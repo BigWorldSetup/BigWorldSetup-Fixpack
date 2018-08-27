@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg2/combatblocks/low_level_area.ssl	2018-08-21 11:17:54.201196600 +0200
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/low_level_area.ssl	2018-08-21 11:36:59.384034200 +0200
+--- stratagems/mage/ssl/bg2/combatblocks/low_level_area.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/low_level_area.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -11,8 +11,7 @@
  	IgnoreBlock(IsEvokerStreamline)
  	TargetBlock(EnemiesInOrder)

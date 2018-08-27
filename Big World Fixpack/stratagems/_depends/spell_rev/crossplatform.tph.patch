@@ -1,5 +1,5 @@
---- stratagems/lib/crossplatform.tph	2018-08-21 11:17:54.174197300 +0200
-+++ Fixpack/stratagems/lib/crossplatform.tph	2018-08-21 11:36:59.354035000 +0200
+--- stratagems/lib/crossplatform.tph	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/lib/crossplatform.tph	2018-08-27 18:00:49.000000000 +0200
 @@ -1,2382 +1,2382 @@
 -
 -  ACTION_IF GAME_IS ~bgee~ BEGIN

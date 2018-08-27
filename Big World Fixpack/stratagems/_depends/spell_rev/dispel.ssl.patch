@@ -1,5 +1,5 @@
---- stratagems/fiend/ssl/dispel.ssl	2018-08-21 11:17:54.159197300 +0200
-+++ Fixpack/stratagems/fiend/ssl/dispel.ssl	2018-08-21 11:36:59.336035600 +0200
+--- stratagems/fiend/ssl/dispel.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/fiend/ssl/dispel.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,77 +1,77 @@
 -IF TRIGGER
 -	Allegiance(Myself,ENEMY)

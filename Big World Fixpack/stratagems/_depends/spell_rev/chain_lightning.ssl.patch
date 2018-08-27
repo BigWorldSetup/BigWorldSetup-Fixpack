@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg1/combatblocks/chain_lightning.ssl	2018-08-21 11:17:54.214195800 +0200
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chain_lightning.ssl	2018-08-21 11:36:59.399033900 +0200
+--- stratagems/priest/ssl/bg1/combatblocks/chain_lightning.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chain_lightning.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,10 +1,10 @@
 -IF TRIGGER
 -	RequireBlock(HasL6)
@@ -21,8 +21,8 @@
 +	Combine()
 +	Action(SpellRES,"spdr601"|150|50)
 +END
---- stratagems/priest/ssl/bg2/combatblocks/chain_lightning.ssl	2018-08-21 11:17:54.224196000 +0200
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chain_lightning.ssl	2018-08-21 11:36:59.410033300 +0200
+--- stratagems/priest/ssl/bg2/combatblocks/chain_lightning.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chain_lightning.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,27 +1,27 @@
 -IF TRIGGER
 -	RequireBlock(HasL6)

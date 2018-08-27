@@ -1,5 +1,5 @@
---- stratagems/sfo/general/lib_macro.tpa	2018-08-21 11:17:54.245194900 +0200
-+++ Fixpack/stratagems/sfo/general/lib_macro.tpa	2018-08-21 11:36:59.434033400 +0200
+--- stratagems/sfo/general/lib_macro.tpa	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/sfo/general/lib_macro.tpa	2018-08-27 18:00:49.000000000 +0200
 @@ -54,7 +54,7 @@
   ACTION_IF !VARIABLE_IS_SET ~macro_read_in_dialog_data~ BEGIN
     OUTER_SPRINT ~macro_read_in_dialog_data~ ~~

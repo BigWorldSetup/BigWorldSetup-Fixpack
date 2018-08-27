@@ -1,5 +1,5 @@
---- stratagems/initial/initial.tpa	2018-08-21 11:17:54.171198600 +0200
-+++ Fixpack/stratagems/initial/initial.tpa	2018-08-21 11:36:59.350035600 +0200
+--- stratagems/initial/initial.tpa	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/initial/initial.tpa	2018-08-27 18:00:49.000000000 +0200
 @@ -1,510 +1,510 @@
 -INCLUDE ~%scsroot%/ds/ds.tph~
 -

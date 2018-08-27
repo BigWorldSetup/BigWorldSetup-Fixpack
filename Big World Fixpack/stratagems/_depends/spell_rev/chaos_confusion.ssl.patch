@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg1/combatblocks/chaos_confusion.ssl	2018-08-21 11:17:54.215196300 +0200
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chaos_confusion.ssl	2018-08-21 11:36:59.399033900 +0200
+--- stratagems/priest/ssl/bg1/combatblocks/chaos_confusion.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chaos_confusion.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,24 +1,23 @@
 -//////////////////////////////////////////////////////////////////////////
 -///	Chaos is completely devastating: if you've got it, chuck it
@@ -47,8 +47,8 @@
 +THEN DO
 +	Action(SpellArea,CLERIC_CONFUSION|200|100)
  END
---- stratagems/priest/ssl/bg2/combatblocks/chaos_confusion.ssl	2018-08-21 11:17:54.225195900 +0200
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chaos_confusion.ssl	2018-08-21 11:36:59.411033200 +0200
+--- stratagems/priest/ssl/bg2/combatblocks/chaos_confusion.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chaos_confusion.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,45 +1,44 @@
 -//////////////////////////////////////////////////////////////////////////
 -///	Chaos is completely devastating: if you've got it, chuck it

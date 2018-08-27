@@ -1,5 +1,5 @@
---- stratagems/abazigal/ssl/dw#abdgy.ssl	2018-08-21 11:17:54.136198600 +0200
-+++ Fixpack/stratagems/abazigal/ssl/dw#abdgy.ssl	2018-08-21 11:36:59.308036400 +0200
+--- stratagems/abazigal/ssl/dw#abdgy.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/abazigal/ssl/dw#abdgy.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -306,13 +306,14 @@
  
  IF TRIGGER

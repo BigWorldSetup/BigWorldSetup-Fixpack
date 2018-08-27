@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg2/combatblocks/lowpowered_attacks.ssl	2018-08-21 11:17:54.234195700 +0200
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/lowpowered_attacks.ssl	2018-08-21 11:36:59.420033300 +0200
+--- stratagems/priest/ssl/bg2/combatblocks/lowpowered_attacks.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/lowpowered_attacks.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,76 +1,76 @@
 -/////////////////////////////////////////////////////////////////////////////
 -///	Doom

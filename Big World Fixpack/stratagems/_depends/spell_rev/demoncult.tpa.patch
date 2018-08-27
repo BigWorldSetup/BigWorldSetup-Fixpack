@@ -1,5 +1,5 @@
---- stratagems/tactical_bg1/demoncult.tpa	2018-08-21 11:17:54.248195300 +0200
-+++ Fixpack/stratagems/tactical_bg1/demoncult.tpa	2018-08-21 11:36:59.438032900 +0200
+--- stratagems/tactical_bg1/demoncult.tpa	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/tactical_bg1/demoncult.tpa	2018-08-27 18:00:49.000000000 +0200
 @@ -1,66 +1,66 @@
 -INCLUDE ~%scsroot%/lib/ai_wrap.tph~
 -LAF include STR_VAR file=fiend_shared.tph locbase=fiend END

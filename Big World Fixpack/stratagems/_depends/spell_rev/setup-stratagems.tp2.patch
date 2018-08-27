@@ -1,14 +1,15 @@
---- stratagems/setup-stratagems.tp2	2018-08-21 11:17:54.243195000 +0200
-+++ Fixpack/stratagems/setup-stratagems.tp2	2018-08-21 11:36:59.431033200 +0200
-@@ -1,6 +1,6 @@
+--- stratagems/setup-stratagems.tp2	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/setup-stratagems.tp2	2018-08-27 18:00:49.000000000 +0200
+@@ -1,6 +1,7 @@
  BACKUP ~stratagems_external/backup/stratagems~
- AUTHOR ~For help troubleshooting installation problems, go to the Sword Coast Stratagems forum at forums.gibberlings3.net.~
--VERSION ~v30 BWP fix + K4thos' EET compatibility~
-+VERSION ~v30 BWP fix + K4thos' EET compatibility + kreso's Spell Revisions compatibility~
+ SUPPORT ~For help troubleshooting installation problems, go to the Sword Coast Stratagems forum at forums.gibberlings3.net.~
+-VERSION ~v31 RC2~
++VERSION ~v31 RC2 + kreso's Spell Revisions compatibility~
++
  README ~stratagems/readme-stratagems.html~
  AUTO_EVAL_STRINGS
  
-@@ -167,6 +167,7 @@
+@@ -174,6 +175,7 @@
  
  BEGIN @12 DESIGNATED 2010 GROUP @2
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
@@ -16,7 +17,7 @@
  
  LAF make_label STR_VAR label=dw#breach END
  
-@@ -180,6 +181,7 @@
+@@ -187,6 +189,7 @@
  
  BEGIN @13 DESIGNATED 2020 GROUP @2
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
@@ -24,7 +25,7 @@
  
  LAF make_label STR_VAR label=dw#antimagicII END
  
-@@ -230,6 +232,7 @@
+@@ -237,6 +240,7 @@
  ///////////////////////////////////////////////////////////////////////////////
  
  BEGIN @18 DESIGNATED 2050 GROUP @2
@@ -32,7 +33,7 @@
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
  REQUIRE_PREDICATE !FILE_EXISTS ~tobex.dll~ @16045
  REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
-@@ -397,6 +400,7 @@
+@@ -404,6 +408,7 @@
  
  BEGIN @3387 DESIGNATED 2160 GROUP @2
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8
@@ -40,7 +41,7 @@
  REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc bgee~ @16000
  
  
-@@ -411,6 +415,7 @@
+@@ -418,6 +423,7 @@
  
  BEGIN @3392 DESIGNATED 2170 GROUP @2
  REQUIRE_PREDICATE FILE_EXISTS ~override/dw#setup.mrk~ @8

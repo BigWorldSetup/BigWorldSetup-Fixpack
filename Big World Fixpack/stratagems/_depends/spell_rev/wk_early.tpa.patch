@@ -1,5 +1,5 @@
---- stratagems/gameplay/wk_early.tpa	2018-08-21 11:17:54.167197600 +0200
-+++ Fixpack/stratagems/gameplay/wk_early.tpa	2018-08-21 11:36:59.345035700 +0200
+--- stratagems/gameplay/wk_early.tpa	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/gameplay/wk_early.tpa	2018-08-27 18:00:49.000000000 +0200
 @@ -1,286 +1,286 @@
 -DEFINE_ACTION_FUNCTION wk_early BEGIN
 -   LAF wk_hack RET success END

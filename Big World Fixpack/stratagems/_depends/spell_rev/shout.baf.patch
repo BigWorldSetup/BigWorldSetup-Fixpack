@@ -1,5 +1,5 @@
---- stratagems/help/baf/shout.baf	2018-08-21 11:17:54.170197600 +0200
-+++ Fixpack/stratagems/help/baf/shout.baf	2018-08-21 11:36:59.349035200 +0200
+--- stratagems/help/baf/shout.baf	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/help/baf/shout.baf	2018-08-27 18:00:49.000000000 +0200
 @@ -1,106 +1,106 @@
 -// slightly-tweaked enhanced-edition version
 -

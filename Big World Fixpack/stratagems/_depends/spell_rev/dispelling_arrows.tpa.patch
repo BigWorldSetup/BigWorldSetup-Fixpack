@@ -1,5 +1,5 @@
---- stratagems/item/dispelling_arrows.tpa	2018-08-21 11:17:54.172197500 +0200
-+++ Fixpack/stratagems/item/dispelling_arrows.tpa	2018-08-21 11:36:59.351035100 +0200
+--- stratagems/item/dispelling_arrows.tpa	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/item/dispelling_arrows.tpa	2018-08-27 18:00:49.000000000 +0200
 @@ -1,24 +1,25 @@
 -DEFINE_ACTION_FUNCTION dispelling_arrows
 -  STR_VAR version="none"

@@ -1,5 +1,5 @@
---- stratagems/sfo/install_sfo.tpa	2018-08-21 11:17:54.246195400 +0200
-+++ Fixpack/stratagems/sfo/install_sfo.tpa	2018-08-21 11:36:59.434033400 +0200
+--- stratagems/sfo/install_sfo.tpa	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/sfo/install_sfo.tpa	2018-08-27 18:00:49.000000000 +0200
 @@ -1,259 +1,259 @@
 -ACTION_IF !VARIABLE_IS_SET sfo_installed BEGIN
 -
@@ -249,12 +249,12 @@
 -// Initialise SSL variables
 -///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 -
--// OUTER_SPRINT sslvariables "UNUSED_PLACEHOLDER=true"
+- OUTER_SPRINT sslvariables "UNUSED_PLACEHOLDER=true"
 -LAF check_ini STR_VAR ini=library_override RET value END
 -ACTION_IF "%value%" STRING_EQUAL_CASE none BEGIN
 -   OUTER_SPRINT ssllibrary "%scsroot%/ssl/library"
 -END ELSE BEGIN
--   OUTER_SPRINT ssllibrary "%value%"
+-   OUTER_SPRINT ssllibrary "%scsroot%/ssl/%value%"
 -END
 -
 -END
@@ -508,12 +508,12 @@
 +// Initialise SSL variables
 +///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 +
-+// OUTER_SPRINT sslvariables "UNUSED_PLACEHOLDER=true"
++ OUTER_SPRINT sslvariables "UNUSED_PLACEHOLDER=true"
 +LAF check_ini STR_VAR ini=library_override RET value END
 +ACTION_IF "%value%" STRING_EQUAL_CASE none BEGIN
 +   OUTER_SPRINT ssllibrary "%scsroot%/ssl/library"
 +END ELSE BEGIN
-+   OUTER_SPRINT ssllibrary "%value%"
++   OUTER_SPRINT ssllibrary "%scsroot%/ssl/%value%"
 +END
 +
 +END

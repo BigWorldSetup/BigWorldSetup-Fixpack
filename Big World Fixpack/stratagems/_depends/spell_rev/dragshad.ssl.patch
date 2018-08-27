@@ -1,5 +1,5 @@
---- stratagems/dragon/ssl/dragshad.ssl	2018-08-21 11:17:54.152197900 +0200
-+++ Fixpack/stratagems/dragon/ssl/dragshad.ssl	2018-08-21 11:36:59.328035800 +0200
+--- stratagems/dragon/ssl/dragshad.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/dragon/ssl/dragshad.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -164,7 +164,7 @@
  
  IF TRIGGER

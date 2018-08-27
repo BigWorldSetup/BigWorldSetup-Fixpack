@@ -1,5 +1,5 @@
---- stratagems/lib/stratagems_shared.tph	2018-08-21 11:17:54.175197100 +0200
-+++ Fixpack/stratagems/lib/stratagems_shared.tph	2018-08-21 11:36:59.356035000 +0200
+--- stratagems/lib/stratagems_shared.tph	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/lib/stratagems_shared.tph	2018-08-27 18:00:49.000000000 +0200
 @@ -1,208 +1,208 @@
 -DEFINE_PATCH_FUNCTION strip_scs_scripts
 -   STR_VAR arguments=""

@@ -1,5 +1,5 @@
---- stratagems/gameplay/npc_separate.tpa	2018-08-21 11:17:54.166197200 +0200
-+++ Fixpack/stratagems/gameplay/npc_separate.tpa	2018-08-21 11:36:59.344036100 +0200
+--- stratagems/gameplay/npc_separate.tpa	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/gameplay/npc_separate.tpa	2018-08-27 18:00:49.000000000 +0200
 @@ -1,120 +1,109 @@
 -DEFINE_ACTION_FUNCTION npc_separate BEGIN
 -   ACTION_CLEAR_ARRAY npc_data

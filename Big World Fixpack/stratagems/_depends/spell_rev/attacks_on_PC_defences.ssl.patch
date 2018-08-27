@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg1/combatblocks/attacks_on_pc_defences.ssl	2018-08-21 11:17:54.183197500 +0200
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/attacks_on_pc_defences.ssl	2018-08-21 11:36:59.365034700 +0200
+--- stratagems/mage/ssl/bg1/combatblocks/attacks_on_pc_defences.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/attacks_on_pc_defences.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,72 +1,72 @@
 -///////////////////////////////////////////////////////////////////////
 -////	MAGIC-STRIKE PHASE 1: Remove Magic, Breach
@@ -145,8 +145,8 @@
 +	Action(SpellArea,WIZARD_DISPEL_MAGIC)
 +END
 +
---- stratagems/mage/ssl/bg2/combatblocks/attacks_on_pc_defences.ssl	2018-08-21 11:17:54.193196700 +0200
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/attacks_on_pc_defences.ssl	2018-08-21 11:36:59.375034100 +0200
+--- stratagems/mage/ssl/bg2/combatblocks/attacks_on_pc_defences.ssl	2018-08-27 01:01:22.000000000 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/attacks_on_pc_defences.ssl	2018-08-27 18:00:49.000000000 +0200
 @@ -1,433 +1,435 @@
 -///////////////////////////////////////////////////////////////////////
 -////	MAGIC-STRIKE PHASE 1: Remove Magic, Breach, anti-magic sequencers
