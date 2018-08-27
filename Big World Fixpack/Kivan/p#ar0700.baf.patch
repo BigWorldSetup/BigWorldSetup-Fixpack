@@ -1,9 +1,0 @@
---- kivan/baf/p#ar0700.baf	2005-04-01 10:55:30.521148800 -0400
-+++ Fixpack/kivan/baf/p#ar0700.baf	2016-11-21 10:15:28.301480000 -0500
-@@ -1,5 +1,5 @@
- IF
--GlobalLT("Chapter","GLOBAL",2)
-+GlobalLT("Chapter","GLOBAL",%bg2_chapter_2%)
- !Exists("P#KIVAN")
- Global("P#KIVANExists","Global",0)
- !Global("X#TalkedToKivan","GLOBAL",1)
