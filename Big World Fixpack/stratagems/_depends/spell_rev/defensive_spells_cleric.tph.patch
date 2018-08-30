@@ -1,5 +1,5 @@
---- stratagems/priest/defensive_spells_cleric.tph	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/priest/defensive_spells_cleric.tph	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/priest/defensive_spells_cleric.tph	2018-08-30 07:50:32.472430900 +0200
++++ Fixpack/stratagems/priest/defensive_spells_cleric.tph	2018-08-30 07:52:13.709118800 +0200
 @@ -57,7 +57,7 @@
             DEFAULT END
           PATCH_MATCH RANDOM(1 3) WITH

@@ -1,5 +1,5 @@
---- stratagems/genie/ssl/dao01.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/genie/ssl/dao01.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/genie/ssl/dao01.ssl	2018-08-30 07:50:32.450431500 +0200
++++ Fixpack/stratagems/genie/ssl/dao01.ssl	2018-08-30 07:52:13.684119100 +0200
 @@ -1,86 +1,86 @@
 -
 -INCLUDE FILE(%scsroot%\genie\ssl\genie_definitions.ssl)

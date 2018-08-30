@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg1/combatblocks/area_effect.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/area_effect.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/mage/ssl/bg1/combatblocks/area_effect.ssl	2018-08-30 07:50:32.457431300 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/area_effect.ssl	2018-08-30 07:52:13.692118600 +0200
 @@ -1,158 +1,158 @@
 -
 -//////////////////////////////////////////////////////////////////////

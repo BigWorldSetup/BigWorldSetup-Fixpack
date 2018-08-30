@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg2/combatblocks/low_level_disabling.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/low_level_disabling.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/mage/ssl/bg2/combatblocks/low_level_disabling.ssl	2018-08-30 07:50:32.468431000 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/low_level_disabling.ssl	2018-08-30 07:52:13.704118400 +0200
 @@ -1,250 +1,247 @@
 -///////////////////////////////////////////////////////////////////////////
 -////	ATTACK PHASE 5: Low-powered disabling and charming magic

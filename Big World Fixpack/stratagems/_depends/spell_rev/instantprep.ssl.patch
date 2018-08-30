@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg2/prepblocks/instantprep.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/instantprep.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/mage/ssl/bg2/prepblocks/instantprep.ssl	2018-08-30 07:50:32.470431100 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/prepblocks/instantprep.ssl	2018-08-30 07:52:13.706118400 +0200
 @@ -1,163 +1,173 @@
 -///////////////////////////////////////////////////////////////////
 -//////	Battle preps: here we pre-cast spells that would have
@@ -337,8 +337,8 @@
 +	Action(SpellPrecast,WIZARD_ENERGY_BLADES)
 +END
 +
---- stratagems/priest/ssl/bg2/prepblocks/instantprep.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/priest/ssl/bg2/prepblocks/instantprep.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/priest/ssl/bg2/prepblocks/instantprep.ssl	2018-08-30 07:50:32.489430000 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/prepblocks/instantprep.ssl	2018-08-30 07:52:13.726117700 +0200
 @@ -22,7 +22,7 @@
  		Action(SpellPrecast,CLERIC_REGENERATE)
  END

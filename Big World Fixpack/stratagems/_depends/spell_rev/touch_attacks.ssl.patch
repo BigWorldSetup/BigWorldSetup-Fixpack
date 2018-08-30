@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg1/combatblocks/touch_attacks.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/touch_attacks.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/priest/ssl/bg1/combatblocks/touch_attacks.ssl	2018-08-30 07:50:32.479430500 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/touch_attacks.ssl	2018-08-30 07:52:13.715118200 +0200
 @@ -1,45 +1,44 @@
 -
 -////////////////////////////////////////////////////////////////////
@@ -90,8 +90,8 @@
 +
 +
 +
---- stratagems/priest/ssl/bg2/combatblocks/touch_attacks.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/touch_attacks.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/priest/ssl/bg2/combatblocks/touch_attacks.ssl	2018-08-30 07:50:32.488430600 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/touch_attacks.ssl	2018-08-30 07:52:13.724117600 +0200
 @@ -1,59 +1,57 @@
 -
 -////////////////////////////////////////////////////////////////////

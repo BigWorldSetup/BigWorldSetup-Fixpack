@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg2/combatblocks/imprisonment.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/imprisonment.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/mage/ssl/bg2/combatblocks/imprisonment.ssl	2018-08-30 07:50:32.466431300 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/imprisonment.ssl	2018-08-30 07:52:13.702118500 +0200
 @@ -12,7 +12,7 @@
  	OR(2)
  		!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")

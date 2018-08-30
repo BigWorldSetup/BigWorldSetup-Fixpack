@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg1/combatblocks/enfeeblement.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/enfeeblement.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/mage/ssl/bg1/combatblocks/enfeeblement.ssl	2018-08-30 07:50:32.459431600 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/enfeeblement.ssl	2018-08-30 07:52:13.694118900 +0200
 @@ -1,21 +1,19 @@
 -IF TRIGGER
 -	IgnoreBlock(IsInvoker)

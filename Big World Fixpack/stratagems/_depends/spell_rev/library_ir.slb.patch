@@ -1,5 +1,5 @@
---- stratagems/ssl/library_ir.slb	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/ssl/library_ir.slb	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/ssl/library_ir.slb	2018-08-30 07:50:32.494430300 +0200
++++ Fixpack/stratagems/ssl/library_ir.slb	2018-08-30 07:52:13.731117900 +0200
 @@ -1,8 +1,2 @@
 -TRIGGER=SINecromancy
 -	!HasItemEquiped("plat16",scstarget)

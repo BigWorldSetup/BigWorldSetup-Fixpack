@@ -1,5 +1,5 @@
---- stratagems/setup-stratagems.tp2	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/setup-stratagems.tp2	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/setup-stratagems.tp2	2018-08-30 07:50:32.491430300 +0200
++++ Fixpack/stratagems/setup-stratagems.tp2	2018-08-30 07:52:13.728117600 +0200
 @@ -1,6 +1,7 @@
  BACKUP ~stratagems_external/backup/stratagems~
  SUPPORT ~For help troubleshooting installation problems, go to the Sword Coast Stratagems forum at forums.gibberlings3.net.~

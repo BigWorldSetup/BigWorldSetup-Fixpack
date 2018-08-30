@@ -1,5 +1,5 @@
---- stratagems/sfo/install_sfo.tpa	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/sfo/install_sfo.tpa	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/sfo/install_sfo.tpa	2018-08-30 07:50:32.493430700 +0200
++++ Fixpack/stratagems/sfo/install_sfo.tpa	2018-08-30 07:52:13.730117700 +0200
 @@ -1,259 +1,259 @@
 -ACTION_IF !VARIABLE_IS_SET sfo_installed BEGIN
 -

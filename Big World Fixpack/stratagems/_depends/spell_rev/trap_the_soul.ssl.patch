@@ -1,5 +1,5 @@
---- stratagems/demilich/ssl/trap_the_soul.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/demilich/ssl/trap_the_soul.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/demilich/ssl/trap_the_soul.ssl	2018-08-30 07:50:32.438431900 +0200
++++ Fixpack/stratagems/demilich/ssl/trap_the_soul.ssl	2018-08-30 07:52:13.672119200 +0200
 @@ -52,7 +52,7 @@
  	TargetBlock(Celestials)
  	!GlobalTimerNotExpired("DMWWTimestopRunning","GLOBAL")
@@ -18,8 +18,8 @@
  	OR(2)
  		GlobalTimerNotExpired("seeabjuration","LOCALS")
  		!CheckStat(scstarget,1,WIZARD_SPELL_IMMUNITY)
---- stratagems/mage/ssl/bg2/combatblocks/trap_the_soul.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/trap_the_soul.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/mage/ssl/bg2/combatblocks/trap_the_soul.ssl	2018-08-30 07:50:32.469431000 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/trap_the_soul.ssl	2018-08-30 07:52:13.705118600 +0200
 @@ -1,46 +1,43 @@
 -//////////////////////////////////////////////////////////////////////////
 -////  Trap the Soul

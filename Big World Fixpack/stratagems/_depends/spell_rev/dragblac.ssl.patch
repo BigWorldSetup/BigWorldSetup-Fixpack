@@ -1,5 +1,5 @@
---- stratagems/dragon/ssl/dragblac.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/dragon/ssl/dragblac.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/dragon/ssl/dragblac.ssl	2018-08-30 07:50:32.438431900 +0200
++++ Fixpack/stratagems/dragon/ssl/dragblac.ssl	2018-08-30 07:52:13.673119300 +0200
 @@ -132,7 +132,7 @@
  
  IF TRIGGER

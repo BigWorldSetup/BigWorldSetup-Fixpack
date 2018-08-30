@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg1/combatblocks/holy_smite.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/holy_smite.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/priest/ssl/bg1/combatblocks/holy_smite.ssl	2018-08-30 07:50:32.477430700 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/holy_smite.ssl	2018-08-30 07:52:13.713118500 +0200
 @@ -10,9 +10,7 @@
  	ConditionalTargetBlock(PCsPreferringStrong;!CheckStatGT(scstarget,50,RESISTMAGIC))
  	TargetBlock(EnemiesInOrderShort)
@@ -30,8 +30,8 @@
  	TriggerBlock(MR100|ResistElectric|Enemy)
  THEN DO
  	Action(SpellArea,CLERIC_GLYPH_OF_WARDING|200|100)
---- stratagems/priest/ssl/bg2/combatblocks/holy_smite.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/holy_smite.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/priest/ssl/bg2/combatblocks/holy_smite.ssl	2018-08-30 07:50:32.483431400 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/holy_smite.ssl	2018-08-30 07:52:13.720117700 +0200
 @@ -10,9 +10,7 @@
  	ConditionalTargetBlock(PCsPreferringStrong;!CheckStatGT(scstarget,50,RESISTMAGIC))
  	TargetBlock(EnemiesInOrderShort)

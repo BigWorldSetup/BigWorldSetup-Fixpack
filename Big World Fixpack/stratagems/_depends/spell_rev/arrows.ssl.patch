@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg1/combatblocks/arrows.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/arrows.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/mage/ssl/bg1/combatblocks/arrows.ssl	2018-08-30 07:50:32.457431300 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/arrows.ssl	2018-08-30 07:52:13.693119200 +0200
 @@ -1,73 +1,73 @@
 -//////////////////////////////////////////////////////////////////////////
 -///  ATTACK PHASE 6: Use magic missiles to bring down mirror images
@@ -147,8 +147,8 @@
 +	Action(Spell,WIZARD_MAGIC_MISSILE)
 +END
 +
---- stratagems/mage/ssl/bg2/combatblocks/arrows.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/arrows.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/mage/ssl/bg2/combatblocks/arrows.ssl	2018-08-30 07:50:32.463431300 +0200
++++ Fixpack/stratagems/mage/ssl/bg2/combatblocks/arrows.ssl	2018-08-30 07:52:13.698118200 +0200
 @@ -1,235 +1,221 @@
 -//////////////////////////////////////////////////////////////////////////
 -///  ATTACK PHASE 6: Use magic missiles to bring down mirror images

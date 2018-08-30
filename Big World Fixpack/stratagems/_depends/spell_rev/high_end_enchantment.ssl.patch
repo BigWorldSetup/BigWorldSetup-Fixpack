@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg1/combatblocks/high_end_enchantment.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/high_end_enchantment.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/mage/ssl/bg1/combatblocks/high_end_enchantment.ssl	2018-08-30 07:50:32.459431600 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/high_end_enchantment.ssl	2018-08-30 07:52:13.695118600 +0200
 @@ -1,35 +1,32 @@
 -//////////////////////////////////////////////////////////////////////////
 -///	Chaos is completely devastating: if you've got it, chuck it

@@ -1,5 +1,5 @@
---- stratagems/setup-stratagems_autoinstall.tp2	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/setup-stratagems_autoinstall.tp2	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/setup-stratagems_autoinstall.tp2	2018-08-30 07:50:32.491430300 +0200
++++ Fixpack/stratagems/setup-stratagems_autoinstall.tp2	2018-08-30 07:52:13.728117600 +0200
 @@ -1,153 +1,153 @@
 -BACKUP ~stratagems_external/autoinstall/backup~
 -AUTHOR ~davidw, Gibberlings3 forums~ // email address displayed if install fails

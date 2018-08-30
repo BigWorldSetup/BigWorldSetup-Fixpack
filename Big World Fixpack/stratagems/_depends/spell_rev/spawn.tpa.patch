@@ -1,5 +1,5 @@
---- stratagems/tactical_bg2/spawn.tpa	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/tactical_bg2/spawn.tpa	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/tactical_bg2/spawn.tpa	2018-08-30 07:50:32.495430400 +0200
++++ Fixpack/stratagems/tactical_bg2/spawn.tpa	2018-08-30 07:52:13.732117500 +0200
 @@ -1,76 +1,76 @@
 -DEFINE_ACTION_FUNCTION spawn
 -STR_VAR version=""

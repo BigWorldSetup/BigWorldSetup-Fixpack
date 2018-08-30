@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg2/combatblocks/disabling_magic.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/disabling_magic.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/priest/ssl/bg2/combatblocks/disabling_magic.ssl	2018-08-30 07:50:32.482430900 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/disabling_magic.ssl	2018-08-30 07:52:13.718117800 +0200
 @@ -29,7 +29,7 @@
  	IgnoreBlock(IsDruid)
  	RequireBlock(HasL2)

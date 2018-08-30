@@ -1,5 +1,5 @@
---- stratagems/gameplay/realistic_wolves.tpa	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/gameplay/realistic_wolves.tpa	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/gameplay/realistic_wolves.tpa	2018-08-30 07:50:32.448431900 +0200
++++ Fixpack/stratagems/gameplay/realistic_wolves.tpa	2018-08-30 07:52:13.682119100 +0200
 @@ -63,9 +63,9 @@
       ACTION_FOR_EACH area IN Encounter_Plains1 Encounter_Plains2 Encounter_Canyon1 Encounter_Canyon2
                               Encounter_Cliff1 Encounter_Cliff2 Encounter_Grassland1 Encounter_Grassland2 

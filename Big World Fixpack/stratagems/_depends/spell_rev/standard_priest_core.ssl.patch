@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg2/meleeblocks/standard_priest_core.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/priest/ssl/bg2/meleeblocks/standard_priest_core.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/priest/ssl/bg2/meleeblocks/standard_priest_core.ssl	2018-08-30 07:50:32.488430600 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/meleeblocks/standard_priest_core.ssl	2018-08-30 07:52:13.725118100 +0200
 @@ -1,52 +1,52 @@
 -DEFAULT TRIGGER(GlobalTimerNotExpired("castspell","LOCALS"))
 -

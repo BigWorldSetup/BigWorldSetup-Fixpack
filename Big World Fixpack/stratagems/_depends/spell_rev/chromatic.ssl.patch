@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg1/combatblocks/chromatic.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chromatic.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/priest/ssl/bg1/combatblocks/chromatic.ssl	2018-08-30 07:50:32.476430800 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/chromatic.ssl	2018-08-30 07:52:13.712118300 +0200
 @@ -1,10 +1,10 @@
 -IF TRIGGER
 -	RequireBlock(IsAvenger)
@@ -20,8 +20,8 @@
 +	Combine()
 +	Action(SpellRES,"spdr101"|100|50)
  END
---- stratagems/priest/ssl/bg2/combatblocks/chromatic.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chromatic.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/priest/ssl/bg2/combatblocks/chromatic.ssl	2018-08-30 07:50:32.481430400 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/chromatic.ssl	2018-08-30 07:52:13.717118200 +0200
 @@ -1,10 +1,10 @@
 -IF TRIGGER
 -	RequireBlock(IsAvenger)

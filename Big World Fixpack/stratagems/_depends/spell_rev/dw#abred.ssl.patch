@@ -1,5 +1,5 @@
---- stratagems/abazigal/ssl/dw#abred.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/abazigal/ssl/dw#abred.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/abazigal/ssl/dw#abred.ssl	2018-08-30 07:50:32.431432100 +0200
++++ Fixpack/stratagems/abazigal/ssl/dw#abred.ssl	2018-08-30 07:52:13.665119700 +0200
 @@ -1,364 +1,363 @@
 -// Based on Firkraag, but
 -//

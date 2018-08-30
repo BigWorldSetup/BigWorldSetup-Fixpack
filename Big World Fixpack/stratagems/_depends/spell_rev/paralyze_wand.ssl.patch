@@ -1,5 +1,5 @@
---- stratagems/mage/ssl/bg1/combatblocks/paralyze_wand.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/paralyze_wand.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/mage/ssl/bg1/combatblocks/paralyze_wand.ssl	2018-08-30 07:50:32.460431200 +0200
++++ Fixpack/stratagems/mage/ssl/bg1/combatblocks/paralyze_wand.ssl	2018-08-30 07:52:13.696119100 +0200
 @@ -1,12 +1,11 @@
 -////////////////////////////////////////////////////////////////////////////
 -////	The four-point saving throw penalty on the Wand of Paralysation means

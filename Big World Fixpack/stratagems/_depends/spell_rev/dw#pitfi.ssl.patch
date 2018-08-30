@@ -1,5 +1,5 @@
---- stratagems/fiend/ssl/dw#pitfi.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/fiend/ssl/dw#pitfi.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/fiend/ssl/dw#pitfi.ssl	2018-08-30 07:50:32.445431500 +0200
++++ Fixpack/stratagems/fiend/ssl/dw#pitfi.ssl	2018-08-30 07:52:13.679119400 +0200
 @@ -76,7 +76,7 @@
  	IgnoreBlock(IsSummoned)
  	TargetBlock(PCsInOrder)

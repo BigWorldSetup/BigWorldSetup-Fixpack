@@ -1,5 +1,5 @@
---- stratagems/priest/ssl/bg1/combatblocks/my_defences.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/my_defences.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/priest/ssl/bg1/combatblocks/my_defences.ssl	2018-08-30 07:50:32.478430600 +0200
++++ Fixpack/stratagems/priest/ssl/bg1/combatblocks/my_defences.ssl	2018-08-30 07:52:13.714118200 +0200
 @@ -11,7 +11,7 @@
  	GlobalTimerExpired("redefend","LOCALS")
  	Range(NearestEnemyOf(Myself),10)
@@ -25,8 +25,8 @@
  	RequireBlock(HasL5)
  	!CheckStatGT(Myself,0,CLERIC_CHAOTIC_COMMANDS)
  	GlobalTimerExpired("redefend","LOCALS")
---- stratagems/priest/ssl/bg2/combatblocks/my_defences.ssl	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/my_defences.ssl	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/priest/ssl/bg2/combatblocks/my_defences.ssl	2018-08-30 07:50:32.486430600 +0200
++++ Fixpack/stratagems/priest/ssl/bg2/combatblocks/my_defences.ssl	2018-08-30 07:52:13.723118300 +0200
 @@ -11,7 +11,7 @@
  	GlobalTimerExpired("redefend","LOCALS")
  	Range(NearestEnemyOf(Myself),10)

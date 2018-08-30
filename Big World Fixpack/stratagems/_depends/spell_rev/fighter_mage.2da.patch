@@ -1,5 +1,5 @@
---- stratagems/mage/spellchoices/demivrgvs/fighter_mage.2da	2018-08-27 01:01:22.000000000 +0200
-+++ Fixpack/stratagems/mage/spellchoices/demivrgvs/fighter_mage.2da	2018-08-27 18:00:49.000000000 +0200
+--- stratagems/mage/spellchoices/demivrgvs/fighter_mage.2da	2018-08-30 07:50:32.456431300 +0200
++++ Fixpack/stratagems/mage/spellchoices/demivrgvs/fighter_mage.2da	2018-08-30 07:52:13.691118600 +0200
 @@ -1,13 +1,13 @@
 -VANILLA_FIGHTER-MAGE
 -1 MAGIC_MISSILE         MAGIC_MISSILE           CHROMATIC_ORB               CHARM_PERSON            SLEEP                   SLEEP                       
