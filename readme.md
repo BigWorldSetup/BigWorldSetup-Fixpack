@@ -27,7 +27,3 @@ NOTE:  On Linux, before applying these patches, due to case sensitivity, you mus
 Indeed, you should not manually apply any hotfixes or patches to any mods until at least after the automated Big World Fixpack patching at the beginning of the installation process has completed.  Any manual changes to mod files can cause the automated patching to fail, possibly resulting in partial/incomplete patching.
 
 If you want to edit mod files manually when using BWS, after Fixpack patching, one option is to use the 'OverwriteFiles' advanced feature of BWS to supply your own replacement copies of certain files, which BWS will automatically copy into the game folder for you; alternatively, you can configure BWS to pause (via right-click during the mod/component selection phase) before installing the particular mods you want to modify manually, and then at any time after the Fixpack patching is done you can make whatever additional changes you want.
-
-## Usage with BiG World Project (not the same as Big World Setup!)
-
-If you use the Windows-only [BiG World Project](https://kerzenburg.baldurs-gate.eu/downloads.php?cat=10) command-line automated installation scripts, you may wish to download the Fixpack from their page rather.  The BWP author Leonardo Watson does not contribute directly to this repository and he prefers to release snapshot versions of Fixpack corresponding to the current version of the BiG World Project.
