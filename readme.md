@@ -6,14 +6,6 @@ This is a community project; you are welcome to fork this repository and contrib
 
 Click [here](https://github.com/BigWorldProject/Big-World-Fixpack/archive/master.zip) to download the latest version.
 
-## Enhanced Edition Trilogy (EET) Patches Are Included
-
-See <http://gibberlings3.net/forums/index.php?showtopic=27741&page=33#entry248962> for details.  These patches make all of the EET-compatible mods also compatible with Enhanced Edition games without EET.
-
-CAUTION when using Fixpack for manual EET installations - Do NOT use any patches on EET mods other than for the mods in the EET compatibility list in the version listed in the last section of the list
-<https://rawgit.com/K4thos/EET-Compatibility-List/master/EET-Compatibility-List.html>
-Patching any other mod for inclusion in EET will cause issues because those mods have already been updated and Fixpack addresses issues that are related to classic game versions of the mods only.
-
 ## Usage when installing mods manually
 
 The fixpack is primarily intended for use by [Big World Setup](https://forums.beamdog.com/discussion/44476/tool-big-world-setup-bws-mod-manager-for-baldurs-gate-enhanced-edition-trilogy-for-windows/p1) tool. Big World Fixpack will be downloaded automatically and applied to all of the mods you selected without requiring you to take any manual action. Use caution when integrating it in manual installs and make sure you understand the below:
