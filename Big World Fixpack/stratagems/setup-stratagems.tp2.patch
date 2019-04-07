@@ -1,0 +1,10 @@
+--- stratagems/setup-stratagems.tp2	2019-04-07 10:10:49.584356500 +0200
++++ Fixpack/stratagems/setup-stratagems.tp2	2019-04-07 10:10:56.762355900 +0200
+@@ -1,6 +1,6 @@
+ BACKUP ~stratagems_external/backup/stratagems~
+ SUPPORT ~http://gibberlings3.net/forums/index.php?showforum=118~
+-VERSION ~v31~
++VERSION ~v31 + kreso's Spell Revisions compatibility~
+ README ~stratagems/readme-stratagems.html~
+ AUTO_EVAL_STRINGS
+ 
