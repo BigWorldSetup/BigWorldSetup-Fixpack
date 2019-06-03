@@ -6,6 +6,10 @@ This is a community project; you are welcome to fork this repository and contrib
 
 Click [here](https://github.com/BigWorldProject/Big-World-Fixpack/archive/master.zip) to download the latest version.
 
+## Usage when installing mods via Project Infinity  
+
+You have to install it manually inside folder with extracted mods, before even starting PI. As advantage, you install it one time only. Also make sure you understand the below:  
+
 ## Usage when installing mods manually
 
 Use caution when integrating it in manual installs and make sure you understand the below:
